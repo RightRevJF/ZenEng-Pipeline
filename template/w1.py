@@ -1,62 +1,58 @@
-"""Song 25 writing room (v64 port): 'Through Its Breaking' -- the lines drafted with the writer (15:01-15:10), scored here for the record:
-draft 1 (the run's) and draft 2 (the writer's notes: verse 1 trimmed to its pictures; the chorus's second couplet; one more interior moment).
-6/8 in two at dotted-q = 54: a line takes two bars (12 eighth slots; span 10). Both never-say lists are deaths; Rule V1 on the couplets."""
-import sys; sys.path[:0] = ["/home/claude/p25", "/home/claude/carol", "/home/claude/pop"]
-import engine_p25 as E, phrasestress48 as P; P.install(E); E.install_patches()
-E.METER = "6/8"
+"""Song 27 writing room (v64 port, v65 fixes as ports): 'Either Or' -- the lines drafted with the writer (11:47-12:56), scored here for
+the record: his poem's stanzas (draft 1-2), the new verses (draft 3), and drafts 4-5 from his notes. Verses 5/4 (3+2) at q = 132, a line
+two bars (20 eighths); the refrain 4/4, a line two bars (16 eighths). Rule V1 on the couplets."""
+import sys; sys.path[:0] = ["/home/claude/p27", "/home/claude/carol", "/home/claude/pop"]
+import engine_p27 as E, phrasestress48 as P; P.install(E); E.install_patches()
 def V(mate=None, **k):
-    d = dict(role="verse", nslots=12, show=3, couplet=mate); d.update(k); return d
-E.run("V1.1 the tower", "object: high in the tower over the town", **V("a bell too big for a place this small"))
-E.run("V1.2 too big", "object: a bell too big for a place this small", **V("high in the tower over the town"))
-E.run("V1.3 the crack", "object: green as moss, with a crack up the side", **V("wide enough to hold a thumbnail"))
-E.run("V1.4 the thumbnail", "object: wide enough to hold a thumbnail", **V("green as moss, with a crack up the side"))
-E.run("V1.x the functions (cut in draft 2)", """
-plain: it rings the hour, it rings the market
-plain: it calls the meeting to the hall
-""", **V("close to the note it was made to sing"))
-E.run("V1.5 the note", "contradiction: close to the note it was made to sing", **V("never quite the note at all"))
-E.run("V1.6 never quite", "plain: never quite the note at all", **V("close to the note it was made to sing"))
-E.run("C.1 the tune", "plain: close enough to know the tune", role="chorus", nslots=12, show=1)
-E.run("C.2 true", "contradiction: not close enough to call it true", role="chorus", nslots=12, show=1)
-E.run("C.3 the couplet", """
-plain: two almost-notes where one should be
-object: like your name in a stranger's mouth
-""", role="chorus", nslots=12, show=2)
-E.run("C.4 she rings it", """
-plain: and still she rings it anyway
-plain: and every hour she rings it through
-""", role="hook", nslots=12, show=2)
-E.run("V2.1 brilliance", "plain: she was never made for brilliance", **V("she was made for oil and rope"))
-E.run("V2.2 oil and rope", "object: she was made for oil and rope", **V("she was never made for brilliance"))
-E.run("V2.3 love (draft 2)", """
-time: eleven years of every hour
-body: she never meant to love the thing
-""", **V("it found her, year by year, at the wheel"))
-E.run("V2.4 the wheel (draft 2)", """
-object: measuring a crack that never grows
-body: it found her, year by year, at the wheel
-""", **V("she never meant to love the thing"))
-E.run("V2.5 sleep", "body: some nights she couldn't find her sleep", **V("she'd climb up in the dark and sit"))
-E.run("V2.6 the dark", "object: she'd climb up in the dark and sit", **V("some nights she couldn't find her sleep"))
-E.run("V2.7 the palm", "body: her palm flat on the cold green bronze", **V("she thought: the note is still in it"))
-E.run("V2.8 the thought", "plain: she thought: the note is still in it", **V("her palm flat on the cold green bronze"))
-E.run("B.1 the valley bell", "time: one winter night the valley bell fell still", role="bridge", nslots=12, show=1)
-E.run("B.2 the need", "object: and the need came down like snow", role="bridge", nslots=12, show=1)
-E.run("B.3 the only bell", "contradiction: the wrong bell was the only bell", role="bridge", nslots=12, show=1)
-E.run("B.4 the rope", "body: she took the rope in both her hands", role="bridge", nslots=12, show=1)
-E.run("B.5 again", "plain: again, again, the split note went", role="bridge", nslots=12, show=1)
-E.run("B.6 the fields", "object: out over roofs and frozen fields", role="bridge", nslots=12, show=1)
-E.run("B.7 the doors", "object: and doors came open down the valley", role="bridge", nslots=12, show=1)
-E.run("B.8 farther", "plain: farther out than it had ever reached", role="bridge", nslots=12, show=1)
-E.run("CF.3-4 the turn", """
-contradiction: it didn't ring in spite of the crack
-contradiction: it never rang in spite of the crack
-""", role="chorus", nslots=12, show=2)
-E.run("CF.4 the title", "plain: it rang through its breaking", role="hook", nslots=12, show=1)
-E.run("TAG", """
-object: the crack runs up the bronze
-plain: the bell rings
-plain: the sound carries
-""", role="tag", nslots=12, show=3)
-E.save("/home/claude/p25/w1.json")
+    d = dict(role="verse", nslots=20, show=6, couplet=mate); d.update(k); return d
+E.METER = "5/4"
+E.run("V1.1-2 the line (poem -> drafts 3-5)", """
+plain: where is the conflict? it's with either or
+plain: birthed by a thinker whose thought line was poor
+plain: birthed by Aristotle, whose line of thought was poor
+object: Aristotle drew a line in the dust
+object: Aristotle drew a line across the dust
+plain: said a thing is true or it's a lie
+plain: said one thing's true and the other must be lies
+""", **V())
+E.run("V1.3-4 the blood (poem -> drafts 3-5)", """
+body: now there is anguish, everyone's made sore
+plain: all 'cause of Ari, should've known he's a boor
+body: and we've been bleeding on that line ever since
+body: and we've bled across that line ever since
+body: calling our own blood the other side
+""", **V())
+E.run("V2 the tower (poem -> drafts 3-5)", """
+plain: theologians are cowards, hiding in words
+plain: crowing their nonsense, syllables for the birds
+object: they sat in the tower systematizing wind
+object: stacking up syllables for the birds
+object: weighing the wind by the words that they heard
+object: then they sprinkled water on whatever they wrote
+object: sprinkled holy water on the laws they wrote
+plain: and the herd said amen, word for word
+""", **V())
+E.run("V3 the stones (poem -> drafts 3-5)", """
+plain: the mugwumps are hated by denizens of dread
+object: who spin issues into inheritance, bones into bread
+plain: telling you one thing, different from what's read
+plain: and it's into perdition that you're being led
+object: the ones in the middle catch the stones
+object: the ones who won't choose catch the stones
+plain: from the denizens of dread
+object: from the keepers of the dead
+plain: who hand them their fathers' wars by name
+plain: handing down their fathers' wars by name
+object: turning bones into bread
+""", **V())
+E.METER = "4/4"
+E.run("R the wind (draft 1 -> 5)", """
+object: and the wind blows where it wants to blow
+plain: it doesn't stop to ask you yes or no
+plain: you can't nail it down, you can't keep score
+plain: you can't fence it in, you can't keep score
+plain: the wind was never either or
+plain: and you were never either or
+""", role="refrain", nslots=16, show=6)
+E.save("/home/claude/p27/w1.json")
 print("compounds:", E.COMPOUND_LOG)

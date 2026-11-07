@@ -1,8 +1,36 @@
-# Through Its Breaking - draft 1
-V1: High in the tower over the town / a bell too big for a place this small / green as moss, with a crack up the side / wide enough to hold a thumbnail / it rings the hour, it rings the market / it calls the meeting to the hall / close to the note it was made to sing / never quite the note at all
-C: Close enough to know the tune / not close enough to call it true / two almost-notes where one should be / and still she rings it anyway
-V2: She was never made for brilliance / she was made for oil and rope / eleven years of every hour / measuring a crack that never grows / some nights she couldn't find her sleep / she'd climb up in the dark and sit / her palm flat on the cold green bronze / she thought: the note is still in it
-C
-B: One winter night the valley bell fell still / and the need came down like snow / the wrong bell was the only bell / she took the rope in both her hands / again, again, the split note went / out over roofs and frozen fields / and doors came open down the valley / farther out than it had ever reached
-CF: Close enough to know the tune / not close enough to call it true / it didn't ring in spite of the crack / it rang through its breaking
-TAG: The crack runs up the bronze / the bell rings / the sound carries
+# Either Or (draft 1) -- the writer's stanzas shaped for singing; the refrain new
+
+Verse 1
+where is the conflict? it's with either or
+birthed by a thinker whose thought line was poor
+now there is anguish, everyone's made sore
+all 'cause of Ari, should've known he's a boor
+
+Refrain
+and the wind blows where it wants to blow
+it doesn't stop to ask you yes or no
+you can't nail it down, you can't keep score
+the wind was never either or
+
+Verse 2
+theologians are cowards, hiding in words
+crowing their nonsense, syllables for the birds
+systematizing wind, they make nothing but turds
+which then are baptized, delighting the herds
+
+Refrain
+
+(instrumental break)
+
+Verse 3
+the mugwumps are hated by denizens of dread
+who spin issues into inheritance, bones into bread
+telling you one thing, different from what's read
+and it's into perdition that you're being led
+
+(the build)
+
+Refrain
+
+Last refrain
+... and you were never either or

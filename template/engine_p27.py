@@ -35,7 +35,7 @@ def conc(w):
 
 # Song 8, "All of It Was You" (W/T, v47). The intake's objects stand where Pole A stood; they and the title's words are exempt
 # from every word filter (v47 fixes 1.4 / 2.5).
-import sys as _s; _s.path.insert(0, "/home/claude/p25")
+import sys as _s; _s.path.insert(0, "/home/claude/p27")
 import intake as _I
 for _w, _p in getattr(_I, 'LEXICON', {}).items(): OVERRIDE[_w] = [_p]     # the writer's readings (v54/v60)
 POLE_A = set(_I.OBJECTS)
@@ -71,7 +71,7 @@ def parallel(line, mate):
     p += 0.3 if len(syllables(line)) == len(syllables(mate)) else 0.0
     return min(1.0, p)
 
-REG = {r: (0.6, 2, 2.75, 4.25 if r in ("chorus", "hook") else 4.0) for r in ("verse", "pre", "chorus", "bridge", "hook", "aside", "refrain", "tag")}   # Q7 A: narrative
+REG = {r: (0.6, 2, 2.75, 4.25 if r in ("chorus", "hook") else 4.0) for r in ("verse", "pre", "chorus", "bridge", "hook", "aside", "refrain", "tag", "breakdown", "lift", "shout", "refrain")}   # Q7 A: narrative
 def norm(t): return " ".join(re.sub(r"[^a-z0-9' ]", " ", t.lower().replace("\u2019", "'")).split())
 def score(line, role="verse", mate=None, need_rhyme=None, kernel=None, nslots=12, par_mate=None, prospective=False,
           allow_party=False, couplet=None, before_turn=False, cap=10):
@@ -116,9 +116,9 @@ def score(line, role="verse", mate=None, need_rhyme=None, kernel=None, nslots=12
     AUXEND = {"do", "does", "did", "is", "was", "are", "were", "has", "have", "had", "can", "could", "will", "would"}
     if last in DEM or (last == "to" and len(ws) > 1 and ws[-2] in TO_VERBS): pass   # F-b, F-d
     elif last in AUXEND: pass                     # v52 (Table K): an auxiliary standing for its verb is an ending ('what hands do')
-    elif last in WEAK_END and not (need_rhyme and stressed_mono) and last not in ("up", "out", "down", "on", "in", "off", "here", "there", "now", "again", "home") \
+    elif last in WEAK_END and not syllables(line)[-1][2] and not (need_rhyme and stressed_mono) and last not in ("up", "out", "down", "on", "in", "off", "here", "there", "now", "again", "home") \
             and not prospective:
-        return {"line": line, "dead": f"weak ending ('{last}')"}
+        return {"line": line, "dead": f"weak ending ('{last}')"}   # song 27 port: a line-final word the stress rules stress is not a weak ending
     rk = None
     if need_rhyme and mate:
         if last == mate.lower(): return {"line": line, "dead": f"identical rhyme ('{last}' on '{mate}')"}   # v53 certificate
@@ -182,9 +182,9 @@ def sound_inside(line):
 
 # ---- meter-general placement (run's port) ----
 METER = "4/4"
-BAR = {"4/4": 8, "7/8": 7, "6/8": 6, "12/8": 12, "3/4": 6}
-BEATS = {"4/4": [0, 2, 4, 6], "7/8": [0, 2, 4], "6/8": [0, 3], "12/8": [0, 3, 6, 9], "3/4": [0, 2, 4]}
-STRONGB = {"4/4": [0, 4], "7/8": [0, 2, 4], "6/8": [0, 3], "12/8": [0, 3, 6, 9], "3/4": [0]}
+BAR = {"5/4": 10, "4/4s": 16, "4/4": 8, "7/8": 7, "6/8": 6, "12/8": 12, "3/4": 6}
+BEATS = {"5/4": [0, 2, 4, 6, 8], "4/4s": [0, 2, 4, 6, 8, 10, 12, 14], "4/4": [0, 2, 4, 6], "7/8": [0, 2, 4], "6/8": [0, 3], "12/8": [0, 3, 6, 9], "3/4": [0, 2, 4]}
+STRONGB = {"5/4": [0, 6], "4/4s": [0, 8], "4/4": [0, 4], "7/8": [0, 2, 4], "6/8": [0, 3], "12/8": [0, 3, 6, 9], "3/4": [0]}
 def grid(meter, nslots):
     bar = BAR[meter]; nb = -(-nslots // bar) + 4
     beats = {b * bar + x for b in range(-1, nb) for x in BEATS[meter]}

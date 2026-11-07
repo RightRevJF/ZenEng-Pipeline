@@ -1,10 +1,10 @@
 ---
-title: "Through Its Breaking — Songbook and production notes"
+title: "Either Or — Songbook and production notes"
 author: "Words and music: Jason Bryant"
-date: "6 November 2026"
+date: "7 November 2026"
 ---
 
-# Through Its Breaking
+# Either Or
 
 *Words and music: Jason Bryant*
 
@@ -12,335 +12,263 @@ date: "6 November 2026"
 
 | | |
 |---|---|
-| Style | Piano ballad; one female voice, with cello and strings |
-| Tempo | ♩. = 54 throughout |
-| Metre | 6/8, felt in two |
-| Length | 88 bars, about 3:16 |
-| Key | A minor for the verses and the bridge, C major for the choruses (one key signature) |
-| Voice | Female: A3–B4, C5 once (the last "through") |
-| Feel | A told story. Unhurried and plain, rocking in two; the bell figure on the piano opens it, comes back between sections, and rings through the last chorus |
+| Style | Angular art rock; one tenor, two clean electric guitars, bass, organ, drums |
+| Tempo | ♩ = 132 throughout |
+| Metre | Verses, intro, break and build in 5/4, felt 3+2; refrains and outro in 4/4 |
+| Length | 84 bars, about 2:55 |
+| Key | D Dorian (no key signature) for the verses; F major for the refrains |
+| Voice | Tenor: F3–A4, B♭4 once (the last "score") |
+| Feel | The verses lurch and argue, one beat too many for either/or. The refrain opens out, even and ringing, the wind blowing through |
 
 ### The form
 
 | Bars | Section | What happens |
 |---|---|---|
-| 1–4 | Intro | The bell alone on the piano: a low toll, then the cracked note |
-| 5–16 | Verse 1 | The bell in the tower, and the crack |
-| 17–24 | Chorus 1 | Close enough to know the tune |
-| 25–26 | Interlude 1 | Two bars of the bell |
-| 27–42 | Verse 2 | The keeper, and the nights she climbs up to sit with it |
-| 43–50 | Chorus 2 | The chorus again; strings come in |
-| 51–52 | Interlude 2 | Two bars of the bell, then the night |
-| 53–68 | Bridge | The winter night: the valley bell goes still, and she rings the cracked one. It builds all the way |
-| 69–78 | Chorus 3 | Everyone, with the bell. The last line turns: "it rang through its breaking" |
-| 79–84 | Tag | Down low: "the crack runs up the bronze / the bell rings / the sound carries" |
-| 85–88 | Outro | The bell over C. The last bar rings with the crack still in it |
+| 1–8 | Intro (5/4) | Guitar 1's figure alone; guitar 2 answers from bar 3; bass and drums from bar 5 |
+| 9–16 | Verse 1 (5/4) | Aristotle's line in the dust |
+| 17–24 | Refrain 1 (4/4) | The wind |
+| 25–32 | Verse 2 (5/4) | The tower |
+| 33–40 | Refrain 2 (4/4) | |
+| 41–48 | Break (5/4) | The guitars interlock |
+| 49–56 | Verse 3 (5/4) | The stones |
+| 57–64 | Build (5/4) | Eight bars climbing |
+| 65–72 | Refrain 3 (4/4) | Everyone: the top of the song |
+| 73–80 | Refrain 4 (4/4) | B♭4 on "score"; then everything stops, and the last line is sung alone |
+| 81–84 | Outro (4/4) | A bare D–A drone, neither major nor minor |
 
 ## What the song is about
 
-A town has a bell too big for it, green with age, with a crack up one side. It rings close to the note it was made for, but never quite on it. The woman who keeps it was never meant to love it; it found her, year by year, at the wheel. Some nights she climbs up in the dark and sits with her hand on the bronze, sure the true note is still in there somewhere.
+Aristotle drew a line across the dust: a thing is true, or it's a lie. We've been bleeding across that line ever since, calling our own blood the other side. The theologians sat in their tower systematizing the wind, weighing it by the words they heard, sprinkling holy water on the laws they wrote, while the herd said amen. And the ones who won't choose catch the stones, thrown by the keepers of the dead, who hand down their fathers' wars as a name and turn bones into bread.
 
-Then one winter night the good bell in the valley falls silent. The wrong bell is the only bell. She takes the rope in both hands and rings it, again and again, and the split note carries farther than it ever has. Doors open all down the valley.
+The refrain answers all of it: the wind blows where it wants to blow. It doesn't ask yes or no; you can't fence it in or keep score. The wind was never either or. In the very last line the band stops, and the song turns to the listener: "and you were never either or."
 
-The chorus says what the bell sounds like: close enough to know the tune, not close enough to call it true, like your name in a stranger's mouth. The last chorus turns it: the bell never rang in spite of the crack. It rang through its breaking.
-
-The song never explains itself. It tells the story and lets the listener find their own crack in it.
+The music makes the same argument. The verses are in D Dorian, which has B natural; the refrain is in F major, which has B flat. The two keys fight over that one note, B or B♭, and the song's single B♭4 lands on "score" just before the stop. The verses are in 5/4, a beat too many to settle; the refrain breathes in 4/4. And the last chord is a bare fifth, D and A, with no third: neither major nor minor.
 
 **Playing it:**
 
-- **Tell it plainly.** This is a story told by someone standing a little way off. Don't push the feeling; the story carries it.
-- **The bell is the second voice.** It speaks in the intro, between sections, in the bridge's second half and all through the last chorus. Let it ring.
-- **Everything builds toward the bridge's last line** ("farther out than it had ever reached") and the last chorus. Then the tag drops right down.
+- **Count the 5/4 as 3+2.** ONE-two-three FOUR-five. The accents on 1 and 4 make it walk instead of stumble.
+- **The refrain is release.** The guitars stop picking and ring; the organ holds underneath. Let it open up.
+- **The stop is the song.** At bar 79 everyone stops dead. The last line is the voice alone. Don't fill the silence.
 
 ## The song, section by section
 
-Each lyric line takes two bars of 6/8 (the last line of chorus 3 takes four). The chords of those bars are shown beside each line.
+Each lyric line takes two bars: two of 5/4 in the verses, two of 4/4 in the refrains. The chords of those bars are shown beside each line.
 
-### Intro · bars 1–4
+### Intro · bars 1–8 (5/4)
 
-*Am Am F F.* The bell on the piano: a low octave toll on each downbeat, and on beat 2 the crack, the chord's root struck together with the half step below it (A with G♯, then F with E), left to ring. The left hand holds root and fifth underneath.
+*Dm G Dm G F G Am C.* Guitar 1 alone for two bars: the figure, one note an eighth (on Dm: D F A D F A F D F A), accented on 1 and 4. Guitar 2 answers from bar 3 with two-note chords on the "and" of 1, on 3 and on 5. Bass and drums in at bar 5.
 
-### Verse 1 · bars 5–16
-
-| Chords | Line |
-|---|---|
-| Am · F | high in the tower over the town |
-| C · G | a bell too big for a place this small |
-| Am · F | green as moss, with a crack up the side |
-| C · E | wide enough to hold a thumbnail |
-| Am · F | close to the note it was made to sing |
-| Dm · G | never quite the note at all |
-
-- **Melody:** low and close, A3–E4, close to speaking. "Tower" touches E4; "small" holds on D4; "hold" reaches E4 over the E chord.
-- **Piano:** thin. The root held on 1; fifth, octave and tenth together on beat 2.
-
-### Chorus 1 · bars 17–24
+### Verse 1 · bars 9–16 (5/4)
 
 | Chords | Line |
 |---|---|
-| C · Em | close enough to know the tune |
-| Am · F | not close enough to call it true |
-| C · Em | like your name in a stranger's mouth |
-| F · G | and every hour she rings it through |
+| Dm · G | Aristotle drew a line across the dust |
+| Dm · G | said one thing's true and the other must be lies |
+| F · G | and we've bled across that line ever since |
+| Am · C | calling our own blood the other side |
 
-- **Melody:** C4 to A4.
-  - "Close e-" is a two-note pickup; "tune" lands on the downbeat of bar 18 on E4 and holds.
-  - "True" goes up to A4 over F at the end of bar 20, the chorus's high note.
-  - "Like your name" starts on G4, and "mouth" settles on E4.
-  - "Through" ends the chorus on G4 over G, left open.
-- **Piano:** the 6/8 ballad figure in the left hand, root–fifth–octave–tenth–octave–fifth in eighths, with a right-hand chord held from beat 1. Cello comes in for the second couplet.
+- **Melody:** low and sardonic, F3–D4. "Dust" lands on D4 on beat 4 of bar 10; "lies" falls to A3 on beat 3 of bar 12; "side" sits on C4 at beat 2 of bar 16, leading into the refrain.
+- **Band:** guitar 1's figure alone over bass and drums; guitar 2 lays out. Hats on 1 and 4 only.
 
-### Interlude 1 · bars 25–26
-
-*Am Am.* Two bars of the bell.
-
-### Verse 2 · bars 27–42
+### Refrain 1 · bars 17–24 (4/4)
 
 | Chords | Line |
 |---|---|
-| Am · F | she was never made for brilliance |
-| C · G | she was made for oil and rope |
-| Am · F | she never meant to love the thing |
-| C · E | it found her, year by year, at the wheel |
-| Am · F | some nights she couldn't find her sleep |
-| C · G | she'd climb up in the dark and sit |
-| Am · F | her palm flat on the cold green bronze |
-| Dm · G | she thought: the note is still in it |
+| F · B♭ | and the wind blows where it wants to blow |
+| F · C | it doesn't stop to ask you yes or no |
+| Dm · B♭ | you can't fence it in, you can't keep score |
+| B♭ · C | the wind was never either or |
 
-- **Melody:** A3–E4, like verse 1. "Brilliance" holds on C4; "year by year" peaks on E4; "climb" reaches E4.
-- **The last line** is the quiet centre of the song. "Still" falls on the downbeat of bar 42; "in it" trails off.
-- **Piano and cello:** the full left-hand figure; the cello holds the root a bar at a time.
+- **Melody:** up into the open, C4–A4. "Blows" reaches A4 on beat 3 of bar 17; "no" holds on G4 at beat 2 of bar 20; "score" lands on F4 at the downbeat of bar 22, over B♭; "or" ends on C4, beat 3 of bar 24, over C.
+- **Band:** switch to 4/4. Guitar 1 rings the chord on 1 and 3; guitar 2 drives eighths underneath; bass in eighths; the organ holds F and C under the whole refrain; ride and a crash at the top.
 
-### Chorus 2 · bars 43–50
-
-The same words and melody as chorus 1.
-
-- **Strings** come in with a held pad. The cello answers on beat 2 with the fifth.
-
-### Interlude 2 · bars 51–52
-
-*Am Am.* The bell again, and the singer's pickup into the bridge ("one win-ter") comes in over the second bar.
-
-### Bridge · bars 53–68
+### Verse 2 · bars 25–32 (5/4)
 
 | Chords | Line |
 |---|---|
-| Am · F | one winter night the valley bell fell still |
-| C · G | and the need came down like snow |
-| Am · F | the wrong bell was the only bell |
-| Dm · E | she took the rope in both her hands |
-| F · G | again, again, the split note went |
-| Am · F | out over roofs and frozen fields |
-| F · G | and doors came open down the valley |
-| Dm · G | farther out than it had ever reached |
+| Dm · G | they sat in the tower systematizing wind |
+| Dm · G | weighing the wind by the words that they heard |
+| F · G | sprinkled holy water on the laws they wrote |
+| Am · C | and the herd said amen, word for word |
 
-- **Melody:** starts low (A3) and climbs line by line.
-  - "Snow" holds on E4; the second "bell" holds on F4; "rope" touches G4.
-  - "A-GAIN, a-GAIN" starts the second half, as the bell joins.
-  - "Doors came open" reaches A4.
-  - "Reached" lands on B4 over G at the downbeat of bar 68 and holds: the top of the bridge.
-- **The build:**
-  - bars 53–56: piano thinned, cello on the roots;
-  - bars 57–60: one held string line;
-  - bars 61–68: the full string pad and the bell (toll on 1, crack on 2), swelling bar by bar.
+- **Melody:** F3–D4. "Systematizing" climbs to D4 on beat 4 of bar 25; "sprinkled holy water" sits low, F3–A3; "word for word" ends on G3 at the downbeat of bar 32.
+- **Band:** guitar 2 back in with its answers; hats on every beat.
 
-### Chorus 3 · bars 69–78
+### Refrain 2 · bars 33–40
+
+As refrain 1.
+
+### Break · bars 41–48 (5/4)
+
+*Dm G Dm G F G Am C.* The two guitars hocket: guitar 1 plays on the beats, guitar 2 on the offbeats, so the line passes back and forth between them. Floor tom with the kick on 1 and 4.
+
+### Verse 3 · bars 49–56 (5/4)
 
 | Chords | Line |
 |---|---|
-| C · Em | close enough to know the tune |
-| Am · F | not close enough to call it true |
-| C · Em | it never rang in spite of the crack |
-| F · G · C · C | it rang through its breaking |
+| Dm · G | the ones who won't choose catch the stones |
+| Dm · G | from the keepers of the dead |
+| F · G | handing down their fathers' wars by name |
+| Am · C | turning bones into bread |
 
-- **Melody:**
-  - The first two lines are as before.
-  - "Crack" holds on F4 over Em.
-  - The last line is four bars:
-    - "it" is a pickup;
-    - "RANG" holds on G4 through bar 76;
-    - "THROUGH" lands on C5 at the downbeat of bar 77, over C, and holds. This is the only C5 in the song;
-    - "its BREAK-ing" falls home to E4.
-- **Everyone plays.** The bell rings through the whole chorus: the toll every bar, the crack on beat 2.
+- **Melody:** the shortest lines in the song, F3–C4, each held long. "Stones" holds on A3 from beat 4 of bar 49; "dead" on G3 from beat 3 of bar 51. The B natural (B3) colors the opening line.
+- **Band:** as verse 2.
 
-### Tag · bars 79–84
+### Build · bars 57–64 (5/4)
+
+*Dm G Dm G F G Am C.* Eight bars climbing. Guitar 1 strikes the chord on every beat (bars 57–60), then on every eighth (61–64); guitar 2 lays out. Bass holds a low D (57–58), then walks the 5/4 line. Drums: hats and kick only (57–58), the full groove (59–62), then snare on every eighth with toms on 1, 2, 4 and 5 (63–64). The organ swells up through the chords.
+
+### Refrain 3 · bars 65–72 (4/4)
+
+As refrain 1, with everything: the top of the song.
+
+### Refrain 4 · bars 73–80 (4/4)
 
 | Chords | Line |
 |---|---|
-| Am · F | the crack runs up the bronze |
-| C · C | the bell rings |
-| F · C | the sound carries |
+| F · B♭ | and the wind blows where it wants to blow |
+| F · C | it doesn't stop to ask you yes or no |
+| Dm · B♭ | you can't fence it in, you can't keep **score** |
+| N.C. | **and you were never either or** |
 
-- **Melody:** low, C4–D4, nearly spoken. Each line starts after the downbeat, so the bell has the downbeat to itself. "Rings" holds on C4; "car-ries" settles on C4 over C.
-- **Drop right down:** no strings and no figure. The bell, the cello on the root, and the piano holding root, fifth and octave.
+- **The peak:** "score" goes up to B♭4, the song's only B♭4, at the downbeat of bar 78, over B♭, with a crash.
+- **The stop:** at bar 79 the whole band stops. "And you were never either or" is sung alone, almost spoken, on the same notes as every other title line. "You" takes the stress where "wind" did.
 
-### Outro · bars 85–88
+### Outro · bars 81–84 (4/4)
 
-*C C C C.* The bell alone over C. In the last bar a C chord is held, and B4 rings against C5: the crack, left unresolved.
+Organ D and A, guitar 1 D and A, bass low D: a bare fifth, no third. Let it ring out.
 
-## For the pianist
+## For the players
 
-- **The bell figure:** a low octave toll on the downbeat (A1–A2 for Am, F1–F2 for F, C2–C3 for C), and on beat 2 the crack: the chord's root with the half step below it, struck together and pedalled through.
-
-  | Chord | Am | F | C | G | Dm | E |
-  |---|---|---|---|---|---|---|
-  | Crack | G♯4 + A4 | E4 + F4 | B4 + C5 | F♯4 + G4 | C♯5 + D5 | D♯4 + E4 |
-
-  It plays in the intro, both interludes, bridge bars 61–68, all of chorus 3, the tag and the outro. The lead sheet cues it.
-- **Verse 1:** root held on 1, then fifth–octave–tenth together on beat 2.
-- **Verse 2 onward:** the left hand R–5–8–10–8–5 in eighths. The choruses add a right-hand chord held from beat 1.
-- **Bridge:** bars 53–56 leave out the second and fifth eighths; from bar 61 the right-hand chord comes back under the bell.
-- **The last bar:** C held, with B4 against C5 on top. Let it ring out; don't resolve it.
+- **Guitar 1 (clean, bright):** the 5/4 figure in eighths (on Dm: D F A D F A F D F A), accents on 1 and 4. In the refrains, the chord struck on 1 and 3 and left to ring. In the break, the hocket notes on the beats. In the build, the chord on every beat, then every eighth. In the outro, D and A, let ring.
+- **Guitar 2 (clean, darker):** the answer: two-note chords on the "and" of 1, on 3 and on 5. Tacet in verse 1 and the build. In the refrains, the lower voicing in driving eighths. In the break, the offbeats.
+- **Bass (fretless):** the 5/4 line: root on 1 (dotted quarter), the root again, the fifth on beat 3, the octave on 4, an approach on 5 into the next chord. In the refrains, driving eighths with octave pops on the "and" of 2 and 4. In at bar 5; in the outro, a low D left to ring.
+- **Organ:** the drone: F and C held under every refrain; a rising swell through the build; D and A in the outro.
+- **Drums:** 5/4: kick on 1 and 4, snare on 3 and 5, hats on every beat (on 1 and 4 only in the intro and verse 1). Refrains: kick 1 and 3, snare 2 and 4, ride eighths, crash on the first bar. Break: floor tom on 1 and 4. Crash on bar 78, then stop. Tacet in the outro.
 
 ## For the singer
 
-**Female voice: A3–B4, C5 once.**
+**Tenor: F3–A4, B♭4 once.**
 
-- **The verses sit low (A3–E4).** Tell the story; don't sing at it.
-- **The chorus lifts to A4 on "true."** Keep it plain. The words do the work.
-- **"She thought: the note is still in it" (bars 41–42)** is the quietest line in the song. Almost a whisper.
-- **The bridge climbs the whole way** to B4 on "reached." Let it grow with the band.
-- **The C5 on "through" (bar 77)** is the only time the voice goes past B4. Hold it; then let "breaking" fall.
-- **The tag is low and spoken.** Each line comes in just after the bell.
-- **Breathe** at each line end. The bridge lines are long and close together; take quick breaths before "and the need," "she took," and "and doors."
+- **The verses are an argument.** Low, dry, a little contemptuous. Lean on the stressed words; let the 3+2 carry you.
+- **The refrain lifts.** Open the voice up to A4 on "blows." Sing it like something you've just noticed, not something you're proving.
+- **"Score" in the last refrain** is the only B♭4. Hit it with the crash at bar 78.
+- **The last line is alone.** Bring the volume right down. Almost speak it: "and YOU were never either or."
+- **Breathe** at each line end; the 5/4 lines are long (two bars of five), so take the breath before them.
 
 ## Lyric sheet
 
-♩. = 54 in 6/8, one female voice. The bar numbers show where each line lands. Each line takes two bars; most begin with a pickup in the bar before.
+♩ = 132, verses in 5/4, refrains in 4/4, one tenor. The bar numbers show where each line lands; most lines start with a pickup in the bar before.
 
-**Intro** (bars 1–4): the bell alone
+**Intro** (bars 1–8): the guitars
 
-**Verse 1** (bars 5–16)
+**Verse 1** (bars 9–16)
 
-- 5: high in the tower over the town
-- 7: a bell too big for a place this small
-- 9: green as moss, with a crack up the side
-- 11: wide enough to hold a thumbnail
-- 13: close to the note it was made to sing
-- 15: never quite the note at all
+- 9: Aristotle drew a line across the dust
+- 11: said one thing's true and the other must be lies
+- 13: and we've bled across that line ever since
+- 15: calling our own blood the other side
 
-**Chorus 1** (bars 17–24)
+**Refrain 1** (bars 17–24)
 
-- 17: close enough to know the tune
-- 19: not close enough to call it **true** (A4)
-- 21: like your name in a stranger's mouth
-- 23: and every hour she rings it through
+- 17: and the wind blows where it wants to blow
+- 19: it doesn't stop to ask you yes or no
+- 21: you can't fence it in, you can't keep score
+- 23: the wind was never either or
 
-**Interlude 1** (bars 25–26): the bell
+**Verse 2** (bars 25–32)
 
-**Verse 2** (bars 27–42)
+- 25: they sat in the tower systematizing wind
+- 27: weighing the wind by the words that they heard
+- 29: sprinkled holy water on the laws they wrote
+- 31: and the herd said amen, word for word
 
-- 27: she was never made for brilliance
-- 29: she was made for oil and rope
-- 31: she never meant to love the thing
-- 33: it found her, year by year, at the wheel
-- 35: some nights she couldn't find her sleep
-- 37: she'd climb up in the dark and sit
-- 39: her palm flat on the cold green bronze
-- 41: she thought: the note is still in it
+**Refrain 2** (bars 33–40)
 
-**Chorus 2** (bars 43–50): as chorus 1; strings come in
+**Break** (bars 41–48): the guitars interlock
 
-**Interlude 2** (bars 51–52): the bell
+**Verse 3** (bars 49–56)
 
-**Bridge** (bars 53–68): the build
+- 49: the ones who won't choose catch the stones
+- 51: from the keepers of the dead
+- 53: handing down their fathers' wars by name
+- 55: turning bones into bread
 
-- 53: one winter night the valley bell fell still
-- 55: and the need came down like snow
-- 57: the wrong bell was the only bell
-- 59: she took the rope in both her hands
-- 61: again, again, the split note went (the bell comes in)
-- 63: out over roofs and frozen fields
-- 65: and doors came open down the valley
-- 67: farther out than it had ever **reached** (B4)
+**Build** (bars 57–64)
 
-**Chorus 3** (bars 69–78): everyone, with the bell
+**Refrain 3** (bars 65–72)
 
-- 69: close enough to know the tune
-- 71: not close enough to call it true
-- 73: it never rang in spite of the crack
-- 75: ★ **it rang through its breaking** ★ (four bars; "through" on C5 at bar 77, the top of the song)
+**Refrain 4** (bars 73–80)
 
-**Tag** (bars 79–84): down low
+- 73–75: as before
+- 77: you can't fence it in, you can't keep **score** (B♭4, the top of the song)
+- 79: ★ the band stops ★ **and you were never either or** (alone)
 
-- 79: the crack runs up the bronze
-- 81: the bell rings
-- 83: the sound carries
+**Outro** (bars 81–84): the D–A drone
 
-**Outro** (bars 85–88): the bell over C; the last bar rings unresolved
-
-> **The turn.** The chorus says the bell is close but not true. The last chorus changes its third line: "it never rang in spite of the crack," and then the title, over four bars, with the song's only C5 on "through." Don't oversell it; the height of the note does the work.
+> **The turn.** Every refrain ends "the wind was never either or." The last one, alone, ends "and you were never either or": the same notes, one word changed. The argument stops being about the world and becomes about the listener.
 
 ## Production brief
 
-**The song.** A parable told as a story ballad. A cracked bell in a small town's tower never quite rings true, and the woman who keeps it loves it anyway. One winter night the valley's good bell goes silent, and the cracked bell is the only one left. She rings it, and its split note carries farther than it ever has. It's a piano ballad in 6/8 for one female voice, with cello and strings. The piano also plays the bell. It should sound like someone telling a story in a quiet room, with the room slowly filling up behind her.
+**The song.** An art-rock sermon against either/or thinking: Aristotle's line, the theologians who boxed up the wind, the people stoned for refusing to choose, and the wind, which was never either or. Two clean guitars interlocking in 5/4, a melodic bass, a church organ drone and drums with sharp accents, under a tenor who argues in the verses and opens up in the refrain. It should sound precise and a little dangerous, then suddenly wide, and end in silence and a bare fifth.
 
 **References**
 
-- **Sarah McLachlan, "Angel" (*Surfacing*, 1997):** a female voice over a rocking 6/8 piano. Take the plain, unforced delivery and the way the piano carries the rhythm alone.
-- **Tori Amos, "Winter" (*Little Earthquakes*, 1992):** a winter piano ballad whose strings build gradually under a restrained voice. Take the slow rise: the strings arrive late and never crowd the piano.
-- **Brandi Carlile, "The Joke" (*By the Way, I Forgive You*, 2018):** it opens quiet on piano and strings and builds floor to ceiling. Take the long build and the restraint that earns it. Our top note is one held C5, not a belt.
+- **King Crimson, "Discipline" (title track, *Discipline*, 1981):** interlocking 5/4 guitar lines between Robert Fripp and Adrian Belew. Take the two-guitar interlock for the intro and the break.
+- **Radiohead, "15 Step" (*In Rainbows*, 2007):** a song in 5/4 with light, clean guitar strumming over the beat. Take a 5/4 that moves the body instead of sounding like arithmetic.
+- **Talking Heads, "Once in a Lifetime" (*Remain in Light*, 1980):** David Byrne's phrasing imitates a preacher's delivery. Take that preacher's voice for the verses: a sermon against preachers.
 
 **Non-negotiables**
 
-1. **♩. = 54 in 6/8 throughout,** felt in two. A slight easing in the last two bars is fine; no other tempo changes.
-2. **No drums.** Voice, piano, cello and strings.
-3. **The bell is the piano,** not a sampled bell. The crack is the chord's root with the half step below it, struck together. It's meant to sound wrong. Don't tune it out or soften it into a single note.
-4. **Verse 1 is thin.** The arc fills through verse 2 and chorus 2, builds through the bridge, and peaks in chorus 3.
-5. **The C5 on "through" (bar 77) is the only note above B4.** Hold it full value.
-6. **The tag drops straight down:** no strings, no left-hand figure.
-7. **The last bar doesn't resolve.** C held, with B4 against C5 left ringing. Don't fade early, and don't add a resolving C.
+1. **♩ = 132 throughout.** Verses, intro, break and build in 5/4 (3+2); refrains and outro in 4/4. No tempo changes.
+2. **B natural in the verses, B♭ in the refrains.** Don't smooth the clash: it's the point.
+3. **The B♭4 on "score" (bar 78) is the only note above A4.**
+4. **The stop at bar 79 is total.** No pad, no reverb tail from the band, no count-in. The last line is the voice alone.
+5. **The last chord has no third.** D and A only. Nobody plays an F or an F♯.
+6. **Clean guitars.** No distortion; the edge comes from the rhythm, not the tone.
 
 ## Session notes
 
-**Tempo and metre.** 88 bars, about 3:16. 6/8 at ♩. = 54. In a DAW set to 6/8, that's ♩ = 81 (♪ = 162). Use a dotted-quarter click; an eighth-note click will make the feel stiff.
+**Tempo and metre.** 84 bars, about 2:55. ♩ = 132. Program the click with the metre changes: bars 1–16, 25–32 and 41–64 in 5/4; bars 17–24, 33–40 and 65–84 in 4/4. Accent the click on 1 and 4 in the 5/4 bars.
 
-**Key.** One key signature (no sharps or flats). A minor for the intro, verses, interludes and bridge; C major for the choruses, tag and outro.
+**Key.** D Dorian (no key signature) for bars 1–16, 25–32, 41–64 and the outro; F major (one flat) for the refrains.
 
 **Chords (per bar)**
 
 | Bars | Section | Chords |
 |---|---|---|
-| 1–4 | Intro | Am Am F F |
-| 5–16 | Verse 1 | Am F · C G · Am F · C E · Am F · Dm G |
-| 17–24, 43–50 | Choruses 1–2 | C Em · Am F · C Em · F G |
-| 25–26, 51–52 | Interludes | Am Am |
-| 27–42 | Verse 2 | Am F · C G · Am F · C E · Am F · C G · Am F · Dm G |
-| 53–68 | Bridge | Am F · C G · Am F · Dm E · F G · Am F · F G · Dm G |
-| 69–78 | Chorus 3 | C Em · Am F · C Em · F G C C |
-| 79–84 | Tag | Am F · C C · F C |
-| 85–88 | Outro | C C C C |
+| 1–8, 41–48, 57–64 | Intro, break, build | Dm G Dm G F G Am C |
+| 9–16, 25–32, 49–56 | Verses | Dm G · Dm G · F G · Am C |
+| 17–24, 33–40, 65–72 | Refrains 1–3 | F B♭ · F C · Dm B♭ · B♭ C |
+| 73–80 | Refrain 4 | F B♭ · F C · Dm B♭ · N.C. (the stop) |
+| 81–84 | Outro | D5 (D and A) |
 
 **Range**
 
-- **Voice:** female, A3–B4, with one C5 ("through," bar 77).
-- **Verses:** A3–E4, close and low.
-- **Choruses:** C4–A4. "True" is on A4 at bars 20, 46 and 72.
-- **Bridge:** climbs from A3 to B4 ("reached," bar 68).
-- **Tag:** C4–D4, nearly spoken.
+- **Voice:** tenor, F3–A4, with one B♭4 ("score", bar 78).
+- **Verses:** F3–D4, low and dry.
+- **Refrains:** C4–A4.
 
 **Tracking**
 
-1. **Piano and voice first,** together in the room if possible. The 6/8 sway breathes better live.
-2. **Record the bell as its own piano pass.** In bridge bars 61–68 and all of chorus 3, the bell and the accompaniment play at once, and one player can't play both. Use the same piano, so the bell sounds like part of the accompaniment.
-3. **Cello next,** then strings. The strings part is a reduction: voice it for a quartet or a small section, and keep the top line where it's written.
-4. **Keep verse 2's last line quiet** ("she thought: the note is still in it"). Don't comp it from louder takes.
-5. **The bridge's last line and chorus 3** can take a fuller vocal, but no doubling or harmony.
+1. **Both guitars together** to the click, in the same room if possible, so the interlock locks. Then bass and drums; or track the four together if the band can hold 5/4 live.
+2. **Organ last** among the instruments: the drone and the build's swell.
+3. **Lead vocal.** The verses dry and close; the refrains open. Track the last line separately, quietly, with nothing in the headphones but the click.
+4. **The stop:** edit the band's tails so bar 79 is genuinely silent under the voice.
 
 **Blend and panning**
 
-- **Voice:** centre and in front, dry, with a short room.
-- **Piano:** a stereo image, slightly wide.
-- **The bell pass:** a little apart from the piano, with more room and a longer tail. Let each toll and crack ring through its bar.
-- **Cello and strings:** cello left of centre, strings right, both behind the piano until the bridge.
-- **The build:** the bridge should feel like the room filling, not getting louder all at once. Chorus 3 is the fullest place; the tag drops back to piano, bell, cello and voice.
+- **Guitar 1** left, **guitar 2** right: the interlock should be heard as two players.
+- **Bass** centre, melodic and present; **organ** centre and wide, under everything.
+- **Voice** centre, dry in the verses, a little more room in the refrains; the last line completely dry and close.
+- **The outro:** let the D–A drone ring into silence. Don't fade it early.
 
 ## Score and parts
 
-- **Full score (7 pages):** voice with the lyric and chord names; piano on a grand staff with the bell written in (the crack in the right hand, the toll in the left); cello; strings (a reduction). The cello and strings staves are hidden where they rest. Section dynamics follow the arc.
-- **Lead sheet (3 pages):** voice and lyric, with the bell cued on a small staff wherever it plays.
-- **Nashville chart (1 page):** each section numbered in its own key.
-- Every note in the score matches the demo and the lead sheet.
+- **Lead sheet (3 pages):** voice and lyric with chord names, the metre changes, the stop and the outro marked.
+- **Nashville chart (1 page):** each section numbered in its own key, with drummer notes and the metre of each section.
+- **Band parts (9 pages):** guitar 1, guitar 2, bass, organ and drums. Empty bars compressed; every part has rehearsal marks, bar numbers, chord symbols (N.C. where the band stops) and the metre changes.
+- Every note in the lead sheet and the parts matches the demo.
 
 ## Credits
 

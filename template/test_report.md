@@ -1,124 +1,121 @@
 ---
-title: "Through Its Breaking — Test report (ZenEng v64)"
+title: "Either Or — Test report (ZenEng v64 + v65 fixes)"
 author: "For the engine's maintainers; not for musicians"
-date: "6 November 2026"
+date: "7 November 2026"
 ---
 
-# Through Its Breaking — test report (ZenEng v64)
+# Either Or — test report (ZenEng v64, v65 fixes as ports)
 
-This is the engine's record of song 25, kept apart from the songbook (musicians only).
+This is the engine's record of song 27, kept apart from the songbook (musicians only). The test: art rock from the writer's own poem, in mixed metre (5/4 verses, 4/4 refrain) and a mode (D Dorian against F major).
 
 ## The intake
 
-The writer's seed: his parable book, *Wild Fruit* (Wild_Fruit_KDP_v4.docx), "material to read to consider for the next song."
-
 | Question | His answer |
 |---|---|
-| Which parable | A: "The Cracked Bell" |
-| Who tells it | A: a third-person story ballad |
-| Sound | B: piano ballad. The piano is the bell (low ringing octaves; the crack a half step struck together); strings build to the night |
-| Voice (11.2) | A: female, A3–B4, C5 once |
-| Tempo and feel | B: 6/8 in two, ♩. = 54, the bell swinging |
-| Form | A: two long verses, each into the chorus; the winter night as the bridge; the last chorus turned (about 3:10) |
-| Key | A: A minor verses, C major chorus; C5 on the tonic at the turn |
-| Title | B: "Through Its Breaking" |
-| Never say | C: both lists (the sermon words; the clichés, kept clear of Cohen's crack and light) |
-| The winter night's need | A: unnamed, as in the parable |
-
-- **Standing ask:** show the lyrics before drafting the music.
-- **The form grew** from 84 bars (about 3:10) to 88 bars (3:16): two 2-bar bell interludes after choruses 1 and 2 (finding 4).
+| Source | His poem, three stanzas ("Where is the conflict, its with either or" / "Theologians are cowards, hiding in words" / "The mugwumps are hated by denizens of dread") |
+| How to treat the words | "B leaning towards C": the stanzas as verses plus a refrain from his words, shaped for singing |
+| What the poem is about | The run's reading, given at his request: against either/or (Aristotle's excluded middle), theologians systematizing the wind, the partisans of dread who hate the mugwumps |
+| What the refrain carries | C: the wind, the spirit that won't be systematized (over the recommended both/and) |
+| Voice (11.2) | A: tenor D3–A4, B♭4 once |
+| Sound | A: angular art rock, two interlocking clean guitars, melodic bass, accented drums; the refrain opens into ringing chords over an organ drone |
+| Metre and tempo | A: verses 5/4, refrain 4/4, ♩ = 132 |
+| Form | B: extended, 84 bars, 2:55, an 8-bar intro and an 8-bar 5/4 build (lengths printed per option, fixes 13 and 31) |
+| Key | A: D Dorian verses (B natural), F major refrain (B♭): the either/or in one note |
+| Title | B: "Either Or" (over the recommended "Systematizing Wind") |
+| Production | "I'm going to need an all parts pdf for production": a band parts PDF |
 
 ## The writing room
 
-Two drafts. The writer locked draft 2. The room scored every line afterwards: 38 written, 35 alive.
+Five drafts. The writer locked draft 5. The room scored 37 lines; 28 lived.
 
 | Round | What changed | Why |
 |---|---|---|
-| Draft 1 | The run's lyric | — |
-| Draft 2 | Verse 1 trimmed to six lines. The chorus's second couplet: "like your name in a stranger's mouth / and every hour she rings it through." Verse 2 gained "she never meant to love the thing / it found her, year by year, at the wheel" | His notes: verse 1 listed the bell's functions; the chorus couplet lacked weight; the keeper needed one more precise interior moment |
+| Draft 1 | His poem, set nearly as written, with the run's refrain | — |
+| Draft 2 | Three spots fixed for clarity (Aristotle named; the line of thought) | His choice B of three |
+| Draft 3 | New verses in the refrain's voice, built around his strongest phrases | "I like the poem, don't like the lyrics other than the refrain"; then C of three |
+| Draft 4 | A sharper opening (Aristotle's line in the dust); "weighing the wind by the words that they heard"; verse 3 about the ones punished for not choosing | His attached suggestions document |
+| Draft 5 | "from the keepers of the dead"; "you can't fence it in, you can't keep score"; "sprinkled holy water on the laws they wrote"; "and we've bled across that line ever since"; "handing down their fathers' wars by name" | His five pasted notes |
 
-- **Deaths:**
-  - "and every hour she rings it through" died on a weak ending ("through"). Kept by the writer's lock. "Rings it through" is a phrasal verb: the particle carries the stress (v65 fix 24).
-  - "she thought: the note is still in it" died on a weak ending ("it"). Kept by the writer's lock. A pronoun-object ending after a stressed word (v65 fix 9).
-  - "two almost-notes where one should be" (draft 1's chorus) died on a weak ending, and the writer cut it.
+- **Deaths of the poem's own lines.** The room killed 5 of the poem's 12 original lines, all on distinctive or rare words: "theologians are cowards, hiding in words" (3 distinctive words); "crowing their nonsense, syllables for the birds" (3); "the mugwumps are hated by denizens of dread" (4); "and it's into perdition that you're being led" (perdition, Zipf 2.46); "telling you one thing, different from what's read" (strong-beat agreement 0.17). Finding 50.
+- **A locked line that died.** "said one thing's true and the other must be lies" (draft 4 on) died on V1, no concrete image. It stands by the writer's lock: in an argument song the abstract half of a couplet is the argument, and the next line ("the dust", "blood") carries the image. Finding 53.
 
 ## The quotable line (10.20)
 
-- **Remembered:** "and every hour she rings it through" leads (+5.12).
-- **Annotated:** "the bell rings" leads (+3.47).
-- **In the top quarter of both:** "it rang through its breaking" (the title line), which fills the middle slot.
-- **The writer's blind pick:** A, "it rang through its breaking" (the middle slot, top quarter under both). The title line, and the line the melody was built around.
+- **Remembered:** "the wind was never either or" leads (+5.16; the title line, sung three times plus the turn).
+- **Annotated:** "you can't fence it in, you can't keep score" leads (+3.98), and is in the top quarter of both lists.
+- **The middle slot:** "and the wind blows where it wants to blow", by the rule for a song whose both-lists line already tops a list: the most-repeated hook line.
+- **The writer's blind pick:** B, "the wind was never either or" (the Remembered top, the title line).
 
 ## The melody
 
+**Mixed metre (the run's port).** A new metre, 5/4: 10 eighth slots a bar, beats on slots 0, 2, 4, 6 and 8, strong beats on 0 and 6 (3+2). Verses, intro, break and build in 5/4, refrains and outro in 4/4, ♩ = 132 throughout; a line takes two bars in either metre (20 slots in 5/4, 16 in 4/4). Finding 44.
+
 **The designed notes first.**
 
-- The title line, "it rang THROUGH its BREAKing," runs over four bars (F G C C). THROUGH is on C5 over C at the third bar's downbeat, held; this is the C5 allowance, used once.
-- "TRUE" is on A4 over F in every chorus. "rings it THROUGH" is on G4 over G, left open.
-- "REACHED" is on B4 at the end of the bridge, the bridge's top.
-- The tag is low (C4–D4); "CARries" is on C4 over C.
+- **SCORE:** F4 over B♭ in refrains 1–3; raised to B♭4 over B♭ in refrain 4, the song's only B♭4 (aimed; the B♭ that answers the verses' B natural).
+- **OR:** the title line's last note on a tone of C (aimed): C4, beat 3 of the line's second bar.
+- **The refrains:** refrains 2–4 copied from refrain 1 (by construction).
+- **The turn:** "and YOU were never either or" on the title line's notes, alone after the band stops at bar 79 (by construction). "You" takes the stress "wind" had (finding 46).
 
 **The search.**
 
-- **Volume:** 480 built from 1,053 attempts; 63 survived.
-- **Deaths:** realness 353; verse 2 143; join chorus 1>chorus 1 138; join verse 2>verse 2 114; tag 60; bridge 57; line-final stress off the beat 52 (the new test, finding 1); join verse 1>chorus 1 39; spectral 10.
-- **Pick:** 255b01910113. Composite 0.924, realness 0.51, IC 0.88, CMP 0.62, M 0.77, fit 1.00, lift +4, strong-beat alignment 0.95.
-- **Plans:** verse 1 ABBAEE; verse 2 ABCDEEEE (each quatrain its own letters); bridge AABCEFGH.
+- **Volume:** 500 built from 596 attempts; 389 survived (77.8%).
+- **Deaths:** spectral 56; join verse 1 > verse 1 33; realness 30; verse 3 24; verse 2 22; breath 18; verse 1 16; verse contour 6; join verse 2 > verse 2 1; surprisal 1.
+- **Pick:** b4e50177eaf9. Composite 0.922, realness 0.48, IC 0.96, CMP 0.59, M 0.64, fit 1.00, lift +8, strong-beat alignment 1.00, longest breath 4.77 s, no line ending off the beat.
+- **Plans:** verses 1 and 2 ABAC (line 3 fitted by stress to line 1); verse 3 AABC (the fit to line 1 refused; re-walked, contour kept); refrain lines 1 and 3 drawn AB.
+- **No hand edits.**
 
-**The first run was set aside.** Its pick (290f374a7d5d, composite 0.931) put nine lines' last stressed syllable off the beat: "at all," "fell still," "like snow," "the only bell," "frozen fields," "the bell rings," and others. The engine had no test for this. The run added one (finding 1) and searched again. The new pick has two left, both in the bridge: "fell still" (slot 8) and "the split note went" (slot 7). These are within the new limit of two.
+**Ranges:** verses F3–D4 (verse 3 F3–C4); refrains C4–A4; B♭4 once.
 
-**One hand edit, logged.** In the tag, each "the" moved off the downbeat to the eighth before the stressed word, so the bell has the downbeat to itself. The pick's fingerprint after the edit is 88b42878b8cd; it still passes every check (composite 0.924).
-
-**Ranges:** verse 1 A3–E4; chorus C4–A4; verse 2 A3–E4; bridge A3–B4; chorus 3 C4–C5; tag C4–D4.
+**Two early tries were set aside.** The first trial batches killed the locked lines on weak endings (finding 45) and on the breath limit (finding 47); refrain 3 then read above refrain 4 at the join until the first refrain line's peak was capped (first_maxpk 2).
 
 ## The arrangement and the demo
 
-- **Piano:** the 6/8 ballad figure in the left hand (R–5–8–10–8–5); verse 1 thinner; a right-hand chord in the choruses.
-- **The bell:** on the piano, its own MIDI track. A low octave toll on 1, and the crack on 2: the root with the half step below it. It plays in the intro, the interludes, bridge bars 61–68, all of chorus 3, the tag and the outro. The last bar is B4 against C5 over C, unresolved.
-- **Cello:** from chorus 1's second couplet. **Strings:** chorus 2, building through the bridge, full in chorus 3, out for the tag.
-- **Guide voice:** oboe.
-- **Stems:** the voice sits 7.9 dB over the band (rule: at least +3).
-- **Energy (9.12):**
+- **Band:** guitar 1 (the 5/4 eighth figure, accents on 1 and 4; ringing chords on 1 and 3 in the refrains), guitar 2 (offbeat answers; driving eighths in the refrains; tacet in verse 1 and the build), the break's hocket between them, fretless bass, organ (an F–C drone under the refrains, a swell through the build, D–A in the outro), drums (kick 1 and 4, snare 3 and 5 in 5/4; a ride groove in the refrains).
+- **The stop:** everything rests from bar 79; the last line is the voice alone, N.C. on the lead sheet and in every part (finding 52).
+- **Guide voice:** clarinet.
+- **Stems:** the voice sits 3.3 dB over the band (rule: at least +3), at vocal gain 28, band CC7 84.
+- **Energy (9.12), read per four beats (the run's port, finding 48):**
 
   | Section | Read |
   |---|---|
-  | Intro | 0.34 |
-  | Verse 1 | 0.14 |
-  | Chorus 1 | 0.49 |
-  | Interlude 1 | 0.42 |
-  | Verse 2 | 0.57 |
-  | Chorus 2 | 0.67 |
-  | Interlude 2 | 0.48 |
-  | Bridge | 0.90 (a build) |
-  | Chorus 3 | 0.97 |
-  | Tag | 0.44 |
-  | Outro | 0.35 |
+  | Intro | 0.77 (a build) |
+  | Verse 1 | 0.74 |
+  | Refrain 1 | 0.89 |
+  | Verse 2 | 0.84 |
+  | Refrain 2 | 0.89 |
+  | Break | 0.76 |
+  | Verse 3 | 0.77 |
+  | Build | 0.93 (a build) |
+  | Refrain 3 | 0.96 |
+  | Refrain 4 | 0.88 |
+  | Outro | 0.37 |
 
-  The first arc read the interludes above chorus 1 and the bridge above chorus 3. Fixed by softening the interlude bell and bringing the bell into chorus 3.
-- **27.21 (the instrumental line) was not run.** The bell is a texture, not a tune (finding 6).
+  Each refrain reads above its verse; refrain 3 is the top. Refrain 4 reads below it only because its last two bars are the designed stop (finding 52). Read per bar, the 5/4 verses carried a quarter more events than the 4/4 refrains and read as busy (finding 48).
 
 ## Documents
 
-- **Lead sheet:** voice and lyric, with the bell cued on a small piano grand staff (crack above, toll below) that appears only where the bell plays. LilyPond's MIDI read back: voice 287, crack 70, toll 70; all match.
-- **Nashville chart:** each section numbered in its own key (A minor: 1m, ♭3, 4m, 5, ♭6, ♭7; C major: 1, 3m, 4, 5, 6m).
-- **Consistency check:** 27 of 27.
+- **Lead sheet (3 pages):** voice (treble 8vb) with the lyric and chord names, `\time 3,2 5/4` and 4/4, D Dorian (no signature) and F major, the stop marked. LilyPond's MIDI read back: voice 257; matches.
+- **Nashville chart (1 page):** D Dorian numbered from D (1m, 4, ♭3, 5m, ♭7, 1⁵), F major from F.
+- **Band parts (9 pages):** guitar 1, guitar 2, bass, organ, drums; compressed rests, rehearsal marks, chord symbols, N.C. at the stop. Read back: guitar 1 782 notes, guitar 2 932, bass 453, organ 34, drums 737 of 737; all match the record.
+- **Songbook and production notes:** one document (v65 fix 36), as a Doc and Word.
+- **Consistency check:** 36 of 36, with new checks for the metre per section, the stop (no band note in bars 79–80; N.C. on every chord line), the B♭4 once on "score", the refrain copies, the turn, and B natural against B♭.
 
 ## Findings
 
-1. **The last stressed syllable of a line off the beat.** The rhythm walk scored strong-beat agreement for the whole line but had no test for where the line's last stress lands, so the first run's pick ended nine lines off the beat. **The run's port:** the walk prefers rhythms whose last stressed syllable falls on a beat (in 6/8, a dotted-quarter pulse); evaluation allows at most two lines without it, aimed lines exempt. **Proposed fix 29:** make this a standing rule for every metre.
-2. **Weak endings the writer keeps.** "rings it THROUGH" and "still in IT" both died in the room. They are covered by v65 fixes 24 (phrasal verb stress) and 9 (pronoun-object ending). This song confirms both.
-3. **An aimed peak on a weak word.** THROUGH (C5) was refused as a reduced syllable, so chorus 3 never built. **The run's port:** aimed notes are exempt from the reduced-peak rule. **Proposed fix 30:** generalise song 24's refrain exemption to every aimed note.
-4. **Dense lines in compound metre.** Lines of 9–10 syllables in two bars of 6/8 left no room for the next line's pickup, so joins failed. Three changes were needed:
-   - 2-bar interludes after choruses 1 and 2;
-   - pickups up to four eighths at the bridge's start and three inside the bridge;
-   - chorus 3's line-3 pickup worked out from line 2's end.
-
-   The form grew by four bars. **Proposed fix 31:** intake's form-length estimate (v65 fix 13) counts syllables per bar against the metre and prices interludes before the writer chooses.
-5. **A fitted cell must clear the next line's pickup.** A repeated letter fitted by stress could end where the next line's pickup begins. **The run's port:** the check was added. **Proposed fix 32.**
-6. **A texture is not an instrumental line.** The bell has no tune, so 27.21 doesn't apply, but v65 fix 27 (the instrumental lead in energy) still counts it as band. **Proposed:** a "texture" kind beside fixes 10 (riff kind) and 21 (quote kind).
-7. **Tempo for compound metre.** The MIDI tempo was written as dotted-quarter BPM. The first render ran 4:56 instead of 3:18. **Proposed fix 33:** the record carries the beat unit; MIDI tempo is written in quarters (♩. = 54 is ♩ = 81).
-8. **Spelling from the key.** The lead sheet spelled A minor's leading tone as A♭ until the pitch map took sharps. **Proposed fix 34:** engraving spells pitches from the section's key.
+44. **No 5/4, and no mixed metre.** The engine's metre table has no 5/4 and a form can't change metre between sections. **The run's port:** 5/4 with 10 slots, beats 0/2/4/6/8, strong 0 and 6 (3+2); a metre per section in FORM; `\time 3,2 5/4` in the engraving; the eighth split never crosses the 3+2 line. **Proposed fix 44:** add 5/4 (3+2 and 2+3) and 7/4 to the metre table, and make metre a field of each section, read by the walk, the breath rule, the engraving and the MIDI.
+45. **The weak-ending test ignores the stress rules.** It read the last syllable's lexicon stress, not the line's stress after v58's rules, so locked lines ending "score", "or" and "no" died on weak endings. **The run's port:** the test reads the stress the rules assign. **Proposed fix 45:** every test that asks "is this syllable stressed?" reads the one stress function.
+46. **Binary pairs and contrastive pronouns.** "yes or NO", "either OR" and "and YOU were never" read with the stress on the wrong word. **The run's port:** in "X or Y" at a line's end, Y carries the stress; a pronoun before "was/were/are never" in a line that repeats an earlier line with one word changed is contrastive. **Proposed fix 46:** add both to v58's stress rules, beside fixes 7, 19, 24 and 39.
+47. **Fix 38's breath limit doesn't scale.** A fixed 4.6 seconds killed 5/4 lines of 14 syllables in 20 eighths. **The run's port:** the limit is the longest line's span plus two slots (5.0 s here). **Proposed fix 47:** state fix 38's limit as the line's span plus a breath, with a hard ceiling (6 s).
+48. **9.12 counts per bar.** In mixed metre a 5/4 bar is a quarter longer than a 4/4 bar, so the verses read as busy as the refrains. **The run's port:** energy is counted per four beats. **Proposed fix 48:** 9.12 counts per unit of time (four beats or two seconds), never per bar; this joins fix 41's eighth windows.
+49. **The calibration has no modes.** Its key profile is major/minor; D Dorian verses read as off-key against it. **The run's port:** the verses transposed +5 into the F frame for the calibration; CMP read on the refrain only. **Proposed fix 49:** the calibration reads a modal section in its parent major key, and names the frame in the record.
+50. **The room kills the writer's own voice.** From his own poem, the distinctive-word limit (2 a line) and the rare-word floor (Zipf 2.75) killed 5 of 12 original lines: "theologians", "mugwumps", "denizens", "perdition" are the poem. **Proposed fix 50:** lines from the writer's source text are locked at intake like WRITER_PHRASES, and the room reports their distinctive and rare words instead of killing them; the writer chooses.
+51. **Unknown words.** "systematizing", "birthed", "mugwumps" and "perdition" were missing from the lexicon. **The run's port:** LEXICON entries in intake. **Proposed fix 51:** intake lists the source text's unknown words, with a proposed stress for each, before the room runs.
+52. **No field for a stop.** A sung section where the band drops out had nowhere to live, and 9.12 read the designed drop as a fall in the last refrain. **The run's port:** `stop_at` in the record; every part rests from it; N.C. on the lead sheet and parts; the songbook's non-negotiable. **Proposed fix 52:** a stop field per section (bars, who stops), read by the arrangement, the engraving and the parts; 9.12 leaves stop bars out of the section's read.
+53. **V1 reads lines, not couplets.** "said one thing's true and the other must be lies" died for having no concrete image; its couplet partner has two ("the dust", and "blood" two lines on). Kept by the lock. **Proposed fix 53:** V1 passes an abstract line when the other line of its couplet carries an image of 4.0 or more.
+54. **Fix 40 confirmed.** With the calibration read over all three verses (the refrains are copies), survival fell from song 26's 94.8% to 77.8%: the verses now face a real test. Still 7.8 points above fix 28's band; the designed refrains are half the sung bars.
+55. **v65 fixes used as ports:** 9 and 24 (stress), 13 and 31 (form lengths), 14 (tenor row), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key), 36 (production notes in the songbook); and from song 26's list, 38 (breath in seconds, scaled by finding 47), 39 (line-final stress) and 40 (calibration over every sung section).
 
 ## Blind-pick record
 
-Song 25: A, the middle slot (the title line). With songs 13–24 from the v65 fix list, the tally over 13 songs: Annotated top 5, Remembered top 4, middle 3, refrain 1.
+Song 27: B, the Remembered top ("the wind was never either or", the title line). With songs 13–26, the tally over 15 songs: Annotated top 6, Remembered top 5, middle 3, refrain 1.

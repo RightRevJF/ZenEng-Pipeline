@@ -3,7 +3,7 @@ right hand's chord and the bell's crack; the left hand's figure and the bell's t
 Cello and strings staves are hidden where they rest for whole systems. Every staff is written from the same events the demo plays,
 and LilyPond's MIDI is read back per staff. Section dynamics follow the demo's arc."""
 import re, sys, collections
-SRC = open("/home/claude/p25/engrave_p25.py").read()
+SRC = open("/home/claude/p27/engrave_p27.py").read()
 exec(SRC[:SRC.index("assert min(vp)")])        # the lyric setting, pitch names, 6/8 splitting and the voice stream, shared with the lead sheet
 VB, LYR = stream(VOC, "r", lyric=True)
 def pack(evs, rank):
