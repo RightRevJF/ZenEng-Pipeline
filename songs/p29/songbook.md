@@ -235,6 +235,54 @@ As refrain 1, a little fuller, with the cello.
 
 > **The turn.** The first refrains end "goes in and out, and rests," a sleeping child. The last ends "goes in, and out, and in," with no rhyme and no close: the breath of God in a human body, still going.
 
+```{=openxml}
+<w:p><w:r><w:br w:type="page"/></w:r></w:p>
+```
+
+## Producer one-sheet
+
+**Emotional target.** Wonder that becomes awe, with no sentiment at all: a newborn, a mother, a first word, and then the realization of who is crying. The listener should lean in at the first line, hold their breath at "Abba," and be left breathing at the end.
+
+**References**
+
+- **"O Holy Night" (Adam, 1847):** the shape, one great climb earned over the whole song.
+- **"Gesù Bambino" (Yon, 1917):** a lullaby that is also a concert piece.
+- **"Bethlehem Down" (Warlock, 1927):** restraint and plain English.
+
+**Dynamic arc**
+
+| Section (bars) | Level | What changes |
+|--------------------|------------|----------------------------------------------|
+| Intro, verse 1 (1–12) | p → pp | Piano alone; verse 1 nearly unaccompanied |
+| Refrains 1–2, verse 2 (13–36) | mp → mf | Strings in at refrain 1; cello in at verse 2 |
+| Interlude (37–44) | mp | The cello sings the refrain; strings swell in the last two bars |
+| Verse 3 (45–52) | p | "Ma" (bar 51): nothing moves |
+| Bridge (53–60) | mp, building | Bar 59 ("Abba"): total silence. Bar 60: everyone back, into E♭ |
+| Verse 4 (61–68) | f | The full ensemble for the first time |
+| Refrain 3 (69–76) | ff → pp | Broadens to ♩ = 56; B♭5 on "world" (bar 74); the last line falls to pianissimo |
+| Coda (77–80) | p | Piano alone; the last chord rings |
+
+**Non-negotiables**
+
+1. Under "ma," nothing moves; in bar 59, nothing sounds.
+2. The key change lands on "and Joseph turns," not before.
+3. One B♭5, on "world." Nothing else above A♭5.
+4. The voice ends on B♭4, open, and quiet.
+5. No sweetness: no portamento, no choir pads, no bells, no harp.
+6. Verse 1 nearly unaccompanied.
+
+**Mix priorities**
+
+1. **The words.** Every consonant of "milk and spit and half a sound" should land. The voice is always in front.
+2. **The piano's left-hand figure** is the pulse; keep it clear but soft.
+3. **The cello** leads the interlude; elsewhere it supports.
+4. **The strings** sit behind and wide.
+5. **Never cover:** "ma," "Abba," the B♭5, the last line. No reverb tail into bar 59. Verse 1 dry and close; the last refrain with more room.
+
+```{=openxml}
+<w:p><w:r><w:br w:type="page"/></w:r></w:p>
+```
+
 ## Production brief
 
 **The song.** A concert carol on the Incarnation as the Word who cannot yet speak: the voice of creation, now a newborn learning his mother's language, whose first word is the name he has always called his Father. One high voice over piano, cello and strings, rising from a whisper at the cradle to a single B♭5 on "world," and ending on an open breath. It must never turn sweet: plain words, real bodies, two silences where the music holds its breath.
@@ -296,6 +344,7 @@ As refrain 1, a little fuller, with the cello.
 - **Lead sheet (3 pages):** voice and lyric with chord names, the key change, the tempo change and the two anchors marked.
 - **Full score (4 pages):** voice, piano (both hands), cello and strings, with dynamics by section.
 - **Nashville chart (1 page):** numbers in D♭, then E♭, with the anchors and the band's notes.
+- **Producer one-sheet (1 page, in this songbook):** the emotional target, references, dynamic arc, non-negotiables and mix priorities.
 - Every note in the lead sheet and the full score matches the demo.
 
 ## Credits

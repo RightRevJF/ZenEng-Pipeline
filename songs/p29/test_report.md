@@ -93,7 +93,7 @@ Three drafts. The writer locked draft 3.
 - **Lead sheet (3 pages):** the voice with the lyric and chord names; 3/4; D♭ to E♭; the tempo change; the anchors marked. LilyPond's MIDI read back: 231 notes; matches.
 - **Full score (4 pages):** voice, piano (grand staff), cello, strings. Read back: voice 231, piano right hand 191, left hand 374, cello 62, strings 129; all match.
 - **Nashville chart (1 page):** D♭ numbers, then E♭; the anchors as cues.
-- **Songbook and production notes:** one document, as a Doc and Word.
+- **Songbook and production notes:** one document, as a Doc and Word, with the producer one-sheet on its own page (added after delivery at the writer's request).
 - **Consistency check:** 30 of 30, with new checks for the tempo change, the key lift on "and Joseph turns", the one B♭5 on "world", the title's E♭5 and RESTS's half cadence, the open last note, MA (nothing moves) and ABBA (the ensemble silent), and the cello's lullaby.
 
 ## Findings
@@ -104,7 +104,8 @@ Three drafts. The writer locked draft 3.
 66. **Joins are the biggest waste.** 204 of 349 builds that failed died on joins inside a verse. A re-walked new letter ignored the next line's pickup until the run fixed it; fitted cells still collide when a later line is re-walked. **Proposed fix 66:** build a section's rhythms from the last line back (as fix 59's refit does), so every line knows the next one's pickup before it is placed.
 67. **Anchors have no field.** "Ma" and "Abba" are words the writer asked the arranger to protect: a held note with nothing moving under it, and a bar of total silence. **The run's port:** a walk condition for MA's length; the arrangement drops every onset under MA and silences the ABBA bar; the lead sheet and score mark both. **Proposed fix 67:** an "anchor" field on a syllable (hold, and what the ensemble does: hold, or stop), read by the walk, the arrangement, the engraving and consistency. This joins fix 52's stop.
 68. **The modulation can be a word.** "And Joseph turns" carries the pivot chord and the leading tone of the new key. **The run's port:** the line designed note for note. **Proposed fix 68:** let a key change be anchored to a named syllable (the pivot falls under it), checked like an aimed note.
-69. **v65 fixes used as ports:** 9 and 24 (stress), 13, 31 and 56 (form lengths and the longest line), 25 (voice options), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key), 36 (production notes in the songbook; the full score on request), 47 (breath scaled: 7.0 s at the broadened tempo), 48 (9.12 per four beats), 59 (refit).
+69. **No page for the producer.** The songbook carries everything a producer needs, but spread across the production brief and the session notes. The writer asked for a producer one-sheet (song 29, after delivery). **The run's port:** one printed page in the songbook, between the lyric sheet and the production brief: the emotional target, references, dynamic arc, non-negotiables and mix priorities; consistency checks it is there. **Proposed fix 69:** add the one-sheet to fix 36's production notes as a standard part of every songbook, checked to fit one page.
+70. **v65 fixes used as ports:** 9 and 24 (stress), 13, 31 and 56 (form lengths and the longest line), 25 (voice options), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key), 36 (production notes in the songbook; the full score on request), 47 (breath scaled: 7.0 s at the broadened tempo), 48 (9.12 per four beats), 59 (refit).
 
 ## Blind-pick record
 
