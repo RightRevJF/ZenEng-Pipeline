@@ -50,7 +50,7 @@ Five drafts. The writer locked draft 5 and asked for weak lines to be flagged fi
 - **Remembered:** "behind the tinted glass" leads (+10.31; the title, sung four times).
 - **Annotated:** "and I loved you, that was all" leads (+3.00).
 - **In the top quarter of both:** "past the county line, a door with no name", which fills the middle slot.
-- **The writer's blind pick:** pending.
+- **The writer's blind pick:** A, "past the county line, a door with no name" (the middle slot, top quarter under both).
 
 ## The melody
 
@@ -122,4 +122,4 @@ Five drafts. The writer locked draft 5 and asked for weak lines to be flagged fi
 
 ## Blind-pick record
 
-Song 28: pending. Through song 27, over 15 songs: Annotated top 6, Remembered top 5, middle 3, refrain 1.
+Song 28: A, the middle slot ("past the county line, a door with no name", top quarter under both). With songs 13–27, the tally over 16 songs: Annotated top 6, Remembered top 5, middle 4, refrain 1.
