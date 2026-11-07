@@ -35,7 +35,7 @@ def conc(w):
 
 # Song 8, "All of It Was You" (W/T, v47). The intake's objects stand where Pole A stood; they and the title's words are exempt
 # from every word filter (v47 fixes 1.4 / 2.5).
-import sys as _s; _s.path.insert(0, "/home/claude/p27")
+import sys as _s; _s.path.insert(0, "/home/claude/p28")
 import intake as _I
 for _w, _p in getattr(_I, 'LEXICON', {}).items(): OVERRIDE[_w] = [_p]     # the writer's readings (v54/v60)
 POLE_A = set(_I.OBJECTS)

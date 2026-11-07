@@ -3,10 +3,10 @@ bar from the song record (the same events the demo plays, before any humanizing)
 and build in 5/4 (beamed 3+2), refrains and outro in 4/4, q = 132; D Dorian (no key signature) and F major. Rehearsal marks, bar numbers,
 chord symbols (N.C. where the band stops); empty bars compressed. Absolute pitch, sounding (guitars and bass under 8vb clefs)."""
 import pickle, collections, os, sys, re
-sys.path[:0] = ["/home/claude/carol", "/home/claude/p27"]
+sys.path[:0] = ["/home/claude/carol", "/home/claude/p28"]
 from lily import compile_ly, midi_readback
-REC = pickle.load(open("/home/claude/p27/song_record.pkl", "rb"))
-OUT = "/home/claude/p27/out"
+REC = pickle.load(open("/home/claude/p28/song_record.pkl", "rb"))
+OUT = "/home/claude/p28/out"
 BARS = REC["bars"]; NB = len(BARS); TOT = REC["total_eighths"]
 SP = {0: "c", 1: "cis", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "fis", 7: "g", 8: "gis", 9: "a", 10: "bes", 11: "b"}
 def pname(p):

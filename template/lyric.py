@@ -1,23 +1,30 @@
-"""Song 27, 'Either Or' -- the lyric, from the writer's poem, reworked over five drafts and locked by him (12:56). One voice (tenor);
-first person plural / second person. The refrain is the run's (draft 1), kept by the writer; the verses are draft 5."""
-TITLE = "Either Or"
-V1 = [("verse", "Aristotle drew a line across the dust"), ("verse", "said one thing's true and the other must be lies"),
-      ("verse", "and we've bled across that line ever since"), ("verse", "calling our own blood the other side")]
-REFRAIN = [("refrain", "and the wind blows where it wants to blow"), ("refrain", "it doesn't stop to ask you yes or no"),
-           ("refrain", "you can't fence it in, you can't keep score"), ("hook", "the wind was never either or")]
-V2 = [("verse", "they sat in the tower systematizing wind"), ("verse", "weighing the wind by the words that they heard"),
-      ("verse", "sprinkled holy water on the laws they wrote"), ("verse", "and the herd said amen, word for word")]
-V3 = [("verse", "the ones who won't choose catch the stones"), ("verse", "from the keepers of the dead"),
-      ("verse", "handing down their fathers' wars by name"), ("verse", "turning bones into bread")]
-LAST = REFRAIN[:3] + [("hook", "and you were never either or")]
-SECTIONS = [("Verse 1", V1), ("Refrain 1", REFRAIN), ("Verse 2", V2), ("Refrain 2", REFRAIN), ("Verse 3", V3), ("Refrain 3", REFRAIN), ("Refrain 4", LAST)]
-SINGER = {s: "him" for s, _ in SECTIONS}
-SUNG = [l for _, ls in SECTIONS for _, l in ls]
-PICKS = [
- ("DRAFT 1 (11:59)", "the run's", "the writer's three stanzas lightly shaped; the refrain new (the wind, John 3:8; the last line turned to 'you')"),
- ("DRAFT 2 (12:00)", "the writer's pick B", "'birthed by Aristotle, whose line of thought was poor' -- names him, so 'Ari' lands; 'turds' kept"),
- ("DRAFT 3 (12:46)", "the writer's note", "'I like the poem, don't like the lyrics other than the refrain' -> new verses in the refrain's voice around his phrases (C)"),
- ("DRAFT 4 (12:50)", "the writer's attached notes", "the line across the dust; 'weighing the wind by the words that they heard'; the ones who won't choose; the stop before the last line"),
- ("DRAFT 5 (12:55)", "the writer's notes", "'bled across'; 'fence it in'; 'sprinkled holy water on the laws they wrote'; 'keepers of the dead'; 'handing down'"),
- ("LOCK (12:56)", "the writer's lock", "draft 5"),
+"""Tinted Glass -- the locked lyric (draft 5). Duet: him and her, never together."""
+SECTIONS = [
+ ("Verse 1", [("verse", "I said that I was out visiting the sick"), ("verse", "on the top deck at the furniture company"),
+              ("verse", "you'd pressed black vinyl over every window"), ("verse", "and we were twenty in the dark at noon")]),
+ ("Verse 2", [("verse", "I kept the shades rolled up with my red pens"), ("verse", "you laughed when your glasses fogged"),
+              ("verse", "your hands were shaking worse than mine"), ("verse", "and we'd pull the shades down together")]),
+ ("Chorus 1", [("hook", "behind the tinted glass"), ("chorus", "the world went dark and small"),
+               ("chorus", "I knew you by your breathing"), ("chorus", "and I loved you, that was all")]),
+ ("Verse 3", [("verse", "past the county line, a door with no name"), ("verse", "we paid in dollars for the dark"),
+              ("verse", "then I drove home and couldn't sleep"), ("verse", "and wrote fourteen lines about your laugh")]),
+ ("Verse 4", [("verse", "the screen was full of strangers, loud and bored"), ("verse", "we got the giggles like two kids in the back row"),
+              ("verse", "you held my face like you were memorizing it"), ("verse", "and for once in my life it was enough")]),
+ ("Chorus 2", [("hook", "behind the tinted glass"), ("chorus", "the world looked far away"),
+               ("chorus", "I couldn't see the people"), ("chorus", "we'd have to face someday")]),
+ ("Bridge", [("bridge", "he read them all and never made a sound"), ("bridge", "that Sunday he was waiting at the door"),
+             ("bridge", "he plugged my watch in by my side of the bed"), ("bridge", "he shook my hand and said he liked the words")]),
+ ("Verse 5", [("verse", "Sundays I still say the words they pay me for"), ("verse", "my wife still waves from the second row"),
+              ("verse", "it's a good life, I built it board by board"), ("verse", "and I know where every road in it goes")]),
+ ("Verse 6", [("verse", "he never brought the watch up again"), ("verse", "he still pours my coffee before the sun"),
+              ("verse", "I traded the car for one with clear glass"), ("verse", "and I know how every day will run")]),
+ ("Chorus 3", [("hook", "behind the tinted glass"), ("chorus", "the world is safe and small"),
+               ("chorus", "I still fog the window on your street"), ("chorus", "and I never make the call")]),
+ ("Chorus 4", [("hook", "behind the tinted glass"), ("chorus", "the world is safe and small"),
+               ("chorus", "I still fog the window on your street"), ("chorus", "and I never make the call")]),
 ]
+SINGER = {"Verse 1": "him", "Verse 2": "her", "Chorus 1": "him", "Verse 3": "him", "Verse 4": "her", "Chorus 2": "her",
+          "Bridge": ["her", "him", "her", "him"], "Verse 5": "him", "Verse 6": "her", "Chorus 3": "him", "Chorus 4": "her"}
+SUNG = [l for _, ls in SECTIONS for _, l in ls]
+LAST = SECTIONS[-1][1]
+TITLE = "Tinted Glass"

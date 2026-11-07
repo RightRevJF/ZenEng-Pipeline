@@ -1,29 +1,61 @@
-# Either Or (draft 3) -- new verses in the refrain's voice, built around the poem's phrases
+# Tinted Glass — draft 3
 
-Verse 1
-Aristotle drew a line in the dust
-said a thing is true or it's a lie
-and we've been bleeding on that line ever since
-calling our own blood the other side
+**Verse 1 (him)**
+I said that I was out visiting the sick
+on the top deck at the furniture company
+you'd pressed black vinyl over every window
+and we were twenty in the dark at noon
 
-Refrain
-and the wind blows where it wants to blow
-it doesn't stop to ask you yes or no
-you can't nail it down, you can't keep score
-the wind was never either or
+**Verse 2 (her)**
+I kept the shades rolled up with my red pens
+you laughed when your glasses fogged
+your hands were shaking worse than mine
+and after you left I'd count to six hundred
 
-Verse 2
-they sat in the tower systematizing wind
-stacking up syllables for the birds
-then they sprinkled water on whatever they wrote
-and the herd said amen, word for word
+**Chorus (him)**
+behind the tinted glass
+the world went dark and small
+I knew you by your breathing
+and I loved you, that was all
 
-Refrain / break
+**Verse 3 (him)**
+past the county line, a door with no name
+we paid in dollars for the dark
+then I drove home and couldn't sleep
+and wrote fourteen lines about your laugh
 
-Verse 3
-the ones in the middle catch the stones
-from the denizens of dread
-who hand you their fathers' fights for a name
-turning bones into bread
+**Verse 4 (her)**
+the screen was full of strangers, loud and bored
+you spread your jacket on the seat for me
+you held my face like you were memorizing it
+and for once in my life it was enough
 
-Build / Refrain / Last refrain (... and you were never either or)
+**Chorus (her)**
+behind the tinted glass
+the world looked far away
+I couldn't see the people
+we'd have to face someday
+
+**Bridge (trading lines)**
+her: he read them all and never made a sound
+him: that Sunday he was waiting at the door
+her: he plugged my watch in by my side of the bed
+him: he shook my hand and said he liked the words
+
+**Verse 5 (him)**
+Sundays I still say the words they pay me for
+my wife still waves from the second row
+it's a good life, I built it board by board
+and I know where every road in it goes
+
+**Verse 6 (her)**
+he never brought the watch up again
+he still pours my coffee before the sun
+I traded the car for one with clear glass
+and I know how every day will run
+
+**Last chorus (him, then her, never together)**
+behind the tinted glass
+the world is safe and small
+I still fog the window on your street
+and I never make the call

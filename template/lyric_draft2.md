@@ -1,36 +1,61 @@
-# Either Or (draft 2) -- the writer's stanzas shaped for singing; the refrain new
+# Tinted Glass — draft 2
 
-Verse 1
-where is the conflict? it's with either or
-birthed by Aristotle, whose line of thought was poor
-now there is anguish, everyone's made sore
-all 'cause of Ari, should've known he's a boor
+**Verse 1 (him)**
+I said that I was out visiting the sick
+you put the cardboard beach up in the windshield
+two o'clock in a grocery lot
+and we were twenty under a paper sun
 
-Refrain
-and the wind blows where it wants to blow
-it doesn't stop to ask you yes or no
-you can't nail it down, you can't keep score
-the wind was never either or
+**Verse 2 (her)**
+my rings went in the cup with the red pens
+you laughed when your glasses fogged
+your hands were shaking worse than mine
+I put the rings back on at the light on Seventh
 
-Verse 2
-theologians are cowards, hiding in words
-crowing their nonsense, syllables for the birds
-systematizing wind, they make nothing but turds
-which then are baptized, delighting the herds
+**Chorus (him)**
+behind the tinted glass
+the world went dark and small
+I knew you by your breathing
+and I loved you, that was all
 
-Refrain
+**Verse 3 (him)**
+past the county line, a door with no name
+we paid in quarters for the dark
+then I drove home and couldn't sleep
+and wrote fourteen lines about your laugh
 
-(instrumental break)
+**Verse 4 (her)**
+the screen was full of strangers, loud and bored
+you hummed a hymn into my neck
+you held my face like you were memorizing it
+and for once in my life it was enough
 
-Verse 3
-the mugwumps are hated by denizens of dread
-who spin issues into inheritance, bones into bread
-telling you one thing, different from what's read
-and it's into perdition that you're being led
+**Chorus (her)**
+behind the tinted glass
+the world looked far away
+I couldn't see the people
+we'd have to face someday
 
-(the build)
+**Bridge (trading lines)**
+her: he read them all and never made a sound
+him: that Sunday he was waiting at the door
+her: he plugged my watch in by my side of the bed
+him: he shook my hand and said he liked the words
 
-Refrain
+**Verse 5 (him)**
+Sundays I still say the words they pay me for
+my wife still waves from the second row
+it's a good life, I built it board by board
+and I know where every road in it goes
 
-Last refrain
-... and you were never either or
+**Verse 6 (her)**
+he never brought the watch up again
+he still pours my coffee before the sun
+I traded the car for one with clear glass
+and I know how every day will run
+
+**Last chorus (him, then her, never together)**
+behind the tinted glass
+the world is safe and small
+I still fog the window on your street
+and I never make the call

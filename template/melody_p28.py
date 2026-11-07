@@ -1,57 +1,45 @@
-"""Module 27 melody search for 'Either Or' (ZenEng v64 port, v65 fixes as ports; one male tenor; angular art rock at q = 132). The verses
-in 5/4 (3+2: beats 1 and 4 strong), the refrain in 4/4; eighth-note slots throughout (a 5/4 line two bars = 20 eighths; a 4/4 line 16).
-D Dorian verses (B natural), F major refrain (B flat).
-  * Singer (11.2 tenor, v65 fix 14 row): D3-A4, Bb4 once. Verses low and sardonic (D3-E4); the refrain lifts to A4.
-  * The refrain's SCORE lands on the downbeat of line 3's second bar, over Bb: F4 in the first three refrains, Bb4 in the last -- the
-    song's one Bb4, just before everything stops.
-  * The title line 'the wind was never either OR': OR held on a tone of C, beat 3 of the line's second bar. The last refrain sings the
-    same notes to 'and YOU were never either or', alone.
-  * v63/v64 cell grammar per verse (drawn / surface / skeleton); line 2 open.
-  Calibration: pop major, read in F (TCAL 5): the verses (D Dorian, the C collection) transposed up a fourth into the F frame (fix 4's
-  per-key reading, the run's port); CMP and surprisal read on the refrain (4/4)."""
+"""Module 27 melody search for 'Tinted Glass' (ZenEng v64 port, v65 fixes as ports). A duet that never sings together: him (baritone)
+and her (female, his chorus tune an octave up). Slow-burn soul in 6/8 at dotted-q = 54; eighth slots. Eb major throughout, the verses
+leaning on C minor; no key change anywhere (the writer's choice A).
+  * Verses and bridge: a line in four bars (24 eighths; his choice A at the room). Choruses: a line in two bars (12 eighths).
+  * Him (11.2 bass/baritone row): C3-Bb3 in Eb (B2 is outside the key), C4 once: 'FOG' in his last chorus.
+    Her (11.2 female row): Bb3-Ab4 in the verses; the chorus his tune +12 (Eb4-Bb4), C5 once: 'FOG' in her last chorus.
+  * The chorus: GLASS aimed on Ab3 over Ab (line 1's second downbeat); the chorus's last word on F3 over Bb (line 4's second downbeat),
+    a half cadence that never resolves. Choruses 2-4 refit chorus 1's tune by stress to their own words.
+  * v63/v64 cell grammar per verse; line 2 open.
+  Calibration: pop major read in Eb (TCAL 3); verse 1 + chorus 1; CMP on the chorus."""
 import sys, math, json, pickle, random, hashlib, collections
 import numpy as np
-sys.path[:0] = ["/home/claude/p27", "/home/claude/carol", "/home/claude/pop"]
-import engine_p27 as E, phrasestress48 as PS; PS.install(E); E.install_patches()
+sys.path[:0] = ["/home/claude/p28", "/home/claude/carol", "/home/claude/pop"]
+import engine_p28 as E, phrasestress48 as PS; PS.install(E); E.install_patches()
 from measures import beta_pitch, s_spectral, cmp_score, m_horizon, PPM, ic_profile, feature_vec, syncopation, intervals
 import lyric as L
 syllables = E.syllables
-TCAL = 5
-DD = {2, 4, 5, 7, 9, 11, 0}
-FM = {5, 7, 9, 10, 0, 2, 4}
-CH = {"Dm": {2, 5, 9}, "G": {7, 11, 2}, "F": {5, 9, 0}, "Am": {9, 0, 4}, "C": {0, 4, 7}, "Bb": {10, 2, 5}, "Gm": {7, 10, 2}, "D5": {2, 9}, "Em": {4, 7, 11}}
-HIM = dict(lo=50, verse=64, refrain=69, peak=70)
-HER = HIM
-LO = 50
-METER = {"5/4": dict(bar=10, beats=[0, 2, 4, 6, 8], strong=[0, 6]), "4/4": dict(bar=8, beats=[0, 2, 4, 6], strong=[0, 4])}
-QBPM = 132
-LATER_PK = 2          # inside a section a line's pickup is at most a quarter
+TCAL = 3
+EB = {3, 5, 7, 8, 10, 0, 2}
+CH = {"Eb": {3, 7, 10}, "Ab": {8, 0, 3}, "Bb": {10, 2, 5}, "Cm": {0, 3, 7}, "Fm": {5, 8, 0}, "Gm": {7, 10, 2}}
+HIM = dict(lo=48, verse=58, chorus=58, last=60)
+HER = dict(lo=58, verse=68, chorus=70, last=72)
+LO = 48
+METER = {"6/8": dict(bar=6, beats=[0, 3], strong=[0, 3])}
+QBPM = 81
+LATER_PK = 3
 CAL = json.load(open("/home/claude/pop/pop_calibration.json")); C = CAL["cal"]
 MU, SD = np.array(CAL["mu"]), np.array(CAL["sd"]); ZREF = np.array(CAL["Z"]); REAL_KNN = CAL["real_knn"]
 PPMM = pickle.load(open("/home/claude/pop/pop_ppm.pkl", "rb"))
 IM = pickle.load(open("/home/claude/pop/pop_intervals.pkl", "rb"))
-def iv_weight(prev_iv, prev_deg, iv):
-    c = IM.get((max(-7, min(7, prev_iv)), prev_deg))
-    if not c: return 0.05
-    return (c.get(iv, 0) + 0.2) / (sum(c.values()) + 5)
-def red(x): return x[1].endswith("0") or not x[2]
-VERSE = [["Dm", "G"], ["Dm", "G"], ["F", "G"], ["Am", "C"]]
-REF = [["F", "Bb"], ["F", "C"], ["Dm", "Bb"], ["Bb", "C"]]
-VAMP = ["Dm", "G", "Dm", "G", "F", "G", "Am", "C"]
-FORM = [
-    ("Intro", "5/4", DD, None, VAMP),
-    ("Verse 1", "5/4", DD, L.V1, VERSE),
-    ("Refrain 1", "4/4", FM, L.REFRAIN, REF),
-    ("Verse 2", "5/4", DD, L.V2, VERSE),
-    ("Refrain 2", "4/4", FM, L.REFRAIN, REF),
-    ("Break", "5/4", DD, None, VAMP),
-    ("Verse 3", "5/4", DD, L.V3, VERSE),
-    ("Build", "5/4", DD, None, VAMP),
-    ("Refrain 3", "4/4", FM, L.REFRAIN, REF),
-    ("Refrain 4", "4/4", FM, L.LAST, REF),
-    ("Outro", "4/4", DD, None, ["D5", "D5", "D5", "D5"]),
-]
+VERSE = [["Cm", "Cm", "Ab", "Ab"], ["Eb", "Eb", "Bb", "Bb"], ["Cm", "Cm", "Ab", "Ab"], ["Fm", "Fm", "Bb", "Bb"]]
+CHORUS = [["Eb", "Ab"], ["Eb", "Bb"], ["Cm", "Ab"], ["Fm", "Bb"]]
+BRIDGE = [["Ab", "Ab", "Bb", "Bb"], ["Gm", "Gm", "Cm", "Cm"], ["Ab", "Ab", "Bb", "Bb"], ["Fm", "Fm", "Bb", "Bb"]]
+INTRO = ["Cm", "Ab", "Eb", "Bb"]
+OUTRO = ["Ab", "Bb", "Eb", "Eb"]
+SECD = dict(L.SECTIONS)
+FORM = [("Intro", "6/8", EB, None, INTRO)]
+for _s, _ls in L.SECTIONS:
+    FORM.append((_s, "6/8", EB, _ls, CHORUS if _s.startswith("Chorus") else (BRIDGE if _s == "Bridge" else VERSE)))
+FORM.append(("Outro", "6/8", EB, None, OUTRO))
 SINGER = L.SINGER
+def singer_of(sec, i): s = SINGER[sec]; return s[i] if isinstance(s, list) else s
 BARS, SECS, STARTS = [], {}, {}
 pos = 0
 for sec, met, scale, lines, chs in FORM:
@@ -65,7 +53,7 @@ for sec, met, scale, lines, chs in FORM:
         at = pos
         for c in cl: BARS.append(dict(sec=sec, meter=met, chord=c, start=pos, len=bl, scale=scale)); pos += bl
         SECS[sec].append(dict(line=l, role=role, syl=syllables(l), at=at, n=len(cl) * bl, meter=met, scale=scale, idx=i,
-                              commas=None))
+                              commas=None, singer=singer_of(sec, i)))
 TOTAL = pos; NBARS = len(BARS)
 BAR_AT = []
 for b in BARS: BAR_AT += [b] * b["len"]
@@ -83,7 +71,12 @@ for s in SECS:
     for ln in SECS[s]: ln["commas"] = comma_after(ln["line"])
 SINGS = list(SECS)
 for _s in SECS:
-    for _ln in SECS[_s]: _ln["nomin"] = True        # two-bar lines: no minimum reach
+    for _ln in SECS[_s]: _ln["nomin"] = _ln["n"] < 24        # four-bar lines reach their third bar; two-bar lines no minimum
+def iv_weight(prev_iv, prev_deg, iv):
+    c = IM.get((max(-7, min(7, prev_iv)), prev_deg))
+    if not c: return 0.05
+    return (c.get(iv, 0) + 0.2) / (sum(c.values()) + 5)
+def red(x): return x[1].endswith("0") or not x[2]
 # ---- rhythm ----
 def beats_of(ln):
     m = METER[ln["meter"]]; bl = m["bar"]
@@ -152,6 +145,7 @@ def section_rhythms(lines, rng, after_pk=0, conds=None, first_maxpk=3):
             g = 1 if ln["meter"] == "4/4s" else 0
             mx = (n - 2 - nxt if nxt else n - 3) - g
             mn = n - 9 if n >= 24 and not ln.get("nomin") else None
+            if n >= 24: mx, mn = min(mx, 12), 9                       # song 28: a four-bar line sung in its first two and a half bars; the rest is the answer
 
             sl = rhythm(ln, rng, mx, mn, cond=(conds or {}).get(i), maxpk=first_maxpk if i == 0 else LATER_PK)
             if sl is None: ok = False; break
@@ -167,6 +161,8 @@ def durs(ln, sl, nxt_on=None):
         if not x[2] and d[k] > 2 and not (k == len(d) - 1 and (sl[k] % METER[ln["meter"]]["bar"]) in METER[ln["meter"]]["strong"]): d[k] = 2 if k < len(d) - 1 else min(d[k], 2)   # the run's port (song 24): a line-final syllable on a beat holds
     for k in ln["commas"]:
         if k < len(d) - 1: d[k] = min(d[k], sl[k + 1] - sl[k] - 1)
+    if n >= 24:                                                  # song 28: a four-bar line breathes inside; its last note holds a bar at most (the answer follows)
+        d = [min(x, 3) if k < len(d) - 1 else min(x, 6) for k, x in enumerate(d)]
     return d if min(d) >= 1 else None
 def apply_tail(ln, sl, du):
     """21.7a: the feminine tail repeats its stress's pitch (set in the fill), an eighth, never on a beat, on the last eighth
@@ -470,49 +466,123 @@ def build_cells(sec, rng, centers, lo, cap, maxleap, plan, tonic, fixed_by_line=
     return out, rh
 
 
-REFRAINS = ("Refrain 1", "Refrain 2", "Refrain 3", "Refrain 4")
-TONIC = {"Verse 1": 2, "Verse 2": 2, "Verse 3": 2, "Refrain 1": 5}
+
+CHORUSES = ("Chorus 1", "Chorus 2", "Chorus 3", "Chorus 4")
+def rng_of(singer, sec):
+    R = HIM if singer == "him" else HER
+    return R["lo"], R["chorus" if sec.startswith("Chorus") else "verse"]
+def refit(src_ns, sec_src, sec_dst, rng, transpose=0, after_pk=0, designed=None):
+    """a later chorus: chorus 1's tune refit by stress to its own words (27.20's fit), each syllable taking the pitch the source
+    sounds at its onset; the same words copy outright. Built from the last line back, so each line clears the next one's pickup"""
+    lines = SECS[sec_dst]; res = [None] * len(lines); nxt_pk = after_pk
+    for i in range(len(lines) - 1, -1, -1):
+        if designed and i in designed: res[i] = []; nxt_pk = designed[i]; continue     # a designed line: built after, its pickup known
+        ln = lines[i]; src_ln = SECS[sec_src][i]
+        sn = [n for n in src_ns if n[4] == i]
+        rel = [(o - src_ln["at"], d, p) for o, d, p, x, _ in sn]
+        lim = ln["n"] - 1 - nxt_pk
+        if ln["line"] == src_ln["line"]:
+            ns = [(ln["at"] + r, d, p + transpose, x, i) for (r, d, p), x in zip(rel, ln["syl"])]
+            if rel[-1][0] + rel[-1][1] > lim: ns[-1] = ns[-1][:1] + (max(1, lim - rel[-1][0]),) + ns[-1][2:]
+            if rel[-1][0] >= lim: return None
+            res[i] = ns; nxt_pk = max(0, -rel[0][0]); continue
+        src_sl = [r for r, _, _ in rel]
+        prev_n = len(lines[i - 1]["syl"]) if i > 0 else 0
+        mpk = 2 if prev_n >= 9 else (5 if 0 < prev_n <= 7 else 3)      # after a long line a short pickup; after a short one, a long pickup
+        if i > 0:                                                        # never into the source's previous line's held last note (GLASS keeps its length)
+            pl = [n for n in src_ns if n[4] == i - 1][-1]; pend = pl[0] + pl[1] - SECS[sec_src][i - 1]["at"]
+            mpk = max(1, min(mpk, SECS[sec_src][i - 1]["n"] - pend - 1))
+        f = fit_by_stress(src_ln, src_sl, ln)
+        if f is None or agreement(ln, f)[1] or f[-1] > lim - 1 or f[0] < -mpk:
+            e = max(r for r, x in zip(src_sl, src_ln["syl"]) if x[2])           # the last stress where the source's last stress was
+            f = rhythm(ln, rng, lim - 1, cond=lambda sl, e=e: max(s_ for s_, x in zip(sl, ln["syl"]) if x[2]) in (e, e + 3), tries=400, maxpk=mpk)
+            if f is None: f = rhythm(ln, rng, lim - 1, cond=lambda sl: max(s_ for s_, x in zip(sl, ln["syl"]) if x[2]) % 3 == 0, tries=600, maxpk=mpk)
+            if f is None: return None
+        du = durs(ln, f, ln["n"] - nxt_pk)
+        if du is None: return None
+        ln["_lim"] = ln["n"] - 2 - nxt_pk
+        f, du = apply_tail(ln, f, du)
+        if f is None: return None
+        ps = []
+        for s_ in f:
+            cand = [p for r, _, p in rel if r <= s_]
+            ps.append((cand[-1] if cand else rel[0][2]) + transpose)
+        ft = fem_tail(ln["syl"])
+        if ft:
+            for k in range(len(ps) - ft, len(ps)): ps[k] = ps[len(ps) - ft - 1]
+        res[i] = [(ln["at"] + s_, d, p, x, i) for s_, d, p, x in zip(f, du, ps, ln["syl"])]
+        nxt_pk = max(0, -f[0])
+    return [n for r in res for n in r]
 def generate(rng):
     out = {}; plans = {}; log = []
     def pk_of(ns, sec):
         st = STARTS[sec][1]; return max(0, st - min(n[0] for n in ns))
-    # ---- the refrain (F): SCORE on line 3's second downbeat (F4); OR on a tone of C, beat 3 of line 4's second bar ----
-    drawn = draw(rng, PRIORS); plan_r = drawn[0] + "Z" + drawn[2] + "Y"
-    def refrain():
-        rb = rng.uniform(62.5, 64.5)
-        cens = [lambda j, n: rb + 1.2 * math.sin(j / max(1, n - 1) * math.pi), lambda j, n: rb + 0.8, lambda j, n: rb + 1.0 * j / max(1, n - 1),
-                lambda j, n: rb - 0.5]
-        por = rng.choice([64, 67, 60])                                 # OR on a tone of C
-        return build_cells("Refrain 1", rng, cens, 55, HIM["refrain"], 7, plan_r, 5,
-                           fixed_by_line={2: {-1: 65, -2: rng.choice([65, 67])}, 3: {-1: por}}, first_maxpk=2, conds={2: lambda sl: sl[-1] == 8, 3: lambda sl: sl[-1] == 12}, log=log,
-                           after_pk=0)
-    r = retry(refrain, 12)
-    if r is None: return None, "refrain"
-    R1 = r[0]
-    sc = [n for n in R1 if n[4] == 2][-1]; pv = [n for n in R1 if n[4] == 2][-2][2]
-    if not (63 <= pv <= 70 and abs(70 - pv) <= 7 and abs(70 - pv) != 6): return None, "refrain:Bb4-reach"   # the last refrain's SCORE must reach Bb4
-    plans["Refrain 1"] = f"lines 1 and 3 drawn {drawn[0]}{drawn[2]}; SCORE (F4, Bb4 the last time) and OR (a tone of C) aimed"
-    out["Refrain 1"] = R1; out["Refrain 2"] = shift(R1, "Refrain 1", "Refrain 2"); out["Refrain 3"] = shift(R1, "Refrain 1", "Refrain 3")
-    R4 = []
-    for o, d, p, x, li in shift(R1, "Refrain 1", "Refrain 4"):
-        if li == 2 and x[0] == "score": p = 70
-        R4.append((o, d, p, x, li))
-    syl4 = SECS["Refrain 4"][3]["syl"]                                  # the last line: the same notes, 'and YOU were never either or'
-    k = 0; R4b = []
-    for o, d, p, x, li in R4:
-        if li == 3: x = syl4[k]; k += 1
-        R4b.append((o, d, p, x, li))
-    out["Refrain 4"] = R4b
-    plans["Refrain 4"] = "refrain 1's notes; SCORE raised to Bb4 over Bb; the band stops; 'and YOU were never either or' alone on the title line's notes"
-    # ---- the verses (5/4): the cell grammar ----
-    for sec, nx in (("Verse 1", "Refrain 1"), ("Verse 2", "Refrain 2"), ("Verse 3", "Refrain 3")):
+    # ---- chorus 1 (him): GLASS on Ab3 over Ab; the last word on F3 over Bb ----
+    drawn = draw(rng, PRIORS)
+    if drawn[3] == drawn[0]: drawn = drawn[:3] + "D"            # the last line lands on its own aimed note (F3): a letter of its own
+    def chorus():
+        rb = rng.uniform(53.5, 55.5)
+        cens = [lambda j, n: rb + 1.0 * math.sin(j / max(1, n - 1) * math.pi), lambda j, n: rb + 0.5, lambda j, n: rb + 1.0 * j / max(1, n - 1),
+                lambda j, n: rb - 1.5]
+        return build_cells("Chorus 1", rng, cens, 51, HIM["chorus"], 7, drawn, 3,
+                           fixed_by_line={0: {-1: 56}, 3: {-1: 53}}, first_maxpk=3,
+                           conds={0: lambda sl: sl[-1] == 6, 3: lambda sl: sl[-1] == 6}, log=log, after_pk=0)
+    r = retry(chorus, 12)
+    if r is None: return None, "chorus"
+    C1 = r[0]
+    plans["Chorus 1"] = f"{drawn}; GLASS on Ab3 over Ab, the last word on F3 over Bb (aimed)"
+    out["Chorus 1"] = C1
+    C2 = refit(C1, "Chorus 1", "Chorus 2", rng, 12, after_pk=3)
+    if C2 is None: return None, "chorus 2 refit"
+    out["Chorus 2"] = C2
+    C3 = refit(C1, "Chorus 1", "Chorus 3", rng, 0, after_pk=pk_of(C1, "Chorus 1"), designed={2: 2})
+    if C3 is None: return None, "chorus 3 refit"
+    ln2 = SECS["Chorus 3"][2]; src2 = SECS["Chorus 1"][2]                # the turn's line, designed: I still | FOG (C4, the downbeat) the window on your | STREET
+    rel2 = [(o - src2["at"], p) for o, d, p, x, li in C1 if li == 2]
+    sl2 = [-2, -1, 0, 1, 2, 3, 4, 5, 6]
+    du2 = durs(ln2, sl2, min(n[0] for n in C3 if n[4] == 3) - ln2["at"])
+    if du2 is None: return None, "chorus 3:FOG line"
+    ps2 = []
+    for s_ in sl2:
+        cand = [p for r_, p in rel2 if r_ <= s_]; ps2.append(cand[-1] if cand else rel2[0][1])
+    ps2[2] = 60; ps2[1] = 55                                            # STILL on G3, a step up to the leap: FOG on C4
+    C3 = C3 + [(ln2["at"] + s_, d, p, x, 2) for s_, d, p, x in zip(sl2, du2, ps2, ln2["syl"])]
+    C3.sort(key=lambda n: n[0])
+    l2 = [n[2] for n in C3 if n[4] == 2]
+    if any(abs(b - a) > 7 or abs(b - a) == 6 for a, b in zip(l2, l2[1:])): return None, "chorus 3:FOG reach"
+    out["Chorus 3"] = C3
+    out["Chorus 4"] = [(o + STARTS["Chorus 4"][1] - STARTS["Chorus 3"][1], d, p + 12, x, li) for o, d, p, x, li in C3]
+    plans["Chorus 2"] = "chorus 1's tune, an octave up, refit by stress to its words"
+    plans["Chorus 3"] = "chorus 1's tune refit to its words; FOG raised to C4"
+    plans["Chorus 4"] = "chorus 3 an octave up (FOG on C5)"
+    # ---- the verses and the bridge, built from the end ----
+    order = [("Verse 6", "Chorus 3"), ("Verse 5", "Verse 6"), ("Bridge", "Verse 5"), ("Verse 4", "Chorus 2"), ("Verse 3", "Verse 4"),
+             ("Verse 2", "Chorus 1"), ("Verse 1", "Verse 2")]
+    for sec, nx in order:
+        apk = pk_of(out[nx], nx)
+        if sec == "Bridge":
+            lines = SECS[sec]
+            rh = section_rhythms(lines, rng, after_pk=apk, first_maxpk=3)
+            if rh is None: return None, "bridge:rhythm"
+            ns, prev = [], None
+            for i, ln in enumerate(lines):
+                lo, cap = rng_of(ln["singer"], sec)
+                c = rng.uniform(lo + 3.5, lo + 5.5)
+                nxt = (lines[i + 1]["at"] + rh[i + 1][0] - ln["at"]) if i + 1 < len(lines) else ln["n"] - apk
+                rr = None
+                for _ in range(10):
+                    rr = build_line(ln, rng, None, (lambda j, n, c=c: c + 0.8 * math.sin(j / max(1, n - 1) * math.pi)), lo, cap, 7, rh[i], nxt_on=nxt)
+                    if rr: break
+                if rr is None: return None, "bridge"
+                ns += rr
+            out[sec] = ns; plans[sec] = "lines traded, her/him/her/him; each in its own register"
+            continue
+        sg = SECS[sec][0]["singer"]; lo, cap = rng_of(sg, sec)
         n_ = len(SECS[sec]); pl = draw(rng, PRIORS)[:n_]
-        vb = rng.uniform(56.5, 58.5)
+        vb = rng.uniform(lo + 3.0, lo + 5.0)
         offs = [rng.choice([-1, 0, 0.5, 1]) for _ in range(n_)]
         cens = [lambda j, m, o=o: vb + o + 0.8 * math.sin(j / max(1, m - 1) * math.pi) for o in offs]
-        apk = pk_of(out[nx], nx)
-        fm = 3 if sec == "Verse 1" else 2                                # after a refrain, a short pickup: OR keeps its length
-        rr = retry(lambda: build_cells(sec, rng, cens, HIM["lo"], HIM["verse"], 7, pl, TONIC[sec], after_pk=apk, log=log, first_maxpk=fm), 10)
+        rr = retry(lambda: build_cells(sec, rng, cens, lo, cap, 7, pl, 3, after_pk=apk, log=log, first_maxpk=3), 10)
         if rr is None: return None, sec
         out[sec] = rr[0]; plans[sec] = pl
     allz = sorted([(o, d, p, x, (s_, i), s_) for s_ in SINGS for o, d, p, x, i in out[s_]], key=lambda n: n[0])
@@ -527,10 +597,9 @@ def generate(rng):
     out["plans"] = plans; out["cell_log"] = log
     return out, None
 
-BY_CONSTRUCTION = ["SCORE on F4 over Bb, Bb4 in the last refrain (aimed)", "OR on a tone of C (aimed)", "the refrains copied from refrain 1 (by construction)",
-                   "the last line on the title line's notes (by construction)", "line 2 open (the plan)"]
-LIMIT = {"Verse 1": "verse", "Verse 2": "verse", "Verse 3": "verse", "Refrain 1": "refrain", "Refrain 2": "refrain", "Refrain 3": "refrain", "Refrain 4": "refrain"}
-DESIGNED = {("Refrain 4", 2), ("Refrain 4", 3)}
+BY_CONSTRUCTION = ["GLASS on Ab3 over Ab (aimed)", "the chorus's last word on F3 over Bb (aimed)", "choruses 2-4 refit from chorus 1 (by construction)",
+                   "her choruses an octave above his (by construction)", "the turn's line designed: FOG on the downbeat, C4 / C5 in the last choruses (by construction)", "line 2 open (the plan)"]
+DESIGNED = {("Chorus 3", 2), ("Chorus 4", 2)}
 def fin_count(c):
     bad = []
     for s in SINGS:
@@ -540,41 +609,44 @@ def fin_count(c):
                 if n[4] == ln["idx"] and (not ws or ws[-1][1] != n[3]): ws.append((n[0] - ln["at"], n[3]))
             if len(ws) == len(ln["syl"]) and not fin_ok(ln, [w[0] for w in ws]): bad.append((s, ln["idx"]))
     return bad
-SLOT_S = 60.0 / QBPM / 2
+SLOT_S = 60.0 / 54 / 3
+BREATH_S = 7.5                         # the run's port of fix 47: a four-bar line sung in two and a half bars plus its held last note (a finding: the 6 s ceiling is short for a slow 6/8 ballad)
 def evaluate(c):
-    fb = [b for b in fin_count(c) if b[0] not in ("Refrain 2", "Refrain 3", "Refrain 4")]
-    if len(fb) > 2: return ("final-stress-offbeat", len(fb), "<= 2"), None
+    fb = [b for b in fin_count(c) if b[0] not in ("Chorus 2", "Chorus 3", "Chorus 4")]
+    if len(fb) > 3: return ("final-stress-offbeat", len(fb), "<= 3"), None
     for s in SINGS:
         for ln in SECS[s]:
             ns = [n for n in c[s] if n[4] == ln["idx"]]; ps = [n[2] for n in ns]
-            lim = HIM[LIMIT[s]] + (1 if (s, ln["idx"]) == ("Refrain 4", 2) else 0)
-            if max(ps) > lim or min(ps) < HIM["lo"]: return ("range", (s, ln["idx"], max(ps)), lim), None
+            lo, lim = rng_of(ln["singer"], s)
+            if (s, ln["idx"]) in DESIGNED: lim += 2
+            if max(ps) > lim or min(ps) < lo: return ("range", (s, ln["idx"], min(ps), max(ps)), (lo, lim)), None
             iv = intervals(quarters(ns))
             if iv and max(abs(x) for x in iv) > 7: return ("leap", (s, ln["idx"]), ""), None
             if any(abs(x) == 6 for x in iv): return ("tritone", (s, ln["idx"]), "death"), None
-            if (s, ln["idx"]) not in DESIGNED and red(next(n for n in ns if n[2] == max(ps))[3]): return ("floor:reduced_peak", (s, ln["idx"]), ""), None
+            if (s, ln["idx"]) not in DESIGNED and s == "Chorus 1" or s.startswith(("Verse", "Bridge")):
+                if red(next(n for n in ns if n[2] == max(ps))[3]): return ("floor:reduced_peak", (s, ln["idx"]), ""), None
             ft = fem_tail([n[3] for n in ns])
             if ft:
                 for n in ns[-ft:]:
                     if n[1] > 1 or n[2] != ns[-ft - 1][2] or strong_abs(n[0]): return ("feminine:tail", (s, ln["idx"]), "21.7a"), None
-    top = [n for s in SINGS for n in c[s] if n[2] > 69]
-    if len(top) != 1 or top[0][2] != 70 or top[0][3][0] != "score": return ("Bb4 once", len(top), "on SCORE"), None
+    him = [n for s in SINGS for ln in SECS[s] for n in c[s] if n[4] == ln["idx"] and ln["singer"] == "him"]
+    her = [n for s in SINGS for ln in SECS[s] for n in c[s] if n[4] == ln["idx"] and ln["singer"] == "her"]
+    if [n[3][0] for n in him if n[2] >= 60] != ["fog"] or [n[3][0] for n in her if n[2] >= 72] != ["fog"]: return ("tops once", "", "FOG"), None
     V = c["Verse 1"]
-    if contour(V) not in ("flat", "wave", "arch", "descending"): return ("verse:contour", contour(V), "flat/wave"), None
-    srt = sorted([n for s in SINGS for n in c[s]], key=lambda n: n[0]); run0 = srt[0][0]; best = 0
-    for a, b in zip(srt, srt[1:] + [None]):
-        if b is None or b[0] - (a[0] + a[1]) >= 1:
-            best = max(best, a[0] + a[1] - run0)
-            if b is not None: run0 = b[0]
-    BREATH_S = (max(ln["n"] for s_ in SINGS for ln in SECS[s_]) + 2) * SLOT_S   # the run's port of fix 38: a line's own span plus a quarter's pickup
-    if best * SLOT_S > BREATH_S: return ("breath", round(best * SLOT_S, 2), f"<= {BREATH_S:.2f} s"), None
-    allw = [n for s in SINGS for n in c[s]]
+    if contour(V, 12) not in ("flat", "wave", "arch", "descending"): return ("verse:contour", contour(V, 12), "flat/wave"), None
+    for who in (him, her):
+        srt = sorted(who, key=lambda n: n[0]); run0 = srt[0][0]; best = 0
+        for a, b in zip(srt, srt[1:] + [None]):
+            if b is None or b[0] - (a[0] + a[1]) >= 1:
+                best = max(best, a[0] + a[1] - run0)
+                if b is not None: run0 = b[0]
+        if best * SLOT_S > BREATH_S: return ("breath", round(best * SLOT_S, 2), f"<= {BREATH_S:.2f} s"), None
+    allw = him + her
     strong = [n for n in allw if strong_abs(n[0])]
     al = sum(1 for n in strong if n[3][2]) / len(strong)
     if al < 0.444: return ("floor:alignment", round(al, 3), ">= 0.444"), None
-    H = c["Refrain 1"]
-    qv = [(o, d, p + 5) for o, d, p in quarters(V)]                     # D Dorian (the C collection) read in the F frame
-    qh = quarters(H); off = qv[-1][0] + 6 - qh[0][0]
+    H = c["Chorus 1"]
+    qv = quarters(V); qh = quarters(H); off = qv[-1][0] + 6 - qh[0][0]
     tune = qv + [(o + off, d, p) for o, d, p in qh]
     beta = beta_pitch(tune)
     if beta is None or not (C["beta"]["p05"] <= beta <= C["beta"]["p95"]): return ("spectral", beta and round(beta, 3), "p05-p95"), None
@@ -592,8 +664,8 @@ def evaluate(c):
     if real < C["realness"]["p05"]: return ("realness", round(real, 3), ">= p05"), None
     S_sp = s_spectral(beta, C["beta"]["p25"], C["beta"]["p75"])
     lift = np.median(hp) - np.median([n[2] for n in V])
-    fit_items = [contour(H) in ("arch", "ascending", "wave", "descending"), 1.0 if lift >= 4 else (0.5 if lift >= 2 else 0.0),
-                 contour(V) in ("flat", "wave"), max(n[2] for n in V) <= HIM["verse"]]
+    fit_items = [contour(H, 12) in ("arch", "ascending", "wave", "descending"), 1.0 if lift >= 4 else (0.5 if lift >= 2 else 0.0),
+                 contour(V, 12) in ("flat", "wave"), max(n[2] for n in V) <= HIM["verse"]]
     fitv = float(np.mean([float(x) for x in fit_items]))
     comp = (0.15 * S_sp + 0.15 * min(1.0, cmp_ / 0.6) + 0.10 * min(1, mh) + 0.15 * fitv + 0.15 * ic +
             0.25 * min(1.0, real / C["realness"]["p50"]) + 0.05 * 0.5)
@@ -605,7 +677,7 @@ def fingerprint(c):
 
 if __name__ == "__main__":
     N = int(sys.argv[1]) if len(sys.argv) > 1 else 600
-    rng = random.Random(20261107 + 27)
+    rng = random.Random(20261107 + 28)
     made, deaths, alive, tries, unb = 0, collections.Counter(), [], 0, 0
     while made < N and tries < N * 40:
         tries += 1
@@ -623,4 +695,4 @@ if __name__ == "__main__":
     for c in alive[:6]:
         m = c["meas"]
         print(f"{c['fp']} comp {m['composite']:.3f} real {m['realness']:.2f} IC {m['IC']:.2f} CMP {m['CMP']:.2f} M {m['M_horizon']:.2f} fit {m['fit']:.2f} lift {m['lift']:+.1f}")
-    pickle.dump(dict(by_construction=BY_CONSTRUCTION, alive=alive[:60], deaths=deaths, made=made, tries=tries, order_fp=order_fp, rate=rate, survivors=len(alive)), open("/home/claude/p27/melody_result.pkl", "wb"))
+    pickle.dump(dict(by_construction=BY_CONSTRUCTION, alive=alive[:60], deaths=deaths, made=made, tries=tries, order_fp=order_fp, rate=rate, survivors=len(alive)), open("/home/claude/p28/melody_result.pkl", "wb"))

@@ -1,13 +1,13 @@
-"""Module 11.11 demo for 'Either Or' (angular art rock, one male tenor; 84 bars, 2:55, q = 132; verses 5/4, refrains 4/4). Two clean
-guitars, fretless bass, church organ and drums -- all read from the song record and humanized here (pink-noise velocity and timing, v43).
-Guide voice: clarinet (the v43 reed fallback)."""
+"""Module 11.11 demo for 'Tinted Glass' (slow-burn soul duet; 152 bars, about 5:38, 6/8 at dotted-q = 54, MIDI tempo q = 81). Electric
+piano, bass, drawbar organ and brushed drums -- all read from the song record and humanized here (pink-noise velocity and timing, v43).
+Guide voices: him on clarinet, her on flute (two tracks, never together)."""
 
 
 import pickle, subprocess, os, collections, sys, random
 import numpy as np, mido
 from scipy.io import wavfile
-REC = pickle.load(open("/home/claude/p27/song_record.pkl", "rb"))
-OUT = "/home/claude/p27/out"; os.makedirs(OUT, exist_ok=True); BASE = f"{OUT}/Either Or - demo"
+REC = pickle.load(open("/home/claude/p28/song_record.pkl", "rb"))
+OUT = "/home/claude/p28/out"; os.makedirs(OUT, exist_ok=True); BASE = f"{OUT}/Tinted Glass - demo"
 T = 480; E8 = 240          # an eighth (the record's slot)
 BARS = REC["bars"]; PLAN = REC["plan"]; lead = REC["lead"]; HARM = REC["harm"]; NB = REC["nbars"]
 def tk(e): return int(round(e * E8))
@@ -22,15 +22,15 @@ class Dev:
     def __call__(self):
         i = self.i % 8192; self.i += 1
         return int(max(-4, min(4, round(self.v[i])))), int(max(-4, min(4, round(self.t[i]))))
-KEYS = ["voc", "g1", "g2", "bas", "org", "drm"]
+KEYS = ["him", "her", "key", "bas", "org", "drm"]
 DEV = {k: Dev(i * 17 + 3, tim=1) for i, k in enumerate(KEYS)}
 VOX_GAIN = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].lstrip("-").isdigit() else 12
 BAND_VOL = int(sys.argv[2]) if len(sys.argv) > 2 and sys.argv[2].isdigit() else 92
-CH = dict(voc=0, g1=1, g2=2, bas=3, org=4, drm=9)
-PROG = dict(voc=71, g1=27, g2=27, bas=35, org=19, drm=0)
-PAN = dict(voc=64, g1=34, g2=94, bas=64, org=64, drm=64)
-REVERB = dict(voc=45, g1=40, g2=40, bas=15, org=70, drm=30)
-NAMES = dict(voc="Guide vocal (clarinet - reed fallback)", g1="Guitar 1", g2="Guitar 2", bas="Bass (fretless)", org="Organ", drm="Drums")
+CH = dict(him=0, her=5, key=1, bas=3, org=4, drm=9)
+PROG = dict(him=71, her=73, key=4, bas=33, org=16, drm=0)
+PAN = dict(him=56, her=72, key=60, bas=64, org=70, drm=64)
+REVERB = dict(him=45, her=45, key=50, bas=15, org=60, drm=30)
+NAMES = dict(him="Guide vocal - him (clarinet)", her="Guide vocal - her (flute)", key="Electric piano", bas="Bass", org="Organ", drm="Drums (brushes)")
 tracks = collections.OrderedDict()
 def note(key, t0, t1, p, v):
     v = max(1, min(127, int(v))); tr = NAMES[key]; ch = CH[key]
@@ -43,19 +43,19 @@ def voicing(ch, lo=52, n=4):
         if p % 12 in TONES[ch]: out.append(p)
         p += 1
     return out
-# ---- the voice ----
-VBASE = {"Verse 1": 64, "Refrain 1": 72, "Verse 2": 66, "Refrain 2": 74, "Verse 3": 68, "Refrain 3": 76, "Refrain 4": 78}
+# ---- the voices ----
+VBASE = {"Verse 1": 66, "Verse 2": 66, "Chorus 1": 74, "Verse 3": 68, "Verse 4": 68, "Chorus 2": 76, "Bridge": 64, "Verse 5": 64, "Verse 6": 64,
+         "Chorus 3": 78, "Chorus 4": 78}
 for n in lead:
-    dv, dt = DEV["voc"](); v = VBASE[n["sec"]] + VOX_GAIN + dv + (6 if n["midi"] >= 67 else 0)
-    if n["sec"] == "Refrain 4" and n["line"] == 3: v -= 14                 # the last line: almost quietly, alone
-    t0 = tk(n["on"]) + 5 + dt; note("voc", t0, tk(n["on"] + n["dur"] * 0.94), n["midi"], v); meta("voc", t0, n["syl"][0])
+    k = n["singer"]; dv, dt = DEV[k](); v = VBASE[n["sec"]] + VOX_GAIN + dv + (4 if n["syl"][2] else 0)
+    t0 = tk(n["on"]) + 5 + dt; note(k, t0, tk(n["on"] + n["dur"] * 0.94), n["midi"], v); meta(k, t0, n["syl"][0])
 def play(key, evs):
     for e in evs:
         dv, dt = DEV[key]()
         if key == "drm": dt = 0
-        ln = e["dur"] * (0.95 if e.get("art") in ("ring", "drone", "swell") else 0.85)
+        ln = e["dur"] * (0.97 if e.get("art") in ("ring", "pad") else 0.9)
         for j, p in enumerate(e["p"]): note(key, tk(e["on"]) + dt, tk(e["on"] + ln), p, e["vel"] + dv - j)
-play("g1", REC["g1"]); play("g2", REC["g2"]); play("bas", REC["bass"]); play("org", REC["organ"]); play("drm", REC["drums"])
+play("key", REC["keys"]); play("bas", REC["bass"]); play("org", REC["organ"]); play("drm", REC["drums"])
 def write(path, gm=True, only=None):
     mf = mido.MidiFile(ticks_per_beat=T)
     t0 = mido.MidiTrack(); mf.tracks.append(t0)
@@ -65,7 +65,7 @@ def write(path, gm=True, only=None):
         st = BARS[b0]["start"]; num, den = met.split("/")
         ev.append((tk(st), 0, mido.MetaMessage("set_tempo", tempo=mido.bpm2tempo(BARS[b0]["qbpm"]), time=0)))
         ev.append((tk(st), 1, mido.MetaMessage("time_signature", numerator=int(num), denominator=int(den), clocks_per_click=24, notated_32nd_notes_per_beat=8, time=0)))
-        k = {"D Dorian": "C", "F major": "F"}[BARS[b0]["key"]]          # D Dorian: no sharps or flats
+        k = "Eb"
         ev.append((tk(st), 2, mido.MetaMessage("key_signature", key=k, time=0)))
         ev.append((tk(st), 3, mido.MetaMessage("marker", text=s, time=0)))
     now = 0
@@ -77,7 +77,7 @@ def write(path, gm=True, only=None):
         tr = mido.MidiTrack(); mf.tracks.append(tr); tr.append(mido.MetaMessage("track_name", name=name, time=0))
         if gm and key != "drm": tr.append(mido.Message("program_change", program=PROG[key], channel=CH[key], time=0))
         tr.append(mido.Message("control_change", control=10, value=PAN[key], channel=CH[key], time=0))
-        tr.append(mido.Message("control_change", control=7, value=127 if key == "voc" else BAND_VOL, channel=CH[key], time=0))
+        tr.append(mido.Message("control_change", control=7, value=127 if key in ("him", "her") else BAND_VOL, channel=CH[key], time=0))
         tr.append(mido.Message("control_change", control=91, value=REVERB.get(key, 40), channel=CH[key], time=0))
         now = 0
         for t, pri, e in sorted(tracks.get(name, []), key=lambda x: (x[0], x[1])):
@@ -93,7 +93,7 @@ def render(mid, wav):
 def sec_of_tick(tick, mf):
     return mido.tick2second(tick, T, 500000)
 def stems_check():
-    a = write(f"{OUT}/stem_vox.mid", only={NAMES["voc"]}); b = write(f"{OUT}/stem_band.mid", only=set(NAMES.values()) - {NAMES["voc"]})
+    a = write(f"{OUT}/stem_vox.mid", only={NAMES["him"], NAMES["her"]}); b = write(f"{OUT}/stem_band.mid", only=set(NAMES.values()) - {NAMES["him"], NAMES["her"]})
     sr, xv = render(a, f"{OUT}/stem_vox.wav"); _, xb = render(b, f"{OUT}/stem_band.wav")
     n = min(len(xv), len(xb)); xv, xb = xv[:n].mean(1), xb[:n].mean(1)
     # the tempo map: seconds at each eighth
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     def window(a, z):
         ev, vel, trs = 0.0, [], set()
         for tr, evs in tracks.items():
-            if tr in (NAMES["voc"],): continue
+            if tr in (NAMES["him"], NAMES["her"]): continue
             ons = sorted(t for (t, p, e) in evs if p == 1 and a <= t < z)
             vel += [e[3] for (t, p, e) in evs if p == 1 and a <= t < z]
             last = None; cnt = 0
@@ -155,6 +155,6 @@ if __name__ == "__main__":
         r["slope"] = r["end"] - r["start"]
         r["is_build"] = r["build"] or r["slope"] >= 0.2
         r["energy_read"] = r["end"] if r["is_build"] else r["energy"]
-    print("\nModule 9.12 energy arc (v64: band only, floor spans, by event per four beats (the run's port for mixed metre); a build read by where it arrives)")
+    print("\nModule 9.12 energy arc (v64: band only, floor spans, by event per four beats ; a build read by where it arrives)")
     for r in rows: print(f"  {r['sec']:12s} {'#' * int(round(r['energy_read'] * 20)):20s} read {r['energy_read']:.2f}  avg {r['energy']:.2f}  start {r['start']:.2f} -> end {r['end']:.2f}{'  BUILD' if r['is_build'] else ''}")
     pickle.dump(dict(energy=rows, stems_db=diff, vox_gain=VOX_GAIN, band_vol=BAND_VOL), open(f"{OUT}/demo_report.pkl", "wb"))

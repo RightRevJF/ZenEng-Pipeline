@@ -1,121 +1,125 @@
 ---
-title: "Either Or — Test report (ZenEng v64 + v65 fixes)"
+title: "Tinted Glass — Test report (ZenEng v64 + v65 fixes)"
 author: "For the engine's maintainers; not for musicians"
 date: "7 November 2026"
 ---
 
-# Either Or — test report (ZenEng v64, v65 fixes as ports)
+# Tinted Glass — test report (ZenEng v64, v65 fixes as ports)
 
-This is the engine's record of song 27, kept apart from the songbook (musicians only). The test: art rock from the writer's own poem, in mixed metre (5/4 verses, 4/4 refrain) and a mode (D Dorian against F major).
+This is the engine's record of song 28, kept apart from the songbook (musicians only). The test: a slow-burn soul duet in slow 6/8, two singers who never sing together, a story told in two first persons with the occupations hinted but never named.
 
 ## The intake
 
 | Question | His answer |
 |---|---|
-| Source | His poem, three stanzas ("Where is the conflict, its with either or" / "Theologians are cowards, hiding in words" / "The mugwumps are hated by denizens of dread") |
-| How to treat the words | "B leaning towards C": the stanzas as verses plus a refrain from his words, shaped for singing |
-| What the poem is about | The run's reading, given at his request: against either/or (Aristotle's excluded middle), theologians systematizing the wind, the partisans of dread who hate the mugwumps |
-| What the refrain carries | C: the wind, the spirit that won't be systematized (over the recommended both/and) |
-| Voice (11.2) | A: tenor D3–A4, B♭4 once |
-| Sound | A: angular art rock, two interlocking clean guitars, melodic bass, accented drums; the refrain opens into ringing chords over an organ drone |
-| Metre and tempo | A: verses 5/4, refrain 4/4, ♩ = 132 |
-| Form | B: extended, 84 bars, 2:55, an 8-bar intro and an 8-bar 5/4 build (lengths printed per option, fixes 13 and 31) |
-| Key | A: D Dorian verses (B natural), F major refrain (B♭): the either/or in one note |
-| Title | B: "Either Or" (over the recommended "Systematizing Wind") |
-| Production | "I'm going to need an all parts pdf for production": a band parts PDF |
+| Source | His brief: star-crossed middle-aged lovers (he leads a small congregation, she is a married teacher), a charged affair, caught by her husband, both choosing the known life; occupations hinted, never named; not melodramatic; the high against the pull of inertia |
+| Whose voice | B: a duet, their own verses, the same chorus words, never together |
+| Sound | A: slow-burn soul (electric piano, brushes, bass, a little organ) |
+| Voices (11.2) | A: him baritone B2–C4 (D4); her A3–B4 (C5), his chorus tune an octave up |
+| Tempo and feel | A: 6/8 at ♩. = 54. His addition: the car with every window shaded, the adult bookstore's theater; "capture the heat AND the love" |
+| Form | A: 104 bars, 3:51 (later 152 bars, 5:38; see the room). His addition: caught when her husband took her watch and read the sonnets |
+| Key | A: E♭ major, no key change anywhere |
+| Title | B: "Tinted Glass" (over the recommended "The Devil We Know") |
+| Never say | A: both lists (the job words; the affair clichés) |
+
+- **Standing ask:** show the lyrics before the music (honoured: five drafts shown in full).
 
 ## The writing room
 
-Five drafts. The writer locked draft 5. The room scored 37 lines; 28 lived.
+Five drafts. The writer locked draft 5 and asked for weak lines to be flagged first (his choice C).
 
 | Round | What changed | Why |
 |---|---|---|
-| Draft 1 | His poem, set nearly as written, with the run's refrain | — |
-| Draft 2 | Three spots fixed for clarity (Aristotle named; the line of thought) | His choice B of three |
-| Draft 3 | New verses in the refrain's voice, built around his strongest phrases | "I like the poem, don't like the lyrics other than the refrain"; then C of three |
-| Draft 4 | A sharper opening (Aristotle's line in the dust); "weighing the wind by the words that they heard"; verse 3 about the ones punished for not choosing | His attached suggestions document |
-| Draft 5 | "from the keepers of the dead"; "you can't fence it in, you can't keep score"; "sprinkled holy water on the laws they wrote"; "and we've bled across that line ever since"; "handing down their fathers' wars by name" | His five pasted notes |
+| Draft 1 | The run's lyric | — |
+| Draft 2 | A stranger affair (the cardboard beach, the paper sun, quarters, a hummed hymn); her rings; a quieter bridge (the charged watch, the handshake); "I still fog the window on your street"; the glass changing meaning chorus by chorus | His five-point notes |
+| Draft 3 | Black vinyl, the top deck at the furniture company; no rings (she never wore one); dollars; the hymn gone | His facts: "rings false"; "she never wore a ring"; "humming a hymn isn't something anybody would do" |
+| Draft 4 | "we got the giggles like two kids in the back row" | His pick of three, after "spread jacket … didn't happen" |
+| Draft 5 | "and we'd pull the shades down together" | "count to six hundred doesn't make sense"; his C, amended |
 
-- **Deaths of the poem's own lines.** The room killed 5 of the poem's 12 original lines, all on distinctive or rare words: "theologians are cowards, hiding in words" (3 distinctive words); "crowing their nonsense, syllables for the birds" (3); "the mugwumps are hated by denizens of dread" (4); "and it's into perdition that you're being led" (perdition, Zipf 2.46); "telling you one thing, different from what's read" (strong-beat agreement 0.17). Finding 50.
-- **A locked line that died.** "said one thing's true and the other must be lies" (draft 4 on) died on V1, no concrete image. It stands by the writer's lock: in an argument song the abstract half of a couplet is the argument, and the next line ("the dust", "blood") carries the image. Finding 53.
+**The room at two bars a line.** The run had told him lines of 8–11 syllables would fit two bars of 6/8; at ♩. = 54 the span holds 10 at most and the placement 9. Twelve of the 44 locked lines died on density or span (finding 56). He chose four bars a line for the verses and the bridge (A), which grew the form to 152 bars, 5:38.
+
+**The room at four bars a line.** 33 of the 37 distinct locked lines live. Four die and stand by the writer's lock:
+
+- "I said that I was out visiting the sick": placement, even in 24 slots (two stresses meet at "out VIS-")
+- "you held my face like you were memorizing it": weak ending ("it"), a v65 fix 9 case
+- "Sundays I still say the words they pay me for": weak ending ("for", a stranded preposition), a fix 9 case (finding 57)
+- "and for once in my life it was enough": V1, a fix 53 case (its couplet holds "face")
 
 ## The quotable line (10.20)
 
-- **Remembered:** "the wind was never either or" leads (+5.16; the title line, sung three times plus the turn).
-- **Annotated:** "you can't fence it in, you can't keep score" leads (+3.98), and is in the top quarter of both lists.
-- **The middle slot:** "and the wind blows where it wants to blow", by the rule for a song whose both-lists line already tops a list: the most-repeated hook line.
-- **The writer's blind pick:** B, "the wind was never either or" (the Remembered top, the title line).
+- **Remembered:** "behind the tinted glass" leads (+10.31; the title, sung four times).
+- **Annotated:** "and I loved you, that was all" leads (+3.00).
+- **In the top quarter of both:** "past the county line, a door with no name", which fills the middle slot.
+- **The writer's blind pick:** A, "past the county line, a door with no name" (the middle slot, top quarter under both).
 
 ## The melody
 
-**Mixed metre (the run's port).** A new metre, 5/4: 10 eighth slots a bar, beats on slots 0, 2, 4, 6 and 8, strong beats on 0 and 6 (3+2). Verses, intro, break and build in 5/4, refrains and outro in 4/4, ♩ = 132 throughout; a line takes two bars in either metre (20 slots in 5/4, 16 in 4/4). Finding 44.
+**A duet that never overlaps (the run's port).** Each line carries a singer; her verses and choruses sit in her row, his in his; the joins are checked across both singers so that no line starts before the other singer's last note ends.
+
+**Four-bar lines (the run's port).** A verse or bridge line has 24 slots, but is sung in its first two and a half bars (the last stress by slot 12, at least slot 9), its last note held a bar at most, and no inner note held past a dotted quarter. Bar 4 is the piano's answer (finding 58).
 
 **The designed notes first.**
 
-- **SCORE:** F4 over B♭ in refrains 1–3; raised to B♭4 over B♭ in refrain 4, the song's only B♭4 (aimed; the B♭ that answers the verses' B natural).
-- **OR:** the title line's last note on a tone of C (aimed): C4, beat 3 of the line's second bar.
-- **The refrains:** refrains 2–4 copied from refrain 1 (by construction).
-- **The turn:** "and YOU were never either or" on the title line's notes, alone after the band stops at bar 79 (by construction). "You" takes the stress "wind" had (finding 46).
+- **GLASS:** A♭3 over A♭, line 1's second downbeat (aimed).
+- **The chorus's last word:** F3 over B♭, line 4's second downbeat, a half cadence that never resolves (aimed).
+- **Choruses 2–4:** chorus 1's tune refit by stress to their own words, each syllable taking the pitch the source sounds at its onset (by construction; finding 59). Her choruses are his an octave up.
+- **The turn's line:** "I still | FOG the window on your | STREET", designed: FOG on C4, the downbeat, the only C4 in his part; C5 in hers (by construction).
 
 **The search.**
 
-- **Volume:** 500 built from 596 attempts; 389 survived (77.8%).
-- **Deaths:** spectral 56; join verse 1 > verse 1 33; realness 30; verse 3 24; verse 2 22; breath 18; verse 1 16; verse contour 6; join verse 2 > verse 2 1; surprisal 1.
-- **Pick:** b4e50177eaf9. Composite 0.922, realness 0.48, IC 0.96, CMP 0.59, M 0.64, fit 1.00, lift +8, strong-beat alignment 1.00, longest breath 4.77 s, no line ending off the beat.
-- **Plans:** verses 1 and 2 ABAC (line 3 fitted by stress to line 1); verse 3 AABC (the fit to line 1 refused; re-walked, contour kept); refrain lines 1 and 3 drawn AB.
+- **Volume:** 500 built from 801 attempts; 256 survived (51.2%).
+- **Deaths:** breath 210; FOG's reach 84; the chorus 77; verse 3 31; verse 5 29; chorus 2's refit 26; spectral 19; verses 1 and 6 17 each; verse 4 15; verse contour 11; join in chorus 1 4; realness 4; verse 2 1.
+- **Pick:** dede2d3b460a. Composite 0.858, realness 0.41, IC 0.88, CMP 0.68, M 0.70, fit 0.88, lift +2, strong-beat alignment 0.80, longest breath 6.67 s.
+- **Plans:** chorus 1 AAAD (drawn AAAA; the last line takes a letter of its own for its aimed note); verses ABCD, AAAA, AABA, ABCD, ABCD, AAAB.
 - **No hand edits.**
 
-**Ranges:** verses F3–D4 (verse 3 F3–C4); refrains C4–A4; B♭4 once.
+**Two earlier searches were set aside.** The first pick put FOG on an offbeat eighth before the bar line, a passing note; the run designed the line (FOG on the downbeat). The second pick's later choruses let a long pickup cut GLASS to an eighth; the refit now never borrows from the source's held last note.
 
-**Two early tries were set aside.** The first trial batches killed the locked lines on weak endings (finding 45) and on the breath limit (finding 47); refrain 3 then read above refrain 4 at the join until the first refrain line's peak was capped (first_maxpk 2).
+**Ranges:** him C3–B♭3 (C4 once); her B♭3–B♭4 (C5 once).
 
 ## The arrangement and the demo
 
-- **Band:** guitar 1 (the 5/4 eighth figure, accents on 1 and 4; ringing chords on 1 and 3 in the refrains), guitar 2 (offbeat answers; driving eighths in the refrains; tacet in verse 1 and the build), the break's hocket between them, fretless bass, organ (an F–C drone under the refrains, a swell through the build, D–A in the outro), drums (kick 1 and 4, snare 3 and 5 in 5/4; a ride groove in the refrains).
-- **The stop:** everything rests from bar 79; the last line is the voice alone, N.C. on the lead sheet and in every part (finding 52).
-- **Guide voice:** clarinet.
-- **Stems:** the voice sits 3.3 dB over the band (rule: at least +3), at vocal gain 28, band CC7 84.
-- **Energy (9.12), read per four beats (the run's port, finding 48):**
+- **Band:** electric piano (a low chord, the triplet climb; the answer in bar 4 of every verse and bridge line; pushed chorus chords), bass (root and fifth, approaches), organ (pads under the choruses, the bridge and verses 4–6), brushed drums (none in the intro, verse 1 or the outro; hats only in the bridge; the last choruses fullest).
+- **Guide voices:** him on clarinet, her on flute, two tracks.
+- **Stems:** the voices sit 3.7 dB over the band (rule: at least +3), at vocal gain 17, band CC7 90.
+- **Energy (9.12), per four beats:**
 
   | Section | Read |
   |---|---|
-  | Intro | 0.77 (a build) |
-  | Verse 1 | 0.74 |
-  | Refrain 1 | 0.89 |
-  | Verse 2 | 0.84 |
-  | Refrain 2 | 0.89 |
-  | Break | 0.76 |
-  | Verse 3 | 0.77 |
-  | Build | 0.93 (a build) |
-  | Refrain 3 | 0.96 |
-  | Refrain 4 | 0.88 |
-  | Outro | 0.37 |
+  | Intro | 0.22 |
+  | Verse 1 | 0.48 |
+  | Verse 2 | 0.78 |
+  | Chorus 1 | 0.90 |
+  | Verse 3 | 0.78 |
+  | Verse 4 | 0.79 |
+  | Chorus 2 | 0.89 |
+  | Bridge | 0.73 |
+  | Verse 5 | 0.74 |
+  | Verse 6 | 0.75 |
+  | Chorus 3 | 0.98 |
+  | Chorus 4 | 0.97 |
+  | Outro | 0.09 |
 
-  Each refrain reads above its verse; refrain 3 is the top. Refrain 4 reads below it only because its last two bars are the designed stop (finding 52). Read per bar, the 5/4 verses carried a quarter more events than the 4/4 refrains and read as busy (finding 48).
+  Each chorus reads above its verses; the last choruses are the top with no key change. The bridge reads below the verses on purpose (the quiet that frightens), and 9.12 has no way to say a section is meant to drop (finding 60).
 
 ## Documents
 
-- **Lead sheet (3 pages):** voice (treble 8vb) with the lyric and chord names, `\time 3,2 5/4` and 4/4, D Dorian (no signature) and F major, the stop marked. LilyPond's MIDI read back: voice 257; matches.
-- **Nashville chart (1 page):** D Dorian numbered from D (1m, 4, ♭3, 5m, ♭7, 1⁵), F major from F.
-- **Band parts (9 pages):** guitar 1, guitar 2, bass, organ, drums; compressed rests, rehearsal marks, chord symbols, N.C. at the stop. Read back: guitar 1 782 notes, guitar 2 932, bass 453, organ 34, drums 737 of 737; all match the record.
-- **Songbook and production notes:** one document (v65 fix 36), as a Doc and Word.
-- **Consistency check:** 36 of 36, with new checks for the metre per section, the stop (no band note in bars 79–80; N.C. on every chord line), the B♭4 once on "score", the refrain copies, the turn, and B natural against B♭.
+- **Lead sheet (3 pages):** her staff (treble) and his (treble 8vb), each with its lyric, each hidden where its singer rests; 6/8, E♭, chord names. LilyPond's MIDI read back: her 191, him 193; both match.
+- **Full score (10 pages):** her, him, electric piano (grand staff), bass, organ, drums. Read back: her 191, him 193, piano right hand 731, left hand 553, bass 352, organ 152; drums 983 of 983. All match.
+- **Nashville chart (1 page):** E♭ numbers; who sings each section.
+- **Songbook and production notes:** one document, as a Doc and Word.
+- **Consistency check:** 30 of 30, with new checks for the duet (never together; singers by section; her choruses his tune an octave up), the piano's bar-4 answers, GLASS and the half cadence, FOG once per singer, and no key change.
 
 ## Findings
 
-44. **No 5/4, and no mixed metre.** The engine's metre table has no 5/4 and a form can't change metre between sections. **The run's port:** 5/4 with 10 slots, beats 0/2/4/6/8, strong 0 and 6 (3+2); a metre per section in FORM; `\time 3,2 5/4` in the engraving; the eighth split never crosses the 3+2 line. **Proposed fix 44:** add 5/4 (3+2 and 2+3) and 7/4 to the metre table, and make metre a field of each section, read by the walk, the breath rule, the engraving and the MIDI.
-45. **The weak-ending test ignores the stress rules.** It read the last syllable's lexicon stress, not the line's stress after v58's rules, so locked lines ending "score", "or" and "no" died on weak endings. **The run's port:** the test reads the stress the rules assign. **Proposed fix 45:** every test that asks "is this syllable stressed?" reads the one stress function.
-46. **Binary pairs and contrastive pronouns.** "yes or NO", "either OR" and "and YOU were never" read with the stress on the wrong word. **The run's port:** in "X or Y" at a line's end, Y carries the stress; a pronoun before "was/were/are never" in a line that repeats an earlier line with one word changed is contrastive. **Proposed fix 46:** add both to v58's stress rules, beside fixes 7, 19, 24 and 39.
-47. **Fix 38's breath limit doesn't scale.** A fixed 4.6 seconds killed 5/4 lines of 14 syllables in 20 eighths. **The run's port:** the limit is the longest line's span plus two slots (5.0 s here). **Proposed fix 47:** state fix 38's limit as the line's span plus a breath, with a hard ceiling (6 s).
-48. **9.12 counts per bar.** In mixed metre a 5/4 bar is a quarter longer than a 4/4 bar, so the verses read as busy as the refrains. **The run's port:** energy is counted per four beats. **Proposed fix 48:** 9.12 counts per unit of time (four beats or two seconds), never per bar; this joins fix 41's eighth windows.
-49. **The calibration has no modes.** Its key profile is major/minor; D Dorian verses read as off-key against it. **The run's port:** the verses transposed +5 into the F frame for the calibration; CMP read on the refrain only. **Proposed fix 49:** the calibration reads a modal section in its parent major key, and names the frame in the record.
-50. **The room kills the writer's own voice.** From his own poem, the distinctive-word limit (2 a line) and the rare-word floor (Zipf 2.75) killed 5 of 12 original lines: "theologians", "mugwumps", "denizens", "perdition" are the poem. **Proposed fix 50:** lines from the writer's source text are locked at intake like WRITER_PHRASES, and the room reports their distinctive and rare words instead of killing them; the writer chooses.
-51. **Unknown words.** "systematizing", "birthed", "mugwumps" and "perdition" were missing from the lexicon. **The run's port:** LEXICON entries in intake. **Proposed fix 51:** intake lists the source text's unknown words, with a proposed stress for each, before the room runs.
-52. **No field for a stop.** A sung section where the band drops out had nowhere to live, and 9.12 read the designed drop as a fall in the last refrain. **The run's port:** `stop_at` in the record; every part rests from it; N.C. on the lead sheet and parts; the songbook's non-negotiable. **Proposed fix 52:** a stop field per section (bars, who stops), read by the arrangement, the engraving and the parts; 9.12 leaves stop bars out of the section's read.
-53. **V1 reads lines, not couplets.** "said one thing's true and the other must be lies" died for having no concrete image; its couplet partner has two ("the dust", and "blood" two lines on). Kept by the lock. **Proposed fix 53:** V1 passes an abstract line when the other line of its couplet carries an image of 4.0 or more.
-54. **Fix 40 confirmed.** With the calibration read over all three verses (the refrains are copies), survival fell from song 26's 94.8% to 77.8%: the verses now face a real test. Still 7.8 points above fix 28's band; the designed refrains are half the sung bars.
-55. **v65 fixes used as ports:** 9 and 24 (stress), 13 and 31 (form lengths), 14 (tenor row), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key), 36 (production notes in the songbook); and from song 26's list, 38 (breath in seconds, scaled by finding 47), 39 (line-final stress) and 40 (calibration over every sung section).
+56. **The run's form estimate overpromised.** The run told the writer that lines of 8–11 syllables fit two bars of 6/8 at ♩. = 54; the room's span holds 10 and its placement 9 in that time, and 12 of 44 locked lines died. Fix 31 (syllables per bar) wasn't applied to the run's own reassurance in the form question. **Proposed fix 56:** the form question prints, beside each option, the longest line the option can hold at its tempo, and the intake checks the drafted lyric against it before the room runs.
+57. **A stranded preposition reads as a weak ending.** "the words they pay me FOR" died on its weak ending; the line's last stress is "PAY", and the stranded "for" is natural speech. **Proposed fix 57:** extend fix 9 (pronoun objects) to stranded prepositions after a verb's object ("pay me for", "look it up"), beside fix 45's single stress function.
+58. **No rule for a line shorter than its span.** A four-bar line in a slow 6/8 is sung in two and a half bars and answered by the band; the walk's minimum reach (n − 9) and the breath ceiling (fix 47's 6 s) both assume the voice fills the span. **The run's port:** last stress between slots 9 and 12, inner notes held a dotted quarter at most, the last note a bar at most; the breath ceiling 7.5 s for a held last note. **Proposed fix 58:** a line field "sung span" (how much of the span the voice takes; the rest is the answer), read by the walk, the durations, the breath rule and the arrangement's answer.
+59. **Choruses with different words have no rule.** v64's choruses repeat their words; this song's four choruses share a tune and change words. **The run's port:** a later chorus refits chorus 1's tune by stress (27.20's fit), each syllable taking the source's pitch at its onset; built from the last line back so each line clears the next one's pickup, and never into the source's held last note. **Proposed fix 59:** a "refit" kind for repeated sections with new words, with the two rules above, and her octave transposition as a field.
+60. **9.12 can't say a section is meant to drop.** The bridge is designed to read below the verses (quiet, the calm before the choice), and verses 5–6 to read below verses 3–4 (the settling in). The arc passes only because 9.12 asks nothing of them. **Proposed fix 60:** a "drop" flag per section, so 9.12 checks a designed drop reads below its neighbours instead of ignoring it (this joins fix 52's stop).
+61. **Duets have no join rule of their own.** Fix 3 checks joins per singer; a duet that never overlaps needs the opposite check across singers: no line starts before the other singer's last note ends. **The run's port:** the join pass trims across singers. **Proposed fix 61:** a duet field "never together", checked across singers in the joins and in the consistency report.
+62. **v65 fixes used as ports:** 9 (stress), 13 and 31 (form lengths; see finding 56), 25 (voice options from 11.2), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters: ♩. = 54 written as ♩ = 81), 34 (spelling from the key), 36 (production notes in the songbook; the full score for a keyboard-led song), 38 and 47 (breath in seconds, raised for the held last note), 40 (calibration over the sung sections), 48 (9.12 per four beats).
 
 ## Blind-pick record
 
-Song 27: B, the Remembered top ("the wind was never either or", the title line). With songs 13–26, the tally over 15 songs: Annotated top 6, Remembered top 5, middle 3, refrain 1.
+Song 28: A, the middle slot ("past the county line, a door with no name", top quarter under both). With songs 13–27, the tally over 16 songs: Annotated top 6, Remembered top 5, middle 4, refrain 1.
