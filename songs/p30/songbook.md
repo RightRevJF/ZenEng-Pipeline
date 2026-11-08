@@ -304,7 +304,8 @@ I leave the light on
 
 - **Lead sheet (3 pages):** voice and lyric with chord names, and the lick cued wherever it plays.
 - **Nashville chart (1 page):** numbers in D, with band notes and cues.
-- Every note in the lead sheet matches the demo.
+- **Band parts (9 pages):** acoustic guitar (strums as rhythm slashes, the bridge's picking in notes), electric guitar (the lick), pedal steel, organ, bass and drums. Empty bars are compressed; every part has rehearsal marks with its cues, bar numbers and chord symbols.
+- Every note in the lead sheet and the parts matches the demo.
 
 ## Credits
 
