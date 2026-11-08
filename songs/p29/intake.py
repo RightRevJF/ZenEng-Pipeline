@@ -25,3 +25,6 @@ LOG.append({'q': 'lyric draft 2', 'options': {'A': 'lock', 'B': 'more notes', 'C
 LOG.append({'q': 'lyric draft 3', 'options': {'A': 'lock and write the music', 'B': 'more notes', 'C': 'lock, flag weak lines first'}, 'recommended': 'A', 'answer': 'A'})
 LOG.append({'q': 'music built', 'result': "pick f10477ea1784 (#3 of the frozen ranking: the floor 'verse 4 reaches Eb5' added after the run; no hand edits); 80 bars, 3:44; lead sheet, full score, Nashville chart, songbook + production notes, test report; consistency 30/30"})
 LOG.append({'q': 'producer one-sheet (writer: "Is this something that would help a producer? ... add it to the songbook")', 'options': {'A': 'add it to this songbook now and make it standard (skill and fix list)', 'B': 'this songbook only, as a trial', 'C': 'let it replace the production brief'}, 'recommended': 'A', 'answer': 'A'})
+
+LOG.append({"q": "blind pick (10.20), asked after song 31", "options": {"A": "The voice that said, Let there be light (Annotated top)", "B": "The Word without a word (Remembered top)", "C": "the breath that made the world (middle)"}, "answer": "B"})
+BLIND_PICK = ("B", "The Word without a word -- the Remembered top (the title line)")

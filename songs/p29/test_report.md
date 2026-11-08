@@ -42,7 +42,7 @@ Three drafts. The writer locked draft 3.
 - **Remembered:** "The Word without a word" leads (+12.59; the title, sung three times).
 - **Annotated:** "The voice that said, Let there be light," leads (+3.27), and is the only line in the top quarter of both.
 - **The middle slot:** "the breath that made the world", by the most-repeated hook line rule (the both-lists line already fills the Annotated slot).
-- **The writer's blind pick:** pending.
+- **The writer's blind pick (8 Nov):** B, "The Word without a word": the Remembered top (the title, the most-repeated hook line).
 
 ## The melody
 
@@ -109,4 +109,4 @@ Three drafts. The writer locked draft 3.
 
 ## Blind-pick record
 
-Song 29: pending. Through song 28, over 16 songs: Annotated top 6, Remembered top 5, middle 4, refrain 1.
+Song 29: the Remembered top (the title line). Through song 29 (with song 30 already counted), over 18 picked songs: Annotated top 6, Remembered top 6, middle 5, refrain 1.

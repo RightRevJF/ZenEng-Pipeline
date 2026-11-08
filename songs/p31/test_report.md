@@ -51,7 +51,7 @@ Four drafts. The writer locked draft 4.
 - **Annotated:** "you struck a match and pulled me to the floor" leads (+2.53).
 - **The middle slot:** "nothing on but the moon", top quarter under both.
 - **The writer's thesis line,** "the lights came back and I turned them off", ranks last under both (finding 86).
-- **The writer's blind pick:** pending.
+- **The writer's blind pick:** B, "nothing on but the moon": the middle slot (top quarter under both).
 
 ## The melody
 
@@ -129,4 +129,4 @@ Four drafts. The writer locked draft 4.
 
 ## Blind-pick record
 
-Song 31: pending. Song 29: pending. Through song 30, over 17 picked songs: Annotated top 6, Remembered top 5, middle 5, refrain 1.
+Song 31: the middle slot ("nothing on but the moon"). Song 29 (picked 8 Nov): the Remembered top ("The Word without a word"). Through song 31, over 19 picked songs: Annotated top 6, Remembered top 6, middle 6, refrain 1.

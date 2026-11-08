@@ -88,4 +88,5 @@ INSTRUMENT = FEEL["band"]
 ROUTING = "Anthem (A) primary, Narrative secondary; up-tempo disco-funk pop, one female lead with a backing echo"
 LOG.append({"q": "delivery (8 Nov)", "answer": "demo, lead sheet, Nashville chart, parts (16 pp), songbook Doc + Word with one-sheet, test report (findings 80-88); consistency 30/30"})
 LOG.append({"q": "blind pick (10.20), shuffled", "options": {"A": "you struck a match and pulled me to the floor (Annotated top)", "B": "nothing on but the moon (middle: top quartile under both)",
-            "C": "nothing on, nothing on (Remembered top)"}, "answer": None})
+            "C": "nothing on, nothing on (Remembered top)"}, "answer": "B"})
+BLIND_PICK = ("B", "nothing on but the moon -- the middle slot (top quartile under both)")
