@@ -67,7 +67,7 @@ def staff_music(bys, drum=False):
     vs = ["\\voiceOne", "\\voiceTwo", "\\voiceThree", "\\voiceFour"]
     return "<< " + " \\\\ ".join("{ " + vs[i] + " " + ibody(b, drum) + " }" for i, b in enumerate(bys)) + " >>"
 footer = "Under “ma” (verse 3) nothing moves; in the bridge’s seventh bar (“Abba”) the whole band is silent; everyone returns on “and Joseph turns.”"
-footer2 = "Words and music: Jason Bryant · written for soprano; a tenor sings the voice part an octave lower"
+footer2 = "Words and music: Jason Bryant · two co-equal editions: soprano as written, tenor an octave lower · A♭5 ossia on “world”"
 src = f"""\\version "2.24.3"
 #(set-global-staff-size 16)
 \\header {{ title = "The Word Without a Word" subtitle = "Full score: voice, piano, cello, strings" composer = "Words and music: Jason Bryant" meter = "a concert carol, 3/4" tagline = ##f }}
@@ -81,7 +81,7 @@ src = f"""\\version "2.24.3"
 \\score {{
   <<
     \\new ChordNames \\chordmode {{ {chords} }}
-    \\new Staff \\with {{ instrumentName = "Voice" shortInstrumentName = "V." \\override VerticalAxisGroup.remove-empty = ##f }} {{ \\clef "treble" \\new Voice = "voc" {{ {body(VB["voc"][0], True)} \\bar "|." }} }}
+    \\new Staff = "vstaff" \\with {{ instrumentName = "Voice" shortInstrumentName = "V." \\override VerticalAxisGroup.remove-empty = ##f }} {{ \\clef "treble" \\new Voice = "voc" {{ {body(VB["voc"][0], True)} \\bar "|." }} }}
     \\new Lyrics \\lyricsto "voc" {{ {" ".join(VB["voc"][1])} }}
     \\new PianoStaff \\with {{ instrumentName = "Piano" shortInstrumentName = "Pno." }} <<
       \\new Staff = "rh" \\with {{ \\override VerticalAxisGroup.remove-empty = ##f }} {{ \\clef "treble" {staff_music(RHS)} }}

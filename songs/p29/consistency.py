@@ -5,7 +5,7 @@ sys.path[:0] = ["/home/claude/p29"]
 import lyric as L, intake as I
 REC = pickle.load(open("/home/claude/p29/song_record.pkl", "rb"))
 O = "/home/claude/p29/out/The Word Without a Word - "
-ly = open(O + "lead sheet.ly").read(); sc = open(O + "full score.ly").read(); nv = open("/home/claude/p29/out/nashville.html").read()
+ly = open(O + "lead sheet (soprano).ly").read(); lyt = open(O + "lead sheet (tenor).ly").read(); sc = open(O + "full score.ly").read(); nv = open("/home/claude/p29/out/nashville.html").read()
 sb = open("/home/claude/p29/songbook.md").read()
 docx = subprocess.run(["pandoc", O + "Songbook and production notes.docx", "-t", "plain", "--wrap=none"], capture_output=True, text=True).stdout.replace("’", "'")
 mid = mido.MidiFile(O + "demo (General MIDI).mid"); t0 = mid.tracks[0]
@@ -75,7 +75,31 @@ r1 = [(n["on"] - REC["bars"][12]["start"], n["midi"]) for n in lead if n["sec"] 
 chk("refrain 2 = refrain 1", r1 == r2)
 il = [e for e in REC["cello"] if e.get("art") == "lullaby"]
 r1n = [n for n in lead if n["sec"] == "Refrain 1"]; d = REC["bars"][36]["start"] - REC["bars"][12]["start"]
-chk("the interlude: the cello sings refrain 1's tune an octave lower", il and all(any(e["on"] == n["on"] + d and e["p"] == [n["midi"] - 12] for n in r1n) for e in il))
+diff = [e for e in il if not any(e["on"] == n["on"] + d and e["p"] == [n["midi"] - 12] for n in r1n)]
+chk("the interlude: the cello sings refrain 1's tune an octave lower, ONE note changed (WORLD on F4, bar 42, over D-flat)", il and len(diff) == 1 and diff[0]["p"] == [65]
+    and bno(diff[0]["on"]) == 42 and bar_of(diff[0]["on"])["chord"] == "Db" and REC["varied"]["was"] == 61)
+SEED = [65, 65, 65, 65, 65, 63, 65, 70]
+ok = True
+for s_ in ("Verse 1", "Verse 2", "Verse 3"):
+    l0 = [n for n in lead if n["sec"] == s_ and n["line"] == 0]
+    ok &= [n["midi"] for n in l0] == SEED and l0[-1]["on"] == bar_of(l0[-1]["on"])["start"] and bar_of(l0[-1]["on"])["chord"] == "Bbm"
+t0_ = [n["midi"] for n in lead if n["sec"] == "Refrain 1" and n["line"] == 0]
+ok &= [b - a for a, b in zip(t0_, t0_[1:])][-1] == [b - a for a, b in zip(SEED, SEED[1:])][-1] == 5
+chk("the seed: line 1 of verses 1-3 = F4 x5, Eb4, F4 | Bb4 on the downbeat over Bb minor (the refrain's leap of a fourth, a fourth lower)", ok)
+ans = REC["answers"]; lines_ = {}
+for n in lead: lines_.setdefault((n["sec"], n["line"]), []).append(n)
+ok = len(ans) == 7 and all([e["p"][0] for e in REC["cello"] if e.get("art") == "answer" and a["on"] <= e["on"] < a["on"] + 3] == [x["midi"] - 12 for x in lines_[(a["sec"], a["line"])][-3:]] for a in ans)
+ok &= all(a["on"] + 3 <= M_at + 12 for a in ans for M_at in [REC["bars"][[p for p in plan if p[0] == a["sec"]][0][2] + 2 * a["line"]]["start"]])
+chk("the cello answers verse 2-3 lines (7): each line's last three notes an octave below, ending by the next line's downbeat", ok, f"{len(ans)} answers")
+CP = [e for e in REC["pno"] if e.get("art") == "coda"]
+r3t = [n["midi"] for n in lead if n["sec"] == "Refrain 3" and n["line"] == 0]
+lastc = max(REC["pno"], key=lambda e: e["on"])
+chk("the coda: the piano states refrain 3's title phrase; the last chord E-flat add F with B-flat4 on top", [e["p"][0] for e in CP] == r3t and max(lastc["p"]) == 70 and sorted({p % 12 for p in lastc["p"]}) == [3, 5, 7, 10]
+    and CP[0]["on"] >= max(n["on"] + n["dur"] for n in lead))
+chk("the ossia: A-flat5 over WORLD in the soprano edition, A-flat4 in the tenor; both editions present", 'alignAboveContext = #"vstaff"' in ly and "aes''" in ly.split("alignAboveContext")[1][:400]
+    and 'alignAboveContext = #"vstaff"' in lyt and "aes'" in lyt.split("alignAboveContext")[1][:400] and 'treble_8' in lyt and "tenor edition" in lyt and "A♭5 ossia" in sb)
+PR = pickle.load(open("/home/claude/p29/out/parts_report.pkl", "rb"))
+chk("parts: piano, cello, strings read back against the record", all(PR["readback"].values()), str(PR["readback"]))
 gaps = sorted(lead, key=lambda n: n["on"])
 chk("a breath before every line", all(b["on"] - (a["on"] + a["dur"]) >= 1 for a, b in zip(gaps, gaps[1:]) if (a["sec"], a["line"]) != (b["sec"], b["line"])))
 tn = {next(mm.name for mm in t if mm.type == "track_name"): sum(1 for mm in t if mm.type == "note_on" and mm.velocity > 0) for t in mid.tracks[1:]}

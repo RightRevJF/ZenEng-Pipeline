@@ -5,20 +5,20 @@ REC = pickle.load(open("/home/claude/p29/song_record.pkl", "rb"))
 NUMK = {"Db major": {"Db": "1", "Ebm": "2m", "Fm": "3m", "Gb": "4", "Ab": "5", "Bbm": "6m", "F": "3", "Bb": "6"},
         "Eb major": {"Eb": "1", "Fm": "2m", "Gm": "3m", "Ab": "4", "Bb": "5", "Cm": "6m"}}
 CUE = lambda t: f"<span class=cue>{t}</span>"
-CUES = {("Intro", 0): "PIANO ALONE", ("Verse 1", 0): "VOICE · piano thin", ("Refrain 1", 0): "+ STRINGS", ("Verse 2", 0): "+ CELLO",
+CUES = {("Intro", 0): "PIANO ALONE", ("Verse 1", 0): "VOICE · piano thin", ("Refrain 1", 0): "+ STRINGS", ("Verse 2", 0): "+ CELLO · answers",
         ("Interlude", 0): "CELLO SINGS", ("Interlude", 6): "SWELL", ("Verse 3", 6): "MA: HOLD", ("Bridge", 6): "ABBA: SILENT",
         ("Bridge", 7): "ALL IN · → E♭", ("Verse 4", 0): "E♭ · FULL", ("Refrain 3", 0): "♩ = 56", ("Refrain 3", 5): "B♭5: WORLD",
-        ("Refrain 3", 6): "thin", ("Coda", 0): "PIANO ALONE"}
+        ("Refrain 3", 6): "thin", ("Coda", 0): "PIANO: THE REFRAIN"}
 DRUMS = {"Intro": "3/4 at ♩ = 66. Piano alone: the cradle figure in the left hand (root, fifth, tenth, octave, tenth, fifth in eighths), a right-hand chord in bars 1 and 3.",
          "Verse 1": "Voice almost whispered. Piano left hand only, thinned to root, fifth, tenth on the three beats.",
          "Refrain 1": "Piano adds the right-hand chord on beat 1, held; strings enter softly (a held pad).",
-         "Verse 2": "Cello enters: the root a bar, held. Strings out.", "Refrain 2": "As refrain 1, with the cello; a little fuller.",
-         "Interlude": "Her lullaby: the cello sings the refrain's tune an octave below the voice, at half voice, over the piano's figure. The last two bars (2m, 3): the strings swell, leaning toward the bridge.",
-         "Verse 3": "Piano and cello. On \"ma\" (bar 7 of the verse) nothing moves: hold the chord and let the voice sit alone.",
+         "Verse 2": "Cello enters: the root a bar, held, and it answers each line: the singer's last three notes an octave below, in eighths, as she lands. Strings out. Every verse opens on the refrain's shape in small: a held note, a step down, back, and up a fourth to \"light\", \"bread\", \"mount\".", "Refrain 2": "As refrain 1, with the cello; a little fuller.",
+         "Interlude": "Her lullaby: the cello sings the refrain's tune an octave below the voice, at half voice, over the piano's figure, with one note changed: \"world\" rises to F instead of D♭. The last two bars (2m, 3): the strings swell, leaning toward the bridge.",
+         "Verse 3": "Piano and cello; the cello answers lines 1–3. On \"ma\" (bar 7 of the verse) nothing moves: hold the chord and let the voice sit alone.",
          "Bridge": "Strings build under the piano's chords; cello holds the bass. Bar 7 (\"Now: Abba\"): EVERYONE SILENT. Bar 8 (\"and Joseph turns\"): everyone back on 6 (B♭), the turn into E♭.",
          "Verse 4": "A whole step up, in E♭. Everyone, fuller: both hands of the piano, cello, strings.",
          "Refrain 3": "Broadening, ♩ = 56. Fullest: a held top line in the strings. B♭5 on \"world\" (bar 6). The last line thins to piano and strings, pianissimo; the voice ends on 5, open.",
-         "Coda": "♩ = 56. Piano alone: 4, 2m, 1, 1. The last chord E♭ with an added F, let it ring."}
+         "Coda": "♩ = 56. Piano alone: the refrain's first phrase over 4, 2m (C, C, C, B♭, C, F); then 1; the last chord E♭ with an added F, B♭ on top. Let it ring."}
 def num(sec, ch):
     k = next(b["key"] for b in REC["bars"] if b["sec"] == sec); return NUMK[k][ch]
 def rows(ns, w): return "".join("<tr>" + "".join(f"<td>{n}</td>" for n in ns[i:i + w]) + "</tr>" for i in range(0, len(ns), w))
@@ -51,7 +51,7 @@ table.nums tr td:last-child {{ border-right: 1.5px solid #111; }}
 <div class="cred">Words and music: Jason Bryant · 2026</div></div>
 {body}
 <div class="foot"><b>Numbers.</b> D♭: 1 = D♭, 2m = E♭m, 3m = Fm, 3 = F (the interlude's lift), 4 = G♭, 5 = A♭, 6m = B♭m, 6 = B♭ (the turn). E♭: 1 = E♭, 2m = Fm, 3m = Gm, 4 = A♭, 5 = B♭, 6m = Cm.
-<b>Voice.</b> Written for soprano, D♭4–A5 with one B♭5 ("world"); a tenor sings it an octave lower. <b>Anchors:</b> "ma" (verse 3) held, nothing moves; "Abba" (bridge bar 7) the band silent.</div>
+<b>Voice.</b> Two co-equal editions: soprano, D♭4–A5 with one B♭5 ("world", A♭5 ossia); tenor, an octave lower (B♭4, A♭4 ossia). <b>Anchors:</b> "ma" (verse 3) held, nothing moves; "Abba" (bridge bar 7) the band silent.</div>
 </body></html>"""
 open("/home/claude/p29/out/nashville.html", "w").write(doc)
 async def main():

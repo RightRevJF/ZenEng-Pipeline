@@ -1,7 +1,7 @@
 ---
 title: "The Word Without a Word — Songbook and production notes"
 author: "Words and music: Jason Bryant"
-date: "7 November 2026"
+date: "8 November 2026 (revised)"
 ---
 
 # The Word Without a Word
@@ -13,7 +13,7 @@ date: "7 November 2026"
 | | |
 |---|---|
 | Style | A concert carol for one high voice, piano, cello and strings |
-| Voice | Written for soprano: D♭4–A♭5, with one B♭5 ("world," the last refrain). A tenor sings it an octave lower |
+| Voice | Two co-equal editions. Soprano: D♭4–A♭5, with one B♭5 ("world," the last refrain; A♭5 ossia). Tenor: the same an octave lower, B♭4 on "world" (A♭4 ossia) |
 | Tempo | ♩ = 66 in 3/4; the last refrain and coda broaden to ♩ = 56 |
 | Length | 80 bars, about 3:44 |
 | Key | D♭ major; a whole step up to E♭ from verse 4 |
@@ -33,7 +33,7 @@ date: "7 November 2026"
 | 53–60 | Bridge | His first word: "Abba." Joseph turns |
 | 61–68 | Verse 4 | A step higher, in E♭: the cry |
 | 69–76 | Refrain 3 | Broadening: B♭5 on "world," then "goes in, and out, and in" |
-| 77–80 | Coda | Piano alone |
+| 77–80 | Coda | Piano alone: the refrain's first phrase returns; the last chord rings |
 
 ## What the song is about
 
@@ -46,6 +46,7 @@ The idea is old: in 1618 Lancelot Andrewes preached on *Verbum infans*, "the Wor
 **Playing it:**
 
 - **Start almost in silence.** Verse 1 is barely sung and barely accompanied.
+- **The verses teach the refrain.** Every verse opens on the refrain's shape in small: a held note, a step down and back, and a leap up a fourth ("Let there be **light**"). By the time "The Word without a **word**" arrives, the ear already knows it.
 - **"Ma" and "Abba" are the song's anchors.** Under "ma" nothing moves. Under "Abba" there's nothing at all: the whole band is silent.
 - **"And Joseph turns"** is where the music turns too: everyone comes back on B♭, and the song steps up into E♭.
 - **The B♭5 on "world" is the summit; the last line is a whisper.** The song ends on the fifth, open, like breathing that goes on.
@@ -67,7 +68,7 @@ Each line takes two bars of 3/4. Chords are shown beside each line.
 | D♭ · Fm | is lying in a feeding trough |
 | G♭ · A♭ | with not a single word at all. |
 
-- **Melody:** low and close, D♭4–A♭4. "Light" settles on D♭4 at the downbeat of bar 6; "call" on E♭4 (bar 8); "all" back to D♭4 (bar 12).
+- **Melody:** low and close, D♭4–B♭4. The first line is the refrain in small, a fourth lower: "the voice that said" holds F4, "let" F4, "there" dips to E♭4, "be" F4, and "**light**" leaps a fourth to B♭4 at the downbeat of bar 6, the way "without a **word**" leaps to E♭5. Then the line falls away: "call" on E♭4 (bar 8); "all" down to D♭4 (bar 12).
 - **Accompaniment:** the piano's left hand only, thinned to root, fifth and tenth on the three beats.
 
 ### Refrain 1 · bars 13–20
@@ -91,8 +92,8 @@ Each line takes two bars of 3/4. Chords are shown beside each line.
 | D♭ · Fm | she'll cup his hand to catch the rain, |
 | G♭ · A♭ | then lift him up where stars are hung. |
 
-- **Melody:** E♭4–B♭4. "Bread" twice, the second on G♭4 (bar 22); "against" touches B♭4 (bar 23); "rain" held on A♭4 (bar 26); "hung" on F4 (bar 28).
-- **Accompaniment:** the cello enters, the root held a bar.
+- **Melody:** E♭4–B♭4. The first line is verse 1's opening again, note for note: the second "bread" leaps to B♭4 at the downbeat of bar 22. "Against" touches B♭4 (bar 23); "rain" held on A♭4 (bar 26); "hung" on F4 (bar 28).
+- **Accompaniment:** the cello enters, the root held a bar, and **answers each line**: as she lands, it plays her last three notes an octave below, in eighths (bars 22, 24, 26 and 28). It is Mary's voice, answering, before the interlude says so.
 
 ### Refrain 2 · bars 29–36
 
@@ -100,7 +101,7 @@ As refrain 1, a little fuller, with the cello.
 
 ### Interlude · bars 37–44
 
-*G♭ A♭ Fm B♭m G♭ D♭ E♭m F.* Her lullaby: the cello sings the refrain's tune an octave below the voice, at half voice, over the piano's cradle figure. In the last two bars the strings swell over E♭m and F, leaning toward the bridge.
+*G♭ A♭ Fm B♭m G♭ D♭ E♭m F.* Her lullaby: the cello sings the refrain's tune an octave below the voice, at half voice, over the piano's cradle figure, with **one note changed**: "world" rises to F4 (bar 42) instead of the voice's D♭. The tune is heard three ways: sung, varied, sung. In the last two bars the strings swell over E♭m and F, leaning toward the bridge.
 
 ### Verse 3 · bars 45–52
 
@@ -111,8 +112,8 @@ As refrain 1, a little fuller, with the cello.
 | D♭ · Fm | he loses it and tries again, |
 | G♭ · A♭ | and she says *ma* until it's found. |
 
-- **Melody:** D♭4–B♭4. "Mount" falls to D♭4 (bar 46); "sound" held on A♭4 (bar 48). **"Ma"** is held on B♭4 for two beats at the downbeat of bar 51.
-- **Accompaniment:** piano and cello. Under "ma" nothing moves: the chord holds and the voice sits alone.
+- **Melody:** E♭4–B♭4. The first line is the verses' opening once more: "**mount**" leaps to B♭4 at the downbeat of bar 46. "Sound" held on A♭4 (bar 48). **"Ma"** is held on B♭4 for two beats at the downbeat of bar 51: the same pitch as "light," "bread" and "mount."
+- **Accompaniment:** piano and cello; the cello answers lines 1–3 (bars 46, 48, 50). Under "ma" nothing moves: the chord holds and the voice sits alone.
 
 ### Bridge · bars 53–60
 
@@ -153,23 +154,24 @@ As refrain 1, a little fuller, with the cello.
 
 ### Coda · bars 77–80
 
-*A♭ Fm E♭ E♭.* Piano alone. The last chord is E♭ with an added F, left to ring.
+*A♭ Fm E♭ E♭.* Piano alone. The right hand plays the refrain's first phrase once more, in E♭ (C5, C5, C5, B♭4, C5, F5, the notes she sang in bar 69), so the song leaves on its own tune. Then E♭, and the last chord: E♭ with an added F, **B♭4 on top**, the pitch of "ma." Let it ring.
 
 ## For the players
 
-- **Piano:** the cradle figure throughout, the left hand flowing in eighths: root, fifth, tenth, octave, tenth, fifth (verse 1 thinned to three notes a bar). The right hand adds a chord on beat 1, held, in the refrains, the bridge and verse 4, and in bars 1 and 3 of the intro. Under "ma," no new note. In bar 59, silence. Coda alone.
-- **Cello:** in from verse 2, the root held a bar. In the interlude, the melody: the refrain's tune an octave below the voice, at half voice. Silent in bar 59.
+- **Piano:** the cradle figure throughout, the left hand flowing in eighths: root, fifth, tenth, octave, tenth, fifth (verse 1 thinned to three notes a bar). The right hand adds a chord on beat 1, held, in the refrains, the bridge and verse 4, and in bars 1 and 3 of the intro. Under "ma," no new note. In bar 59, silence. Coda alone: the refrain's first phrase in the right hand, then the last chord with B♭ on top.
+- **Cello:** in from verse 2, the root held a bar. In verses 2 and 3, answer each line: the singer's last three notes an octave below, in eighths, as she lands (bars 22, 24, 26, 28, 46, 48, 50). In the interlude, the melody: the refrain's tune an octave below the voice, at half voice, with "world" on F instead of D♭ (bar 42). Silent in bar 59.
 - **Strings:** a soft pad under the refrains; the swell in the interlude's last two bars; building through the bridge; full in verse 4 and the last refrain, with a held top line; thinning to pianissimo for the last line. Silent in bar 59.
 
 ## For the singer
 
-**Written for soprano, D♭4–A♭5, one B♭5. A tenor sings it an octave lower.**
+**Two co-equal editions: soprano (D♭4–A♭5, one B♭5) and tenor (an octave lower, one B♭4). Each has an A♭ ossia on "world."**
 
 - **Verse 1 is barely sung.** Let the listener lean in.
+- **Every verse opens on the refrain's shape.** Sing "light," "bread" and "mount" exactly as you'll sing "word": the same lift of a fourth, lower.
 - **Sing the verses as things you've watched.** Bread, rain, spit, the cry. The pictures do the work.
 - **"Ma":** hold it, plainly. Nothing under you moves.
 - **"Abba":** the falling third of a child calling out. Sing it into silence, then let "and Joseph turns" lift you into E♭.
-- **The climb in the last refrain** is the summit of the song: E♭5 to B♭5 over one line. Breathe before "the breath."
+- **The climb in the last refrain** is the summit of the song: E♭5 to B♭5 over one line. Breathe before "the breath." If the B♭5 isn't secure, take the A♭5 ossia; nothing else changes.
 - **Then let it go.** "Goes in, and out, and in" is almost spoken. End on B♭4 and don't resolve it.
 
 ## Lyric sheet
@@ -228,10 +230,10 @@ As refrain 1, a little fuller, with the cello.
 
 - 69: The Word without a word
 - 71: is what God meant to say:
-- 73: the breath that made the **world** (B♭5)
+- 73: the breath that made the **world** (B♭5; ossia A♭5)
 - 75: goes in, and out, and in.
 
-**Coda** (bars 77–80): piano
+**Coda** (bars 77–80): piano, the refrain's first phrase
 
 > **The turn.** The first refrains end "goes in and out, and rests," a sleeping child. The last ends "goes in, and out, and in," with no rhyme and no close: the breath of God in a human body, still going.
 
@@ -255,27 +257,29 @@ As refrain 1, a little fuller, with the cello.
 |--------------------|------------|----------------------------------------------|
 | Intro, verse 1 (1–12) | p → pp | Piano alone; verse 1 nearly unaccompanied |
 | Refrains 1–2, verse 2 (13–36) | mp → mf | Strings in at refrain 1; cello in at verse 2 |
-| Interlude (37–44) | mp | The cello sings the refrain; strings swell in the last two bars |
+| Verse 2 (21–28) | mp | The cello answers each line |
+| Interlude (37–44) | mp | The cello sings the refrain, one note changed; strings swell in the last two bars |
 | Verse 3 (45–52) | p | "Ma" (bar 51): nothing moves |
 | Bridge (53–60) | mp, building | Bar 59 ("Abba"): total silence. Bar 60: everyone back, into E♭ |
 | Verse 4 (61–68) | f | The full ensemble for the first time |
 | Refrain 3 (69–76) | ff → pp | Broadens to ♩ = 56; B♭5 on "world" (bar 74); the last line falls to pianissimo |
-| Coda (77–80) | p | Piano alone; the last chord rings |
+| Coda (77–80) | p | Piano alone: the refrain's first phrase; the last chord rings, B♭ on top |
 
 **Non-negotiables**
 
 1. Under "ma," nothing moves; in bar 59, nothing sounds.
 2. The key change lands on "and Joseph turns," not before.
-3. One B♭5, on "world." Nothing else above A♭5.
+3. One B♭5, on "world" (A♭5 ossia). Nothing else above A♭5.
 4. The voice ends on B♭4, open, and quiet.
 5. No sweetness: no portamento, no choir pads, no bells, no harp.
 6. Verse 1 nearly unaccompanied.
+7. Every verse opens on the refrain's shape; the coda ends on the refrain's tune.
 
 **Mix priorities**
 
 1. **The words.** Every consonant of "milk and spit and half a sound" should land. The voice is always in front.
 2. **The piano's left-hand figure** is the pulse; keep it clear but soft.
-3. **The cello** leads the interlude; elsewhere it supports.
+3. **The cello** answers the singer in verses 2 and 3 and leads the interlude; elsewhere it supports.
 4. **The strings** sit behind and wide.
 5. **Never cover:** "ma," "Abba," the B♭5, the last line. No reverb tail into bar 59. Verse 1 dry and close; the last refrain with more room.
 
@@ -297,7 +301,7 @@ As refrain 1, a little fuller, with the cello.
 
 1. **Two silences.** Under "ma" (bar 51) nothing moves. In bar 59 ("Now: Abba") the whole ensemble is silent.
 2. **The turn into E♭ happens on "and Joseph turns"** (bar 60, B♭ chord, D5 in the voice). Don't anticipate it.
-3. **The B♭5 on "world" (bar 74) is the only note above A♭5.**
+3. **The B♭5 on "world" (bar 74) is the only note above A♭5.** The A♭5 ossia is for singers who need it; the tenor edition sings it an octave lower.
 4. **The last line is quiet and the voice ends on B♭4, open.** No added final tonic in the voice.
 5. **No sweetness.** No portamento into notes, no choir "oohs," no bells or sleigh sounds, no harp glissandos.
 6. **Verse 1 is nearly unaccompanied.** Let the song grow from almost nothing.
@@ -323,13 +327,13 @@ As refrain 1, a little fuller, with the cello.
 
 **Range**
 
-- **Voice:** written for soprano, D♭4–A♭5, one B♭5 ("world," bar 74). Tenor an octave lower: D♭3–A♭4, one B♭4.
+- **Voice:** two co-equal editions. Soprano: D♭4–A♭5, one B♭5 ("world," bar 74; A♭5 ossia). Tenor: D♭3–A♭4, one B♭4 (A♭4 ossia).
 - **Verses 1–3:** D♭4–B♭4. **Refrains 1–2:** F4–E♭5. **Bridge:** up to D♭5, with one D5. **Verse 4:** F4–E♭5. **Refrain 3:** G4–B♭5.
 
 **Tracking**
 
 1. **Piano first**, to the click with the tempo change, or live with the singer if possible: the rubato matters more than the grid.
-2. **Cello** next, including the interlude's melody as a solo take.
+2. **Cello** next: the answers in verses 2 and 3 (play them as a duet with the voice) and the interlude's melody as a solo take.
 3. **Strings** last, as a section or layered, keeping bar 59 completely silent.
 4. **Voice:** close and dry for verse 1; open the room as the song grows; record the last line separately if needed, very quietly.
 
@@ -341,11 +345,12 @@ As refrain 1, a little fuller, with the cello.
 
 ## Score and parts
 
-- **Lead sheet (3 pages):** voice and lyric with chord names, the key change, the tempo change and the two anchors marked.
-- **Full score (4 pages):** voice, piano (both hands), cello and strings, with dynamics by section.
+- **Lead sheets (3 pages each), soprano and tenor editions:** voice and lyric with chord names, the key change, the tempo change, the two anchors and the ossia marked.
+- **Full score (4 pages):** voice, piano (both hands), cello and strings, with dynamics by section and the ossia.
+- **Parts (5 pages):** piano, cello and strings (a reduction), with rehearsal marks and cues, bar numbers and chord symbols.
 - **Nashville chart (1 page):** numbers in D♭, then E♭, with the anchors and the band's notes.
 - **Producer one-sheet (1 page, in this songbook):** the emotional target, references, dynamic arc, non-negotiables and mix priorities.
-- Every note in the lead sheet and the full score matches the demo.
+- Every note in the lead sheets, the full score and the parts matches the demo.
 
 ## Credits
 

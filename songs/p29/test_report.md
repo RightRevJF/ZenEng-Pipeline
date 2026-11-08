@@ -107,6 +107,31 @@ Three drafts. The writer locked draft 3.
 69. **No page for the producer.** The songbook carries everything a producer needs, but spread across the production brief and the session notes. The writer asked for a producer one-sheet (song 29, after delivery). **The run's port:** one printed page in the songbook, between the lyric sheet and the production brief: the emotional target, references, dynamic arc, non-negotiables and mix priorities; consistency checks it is there. **Proposed fix 69:** add the one-sheet to fix 36's production notes as a standard part of every songbook, checked to fit one page.
 70. **v65 fixes used as ports:** 9 and 24 (stress), 13, 31 and 56 (form lengths and the longest line), 25 (voice options), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key), 36 (production notes in the songbook; the full score on request), 47 (breath scaled: 7.0 s at the broadened tempo), 48 (9.12 per four beats), 59 (refit).
 
+## Revision 1 (8 Nov, after delivery)
+
+The writer attached five notes aimed at the song's memorability and casting (another reviewer's, measured against "O Holy Night"). Each was checked against the record before acting: four were right as written; the first misstated the refrain's rise (it is B♭4 to E♭5, not F4 to E♭5). He chose all five.
+
+| Note | What was done | Where |
+|---|---|---|
+| 1. Plant the refrain's seed in the verses | Line 1 of verses 1–3 now carries the title line's shape a fourth lower: F4 held, E♭4, F4, then a fourth up to B♭4 on the second downbeat over B♭m ("light," "bread," "mount"). All three lines have eight syllables with stresses on both downbeats, so they take the seed note for note. Verse 4 keeps its own opening (the seed would remove the E♭5 its climb needs). Every other note of the frozen pick is kept | melody (hand edit, logged), re-evaluated |
+| 2. The cello answers the voice | In verses 2 and 3 the cello plays each line's last three notes an octave below, in eighths, from the eighth after the singer's last note, ending by the next line's downbeat (7 answers; none under "ma") | arrangement |
+| 3. Vary the interlude once | The cello's lullaby changes one note: WORLD rises from D♭4 to F4 (bar 42, over D♭) | arrangement |
+| 4. Ossia and co-equal tenor | An A♭5 ossia staff over WORLD; two lead sheets, soprano and tenor (treble 8vb, sounding an octave lower, A♭4 ossia); the songbook's voice lines rewritten for two editions | lead sheets, full score, songbook |
+| 5. The coda returns | The piano's right hand states refrain 3's title phrase (C5 C5 C5 B♭4 C5 \| F5) over A♭ and Fm, then E♭, then the last chord. The last chord already had B♭4 on top (the note assumed it didn't); kept | arrangement |
+
+- **Re-evaluation of the edited melody:** passes. Composite 0.911 (was 0.906); memory horizon 0.661 (was 0.615): the verse now predicts the refrain, which is the note's claim, measured; lift +5 (was +7), since the verses' openings now reach B♭4.
+- **Demo:** stems +4.3 dB (vocal gain 2, ensemble CC7 104). Energy: each refrain above its verse; refrain 3 the top (0.83).
+- **Documents:** lead sheets (soprano, tenor; 3 pages each; readback 231 notes each, match); full score (4 pages; every staff matches, cello 83 notes); **band parts added** (piano, cello, strings; 5 pages; all match: the parts standard applied to this song); Nashville chart and songbook updated (Doc and Word).
+- **Consistency:** 35 of 35, with new checks for the seed, the cello's answers, the interlude's one changed note, the coda's phrase and last chord, the ossia in both editions, and the parts.
+
+**Findings from the revision**
+
+89. **No seed step: the verses never preview the refrain.** The cell grammar draws each verse's letters independently, so the refrain arrives as a new tune three times. The fix was a hand edit after delivery. **Proposed fix 89:** a "seed" field: the title cell's contour, transposed to the verse register, set on a chosen verse line (by syllable count and stress placement), checked by interval identity; report the memory horizon before and after (here 0.615 → 0.661).
+90. **No field for an instrumental answer.** Call-and-response between voice and instrument (the cello as Mary's voice) was built by hand. **Proposed fix 90:** an "answer" field (instrument, sections, figure: the line's last n notes at an interval, window: from the singer's last note to the next downbeat), read by the build, the parts' cues and consistency.
+91. **Instrumental restatements repeat exactly.** The optimal-innovation rule (a familiar phrase with one element changed) governs the voice, not an instrument restating the voice. **Proposed fix 91:** when a part restates a sung tune, change exactly one pitch, to a chord tone of the restatement's harmony, logged.
+92. **One edition, no ossia.** The voice row casts one singer; a summit note narrows who can take the song up. **Proposed fix 92:** an "editions" field (for example soprano and tenor, by transposition or octave) and an "ossia" field for the summit; the lead sheets, songbook and consistency read both.
+93. **The ending field needs "return".** Proposed fix 77 offers resolved, open or abrupt; this coda is open but quotes the hook. **Proposed fix 93:** add "return" (a hook phrase over the open ending) and a check that the last chord's top note matches an anchor pitch.
+
 ## Blind-pick record
 
 Song 29: the Remembered top (the title line). Through song 29 (with song 30 already counted), over 18 picked songs: Annotated top 6, Remembered top 6, middle 5, refrain 1.

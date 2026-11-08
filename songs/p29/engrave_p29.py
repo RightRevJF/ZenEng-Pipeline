@@ -1,6 +1,8 @@
 """Module 11.9 document 3: the engraved lead sheet of 'The Word Without a Word' (v64 port) from the song record -- the VOICE (written for
 soprano; a tenor sings it an octave lower) with the lyric and chord names; 3/4 at q = 66, broadening to q = 56 for the final refrain;
-D-flat major, E-flat from verse 4. The anchors (MA, ABBA) marked. Absolute pitches; LilyPond's MIDI read back."""
+D-flat major, E-flat from verse 4. The anchors (MA, ABBA) marked. Revision 1: the B-flat5 on WORLD carries an A-flat5 ossia, and the
+lead sheet is made in two co-equal editions -- SOPRANO (treble clef, as written) and TENOR (treble 8vb, sounding an octave lower; B-flat4
+on WORLD, A-flat4 ossia) -- chosen with ZVOICE=soprano|tenor. Absolute pitches; LilyPond's MIDI read back."""
 import pickle, re, sys, collections, os
 sys.path[:0] = ["/home/claude/p29", "/home/claude/carol", "/home/claude/pop"]
 from lily import compile_ly, midi_readback
@@ -39,7 +41,8 @@ def texted(notes):
                 else:
                     x["text"] = w; x["hy"] = False
 BARS = REC["bars"]; TOT = REC["total_eighths"]; NB = len(BARS)
-VO = {"voc": sorted([dict(n, p=[n["midi"]]) for n in REC["lead"]], key=lambda n: n["on"])}
+VERSION = os.environ.get("ZVOICE", "soprano"); SHIFT = -12 if VERSION == "tenor" else 0; VCLEF = "treble_8" if VERSION == "tenor" else "treble"
+VO = {"voc": sorted([dict(n, p=[n["midi"] + SHIFT]) for n in REC["lead"]], key=lambda n: n["on"])}
 texted(VO["voc"])
 SP = {0: "c", 1: "des", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "ges", 7: "g", 8: "aes", 9: "a", 10: "bes", 11: "b"}   # D-flat / E-flat major (v65 fix 34)
 def pname(p):
@@ -90,9 +93,21 @@ TURN = next(n["on"] for n in REC["lead"] if n["sec"] == "Bridge" and n["line"] =
 WORLD = next(n["on"] for n in REC["lead"] if n["midi"] == 82)
 MARKS = {MA: "held: nothing moves", NOW + 2: "the band silent", TURN: "everyone back", WORLD: "the one B♭"}
 VB = {"voc": stream(VO["voc"])}
+OSS_BI = bar_at[WORLD]                                    # revision 1: the ossia bar (A-flat5 for B-flat5; the tenor's an octave lower)
+def ossia_tokens(toks):
+    out, done = [], False
+    for t in toks:
+        t = t.split("^")[0]
+        if not done and t.startswith(pname(82 + SHIFT)): t = pname(80 + SHIFT) + t[len(pname(82 + SHIFT)):]; done = True
+        out.append(t)
+    assert done
+    return out
+OSS_STAFF = ('\\new Staff \\with { alignAboveContext = #"vstaff" fontSize = #-3 \\override StaffSymbol.staff-space = #(magstep -3) '
+             '\\remove "Time_signature_engraver" firstClef = ##f \\override KeySignature.stencil = ##f } '
+             '{ \\clef "' + VCLEF + '" \\key ees \\major ')
 starts = {b0: (s, met) for s, nb, b0, met in REC["plan"]}
 TXT = {"Intro": "Intro · piano", "Interlude": "Interlude · the cello sings her lullaby", "Bridge": "Bridge",
-       "Verse 4": "Verse 4 · a step higher", "Refrain 3": "Refrain 3 · broadening", "Coda": "Coda · piano alone"}
+       "Verse 4": "Verse 4 · a step higher", "Refrain 3": "Refrain 3 · broadening", "Coda": "Coda · piano alone: the refrain returns"}
 def body(bybar, marks):
     toks = []
     for bi in range(NB):
@@ -103,19 +118,23 @@ def body(bybar, marks):
             if s == "Verse 4": toks.append("\\key ees \\major")
             if s == "Refrain 3": toks.append('\\tempo "Broadening" 4 = 56')
             if marks: toks.append(f'\\mark \\markup \\box \\bold "{TXT.get(s, s)}"')
-        toks += bybar[bi]
+        if marks and bi == OSS_BI:
+            toks += ["<<", "{", *bybar[bi], "}", OSS_STAFF, '\\once \\override TextScript.font-size = #-2', ossia_tokens(bybar[bi])[0] + '^"ossia"', *ossia_tokens(bybar[bi])[1:], "}", ">>"]
+        else: toks += bybar[bi]
     return " ".join(toks)
 CHR = {"Db": "des", "Gb": "ges", "Ab": "aes", "Bbm": "bes", "Fm": "f", "Ebm": "ees", "Bb": "bes", "Eb": "ees", "Cm": "c", "Gm": "g", "F": "f"}
 QUAL = {"Bbm": ":m", "Fm": ":m", "Ebm": ":m", "Cm": ":m", "Gm": ":m"}
 chords = " ".join(f"{CHR[b['chord']]}2.{QUAL.get(b['chord'], '')}" for b in BARS)
 NM = ['C', 'D♭', 'D', 'E♭', 'E', 'F', 'F♯', 'G', 'A♭', 'A', 'B♭', 'B']; nm = lambda p: NM[p % 12] + str(p // 12 - 1)
-vp = [n["midi"] for n in VO["voc"]]
-assert min(vp) >= 60 and max(vp) == 82 and sum(1 for x in vp if x > 81) == 1
-footer = f"Voice {nm(min(vp))}–{nm(max(vp))} (B♭5 once: “world”, the last refrain) · written for soprano; a tenor sings it an octave lower"
+vp = [n["p"][0] for n in VO["voc"]]
+assert min(vp) >= 60 + SHIFT and max(vp) == 82 + SHIFT and sum(1 for x in vp if x > 81 + SHIFT) == 1
+footer = (f"Soprano edition · {nm(min(vp))}–{nm(max(vp))} (B♭5 once: “world”, the last refrain; A♭5 ossia) · the tenor edition is the same song an octave lower"
+          if VERSION == "soprano" else
+          f"Tenor edition · sounding {nm(min(vp))}–{nm(max(vp))} (B♭4 once: “world”, the last refrain; A♭4 ossia) · the soprano edition is the same song an octave higher")
 footer2 = "Words and music: Jason Bryant · “ma” and “Abba” are the song’s anchors: hold them, and let nothing move under them"
 src = f"""\\version "2.24.3"
 #(set-global-staff-size 19)
-\\header {{ title = "The Word Without a Word" subtitle = "Lead sheet · voice (soprano or tenor)" composer = "Words and music: Jason Bryant" meter = "a concert carol" tagline = ##f }}
+\\header {{ title = "The Word Without a Word" subtitle = "Lead sheet · {VERSION} edition" composer = "Words and music: Jason Bryant" meter = "a concert carol" tagline = ##f }}
 \\paper {{ #(set-paper-size "letter") left-margin = 14\\mm right-margin = 14\\mm top-margin = 12\\mm bottom-margin = 24\\mm
   oddFooterMarkup = \\markup \\column {{ \\fill-line {{ \\tiny "{footer}" }} \\fill-line {{ \\tiny "{footer2}" }} }}
   evenFooterMarkup = \\markup \\column {{ \\fill-line {{ \\tiny "{footer}" }} \\fill-line {{ \\tiny "{footer2}" }} }}
@@ -125,20 +144,20 @@ src = f"""\\version "2.24.3"
 \\score {{
   <<
     \\new ChordNames \\chordmode {{ {chords} }}
-    \\new Staff \\with {{ instrumentName = "Voice" }} {{ \\clef "treble" \\new Voice = "voc" {{ {body(VB["voc"][0], True)} \\bar "|." }} }}
+    \\new Staff = "vstaff" \\with {{ instrumentName = "{VERSION.capitalize()}" }} {{ \\clef "{VCLEF}" \\new Voice = "voc" {{ {body(VB["voc"][0], True)} \\bar "|." }} }}
     \\new Lyrics \\lyricsto "voc" {{ {" ".join(VB["voc"][1])} }}
   >>
 }}
 """
-path, warns = compile_ly(src, "The Word Without a Word - lead sheet", cwd=OUT)
+path, warns = compile_ly(src, f"The Word Without a Word - lead sheet ({VERSION})", cwd=OUT)
 print("compiled", path, "warnings:", [w for w in warns if "clashing" not in w][:6], f"({len(warns)} total)")
 os.makedirs(OUT + "/check", exist_ok=True)
 for name in ("voc",):
     BYB = VB[name][0]
     toks = [t for bi in range(NB) for t in BYB[bi] if t[0] not in "rRs"]
     chk = '\\version "2.24.3"\n\\score { \\new Staff { \\time 3/4 ' + " ".join(toks) + ' } \\midi { } }'
-    compile_ly(chk, f"check_{name}", cwd=OUT + "/check")
-    got = midi_readback(f"{OUT}/check/check_{name}.midi")[0]
-    want = [n["midi"] for n in VO[name]]
+    compile_ly(chk, f"check_{name}_{VERSION}", cwd=OUT + "/check")
+    got = midi_readback(f"{OUT}/check/check_{name}_{VERSION}.midi")[0]
+    want = [n["p"][0] for n in VO[name]]
     print(f"readback ({name}):", "matches" if got == want else f"MISMATCH ({len(got)} vs {len(want)})", len(got), "notes")
 print(footer)

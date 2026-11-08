@@ -28,3 +28,9 @@ LOG.append({'q': 'producer one-sheet (writer: "Is this something that would help
 
 LOG.append({"q": "blind pick (10.20), asked after song 31", "options": {"A": "The voice that said, Let there be light (Annotated top)", "B": "The Word without a word (Remembered top)", "C": "the breath that made the world (middle)"}, "answer": "B"})
 BLIND_PICK = ("B", "The Word without a word -- the Remembered top (the title line)")
+LOG.append({"q": "revision (8 Nov): the writer attached five notes (memorability and casting, measured against 'O Holy Night')",
+            "options": {"A": "all five, then rebuild the full package with parts", "B": "move 1 first, shown before anything else", "C": "moves 2-5 only (the melody untouched)"},
+            "recommended": "A", "answer": "A",
+            "notes": ["1 plant the refrain's seed in the verses", "2 the cello answers the voice in verses 2-3", "3 the interlude varies one note",
+                      "4 an A-flat5 ossia and a co-equal tenor edition", "5 the coda quotes the refrain; B-flat on top of the last chord"]})
+REVISION = 1
