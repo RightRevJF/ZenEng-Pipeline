@@ -1,5 +1,5 @@
-"""The Word Without a Word -- the locked lyric (draft 3). One high voice (soprano; a tenor an octave lower)."""
-TITLE = "The Word Without a Word"
+"""The Breath That Made the World (first titled The Word Without a Word) -- the locked lyric (draft 3). One high voice (soprano; a tenor an octave lower)."""
+TITLE = "The Breath That Made the World"
 V1 = [("verse", "The voice that said, Let there be light,"), ("verse", "and light came running at the call,"),
       ("verse", "is lying in a feeding trough"), ("verse", "with not a single word at all.")]
 REFRAIN = [("hook", "The Word without a word"), ("refrain", "is sleeping on her chest;"),

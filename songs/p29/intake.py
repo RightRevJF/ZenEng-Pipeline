@@ -11,7 +11,7 @@ LOG.append({'q': 'voice (11.2; a concert row the table lacks)', 'options': {'A':
 LOG.append({'q': 'tempo and feel', 'options': {'A': '3/4 at q=66, a lullaby sway; the final section broadens to q=56', 'B': '12/8 at dotted-q=50', 'C': '4/4 at q=60, hymn-like'}, 'recommended': 'A', 'answer': 'A'})
 LOG.append({'q': 'title', 'options': {'A': 'The Word Without a Word', 'B': 'Verbum Infans', 'C': 'First Word'}, 'recommended': 'A', 'answer': 'A',
             'writer_adds': "I want to see a lyric draft before the music comes and, like the last piece, I'll need a full score"})
-TITLE = "The Word Without a Word"
+TITLE = "The Breath That Made the World"
 # ---- derived (provisional until the lyric) ----
 OBJECTS = ["light", "call", "trough", "word", "chest", "breath", "world", "bread", "crumb", "tongue", "hand", "rain", "stars", "mount", "milk", "spit", "sound", "ear", "mother"]; WRITER_PHRASES = []; WRITER_WORDS = []; LEXICON = {}; ROLES = {"verse", "chorus", "bridge", "refrain", "hook", "tag"}
 NEVER_SAY = ["silent", "precious", "lowly", "manger", "angel", "angels", "sweet", "tender", "miracle", "gift", "christmas", "jingle", "glory", "hallelujah"]   # the run's default list, shown with draft 1
@@ -34,3 +34,8 @@ LOG.append({"q": "revision (8 Nov): the writer attached five notes (memorability
             "notes": ["1 plant the refrain's seed in the verses", "2 the cello answers the voice in verses 2-3", "3 the interlude varies one note",
                       "4 an A-flat5 ossia and a co-equal tenor edition", "5 the coda quotes the refrain; B-flat on top of the last chord"]})
 REVISION = 1
+LOG.append({"q": "retitle (8 Nov, after revision 1)", "writer": "I love the song, dislike the title. It needs to be stickier.",
+            "his options": ["The Breath That Made the World", "And Joseph Turns", "The Word Without a Word", "Abba", "Bread", "Let There Be Light"],
+            "run's five": ["What God Meant to Say", "Sleeping on Her Chest", "His Mother Hears", "First Word", "Half a Sound"],
+            "options": {"A": "The Breath That Made the World", "B": "What God Meant to Say", "C": "something else / keep"}, "recommended": "A", "answer": "A"})
+TITLE = "The Breath That Made the World"

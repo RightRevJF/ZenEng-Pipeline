@@ -1,4 +1,4 @@
-"""Module 11.9 document 3: the engraved lead sheet of 'The Word Without a Word' (v64 port) from the song record -- the VOICE (written for
+"""Module 11.9 document 3: the engraved lead sheet of 'The Breath That Made the World' (v64 port) from the song record -- the VOICE (written for
 soprano; a tenor sings it an octave lower) with the lyric and chord names; 3/4 at q = 66, broadening to q = 56 for the final refrain;
 D-flat major, E-flat from verse 4. The anchors (MA, ABBA) marked. Revision 1: the B-flat5 on WORLD carries an A-flat5 ossia, and the
 lead sheet is made in two co-equal editions -- SOPRANO (treble clef, as written) and TENOR (treble 8vb, sounding an octave lower; B-flat4
@@ -134,7 +134,7 @@ footer = (f"Soprano edition · {nm(min(vp))}–{nm(max(vp))} (B♭5 once: “wor
 footer2 = "Words and music: Jason Bryant · “ma” and “Abba” are the song’s anchors: hold them, and let nothing move under them"
 src = f"""\\version "2.24.3"
 #(set-global-staff-size 19)
-\\header {{ title = "The Word Without a Word" subtitle = "Lead sheet · {VERSION} edition" composer = "Words and music: Jason Bryant" meter = "a concert carol" tagline = ##f }}
+\\header {{ title = "The Breath That Made the World" subtitle = "Lead sheet · {VERSION} edition" composer = "Words and music: Jason Bryant" meter = "a concert carol" tagline = ##f }}
 \\paper {{ #(set-paper-size "letter") left-margin = 14\\mm right-margin = 14\\mm top-margin = 12\\mm bottom-margin = 24\\mm
   oddFooterMarkup = \\markup \\column {{ \\fill-line {{ \\tiny "{footer}" }} \\fill-line {{ \\tiny "{footer2}" }} }}
   evenFooterMarkup = \\markup \\column {{ \\fill-line {{ \\tiny "{footer}" }} \\fill-line {{ \\tiny "{footer2}" }} }}
@@ -149,7 +149,7 @@ src = f"""\\version "2.24.3"
   >>
 }}
 """
-path, warns = compile_ly(src, f"The Word Without a Word - lead sheet ({VERSION})", cwd=OUT)
+path, warns = compile_ly(src, f"The Breath That Made the World - lead sheet ({VERSION})", cwd=OUT)
 print("compiled", path, "warnings:", [w for w in warns if "clashing" not in w][:6], f"({len(warns)} total)")
 os.makedirs(OUT + "/check", exist_ok=True)
 for name in ("voc",):

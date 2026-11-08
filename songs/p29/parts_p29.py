@@ -1,4 +1,4 @@
-"""The production parts pack for 'The Word Without a Word' (revision 1): PIANO (grand staff), CELLO and STRINGS (a reduction on one staff,
+"""The production parts pack for 'The Breath That Made the World' (revision 1): PIANO (grand staff), CELLO and STRINGS (a reduction on one staff,
 divisi as written) -- written bar by bar from the song record, the same events the demo plays and the full score shows. 3/4 at q = 66,
 broadening to q = 56 for the last refrain; D-flat major, E-flat from verse 4. Rehearsal marks with each part's cues, bar numbers, chord
 symbols; empty bars compressed. LilyPond's MIDI read back per part."""
@@ -63,7 +63,7 @@ def chords_for(bys):
     return " ".join(out)
 def part(title, kind, staves, bys):
     return f"""\\bookpart {{
-  \\header {{ title = "The Word Without a Word" subtitle = "{title}" composer = "Words and music: Jason Bryant" tagline = ##f }}
+  \\header {{ title = "The Breath That Made the World" subtitle = "{title}" composer = "Words and music: Jason Bryant" tagline = ##f }}
   \\markup \\vspace #1.4
   \\markup \\small \\wordwrap {{ {NOTES[kind]} }}
   \\markup \\vspace #1.0
@@ -84,7 +84,7 @@ src = f"""\\version "2.24.3"
 {part("Cello", "vc", '\\new Staff { \\clef "bass" ' + pmusic(CS, "vc") + ' }', CS)}
 {part("Strings (reduction)", "str", '\\new Staff { \\clef "treble" ' + pmusic(SS, "str") + ' }', SS)}
 """
-path, warns = compile_ly(src, "The Word Without a Word - parts (piano, cello, strings)", cwd=OUT)
+path, warns = compile_ly(src, "The Breath That Made the World - parts (piano, cello, strings)", cwd=OUT)
 print("compiled", path, [w for w in warns if "clashing" not in w][:6], f"({len(warns)} warnings)")
 os.makedirs(OUT + "/check", exist_ok=True)
 RB = {}

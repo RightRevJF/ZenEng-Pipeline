@@ -1,4 +1,4 @@
-"""Module 11.11 demo for 'The Word Without a Word' (a concert carol for one high voice; 80 bars, about 3:44; 3/4 at q = 66, the final
+"""Module 11.11 demo for 'The Breath That Made the World' (a concert carol for one high voice; 80 bars, about 3:44; 3/4 at q = 66, the final
 refrain and coda at q = 56; D-flat, E-flat from verse 4). Piano, cello and strings, read from the song record and humanized here
 (pink-noise velocity and timing, v43). Guide voice: flute (the soprano line at pitch)."""
 
@@ -7,7 +7,7 @@ import pickle, subprocess, os, collections, sys, random
 import numpy as np, mido
 from scipy.io import wavfile
 REC = pickle.load(open("/home/claude/p29/song_record.pkl", "rb"))
-OUT = "/home/claude/p29/out"; os.makedirs(OUT, exist_ok=True); BASE = f"{OUT}/The Word Without a Word - demo"
+OUT = "/home/claude/p29/out"; os.makedirs(OUT, exist_ok=True); BASE = f"{OUT}/The Breath That Made the World - demo"
 T = 480; E8 = 240          # an eighth (the record's slot)
 BARS = REC["bars"]; PLAN = REC["plan"]; lead = REC["lead"]; HARM = REC["harm"]; NB = REC["nbars"]
 def tk(e): return int(round(e * E8))

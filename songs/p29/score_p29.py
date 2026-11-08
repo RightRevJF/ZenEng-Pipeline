@@ -1,4 +1,4 @@
-"""The full score of 'The Word Without a Word' from the song record (the writer asked for it): VOICE (with the lyric and chord names),
+"""The full score of 'The Breath That Made the World' from the song record (the writer asked for it): VOICE (with the lyric and chord names),
 PIANO (grand staff: the right hand's chords, the left hand's cradle figure), CELLO (the interlude's lullaby; hidden where it rests for
 whole systems), STRINGS (a reduction on one staff, hidden where they rest). Every staff is written from the same events the demo plays,
 and LilyPond's MIDI is read back per staff. Section dynamics follow the demo's arc."""
@@ -70,7 +70,7 @@ footer = "Under “ma” (verse 3) nothing moves; in the bridge’s seventh bar 
 footer2 = "Words and music: Jason Bryant · two co-equal editions: soprano as written, tenor an octave lower · A♭5 ossia on “world”"
 src = f"""\\version "2.24.3"
 #(set-global-staff-size 16)
-\\header {{ title = "The Word Without a Word" subtitle = "Full score: voice, piano, cello, strings" composer = "Words and music: Jason Bryant" meter = "a concert carol, 3/4" tagline = ##f }}
+\\header {{ title = "The Breath That Made the World" subtitle = "Full score: voice, piano, cello, strings" composer = "Words and music: Jason Bryant" meter = "a concert carol, 3/4" tagline = ##f }}
 \\paper {{ #(set-paper-size "letter") left-margin = 12\\mm right-margin = 12\\mm top-margin = 11\\mm bottom-margin = 20\\mm
   oddFooterMarkup = \\markup \\column {{ \\fill-line {{ \\tiny "{footer}" }} \\fill-line {{ \\tiny "{footer2}" }} }}
   evenFooterMarkup = \\markup \\column {{ \\fill-line {{ \\tiny "{footer}" }} \\fill-line {{ \\tiny "{footer2}" }} }}
@@ -92,7 +92,7 @@ src = f"""\\version "2.24.3"
   >>
 }}
 """
-path, warns = compile_ly(src, "The Word Without a Word - full score", cwd=OUT)
+path, warns = compile_ly(src, "The Breath That Made the World - full score", cwd=OUT)
 print("compiled", path, "warnings:", [w for w in warns if "clashing" not in w][:6], f"({len(warns)} total)")
 os.makedirs(OUT + "/check", exist_ok=True)
 for name, BYS, notes in (("voice", [VB["voc"][0]], VO["voc"]), ("piano RH", RHS, RH), ("piano LH", LHS, LH), ("cello", CS, REC["cello"]), ("strings", SS, REC["strings"])):

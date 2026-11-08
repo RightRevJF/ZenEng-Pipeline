@@ -1,10 +1,10 @@
-"""Document consistency check for 'The Word Without a Word' (a concert carol: one high voice, piano, cello, strings; 3/4 at q = 66, the
+"""Document consistency check for 'The Breath That Made the World' (a concert carol: one high voice, piano, cello, strings; 3/4 at q = 66, the
 last refrain and coda at q = 56; D-flat, E-flat from verse 4; the songbook for musicians, with the production notes)."""
 import re, pickle, mido, subprocess, sys
 sys.path[:0] = ["/home/claude/p29"]
 import lyric as L, intake as I
 REC = pickle.load(open("/home/claude/p29/song_record.pkl", "rb"))
-O = "/home/claude/p29/out/The Word Without a Word - "
+O = "/home/claude/p29/out/The Breath That Made the World - "
 ly = open(O + "lead sheet (soprano).ly").read(); lyt = open(O + "lead sheet (tenor).ly").read(); sc = open(O + "full score.ly").read(); nv = open("/home/claude/p29/out/nashville.html").read()
 sb = open("/home/claude/p29/songbook.md").read()
 docx = subprocess.run(["pandoc", O + "Songbook and production notes.docx", "-t", "plain", "--wrap=none"], capture_output=True, text=True).stdout.replace("’", "'")
@@ -12,7 +12,7 @@ mid = mido.MidiFile(O + "demo (General MIDI).mid"); t0 = mid.tracks[0]
 norm = lambda t: re.sub(r"[^a-z ]", "", t.lower().replace("’", "'").replace("—", " ").replace("-", " ")).split()
 checks = []
 def chk(n, ok, d=""): checks.append((n, ok, d))
-chk("title in all", all("The Word Without a Word" in d for d in (ly, sc, nv, sb, docx)))
+chk("title in all", all("The Breath That Made the World" in d for d in (ly, sc, nv, sb, docx)))
 chk("credit 'Words and music: Jason Bryant' in all", all("Words and music: Jason Bryant" in d for d in (ly, sc, nv, sb, docx)))
 ENG = r"zeneng|\bengine\b|\bmodule\b|certificate|surviv|composite|table g|\bv\d\d\b|realness|10\.20|search|fingerprint"
 chk("songbook and chart for musicians: no engine terms", not re.search(ENG, sb.lower() + docx.lower() + nv.lower()), str(re.findall(ENG, sb.lower() + docx.lower() + nv.lower())[:5]))

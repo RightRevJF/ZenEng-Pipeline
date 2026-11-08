@@ -1,10 +1,10 @@
 ---
-title: "The Word Without a Word — Test report (ZenEng v64 + v65 fixes)"
+title: "The Breath That Made the World — Test report (ZenEng v64 + v65 fixes)"
 author: "For the engine's maintainers; not for musicians"
 date: "7 November 2026"
 ---
 
-# The Word Without a Word — test report (ZenEng v64, v65 fixes as ports)
+# The Breath That Made the World — test report (ZenEng v64, v65 fixes as ports)
 
 This is the engine's record of song 29, kept apart from the songbook (musicians only). The test: a concert carol for one trained high voice, piano, cello and strings, in 3/4 with a tempo change and a key lift, built to a single climactic note.
 
@@ -131,6 +131,12 @@ The writer attached five notes aimed at the song's memorability and casting (ano
 91. **Instrumental restatements repeat exactly.** The optimal-innovation rule (a familiar phrase with one element changed) governs the voice, not an instrument restating the voice. **Proposed fix 91:** when a part restates a sung tune, change exactly one pitch, to a chord tone of the restatement's harmony, logged.
 92. **One edition, no ossia.** The voice row casts one singer; a summit note narrows who can take the song up. **Proposed fix 92:** an "editions" field (for example soprano and tenor, by transposition or octave) and an "ossia" field for the summit; the lead sheets, songbook and consistency read both.
 93. **The ending field needs "return".** Proposed fix 77 offers resolved, open or abrupt; this coda is open but quotes the hook. **Proposed fix 93:** add "return" (a hook phrase over the open ending) and a check that the last chord's top note matches an anchor pitch.
+
+## Retitle (8 Nov)
+
+The writer kept the song and dropped the title: "It needs to be stickier." His six options and five from the run were weighed for stickiness (sung, and sung where the music peaks), clashes (ABBA and Bread are band names; Let There Be Light is a common title) and prior use (a web search found no song called "The Breath That Made the World" or "What God Meant to Say"). He chose **"The Breath That Made the World"**: sung in every refrain, with the song's one B♭5 on its last word, so anyone humming the climax sings the title. The refrain's first line, "The Word without a word," is unchanged; only the documents changed.
+
+- **Finding 94. The title test reads meaning, not stickiness.** The intake's title question offered the Andrewes phrase on its depth; nothing scored whether a title is sung, how often, and whether it sits on the melody's peak, or whether it clashes with a famous name. **Proposed fix 94:** score title options on repetitions sung, whether the title's stressed word carries the section's top note, length in syllables, and a name-clash and prior-use search; print the scores beside the options.
 
 ## Blind-pick record
 

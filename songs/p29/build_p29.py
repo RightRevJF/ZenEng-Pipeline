@@ -1,4 +1,4 @@
-"""Build the song record for 'The Word Without a Word' from the frozen melody (melody_final.pkl). A concert carol: one high voice (written
+"""Build the song record for 'The Breath That Made the World' from the frozen melody (melody_final.pkl). A concert carol: one high voice (written
 for soprano; a tenor an octave lower), piano, cello, strings. Times in EIGHTHS; 3/4 (a bar = 6) at q = 66, the final refrain and coda
 broadened to q = 56. D-flat major; E-flat from verse 4.
   piano      the cradle figure: the left hand in flowing eighths, root-fifth-tenth-octave-tenth-fifth (verse 1 thinner: root, fifth,
