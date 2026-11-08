@@ -53,7 +53,7 @@ Two drafts. The writer locked draft 2.
 - **Remembered:** "she left the light on" leads (+5.61; the title, sung four times as its own line).
 - **Annotated:** "and lit hers too at sundown, three hundred miles from home" leads (+2.41).
 - **The middle slot:** "I've had a year to shut it off, it'd only take my thumb", the only line in the top quarter of both lists.
-- **The writer's blind pick:** pending.
+- **The writer's blind pick:** A, "I've had a year to shut it off, it'd only take my thumb": the middle slot, the line in the top quarter of both lists.
 
 ## The melody
 
@@ -116,8 +116,10 @@ Two drafts. The writer locked draft 2.
 76. **No field for the drop.** The research's subtraction (the band out before the last chorus) and the turn line sung over it are arrangement design. **The run's port:** hand rules in the build, plus consistency checks. **Proposed fix 76:** an arrangement "drop" field (bars, what remains, the fill into the next downbeat), read by the build, the chart's cues and consistency.
 77. **No field for the ending's kind.** 2025's staying-power hits favoured short, abrupt or unresolved endings. The song ends on IV, ringing. **Proposed fix 77:** an "ending" field (resolved, open, abrupt) checked against the last bar's chord and the outro length.
 78. **The demo cannot sound like country radio.** General MIDI has no pedal steel or fiddle, and the guide voice is a clarinet. For a song aimed at the market, the research says a real voice is needed before anyone outside hears it. **Proposed fix 78:** allow a country soundfont route (pedal steel, fiddle, banjo). For any song with a commercial profile, have the production notes call for a human vocal demo.
-79. **v65 fixes used as ports:** 9 and 24 (stress), 13 and 56 (form lengths), 25 (voice options), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key: sharps, and B♭ from the borrowed chord), 36 (production notes in the songbook), 47 (breath ceiling 7.5 s), 48 (9.12 per four beats), 59 (refit). From song 29's proposals: 69 (the producer one-sheet).
+79. **The band parts become standard.** After delivery the writer asked for the parts and made them standard for every song: six parts (9 pages), strummed guitar as rhythm slashes under the chord names, picked figures in notes, each read back against the record (slashes counted, drum hits counted). **Proposed fix 79:** a parts PDF for every song in the production package (fix 8).
+
+**v65 fixes used as ports:** 9 and 24 (stress), 13 and 56 (form lengths), 25 (voice options), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters), 34 (spelling from the key: sharps, and B♭ from the borrowed chord), 36 (production notes in the songbook), 47 (breath ceiling 7.5 s), 48 (9.12 per four beats), 59 (refit). From song 29's proposals: 69 (the producer one-sheet).
 
 ## Blind-pick record
 
-Song 30: pending. Song 29: pending. Through song 28, over 16 songs: Annotated top 6, Remembered top 5, middle 4, refrain 1.
+Song 30: the middle slot (the line top-quartile under both). Song 29: pending. Through song 30, over 17 picked songs: Annotated top 6, Remembered top 5, middle 5, refrain 1.

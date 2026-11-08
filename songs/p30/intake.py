@@ -84,4 +84,5 @@ FORM_PLAN = "Intro 4 | V1 8 | Ch 8 | Post 2 | V2 8 | Ch 8 | Post 2 | Bridge 6 | 
 KEY = "D major; one borrowed chord, G minor (iv), under 'thumb' at the end of the bridge"
 LOG.append({"q": "deliverables", "answer": "demo MP3 + GM/GarageBand MIDI, lead sheet, Nashville chart, songbook (Doc https://claude.ai/artifact/6oiZAeJi5DoBKmeeDCMTnV + Word) with the producer one-sheet, test report (findings 71-79)"})
 LOG.append({"q": "10.20 blind pick (offered without scores, shuffled)", "options": {"A": "I've had a year to shut it off, it'd only take my thumb", "B": "and lit hers too at sundown, three hundred miles from home", "C": "she left the light on"},
-            "slots": {"A": "middle (top quartile under both)", "B": "Annotated top", "C": "Remembered top"}, "recommended": None, "answer": None})
+            "slots": {"A": "middle (top quartile under both)", "B": "Annotated top", "C": "Remembered top"}, "recommended": None, "answer": "A"})
+BLIND_PICK = ("A", "I've had a year to shut it off, it'd only take my thumb -- the middle slot (top quartile under both)")
