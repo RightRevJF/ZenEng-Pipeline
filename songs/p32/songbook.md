@@ -152,7 +152,7 @@ As refrain 1, a little fuller, with the cello.
 
 - **Melody:** the refrain's tune in major: "I" on F♯4, "the" on C♯5, "gar-den-er" on D5 over G (bar 68); "dawn" on A4 (bar 70). Then the climb: "his hands in the earth" rises D5, E5, F♯5 to **A5 on "earth," over D at the downbeat of bar 72**, the only A5 in the song; "again" falls through G5 to F♯5. "Come" on E5 (bar 73); "own" on C♯5 over A (bar 74).
 - **The last line:** the title once more (bars 75–76, "gar-den-er" on D5 over G). **Bar 77: the voice is silent** while the strings alone hold A. Then "and he" on A4 and C♯5, and "**was**" on D5 over D at the downbeat of bar 78, held: closed, on the tonic.
-- **Accompaniment:** the fullest of the song, with a held top line in the strings, until the last line thins; in bar 77 only the strings and one low A in the piano.
+- **Accompaniment:** the fullest of the song, with a held top line in the strings, until the last line thins; in bar 77 only the strings.
 
 ### Coda · bars 79–82 (♩. = 44)
 
@@ -160,7 +160,7 @@ As refrain 1, a little fuller, with the cello.
 
 ## For the players
 
-- **Piano:** the walking figure throughout, the left hand rocking in eighths: root, fifth, tenth | octave, tenth, fifth (verse 1 bare: root and fifth in dotted quarters). The right hand adds a chord on each downbeat from refrain 1, held, and on both beats in verse 4 and the last refrain. **Bar 54: silent.** Bars 55–56: one soft D major chord a bar, no figure. Bar 77: one low A, nothing else. Coda alone: the refrain's first phrase in the right hand, then the last chord with A on top.
+- **Piano:** the walking figure throughout, the left hand rocking in eighths: root, fifth, tenth | octave, tenth, fifth (verse 1 bare: root and fifth in dotted quarters). The right hand adds a chord on each downbeat from refrain 1, held, and on both beats in verse 4 and the last refrain. **Bar 54: silent.** Bars 55–56: one soft D major chord a bar, no figure. Bar 77: silent (the strings alone). Coda alone: the refrain's first phrase in the right hand, then the last chord with A on top.
 - **Cello:** in from verse 2, the root held a bar. Answer verse 2's lines 2–4 and verse 3's line 2 (bars 24, 26, 28, 44): the singer's last three notes an octave below, in eighths, as she lands. In the interlude, the melody: the refrain's first two lines an octave below the voice, with "dawn" on C♯ instead of A (bar 40). Silent in bar 54; back on "Mary." Held bass from verse 4; out in bar 77.
 - **Strings:** a soft pad under the refrains; the swell in the interlude; building softly under the Name's first two lines; **silent in bar 54**; soft and full on "Mary"; full in verse 4 and the last refrain, with a held top line; alone in bar 77, holding A.
 

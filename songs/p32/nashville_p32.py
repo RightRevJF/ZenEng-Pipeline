@@ -18,7 +18,7 @@ DRUMS = {"Intro": "6/8 at ♩. = 52 (♩ = 78). Piano alone: the walking figure 
          "Verse 3": "Piano and cello; the cello answers lines 1–3 (line 4 if there is room). Strings out.",
          "The Name": "Strings and cello build softly under lines 1–2. Bar 54 (\"said my name\"): EVERYONE SILENT, the voice alone. Bar 55 (\"Mary\"): everyone back on 1 in D MAJOR, soft and held, one chord a bar, no figure; hold through the voice's silent bar; \"and I said, Rabboni\" over 4 and 5.",
          "Verse 4": "D major. Everyone, fuller: the piano's right hand on both beats, cello, strings.",
-         "Refrain 3": "Broadening, ♩. = 48. Fullest: a held top line in the strings. A5 on \"earth\" (bar 72). The last line (bar 75) thins; bar 77 only the strings hold 5, the voice silent, one low A in the piano; \"and he was\" closes on 1.",
+         "Refrain 3": "Broadening, ♩. = 48. Fullest: a held top line in the strings. A5 on \"earth\" (bar 72). The last line (bar 75) thins; bar 77 only the strings hold 5, the voice and piano silent; \"and he was\" closes on 1.",
          "Coda": "♩. = 44. Piano alone: the refrain's first phrase in D major (F♯ A G A C♯ D) over 1 and 4; then 1; the last chord D with an added E, A on top. Let it ring."}
 def num(b): return NUMK[b["key"]][b["chord"]]
 def rows(ns, w): return "".join("<tr>" + "".join(f"<td>{n}</td>" for n in ns[i:i + w]) + "</tr>" for i in range(0, len(ns), w))

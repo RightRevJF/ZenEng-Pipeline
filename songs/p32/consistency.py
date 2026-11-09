@@ -96,9 +96,9 @@ rb = [n for n in lead if n["syl"][0] == "rabboni"]
 chk("RABBONI: A4 to E5 over A (bar 58)", [n["midi"] for n in rb] == [69, 76, 76] and bno(rb[1]["on"]) == 58 and bar_of(rb[1]["on"])["chord"] == "A")
 was = [n for n in lead if n["sec"] == "Refrain 3" and n["line"] == 4][-1]
 hush = REC["hush_bar"]
-chk("the close: WAS on D5 over D (bar 78), after bar 77 where only the strings hold A and one low A in the piano", was["syl"][0] == "was" and was["midi"] == 74 and bno(was["on"]) == 78 and bar_of(was["on"])["chord"] == "D"
+chk("the close: WAS on D5 over D (bar 78), after bar 77 where the strings alone hold A", was["syl"][0] == "was" and was["midi"] == 74 and bno(was["on"]) == 78 and bar_of(was["on"])["chord"] == "D"
     and bno(hush) == 77 and not [n for n in lead if hush <= n["on"] < hush + 4] and not [e for e in REC["cello"] if hush <= e["on"] < hush + 6]
-    and [e["p"] for e in REC["pno"] if hush <= e["on"] < hush + 6] == [[45]] and [e for e in REC["strings"] if e["on"] == hush])
+    and not [e for e in REC["pno"] if hush <= e["on"] < hush + 6] and [e for e in REC["strings"] if e["on"] == hush])
 v4 = max(n["midi"] for n in lead if n["sec"] == "Verse 4")
 chk("verse 4 climbs to F#5 (ANSWERED, bar 65)", v4 == 78 and bno(next(n for n in lead if n["sec"] == "Verse 4" and n["midi"] == 78)["on"]) == 65)
 il = [e for e in REC["cello"] if e.get("art") == "interlude"]

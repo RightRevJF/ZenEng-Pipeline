@@ -129,6 +129,12 @@ The writer was still reluctant about verse 3's "the stone between them clean": "
 
 107. **No listener-clarity test in the room.** The room scores stress, span, rhyme and the never-say list; nothing asks whether a line can be understood on one hearing at tempo without an inference the song hasn't set up. "The stone between them clean" passed every test and the run defended it; the writer heard the problem. **Proposed fix 107:** a one-hearing check in the writing room: flag a line whose key word's sense depends on an earlier line by more than one step (here, "clean" needs "wash the dead" from verse 1), and show it to the writer with the inference spelled out.
 
+## Revision 2 (9 Nov): bar 77
+
+Another reviewer flagged that the full score's footer says "bar 77: only the strings hold" while the piano part gives the left hand a held low A (A2) in that bar. Checked against the record: true, and the documents split the same way (the footer, the strings part, the chart and most of the songbook said strings alone; the piano part, the players' notes and one songbook line said strings plus the low A). The writer chose A: **the strings alone**. The piano's A was cut in the build; the piano part, the chart and the songbook now say the piano is silent in bar 77; the build asserts it and consistency checks it. Demo, lead sheets, full score and parts rebuilt and read back (all match); 40/40.
+
+- **Finding 108. The documents' prose is hand-written beside the record.** The footer, part notes and songbook described bar 77 from the design, not from the events; nothing compared them. **Proposed fix 108:** every instruction that names an instrument in a bar ("only the strings", "silent", "one chord a bar") is generated from the record, or checked against it in consistency (who sounds in that bar).
+
 ## Blind-pick record
 
 Song 32 (9 Nov): C, "I took him for the gardener,": the Remembered top (the title line). Through song 32, over 20 picked songs: Annotated top 6, Remembered top 7, middle 6, refrain 1.

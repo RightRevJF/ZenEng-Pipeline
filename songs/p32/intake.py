@@ -81,3 +81,6 @@ LOG.append({"q": "blind pick (10.20)", "options": {"A": "and someone stood among
 LOG.append({"q": "revision 1: verse 3 line 2", "note": "writer: 'One of the things I remain reluctant about is the clean line in the song. I know you like it but I don't think the lyric works because it confuses the listener.'",
             "options": {"A": "with no one in between (no one / someone two lines later; the same rhythm and long-e sound)", "B": "and nothing in between", "C": "keep 'the stone between them clean'"},
             "recommended": "A", "answer": "A"})
+LOG.append({"q": "revision 2: bar 77", "note": "another AI flagged it: the footer says only the strings hold in bar 77, but the piano part has a held low A",
+            "options": {"A": "strings alone: cut the piano's A", "B": "keep the piano's low A and fix the wording", "C": "silence everyone in bar 77"},
+            "recommended": "A", "answer": "A"})

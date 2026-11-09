@@ -10,7 +10,7 @@ dotted quarter = 52 (q = 78), the last refrain broadened to q = 72 and the coda 
   strings    a soft pad under the refrains; the interlude's last two bars swell; the Name builds through its first two lines
   anchors    NAME (the Name, line 3): the whole band silent for its bar (N.C.), the voice alone. MARY: everyone back on D major, soft and
              full, held through the bar of silence after it; RABBONI over G and A
-  the end    the last refrain's last line: the title cell, then a bar where only the strings hold A (the voice silent), then 'and he WAS'
+  the end    the last refrain's last line: the title cell, then a bar where only the strings hold A (the voice and the piano silent), then 'and he WAS'
              on D5 over D, closed; the coda (fix 93): the piano alone states the title cell in D major (refrain 3's own notes), then the
              open D chord with an added E, A4 on top, let ring."""
 import pickle, sys
@@ -69,7 +69,7 @@ for bi, b in enumerate(bars):
         else: pno.append(dict(on=st, dur=6, p=[r, fifth, 62, 64, 66, 69], vel=40, hand="both", art="ring"))   # D with an added E, A4 on top
         continue
     if st == HUSH:
-        pno.append(dict(on=st, dur=6, p=[r], vel=40, hand="lh", art="ring"))  # one low A; nothing moves
+        pass                                                                   # bar 77: the strings alone (revision 2: the piano's low A cut)
     elif mary:                                                                 # MARY: one D major chord a bar, held, no figure
         pno.append(dict(on=st, dur=6, p=[r, fifth, tenth], vel=v - 6, hand="lh", art="ring"))
         pno.append(dict(on=st, dur=6, p=voicing(ch, 62, 3), vel=v - 10, hand="rh", art="ring"))
@@ -134,6 +134,7 @@ CODA_PHRASE = [dict(on=CODA0 + (n["on"] - at0), dur=n["dur"] if i < len(T3) - 1 
 assert CODA_PHRASE[0]["on"] >= max(n["on"] + n["dur"] for n in lead), "the coda's pickup clears the voice"
 pno += CODA_PHRASE; pno.sort(key=lambda e: e["on"])
 assert not [e for e in pno + cello + strings if NC_BAR <= e["on"] < NC_BAR + 6], "NAME: the band silent"
+assert not [e for e in pno + cello if HUSH <= e["on"] < HUSH + 6] and [e for e in strings if e["on"] == HUSH], "bar 77: the strings alone"
 R = c["search"]
 rec = dict(title=L.TITLE, nbars=len(bars), bars=bars, plan=plan, lead=lead, harm=[], pno=pno, cello=cello, strings=strings,
            total_eighths=TOT, slot="eighth", seconds=secs, singers=dict(her=dict(lo=62, top=81)), singer_by_sec=L.SINGER, stop_at=None,
