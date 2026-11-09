@@ -40,6 +40,7 @@ Four drafts. The writer locked draft 4 ("A"), declining the offered micro-adjust
 - **Remembered:** "I took him for the gardener," leads (+7.03; the title, sung three times and again in the last line).
 - **Annotated:** "I said, sir, if you carried him," leads (+5.20).
 - **The middle slot:** "and someone stood among the trees.", the one line in the top quarter of both lists apart from the Annotated top.
+- **The writer's blind pick (9 Nov):** C, "I took him for the gardener,": the Remembered top.
 
 ## The melody
 
@@ -118,4 +119,4 @@ Four drafts. The writer locked draft 4 ("A"), declining the offered micro-adjust
 
 ## Blind-pick record
 
-Song 32: (pending).
+Song 32 (9 Nov): C, "I took him for the gardener,": the Remembered top (the title line). Through song 32, over 20 picked songs: Annotated top 6, Remembered top 7, middle 6, refrain 1.

@@ -76,3 +76,5 @@ LOG.append({"q": "lock", "options": {"A": "lock draft 4 as it stands and write t
             "recommended": "A", "answer": "A",
             "note": "the writer's micro-notes offered after draft 4 ('clean' -> 'bare' or 'empty'; 'his hands still in the earth'; give the last line a period: 'the song should close, not trail') -- answered A: lock as is. Draft 4 already ends on a period."})
 LOG.append({"q": "ports at the lock", "ports": ["song 32 stress port: line-final 'where/why/who/own/was' stressed; in-STEAD, it-SELF, SOME-one, rab-BO-ni (findings)"]})
+LOG.append({"q": "blind pick (10.20)", "options": {"A": "and someone stood among the trees. (middle)", "B": "I said, sir, if you carried him, (Annotated top)",
+            "C": "I took him for the gardener, (Remembered top)"}, "answer": "C", "slot": "Remembered top (the title line)"})
