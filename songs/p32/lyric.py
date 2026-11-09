@@ -7,7 +7,7 @@ REFRAIN = [("hook", "I took him for the gardener,"), ("refrain", "the first one 
            ("refrain", "I said, sir, if you carried him,"), ("refrain", "just tell me where he's gone.")]
 V2 = [("verse", "I found his linen lying flat,"), ("verse", "the cloth that wrapped his head"),
       ("verse", "folded in a place by itself,"), ("verse", "as if he'd made the bed.")]
-V3 = [("verse", "Two sat in white on either side,"), ("verse", "the stone between them clean;"),
+V3 = [("verse", "Two sat in white on either side,"), ("verse", "with no one in between;"),
       ("verse", "they asked me why I cried. I turned,"), ("verse", "and someone stood among the trees.")]
 NAME = [("bridge", "He asked me who I came to find;"), ("bridge", "I said, just give me back the body."),
         ("bridge", "And then he only said my name."), ("bridge", "Mary. And I said, Rabboni.")]

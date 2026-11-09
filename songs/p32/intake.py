@@ -78,3 +78,6 @@ LOG.append({"q": "lock", "options": {"A": "lock draft 4 as it stands and write t
 LOG.append({"q": "ports at the lock", "ports": ["song 32 stress port: line-final 'where/why/who/own/was' stressed; in-STEAD, it-SELF, SOME-one, rab-BO-ni (findings)"]})
 LOG.append({"q": "blind pick (10.20)", "options": {"A": "and someone stood among the trees. (middle)", "B": "I said, sir, if you carried him, (Annotated top)",
             "C": "I took him for the gardener, (Remembered top)"}, "answer": "C", "slot": "Remembered top (the title line)"})
+LOG.append({"q": "revision 1: verse 3 line 2", "note": "writer: 'One of the things I remain reluctant about is the clean line in the song. I know you like it but I don't think the lyric works because it confuses the listener.'",
+            "options": {"A": "with no one in between (no one / someone two lines later; the same rhythm and long-e sound)", "B": "and nothing in between", "C": "keep 'the stone between them clean'"},
+            "recommended": "A", "answer": "A"})

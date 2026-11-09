@@ -117,6 +117,18 @@ Four drafts. The writer locked draft 4 ("A"), declining the offered micro-adjust
 105. **The tail rule and a spoken name.** Rule 21.7a put both syllables of "Ma-ry" on F♯5. The run kept it as the design ("as he would say it"), but a falling third is the natural call (song 29's "Ab-ba"). **Proposed fix 105:** let a designed anchor exempt itself from 21.7a with a logged reason.
 106. **v65 fixes used as ports:** 9, 24 and 64 (stress), 13, 31 and 56 (form lengths), 25 (voice options), 26 (ASCII track names), 29 (line-final stress on a beat), 30 (aimed notes exempt), 32 (fitted cells clear the pickup), 33 (MIDI tempo in quarters: ♩. = 52 written as 78), 34 (spelling from the key: C♯ in D minor, A♯ in B minor), 36 (production notes in the songbook; the full score for a keyboard-led song), 47 (breath scaled: 7.0 s), 48 (9.12 per four beats), 59 (refit), 67 (anchors), 69 (the producer one-sheet), 89 (seed), 90 (answers), 91 (one note changed), 92 (editions and ossia), 93 (the coda returns), 94 (the title test).
 
+## Revision 1 (9 Nov, after delivery)
+
+The writer was still reluctant about verse 3's "the stone between them clean": "I don't think the lyric works because it confuses the listener." Checked against the line: it asks the listener to infer, at tempo and on one hearing, that she came to wash a body and the place is already clean; read, it lands; sung, "clean" arrives without its reason. Three options were offered; he chose A, **"with no one in between"**: six syllables in the same rhythm, the long-e sound kept against "trees", the empty place stated plainly, and "no one" setting up "someone" two lines later.
+
+- **Melody:** the new words take the old line's notes syllable for syllable (with F4 | NO G4 one G4 in G4 be- F4 | -TWEEN E4 at bar 44's downbeat). No note changed; the melody re-evaluates unchanged (composite 0.880; strong-beat alignment 0.867, was 0.876, since "in" now sits on the second beat).
+- **Arrangement:** unchanged (the cello's answer to the line plays the same three notes).
+- **Documents:** lead sheets (both editions), full score and parts re-engraved and read back (all match); songbook (Doc and Word) updated; the quotable-line slots unchanged.
+
+**Finding from the revision**
+
+107. **No listener-clarity test in the room.** The room scores stress, span, rhyme and the never-say list; nothing asks whether a line can be understood on one hearing at tempo without an inference the song hasn't set up. "The stone between them clean" passed every test and the run defended it; the writer heard the problem. **Proposed fix 107:** a one-hearing check in the writing room: flag a line whose key word's sense depends on an earlier line by more than one step (here, "clean" needs "wash the dead" from verse 1), and show it to the writer with the inference spelled out.
+
 ## Blind-pick record
 
 Song 32 (9 Nov): C, "I took him for the gardener,": the Remembered top (the title line). Through song 32, over 20 picked songs: Annotated top 6, Remembered top 7, middle 6, refrain 1.

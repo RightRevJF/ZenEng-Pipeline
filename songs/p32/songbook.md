@@ -1,7 +1,7 @@
 ---
 title: "I Took Him for the Gardener — Songbook and production notes"
 author: "Words and music: Jason Bryant"
-date: "8 November 2026"
+date: "9 November 2026 (revised)"
 ---
 
 # I Took Him for the Gardener
@@ -108,11 +108,11 @@ As refrain 1, a little fuller, with the cello.
 | Chords | Line |
 |---|---|
 | Dm · B♭ | Two sat in white on either side, |
-| Gm · A | the stone between them clean; |
+| Gm · A | with no one in between; |
 | Dm · F | they asked me why I cried. I turned, |
 | Gm · A | and someone stood among the trees. |
 
-- **Melody:** D4–B♭4. The first line is the verses' opening once more: "ei-" on B♭4 (bar 42), "side" down to F4. "Clean" on E4 (bar 44). "Why" drops to D4 (bar 45). "I turned" rises to A4 (bar 46). "Trees" on A4 over A (bar 48).
+- **Melody:** D4–B♭4. The first line is the verses' opening once more: "ei-" on B♭4 (bar 42), "side" down to F4. "No one in be-" stays near G4 and "-tween" lands on E4 (bar 44). "Why" drops to D4 (bar 45). "I turned" rises to A4 (bar 46). "Trees" on A4 over A (bar 48).
 - **Accompaniment:** piano and cello; the cello answers line 2 (bar 44).
 
 ### The Name · bars 49–58
@@ -210,7 +210,7 @@ As refrain 1, a little fuller, with the cello.
 **Verse 3** (bars 41–48)
 
 - 41: Two sat in white on either side,
-- 43: the stone between them clean;
+- 43: with no one in between;
 - 45: they asked me why I cried. I turned,
 - 47: and someone stood among the trees.
 
