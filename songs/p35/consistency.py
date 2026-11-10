@@ -85,7 +85,7 @@ low = " ".join(L.SUNG).lower()
 chk("never-say: none in the lyric", not [w for w in I.NEVER_SAY if re.search(rf"\b{w}\b", low)] and not [p for p in I.NEVER_PHRASES if p in low])
 chk("the title words in every refrain", all("first wood" in ls[4][1].lower() for _, ls in L.SECTIONS))
 chk("test report: findings 178-187; the gate table; the rule table; the blind pick pending", all(f"\n{n}. **" in TR for n in range(178, 188)) and "| outer voices: parallel perfects (136) | 0 | 0 | 209 |" in TR
-    and "| 155 |" in TR and "Song 35: (pending)." in TR)
+    and "| 155 |" in TR and "Song 35 (10 Nov): A" in TR)
 chk("test report: the search's counts as the record", f"Survivors:** {MR['survivors']} (17.2%)" in TR and MR["order_fp"] in TR and MR["deaths"]["sequence legs (148)"] == 7 and MR["would"]["sequence legs (148)"] == 14)
 for n, ok, info in res: print(("PASS " if ok else "FAIL ") + n + (f"  {info}" if not ok and info != "" else ""))
 print(f"{sum(ok for _, ok, _ in res)}/{len(res)} consistent")

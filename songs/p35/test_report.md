@@ -180,4 +180,4 @@ Fixes 164–172 belong to the metal class and leads, and do not apply here, with
 
 ## Blind-pick record
 
-Song 35: (pending).
+Song 35 (10 Nov): A, "the edges never pared.": the Annotated top (offered as A; B was the Remembered top, C the middle). Through song 35, over 23 picked songs: Annotated top 9, Remembered top 7, middle 6, refrain 1.

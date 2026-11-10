@@ -46,3 +46,5 @@ INSTRUMENT = "SATB choir and organ"
 OBJECTS += ["feed-trough", "pine", "adze/blade", "mortise", "saw", "plane", "beam", "post", "timber"]
 LOG.append({"q": "music", "pick": "d99d993b5228", "search": "500 built, 86 survivors, order 638be4d08765, reproduced (three runs)", "control": "root-position bass, outer-voice terms off: 136 would fail 157/209/35 of 458"})
 LOG.append({"q": "delivery", "songbook_doc": "https://claude.ai/artifact/C31Uq3LK5mDT8ZKqS27PzJ", "consistency": "42/42"})
+LOG.append({"q": "blind pick (10.20)", "options": {"A": "the edges never pared. (Annotated top)", "B": "Sleep in the first wood, child, (Remembered top)", "C": "the blade went wide along the line, (middle)"}, "recommended": None,
+            "answer": "A. But come up with the fix report along with any other information you were supposed to gather for the other ai"})
