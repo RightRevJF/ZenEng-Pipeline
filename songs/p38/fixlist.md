@@ -243,10 +243,10 @@ What the tables did not carry: notes a bar and onsets on the downbeat in the v10
 
 | Slot | Picks |
 |---|---|
-| Annotated top | 9 |
+| Annotated top | 10 |
 | Remembered top | 8 |
 | Middle | 7 |
 | Refrain | 1 |
-| Songs picked | 25 |
+| Songs picked | 26 |
 
-Song 38: pending. The slots offered in shuffled order: A "they toast the ratings, glass to glass" (Annotated top), B "Stay tuned, stay mad" (Remembered top), C "stay tuned, stay scared" (Middle: top quartile under both regimes).
+Song 38: the Annotated top, "they toast the ratings, glass to glass." The slots were offered in shuffled order: A that line, B "Stay tuned, stay mad" (Remembered top), C "stay tuned, stay scared" (Middle: top quartile under both regimes).

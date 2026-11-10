@@ -45,6 +45,8 @@ A new song under ZenEng v103 (version row v137, Window 123, last fix 256), worke
 | 13 | which spec governs | A |
 | note (conflict found before build) |  | Q6 'reciting' (1.4-2.1 sd) against Q5 era CLASSIC (242): of 314 kept chart windows (v103 training rows), the 20 at 1.4-2.1 on reciting repeat 52% of moves (none at or under 33%) and read 2.41 bits a note; CLASSIC's bands |
 | 14 | reciting against CLASSIC | A |
+| build |  |  |
+| blind pick (10.20), offered |  | A |
 
 **The song.** *Stay Tuned*: rock (Who-style), 4/4 at ♩ = 132, A major, male high baritone C♯3–A4. A cable-news cameraman tells what he sees; the chorus is the network's own voice; in the last chorus he cuts the cameras and says turn it off. Form: Intro 8 · Verse 8 · Pre 4 · Chorus 16 · Verse 8 · Pre 4 · Chorus 16 · Bridge 8 · Solo 8 · Breakdown 8 · Last Chorus 18 · Outro 8 = 114 bars, 3:27. Every sung line two bars (3–8 syllables; 230). The title is sung 9 times, first at bar 21 of 114 (232; kept 2–10, median 5, first in the opening third in 72%).
 
@@ -143,7 +145,7 @@ Stems: the lead vocal +5.9 dB over the band (rule ≥ +3). Energy arc (band only
 
 ## The quotable line (10.20)
 
-Slots for the blind pick: remembered 'Stay tuned, stay mad,', middle 'stay tuned, stay scared,' (top quartile under both), annotated 'they toast the ratings, glass to glass;'. The writer's pick: pending.
+Slots for the blind pick: remembered 'Stay tuned, stay mad,', middle 'stay tuned, stay scared,' (top quartile under both), annotated 'they toast the ratings, glass to glass;'. The writer's pick: A, the annotated slot ('they toast the ratings, glass to glass'). Tally after song 38: Annotated 10, Remembered 8, Middle 7, Refrain 1 (26 songs).
 
 ## Findings
 
