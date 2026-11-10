@@ -54,3 +54,4 @@ LOG.append({"q": "build", "reading": "main 3000 builds, 43 survivors (order 6c91
             "design_choices": ["chorus/bridge targets drawn from the 48 kept windows inside 3 of CLASSIC's 4 bands (finding 259)", "bass and rhythm guitar wait for the verse (238: intro under half the fullest)",
                                "outro: one hit on bar 107, let ring (the writer's note on 'Turn it off')", "gang vocal in chorus 2, plus a third under in the last chorus (each chorus bigger)"],
             "songbook_doc": "https://claude.ai/artifact/8QtPjqLaUktzoho41AduQf"})
+LOG.append({"q": "blind pick (10.20), offered", "options": {"A": "they toast the ratings, glass to glass; (annotated)", "B": "Stay tuned, stay mad, (remembered)", "C": "stay tuned, stay scared, (middle: top quartile under both)"}, "answer": None})
