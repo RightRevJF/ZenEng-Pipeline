@@ -115,9 +115,10 @@ HEAD = r'''\version "2.24.3"
   oddFooterMarkup = \markup \fill-line { \tiny "%s" } evenFooterMarkup = \markup \fill-line { \tiny "%s" } }
 \layout { \context { \Score \override BarNumber.break-visibility = ##(#f #f #t) \compressEmptyMeasures } \context { \Lyrics \override LyricText.font-size = #-0.5 } }
 '''
-FOOT = "Dance Anyway · Words and music: Jason Bryant · ♩ = 118 · E♭ major · 2:59"
+V2S = " (version 2)" if REC.get("version") == 2 else ""
+FOOT = f"Dance Anyway{V2S} · Words and music: Jason Bryant · ♩ = 118 · E♭ major · 2:59"
 if __name__ == "__main__":
-    lead_ly = HEAD % (19, FOOT, FOOT) + f'''\\header {{ title = "Dance Anyway" subtitle = "Lead sheet" composer = "Words and music: Jason Bryant" meter = "Disco-pop · ♩ = 118" tagline = ##f }}
+    lead_ly = HEAD % (19, FOOT, FOOT) + f'''\\header {{ title = "Dance Anyway" subtitle = "Lead sheet{V2S}" composer = "Words and music: Jason Bryant" meter = "Disco-pop · ♩ = 118" tagline = ##f }}
 \\score {{ <<
   \\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(set())} }}
   \\new Staff \\with {{ instrumentName = "Voice" }} {{ \\new Voice = "v" {{ {VBODY} }} }}
@@ -125,7 +126,7 @@ if __name__ == "__main__":
 >> \\layout {{ }} }}
 \\markup \\small \\column {{ \\vspace #1 "Female voice, B♭3–D5. The one D5 falls on “for-EV-er” in the last chorus (bar 82); every other note is C5 or lower." "Chorus 2 is chorus 1 again. The last line of the song sings the hook a third time and ends on E♭." }}
 '''
-    path, warns = compile_ly(lead_ly, "Dance Anyway - lead sheet", cwd=OUT)
+    path, warns = compile_ly(lead_ly, f"Dance Anyway{V2S} - lead sheet", cwd=OUT)
     if os.environ.get("LEAD_ONLY"): print("lead sheet:", len(warns), "warnings"); print("  readback voice:", readback("voice", VOX, VWANT)); sys.exit(0)
     print("lead sheet:", [w for w in warns][:4], len(warns))
     ok = readback("voice", VOX, VWANT); print("  readback voice:", "matches" if ok[0] else "MISMATCH", ok[1:])
@@ -179,8 +180,8 @@ if __name__ == "__main__":
     books.append(f'''\\bookpart {{ \\header {{ subtitle = "Drums" }}
 \\score {{ \\new DrumStaff \\with {{ drumStyleTable = #drums-style }} \\drummode {{ {" ".join(dt)} }} \\layout {{ }} }} }}''')
     nh = sum(len(v) for v in HITS.values()); nd = sum(len(e["p"]) for e in REC["drums"])
-    parts = HEAD % (17, FOOT, FOOT) + '\\header { title = "Dance Anyway" subtitle = "Parts" composer = "Words and music: Jason Bryant" tagline = ##f }\n' + "\n".join(books)
-    path, warns = compile_ly(parts, "Dance Anyway - parts", cwd=OUT)
+    parts = HEAD % (17, FOOT, FOOT) + '\\header { title = "Dance Anyway" subtitle = "Parts' + V2S + '" composer = "Words and music: Jason Bryant" tagline = ##f }\n' + "\n".join(books)
+    path, warns = compile_ly(parts, f"Dance Anyway{V2S} - parts", cwd=OUT)
     print("parts:", [w for w in warns][:4], len(warns))
     for k, v in checks.items(): print(f"  readback {k}:", "matches" if v[0] else "MISMATCH", v[1:])
     print(f"  drums: {nh} hits written of {nd} in the record")

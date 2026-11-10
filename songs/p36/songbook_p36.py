@@ -39,7 +39,8 @@ def sec_range(s):
 secs = REC["seconds"]
 def t_at(bar): s = bar * 4 * 60 / 118; return f"{int(s // 60)}:{int(round(s % 60)):02d}"
 md = []
-md.append("---\ntitle: \"Dance Anyway\"\nsubtitle: \"Songbook and production notes\"\nauthor: \"Words and music: Jason Bryant\"\n---\n")
+V2T = " (version 2)" if REC.get("version") == 2 else ""
+md.append(f"---\ntitle: \"Dance Anyway{V2T}\"\nsubtitle: \"Songbook and production notes\"\nauthor: \"Words and music: Jason Bryant\"\n---\n")
 md.append("## At a glance\n")
 md.append("*Dance Anyway* is a four-on-the-floor disco-pop song for one female voice. It is two in the morning; the dishes are done, the microwave clock has blinked 12:00 since a power cut in July, a red-stamped bill sits on the counter, and the radio finds an old song. She dances anyway. Nothing gets fixed. The joy is chosen, not caused.\n")
 md.append("| | |\n|---|---|\n| Key | E♭ major throughout |\n| Tempo | ♩ = 118, straight sixteenths |\n| Length | 88 bars, 2:59 |\n| Voice | female, B♭3 to D5 (the D5 once, in the last chorus) |\n| Chords | one a bar, all root position: E♭, Fm, Cm, A♭, B♭, D♭ |\n")
@@ -99,6 +100,6 @@ md.append(f"- **Tempo and click:** ♩ = 118 throughout, no tempo changes; 2:59 
 md.append("- **Tracking order:** drums and bass to the click, then keys and guitar, then pad and synth, then the lead vocal. The guitar's muted sixteenths and the chord on each 'and' are one part for one player; track it in one pass.\n")
 md.append("- **Blend and panning:** kick and bass centre; keys left of centre, guitar right; pad wide; synth slightly right; lead vocal centre and on top (at least 3 dB over the band).\n")
 md.append("### Score and parts\n")
-md.append("- Lead sheet (voice, lyrics, chord symbols): *Dance Anyway - lead sheet.pdf*\n- Parts (synth, electric piano, guitar, pad, bass, drums): *Dance Anyway - parts.pdf*\n- Number chart: *Dance Anyway - Nashville chart.pdf*\n- Demo: *Dance Anyway - demo.mp3*, with General MIDI and GarageBand MIDI files\n")
+md.append(f"- Lead sheet (voice, lyrics, chord symbols): *Dance Anyway{V2T} - lead sheet.pdf*\n- Parts (synth, electric piano, guitar, pad, bass, drums): *Dance Anyway{V2T} - parts.pdf*\n- Number chart: *Dance Anyway{V2T} - Nashville chart.pdf*\n- Demo: *Dance Anyway{V2T} - demo.mp3*, with General MIDI and GarageBand MIDI files\n")
 open("/home/claude/p36/songbook.md", "w").write("\n".join(md))
 print("songbook.md written:", len(md), "lines")

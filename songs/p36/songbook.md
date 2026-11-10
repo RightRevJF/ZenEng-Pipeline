@@ -1,5 +1,5 @@
 ---
-title: "Dance Anyway"
+title: "Dance Anyway (version 2)"
 subtitle: "Songbook and production notes"
 author: "Words and music: Jason Bryant"
 ---
@@ -236,7 +236,7 @@ Chorus 1's tune with the new words, two changes: the one D5 in the song, on 'for
 
 ### Score and parts
 
-- Lead sheet (voice, lyrics, chord symbols): *Dance Anyway - lead sheet.pdf*
-- Parts (synth, electric piano, guitar, pad, bass, drums): *Dance Anyway - parts.pdf*
-- Number chart: *Dance Anyway - Nashville chart.pdf*
-- Demo: *Dance Anyway - demo.mp3*, with General MIDI and GarageBand MIDI files
+- Lead sheet (voice, lyrics, chord symbols): *Dance Anyway (version 2) - lead sheet.pdf*
+- Parts (synth, electric piano, guitar, pad, bass, drums): *Dance Anyway (version 2) - parts.pdf*
+- Number chart: *Dance Anyway (version 2) - Nashville chart.pdf*
+- Demo: *Dance Anyway (version 2) - demo.mp3*, with General MIDI and GarageBand MIDI files

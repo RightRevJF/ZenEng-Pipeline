@@ -5,7 +5,8 @@ import pickle, subprocess, os, sys
 import numpy as np, mido
 from scipy.io import wavfile
 REC = pickle.load(open("/home/claude/p36/song_record.pkl", "rb"))
-OUT = "/home/claude/p36/out"; os.makedirs(OUT, exist_ok=True); BASE = f"{OUT}/Dance Anyway - demo"
+OUT = "/home/claude/p36/out"; os.makedirs(OUT, exist_ok=True); SUF = " (version 2)" if REC.get("version") == 2 else ""
+BASE = f"{OUT}/Dance Anyway{SUF} - demo"
 T = 480; TW = T // 12
 BARS = REC["bars"]; PLAN = REC["plan"]; lead = REC["lead"]; NB = REC["nbars"]
 def tk(e): return int(round(e * TW))
@@ -29,7 +30,7 @@ PROG = dict(voc=71, drm=0, bas=38, key=4, gtr=28, pad=89, syn=81)
 PAN = dict(voc=64, drm=64, bas=64, key=44, gtr=86, pad=64, syn=72)
 REVERB = dict(voc=45, drm=22, bas=8, key=40, gtr=30, pad=70, syn=50)
 NAMES = dict(voc="Guide vocal (clarinet - reed fallback)", drm="Drums and clap", bas="Bass (synth)", key="Electric piano", gtr="Guitar (muted)",
-             pad="Pad", syn="Synth (hook)")
+             pad="Pad", syn="Synth (riff)" if REC.get("version") == 2 else "Synth (hook)")
 tracks = {}
 def note(key, t0, t1, p, v):
     v = max(1, min(127, int(v))); tr = NAMES[key]; ch = CH[key]

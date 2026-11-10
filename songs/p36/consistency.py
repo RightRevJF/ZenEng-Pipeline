@@ -37,7 +37,8 @@ chk("each chorus's top not below its verse's (133)", not M.register_bad(pick["no
 chk("the song ends on E-flat", sorted(lead, key=lambda n: n["on"])[-1]["midi"] % 12 == 3)
 chk("chords: one a bar, the plan's", [b["chord"] for b in REC["bars"]] == M.CHORD)
 # demo
-mf = mido.MidiFile(f"{OUT}/Dance Anyway - demo (General MIDI).mid")
+SUF = " (version 2)" if REC.get("version") == 2 else ""
+mf = mido.MidiFile(f"{OUT}/Dance Anyway{SUF} - demo (General MIDI).mid")
 voc = [t for t in mf.tracks if any(m.type == "track_name" and m.name.startswith("Guide vocal") for m in t)][0]
 vn = [m.note for m in voc if m.type == "note_on" and m.velocity > 0]
 chk("demo guide vocal = the record's notes", vn == ps)
@@ -45,13 +46,13 @@ chk("demo tempo 118", any(m.type == "set_tempo" and round(mido.tempo2bpm(m.tempo
 chk("demo stems: voice >= +3 dB over the band", DR["stems_db"] >= 3.0)
 E = {r["sec"]: r["energy_read"] for r in DR["energy"]}
 chk("energy arc: each chorus above its verse; the last chorus the top", E["Chorus 1"] > E["Verse 1"] and E["Chorus 2"] > E["Verse 2"] and E["Last Chorus"] == max(E.values()))
-gb = mido.MidiFile(f"{OUT}/Dance Anyway - demo (GarageBand).mid")
+gb = mido.MidiFile(f"{OUT}/Dance Anyway{SUF} - demo (GarageBand).mid")
 chk("GarageBand MIDI: same notes, ASCII names, no program changes", all(not any(m.type == "program_change" for m in t) for t in gb.tracks) and all(all(ord(ch) < 128 for ch in m.name) for t in gb.tracks for m in t if m.type == "track_name"))
 # engravings
 chk("lead sheet: MIDI readback matches", RB["voice"][0])
 for k, v in RB["parts"].items(): chk(f"parts, {k}: MIDI readback matches", v[0])
 chk("parts, drums: every hit written", RB["drums"][0] == RB["drums"][1])
-for f in ("Dance Anyway - lead sheet.ly", "Dance Anyway - parts.ly"):
+for f in (f"Dance Anyway{SUF} - lead sheet.ly", f"Dance Anyway{SUF} - parts.ly"):
     chk(f"credit line in {f}", "Words and music: Jason Bryant" in open(f"{OUT}/{f}").read())
 # the chart
 html = open(f"{OUT}/nashville.html").read()
