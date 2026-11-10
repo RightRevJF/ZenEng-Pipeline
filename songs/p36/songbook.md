@@ -66,7 +66,7 @@ Two halves of eight bars, the second singing the first again; the last line come
 | 21 | in my socks with somewhere to go, | E♭ – B♭ | F4 – A♭4 | C5 (with) |
 | 23 | singing all the wrong words louder than the right; | A♭ – A♭ | G4 – F4 | C5 (wrong) |
 | 25 | yeah, I dance anyway, | E♭ – B♭ | G4 – B♭4 | C5 (dance) |
-| 26 | to a song from before all this, | B♭ – Cm | G4 – F4 | C5 (from) |
+| 26 | to a song I haven't heard since I was twelve, | B♭ – Cm | G4 – D4 | C5 (I) |
 | 29 | and the only one watching | E♭ – B♭ | E♭4 – A♭4 | B♭4 (only) |
 | 31 | is a clock that's wrong, keeping time with me. | D♭ – E♭ | G4 – E♭4 | C5 (wrong) |
 
@@ -78,7 +78,7 @@ Verse 1's tune with the new words.
 |---|---|---|---|---|
 | 33 | There's a bill on the counter, stamped in red, | E♭ – E♭ | D4 – F4 | B♭4 (counter) |
 | 34 | a call from this morning still loud in my head; | E♭ – A♭ – E♭ | D4 – C4 | G4 (from) |
-| 37 | I know that red, it's the same as July's, | Cm – A♭ | C4 – A♭4 | B♭4 (the) |
+| 37 | it's the same red they sent me in July, | Cm – A♭ | B♭3 – A♭4 | B♭4 (me) |
 | 38 | when the lights went out and the clock forgot the time. | A♭ – E♭ – B♭ | C4 – B♭3 | G4 (went) |
 
 ### Pre 2 (bars 41–44)
@@ -88,7 +88,7 @@ Pre-chorus 1's tune with the new words.
 | Bar | Line | Chords | First – last note | Top note |
 |---|---|---|---|---|
 | 40 | That light's been blinking since the dark in July, | B♭ – A♭ – B♭ | B♭3 – D4 | C5 (dark) |
-| 42 | and it's counting me in again — | B♭ – Cm | E♭4 – G4 | A♭4 (me) |
+| 42 | and this time I don't wait for the one — | B♭ – Cm | E♭4 – G4 | A♭4 (wait) |
 
 ### Chorus 2 (bars 45–60)
 
@@ -101,20 +101,20 @@ Chorus 1 exactly.
 | 49 | in my socks with somewhere to go, | E♭ – B♭ | F4 – A♭4 | C5 (with) |
 | 51 | singing all the wrong words louder than the right; | A♭ – A♭ | G4 – F4 | C5 (wrong) |
 | 53 | yeah, I dance anyway, | E♭ – B♭ | G4 – B♭4 | C5 (dance) |
-| 54 | to a song from before all this, | B♭ – Cm | G4 – F4 | C5 (from) |
+| 54 | to a song I haven't heard since I was twelve, | B♭ – Cm | G4 – D4 | C5 (I) |
 | 57 | and the only one watching | E♭ – B♭ | E♭4 – A♭4 | B♭4 (only) |
 | 59 | is a clock that's wrong, keeping time with me. | D♭ – E♭ | G4 – E♭4 | C5 (wrong) |
 
 ### Bridge (bars 61–68)
 
-The floor drops. Lines 1 and 3 share a tune. Low (B♭3–A♭4) and close to speech; the last two bars build back.
+The floor drops and the voice changes gear: eighths and quarters, no sixteenths. 'Last July' is three quarter notes pushed off the beat; line 3 brings that figure back a third higher ('hear the neighbors'). Each line climbs a little higher than the last (D4–B♭4) and the last word, 'all', lifts to B♭4 and holds, one step under the chorus's top.
 
 | Bar | Line | Chords | First – last note | Top note |
 |---|---|---|---|---|
-| 60 | Last July I sat here on the floor, | E♭ – A♭ – Cm | C4 – E♭4 | G♭4 (here) |
-| 63 | the freezer dripping in the dark, a puddle by the door; | Fm – D♭ | D4 – E♭4 | A♭4 (a) |
-| 64 | I could hear the neighbors' radio through the wall, | D♭ – A♭ – Cm | E♭4 – E♭4 | G4 (radio) |
-| 67 | and I didn't move at all. | Fm – B♭ | F4 – C4 | A♭4 (didn't) |
+| 61 | Last July I sat here on the floor, | A♭ – Cm | E♭4 – E♭4 | F4 (July) |
+| 62 | the freezer dripping in the dark, a puddle by the door; | Cm – Fm – D♭ | E♭4 – F4 | A♭4 (the) |
+| 64 | I could hear the neighbors' radio through the wall, | D♭ – A♭ – Cm | E♭4 – G4 | A♭4 (the) |
+| 67 | and I didn't move at all. | Fm – B♭ | F4 – B♭4 | B♭4 (all) |
 
 ### Last Chorus (bars 69–84)
 
@@ -143,11 +143,11 @@ Chorus 1's tune with the new words, two changes: the one D5 in the song, on 'for
 
 **Pad.** Held triads in every pre-chorus and chorus, the bridge and the outro (out in the verses); in the last chorus voice it an octave higher (around G4).
 
-**Synth.** The hook, an octave over the voice: bars 3–4 (the intro's second half) and bars 86–87 (the outro). It is the voice's own 'So I dance anyway' figure.
+**Synth.** Its own riff, five notes on beats 3 and 4 of a bar (E♭5 A♭5 E♭5 F5 E♭5 over E♭): the root on beat 3, then up a fourth, back, up a step and back, all off the beat. It plays on beats 3–4 of every intro bar (bars 1–4), answers the voice in the second bar of every chorus line while she holds her last word (moved to each bar's chord), and plays in outro bars 85–87. It is not the vocal hook; it answers it.
 
 **Singer.** Range B♭3–D5; most of the song lives between D4 and C5. The verses are close to speech and full of sixteenths: keep them light and on the grid. Hold every line's last word through to the breath (the band leaves room). The one D5 is on 'for-EV-er' in the last chorus, bar 82, beat 2; every other note is C5 or lower, so save it. The last line sings the hook a third time; its last word, 'way', lands on bar 84, beat 2, and holds into the outro.
 
-**Arrangement.** Intro: keys alone for two bars, then drums, bass and the synth hook. Verse 1 light; verse 2 adds the guitar. Each pre-chorus builds; each chorus opens up. The bridge drops to kick, held bass, held keys and pad, and builds back for the last chorus, which is the fullest section (pad up an octave, a crash every four bars). Outro: the chorus groove with the synth hook, one final hit on E♭.
+**Arrangement.** Intro: keys and the synth riff for two bars, then drums and bass. Verse 1 light; verse 2 adds the guitar. Each pre-chorus builds; each chorus opens up. The bridge drops to kick, held bass, held keys and pad, and builds back for the last chorus, which is the fullest section (pad up an octave, a crash every four bars). Outro: the chorus groove with the synth riff, one final hit on E♭.
 
 ## Production notes
 
@@ -169,19 +169,19 @@ Chorus 1's tune with the new words, two changes: the one D5 in the song, on 'for
 21: in my socks with somewhere to go,  
 23: singing all the wrong words louder than the right;  
 25: yeah, I dance anyway,  
-26: to a song from before all this,  
+26: to a song I haven't heard since I was twelve,  
 29: and the only one watching  
 31: is a clock that's wrong, keeping time with me.  
 
 **Verse 2** (bar 33)  
 33: There's a bill on the counter, stamped in red,  
 34: a call from this morning still loud in my head;  
-37: I know that red, it's the same as July's,  
+37: it's the same red they sent me in July,  
 38: when the lights went out and the clock forgot the time.  
 
 **Pre 2** (bar 41)  
 40: That light's been blinking since the dark in July,  
-42: and it's counting me in again —  
+42: and this time I don't wait for the one —  
 
 **Chorus 2** (bar 45)  
 45: So I dance anyway,  
@@ -189,13 +189,13 @@ Chorus 1's tune with the new words, two changes: the one D5 in the song, on 'for
 49: in my socks with somewhere to go,  
 51: singing all the wrong words louder than the right;  
 53: yeah, I dance anyway,  
-54: to a song from before all this,  
+54: to a song I haven't heard since I was twelve,  
 57: and the only one watching  
 59: is a clock that's wrong, keeping time with me.  
 
 **Bridge** (bar 61)  
-60: Last July I sat here on the floor,  
-63: the freezer dripping in the dark, a puddle by the door;  
+61: Last July I sat here on the floor,  
+62: the freezer dripping in the dark, a puddle by the door;  
 64: I could hear the neighbors' radio through the wall,  
 67: and I didn't move at all.  
 

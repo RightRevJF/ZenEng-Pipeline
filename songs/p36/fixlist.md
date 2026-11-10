@@ -1,6 +1,6 @@
 # ZenEng fix list after v91
 
-*Song 36 onward · fixes 194–203 · with the test results the brief asked for, the rule-by-rule run, the deaths per gate and the tables gaps*
+*Song 36 onward · fixes 194–205 · with the test results the brief asked for, the rule-by-rule run, the deaths per gate and the tables gaps*
 
 v91's version row (v125) ends at fix 193, checked before numbering. This list starts at 194 and covers every song since v91. Each fix gives the problem, the evidence, the proposed fix and the check.
 
@@ -121,6 +121,26 @@ The test results follow the fixes, as Reports 1–3.
 **Fix:** Scope 192 to the classes whose bass is drawn with the tune (hymn, carol, concert solo). In the band classes print instead whether the tune doubles the leading note in the bass, which a root bass on V cannot do.
 
 **Check:** A band song's report lists 192 as not applicable.
+
+### 204. Nothing ranks the bridge
+
+**Problem:** Table B and the composite (Table C) read verse 1 and chorus 1 only. Every other section, the bridge included, only has to pass the gates. Nothing asks a bridge to change gear and leave a melodic shape of its own.
+
+**Evidence:** Song 36's bridge passed every gate and was never scored: lowest in the song (B♭3–A♭4), at the verses' sixteenth-packed density. The writer: "the melodic line itself is more functional than distinctive."
+
+**Fix:** Score every section against its job. For the bridge: a contrast term (fewer onsets or longer notes than the verse, a contour unrelated to verse and chorus by 27.31's test) and a memory term of its own, ranked beside the composite.
+
+**Check:** A rerun's bridge has longer notes than its verse, a contour unrelated to verse and chorus, and its score printed.
+
+### 205. Nothing writes an instrumental hook
+
+**Problem:** The arrangement quotes the vocal hook (27.21's quote kind); no module writes an instrumental hook of its own.
+
+**Evidence:** Song 36's synth played "so I dance anyway" an octave up in the intro and outro, and nothing else. The writer: the figure "appears relatively simple … needs one more memorable contour or rhythmic twist." Every sung line ends on a long hold (fix 201), leaving room for an answer.
+
+**Fix:** For the band classes, search a one- or two-bar instrumental hook (rhythm from the class's table, its own contour, chord tones on the beat, unrelated to the vocal hook) and place it in the intro, the holds after chorus lines, and the outro; gate it like a lead (164).
+
+**Check:** The riff is unrelated to the vocal hook, sounds only where the voice holds or rests, and appears in intro, choruses and outro.
 
 ## Order of work
 

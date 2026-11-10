@@ -13,8 +13,16 @@ import pickle, sys, re
 sys.argv = ["x", "1", "main"]; sys.path[:0] = ["/home/claude/p36", "/home/claude/carol", "/home/claude/pop"]
 import melody_p36 as M
 import engine_p36 as _E
-import pyphen, lyric as L
-R = pickle.load(open("/home/claude/p36/melody_main.pkl", "rb")); c = R["alive"][0]
+import pyphen, os
+V2 = os.environ.get("V2") == "1"
+if V2:                                            # version 2: lyric draft 5, the v2 bridge and the synth answer riff
+    import lyric_v2 as L
+    R2 = pickle.load(open("/home/claude/p36/melody_v2.pkl", "rb")); c = R2["pick"]
+    M.LINES = R2["lines2"]; M.WORDS_OF = dict(L.SECTIONS)
+    R = dict(order_fp=R2["order"], survivors=R2["survivors"], made=R2["built"], deaths=R2["deaths"], rerun=R2["rerun"])
+else:
+    import lyric as L
+    R = pickle.load(open("/home/claude/p36/melody_main.pkl", "rb")); c = R["alive"][0]
 BAR = M.BAR; NB = M.NBARS; QB = 118
 _PY = pyphen.Pyphen(lang="en_US")
 HFIX = {"a.m.,": ["a.", "m.,"], "microwave's": ["mi", "cro", "wave's"], "radio": ["ra", "di", "o"], "somewhere": ["some", "where"], "anyway,": ["an", "y", "way,"],
@@ -129,7 +137,19 @@ def put_hook(at_bar):
     for j, n in enumerate(hook):
         d = n["dur"] if j < len(hook) - 1 else 24
         ev(synth, at_bar * BAR + (n["on"] - h0), d, n["p"] + 12, 88, "hook")
-put_hook(2); put_hook(M.BAR0["Outro"] + 1)
+if not V2:
+    put_hook(2); put_hook(M.BAR0["Outro"] + 1)
+else:                                             # 205: the riff answers each chorus line in its hold; four times in the intro, three in the outro
+    import melody_v2_p36 as V
+    _, rons, rsteps = R2["riff"][:3]
+    def put_riff(bar):
+        ch = M.CHORD[bar]; ps = V.riff_pitches(rsteps, ch)
+        for j, (t, p) in enumerate(zip(rons, ps)):
+            nxt = rons[j + 1] if j + 1 < len(rons) else 24
+            ev(synth, bar * BAR + 24 + t, max(3, nxt - t), p, 90, "riff")
+    for bar in range(0, 4): put_riff(bar)
+    for sl in R2["riff_slots"]: put_riff(sl["bar"])
+    for bar in range(M.BAR0["Outro"], M.BAR0["Outro"] + 3): put_riff(bar)
 synth = [s for s in synth if s["on"] < (NB - 1) * BAR]
 for lst in (drums, bass, keys, gtr, pad, synth): lst.sort(key=lambda e: (e["on"], e["p"][0]))
 plan = [(nm, nb, M.BAR0[nm], "4/4") for nm, _, nb in M.FORM]
@@ -138,6 +158,7 @@ rec = dict(title=L.TITLE, nbars=NB, bars=bars, plan=plan, lead=lead, drums=drums
            slot="twelfth of a beat", bar=BAR, qbpm=QB, seconds=secs, tw_sec=60 / QB / 12, fp=c["fp"], order_fp=R["order_fp"], survivors=R["survivors"],
            built=R["made"], deaths=dict(R["deaths"]), meas={k: (float(v) if isinstance(v, (int, float)) else v) for k, v in c["meas"].items()},
            plans=c["meta"]["plans"], shifts={f"{a} {b + 1}": v for (a, b), v in c["meta"]["shifts"].items()}, hand_edits=[], rerun=R["rerun"], text=TEXT)
-pickle.dump(rec, open("/home/claude/p36/song_record.pkl", "wb"))
+rec["version"] = 2 if V2 else 1
+pickle.dump(rec, open("/home/claude/p36/song_record_v2.pkl" if V2 else "/home/claude/p36/song_record.pkl", "wb"))
 print(NB, "bars,", f"{secs:.0f} s ({int(secs // 60)}:{int(round(secs % 60)):02d});", len(lead), "sung;", len(drums), "drums;", len(bass), "bass;",
       len(keys), "keys;", len(gtr), "guitar;", len(pad), "pad;", len(synth), "synth; fp", rec["fp"])

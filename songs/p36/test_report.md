@@ -289,8 +289,37 @@ Table B deaths in the main run: surprisal (Table B) 13, cmp (Table B) 4, spectra
 
 ## Consistency
 
-38 of 38 checks pass: the record against the frozen pick; range, summit, chorus 2 and the register clause; the demo's notes, tempo, stems and energy arc; the GarageBand file; every staff's MIDI readback; the credit lines; the chart's numbers; the songbook's 40 line rows, its references and its freedom from engine terms; and the report's figures against the readings.
+43 of 43 checks pass on version 2's record (five checks added for version 2: the kept sections, the bridge's grid and close, the riff against the held notes, and the version 2 figures in this report): the record against the frozen pick; range, summit, chorus 2 and the register clause; the demo's notes, tempo, stems and energy arc; the GarageBand file; every staff's MIDI readback; the credit lines; the chart's numbers; the songbook's 40 line rows, its references and its freedom from engine terms; and the report's figures against the readings.
 
 ## The blind pick
 
 Offered after delivery as A, B and C (the three quotable-line slots, shuffled). The writer chose **A**, the middle slot (top quartile under both regimes): "by the green of a clock stuck on twelve." Tally after song 36: Annotated top 9, Remembered top 7, Middle 7, Refrain 1 (24 songs).
+
+## Version 2 (lyric draft 5, a new bridge, the synth riff)
+
+The writer heard version 1 and gave four notes: the chorus line 'to a song from before all this' was the least specific; the bridge melody was functional, not distinctive; the synth hook too simple; a few lines read written, not spoken. All four were agreed, and two became findings 204 (nothing ranks the bridge) and 205 (nothing writes an instrumental hook), added to the fix list.
+
+**The lyric (draft 5, locked 'A').** Three lines, each chosen from three options: chorus line 6 'to a song I haven't heard since I was twelve' (choruses 1 and 2); verse 2 line 3 'it's the same red they sent me in July'; pre-chorus 2 line 2 'and this time I don't wait for the one'.
+
+**What was kept.** Version 1's verses, pre-choruses and choruses, note for note; the three new lines mapped onto their tunes as version 1 mapped its words (chorus line 6 onto chorus line 6's notes, verse 2 line 3 onto verse 1 line 3's, pre-chorus 2 line 2 onto pre-chorus 1 line 2's).
+
+**The bridge, searched again against a bridge's job (the engine's answer to 204).** An eighth-note grid, no sixteenths; the class's rhythm table tilted toward quarters; each line's last stress late in its second bar; line 3 returning line 1's figure a third higher; the walk's chord-tone weight on the beat raised (199); the climb favoured, ending on a held B♭4 under the chorus's C5. Ranked on contrast (no unit related to a verse or chorus unit; distance in contour), chord tones, memory against chorus 1, surprise and the climb. N 600, seed 20261472, PYTHONHASHSEED 0, code 895f42da56f9: 70 survivors, order 2003a143b275, reproduced exactly on a second run. Deaths: bridge: no build 330; bridge: a sixteenth 117; returns related (181) 38; monotony (166) 27; leaps: tritone or past an octave 10; bridge: related to a verse or chorus unit (204) 8.
+
+**The bridge pick** (318596972c11, score 0.713): gaps between notes a sixteenth 0% of the time (version 1's bridge 54%), an eighth 82%, a quarter or longer 18% (version 1 13%); chord tones 56%; no unit related to any verse or chorus unit (the closest contour correlation 0.40); memory against chorus 1 0.67; surprise 0.88; each line's top at or above the last; range D4–B♭4. At 8 bars it reads as a period (line 3 against line 1: 0.75, 0.71). 'Last July' is three quarter notes, each pushed off the beat; line 3 brings that figure back a third higher. The onsets a bar cannot fall below the verse's in a two-bar line (5.38 against 5.75): the bridge's 42 syllables fix them, which is finding 201 again.
+
+**The synth riff (the engine's answer to 205).** 2074 two-beat figures drawn on sixteenths (3–6 notes, scale steps from the bar's root, above the voice); 69 passed (rhythm inside the pop band, nothing a semitone from the voice's held note in any of the 24 chorus slots, nothing under G4). Ranked on chord tones on the beat, notes off the beat, a leap, a turn, four or five notes, no repeated note, and not related to the vocal hook. The pick: onsets (0, 6, 15, 18, 21) in twelfths from beat 3, steps (0, 3, 0, 1, 0) (over E♭: E♭5 A♭5 E♭5 F5 E♭5); rhythm 2.26 bits; chord tones on the beat 100%; 80% of its notes off the beat; not related to the hook. Placed on beats 3–4 of intro bars 1–4, of the second bar of every chorus line (24 times, moved to each bar's chord, while the voice holds), and of outro bars 85–87: 31 statements.
+
+**Version 2 against version 1:**
+
+| Reading | Version 1 | Version 2 |
+|---|---|---|
+| pitch surprise (bits a note) | 3.08 | 3.02 |
+| repeated notes / steps / past a fifth | 17.0% / 49.7% / 4.7% | 18.9% / 49.6% / 4.4% |
+| exact bar repetition | 51% | 47% |
+| stock design at 8 / 16 bars | 56% / 100% | 56% / 100% |
+| key word on a chord tone | 50% | 52% |
+| all notes on chord tones | 40% | 41% |
+| rhythm (bits) / pushed notes | 2.35 / 8.6% | 2.37 / 9.0% |
+| composite (verse 1 and chorus 1) | 0.854 | 0.855 |
+
+Every named return is still related (the chorus's unit 3 against unit 1 now 0.88, 0.94 with the new line 6). The demo, the lead sheet and the parts were rebuilt from the version 2 record; every staff reads back, and the consistency checks below cover version 2.

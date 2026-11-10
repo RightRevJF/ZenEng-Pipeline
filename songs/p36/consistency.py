@@ -4,12 +4,24 @@ sys.argv = ["x", "1", "main"]; sys.path[:0] = ["/home/claude/p36", "/home/claude
 import melody_p36 as M
 REC = pickle.load(open("/home/claude/p36/song_record.pkl", "rb")); OUT = "/home/claude/p36/out"
 RD = pickle.load(open("/home/claude/p36/readings.pkl", "rb")); MR = pickle.load(open("/home/claude/p36/melody_main.pkl", "rb"))
+VER2 = REC.get("version") == 2
+if VER2:
+    R2 = pickle.load(open("/home/claude/p36/melody_v2.pkl", "rb")); RD2 = pickle.load(open("/home/claude/p36/readings_v2.pkl", "rb"))
 RB = pickle.load(open(f"{OUT}/readback.pkl", "rb")); DR = pickle.load(open(f"{OUT}/demo_report.pkl", "rb"))
 SB = open("/home/claude/p36/songbook.md").read(); TR = open("/home/claude/p36/test_report.md").read() if len(sys.argv) else ""
 lead = REC["lead"]; BAR = 48; ok = []
 def chk(name, cond): ok.append((name, bool(cond))); print(("PASS " if cond else "FAIL ") + name)
-pick = MR["alive"][0]
-chk("record from the frozen pick (#1 of the ranked survivors)", REC["fp"] == pick["fp"] == RD["pick_fp"])
+pick = R2["pick"] if VER2 else MR["alive"][0]
+chk("record from the frozen pick (#1 of the ranked survivors)", REC["fp"] == pick["fp"] == (RD2["fp"] if VER2 else RD["pick_fp"]))
+if VER2:
+    chk("v2: every section but the bridge and the three changed lines = version 1's", [(n["on"], n["p"]) for n in pick["notes"] if n["sec"] != "Bridge" and n["line"] not in ("Chorus 1:5", "Chorus 2:5", "Verse 2:2", "Pre 2:1")] == [(n["on"], n["p"]) for n in MR["alive"][0]["notes"] if n["sec"] != "Bridge" and n["line"] not in ("Chorus 1:5", "Chorus 2:5", "Verse 2:2", "Pre 2:1")])
+    br = [n for n in lead if n["sec"] == "Bridge"]
+    chk("v2: the bridge has no sixteenth gap and ends on a held B-flat 4", all(b["on"] - a["on"] >= 6 for a, b in zip(br, br[1:]) if a["line"] == b["line"]) and br[-1]["midi"] == 70)
+    syn = REC["synth"]; held_bad = 0
+    for s_ in syn:
+        h = [n["midi"] for n in lead if n["on"] < s_["on"] + s_["dur"] and n["on"] + n["dur"] > s_["on"]]
+        held_bad += any(abs((s_["p"][0] - x) % 12) in (1, 11) for x in h)
+    chk("v2: the synth riff (31 statements) never a semitone from the sung note", len(syn) == 5 * 31 and held_bad == 0)
 chk("record's sung notes = the pick's notes", [(n["on"], n["dur"], n["midi"]) for n in lead] == [(n["on"], n["dur"], n["p"]) for n in pick["notes"]])
 chk("no hand edits", REC["hand_edits"] == [])
 chk("88 bars, 2:59", REC["nbars"] == 88 and round(REC["seconds"]) == 179)
@@ -55,6 +67,7 @@ chk("chart credit line", "Words and music: Jason Bryant" in html)
 rows = re.findall(r"^\| (\d+) \| (.+?) \| (.+?) \| (\S+) – (\S+) \| (\S+) \((.*?)\) \|$", SB, re.M)
 bad = 0
 import lyric as L
+if VER2: import lyric_v2 as L
 for bar, text, chords, first, last, hi, hw in rows:
     sec = next(s for s, ls in L.SECTIONS if any(t == text for _, t in ls) and any(n["sec"] == s and n["on"] // BAR + 1 == int(bar) and n["line"] == [t for _, t in ls].index(text) for n in lead))
     i = [t for _, t in dict(L.SECTIONS)[sec]].index(text); ns = [n for n in lead if n["sec"] == sec and n["line"] == i]
@@ -67,6 +80,9 @@ chk("songbook: no engine terms", not any(w in SB.lower() for w in ENGINE))
 chk("songbook: three references", len(re.findall(r"^- .+\(\d{4}\), \d+ BPM", SB, re.M)) == 3)
 chk("songbook: the D5 bar is the record's", "bar 82" in SB)
 # the report against the readings
+if TR and VER2:
+    chk("report v2: the song's pitch surprise", f"{RD2['pitch']:.2f}" in TR)
+    chk("report v2: the bridge search's survivors and order", str(RD2["survivors"]) in TR and RD2["order"] in TR)
 if TR:
     chk("report: the pick's pitch surprise", f"{RD['pick']['pitch_bits']:.2f}" in TR)
     chk("report: the control's pitch surprise", f"{RD['ctl']['pitch_bits']:.2f}" in TR)

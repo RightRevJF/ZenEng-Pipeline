@@ -107,7 +107,7 @@ for n in sorted(lead, key=lambda n: n["on"]):
     if not n["first"]: continue
     w = n["text"].replace("'", "’"); q = '"' + esc(w) + '"' if re.search(r"[’?!,.;:\"—]", w) or w in ("_",) else w
     LYR.append(q + (" --" if n["hyph"] else ""))
-VMARKS = {"Intro": "synth plays the hook", "Outro": "synth: the hook"}
+VMARKS = {"Intro": "keys and synth riff", "Outro": "synth riff"} if REC.get("version") == 2 else {"Intro": "synth plays the hook", "Outro": "synth: the hook"}
 VBODY, VREST = body(VOX, VMARKS)
 HEAD = r'''\version "2.24.3"
 #(set-global-staff-size %s)
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     print("lead sheet:", [w for w in warns][:4], len(warns))
     ok = readback("voice", VOX, VWANT); print("  readback voice:", "matches" if ok[0] else "MISMATCH", ok[1:])
     # ---- the parts ----
-    parts_src = [("syn", "Synth (hook)", "synth", "", {"Intro": "the hook, bars 3–4", "Outro": "the hook"}),
+    parts_src = [("syn", "Synth (riff)" if REC.get("version") == 2 else "Synth (hook)", "synth", "", {"Intro": "the riff, beats 3–4", "Chorus 1": "answer each line (beats 3–4 of its second bar)", "Outro": "the riff"} if REC.get("version") == 2 else {"Intro": "the hook, bars 3–4", "Outro": "the hook"}),
                  ("key", "Electric piano", "keys", "", {"Verse 1": "stabs on the 'and' of 2 and 4", "Chorus 1": "stabs on every 'and'", "Bridge": "hold, then stabs from bar 67"}),
                  ("gtr", "Guitar", "gtr", '\\clef "treble_8"', {"Pre 1": "muted sixteenths, the chord on each 'and'", "Verse 1": "tacet", "Verse 2": "in", "Bridge": "tacet to bar 67"}),
                  ("pad", "Pad", "pad", "", {"Pre 1": "in", "Last Chorus": "an octave up"}),

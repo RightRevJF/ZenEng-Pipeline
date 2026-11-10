@@ -11,7 +11,6 @@ def pos(t):
 def line_rows(sec):
     out = []
     for i, (role, text) in enumerate([x for s, x in [(s, x) for s, xs in [(s, REC["text"][s]) for s in REC["text"]] for x in []]]): pass
-    import lyric as L
     words = dict(L.SECTIONS)[sec]
     for i, (role, text) in enumerate(words):
         ns = [n for n in lead if n["sec"] == sec and n["line"] == i]
@@ -22,7 +21,8 @@ def line_rows(sec):
         out.append(dict(i=i, text=text, start=ns[0]["on"], bar=b0 + 1, chords=chords, first=nm(ns[0]["midi"]), last=nm(ns[-1]["midi"]), hi=nm(hi["midi"]), hi_word=word, lo=nm(min(n["midi"] for n in ns))))
     return out
 import sys; sys.path.insert(0, "/home/claude/p36")
-import lyric as L
+if REC.get("version") == 2: import lyric_v2 as L
+else: import lyric as L
 def words_of(sec):
     out = []
     for toks in REC["text"][sec]:
@@ -58,7 +58,7 @@ for s in ("Verse 1", "Pre 1", "Chorus 1", "Verse 2", "Pre 2", "Chorus 2", "Bridg
             "Pre 1": "The voice climbs into the chorus's register (" + lo + "–" + hi + "); the last bar is the snare build.",
             "Chorus 1": "Two halves of eight bars, the second singing the first again; the last line comes home to E♭. The hook, 'So I dance anyway', jumps a sixth up on 'dance'.",
             "Verse 2": "Verse 1's tune with the new words.", "Pre 2": "Pre-chorus 1's tune with the new words.", "Chorus 2": "Chorus 1 exactly.",
-            "Bridge": "The floor drops. Lines 1 and 3 share a tune. Low (" + lo + "–" + hi + ") and close to speech; the last two bars build back.",
+            "Bridge": "The floor drops and the voice changes gear: eighths and quarters, no sixteenths. 'Last July' is three quarter notes pushed off the beat; line 3 brings that figure back a third higher ('hear the neighbors'). Each line climbs a little higher than the last (" + lo + "–" + hi + ") and the last word, 'all', lifts to B♭4 and holds, one step under the chorus's top.",
             "Last Chorus": "Chorus 1's tune with the new words, two changes: the one D5 in the song, on 'for-EV-er' (bar 82), and the last line sings the hook a third time and comes home to E♭."}[s]
     md.append(note + "\n")
     md.append("| Bar | Line | Chords | First – last note | Top note |\n|---|---|---|---|---|")
@@ -74,11 +74,12 @@ md.append("**Bass.** Root on every beat, octave on every 'and' in the choruses a
 md.append("**Electric piano.** Close triads around middle C. Verses: stabs on the 'and' of 2 and 4. Pre-choruses and choruses: stabs on every 'and'. Bridge bars 61–66: hold each chord for the bar.\n")
 md.append("**Guitar.** Muted sixteenths with the chord on the 'and' of each beat (top three strings, triad around E4). In from pre-chorus 1, out for verse 1, in for verse 2, out for bridge bars 61–66.\n")
 md.append("**Pad.** Held triads in every pre-chorus and chorus, the bridge and the outro (out in the verses); in the last chorus voice it an octave higher (around G4).\n")
-md.append(f"**Synth.** The hook, an octave over the voice: bars 3–4 (the intro's second half) and bars 86–87 (the outro). It is the voice's own 'So I dance anyway' figure.\n")
+rf = [s_ for s_ in REC["synth"] if s_["on"] < 48]
+md.append("**Synth.** Its own riff, five notes on beats 3 and 4 of a bar (" + " ".join(nm(s_["p"][0]) for s_ in rf) + " over E♭): the root on beat 3, then up a fourth, back, up a step and back, all off the beat. It plays on beats 3–4 of every intro bar (bars 1–4), answers the voice in the second bar of every chorus line while she holds her last word (moved to each bar's chord), and plays in outro bars 85–87. It is not the vocal hook; it answers it.\n")
 last = sorted(lead, key=lambda n: n["on"])[-1]; lw = [n for n in lead if n["sec"] == last["sec"] and n["line"] == last["line"] and n["first"]][-1]
 LAND = f"its last word, '{lw['text'].strip('.')}', lands on {pos(lw['on'])}"
 md.append(f"**Singer.** Range B♭3–D5; most of the song lives between D4 and C5. The verses are close to speech and full of sixteenths: keep them light and on the grid. Hold every line's last word through to the breath (the band leaves room). The one D5 is on 'for-EV-er' in the last chorus, {pos(summit['on'])}; every other note is C5 or lower, so save it. The last line sings the hook a third time; {LAND}, and holds into the outro.\n")
-md.append("**Arrangement.** Intro: keys alone for two bars, then drums, bass and the synth hook. Verse 1 light; verse 2 adds the guitar. Each pre-chorus builds; each chorus opens up. The bridge drops to kick, held bass, held keys and pad, and builds back for the last chorus, which is the fullest section (pad up an octave, a crash every four bars). Outro: the chorus groove with the synth hook, one final hit on E♭.\n")
+md.append("**Arrangement.** Intro: keys and the synth riff for two bars, then drums and bass. Verse 1 light; verse 2 adds the guitar. Each pre-chorus builds; each chorus opens up. The bridge drops to kick, held bass, held keys and pad, and builds back for the last chorus, which is the fullest section (pad up an octave, a crash every four bars). Outro: the chorus groove with the synth riff, one final hit on E♭.\n")
 md.append("## Production notes\n")
 md.append("### Lyric sheet\n")
 for s in ("Verse 1", "Pre 1", "Chorus 1", "Verse 2", "Pre 2", "Chorus 2", "Bridge", "Last Chorus"):

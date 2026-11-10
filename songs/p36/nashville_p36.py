@@ -3,13 +3,13 @@ import asyncio, pickle
 REC = pickle.load(open("/home/claude/p36/song_record.pkl", "rb"))
 NUM = {"I": "1", "V": "5", "vi": "6m", "IV": "4", "bVII": "♭7", "ii": "2m"}
 BARS = REC["bars"]
-FEEL = {"Intro": "keys alone; drums and bass in at bar 3; the synth plays the hook, bars 3–4",
+FEEL = {"Intro": "keys and the synth riff (beats 3–4 of each bar); drums and bass in at bar 3",
         "Verse 1": "four on the floor, eighth hats, clap 2 and 4; bass root and octave in quarters; keys stab the 'and' of 2 and 4; no guitar",
         "Pre 1": "pad in; guitar in (muted sixteenths); snare build in bar 16",
-        "Chorus 1": "crash; sixteenth hats, open on every 'and'; disco octaves in eighths; keys stab every 'and'",
+        "Chorus 1": "crash; sixteenth hats, open on every 'and'; disco octaves in eighths; keys stab every 'and'; the synth riff answers each line (beats 3–4 of every second bar)",
         "Verse 2": "as verse 1, with the guitar", "Pre 2": "as pre-chorus 1; build in bar 44", "Chorus 2": "as chorus 1",
         "Bridge": "the floor drops: kick on 1 and 3, bass and keys held, through bar 66; hats from bar 65; quarters and a snare build in bars 67–68",
-        "Last Chorus": "full; pad an octave up; crash every 4 bars", "Outro": "the chorus groove; the synth plays the hook; one hit on 1 in bar 88"}
+        "Last Chorus": "full; pad an octave up; crash every 4 bars", "Outro": "the chorus groove; the synth riff in bars 85–87; one hit on 1 in bar 88"}
 def rows(cells, w=8): return "".join("<tr>" + "".join(f"<td>{c}</td>" for c in cells[i:i + w]) + "</tr>" for i in range(0, len(cells), w))
 body = ""
 for s, nb, b0, met in REC["plan"]:
