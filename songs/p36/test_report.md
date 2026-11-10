@@ -1,5 +1,5 @@
 ---
-title: "Dance Anyway — Test report (ZenEng v91), with version 2"
+title: "Dance Anyway — Test report (ZenEng v91), with versions 2 and 3 (v95)"
 author: "Words and music: Jason Bryant"
 date: "10 November 2026"
 ---
@@ -323,3 +323,128 @@ The writer heard version 1 and gave four notes: the chorus line 'to a song from 
 | composite (verse 1 and chorus 1) | 0.854 | 0.855 |
 
 Every named return is still related (the chorus's unit 3 against unit 1 now 0.88, 0.94 with the new line 6). The demo, the lead sheet and the parts were rebuilt from the version 2 record; every staff reads back, and the consistency checks below cover version 2.
+
+## Version 3 (ZenEng v95: the music rebuilt on the locked lyric)
+
+**The brief.** Rebuild song 36's music under ZenEng v95 on lyric draft 5 and the same form plan; port 201, 199, 206, 205, 208, 209, 194–198, 200, 202, 203, 195 and 210–211 before the search, in that order; ask the bridge and summit questions; run a control (same seed and N, 199, 201, 205 and 206 off); report the readings; push the code with the seed; number findings from 212. The paper was not edited.
+
+**The spec and the tables.** ZenEng_v95.docx, version row v129, last fix 211 (checked before numbering). The tables artifact still holds the same two files with the same hashes; read, not refitted (tables 561355b1110d1d8e…).
+
+**201 first: the form.** About five syllables a bar at ♩ = 118; leading unstressed syllables go to the pickup; more than ten counted syllables take a third bar; repeated sections and returning lines share spans. Verse lines 2 and 4, chorus lines 4 and 8 and bridge line 2 take three bars: verse 10, chorus 18, bridge 9. 99 bars, 3:21 (version 1: 88 bars, 2:59). Shown to the writer before the search.
+
+**Intake (the two questions of step 5).** The bridge: A, lifted above the verse (kept 68%). The summit: A, D5 on the last stressed syllable of chorus line 6 in every chorus ('twelve'; 'July' in the last), first at about 29% of the song (chart pop's median 31%).
+
+**How each port was built.**
+
+| Fix | In version 3 |
+|---|---|
+| 201 | Each line's rhythm drawn over its own bars on an eighth grid; the last stress on the last bar's downbeat (or beats 3, 2 of it, or beat 3 of the bar before); a section's last line and the summit's line land in their last bar. |
+| 199 | One draw over every candidate pitch: a category's weight tilted by the chord it offers (with the chord term over without), chord tone or not weighted 2.5 : 0.38 on the beat and 5.0 : 1.0 off it, calibrated so the builds land at the chart's shares. (182's category-first draw could not move the share: finding 214.) |
+| 206 | No sixteenths (onsets on eighths); a line's last note held a half or a dotted quarter (shorter only where the next line comes sooner), then an eighth's breath. |
+| 205 | Plans AABC and AAAB at about one section in five where the first two lines are within three syllables and share a span (here: the chorus head and the pre-chorus); if no section opens AA, the pre-chorus does. |
+| 208 | The bridge sung from a register centred above the verse's (lifted, the writer's A); a gate: its opening line related to neither the verse's nor the chorus's opening line (27.31 read on lines); a gate: its median above the verse's; its pace printed only. |
+| 209 | A one-bar synth figure searched against the pick (below). |
+| 194 | The stress reading from version 1 (191 and 194). |
+| 195 | The 181 gate reads lines: a unit runs from its line's first onset to the next line's, onsets and contour counted from the line's own downbeat, the last note left out of the contour (finding 219). 27.31's bar windows kept for the repetition and design readings. |
+| 196 | Pop's monotony floor is the run clause; the two-pitch share printed. |
+| 197 | After a leap past a fifth, the walk steps or skips back. |
+| 198 | The draw aimed (repeat ×0.95, step ×1.35, third ×0.8, larger ×1.6) so the builds' medians meet Table CG. |
+| 200 | ♭3 and ♭7 only where no chord tone lies a semitone away and not a tritone from the root; and, added after the first picks, no tone of any kind a tritone from its chord's root (finding 215). |
+| 202 | The summit placed by the writer's answer: three D5s, each on a beat over a chord holding D (line 6's chord moved to B♭; finding 216). |
+| 203 | 192 not applicable: a band song (triads over a root bass). |
+| 210 | The distance from the centre printed beside 0.086–0.351, partial (finding 221). |
+| 211 | The composite orders the survivors as the rank of record and claims nothing more. |
+
+**The search.** N 500, seed 20261473, PYTHONHASHSEED 0, code 9a1169b02f02, Python 3.13.18, numpy 2.5.3. 55 survivors of 500 (11.0%); frozen order 0256c9241d20, reproduced exactly on a second run. Pick 374966ffc8d9, first by the rank of record (composite 0.862); no hand edits. Plans: verse ABAB, pre-chorus AA, chorus A B C D A' B' C' D', bridge ABCD.
+
+**The control.** Same seed and N, with 199, 201, 205 and 206 off (the 88-bar form with two-bar lines, a sixteenth grid, free line ends, version 1's chord term and plan draws); everything else on, the same gates and readings. 130 survivors, order bb074ba2bb43; its first pick 9459945b6685 (composite 0.879).
+
+**Hand inspection of the pick, and what it changed.** The pick was printed syllable by syllable before the record was built. Three faults were found in earlier picks of the same code and fixed in the construction, then the run repeated: (1) the summit's D5 fell off the beat over A♭, a tritone from the root, held a half (finding 216); (2) copied notes and held slurs a tritone from their chord's root, D over A♭ and G over D♭ (finding 215); (3) the chorus's last line and the summit line could end on an off-beat; those lines now take the cadence rhythm. The last chorus's last line has a bar more than the hook it returns; the hook keeps its place in its own bars a bar later, with D♭ under 'I'm still here' and E♭ under the hook (finding 217). The frozen pick needed no hand edit.
+
+### Version 3 readings (step 7)
+
+Builds are every song the generator finished (5th, median and 95th percentiles), before the gates.
+
+| Reading | Pick | Builds 5th · median · 95th | Control's pick | Builds of the control (median) | Kept / chart | Version 1 |
+|---|---|---|---|---|---|---|
+| Chord tones on the beat | 79% | 62% · 71% · 81% | 62% | 63% | chart 69% (pop 72%) | — |
+| Chord tones off the beat | 52% | 53% · 64% · 73% | 43% | 45% | chart 62% | — |
+| Sixteenth-note gaps, share | 0% | 0% · 0% · 0% | 29% | 29% | pop 2% | 38% |
+| Longest note over the median note (median of 8-bar windows) | 4 | 4 · 4 · 4 | 7.75 | 9.25 | kept 3 (chart 2–4) | 9 |
+| Different note lengths per 8 bars (median of windows) | 4 | 3 · 4 · 4 | 7 | 7.5 | kept 4 (chart 3–5) | 7 |
+| Opening unit repeated at once, share of windows | 0% | 0% · 0% · 38% | 0% | 0% | kept 17–28% | 1% |
+| Stock designs, 8 bars | 0% | 0% · 0% · 47% | 33% | 33% | — | — |
+| Stock designs, 16 bars | 0% | 0% · 0% · 0% | 100% | 100% | — | — |
+| Pitch surprise (bits a note) | 2.82 | 2.65 · 2.85 · 3.03 | 2.99 | 2.84 | chart 2.53–2.74–3.03 | — |
+| Repeated notes, share of intervals | 25% | 22% · 28% · 35% | 24% | 22% | pop 27.6% | 23.7% |
+| Steps, share of intervals | 42% | 33% · 41% · 50% | 52% | 53% | pop 42.6% | 47.3% |
+| Leaps past a fifth, share of intervals | 3% | 1% · 3% · 7% | 4% | 3% | pop 3.0% | 1.3% |
+| Exact bar repetition | 53% | 52% · 57% · 62% | 53% | 53% | — | — |
+| Spread of notes bar to bar (sd of onsets a bar) | 2.23 | 1.48 · 1.87 · 2.28 | 2.60 | 2.37 | chart 1.20–1.62–2.12 | — |
+| Bridge median over the verse's (semitones) | 2.00 | 0.00 · 3.00 · 7.00 | 5.00 | 2.50 | kept +2 (68% above) | — |
+| Bridge onsets a bar over the verse's | 1.02 | 0.96 · 1.04 · 1.09 | 0.88 | 0.92 | kept 0.97 (0.78–1.21) | — |
+| Distance from the centre (partial: 11 of 46 measures) | 0.031 | 0.012 · 0.052 · 0.137 | 0.441 | 0.518 | chart 0.176 (0.086–0.351) | — |
+| Bridge opening related to (27.31 read on lines) | neither (onsets 0.73/0.36, contour -0.61/-0.66) | related to either in 12% of builds | neither | 0% | kept: neither 94% | — |
+
+Distance from the centre (210): the pick 0.031, **TOO CENTRAL** beside the chart songs' 0.086–0.351; the control's first pick 0.441, **FAR**. Computed on the 11 numeric measures of Table CU only (the 46 are not on file), so neither figure is the paper's distance (finding 221).
+
+The rank of record (211): the composite ordered the survivors so the run has one reproducible first pick; it claims nothing more. It scored the control's first pick 0.879 against the pick's 0.862.
+
+### Deaths per gate, with the control
+
+| Cause | Run: deaths | Run: would fail | Control: deaths | Control: would fail |
+|---|---|---|---|---|
+| join: no held end and breath before the line (206) | 234 | — | 0 | — |
+| align: the words do not fit the returning unit | 69 | — | 0 | — |
+| summit placed (the writer's A) | 29 | 56 | 115 | 151 |
+| rhythm: no placement | 8 | — | 0 | — |
+| leaps: tritone or past an octave | 24 | 24 | 104 | 104 |
+| monotony run (166/196) | 61 | 65 | 31 | 41 |
+| bridge opening unrelated (208) | 9 | 22 | 0 | 2 |
+| cmp (Table B) | 1 | — | 0 | — |
+| spectral (Table B) | 3 | — | 3 | — |
+| bridge above the verse (208) | 3 | 17 | 25 | 78 |
+| returns related, on lines (181/195) | 4 | 9 | 14 | 36 |
+| align: no room before the hook | 0 | — | 78 | — |
+| register (133) | 0 | — | 0 | — |
+| pitch band (153/182) | 0 | — | 0 | — |
+| rhythm band (163) | 0 | — | 0 | — |
+| pushed notes (159) | 0 | — | 0 | — |
+| density (159) | 0 | — | 0 | — |
+| sequence legs (148) | 0 | — | 0 | — |
+| key word on a chord tone (134) | 0 | — | 0 | 2 |
+| note lengths <= 5 per 8 bars (206) | 0 | — | 0 | 422 |
+| **Survivors** | **55 of 500** | | **130 of 500** | |
+
+### The paper's tests for each fix
+
+| Fix | Test | Version 3 |
+|---|---|---|
+| 194 | 'July', 'radio', 'microwave', 'somewhere' one stress each; 'anyway' its last only at a line's end | 'July', 'radio' and 'microwave' pass; **'somewhere' carries two** (finding 223); 'anyway' at a line's end: first and last |
+| 195 | no build dies at 181 where its construction was used; the 8-bar stock share at or above 39% | 4 died at 181 (after the summit and the tritone repair changed a copied note); stock share 0% in the pick, 7.6% across builds: **fails** (finding 220) |
+| 196 | monotony deaths from the run clause alone; the two-pitch share printed | yes, 61 deaths; two-pitch lines 0% |
+| 197 | no survivor follows a leap past a fifth with another leap | the pick none; 2 of the 40 survivors kept for inspection do, in copied lines |
+| 198 | builds' median repeats, steps and wide leaps within two points of Table CG | 28.5%, 41.0%, 3.2% against 27.6%, 42.6%, 3.0%: passes |
+| 199 | the pick's chord-tone share inside the class's middle half; key-word deaths fall | 66% (middle half 54–76%); key words on chord tones 75%; key-word deaths 0 (version 1: 42): passes |
+| 200 | no ♭3 or ♭7 a semitone from a chord tone, or a tritone from the root, in any survivor | none (0); no tone of any kind a tritone from the root in any survivor kept (0) |
+| 201 | sixteenth share inside the class's 5th–95th; the final note near twice the line's median, or the report names the lines given a third bar | sixteenths 0%; final note 4 times the median; third bars: Verse 1 line 2, Verse 1 line 4, Verse 2 line 2, Verse 2 line 4, Chorus line 4, Chorus line 8, Bridge line 2 |
+| 202 | the summit question prints the class's position figure beside each option | yes (31%, at intake) |
+| 203 | a band song lists 192 as not applicable | yes |
+| 204 | survivors' windows read on Table CU; every measure outside both middle halves listed | chart pop only (the grid corpus's quartiles are not on file). Outside the chart's middle half in the pick's 8 windows: pitch 2, fourth fifth 4, spread 6, chord on 3, chord off 3, mean iv 3 |
+| 205 | builds' opening repeated at once in 15–30% of verse and chorus windows; one section opens so where the lyric allows | 7.3% across builds; the pre-chorus opens so, outside the windows; the pick 0%: **fails** (finding 213) |
+| 206 | no 8-bar span over five lengths; line ends share one or two held lengths; longest within two to five times the median | at most 4 lengths; line ends 24 twelfths ×27, 18 twelfths ×13; longest 4× the median: passes (76% of notes are eighths: finding 218) |
+| 207 | the bar-to-bar spread printed beside the kept figures | 2.23 (chart 1.20–1.62–2.12) |
+| 208 | the bridge's opening unrelated; its median above the verse's; pace printed | related to neither (contour -0.61 and -0.66); median +2 semitones; onsets 1.02 of the verse's |
+| 209 | the figure unrelated to the vocal hook; only where the voice holds or rests; in the intro, choruses and outro; the report says there is no corpus figure | unrelated (onsets 0.29, contour -0.17); 0 notes over a sung onset; intro, the three choruses, outro; no corpus on file separates instrumental figures from the voice, so this rule has no kept figure behind it |
+| 210 | the pick's distance printed and flagged | 0.031, TOO CENTRAL (partial) |
+| 211 | the composite called the rank of record | yes |
+
+**The instrumental hook (209).** 2513 distinct one-bar figures drawn from the pop rhythm table (4–7 notes, scale steps from the chord's root, from its fifth over D♭), 199 passed the lead gates (rhythm inside the pop band; chord tones on the beats 60% or more; no semitone against a held sung note; nothing under G4; no tritone or flat ninth against a root). Deaths: a tritone against the root on a beat 992; a semitone against a held sung note 461; below the voice's chorus (G4) 354; rhythm band (164 via 163) 338; chord tones on the beats under 0.6 115; no contour of its own (no turn) 51; related to the vocal hook (27.31) 3. The pick: onsets (0, 3, 6, 18, 30) in twelfths, steps (0, -2, 2, 4, 0) (E♭5 C5 G5 B♭5 E♭5 over E♭); rhythm 2.84 bits; chord tones on the beat 100%; 80% of its notes off the beat; seed 20261474. It plays 19 times: intro bars 1–4, the holds after chorus lines 2, 4, 6 and 8 (7 in the last chorus), outro bars 96–98, cut where the hold is short.
+
+**The demo.** Voice +4.9 dB over the band; energy: Intro 0.56, Verse 1 0.51, Pre 1 0.63, Chorus 1 0.72, Verse 2 0.48, Pre 2 0.65, Chorus 2 0.72, Bridge 0.60, Last Chorus 0.75, Outro 0.72.
+
+**Documents.** The demo (MP3, General MIDI, GarageBand MIDI), the lead sheet, the parts, the number chart and the songbook were written from the version 3 record; every staff reads back against the record, and 49 of 49 consistency checks pass (consistency_v3.py).
+
+**The quotable line (10.20) on draft 5.** Remembered top: 'yeah, I dance anyway'; annotated top: 'the microwave's blinking twelve, been blinking since July'; middle (top quartile under both): 'by the green of a clock stuck on twelve'. The lyric did not change from version 2, so the blind pick of version 1 stands unless the writer picks again.
+
+**Findings.** 212–223, on the new fix list (after v95).
