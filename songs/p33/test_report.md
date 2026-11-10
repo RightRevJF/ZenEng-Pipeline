@@ -108,4 +108,4 @@ Ran as code in this song: 22, 29, 43, 47, 60, 76, 82, 87, 88, 101, 108 in part (
 
 ## Blind-pick record
 
-Song 33: (pending).
+Song 33 (9 Nov): A, "the holder spins the laces round;": the Annotated top (offered as A; B was the Remembered top, C the middle). Through song 33, over 21 picked songs: Annotated top 7, Remembered top 7, middle 6, refrain 1.
