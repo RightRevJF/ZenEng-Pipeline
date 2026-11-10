@@ -36,6 +36,8 @@ Song 39 under ZenEng v103 (version row v137, last fix 256), written after song 3
 | 10 (208) | bridge register | A |
 | 11 (235) | chorus countermelody | A |
 | 12 (236) | drum design | B |
+| build |  |  |
+| blind pick (10.20), offered |  | B |
 
 **The song.** *Fixed by Fall*: rock with a swagger, 4/4 at ♩ = 108, E major; a shuffle (eighths swung) in the verses, bridge, solo, intro and outro, a straight rally march in the choruses (Q12); one gritty baritone A2–E4, double-tracked as two candidates in the last chorus (Q2). An all-seeing narrator cuts between rooms where both sides take the same money; the chorus is their campaign jingle sung back; the bridge follows them out of office; the last chorus ends in unison. Form: Intro 4 · Verse 16 · Chorus 8 · Verse 16 · Chorus 8 · Bridge 8 · Solo 8 · Last Chorus 18 · Outro 4 = 90 bars, 3:20. Every line two bars (4–8 syllables; 230). The title is sung 4 times, first at bar 27 of 90 (232). No era (Q5).
 
