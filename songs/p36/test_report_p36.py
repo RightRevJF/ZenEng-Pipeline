@@ -189,6 +189,6 @@ for n, t, p, f_, c in F:
 A("## Consistency\n")
 A("CONSISTENCY_PLACEHOLDER\n")
 A("## The blind pick\n")
-A("BLIND_PLACEHOLDER\n")
+A("Offered after delivery as A, B and C (the three quotable-line slots, shuffled). The writer chose **A**, the middle slot (top quartile under both regimes): \"by the green of a clock stuck on twelve.\" Tally after song 36: Annotated top 9, Remembered top 7, Middle 7, Refrain 1 (24 songs).\n")
 open("/home/claude/p36/test_report.md", "w").write("\n".join(L))
 print("test_report.md written", len(L))

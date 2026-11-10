@@ -42,3 +42,7 @@ COMMERCIAL = {"profile": "chart pop, 2020s", "hold": ["2:50-3:15", "title in the
 SENSES = "the green blink, the hum, socks on tile, the drip in the dark, the radio through the wall"
 INSTRUMENT = "pop band: drums (four on the floor), bass (octaves), electric piano stabs, rhythm guitar, synth pad; female lead"
 OBJECTS += ["microwave clock blinking twelve", "dishes", "radio", "bill stamped in red", "freezer dripping", "puddle by the door", "neighbors' radio through the wall"]
+LOG.append({"q": "delivery", "answer": "delivered 10 Nov: demo, MIDI x2, lead sheet, parts, chart, songbook (Doc https://claude.ai/artifact/WawhreHv92GQd6Cn3ZAN26 + Word), test report; pick 862839a1b813"})
+LOG.append({"q": "blind pick (10.20), offered", "options": {"A": "by the green of a clock stuck on twelve, (middle: top quartile under both)", "B": "the microwave's blinking twelve, been blinking since July; (annotated top)", "C": "yeah, I dance anyway, (remembered top)"}})
+LOG.append({"q": "blind pick (10.20)", "answer": "A", "slot": "middle (top quartile under both)", "line": "by the green of a clock stuck on twelve,"})
+LOG.append({"q": "fix list", "answer": "Now generate the fix list and the test results the other ai requested", "reading": "a new fix list Doc after v91, findings 194-203, with the requested test results"})

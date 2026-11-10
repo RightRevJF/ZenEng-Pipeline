@@ -293,4 +293,4 @@ Table B deaths in the main run: surprisal (Table B) 13, cmp (Table B) 4, spectra
 
 ## The blind pick
 
-Offered after delivery: the three quotable-line slots, shuffled.
+Offered after delivery as A, B and C (the three quotable-line slots, shuffled). The writer chose **A**, the middle slot (top quartile under both regimes): "by the green of a clock stuck on twelve." Tally after song 36: Annotated top 9, Remembered top 7, Middle 7, Refrain 1 (24 songs).
