@@ -164,4 +164,4 @@ Each chorus reads above its verse (asserted).
 
 ## Blind-pick record
 
-Song 34: (pending).
+Song 34 (10 Nov): B, "I hold his Bible, margins rubbed to cloth,": the Annotated top (offered as B; A was the middle, C the Remembered top). Through song 34, over 22 picked songs: Annotated top 8, Remembered top 7, middle 6, refrain 1.

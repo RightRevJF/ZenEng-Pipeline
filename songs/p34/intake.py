@@ -65,3 +65,5 @@ SENSES = "to hit: the body (hands, fist, mouth, jaw, throat), cold, wet, sound (
 INSTRUMENT = "death metal band: two rhythm guitars (left and right, the same riff), a lead guitar, five-string bass, drums; a harsh voice (growl low, shout mid, one high scream)"
 TITLE = "Swallowed Up"
 LOG.append({"q": "delivery", "songbook_doc": "https://claude.ai/artifact/K1q3mBa6731VeiXDCGB5UA", "riffs_frozen": "7f7d89c5e09d", "solo_order": "b644ed162840 (reproduced)", "consistency": "41/41"})
+LOG.append({"q": "blind pick (10.20)", "options": {"A": "cold as iron, heavy as a debt. (middle)", "B": "I hold his Bible, margins rubbed to cloth, (Annotated top)", "C": "Swallowed up! (Remembered top)"}, "recommended": None,
+            "answer": "B. Put together a fix document like before for the other ai"})
