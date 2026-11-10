@@ -1,0 +1,3 @@
+- John Mellencamp, "Small Town" (1985), about 123 BPM: the tempo, the straight-eighth drive and a plain, particular lyric about where a man is from.
+- Tom Petty, "I Won't Back Down" (1989), about 114 BPM: defiance said plainly, with no anger in it.
+- Bruce Springsteen, "My Hometown" (1984), a slow, synthesizer-based heartland song: a mill closing told through one family, with no one blamed by name.
