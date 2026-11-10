@@ -187,9 +187,9 @@ Builds are every song the generator finished, before the gates. Across all build
 | Slot | Picks |
 |---|---|
 | Annotated top | 9 |
-| Remembered top | 7 |
+| Remembered top | 8 |
 | Middle | 7 |
 | Refrain | 1 |
-| Songs picked | 24 |
+| Songs picked | 25 |
 
-Song 37: offered to the writer; this tally updates with his pick.
+Song 37: the Remembered top, "I'm hollering home with all I've got." The slots were "Noon, and my shadow's under my boots" (Annotated top), "Windows down till the oil smell's gone" (Middle: top quartile under both regimes) and the line picked (Remembered top), offered in shuffled order. The pick is the line that carries the summit, the F♯4 on 'HOL-lering'.
