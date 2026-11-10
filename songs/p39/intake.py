@@ -46,3 +46,5 @@ LOG.append({"q": "build", "reading": "main 500 builds, 58 survivors (order 07c5a
             "design_choices": ["three target pools: verse off-beat (10 kept), chorus chord-bound (22), bridge all", "said twice: line 2 a whole step down over D, repaired for runs (finding 270)",
                                "the join into 'Vote': the line before re-walked toward E4", "swing in the demo only (finding 271)", "chorus 2 double-tracked (238: no verse fuller than its chorus)",
                                "bass waits for the verse (238: intro under half the fullest)"]})
+LOG.append({"q": "blind pick (10.20), offered", "options": {"A": "same shrimp, same band, same donor's hand (middle: top quartile under both)", "B": "Vote for us, we'll fix it all, (annotated)", "C": "we've got it fixed by fall. (remembered)"}, "answer": None,
+            "songbook_doc": "https://claude.ai/artifact/6URmGwWg8qJu2gKjpEtAV7"})
