@@ -1,0 +1,144 @@
+{
+ "hymn_rhythm_by_metre": {
+  "3/4": {
+   "pieces": 47,
+   "onsets_per_bar": {
+    "p05": 1.952,
+    "median": 2.375,
+    "p95": 3.681
+   },
+   "npvi": {
+    "p05": 22.16,
+    "median": 43.827,
+    "p95": 67.653
+   },
+   "on_downbeat": {
+    "p05": 0.272,
+    "median": 0.421,
+    "p95": 0.504
+   },
+   "pushed": {
+    "p05": 0.0,
+    "median": 0.0,
+    "p95": 0.164
+   },
+   "distinct_bar_rhythms_per_bar": {
+    "p05": 0.086,
+    "median": 0.172,
+    "p95": 0.376
+   }
+  },
+  "4/4": {
+   "pieces": 192,
+   "onsets_per_bar": {
+    "p05": 2.5,
+    "median": 3.5,
+    "p95": 4.394
+   },
+   "npvi": {
+    "p05": 7.564,
+    "median": 27.531,
+    "p95": 54.614
+   },
+   "on_downbeat": {
+    "p05": 0.215,
+    "median": 0.282,
+    "p95": 0.4
+   },
+   "pushed": {
+    "p05": 0.0,
+    "median": 0.0,
+    "p95": 0.0
+   },
+   "distinct_bar_rhythms_per_bar": {
+    "p05": 0.167,
+    "median": 0.333,
+    "p95": 0.714
+   }
+  }
+ },
+ "hymn_declamation_3_4": {
+  "lines": 59,
+  "pieces": 7,
+  "provisional": true,
+  "stress_on_downbeat (mean)": 0.693,
+  "starts_before_downbeat": 0.627,
+  "first_stress_on_downbeat": 0.61,
+  "last_stress_on_downbeat": 1.0,
+  "final_syllable_over_median": 2.0,
+  "syllables_median": 7.0,
+  "stresses_median": 3.0,
+  "span_bars": {
+   "2": 0.356,
+   "3": 0.339,
+   "4": 0.271,
+   "5": 0.034
+  },
+  "top_schemas": [
+   {
+    "schema": "1 | 1",
+    "share": 0.136
+   },
+   {
+    "schema": "3 | 1 3 | 1",
+    "share": 0.085
+   },
+   {
+    "schema": "1 3 | 1",
+    "share": 0.068
+   },
+   {
+    "schema": "3 | 1 | 1",
+    "share": 0.051
+   },
+   {
+    "schema": "1 | 1 3 | 1 | 1",
+    "share": 0.051
+   },
+   {
+    "schema": "1 | 1 | 1 3 | 1",
+    "share": 0.051
+   },
+   {
+    "schema": "1 | 1 | 1 | 1",
+    "share": 0.034
+   },
+   {
+    "schema": "1 + | 1",
+    "share": 0.034
+   }
+  ],
+  "distinct_schemas": 31
+ },
+ "hymn_harmony_from_satb": {
+  "note": "the four voices sampled on each quarter beat; a chord change = a new pitch-class set; inverted = the bass is not the root of a chord that stacks in thirds",
+  "3/4": {
+   "pieces": 53,
+   "chords_per_bar": {
+    "p05": 1.06,
+    "median": 1.96,
+    "p95": 2.49
+   },
+   "inverted": {
+    "p05": 0.1,
+    "median": 0.32,
+    "p95": 0.5
+   },
+   "beats_labelled": 0.81
+  },
+  "4/4": {
+   "pieces": 195,
+   "chords_per_bar": {
+    "p05": 1.94,
+    "median": 2.92,
+    "p95": 3.74
+   },
+   "inverted": {
+    "p05": 0.14,
+    "median": 0.31,
+    "p95": 0.53
+   },
+   "beats_labelled": 0.78
+  }
+ }
+}

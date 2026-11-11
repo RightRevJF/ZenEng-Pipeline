@@ -1,0 +1,1246 @@
+{
+"version": "ZenEng v96",
+"note": "The discriminator's 56 measures on 8-bar windows in 4/4 from the first bar line of a verse or chorus (pickups before the bar line left out). Percentiles 5, 25, 50, 75, 95 for chart pop (CoCoPops) and pop on a grid (Hooktheory). 'agree' marks the 46 measures used for distance from the centre (fix 210). The code that defines each measure is feats() in corpus/discriminator/discriminator.py; its text is in 'feats_source'. Distance of a window on a measure = how far outside [q25, q75] of 'centre_reference' it lies, divided by 'width', capped at 3; a window's distance = the mean over the 'agree' measures it has; a song's = the mean over its verse-1 and chorus-1 windows. Chart songs: 0.086-0.351, median 0.176.",
+"measures": {
+"notes_per_bar": {
+"chart": [
+2.0,
+2.9375,
+3.75,
+4.625,
+6.5
+],
+"grid": [
+2.125,
+3.25,
+4.5,
+5.875,
+8.5
+],
+"agree": false,
+"centre_reference": {
+"q25": 3.125,
+"q75": 5.25,
+"width": 2.125
+}
+},
+"range": {
+"chart": [
+5.0,
+8.0,
+10.0,
+13.0,
+17.0
+],
+"grid": [
+5.0,
+9.0,
+12.0,
+15.0,
+24.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 8.0,
+"q75": 14.0,
+"width": 6.0
+}
+},
+"pitch_sd": {
+"chart": [
+1.5842,
+2.197,
+2.7944,
+3.5335,
+4.6331
+],
+"grid": [
+1.6139,
+2.4224,
+3.0905,
+3.99,
+6.6362
+],
+"agree": true,
+"centre_reference": {
+"q25": 2.2558,
+"q75": 3.7258,
+"width": 1.47
+}
+},
+"distinct_pitches": {
+"chart": [
+3.7,
+5.0,
+6.0,
+8.0,
+9.0
+],
+"grid": [
+4.0,
+5.0,
+7.0,
+9.0,
+13.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 5.0,
+"q75": 8.0,
+"width": 3.0
+}
+},
+"repeat": {
+"chart": [
+0.0478,
+0.1342,
+0.25,
+0.3939,
+0.5313
+],
+"grid": [
+0.0,
+0.0625,
+0.2,
+0.3595,
+0.6109
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.1064,
+"q75": 0.375,
+"width": 0.2686
+}
+},
+"step": {
+"chart": [
+0.1753,
+0.3221,
+0.4286,
+0.5455,
+0.7228
+],
+"grid": [
+0.091,
+0.3,
+0.4375,
+0.5652,
+0.75
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.3037,
+"q75": 0.5652,
+"width": 0.2616
+}
+},
+"third": {
+"chart": [
+0.0,
+0.1044,
+0.1786,
+0.2688,
+0.4152
+],
+"grid": [
+0.0,
+0.08,
+0.1481,
+0.2353,
+0.4
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.093,
+"q75": 0.25,
+"width": 0.157
+}
+},
+"fourth_fifth": {
+"chart": [
+0.0,
+0.027,
+0.0741,
+0.1212,
+0.1932
+],
+"grid": [
+0.0,
+0.04,
+0.0889,
+0.1579,
+0.3333
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0303,
+"q75": 0.1364,
+"width": 0.1061
+}
+},
+"past_fifth": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.036,
+0.0957
+],
+"grid": [
+0.0,
+0.0,
+0.0156,
+0.0571,
+0.2327
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.0426,
+"width": 0.0426
+}
+},
+"mean_interval": {
+"chart": [
+1.0782,
+1.6382,
+2.0769,
+2.4904,
+3.0702
+],
+"grid": [
+0.9774,
+1.7377,
+2.2727,
+2.9142,
+5.0958
+],
+"agree": true,
+"centre_reference": {
+"q25": 1.6667,
+"q75": 2.6397,
+"width": 0.9731
+}
+},
+"ascending": {
+"chart": [
+0.3333,
+0.4167,
+0.4667,
+0.5,
+0.5848
+],
+"grid": [
+0.3125,
+0.4142,
+0.4756,
+0.5357,
+0.6439
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.4118,
+"q75": 0.5238,
+"width": 0.112
+}
+},
+"turns_per_move": {
+"chart": [
+0.3679,
+0.4783,
+0.5714,
+0.6667,
+0.86
+],
+"grid": [
+0.3333,
+0.4667,
+0.5667,
+0.6765,
+0.84
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.4706,
+"q75": 0.6667,
+"width": 0.1961
+}
+},
+"longest_run_one_way": {
+"chart": [
+2.0,
+3.0,
+3.0,
+4.0,
+5.0
+],
+"grid": [
+2.0,
+3.0,
+3.0,
+4.0,
+6.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 3.0,
+"q75": 4.0,
+"width": 1.0
+}
+},
+"leap_then_back_by_step": {
+"chart": [
+0.0,
+0.0,
+0.2,
+0.5,
+1.0
+],
+"grid": [
+0.0,
+0.0,
+0.2,
+0.4783,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.4833,
+"width": 0.4833
+}
+},
+"on_tonic": {
+"chart": [
+0.0,
+0.1143,
+0.2174,
+0.3333,
+0.5
+],
+"grid": [
+0.0,
+0.1111,
+0.2,
+0.2857,
+0.4897
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.1111,
+"q75": 0.312,
+"width": 0.2009
+}
+},
+"on_third": {
+"chart": [
+0.0,
+0.1127,
+0.1875,
+0.2698,
+0.4172
+],
+"grid": [
+0.0,
+0.1053,
+0.1786,
+0.2619,
+0.4286
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.1034,
+"q75": 0.2667,
+"width": 0.1632
+}
+},
+"on_fifth": {
+"chart": [
+0.0,
+0.0476,
+0.1429,
+0.2383,
+0.4035
+],
+"grid": [
+0.0,
+0.0833,
+0.1515,
+0.2353,
+0.3846
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0656,
+"q75": 0.2435,
+"width": 0.178
+}
+},
+"outside_scale": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.0785,
+0.3532
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+0.0455,
+0.2308
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.0541,
+"width": 0.0541
+}
+},
+"last_note_tonic": {
+"chart": [
+0.0,
+0.0,
+0.0,
+1.0,
+1.0
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+1.0,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 1.0,
+"width": 1.0
+}
+},
+"first_note_tonic_triad": {
+"chart": [
+0.0,
+0.5,
+1.0,
+1.0,
+1.0
+],
+"grid": [
+0.0,
+1.0,
+1.0,
+1.0,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 1.0,
+"q75": 1.0,
+"width": 1.0
+}
+},
+"peak_position": {
+"chart": [
+0.0,
+0.0391,
+0.2266,
+0.5469,
+0.9375
+],
+"grid": [
+0.0,
+0.0859,
+0.25,
+0.5781,
+0.9289
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0625,
+"q75": 0.5156,
+"width": 0.4531
+}
+},
+"low_position": {
+"chart": [
+0.0,
+0.1367,
+0.3281,
+0.5547,
+0.9062
+],
+"grid": [
+0.0,
+0.0859,
+0.2344,
+0.5,
+0.9062
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0938,
+"q75": 0.5215,
+"width": 0.4277
+}
+},
+"peak_count": {
+"chart": [
+1.0,
+1.0,
+2.0,
+5.0,
+10.3
+],
+"grid": [
+1.0,
+1.0,
+2.0,
+4.0,
+11.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 1.0,
+"q75": 4.0,
+"width": 3.0
+}
+},
+"time_in_top_third": {
+"chart": [
+0.0979,
+0.2425,
+0.3778,
+0.5036,
+0.7641
+],
+"grid": [
+0.0866,
+0.2143,
+0.3281,
+0.4771,
+0.6964
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.2267,
+"q75": 0.5,
+"width": 0.2733
+}
+},
+"pitch_bits": {
+"chart": [
+2.209,
+2.5323,
+2.735,
+3.0294,
+3.9137
+],
+"grid": [
+2.227,
+2.5476,
+2.8859,
+3.3959,
+5.4841
+],
+"agree": true,
+"centre_reference": {
+"q25": 2.5281,
+"q75": 3.1585,
+"width": 0.6304
+}
+},
+"on_downbeat": {
+"chart": [
+0.0833,
+0.1371,
+0.1739,
+0.2308,
+0.3333
+],
+"grid": [
+0.0,
+0.0865,
+0.1333,
+0.1905,
+0.3333
+],
+"agree": false,
+"centre_reference": {
+"q25": 0.1136,
+"q75": 0.2105,
+"width": 0.0969
+}
+},
+"on_beat3": {
+"chart": [
+0.0,
+0.0769,
+0.125,
+0.1667,
+0.2321
+],
+"grid": [
+0.0,
+0.0652,
+0.1154,
+0.1667,
+0.2581
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0769,
+"q75": 0.1667,
+"width": 0.0897
+}
+},
+"on_beats_2_4": {
+"chart": [
+0.0547,
+0.1515,
+0.2174,
+0.2649,
+0.3506
+],
+"grid": [
+0.0526,
+0.1571,
+0.2321,
+0.2903,
+0.4118
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.1579,
+"q75": 0.2773,
+"width": 0.1194
+}
+},
+"on_offbeat_eighth": {
+"chart": [
+0.155,
+0.3043,
+0.3793,
+0.4555,
+0.5355
+],
+"grid": [
+0.0529,
+0.2766,
+0.3881,
+0.5,
+0.6216
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.2824,
+"q75": 0.464,
+"width": 0.1816
+}
+},
+"on_sixteenth": {
+"chart": [
+0.0,
+0.0,
+0.0208,
+0.1429,
+0.4014
+],
+"grid": [
+0.0,
+0.0,
+0.0263,
+0.2234,
+0.4959
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.2,
+"width": 0.2
+}
+},
+"gap_sixteenth": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.1538,
+0.4506
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+0.2,
+0.5806
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.1988,
+"width": 0.1988
+}
+},
+"gap_eighth": {
+"chart": [
+0.1375,
+0.3158,
+0.4737,
+0.6154,
+0.7669
+],
+"grid": [
+0.0,
+0.2727,
+0.4444,
+0.6133,
+0.8333
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.2783,
+"q75": 0.6136,
+"width": 0.3353
+}
+},
+"gap_quarter": {
+"chart": [
+0.0,
+0.0597,
+0.15,
+0.2768,
+0.486
+],
+"grid": [
+0.0,
+0.0476,
+0.16,
+0.3125,
+0.6047
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0488,
+"q75": 0.2857,
+"width": 0.2369
+}
+},
+"gap_longer": {
+"chart": [
+0.0556,
+0.1154,
+0.1778,
+0.262,
+0.4167
+],
+"grid": [
+0.0,
+0.0578,
+0.125,
+0.2188,
+0.5333
+],
+"agree": false,
+"centre_reference": {
+"q25": 0.0909,
+"q75": 0.2422,
+"width": 0.1513
+}
+},
+"npvi": {
+"chart": [
+30.6959,
+46.6595,
+57.8019,
+70.9364,
+90.3774
+],
+"grid": [
+11.7934,
+33.3102,
+46.5128,
+60.0507,
+84.4208
+],
+"agree": false,
+"centre_reference": {
+"q25": 40.6487,
+"q75": 66.1903,
+"width": 25.5416
+}
+},
+"sounding_share": {
+"chart": [
+0.4062,
+0.5521,
+0.6562,
+0.75,
+0.8594
+],
+"grid": [
+0.5547,
+0.7578,
+0.875,
+0.9688,
+1.0
+],
+"agree": false,
+"centre_reference": {
+"q25": 0.6094,
+"q75": 0.875,
+"width": 0.2656
+}
+},
+"longest_over_median_note": {
+"chart": [
+1.5,
+2.0,
+3.0,
+4.0,
+8.0
+],
+"grid": [
+1.0,
+2.0,
+3.0,
+5.0,
+9.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 2.0,
+"q75": 4.0,
+"width": 2.0
+}
+},
+"distinct_durations": {
+"chart": [
+2.0,
+3.0,
+4.0,
+5.0,
+6.0
+],
+"grid": [
+2.0,
+3.0,
+4.0,
+5.0,
+7.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 3.0,
+"q75": 5.0,
+"width": 2.0
+}
+},
+"pushed": {
+"chart": [
+0.0,
+0.0476,
+0.1,
+0.1611,
+0.3383
+],
+"grid": [
+0.0,
+0.0145,
+0.1282,
+0.25,
+0.4412
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0312,
+"q75": 0.1858,
+"width": 0.1546
+}
+},
+"rests_of_a_beat": {
+"chart": [
+1.0,
+2.0,
+3.0,
+4.0,
+7.0
+],
+"grid": [
+0.0,
+0.0,
+1.0,
+2.0,
+5.0
+],
+"agree": false,
+"centre_reference": {
+"q25": 1.0,
+"q75": 4.0,
+"width": 3.0
+}
+},
+"first_onset": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.5,
+2.0
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+1.0,
+3.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 1.0,
+"width": 1.0
+}
+},
+"longest_rest": {
+"chart": [
+1.0,
+2.0,
+3.0,
+4.5,
+7.05
+],
+"grid": [
+0.0,
+0.0,
+1.0,
+2.0,
+5.0
+],
+"agree": false,
+"centre_reference": {
+"q25": 1.0,
+"q75": 4.0,
+"width": 3.0
+}
+},
+"empty_bars": {
+"chart": [
+0.0,
+0.0,
+0.0,
+1.0,
+2.0
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+0.0,
+2.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 1.0,
+"width": 1.0
+}
+},
+"bar_rhythm_repeats": {
+"chart": [
+0.0,
+0.0,
+0.1667,
+0.3333,
+0.7143
+],
+"grid": [
+0.0,
+0.1667,
+0.4286,
+0.6,
+0.8571
+],
+"agree": false,
+"centre_reference": {
+"q25": 0.1429,
+"q75": 0.5,
+"width": 0.3571
+}
+},
+"bar_exact_repeats": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.1667,
+0.5
+],
+"grid": [
+0.0,
+0.0,
+0.1429,
+0.4286,
+0.7143
+],
+"agree": false,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.2857,
+"width": 0.2857
+}
+},
+"distinct_bar_rhythms": {
+"chart": [
+3.0,
+5.0,
+6.0,
+7.0,
+8.0
+],
+"grid": [
+2.0,
+3.0,
+5.0,
+6.0,
+8.0
+],
+"agree": false,
+"centre_reference": {
+"q25": 4.0,
+"q75": 7.0,
+"width": 3.0
+}
+},
+"notes_per_bar_sd": {
+"chart": [
+0.696,
+1.199,
+1.6154,
+2.1195,
+2.9264
+],
+"grid": [
+0.0,
+0.927,
+1.479,
+2.0463,
+3.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 1.0897,
+"q75": 2.0578,
+"width": 0.968
+}
+},
+"unit2_returns": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+1.0,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 0.0,
+"width": 1.0
+}
+},
+"unit3_returns": {
+"chart": [
+0.0,
+0.0,
+0.0,
+1.0,
+1.0
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+1.0,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 1.0,
+"width": 1.0
+}
+},
+"unit4_to_unit2": {
+"chart": [
+0.0,
+0.0,
+0.0,
+0.0,
+1.0
+],
+"grid": [
+0.0,
+0.0,
+0.0,
+1.0,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.0,
+"q75": 1.0,
+"width": 1.0
+}
+},
+"chord_tones": {
+"chart": [
+0.3473,
+0.5361,
+0.6512,
+0.7586,
+0.8889
+],
+"grid": [
+0.4167,
+0.5625,
+0.6667,
+0.7742,
+0.9375
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.5531,
+"q75": 0.7647,
+"width": 0.2117
+}
+},
+"chord_tones_on_beat": {
+"chart": [
+0.3054,
+0.5625,
+0.6923,
+0.8,
+0.9588
+],
+"grid": [
+0.375,
+0.5714,
+0.7222,
+0.8571,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.5625,
+"q75": 0.8333,
+"width": 0.2708
+}
+},
+"chord_tones_off_beat": {
+"chart": [
+0.25,
+0.4748,
+0.625,
+0.7647,
+0.9427
+],
+"grid": [
+0.3,
+0.5,
+0.6207,
+0.7647,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.5,
+"q75": 0.7692,
+"width": 0.2692
+}
+},
+"chord_tones_on_downbeat": {
+"chart": [
+0.2,
+0.5,
+0.75,
+1.0,
+1.0
+],
+"grid": [
+0.25,
+0.625,
+0.8571,
+1.0,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.5714,
+"q75": 1.0,
+"width": 0.4286
+}
+},
+"chord_tones_on_long_notes": {
+"chart": [
+0.25,
+0.5505,
+0.75,
+0.931,
+1.0
+],
+"grid": [
+0.3012,
+0.5714,
+0.7407,
+0.9183,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.5714,
+"q75": 0.9091,
+"width": 0.3377
+}
+},
+"non_chord_resolved_by_step": {
+"chart": [
+0.1047,
+0.3153,
+0.5,
+0.6667,
+1.0
+],
+"grid": [
+0.0,
+0.2857,
+0.4667,
+0.6667,
+1.0
+],
+"agree": true,
+"centre_reference": {
+"q25": 0.2956,
+"q75": 0.6667,
+"width": 0.3711
+}
+}
+},
+"chart_songs_distance_p05_p25_median_p75_p95": [
+0.086,
+0.133,
+0.176,
+0.228,
+0.351
+],
+"feats_source": "def feats(N, ton, minor):\n    \"\"\"N: (t in quarter beats from the window's first bar line, dur, pitch, chord pcs or None), sorted, 0 <= t < 32.\"\"\"\n    if len(N) < 12: return None\n    t = np.array([n[0] for n in N]); du = np.array([n[1] for n in N]); p = np.array([n[2] for n in N]); iv = np.diff(p); a = np.abs(iv); f = {}\n    f[\"notes_per_bar\"] = len(N) / 8; f[\"range\"] = p.max() - p.min(); f[\"pitch_sd\"] = p.std(); f[\"distinct_pitches\"] = len(set(p))\n    f[\"repeat\"] = (a == 0).mean(); f[\"step\"] = ((a > 0) & (a <= 2)).mean(); f[\"third\"] = ((a >= 3) & (a <= 4)).mean(); f[\"fourth_fifth\"] = ((a >= 5) & (a <= 7)).mean(); f[\"past_fifth\"] = (a > 7).mean(); f[\"mean_interval\"] = a.mean()\n    mv = iv[iv != 0]; f[\"ascending\"] = (mv > 0).mean() if len(mv) else 0.5\n    sg = np.sign(mv); f[\"turns_per_move\"] = (sg[1:] != sg[:-1]).mean() if len(sg) > 1 else 0\n    runs = []; r = 1\n    for i in range(1, len(sg)):\n        if sg[i] == sg[i - 1]: r += 1\n        else: runs.append(r); r = 1\n    runs.append(r); f[\"longest_run_one_way\"] = max(runs) if len(sg) else 0\n    lp = [i for i in range(len(iv) - 1) if abs(iv[i]) >= 5]; f[\"leap_then_back_by_step\"] = np.mean([np.sign(iv[i + 1]) == -np.sign(iv[i]) and abs(iv[i + 1]) <= 2 for i in lp]) if len(lp) >= 2 else np.nan\n    deg = (p - ton) % 12; f[\"on_tonic\"] = (deg == 0).mean(); f[\"on_third\"] = np.isin(deg, (3, 4)).mean(); f[\"on_fifth\"] = (deg == 7).mean(); f[\"outside_scale\"] = (~np.isin(deg, list(MIN if minor else MAJ))).mean()\n    f[\"last_note_tonic\"] = float(deg[-1] == 0); f[\"first_note_tonic_triad\"] = float(deg[0] in (0, 3, 4, 7))\n    f[\"peak_position\"] = t[int(np.argmax(p))] / 32; f[\"low_position\"] = t[int(np.argmin(p))] / 32; f[\"peak_count\"] = (p == p.max()).sum()\n    w = du / du.sum(); f[\"time_in_top_third\"] = w[p >= p.min() + 2 * (p.max() - p.min()) / 3].sum() if p.max() > p.min() else 0\n    f[\"pitch_bits\"] = MP.song_bits(dict(p=p.astype(int), key=int(ton), minor=bool(minor)), pm[\"R\"], pm[\"P\"], KM)\n    fr = np.round((t % 1) * 12).astype(int); beat = np.floor(t + 1e-6) % 4\n    f[\"on_downbeat\"] = ((fr == 0) & (beat == 0)).mean(); f[\"on_beat3\"] = ((fr == 0) & (beat == 2)).mean(); f[\"on_beats_2_4\"] = ((fr == 0) & np.isin(beat, (1, 3))).mean(); f[\"on_offbeat_eighth\"] = (fr == 6).mean(); f[\"on_sixteenth\"] = np.isin(fr, (3, 9)).mean()\n    ioi = np.diff(t); ioi = ioi[ioi > 0.01]\n    f[\"gap_sixteenth\"] = (np.abs(ioi - .25) < .04).mean(); f[\"gap_eighth\"] = (np.abs(ioi - .5) < .04).mean(); f[\"gap_quarter\"] = (np.abs(ioi - 1) < .04).mean(); f[\"gap_longer\"] = (ioi > 1.04).mean()\n    f[\"npvi\"] = 100 * np.mean(np.abs(ioi[1:] - ioi[:-1]) / ((ioi[1:] + ioi[:-1]) / 2)) if len(ioi) > 2 else np.nan\n    f[\"sounding_share\"] = min(1.0, du.sum() / 32); f[\"longest_over_median_note\"] = du.max() / np.median(du); f[\"distinct_durations\"] = len(set(np.round(du * 12)))\n    ons = set(np.round(t * 12).astype(int)); f[\"pushed\"] = np.mean([(fr[i] != 0) and (t[i] + du[i] > np.floor(t[i]) + 1.05) and (int(round((np.floor(t[i]) + 1) * 12)) not in ons) for i in range(len(t))])\n    gaps = t[1:] - (t[:-1] + du[:-1]); f[\"rests_of_a_beat\"] = (gaps >= 1).sum(); f[\"first_onset\"] = t[0]; f[\"longest_rest\"] = max(0.0, gaps.max()) if len(gaps) else 0\n    bars = collections.defaultdict(list)\n    for i in range(len(t)): bars[int(t[i] // 4)].append((int(round((t[i] % 4) * 12)), int(p[i])))\n    f[\"empty_bars\"] = 8 - len(bars); rh = [tuple(o for o, _ in bars[b]) for b in sorted(bars)]; ex = [tuple(bars[b]) for b in sorted(bars)]\n    f[\"bar_rhythm_repeats\"] = np.mean([rh[i] in rh[:i] for i in range(1, len(rh))]) if len(rh) > 1 else 0; f[\"bar_exact_repeats\"] = np.mean([ex[i] in ex[:i] for i in range(1, len(ex))]) if len(ex) > 1 else 0\n    f[\"distinct_bar_rhythms\"] = len(set(rh)); f[\"notes_per_bar_sd\"] = np.std([len(bars.get(b, [])) for b in range(8)])\n    nbb = collections.defaultdict(list)\n    for i in range(len(t)): nbb[int(t[i] // 4)].append((float(t[i] % 4), int(p[i]), float(du[i])))\n    U = [PD.unit(nbb, 2 * k, 2, 4.0) for k in range(4)]\n    f[\"unit2_returns\"] = float(PD.related(U[0], U[1])); f[\"unit3_returns\"] = float(PD.related(U[0], U[2])); f[\"unit4_to_unit2\"] = float(PD.related(U[1], U[3]))\n    hv = [(n, i) for i, n in enumerate(N) if n[3]]\n    if len(hv) >= 10:\n        ct = np.array([n[2] % 12 in n[3] for n, i in hv]); onb = np.array([fr[i] == 0 for n, i in hv]); dn = np.array([fr[i] == 0 and beat[i] == 0 for n, i in hv]); lg = np.array([du[i] >= np.median(du) * 1.5 for n, i in hv])\n        f[\"chord_tones\"] = ct.mean(); f[\"chord_tones_on_beat\"] = ct[onb].mean() if onb.sum() >= 3 else np.nan; f[\"chord_tones_off_beat\"] = ct[~onb].mean() if (~onb).sum() >= 3 else np.nan\n        f[\"chord_tones_on_downbeat\"] = ct[dn].mean() if dn.sum() >= 3 else np.nan; f[\"chord_tones_on_long_notes\"] = ct[lg].mean() if lg.sum() >= 3 else np.nan\n        nc = [(k, i) for k, ((n, i), c) in enumerate(zip(hv, ct)) if not c and i + 1 < len(N)]\n        f[\"non_chord_resolved_by_step\"] = np.mean([0 < abs(p[i + 1] - p[i]) <= 2 and (N[i + 1][3] is not None and p[i + 1] % 12 in N[i + 1][3]) for k, i in nc]) if len(nc) >= 3 else np.nan\n    return {k: float(v) for k, v in f.items()}\n\n"
+}

@@ -1,0 +1,2847 @@
+{
+ "about": "ZenEng v101, Windows 119-121, fixes 236-242. Percentiles are across songs. Grid steps are sixteenths of a 4/4 bar (0 = beat 1, 4 = beat 2, 8 = beat 3, 12 = beat 4).",
+ "band (fixes 236-238)": {
+  "songs": {
+   "mostly_backbeat": 0.731,
+   "mostly_four_on_the_floor": 0.154,
+   "quarter_or_more_half_time": 0.073,
+   "hats_mostly_sixteenths": 0.133,
+   "hats_mostly_eighths": 0.469,
+   "drums_from_bar_1": 0.163,
+   "chordal_part_mostly_held": 0.332,
+   "n": 2667
+  },
+  "artists": 1016,
+  "percentiles (5, 25, 50, 75, 95)": {
+   "bars": [
+    61.0,
+    85.0,
+    105.0,
+    129.0,
+    175.0
+   ],
+   "tempo": [
+    70.0,
+    94.895,
+    117.0,
+    130.002,
+    172.004
+   ],
+   "drums_enter_at_bar": [
+    1.0,
+    2.0,
+    3.0,
+    6.0,
+    21.0
+   ],
+   "bars_without_drums_after_entry": [
+    0.0,
+    0.0,
+    0.013,
+    0.043,
+    0.2
+   ],
+   "backbeat": [
+    0.0,
+    0.449,
+    0.845,
+    0.951,
+    0.992
+   ],
+   "backbeat_only": [
+    0.0,
+    0.0,
+    0.57,
+    0.825,
+    0.967
+   ],
+   "half_time": [
+    0.0,
+    0.0,
+    0.0,
+    0.008,
+    0.529
+   ],
+   "snare_absent": [
+    0.0,
+    0.008,
+    0.033,
+    0.118,
+    0.687
+   ],
+   "four_on_the_floor": [
+    0.0,
+    0.0,
+    0.0,
+    0.048,
+    0.966
+   ],
+   "kick_on_1": [
+    0.0,
+    0.797,
+    0.952,
+    0.99,
+    1.0
+   ],
+   "kick_on_3": [
+    0.0,
+    0.308,
+    0.84,
+    0.961,
+    1.0
+   ],
+   "kick_on_1_and_3_only": [
+    0.0,
+    0.0,
+    0.0,
+    0.038,
+    0.887
+   ],
+   "kicks_a_bar": [
+    1.0,
+    2.255,
+    3.143,
+    3.949,
+    5.453
+   ],
+   "kick_off_the_beat": [
+    0.0,
+    0.091,
+    0.362,
+    0.549,
+    0.753
+   ],
+   "kick_on_sixteenths": [
+    0.0,
+    0.0,
+    0.005,
+    0.198,
+    0.505
+   ],
+   "kick_absent": [
+    0.0,
+    0.0,
+    0.014,
+    0.061,
+    0.539
+   ],
+   "hat_sixteenths": [
+    0.0,
+    0.0,
+    0.0,
+    0.012,
+    0.944
+   ],
+   "hat_eighths": [
+    0.0,
+    0.0,
+    0.422,
+    0.876,
+    0.988
+   ],
+   "hat_quarters": [
+    0.0,
+    0.0,
+    0.011,
+    0.123,
+    0.937
+   ],
+   "hat_absent": [
+    0.0,
+    0.0,
+    0.022,
+    0.101,
+    1.0
+   ],
+   "groove_same_as_last_bar": [
+    0.0,
+    0.212,
+    0.515,
+    0.779,
+    0.978
+   ],
+   "groove_same_as_two_back": [
+    0.104,
+    0.426,
+    0.624,
+    0.798,
+    0.98
+   ],
+   "distinct_grooves": [
+    2.0,
+    6.0,
+    11.0,
+    18.0,
+    39.0
+   ],
+   "top_groove_share": [
+    0.16,
+    0.342,
+    0.5,
+    0.762,
+    0.974
+   ],
+   "grooves_for_80pct": [
+    1.0,
+    2.0,
+    3.0,
+    6.0,
+    19.0
+   ],
+   "top_kick_share": [
+    0.2,
+    0.424,
+    0.622,
+    0.91,
+    1.0
+   ],
+   "held_grooves_distinct": [
+    0.0,
+    1.0,
+    1.0,
+    2.0,
+    3.0
+   ],
+   "held_groove_changes": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    5.0
+   ],
+   "fills_per_8_bars": [
+    0.0,
+    0.157,
+    0.626,
+    1.321,
+    5.994
+   ],
+   "fill_in_4th_bar": [
+    0.0,
+    0.116,
+    0.25,
+    0.4,
+    1.0
+   ],
+   "fill_in_8th_bar": [
+    0.0,
+    0.0,
+    0.118,
+    0.2,
+    0.549
+   ],
+   "fill_in_bar_4_or_8_of_8": [
+    0.0,
+    0.116,
+    0.25,
+    0.4,
+    1.0
+   ],
+   "crash_after_fill": [
+    0.0,
+    0.093,
+    0.479,
+    0.846,
+    1.0
+   ],
+   "fill_gaps_multiple_of_4": [
+    0.0,
+    0.068,
+    0.308,
+    0.667,
+    1.0
+   ],
+   "fill_gaps_multiple_of_8": [
+    0.0,
+    0.0,
+    0.1,
+    0.286,
+    0.8
+   ],
+   "fill_gap_median": [
+    1.0,
+    1.0,
+    4.0,
+    8.0,
+    14.5
+   ],
+   "crash_downbeats_on_8_bar_starts": [
+    0.0,
+    0.0,
+    0.125,
+    0.25,
+    0.556
+   ],
+   "crash_downbeats_on_4_bar_starts": [
+    0.0,
+    0.091,
+    0.25,
+    0.455,
+    1.0
+   ],
+   "crash_downbeats_per_8_bars": [
+    0.0,
+    0.097,
+    0.837,
+    1.619,
+    3.334
+   ],
+   "crash_gaps_multiple_of_4": [
+    0.0,
+    0.167,
+    0.438,
+    0.75,
+    1.0
+   ],
+   "crash_gaps_multiple_of_8": [
+    0.0,
+    0.0,
+    0.1,
+    0.3,
+    0.8
+   ],
+   "crash_gap_median": [
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    12.0
+   ],
+   "pitched_parts": [
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    14.0
+   ],
+   "parts_playing_median": [
+    3.0,
+    4.0,
+    5.0,
+    6.0,
+    8.0
+   ],
+   "parts_playing_max": [
+    3.05,
+    5.0,
+    7.0,
+    8.0,
+    10.0
+   ],
+   "part_changes_on_4_bar_starts": [
+    0.0,
+    0.167,
+    0.24,
+    0.3,
+    0.448
+   ],
+   "part_changes_on_8_bar_starts": [
+    0.0,
+    0.065,
+    0.113,
+    0.154,
+    0.261
+   ],
+   "part_changes_per_8_bars": [
+    0.692,
+    1.46,
+    2.297,
+    3.333,
+    5.19
+   ],
+   "first_bar_parts_over_max": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5
+   ],
+   "part_change_gaps_multiple_of_4": [
+    0.0,
+    0.048,
+    0.111,
+    0.212,
+    0.474
+   ],
+   "part_change_gaps_multiple_of_8": [
+    0.0,
+    0.0,
+    0.033,
+    0.1,
+    0.312
+   ],
+   "part_change_gap_median": [
+    1.0,
+    1.0,
+    2.0,
+    3.0,
+    8.0
+   ],
+   "chordal_share_of_its_onsets": [
+    0.192,
+    0.432,
+    0.695,
+    0.938,
+    1.0
+   ],
+   "chords_struck_a_bar": [
+    0.681,
+    1.482,
+    2.605,
+    4.102,
+    7.903
+   ],
+   "chordal_held_bars": [
+    0.0,
+    0.09,
+    0.322,
+    0.609,
+    0.922
+   ],
+   "chordal_silent_bars": [
+    0.0,
+    0.016,
+    0.133,
+    0.353,
+    0.636
+   ],
+   "chordal_top_rhythm_share": [
+    0.129,
+    0.274,
+    0.46,
+    0.75,
+    0.991
+   ],
+   "chordal_same_as_last_bar": [
+    0.0,
+    0.1,
+    0.361,
+    0.757,
+    1.0
+   ],
+   "chordal_same_as_two_back": [
+    0.0,
+    0.239,
+    0.512,
+    0.806,
+    1.0
+   ],
+   "chordal_on_the_beat": [
+    0.091,
+    0.388,
+    0.542,
+    0.776,
+    1.0
+   ],
+   "chordal_on_beat_1": [
+    0.0,
+    0.098,
+    0.175,
+    0.313,
+    0.772
+   ],
+   "chordal_on_offbeat_eighth": [
+    0.0,
+    0.057,
+    0.285,
+    0.436,
+    0.674
+   ],
+   "chordal_on_sixteenths": [
+    0.0,
+    0.0,
+    0.018,
+    0.28,
+    0.53
+   ],
+   "chordal_on_2_and_4": [
+    0.0,
+    0.067,
+    0.189,
+    0.284,
+    0.499
+   ],
+   "chord_size": [
+    3.0,
+    3.0,
+    3.0,
+    4.0,
+    5.0
+   ],
+   "chord_low": [
+    43.0,
+    51.0,
+    56.0,
+    60.0,
+    69.0
+   ],
+   "chord_high": [
+    59.0,
+    64.0,
+    67.0,
+    71.0,
+    80.0
+   ],
+   "chordal_with_kick": [
+    0.002,
+    0.265,
+    0.422,
+    0.61,
+    0.946
+   ],
+   "chordal_with_snare": [
+    0.0,
+    0.083,
+    0.219,
+    0.335,
+    0.715
+   ],
+   "chordal_with_bass": [
+    0.162,
+    0.472,
+    0.674,
+    0.885,
+    1.0
+   ]
+  },
+  "song's_commonest_kick_bar (sixteenth steps: share of songs)": [
+   {
+    "steps": [
+     0,
+     8
+    ],
+    "share": 0.15
+   },
+   {
+    "steps": [
+     0,
+     4,
+     8,
+     12
+    ],
+    "share": 0.141
+   },
+   {
+    "steps": [
+     0,
+     6,
+     8
+    ],
+    "share": 0.1
+   },
+   {
+    "steps": [],
+    "share": 0.076
+   },
+   {
+    "steps": [
+     0,
+     6,
+     8,
+     14
+    ],
+    "share": 0.042
+   },
+   {
+    "steps": [
+     0,
+     8,
+     10
+    ],
+    "share": 0.033
+   },
+   {
+    "steps": [
+     0
+    ],
+    "share": 0.031
+   },
+   {
+    "steps": [
+     0,
+     7,
+     8
+    ],
+    "share": 0.02
+   },
+   {
+    "steps": [
+     0,
+     6
+    ],
+    "share": 0.017
+   },
+   {
+    "steps": [
+     0,
+     8,
+     10,
+     14
+    ],
+    "share": 0.016
+   },
+   {
+    "steps": [
+     0,
+     2,
+     8,
+     10
+    ],
+    "share": 0.013
+   },
+   {
+    "steps": [
+     0,
+     8,
+     14
+    ],
+    "share": 0.013
+   }
+  ],
+  "song's_commonest_snare_bar": [
+   {
+    "steps": [
+     4,
+     12
+    ],
+    "share": 0.622
+   },
+   {
+    "steps": [],
+    "share": 0.099
+   },
+   {
+    "steps": [
+     8
+    ],
+    "share": 0.042
+   },
+   {
+    "steps": [
+     0,
+     4,
+     8,
+     12
+    ],
+    "share": 0.02
+   },
+   {
+    "steps": [
+     2,
+     6,
+     10,
+     14
+    ],
+    "share": 0.015
+   },
+   {
+    "steps": [
+     4,
+     7,
+     12
+    ],
+    "share": 0.015
+   }
+  ],
+  "chordal_songs": 2391,
+  "chordal_commonest_bar": [
+   {
+    "steps": [
+     0
+    ],
+    "share": 0.204
+   },
+   {
+    "steps": [
+     0,
+     4,
+     8,
+     12
+    ],
+    "share": 0.065
+   },
+   {
+    "steps": [
+     0,
+     2,
+     4,
+     6,
+     8,
+     10,
+     12,
+     14
+    ],
+    "share": 0.061
+   },
+   {
+    "steps": [
+     0,
+     8
+    ],
+    "share": 0.046
+   },
+   {
+    "steps": [
+     2,
+     6,
+     10,
+     14
+    ],
+    "share": 0.037
+   },
+   {
+    "steps": [
+     4,
+     12
+    ],
+    "share": 0.026
+   },
+   {
+    "steps": [
+     0,
+     6
+    ],
+    "share": 0.025
+   },
+   {
+    "steps": [
+     8
+    ],
+    "share": 0.01
+   },
+   {
+    "steps": [
+     4
+    ],
+    "share": 0.01
+   },
+   {
+    "steps": [
+     0,
+     6,
+     12
+    ],
+    "share": 0.009
+   },
+   {
+    "steps": [
+     14
+    ],
+    "share": 0.009
+   },
+   {
+    "steps": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ],
+    "share": 0.008
+   }
+  ],
+  "parts_playing_by_tenth_of_song (share of the song's most)": [
+   0.457,
+   0.666,
+   0.734,
+   0.754,
+   0.758,
+   0.758,
+   0.754,
+   0.772,
+   0.797,
+   0.719
+  ],
+  "chordal_instrument": {
+   "guitar": 0.439,
+   "piano": 0.351,
+   "strings/pad": 0.087,
+   "other": 0.076,
+   "organ": 0.047
+  }
+ },
+ "returns (fixes 239-240; chart = chart pop, grid = pop on a grid)": {
+  "windows": {
+   "chart": 280,
+   "grid": 5374
+  },
+  "returns": {
+   "chart": 197,
+   "grid": 6023
+  },
+  "chart": {
+   "unit 3 to unit 1": {
+    "returns": 90,
+    "kind": {
+     "exact": 0.289,
+     "transposed": 0.0,
+     "same rhythm, pitches changed": 0.056,
+     "rhythm changed, shared pitches kept": 0.222,
+     "both changed": 0.433
+    },
+    "same_rhythm": 0.344,
+    "same_pitch_level": 0.911,
+    "levels (semitones: share)": {
+     "0": 0.911,
+     "2": 0.022,
+     "-1": 0.011,
+     "4": 0.011,
+     "-3": 0.011,
+     "-4": 0.011,
+     "-5": 0.011,
+     "5": 0.011
+    },
+    "moved_up_of_those_moved": null,
+    "moved_by_step_of_those_moved": null,
+    "rhythm_differs_by_beat (1..8)": [
+     0.184,
+     0.194,
+     0.187,
+     0.232,
+     0.152,
+     0.231,
+     0.262,
+     0.397
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.118,
+     0.129,
+     0.042,
+     0.241,
+     0.147,
+     0.203,
+     0.241,
+     0.157
+    ],
+    "rhythm_differs_first_quarter": 0.261,
+    "rhythm_differs_last_quarter": 0.461,
+    "pitch_differs_first_quarter": 0.172,
+    "pitch_differs_last_quarter": 0.239,
+    "first_half_identical": 0.522,
+    "second_half_identical": 0.433,
+    "first_note_same": 0.822,
+    "last_note_same": 0.611,
+    "top_note": {
+     "same": 0.844,
+     "higher": 0.111,
+     "lower": 0.044
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.875,
+    "note_off_the_beat_keeps_its_pitch": 0.868,
+    "changed_onsets_on_the_beat": 0.373,
+    "all_onsets_on_the_beat": 0.556,
+    "notes": {
+     "more": 0.3,
+     "fewer": 0.211,
+     "same": 0.489
+    },
+    "onsets_shared (median)": 0.862,
+    "ending": {
+     "lower": 0.133,
+     "higher": 0.122,
+     "same_pitch": 0.744,
+     "longer_last_note": 0.133,
+     "shorter_last_note": 0.156,
+     "source_ends_on_tonic": 0.211,
+     "return_ends_on_tonic": 0.2,
+     "open_then_closed (source off the tonic, return on it)": 0.022,
+     "closed_then_open": 0.033
+    }
+   },
+   "unit 2 to unit 1": {
+    "returns": 52,
+    "kind": {
+     "exact": 0.269,
+     "transposed": 0.0,
+     "same rhythm, pitches changed": 0.038,
+     "rhythm changed, shared pitches kept": 0.173,
+     "both changed": 0.519
+    },
+    "same_rhythm": 0.308,
+    "same_pitch_level": 0.846,
+    "levels (semitones: share)": {
+     "0": 0.846,
+     "-2": 0.058,
+     "9": 0.019,
+     "-4": 0.019,
+     "-5": 0.019,
+     "3": 0.019,
+     "1": 0.019
+    },
+    "moved_up_of_those_moved": null,
+    "moved_by_step_of_those_moved": null,
+    "rhythm_differs_by_beat (1..8)": [
+     0.293,
+     0.275,
+     0.205,
+     0.222,
+     0.279,
+     0.429,
+     0.333,
+     0.214
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.289,
+     0.27,
+     0.195,
+     0.206,
+     0.25,
+     0.217,
+     0.238,
+     0.2
+    ],
+    "rhythm_differs_first_quarter": 0.327,
+    "rhythm_differs_last_quarter": 0.343,
+    "pitch_differs_first_quarter": 0.356,
+    "pitch_differs_last_quarter": 0.267,
+    "first_half_identical": 0.442,
+    "second_half_identical": 0.5,
+    "first_note_same": 0.692,
+    "last_note_same": 0.673,
+    "top_note": {
+     "same": 0.769,
+     "higher": 0.135,
+     "lower": 0.096
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.825,
+    "note_off_the_beat_keeps_its_pitch": 0.797,
+    "changed_onsets_on_the_beat": 0.301,
+    "all_onsets_on_the_beat": 0.483,
+    "notes": {
+     "more": 0.365,
+     "fewer": 0.212,
+     "same": 0.423
+    },
+    "onsets_shared (median)": 0.806,
+    "ending": {
+     "lower": 0.173,
+     "higher": 0.154,
+     "same_pitch": 0.673,
+     "longer_last_note": 0.058,
+     "shorter_last_note": 0.154,
+     "source_ends_on_tonic": 0.346,
+     "return_ends_on_tonic": 0.288,
+     "open_then_closed (source off the tonic, return on it)": 0.038,
+     "closed_then_open": 0.096
+    }
+   },
+   "unit 4 to unit 2": {
+    "returns": 55,
+    "kind": {
+     "exact": 0.255,
+     "transposed": 0.0,
+     "same rhythm, pitches changed": 0.091,
+     "rhythm changed, shared pitches kept": 0.236,
+     "both changed": 0.418
+    },
+    "same_rhythm": 0.345,
+    "same_pitch_level": 0.927,
+    "levels (semitones: share)": {
+     "0": 0.927,
+     "-2": 0.018,
+     "-1": 0.018,
+     "3": 0.018,
+     "5": 0.018
+    },
+    "moved_up_of_those_moved": null,
+    "moved_by_step_of_those_moved": null,
+    "rhythm_differs_by_beat (1..8)": [
+     0.102,
+     0.152,
+     0.184,
+     0.324,
+     0.156,
+     0.333,
+     0.467,
+     0.485
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.208,
+     0.091,
+     0.143,
+     0.129,
+     0.227,
+     0.261,
+     0.211,
+     0.571
+    ],
+    "rhythm_differs_first_quarter": 0.218,
+    "rhythm_differs_last_quarter": 0.568,
+    "pitch_differs_first_quarter": 0.218,
+    "pitch_differs_last_quarter": 0.462,
+    "first_half_identical": 0.527,
+    "second_half_identical": 0.364,
+    "first_note_same": 0.873,
+    "last_note_same": 0.418,
+    "top_note": {
+     "same": 0.782,
+     "higher": 0.109,
+     "lower": 0.109
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.856,
+    "note_off_the_beat_keeps_its_pitch": 0.824,
+    "changed_onsets_on_the_beat": 0.314,
+    "all_onsets_on_the_beat": 0.538,
+    "notes": {
+     "more": 0.327,
+     "fewer": 0.236,
+     "same": 0.436
+    },
+    "onsets_shared (median)": 0.818,
+    "ending": {
+     "lower": 0.273,
+     "higher": 0.2,
+     "same_pitch": 0.527,
+     "longer_last_note": 0.218,
+     "shorter_last_note": 0.182,
+     "source_ends_on_tonic": 0.273,
+     "return_ends_on_tonic": 0.236,
+     "open_then_closed (source off the tonic, return on it)": 0.055,
+     "closed_then_open": 0.091
+    }
+   },
+   "all": {
+    "returns": 197,
+    "kind": {
+     "exact": 0.274,
+     "transposed": 0.0,
+     "same rhythm, pitches changed": 0.061,
+     "rhythm changed, shared pitches kept": 0.213,
+     "both changed": 0.452
+    },
+    "same_rhythm": 0.335,
+    "same_pitch_level": 0.898,
+    "levels (semitones: share)": {
+     "0": 0.898,
+     "-2": 0.02,
+     "2": 0.01,
+     "-1": 0.01,
+     "5": 0.01,
+     "-4": 0.01,
+     "3": 0.01,
+     "-5": 0.01,
+     "4": 0.005
+    },
+    "moved_up_of_those_moved": 0.45,
+    "moved_by_step_of_those_moved": 0.45,
+    "rhythm_differs_by_beat (1..8)": [
+     0.187,
+     0.203,
+     0.19,
+     0.256,
+     0.186,
+     0.3,
+     0.328,
+     0.379
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.188,
+     0.152,
+     0.111,
+     0.202,
+     0.195,
+     0.219,
+     0.234,
+     0.258
+    ],
+    "rhythm_differs_first_quarter": 0.266,
+    "rhythm_differs_last_quarter": 0.459,
+    "pitch_differs_first_quarter": 0.23,
+    "pitch_differs_last_quarter": 0.293,
+    "first_half_identical": 0.503,
+    "second_half_identical": 0.431,
+    "first_note_same": 0.802,
+    "last_note_same": 0.574,
+    "top_note": {
+     "same": 0.807,
+     "higher": 0.117,
+     "lower": 0.076
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.856,
+    "note_off_the_beat_keeps_its_pitch": 0.837,
+    "changed_onsets_on_the_beat": 0.337,
+    "all_onsets_on_the_beat": 0.531,
+    "notes": {
+     "more": 0.325,
+     "fewer": 0.218,
+     "same": 0.457
+    },
+    "onsets_shared (median)": 0.833,
+    "ending": {
+     "lower": 0.183,
+     "higher": 0.152,
+     "same_pitch": 0.665,
+     "longer_last_note": 0.137,
+     "shorter_last_note": 0.162,
+     "source_ends_on_tonic": 0.264,
+     "return_ends_on_tonic": 0.234,
+     "open_then_closed (source off the tonic, return on it)": 0.036,
+     "closed_then_open": 0.066
+    }
+   }
+  },
+  "grid": {
+   "unit 3 to unit 1": {
+    "returns": 2658,
+    "kind": {
+     "exact": 0.512,
+     "transposed": 0.021,
+     "same rhythm, pitches changed": 0.119,
+     "rhythm changed, shared pitches kept": 0.171,
+     "both changed": 0.177
+    },
+    "same_rhythm": 0.652,
+    "same_pitch_level": 0.891,
+    "levels (semitones: share)": {
+     "0": 0.891,
+     "5": 0.014,
+     "-2": 0.014,
+     "3": 0.013,
+     "2": 0.012,
+     "-3": 0.007,
+     "-5": 0.006,
+     "7": 0.006,
+     "-4": 0.006
+    },
+    "moved_up_of_those_moved": 0.572,
+    "moved_by_step_of_those_moved": 0.297,
+    "rhythm_differs_by_beat (1..8)": [
+     0.148,
+     0.086,
+     0.072,
+     0.075,
+     0.064,
+     0.092,
+     0.107,
+     0.148
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.092,
+     0.08,
+     0.091,
+     0.109,
+     0.11,
+     0.11,
+     0.127,
+     0.175
+    ],
+    "rhythm_differs_first_quarter": 0.168,
+    "rhythm_differs_last_quarter": 0.176,
+    "pitch_differs_first_quarter": 0.113,
+    "pitch_differs_last_quarter": 0.198,
+    "first_half_identical": 0.684,
+    "second_half_identical": 0.659,
+    "first_note_same": 0.827,
+    "last_note_same": 0.781,
+    "top_note": {
+     "same": 0.872,
+     "higher": 0.087,
+     "lower": 0.041
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.915,
+    "note_off_the_beat_keeps_its_pitch": 0.909,
+    "changed_onsets_on_the_beat": 0.379,
+    "all_onsets_on_the_beat": 0.497,
+    "notes": {
+     "more": 0.184,
+     "fewer": 0.104,
+     "same": 0.712
+    },
+    "onsets_shared (median)": 1.0,
+    "ending": {
+     "lower": 0.094,
+     "higher": 0.128,
+     "same_pitch": 0.777,
+     "longer_last_note": 0.061,
+     "shorter_last_note": 0.076,
+     "source_ends_on_tonic": 0.221,
+     "return_ends_on_tonic": 0.216,
+     "open_then_closed (source off the tonic, return on it)": 0.04,
+     "closed_then_open": 0.045
+    }
+   },
+   "unit 2 to unit 1": {
+    "returns": 1504,
+    "kind": {
+     "exact": 0.229,
+     "transposed": 0.019,
+     "same rhythm, pitches changed": 0.223,
+     "rhythm changed, shared pitches kept": 0.174,
+     "both changed": 0.354
+    },
+    "same_rhythm": 0.472,
+    "same_pitch_level": 0.769,
+    "levels (semitones: share)": {
+     "0": 0.769,
+     "-2": 0.06,
+     "2": 0.028,
+     "-3": 0.022,
+     "-5": 0.019,
+     "3": 0.018,
+     "-4": 0.016,
+     "-1": 0.016,
+     "5": 0.013
+    },
+    "moved_up_of_those_moved": 0.394,
+    "moved_by_step_of_those_moved": 0.494,
+    "rhythm_differs_by_beat (1..8)": [
+     0.167,
+     0.099,
+     0.083,
+     0.115,
+     0.119,
+     0.148,
+     0.183,
+     0.29
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.184,
+     0.16,
+     0.174,
+     0.221,
+     0.27,
+     0.307,
+     0.357,
+     0.402
+    ],
+    "rhythm_differs_first_quarter": 0.194,
+    "rhythm_differs_last_quarter": 0.331,
+    "pitch_differs_first_quarter": 0.226,
+    "pitch_differs_last_quarter": 0.451,
+    "first_half_identical": 0.514,
+    "second_half_identical": 0.35,
+    "first_note_same": 0.751,
+    "last_note_same": 0.511,
+    "top_note": {
+     "same": 0.723,
+     "higher": 0.188,
+     "lower": 0.089
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.804,
+    "note_off_the_beat_keeps_its_pitch": 0.795,
+    "changed_onsets_on_the_beat": 0.364,
+    "all_onsets_on_the_beat": 0.492,
+    "notes": {
+     "more": 0.278,
+     "fewer": 0.169,
+     "same": 0.553
+    },
+    "onsets_shared (median)": 0.929,
+    "ending": {
+     "lower": 0.236,
+     "higher": 0.227,
+     "same_pitch": 0.537,
+     "longer_last_note": 0.114,
+     "shorter_last_note": 0.116,
+     "source_ends_on_tonic": 0.233,
+     "return_ends_on_tonic": 0.249,
+     "open_then_closed (source off the tonic, return on it)": 0.102,
+     "closed_then_open": 0.086
+    }
+   },
+   "unit 4 to unit 2": {
+    "returns": 1861,
+    "kind": {
+     "exact": 0.399,
+     "transposed": 0.016,
+     "same rhythm, pitches changed": 0.148,
+     "rhythm changed, shared pitches kept": 0.188,
+     "both changed": 0.249
+    },
+    "same_rhythm": 0.563,
+    "same_pitch_level": 0.872,
+    "levels (semitones: share)": {
+     "0": 0.872,
+     "-2": 0.016,
+     "3": 0.015,
+     "5": 0.012,
+     "-3": 0.011,
+     "2": 0.009,
+     "-5": 0.009,
+     "12": 0.008,
+     "7": 0.007
+    },
+    "moved_up_of_those_moved": 0.544,
+    "moved_by_step_of_those_moved": 0.28,
+    "rhythm_differs_by_beat (1..8)": [
+     0.076,
+     0.09,
+     0.078,
+     0.096,
+     0.096,
+     0.123,
+     0.176,
+     0.302
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.116,
+     0.122,
+     0.121,
+     0.156,
+     0.156,
+     0.188,
+     0.216,
+     0.272
+    ],
+    "rhythm_differs_first_quarter": 0.121,
+    "rhythm_differs_last_quarter": 0.322,
+    "pitch_differs_first_quarter": 0.155,
+    "pitch_differs_last_quarter": 0.302,
+    "first_half_identical": 0.672,
+    "second_half_identical": 0.519,
+    "first_note_same": 0.868,
+    "last_note_same": 0.627,
+    "top_note": {
+     "same": 0.818,
+     "higher": 0.11,
+     "lower": 0.072
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.867,
+    "note_off_the_beat_keeps_its_pitch": 0.876,
+    "changed_onsets_on_the_beat": 0.318,
+    "all_onsets_on_the_beat": 0.487,
+    "notes": {
+     "more": 0.175,
+     "fewer": 0.202,
+     "same": 0.623
+    },
+    "onsets_shared (median)": 1.0,
+    "ending": {
+     "lower": 0.151,
+     "higher": 0.194,
+     "same_pitch": 0.655,
+     "longer_last_note": 0.124,
+     "shorter_last_note": 0.161,
+     "source_ends_on_tonic": 0.266,
+     "return_ends_on_tonic": 0.293,
+     "open_then_closed (source off the tonic, return on it)": 0.091,
+     "closed_then_open": 0.064
+    }
+   },
+   "all": {
+    "returns": 6023,
+    "kind": {
+     "exact": 0.406,
+     "transposed": 0.019,
+     "same rhythm, pitches changed": 0.154,
+     "rhythm changed, shared pitches kept": 0.177,
+     "both changed": 0.244
+    },
+    "same_rhythm": 0.579,
+    "same_pitch_level": 0.854,
+    "levels (semitones: share)": {
+     "0": 0.854,
+     "-2": 0.026,
+     "2": 0.015,
+     "3": 0.015,
+     "5": 0.013,
+     "-3": 0.012,
+     "-5": 0.01,
+     "-4": 0.009,
+     "-1": 0.007
+    },
+    "moved_up_of_those_moved": 0.494,
+    "moved_by_step_of_those_moved": 0.371,
+    "rhythm_differs_by_beat (1..8)": [
+     0.13,
+     0.091,
+     0.077,
+     0.091,
+     0.088,
+     0.116,
+     0.147,
+     0.229
+    ],
+    "pitch_differs_by_beat (1..8)": [
+     0.123,
+     0.113,
+     0.122,
+     0.152,
+     0.164,
+     0.183,
+     0.211,
+     0.257
+    ],
+    "rhythm_differs_first_quarter": 0.16,
+    "rhythm_differs_last_quarter": 0.258,
+    "pitch_differs_first_quarter": 0.154,
+    "pitch_differs_last_quarter": 0.29,
+    "first_half_identical": 0.638,
+    "second_half_identical": 0.539,
+    "first_note_same": 0.821,
+    "last_note_same": 0.666,
+    "top_note": {
+     "same": 0.818,
+     "higher": 0.119,
+     "lower": 0.063
+    },
+    "note_on_the_beat_keeps_its_pitch": 0.872,
+    "note_off_the_beat_keeps_its_pitch": 0.87,
+    "changed_onsets_on_the_beat": 0.354,
+    "all_onsets_on_the_beat": 0.492,
+    "notes": {
+     "more": 0.205,
+     "fewer": 0.15,
+     "same": 0.645
+    },
+    "onsets_shared (median)": 1.0,
+    "ending": {
+     "lower": 0.147,
+     "higher": 0.173,
+     "same_pitch": 0.679,
+     "longer_last_note": 0.094,
+     "shorter_last_note": 0.112,
+     "source_ends_on_tonic": 0.238,
+     "return_ends_on_tonic": 0.248,
+     "open_then_closed (source off the tonic, return on it)": 0.071,
+     "closed_then_open": 0.061
+    }
+   }
+  }
+ },
+ "era_settings (fix 242; 25th, median, 75th; the five bands the setting moves are notes_per_bar, range, repeat, distinct_durations, pitch_bits)": {
+  "CLASSIC (to 1979)": {
+   "songs": 109,
+   "notes_per_bar": [
+    3.188,
+    3.938,
+    4.875
+   ],
+   "notes_a_second": [
+    1.571,
+    1.961,
+    2.431
+   ],
+   "range": [
+    10.0,
+    12.0,
+    13.75
+   ],
+   "repeat": [
+    0.157,
+    0.229,
+    0.333
+   ],
+   "distinct_durations": [
+    4.333,
+    5.0,
+    6.0
+   ],
+   "pitch_bits": [
+    2.667,
+    2.924,
+    3.187
+   ],
+   "on_sixteenth": [
+    0.0,
+    0.054,
+    0.173
+   ],
+   "bar_exact_repeats": [
+    0.0,
+    0.0,
+    0.143
+   ],
+   "unit3_returns": [
+    0.0,
+    0.0,
+    0.5
+   ]
+  },
+  "MODERN (1995 on)": {
+   "songs": 138,
+   "notes_per_bar": [
+    4.68,
+    5.625,
+    6.82
+   ],
+   "notes_a_second": [
+    2.307,
+    2.668,
+    3.183
+   ],
+   "range": [
+    8.5,
+    10.0,
+    11.5
+   ],
+   "repeat": [
+    0.26,
+    0.352,
+    0.441
+   ],
+   "distinct_durations": [
+    3.5,
+    4.0,
+    4.667
+   ],
+   "pitch_bits": [
+    2.485,
+    2.635,
+    2.786
+   ],
+   "on_sixteenth": [
+    0.025,
+    0.185,
+    0.334
+   ],
+   "bar_exact_repeats": [
+    0.048,
+    0.117,
+    0.211
+   ],
+   "unit3_returns": [
+    0.25,
+    0.4,
+    0.65
+   ]
+  }
+ },
+ "eras (fix 241)": {
+  "songs": 363,
+  "section_melodies": 1114,
+  "in_4_4_with_a_window": 959,
+  "songs_with_a_window": 314,
+  "songs_by_era": {
+   "1950-64": 43,
+   "1965-79": 66,
+   "1980-94": 67,
+   "1995-2009": 67,
+   "2010-24": 71
+  },
+  "measures": {
+   "notes_per_bar": {
+    "by_era (median)": {
+     "1950-64": 3.562,
+     "1965-79": 4.297,
+     "1980-94": 4.531,
+     "1995-2009": 5.844,
+     "2010-24": 5.531
+    },
+    "by_era (mean)": {
+     "1950-64": 3.683,
+     "1965-79": 4.344,
+     "1980-94": 4.508,
+     "1995-2009": 6.018,
+     "2010-24": 5.762
+    },
+    "trend_with_year": [
+     0.484,
+     0.368,
+     0.564,
+     314
+    ],
+    "to_1991 (mean)": 4.212,
+    "from_1992 (mean)": 5.812
+   },
+   "notes_a_second": {
+    "by_era (median)": {
+     "1950-64": 1.675,
+     "1965-79": 2.108,
+     "1980-94": 2.037,
+     "1995-2009": 2.522,
+     "2010-24": 2.876
+    },
+    "by_era (mean)": {
+     "1950-64": 1.842,
+     "1965-79": 2.085,
+     "1980-94": 2.067,
+     "1995-2009": 2.685,
+     "2010-24": 2.921
+    },
+    "trend_with_year": [
+     0.54,
+     0.452,
+     0.617,
+     314
+    ],
+    "to_1991 (mean)": 2.03,
+    "from_1992 (mean)": 2.741
+   },
+   "tempo": {
+    "by_era (median)": {
+     "1950-64": 112.0,
+     "1965-79": 107.0,
+     "1980-94": 98.0,
+     "1995-2009": 95.0,
+     "2010-24": 108.0
+    },
+    "by_era (mean)": {
+     "1950-64": 112.628,
+     "1965-79": 105.818,
+     "1980-94": 99.164,
+     "1995-2009": 98.433,
+     "2010-24": 110.761
+    },
+    "trend_with_year": [
+     -0.026,
+     -0.139,
+     0.084,
+     314
+    ],
+    "to_1991 (mean)": 105.946,
+    "from_1992 (mean)": 103.669
+   },
+   "range": {
+    "by_era (median)": {
+     "1950-64": 12.0,
+     "1965-79": 11.542,
+     "1980-94": 10.75,
+     "1995-2009": 10.0,
+     "2010-24": 9.75
+    },
+    "by_era (mean)": {
+     "1950-64": 12.248,
+     "1965-79": 11.586,
+     "1980-94": 10.747,
+     "1995-2009": 10.338,
+     "2010-24": 9.877
+    },
+    "trend_with_year": [
+     -0.27,
+     -0.363,
+     -0.165,
+     314
+    ],
+    "to_1991 (mean)": 11.37,
+    "from_1992 (mean)": 10.255
+   },
+   "pitch_sd": {
+    "by_era (median)": {
+     "1950-64": 3.184,
+     "1965-79": 3.048,
+     "1980-94": 2.792,
+     "1995-2009": 2.674,
+     "2010-24": 2.63
+    },
+    "by_era (mean)": {
+     "1950-64": 3.375,
+     "1965-79": 3.091,
+     "1980-94": 2.848,
+     "1995-2009": 2.714,
+     "2010-24": 2.669
+    },
+    "trend_with_year": [
+     -0.31,
+     -0.403,
+     -0.218,
+     314
+    ],
+    "to_1991 (mean)": 3.071,
+    "from_1992 (mean)": 2.713
+   },
+   "distinct_pitches": {
+    "by_era (median)": {
+     "1950-64": 7.0,
+     "1965-79": 6.583,
+     "1980-94": 6.2,
+     "1995-2009": 5.75,
+     "2010-24": 5.667
+    },
+    "by_era (mean)": {
+     "1950-64": 7.597,
+     "1965-79": 6.686,
+     "1980-94": 6.43,
+     "1995-2009": 5.997,
+     "2010-24": 5.685
+    },
+    "trend_with_year": [
+     -0.334,
+     -0.434,
+     -0.237,
+     314
+    ],
+    "to_1991 (mean)": 6.772,
+    "from_1992 (mean)": 5.946
+   },
+   "pitch_bits": {
+    "by_era (median)": {
+     "1950-64": 3.076,
+     "1965-79": 2.821,
+     "1980-94": 2.791,
+     "1995-2009": 2.645,
+     "2010-24": 2.62
+    },
+    "by_era (mean)": {
+     "1950-64": 3.185,
+     "1965-79": 2.893,
+     "1980-94": 2.834,
+     "1995-2009": 2.719,
+     "2010-24": 2.726
+    },
+    "trend_with_year": [
+     -0.362,
+     -0.463,
+     -0.265,
+     314
+    ],
+    "to_1991 (mean)": 2.937,
+    "from_1992 (mean)": 2.743
+   },
+   "repeat": {
+    "by_era (median)": {
+     "1950-64": 0.215,
+     "1965-79": 0.24,
+     "1980-94": 0.275,
+     "1995-2009": 0.336,
+     "2010-24": 0.365
+    },
+    "by_era (mean)": {
+     "1950-64": 0.225,
+     "1965-79": 0.262,
+     "1980-94": 0.288,
+     "1995-2009": 0.352,
+     "2010-24": 0.366
+    },
+    "trend_with_year": [
+     0.379,
+     0.286,
+     0.471,
+     314
+    ],
+    "to_1991 (mean)": 0.265,
+    "from_1992 (mean)": 0.35
+   },
+   "step": {
+    "by_era (median)": {
+     "1950-64": 0.433,
+     "1965-79": 0.42,
+     "1980-94": 0.439,
+     "1995-2009": 0.35,
+     "2010-24": 0.375
+    },
+    "by_era (mean)": {
+     "1950-64": 0.426,
+     "1965-79": 0.416,
+     "1980-94": 0.431,
+     "1995-2009": 0.363,
+     "2010-24": 0.376
+    },
+    "trend_with_year": [
+     -0.193,
+     -0.299,
+     -0.099,
+     314
+    ],
+    "to_1991 (mean)": 0.421,
+    "from_1992 (mean)": 0.377
+   },
+   "third": {
+    "by_era (median)": {
+     "1950-64": 0.186,
+     "1965-79": 0.197,
+     "1980-94": 0.165,
+     "1995-2009": 0.15,
+     "2010-24": 0.147
+    },
+    "by_era (mean)": {
+     "1950-64": 0.205,
+     "1965-79": 0.211,
+     "1980-94": 0.166,
+     "1995-2009": 0.164,
+     "2010-24": 0.155
+    },
+    "trend_with_year": [
+     -0.226,
+     -0.333,
+     -0.118,
+     314
+    ],
+    "to_1991 (mean)": 0.194,
+    "from_1992 (mean)": 0.16
+   },
+   "fourth_fifth": {
+    "by_era (median)": {
+     "1950-64": 0.093,
+     "1965-79": 0.072,
+     "1980-94": 0.069,
+     "1995-2009": 0.084,
+     "2010-24": 0.074
+    },
+    "by_era (mean)": {
+     "1950-64": 0.097,
+     "1965-79": 0.083,
+     "1980-94": 0.09,
+     "1995-2009": 0.1,
+     "2010-24": 0.083
+    },
+    "trend_with_year": [
+     0.019,
+     -0.083,
+     0.138,
+     314
+    ],
+    "to_1991 (mean)": 0.089,
+    "from_1992 (mean)": 0.092
+   },
+   "past_fifth": {
+    "by_era (median)": {
+     "1950-64": 0.033,
+     "1965-79": 0.027,
+     "1980-94": 0.02,
+     "1995-2009": 0.013,
+     "2010-24": 0.014
+    },
+    "by_era (mean)": {
+     "1950-64": 0.047,
+     "1965-79": 0.027,
+     "1980-94": 0.025,
+     "1995-2009": 0.021,
+     "2010-24": 0.021
+    },
+    "trend_with_year": [
+     -0.175,
+     -0.297,
+     -0.062,
+     314
+    ],
+    "to_1991 (mean)": 0.031,
+    "from_1992 (mean)": 0.022
+   },
+   "mean_interval": {
+    "by_era (median)": {
+     "1950-64": 2.261,
+     "1965-79": 2.113,
+     "1980-94": 2.109,
+     "1995-2009": 1.994,
+     "2010-24": 1.945
+    },
+    "by_era (mean)": {
+     "1950-64": 2.44,
+     "1965-79": 2.171,
+     "1980-94": 2.081,
+     "1995-2009": 1.975,
+     "2010-24": 1.887
+    },
+    "trend_with_year": [
+     -0.258,
+     -0.346,
+     -0.142,
+     314
+    ],
+    "to_1991 (mean)": 2.197,
+    "from_1992 (mean)": 1.955
+   },
+   "on_downbeat": {
+    "by_era (median)": {
+     "1950-64": 0.13,
+     "1965-79": 0.09,
+     "1980-94": 0.086,
+     "1995-2009": 0.077,
+     "2010-24": 0.07
+    },
+    "by_era (mean)": {
+     "1950-64": 0.146,
+     "1965-79": 0.095,
+     "1980-94": 0.092,
+     "1995-2009": 0.077,
+     "2010-24": 0.073
+    },
+    "trend_with_year": [
+     -0.29,
+     -0.389,
+     -0.188,
+     314
+    ],
+    "to_1991 (mean)": 0.106,
+    "from_1992 (mean)": 0.077
+   },
+   "on_offbeat_eighth": {
+    "by_era (median)": {
+     "1950-64": 0.368,
+     "1965-79": 0.416,
+     "1980-94": 0.404,
+     "1995-2009": 0.397,
+     "2010-24": 0.363
+    },
+    "by_era (mean)": {
+     "1950-64": 0.361,
+     "1965-79": 0.402,
+     "1980-94": 0.391,
+     "1995-2009": 0.39,
+     "2010-24": 0.372
+    },
+    "trend_with_year": [
+     -0.063,
+     -0.175,
+     0.04,
+     314
+    ],
+    "to_1991 (mean)": 0.392,
+    "from_1992 (mean)": 0.377
+   },
+   "on_sixteenth": {
+    "by_era (median)": {
+     "1950-64": 0.013,
+     "1965-79": 0.127,
+     "1980-94": 0.166,
+     "1995-2009": 0.205,
+     "2010-24": 0.155
+    },
+    "by_era (mean)": {
+     "1950-64": 0.052,
+     "1965-79": 0.157,
+     "1980-94": 0.186,
+     "1995-2009": 0.215,
+     "2010-24": 0.181
+    },
+    "trend_with_year": [
+     0.246,
+     0.142,
+     0.351,
+     314
+    ],
+    "to_1991 (mean)": 0.135,
+    "from_1992 (mean)": 0.202
+   },
+   "gap_sixteenth": {
+    "by_era (median)": {
+     "1950-64": 0.014,
+     "1965-79": 0.118,
+     "1980-94": 0.161,
+     "1995-2009": 0.284,
+     "2010-24": 0.161
+    },
+    "by_era (mean)": {
+     "1950-64": 0.06,
+     "1965-79": 0.174,
+     "1980-94": 0.201,
+     "1995-2009": 0.263,
+     "2010-24": 0.245
+    },
+    "trend_with_year": [
+     0.267,
+     0.149,
+     0.371,
+     314
+    ],
+    "to_1991 (mean)": 0.15,
+    "from_1992 (mean)": 0.254
+   },
+   "gap_eighth": {
+    "by_era (median)": {
+     "1950-64": 0.467,
+     "1965-79": 0.471,
+     "1980-94": 0.482,
+     "1995-2009": 0.474,
+     "2010-24": 0.476
+    },
+    "by_era (mean)": {
+     "1950-64": 0.478,
+     "1965-79": 0.47,
+     "1980-94": 0.461,
+     "1995-2009": 0.475,
+     "2010-24": 0.476
+    },
+    "trend_with_year": [
+     -0.011,
+     -0.129,
+     0.102,
+     314
+    ],
+    "to_1991 (mean)": 0.473,
+    "from_1992 (mean)": 0.47
+   },
+   "gap_quarter": {
+    "by_era (median)": {
+     "1950-64": 0.169,
+     "1965-79": 0.121,
+     "1980-94": 0.107,
+     "1995-2009": 0.096,
+     "2010-24": 0.103
+    },
+    "by_era (mean)": {
+     "1950-64": 0.192,
+     "1965-79": 0.13,
+     "1980-94": 0.132,
+     "1995-2009": 0.112,
+     "2010-24": 0.127
+    },
+    "trend_with_year": [
+     -0.186,
+     -0.301,
+     -0.085,
+     314
+    ],
+    "to_1991 (mean)": 0.15,
+    "from_1992 (mean)": 0.117
+   },
+   "pushed": {
+    "by_era (median)": {
+     "1950-64": 0.095,
+     "1965-79": 0.164,
+     "1980-94": 0.154,
+     "1995-2009": 0.083,
+     "2010-24": 0.061
+    },
+    "by_era (mean)": {
+     "1950-64": 0.098,
+     "1965-79": 0.163,
+     "1980-94": 0.154,
+     "1995-2009": 0.12,
+     "2010-24": 0.086
+    },
+    "trend_with_year": [
+     -0.253,
+     -0.37,
+     -0.141,
+     314
+    ],
+    "to_1991 (mean)": 0.143,
+    "from_1992 (mean)": 0.106
+   },
+   "npvi": {
+    "by_era (median)": {
+     "1950-64": 60.197,
+     "1965-79": 56.89,
+     "1980-94": 54.926,
+     "1995-2009": 43.102,
+     "2010-24": 39.437
+    },
+    "by_era (mean)": {
+     "1950-64": 62.416,
+     "1965-79": 58.9,
+     "1980-94": 56.458,
+     "1995-2009": 43.709,
+     "2010-24": 40.085
+    },
+    "trend_with_year": [
+     -0.536,
+     -0.613,
+     -0.452,
+     314
+    ],
+    "to_1991 (mean)": 58.761,
+    "from_1992 (mean)": 43.069
+   },
+   "distinct_durations": {
+    "by_era (median)": {
+     "1950-64": 5.0,
+     "1965-79": 5.0,
+     "1980-94": 5.0,
+     "1995-2009": 4.4,
+     "2010-24": 3.75
+    },
+    "by_era (mean)": {
+     "1950-64": 5.258,
+     "1965-79": 4.983,
+     "1980-94": 5.222,
+     "1995-2009": 4.431,
+     "2010-24": 3.877
+    },
+    "trend_with_year": [
+     -0.405,
+     -0.493,
+     -0.302,
+     314
+    ],
+    "to_1991 (mean)": 5.114,
+    "from_1992 (mean)": 4.244
+   },
+   "longest_over_median_note": {
+    "by_era (median)": {
+     "1950-64": 4.181,
+     "1965-79": 4.013,
+     "1980-94": 3.843,
+     "1995-2009": 3.006,
+     "2010-24": 2.765
+    },
+    "by_era (mean)": {
+     "1950-64": 4.609,
+     "1965-79": 4.202,
+     "1980-94": 4.075,
+     "1995-2009": 3.331,
+     "2010-24": 3.072
+    },
+    "trend_with_year": [
+     -0.339,
+     -0.44,
+     -0.221,
+     314
+    ],
+    "to_1991 (mean)": 4.215,
+    "from_1992 (mean)": 3.311
+   },
+   "sounding_share": {
+    "by_era (median)": {
+     "1950-64": 0.741,
+     "1965-79": 0.649,
+     "1980-94": 0.646,
+     "1995-2009": 0.694,
+     "2010-24": 0.671
+    },
+    "by_era (mean)": {
+     "1950-64": 0.738,
+     "1965-79": 0.665,
+     "1980-94": 0.636,
+     "1995-2009": 0.698,
+     "2010-24": 0.654
+    },
+    "trend_with_year": [
+     -0.105,
+     -0.215,
+     0.016,
+     314
+    ],
+    "to_1991 (mean)": 0.672,
+    "from_1992 (mean)": 0.676
+   },
+   "notes_per_bar_sd": {
+    "by_era (median)": {
+     "1950-64": 1.74,
+     "1965-79": 2.193,
+     "1980-94": 2.035,
+     "1995-2009": 1.975,
+     "2010-24": 1.925
+    },
+    "by_era (mean)": {
+     "1950-64": 1.727,
+     "1965-79": 2.132,
+     "1980-94": 2.062,
+     "1995-2009": 2.119,
+     "2010-24": 2.156
+    },
+    "trend_with_year": [
+     0.098,
+     -0.027,
+     0.222,
+     314
+    ],
+    "to_1991 (mean)": 2.0,
+    "from_1992 (mean)": 2.137
+   },
+   "bar_exact_repeats": {
+    "by_era (median)": {
+     "1950-64": 0.0,
+     "1965-79": 0.042,
+     "1980-94": 0.071,
+     "1995-2009": 0.095,
+     "2010-24": 0.143
+    },
+    "by_era (mean)": {
+     "1950-64": 0.062,
+     "1965-79": 0.081,
+     "1980-94": 0.088,
+     "1995-2009": 0.116,
+     "2010-24": 0.169
+    },
+    "trend_with_year": [
+     0.326,
+     0.236,
+     0.437,
+     314
+    ],
+    "to_1991 (mean)": 0.079,
+    "from_1992 (mean)": 0.139
+   },
+   "bar_rhythm_repeats": {
+    "by_era (median)": {
+     "1950-64": 0.226,
+     "1965-79": 0.118,
+     "1980-94": 0.103,
+     "1995-2009": 0.167,
+     "2010-24": 0.214
+    },
+    "by_era (mean)": {
+     "1950-64": 0.232,
+     "1965-79": 0.146,
+     "1980-94": 0.142,
+     "1995-2009": 0.191,
+     "2010-24": 0.248
+    },
+    "trend_with_year": [
+     0.138,
+     0.032,
+     0.249,
+     314
+    ],
+    "to_1991 (mean)": 0.165,
+    "from_1992 (mean)": 0.217
+   },
+   "distinct_bar_rhythms": {
+    "by_era (median)": {
+     "1950-64": 6.0,
+     "1965-79": 6.417,
+     "1980-94": 6.333,
+     "1995-2009": 6.0,
+     "2010-24": 5.4
+    },
+    "by_era (mean)": {
+     "1950-64": 5.829,
+     "1965-79": 6.243,
+     "1980-94": 6.283,
+     "1995-2009": 6.058,
+     "2010-24": 5.574
+    },
+    "trend_with_year": [
+     -0.123,
+     -0.234,
+     -0.015,
+     314
+    ],
+    "to_1991 (mean)": 6.16,
+    "from_1992 (mean)": 5.829
+   },
+   "unit2_returns": {
+    "by_era (median)": {
+     "1950-64": 0.0,
+     "1965-79": 0.0,
+     "1980-94": 0.0,
+     "1995-2009": 0.25,
+     "2010-24": 0.25
+    },
+    "by_era (mean)": {
+     "1950-64": 0.267,
+     "1965-79": 0.152,
+     "1980-94": 0.111,
+     "1995-2009": 0.26,
+     "2010-24": 0.303
+    },
+    "trend_with_year": [
+     0.189,
+     0.072,
+     0.3,
+     314
+    ],
+    "to_1991 (mean)": 0.169,
+    "from_1992 (mean)": 0.27
+   },
+   "unit3_returns": {
+    "by_era (median)": {
+     "1950-64": 0.0,
+     "1965-79": 0.25,
+     "1980-94": 0.333,
+     "1995-2009": 0.333,
+     "2010-24": 0.5
+    },
+    "by_era (mean)": {
+     "1950-64": 0.244,
+     "1965-79": 0.283,
+     "1980-94": 0.354,
+     "1995-2009": 0.354,
+     "2010-24": 0.459
+    },
+    "trend_with_year": [
+     0.242,
+     0.127,
+     0.347,
+     314
+    ],
+    "to_1991 (mean)": 0.301,
+    "from_1992 (mean)": 0.401
+   },
+   "unit4_to_unit2": {
+    "by_era (median)": {
+     "1950-64": 0.0,
+     "1965-79": 0.0,
+     "1980-94": 0.0,
+     "1995-2009": 0.0,
+     "2010-24": 0.25
+    },
+    "by_era (mean)": {
+     "1950-64": 0.112,
+     "1965-79": 0.163,
+     "1980-94": 0.118,
+     "1995-2009": 0.173,
+     "2010-24": 0.249
+    },
+    "trend_with_year": [
+     0.184,
+     0.072,
+     0.29,
+     314
+    ],
+    "to_1991 (mean)": 0.136,
+    "from_1992 (mean)": 0.204
+   },
+   "peak_position": {
+    "by_era (median)": {
+     "1950-64": 0.336,
+     "1965-79": 0.329,
+     "1980-94": 0.328,
+     "1995-2009": 0.305,
+     "2010-24": 0.234
+    },
+    "by_era (mean)": {
+     "1950-64": 0.36,
+     "1965-79": 0.355,
+     "1980-94": 0.313,
+     "1995-2009": 0.325,
+     "2010-24": 0.263
+    },
+    "trend_with_year": [
+     -0.119,
+     -0.227,
+     -0.016,
+     314
+    ],
+    "to_1991 (mean)": 0.335,
+    "from_1992 (mean)": 0.303
+   },
+   "on_tonic": {
+    "by_era (median)": {
+     "1950-64": 0.179,
+     "1965-79": 0.199,
+     "1980-94": 0.202,
+     "1995-2009": 0.223,
+     "2010-24": 0.196
+    },
+    "by_era (mean)": {
+     "1950-64": 0.176,
+     "1965-79": 0.207,
+     "1980-94": 0.207,
+     "1995-2009": 0.242,
+     "2010-24": 0.206
+    },
+    "trend_with_year": [
+     0.077,
+     -0.036,
+     0.201,
+     314
+    ],
+    "to_1991 (mean)": 0.201,
+    "from_1992 (mean)": 0.22
+   },
+   "outside_scale": {
+    "by_era (median)": {
+     "1950-64": 0.016,
+     "1965-79": 0.008,
+     "1980-94": 0.0,
+     "1995-2009": 0.0,
+     "2010-24": 0.0
+    },
+    "by_era (mean)": {
+     "1950-64": 0.065,
+     "1965-79": 0.054,
+     "1980-94": 0.045,
+     "1995-2009": 0.029,
+     "2010-24": 0.043
+    },
+    "trend_with_year": [
+     -0.246,
+     -0.339,
+     -0.145,
+     314
+    ],
+    "to_1991 (mean)": 0.053,
+    "from_1992 (mean)": 0.038
+   },
+   "last_note_tonic": {
+    "by_era (median)": {
+     "1950-64": 0.333,
+     "1965-79": 0.333,
+     "1980-94": 0.333,
+     "1995-2009": 0.333,
+     "2010-24": 0.333
+    },
+    "by_era (mean)": {
+     "1950-64": 0.32,
+     "1965-79": 0.319,
+     "1980-94": 0.294,
+     "1995-2009": 0.352,
+     "2010-24": 0.361
+    },
+    "trend_with_year": [
+     0.058,
+     -0.048,
+     0.171,
+     314
+    ],
+    "to_1991 (mean)": 0.318,
+    "from_1992 (mean)": 0.344
+   },
+   "axis_Reach": {
+    "by_era (median)": {
+     "1950-64": 0.451,
+     "1965-79": 0.199,
+     "1980-94": 0.09,
+     "1995-2009": -0.153,
+     "2010-24": -0.179
+    },
+    "by_era (mean)": {
+     "1950-64": 0.546,
+     "1965-79": 0.162,
+     "1980-94": 0.034,
+     "1995-2009": -0.226,
+     "2010-24": -0.245
+    },
+    "trend_with_year": [
+     -0.366,
+     -0.46,
+     -0.264,
+     314
+    ],
+    "to_1991 (mean)": 0.197,
+    "from_1992 (mean)": -0.194
+   },
+   "axis_Sixteenth motion": {
+    "by_era (median)": {
+     "1950-64": 0.206,
+     "1965-79": 0.594,
+     "1980-94": 0.7,
+     "1995-2009": 0.969,
+     "2010-24": 0.682
+    },
+    "by_era (mean)": {
+     "1950-64": 0.179,
+     "1965-79": 0.651,
+     "1980-94": 0.74,
+     "1995-2009": 0.9,
+     "2010-24": 0.726
+    },
+    "trend_with_year": [
+     0.24,
+     0.131,
+     0.335,
+     314
+    ],
+    "to_1991 (mean)": 0.549,
+    "from_1992 (mean)": 0.817
+   },
+   "axis_Stepwise": {
+    "by_era (median)": {
+     "1950-64": -0.158,
+     "1965-79": -0.122,
+     "1980-94": -0.089,
+     "1995-2009": -0.441,
+     "2010-24": -0.36
+    },
+    "by_era (mean)": {
+     "1950-64": -0.141,
+     "1965-79": -0.124,
+     "1980-94": -0.098,
+     "1995-2009": -0.392,
+     "2010-24": -0.346
+    },
+    "trend_with_year": [
+     -0.186,
+     -0.295,
+     -0.071,
+     314
+    ],
+    "to_1991 (mean)": -0.128,
+    "from_1992 (mean)": -0.34
+   },
+   "axis_Reciting": {
+    "by_era (median)": {
+     "1950-64": 0.188,
+     "1965-79": 0.056,
+     "1980-94": 0.088,
+     "1995-2009": 0.182,
+     "2010-24": 0.332
+    },
+    "by_era (mean)": {
+     "1950-64": 0.038,
+     "1965-79": 0.075,
+     "1980-94": 0.127,
+     "1995-2009": 0.254,
+     "2010-24": 0.384
+    },
+    "trend_with_year": [
+     0.19,
+     0.084,
+     0.287,
+     314
+    ],
+    "to_1991 (mean)": 0.088,
+    "from_1992 (mean)": 0.302
+   },
+   "axis_Off-beat": {
+    "by_era (median)": {
+     "1950-64": 0.073,
+     "1965-79": 0.493,
+     "1980-94": 0.298,
+     "1995-2009": 0.199,
+     "2010-24": 0.076
+    },
+    "by_era (mean)": {
+     "1950-64": 0.089,
+     "1965-79": 0.418,
+     "1980-94": 0.313,
+     "1995-2009": 0.296,
+     "2010-24": 0.183
+    },
+    "trend_with_year": [
+     -0.044,
+     -0.165,
+     0.067,
+     314
+    ],
+    "to_1991 (mean)": 0.318,
+    "from_1992 (mean)": 0.219
+   },
+   "axis_Uneven lengths": {
+    "by_era (median)": {
+     "1950-64": 0.969,
+     "1965-79": 0.993,
+     "1980-94": 1.008,
+     "1995-2009": 0.498,
+     "2010-24": 0.346
+    },
+    "by_era (mean)": {
+     "1950-64": 0.831,
+     "1965-79": 0.959,
+     "1980-94": 0.967,
+     "1995-2009": 0.506,
+     "2010-24": 0.372
+    },
+    "trend_with_year": [
+     -0.363,
+     -0.461,
+     -0.264,
+     314
+    ],
+    "to_1991 (mean)": 0.921,
+    "from_1992 (mean)": 0.481
+   },
+   "axis_Late peak": {
+    "by_era (median)": {
+     "1950-64": -0.216,
+     "1965-79": -0.172,
+     "1980-94": -0.089,
+     "1995-2009": -0.126,
+     "2010-24": -0.381
+    },
+    "by_era (mean)": {
+     "1950-64": -0.156,
+     "1965-79": -0.175,
+     "1980-94": -0.24,
+     "1995-2009": -0.121,
+     "2010-24": -0.383
+    },
+    "trend_with_year": [
+     -0.061,
+     -0.165,
+     0.052,
+     314
+    ],
+    "to_1991 (mean)": -0.21,
+    "from_1992 (mean)": -0.235
+   }
+  },
+  "trending": {
+   "notes_per_bar": [
+    0.484,
+    0.368,
+    0.564,
+    314
+   ],
+   "notes_a_second": [
+    0.54,
+    0.452,
+    0.617,
+    314
+   ],
+   "range": [
+    -0.27,
+    -0.363,
+    -0.165,
+    314
+   ],
+   "pitch_sd": [
+    -0.31,
+    -0.403,
+    -0.218,
+    314
+   ],
+   "distinct_pitches": [
+    -0.334,
+    -0.434,
+    -0.237,
+    314
+   ],
+   "pitch_bits": [
+    -0.362,
+    -0.463,
+    -0.265,
+    314
+   ],
+   "repeat": [
+    0.379,
+    0.286,
+    0.471,
+    314
+   ],
+   "third": [
+    -0.226,
+    -0.333,
+    -0.118,
+    314
+   ],
+   "mean_interval": [
+    -0.258,
+    -0.346,
+    -0.142,
+    314
+   ],
+   "on_downbeat": [
+    -0.29,
+    -0.389,
+    -0.188,
+    314
+   ],
+   "on_sixteenth": [
+    0.246,
+    0.142,
+    0.351,
+    314
+   ],
+   "gap_sixteenth": [
+    0.267,
+    0.149,
+    0.371,
+    314
+   ],
+   "pushed": [
+    -0.253,
+    -0.37,
+    -0.141,
+    314
+   ],
+   "npvi": [
+    -0.536,
+    -0.613,
+    -0.452,
+    314
+   ],
+   "distinct_durations": [
+    -0.405,
+    -0.493,
+    -0.302,
+    314
+   ],
+   "longest_over_median_note": [
+    -0.339,
+    -0.44,
+    -0.221,
+    314
+   ],
+   "bar_exact_repeats": [
+    0.326,
+    0.236,
+    0.437,
+    314
+   ],
+   "unit3_returns": [
+    0.242,
+    0.127,
+    0.347,
+    314
+   ],
+   "outside_scale": [
+    -0.246,
+    -0.339,
+    -0.145,
+    314
+   ],
+   "axis_Reach": [
+    -0.366,
+    -0.46,
+    -0.264,
+    314
+   ],
+   "axis_Sixteenth motion": [
+    0.24,
+    0.131,
+    0.335,
+    314
+   ],
+   "axis_Uneven lengths": [
+    -0.363,
+    -0.461,
+    -0.264,
+    314
+   ]
+  },
+  "form_by_era": {
+   "1950-64": {
+    "songs": 52,
+    "verse": 0.769,
+    "chorus": 0.788,
+    "prechorus": 0.058,
+    "bridge": 0.404,
+    "postchorus": 0.038,
+    "hook": 0.019
+   },
+   "1965-79": {
+    "songs": 71,
+    "verse": 0.944,
+    "chorus": 0.873,
+    "prechorus": 0.197,
+    "bridge": 0.254,
+    "postchorus": 0.056,
+    "hook": 0.028
+   },
+   "1980-94": {
+    "songs": 71,
+    "verse": 0.958,
+    "chorus": 0.972,
+    "prechorus": 0.296,
+    "bridge": 0.423,
+    "postchorus": 0.099,
+    "hook": 0.0
+   },
+   "1995-2009": {
+    "songs": 72,
+    "verse": 0.931,
+    "chorus": 0.986,
+    "prechorus": 0.375,
+    "bridge": 0.556,
+    "postchorus": 0.111,
+    "hook": 0.028
+   },
+   "2010-24": {
+    "songs": 72,
+    "verse": 0.875,
+    "chorus": 0.986,
+    "prechorus": 0.514,
+    "bridge": 0.458,
+    "postchorus": 0.139,
+    "hook": 0.111
+   }
+  },
+  "rules": {
+   "1950-1991": {
+    "songs_with_verse_and_chorus": 144,
+    "chorus_median_higher": 0.556,
+    "level": 0.181,
+    "lower": 0.264,
+    "not_lower": 0.736,
+    "median_change": 2.0,
+    "chorus_floor_higher": 0.528,
+    "floor_lower": 0.215,
+    "floor_change": 1.0,
+    "chorus_top_higher": 0.521,
+    "top_lower": 0.222,
+    "chorus_opening_related_to_verse": 0.068,
+    "openings_compared": 118,
+    "chorus_fewer_notes_a_second": 0.59,
+    "bridge_above_verse": 0.625,
+    "bridge_songs": 56
+   },
+   "1992-2024": {
+    "songs_with_verse_and_chorus": 139,
+    "chorus_median_higher": 0.583,
+    "level": 0.223,
+    "lower": 0.194,
+    "not_lower": 0.806,
+    "median_change": 2.0,
+    "chorus_floor_higher": 0.54,
+    "floor_lower": 0.144,
+    "floor_change": 2.0,
+    "chorus_top_higher": 0.626,
+    "top_lower": 0.245,
+    "chorus_opening_related_to_verse": 0.039,
+    "openings_compared": 128,
+    "chorus_fewer_notes_a_second": 0.568,
+    "bridge_above_verse": 0.691,
+    "bridge_songs": 68
+   }
+  },
+  "section_lengths": {
+   "1950-1991": {
+    "bridge": {
+     "n": 67,
+     "multiple_of_4": 0.478,
+     "median_bars": 8.0,
+     "8_bars": 0.418,
+     "16_bars": 0.045
+    },
+    "chorus": {
+     "n": 161,
+     "multiple_of_4": 0.447,
+     "median_bars": 8.0,
+     "8_bars": 0.348,
+     "16_bars": 0.025
+    },
+    "prechorus": {
+     "n": 36,
+     "multiple_of_4": 0.556,
+     "median_bars": 8.0,
+     "8_bars": 0.361,
+     "16_bars": 0.028
+    },
+    "verse": {
+     "n": 187,
+     "multiple_of_4": 0.508,
+     "median_bars": 9.0,
+     "8_bars": 0.337,
+     "16_bars": 0.118
+    }
+   },
+   "1992-2024": {
+    "bridge": {
+     "n": 79,
+     "multiple_of_4": 0.582,
+     "median_bars": 8.0,
+     "8_bars": 0.43,
+     "16_bars": 0.101
+    },
+    "chorus": {
+     "n": 156,
+     "multiple_of_4": 0.596,
+     "median_bars": 9.0,
+     "8_bars": 0.365,
+     "16_bars": 0.16
+    },
+    "prechorus": {
+     "n": 69,
+     "multiple_of_4": 0.812,
+     "median_bars": 8.0,
+     "8_bars": 0.493,
+     "16_bars": 0.029
+    },
+    "verse": {
+     "n": 194,
+     "multiple_of_4": 0.68,
+     "median_bars": 8.0,
+     "8_bars": 0.459,
+     "16_bars": 0.16
+    }
+   }
+  },
+  "genre_by_era": {
+   "1950-64": {
+    "Pop": 0.53,
+    "Rock": 0.16,
+    "Jazz": 0.07,
+    "Folk": 0.05
+   },
+   "1965-79": {
+    "Funk/Soul": 0.41,
+    "Rock": 0.23,
+    "Pop": 0.21,
+    "Country": 0.05
+   },
+   "1980-94": {
+    "Rock": 0.32,
+    "Pop": 0.28,
+    "R&B": 0.15,
+    "Funk/Soul": 0.11
+   },
+   "1995-2009": {
+    "R&B": 0.32,
+    "Pop": 0.29,
+    "Rock": 0.14,
+    "Hip-hop": 0.14
+   },
+   "2010-24": {
+    "Pop": 0.52,
+    "Hip-hop": 0.21,
+    "Country": 0.07,
+    "Rock": 0.07
+   }
+  }
+ }
+}

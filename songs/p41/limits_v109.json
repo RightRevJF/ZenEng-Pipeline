@@ -1,0 +1,122 @@
+{
+ "corpus": "POP909 (Wang et al. 2020), the 515 major-key songs with a labelled verse and chorus (Dai et al. 2020 labels): the engine's calibration pairs for Table B, read on the whole first verse and chorus runs as the calibration was",
+ "pairs": 515,
+ "family": "the six of 286 without realness (300)",
+ "steps": [
+  {
+   "hard_percentile": 1,
+   "joint": 0.9417,
+   "hard_any": 30,
+   "limits": {
+    "spectral": [
+     "between",
+     [
+      0.086,
+      1.628
+     ],
+     [
+      -0.098,
+      1.766
+     ]
+    ],
+    "cmp": [
+     "at least",
+     0.338,
+     0.0915
+    ],
+    "memory": [
+     "at least",
+     0.2266,
+     0.0762
+    ],
+    "surprisal": [
+     "at least",
+     0.3333,
+     0.245
+    ],
+    "rhythm band": [
+     "between",
+     [
+      1.5809,
+      2.9273
+     ],
+     [
+      1.3686,
+      3.6124
+     ]
+    ],
+    "sequence legs": [
+     "at most",
+     1.0,
+     2.0
+    ]
+   }
+  }
+ ],
+ "chosen": {
+  "hard_percentile": 1,
+  "joint": 0.9417,
+  "hard_any": 30,
+  "limits": {
+   "spectral": [
+    "between",
+    [
+     0.086,
+     1.628
+    ],
+    [
+     -0.098,
+     1.766
+    ]
+   ],
+   "cmp": [
+    "at least",
+    0.338,
+    0.0915
+   ],
+   "memory": [
+    "at least",
+    0.2266,
+    0.0762
+   ],
+   "surprisal": [
+    "at least",
+    0.3333,
+    0.245
+   ],
+   "rhythm band": [
+    "between",
+    [
+     1.5809,
+     2.9273
+    ],
+    [
+     1.3686,
+     3.6124
+    ]
+   ],
+   "sequence legs": [
+    "at most",
+    1.0,
+    2.0
+   ]
+  }
+ },
+ "realness": {
+  "reading_only": true,
+  "pairs_percentiles": [
+   0.0518,
+   0.2515,
+   0.501,
+   0.7505,
+   0.9501
+  ],
+  "kept_chart": [
+   0.004,
+   0.029,
+   0.088,
+   0.303,
+   0.636
+  ]
+ }
+}

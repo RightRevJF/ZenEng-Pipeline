@@ -1,0 +1,311 @@
+{
+ "about": "ZenEng v106, Window 126, fixes 276-280. Each limit is read on the whole song's sung notes: shares are of consecutive moves (leaps), of notes on a beat or held a beat (tritone from the root), the longest run of one pitch inside a line, the most distinct note lengths (in twelfths of a beat) in any 8 bars, and Chorus 1 minus Verse 1 in semitones (top, median, lowest note). A build dies when it goes past any hard limit or breaks three or more soft limits.",
+ "soft limits (kept 5th or 95th percentile)": {
+  "tritone_leap_share": 0.0171,
+  "past_octave_share": 0.0177,
+  "run_max": 9.55,
+  "tritone_from_root_share": 0.0348,
+  "max_lengths_8_bars": 8.0,
+  "chorus_top_minus_verse": -6.05,
+  "chorus_median_minus_verse": -5.0,
+  "chorus_floor_minus_verse": -5.0
+ },
+ "hard limits (kept 1st or 99th percentile)": {
+  "tritone_leap_share": 0.0383,
+  "past_octave_share": 0.0417,
+  "run_max": 14.86,
+  "tritone_from_root_share": 0.1282,
+  "max_lengths_8_bars": 9.0,
+  "chorus_top_minus_verse": -10.83,
+  "chorus_median_minus_verse": -8.22,
+  "chorus_floor_minus_verse": -7.0
+ },
+ "direction": {
+  "tritone_leap_share": "at most",
+  "past_octave_share": "at most",
+  "run_max": "at most (soft: under 10; hard: under 15)",
+  "tritone_from_root_share": "at most",
+  "max_lengths_8_bars": "at most",
+  "chorus_top_minus_verse": "at least",
+  "chorus_median_minus_verse": "at least",
+  "chorus_floor_minus_verse": "at least"
+ },
+ "kept percentiles": {
+  "tritone_leap_share": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0037,
+   0.0171,
+   0.0383
+  ],
+  "past_octave_share": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0042,
+   0.0177,
+   0.0417
+  ],
+  "past_octave_count": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   1.0,
+   5.0,
+   10.55
+  ],
+  "largest_leap": [
+   4.38,
+   7.0,
+   9.0,
+   12.0,
+   15.0,
+   21.55,
+   26.0
+  ],
+  "largest_leap_inside_a_line": [
+   3.38,
+   5.0,
+   7.0,
+   9.0,
+   12.0,
+   16.55,
+   22.62
+  ],
+  "tritone_share_inside_lines": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0178,
+   0.0353
+  ],
+  "run_max": [
+   2.0,
+   2.0,
+   4.0,
+   5.0,
+   7.0,
+   9.55,
+   14.86
+  ],
+  "tritone_from_root_share": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0127,
+   0.0348,
+   0.1282
+  ],
+  "max_lengths_8_bars": [
+   2.0,
+   4.0,
+   5.0,
+   6.0,
+   7.0,
+   8.0,
+   9.0
+  ],
+  "chorus_top_minus_verse": [
+   -10.83,
+   -6.05,
+   -1.0,
+   0.0,
+   3.0,
+   9.0,
+   11.61
+  ],
+  "chorus_median_minus_verse": [
+   -8.22,
+   -5.0,
+   0.0,
+   1.0,
+   3.125,
+   10.05,
+   13.22
+  ],
+  "chorus_floor_minus_verse": [
+   -7.0,
+   -5.0,
+   0.0,
+   2.0,
+   4.0,
+   9.05,
+   12.0
+  ],
+  "bridge_median_minus_verse": [
+   -5.9,
+   -2.9,
+   0.0,
+   2.0,
+   5.0,
+   7.0,
+   11.16
+  ],
+  "bridge_top_minus_song_top": [
+   -9.58,
+   -8.9,
+   -3.5,
+   -1.0,
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "kept songs: soft breaks 0, 1, 2, 3 or more": [
+  0.707,
+  0.229,
+  0.057,
+  0.007
+ ],
+ "audit, as coded": {
+  "kept songs": 170,
+  "gates (share of kept songs that pass; songs it could be read on)": {
+   "leaps: no tritone leap and none past an octave, anywhere in the sung notes (as coded)": [
+    0.435,
+    170
+   ],
+   "  no leap past an octave": [
+    0.594,
+    170
+   ],
+   "  no tritone leap": [
+    0.659,
+    170
+   ],
+   "  the same read inside lines only": [
+    0.659,
+    170
+   ],
+   "run clause, old (no pitch over three times running in a line; 166/196)": [
+    0.212,
+    170
+   ],
+   "run clause, new (under ten; 270)": [
+    0.947,
+    170
+   ],
+   "register (133): chorus top at or above the verse's": [
+    0.729,
+    140
+   ],
+   "227: chorus median not below the verse's": [
+    0.771,
+    140
+   ],
+   "227: chorus lowest note above the verse's": [
+    0.557,
+    140
+   ],
+   "  lowest note not below": [
+    0.793,
+    140
+   ],
+   "227 as coded (both)": [
+    0.529,
+    140
+   ],
+   "227: chorus opening unrelated to the verse's": [
+    0.949,
+    138
+   ],
+   "208: bridge opening unrelated to verse and chorus": [
+    0.952,
+    42
+   ],
+   "208: bridge median above the verse's": [
+    0.674,
+    43
+   ],
+   "208: bridge top under the song's top": [
+    0.558,
+    43
+   ],
+   "208 register as coded (both)": [
+    0.326,
+    43
+   ],
+   "215: no sung note a tritone from its chord's root on a beat or held a beat": [
+    0.541,
+    170
+   ],
+   "159: pushed notes at most 42%": [
+    0.994,
+    170
+   ],
+   "206: at most five note lengths in every 8-bar stretch of the song (as coded)": [
+    0.371,
+    170
+   ],
+   "  the same on the first verse and chorus windows only": [
+    0.808,
+    167
+   ]
+  },
+  "readings": {
+   "pushed share (5, 50, 95)": [
+    0.018,
+    0.11,
+    0.24
+   ],
+   "most note lengths in any 8 bars (5, 25, 50, 75, 95)": [
+    4.0,
+    5.0,
+    6.0,
+    7.0,
+    8.0
+   ],
+   "share of beat-or-held notes a tritone from the root (50, 75, 95)": [
+    0.0,
+    0.0127,
+    0.0348
+   ],
+   "longest run in a line (50, 95)": [
+    5.0,
+    9.549999999999983
+   ]
+  },
+  "all eight together, as coded in song 38 (songs with a verse and a chorus)": {
+   "songs": 138,
+   "pass all": 0.0,
+   "gates failed (median, 75th)": [
+    3.0,
+    4.0
+   ],
+   "pass each": {
+    "leaps_ok": 0.428,
+    "run_3_ok": 0.181,
+    "register_133_ok": 0.732,
+    "227_ok": 0.529,
+    "chorus_opening_unrelated": 0.949,
+    "no_tritone_from_root_215": 0.5,
+    "pushed_159_ok": 1.0,
+    "206_ok": 0.355
+   }
+  },
+  "with the bridge gates too (songs with a bridge)": {
+   "songs": 42,
+   "pass all ten": 0.0
+  },
+  "159 density, 1.1 to 4.9 notes a second (top-five singles 1950-2024)": [
+   0.953,
+   363
+  ],
+  "239 as a gate: a kept return keeps its first note / its top note or higher (chart, grid)": {
+   "first note": [
+    0.802,
+    0.821
+   ],
+   "top same or higher": [
+    0.924,
+    0.937
+   ]
+  }
+ }
+}

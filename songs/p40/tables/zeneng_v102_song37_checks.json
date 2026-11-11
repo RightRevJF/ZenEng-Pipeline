@@ -1,0 +1,314 @@
+{
+ "about": "ZenEng v102, Window 122, fixes 243-251. Kept figures behind song 37's findings.",
+ "checks": {
+  "measures": 56,
+  "outside_both_middle_halves (5, 25, 50, 75, 95)": {
+   "chart windows": [
+    8.0,
+    13.0,
+    16.0,
+    19.0,
+    26.0
+   ],
+   "grid windows": [
+    10.0,
+    15.0,
+    18.0,
+    22.0,
+    29.0
+   ],
+   "chart songs (mean of a song's windows)": [
+    9.5,
+    13.5,
+    16.0,
+    19.0,
+    24.0
+   ]
+  },
+  "chart_window_distance": [
+   0.076,
+   0.144,
+   0.197,
+   0.264,
+   0.446
+  ],
+  "chart_song_distance (features averaged)": [
+   0.043,
+   0.093,
+   0.144,
+   0.196,
+   0.351
+  ],
+  "chart_song_distance (mean of windows' distances)": [
+   0.102,
+   0.154,
+   0.204,
+   0.257,
+   0.39
+  ],
+  "aimed_measures_in_the_distance": 10,
+  "chart_window_distance_from_the_aimed (median, mean)": [
+   0.041,
+   0.048
+  ],
+  "from_the_rest (median, mean)": [
+   0.149,
+   0.169
+  ],
+  "share_of_distance_from_the_aimed (mean)": 0.221,
+  "distance a target adds on the aimed measures if met exactly (mean)": {
+   "middle half": 0.0,
+   "uniform between the 5th and 95th": 0.059,
+   "each measure from its own kept values": 0.048,
+   "a whole kept window": 0.047
+  },
+  "aimed measures: median |rank correlation| between pairs in chart windows": 0.082,
+  "pairs over 0.4": [
+   [
+    "repeat",
+    "step",
+    -0.61
+   ],
+   [
+    "step",
+    "third",
+    -0.41
+   ]
+  ],
+  "chart: windows at 4.25 notes a bar or more": {
+   "share": 0.394,
+   "n": 124,
+   "gap_eighth (5,25,50,75,95)": [
+    0.189,
+    0.363,
+    0.515,
+    0.667,
+    0.804
+   ],
+   "gap_sixteenth": [
+    0.0,
+    0.0,
+    0.123,
+    0.355,
+    0.567
+   ],
+   "gap_quarter": [
+    0.0,
+    0.044,
+    0.09,
+    0.171,
+    0.382
+   ]
+  },
+  "chart: gap_eighth by notes a bar": {
+   "(0.0, 3.0]": [
+    0.333,
+    90
+   ],
+   "(3.0, 3.75]": [
+    0.536,
+    75
+   ],
+   "(3.75, 4.25]": [
+    0.539,
+    40
+   ],
+   "(4.25, 5.0]": [
+    0.548,
+    50
+   ],
+   "(5.0, 20.0]": [
+    0.495,
+    60
+   ]
+  },
+  "grid: windows at 4.25 notes a bar or more": {
+   "share": 0.563,
+   "n": 1352,
+   "gap_eighth (5,25,50,75,95)": [
+    0.078,
+    0.348,
+    0.511,
+    0.675,
+    0.879
+   ],
+   "gap_sixteenth": [
+    0.0,
+    0.0,
+    0.106,
+    0.333,
+    0.676
+   ],
+   "gap_quarter": [
+    0.0,
+    0.025,
+    0.105,
+    0.217,
+    0.455
+   ]
+  },
+  "grid: gap_eighth by notes a bar": {
+   "(0.0, 3.0]": [
+    0.261,
+    480
+   ],
+   "(3.0, 3.75]": [
+    0.407,
+    367
+   ],
+   "(3.75, 4.25]": [
+    0.469,
+    276
+   ],
+   "(4.25, 5.0]": [
+    0.5,
+    366
+   ],
+   "(5.0, 20.0]": [
+    0.519,
+    914
+   ]
+  },
+  "chart chorus windows": {
+   "n": 145,
+   "peak_position (5,25,50,75,95)": [
+    0.0,
+    0.031,
+    0.227,
+    0.578,
+    0.9
+   ],
+   "peak in the last quarter": 0.159,
+   "peak in the first quarter": 0.517,
+   "time_in_top_third": [
+    0.092,
+    0.238,
+    0.373,
+    0.525,
+    0.78
+   ]
+  },
+  "all chart windows: peak in the last quarter": 0.149,
+  "grid: peak in the last quarter": 0.162
+ },
+ "added_notes_in_returns (fix 246)": {
+  "chart": {
+   "returns": 197,
+   "added_notes": 193,
+   "against the note before: same / step / leap": [
+    0.279,
+    0.475,
+    0.246
+   ],
+   "against the note after": [
+    0.28,
+    0.507,
+    0.213
+   ],
+   "same pitch as a neighbour": 0.429,
+   "sources with a run of four of one pitch": 0.178,
+   "returns with one": 0.178
+  },
+  "grid": {
+   "returns": 6023,
+   "added_notes": 3382,
+   "against the note before: same / step / leap": [
+    0.304,
+    0.432,
+    0.264
+   ],
+   "against the note after": [
+    0.304,
+    0.395,
+    0.301
+   ],
+   "same pitch as a neighbour": 0.458,
+   "sources with a run of four of one pitch": 0.187,
+   "returns with one": 0.188
+  },
+  "all moves that repeat the note (median window)": {
+   "chart": 0.25,
+   "grid": 0.2,
+   "old": 0.321,
+   "control": 0.376,
+   "new": 0.242
+  }
+ },
+ "song_37_on_the_axes": {
+  "axes": [
+   "Reach",
+   "Chord-bound",
+   "Sixteenth motion",
+   "Stepwise",
+   "Reciting",
+   "Off-beat",
+   "Uneven lengths",
+   "Late peak"
+  ],
+  "pick": [
+   -0.56,
+   0.81,
+   -0.01,
+   0.84,
+   -0.61,
+   1.15,
+   0.62,
+   1.0
+  ],
+  "survivors_5_50_95": [
+   [
+    -0.41,
+    0.28,
+    0.62
+   ],
+   [
+    -0.97,
+    0.14,
+    1.15
+   ],
+   [
+    -0.84,
+    -0.34,
+    0.18
+   ],
+   [
+    -0.87,
+    -0.15,
+    0.84
+   ],
+   [
+    -0.61,
+    0.19,
+    1.1
+   ],
+   [
+    -0.41,
+    0.4,
+    1.16
+   ],
+   [
+    -0.41,
+    0.1,
+    0.63
+   ],
+   [
+    0.42,
+    0.95,
+    1.3
+   ]
+  ],
+  "survivors_sd": [
+   0.34,
+   0.62,
+   0.3,
+   0.51,
+   0.5,
+   0.56,
+   0.33,
+   0.34
+  ],
+  "n": 40,
+  "order": "15ed5929f53d",
+  "pick_fp": "9a3e548d293f"
+ }
+}

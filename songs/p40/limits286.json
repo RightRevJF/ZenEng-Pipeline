@@ -1,0 +1,69 @@
+{
+ "corpus": "POP909 (Wang et al. 2020), the 515 major-key songs with a labelled verse and chorus (Dai et al. 2020 labels): the engine's calibration pairs for Table B, read on the whole first verse and chorus runs as the calibration was",
+ "pairs": 515,
+ "alone": {
+  "spectral": 0.899,
+  "cmp": 0.95,
+  "memory": 0.95,
+  "surprisal": 0.979,
+  "realness": 0.95,
+  "rhythm band (163)": 0.984,
+  "sequence legs (148)": 1.0
+ },
+ "table_b_together": 0.759,
+ "all_seven": 0.757,
+ "breaks": {
+  "0": 390,
+  "1": 102,
+  "2": 22,
+  "3": 1
+ },
+ "limits": {
+  "cmp": {
+   "direction": "at least",
+   "soft": 0.338,
+   "hard": 0.0915
+  },
+  "memory": {
+   "direction": "at least",
+   "soft": 0.2266,
+   "hard": 0.0762
+  },
+  "surprisal": {
+   "direction": "at least",
+   "soft": 0.3333,
+   "hard": 0.245
+  },
+  "realness": {
+   "direction": "at least",
+   "soft": 0.0518,
+   "hard": 0.0119
+  },
+  "rhythm band": {
+   "direction": "between",
+   "soft": [
+    1.5809,
+    2.9273
+   ],
+   "hard": [
+    1.3686,
+    3.6124
+   ]
+  },
+  "sequence legs": {
+   "direction": "at most",
+   "soft": 1.0,
+   "hard": 2.0
+  }
+ },
+ "table_b_floors_as_coded": {
+  "cmp": 0.3379578845273341,
+  "mh": 0.22664465639520667,
+  "ic": 0.3333333333333333,
+  "realness": 0.05184466019417476,
+  "rhythm_hooktheory": [
+   1.33,
+   3.57
+  ]
+ }
+}

@@ -16,6 +16,11 @@ mkdir -p /home/claude
 for d in carol pop; do
   if [ -e "/home/claude/$d" ] && [ ! -L "/home/claude/$d" ]; then echo "/home/claude/$d exists and is not a link: left alone"; else ln -sfn "$REPO/lib/$d" "/home/claude/$d"; fi
 done
+# 309: the songs' scripts read each other and their tables by absolute path (/home/claude/pNN); link every song folder there
+for d in "$REPO"/songs/p*; do
+  n=$(basename "$d")
+  if [ -e "/home/claude/$n" ] && [ ! -L "/home/claude/$n" ]; then :; else ln -sfn "$d" "/home/claude/$n"; fi
+done
 echo "checks:"; lilypond --version | head -1; fluidsynth --version 2>&1 | head -1; pandoc --version | head -1
 ls /usr/share/sounds/sf2/FluidR3_GM.sf2 >/dev/null && echo "soundfont ok"
 python3 -c "import sys; sys.path[:0]=['/home/claude/carol','/home/claude/pop']; import lily, measures, lyricsearch, popsearch; print('libraries ok')"
