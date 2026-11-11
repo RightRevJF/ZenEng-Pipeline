@@ -109,7 +109,7 @@ for n in sorted(lead, key=lambda n: n["on"]):
     w = n["text"].replace("'", "’"); q = '"' + esc(w) + '"' if re.search(r"[’?!,.;:\"—]", w) or w in ("_",) else w
     LYR.append(q + (" --" if n["hyph"] else ""))
 VMARKS = {"Intro": "mandolin riff alone; acoustic at bar 5", "Verse 1": "Lark", "Pre 1": "Lark", "Chorus 1": "Briar; the band", "Verse 2": "Lark", "Pre 2": "Lark",
-          "Chorus 2": "Briar, Lark's harmony", "Bridge": "Lark", "Riff break": "guitar solo", "Last Chorus": "both; bars 101-102 Lark alone", "Outro": "mandolin; one chord, let ring"}
+          "Chorus 2": "Briar, Lark's harmony", "Bridge": "Lark", "Riff break": "guitar solo", "Last Chorus": "both; bars 100-101 Lark alone", "Outro": "mandolin; one chord, let ring"}
 VBODY, VREST = body(VOX, VMARKS)
 HARM = [dict(n) for n in REC["harm"]]
 hg = collections.defaultdict(list)

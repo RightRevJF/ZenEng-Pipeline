@@ -10,7 +10,7 @@ FEEL = {"Intro": "MANDOLIN RIFF ALONE for 4 bars (picked eighths over open D and
         "Verse 2": "LARK. As verse 1 (the band drops out)", "Pre 2": "as pre-chorus 1; fill into the chorus (bar 56)", "Chorus 2": "BRIAR, Lark's harmony a third above; tambourine on 2 and 4",
         "Bridge": "LARK. Back to the folk band: acoustic, mandolin strum, hand percussion, strings held, bass whole notes; fill into the break (bar 80)",
         "Riff break": "8-bar lead-guitar solo; the mandolin riff in its first and last two bars; the kit; electric guitar quarters",
-        "Last Chorus": "BOTH VOICES, the biggest: tambourine eighths, strings an octave up; bars 101-102 Lark alone ('she sat down hungry'); the tag 'Nothing else on earth' home to D (bars 105-106)",
+        "Last Chorus": "BOTH VOICES, the biggest: tambourine eighths, strings an octave up; bars 100-101 Lark alone ('she sat down hungry'); the tag 'Nothing else on earth' home to D (bars 105-106)",
         "Outro": "MANDOLIN RIFF for 3 bars, floor tom; ONE D CHORD on 1 of bar 110 (everyone who plays); let it ring"}
 def rows(cells, w=8): return "".join("<tr>" + "".join(f"<td>{c}</td>" for c in cells[i:i + w]) + "</tr>" for i in range(0, len(cells), w))
 body = ""
