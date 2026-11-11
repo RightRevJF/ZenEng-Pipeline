@@ -145,4 +145,12 @@ Deaths, main: design: 'Nothing important' held longer than in the hook; 'I'll ca
 
 # Blind pick
 
-Not yet run: offered after delivery.
+Module 10.20's three slots, offered in shuffled order (seed 20261552) without their labels:
+
+| Offered | Line | Slot |
+|---|---|---|
+| A | Hey, it's me, nothing important, | remembered top |
+| B | the kid at the counter said, "Nothing to save," | middle (top quartile under both) |
+| C | you can hear his blinker, his ring tapping the wheel, | annotated top |
+
+The writer picked **B: the middle slot.** Tally (28 songs; songs 40 and 41 not yet offered): Annotated top 11, Remembered top 8, Middle 8, Refrain 1.

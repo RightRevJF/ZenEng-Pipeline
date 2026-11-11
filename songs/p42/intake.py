@@ -59,3 +59,6 @@ LOG.append({"q": "14 (235)", "topic": "the cello", "options": {"A": "holds in ve
 COUNTER = "cello: holds in verse 2 and choruses 1-2; countermelody in the voice's gaps in the bridge and the last chorus (design, 235)"
 LOG.append({"q": "15 (208)", "topic": "bridge register", "options": {"A": "drawn as kept songs do (default path)", "B": "below the verse (design)", "C": "above the verse (design)"},
             "recommended": "A", "answer": "A"})
+LOG.append({"q": "16 (10.20 blind pick)", "topic": "which line people would quote", "options": {"A": "Hey, it's me, nothing important, [remembered top]",
+            "B": "the kid at the counter said, \"Nothing to save,\" [middle: top quartile under both]", "C": "you can hear his blinker, his ring tapping the wheel, [annotated top]"},
+            "recommended": None, "answer": "B", "slot": "middle"})

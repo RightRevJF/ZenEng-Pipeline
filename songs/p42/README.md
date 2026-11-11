@@ -24,3 +24,4 @@ Words and music: Jason Bryant. A piano ballad, straight eighths, q = 76, B-flat 
     python3 demo_p42.py; python3 engrave_p42.py; python3 nashville_p42.py
     python3 consistency_p42.py                               # 39/39
     songbook.md, test_report.md, fixlist_v110.md             # findings 322-328
+    python3 q1020_p42.py                                     # 10.20 slots; blind pick B, the middle slot (Q16)

@@ -142,4 +142,4 @@ After 322–328: song 40 under the floor below one in ten with likeness of bar r
 
 ## Blind-pick tally
 
-Songs 40, 41 and 42's blind picks are offered after delivery. The tally stands at 27 songs until they are answered: Annotated top 11, Remembered top 8, Middle 7, Refrain 1.
+Song 42: the writer picked the middle slot ("the kid at the counter said, 'Nothing to save,'", top quartile under both). Songs 40 and 41 are not yet offered. Tally, 28 songs: Annotated top 11, Remembered top 8, Middle 8, Refrain 1.
