@@ -20,3 +20,12 @@ Words and music: Jason Bryant. Intake Q1-Q20 in intake.py; the locked lyric in l
     python3 trace_opens.py melody_p41.py 5 main _trace       # 309: reads_melody_p41.txt (all committed)
 
 test_report.md: the run and findings 314-319. songbook.md: the musicians' songbook (Doc and Word).
+
+## Song 41 made for real (the writer's Q21-Q25)
+
+    PYTHONHASHSEED=0 python3 melody_p41d.py 1000 design       # twice: 504 survivors, order 33000bf520dd (designs: hook to D4, verses on D3,
+                                                             # eighths only, E4 once on 'shine', 'It sings.' home to G3; the bridge under the verse)
+    PYTHONHASHSEED=0 python3 pick_p41d.py                     # e6ba46e75684 (255's pick, read by ear against the shortlist), no hand edits
+    PYTHONHASHSEED=0 python3 riff_p41d.py; PYTHONHASHSEED=0 python3 build_p41d.py
+    python3 demo_p41d.py; python3 engrave_p41d.py; python3 nashville_p41d.py
+    PYTHONHASHSEED=0 python3 consistency_p41d.py              # 47/47

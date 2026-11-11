@@ -66,3 +66,23 @@ LOG.append({"q": "20 (230, 308)", "topic": "lines of 9+ syllables in the chosen 
                         "B": "230's default throughout: 140 bars, about 5:50", "C": "keep 96 bars by cutting words in the bridge and verse 3 (unlocks the lyric)"},
             "recommended": "A", "answer": "A"})
 SLOTS_DESIGN = "230 failed by a named design choice (Q20 A): 9-12-syllable lines take two bars; 6-8-syllable lines take one bar in verses 1-2"
+LOG.append({"q": "21", "topic": "after delivery: the writer likes the lyric; take it out of the test and make the music better",
+            "options": {"A": "a real-song rerun: design questions one at a time (the hook's high point, the chorus lift, the verse's place), then search again with them built in",
+                        "B": "pick by ear from the 615 survivors (three that use the upper range best)", "C": "hand-edit the pick: raise the chorus, smooth the leaps"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "22 (design)", "topic": "the hook's high point",
+            "options": {"A": "climb to 'sing' on D4 near the top of the voice, held over G; the final 'It sings.' comes home low on G3",
+                        "B": "peak on 'WA-ter' around C4, fall to 'sing' on G3 (the lament, an octave up)", "C": "the hook stays low; 'the whole night under my window' climbs to D4"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "23 (design)", "topic": "the verses' place under a chorus that reaches D4",
+            "options": {"A": "low-middle, about B2-B3 centred on D3 (conversational); the chorus lifts about a fourth above",
+                        "B": "lower, A2-A3 (as now); bigger jump, very low verses", "C": "middle, D3-D4, close to the chorus; smaller lift"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "24 (design)", "topic": "the words on the shuffle",
+            "options": {"A": "swung eighths and longer, no sixteenths; steps and small leaps, a leap past a fifth only where a word earns it",
+                        "B": "mostly swung eighths, a quick sixteenth pickup on fast spoken words", "C": "rhythm left to the search (as in the test)"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "25 (design)", "topic": "the last chorus's peak",
+            "options": {"A": "'living water doesn't shine' climbs to E4, the only time the song goes there; 'It sings.' drops back to G3, quiet and held",
+                        "B": "the last chorus at the others' height; the band and the organ carry the lift", "C": "'the water's singing now' takes the E4 instead"},
+            "recommended": "A", "answer": "A"})
