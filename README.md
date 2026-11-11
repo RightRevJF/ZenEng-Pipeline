@@ -20,6 +20,7 @@ bash newsong.sh 26          # makes /home/claude/p26 from the template (the late
 | `lib/pop/` | `popsearch.py` (lexicon overrides), the pop calibration (`pop_calibration.json`, `pop_ppm.pkl`, `pop_intervals.pkl`) and the Brysbaert concreteness ratings |
 | `template/` | Song 25's scripts: the starting point for the next song |
 | `songs/p21`–`p24` | Earlier songs' scripts, for reference (duets and 7/8 in p22; a band, riff and push in p23; guitar with capo and TAB parts in p24) |
+| `songs/p25`–`p40` | Later songs, each with its own README and rerun line (p38's v2 is the v107 rerun; p40 is the first song under v108, on the default path) |
 
 ## One song, in order
 
