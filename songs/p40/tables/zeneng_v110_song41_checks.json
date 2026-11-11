@@ -1,0 +1,770 @@
+{
+ "about": "ZenEng v110, Window 130: the kept song's sung range and where the verse and chorus sit in it (314), the order judge's measures and leaps past a fifth on kept windows (310, 312), and the builds of song 40 (v108 and the v109 port) and song 41 read beside them.",
+ "kept": {
+  "314 the song's range and the verse in it": {
+   "songs": 167,
+   "the song's sung range, semitones (5, 25, 50, 75, 95)": [
+    10.0,
+    14.5,
+    17.0,
+    22.0,
+    28.0
+   ],
+   "the song's median note, as a share of its range from the bottom": [
+    0.333,
+    0.462,
+    0.525,
+    0.62,
+    0.75
+   ],
+   "verse median": [
+    0.25,
+    0.396,
+    0.5,
+    0.575,
+    0.709
+   ],
+   "verse top": [
+    0.522,
+    0.737,
+    0.895,
+    1.0,
+    1.0
+   ],
+   "verse lowest": [
+    0.0,
+    0.0,
+    0.0,
+    0.025,
+    0.368
+   ],
+   "chorus median": [
+    0.26,
+    0.474,
+    0.583,
+    0.667,
+    0.831
+   ],
+   "verse holds the song's lowest note": 0.749,
+   "verse holds the song's top note": 0.401,
+   "chorus holds the song's top note": 0.581,
+   "notes in the range's lowest third": [
+    0.024,
+    0.09,
+    0.18,
+    0.294,
+    0.424
+   ],
+   "notes in its top third": [
+    0.036,
+    0.15,
+    0.275,
+    0.387,
+    0.696
+   ]
+  },
+  "310 the order judge's measures (kept windows: 25, 50, 75)": {
+   "parallel": [
+    0.043,
+    0.14,
+    0.232
+   ],
+   "pitch_parallel": [
+    0.029,
+    0.194,
+    0.368
+   ],
+   "smooth_barline": [
+    -1.648,
+    -0.903,
+    -0.17
+   ],
+   "thin_48": [
+    -0.167,
+    1.167,
+    2.5
+   ]
+  },
+  "312 leaps past a fifth, share of moves (kept windows: 25, 50, 75, 95)": [
+   0.0,
+   0.0,
+   0.036,
+   0.096
+  ]
+ },
+ "41 main": {
+  "order": "615aa4e7f73d",
+  "survivors": 615,
+  "reproduced": true,
+  "amplitude": 20.480000000000004,
+  "complete builds read": 600,
+  "under the floor": 0.04,
+  "content (5, 50, 95)": [
+   -1.722,
+   1.074,
+   4.224
+  ],
+  "order (5, 50, 95)": [
+   -0.592,
+   0.586,
+   2.025
+  ],
+  "order measures (median over windows)": {
+   "parallel": 0.092,
+   "pitch_parallel": 0.111,
+   "smooth_barline": -1.694,
+   "thin_48": 0.0
+  },
+  "order measures, mean weight x z": {
+   "parallel": 0.63,
+   "pitch_parallel": 0.08,
+   "smooth_barline": -0.15,
+   "thin_48": -0.13
+  },
+  "heaviest content give-aways": [
+   [
+    "past_fifth",
+    -1.03
+   ],
+   [
+    "distinct_pitches",
+    -0.42
+   ],
+   [
+    "on_sixteenth",
+    -0.33
+   ],
+   [
+    "chord_tones",
+    -0.3
+   ],
+   [
+    "chord_tones_on_long_notes",
+    -0.19
+   ]
+  ],
+  "past_fifth (verse, chorus medians; kept 25, 50, 75)": [
+   0.119,
+   0.061,
+   [
+    0.0,
+    0.0,
+    0.036
+   ]
+  ],
+  "on_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.163,
+   0.067,
+   [
+    0.0,
+    0.01,
+    0.143
+   ]
+  ],
+  "gap_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.311,
+   0.074,
+   [
+    0.0,
+    0.0,
+    0.154
+   ]
+  ],
+  "notes_per_bar_sd (verse, chorus medians; kept 25, 50, 75)": [
+   1.658,
+   2.046,
+   [
+    1.199,
+    1.598,
+    2.115
+   ]
+  ],
+  "arch term over the span, by build": [
+   -0.286,
+   -0.026,
+   0.145,
+   0.36,
+   0.684
+  ],
+  "314 in the singer's row": {
+   "row, semitones": 21,
+   "the build's range, semitones": [
+    14.0,
+    14.0,
+    14.0,
+    17.0,
+    21.0
+   ],
+   "its lowest note, as a share of the row": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "its top note": [
+    0.667,
+    0.667,
+    0.667,
+    0.81,
+    1.0
+   ],
+   "its median note": [
+    0.238,
+    0.333,
+    0.429,
+    0.429,
+    0.571
+   ],
+   "verse median": [
+    0.238,
+    0.333,
+    0.381,
+    0.429,
+    0.524
+   ],
+   "builds that touch the row's floor": 0.982,
+   "builds that use the row's top fifth": 0.303
+  }
+ },
+ "41 control": {
+  "order": "83c59a365e29",
+  "survivors": 660,
+  "reproduced": true,
+  "amplitude": 20.480000000000004,
+  "complete builds read": 600,
+  "under the floor": 0.025,
+  "content (5, 50, 95)": [
+   -1.482,
+   0.975,
+   3.438
+  ],
+  "order (5, 50, 95)": [
+   -0.711,
+   0.571,
+   1.97
+  ],
+  "order measures (median over windows)": {
+   "parallel": 0.078,
+   "pitch_parallel": 0.109,
+   "smooth_barline": -1.71,
+   "thin_48": -0.167
+  },
+  "order measures, mean weight x z": {
+   "parallel": 0.64,
+   "pitch_parallel": 0.06,
+   "smooth_barline": -0.18,
+   "thin_48": -0.14
+  },
+  "heaviest content give-aways": [
+   [
+    "past_fifth",
+    -1.12
+   ],
+   [
+    "distinct_pitches",
+    -0.57
+   ],
+   [
+    "on_offbeat_eighth",
+    -0.33
+   ],
+   [
+    "chord_tones",
+    -0.19
+   ],
+   [
+    "on_fifth",
+    -0.15
+   ]
+  ],
+  "past_fifth (verse, chorus medians; kept 25, 50, 75)": [
+   0.136,
+   0.08,
+   [
+    0.0,
+    0.0,
+    0.036
+   ]
+  ],
+  "on_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.148,
+   0.0,
+   [
+    0.0,
+    0.01,
+    0.143
+   ]
+  ],
+  "gap_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.286,
+   0.0,
+   [
+    0.0,
+    0.0,
+    0.154
+   ]
+  ],
+  "notes_per_bar_sd (verse, chorus medians; kept 25, 50, 75)": [
+   1.654,
+   1.998,
+   [
+    1.199,
+    1.598,
+    2.115
+   ]
+  ],
+  "arch term over the span, by build": [
+   -0.257,
+   -0.0,
+   0.162,
+   0.325,
+   0.62
+  ],
+  "314 in the singer's row": {
+   "row, semitones": 21,
+   "the build's range, semitones": [
+    14.0,
+    14.0,
+    14.0,
+    17.0,
+    21.0
+   ],
+   "its lowest note, as a share of the row": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "its top note": [
+    0.667,
+    0.667,
+    0.667,
+    0.81,
+    1.0
+   ],
+   "its median note": [
+    0.238,
+    0.333,
+    0.429,
+    0.429,
+    0.571
+   ],
+   "verse median": [
+    0.333,
+    0.333,
+    0.429,
+    0.429,
+    0.524
+   ],
+   "builds that touch the row's floor": 1.0,
+   "builds that use the row's top fifth": 0.283
+  }
+ },
+ "40 port main": {
+  "order": "6ad97e7695d1",
+  "survivors": 476,
+  "reproduced": true,
+  "amplitude": 13.24273731924954,
+  "complete builds read": 600,
+  "under the floor": 0.325,
+  "content (5, 50, 95)": [
+   -3.22,
+   -0.669,
+   2.421
+  ],
+  "order (5, 50, 95)": [
+   -1.14,
+   -0.074,
+   1.086
+  ],
+  "order measures (median over windows)": {
+   "parallel": 0.067,
+   "pitch_parallel": -0.003,
+   "smooth_barline": -1.22,
+   "thin_48": 0.333
+  },
+  "order measures, mean weight x z": {
+   "parallel": 0.04,
+   "pitch_parallel": -0.24,
+   "smooth_barline": 0.02,
+   "thin_48": -0.07
+  },
+  "heaviest content give-aways": [
+   [
+    "distinct_pitches",
+    -0.44
+   ],
+   [
+    "chord_tones_on_long_notes",
+    -0.39
+   ],
+   [
+    "on_offbeat_eighth",
+    -0.38
+   ],
+   [
+    "past_fifth",
+    -0.35
+   ],
+   [
+    "chord_tones",
+    -0.25
+   ]
+  ],
+  "past_fifth (verse, chorus medians; kept 25, 50, 75)": [
+   0.049,
+   0.028,
+   [
+    0.0,
+    0.0,
+    0.036
+   ]
+  ],
+  "on_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.093,
+   0.081,
+   [
+    0.0,
+    0.01,
+    0.143
+   ]
+  ],
+  "gap_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.15,
+   0.135,
+   [
+    0.0,
+    0.0,
+    0.154
+   ]
+  ],
+  "notes_per_bar_sd (verse, chorus medians; kept 25, 50, 75)": [
+   2.204,
+   1.495,
+   [
+    1.199,
+    1.598,
+    2.115
+   ]
+  ],
+  "arch term over the span, by build": [
+   -0.314,
+   -0.047,
+   0.169,
+   0.354,
+   0.676
+  ],
+  "314 in the singer's row": {
+   "row, semitones": 17,
+   "the build's range, semitones": [
+    12.0,
+    14.0,
+    17.0,
+    17.0,
+    17.0
+   ],
+   "its lowest note, as a share of the row": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "its top note": [
+    0.706,
+    0.824,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "its median note": [
+    0.235,
+    0.412,
+    0.412,
+    0.529,
+    0.706
+   ],
+   "verse median": [
+    0.294,
+    0.294,
+    0.412,
+    0.412,
+    0.529
+   ],
+   "builds that touch the row's floor": 0.998,
+   "builds that use the row's top fifth": 0.817
+  }
+ },
+ "40 port control": {
+  "order": "4974bb2f8af1",
+  "survivors": 398,
+  "reproduced": true,
+  "amplitude": 13.24273731924954,
+  "complete builds read": 600,
+  "under the floor": 0.42,
+  "content (5, 50, 95)": [
+   -3.247,
+   -1.238,
+   1.093
+  ],
+  "order (5, 50, 95)": [
+   -0.933,
+   0.033,
+   1.034
+  ],
+  "order measures (median over windows)": {
+   "parallel": 0.078,
+   "pitch_parallel": -0.005,
+   "smooth_barline": -1.181,
+   "thin_48": 0.333
+  },
+  "order measures, mean weight x z": {
+   "parallel": 0.11,
+   "pitch_parallel": -0.24,
+   "smooth_barline": 0.04,
+   "thin_48": -0.08
+  },
+  "heaviest content give-aways": [
+   [
+    "distinct_pitches",
+    -0.75
+   ],
+   [
+    "on_offbeat_eighth",
+    -0.64
+   ],
+   [
+    "gap_eighth",
+    -0.33
+   ],
+   [
+    "past_fifth",
+    -0.31
+   ],
+   [
+    "chord_tones_on_long_notes",
+    -0.27
+   ]
+  ],
+  "past_fifth (verse, chorus medians; kept 25, 50, 75)": [
+   0.05,
+   0.028,
+   [
+    0.0,
+    0.0,
+    0.036
+   ]
+  ],
+  "on_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.049,
+   0.054,
+   [
+    0.0,
+    0.01,
+    0.143
+   ]
+  ],
+  "gap_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.098,
+   0.108,
+   [
+    0.0,
+    0.0,
+    0.154
+   ]
+  ],
+  "notes_per_bar_sd (verse, chorus medians; kept 25, 50, 75)": [
+   2.17,
+   1.495,
+   [
+    1.199,
+    1.598,
+    2.115
+   ]
+  ],
+  "arch term over the span, by build": [
+   -0.281,
+   -0.047,
+   0.144,
+   0.324,
+   0.642
+  ],
+  "314 in the singer's row": {
+   "row, semitones": 17,
+   "the build's range, semitones": [
+    12.0,
+    14.0,
+    17.0,
+    17.0,
+    17.0
+   ],
+   "its lowest note, as a share of the row": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "its top note": [
+    0.706,
+    0.824,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "its median note": [
+    0.235,
+    0.294,
+    0.412,
+    0.529,
+    0.706
+   ],
+   "verse median": [
+    0.294,
+    0.294,
+    0.412,
+    0.412,
+    0.529
+   ],
+   "builds that touch the row's floor": 1.0,
+   "builds that use the row's top fifth": 0.802
+  }
+ },
+ "40 v108 main": {
+  "order": "8922c963f670",
+  "survivors": 468,
+  "reproduced": true,
+  "amplitude": 7.0,
+  "complete builds read": 600,
+  "under the floor": 0.252,
+  "content (5, 50, 95)": [
+   -4.25,
+   -1.217,
+   1.773
+  ],
+  "order (5, 50, 95)": [
+   -0.439,
+   1.012,
+   2.491
+  ],
+  "order measures (median over windows)": {
+   "parallel": 0.097,
+   "pitch_parallel": -0.009,
+   "smooth_barline": -0.86,
+   "thin_48": 0.833
+  },
+  "order measures, mean weight x z": {
+   "parallel": 0.59,
+   "pitch_parallel": -0.26,
+   "smooth_barline": 0.19,
+   "thin_48": 0.28
+  },
+  "heaviest content give-aways": [
+   [
+    "notes_per_bar_sd",
+    -1.25
+   ],
+   [
+    "on_sixteenth",
+    -0.51
+   ],
+   [
+    "chord_tones_on_long_notes",
+    -0.48
+   ],
+   [
+    "range",
+    -0.25
+   ],
+   [
+    "chord_tones",
+    -0.18
+   ]
+  ],
+  "past_fifth (verse, chorus medians; kept 25, 50, 75)": [
+   0.024,
+   0.0,
+   [
+    0.0,
+    0.0,
+    0.036
+   ]
+  ],
+  "on_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.092,
+   0.184,
+   [
+    0.0,
+    0.01,
+    0.143
+   ]
+  ],
+  "gap_sixteenth (verse, chorus medians; kept 25, 50, 75)": [
+   0.154,
+   0.333,
+   [
+    0.0,
+    0.0,
+    0.154
+   ]
+  ],
+  "notes_per_bar_sd (verse, chorus medians; kept 25, 50, 75)": [
+   2.421,
+   3.565,
+   [
+    1.199,
+    1.598,
+    2.115
+   ]
+  ],
+  "arch term over the span, by build": [
+   -0.451,
+   -0.154,
+   0.041,
+   0.229,
+   0.556
+  ],
+  "314 in the singer's row": {
+   "row, semitones": 17,
+   "the build's range, semitones": [
+    12.0,
+    14.0,
+    16.0,
+    17.0,
+    17.0
+   ],
+   "its lowest note, as a share of the row": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.118
+   ],
+   "its top note": [
+    0.706,
+    0.824,
+    0.941,
+    1.0,
+    1.0
+   ],
+   "its median note": [
+    0.294,
+    0.412,
+    0.412,
+    0.529,
+    0.706
+   ],
+   "verse median": [
+    0.294,
+    0.294,
+    0.412,
+    0.412,
+    0.529
+   ],
+   "builds that touch the row's floor": 0.94,
+   "builds that use the row's top fifth": 0.803
+  }
+ }
+}

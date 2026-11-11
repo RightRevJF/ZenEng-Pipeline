@@ -1,0 +1,327 @@
+{
+ "about": "ZenEng v109, Window 129: counts on kept songs made to settle song 40's findings, and song 40's builds read beside them.",
+ "kept songs (298, 300, 305, 307)": {
+  "300 realness on kept chart choruses": {
+   "songs": 140,
+   "realness (5, 25, 50, 75, 95)": [
+    0.004,
+    0.029,
+    0.088,
+    0.303,
+    0.636
+   ],
+   "at or above the soft limit (0.0518)": 0.621,
+   "at or above the hard limit (0.0119)": 0.8
+  },
+  "298 the chorus's first line against the verse": {
+   "songs": 118,
+   "median minus the verse's median, semitones (5, 25, 50, 75, 95)": [
+    -5.0,
+    -0.5,
+    1.0,
+    4.0,
+    9.15
+   ],
+   "above the verse's median": 0.559,
+   "at it": 0.178,
+   "below": 0.263,
+   "first line's top at or above the verse's top": 0.525
+  },
+  "307 the song's top note": {
+   "songs": 170,
+   "soundings (25, 50, 75)": [
+    2.0,
+    4.0,
+    13.75
+   ],
+   "sung once": 0.218,
+   "its longest sounding over the song's median note (5, 25, 50, 75, 95)": [
+    1.0,
+    1.0,
+    2.0,
+    2.438,
+    6.0
+   ],
+   "never longer than the song's short notes (its 25th percentile length)": 0.253,
+   "never on a beat": 0.212,
+   "share of its soundings on a beat (median)": 0.667
+  },
+  "305 the arch term by a line's pitch span (kept lines)": {
+   "4 or under": {
+    "lines": 1029,
+    "arch term (25, 50, 75)": [
+     -1.32,
+     0.0,
+     2.35
+    ],
+    "positive": 0.507,
+    "arch term over the span (median)": 0.0
+   },
+   "5 to 7": {
+    "lines": 1673,
+    "arch term (25, 50, 75)": [
+     -1.46,
+     2.01,
+     5.21
+    ],
+    "positive": 0.652,
+    "arch term over the span (median)": 0.338
+   },
+   "8 to 11": {
+    "lines": 994,
+    "arch term (25, 50, 75)": [
+     -1.4,
+     3.52,
+     7.42
+    ],
+    "positive": 0.689,
+    "arch term over the span (median)": 0.359
+   },
+   "12 or more": {
+    "lines": 577,
+    "arch term (25, 50, 75)": [
+     -4.14,
+     1.85,
+     8.1
+    ],
+    "positive": 0.598,
+    "arch term over the span (median)": 0.147
+   }
+  },
+  "305 kept line span (25, 50, 75)": [
+   5.0,
+   7.0,
+   9.0
+  ],
+  "305 arch term over the span, all kept lines (25, 50, 75)": [
+   -0.29,
+   0.28,
+   0.813
+  ],
+  "305 arch term over the span, by song (5, 25, 50, 75, 95)": [
+   -0.668,
+   0.0,
+   0.234,
+   0.547,
+   0.94
+  ]
+ },
+ "long lines across their bars (308)": {
+  "kept": {
+   "lines of 9 notes or more": 2301,
+   "bars a line touches (25, 50, 75)": [
+    3.0,
+    3.0,
+    4.0
+   ],
+   "share of the line's notes in its fullest bar (5, 25, 50, 75, 95)": [
+    0.217,
+    0.348,
+    0.455,
+    0.571,
+    0.778
+   ],
+   "lines with four fifths or more of their notes in one bar": 0.038,
+   "the same share, by song (5, 25, 50, 75, 95)": [
+    0.295,
+    0.364,
+    0.455,
+    0.556,
+    0.68
+   ],
+   "songs": 164
+  },
+  "main": {
+   "lines of 9 notes or more": 30550,
+   "share of the line's notes in its fullest bar (5, 25, 50, 75, 95)": [
+    0.5,
+    0.636,
+    0.818,
+    0.9,
+    1.0
+   ],
+   "lines with four fifths or more of their notes in one bar": 0.582,
+   "by build (5, 25, 50, 75, 95)": [
+    0.667,
+    0.778,
+    0.818,
+    0.894,
+    0.9
+   ]
+  },
+  "ctl": {
+   "lines of 9 notes or more": 29519,
+   "share of the line's notes in its fullest bar (5, 25, 50, 75, 95)": [
+    0.5,
+    0.636,
+    0.818,
+    0.9,
+    1.0
+   ],
+   "lines with four fifths or more of their notes in one bar": 0.575,
+   "by build (5, 25, 50, 75, 95)": [
+    0.653,
+    0.778,
+    0.818,
+    0.9,
+    0.9
+   ]
+  }
+ },
+ "song 40's builds (299, 305)": {
+  "main": {
+   "order": "8922c963f670",
+   "survivors": 468,
+   "reproduced": true,
+   "complete builds read": 938,
+   "under the floor": 0.265,
+   "combined (5, 50, 95)": [
+    -1.735,
+    -0.13,
+    1.422
+   ],
+   "notes_per_bar_sd: chorus window, verse window (median); kept (25, 50, 75, 95)": [
+    3.53,
+    2.38,
+    [
+     1.2,
+     1.6,
+     2.11,
+     2.91
+    ]
+   ],
+   "builds whose chorus window is past the kept 95th on notes_per_bar_sd": 0.835,
+   "under the floor with that one measure at the kept median": 0.075,
+   "heaviest give-aways (mean weight x z)": [
+    [
+     "notes_per_bar_sd",
+     -1.23
+    ],
+    [
+     "on_sixteenth",
+     -0.49
+    ],
+    [
+     "chord_tones_on_long_notes",
+     -0.47
+    ],
+    [
+     "range",
+     -0.27
+    ],
+    [
+     "chord_tones",
+     -0.17
+    ],
+    [
+     "on_offbeat_eighth",
+     -0.17
+    ]
+   ],
+   "measures with the builds' median outside the kept middle half: verse, chorus": [
+    [
+     "notes_per_bar_sd",
+     "chord_tones_on_long_notes"
+    ],
+    [
+     "turns_per_move",
+     "on_sixteenth",
+     "gap_sixteenth",
+     "gap_quarter",
+     "notes_per_bar_sd",
+     "chord_tones_on_long_notes",
+     "non_chord_resolved_by_step"
+    ]
+   ],
+   "line span, semitones (25, 50, 75)": [
+    5.0,
+    7.0,
+    9.0
+   ],
+   "arch term over the span, by build (5, 25, 50, 75, 95)": [
+    -0.471,
+    -0.154,
+    0.042,
+    0.249,
+    0.566
+   ],
+   "lines of 5 notes or more read": 18483
+  },
+  "ctl": {
+   "order": "52ad6487743f",
+   "survivors": 570,
+   "reproduced": true,
+   "complete builds read": 930,
+   "under the floor": 0.214,
+   "combined (5, 50, 95)": [
+    -1.485,
+    -0.048,
+    1.457
+   ],
+   "notes_per_bar_sd: chorus window, verse window (median); kept (25, 50, 75, 95)": [
+    3.5,
+    2.33,
+    [
+     1.2,
+     1.6,
+     2.11,
+     2.91
+    ]
+   ],
+   "builds whose chorus window is past the kept 95th on notes_per_bar_sd": 0.822,
+   "under the floor with that one measure at the kept median": 0.053,
+   "heaviest give-aways (mean weight x z)": [
+    [
+     "notes_per_bar_sd",
+     -1.17
+    ],
+    [
+     "on_offbeat_eighth",
+     -0.49
+    ],
+    [
+     "distinct_pitches",
+     -0.47
+    ],
+    [
+     "chord_tones_on_long_notes",
+     -0.33
+    ],
+    [
+     "gap_eighth",
+     -0.22
+    ],
+    [
+     "range",
+     -0.15
+    ]
+   ],
+   "measures with the builds' median outside the kept middle half: verse, chorus": [
+    [
+     "on_offbeat_eighth",
+     "gap_eighth",
+     "notes_per_bar_sd"
+    ],
+    [
+     "gap_sixteenth",
+     "gap_quarter",
+     "notes_per_bar_sd",
+     "chord_tones_on_long_notes"
+    ]
+   ],
+   "line span, semitones (25, 50, 75)": [
+    5.0,
+    7.0,
+    9.0
+   ],
+   "arch term over the span, by build (5, 25, 50, 75, 95)": [
+    -0.42,
+    -0.131,
+    0.067,
+    0.245,
+    0.509
+   ],
+   "lines of 5 notes or more read": 18430
+  }
+ }
+}
