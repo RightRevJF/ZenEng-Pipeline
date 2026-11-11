@@ -23,3 +23,18 @@ Run, in order (PYTHONHASHSEED=0; seed 20261511, calibration seed 20261512):
     python3 consistency_p40.py                             # 65/65
 
 Code sha 8275c26ef512 (melody_p40.py + lyric_p40.py + judges.py + melody_p36.py). show_pick.py prints a pick line by line.
+
+## Made for real: the Evermore version (after delivery; the writer's Q22-Q27)
+
+The writer: "stop thinking of it as a test and start thinking of it like a real song." Patterned after The Battle of Evermore: Lark
+(mezzo) sings the verses low; Briar (an older man, high and worn) sings the choruses, which climb to B4 on 'NOTH-ing' and land 'earth'
+on a held A4 over A; Lark harmonizes a third above in chorus 2 and the last chorus. Mandolin riff and acoustic guitar in the verses;
+the band arrives at the chorus. Design gates named in melody_p40d.py; the pick chosen by ear and hand-edited, every edit logged.
+
+    PYTHONHASHSEED=0 python3 melody_p40d.py 1000 design        # 382 survivors, order b171675bc950 (reproduced with _r)
+    python3 cand.py melody_design.pkl 8 "Chorus 1"             # the shortlist's choruses, to pick by ear
+    PYTHONHASHSEED=0 python3 pick_p40d.py                      # pick 713d985f016b + 41 logged hand edits -> melody_final_d.pkl
+    PYTHONHASHSEED=0 python3 riff_p40d.py                      # the mandolin riff, chorus fills, the break's solo
+    PYTHONHASHSEED=0 python3 build_p40d.py                     # song_record_d.pkl
+    python3 demo_p40d.py; python3 engrave_p40d.py; python3 nashville_p40d.py
+    python3 consistency_p40d.py                                # 40/40

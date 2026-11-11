@@ -61,3 +61,30 @@ LOG.append({"q": "21 (230)", "topic": "lines of 9+ syllables in the chosen form"
             "readings_offered": ["232 over 289 for title lines", "288 kept rates of note lengths from the pop IOI shares (v88), eight lengths; chorus top/median/lowest drawn together from one quantile",
                                  "286 rhythm band and sequence legs read on the POP909 pairs at 5/95 soft and 1/99 hard", "'every' sung as two syllables", "last chorus 'and it tastes' a return of the hook; the tag repeats the hook's end"]})
 SLOTS = {"Verse": [2, 1, 3, 3, 2, 1], "Pre": [2, 2], "Chorus": [2, 2, 2, 2, 2, 2, 2, 2], "Bridge": [2, 1, 1, 2, 1, 1], "Last Chorus": [2, 2, 2, 2, 2, 2, 2, 2, 2]}
+# ---- after delivery: the song treated as a real song, not a test ----
+LOG.append({"q": "22", "topic": "after delivery: the hook (the writer: 'stop thinking of it as a test and start thinking of it like a real song that we want to do great on')",
+            "options": {"A": "design the chorus: where the hook peaks and how far the chorus lifts; rerun the search with that design, pick by ear, refine the hook by hand (logged)",
+                        "B": "start from the old-fit pick 353742341ffc (chorus +4.5) and polish", "C": "hand-write the chorus melody; the engine fits the rest"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "23 (design)", "topic": "the hook's high point",
+            "options": {"A": "climb through 'used to taste like', peak on 'NOTH-ing', land 'earth' on a held A4 over the A chord (open; only the tag comes home to D)",
+                        "B": "'earth' on a held D5, the hook's top", "C": "peak early on 'taste', fall to 'earth' (lifted above the verse)"},
+            "recommended": "A", "answer": "A. And I just realized, the Zeppelin song this should be patterned after is the Battle of Evermore!"})
+LOG.append({"q": "24 (design)", "topic": "the sound, after The Battle of Evermore",
+            "options": {"A": "all Evermore: mandolin riff, strummed and droning acoustic, frame drum or hand percussion, no kit",
+                        "B": "Evermore, then the storm: verses and pre-choruses mandolin and acoustic only; the band (full beat, strings) arrives at the chorus",
+                        "C": "keep the band; borrow only the duet and call and response"},
+            "recommended": "A", "answer": "B"})
+LOG.append({"q": "25 (design)", "topic": "the second voice",
+            "options": {"A": "Briar sings the chorus: chorus 1 alone; Lark joins in harmony in chorus 2; the last chorus both, Lark on top for 'she sat down hungry'",
+                        "B": "Lark sings all; a second female voice shadows every chorus", "C": "call and response inside the chorus: a second voice echoes 'nothing else on earth'"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "26 (design)", "topic": "Briar's voice",
+            "options": {"A": "an older man, high and worn: the chorus at the written pitch, the climb and the A4 a cry; Lark's harmony above toward C#5",
+                        "B": "an older man, low and gentle, an octave under", "C": "an older woman, alto, Lark's octave"},
+            "recommended": "A", "answer": "A"})
+LOG.append({"q": "27 (design)", "topic": "the mandolin riff",
+            "options": {"A": "a new mandolin figure drawn by the engine: driving picked eighths over open D and A drones, the melody notes on top, moving over D-C-G-D (Evermore's spirit, not its notes)",
+                        "B": "a hand-written D mixolydian figure", "C": "the current guitar riff an octave up on mandolin"},
+            "recommended": "A", "answer": "A",
+            "plan stated before it": "verses (Lark) low, top about F#4; the chorus (Briar) climbs to B4 on 'NOTH-ing', 'earth' a held A4; Lark's harmony above him later, up to C#5"})
