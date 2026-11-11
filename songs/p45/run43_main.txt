@@ -1,0 +1,36 @@
+[main] 80 bars; built 1000, survivors 811 (81.1%), order df5dff409ad9, 109s
+      69  design: 'blue movie' a falling sequence from the chorus's top; 'starring nobody but you' lifts back to it; the post-chorus chants the figure (Q15 A)
+      37  bridge opening unrelated (208; 279)
+      29  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+      19  chorus opening another tune (227; 279)
+      14  key word on a chord tone (134; 279)
+      12  the judge's floor (254; 279)
+       8  join: no held end and breath before the line (212)
+       1  align: the words do not fit the returning tune
+would fail:
+      69  design: 'blue movie' a falling sequence from the chorus's top; 'starring nobody but you' lifts back to it; the post-chorus chants the figure (Q15 A)
+      33  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+       0  returns related (267)
+      21  chorus opening another tune (227; 279)
+      37  bridge opening unrelated (208; 279)
+       0  pushed notes (159; 279)
+       0  density (159; 279)
+      20  key word on a chord tone (134; 279)
+      16  the judge's floor (254; 279)
+       3  limit broken: chorus_floor_minus_verse
+      15  limit broken: chorus_median_minus_verse
+      31  limit broken: cmp
+       6  limit broken: max_lengths_8_bars
+      65  limit broken: memory
+      38  limit broken: past_octave_share
+      39  limit broken: run_max
+      47  limit broken: sequence legs
+      53  limit broken: spectral
+      23  limit broken: surprisal
+       5  limit broken: tritone_from_root_share
+       6  limit broken: tritone_leap_share
+composite first  840d7b4af214 comp 0.904 judge 1.686 (content 0.932, order 2.440) soft [] lift {'median': 0.0, 'top': 5, 'lowest': 3, 'bridge': -1.0}
+shortlist pick   840d7b4af214 comp 0.904 judge 1.686 (content 0.932, order 2.440) soft [] lift {'median': 0.0, 'top': 5, 'lowest': 3, 'bridge': -1.0}
+judge first      dc24946f27cb comp 0.641 judge 4.552 (content 4.538, order 4.566) soft [] lift {'median': 0.0, 'top': 3, 'lowest': 9, 'bridge': -2.0}
+pick, old fit    8c54529c4c9d comp 0.869 judge 1.764 (content 0.718, order 2.809) soft [] lift {'median': 5.0, 'top': 7, 'lowest': -1, 'bridge': 7.0}
+rerun: {'seed': 20261553, 'calibration_seed': 20261554, 'N': 1000, 'mode': 'main', 'code_sha': 'c16750d9ad60', 'pythonhashseed': '0', 'python': '3.13.18', 'numpy': '2.5.3', 'tables': {'zeneng_v100_bass_and_figures.json': 'cfe324a5892893a5', 'zeneng_v101_band_returns_eras.json': '0224a91747a584e5', 'zeneng_v102_song37_checks.json': 'caaa40ecfc747e98', 'zeneng_v103_selector.json': 'aefba3718173b03d', 'zeneng_v104_line_in_time.json': '43325ed4951f1784', 'zeneng_v105_kept_windows.json': '3633a24efd73159e', 'zeneng_v105_song38_checks.json': '69cbe7138da1901f', 'zeneng_v106_gate_limits.json': 'ca3e6a8b0b16480a', 'zeneng_v108_judges.json': 'cb84379c710e875d', 'zeneng_v108_spectral_and_registers.json': '8d33013cf887972a', 'zeneng_v109_song40_checks.json': '61a7fce931a67fc4', 'zeneng_v110_song41_checks.json': 'ec0ece7ffbe30d05', 'zeneng_v88_tables.json': '561355b1110d1d8e', 'zeneng_v91_hymn_supplement.json': 'e74e7c30cb04e141', 'zeneng_v96_discriminator_tables.json': '1a2af952c43c3eb7', 'zeneng_v97_axes_of_character.json': '00e65c5b516848aa'}, 'limits286': '46871a03d407be3f', 'cmd': 'PYTHONHASHSEED=0 python3 melody_p43.py 1000 main', 'line_knobs': {'amp': 5.0, 'widen': -0.17537254901960803, 'fresh': 1.1107696754882697, 'leap': 1.0, 's16': 0.3565433207073465, 'ctl': 5.401737073171114, 'offb': 0.7777895393132793, 'dpk': 1.725932279381833, 'k44': 8.0}, 'near_level': 2, 'calibration_stop': [], 'frozen': [], 'rate293': 0.9386904761904762}
