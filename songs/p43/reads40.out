@@ -1,0 +1,48 @@
+main {'made': 1000, 'survivors': 480, 'order': '7d491acfca47', 'rerun_order': '7d491acfca47', 'reproduced': True, 'deaths': {"the judge's floor (254; 279)": 183, 'key word on a chord tone (134; 279)': 159, "limits: a hard limit or three soft breaks (276/277, with 286's seven)": 81, 'bridge opening unrelated (208; 279)': 60, 'chorus opening another tune (227; 279)': 13, 'align: the words do not fit the returning tune': 12, 'join: no held end and breath before the copy (212)': 12}, 'code': '410f0b0b9dd0', 'line_knobs': {'amp': 7.0, 'widen': 0.754354609929078, 'fresh': 2.0416318405662985, 'leap': 1.0}, 'calibration_stop': ["calibration stopped after round 2: ['amp'] took the largest step two rounds running"], 'before': {'survivors': 505, 'order': '3c9c4f2da558'}}
+ctl {'made': 1000, 'survivors': 417, 'order': '07a87d6f518f', 'rerun_order': '07a87d6f518f', 'reproduced': True, 'deaths': {"the judge's floor (254; 279)": 313, 'key word on a chord tone (134; 279)': 103, 'bridge opening unrelated (208; 279)': 89, "limits: a hard limit or three soft breaks (276/277, with 286's seven)": 50, 'chorus opening another tune (227; 279)': 16, 'align: the words do not fit the returning tune': 10, 'join: no held end and breath before the copy (212)': 2}, 'code': '410f0b0b9dd0', 'line_knobs': {'amp': 7.0, 'widen': 0.754354609929078, 'fresh': 2.0416318405662985, 'leap': 1.0}, 'calibration_stop': ["calibration stopped after round 2: ['amp'] took the largest step two rounds running"], 'before': {'survivors': 537, 'order': '30ba2486b5e4'}}
+310 | under the floor < 10%; likeness of bar rhythms (parallel) >= kept 0.14 at the median; no judge refitted | under floor 28.7%; parallel 0.098 (kept 0.14); paired lines 4817, partner given up 1529 | under floor 42.4%; parallel 0.112 (kept 0.14); paired lines 4761, partner given up 1368 | False
+311 | the last chorus on the tonic in every build; misses none | tonic 100.0%; registers redrawn 0; misses 0 | tonic 100.0%; registers redrawn 0; misses 0 | True
+312 | leaps past a fifth <= 3.6% of moves at the median, verse and chorus | verse 2.5%, chorus 2.7%; leap knob 1.0 | verse 2.5%, chorus 2.8%; leap knob 1.0 | True
+313 | verse 2 shares 25-75% in 3 builds of 4; copies given up < 1 line in 20 | share [0.0, 0.25, 0.5]; in range 51%; given up 23 (0.4%); left out 1507 | share [0.083, 0.273, 0.5]; in range 64%; given up 17 (0.3%); left out 1272 | False
+314 | range printed; unused above/below differ by 1 at most; verse median 40-57% of the range; tonic endings nearest the centre (as 324 reads it) | range [10.0, 15.0, 17.0, 17.0, 17.0] (kept [10, 14.5, 17, 22, 28]); unused split max 1; verse share [0.4, 0.529, 0.588]; tonic nearest the sung median 0.928, the drawn centre 1.0; top fifth 92%; floor 69% | range [10.0, 14.0, 17.0, 17.0, 17.0] (kept [10, 14.5, 17, 22, 28]); unused split max 1; verse share [0.4, 0.529, 0.571]; tonic nearest the sung median 0.967, the drawn centre 1.0; top fifth 92%; floor 69% | True
+315 | amplitude <= 7; calibration stops on two largest steps running; arch over the span 0.0-0.55 at the median | amplitude 7.0; arch [-0.106, 0.104, 0.34]; stop ["calibration stopped after round 2: ['amp'] took the largest step two rounds running"] | amplitude 7.0; arch [-0.132, 0.064, 0.274]; stop ["calibration stopped after round 2: ['amp'] took the largest step two rounds running"] | True
+316 | redraws per long line < 1.5; entry shares unchanged | redraws 0/13375 = 0.0; entries {'starts_on_downbeat': 0.23, 'starts_after_downbeat': 0.639, 'starts_as_pickup': 0.131} (before {'starts_on_downbeat': 0.23, 'starts_after_downbeat': 0.647, 'starts_as_pickup': 0.123}) | redraws 0/13343 = 0.0; entries {'starts_on_downbeat': 0.227, 'starts_after_downbeat': 0.644, 'starts_as_pickup': 0.129} (before {'starts_on_downbeat': 0.244, 'starts_after_downbeat': 0.628, 'starts_as_pickup': 0.129}) | True
+317 | each design gate's pass rate printed; nine in ten or more | none in force | none in force | True
+318 | the feel named; sixteenths printed | straight eighths; sixteenth onsets [0.108, 0.145, 0.212] | straight eighths; sixteenth onsets [0.08, 0.097, 0.119] | printed
+319 | no instrumental note outside its instrument | read on the arrangement; these runs make no instrumental lines | read on the arrangement; these runs make no instrumental lines | n/a
+320 | rescorings stated as bounds | the report states no predicted counts from rescoring; figures here are from runs | the report states no predicted counts from rescoring; figures here are from runs | True
+321 | this table | this table, on this song's own runs | this table, on this song's own runs | True
+322 | song 40: partners given up < 1 paired line in 10; likeness >= 0.14 at the median; under the floor < 1 in 10 | paired 4817 (990 of another length); given up 1529 (31.7%); parallel 0.098; under floor 28.7% | paired 4761 (990 of another length); given up 1368 (28.7%); parallel 0.112; under floor 42.4% | False
+323 | verse 2 shares 25-75% of verse 1's bar rhythms in 3 builds of 4, main and control | one-over bars copied without the weakest onset 3248; left out 1507; verse 2 in range 51% | one-over bars copied without the weakest onset 2699; left out 1272; verse 2 in range 64% | False
+324 | every tonic ending on the tonic nearest the centre of its section's drawn register | 976 tonic endings, on the nearest to the centre 1.0 | 988 tonic endings, on the nearest to the centre 1.0 | True
+325 | no build dies at a design gate for want of a note the registers could not hold; the last chorus on the tonic in every complete build | design failures for the registers n/a; last chorus on the tonic 100.0%; redrawn 0 | design failures for the registers n/a; last chorus on the tonic 100.0%; redrawn 0 | True
+326 | nine builds in ten pass each design gate | none in force | none in force | True
+327 | song 40: deaths at the breath before a copy at or under v109's 92 in 1,000 | join deaths 12 (v109 92); refits {'327: copy could not enter later (return, entry pickup)': 9, '327: return fitted again without a pickup, ordinary end': 46, '327: copy fitted again after its downbeat': 116, '327: plan fitted again without a pickup, ordinary end': 67, '327: copy fitted again after its downbeat, join still short': 3, '327: plan fitted again without a pickup': 6} | join deaths 2 (v109 92); refits {'327: plan fitted again without a pickup, ordinary end': 63, '327: copy fitted again after its downbeat': 110, '327: return fitted again without a pickup, ordinary end': 42, '327: plan fitted again without a pickup': 5, '327: copy could not enter later (return, entry pickup)': 2} | True
+328 | the sixteenth share printed beside its tempo band | q = 116, band 100-120: kept median 12%, quartiles not given in the paper's text (Table DQ's file not attached); song [0.108, 0.145, 0.212] | q = 116, band 100-120: kept median 12%, quartiles not given in the paper's text (Table DQ's file not attached); song [0.08, 0.097, 0.119] | printed
+329 | sung range within 2 of the drawn at the median; chorus window range >= 10 at the median; range not among the content judge's five heaviest give-aways | sung [14.0, 17.0, 17.0] vs drawn [15.0, 17.0, 17.0] (gap [0.0, 0.0, 0.0]); chorus window [10.0, 11.0, 12.0]; heaviest give-aways ['distinct_pitches', 'chord_tones_on_long_notes', 'chord_tones', 'empty_bars', 'step']; extremes sung low 99%, high 100% | sung [14.0, 17.0, 17.0] vs drawn [14.0, 17.0, 17.0] (gap [0.0, 0.0, 0.0]); chorus window [10.0, 11.0, 12.0]; heaviest give-aways ['distinct_pitches', 'on_offbeat_eighth', 'gap_eighth', 'chord_tones_on_long_notes', 'empty_bars']; extremes sung low 99%, high 100% | True
+DQ main
+  survivors of 1,000: 480  (before 505)
+  builds under the judge's floor: 0.287  (before 0.258)
+  content judge, median: -0.9  (before -0.89)
+  order judge, median: 0.53  (before 0.6)
+  likeness of bar rhythms between lines: 0.098  (before 0.094)
+  contour amplitude: 7.0  (before 5.0)
+  arch term over the line's span: 0.1  (before 0.08)
+  leaps past a fifth, verse, % of moves: 2.5  (before 0.0)
+  the song's sung range, semitones: 17.0  (before 12.0)
+  range in eight bars, verse / chorus: 12 / 11  (before 10 / 8)
+  builds that touch the row's floor: 0.69  (before 0.379)
+  builds that use the row's top fifth: 0.925  (before 0.736)
+DQ ctl
+  survivors of 1,000: 417  (before 537)
+  builds under the judge's floor: 0.424  (before 0.285)
+  content judge, median: -1.76  (before -1.27)
+  order judge, median: 0.67  (before 0.6)
+  likeness of bar rhythms between lines: 0.112  (before 0.105)
+  contour amplitude: 7.0  (before 5.0)
+  arch term over the line's span: 0.06  (before 0.09)
+  leaps past a fifth, verse, % of moves: 2.5  (before 0.0)
+  the song's sung range, semitones: 17.0  (before 13.0)
+  range in eight bars, verse / chorus: 12 / 11  (before 10 / 8)
+  builds that touch the row's floor: 0.686  (before 0.413)
+  builds that use the row's top fifth: 0.925  (before 0.772)
