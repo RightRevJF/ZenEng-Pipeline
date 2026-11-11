@@ -55,3 +55,16 @@ LOG.append({"q": "build", "reading": "main 3000 builds, 43 survivors (order 6c91
                                "outro: one hit on bar 107, let ring (the writer's note on 'Turn it off')", "gang vocal in chorus 2, plus a third under in the last chorus (each chorus bigger)"],
             "songbook_doc": "https://claude.ai/artifact/8QtPjqLaUktzoho41AduQf"})
 LOG.append({"q": "blind pick (10.20), offered", "options": {"A": "they toast the ratings, glass to glass; (annotated)", "B": "Stay tuned, stay mad, (remembered)", "C": "stay tuned, stay scared, (middle: top quartile under both)"}, "answer": "A", "slot": "Annotated top"})
+# ---- the rerun under ZenEng v107 (v2, a regression run; no intake questions asked) ----
+LOG.append({"q": "rerun brief", "reading": "rerun song 38 under ZenEng v107; seed 20261491, calibration 20261492; judges' weights not refitted; v1 files kept, v2 beside them; Runs A (gates only), B (full v107), C (B with 243 off), 3000 builds each; findings from 286"})
+LOG.append({"q": "stops before running (five)", "options": {"A": "take all the session's readings and add 282 to Run B", "B": "all readings, the brief's list exactly (no 282)", "C": "hold for corrections"}, "recommended": "A",
+            "answer": "Proceed; readings stand on all five stops", "rulings": [
+                "1: 276/277 govern; a run of 10-14 in a line is a soft break, 15 or more hard; 270 only lifts the walk's ban and removes the v1 repair step",
+                "2: in verse 2 each line takes its source line's entry kind, the rest of the rhythm tilted toward the source's onsets",
+                "3: near-level = both shared-event pitch series span 2 semitones or less; the number is the session's and uncounted",
+                "4: the seven unaudited gates stay as gates in all three runs; pass rates printed on the calibration pairs, with the corpus named",
+                "5: 282 in Run B (the said-twice line moved whole, a note changed only for 276's tritone reading); Run A keeps the old way"],
+            "change": "Run B verse pool keeps all 20 reciting windows, any year (Q14 settled reciting against CLASSIC; the era applies to the chorus and bridge pools only)",
+            "also": "list in the report every reading the paper did not spell out, with the fix number"})
+LOG.append({"q": "rerun result", "reading": "A 219 survivors (2f9ce3d36fce), B 610 (d648725d3587), C 702 (3a6e5a3ea5af), each reproduced on a second run; record from Run B's shortlist pick 45a09df333f6 (composite 0.850, combined 2.508), no hand edits; consistency 55/55; findings 286-295"})
+SPEC_V2 = "ZenEng v107"
