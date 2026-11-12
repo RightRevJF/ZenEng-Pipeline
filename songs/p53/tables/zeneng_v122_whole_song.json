@@ -1,0 +1,2995 @@
+{
+ "about": "ZenEng v122, Window 142. Measures read from onsets, pitches and chords only (no note lengths), by one code on CoCoPops Billboard, the Rolling Stone 200 and the v118 builds. Kept figures by section for fixes 431-436; chord tones on two collections (431, 432); the second verse beside the first (434, 435); separation by section (433).",
+ "measures (agreed by both collections, and the chord tones)": [
+  "notes_per_bar",
+  "range",
+  "distinct_pitches",
+  "repeat",
+  "step",
+  "third",
+  "fourth_fifth",
+  "mean_interval",
+  "turns_per_move",
+  "last_note_tonic",
+  "peak_position",
+  "on_beats_2_4",
+  "gap_eighth",
+  "gap_quarter",
+  "gap_longer",
+  "first_onset",
+  "bar_rhythm_repeats",
+  "equal_gap_run_max",
+  "gap_same_as_before",
+  "gap_entropy",
+  "most_onsets_in_a_beat",
+  "phrase_starts_same_place",
+  "zigzag_of_three",
+  "chord_tones",
+  "chord_tones_on_beat",
+  "chord_tones_off_beat",
+  "chord_tones_on_downbeat"
+ ],
+ "kept figures by section (both collections pooled)": {
+  "bridge 1": {
+   "notes_per_bar": {
+    "mean": 3.8685,
+    "sd": 1.3288,
+    "q25": 3.0,
+    "q75": 4.6875
+   },
+   "range": {
+    "mean": 11.3229,
+    "sd": 4.1333,
+    "q25": 8.0,
+    "q75": 14.0
+   },
+   "distinct_pitches": {
+    "mean": 6.8646,
+    "sd": 2.0085,
+    "q25": 5.75,
+    "q75": 8.0
+   },
+   "repeat": {
+    "mean": 0.2826,
+    "sd": 0.1681,
+    "q25": 0.158,
+    "q75": 0.383
+   },
+   "step": {
+    "mean": 0.459,
+    "sd": 0.1605,
+    "q25": 0.3675,
+    "q75": 0.5632
+   },
+   "third": {
+    "mean": 0.1629,
+    "sd": 0.108,
+    "q25": 0.0764,
+    "q75": 0.2275
+   },
+   "fourth_fifth": {
+    "mean": 0.0679,
+    "sd": 0.0608,
+    "q25": 0.0233,
+    "q75": 0.1075
+   },
+   "mean_interval": {
+    "mean": 1.9773,
+    "sd": 0.6442,
+    "q25": 1.5762,
+    "q75": 2.4934
+   },
+   "turns_per_move": {
+    "mean": 0.5655,
+    "sd": 0.1412,
+    "q25": 0.4797,
+    "q75": 0.6571
+   },
+   "last_note_tonic": {
+    "mean": 0.2396,
+    "sd": 0.4291,
+    "q25": 0.0,
+    "q75": 0.0
+   },
+   "peak_position": {
+    "mean": 0.4045,
+    "sd": 0.3513,
+    "q25": 0.0742,
+    "q75": 0.75
+   },
+   "on_beats_2_4": {
+    "mean": 0.216,
+    "sd": 0.0857,
+    "q25": 0.1667,
+    "q75": 0.2727
+   },
+   "gap_eighth": {
+    "mean": 0.4308,
+    "sd": 0.1956,
+    "q25": 0.2979,
+    "q75": 0.5708
+   },
+   "gap_quarter": {
+    "mean": 0.2156,
+    "sd": 0.1626,
+    "q25": 0.0911,
+    "q75": 0.3164
+   },
+   "gap_longer": {
+    "mean": 0.1991,
+    "sd": 0.139,
+    "q25": 0.1087,
+    "q75": 0.25
+   },
+   "first_onset": {
+    "mean": 1.599,
+    "sd": 3.4993,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "bar_rhythm_repeats": {
+    "mean": 0.1848,
+    "sd": 0.2239,
+    "q25": 0.0,
+    "q75": 0.2857
+   },
+   "equal_gap_run_max": {
+    "mean": 4.7917,
+    "sd": 2.7219,
+    "q25": 3.0,
+    "q75": 6.0
+   },
+   "gap_same_as_before": {
+    "mean": 0.3862,
+    "sd": 0.172,
+    "q25": 0.2813,
+    "q75": 0.4839
+   },
+   "gap_entropy": {
+    "mean": 1.9093,
+    "sd": 0.5189,
+    "q25": 1.5887,
+    "q75": 2.2017
+   },
+   "most_onsets_in_a_beat": {
+    "mean": 2.6354,
+    "sd": 0.8475,
+    "q25": 2.0,
+    "q75": 3.0
+   },
+   "phrase_starts_same_place": {
+    "mean": 0.5514,
+    "sd": 0.2087,
+    "q25": 0.4,
+    "q75": 0.6667
+   },
+   "zigzag_of_three": {
+    "mean": 0.2963,
+    "sd": 0.1926,
+    "q25": 0.1718,
+    "q75": 0.3935
+   },
+   "chord_tones": {
+    "mean": 0.5812,
+    "sd": 0.1655,
+    "q25": 0.469,
+    "q75": 0.6971
+   },
+   "chord_tones_on_beat": {
+    "mean": 0.6019,
+    "sd": 0.2158,
+    "q25": 0.4444,
+    "q75": 0.75
+   },
+   "chord_tones_off_beat": {
+    "mean": 0.5514,
+    "sd": 0.1927,
+    "q25": 0.4383,
+    "q75": 0.6667
+   },
+   "chord_tones_on_downbeat": {
+    "mean": 0.6371,
+    "sd": 0.3027,
+    "q25": 0.5,
+    "q75": 0.875
+   },
+   "windows": 96
+  },
+  "chorus 1": {
+   "notes_per_bar": {
+    "mean": 3.8281,
+    "sd": 1.3042,
+    "q25": 2.75,
+    "q75": 4.625
+   },
+   "range": {
+    "mean": 10.654,
+    "sd": 3.9217,
+    "q25": 8.0,
+    "q75": 13.0
+   },
+   "distinct_pitches": {
+    "mean": 6.4093,
+    "sd": 1.9521,
+    "q25": 5.0,
+    "q75": 8.0
+   },
+   "repeat": {
+    "mean": 0.273,
+    "sd": 0.1676,
+    "q25": 0.1351,
+    "q75": 0.3902
+   },
+   "step": {
+    "mean": 0.4349,
+    "sd": 0.1738,
+    "q25": 0.3208,
+    "q75": 0.5455
+   },
+   "third": {
+    "mean": 0.1921,
+    "sd": 0.1176,
+    "q25": 0.1071,
+    "q75": 0.2632
+   },
+   "fourth_fifth": {
+    "mean": 0.0762,
+    "sd": 0.0719,
+    "q25": 0.0192,
+    "q75": 0.12
+   },
+   "mean_interval": {
+    "mean": 2.08,
+    "sd": 0.6499,
+    "q25": 1.6977,
+    "q75": 2.5
+   },
+   "turns_per_move": {
+    "mean": 0.5815,
+    "sd": 0.1442,
+    "q25": 0.4783,
+    "q75": 0.6667
+   },
+   "last_note_tonic": {
+    "mean": 0.3207,
+    "sd": 0.4677,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "peak_position": {
+    "mean": 0.3115,
+    "sd": 0.2931,
+    "q25": 0.0625,
+    "q75": 0.5312
+   },
+   "on_beats_2_4": {
+    "mean": 0.2076,
+    "sd": 0.081,
+    "q25": 0.1471,
+    "q75": 0.2609
+   },
+   "gap_eighth": {
+    "mean": 0.4449,
+    "sd": 0.1911,
+    "q25": 0.3103,
+    "q75": 0.5862
+   },
+   "gap_quarter": {
+    "mean": 0.1872,
+    "sd": 0.1539,
+    "q25": 0.0635,
+    "q75": 0.2857
+   },
+   "gap_longer": {
+    "mean": 0.2,
+    "sd": 0.12,
+    "q25": 0.1176,
+    "q75": 0.2667
+   },
+   "first_onset": {
+    "mean": 0.9821,
+    "sd": 2.7442,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "bar_rhythm_repeats": {
+    "mean": 0.235,
+    "sd": 0.2416,
+    "q25": 0.0,
+    "q75": 0.4286
+   },
+   "equal_gap_run_max": {
+    "mean": 4.4515,
+    "sd": 2.3168,
+    "q25": 3.0,
+    "q75": 5.0
+   },
+   "gap_same_as_before": {
+    "mean": 0.3706,
+    "sd": 0.1556,
+    "q25": 0.2609,
+    "q75": 0.4815
+   },
+   "gap_entropy": {
+    "mean": 1.8969,
+    "sd": 0.4605,
+    "q25": 1.6052,
+    "q75": 2.2192
+   },
+   "most_onsets_in_a_beat": {
+    "mean": 2.6835,
+    "sd": 0.8317,
+    "q25": 2.0,
+    "q75": 3.0
+   },
+   "phrase_starts_same_place": {
+    "mean": 0.5336,
+    "sd": 0.1905,
+    "q25": 0.4,
+    "q75": 0.625
+   },
+   "zigzag_of_three": {
+    "mean": 0.3138,
+    "sd": 0.1998,
+    "q25": 0.1724,
+    "q75": 0.4286
+   },
+   "chord_tones": {
+    "mean": 0.6257,
+    "sd": 0.1655,
+    "q25": 0.5405,
+    "q75": 0.7308
+   },
+   "chord_tones_on_beat": {
+    "mean": 0.6657,
+    "sd": 0.1984,
+    "q25": 0.5714,
+    "q75": 0.8
+   },
+   "chord_tones_off_beat": {
+    "mean": 0.5893,
+    "sd": 0.2047,
+    "q25": 0.4628,
+    "q75": 0.7202
+   },
+   "chord_tones_on_downbeat": {
+    "mean": 0.7492,
+    "sd": 0.2625,
+    "q25": 0.5857,
+    "q75": 1.0
+   },
+   "windows": 237
+  },
+  "verse 1": {
+   "notes_per_bar": {
+    "mean": 4.1166,
+    "sd": 1.385,
+    "q25": 3.125,
+    "q75": 4.875
+   },
+   "range": {
+    "mean": 10.5236,
+    "sd": 3.7298,
+    "q25": 8.0,
+    "q75": 12.0
+   },
+   "distinct_pitches": {
+    "mean": 6.3412,
+    "sd": 1.7761,
+    "q25": 5.0,
+    "q75": 7.25
+   },
+   "repeat": {
+    "mean": 0.2839,
+    "sd": 0.1612,
+    "q25": 0.15,
+    "q75": 0.4047
+   },
+   "step": {
+    "mean": 0.4273,
+    "sd": 0.1702,
+    "q25": 0.3091,
+    "q75": 0.5336
+   },
+   "third": {
+    "mean": 0.1869,
+    "sd": 0.125,
+    "q25": 0.0992,
+    "q75": 0.2568
+   },
+   "fourth_fifth": {
+    "mean": 0.0807,
+    "sd": 0.0681,
+    "q25": 0.0285,
+    "q75": 0.1193
+   },
+   "mean_interval": {
+    "mean": 2.0386,
+    "sd": 0.6312,
+    "q25": 1.5792,
+    "q75": 2.459
+   },
+   "turns_per_move": {
+    "mean": 0.5946,
+    "sd": 0.1485,
+    "q25": 0.5,
+    "q75": 0.685
+   },
+   "last_note_tonic": {
+    "mean": 0.2804,
+    "sd": 0.45,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "peak_position": {
+    "mean": 0.3111,
+    "sd": 0.2991,
+    "q25": 0.0469,
+    "q75": 0.5
+   },
+   "on_beats_2_4": {
+    "mean": 0.2066,
+    "sd": 0.0944,
+    "q25": 0.1498,
+    "q75": 0.264
+   },
+   "gap_eighth": {
+    "mean": 0.4705,
+    "sd": 0.1926,
+    "q25": 0.3309,
+    "q75": 0.6116
+   },
+   "gap_quarter": {
+    "mean": 0.1796,
+    "sd": 0.155,
+    "q25": 0.0602,
+    "q75": 0.2667
+   },
+   "gap_longer": {
+    "mean": 0.1854,
+    "sd": 0.1139,
+    "q25": 0.1151,
+    "q75": 0.2276
+   },
+   "first_onset": {
+    "mean": 0.4932,
+    "sd": 1.142,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "bar_rhythm_repeats": {
+    "mean": 0.1943,
+    "sd": 0.211,
+    "q25": 0.0,
+    "q75": 0.2857
+   },
+   "equal_gap_run_max": {
+    "mean": 4.8108,
+    "sd": 2.5534,
+    "q25": 3.0,
+    "q75": 6.0
+   },
+   "gap_same_as_before": {
+    "mean": 0.3817,
+    "sd": 0.1727,
+    "q25": 0.2671,
+    "q75": 0.5029
+   },
+   "gap_entropy": {
+    "mean": 1.8423,
+    "sd": 0.4444,
+    "q25": 1.5439,
+    "q75": 2.1222
+   },
+   "most_onsets_in_a_beat": {
+    "mean": 2.6892,
+    "sd": 0.8304,
+    "q25": 2.0,
+    "q75": 3.0
+   },
+   "phrase_starts_same_place": {
+    "mean": 0.5376,
+    "sd": 0.1924,
+    "q25": 0.4,
+    "q75": 0.6667
+   },
+   "zigzag_of_three": {
+    "mean": 0.3301,
+    "sd": 0.2067,
+    "q25": 0.1795,
+    "q75": 0.4375
+   },
+   "chord_tones": {
+    "mean": 0.6389,
+    "sd": 0.1442,
+    "q25": 0.5445,
+    "q75": 0.7429
+   },
+   "chord_tones_on_beat": {
+    "mean": 0.6539,
+    "sd": 0.1889,
+    "q25": 0.5385,
+    "q75": 0.7857
+   },
+   "chord_tones_off_beat": {
+    "mean": 0.6225,
+    "sd": 0.1933,
+    "q25": 0.5,
+    "q75": 0.7647
+   },
+   "chord_tones_on_downbeat": {
+    "mean": 0.6891,
+    "sd": 0.2789,
+    "q25": 0.5,
+    "q75": 1.0
+   },
+   "windows": 296
+  },
+  "verse 2": {
+   "notes_per_bar": {
+    "mean": 4.2284,
+    "sd": 1.48,
+    "q25": 3.125,
+    "q75": 5.0
+   },
+   "range": {
+    "mean": 11.1021,
+    "sd": 3.8506,
+    "q25": 8.75,
+    "q75": 14.0
+   },
+   "distinct_pitches": {
+    "mean": 6.588,
+    "sd": 1.8445,
+    "q25": 5.0,
+    "q75": 8.0
+   },
+   "repeat": {
+    "mean": 0.2955,
+    "sd": 0.1617,
+    "q25": 0.1882,
+    "q75": 0.4167
+   },
+   "step": {
+    "mean": 0.4078,
+    "sd": 0.1715,
+    "q25": 0.2857,
+    "q75": 0.5096
+   },
+   "third": {
+    "mean": 0.1925,
+    "sd": 0.1206,
+    "q25": 0.1077,
+    "q75": 0.2632
+   },
+   "fourth_fifth": {
+    "mean": 0.0799,
+    "sd": 0.0667,
+    "q25": 0.0294,
+    "q75": 0.1119
+   },
+   "mean_interval": {
+    "mean": 2.0531,
+    "sd": 0.6342,
+    "q25": 1.6125,
+    "q75": 2.4548
+   },
+   "turns_per_move": {
+    "mean": 0.5979,
+    "sd": 0.1432,
+    "q25": 0.5,
+    "q75": 0.688
+   },
+   "last_note_tonic": {
+    "mean": 0.3028,
+    "sd": 0.4603,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "peak_position": {
+    "mean": 0.3444,
+    "sd": 0.3129,
+    "q25": 0.0605,
+    "q75": 0.5625
+   },
+   "on_beats_2_4": {
+    "mean": 0.205,
+    "sd": 0.0894,
+    "q25": 0.1429,
+    "q75": 0.2635
+   },
+   "gap_eighth": {
+    "mean": 0.4579,
+    "sd": 0.1896,
+    "q25": 0.3131,
+    "q75": 0.6097
+   },
+   "gap_quarter": {
+    "mean": 0.1807,
+    "sd": 0.1666,
+    "q25": 0.0432,
+    "q75": 0.2581
+   },
+   "gap_longer": {
+    "mean": 0.1795,
+    "sd": 0.1089,
+    "q25": 0.1053,
+    "q75": 0.2196
+   },
+   "first_onset": {
+    "mean": 0.5516,
+    "sd": 1.2067,
+    "q25": 0.0,
+    "q75": 1.0
+   },
+   "bar_rhythm_repeats": {
+    "mean": 0.1833,
+    "sd": 0.2086,
+    "q25": 0.0,
+    "q75": 0.2857
+   },
+   "equal_gap_run_max": {
+    "mean": 4.9014,
+    "sd": 2.5088,
+    "q25": 3.0,
+    "q75": 6.0
+   },
+   "gap_same_as_before": {
+    "mean": 0.3859,
+    "sd": 0.1616,
+    "q25": 0.2727,
+    "q75": 0.5
+   },
+   "gap_entropy": {
+    "mean": 1.8659,
+    "sd": 0.4605,
+    "q25": 1.527,
+    "q75": 2.2104
+   },
+   "most_onsets_in_a_beat": {
+    "mean": 2.7289,
+    "sd": 0.811,
+    "q25": 2.0,
+    "q75": 3.0
+   },
+   "phrase_starts_same_place": {
+    "mean": 0.5048,
+    "sd": 0.1946,
+    "q25": 0.3333,
+    "q75": 0.6
+   },
+   "zigzag_of_three": {
+    "mean": 0.3339,
+    "sd": 0.2059,
+    "q25": 0.1869,
+    "q75": 0.4444
+   },
+   "chord_tones": {
+    "mean": 0.6433,
+    "sd": 0.1436,
+    "q25": 0.5455,
+    "q75": 0.7436
+   },
+   "chord_tones_on_beat": {
+    "mean": 0.667,
+    "sd": 0.19,
+    "q25": 0.5455,
+    "q75": 0.8
+   },
+   "chord_tones_off_beat": {
+    "mean": 0.6211,
+    "sd": 0.1791,
+    "q25": 0.5,
+    "q75": 0.7368
+   },
+   "chord_tones_on_downbeat": {
+    "mean": 0.7003,
+    "sd": 0.2878,
+    "q25": 0.5,
+    "q75": 1.0
+   },
+   "windows": 284
+  }
+ },
+ "chord tones (Table EB)": [
+  {
+   "measure": "chord_tones",
+   "billboard": 0.644,
+   "rolling_stone": 0.622,
+   "builds": 0.552,
+   "collections_gap": -0.14,
+   "builds_vs_billboard": -0.59,
+   "builds_vs_rolling_stone": -0.45,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "chord_tones_on_beat",
+   "billboard": 0.674,
+   "rolling_stone": 0.643,
+   "builds": 0.572,
+   "collections_gap": -0.16,
+   "builds_vs_billboard": -0.53,
+   "builds_vs_rolling_stone": -0.37,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "chord_tones_off_beat",
+   "billboard": 0.612,
+   "rolling_stone": 0.603,
+   "builds": 0.533,
+   "collections_gap": -0.04,
+   "builds_vs_billboard": -0.39,
+   "builds_vs_rolling_stone": -0.35,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "chord_tones_on_downbeat",
+   "billboard": 0.729,
+   "rolling_stone": 0.705,
+   "builds": 0.545,
+   "collections_gap": -0.09,
+   "builds_vs_billboard": -0.68,
+   "builds_vs_rolling_stone": -0.59,
+   "agreed": true,
+   "builds_differ_from_both": true
+  }
+ ],
+ "every onset measure on the three bodies": [
+  {
+   "measure": "notes_per_bar",
+   "billboard": 3.937,
+   "rolling_stone": 4.143,
+   "builds": 4.554,
+   "collections_gap": 0.15,
+   "builds_vs_billboard": 0.45,
+   "builds_vs_rolling_stone": 0.3,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "range",
+   "billboard": 10.67,
+   "rolling_stone": 10.587,
+   "builds": 10.215,
+   "collections_gap": -0.02,
+   "builds_vs_billboard": -0.12,
+   "builds_vs_rolling_stone": -0.1,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "distinct_pitches",
+   "billboard": 6.362,
+   "rolling_stone": 6.453,
+   "builds": 6.42,
+   "collections_gap": 0.05,
+   "builds_vs_billboard": 0.03,
+   "builds_vs_rolling_stone": -0.02,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "repeat",
+   "billboard": 0.273,
+   "rolling_stone": 0.291,
+   "builds": 0.284,
+   "collections_gap": 0.11,
+   "builds_vs_billboard": 0.07,
+   "builds_vs_rolling_stone": -0.05,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "step",
+   "billboard": 0.436,
+   "rolling_stone": 0.417,
+   "builds": 0.393,
+   "collections_gap": -0.11,
+   "builds_vs_billboard": -0.25,
+   "builds_vs_rolling_stone": -0.14,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "third",
+   "billboard": 0.191,
+   "rolling_stone": 0.191,
+   "builds": 0.178,
+   "collections_gap": 0.0,
+   "builds_vs_billboard": -0.1,
+   "builds_vs_rolling_stone": -0.11,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "fourth_fifth",
+   "billboard": 0.079,
+   "rolling_stone": 0.079,
+   "builds": 0.112,
+   "collections_gap": 0.0,
+   "builds_vs_billboard": 0.47,
+   "builds_vs_rolling_stone": 0.47,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "mean_interval",
+   "billboard": 2.071,
+   "rolling_stone": 2.03,
+   "builds": 2.23,
+   "collections_gap": -0.06,
+   "builds_vs_billboard": 0.25,
+   "builds_vs_rolling_stone": 0.32,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "turns_per_move",
+   "billboard": 0.584,
+   "rolling_stone": 0.594,
+   "builds": 0.659,
+   "collections_gap": 0.07,
+   "builds_vs_billboard": 0.51,
+   "builds_vs_rolling_stone": 0.44,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "on_tonic",
+   "billboard": 0.229,
+   "rolling_stone": 0.263,
+   "builds": 0.192,
+   "collections_gap": 0.22,
+   "builds_vs_billboard": -0.24,
+   "builds_vs_rolling_stone": -0.45,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "outside_scale",
+   "billboard": 0.07,
+   "rolling_stone": 0.139,
+   "builds": 0.006,
+   "collections_gap": 0.43,
+   "builds_vs_billboard": -0.41,
+   "builds_vs_rolling_stone": -0.84,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "last_note_tonic",
+   "billboard": 0.282,
+   "rolling_stone": 0.328,
+   "builds": 0.152,
+   "collections_gap": 0.1,
+   "builds_vs_billboard": -0.28,
+   "builds_vs_rolling_stone": -0.38,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "peak_position",
+   "billboard": 0.315,
+   "rolling_stone": 0.293,
+   "builds": 0.289,
+   "collections_gap": -0.07,
+   "builds_vs_billboard": -0.09,
+   "builds_vs_rolling_stone": -0.01,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "on_downbeat",
+   "billboard": 0.188,
+   "rolling_stone": 0.117,
+   "builds": 0.135,
+   "collections_gap": -0.85,
+   "builds_vs_billboard": -0.64,
+   "builds_vs_rolling_stone": 0.21,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "on_beat3",
+   "billboard": 0.124,
+   "rolling_stone": 0.097,
+   "builds": 0.123,
+   "collections_gap": -0.4,
+   "builds_vs_billboard": -0.01,
+   "builds_vs_rolling_stone": 0.39,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "on_beats_2_4",
+   "billboard": 0.21,
+   "rolling_stone": 0.201,
+   "builds": 0.219,
+   "collections_gap": -0.09,
+   "builds_vs_billboard": 0.11,
+   "builds_vs_rolling_stone": 0.2,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "on_offbeat_eighth",
+   "billboard": 0.37,
+   "rolling_stone": 0.436,
+   "builds": 0.408,
+   "collections_gap": 0.5,
+   "builds_vs_billboard": 0.3,
+   "builds_vs_rolling_stone": -0.21,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "on_sixteenth",
+   "billboard": 0.097,
+   "rolling_stone": 0.141,
+   "builds": 0.115,
+   "collections_gap": 0.29,
+   "builds_vs_billboard": 0.12,
+   "builds_vs_rolling_stone": -0.17,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "gap_sixteenth",
+   "billboard": 0.109,
+   "rolling_stone": 0.144,
+   "builds": 0.141,
+   "collections_gap": 0.21,
+   "builds_vs_billboard": 0.19,
+   "builds_vs_rolling_stone": -0.02,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "gap_eighth",
+   "billboard": 0.465,
+   "rolling_stone": 0.449,
+   "builds": 0.574,
+   "collections_gap": -0.08,
+   "builds_vs_billboard": 0.57,
+   "builds_vs_rolling_stone": 0.65,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "gap_quarter",
+   "billboard": 0.186,
+   "rolling_stone": 0.175,
+   "builds": 0.104,
+   "collections_gap": -0.07,
+   "builds_vs_billboard": -0.54,
+   "builds_vs_rolling_stone": -0.47,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "gap_longer",
+   "billboard": 0.2,
+   "rolling_stone": 0.177,
+   "builds": 0.123,
+   "collections_gap": -0.19,
+   "builds_vs_billboard": -0.65,
+   "builds_vs_rolling_stone": -0.46,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "first_onset",
+   "billboard": 0.574,
+   "rolling_stone": 0.869,
+   "builds": 0.684,
+   "collections_gap": 0.14,
+   "builds_vs_billboard": 0.05,
+   "builds_vs_rolling_stone": -0.09,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "empty_bars",
+   "billboard": 0.515,
+   "rolling_stone": 0.736,
+   "builds": 0.264,
+   "collections_gap": 0.23,
+   "builds_vs_billboard": -0.26,
+   "builds_vs_rolling_stone": -0.48,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "bar_rhythm_repeats",
+   "billboard": 0.229,
+   "rolling_stone": 0.192,
+   "builds": 0.151,
+   "collections_gap": -0.16,
+   "builds_vs_billboard": -0.34,
+   "builds_vs_rolling_stone": -0.18,
+   "agreed": true,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "notes_per_bar_sd",
+   "billboard": 1.704,
+   "rolling_stone": 1.866,
+   "builds": 1.724,
+   "collections_gap": 0.22,
+   "builds_vs_billboard": 0.03,
+   "builds_vs_rolling_stone": -0.19,
+   "agreed": false,
+   "builds_differ_from_both": false
+  },
+  {
+   "measure": "equal_gap_run_max",
+   "billboard": 4.867,
+   "rolling_stone": 4.378,
+   "builds": 6.183,
+   "collections_gap": -0.2,
+   "builds_vs_billboard": 0.53,
+   "builds_vs_rolling_stone": 0.73,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "gap_same_as_before",
+   "billboard": 0.387,
+   "rolling_stone": 0.364,
+   "builds": 0.485,
+   "collections_gap": -0.14,
+   "builds_vs_billboard": 0.6,
+   "builds_vs_rolling_stone": 0.73,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "gap_entropy",
+   "billboard": 1.836,
+   "rolling_stone": 1.9,
+   "builds": 1.673,
+   "collections_gap": 0.14,
+   "builds_vs_billboard": -0.36,
+   "builds_vs_rolling_stone": -0.5,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "most_onsets_in_a_beat",
+   "billboard": 2.634,
+   "rolling_stone": 2.801,
+   "builds": 3.085,
+   "collections_gap": 0.2,
+   "builds_vs_billboard": 0.54,
+   "builds_vs_rolling_stone": 0.34,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "phrase_starts_same_place",
+   "billboard": 0.551,
+   "rolling_stone": 0.521,
+   "builds": 0.47,
+   "collections_gap": -0.15,
+   "builds_vs_billboard": -0.42,
+   "builds_vs_rolling_stone": -0.27,
+   "agreed": true,
+   "builds_differ_from_both": true
+  },
+  {
+   "measure": "zigzag_of_three",
+   "billboard": 0.315,
+   "rolling_stone": 0.333,
+   "builds": 0.409,
+   "collections_gap": 0.09,
+   "builds_vs_billboard": 0.45,
+   "builds_vs_rolling_stone": 0.37,
+   "agreed": true,
+   "builds_differ_from_both": true
+  }
+ ],
+ "separation by section": {
+  "verse 1": [
+   0.86,
+   0.024,
+   284,
+   1200
+  ],
+  "verse 2": [
+   0.953,
+   0.012,
+   272,
+   1200
+  ],
+  "verse 3": null,
+  "chorus 1": [
+   0.838,
+   0.035,
+   226,
+   1200
+  ],
+  "chorus 2": [
+   0.805,
+   0.051,
+   220,
+   1200
+  ],
+  "chorus last": [
+   0.803,
+   0.072,
+   170,
+   1200
+  ],
+  "bridge 1": [
+   0.886,
+   0.044,
+   89,
+   1200
+  ]
+ },
+ "the later section less the first, paired": {
+  "verse 2 less verse 1, in kept sd": {
+   "pairs (billboard, rolling stone, builds)": [
+    163,
+    108,
+    1200
+   ],
+   "billboard: measures under 0.15": 23,
+   "rolling stone: measures under 0.15": 23,
+   "builds: measures under 0.15": 16,
+   "of": 27,
+   "largest in the builds (measure, builds, billboard, rolling stone)": [
+    [
+     "chord_tones_on_beat",
+     1.25,
+     0.15,
+     -0.07
+    ],
+    [
+     "chord_tones_on_downbeat",
+     0.94,
+     0.04,
+     0.04
+    ],
+    [
+     "chord_tones",
+     0.81,
+     0.05,
+     -0.01
+    ],
+    [
+     "equal_gap_run_max",
+     0.48,
+     0.0,
+     0.07
+    ],
+    [
+     "repeat",
+     0.47,
+     0.08,
+     0.03
+    ],
+    [
+     "step",
+     -0.42,
+     -0.13,
+     -0.09
+    ],
+    [
+     "most_onsets_in_a_beat",
+     -0.36,
+     0.01,
+     0.02
+    ],
+    [
+     "gap_eighth",
+     0.28,
+     -0.03,
+     -0.08
+    ]
+   ],
+   "largest in kept (measure, billboard, rolling stone, builds)": [
+    [
+     "phrase_starts_same_place",
+     -0.19,
+     -0.16,
+     0.03
+    ],
+    [
+     "range",
+     0.12,
+     0.21,
+     -0.0
+    ],
+    [
+     "peak_position",
+     0.15,
+     0.14,
+     0.06
+    ],
+    [
+     "distinct_pitches",
+     0.08,
+     0.21,
+     0.06
+    ],
+    [
+     "step",
+     -0.13,
+     -0.09,
+     -0.42
+    ],
+    [
+     "notes_per_bar",
+     0.04,
+     0.15,
+     0.03
+    ]
+   ]
+  },
+  "chorus 2 less chorus 1, in kept sd": {
+   "pairs (billboard, rolling stone, builds)": [
+    136,
+    78,
+    1200
+   ],
+   "billboard: measures under 0.15": 27,
+   "rolling stone: measures under 0.15": 27,
+   "builds: measures under 0.15": 27,
+   "of": 27,
+   "largest in the builds (measure, builds, billboard, rolling stone)": [
+    [
+     "notes_per_bar",
+     0.0,
+     0.01,
+     -0.05
+    ],
+    [
+     "range",
+     0.0,
+     0.01,
+     0.09
+    ],
+    [
+     "distinct_pitches",
+     0.0,
+     0.05,
+     0.05
+    ],
+    [
+     "repeat",
+     0.0,
+     0.04,
+     0.03
+    ],
+    [
+     "step",
+     0.0,
+     -0.01,
+     -0.03
+    ],
+    [
+     "third",
+     0.0,
+     -0.05,
+     -0.12
+    ],
+    [
+     "fourth_fifth",
+     0.0,
+     0.0,
+     0.12
+    ],
+    [
+     "mean_interval",
+     0.0,
+     -0.02,
+     0.04
+    ]
+   ],
+   "largest in kept (measure, billboard, rolling stone, builds)": [
+    [
+     "third",
+     -0.05,
+     -0.12,
+     0.0
+    ],
+    [
+     "first_onset",
+     -0.03,
+     -0.13,
+     0.0
+    ],
+    [
+     "phrase_starts_same_place",
+     -0.04,
+     -0.09,
+     0.0
+    ],
+    [
+     "chord_tones_on_downbeat",
+     0.01,
+     -0.14,
+     0.0
+    ],
+    [
+     "fourth_fifth",
+     0.0,
+     0.12,
+     0.0
+    ],
+    [
+     "gap_entropy",
+     0.08,
+     0.04,
+     0.0
+    ]
+   ]
+  },
+  "chorus last less chorus 1, in kept sd": {
+   "pairs (billboard, rolling stone, builds)": [
+    107,
+    59,
+    1200
+   ],
+   "billboard: measures under 0.15": 23,
+   "rolling stone: measures under 0.15": 22,
+   "builds: measures under 0.15": 26,
+   "of": 27,
+   "largest in the builds (measure, builds, billboard, rolling stone)": [
+    [
+     "phrase_starts_same_place",
+     0.39,
+     -0.11,
+     0.11
+    ],
+    [
+     "last_note_tonic",
+     -0.13,
+     0.06,
+     0.11
+    ],
+    [
+     "peak_position",
+     -0.09,
+     -0.06,
+     0.07
+    ],
+    [
+     "gap_entropy",
+     -0.06,
+     0.01,
+     -0.01
+    ],
+    [
+     "range",
+     -0.05,
+     -0.04,
+     -0.03
+    ],
+    [
+     "distinct_pitches",
+     -0.05,
+     -0.04,
+     -0.11
+    ],
+    [
+     "mean_interval",
+     -0.05,
+     0.06,
+     0.01
+    ],
+    [
+     "on_beats_2_4",
+     0.05,
+     -0.04,
+     -0.01
+    ]
+   ],
+   "largest in kept (measure, billboard, rolling stone, builds)": [
+    [
+     "chord_tones_on_downbeat",
+     -0.24,
+     -0.24,
+     -0.03
+    ],
+    [
+     "zigzag_of_three",
+     0.06,
+     0.27,
+     -0.01
+    ],
+    [
+     "turns_per_move",
+     0.06,
+     0.23,
+     -0.0
+    ],
+    [
+     "chord_tones",
+     -0.3,
+     0.05,
+     -0.02
+    ],
+    [
+     "chord_tones_on_beat",
+     -0.25,
+     0.04,
+     -0.02
+    ],
+    [
+     "equal_gap_run_max",
+     -0.1,
+     -0.08,
+     -0.0
+    ]
+   ]
+  }
+ },
+ "the later window beside the first": {
+  "verse 2 beside verse 1": {
+   "bb": {
+    "pairs": 163,
+    "bars_same_rhythm": [
+     0.349,
+     0.125,
+     0.598
+    ],
+    "onsets_shared": [
+     0.713,
+     0.583,
+     0.857
+    ],
+    "pitch_kept": [
+     0.789,
+     0.714,
+     0.95
+    ],
+    "notes_ratio": [
+     1.024,
+     0.957,
+     1.106
+    ],
+    "bars all the same rhythm": 0.043,
+    "no bar the same rhythm": 0.196
+   },
+   "rs": {
+    "pairs": 135,
+    "bars_same_rhythm": [
+     0.282,
+     0.0,
+     0.464
+    ],
+    "onsets_shared": [
+     0.698,
+     0.581,
+     0.844
+    ],
+    "pitch_kept": [
+     0.716,
+     0.566,
+     0.901
+    ],
+    "notes_ratio": [
+     1.056,
+     0.963,
+     1.102
+    ],
+    "bars all the same rhythm": 0.037,
+    "no bar the same rhythm": 0.311
+   },
+   "build": {
+    "pairs": 1200,
+    "bars_same_rhythm": [
+     0.159,
+     0.0,
+     0.25
+    ],
+    "onsets_shared": [
+     0.752,
+     0.694,
+     0.816
+    ],
+    "pitch_kept": [
+     0.583,
+     0.48,
+     0.688
+    ],
+    "notes_ratio": [
+     1.007,
+     0.921,
+     1.071
+    ],
+    "bars all the same rhythm": 0.0,
+    "no bar the same rhythm": 0.296
+   }
+  },
+  "chorus 2 beside chorus 1": {
+   "bb": {
+    "pairs": 136,
+    "bars_same_rhythm": [
+     0.714,
+     0.5,
+     1.0
+    ],
+    "onsets_shared": [
+     0.873,
+     0.835,
+     1.0
+    ],
+    "pitch_kept": [
+     0.902,
+     0.892,
+     1.0
+    ],
+    "notes_ratio": [
+     1.004,
+     0.969,
+     1.034
+    ],
+    "bars all the same rhythm": 0.301,
+    "no bar the same rhythm": 0.044
+   },
+   "rs": {
+    "pairs": 97,
+    "bars_same_rhythm": [
+     0.593,
+     0.25,
+     1.0
+    ],
+    "onsets_shared": [
+     0.802,
+     0.69,
+     1.0
+    ],
+    "pitch_kept": [
+     0.846,
+     0.784,
+     1.0
+    ],
+    "notes_ratio": [
+     1.004,
+     0.952,
+     1.034
+    ],
+    "bars all the same rhythm": 0.268,
+    "no bar the same rhythm": 0.093
+   },
+   "build": {
+    "pairs": 1200,
+    "bars_same_rhythm": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "onsets_shared": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "pitch_kept": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "notes_ratio": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "bars all the same rhythm": 1.0,
+    "no bar the same rhythm": 0.0
+   }
+  },
+  "chorus last beside chorus 1": {
+   "bb": {
+    "pairs": 107,
+    "bars_same_rhythm": [
+     0.537,
+     0.25,
+     0.866
+    ],
+    "onsets_shared": [
+     0.753,
+     0.589,
+     0.951
+    ],
+    "pitch_kept": [
+     0.804,
+     0.716,
+     1.0
+    ],
+    "notes_ratio": [
+     0.968,
+     0.917,
+     1.054
+    ],
+    "bars all the same rhythm": 0.206,
+    "no bar the same rhythm": 0.159
+   },
+   "rs": {
+    "pairs": 75,
+    "bars_same_rhythm": [
+     0.525,
+     0.143,
+     0.857
+    ],
+    "onsets_shared": [
+     0.747,
+     0.581,
+     0.915
+    ],
+    "pitch_kept": [
+     0.771,
+     0.647,
+     1.0
+    ],
+    "notes_ratio": [
+     1.064,
+     1.0,
+     1.12
+    ],
+    "bars all the same rhythm": 0.16,
+    "no bar the same rhythm": 0.107
+   },
+   "build": {
+    "pairs": 1200,
+    "bars_same_rhythm": [
+     0.931,
+     0.857,
+     1.0
+    ],
+    "onsets_shared": [
+     0.971,
+     0.938,
+     1.0
+    ],
+    "pitch_kept": [
+     0.993,
+     1.0,
+     1.0
+    ],
+    "notes_ratio": [
+     0.999,
+     1.0,
+     1.0
+    ],
+    "bars all the same rhythm": 0.667,
+    "no bar the same rhythm": 0.0
+   }
+  }
+ },
+ "by measure and section": {
+  "notes_per_bar": {
+   "verse 1": {
+    "kept": 4.156,
+    "builds": 4.883,
+    "by_song": [
+     5.192,
+     4.878,
+     4.58
+    ],
+    "sd": 0.52,
+    "auc": 0.259
+   },
+   "verse 2": {
+    "kept": 4.269,
+    "builds": 4.926,
+    "by_song": [
+     5.507,
+     5.102,
+     4.168
+    ],
+    "sd": 0.44,
+    "auc": 0.295
+   },
+   "chorus 1": {
+    "kept": 3.845,
+    "builds": 4.226,
+    "by_song": [
+     4.738,
+     4.103,
+     3.836
+    ],
+    "sd": 0.29,
+    "auc": 0.368
+   },
+   "bridge 1": {
+    "kept": 3.869,
+    "builds": 4.923,
+    "by_song": [
+     6.26,
+     4.385,
+     4.123
+    ],
+    "sd": 0.79,
+    "auc": 0.231
+   }
+  },
+  "range": {
+   "verse 1": {
+    "kept": 10.553,
+    "builds": 10.02,
+    "by_song": [
+     9.13,
+     10.852,
+     10.078
+    ],
+    "sd": -0.14,
+    "auc": 0.525
+   },
+   "verse 2": {
+    "kept": 11.158,
+    "builds": 10.015,
+    "by_song": [
+     9.287,
+     10.768,
+     9.99
+    ],
+    "sd": -0.3,
+    "auc": 0.576
+   },
+   "chorus 1": {
+    "kept": 10.743,
+    "builds": 10.41,
+    "by_song": [
+     9.865,
+     10.275,
+     11.09
+    ],
+    "sd": -0.08,
+    "auc": 0.514
+   },
+   "bridge 1": {
+    "kept": 11.315,
+    "builds": 11.082,
+    "by_song": [
+     10.805,
+     12.26,
+     10.18
+    ],
+    "sd": -0.05,
+    "auc": 0.508
+   }
+  },
+  "distinct_pitches": {
+   "verse 1": {
+    "kept": 6.359,
+    "builds": 6.327,
+    "by_song": [
+     6.0,
+     6.782,
+     6.197
+    ],
+    "sd": -0.02,
+    "auc": 0.497
+   },
+   "verse 2": {
+    "kept": 6.596,
+    "builds": 6.442,
+    "by_song": [
+     6.28,
+     6.89,
+     6.157
+    ],
+    "sd": -0.08,
+    "auc": 0.515
+   },
+   "chorus 1": {
+    "kept": 6.447,
+    "builds": 6.513,
+    "by_song": [
+     6.395,
+     6.247,
+     6.897
+    ],
+    "sd": 0.03,
+    "auc": 0.47
+   },
+   "bridge 1": {
+    "kept": 6.854,
+    "builds": 6.523,
+    "by_song": [
+     6.753,
+     7.045,
+     5.772
+    ],
+    "sd": -0.16,
+    "auc": 0.545
+   }
+  },
+  "repeat": {
+   "verse 1": {
+    "kept": 0.286,
+    "builds": 0.309,
+    "by_song": [
+     0.306,
+     0.316,
+     0.303
+    ],
+    "sd": 0.14,
+    "auc": 0.48
+   },
+   "verse 2": {
+    "kept": 0.296,
+    "builds": 0.385,
+    "by_song": [
+     0.403,
+     0.386,
+     0.367
+    ],
+    "sd": 0.55,
+    "auc": 0.338
+   },
+   "chorus 1": {
+    "kept": 0.272,
+    "builds": 0.259,
+    "by_song": [
+     0.264,
+     0.25,
+     0.263
+    ],
+    "sd": -0.08,
+    "auc": 0.53
+   },
+   "bridge 1": {
+    "kept": 0.287,
+    "builds": 0.284,
+    "by_song": [
+     0.257,
+     0.262,
+     0.334
+    ],
+    "sd": -0.01,
+    "auc": 0.52
+   }
+  },
+  "step": {
+   "verse 1": {
+    "kept": 0.424,
+    "builds": 0.382,
+    "by_song": [
+     0.38,
+     0.383,
+     0.383
+    ],
+    "sd": -0.25,
+    "auc": 0.568
+   },
+   "verse 2": {
+    "kept": 0.405,
+    "builds": 0.31,
+    "by_song": [
+     0.305,
+     0.319,
+     0.306
+    ],
+    "sd": -0.55,
+    "auc": 0.673
+   },
+   "chorus 1": {
+    "kept": 0.434,
+    "builds": 0.404,
+    "by_song": [
+     0.397,
+     0.388,
+     0.428
+    ],
+    "sd": -0.17,
+    "auc": 0.549
+   },
+   "bridge 1": {
+    "kept": 0.457,
+    "builds": 0.367,
+    "by_song": [
+     0.378,
+     0.395,
+     0.327
+    ],
+    "sd": -0.54,
+    "auc": 0.643
+   }
+  },
+  "third": {
+   "verse 1": {
+    "kept": 0.188,
+    "builds": 0.176,
+    "by_song": [
+     0.188,
+     0.165,
+     0.175
+    ],
+    "sd": -0.1,
+    "auc": 0.545
+   },
+   "verse 2": {
+    "kept": 0.194,
+    "builds": 0.17,
+    "by_song": [
+     0.177,
+     0.161,
+     0.173
+    ],
+    "sd": -0.2,
+    "auc": 0.551
+   },
+   "chorus 1": {
+    "kept": 0.193,
+    "builds": 0.18,
+    "by_song": [
+     0.189,
+     0.186,
+     0.164
+    ],
+    "sd": -0.11,
+    "auc": 0.542
+   },
+   "bridge 1": {
+    "kept": 0.16,
+    "builds": 0.191,
+    "by_song": [
+     0.204,
+     0.171,
+     0.196
+    ],
+    "sd": 0.28,
+    "auc": 0.444
+   }
+  },
+  "fourth_fifth": {
+   "verse 1": {
+    "kept": 0.081,
+    "builds": 0.103,
+    "by_song": [
+     0.104,
+     0.097,
+     0.108
+    ],
+    "sd": 0.33,
+    "auc": 0.422
+   },
+   "verse 2": {
+    "kept": 0.081,
+    "builds": 0.108,
+    "by_song": [
+     0.097,
+     0.102,
+     0.126
+    ],
+    "sd": 0.42,
+    "auc": 0.374
+   },
+   "chorus 1": {
+    "kept": 0.077,
+    "builds": 0.121,
+    "by_song": [
+     0.121,
+     0.138,
+     0.104
+    ],
+    "sd": 0.6,
+    "auc": 0.344
+   },
+   "bridge 1": {
+    "kept": 0.069,
+    "builds": 0.121,
+    "by_song": [
+     0.13,
+     0.124,
+     0.109
+    ],
+    "sd": 0.85,
+    "auc": 0.33
+   }
+  },
+  "mean_interval": {
+   "verse 1": {
+    "kept": 2.034,
+    "builds": 2.125,
+    "by_song": [
+     2.087,
+     2.125,
+     2.163
+    ],
+    "sd": 0.15,
+    "auc": 0.451
+   },
+   "verse 2": {
+    "kept": 2.055,
+    "builds": 1.961,
+    "by_song": [
+     1.842,
+     1.953,
+     2.09
+    ],
+    "sd": -0.15,
+    "auc": 0.537
+   },
+   "chorus 1": {
+    "kept": 2.08,
+    "builds": 2.335,
+    "by_song": [
+     2.311,
+     2.431,
+     2.261
+    ],
+    "sd": 0.39,
+    "auc": 0.386
+   },
+   "bridge 1": {
+    "kept": 1.965,
+    "builds": 2.326,
+    "by_song": [
+     2.394,
+     2.415,
+     2.169
+    ],
+    "sd": 0.56,
+    "auc": 0.346
+   }
+  },
+  "turns_per_move": {
+   "verse 1": {
+    "kept": 0.592,
+    "builds": 0.654,
+    "by_song": [
+     0.662,
+     0.636,
+     0.665
+    ],
+    "sd": 0.41,
+    "auc": 0.363
+   },
+   "verse 2": {
+    "kept": 0.597,
+    "builds": 0.673,
+    "by_song": [
+     0.68,
+     0.658,
+     0.681
+    ],
+    "sd": 0.52,
+    "auc": 0.326
+   },
+   "chorus 1": {
+    "kept": 0.582,
+    "builds": 0.664,
+    "by_song": [
+     0.694,
+     0.648,
+     0.648
+    ],
+    "sd": 0.56,
+    "auc": 0.318
+   },
+   "bridge 1": {
+    "kept": 0.57,
+    "builds": 0.67,
+    "by_song": [
+     0.695,
+     0.639,
+     0.675
+    ],
+    "sd": 0.69,
+    "auc": 0.288
+   }
+  },
+  "last_note_tonic": {
+   "verse 1": {
+    "kept": 0.285,
+    "builds": 0.137,
+    "by_song": [
+     0.237,
+     0.0,
+     0.172
+    ],
+    "sd": -0.33,
+    "auc": 0.574
+   },
+   "verse 2": {
+    "kept": 0.309,
+    "builds": 0.128,
+    "by_song": [
+     0.265,
+     0.0,
+     0.12
+    ],
+    "sd": -0.39,
+    "auc": 0.59
+   },
+   "chorus 1": {
+    "kept": 0.319,
+    "builds": 0.168,
+    "by_song": [
+     0.07,
+     0.357,
+     0.075
+    ],
+    "sd": -0.32,
+    "auc": 0.576
+   },
+   "bridge 1": {
+    "kept": 0.258,
+    "builds": 0.112,
+    "by_song": [
+     0.072,
+     0.117,
+     0.145
+    ],
+    "sd": -0.33,
+    "auc": 0.573
+   }
+  },
+  "peak_position": {
+   "verse 1": {
+    "kept": 0.305,
+    "builds": 0.271,
+    "by_song": [
+     0.265,
+     0.28,
+     0.267
+    ],
+    "sd": -0.12,
+    "auc": 0.52
+   },
+   "verse 2": {
+    "kept": 0.342,
+    "builds": 0.288,
+    "by_song": [
+     0.283,
+     0.306,
+     0.275
+    ],
+    "sd": -0.17,
+    "auc": 0.534
+   },
+   "chorus 1": {
+    "kept": 0.308,
+    "builds": 0.308,
+    "by_song": [
+     0.328,
+     0.213,
+     0.382
+    ],
+    "sd": -0.0,
+    "auc": 0.486
+   },
+   "bridge 1": {
+    "kept": 0.417,
+    "builds": 0.246,
+    "by_song": [
+     0.268,
+     0.254,
+     0.215
+    ],
+    "sd": -0.49,
+    "auc": 0.637
+   }
+  },
+  "on_beats_2_4": {
+   "verse 1": {
+    "kept": 0.205,
+    "builds": 0.221,
+    "by_song": [
+     0.226,
+     0.224,
+     0.212
+    ],
+    "sd": 0.16,
+    "auc": 0.438
+   },
+   "verse 2": {
+    "kept": 0.204,
+    "builds": 0.22,
+    "by_song": [
+     0.23,
+     0.209,
+     0.221
+    ],
+    "sd": 0.18,
+    "auc": 0.425
+   },
+   "chorus 1": {
+    "kept": 0.208,
+    "builds": 0.218,
+    "by_song": [
+     0.226,
+     0.221,
+     0.206
+    ],
+    "sd": 0.12,
+    "auc": 0.453
+   },
+   "bridge 1": {
+    "kept": 0.217,
+    "builds": 0.208,
+    "by_song": [
+     0.179,
+     0.224,
+     0.222
+    ],
+    "sd": -0.1,
+    "auc": 0.534
+   }
+  },
+  "gap_eighth": {
+   "verse 1": {
+    "kept": 0.469,
+    "builds": 0.587,
+    "by_song": [
+     0.603,
+     0.576,
+     0.582
+    ],
+    "sd": 0.61,
+    "auc": 0.319
+   },
+   "verse 2": {
+    "kept": 0.458,
+    "builds": 0.641,
+    "by_song": [
+     0.676,
+     0.611,
+     0.636
+    ],
+    "sd": 0.96,
+    "auc": 0.241
+   },
+   "chorus 1": {
+    "kept": 0.446,
+    "builds": 0.56,
+    "by_song": [
+     0.564,
+     0.571,
+     0.545
+    ],
+    "sd": 0.6,
+    "auc": 0.327
+   },
+   "bridge 1": {
+    "kept": 0.436,
+    "builds": 0.52,
+    "by_song": [
+     0.315,
+     0.597,
+     0.646
+    ],
+    "sd": 0.42,
+    "auc": 0.397
+   }
+  },
+  "gap_quarter": {
+   "verse 1": {
+    "kept": 0.178,
+    "builds": 0.101,
+    "by_song": [
+     0.12,
+     0.096,
+     0.088
+    ],
+    "sd": -0.49,
+    "auc": 0.642
+   },
+   "verse 2": {
+    "kept": 0.179,
+    "builds": 0.093,
+    "by_song": [
+     0.086,
+     0.101,
+     0.092
+    ],
+    "sd": -0.51,
+    "auc": 0.638
+   },
+   "chorus 1": {
+    "kept": 0.186,
+    "builds": 0.106,
+    "by_song": [
+     0.115,
+     0.107,
+     0.094
+    ],
+    "sd": -0.53,
+    "auc": 0.642
+   },
+   "bridge 1": {
+    "kept": 0.217,
+    "builds": 0.075,
+    "by_song": [
+     0.055,
+     0.106,
+     0.064
+    ],
+    "sd": -0.86,
+    "auc": 0.773
+   }
+  },
+  "gap_longer": {
+   "verse 1": {
+    "kept": 0.185,
+    "builds": 0.108,
+    "by_song": [
+     0.093,
+     0.117,
+     0.113
+    ],
+    "sd": -0.67,
+    "auc": 0.75
+   },
+   "verse 2": {
+    "kept": 0.178,
+    "builds": 0.1,
+    "by_song": [
+     0.079,
+     0.107,
+     0.114
+    ],
+    "sd": -0.71,
+    "auc": 0.765
+   },
+   "chorus 1": {
+    "kept": 0.198,
+    "builds": 0.138,
+    "by_song": [
+     0.106,
+     0.122,
+     0.186
+    ],
+    "sd": -0.5,
+    "auc": 0.649
+   },
+   "bridge 1": {
+    "kept": 0.194,
+    "builds": 0.112,
+    "by_song": [
+     0.106,
+     0.119,
+     0.109
+    ],
+    "sd": -0.61,
+    "auc": 0.733
+   }
+  },
+  "first_onset": {
+   "verse 1": {
+    "kept": 0.451,
+    "builds": 0.604,
+    "by_song": [
+     0.472,
+     0.667,
+     0.672
+    ],
+    "sd": 0.14,
+    "auc": 0.379
+   },
+   "verse 2": {
+    "kept": 0.525,
+    "builds": 0.614,
+    "by_song": [
+     0.524,
+     0.657,
+     0.661
+    ],
+    "sd": 0.07,
+    "auc": 0.377
+   },
+   "chorus 1": {
+    "kept": 0.992,
+    "builds": 0.764,
+    "by_song": [
+     0.749,
+     0.499,
+     1.044
+    ],
+    "sd": -0.08,
+    "auc": 0.36
+   },
+   "bridge 1": {
+    "kept": 1.691,
+    "builds": 0.699,
+    "by_song": [
+     0.906,
+     0.651,
+     0.54
+    ],
+    "sd": -0.27,
+    "auc": 0.426
+   }
+  },
+  "bar_rhythm_repeats": {
+   "verse 1": {
+    "kept": 0.195,
+    "builds": 0.13,
+    "by_song": [
+     0.119,
+     0.116,
+     0.155
+    ],
+    "sd": -0.31,
+    "auc": 0.571
+   },
+   "verse 2": {
+    "kept": 0.184,
+    "builds": 0.093,
+    "by_song": [
+     0.094,
+     0.047,
+     0.139
+    ],
+    "sd": -0.43,
+    "auc": 0.613
+   },
+   "chorus 1": {
+    "kept": 0.239,
+    "builds": 0.172,
+    "by_song": [
+     0.117,
+     0.184,
+     0.214
+    ],
+    "sd": -0.28,
+    "auc": 0.538
+   },
+   "bridge 1": {
+    "kept": 0.189,
+    "builds": 0.256,
+    "by_song": [
+     0.246,
+     0.223,
+     0.297
+    ],
+    "sd": 0.3,
+    "auc": 0.376
+   }
+  },
+  "equal_gap_run_max": {
+   "verse 1": {
+    "kept": 4.838,
+    "builds": 6.614,
+    "by_song": [
+     7.522,
+     5.758,
+     6.562
+    ],
+    "sd": 0.69,
+    "auc": 0.278
+   },
+   "verse 2": {
+    "kept": 4.912,
+    "builds": 7.841,
+    "by_song": [
+     10.652,
+     6.348,
+     6.522
+    ],
+    "sd": 1.16,
+    "auc": 0.226
+   },
+   "chorus 1": {
+    "kept": 4.469,
+    "builds": 5.751,
+    "by_song": [
+     6.428,
+     5.133,
+     5.692
+    ],
+    "sd": 0.54,
+    "auc": 0.309
+   },
+   "bridge 1": {
+    "kept": 4.888,
+    "builds": 6.179,
+    "by_song": [
+     6.317,
+     5.9,
+     6.32
+    ],
+    "sd": 0.47,
+    "auc": 0.279
+   }
+  },
+  "gap_same_as_before": {
+   "verse 1": {
+    "kept": 0.384,
+    "builds": 0.512,
+    "by_song": [
+     0.525,
+     0.483,
+     0.527
+    ],
+    "sd": 0.75,
+    "auc": 0.285
+   },
+   "verse 2": {
+    "kept": 0.387,
+    "builds": 0.535,
+    "by_song": [
+     0.588,
+     0.482,
+     0.537
+    ],
+    "sd": 0.91,
+    "auc": 0.256
+   },
+   "chorus 1": {
+    "kept": 0.371,
+    "builds": 0.459,
+    "by_song": [
+     0.501,
+     0.451,
+     0.426
+    ],
+    "sd": 0.56,
+    "auc": 0.337
+   },
+   "bridge 1": {
+    "kept": 0.395,
+    "builds": 0.524,
+    "by_song": [
+     0.528,
+     0.492,
+     0.55
+    ],
+    "sd": 0.75,
+    "auc": 0.272
+   }
+  },
+  "gap_entropy": {
+   "verse 1": {
+    "kept": 1.839,
+    "builds": 1.606,
+    "by_song": [
+     1.566,
+     1.64,
+     1.612
+    ],
+    "sd": -0.53,
+    "auc": 0.646
+   },
+   "verse 2": {
+    "kept": 1.858,
+    "builds": 1.494,
+    "by_song": [
+     1.361,
+     1.603,
+     1.519
+    ],
+    "sd": -0.78,
+    "auc": 0.714
+   },
+   "chorus 1": {
+    "kept": 1.89,
+    "builds": 1.741,
+    "by_song": [
+     1.668,
+     1.697,
+     1.858
+    ],
+    "sd": -0.32,
+    "auc": 0.593
+   },
+   "bridge 1": {
+    "kept": 1.889,
+    "builds": 1.605,
+    "by_song": [
+     1.795,
+     1.602,
+     1.417
+    ],
+    "sd": -0.54,
+    "auc": 0.661
+   }
+  },
+  "most_onsets_in_a_beat": {
+   "verse 1": {
+    "kept": 2.708,
+    "builds": 3.153,
+    "by_song": [
+     3.072,
+     3.087,
+     3.3
+    ],
+    "sd": 0.53,
+    "auc": 0.347
+   },
+   "verse 2": {
+    "kept": 2.732,
+    "builds": 2.852,
+    "by_song": [
+     2.837,
+     2.885,
+     2.833
+    ],
+    "sd": 0.15,
+    "auc": 0.453
+   },
+   "chorus 1": {
+    "kept": 2.69,
+    "builds": 3.016,
+    "by_song": [
+     3.3,
+     2.915,
+     2.833
+    ],
+    "sd": 0.39,
+    "auc": 0.386
+   },
+   "bridge 1": {
+    "kept": 2.652,
+    "builds": 3.228,
+    "by_song": [
+     3.993,
+     2.885,
+     2.808
+    ],
+    "sd": 0.66,
+    "auc": 0.319
+   }
+  },
+  "phrase_starts_same_place": {
+   "verse 1": {
+    "kept": 0.539,
+    "builds": 0.464,
+    "by_song": [
+     0.484,
+     0.443,
+     0.465
+    ],
+    "sd": -0.39,
+    "auc": 0.606
+   },
+   "verse 2": {
+    "kept": 0.505,
+    "builds": 0.47,
+    "by_song": [
+     0.486,
+     0.415,
+     0.51
+    ],
+    "sd": -0.18,
+    "auc": 0.537
+   },
+   "chorus 1": {
+    "kept": 0.539,
+    "builds": 0.475,
+    "by_song": [
+     0.481,
+     0.487,
+     0.458
+    ],
+    "sd": -0.33,
+    "auc": 0.59
+   },
+   "bridge 1": {
+    "kept": 0.559,
+    "builds": 0.502,
+    "by_song": [
+     0.378,
+     0.52,
+     0.609
+    ],
+    "sd": -0.27,
+    "auc": 0.583
+   }
+  },
+  "zigzag_of_three": {
+   "verse 1": {
+    "kept": 0.328,
+    "builds": 0.406,
+    "by_song": [
+     0.403,
+     0.394,
+     0.421
+    ],
+    "sd": 0.37,
+    "auc": 0.371
+   },
+   "verse 2": {
+    "kept": 0.334,
+    "builds": 0.429,
+    "by_song": [
+     0.431,
+     0.415,
+     0.44
+    ],
+    "sd": 0.46,
+    "auc": 0.339
+   },
+   "chorus 1": {
+    "kept": 0.316,
+    "builds": 0.412,
+    "by_song": [
+     0.463,
+     0.401,
+     0.372
+    ],
+    "sd": 0.47,
+    "auc": 0.337
+   },
+   "bridge 1": {
+    "kept": 0.299,
+    "builds": 0.428,
+    "by_song": [
+     0.463,
+     0.394,
+     0.428
+    ],
+    "sd": 0.65,
+    "auc": 0.296
+   }
+  },
+  "chord_tones": {
+   "verse 1": {
+    "kept": 0.64,
+    "builds": 0.577,
+    "by_song": [
+     0.604,
+     0.555,
+     0.572
+    ],
+    "sd": -0.43,
+    "auc": 0.644
+   },
+   "verse 2": {
+    "kept": 0.643,
+    "builds": 0.695,
+    "by_song": [
+     0.704,
+     0.668,
+     0.715
+    ],
+    "sd": 0.36,
+    "auc": 0.386
+   },
+   "chorus 1": {
+    "kept": 0.629,
+    "builds": 0.526,
+    "by_song": [
+     0.538,
+     0.514,
+     0.528
+    ],
+    "sd": -0.61,
+    "auc": 0.722
+   },
+   "bridge 1": {
+    "kept": 0.581,
+    "builds": 0.518,
+    "by_song": [
+     0.522,
+     0.516,
+     0.515
+    ],
+    "sd": -0.37,
+    "auc": 0.631
+   }
+  },
+  "chord_tones_on_beat": {
+   "verse 1": {
+    "kept": 0.656,
+    "builds": 0.592,
+    "by_song": [
+     0.628,
+     0.562,
+     0.587
+    ],
+    "sd": -0.34,
+    "auc": 0.613
+   },
+   "verse 2": {
+    "kept": 0.665,
+    "builds": 0.827,
+    "by_song": [
+     0.832,
+     0.796,
+     0.854
+    ],
+    "sd": 0.86,
+    "auc": 0.229
+   },
+   "chorus 1": {
+    "kept": 0.669,
+    "builds": 0.551,
+    "by_song": [
+     0.57,
+     0.538,
+     0.546
+    ],
+    "sd": -0.59,
+    "auc": 0.709
+   },
+   "bridge 1": {
+    "kept": 0.598,
+    "builds": 0.567,
+    "by_song": [
+     0.573,
+     0.555,
+     0.571
+    ],
+    "sd": -0.15,
+    "auc": 0.552
+   }
+  },
+  "chord_tones_off_beat": {
+   "verse 1": {
+    "kept": 0.622,
+    "builds": 0.561,
+    "by_song": [
+     0.581,
+     0.549,
+     0.555
+    ],
+    "sd": -0.31,
+    "auc": 0.6
+   },
+   "verse 2": {
+    "kept": 0.622,
+    "builds": 0.578,
+    "by_song": [
+     0.591,
+     0.555,
+     0.588
+    ],
+    "sd": -0.24,
+    "auc": 0.58
+   },
+   "chorus 1": {
+    "kept": 0.592,
+    "builds": 0.504,
+    "by_song": [
+     0.509,
+     0.493,
+     0.51
+    ],
+    "sd": -0.42,
+    "auc": 0.643
+   },
+   "bridge 1": {
+    "kept": 0.554,
+    "builds": 0.478,
+    "by_song": [
+     0.489,
+     0.48,
+     0.466
+    ],
+    "sd": -0.4,
+    "auc": 0.612
+   }
+  },
+  "chord_tones_on_downbeat": {
+   "verse 1": {
+    "kept": 0.691,
+    "builds": 0.578,
+    "by_song": [
+     0.633,
+     0.564,
+     0.538
+    ],
+    "sd": -0.4,
+    "auc": 0.638
+   },
+   "verse 2": {
+    "kept": 0.7,
+    "builds": 0.842,
+    "by_song": [
+     0.87,
+     0.845,
+     0.812
+    ],
+    "sd": 0.5,
+    "auc": 0.365
+   },
+   "chorus 1": {
+    "kept": 0.759,
+    "builds": 0.512,
+    "by_song": [
+     0.55,
+     0.524,
+     0.458
+    ],
+    "sd": -0.97,
+    "auc": 0.758
+   },
+   "bridge 1": {
+    "kept": 0.633,
+    "builds": 0.552,
+    "by_song": [
+     0.519,
+     0.54,
+     0.599
+    ],
+    "sd": -0.26,
+    "auc": 0.592
+   }
+  }
+ },
+ "fix 331's measure": {
+  "rs": [
+   0.411,
+   0.375,
+   135
+  ],
+  "bb": [
+   0.505,
+   0.5,
+   163
+  ],
+  "build": [
+   0.408,
+   0.375,
+   1200
+  ]
+ },
+ "bridge and verse": {
+  "first_onset": {
+   "bb verse": 0.363,
+   "bb bridge": 1.553,
+   "rs verse": 0.629,
+   "rs bridge": 1.628,
+   "build verse": 0.604,
+   "build bridge": 0.699,
+   "bb bridge median": 0.0,
+   "rs bridge median": 0.25,
+   "build bridge median": 0.5
+  },
+  "notes_per_bar": {
+   "bb verse": 4.045,
+   "bb bridge": 3.949,
+   "rs verse": 4.216,
+   "rs bridge": 3.767,
+   "build verse": 4.883,
+   "build bridge": 4.923,
+   "bb bridge median": 3.75,
+   "rs bridge median": 3.5,
+   "build bridge median": 4.375
+  },
+  "peak_position": {
+   "bb verse": 0.308,
+   "bb bridge": 0.384,
+   "rs verse": 0.322,
+   "rs bridge": 0.45,
+   "build verse": 0.271,
+   "build bridge": 0.246,
+   "bb bridge median": 0.25,
+   "rs bridge median": 0.469,
+   "build bridge median": 0.109
+  },
+  "gap_quarter": {
+   "bb verse": 0.191,
+   "bb bridge": 0.207,
+   "rs verse": 0.173,
+   "rs bridge": 0.225,
+   "build verse": 0.101,
+   "build bridge": 0.075,
+   "bb bridge median": 0.176,
+   "rs bridge median": 0.2,
+   "build bridge median": 0.061
+  },
+  "bar_rhythm_repeats": {
+   "bb verse": 0.21,
+   "bb bridge": 0.193,
+   "rs verse": 0.186,
+   "rs bridge": 0.172,
+   "build verse": 0.13,
+   "build bridge": 0.256,
+   "bb bridge median": 0.143,
+   "rs bridge median": 0.143,
+   "build bridge median": 0.286
+  },
+  "fourth_fifth": {
+   "bb verse": 0.081,
+   "bb bridge": 0.068,
+   "rs verse": 0.079,
+   "rs bridge": 0.066,
+   "build verse": 0.103,
+   "build bridge": 0.121,
+   "bb bridge median": 0.052,
+   "rs bridge median": 0.053,
+   "build bridge median": 0.1
+  }
+ },
+ "code": "\"\"\"(A) Harmony on a second chorded collection, and (B) the sections the judge never reads. Onsets, pitches and chords only.\nPredictions in PREDICTION.md. Run: python3 whole_study.py\"\"\"\nimport json, re, sys, pickle, collections, warnings, numpy as np, pandas as pd\nfrom pathlib import Path\nwarnings.filterwarnings(\"ignore\")\nfrom sklearn.pipeline import make_pipeline; from sklearn.impute import SimpleImputer; from sklearn.preprocessing import StandardScaler; from sklearn.linear_model import LogisticRegression; from sklearn.metrics import roc_auc_score\nsys.path.insert(0, \"/home/claude/zeneng/corpus/blind\"); from blind_study import cand\nsys.path.insert(0, \"/home/claude/zeneng/corpus/gate_audit\"); import gate_audit as GA\nRS = Path(\"/home/claude/corpus/try2/CoCoPops/RollingStone/Data\"); BB = Path(\"/home/claude/corpus/try2/CoCoPops/Billboard/Data\")\nPCN = {\"c\": 0, \"d\": 2, \"e\": 4, \"f\": 5, \"g\": 7, \"a\": 9, \"b\": 11}; MAJ = {0, 2, 4, 5, 7, 9, 11}; MIN = {0, 2, 3, 5, 7, 8, 10}\nQU = {\"maj\": (4, 7), \"min\": (3, 7), \"7\": (4, 7, 10), \"min7\": (3, 7, 10), \"maj7\": (4, 7, 11), \"hdim7\": (3, 6, 10), \"dim\": (3, 6), \"dim7\": (3, 6, 9), \"sus4\": (5, 7), \"aug\": (4, 8), \"5\": (7,), \"sus2\": (2, 7), \"maj6\": (4, 7), \"min6\": (3, 7), \"9\": (4, 7, 10), \"maj9\": (4, 7, 11), \"min9\": (3, 7, 10), \"minmaj7\": (3, 7, 11), \"1\": ()}\nDEG = {\"1\": 0, \"2\": 2, \"3\": 4, \"4\": 5, \"5\": 7, \"6\": 9, \"7\": 11}\ndef harte(tok):\n    m = re.match(r\"^([A-G])([#-]*):([^/]*)\", tok)\n    if not m: return None\n    r = (PCN[m.group(1).lower()] + m.group(2).count(\"#\") - m.group(2).count(\"-\")) % 12; q = m.group(3)\n    if q.startswith(\"(\"):\n        iv = []\n        for d in q.strip(\"()\").split(\",\"):\n            mm = re.match(r\"^([b#]*)(\\d+)$\", d.strip())\n            if mm and mm.group(2) in DEG: iv.append(DEG[mm.group(2)] - mm.group(1).count(\"b\") + mm.group(1).count(\"#\"))\n    else:\n        q = re.sub(r\"\\(.*\\)\", \"\", q); iv = QU.get(q)\n        if iv is None: return None\n    return frozenset((r + i) % 12 for i in (0, *iv))\ndef kpitch(tok):\n    m = re.search(r\"([a-gA-G]+)([#-]*)\", tok)\n    if not m: return None\n    L = m.group(1); o = 3 + len(L) if L[0].islower() else 4 - len(L); return 12 * (o + 1) + PCN[L[0].lower()] + m.group(2).count(\"#\") - m.group(2).count(\"-\")\ndef tbdur(s):\n    m = re.match(r\"^(\\d+)(\\.*)$\", s)\n    if not m: return None\n    return 4.0 / int(m.group(1)) * (1.5 if m.group(2) else 1)\ndef parse_rs(f):\n    \"\"\"-> notes [(bar index, beat in bar, pitch, chord pcs annotator 1, annotator 2)], bars {index: (meter, length)}, marks [(bar index, label)], key\"\"\"\n    cols = None; tb = None; meter = None; key = None; bi = -1; pos = 0.0; ch = [None, None]; notes = []; bars = {}; marks = []; pend = None\n    for l in f.read_text(errors=\"ignore\").splitlines():\n        if not l or l.startswith(\"!\"): continue\n        c = l.split(\"\\t\")\n        if l.startswith(\"**\"): cols = c; hi = [i for i, x in enumerate(c) if x == \"**harte\"]; ki = next(i for i, x in enumerate(c) if x == \"**kern\"); continue\n        if l.startswith(\"=\"):\n            if bi >= 0: bars[bi] = (meter, pos)\n            bi += 1; pos = 0.0; continue\n        if l.startswith(\"*\"):\n            for x in c[:1] + [c[ki]]:\n                m = re.match(r\"^\\*tb(.+)$\", x)\n                if m: tb = tbdur(m.group(1))\n                m = re.match(r\"^\\*M(\\d+/\\d+)$\", x)\n                if m: meter = m.group(1)\n                m = re.match(r\"^\\*([A-Ga-g])([#-]*):$\", x)\n                if m and key is None: key = ((PCN[m.group(1).lower()] + m.group(2).count(\"#\") - m.group(2).count(\"-\")) % 12, m.group(1).islower())\n                m = re.match(r\"^\\*>([A-Za-z]+)$\", x)\n                if m: marks.append((max(bi, 0), m.group(1).lower()))\n            continue\n        if tb is None: return None\n        for j, i in enumerate(hi[:2]):\n            if c[i] not in (\".\", \"\"): ch[j] = harte(c[i])\n        tok = c[ki]\n        if tok not in (\".\", \"\") and \"r\" not in tok:\n            p = kpitch(tok)\n            if p is not None: notes.append((bi, pos, p, ch[0], ch[1]))\n        pos += tb\n    bars[bi] = (meter, pos); marks = [m for k, m in enumerate(marks) if k == 0 or m != marks[k - 1]]\n    return notes, bars, marks, key\ndef parse_bb_marks(f):\n    bi = None; marks = []; nxt = []\n    for l in f.read_text(errors=\"ignore\").splitlines():\n        if l.startswith(\"=\"):\n            m = re.match(r\"^=+(\\d+)\", l)\n            if m: bi = int(m.group(1))\n            continue\n        m = re.match(r\"^\\*>Label>([A-Za-z]+)\", l)\n        if m: marks.append((bi, m.group(1).lower()))      # the marker follows its bar line\n    return marks\ndef om(N, ton, minor):\n    \"\"\"N: (t in beats from the window's first bar line, pitch, chord pcs or None), 0 <= t < 32, sorted.\"\"\"\n    if len(N) < 12: return None\n    t = np.array([n[0] for n in N], float); p = np.array([n[1] for n in N]); a = np.abs(np.diff(p)); f = {}\n    f[\"notes_per_bar\"] = len(N) / 8; f[\"range\"] = p.max() - p.min(); f[\"distinct_pitches\"] = len(set(p)); f[\"repeat\"] = (a == 0).mean(); f[\"step\"] = ((a > 0) & (a <= 2)).mean(); f[\"third\"] = ((a >= 3) & (a <= 4)).mean(); f[\"fourth_fifth\"] = ((a >= 5) & (a <= 7)).mean(); f[\"mean_interval\"] = a.mean()\n    mv = np.diff(p); mv = np.sign(mv[mv != 0]); f[\"turns_per_move\"] = (mv[1:] != mv[:-1]).mean() if len(mv) > 1 else 0\n    deg = (p - ton) % 12; f[\"on_tonic\"] = (deg == 0).mean(); f[\"outside_scale\"] = (~np.isin(deg, list(MIN if minor else MAJ))).mean(); f[\"last_note_tonic\"] = float(deg[-1] == 0); f[\"peak_position\"] = t[int(np.argmax(p))] / 32\n    fr = np.round((t % 1) * 12).astype(int) % 12; beat = np.floor(t + 1e-6) % 4\n    f[\"on_downbeat\"] = ((fr == 0) & (beat == 0)).mean(); f[\"on_beat3\"] = ((fr == 0) & (beat == 2)).mean(); f[\"on_beats_2_4\"] = ((fr == 0) & np.isin(beat, (1, 3))).mean(); f[\"on_offbeat_eighth\"] = (fr == 6).mean(); f[\"on_sixteenth\"] = np.isin(fr, (3, 9)).mean()\n    g = np.diff(t); g = g[g > 0.01]; f[\"gap_sixteenth\"] = (np.abs(g - .25) < .04).mean(); f[\"gap_eighth\"] = (np.abs(g - .5) < .04).mean(); f[\"gap_quarter\"] = (np.abs(g - 1) < .04).mean(); f[\"gap_longer\"] = (g > 1.04).mean(); f[\"first_onset\"] = t[0]\n    bars = collections.defaultdict(list)\n    for x, y in zip(t, p): bars[int(x // 4)].append(int(round((x % 4) * 12)))\n    f[\"empty_bars\"] = 8 - len(bars); rh = [tuple(bars[b]) for b in sorted(bars)]; f[\"bar_rhythm_repeats\"] = np.mean([rh[i] in rh[:i] for i in range(1, len(rh))]) if len(rh) > 1 else 0; f[\"notes_per_bar_sd\"] = np.std([len(bars.get(b, [])) for b in range(8)])\n    c = cand([(x, 0, y) for x, y in zip(t, p)])\n    if c is None: return None\n    f.update({k: c[k] for k in SIX})\n    hv = [i for i, n in enumerate(N) if n[2]]\n    if len(hv) >= 10:\n        ct = np.array([N[i][1] % 12 in N[i][2] for i in hv]); onb = fr[hv] == 0; dn = onb & (beat[hv] == 0)\n        f[\"chord_tones\"] = ct.mean(); f[\"chord_tones_on_beat\"] = ct[onb].mean() if onb.sum() >= 3 else np.nan; f[\"chord_tones_off_beat\"] = ct[~onb].mean() if (~onb).sum() >= 3 else np.nan; f[\"chord_tones_on_downbeat\"] = ct[dn].mean() if dn.sum() >= 3 else np.nan\n    return {k: float(v) for k, v in f.items()}\nSIX = [\"equal_gap_run_max\", \"gap_same_as_before\", \"gap_entropy\", \"most_onsets_in_a_beat\", \"phrase_starts_same_place\", \"zigzag_of_three\"]\nHARM = [\"chord_tones\", \"chord_tones_on_beat\", \"chord_tones_off_beat\", \"chord_tones_on_downbeat\"]\ndef inst(marks):\n    \"\"\"the bar at which each instance of a label begins: {('verse', 1): bar, ...}; 'last chorus' too\"\"\"\n    o = {}; cnt = collections.Counter()\n    for b, lab in marks:\n        lab = {\"prechorus\": \"pre\", \"refrain\": \"chorus\"}.get(lab, lab); cnt[lab] += 1; o[(lab, cnt[lab])] = b\n    if cnt[\"chorus\"] >= 3: o[(\"chorus\", \"last\")] = o[(\"chorus\", cnt[\"chorus\"])]\n    return o\nWANT = [(\"verse\", 1), (\"verse\", 2), (\"verse\", 3), (\"chorus\", 1), (\"chorus\", 2), (\"chorus\", \"last\"), (\"bridge\", 1)]\ndef pair(Na, Nb):\n    \"\"\"how the later window stands to the earlier: bars with the same rhythm; notes struck at the same place with the same pitch (best level)\"\"\"\n    ba, bb = collections.defaultdict(dict), collections.defaultdict(dict)\n    for N, B in ((Na, ba), (Nb, bb)):\n        for n in N: B[int(n[0] // 4)][int(round((n[0] % 4) * 12))] = n[1]\n    bs = [b for b in range(8) if ba.get(b) or bb.get(b)]; same = np.mean([set(ba.get(b, {})) == set(bb.get(b, {})) for b in bs])\n    sh = [(ba[b][o], bb[b][o]) for b in range(8) for o in ba.get(b, {}) if o in bb.get(b, {})]\n    if len(sh) < 4: return dict(bars_same_rhythm=float(same), onsets_shared=len(sh) / max(len(Na), len(Nb)), pitch_kept=np.nan, notes_ratio=len(Nb) / len(Na))\n    lev = collections.Counter(y - x for x, y in sh).most_common(1)[0][0]\n    return dict(bars_same_rhythm=float(same), onsets_shared=len(sh) / max(len(Na), len(Nb)), pitch_kept=float(np.mean([y - x == lev for x, y in sh])), notes_ratio=len(Nb) / len(Na))\nrows = []; wins = {}\n# ---- Rolling Stone\nfor f in sorted(RS.glob(\"*.hum\")):\n    r = parse_rs(f)\n    if not r or r[3] is None: continue\n    notes, bars, marks, (ton, minor) = r; I = inst(marks); yr = int(re.search(r\"_(\\d{4})$\", f.stem).group(1))\n    for w in WANT:\n        if w not in I: continue\n        b0 = I[w]\n        if any(bars.get(b, (None, 0))[0] != \"4/4\" or abs(bars[b][1] - 4) > 1e-6 for b in range(b0, b0 + 8)): continue\n        for ann in (0, 1):\n            N = [((b - b0) * 4 + q, p, (c1, c2)[ann]) for b, q, p, c1, c2 in notes if b0 <= b < b0 + 8]; m = om(N, ton, minor)\n            if m and ann == 0: rows.append(dict(m, body=\"rs\", piece=f.stem, year=yr, sec=w[0], k=str(w[1]))); wins[(\"rs\", f.stem, w)] = N\n            if m and ann == 1 and m.get(\"chord_tones\") is not None and rows and rows[-1][\"piece\"] == f.stem and rows[-1][\"k\"] == str(w[1]) and rows[-1][\"sec\"] == w[0]: rows[-1][\"chord_tones_ann2\"] = m.get(\"chord_tones\", np.nan)\n# ---- CoCoPops Billboard\nd = pd.read_csv(\"/home/claude/zeneng/corpus/cocopops_notes.csv.gz\", low_memory=False); d = d[d.dur > 0]\nfor s, g in d.groupby(\"song\", sort=False):\n    if g.beat.quantile(.99) >= 4: continue\n    fs = [x for x in (BB / f\"{s}.varms.hum\", BB / f\"{s}.hum\") if x.exists()]\n    if not fs: continue\n    I = inst([m for m in parse_bb_marks(fs[0]) if m[0] is not None]); ton = int(g.key_pc.iloc[0]); minor = str(g[\"mode\"].iloc[0]) == \"minor\"; g = g.sort_values(\"abs_beat\")\n    for w in WANT:\n        if w not in I: continue\n        b0 = I[w]; x = g[(g.bar >= b0) & (g.bar < b0 + 8)]; N = [((r.bar - b0) * 4 + r.beat, int(r.pitch), GA.roman_pcs(r.roman, ton)) for r in x.itertuples()]; m = om(N, ton, minor)\n        if m: rows.append(dict(m, body=\"bb\", piece=s, year=int(g.year.iloc[0]), sec=w[0], k=str(w[1]))); wins[(\"bb\", s, w)] = N\n# ---- the v118 builds of songs 40, 42, 43\nNAME = {\"C\": 0, \"D\": 2, \"E\": 4, \"F\": 5, \"G\": 7, \"A\": 9, \"B\": 11}\ndef pcs(c):\n    c = c.split(\"/\")[0]; r = NAME[c[0]] + (1 if \"#\" in c[:2] else -1 if (len(c) > 1 and c[1] == \"b\") else 0); m = \"m\" in c[1:3] and \"maj\" not in c; return frozenset({r % 12, (r + (3 if m else 4)) % 12, (r + 7) % 12})\nBW = {\"Verse 1\": (\"verse\", 1), \"Verse 2\": (\"verse\", 2), \"Verse 3\": (\"verse\", 3), \"Chorus 1\": (\"chorus\", 1), \"Chorus 2\": (\"chorus\", 2), \"Last Chorus\": (\"chorus\", \"last\"), \"Bridge\": (\"bridge\", 1)}\nfor s, ton in ((\"40\", 2), (\"42\", 10), (\"43\", 0)):\n    P = pickle.load(open(f\"/home/claude/p50/melody_v118_p{s}_main.pkl\", \"rb\")); st = {}; i = 0\n    for name, kind, nb in P[\"form\"]: st[name] = (i, nb); i += nb\n    ev = [c for c in P[\"every\"] if not c.get(\"partial\")][:400]\n    for bi, c in enumerate(ev):\n        for name, w in BW.items():\n            if name not in st or st[name][1] < 8: continue\n            b0 = st[name][0]; N = sorted(((t[0] - b0 * 48) / 12, t[2], pcs(P[\"chords\"][t[0] // 48])) for t in c[\"notes\"] if b0 * 48 <= t[0] < (b0 + 8) * 48 and t[3] == name); m = om(N, ton, False)\n            if m: rows.append(dict(m, body=\"build\", piece=f\"s{s}\", song=s, build=bi, sec=w[0], k=str(w[1]))); wins[(\"build\", f\"s{s}_{bi}\", w)] = N\nA = pd.DataFrame(rows); A.to_pickle(\"whole_windows.pkl\"); pickle.dump(wins, open(\"whole_notes.pkl\", \"wb\"))\nM = [c for c in A.columns if c not in (\"body\", \"piece\", \"year\", \"sec\", \"k\", \"song\", \"build\", \"chord_tones_ann2\")]; MO = [m for m in M if m not in HARM]\nbbs = set(A[A.body == \"bb\"].piece); norm = lambda s: re.sub(r\"[^a-z]\", \"\", s.split(\"_\")[1].lower()) if \"_\" in s else s; bbt = {norm(s) for s in bbs}\nA[\"dup\"] = (A.body == \"rs\") & A.piece.map(lambda s: norm(s) in bbt)\nK = A[(A.body != \"build\")]; era = lambda D: D[(D.year >= 1958) & (D.year <= 1991)]\nfirst = lambda D: D[D.k == \"1\"][D.sec.isin((\"verse\", \"chorus\"))]\nbb1, rs1, bd1 = first(A[A.body == \"bb\"]), first(era(A[(A.body == \"rs\") & ~A.dup])), first(A[A.body == \"build\"])\nout = {\"windows\": {f\"{b} {s} {k}\": int(((A.body == b) & (A.sec == s) & (A.k == k)).sum()) for b in (\"bb\", \"rs\", \"build\") for s, k in ((\"verse\", \"1\"), (\"verse\", \"2\"), (\"verse\", \"3\"), (\"chorus\", \"1\"), (\"chorus\", \"2\"), (\"chorus\", \"last\"), (\"bridge\", \"1\"))},\n       \"Rolling Stone songs also in the Billboard set (left out of A)\": int(A[A.dup].piece.nunique()), \"A: first verse and chorus windows (Billboard; Rolling Stone 1958-1991 not in Billboard; builds)\": [len(bb1), len(rs1), len(bd1)], \"pieces\": [int(bb1.piece.nunique()), int(rs1.piece.nunique())]}\ndef tab(ms, a, b, c):\n    o = []\n    for m in ms:\n        sd = np.nanstd(pd.concat([a[m], b[m]])); persong = [c[c.song == s][m].mean() for s in (\"40\", \"42\", \"43\")]\n        gap = (b[m].mean() - a[m].mean()) / sd; da = (c[m].mean() - a[m].mean()) / sd; db = (c[m].mean() - b[m].mean()) / sd; mid = (a[m].mean() + b[m].mean()) / 2; sides = {np.sign(x - a[m].mean()) for x in persong} | {np.sign(x - b[m].mean()) for x in persong}\n        o.append(dict(measure=m, billboard=round(float(a[m].mean()), 3), rolling_stone=round(float(b[m].mean()), 3), builds=round(float(c[m].mean()), 3), collections_gap=round(float(gap), 2), builds_vs_billboard=round(float(da), 2), builds_vs_rolling_stone=round(float(db), 2), agreed=bool(abs(gap) < .2), builds_differ_from_both=bool(abs(gap) < .2 and min(abs(da), abs(db)) >= .25 and len(sides) == 1)))\n    return o\nout[\"A1. chord tones\"] = tab(HARM, bb1, rs1, bd1)\nout[\"A2. chord tones by section\"] = {s: {\"billboard\": round(float(bb1[bb1.sec == s].chord_tones.mean()), 3), \"rolling stone\": round(float(rs1[rs1.sec == s].chord_tones.mean()), 3), \"builds\": round(float(bd1[bd1.sec == s].chord_tones.mean()), 3)} for s in (\"verse\", \"chorus\")}\nx = rs1.dropna(subset=[\"chord_tones\", \"chord_tones_ann2\"]); out[\"A. Rolling Stone, the two annotators' chords: chord tones under each, mean absolute difference by window\"] = [round(float(x.chord_tones.mean()), 3), round(float(x.chord_tones_ann2.mean()), 3), round(float((x.chord_tones - x.chord_tones_ann2).abs().mean()), 3), len(x)]\nout[\"A. chord tones by build song\"] = {s: round(float(bd1[bd1.song == s].chord_tones.mean()), 3) for s in (\"40\", \"42\", \"43\")}\nout[\"A. chord tones, quartiles (billboard, rolling stone, builds)\"] = [[round(float(D.chord_tones.quantile(q)), 3) for q in (.25, .5, .75)] for D in (bb1, rs1, bd1)]\nout[\"A3. every onset-and-pitch measure on the three bodies\"] = tab(MO, bb1, rs1, bd1)\nlin = lambda: make_pipeline(SimpleImputer(strategy=\"median\"), StandardScaler(), LogisticRegression(C=.3, max_iter=2000, class_weight=\"balanced\"))\nrng = np.random.default_rng(12)\ndef sep(Kd, Bd, feats, reps=12):\n    \"\"\"a fresh judge: fitted on kept half + two songs' builds, tested on the other kept half + the third song's builds, each song in turn\"\"\"\n    res = []\n    for _ in range(reps):\n        ps = Kd.piece.unique(); rng.shuffle(ps); h = set(ps[: len(ps) // 2]); ktr, kte = Kd[Kd.piece.isin(h)], Kd[~Kd.piece.isin(h)]\n        for s in (\"40\", \"42\", \"43\"):\n            tr, te = Bd[Bd.song != s], Bd[Bd.song == s]\n            if len(te) < 30 or len(tr) < 30: continue\n            tr = tr.sample(min(len(tr), 3 * len(ktr)), random_state=int(rng.integers(1e6))); te = te.sample(min(len(te), 3 * len(kte)), random_state=int(rng.integers(1e6)))\n            m = lin(); m.fit(pd.concat([ktr[feats], tr[feats]]).astype(float), np.r_[np.ones(len(ktr)), np.zeros(len(tr))]); res.append(roc_auc_score(np.r_[np.ones(len(kte)), np.zeros(len(te))], m.predict_proba(pd.concat([kte[feats], te[feats]]).astype(float))[:, 1]))\n    return [round(float(np.mean(res)), 3), round(float(np.std(res)), 3), len(Kd), len(Bd)] if res else None\ndef two(a, b, feats, reps=16):\n    res = []\n    for _ in range(reps):\n        pa, pb = a.piece.unique(), b.piece.unique(); rng.shuffle(pa); rng.shuffle(pb); ha, hb = set(pa[: len(pa) // 2]), set(pb[: len(pb) // 2])\n        m = lin(); m.fit(pd.concat([a[a.piece.isin(ha)][feats], b[b.piece.isin(hb)][feats]]).astype(float), np.r_[np.ones(a.piece.isin(ha).sum()), np.zeros(b.piece.isin(hb).sum())])\n        res.append(roc_auc_score(np.r_[np.ones((~a.piece.isin(ha)).sum()), np.zeros((~b.piece.isin(hb)).sum())], m.predict_proba(pd.concat([a[~a.piece.isin(ha)][feats], b[~b.piece.isin(hb)][feats]]).astype(float))[:, 1]))\n    return [round(float(np.mean(res)), 3), round(float(np.std(res)), 3)]\nAG = [r[\"measure\"] for r in out[\"A3. every onset-and-pitch measure on the three bodies\"] if r[\"agreed\"]]; out[\"measures the two collections agree on\"] = AG\nout[\"A. Billboard against Rolling Stone (first verse and chorus)\"] = {\"all onset measures\": two(bb1, rs1, MO), \"agreed measures\": two(bb1, rs1, AG), \"chord tones only\": two(bb1.dropna(subset=[\"chord_tones\"]), rs1.dropna(subset=[\"chord_tones\"]), HARM)}\n# ---- B. the sections the judge never reads\nKA = pd.concat([A[A.body == \"bb\"], era(A[(A.body == \"rs\") & ~A.dup])]); BA = A[A.body == \"build\"]; S = lambda D, s, k: D[(D.sec == s) & (D.k == k)]\nFE = AG + HARM\nout[\"B. builds against kept (both collections pooled), agreed measures and chord tones, by section\"] = {f\"{s} {k}\": sep(S(KA, s, k), S(BA, s, k), FE) for s, k in ((\"verse\", \"1\"), (\"verse\", \"2\"), (\"verse\", \"3\"), (\"chorus\", \"1\"), (\"chorus\", \"2\"), (\"chorus\", \"last\"), (\"bridge\", \"1\"))}\nout[\"B. the same, each collection alone\"] = {b: {f\"{s} {k}\": sep(S(KA[KA.body == b], s, k), S(BA, s, k), FE) for s, k in ((\"verse\", \"1\"), (\"verse\", \"2\"), (\"chorus\", \"1\"), (\"chorus\", \"2\"), (\"bridge\", \"1\"))} for b in (\"bb\", \"rs\")}\ndef paired(D, s, k1, k2, by):\n    a, b = S(D, s, k1).set_index(by), S(D, s, k2).set_index(by); ix = a.index.intersection(b.index); o = {}\n    for m in FE:\n        sd = np.nanstd(S(KA, s, \"1\")[m]); o[m] = round(float((b.loc[ix, m] - a.loc[ix, m]).mean() / sd), 2)\n    return o, len(ix)\nBA2 = BA.assign(bid=BA.song + \"_\" + BA.build.astype(str))\npr = {}\nfor s, k2 in ((\"verse\", \"2\"), (\"chorus\", \"2\"), (\"chorus\", \"last\")):\n    kb, nb = paired(KA[KA.body == \"bb\"], s, \"1\", k2, \"piece\"); kr, nr = paired(KA[KA.body == \"rs\"], s, \"1\", k2, \"piece\"); bd, nd = paired(BA2, s, \"1\", k2, \"bid\")\n    pr[f\"{s} {k2} less {s} 1, in kept sd\"] = {\"pairs (billboard, rolling stone, builds)\": [nb, nr, nd], \"billboard: measures under 0.15\": int(sum(abs(v) < .15 for v in kb.values())), \"rolling stone: measures under 0.15\": int(sum(abs(v) < .15 for v in kr.values())), \"builds: measures under 0.15\": int(sum(abs(v) < .15 for v in bd.values())), \"of\": len(FE),\n        \"largest in the builds (measure, builds, billboard, rolling stone)\": [[m, bd[m], kb[m], kr[m]] for m in sorted(bd, key=lambda m: -abs(bd[m]))[:8]], \"largest in kept (measure, billboard, rolling stone, builds)\": [[m, kb[m], kr[m], bd[m]] for m in sorted(kb, key=lambda m: -abs(kb[m] + kr[m]))[:6]]}\nout[\"B1. the later section less the first, paired\"] = pr\n# how the later window stands to the first\nrel = {}\nfor s, k2 in ((\"verse\", 2), (\"chorus\", 2), (\"chorus\", \"last\")):\n    o = {}\n    for body in (\"bb\", \"rs\", \"build\"):\n        R = [pair(wins[(b, p, (s, 1))], wins[k]) for k in wins for b, p, w in [k] if b == body and w == (s, k2) and (b, p, (s, 1)) in wins and len(wins[k]) >= 12 and len(wins[(b, p, (s, 1))]) >= 12]\n        R = pd.DataFrame(R); o[body] = {\"pairs\": len(R), **{c: [round(float(R[c].mean()), 3), round(float(R[c].quantile(.25)), 3), round(float(R[c].quantile(.75)), 3)] for c in R.columns}, \"bars all the same rhythm\": round(float((R.bars_same_rhythm == 1).mean()), 3), \"no bar the same rhythm\": round(float((R.bars_same_rhythm == 0).mean()), 3)}\n    rel[f\"{s} {k2} beside {s} 1\"] = o\nout[\"B4. the later window beside the first (mean, 25th, 75th)\"] = rel\njson.dump(out, open(\"whole_findings.json\", \"w\"), indent=1); print(json.dumps(out, indent=1))\n"
+}

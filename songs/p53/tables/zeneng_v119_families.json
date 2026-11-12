@@ -1,0 +1,923 @@
+{
+ "about": "ZenEng v119, Window 139: separability by family of measures under v116 and v118 (397); the builds against kept windows of their own density; each measure's separation alone; and the kept figures to aim at for fixes 398 to 401.",
+ "kept targets (398-401)": {
+  "first_onset": {
+   "kept quartiles": [
+    0.0,
+    0.0,
+    0.5
+   ],
+   "kept mean": 0.371
+  },
+  "chord_tones": {
+   "kept quartiles": [
+    0.538,
+    0.652,
+    0.759
+   ],
+   "kept mean": 0.639
+  },
+  "chord_tones_on_beat": {
+   "kept quartiles": [
+    0.562,
+    0.692,
+    0.8
+   ],
+   "kept mean": 0.669
+  },
+  "chord_tones_on_downbeat": {
+   "kept quartiles": [
+    0.5,
+    0.775,
+    1.0
+   ],
+   "kept mean": 0.722
+  },
+  "chord_tones_off_beat": {
+   "kept quartiles": [
+    0.478,
+    0.625,
+    0.765
+   ],
+   "kept mean": 0.608
+  },
+  "chord_tones_on_long_notes": {
+   "kept quartiles": [
+    0.556,
+    0.75,
+    0.932
+   ],
+   "kept mean": 0.716
+  },
+  "non_chord_resolved_by_step": {
+   "kept quartiles": [
+    0.322,
+    0.5,
+    0.667
+   ],
+   "kept mean": 0.501
+  },
+  "turns_per_move": {
+   "kept quartiles": [
+    0.479,
+    0.571,
+    0.667
+   ],
+   "kept mean": 0.584
+  },
+  "distinct_durations": {
+   "kept quartiles": [
+    3.0,
+    4.0,
+    5.0
+   ],
+   "kept mean": 4.035
+  },
+  "fourth_fifth": {
+   "kept quartiles": [
+    0.027,
+    0.074,
+    0.121
+   ],
+   "kept mean": 0.08
+  },
+  "first_onset: share of kept windows whose first sung note is on the downbeat / within the first beat": [
+   0.694,
+   0.768
+  ]
+ },
+ "by family (397)": {
+  "families": {
+   "rhythm": 13,
+   "form": 3,
+   "harmony": 6,
+   "pitch": 24,
+   "all": 46,
+   "all but outside_scale": 45,
+   "pitch but outside_scale": 23
+  },
+  "rhythm": {
+   "v116": {
+    "across songs, mean of six": 0.855,
+    "within songs 40, 42, 43": [
+     0.928,
+     0.871,
+     0.858
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.86,
+    "within songs 40, 42, 43": [
+     0.89,
+     0.867,
+     0.885
+    ]
+   }
+  },
+  "form": {
+   "v116": {
+    "across songs, mean of six": 0.54,
+    "within songs 40, 42, 43": [
+     0.633,
+     0.687,
+     0.582
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.513,
+    "within songs 40, 42, 43": [
+     0.522,
+     0.683,
+     0.653
+    ]
+   }
+  },
+  "harmony": {
+   "v116": {
+    "across songs, mean of six": 0.7,
+    "within songs 40, 42, 43": [
+     0.73,
+     0.705,
+     0.713
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.733,
+    "within songs 40, 42, 43": [
+     0.691,
+     0.762,
+     0.754
+    ]
+   }
+  },
+  "pitch": {
+   "v116": {
+    "across songs, mean of six": 0.809,
+    "within songs 40, 42, 43": [
+     0.881,
+     0.812,
+     0.847
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.806,
+    "within songs 40, 42, 43": [
+     0.883,
+     0.832,
+     0.871
+    ]
+   }
+  },
+  "all": {
+   "v116": {
+    "across songs, mean of six": 0.895,
+    "within songs 40, 42, 43": [
+     0.966,
+     0.926,
+     0.929
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.904,
+    "within songs 40, 42, 43": [
+     0.942,
+     0.947,
+     0.943
+    ]
+   }
+  },
+  "all but outside_scale": {
+   "v116": {
+    "across songs, mean of six": 0.881,
+    "within songs 40, 42, 43": [
+     0.961,
+     0.924,
+     0.913
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.876,
+    "within songs 40, 42, 43": [
+     0.927,
+     0.933,
+     0.928
+    ]
+   }
+  },
+  "pitch but outside_scale": {
+   "v116": {
+    "across songs, mean of six": 0.798,
+    "within songs 40, 42, 43": [
+     0.875,
+     0.807,
+     0.835
+    ]
+   },
+   "v118": {
+    "across songs, mean of six": 0.761,
+    "within songs 40, 42, 43": [
+     0.859,
+     0.807,
+     0.818
+    ]
+   }
+  },
+  "means": {
+   "gap_sixteenth": {
+    "kept": 0.107,
+    "40 v116": 0.104,
+    "40 v118": 0.144,
+    "42 v116": 0.15,
+    "42 v118": 0.142,
+    "43 v116": 0.115,
+    "43 v118": 0.137
+   },
+   "gap_eighth": {
+    "kept": 0.465,
+    "40 v116": 0.635,
+    "40 v118": 0.584,
+    "42 v116": 0.56,
+    "42 v118": 0.572,
+    "43 v116": 0.578,
+    "43 v118": 0.562
+   },
+   "gap_quarter": {
+    "kept": 0.186,
+    "40 v116": 0.14,
+    "40 v118": 0.118,
+    "42 v116": 0.144,
+    "42 v118": 0.101,
+    "43 v116": 0.131,
+    "43 v118": 0.091
+   },
+   "on_sixteenth": {
+    "kept": 0.094,
+    "40 v116": 0.071,
+    "40 v118": 0.116,
+    "42 v116": 0.122,
+    "42 v118": 0.119,
+    "43 v116": 0.089,
+    "43 v118": 0.11
+   },
+   "on_offbeat_eighth": {
+    "kept": 0.371,
+    "40 v116": 0.451,
+    "40 v118": 0.408,
+    "42 v116": 0.409,
+    "42 v118": 0.415,
+    "43 v116": 0.42,
+    "43 v118": 0.402
+   },
+   "on_beats_2_4": {
+    "kept": 0.21,
+    "40 v116": 0.237,
+    "40 v118": 0.226,
+    "42 v116": 0.227,
+    "42 v118": 0.224,
+    "43 v116": 0.221,
+    "43 v118": 0.208
+   },
+   "distinct_durations": {
+    "kept": 4.035,
+    "40 v116": 3.745,
+    "40 v118": 4.765,
+    "42 v116": 4.065,
+    "42 v118": 4.676,
+    "43 v116": 4.349,
+    "43 v118": 5.009
+   },
+   "notes_per_bar_sd": {
+    "kept": 1.692,
+    "40 v116": 1.741,
+    "40 v118": 1.683,
+    "42 v116": 1.747,
+    "42 v118": 1.631,
+    "43 v116": 1.787,
+    "43 v118": 1.809
+   },
+   "longest_over_median_note": {
+    "kept": 3.535,
+    "40 v116": 2.748,
+    "40 v118": 3.722,
+    "42 v116": 3.14,
+    "42 v118": 3.468,
+    "43 v116": 3.675,
+    "43 v118": 3.907
+   },
+   "outside_scale": {
+    "kept": 0.071,
+    "40 v116": 0.054,
+    "40 v118": 0.009,
+    "42 v116": 0.068,
+    "42 v118": 0.007,
+    "43 v116": 0.041,
+    "43 v118": 0.001
+   },
+   "distinct_pitches": {
+    "kept": 6.382,
+    "40 v116": 7.329,
+    "40 v118": 6.197,
+    "42 v116": 7.228,
+    "42 v118": 6.546,
+    "43 v116": 7.204,
+    "43 v118": 6.57
+   },
+   "pitch_sd": {
+    "kept": 2.91,
+    "40 v116": 2.644,
+    "40 v118": 2.491,
+    "42 v116": 2.799,
+    "42 v118": 2.899,
+    "43 v116": 2.901,
+    "43 v118": 2.958
+   },
+   "unit3_returns": {
+    "kept": 0.315,
+    "40 v116": 0.145,
+    "40 v118": 0.326,
+    "42 v116": 0.424,
+    "42 v118": 0.41,
+    "43 v116": 0.15,
+    "43 v118": 0.04
+   },
+   "unit4_to_unit2": {
+    "kept": 0.188,
+    "40 v116": 0.037,
+    "40 v118": 0.155,
+    "42 v116": 0.009,
+    "42 v118": 0.021,
+    "43 v116": 0.128,
+    "43 v118": 0.107
+   },
+   "chord_tones_on_long_notes": {
+    "kept": 0.716,
+    "40 v116": 0.626,
+    "40 v118": 0.639,
+    "42 v116": 0.662,
+    "42 v118": 0.597,
+    "43 v116": 0.643,
+    "43 v118": 0.578
+   },
+   "notes_per_bar": {
+    "kept": 3.951,
+    "40 v116": 5.006,
+    "40 v118": 4.965,
+    "42 v116": 4.565,
+    "42 v118": 4.515,
+    "43 v116": 4.309,
+    "43 v118": 4.222
+   }
+  }
+ },
+ "matched on density": {
+  "40": {
+   "builds' notes a bar (10th, 50th, 90th)": [
+    4.62,
+    4.88,
+    5.38
+   ],
+   "kept windows that dense": 47,
+   "kept songs among them": 43,
+   "rhythm": {
+    "against kept windows as dense": [
+     0.821,
+     0.057
+    ],
+    "against as many kept windows taken at random": [
+     0.783,
+     0.063
+    ]
+   },
+   "pitch but outside_scale": {
+    "against kept windows as dense": [
+     0.76,
+     0.066
+    ],
+    "against as many kept windows taken at random": [
+     0.703,
+     0.038
+    ]
+   },
+   "harmony": {
+    "against kept windows as dense": [
+     0.686,
+     0.054
+    ],
+    "against as many kept windows taken at random": [
+     0.609,
+     0.049
+    ]
+   },
+   "all but outside_scale": {
+    "against kept windows as dense": [
+     0.863,
+     0.045
+    ],
+    "against as many kept windows taken at random": [
+     0.772,
+     0.062
+    ]
+   },
+   "rhythm means: kept as dense; builds": {
+    "gap_sixteenth": [
+     0.133,
+     0.144
+    ],
+    "gap_eighth": [
+     0.565,
+     0.584
+    ],
+    "gap_quarter": [
+     0.153,
+     0.118
+    ],
+    "on_sixteenth": [
+     0.113,
+     0.116
+    ],
+    "on_offbeat_eighth": [
+     0.399,
+     0.408
+    ],
+    "distinct_durations": [
+     3.489,
+     4.765
+    ],
+    "notes_per_bar_sd": [
+     1.88,
+     1.683
+    ],
+    "longest_over_median_note": [
+     3.473,
+     3.722
+    ],
+    "empty_bars": [
+     0.191,
+     0.182
+    ],
+    "first_onset": [
+     0.255,
+     0.611
+    ],
+    "pushed": [
+     0.091,
+     0.092
+    ]
+   }
+  },
+  "42": {
+   "builds' notes a bar (10th, 50th, 90th)": [
+    4.0,
+    4.5,
+    5.0
+   ],
+   "kept windows that dense": 82,
+   "kept songs among them": 69,
+   "rhythm": {
+    "against kept windows as dense": [
+     0.801,
+     0.027
+    ],
+    "against as many kept windows taken at random": [
+     0.813,
+     0.027
+    ]
+   },
+   "pitch but outside_scale": {
+    "against kept windows as dense": [
+     0.736,
+     0.04
+    ],
+    "against as many kept windows taken at random": [
+     0.753,
+     0.026
+    ]
+   },
+   "harmony": {
+    "against kept windows as dense": [
+     0.773,
+     0.026
+    ],
+    "against as many kept windows taken at random": [
+     0.701,
+     0.038
+    ]
+   },
+   "all but outside_scale": {
+    "against kept windows as dense": [
+     0.87,
+     0.032
+    ],
+    "against as many kept windows taken at random": [
+     0.865,
+     0.037
+    ]
+   },
+   "rhythm means: kept as dense; builds": {
+    "gap_sixteenth": [
+     0.134,
+     0.142
+    ],
+    "gap_eighth": [
+     0.518,
+     0.572
+    ],
+    "gap_quarter": [
+     0.156,
+     0.101
+    ],
+    "on_sixteenth": [
+     0.115,
+     0.119
+    ],
+    "on_offbeat_eighth": [
+     0.396,
+     0.415
+    ],
+    "distinct_durations": [
+     3.976,
+     4.676
+    ],
+    "notes_per_bar_sd": [
+     1.883,
+     1.631
+    ],
+    "longest_over_median_note": [
+     3.721,
+     3.468
+    ],
+    "empty_bars": [
+     0.28,
+     0.247
+    ],
+    "first_onset": [
+     0.293,
+     0.583
+    ],
+    "pushed": [
+     0.11,
+     0.12
+    ]
+   }
+  },
+  "43": {
+   "builds' notes a bar (10th, 50th, 90th)": [
+    3.75,
+    4.31,
+    4.75
+   ],
+   "kept windows that dense": 93,
+   "kept songs among them": 77,
+   "rhythm": {
+    "against kept windows as dense": [
+     0.853,
+     0.027
+    ],
+    "against as many kept windows taken at random": [
+     0.859,
+     0.029
+    ]
+   },
+   "pitch but outside_scale": {
+    "against kept windows as dense": [
+     0.814,
+     0.036
+    ],
+    "against as many kept windows taken at random": [
+     0.794,
+     0.03
+    ]
+   },
+   "harmony": {
+    "against kept windows as dense": [
+     0.718,
+     0.031
+    ],
+    "against as many kept windows taken at random": [
+     0.73,
+     0.038
+    ]
+   },
+   "all but outside_scale": {
+    "against kept windows as dense": [
+     0.907,
+     0.022
+    ],
+    "against as many kept windows taken at random": [
+     0.87,
+     0.042
+    ]
+   },
+   "rhythm means: kept as dense; builds": {
+    "gap_sixteenth": [
+     0.131,
+     0.137
+    ],
+    "gap_eighth": [
+     0.508,
+     0.562
+    ],
+    "gap_quarter": [
+     0.155,
+     0.091
+    ],
+    "on_sixteenth": [
+     0.117,
+     0.11
+    ],
+    "on_offbeat_eighth": [
+     0.399,
+     0.402
+    ],
+    "distinct_durations": [
+     4.065,
+     5.009
+    ],
+    "notes_per_bar_sd": [
+     1.889,
+     1.809
+    ],
+    "longest_over_median_note": [
+     3.737,
+     3.907
+    ],
+    "empty_bars": [
+     0.312,
+     0.302
+    ],
+    "first_onset": [
+     0.352,
+     0.858
+    ],
+    "pushed": [
+     0.124,
+     0.112
+    ]
+   }
+  }
+ },
+ "measures alone": {
+  "kept windows as dense as the builds": 102,
+  "measures by how well each alone separates (0.5 = not at all; over 0.5 = higher in kept)": [
+   {
+    "measure": "chord_tones",
+    "family": "harmony",
+    "auc_all": 0.688,
+    "auc_dense": 0.701,
+    "by_song": [
+     0.65,
+     0.726,
+     0.688
+    ],
+    "kept_mean": 0.639,
+    "kept_dense_mean": 0.645,
+    "builds_mean": 0.552,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "distinct_durations",
+    "family": "rhythm",
+    "auc_all": 0.312,
+    "auc_dense": 0.305,
+    "by_song": [
+     0.32,
+     0.34,
+     0.277
+    ],
+    "kept_mean": 4.035,
+    "kept_dense_mean": 3.912,
+    "builds_mean": 4.817,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "first_onset",
+    "family": "rhythm",
+    "auc_all": 0.33,
+    "auc_dense": 0.314,
+    "by_song": [
+     0.347,
+     0.342,
+     0.302
+    ],
+    "kept_mean": 0.371,
+    "kept_dense_mean": 0.328,
+    "builds_mean": 0.684,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "turns_per_move",
+    "family": "pitch",
+    "auc_all": 0.329,
+    "auc_dense": 0.324,
+    "by_song": [
+     0.293,
+     0.365,
+     0.329
+    ],
+    "kept_mean": 0.584,
+    "kept_dense_mean": 0.582,
+    "builds_mean": 0.659,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "chord_tones_on_beat",
+    "family": "harmony",
+    "auc_all": 0.672,
+    "auc_dense": 0.675,
+    "by_song": [
+     0.623,
+     0.712,
+     0.68
+    ],
+    "kept_mean": 0.669,
+    "kept_dense_mean": 0.671,
+    "builds_mean": 0.572,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "chord_tones_on_downbeat",
+    "family": "harmony",
+    "auc_all": 0.696,
+    "auc_dense": 0.673,
+    "by_song": [
+     0.647,
+     0.706,
+     0.735
+    ],
+    "kept_mean": 0.722,
+    "kept_dense_mean": 0.7,
+    "builds_mean": 0.545,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "non_chord_resolved_by_step",
+    "family": "harmony",
+    "auc_all": 0.679,
+    "auc_dense": 0.667,
+    "by_song": [
+     0.671,
+     0.703,
+     0.663
+    ],
+    "kept_mean": 0.501,
+    "kept_dense_mean": 0.497,
+    "builds_mean": 0.355,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "outside_scale",
+    "family": "pitch",
+    "auc_all": 0.655,
+    "auc_dense": 0.655,
+    "by_song": [
+     0.626,
+     0.648,
+     0.691
+    ],
+    "kept_mean": 0.071,
+    "kept_dense_mean": 0.067,
+    "builds_mean": 0.006,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "chord_tones_on_long_notes",
+    "family": "harmony",
+    "auc_all": 0.667,
+    "auc_dense": 0.655,
+    "by_song": [
+     0.623,
+     0.69,
+     0.688
+    ],
+    "kept_mean": 0.716,
+    "kept_dense_mean": 0.704,
+    "builds_mean": 0.605,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "chord_tones_off_beat",
+    "family": "harmony",
+    "auc_all": 0.624,
+    "auc_dense": 0.653,
+    "by_song": [
+     0.607,
+     0.647,
+     0.619
+    ],
+    "kept_mean": 0.608,
+    "kept_dense_mean": 0.619,
+    "builds_mean": 0.533,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "fourth_fifth",
+    "family": "pitch",
+    "auc_all": 0.39,
+    "auc_dense": 0.362,
+    "by_song": [
+     0.397,
+     0.368,
+     0.405
+    ],
+    "kept_mean": 0.08,
+    "kept_dense_mean": 0.074,
+    "builds_mean": 0.112,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "on_tonic",
+    "family": "pitch",
+    "auc_all": 0.59,
+    "auc_dense": 0.637,
+    "by_song": [
+     0.556,
+     0.566,
+     0.648
+    ],
+    "kept_mean": 0.229,
+    "kept_dense_mean": 0.251,
+    "builds_mean": 0.192,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "longest_run_one_way",
+    "family": "pitch",
+    "auc_all": 0.571,
+    "auc_dense": 0.603,
+    "by_song": [
+     0.591,
+     0.53,
+     0.591
+    ],
+    "kept_mean": 3.299,
+    "kept_dense_mean": 3.412,
+    "builds_mean": 3.05,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "gap_quarter",
+    "family": "rhythm",
+    "auc_all": 0.646,
+    "auc_dense": 0.603,
+    "by_song": [
+     0.608,
+     0.65,
+     0.68
+    ],
+    "kept_mean": 0.186,
+    "kept_dense_mean": 0.155,
+    "builds_mean": 0.103,
+    "same_side_all_songs": true
+   },
+   {
+    "measure": "range",
+    "family": "pitch",
+    "auc_all": 0.527,
+    "auc_dense": 0.594,
+    "by_song": [
+     0.59,
+     0.495,
+     0.497
+    ],
+    "kept_mean": 10.72,
+    "kept_dense_mean": 11.392,
+    "builds_mean": 10.244,
+    "same_side_all_songs": false
+   },
+   {
+    "measure": "gap_eighth",
+    "family": "rhythm",
+    "auc_all": 0.338,
+    "auc_dense": 0.41,
+    "by_song": [
+     0.324,
+     0.339,
+     0.351
+    ],
+    "kept_mean": 0.465,
+    "kept_dense_mean": 0.526,
+    "builds_mean": 0.573,
+    "same_side_all_songs": true
+   }
+  ],
+  "rhythm judge (trained on songs 40 and 42, tested on 43)": 0.852,
+  "the same with one measure left out": {
+   "on_beat3": 0.824,
+   "on_beats_2_4": 0.829,
+   "on_offbeat_eighth": 0.852,
+   "on_sixteenth": 0.856,
+   "gap_sixteenth": 0.848,
+   "gap_eighth": 0.848,
+   "gap_quarter": 0.853,
+   "longest_over_median_note": 0.839,
+   "distinct_durations": 0.773,
+   "pushed": 0.847,
+   "first_onset": 0.842,
+   "empty_bars": 0.852,
+   "notes_per_bar_sd": 0.858
+  },
+  "rhythm judge without first_onset, distinct_durations and gap_quarter": 0.741,
+  "all but outside_scale": 0.857,
+  "all but outside_scale, first_onset, distinct_durations, gap_quarter": 0.8
+ }
+}
