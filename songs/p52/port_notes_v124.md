@@ -1,0 +1,47 @@
+- **How it was ported (384).**
+  - gen_v124.py writes melody_v124_p40.py to melody_v124_p45.py from the v119 files (songs/p51). Every patch replaces whole statements, and the generator stops unless each one matches the stated number of times in each file it names.
+  - The new repairs are on unless ZE_OFF names one. ZE_OFF is used only for side runs.
+  - Every patched path ran in a 40-build smoke run of all five songs before the runs of record (smoke/). The paths were:
+    - 405's three kinds of line;
+    - 409's weighted last notes, walked and slurred;
+    - 413's left-out bars and unkept pitches;
+    - 414's two cases;
+    - 415, read on the calibration rounds;
+    - the 450 diagnostic.
+  - The predictions were committed and pushed before the runs of record (predictions_run1.md).
+- **405.** Each line drawn by the rhythm is marked in the build as drawable or not.
+  - A line is drawable when it had room on the eighth grid and did not fall back to runs.
+  - A line is not drawable when it had no room, or when it fell back at half its tries or at the free tries.
+  - 389's calibration reads each band's runs share on the drawable lines' onsets only, and aims its rate there.
+  - The readings print three kinds of line apart: drawable; no room or fell back; and not drawn by the rhythm (copies, returns and designs).
+- **428 (withdraws 424's empty-bar rate).** No line is drawn to leave its slot's last bar empty, and the calibration aims no empty-bar knob. Empty bars are printed beside 378's slot share. 424's test now reads fourths and fifths and the last note only.
+- **409.** 424's last-note knob now weights the last note of the window's last line: the last line of the section to begin inside its first eight bars, whatever bar it ends in.
+  - The weight applies in the walk, and also where that note is slurred (a melisma's last note).
+  - 314's ending draw uses the same rule.
+  - The readings print where each window's last note comes from: the walk, an ending rule, a copy or return, a design, a carried extreme (329), or the next section's pickup. They also print the tonic share of each.
+  - 314's ending draw reaches no window's last note on any song. Verse 1's last line must end off the tonic, and Post 3 is not read.
+- **412, as proposed.**
+  - A return keeps its source's range. This was already so: _vary_return widens its low and high limits to the source's lowest and highest notes. Nothing was added.
+  - 398's chord-tone weights act only on drawn notes, in the walk of a fresh line. Returns, sung-again lines, designs and the re-pitching of a return's added notes take no 398 weight.
+- **413.** A line drawn on a returning unit keeps the unit's bars through all its copy tries, not 14 of them. Three losses are counted: bars left out (more than one onset off), unit pitches not kept (range, slur or chord) on each try, and builds lost on such a line.
+- **414.** A line's span is drawn inside the kept band for its notes, intersected with [n / (2.3·T), n / (1.4·T)].
+  - n is the line's syllables and T is the time to the next line in seconds.
+  - So the line sings at the kept 1.4 to 2.3 syllables a second (423) across its span.
+  - Where the two do not meet, the span is drawn from the kept 5th to 95th percentiles.
+  - 391's widening at half the tries stays.
+- **415.** Verse 2's share, both in 331's calibration and in the readings, is read on the bars where verse 2 has as many syllable onsets (first notes of a syllable) as verse 1's same bar. Where no bar has, all bars are read. 393's line rule is set aside.
+- **417.** 311 reads the last chorus where the song ends on a tag (song 45, whose tag ends open by design, Q15 A). The tag's last degree is printed apart. Songs that end on a post-chorus read it as before.
+- **419.** 375 and 386's clash is read on the chord at the note (the engine's chord_for), not the bar's chord. The notes that keep a clash are printed with their line's kind.
+- **Not ported:** 404, 406, 408 (Run 2), 410, 425 and 427.
+- **Side runs** (main, 1,000 builds, same seeds; none is a run of record):
+  - song 43 with 386 off and with 389 off (416);
+  - each song with 398 off and with 400 off (the range question);
+  - song 45 with 392 off, added when the step-3 diagnostics showed that 392 moves song 45's range;
+  - song 45 with 413 off, 414 off and 428 off, added to name the source of its new align and join deaths;
+  - song 45 with 267 reading the bridge's G before its raise to G-sharp (ZE_DIAG450=1, finding 450).
+- **The new readings** (new_readings_v124.py) run the studies' own code:
+  - cand, from zeneng_v121_blind_spots.json;
+  - om and pair, from zeneng_v122_whole_song.json;
+  - outer, from zeneng_v123_bass_at_the_chord.json.
+
+  They read each song's survivors, main and control, with one chord a bar from the chart, as triads with the bass on the root, as those studies read the builds. Each window is the section's first eight bars, notes of that section only.
