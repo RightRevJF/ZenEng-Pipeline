@@ -1,0 +1,34 @@
+round 2: ['rhythm_bits'] outside the kept middle half (distinct lengths 4.0, rhythm bits 1.908); the 354 knobs stop at [1.0, 0.943, 0.726, 1.001]
+round 2: ['fresh'] took the largest step two rounds running and are frozen at [5.12]; the other knobs finish their rounds
+362: survivors with no soft break 477 of 546
+[ctl_r] 56 bars; built 1000, survivors 546 (54.6%), order 37097d8bd9f3, 108s
+     115  design: 'thought' held on G or D, 'morning' held on it in the last chorus; 'before it's done' D C B A (choruses), C B A G (last chorus); the tag on A; the chorus over the verse (Q14 A, Q15 A)
+     113  align: the words do not fit the returning tune
+      83  returns related (267)
+      68  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+      37  join: no held end and breath before the line (212)
+      27  bridge opening unrelated (208; 279)
+       8  the judge's floor (254; 279)
+       2  join: no held end and breath before the copy (212)
+       1  key word on a chord tone (134; 279)
+would fail:
+     115  design: 'thought' held on G or D, 'morning' held on it in the last chorus; 'before it's done' D C B A (choruses), C B A G (last chorus); the tag on A; the chorus over the verse (Q14 A, Q15 A)
+      77  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+     115  returns related (267)
+       0  chorus opening another tune (227; 279)
+      51  bridge opening unrelated (208; 279)
+       0  pushed notes (159; 279)
+       0  density (159; 279)
+       1  key word on a chord tone (134; 279)
+       8  the judge's floor (254; 279)
+      16  limit broken: cmp
+      21  limit broken: run_max
+       1  limit broken: sequence legs
+       6  limit broken: spectral
+     139  limit broken: surprisal
+composite first  cb81f805d0a0 comp 0.904 judge 1.294 (content 1.529, order 1.058) soft [] lift {'median': 5.0, 'top': 5, 'lowest': 2, 'bridge': 1.0}
+pick (362)       591f1f19915d comp 0.614 judge 3.765 (content 5.693, order 1.836) soft [] lift {'median': 3.0, 'top': 5, 'lowest': 5, 'bridge': 1.0}
+judge's first    591f1f19915d comp 0.614 judge 3.765 (content 5.693, order 1.836) soft [] lift {'median': 3.0, 'top': 5, 'lowest': 5, 'bridge': 1.0}
+255's pick       cb81f805d0a0 comp 0.904 judge 1.294 (content 1.529, order 1.058) soft [] lift {'median': 5.0, 'top': 5, 'lowest': 2, 'bridge': 1.0}
+pick, old fit    cb81f805d0a0 comp 0.904 judge 1.294 (content 1.529, order 1.058) soft [] lift {'median': 5.0, 'top': 5, 'lowest': 2, 'bridge': 1.0}
+rerun: {'seed': 20261555, 'calibration_seed': 20261556, 'N': 1000, 'mode': 'ctl', 'code_sha': '48904f8fb199', 'pythonhashseed': '0', 'python': '3.13.18', 'numpy': '2.5.3', 'tables': {'zeneng_v100_bass_and_figures.json': 'cfe324a5892893a5', 'zeneng_v101_band_returns_eras.json': '0224a91747a584e5', 'zeneng_v102_song37_checks.json': 'caaa40ecfc747e98', 'zeneng_v103_selector.json': 'aefba3718173b03d', 'zeneng_v104_line_in_time.json': '43325ed4951f1784', 'zeneng_v105_kept_windows.json': '3633a24efd73159e', 'zeneng_v105_song38_checks.json': '69cbe7138da1901f', 'zeneng_v106_gate_limits.json': 'ca3e6a8b0b16480a', 'zeneng_v108_judges.json': 'cb84379c710e875d', 'zeneng_v108_spectral_and_registers.json': '8d33013cf887972a', 'zeneng_v109_song40_checks.json': '61a7fce931a67fc4', 'zeneng_v110_song41_checks.json': 'ec0ece7ffbe30d05', 'zeneng_v88_tables.json': '561355b1110d1d8e', 'zeneng_v91_hymn_supplement.json': 'e74e7c30cb04e141', 'zeneng_v96_discriminator_tables.json': '1a2af952c43c3eb7', 'zeneng_v97_axes_of_character.json': '00e65c5b516848aa'}, 'limits286': '46871a03d407be3f', 'cmd': 'PYTHONHASHSEED=0 python3 melody_p45.py 1000 ctl', 'line_knobs': {'amp': 5.0, 'widen': 0.962700854700855, 'fresh': 5.120000000000001, 'leap': 1.0, 's16': 1.0, 'ctl': 1.525417774414303, 'offb': 0.580947356985072, 'dpk': 0.9845586284246954, 'k44': 30.0, 'g8': 0.9425954644306508, 'g4': 0.7258677939366103, 'glong': 1.0010998379547449, 'run': 1e-07, 'on16': 0.23877225554568307}, 'near_level': 2, 'calibration_stop': ["round 2: ['fresh'] took the largest step two rounds running and are frozen at [5.12]; the other knobs finish their rounds"], 'frozen': ['fresh'], 'rate293': 0.5319444444444444, 'calibration_rounds': 6, 'stop356': ["round 2: ['rhythm_bits'] outside the kept middle half (distinct lengths 4.0, rhythm bits 1.908); the 354 knobs stop at [1.0, 0.943, 0.726, 1.001]"], 'off': []}
