@@ -23,7 +23,7 @@ author: "Words and music: Jason Bryant"
 | Last chorus (in A) | 45–52 | A E/G♯ F♯m7 Dadd9 A E/G♯ Dadd9 A |
 | Tag (in A) | 53–56 | F♯m7 Dadd9 A Dadd9 |
 
-**The singer.** A man's middle voice, D3 to E4. The verses sit low, D3 to A3. The chorus climbs over them to D4, and the last chorus, a step up, reaches E4 on "no one" in bar 51.
+**The singer.** A man's middle voice, D3 to E4. The verses sit low, D3 to A3. The chorus climbs over them to D4, and the last chorus, a step up, reaches E4 on "You" in bar 47 and again on "no one" in bar 51.
 
 # Section by section
 
@@ -53,7 +53,7 @@ Low and close, D3 to A3, in quick eighths and sixteenths, the way someone talks 
 | G D/F♯ | Somebody left the hall light on and the door cracked open |
 | Cadd9 D | And this time no one calls lights out before it's done |
 
-"Hold that thought" comes on the beat: "Hold" B3 on 1, "that" A3 on 2, and "thought" on G3 on beat 3 of bar 13, held two and a half beats, across the bar line. Under it the guitar's G turns to Gsus4 (a C on the second string) and back to G on beat 4, and the D in bar 14 starts as Dsus4, so the G the singer is holding stays a chord tone until he moves. "You're only in the next room" starts high on C4 in bar 15 and tumbles down quickly to G3, then leaves a long breath. The last line starts on D4 in bar 19 and ends by stepping down D4, C4, B3, A3 on "before it's done," landing on A3 on beat 3 of bar 20, over D. That is the 2nd of the key: the chorus ends unfinished, on purpose, every time until the last.
+"Hold that thought" comes on the beat: "Hold" B3 on 1, "that" A3 on 2, and "thought" on G3 on beat 3 of bar 13, held two and a half beats, across the bar line. Under it the guitar's G turns to Gsus4 (a C on the second string) and back to G on beat 4, and the D in bar 14 starts as Dsus4, so the G the singer is holding stays a chord tone until he moves. "You're only in the next room" starts on D4 in bar 15 and steps down through B3, A3 and G3 to E3, then lifts to A3 on "next" on the downbeat of bar 16 and holds "room" on G3 for two beats. The last line starts on D4 in bar 19 and ends by stepping down D4, C4, B3, A3 on "before it's done," landing on A3 on beat 3 of bar 20, over D. That is the 2nd of the key: the chorus ends unfinished, on purpose, every time until the last.
 
 ## Verse 2 (bars 21–28)
 
@@ -64,11 +64,11 @@ Low and close, D3 to A3, in quick eighths and sixteenths, the way someone talks 
 | Em7 Cadd9 | I'd stood in that doorway for a hundred other families |
 | Am7 D | Never as the brother, walking in with nowhere left to go |
 
-The verse tune again, fitted to the new words. The first line stays almost entirely on E3, nearly spoken. The cello enters under it with long notes. The last line again ends on D3 over D, in bar 28.
+The verse tune again, fitted to the new words. The first line rises to G3 on "knew," settles on E3 for "room," dips to D3 and lifts to A3 on "us." The cello enters under it with long notes. The last line again ends on D3 over D, in bar 28.
 
 ## Chorus 2 (bars 29–36)
 
-As chorus 1. The cello now plays a high line above the voice, holding under "Hold that thought" and answering in the gaps: it rises E4, G4 to A4 in bars 31–32 after "You're only in the next room."
+As chorus 1. The cello now plays a high line above the voice, holding under "Hold that thought" and answering in the gaps: it rises E4, G4 to A4 in bars 31–32 under "You're only in the next room."
 
 ## Bridge (bars 37–44)
 
@@ -90,7 +90,7 @@ Back down to the verse's range, D3 to A3, and lighter: the guitar slows to quart
 | A E/G♯ | And the hall light's on, and the door is open wide |
 | Dadd9 A | And no one calls lights out before it's done |
 
-A whole step up. "It's" on beat 2 of bar 45, then "morning" held two and a half beats on A3: the same held note as "thought," a step higher, with the guitar's Asus4 resolving under it and the cello taking the suspension in bar 46 (A4 down to G♯4). The last line reaches E4 on "no one" in bar 51 and steps down D4, C♯4, B3, A3 on "before it's done": the same shape as before, now landing home on A3 in bar 52, over A.
+A whole step up. "It's" on beat 2 of bar 45, then "morning" held two and a half beats on A3: the same held note as "thought," a step higher, with the guitar's Asus4 resolving under it and the cello taking the suspension in bar 46 (A4 down to G♯4). "You were only in the next room" starts on E4 in bar 47 and steps down as in the chorus. The last line reaches E4 on "no one" in bar 51 and steps down D4, C♯4, B3, A3 on "before it's done": the same shape as before, now landing home on A3 in bar 52, over A.
 
 ## Tag (bars 53–56, in A)
 
@@ -125,9 +125,9 @@ The top two strings stay on D and G (third fret) through G, Em7, Cadd9 and Dsus4
 **Cello.** Tacet until verse 2, then:
 
 - *Verse 2 (bars 21–28):* whole notes, a falling line under the voice: E3, C3, B2, A2, G2, C3, A2, D3.
-- *Chorus 2 (bars 29–36):* above the voice, in the tenor clef: D4, then G4 to F♯4 (taking the suspension under "thought"), rising E4, G4 to A4 in the gap after "the next room," and ending on F♯4 against the voice's A3.
+- *Chorus 2 (bars 29–36):* above the voice, in the tenor clef: D4, then G4 to F♯4 (taking the suspension under "thought"), rising E4, G4 to A4 under "the next room," and ending on F♯4 against the voice's A3.
 - *Bridge (bars 37–44):* low and held: A2, B2, C3, B2, A2, G2, E2, and E2 again with a swell into the key change.
-- *Last chorus (bars 45–52):* half notes, singing. E4 then A4 held over the bar into bar 46, falling to G♯4 with the guitar's resolution; C♯5, B4, A4 in bar 48 (the top of the song, in the gap after "the next room"); ending E4 to C♯4 under the voice's last A3.
+- *Last chorus (bars 45–52):* half notes, singing. E4 then A4 held over the bar into bar 46, falling to G♯4 with the guitar's resolution; C♯5, B4, A4 in bar 48 (the top of the song, over "the next room"); ending E4 to C♯4 under the voice's last A3.
 - *Tag (bars 53–56):* A3, F♯3, E3, D3, the last D left to ring with the guitar.
 
 # Arrangement

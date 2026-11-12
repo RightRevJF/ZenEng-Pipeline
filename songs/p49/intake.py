@@ -61,3 +61,7 @@ LOG.append({"q": "15", "topic": "the chorus design",
             "options": {"A": "the resolution withheld until morning: 'thought' held long over a suspension; 'before it's done' walks down by step toward home and stops one step short (the 2nd) in choruses 1-2; only the last chorus ('It's morning') lands home; the tag ends unresolved on 'before'; a design gate",
                         "B": "only the last chorus's last note home", "C": "no design"}, "recommended": "A", "answer": "A"})
 CHORUS_DESIGN = "Q15 A: 'thought' held long over a sus chord; 'before it's done' steps down to the 2nd (choruses 1-2) and home (last chorus); the tag ends on the 2nd"
+LOG.append({"q": "16", "topic": "after delivery: two weak lines in the pick of record (verse 2 opens on nine E3s; 'You're only in the next room' rushed in sixteenths, then a bar and a half of rest)",
+            "options": {"A": "hand-edit both lines, log the edits and rebuild every document", "B": "keep the pick as it is", "C": "take the engine's next choice and rebuild"},
+            "recommended": "A", "answer": "A"})
+HAND_EDITS = "Q16 A: verse 2 line 1 re-pitched on its own rhythm; chorus line 2 re-set in eighths and quarters (chorus 2 the same), and the last chorus's return of it re-set to match"

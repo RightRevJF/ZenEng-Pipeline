@@ -16,14 +16,21 @@ def chk(name, cond): ok.append((name, bool(cond))); print(("PASS " if cond else 
 by = collections.defaultdict(list)
 for n in lead: by[(n["sec"], n["line"])].append(n)
 first = lambda k: [n for n in by[k] if n["first"]]
+rel = lambda s: [(n["on"] - P.BAR0[s] * BAR, n["midi"]) for n in lead if n["sec"] == s]
 chk(f"both runs made twice give the same order (main {D['order_fp']}, control {C['order_fp']})", D["order_fp"] == DRr["order_fp"] and C["order_fp"] == Cr["order_fp"])
-chk(f"the record is the pick of record (362: the judge's first with no soft break), {REC['fp']}, with no hand edits",
-    REC["fp"] == D["pick"]["fp"] == DRr["pick"]["fp"] == pick["fp"] and not REC["hand_edits"] and not pick["info"]["soft"])
+chk(f"the record is the pick of record (362: the judge's first with no soft break), {REC['fp']}, with the writer's hand edits (Q16 A) logged in it",
+    REC["fp"] == D["pick"]["fp"] == DRr["pick"]["fp"] == pick["fp"] and not pick["info"]["soft"]
+    and [h["line"] for h in REC["hand_edits"]] == ["Verse 2:0", "Chorus 1:1", "Chorus 2:1", "Last Chorus:1"] and any(str(x["q"]) == "16" and x["answer"] == "A" for x in I.LOG))
+untouched = lambda ns: [(n["on"], n["p"]) for n in ns if n["line"] not in {h["line"] for h in pick["hand_edits"]}]
+chk("every other line is the pick as drawn", untouched(D["pick"]["notes"]) == untouched(pick["notes"]))
+chk("Q16 A: verse 2's first line no longer one pitch (longest run 2); the chorus's second line in eighths and quarters, 'room' held two beats",
+    max(len(list(g)) for _, g in __import__("itertools").groupby(n["midi"] for n in by[("Verse 2", 0)])) <= 2
+    and all(n["dur"] >= 6 for n in by[("Chorus 1", 1)]) and by[("Chorus 1", 1)][-1]["dur"] == 24 and rel("Chorus 1") == rel("Chorus 2"))
 chk("record's sung notes = the melody (the last chorus and the tag a whole step up)",
     [(n["on"], n["midi"], n["dur"]) for n in lead] == [(n["on"], n["p"] + (2 if n["sec"] in LIFTED else 0), n["dur"]) for n in sorted(pick["notes"], key=lambda n: n["on"])])
 chk("the melody passes evaluate: every gate and the design gate", P.evaluate(pick)[0] is None and not P.design_fails(pick))
 qs = [str(x["q"]).split(" ")[0] for x in I.LOG if str(x["q"]).split(" ")[0].isdigit()]
-chk("every writer's choice logged (Q0-Q15)", sorted(int(q) for q in qs) == list(range(0, 16)))
+chk("every writer's choice logged (Q0-Q16)", sorted(int(q) for q in qs) == list(range(0, 17)))
 chk("the locked lyric is the lyric sung, every syllable", all(len(REC["text"][s][i]) == len(P.LINES[s][i]) for s in P.SUNG for i in range(len(P.LINES[s])))
     and all(by[(s, i)] for s in P.SUNG for i in range(len(P.LINES[s]))) and all(l in open(f"{H}/lyric_locked.md").read() for l in L.SUNG))
 low = " ".join(L.SUNG).lower()

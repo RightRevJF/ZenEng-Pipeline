@@ -18,6 +18,7 @@ author: "Words and music: Jason Bryant"
 - Q9–Q12, the lyric: four drafts with the writer's notes, locked at draft 4.
 - Q13 A, density (342): 275 syllables over 52 sung bars, 5.29 a bar, over the kept 3.6–4.1; kept as written.
 - Q14 A, the chorus over the verse (298). Q15 A, the chorus design: "thought" held over a sus chord; "before it's done" stepping down to the 2nd (to the tonic in the last chorus); the tag ending on the 2nd.
+- Q16 A, after delivery: hand-edit the two weak lines of the pick, log the edits and rebuild every document.
 
 **The search.** melody_p45.py, built from the v116 port as song 44 was (gen_p45.py), seed 20261555. The search runs in G (row B2–D4); the last chorus and the tag are lifted two semitones in the record. 1,000 builds in the main run and 1,000 in the control, each made twice; both reproduced.
 
@@ -33,7 +34,15 @@ Deaths in the main run: the design 155, align 133, limits 80, returns related 80
 - **Q14 A, the lift.** As song 44 (372): the song placed high in the row, the verse register eight semitones at the bottom, the chorus register to the top. The design register test also needs the chorus register to hold G3–D4 (the designed notes). 176 register redraws in 1,000 builds.
 - **Q15 A, the chorus.** Chorus 1, line 1 has a designed rhythm: "HOLD that THOUGHT, I'm STILL COM-ing" on 0, 12, 24, 54, 60, 72, 84 (twelfths of a beat); "thought" is pinned to G or D in the register, held 30. The last chorus, line 1 ("It's MORN-ing, and I HELD the THOUGHT") has its own designed rhythm, with "morning" held where "thought" was, and takes the chorus's pitches on every onset it shares with it (the passing syllables between pinned to a step). "Before it's done" is pinned D4 C4 B3 A3 in chorus 1 (copied in chorus 2) and C4 B3 A3 G3 in the last chorus (lifted: D4 C♯4 B3 A3). The tag's last note is pinned A3 (lifted: B3). Pinned notes take one note a syllable and are kept out of 349 and 215's moves.
 
-**The pick (362).** The judge's first among the 371 of 476 survivors with no soft break: 10c3fce99da2, which is also the judge's first overall (combined 3.967). It ranks 50th by the composite. Evaluated again, it passes every gate and the design. No hand edits.
+**The pick (362).** The judge's first among the 371 of 476 survivors with no soft break: 10c3fce99da2, which is also the judge's first overall (combined 3.967). It ranks 50th by the composite. Evaluated again, it passes every gate and the design.
+
+**The writer's hand edits (Q16 A).** Logged in the pick (edit_p45.py) and evaluated again: it still passes every gate and the design, with no soft break.
+
+- Verse 2, line 1 ("I knew the room before they let us in"): eight E3s in a row, then A3 G3. Re-pitched on the drawn rhythm: E3 G3 F♯3 E3 D3 E3 G3 G3 A3 G3.
+- Chorus, line 2 ("You're only in the next room"): six sixteenths and a bar and a half of rest (378). Re-set in eighths and quarters: D4 B3 A3 G3 E3, then "next" A3 on the downbeat and "room" G3 held two beats. Chorus 2 copies it.
+- The last chorus's return of that line, re-set to the same rhythm and tune with a two-sixteenth pickup (D4 C4). It stays related to its source (267).
+
+The judge reads the edited melody lower (combined 2.712, from 3.967); the composite rises (0.830, from 0.805). Every other line is the pick as drawn.
 
 ## The record, the demo, the documents
 
@@ -45,7 +54,7 @@ Deaths in the main run: the design 155, align 133, limits 80, returns related 80
 - **Lead sheet and parts.** Lead sheet (voice, words, chords); parts for guitar (notation and TAB) and cello (tenor clef for its high lines). Every staff reads back from LilyPond's MIDI (voice 278, guitar treble 414, guitar thumb 102, cello 51); the TAB's strings and frets agree with the pitches. Pages checked by eye.
 - **Nashville chart.** Numbered in G through the bridge and in A from the last chorus, from the guitar's shapes; a bar split where a sus resolves at the half bar.
 - **Songbook and production notes.** A Doc and a Word copy, with no engine terms. The references were checked by search: Eric Clapton, "Tears in Heaven"; Jason Isbell and the 400 Unit, "If We Were Vampires"; Sufjan Stevens, "Fourth of July."
-- **Consistency.** 46 of 46 checks pass.
+- **Consistency.** 48 of 48 checks pass.
 
 ## Findings
 
@@ -83,7 +92,7 @@ Deaths in the main run: the design 155, align 133, limits 80, returns related 80
 
 **Problem:** The rhythm tables and the 341–346 knobs count note lengths in beats, whatever the tempo. At ♩ = 72 a sixteenth is 0.21 seconds. A seven-syllable line in a two-bar slot can be drawn as a beat and a half of sixteenths followed by a bar and a half of rest.
 
-**Evidence:** "You're only in the next room" (chorus, bar 15) is sung C4 B3 F♯3 G3 E3 F♯3 on six sixteenths, "room" on beat 3, then rest until bar 17. Sixteenths are 28% of the pick's notes, against 17% in song 44's pick at 112. The main run's survivors have a median of 21%.
+**Evidence:** "You're only in the next room" (chorus, bar 15) is sung C4 B3 F♯3 G3 E3 F♯3 on six sixteenths, "room" on beat 3, then rest until bar 17. Sixteenths are 28% of the pick's notes, against 17% in song 44's pick at 112. The main run's survivors have a median of 21%. The writer had the line re-set by hand (Q16 A).
 
 **Fix:** Read the note-length tables in seconds, or in tempo bands, so a ballad's line spreads across its slot. A short line in a long slot should prefer longer notes to a long rest.
 
@@ -93,7 +102,7 @@ Deaths in the main run: the design 155, align 133, limits 80, returns related 80
 
 **Problem:** The design holds "thought" across the bar line into the D chord (bar 14), and the engine sang the fourth (G) over D in other places. A D/F♯ under a held G is a minor ninth. Where the voice sang F♯ over a planned Dsus4, the reverse clash appeared. The spec has no rule for the accompaniment to follow the voice.
 
-**Evidence:** A semitone check of sung notes (a beat or longer, or on a beat) against everything sounding found 33 of 278 notes in the first arrangement. With the guitar reading the voice (the sus4 where the fourth is held an eighth or more and longer than the third, the plain chord where the third is sung) and notes damped when the hand leaves their fret, 13 remain, all passing sixteenths and eighths. Four half bars took the sus4; four took the plain D.
+**Evidence:** A semitone check of sung notes (a beat or longer, or on a beat) against everything sounding found 33 of 278 notes in the first arrangement. With the guitar reading the voice (the sus4 where the fourth is held an eighth or more and longer than the third, the plain chord where the third is sung) and notes damped when the hand leaves their fret, 13 remain, all passing sixteenths and eighths (10 after the hand edits). Four half bars took the sus4; four took the plain D.
 
 **Fix:** A rule for arrangements: over each half bar, the chord's sus or plain form follows the sung note held there; a sustained instrument note a semitone from a held sung note is moved. Add the semitone check to the consistency checks.
 
