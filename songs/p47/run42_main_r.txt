@@ -1,0 +1,40 @@
+362: survivors with no soft break 561 of 759
+[main_r] 68 bars; built 1000, survivors 759 (75.9%), order 80e060723e2c, 95s
+     111  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+      48  bridge opening unrelated (208; 279)
+      46  join: no held end and breath before the line (212)
+      10  design: 'Nothing important' held longer than in the hook; 'I'll call you back' falls to the tonic, under it (Q11 note 4)
+       9  the judge's floor (254; 279)
+       8  chorus opening another tune (227; 279)
+       8  key word on a chord tone (134; 279)
+       1  join: no held end and breath before the copy (212)
+would fail:
+      10  design: 'Nothing important' held longer than in the hook; 'I'll call you back' falls to the tonic, under it (Q11 note 4)
+     111  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+       0  returns related (267)
+       8  chorus opening another tune (227; 279)
+      61  bridge opening unrelated (208; 279)
+       0  pushed notes (159; 279)
+       0  density (159; 279)
+       9  key word on a chord tone (134; 279)
+      10  the judge's floor (254; 279)
+       2  limit broken: chorus_floor_minus_verse
+      22  limit broken: chorus_median_minus_verse
+       5  limit broken: chorus_top_minus_verse
+      37  limit broken: cmp
+       3  limit broken: max_lengths_8_bars
+      47  limit broken: memory
+       2  limit broken: past_octave_share
+      12  limit broken: rhythm band
+      91  limit broken: run_max
+       1  limit broken: sequence legs
+      44  limit broken: spectral
+     113  limit broken: surprisal
+       1  limit broken: tritone_from_root_share
+       8  limit broken: tritone_leap_share
+composite first  893ffe18e5a4 comp 0.855 judge 2.144 (content 1.501, order 2.787) soft [] lift {'median': -1.0, 'top': -3, 'lowest': 3, 'bridge': 7.0}
+pick (362)       dd2824b10b2f comp 0.552 judge 4.966 (content 8.246, order 1.685) soft [] lift {'median': 2.5, 'top': 2, 'lowest': 0, 'bridge': 4.5}
+judge's first    3160cb7c017a comp 0.467 judge 5.658 (content 8.232, order 3.083) soft ['cmp'] lift {'median': -2.0, 'top': -2, 'lowest': 1, 'bridge': 2.0}
+255's pick       893ffe18e5a4 comp 0.855 judge 2.144 (content 1.501, order 2.787) soft [] lift {'median': -1.0, 'top': -3, 'lowest': 3, 'bridge': 7.0}
+pick, old fit    5d7b8672cbb4 comp 0.831 judge 2.037 (content 1.362, order 2.712) soft [] lift {'median': 4.0, 'top': 0, 'lowest': 3, 'bridge': 0.0}
+rerun: {'seed': 20261552, 'calibration_seed': 20261553, 'N': 1000, 'mode': 'main', 'code_sha': '84d3cca0b2bc', 'pythonhashseed': '0', 'python': '3.13.18', 'numpy': '2.5.3', 'tables': {'zeneng_v100_bass_and_figures.json': 'cfe324a5892893a5', 'zeneng_v101_band_returns_eras.json': '0224a91747a584e5', 'zeneng_v102_song37_checks.json': 'caaa40ecfc747e98', 'zeneng_v103_selector.json': 'aefba3718173b03d', 'zeneng_v104_line_in_time.json': '43325ed4951f1784', 'zeneng_v105_kept_windows.json': '3633a24efd73159e', 'zeneng_v105_song38_checks.json': '69cbe7138da1901f', 'zeneng_v106_gate_limits.json': 'ca3e6a8b0b16480a', 'zeneng_v108_judges.json': 'cb84379c710e875d', 'zeneng_v108_spectral_and_registers.json': '8d33013cf887972a', 'zeneng_v109_song40_checks.json': '61a7fce931a67fc4', 'zeneng_v110_song41_checks.json': 'ec0ece7ffbe30d05', 'zeneng_v88_tables.json': '561355b1110d1d8e', 'zeneng_v91_hymn_supplement.json': 'e74e7c30cb04e141', 'zeneng_v96_discriminator_tables.json': '1a2af952c43c3eb7', 'zeneng_v97_axes_of_character.json': '00e65c5b516848aa'}, 'limits286': '46871a03d407be3f', 'cmd': 'PYTHONHASHSEED=0 python3 melody_v116_p42.py 1000 main', 'line_knobs': {'amp': 5.0, 'widen': 0.4497777777777779, 'fresh': 3.296661179528361, 'leap': 1.0, 's16': 1.039383815849414, 'ctl': 5.3675257741348466, 'offb': 0.4192138237330381, 'dpk': 7.529405949481514, 'k44': 2.068634225947648, 'g8': 0.7528098480678518, 'g4': 2.692814278132181, 'glong': 0.8939988320522451, 'run': 3.610719402234766e-07, 'on16': 0.9746290924773056}, 'near_level': 2, 'calibration_stop': [], 'frozen': [], 'rate293': 0.8126984126984127, 'calibration_rounds': 6, 'stop356': [], 'off': []}

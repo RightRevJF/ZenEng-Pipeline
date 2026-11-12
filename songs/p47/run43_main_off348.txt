@@ -1,0 +1,40 @@
+round 1: ['rhythm_bits'] outside the kept middle half (distinct lengths 5.0, rhythm bits 2.651); the 354 knobs stop at [1.0, 1.0, 1.0, 1.0]
+362: survivors with no soft break 541 of 785
+[main_off348] 80 bars; built 1000, survivors 785 (78.5%), order 0223629d4b13, 88s
+      67  design: 'blue movie' a falling sequence from the chorus's top; 'starring nobody but you' lifts back to it; the post-chorus chants the figure (Q15 A)
+      61  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+      26  key word on a chord tone (134; 279)
+      20  bridge opening unrelated (208; 279)
+      18  chorus opening another tune (227; 279)
+      14  the judge's floor (254; 279)
+       8  join: no held end and breath before the line (212)
+       1  align: the words do not fit the returning tune
+would fail:
+      67  design: 'blue movie' a falling sequence from the chorus's top; 'starring nobody but you' lifts back to it; the post-chorus chants the figure (Q15 A)
+      72  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+       0  returns related (267)
+      19  chorus opening another tune (227; 279)
+      24  bridge opening unrelated (208; 279)
+       0  pushed notes (159; 279)
+       0  density (159; 279)
+      28  key word on a chord tone (134; 279)
+      14  the judge's floor (254; 279)
+       5  limit broken: chorus_floor_minus_verse
+      16  limit broken: chorus_median_minus_verse
+      54  limit broken: cmp
+      11  limit broken: max_lengths_8_bars
+     132  limit broken: memory
+      28  limit broken: past_octave_share
+       4  limit broken: rhythm band
+      62  limit broken: run_max
+      39  limit broken: sequence legs
+      52  limit broken: spectral
+      36  limit broken: surprisal
+       8  limit broken: tritone_from_root_share
+      10  limit broken: tritone_leap_share
+composite first  a3061668e3d0 comp 0.892 judge 0.324 (content -2.017, order 2.666) soft ['tritone_leap_share'] lift {'median': 4.0, 'top': 5, 'lowest': 2, 'bridge': 7.0}
+pick (362)       1168b265ebbc comp 0.494 judge 4.638 (content 5.799, order 3.478) soft [] lift {'median': 0.0, 'top': 0, 'lowest': 1, 'bridge': 0.0}
+judge's first    1168b265ebbc comp 0.494 judge 4.638 (content 5.799, order 3.478) soft [] lift {'median': 0.0, 'top': 0, 'lowest': 1, 'bridge': 0.0}
+255's pick       53b5f9d7ac15 comp 0.881 judge 3.112 (content 4.707, order 1.516) soft [] lift {'median': -1.0, 'top': 3, 'lowest': 3, 'bridge': 0.0}
+pick, old fit    b9a02305b282 comp 0.873 judge 3.594 (content 4.580, order 2.608) soft ['memory'] lift {'median': 2.0, 'top': 3, 'lowest': 5, 'bridge': 2.0}
+rerun: {'seed': 20261553, 'calibration_seed': 20261554, 'N': 1000, 'mode': 'main', 'code_sha': 'dc342d94f3fa', 'pythonhashseed': '0', 'python': '3.13.18', 'numpy': '2.5.3', 'tables': {'zeneng_v100_bass_and_figures.json': 'cfe324a5892893a5', 'zeneng_v101_band_returns_eras.json': '0224a91747a584e5', 'zeneng_v102_song37_checks.json': 'caaa40ecfc747e98', 'zeneng_v103_selector.json': 'aefba3718173b03d', 'zeneng_v104_line_in_time.json': '43325ed4951f1784', 'zeneng_v105_kept_windows.json': '3633a24efd73159e', 'zeneng_v105_song38_checks.json': '69cbe7138da1901f', 'zeneng_v106_gate_limits.json': 'ca3e6a8b0b16480a', 'zeneng_v108_judges.json': 'cb84379c710e875d', 'zeneng_v108_spectral_and_registers.json': '8d33013cf887972a', 'zeneng_v109_song40_checks.json': '61a7fce931a67fc4', 'zeneng_v110_song41_checks.json': 'ec0ece7ffbe30d05', 'zeneng_v88_tables.json': '561355b1110d1d8e', 'zeneng_v91_hymn_supplement.json': 'e74e7c30cb04e141', 'zeneng_v96_discriminator_tables.json': '1a2af952c43c3eb7', 'zeneng_v97_axes_of_character.json': '00e65c5b516848aa'}, 'limits286': '46871a03d407be3f', 'cmd': 'PYTHONHASHSEED=0 python3 melody_v116_p43.py 1000 main', 'line_knobs': {'amp': 5.0, 'widen': -0.2655686274509799, 'fresh': 2.0831835745030975, 'leap': 1.0, 's16': 1.0, 'ctl': 5.335793257576516, 'offb': 0.77263685773561, 'dpk': 3.1299487595626636, 'k44': 5.390055837661517, 'g8': 1.0, 'g4': 1.0, 'glong': 1.0, 'run': 0.01, 'on16': 1.0}, 'near_level': 2, 'calibration_stop': [], 'frozen': [], 'rate293': 1.0, 'calibration_rounds': 3, 'stop356': ["round 1: ['rhythm_bits'] outside the kept middle half (distinct lengths 5.0, rhythm bits 2.651); the 354 knobs stop at [1.0, 1.0, 1.0, 1.0]"], 'off': ['348']}
