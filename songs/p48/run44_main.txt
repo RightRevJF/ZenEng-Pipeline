@@ -1,0 +1,35 @@
+round 1: ['rhythm_bits'] outside the kept middle half (distinct lengths 5.0, rhythm bits 2.548); the 354 knobs stop at [1.0, 1.0, 1.0, 1.0]
+362: survivors with no soft break 481 of 614
+[main] 80 bars; built 1000, survivors 614 (61.4%), order 1a842f54b719, 68s
+     201  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+      81  the judge's floor (254; 279)
+      52  bridge opening unrelated (208; 279)
+      36  design: the two clocks rock a step apart; keeping time twice, a step higher; every post-chorus phrase on the one (Q16 A); the chorus over the narrow verse and wider (Q17 C)
+      11  chorus opening another tune (227; 279)
+       2  align: the words do not fit the returning tune
+       2  join: no held end and breath before the copy (212)
+       1  join: no held end and breath before the line (212)
+would fail:
+      36  design: the two clocks rock a step apart; keeping time twice, a step higher; every post-chorus phrase on the one (Q16 A); the chorus over the narrow verse and wider (Q17 C)
+     210  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+       0  returns related (267)
+      21  chorus opening another tune (227; 279)
+      65  bridge opening unrelated (208; 279)
+       0  pushed notes (159; 279)
+       0  density (159; 279)
+       0  key word on a chord tone (134; 279)
+     105  the judge's floor (254; 279)
+      22  limit broken: cmp
+      14  limit broken: max_lengths_8_bars
+     102  limit broken: memory
+       5  limit broken: run_max
+       1  limit broken: sequence legs
+      82  limit broken: spectral
+     215  limit broken: surprisal
+       2  limit broken: tritone_leap_share
+composite first  85fd50a878f3 comp 0.856 judge 0.309 (content 0.398, order 0.221) soft [] lift {'median': 10.0, 'top': 9, 'lowest': 7, 'bridge': 3.0}
+pick (362)       e8dc84c25324 comp 0.669 judge 3.178 (content 3.137, order 3.219) soft [] lift {'median': 5.0, 'top': 7, 'lowest': 5, 'bridge': 5.0}
+judge's first    ce86411c8473 comp 0.667 judge 3.211 (content 4.926, order 1.495) soft ['surprisal'] lift {'median': 5.0, 'top': 11, 'lowest': 5, 'bridge': 4.0}
+255's pick       8475753f54fb comp 0.849 judge 1.244 (content 1.288, order 1.201) soft [] lift {'median': 9.0, 'top': 11, 'lowest': 5, 'bridge': 6.0}
+pick, old fit    77616c0fcbbe comp 0.841 judge 0.384 (content -0.916, order 1.685) soft [] lift {'median': 9.0, 'top': 11, 'lowest': 5, 'bridge': 3.0}
+rerun: {'seed': 20261554, 'calibration_seed': 20261555, 'N': 1000, 'mode': 'main', 'code_sha': '7800daae6c1a', 'pythonhashseed': '0', 'python': '3.13.18', 'numpy': '2.5.3', 'tables': {'zeneng_v100_bass_and_figures.json': 'cfe324a5892893a5', 'zeneng_v101_band_returns_eras.json': '0224a91747a584e5', 'zeneng_v102_song37_checks.json': 'caaa40ecfc747e98', 'zeneng_v103_selector.json': 'aefba3718173b03d', 'zeneng_v104_line_in_time.json': '43325ed4951f1784', 'zeneng_v105_kept_windows.json': '3633a24efd73159e', 'zeneng_v105_song38_checks.json': '69cbe7138da1901f', 'zeneng_v106_gate_limits.json': 'ca3e6a8b0b16480a', 'zeneng_v108_judges.json': 'cb84379c710e875d', 'zeneng_v108_spectral_and_registers.json': '8d33013cf887972a', 'zeneng_v109_song40_checks.json': '61a7fce931a67fc4', 'zeneng_v110_song41_checks.json': 'ec0ece7ffbe30d05', 'zeneng_v88_tables.json': '561355b1110d1d8e', 'zeneng_v91_hymn_supplement.json': 'e74e7c30cb04e141', 'zeneng_v96_discriminator_tables.json': '1a2af952c43c3eb7', 'zeneng_v97_axes_of_character.json': '00e65c5b516848aa'}, 'limits286': '46871a03d407be3f', 'cmd': 'PYTHONHASHSEED=0 python3 melody_p44.py 1000 main', 'line_knobs': {'amp': 5.0, 'widen': 0.6236470588235292, 'fresh': 1.8314315498491114, 'leap': 1.0, 's16': 1.0, 'ctl': 2.038490799083556, 'offb': 0.8876453640879933, 'dpk': 0.538504611630489, 'k44': 8.0, 'g8': 1.0, 'g4': 1.0, 'glong': 1.0, 'run': 0.007871310330464716, 'on16': 0.7778210871448187}, 'near_level': 2, 'calibration_stop': [], 'frozen': [], 'rate293': 1.0, 'calibration_rounds': 3, 'stop356': ["round 1: ['rhythm_bits'] outside the kept middle half (distinct lengths 5.0, rhythm bits 2.548); the 354 knobs stop at [1.0, 1.0, 1.0, 1.0]"], 'off': []}
