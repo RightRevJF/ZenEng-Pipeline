@@ -1,0 +1,13 @@
+- **372's band for each section.** A section's band is its syllables over its bars, read once from the lyric. Song 45's verses and bridge fall in "5.5 and over" (6.25, 6.75, 5.62 a bar); its tag falls "under 3.5". Every other section in the five songs falls in "3.5 to 4.5" or "4.5 to 5.5".
+- **372's knobs where 356 stopped them.** On songs 42, 43 and 44 (main runs), 356's stop fired in round 1: the builds read 2.79 to 2.87 rhythm bits a note against the kept quartiles' top of 2.735. The 354 knobs (s16, g8, g4, glong) therefore stayed at one. Only the run rate and the sixteenth-onset knob moved. On song 40's control, the stop fired on distinct lengths.
+- **The gap shares.** The table under 372 prints the builds' four shares beside the kept table's, for the section bands in use, weighted by notes.
+- **375's "where".** A note a semitone from a chord's outside tone is counted by the kind of line it is in: drawn ("inside"), or returning or copied ("line: exact", "pitch", "rhythm", "both", "fresh (361 unit return)").
+- **378's span.** It is read as the time from the line's first onset to its last note's end, over the time to the next line's first onset, by the line's notes. "Given up" counts the lines whose span was dropped after the ordinary tries.
+- **366's fallbacks.** These are lines drawn as "may not run" that found no rhythm without a run and fell back to runs. They are counted beside the lines drawn each way.
+- **377's lift.** It is read on the chorus's drawn notes only. The pinned notes' lift is printed beside it.
+- **368's memory reading.** It is re-read with 373's soft limit (0.12) on v114's song 43 run (melody_p43_main.pkl in songs/p45) and on the two diagnostic runs.
+- **Side runs (findings 385 and 389).** Each has 300 builds at the song's main seed, and no pick is taken from them.
+  - Song 45: as run, with 378 off, and with 366 off (seed 20261555).
+  - Songs 40 and 43: as run, with 381 off, and with 375 off.
+  - Their outputs are in diag/.
+- **Separability.** It is read on the first 400 complete builds of each main run against the kept windows split by their 170 true songs (369). The figures for v115 and v116 are re-read with the same code.

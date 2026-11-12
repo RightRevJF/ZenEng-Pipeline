@@ -1,0 +1,40 @@
+362: survivors with no soft break 659 of 792
+[ctl] 68 bars; built 1000, survivors 792 (79.2%), order 264d8899cc47, 266s
+      59  bridge opening unrelated (208; 279)
+      58  join: no held end and breath before the line (212)
+      42  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+      17  rhythm: no placement
+      12  the judge's floor (254; 279)
+      12  chorus opening another tune (227; 279)
+       4  design: 'Nothing important' held longer than in the hook; 'I'll call you back' falls to the tonic, under it (Q11 note 4)
+       3  walk: no note
+       1  key word on a chord tone (134; 279)
+would fail:
+       4  design: 'Nothing important' held longer than in the hook; 'I'll call you back' falls to the tonic, under it (Q11 note 4)
+      42  limits: a hard limit or three soft breaks (276/277, with 286's seven)
+       0  returns related (267)
+      15  chorus opening another tune (227; 279)
+      61  bridge opening unrelated (208; 279)
+       0  pushed notes (159; 279)
+       0  density (159; 279)
+       1  key word on a chord tone (134; 279)
+      13  the judge's floor (254; 279)
+      11  limit broken: chorus_median_minus_verse
+      12  limit broken: chorus_top_minus_verse
+      64  limit broken: cmp
+       1  limit broken: max_lengths_8_bars
+       1  limit broken: memory
+      12  limit broken: past_octave_share
+       1  limit broken: rhythm band
+       5  limit broken: run_max
+       3  limit broken: sequence legs
+      47  limit broken: spectral
+      54  limit broken: surprisal
+       6  limit broken: tritone_leap_share
+composite first  92206e38fc48 comp 0.877 judge 1.187 (content -0.557, order 2.930) soft [] lift {'median': 3.0, 'top': 2, 'lowest': 0, 'bridge': 2.0}
+pick (362)       6065fb26414e comp 0.526 judge 3.484 (content 3.768, order 3.200) soft [] lift {'median': 5.0, 'top': 3, 'lowest': 4, 'bridge': -2.0}
+judge's first    6065fb26414e comp 0.526 judge 3.484 (content 3.768, order 3.200) soft [] lift {'median': 5.0, 'top': 3, 'lowest': 4, 'bridge': -2.0}
+255's pick       613932b77fa4 comp 0.854 judge 2.322 (content 2.368, order 2.276) soft [] lift {'median': 0.0, 'top': 3, 'lowest': 3, 'bridge': -3.0}
+pick, old fit    0f0ef7ce2756 comp 0.851 judge 1.686 (content 1.892, order 1.480) soft [] lift {'median': 5.0, 'top': 2, 'lowest': 7, 'bridge': -2.0}
+372: gap knobs {'s16': (0.407, 'PAST A FACTOR OF TWO'), 'g8': (0.626, ''), 'g4': (4.38, 'PAST A FACTOR OF TWO'), 'glong': (3.613, 'PAST A FACTOR OF TWO'), 'run': (0.251, 'PAST A FACTOR OF TWO'), 'on16': (1.713, '')} | 371: rates {'unit2_returns': 1.0, 'unit3_returns': 0.038, 'unit4_to_unit2': 1.0}
+rerun: {'seed': 20261552, 'calibration_seed': 20261553, 'N': 1000, 'mode': 'ctl', 'code_sha': '242a2d8f4744', 'pythonhashseed': '0', 'python': '3.13.18', 'numpy': '2.5.3', 'tables': {'zeneng_v100_bass_and_figures.json': 'cfe324a5892893a5', 'zeneng_v101_band_returns_eras.json': '0224a91747a584e5', 'zeneng_v102_song37_checks.json': 'caaa40ecfc747e98', 'zeneng_v103_selector.json': 'aefba3718173b03d', 'zeneng_v104_line_in_time.json': '43325ed4951f1784', 'zeneng_v105_kept_windows.json': '3633a24efd73159e', 'zeneng_v105_song38_checks.json': '69cbe7138da1901f', 'zeneng_v106_gate_limits.json': 'ca3e6a8b0b16480a', 'zeneng_v108_judges.json': 'cb84379c710e875d', 'zeneng_v108_spectral_and_registers.json': '8d33013cf887972a', 'zeneng_v109_song40_checks.json': '61a7fce931a67fc4', 'zeneng_v110_song41_checks.json': 'ec0ece7ffbe30d05', 'zeneng_v88_tables.json': '561355b1110d1d8e', 'zeneng_v91_hymn_supplement.json': 'e74e7c30cb04e141', 'zeneng_v96_discriminator_tables.json': '1a2af952c43c3eb7', 'zeneng_v97_axes_of_character.json': '00e65c5b516848aa'}, 'limits286': '46871a03d407be3f', 'cmd': 'PYTHONHASHSEED=0 python3 melody_v118_p42.py 1000 ctl', 'line_knobs': {'amp': 7.0, 'widen': 0.8944444444444443, 'fresh': 1.1650709808899233, 'leap': 1.0, 's16': 0.40690870885478264, 'ctl': 3.9268734004036094, 'offb': 0.51364837546373, 'dpk': 2.1132394346304446, 'k44': 30.0, 'g8': 0.6264338417062609, 'g4': 4.38044667997309, 'glong': 3.6131736154745107, 'run': 0.2506763258181818, 'on16': 1.7129399998776382}, 'near_level': 2, 'calibration_stop': [], 'frozen': [], 'rate293': 0.726388888888889, 'calibration_rounds': 5, 'stop356': [], 'off': [], 'tables118': {'zeneng_v111_song42_checks.json': 'd31297950a420694', 'zeneng_v112_checks.json': '62f7b879742c6c9d', 'zeneng_v114_distance.json': '5ad8e3820b17ab8a', 'zeneng_v115_gap_shares.json': '23e58e20c7b2f2cc', 'zeneng_v116_separability.json': '7152232dec14c16c', 'zeneng_v117_kept_rhythm_tables.json': 'ff05cf32d3b0609f', 'zeneng_v117_kept_songs_and_modes.json': 'e7bd36209afb5fe9', 'zeneng_v117_yardstick.json': 'aaceb2a9730ac5f8', 'zeneng_v118_slot_and_surprisal.json': 'a96ac6faf1959011'}, 'knobs372': {'s16': {'final': 0.4069, 'past_a_factor_of_two': True}, 'g8': {'final': 0.6264, 'past_a_factor_of_two': False}, 'g4': {'final': 4.3804, 'past_a_factor_of_two': True}, 'glong': {'final': 3.6132, 'past_a_factor_of_two': True}, 'run': {'final': 0.2507, 'past_a_factor_of_two': True}, 'on16': {'final': 1.7129, 'past_a_factor_of_two': False}}, 'unit_return_rates371': {'unit2_returns': 1.0, 'unit3_returns': 0.038, 'unit4_to_unit2': 1.0}, 'limits': {'spectral': {'rule': ('between', [0.086, 1.628], [-0.098, 1.766]), 'corpus': 'kept chart songs (286, Window 128)'}, 'cmp': {'rule': ('at least', 0.338, 0.0915), 'corpus': 'POP909 pairs; unchanged, 94% of kept songs pass (373)'}, 'memory': {'rule': ('at least', 0.12, -1000000000.0), 'corpus': 'kept chart songs (373)'}, 'surprisal': {'rule': ('at least', 0.24, 0.08), 'corpus': 'kept chart songs (382)'}, 'rhythm band': {'rule': ('between', [1.62, 3.38], [1.43, 3.61]), 'corpus': 'kept chart songs, the pooled kept table (373)'}, 'sequence legs': {'rule': ('at most', 1.0, 2.0), 'corpus': 'a count (286)'}, 'realness': {'rule': 'printed', 'corpus': 'withdrawn; printed (300)'}}, 'section_bands372': {'Verse 1': (4.75, '4.5 to 5.5'), 'Chorus 1': (4.0, '3.5 to 4.5'), 'Verse 2': (5.0, '4.5 to 5.5'), 'Chorus 2': (4.0, '3.5 to 4.5'), 'Bridge': (4.25, '3.5 to 4.5'), 'Verse 3': (4.12, '3.5 to 4.5'), 'Last Chorus': (3.42, 'under 3.5')}}
