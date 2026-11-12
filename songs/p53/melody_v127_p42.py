@@ -342,7 +342,7 @@ class Aim:
         self.mel_inner, self.mel_final = min(0.40, 0.04 + 1.2 * x), min(0.5, 0.08 + 1.5 * x)
 AIMS = {}; AIM = None
 LK = dict(amp=5.0, widen=1.0, fresh=2.0, leap=1.0, s16=1.0, ctl=1.0, offb=1.0, dpk=1.0, k44=1.0, g8=1.0, g4=1.0, glong=1.0, run=1.0, on16=1.0,
-          ct398=1.0, ctb398=1.0, ctd398=1.0, res398=1.0, turn400=1.0, ff424=1.0, lt424=1.0, eb424=0.25)   # 424: the empty-bar rate starts at a quarter                            # 398, 400: one knob each, from one   # 366: run is the rate at which a line may run; 372: every gap knob starts at one
+          ct398=1.0, ctb398=1.0, ctd398=1.0, res398=1.0, turn400=1.0, ff424=1.0, lt424=1.0, eb424=0.25, gs452=1.0, er452=1.0, zz452=1.0, ctd398V=1.0, ctd398C=1.0, th461=1.0, sb461=1.0, rg467=1.0, sh408=1.0)   # 424: the empty-bar rate starts at a quarter                            # 398, 400: one knob each, from one   # 366: run is the rate at which a line may run; 372: every gap knob starts at one
 GAPKNOBS = ("s16", "g8", "g4", "glong", "run", "on16")                                     # 372: the knobs of 354, 355, 365 and 366 (reported if they end more than a factor of two from one)
 UR_KEPT = {1: (0, 0.172, "unit2_returns"), 2: (0, 0.315, "unit3_returns"), 3: (1, 0.188, "unit4_to_unit2")}   # 371: the kept readings
 UR_RATE = {j: v[1] for j, v in UR_KEPT.items()}                                             # 371: drawn at rates set on unaimed builds (they start at the kept readings)
@@ -383,6 +383,7 @@ def _runs_kept(T):
     return float(sum(pi_[p_ - 1] * T[p_ - 1][1] / T[p_ - 1][1:].sum() * T[p_][1] / T[p_][1:].sum() for p_ in range(1, 16, 2)) / sum(pi_[p_] for p_ in range(1, 16, 2)))
 RUN_POOLED = _runs_kept(KT["tables"]["all"])
 RUN_KEPT_BAND = {b_: round(0.31 * _runs_kept(KT["tables"][b_]) / RUN_POOLED, 3) for b_ in KT["tables"] if b_ != "all"}   # 389: the kept 31%, scaled by the band's table
+S16B = {b_: 1.0 for b_ in RUN_KEPT_BAND}                                                 # 455: the sixteenth-gap weight by band
 RUNR = {b_: 1.0 for b_ in RUN_KEPT_BAND}                                                 # 389: the run rate of each band, set on unaimed builds
 def s16_bands(notes, dr=None):
     """389: onsets on a sixteenth position and those in runs, by the band of their section."""
@@ -444,6 +445,14 @@ def pool_of(sec): return "V" if KIND[sec] in ("Verse", "Pre") else "C"
 
 # ---- 231/289: where a line lands (relative to its slot's first downbeat), Window 124's line ends; 232 for the title ----
 LAND_SH = dict(b1=0.26, b3=0.10, b24=0.16, off=0.49)
+def land_w406(sec, n_syl, i=None, allowed=None):
+    """406: the landing's weight at each place, by Window 124's line ends (each class's share spread over its places), for the joint draw."""
+    nb = slot_len(sec, i); lo_ = 0 if nb == 1 else (nb - 1) * BAR - 24; hi_ = slot_end(sec, i)
+    cls = lambda t: "b1" if t % BAR == 0 else "b3" if t % BAR == 24 else "b24" if t % BEAT == 0 else "off"
+    opts = [t for t in range(lo_, hi_ + 1, 6)]
+    if allowed is not None: opts = [t for t in opts if t in allowed] or sorted(allowed)
+    sh = dict(b1=0.26, b3=0.10) if is_title(sec, i) else dict(LAND_SH); cnt = collections.Counter(cls(t) for t in opts)
+    return {t: sh.get(cls(t), 0.0) / cnt[cls(t)] for t in opts}
 def land_draw(rng, sec, n_syl, i=None, allowed=None):
     nb = slot_len(sec, i); lo_ = 0 if nb == 1 else (nb - 1) * BAR - 24; hi_ = slot_end(sec, i)
     cls = lambda t: "b1" if t % BAR == 0 else "b3" if t % BAR == 24 else "b24" if t % BEAT == 0 else "off"
@@ -507,7 +516,7 @@ def line_rhythm(sy, rng, tmin, sec, last_max=None, fix=None, entry=None, prior=N
     s_span = rng.uniform(*sp) if sp else None
     def tw(tp, k, d):
         w = RTS[tp % BAR][d] * H(k - 1, d) * tilt.get(d, 1.0)                               # 372: the kept table for the section's band
-        if "354" not in OFF: w *= LK["s16"] if d in (3, 9) else LK["g8"] if d == 6 else LK["g4"] if d == 12 else LK["glong"] if d > 12 else 1.0   # 354: the gaps together
+        if "354" not in OFF: w *= (LK["s16"] * (S16B.get(SEC_BAND[sec], 1.0) if ON7("455") else 1.0)) if d in (3, 9) else LK["g8"] if d == 6 else LK["g4"] if d == 12 else LK["glong"] if d > 12 else 1.0   # 354: the gaps together
         if tp % 6 == 3 and d < 6 and not may_run[0] and "348" not in OFF: w = 0.0               # 366 (amends 355): a line that may not run is placed with no run
         return w
     pal = PALS.get(KIND[sec])
@@ -585,6 +594,9 @@ def line_rhythm(sy, rng, tmin, sec, last_max=None, fix=None, entry=None, prior=N
             tgt = land_draw(rng, sec, n, i, allowed=al_)
         else: tgt = land_draw(rng, sec, n, i, allowed=spa if spa else None)
         if PIN388 and not free and Ls not in fix: tgt = None; STATS["388: landing left to the draw (side run)"] += 1
+        LW406[0] = None
+        if ON7("406") and not free and Ls not in fix and tgt is not None:                     # 406: the landing drawn jointly with the kept table
+            LW406[0] = land_w406(sec, n, i, (al_ if fits is not None else (spa or None))); tgt = None; STATS["406: landing drawn with the rhythm"] += 1
         cb = {}; sb = {}
         if copybars and _try < (NT if (allbars and ON("413")) else 14) and not free: cb = {bb: ts for bb, ts in copybars.items() if pair or allbars or rng.random() < RATE293[0]}   # 293 at 331's rate; 310 and 361: every bar
         elif copybars and _try == (NT if (allbars and ON("413")) else 14) and not (pair and fallback): STATS["361: unit return given up for a line" if allbars else "293: copy given up for a line" if not pair else "310: partner's rhythm given up for a line"] += 1
@@ -593,20 +605,27 @@ def line_rhythm(sy, rng, tmin, sec, last_max=None, fix=None, entry=None, prior=N
         if stressbars and _try < 14 and not free: sb = stressbars                         # 322
         elif stressbars and _try == 14: STATS["322: partner's stresses given up for a line"] += 1
         if tgt is not None and (tgt + step * post > end or tgt - step * Ls < tmin): continue
-        alpha, cbw = dp(kind_, tgt, cb, sb)
+        st457 = set(cb) if (ON7("457") and allbars and cb and _try < NT // 2) else ()
+        if ON7("457") and allbars and cb and _try == NT // 2: STATS["457: unit-return line falls back to the weighted copy"] += 1
+        alpha, cbw = dp(kind_, tgt, cb, sb, strict=st457)
         if not alpha[n - 1]:
             if n >= 9: STATS["308: long line redrawn"] += 1
             continue
         def sample(alpha):
-            ks = list(alpha[n - 1]); ws = [alpha[n - 1][x] * (1.0 + (end - x[0]) / 40) for x in ks]
+            lw_ = LW406[0]; ert_ = int(er_kept(SEC_NPB[sec])); rl_ = [0]
+            ks = list(alpha[n - 1]); ws = [alpha[n - 1][x] * (1.0 + (end - x[0]) / 40) * (lw_.get(x[0], 0.0) if (lw_ is not None and Ls == n - 1) else 1.0) for x in ks]
             if not ks or sum(ws) <= 0: return None
             cur = rng.choices(ks, ws)[0]; ons = [cur[0]]
             for k in range(n - 1, 0, -1):
                 t, c = cur
                 ks = [(tp, cp) for (tp, cp) in alpha[k - 1] if step <= t - tp <= 24 and (cp + 1 if t // BAR == tp // BAR else 1) == c]
-                ws = [alpha[k - 1][x] * tw(x[0], k, t - x[0]) for x in ks]
+                g_ = (ons[-2] - t) if len(ons) >= 2 else None
+                def e452(d_):                                                                    # 452: a gap equal to the one after it; a run past the kept figure
+                    if not ON7("452") or g_ is None or d_ != g_: return 1.0
+                    return LK["gs452"] * (LK["er452"] if rl_[0] + 1 > ert_ else 1.0)
+                ws = [alpha[k - 1][x] * tw(x[0], k, t - x[0]) * e452(t - x[0]) * (lw_.get(x[0], 0.0) if (lw_ is not None and k - 1 == Ls) else 1.0) for x in ks]
                 if not ks or sum(ws) <= 0: return None
-                cur = rng.choices(ks, ws)[0]; ons.append(cur[0])
+                cur = rng.choices(ks, ws)[0]; ons.append(cur[0]); rl_[0] = (rl_[0] + 1) if (g_ is not None and t - cur[0] == g_) else 1
             ons.reverse(); return ons
         ons = sample(alpha)
         if ons is None: continue
@@ -686,7 +705,11 @@ def melismas(ons, rng, end, pal=None):
 def chord_w(p, n, ch):
     tones = M.CH[ch][1]; on_beat = n["on"] % BEAT == 0; cw = AIM.cw
     w = (cw[0] if p % 12 in tones else cw[1]) if on_beat else (cw[2] if p % 12 in tones else cw[3])
-    if ON("398") and (DRAWN398[0] or not ON("412")) and p % 12 in tones: w *= LK["ct398"] * (LK["ctb398"] if on_beat else 1.0) * (LK["ctd398"] if n["on"] % BAR == 0 else 1.0)   # 398: overall, on a beat, on a downbeat
+    if ON("398") and (DRAWN398[0] or not ON("412")) and p % 12 in tones: w *= LK["ct398"] * (LK["ctb398"] if on_beat else 1.0) * ((LK["ctd398" + AIM.p] if ON7("461") else LK["ctd398"]) if n["on"] % BAR == 0 else 1.0)   # 398: overall, on a beat, on a downbeat
+    if ON7("461") and DRAWN398[0]:                                                         # 461: the chorus's first-beat third; 450: a second or seventh from the bass
+        r461 = (p - M.CH[ch][0]) % 12
+        if AIM.p == "C" and n["on"] % BAR == 0 and r461 in (3, 4) and p % 12 in tones: w *= LK["th461"]
+        if r461 in (1, 2, 10, 11): w *= LK["sb461"]
     if n.get("dur", 0) >= 12 and p % 12 in tones: w *= LK["ctl"]                           # 345: a long note on a chord tone
     return w
 def extra_w(p):
@@ -700,7 +723,7 @@ def tri(p, ch): return (p - M.CH[ch][0]) % 12 == 6
 def next_pitch(rng, prev, run, n, ch, mu, lo, hi, last_iv=None, toward=None):
     if prev is None:
         cands = [p for p in range(lo, hi + 1) if p % 12 in M.SCALE and not tri(p, ch)]
-        return rng.choices(cands, [math.exp(-(p - mu) ** 2 / (2 * M.RSD ** 2)) * M.kp(p) * chord_w(p, n, ch) * deg_w(p) for p in cands])[0]
+        return rng.choices(cands, [math.exp(-(p - mu) ** 2 / (2 * (M.RSD * (LK["rg467"] if ON7("467") else 1.0)) ** 2)) * M.kp(p) * chord_w(p, n, ch) * deg_w(p) for p in cands])[0]
     cats = [(c, AIM.cat[c], sz) for c, _, sz in M.CATS]
     if last_iv is not None and abs(last_iv) > 7: cats = [x for x in cats if x[0] in ("step", "third")]
     allc, allw = [], []
@@ -713,10 +736,11 @@ def next_pitch(rng, prev, run, n, ch, mu, lo, hi, last_iv=None, toward=None):
                 if tri(p, ch): continue                                                    # 215
                 if last_iv is not None and abs(last_iv) > 7 and (sg > 0) == (last_iv > 0): continue
                 if toward is not None and (abs(toward - p) > 7 or abs(toward - p) == 6): continue
-                w0 = math.exp(-(p - mu) ** 2 / (2 * M.RSD ** 2)) * M.kp(p) * M.SIZE_W.get(sz, 1.0)
+                w0 = math.exp(-(p - mu) ** 2 / (2 * (M.RSD * (LK["rg467"] if ON7("467") else 1.0)) ** 2)) * M.kp(p) * M.SIZE_W.get(sz, 1.0)
                 w0 *= 1.0 if sz == 0 else (M.DESC if sg < 0 else 1 - M.DESC)
                 if sz and last_iv: w0 *= AIM.turn if (sg > 0) != (last_iv > 0) else 1.0
-                sf = math.exp(-(p - SHAPE[0]) ** 2 / (2 * 2.5 ** 2)) if SHAPE is not None else 1.0   # 257: toward the line's contour, across move kinds
+                if ON7("452") and sz and ZZ452[0] and ZZ452[1] and sg != ZZ452[1] and ZZ452[1] != ZZ452[0]: w0 *= LK["zz452"]   # 452: a third move that zigzags
+                sf = math.exp(-(p - SHAPE[0]) ** 2 / (2 * (2.5 * (LK["sh408"] if ON7("408") else 1.0)) ** 2)) if SHAPE is not None else 1.0   # 257: toward the line's contour, across move kinds
                 rs_ = LK["res398"] if (ON("398") and (DRAWN398[0] or not ON("412")) and PREV_NC[0] and 0 < abs(p - prev) <= 2 and p % 12 in M.CH[ch][1]) else 1.0   # 398: a note off its chord left by step
                 lt_ = LK["lt424"] if (LAST424[0] and (p - mton()) % 12 == 0) else 1.0             # 424: the window's last note on the tonic
                 cands.append(p); ws.append(w0 * chord_w(p, n, ch) * deg_w(p) * sf * extra_w(p) * rs_ * lt_); base += w0
@@ -752,7 +776,7 @@ def first_note(rng, n, ch, h0, lo, hi):
     return rng.choices(cands, [math.exp(-(p - h0) ** 2 / (2 * 1.5 ** 2)) * M.kp(p) * chord_w(p, n, ch) * deg_w(p) + 1e-12 for p in cands])[0]
 def walk_notes(rng, notes, prev, run, mu, lo, hi, notes_on, fixed=None, shape=None):
     global SHAPE
-    out = []; notes_on = set(notes_on) | {n["on"] for n in notes}; last_iv = None
+    out = []; notes_on = set(notes_on) | {n["on"] for n in notes}; last_iv = None; ZZ452[0] = ZZ452[1] = 0
     for i, n in enumerate(notes): n["dur"] = notes[i + 1]["on"] - n["on"] if i + 1 < len(notes) else 24
     for i, n in enumerate(notes):
         if fixed and i in fixed: p = fixed[i]
@@ -772,6 +796,7 @@ def walk_notes(rng, notes, prev, run, mu, lo, hi, notes_on, fixed=None, shape=No
             if LAST424[0] and isinstance(CUR424[0], tuple): STATS["409: the window's last note weighted (walk)"] += 1
             p = next_pitch(rng, prev, run, n, M.chord_for(n, notes_on), mu, lo, hi, last_iv, toward=tw); SHAPE = None; LAST424[0] = False
             if p is None: return None
+        if prev is not None and p != prev: ZZ452[0], ZZ452[1] = ZZ452[1], (1 if p > prev else -1)   # 452: the last two moves
         run = run + 1 if p == prev else 1
         last_iv = (p - prev) if prev is not None else last_iv
         prev = p; out.append(p)
@@ -1695,6 +1720,17 @@ V127 = int(os.environ.get("ZE_PART", "3"))                                      
 P127 = {f_: 0 for f_ in ("470", "471", "472", "473", "464", "459")} | {f_: 1 for f_ in ("434", "435")} | {f_: 2 for f_ in ("452", "455", "406", "465", "457", "458")} | {f_: 3 for f_ in ("408", "468", "467", "461", "456")}
 def ON7(f_): return P127.get(f_, 0) <= V127 and f_ not in OFF
 PICK108 = [None, None]
+ZZ452 = [0, 0]; LW406 = [None]
+ER452 = {"3.5 to 4.5": 4.582, "4.5 to 5.5": 5.5, "5.5 to 9": 6.172}                         # 452: the kept longest run of equal gaps by notes a bar (zeneng_v125_port_reread.json)
+def er_kept(npb): return ER452["3.5 to 4.5"] if npb < 4.5 else ER452["4.5 to 5.5"] if npb < 5.5 else ER452["5.5 to 9"]
+def outer_reads(notes, b0):
+    """461: the window's first-beat notes on a chord tone and on the third; notes a second or seventh above the root (the bass), as Window 143 reads them."""
+    W_ = [n_ for n_ in notes if b0 * BAR <= n_["on"] < (b0 + 8) * BAR]
+    if len(W_) < 12: return None
+    rel_ = [((n_["p"] - M.CH[M.chord_at(n_["on"])][0]) % 12, n_["p"] % 12 in M.CH[M.chord_at(n_["on"])][1], n_["on"] % BAR == 0) for n_ in W_]
+    db_ = [x_ for x_ in rel_ if x_[2]]
+    return dict(db_ct=float(np.mean([x_[1] for x_ in db_])) if len(db_) >= 3 else None, db_third=float(np.mean([x_[0] in (3, 4) for x_ in db_])) if len(db_) >= 3 else None,
+                sb=float(np.mean([x_[0] in (1, 2, 10, 11) for x_ in rel_])))
 K435 = 0.75                                                                              # 435: the kept three in four
 def calibrate(rng, n=30, rounds=6):                                                    # 357: up to six rounds
     """249: the knobs are set on this song so that a build aimed at its pool's medians reads near them."""
@@ -1740,6 +1776,17 @@ def calibrate(rng, n=30, rounds=6):                                             
                 f_ = win_feats(c2["notes"], BAR0[s_])
                 for m_ in list(KEPT114) + list(GAPS) + ["notes_per_bar", "on_sixteenth", "distinct_durations"] + list(KEPT398) + ["turns_per_move"] + list(KEPT424):
                     if f_ and np.isfinite(f_.get(m_, np.nan)): ua[m_].append(f_[m_])
+                if V127 >= 2:                                                                 # v127: 452, 461, 467 read on the same windows
+                    N_ = sorted(win_N(c2["notes"], BAR0[s_])); c_ = cand(N_) if N_ else None
+                    if c_ and ON7("452"):
+                        ua["_gs452"].append(c_["gap_same_as_before"]); ua["_er452"].append(c_["equal_gap_run_max"] / er_kept(len(N_) / 8))
+                        if np.isfinite(c_["zigzag_of_three"]): ua["_zz452"].append(c_["zigzag_of_three"])
+                    if ON7("467") and N_: ua["_rng467"].append(max(x_[2] for x_ in N_) - min(x_[2] for x_ in N_))
+                    o_ = outer_reads(c2["notes"], BAR0[s_]) if ON7("461") else None
+                    if o_:
+                        if o_["db_ct"] is not None: ua["_ctd" + pool_of(s_)].append(o_["db_ct"])
+                        if s_ == "Chorus 1" and o_["db_third"] is not None: ua["_th461"].append(o_["db_third"])
+                        ua["_sb461"].append(o_["sb"])
         row["338: unaimed builds read"] = k2
         row["372: knobs"] = {k_: round(LK[k_], 4) for k_ in GAPKNOBS}
         if ua:                                                                              # 341, 344-346: each knob toward its kept figure
@@ -1768,7 +1815,7 @@ def calibrate(rng, n=30, rounds=6):                                             
                     for b_ in RUNR:
                         n_ = sum(ua.get("_n6b" + b_, [])); r_ = sum(ua.get("_r6b" + b_, []))
                         if n_ < 30: continue
-                        f_ = float(np.clip(RUN_KEPT_BAND[b_] / max(0.02, r_ / n_), 0.6, 1.6)); RUNR[b_] = float(np.clip(RUNR[b_] * f_, 0.0, 1.0))
+                        f_ = float(np.clip(RUN_KEPT_BAND[b_] / max(0.02, r_ / n_), 0.6, 1.6)); RUNR[b_] = float(np.clip(RUNR[b_] * f_, 0.0, 1.0)); S16B[b_] = float(np.clip(S16B[b_] * f_, 0.05, 5.0)) if ON7("455") else S16B[b_]
                         if f_ in (0.6, 1.6) and 0.0 < RUNR[b_] < 1.0: full_now.add("run " + b_)
                         rb_[b_] = (RUN_KEPT_BAND[b_], round(r_ / n_, 3), round(RUNR[b_], 3))
                     row["389 (band: kept, unaimed reading, rate)"] = rb_
@@ -1789,6 +1836,7 @@ def calibrate(rng, n=30, rounds=6):                                             
             if ON("398"):                                                                     # 398: each rate toward its kept mean by one knob on unaimed builds
                 for kn_, m_ in (("ct398", "chord_tones"), ("ctb398", "chord_tones_on_beat"), ("ctd398", "chord_tones_on_downbeat"), ("res398", "non_chord_resolved_by_step")):
                     if not ua.get(m_): continue
+                    if kn_ == "ctd398" and ON7("461"): continue                                 # 461: the first-beat knob by section (below)
                     r_ = float(np.mean(ua[m_])); f_ = float(np.clip((max(0.02, KEPT398[m_]) / max(0.02, r_)) ** 2, 0.6, 1.6)); LK[kn_] = float(np.clip(LK[kn_] * f_, 0.1, 10.0))
                     if f_ in (0.6, 1.6): full_now.add(kn_)
                 row["398 (kept, unaimed reading, knob)"] = {m_: (KEPT398[m_], round(float(np.mean(ua[m_])), 3) if ua.get(m_) else None, round(LK[kn_], 3)) for kn_, m_ in (("ct398", "chord_tones"), ("ctb398", "chord_tones_on_beat"), ("ctd398", "chord_tones_on_downbeat"), ("res398", "non_chord_resolved_by_step"))}
@@ -1801,8 +1849,24 @@ def calibrate(rng, n=30, rounds=6):                                             
                     r_ = float(np.mean(ua["empty_bars"])); f_ = float(np.clip(max(0.02, KEPT424["empty_bars"]) / max(0.02, r_), 0.6, 1.6)); LK["eb424"] = float(np.clip(LK["eb424"] * f_, 0.0, 1.0))
                     if f_ in (0.6, 1.6) and 0.0 < LK["eb424"] < 1.0: full_now.add("eb424")
                 row["424 (pooled kept, unaimed reading, knob)"] = {m_: (KEPT424[m_], round(float(np.mean(ua[m_])), 3) if ua.get(m_) else None, round(LK[k_], 3)) for k_, m_ in (("ff424", "fourth_fifth"), ("lt424", "last_note_tonic"), ("eb424", "empty_bars"))}
+            def aim7(kn_, key_, t_, lo_=0.05, hi_=20.0, pw_=2):                                 # v127: one knob a measure, toward its kept figure, on unaimed builds
+                if not ua.get(key_): return None
+                r_ = float(np.mean(ua[key_])); f_ = float(np.clip((max(0.02, t_) / max(0.02, r_)) ** pw_, 0.6, 1.6)); LK[kn_] = float(np.clip(LK[kn_] * f_, lo_, hi_))
+                if f_ in (0.6, 1.6): full_now.add(kn_)
+                return (t_, round(r_, 3), round(LK[kn_], 3))
+            if ON7("452"):
+                row["452 (kept, unaimed reading, knob)"] = dict(gap_same_as_before=aim7("gs452", "_gs452", 0.38), zigzag_of_three=aim7("zz452", "_zz452", 0.32),
+                                                            equal_gap_run_over_kept=aim7("er452", "_er452", 1.0, 0.02, 5.0))
+            if ON7("461"):
+                row["461 (kept, unaimed reading, knob)"] = dict(verse_first_beat=aim7("ctd398V", "_ctdV", KEPT398["chord_tones_on_downbeat"], 0.1, 10.0),
+                                                            chorus_first_beat=aim7("ctd398C", "_ctdC", KEPT398["chord_tones_on_downbeat"], 0.1, 10.0),
+                                                            chorus_first_beat_third=aim7("th461", "_th461", 0.27, 0.1, 10.0), second_or_seventh=aim7("sb461", "_sb461", 0.19, 0.1, 10.0))
+            if ON7("467"): row["467 (kept, unaimed reading, knob)"] = aim7("rg467", "_rng467", 10.895, 0.5, 3.0, 1)
+            if ON7("408") and ua.get("turns_per_move"):                                      # 408: 257's contour width toward the kept turns (narrower turns less)
+                r_ = float(np.mean(ua["turns_per_move"])); f_ = float(np.clip((KEPT400 / max(0.05, r_)) ** 2, 0.6, 1.6)); LK["sh408"] = float(np.clip(LK["sh408"] * f_, 0.2, 3.0))
+                row["408 (kept, unaimed reading, knob)"] = (KEPT400, round(r_, 3), round(LK["sh408"], 3))
             if ON("400") and ua.get("turns_per_move"):                                        # 400: turns per move toward the kept 0.58 by one knob on unaimed builds
-                r_ = float(np.mean(ua["turns_per_move"])); f_ = float(np.clip((KEPT400 / max(0.05, r_)) ** 2, 0.6, 1.6)); LK["turn400"] = float(np.clip(LK["turn400"] * f_, 0.1, 10.0))
+                r_ = float(np.mean(ua["turns_per_move"])); f_ = float(np.clip((KEPT400 / max(0.05, r_)) ** 2, 0.6, 1.6)); LK["turn400"] = float(np.clip(LK["turn400"] * f_, 0.5 if ON7("468") else 0.1, 10.0))   # 468: held at a half or above
                 if f_ in (0.6, 1.6): full_now.add("turn400")
                 row["400 (kept, unaimed reading, knob)"] = (KEPT400, round(r_, 3), round(LK["turn400"], 3))
             LK["k44"] = float(np.clip(LK["k44"] * np.clip(KEPT114["outside_scale"] / max(0.005, rd["outside_scale"]), 0.5, 2.0), 0.01, 30.0))
@@ -1908,6 +1972,7 @@ if __name__ == "__main__":
     rerun["calibration_stop"] = list(CAL_STOP); rerun["frozen"] = sorted(FROZEN); rerun["rate293"] = RATE293[0]
     rerun["calibration_rounds"] = CAL_ROUNDS[0]; rerun["stop356"] = list(STOP356); rerun["off"] = sorted(OFF)
     rerun["knobs398_400"] = {k_: round(LK[k_], 4) for k_ in ("ct398", "ctb398", "ctd398", "res398", "turn400")}
+    rerun["knobs127"] = {k_: round(LK[k_], 4) for k_ in ("gs452", "er452", "zz452", "ctd398V", "ctd398C", "th461", "sb461", "rg467", "sh408", "turn400")} | {"s16_by_band": {b_: round(v_, 4) for b_, v_ in S16B.items()}}
     rerun["v127_part"] = V127; rerun["v127_on"] = sorted(f_ for f_ in P127 if ON7(f_))
     rerun["v124"] = [f_ for f_ in FIX124 if ON(f_)]; rerun["diag450"] = DIAG450
     rerun["knobs424"] = {k_: round(LK[k_], 4) for k_ in ("ff424", "lt424", "eb424")}; rerun["kept424"] = KEPT424

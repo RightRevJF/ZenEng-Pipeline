@@ -1,0 +1,43 @@
+- **How it was ported (384).**
+  - gen_v127.py writes melody_v127_p40.py to melody_v127_p45.py from Run 1's files (songs/p52). The Part 2 and 3 patches are in gen_v127_parts23.py. Every patch replaces whole statements, matched the stated number of times in each file.
+  - The parts are switched by ZE_PART. Every new fix is gated on its part. With a fix off, every weight it touches is multiplied by exactly 1.0 and no draw is added, so an earlier part's runs reproduce from the final files. Song 43's 30-build smoke run at ZE_PART=1 gives the same order (4ebf7a75415b) from the Part 1 files and from the final files.
+  - Each part's patched paths were run in 30-build smoke runs before its runs of record (smoke/).
+  - Each part's predictions were committed and pushed before its runs.
+- **470 (the refit is the content judge of record).**
+  - Each window's content score is v126's intercept plus the sum of weight × (value − mean) / sd over its 37 measures. A measure the window lacks takes the table's fill value.
+  - The four measures new to the engine come from cand(), from zeneng_v121_blind_spots.json, run on the window as the engine reads it. The rest come from the engine's own measure code.
+  - A build's refit content is the mean over its Verse 1 and Chorus 1 windows. Its refit combined score is the mean over the two windows of (refit content + order) / 2, the combining the v108 judge used.
+  - Window 146's code adds half the order score to the refit content instead of averaging the two. The order is already a mean over windows there, so its weight is halved (finding 482). The port follows 470's text.
+- **471.** 254's floor reads the v108 judge's combined score, as before. The share of complete builds whose refit content is under the kept 5th percentile (−0.51) is printed.
+- **472.** The pick is the first, by refit combined score, of the survivors with no soft break. The v108 pick, and each pick's rank among those survivors under the other judge, are kept in the run's record.
+- **473.** The judge reads Verse 1 and Chorus 1, as before. Verse 2 answers to 434's test.
+- **464.** 267 reads song 45's bridge G before its raise to G-sharp. This is Run 1's diagnostic made the rule.
+- **459.** Verse 2's bars are read where the two verses' syllable counts differ by one or less, both in 331's calibration and in the readings.
+- **434 (amends 228).** In sing-again, a verse 2 line keeps verse 1's line as its contour. Its first and last notes are verse 1's, as before.
+  - Where it strikes a place in the line where verse 1 struck, it takes verse 1's pitch three times in four (435).
+  - Its other notes are drawn by the walk toward the contour, with 398's chord-tone weights, as drawn notes are in verse 1.
+  - The move of stressed on-beat notes to a chord tone is removed. The tritone rule stays.
+  - A note that repeats the one before it moves a step (to the step the chord weights favour) unless the source line repeated at that place.
+- **435.** A rate of 0.75 at each shared place. The kept figure (pitch kept where both strike, 0.72–0.79) is read after the run.
+- **452.** These knobs weight the rhythm's backward draw and the walk, and are aimed on unaimed builds:
+  - **gap equal to the one before:** a knob on drawing a gap equal to the one after it, aimed at 38%;
+  - **runs of equal gaps:** a knob on a gap that extends a run of equal gaps past the kept figure for the section's notes a bar (4.6, 5.5 or 6.2, by zeneng_v125's density bands; floored to a whole run), aimed so that the window's longest run reads the kept figure for its own density;
+  - **zigzags:** a knob on a third move that zigzags, aimed at 32%.
+- **455.** One sixteenth-gap weight for each band of density, multiplying 354's s16. It moves with 389's rate for that band, toward the band's kept runs share on drawable lines (405).
+- **406.** Where a line's landing would be drawn first, it is now left free. The rhythm's backward draw weights the last stressed syllable's place by Window 124's landing shares (each class's share spread over its places), inside the places allowed by 316 and 378.
+- **457.** A line drawn on a returning unit takes only the unit's onsets in the unit's bars (360's strict mode) for its first half of tries, then falls back to the weighted copy (counted).
+- **465 and 458: not ported (Q1 A).** Their kept figures (where kept lines of each length end in their slot; kept lines' syllables a second across the sung span) are not in the session's tables. The writer chose to run Part 2 without them. They wait for the tables, and so they are not in Part 3 either.
+- **408 with 468.** 257's contour pull (its width, 2.5 semitones) is a knob, aimed with 400's toward the kept 0.584 turns per move. A narrower contour turns less. 400's knob is held at 0.5 or above.
+- **467.**
+  - Song 45: 392's chorus floor is no higher than the chorus top less eight.
+  - Every song: the window's range is aimed at the pooled kept 10.9 by a knob on the register's spread (the walk's spread about the section's median, M.RSD).
+  - 329's minimum register width (13) is unchanged: the registers are already that wide, and the walk's spread is what keeps the windows narrow. Reading "the register's widening" as this spread is the session's (finding 483).
+- **461 with 450.**
+  - 398's first-beat knob is split by pool, verse and chorus, each aimed at the kept 72% on its own window.
+  - For drawn notes, two more knobs are aimed on unaimed builds, reading the chord's root at the note's bar (the bass on the root):
+    - one on the chord's third on a chorus first beat, aimed at 27%;
+    - one on a note a second or seventh above the root, aimed at 19%.
+- **456.** The last-note test is read on windows whose last note the walk chose, with 100 or more such windows. The rest are printed by source.
+- **Readings** (readings_v127.py, readings_v127_block.py, reread_v127.py, sep_v127.py).
+  - reread_v127.py is zeneng_v125's own code, run on the first 400 complete builds of each main run, with each song on the paper's tonic and read as major. It reproduces Window 147's figures for Run 1: 14 of 27, 0.679 / 0.870, pair 0.136 / 0.607.
+  - sep_v127.py is sep_v120.py, with the agreed 30 also read without each family (454).
