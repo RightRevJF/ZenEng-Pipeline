@@ -1,0 +1,933 @@
+{
+ "about": "ZenEng v123, Window 143. The bass at each chord and the melody over it, on CoCoPops Billboard and the Rolling Stone 200 (1958-1991), beside the engine's five charts and the v118 builds. Kept quartiles for fixes 438, 441, 442.",
+ "the chart, by song: kept quartiles (438, 440)": {
+  "chord_changes_per_bar": {
+   "mean": 0.9564,
+   "q25": 0.6089,
+   "median": 0.878,
+   "q75": 1.2392
+  },
+  "bars_with_two_or_more_changes": {
+   "mean": 0.2096,
+   "q25": 0.0,
+   "median": 0.1049,
+   "q75": 0.3277
+  },
+  "bars_with_no_change": {
+   "mean": 0.2791,
+   "q25": 0.0798,
+   "median": 0.2509,
+   "q75": 0.4402
+  },
+  "bass_off_the_root": {
+   "mean": 0.0644,
+   "q25": 0.0,
+   "median": 0.0,
+   "q75": 0.0857
+  },
+  "bass_by_step": {
+   "mean": 0.3069,
+   "q25": 0.1452,
+   "median": 0.2696,
+   "q75": 0.4243
+  },
+  "bass_by_third": {
+   "mean": 0.1413,
+   "q25": 0.0,
+   "median": 0.0938,
+   "q75": 0.2198
+  },
+  "bass_by_fourth_or_fifth": {
+   "mean": 0.4824,
+   "q25": 0.2739,
+   "median": 0.4779,
+   "q75": 0.6893
+  },
+  "steps_down_of_steps": {
+   "mean": 0.4873,
+   "q25": 0.2222,
+   "median": 0.5,
+   "q75": 0.7692
+  }
+ },
+ "kept songs with no bar of two changes": [
+  0.251,
+  0.366
+ ],
+ "the melody over chord and bass, by window: kept quartiles (441, 442)": {
+  "verse": {
+   "downbeat_chord_tone": {
+    "mean": 0.6988,
+    "q25": 0.5,
+    "median": 0.75,
+    "q75": 1.0
+   },
+   "downbeat_on_root": {
+    "mean": 0.2384,
+    "q25": 0.0,
+    "median": 0.1667,
+    "q75": 0.4
+   },
+   "downbeat_on_third": {
+    "mean": 0.2446,
+    "q25": 0.0,
+    "median": 0.2,
+    "q75": 0.4
+   },
+   "downbeat_on_fifth": {
+    "mean": 0.221,
+    "q25": 0.0,
+    "median": 0.1667,
+    "q75": 0.3333
+   },
+   "melody_on_root": {
+    "mean": 0.2366,
+    "q25": 0.1111,
+    "median": 0.2174,
+    "q75": 0.3333
+   },
+   "melody_on_third": {
+    "mean": 0.1951,
+    "q25": 0.1,
+    "median": 0.1818,
+    "q75": 0.2692
+   },
+   "melody_on_fifth": {
+    "mean": 0.211,
+    "q25": 0.1053,
+    "median": 0.2,
+    "q75": 0.2927
+   },
+   "melody_a_step_above_a_chord_tone": {
+    "mean": 0.2386,
+    "q25": 0.1471,
+    "median": 0.2273,
+    "q75": 0.32
+   },
+   "over_bass_second_or_seventh": {
+    "mean": 0.1927,
+    "q25": 0.1034,
+    "median": 0.1852,
+    "q75": 0.2619
+   }
+  },
+  "chorus": {
+   "downbeat_chord_tone": {
+    "mean": 0.7481,
+    "q25": 0.5929,
+    "median": 0.8,
+    "q75": 1.0
+   },
+   "downbeat_on_root": {
+    "mean": 0.2618,
+    "q25": 0.0,
+    "median": 0.2,
+    "q75": 0.4
+   },
+   "downbeat_on_third": {
+    "mean": 0.2622,
+    "q25": 0.0,
+    "median": 0.2,
+    "q75": 0.4286
+   },
+   "downbeat_on_fifth": {
+    "mean": 0.2236,
+    "q25": 0.0,
+    "median": 0.2,
+    "q75": 0.3333
+   },
+   "melody_on_root": {
+    "mean": 0.2127,
+    "q25": 0.1009,
+    "median": 0.1765,
+    "q75": 0.2857
+   },
+   "melody_on_third": {
+    "mean": 0.2074,
+    "q25": 0.1176,
+    "median": 0.2,
+    "q75": 0.2913
+   },
+   "melody_on_fifth": {
+    "mean": 0.206,
+    "q25": 0.1154,
+    "median": 0.1875,
+    "q75": 0.2902
+   },
+   "melody_a_step_above_a_chord_tone": {
+    "mean": 0.2441,
+    "q25": 0.159,
+    "median": 0.2343,
+    "q75": 0.3179
+   },
+   "over_bass_second_or_seventh": {
+    "mean": 0.1745,
+    "q25": 0.1,
+    "median": 0.1667,
+    "q75": 0.2422
+   }
+  }
+ },
+ "findings": {
+  "outer-voice windows (billboard, rolling stone, builds)": [
+   309,
+   201,
+   4000
+  ],
+  "songs read at the chord (billboard, rolling stone, engine charts)": [
+   211,
+   142,
+   5
+  ],
+  "1. the bass at the chord, by song: kept means and the engine's five charts (songs 40, 42, 43, 44, 45)": {
+   "chord_changes_per_bar": {
+    "billboard": 0.964,
+    "rolling_stone": 1.014,
+    "billboard_median": 0.864,
+    "rolling_stone_median": 0.945,
+    "collections_gap": 0.11,
+    "engine": [
+     0.909,
+     0.941,
+     0.975,
+     0.975,
+     1.0
+    ],
+    "kept_songs_at_zero": [
+     0.0,
+     0.0
+    ]
+   },
+   "bars_with_two_or_more_changes": {
+    "billboard": 0.213,
+    "rolling_stone": 0.234,
+    "billboard_median": 0.12,
+    "rolling_stone_median": 0.115,
+    "collections_gap": 0.08,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.251,
+     0.366
+    ]
+   },
+   "bars_with_no_change": {
+    "billboard": 0.28,
+    "rolling_stone": 0.244,
+    "billboard_median": 0.267,
+    "rolling_stone_median": 0.19,
+    "collections_gap": -0.17,
+    "engine": [
+     0.091,
+     0.059,
+     0.025,
+     0.025,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.071,
+     0.141
+    ]
+   },
+   "bass_off_the_root": {
+    "billboard": 0.083,
+    "rolling_stone": 0.051,
+    "billboard_median": 0.029,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.27,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.427,
+     0.648
+    ]
+   },
+   "bass_on_third": {
+    "billboard": 0.024,
+    "rolling_stone": 0.029,
+    "billboard_median": 0.0,
+    "rolling_stone_median": 0.0,
+    "collections_gap": 0.09,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.649,
+     0.732
+    ]
+   },
+   "bass_on_fifth": {
+    "billboard": 0.027,
+    "rolling_stone": 0.017,
+    "billboard_median": 0.0,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.16,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.682,
+     0.831
+    ]
+   },
+   "seventh_chords": {
+    "billboard": 0.24,
+    "rolling_stone": 0.074,
+    "billboard_median": 0.146,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.69,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.237,
+     0.577
+    ]
+   },
+   "bass_stays_under_a_new_chord": {
+    "billboard": 0.109,
+    "rolling_stone": 0.027,
+    "billboard_median": 0.032,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.53,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.36,
+     0.789
+    ]
+   },
+   "bass_by_step": {
+    "billboard": 0.297,
+    "rolling_stone": 0.345,
+    "billboard_median": 0.262,
+    "rolling_stone_median": 0.304,
+    "collections_gap": 0.23,
+    "engine": [
+     0.354,
+     0.27,
+     0.481,
+     0.377,
+     0.236
+    ],
+    "kept_songs_at_zero": [
+     0.043,
+     0.056
+    ]
+   },
+   "bass_by_semitone": {
+    "billboard": 0.063,
+    "rolling_stone": 0.058,
+    "billboard_median": 0.029,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.04,
+    "engine": [
+     0.0,
+     0.079,
+     0.039,
+     0.026,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.403,
+     0.556
+    ]
+   },
+   "bass_by_third": {
+    "billboard": 0.142,
+    "rolling_stone": 0.145,
+    "billboard_median": 0.097,
+    "rolling_stone_median": 0.113,
+    "collections_gap": 0.02,
+    "engine": [
+     0.141,
+     0.365,
+     0.182,
+     0.221,
+     0.291
+    ],
+    "kept_songs_at_zero": [
+     0.19,
+     0.261
+    ]
+   },
+   "bass_by_fourth_or_fifth": {
+    "billboard": 0.449,
+    "rolling_stone": 0.481,
+    "billboard_median": 0.44,
+    "rolling_stone_median": 0.45,
+    "collections_gap": 0.13,
+    "engine": [
+     0.505,
+     0.365,
+     0.338,
+     0.403,
+     0.473
+    ],
+    "kept_songs_at_zero": [
+     0.019,
+     0.049
+    ]
+   },
+   "bass_by_tritone": {
+    "billboard": 0.003,
+    "rolling_stone": 0.002,
+    "billboard_median": 0.0,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.13,
+    "engine": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.905,
+     0.944
+    ]
+   },
+   "steps_down_of_steps": {
+    "billboard": 0.468,
+    "rolling_stone": 0.52,
+    "billboard_median": 0.5,
+    "rolling_stone_median": 0.5,
+    "collections_gap": 0.16,
+    "engine": [
+     0.543,
+     0.235,
+     0.135,
+     0.138,
+     0.231
+    ],
+    "kept_songs_at_zero": [
+     0.14,
+     0.135
+    ]
+   },
+   "longest_bass_walk_by_step": {
+    "billboard": 2.142,
+    "rolling_stone": 2.169,
+    "billboard_median": 2.0,
+    "rolling_stone_median": 2.0,
+    "collections_gap": 0.01,
+    "engine": [
+     2.0,
+     2.0,
+     3.0,
+     3.0,
+     2.0
+    ],
+    "kept_songs_at_zero": [
+     0.043,
+     0.056
+    ]
+   },
+   "has_a_walk_of_three_steps": {
+    "billboard": 0.313,
+    "rolling_stone": 0.254,
+    "billboard_median": 0.0,
+    "rolling_stone_median": 0.0,
+    "collections_gap": -0.13,
+    "engine": [
+     0.0,
+     0.0,
+     1.0,
+     1.0,
+     0.0
+    ],
+    "kept_songs_at_zero": [
+     0.687,
+     0.746
+    ]
+   },
+   "inversions_reached_or_left_by_step": {
+    "billboard": 0.529,
+    "rolling_stone": 0.799,
+    "billboard_median": 0.548,
+    "rolling_stone_median": 1.0,
+    "collections_gap": 0.64,
+    "engine": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "kept_songs_at_zero": [
+     0.257,
+     0.128
+    ]
+   },
+   "inversions_passing_between_steps": {
+    "billboard": 0.241,
+    "rolling_stone": 0.461,
+    "billboard_median": 0.0,
+    "rolling_stone_median": 0.5,
+    "collections_gap": 0.59,
+    "engine": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "kept_songs_at_zero": [
+     0.505,
+     0.34
+    ]
+   }
+  },
+  "2. the melody over the chord and the bass (first verse and chorus)": {
+   "chord_tones": {
+    "billboard": 0.647,
+    "rolling_stone": 0.624,
+    "builds": 0.554,
+    "by_song": [
+     0.571,
+     0.534,
+     0.55,
+     0.542,
+     0.571
+    ],
+    "collections_gap": -0.15,
+    "builds_vs_billboard": -0.6,
+    "builds_vs_rolling_stone": -0.45,
+    "agreed": true,
+    "builds_differ_from_both": true
+   },
+   "melody_on_root": {
+    "billboard": 0.234,
+    "rolling_stone": 0.211,
+    "builds": 0.181,
+    "by_song": [
+     0.159,
+     0.172,
+     0.201,
+     0.188,
+     0.187
+    ],
+    "collections_gap": -0.14,
+    "builds_vs_billboard": -0.32,
+    "builds_vs_rolling_stone": -0.19,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "melody_on_third": {
+    "billboard": 0.201,
+    "rolling_stone": 0.195,
+    "builds": 0.186,
+    "by_song": [
+     0.195,
+     0.165,
+     0.174,
+     0.237,
+     0.161
+    ],
+    "collections_gap": -0.06,
+    "builds_vs_billboard": -0.13,
+    "builds_vs_rolling_stone": -0.07,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "melody_on_fifth": {
+    "billboard": 0.204,
+    "rolling_stone": 0.221,
+    "builds": 0.186,
+    "by_song": [
+     0.218,
+     0.198,
+     0.175,
+     0.118,
+     0.223
+    ],
+    "collections_gap": 0.12,
+    "builds_vs_billboard": -0.12,
+    "builds_vs_rolling_stone": -0.24,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "melody_on_seventh": {
+    "billboard": 0.095,
+    "rolling_stone": 0.096,
+    "builds": 0.114,
+    "by_song": [
+     0.103,
+     0.151,
+     0.122,
+     0.089,
+     0.106
+    ],
+    "collections_gap": 0.01,
+    "builds_vs_billboard": 0.22,
+    "builds_vs_rolling_stone": 0.21,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "melody_a_step_above_a_chord_tone": {
+    "billboard": 0.233,
+    "rolling_stone": 0.25,
+    "builds": 0.314,
+    "by_song": [
+     0.315,
+     0.28,
+     0.307,
+     0.356,
+     0.311
+    ],
+    "collections_gap": 0.14,
+    "builds_vs_billboard": 0.64,
+    "builds_vs_rolling_stone": 0.5,
+    "agreed": true,
+    "builds_differ_from_both": true
+   },
+   "over_bass_octave": {
+    "billboard": 0.228,
+    "rolling_stone": 0.209,
+    "builds": 0.181,
+    "by_song": [
+     0.159,
+     0.172,
+     0.201,
+     0.188,
+     0.187
+    ],
+    "collections_gap": -0.12,
+    "builds_vs_billboard": -0.29,
+    "builds_vs_rolling_stone": -0.17,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "over_bass_third_or_sixth": {
+    "billboard": 0.3,
+    "rolling_stone": 0.278,
+    "builds": 0.292,
+    "by_song": [
+     0.308,
+     0.274,
+     0.306,
+     0.305,
+     0.265
+    ],
+    "collections_gap": -0.18,
+    "builds_vs_billboard": -0.07,
+    "builds_vs_rolling_stone": 0.11,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "over_bass_fifth": {
+    "billboard": 0.2,
+    "rolling_stone": 0.216,
+    "builds": 0.186,
+    "by_song": [
+     0.218,
+     0.198,
+     0.175,
+     0.118,
+     0.223
+    ],
+    "collections_gap": 0.11,
+    "builds_vs_billboard": -0.1,
+    "builds_vs_rolling_stone": -0.21,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "over_bass_fourth": {
+    "billboard": 0.071,
+    "rolling_stone": 0.087,
+    "builds": 0.085,
+    "by_song": [
+     0.09,
+     0.084,
+     0.074,
+     0.079,
+     0.099
+    ],
+    "collections_gap": 0.17,
+    "builds_vs_billboard": 0.16,
+    "builds_vs_rolling_stone": -0.02,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "over_bass_second_or_seventh": {
+    "billboard": 0.18,
+    "rolling_stone": 0.196,
+    "builds": 0.255,
+    "by_song": [
+     0.224,
+     0.272,
+     0.242,
+     0.31,
+     0.225
+    ],
+    "collections_gap": 0.14,
+    "builds_vs_billboard": 0.68,
+    "builds_vs_rolling_stone": 0.53,
+    "agreed": true,
+    "builds_differ_from_both": true
+   },
+   "downbeat_on_root": {
+    "billboard": 0.261,
+    "rolling_stone": 0.223,
+    "builds": 0.171,
+    "by_song": [
+     0.147,
+     0.196,
+     0.18,
+     0.148,
+     0.184
+    ],
+    "collections_gap": -0.14,
+    "builds_vs_billboard": -0.33,
+    "builds_vs_rolling_stone": -0.19,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "downbeat_on_third": {
+    "billboard": 0.242,
+    "rolling_stone": 0.269,
+    "builds": 0.18,
+    "by_song": [
+     0.204,
+     0.153,
+     0.155,
+     0.232,
+     0.156
+    ],
+    "collections_gap": 0.1,
+    "builds_vs_billboard": -0.24,
+    "builds_vs_rolling_stone": -0.34,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "downbeat_on_fifth": {
+    "billboard": 0.225,
+    "rolling_stone": 0.221,
+    "builds": 0.202,
+    "by_song": [
+     0.24,
+     0.195,
+     0.164,
+     0.176,
+     0.233
+    ],
+    "collections_gap": -0.02,
+    "builds_vs_billboard": -0.09,
+    "builds_vs_rolling_stone": -0.07,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "downbeat_chord_tone": {
+    "billboard": 0.737,
+    "rolling_stone": 0.71,
+    "builds": 0.553,
+    "by_song": [
+     0.59,
+     0.544,
+     0.499,
+     0.557,
+     0.572
+    ],
+    "collections_gap": -0.1,
+    "builds_vs_billboard": -0.68,
+    "builds_vs_rolling_stone": -0.59,
+    "agreed": true,
+    "builds_differ_from_both": true
+   },
+   "parallel_perfect": {
+    "billboard": 0.147,
+    "rolling_stone": 0.109,
+    "builds": 0.059,
+    "by_song": [
+     0.065,
+     0.071,
+     0.055,
+     0.038,
+     0.067
+    ],
+    "collections_gap": -0.17,
+    "builds_vs_billboard": -0.39,
+    "builds_vs_rolling_stone": -0.22,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "melody_holds_while_bass_steps": {
+    "billboard": 0.169,
+    "rolling_stone": 0.2,
+    "builds": 0.197,
+    "by_song": [
+     0.159,
+     0.166,
+     0.203,
+     0.201,
+     0.235
+    ],
+    "collections_gap": 0.13,
+    "builds_vs_billboard": 0.12,
+    "builds_vs_rolling_stone": -0.02,
+    "agreed": true,
+    "builds_differ_from_both": false
+   },
+   "contrary_of_moving": {
+    "billboard": 0.435,
+    "rolling_stone": 0.404,
+    "builds": 0.499,
+    "by_song": [
+     0.457,
+     0.502,
+     0.579,
+     0.459,
+     0.48
+    ],
+    "collections_gap": -0.1,
+    "builds_vs_billboard": 0.2,
+    "builds_vs_rolling_stone": 0.3,
+    "agreed": true,
+    "builds_differ_from_both": false
+   }
+  },
+  "2. by section": {
+   "verse": {
+    "melody_on_root": [
+     0.245,
+     0.217,
+     0.206
+    ],
+    "melody_on_third": [
+     0.195,
+     0.189,
+     0.198
+    ],
+    "melody_on_fifth": [
+     0.206,
+     0.226,
+     0.167
+    ],
+    "downbeat_on_root": [
+     0.249,
+     0.215,
+     0.178
+    ],
+    "downbeat_on_third": [
+     0.237,
+     0.243,
+     0.221
+    ],
+    "downbeat_on_fifth": [
+     0.229,
+     0.209,
+     0.178
+    ],
+    "downbeat_chord_tone": [
+     0.722,
+     0.668,
+     0.577
+    ],
+    "contrary_of_moving": [
+     0.428,
+     0.395,
+     0.463
+    ]
+   },
+   "chorus": {
+    "melody_on_root": [
+     0.221,
+     0.205,
+     0.156
+    ],
+    "melody_on_third": [
+     0.209,
+     0.202,
+     0.174
+    ],
+    "melody_on_fifth": [
+     0.202,
+     0.214,
+     0.206
+    ],
+    "downbeat_on_root": [
+     0.276,
+     0.235,
+     0.164
+    ],
+    "downbeat_on_third": [
+     0.247,
+     0.31,
+     0.138
+    ],
+    "downbeat_on_fifth": [
+     0.221,
+     0.239,
+     0.226
+    ],
+    "downbeat_chord_tone": [
+     0.755,
+     0.778,
+     0.529
+    ],
+    "contrary_of_moving": [
+     0.442,
+     0.416,
+     0.523
+    ]
+   }
+  },
+  "3. outer-voice motion, pooled over windows": {
+   "bb": {
+    "chord-to-chord pairs": 1798,
+    "bass stays": 0.068,
+    "parallel fifths or octaves, of bass moves": 0.138,
+    "bass by step or third: contrary": 0.362,
+    "similar": 0.476,
+    "melody holds": 0.163,
+    "contrary of the two moving": 0.432
+   },
+   "rs": {
+    "chord-to-chord pairs": 1230,
+    "bass stays": 0.014,
+    "parallel fifths or octaves, of bass moves": 0.112,
+    "bass by step or third: contrary": 0.319,
+    "similar": 0.476,
+    "melody holds": 0.205,
+    "contrary of the two moving": 0.401
+   },
+   "build": {
+    "chord-to-chord pairs": 26223,
+    "bass stays": 0.0,
+    "parallel fifths or octaves, of bass moves": 0.059,
+    "bass by step or third: contrary": 0.406,
+    "similar": 0.4,
+    "melody holds": 0.195,
+    "contrary of the two moving": 0.504
+   }
+  }
+ },
+ "code": "\"\"\"The bass at the chord and the melody over it: CoCoPops Billboard and the Rolling Stone 200 beside the engine's charts and\nthe v118 builds. Predictions in PREDICTION.md. Run: python3 bass_study.py\"\"\"\nimport json, re, sys, pickle, collections, warnings, numpy as np, pandas as pd\nfrom pathlib import Path\nwarnings.filterwarnings(\"ignore\")\nRS = Path(\"/home/claude/corpus/try2/CoCoPops/RollingStone/Data\"); BB = Path(\"/home/claude/corpus/try2/CoCoPops/Billboard/Data\")\nPCN = {\"c\": 0, \"d\": 2, \"e\": 4, \"f\": 5, \"g\": 7, \"a\": 9, \"b\": 11}\nQU = {\"maj\": (4, 7), \"min\": (3, 7), \"7\": (4, 7, 10), \"min7\": (3, 7, 10), \"maj7\": (4, 7, 11), \"hdim7\": (3, 6, 10), \"dim\": (3, 6), \"dim7\": (3, 6, 9), \"sus4\": (5, 7), \"aug\": (4, 8), \"5\": (7,), \"sus2\": (2, 7), \"maj6\": (4, 7, 9), \"min6\": (3, 7, 9), \"9\": (4, 7, 10), \"maj9\": (4, 7, 11), \"min9\": (3, 7, 10), \"minmaj7\": (3, 7, 11), \"1\": (), \"11\": (4, 7, 10), \"13\": (4, 7, 10), \"min11\": (3, 7, 10), \"sus4(b7)\": (5, 7, 10)}\nDEG = {\"1\": 0, \"2\": 2, \"3\": 4, \"4\": 5, \"5\": 7, \"6\": 9, \"7\": 11, \"9\": 2, \"11\": 5, \"13\": 9}\ndef deg(d):\n    m = re.match(r\"^([b#]*)(\\d+)$\", d.strip())\n    return None if not m or m.group(2) not in DEG else (DEG[m.group(2)] - m.group(1).count(\"b\") + m.group(1).count(\"#\")) % 12\ndef harte(tok):\n    \"\"\"-> (root pc, chord pcs as intervals above the root, bass interval above the root, has a seventh) or None\"\"\"\n    m = re.match(r\"^([A-G])([#b-]*):([^/]*)(?:/(.+))?$\", tok)\n    if not m: return None\n    r = (PCN[m.group(1).lower()] + m.group(2).count(\"#\") - m.group(2).count(\"-\") - m.group(2).count(\"b\")) % 12; q = m.group(3)\n    if q.startswith(\"(\"): iv = tuple(x for x in (deg(d) for d in q.strip(\"()\").split(\",\")) if x)\n    else:\n        q0 = re.sub(r\"\\(.*\\)\", \"\", q); iv = QU.get(q0)\n        if iv is None: return None\n    b = deg(m.group(4)) if m.group(4) else 0\n    if b is None: return None\n    return r, frozenset((0, *iv)), b, any(x in iv for x in (10, 11, 9)) and len(iv) >= 3\ndef kpitch(tok):\n    m = re.search(r\"([a-gA-G]+)([#-]*)\", tok)\n    if not m: return None\n    L = m.group(1); o = 3 + len(L) if L[0].islower() else 4 - len(L); return 12 * (o + 1) + PCN[L[0].lower()] + m.group(2).count(\"#\") - m.group(2).count(\"-\")\ndef tbdur(s):\n    m = re.match(r\"^(\\d+)(\\.*)$\", s); return None if not m else 4.0 / int(m.group(1)) * (1.5 if m.group(2) else 1)\ndef rdur(tok):\n    m = re.match(r\"^(\\d+)(\\.*)\", tok)\n    if not m: return None\n    n = int(m.group(1)); base = 8.0 if n == 0 else 4.0 / n; tot, add = base, base\n    for _ in m.group(2): add /= 2; tot += add\n    return tot\ndef inst(marks):\n    o = {}; cnt = collections.Counter()\n    for b, lab in marks:\n        lab = {\"refrain\": \"chorus\"}.get(lab, lab); cnt[lab] += 1; o[(lab, cnt[lab])] = b\n    return o\ndef parse_rs(f):\n    tb = None; meter = None; bi = -1; pos = 0.0; ch = None; notes = []; bars = {}; marks = []; seq = []\n    for l in f.read_text(errors=\"ignore\").splitlines():\n        if not l or l.startswith(\"!\"): continue\n        c = l.split(\"\\t\")\n        if l.startswith(\"**\"): hi = [i for i, x in enumerate(c) if x == \"**harte\"][0]; ki = next(i for i, x in enumerate(c) if x == \"**kern\"); continue\n        if l.startswith(\"=\"):\n            if bi >= 0: bars[bi] = (meter, pos)\n            bi += 1; pos = 0.0; continue\n        if l.startswith(\"*\"):\n            for x in c[:1] + [c[ki]]:\n                m = re.match(r\"^\\*tb(.+)$\", x)\n                if m: tb = tbdur(m.group(1))\n                m = re.match(r\"^\\*M(\\d+/\\d+)$\", x)\n                if m: meter = m.group(1)\n                m = re.match(r\"^\\*>([A-Za-z]+)$\", x)\n                if m: marks.append((max(bi, 0), m.group(1).lower()))\n            continue\n        if tb is None: return None\n        if c[hi] not in (\".\", \"\"):\n            h = harte(c[hi]); ch = h\n            if h: seq.append((bi, pos, h))\n        tok = c[ki]\n        if tok not in (\".\", \"\") and \"r\" not in tok:\n            p = kpitch(tok)\n            if p is not None: notes.append((bi, pos, p, ch))\n        pos += tb\n    bars[bi] = (meter, pos); marks = [m for k, m in enumerate(marks) if k == 0 or m != marks[k - 1]]\n    return notes, bars, marks, seq\ndef parse_bb(f):\n    \"\"\"-> chord sequence [(bar number, chord)], marks\"\"\"\n    bi = 0; seq = []; marks = []; hi = None\n    for l in f.read_text(errors=\"ignore\").splitlines():\n        if not l or l.startswith(\"!\"): continue\n        c = l.split(\"\\t\")\n        if l.startswith(\"**\"): hi = c.index(\"**harte\") if \"**harte\" in c else None; continue\n        if l.startswith(\"=\"):\n            m = re.match(r\"^=+(\\d+)\", l)\n            if m: bi = int(m.group(1))\n            continue\n        if l.startswith(\"*\"):\n            m = re.match(r\"^\\*>Label>([A-Za-z]+)\", l)\n            if m: marks.append((bi, m.group(1).lower()))\n            continue\n        if hi is None or hi >= len(c) or c[hi] in (\".\", \"\"): continue\n        h = harte(c[hi])\n        if h: seq.append((bi, 0.0, h))\n    return seq, marks\nRNV = {\"i\": 0, \"ii\": 2, \"iii\": 4, \"iv\": 5, \"v\": 7, \"vi\": 9, \"vii\": 11}\ndef roman(tok, ton):\n    \"\"\"-> (root pc, chord intervals, bass interval above the root) from Billboard's roman numeral with its inversion letter\"\"\"\n    m = re.match(r\"^([-#]*)([ivIV]+)(.*)$\", str(tok))\n    if not m or m.group(2).lower() not in RNV: return None\n    acc, num, rest = m.groups(); root = (ton + RNV[num.lower()] - acc.count(\"-\") + acc.count(\"#\")) % 12; third = 3 if num.islower() else 4; fifth = 7\n    if \"o\" in rest: third, fifth = 3, 6\n    if \"+\" in rest: fifth = 8\n    iv = [0, third, fifth]; sev = None\n    if \"M7\" in rest: sev = 11\n    elif \"o7\" in rest: sev = 9\n    elif \"7\" in rest: sev = 10\n    if sev: iv.append(sev)\n    let = re.sub(r\"[^a-g]\", \"\", rest.replace(\"m\", \"\").replace(\"o\", \"\")); b = 0\n    if let[:1] == \"b\": b = third\n    elif let[:1] == \"c\": b = fifth\n    elif let[:1] == \"d\": b = sev if sev else 10\n    elif let[:1] in (\"e\", \"f\", \"g\"): b = {\"e\": 2, \"f\": 5, \"g\": 9}[let[0]]\n    return root, frozenset(iv), b, sev is not None\ndef sgn(x): return int(x > 0) - int(x < 0)\ndef bmove(a, b):\n    d = (b - a) % 12; return d if d <= 6 else d - 12\ndef outer(N):\n    \"\"\"N: (t in beats from the window's first bar line, pitch, (root, intervals, bass interval, seventh) or None), sorted, 8 bars of 4/4.\"\"\"\n    H = [(t, p, c) for t, p, c in N if c]\n    if len(H) < 12: return None\n    rel = np.array([(p - c[0]) % 12 for t, p, c in H]); ob = np.array([(p - c[0] - c[2]) % 12 for t, p, c in H]); ct = np.array([(p - c[0]) % 12 in c[1] for t, p, c in H]); f = {}\n    dn = np.array([abs(t % 4) < 1e-6 for t, p, c in H]); bt = np.array([abs(t % 1) < 1e-6 for t, p, c in H])\n    f[\"chord_tones\"] = ct.mean(); f[\"melody_on_root\"] = (rel == 0).mean(); f[\"melody_on_third\"] = np.isin(rel, (3, 4)).mean(); f[\"melody_on_fifth\"] = (rel == 7).mean(); f[\"melody_on_seventh\"] = np.isin(rel, (10, 11)).mean(); f[\"melody_a_step_above_a_chord_tone\"] = np.isin(rel, (2, 5, 9)).mean()\n    f[\"over_bass_octave\"] = (ob == 0).mean(); f[\"over_bass_third_or_sixth\"] = np.isin(ob, (3, 4, 8, 9)).mean(); f[\"over_bass_fifth\"] = (ob == 7).mean(); f[\"over_bass_fourth\"] = (ob == 5).mean(); f[\"over_bass_second_or_seventh\"] = np.isin(ob, (1, 2, 10, 11)).mean()\n    if dn.sum() >= 3: f[\"downbeat_on_root\"] = (rel[dn] == 0).mean(); f[\"downbeat_on_third\"] = np.isin(rel[dn], (3, 4)).mean(); f[\"downbeat_on_fifth\"] = (rel[dn] == 7).mean(); f[\"downbeat_chord_tone\"] = ct[dn].mean()\n    # spans: runs of melody notes under one chord and bass\n    sp = []\n    for t, p, c in H:\n        k = (c[0], c[2], tuple(sorted(c[1])))\n        if not sp or sp[-1][0] != k: sp.append((k, t, p, (p - c[0] - c[2]) % 12, (c[0] + c[2]) % 12))\n    cnt = collections.Counter()\n    for a, b in zip(sp, sp[1:]):\n        db = bmove(a[4], b[4]); dm = b[2] - a[2]; cnt[\"pairs\"] += 1\n        if db == 0: cnt[\"bass_stays\"] += 1; continue\n        cnt[\"bass_moves\"] += 1\n        if a[3] == b[3] and a[3] in (0, 7) and dm != 0: cnt[\"parallel_perfect\"] += 1\n        if abs(db) <= 4:\n            cnt[\"clear\"] += 1\n            if dm == 0: cnt[\"oblique\"] += 1\n            elif sgn(dm) == sgn(db): cnt[\"similar\"] += 1\n            else: cnt[\"contrary\"] += 1\n    f[\"chord_spans\"] = len(sp)\n    if cnt[\"bass_moves\"] >= 3: f[\"parallel_perfect\"] = cnt[\"parallel_perfect\"] / cnt[\"bass_moves\"]\n    if cnt[\"contrary\"] + cnt[\"similar\"] >= 3: f[\"contrary_of_moving\"] = cnt[\"contrary\"] / (cnt[\"contrary\"] + cnt[\"similar\"])\n    if cnt[\"clear\"] >= 3: f[\"melody_holds_while_bass_steps\"] = cnt[\"oblique\"] / cnt[\"clear\"]\n    return {k: float(v) for k, v in f.items()}, cnt\ndef chordlevel(seq, nbars):\n    \"\"\"seq: [(bar, pos, chord)] in order. Counts on changes of chord (root, bass or kind).\"\"\"\n    ch = []\n    for b, q, c in seq:\n        k = (c[0], c[2], tuple(sorted(c[1])))\n        if not ch or ch[-1][1] != k: ch.append((b, k, c))\n    if len(ch) < 8: return None\n    f = {}; per = collections.Counter(b for b, k, c in ch); bars = max(1, nbars)\n    f[\"chord_changes_per_bar\"] = len(ch) / bars; f[\"bars_with_two_or_more_changes\"] = sum(1 for v in per.values() if v >= 2) / bars; f[\"bars_with_no_change\"] = 1 - len(per) / bars\n    f[\"bass_off_the_root\"] = np.mean([c[2] != 0 for b, k, c in ch]); f[\"bass_on_third\"] = np.mean([c[2] in (3, 4) for b, k, c in ch]); f[\"bass_on_fifth\"] = np.mean([c[2] == 7 for b, k, c in ch]); f[\"seventh_chords\"] = np.mean([c[3] for b, k, c in ch])\n    mv = [bmove((a[2][0] + a[2][2]) % 12, (b[2][0] + b[2][2]) % 12) for a, b in zip(ch, ch[1:])]; mv = np.array(mv); a = np.abs(mv)\n    f[\"bass_stays_under_a_new_chord\"] = (a == 0).mean(); f[\"bass_by_step\"] = np.isin(a, (1, 2)).mean(); f[\"bass_by_semitone\"] = (a == 1).mean(); f[\"bass_by_third\"] = np.isin(a, (3, 4)).mean(); f[\"bass_by_fourth_or_fifth\"] = (a == 5).mean(); f[\"bass_by_tritone\"] = (a == 6).mean()\n    st = mv[np.isin(a, (1, 2))]; f[\"steps_down_of_steps\"] = (st < 0).mean() if len(st) >= 4 else np.nan\n    run = best = 0; runs3 = 0\n    for x in mv:\n        if abs(x) in (1, 2) and (run == 0 or sgn(x) == sgn(prev)): run += 1\n        elif abs(x) in (1, 2): run = 1\n        else: run = 0\n        prev = x; best = max(best, run)\n        if run == 3: runs3 += 1\n    f[\"longest_bass_walk_by_step\"] = best; f[\"has_a_walk_of_three_steps\"] = float(best >= 3)\n    inv = [i for i, (b, k, c) in enumerate(ch) if c[2] != 0 and 0 < i < len(ch) - 1]\n    if len(inv) >= 3: f[\"inversions_reached_or_left_by_step\"] = np.mean([abs(mv[i - 1]) in (1, 2) or abs(mv[i]) in (1, 2) for i in inv]); f[\"inversions_passing_between_steps\"] = np.mean([abs(mv[i - 1]) in (1, 2) and abs(mv[i]) in (1, 2) and sgn(mv[i - 1]) == sgn(mv[i]) for i in inv])\n    return {k: float(v) for k, v in f.items()}\nif __name__ == \"__main__\":\n    rows = []; chl = []; tot = {}\n    for f in sorted(RS.glob(\"*.hum\")):\n        r = parse_rs(f)\n        if not r: continue\n        notes, bars, marks, seq = r; yr = int(re.search(r\"_(\\d{4})$\", f.stem).group(1)); I = inst(marks)\n        c = chordlevel(seq, len({b for b, q, h in seq} | set(range(min(b for b, q, h in seq), max(b for b, q, h in seq) + 1)))) if seq else None\n        if c: chl.append(dict(c, body=\"rs\", piece=f.stem, year=yr))\n        for w in ((\"verse\", 1), (\"chorus\", 1)):\n            if w not in I: continue\n            b0 = I[w]\n            if any(bars.get(b, (None, 0))[0] != \"4/4\" or abs(bars[b][1] - 4) > 1e-6 for b in range(b0, b0 + 8)): continue\n            o = outer([((b - b0) * 4 + q, p, h) for b, q, p, h in notes if b0 <= b < b0 + 8])\n            if o: rows.append(dict(o[0], body=\"rs\", piece=f.stem, year=yr, sec=w[0])); tot[(\"rs\", f.stem, w[0])] = o[1]\n    d = pd.read_csv(\"/home/claude/zeneng/corpus/cocopops_notes.csv.gz\", low_memory=False); d = d[d.dur > 0]\n    for s, g in d.groupby(\"song\", sort=False):\n        fs = [x for x in (BB / f\"{s}.varms.hum\", BB / f\"{s}.hum\") if x.exists()]\n        if not fs: continue\n        seq, marks = parse_bb(fs[0]); yr = int(g.year.iloc[0])\n        if seq:\n            c = chordlevel(seq, max(b for b, q, h in seq) - min(b for b, q, h in seq) + 1)\n            if c: chl.append(dict(c, body=\"bb\", piece=s, year=yr))\n        if g.beat.quantile(.99) >= 4: continue\n        I = inst([m for m in marks if m[0] is not None]); ton = int(g.key_pc.iloc[0]); g = g.sort_values(\"abs_beat\")\n        for w in ((\"verse\", 1), (\"chorus\", 1)):\n            if w not in I: continue\n            b0 = I[w]; x = g[(g.bar >= b0) & (g.bar < b0 + 8)]; o = outer([((r.bar - b0) * 4 + r.beat, int(r.pitch), roman(r.roman, ton)) for r in x.itertuples()])\n            if o: rows.append(dict(o[0], body=\"bb\", piece=s, year=yr, sec=w[0])); tot[(\"bb\", s, w[0])] = o[1]\n    NAME = {\"C\": 0, \"D\": 2, \"E\": 4, \"F\": 5, \"G\": 7, \"A\": 9, \"B\": 11}\n    def eng(c):\n        c = c.split(\"/\")[0]; r = NAME[c[0]] + (1 if \"#\" in c[:2] else -1 if (len(c) > 1 and c[1] == \"b\") else 0); m = \"m\" in c[1:3] and \"maj\" not in c; return (r % 12, frozenset((0, 3 if m else 4, 7)), 0, False)\n    charts = {}\n    for s in (\"40\", \"42\", \"43\", \"44\", \"45\"):\n        P = pickle.load(open(f\"/home/claude/p50/melody_v118_p{s}_main.pkl\", \"rb\")); st = {}; i = 0\n        for name, kind, nb in P[\"form\"]: st[name] = (i, nb); i += nb\n        charts[s] = P[\"chords\"]; c = chordlevel([(b, 0.0, eng(x)) for b, x in enumerate(P[\"chords\"])], len(P[\"chords\"])); chl.append(dict(c, body=\"engine\", piece=f\"s{s}\", song=s))\n        for bi, cnd in enumerate([c for c in P[\"every\"] if not c.get(\"partial\")][:400]):\n            for name, w in ((\"Verse 1\", \"verse\"), (\"Chorus 1\", \"chorus\")):\n                if name not in st or st[name][1] < 8: continue\n                b0 = st[name][0]; o = outer(sorted(((t[0] - b0 * 48) / 12, t[2], eng(P[\"chords\"][t[0] // 48])) for t in cnd[\"notes\"] if b0 * 48 <= t[0] < (b0 + 8) * 48 and t[3] == name))\n                if o: rows.append(dict(o[0], body=\"build\", piece=f\"s{s}\", song=s, build=bi, sec=w)); tot[(\"build\", f\"s{s}_{bi}\", w)] = o[1]\n    A = pd.DataFrame(rows); C = pd.DataFrame(chl); A.to_pickle(\"outer_windows.pkl\"); C.to_pickle(\"chord_level.pkl\")\n    bbt = {re.sub(r\"[^a-z]\", \"\", s.split(\"_\")[1].lower()) for s in set(A[A.body == \"bb\"].piece) | set(C[C.body == \"bb\"].piece)}; dup = lambda D: (D.body == \"rs\") & D.piece.map(lambda s: \"_\" in s and re.sub(r\"[^a-z]\", \"\", s.split(\"_\")[1].lower()) in bbt)\n    era = lambda D: D[(D.body != \"rs\") | ((D.year >= 1958) & (D.year <= 1991) & ~dup(D))]\n    A, C = era(A), era(C); out = {\"outer-voice windows (billboard, rolling stone, builds)\": [int((A.body == b).sum()) for b in (\"bb\", \"rs\", \"build\")], \"songs read at the chord (billboard, rolling stone, engine charts)\": [int((C.body == b).sum()) for b in (\"bb\", \"rs\", \"engine\")]}\n    CM = [c for c in C.columns if c not in (\"body\", \"piece\", \"year\", \"song\")]; t = {}\n    for m in CM:\n        a, b, e = C[C.body == \"bb\"][m].dropna(), C[C.body == \"rs\"][m].dropna(), C[C.body == \"engine\"]; sd = np.nanstd(pd.concat([a, b]))\n        t[m] = dict(billboard=round(float(a.mean()), 3), rolling_stone=round(float(b.mean()), 3), billboard_median=round(float(a.median()), 3), rolling_stone_median=round(float(b.median()), 3), collections_gap=round(float((b.mean() - a.mean()) / sd), 2) if sd else 0, engine=[None if pd.isna(x) else round(float(x), 3) for x in e[m]], kept_songs_at_zero=[round(float((a == 0).mean()), 3), round(float((b == 0).mean()), 3)])\n    out[\"1. the bass at the chord, by song: kept means and the engine's five charts (songs 40, 42, 43, 44, 45)\"] = t\n    OM = [c for c in A.columns if c not in (\"body\", \"piece\", \"year\", \"sec\", \"song\", \"build\", \"chord_spans\")]; t = {}\n    for m in OM:\n        a, b, e = A[A.body == \"bb\"][m].dropna(), A[A.body == \"rs\"][m].dropna(), A[A.body == \"build\"]; sd = np.nanstd(pd.concat([a, b])); ps = [e[e.song == s][m].mean() for s in (\"40\", \"42\", \"43\", \"44\", \"45\")]; gap = (b.mean() - a.mean()) / sd; da, db_ = (e[m].mean() - a.mean()) / sd, (e[m].mean() - b.mean()) / sd\n        sides = {np.sign(x - a.mean()) for x in ps if not pd.isna(x)} | {np.sign(x - b.mean()) for x in ps if not pd.isna(x)}\n        t[m] = dict(billboard=round(float(a.mean()), 3), rolling_stone=round(float(b.mean()), 3), builds=round(float(e[m].mean()), 3), by_song=[round(float(x), 3) for x in ps], collections_gap=round(float(gap), 2), builds_vs_billboard=round(float(da), 2), builds_vs_rolling_stone=round(float(db_), 2), agreed=bool(abs(gap) < .2), builds_differ_from_both=bool(abs(gap) < .2 and min(abs(da), abs(db_)) >= .25 and len(sides) == 1))\n    out[\"2. the melody over the chord and the bass (first verse and chorus)\"] = t\n    out[\"2. by section\"] = {s: {m: [round(float(A[(A.body == b) & (A.sec == s)][m].mean()), 3) for b in (\"bb\", \"rs\", \"build\")] for m in (\"melody_on_root\", \"melody_on_third\", \"melody_on_fifth\", \"downbeat_on_root\", \"downbeat_on_third\", \"downbeat_on_fifth\", \"downbeat_chord_tone\", \"contrary_of_moving\")} for s in (\"verse\", \"chorus\")}\n    pool = {}\n    for b in (\"bb\", \"rs\", \"build\"):\n        c = collections.Counter()\n        for (bd, p, s), x in tot.items():\n            if bd == b and ((A.body == b) & (A.piece == (p if b != \"build\" else p.split(\"_\")[0]))).any(): c.update(x)\n        pool[b] = {\"chord-to-chord pairs\": c[\"pairs\"], \"bass stays\": round(c[\"bass_stays\"] / max(1, c[\"pairs\"]), 3), \"parallel fifths or octaves, of bass moves\": round(c[\"parallel_perfect\"] / max(1, c[\"bass_moves\"]), 3), \"bass by step or third: contrary\": round(c[\"contrary\"] / max(1, c[\"clear\"]), 3), \"similar\": round(c[\"similar\"] / max(1, c[\"clear\"]), 3), \"melody holds\": round(c[\"oblique\"] / max(1, c[\"clear\"]), 3), \"contrary of the two moving\": round(c[\"contrary\"] / max(1, c[\"contrary\"] + c[\"similar\"]), 3)}\n    out[\"3. outer-voice motion, pooled over windows\"] = pool\n    json.dump(out, open(\"bass_findings.json\", \"w\"), indent=1); print(json.dumps(out, indent=1))\n"
+}

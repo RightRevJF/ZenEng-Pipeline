@@ -1,0 +1,356 @@
+{
+ "about": "ZenEng v115, Window 135: kept shares of gaps between onsets (sixteenth, eighth, quarter, longer) by the window's notes a bar, to draw from (354); song 43's builds read against the kept mean; kept windows by mode (353).",
+ "gap shares by notes a bar (354)": {
+  "gap measures": [
+   "gap_sixteenth",
+   "gap_eighth",
+   "gap_quarter",
+   "gap_longer"
+  ],
+  "under 3.5 notes a bar": {
+   "windows": 128,
+   "mean shares": [
+    0.039,
+    0.399,
+    0.243,
+    0.291
+   ],
+   "quartiles": {
+    "gap_sixteenth": [
+     0.0,
+     0.0,
+     0.043
+    ],
+    "gap_eighth": [
+     0.269,
+     0.396,
+     0.55
+    ],
+    "gap_quarter": [
+     0.094,
+     0.227,
+     0.352
+    ],
+    "gap_longer": [
+     0.2,
+     0.269,
+     0.364
+    ]
+   }
+  },
+  "3.5 to 4.5": {
+   "windows": 91,
+   "mean shares": [
+    0.106,
+    0.496,
+    0.171,
+    0.179
+   ],
+   "quartiles": {
+    "gap_sixteenth": [
+     0.0,
+     0.029,
+     0.155
+    ],
+    "gap_eighth": [
+     0.365,
+     0.516,
+     0.613
+    ],
+    "gap_quarter": [
+     0.06,
+     0.143,
+     0.259
+    ],
+    "gap_longer": [
+     0.131,
+     0.179,
+     0.226
+    ]
+   }
+  },
+  "4.5 to 5.5": {
+   "windows": 53,
+   "mean shares": [
+    0.14,
+    0.551,
+    0.156,
+    0.114
+   ],
+   "quartiles": {
+    "gap_sixteenth": [
+     0.0,
+     0.056,
+     0.25
+    ],
+    "gap_eighth": [
+     0.429,
+     0.583,
+     0.694
+    ],
+    "gap_quarter": [
+     0.054,
+     0.139,
+     0.222
+    ],
+    "gap_longer": [
+     0.083,
+     0.111,
+     0.143
+    ]
+   }
+  },
+  "5.5 and over": {
+   "windows": 42,
+   "mean shares": [
+    0.279,
+    0.491,
+    0.084,
+    0.089
+   ],
+   "quartiles": {
+    "gap_sixteenth": [
+     0.116,
+     0.264,
+     0.421
+    ],
+    "gap_eighth": [
+     0.328,
+     0.495,
+     0.632
+    ],
+    "gap_quarter": [
+     0.042,
+     0.065,
+     0.125
+    ],
+    "gap_longer": [
+     0.057,
+     0.072,
+     0.13
+    ]
+   }
+  },
+  "song 43 builds (4.3 notes a bar)": {
+   "mean shares": [
+    0.117,
+    0.602,
+    0.133,
+    0.142
+   ]
+  },
+  "song 40 builds under v112 (5.1 notes a bar)": {
+   "mean shares": [
+    0.201,
+    0.548,
+    0.134,
+    0.098
+   ]
+  },
+  "song 42 builds under v112 (4.6 notes a bar)": {
+   "mean shares": [
+    0.225,
+    0.507,
+    0.128,
+    0.118
+   ]
+  }
+ },
+ "song 43 read (340, 342, 353)": {
+  "353 kept windows by mode": {
+   "major": {
+    "windows": 244,
+    "outside_scale mean": 0.078,
+    "on_third mean": 0.194
+   },
+   "minor": {
+    "windows": 70,
+    "outside_scale mean": 0.045,
+    "on_third mean": 0.212
+   }
+  },
+  "353 song 43's outside_scale: read on A (as the code reads a tonic), read on C": [
+   0.475,
+   0.012
+  ],
+  "340 gap, main read on C (Window 134's fit: C 0.3, weighted)": {
+   "gap": 7.75,
+   "the eight costliest (measure, points, kept mean, builds' mean)": [
+    [
+     "gap_eighth",
+     1.69,
+     0.465,
+     0.602
+    ],
+    [
+     "outside_scale",
+     1.42,
+     0.071,
+     0.012
+    ],
+    [
+     "unit3_returns",
+     1.35,
+     0.315,
+     0.007
+    ],
+    [
+     "on_offbeat_eighth",
+     0.87,
+     0.371,
+     0.431
+    ],
+    [
+     "distinct_pitches",
+     0.5,
+     6.382,
+     7.004
+    ],
+    [
+     "on_beats_2_4",
+     0.42,
+     0.21,
+     0.232
+    ],
+    [
+     "on_beat3",
+     0.34,
+     0.124,
+     0.139
+    ],
+    [
+     "chord_tones_on_downbeat",
+     0.28,
+     0.722,
+     0.558
+    ]
+   ],
+   "the eight of Window 134": {
+    "gap_sixteenth": 0.18,
+    "distinct_durations": 0.06,
+    "on_offbeat_eighth": 0.87,
+    "outside_scale": 1.42,
+    "gap_eighth": 1.69,
+    "distinct_pitches": 0.5,
+    "unit4_to_unit2": -0.01,
+    "chord_tones_on_long_notes": -0.03
+   }
+  },
+  "340 gap, control read on C (Window 134's fit: C 0.3, weighted)": {
+   "gap": 7.86,
+   "the eight costliest (measure, points, kept mean, builds' mean)": [
+    [
+     "gap_eighth",
+     2.14,
+     0.465,
+     0.608
+    ],
+    [
+     "unit3_returns",
+     1.39,
+     0.315,
+     0.008
+    ],
+    [
+     "outside_scale",
+     1.16,
+     0.071,
+     0.015
+    ],
+    [
+     "on_beats_2_4",
+     1.08,
+     0.21,
+     0.251
+    ],
+    [
+     "on_offbeat_eighth",
+     0.74,
+     0.371,
+     0.425
+    ],
+    [
+     "on_beat3",
+     0.42,
+     0.124,
+     0.141
+    ],
+    [
+     "distinct_pitches",
+     0.41,
+     6.382,
+     6.953
+    ],
+    [
+     "on_sixteenth",
+     0.4,
+     0.094,
+     0.051
+    ]
+   ],
+   "the eight of Window 134": {
+    "gap_sixteenth": -0.35,
+    "distinct_durations": -0.06,
+    "on_offbeat_eighth": 0.74,
+    "outside_scale": 1.16,
+    "gap_eighth": 2.14,
+    "distinct_pitches": 0.41,
+    "unit4_to_unit2": -0.01,
+    "chord_tones_on_long_notes": -0.04
+   }
+  },
+  "342 kept: each measure against notes a bar; what a kept window at the builds' density would read; the builds": {
+   "gap_eighth": {
+    "kept slope per note a bar": 0.029,
+    "kept r": 0.2,
+    "builds' notes a bar": 4.3,
+    "kept at that density": 0.475,
+    "builds": 0.602,
+    "excess over density, kept residual sd": 0.65
+   },
+   "gap_quarter": {
+    "kept slope per note a bar": -0.041,
+    "kept r": -0.36,
+    "builds' notes a bar": 4.3,
+    "kept at that density": 0.172,
+    "builds": 0.133,
+    "excess over density, kept residual sd": -0.26
+   },
+   "gap_sixteenth": {
+    "kept slope per note a bar": 0.064,
+    "kept r": 0.55,
+    "builds' notes a bar": 4.3,
+    "kept at that density": 0.13,
+    "builds": 0.117,
+    "excess over density, kept residual sd": -0.1
+   },
+   "on_offbeat_eighth": {
+    "kept slope per note a bar": 0.003,
+    "kept r": 0.03,
+    "builds' notes a bar": 4.3,
+    "kept at that density": 0.372,
+    "builds": 0.431,
+    "excess over density, kept residual sd": 0.5
+   }
+  },
+  "342 kept windows as dense as the builds' middle half": {
+   "windows": 82,
+   "gap_eighth (25, 50, 75)": [
+    0.367,
+    0.532,
+    0.664
+   ],
+   "builds (25, 50, 75)": [
+    0.5,
+    0.625,
+    0.71
+   ]
+  },
+  "352 keys on file": {
+   "short": "['dc24946f27cb', '95e98ce87177', 'a1bccd3ac5b5', '5816dccba898', 'bccf13952384', 'a80ec37b5393', '325450ff7da6', '54d47ef88d3c', '2535171a3d6b', '9ff123692c36',",
+   "pick": "{'notes': [{'on': 390, 'p': 60, 'syl': 0, 'slur': False, 'stress': False, 'dur': 6, 'sec': 'Verse 1', 'line': 'Verse 1:0'}, {'on': 396, 'p': 59, 'syl': 1, 'slur",
+   "comp_first": "{'notes': [{'on': 390, 'p': 60, 'syl': 0, 'slur': False, 'stress': False, 'dur': 6, 'sec': 'Verse 1', 'line': 'Verse 1:0'}, {'on': 396, 'p': 59, 'syl': 1, 'slur",
+   "judge_first": "{'notes': [{'on': 402, 'p': 62, 'syl': 0, 'slur': False, 'stress': False, 'dur': 6, 'sec': 'Verse 1', 'line': 'Verse 1:0'}, {'on': 408, 'p': 62, 'syl': 1, 'slur"
+  }
+ }
+}
