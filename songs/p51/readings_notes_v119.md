@@ -1,0 +1,10 @@
+- **The pooled kept means (420, 422, 424).** These weight CoCoPops' mean by its 314 windows and BiMMuDa 1958–1991's by its 231, from the means in zeneng_v120_second_collection.json. A test against "both collections" uses that pooled mean.
+  - The pooled figures used here: unit returns 16.4%, 30.1% and 19.4%; turns per move 0.587; fourths and fifths 8.3%; the window's last note on the tonic 29.9%; empty bars 0.484 of eight.
+- **424's "fifth of a standard deviation".** Each measure's standard deviation is the collections' difference in means over that difference in standard deviations, both as the table gives them.
+- **Costs on the 30 (340, 347).** A judge is fitted on both collections pooled (545 windows) against each run's builds. Each measure's cost is its weight times the kept mean less the builds' mean, over the pooled standard deviation.
+- **Separation (422).** It uses sep_v120.py. Kept songs are held out by song in both collections: CoCoPops' 170 true songs, and BiMMuDa's songs by their year and position. The collections read 0.545 against each other this way (Window 140: 0.555). The v118 builds of songs 40, 42 and 43 read 0.756 across (Window 140: 0.750).
+- **389's bands.** The runs share is read on every section's onsets at sixteenth positions, by the section's band. The kept share for each band is read off the kept table as a chain over the bar's 16 positions and scaled to the measured 31%.
+- **390's free units.** A window's unit is free when the plan's lines do not already return it in that build. Unit returns are read on the free windows alone.
+- **391's drawn lines.** These are lines whose kind is "fresh" or "fresh (361 unit return)". Copies and returns are left out.
+- **399 and 401, printed only.** The share of builds whose section's first bar has a sung note on its downbeat, and the median count of distinct note lengths, are printed beside both collections.
+- **Step 1's and step 2's readings.** These were made by step_read.py on the main runs (step1/, step2/). They sit beside the v118 main runs read the same way (base/).

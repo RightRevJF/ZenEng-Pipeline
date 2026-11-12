@@ -1,0 +1,251 @@
+{
+ "song": "42",
+ "step": 1,
+ "fixes_on": [
+  "384",
+  "385",
+  "386",
+  "387",
+  "389",
+  "394",
+  "395"
+ ],
+ "made": 1000,
+ "survivors": 789,
+ "order": "ccecd90174fa",
+ "complete": 935,
+ "deaths": {
+  "bridge opening unrelated (208; 279)": 66,
+  "join: no held end and breath before the line (212)": 49,
+  "limits: a hard limit or three soft breaks (276/277, with 286's seven)": 49,
+  "chorus opening another tune (227; 279)": 18,
+  "rhythm: no placement": 9,
+  "the judge's floor (254; 279)": 9,
+  "align: the words do not fit the returning tune": 4,
+  "walk: no note": 3,
+  "key word on a chord tone (134; 279)": 3,
+  "design: 'Nothing important' held longer than in the hook; 'I'll call you back' falls to the tonic, under it (Q11 note 4)": 1
+ },
+ "measures": {
+  "chord_tones": {
+   "kept_mean": 0.639,
+   "kept_quartiles": [
+    0.538,
+    0.652,
+    0.759
+   ],
+   "builds_mean": 0.554,
+   "builds_median": 0.556
+  },
+  "chord_tones_on_beat": {
+   "kept_mean": 0.669,
+   "kept_quartiles": [
+    0.562,
+    0.692,
+    0.8
+   ],
+   "builds_mean": 0.577,
+   "builds_median": 0.579
+  },
+  "chord_tones_on_downbeat": {
+   "kept_mean": 0.722,
+   "kept_quartiles": [
+    0.5,
+    0.775,
+    1.0
+   ],
+   "builds_mean": 0.573,
+   "builds_median": 0.6
+  },
+  "chord_tones_off_beat": {
+   "kept_mean": 0.608,
+   "kept_quartiles": [
+    0.478,
+    0.625,
+    0.765
+   ],
+   "builds_mean": 0.534,
+   "builds_median": 0.542
+  },
+  "chord_tones_on_long_notes": {
+   "kept_mean": 0.716,
+   "kept_quartiles": [
+    0.556,
+    0.75,
+    0.932
+   ],
+   "builds_mean": 0.629,
+   "builds_median": 0.625
+  },
+  "non_chord_resolved_by_step": {
+   "kept_mean": 0.501,
+   "kept_quartiles": [
+    0.322,
+    0.5,
+    0.667
+   ],
+   "builds_mean": 0.347,
+   "builds_median": 0.333
+  },
+  "turns_per_move": {
+   "kept_mean": 0.584,
+   "kept_quartiles": [
+    0.479,
+    0.571,
+    0.667
+   ],
+   "builds_mean": 0.642,
+   "builds_median": 0.64
+  },
+  "distinct_durations": {
+   "kept_mean": 4.035,
+   "kept_quartiles": [
+    3.0,
+    4.0,
+    5.0
+   ],
+   "builds_mean": 4.428,
+   "builds_median": 4.0
+  },
+  "first_onset": {
+   "kept_mean": 0.371,
+   "kept_quartiles": [
+    0.0,
+    0.0,
+    0.5
+   ],
+   "builds_mean": 0.495,
+   "builds_median": 0.5
+  },
+  "fourth_fifth": {
+   "kept_mean": 0.08,
+   "kept_quartiles": [
+    0.027,
+    0.074,
+    0.121
+   ],
+   "builds_mean": 0.127,
+   "builds_median": 0.105
+  },
+  "outside_scale": {
+   "kept_mean": 0.071,
+   "builds_mean": 0.029,
+   "builds_median": 0.0
+  },
+  "gap_quarter": {
+   "kept_mean": 0.186,
+   "builds_mean": 0.128,
+   "builds_median": 0.125
+  },
+  "gap_eighth": {
+   "kept_mean": 0.465,
+   "builds_mean": 0.592,
+   "builds_median": 0.645
+  },
+  "gap_sixteenth": {
+   "kept_mean": 0.107,
+   "builds_mean": 0.125,
+   "builds_median": 0.088
+  }
+ },
+ "385": {
+  "outside_scale": 0.029,
+  "kept": 0.071,
+  "placed": 3115,
+  "wanting": 27359,
+  "passing": 1665
+ },
+ "386": {
+  "notes_read": 0,
+  "clashes": 0,
+  "by_line": {},
+  "moved": {}
+ },
+ "387": {
+  "stop": [
+   "round 1: ['rhythm_bits'] outside the kept middle half (distinct lengths 5.0, rhythm bits 2.763); a reading (387): no knob stops"
+  ],
+  "knobs": {
+   "s16": 0.494,
+   "g8": 1.104,
+   "g4": 4.604,
+   "glong": 0.861,
+   "run": 1.0,
+   "on16": 0.345
+  }
+ },
+ "389": {
+  "by_band": {
+   "3.5 to 4.5": {
+    "onsets": 9897,
+    "in_runs": 0.28,
+    "kept": 0.291,
+    "rate": 0.1002
+   },
+   "4.5 to 5.5": {
+    "onsets": 7732,
+    "in_runs": 0.31,
+    "kept": 0.317,
+    "rate": 0.2195
+   },
+   "under 3.5": {
+    "onsets": 3133,
+    "in_runs": 0.31,
+    "kept": 0.271,
+    "rate": 0.0954
+   }
+  },
+  "pushed": 0.549,
+  "in_runs_windows": 0.37,
+  "rhythm_deaths": 9,
+  "join_deaths": 49,
+  "fallbacks": {
+   "366: fallback to runs (nothing fitted without)": 898,
+   "389: fallback at half the tries": 857,
+   "389: fallback at once (no entry and landing fit)": 41
+  },
+  "may_run": 2791,
+  "may_not": 15817
+ },
+ "394": {
+  "memory_breaks": 1,
+  "surprisal_breaks": 90,
+  "rhythm_band_breaks": 9,
+  "stats": {
+   "394: passing note withdrawn (an occurrence could not take it)": 489,
+   "394: passing note placed in every occurrence": 489,
+   "394: occurrences given the passing note": 66
+  }
+ },
+ "399": {
+  "Verse 1": 0.379,
+  "Chorus 1": 0.252,
+  "kept": 0.69,
+  "test": [
+   0.59,
+   0.79
+  ],
+  "stats": {}
+ },
+ "401": {
+  "distinct_durations_median": 4.0,
+  "kept": 4,
+  "stats": {
+   "343: palette dropped for a line": 285
+  }
+ },
+ "398": {
+  "chord_tones": 0.556,
+  "on_beat": 0.579,
+  "on_downbeat": 0.6,
+  "resolved_by_step": 0.347,
+  "knobs": {},
+  "stats": {}
+ },
+ "400": {
+  "verse": 0.639,
+  "chorus": 0.645,
+  "kept": 0.58,
+  "knob": 1.0
+ }
+}

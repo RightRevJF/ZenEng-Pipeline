@@ -1,0 +1,243 @@
+{
+ "kept": {
+  "cocopops_windows": 314,
+  "bimmuda_windows": 231,
+  "songs": 285
+ },
+ "agreed": [
+  "range",
+  "pitch_sd",
+  "distinct_pitches",
+  "repeat",
+  "step",
+  "third",
+  "fourth_fifth",
+  "past_fifth",
+  "mean_interval",
+  "ascending",
+  "turns_per_move",
+  "longest_run_one_way",
+  "leap_then_back_by_step",
+  "on_tonic",
+  "on_third",
+  "on_fifth",
+  "last_note_tonic",
+  "first_note_tonic_triad",
+  "peak_position",
+  "low_position",
+  "peak_count",
+  "time_in_top_third",
+  "pitch_bits",
+  "on_beats_2_4",
+  "gap_sixteenth",
+  "gap_eighth",
+  "empty_bars",
+  "unit2_returns",
+  "unit3_returns",
+  "unit4_to_unit2"
+ ],
+ "beside": {
+  "collections_against_each_other": 0.56,
+  "window140_builds_pooled": 0.75
+ },
+ "window140": {
+  "on the agreed measures": {
+   "count": 30,
+   "CoCoPops against BiMMuDa 1958-1991": [
+    0.555,
+    0.023,
+    314,
+    231
+   ],
+   "builds against CoCoPops": [
+    0.768,
+    0.02,
+    314
+   ],
+   "builds against BiMMuDa 1958-1991": [
+    0.728,
+    0.022,
+    231
+   ],
+   "builds against BiMMuDa 1980-1999": [
+    0.663,
+    0.036,
+    129
+   ],
+   "builds against both kept collections pooled (1958-1991)": [
+    0.75,
+    0.018,
+    545
+   ]
+  },
+  "on all 40": {
+   "CoCoPops against BiMMuDa 1958-1991": [
+    0.786,
+    0.019,
+    314,
+    231
+   ],
+   "builds against CoCoPops": [
+    0.89,
+    0.016,
+    314
+   ],
+   "builds against BiMMuDa 1958-1991": [
+    0.803,
+    0.022,
+    231
+   ],
+   "builds against both kept collections pooled (1958-1991)": [
+    0.834,
+    0.02,
+    545
+   ]
+  }
+ },
+ "builds_read": {
+  "40": 400,
+  "42": 400,
+  "43": 400
+ },
+ "family": {
+  "agreed 30": {
+   "within": {
+    "40": 0.888,
+    "42": 0.887,
+    "43": 0.884
+   },
+   "across": {
+    "40 -> 42": 0.843,
+    "40 -> 43": 0.789,
+    "42 -> 40": 0.837,
+    "42 -> 43": 0.705,
+    "43 -> 40": 0.818,
+    "43 -> 42": 0.734
+   },
+   "across_mean": 0.788,
+   "across_mean_40_42_43": 0.788
+  },
+  "pitch (agreed)": {
+   "within": {
+    "40": 0.839,
+    "42": 0.804,
+    "43": 0.8
+   },
+   "across": {
+    "40 -> 42": 0.786,
+    "40 -> 43": 0.735,
+    "42 -> 40": 0.841,
+    "42 -> 43": 0.743,
+    "43 -> 40": 0.787,
+    "43 -> 42": 0.745
+   },
+   "across_mean": 0.773,
+   "across_mean_40_42_43": 0.773
+  },
+  "rhythm (agreed)": {
+   "within": {
+    "40": 0.746,
+    "42": 0.726,
+    "43": 0.74
+   },
+   "across": {
+    "40 -> 42": 0.704,
+    "40 -> 43": 0.663,
+    "42 -> 40": 0.749,
+    "42 -> 43": 0.693,
+    "43 -> 40": 0.712,
+    "43 -> 42": 0.708
+   },
+   "across_mean": 0.705,
+   "across_mean_40_42_43": 0.705
+  },
+  "form": {
+   "within": {
+    "40": 0.505,
+    "42": 0.693,
+    "43": 0.673
+   },
+   "across": {
+    "40 -> 42": 0.567,
+    "40 -> 43": 0.498,
+    "42 -> 40": 0.528,
+    "42 -> 43": 0.413,
+    "43 -> 40": 0.51,
+    "43 -> 42": 0.378
+   },
+   "across_mean": 0.482,
+   "across_mean_40_42_43": 0.482
+  },
+  "harmony (CoCoPops alone, apart)": {
+   "within": {
+    "40": 0.704,
+    "42": 0.733,
+    "43": 0.736
+   },
+   "across": {
+    "40 -> 42": 0.725,
+    "40 -> 43": 0.702,
+    "42 -> 40": 0.706,
+    "42 -> 43": 0.719,
+    "43 -> 40": 0.687,
+    "43 -> 42": 0.722
+   },
+   "across_mean": 0.71,
+   "across_mean_40_42_43": 0.71
+  }
+ },
+ "collections_against_each_other": 0.545,
+ "costs_agreed_30": {
+  "gap": 2.83,
+  "eight": [
+   [
+    "gap_eighth",
+    0.74,
+    0.475,
+    0.595
+   ],
+   [
+    "distinct_pitches",
+    0.25,
+    6.439,
+    6.731
+   ],
+   [
+    "fourth_fifth",
+    0.24,
+    0.083,
+    0.121
+   ],
+   [
+    "last_note_tonic",
+    0.24,
+    0.299,
+    0.124
+   ],
+   [
+    "mean_interval",
+    0.22,
+    2.109,
+    2.314
+   ],
+   [
+    "range",
+    0.19,
+    10.895,
+    10.326
+   ],
+   [
+    "empty_bars",
+    0.19,
+    0.484,
+    0.231
+   ],
+   [
+    "past_fifth",
+    0.17,
+    0.024,
+    0.035
+   ]
+  ]
+ }
+}

@@ -1,0 +1,617 @@
+{
+ "kept_songs": 170,
+ "kept_windows": 314,
+ "grouping": "true songs (369)",
+ "builds_read": {
+  "40": 400,
+  "42": 400,
+  "43": 400
+ },
+ "yardstick": {
+  "first_decade_against_last": 0.57,
+  "sixties_against_seventies": 0.63
+ },
+ "window139": {
+  "pitch": {
+   "v116": 0.809,
+   "v118": 0.806
+  },
+  "rhythm": {
+   "v116": 0.855,
+   "v118": 0.86
+  },
+  "form": {
+   "v116": 0.54,
+   "v118": 0.513
+  },
+  "harmony": {
+   "v116": 0.7,
+   "v118": 0.733
+  },
+  "all": {
+   "v116": 0.895,
+   "v118": 0.904
+  },
+  "all but outside_scale": {
+   "v116": 0.881,
+   "v118": 0.876
+  },
+  "pitch but outside_scale": {
+   "v116": 0.798,
+   "v118": 0.761
+  }
+ },
+ "family": {
+  "pitch": {
+   "within": {
+    "40": 0.881,
+    "42": 0.843,
+    "43": 0.885
+   },
+   "across": {
+    "40 -> 42": 0.799,
+    "40 -> 43": 0.757,
+    "42 -> 40": 0.851,
+    "42 -> 43": 0.79,
+    "43 -> 40": 0.806,
+    "43 -> 42": 0.795
+   },
+   "across_mean": 0.8,
+   "across_mean_40_42_43": 0.8
+  },
+  "rhythm": {
+   "within": {
+    "40": 0.893,
+    "42": 0.872,
+    "43": 0.885
+   },
+   "across": {
+    "40 -> 42": 0.846,
+    "40 -> 43": 0.846,
+    "42 -> 40": 0.88,
+    "42 -> 43": 0.853,
+    "43 -> 40": 0.865,
+    "43 -> 42": 0.829
+   },
+   "across_mean": 0.853,
+   "across_mean_40_42_43": 0.853
+  },
+  "form": {
+   "within": {
+    "40": 0.505,
+    "42": 0.679,
+    "43": 0.652
+   },
+   "across": {
+    "40 -> 42": 0.588,
+    "40 -> 43": 0.501,
+    "42 -> 40": 0.543,
+    "42 -> 43": 0.483,
+    "43 -> 40": 0.486,
+    "43 -> 42": 0.428
+   },
+   "across_mean": 0.505,
+   "across_mean_40_42_43": 0.505
+  },
+  "harmony": {
+   "within": {
+    "40": 0.676,
+    "42": 0.759,
+    "43": 0.75
+   },
+   "across": {
+    "40 -> 42": 0.734,
+    "40 -> 43": 0.721,
+    "42 -> 40": 0.696,
+    "42 -> 43": 0.741,
+    "43 -> 40": 0.686,
+    "43 -> 42": 0.744
+   },
+   "across_mean": 0.72,
+   "across_mean_40_42_43": 0.72
+  },
+  "all": {
+   "within": {
+    "40": 0.947,
+    "42": 0.945,
+    "43": 0.955
+   },
+   "across": {
+    "40 -> 42": 0.911,
+    "40 -> 43": 0.897,
+    "42 -> 40": 0.918,
+    "42 -> 43": 0.899,
+    "43 -> 40": 0.904,
+    "43 -> 42": 0.884
+   },
+   "across_mean": 0.902,
+   "across_mean_40_42_43": 0.902
+  },
+  "all but outside_scale": {
+   "within": {
+    "40": 0.931,
+    "42": 0.931,
+    "43": 0.929
+   },
+   "across": {
+    "40 -> 42": 0.884,
+    "40 -> 43": 0.844,
+    "42 -> 40": 0.894,
+    "42 -> 43": 0.843,
+    "43 -> 40": 0.873,
+    "43 -> 42": 0.843
+   },
+   "across_mean": 0.864,
+   "across_mean_40_42_43": 0.864
+  },
+  "pitch but outside_scale": {
+   "within": {
+    "40": 0.853,
+    "42": 0.818,
+    "43": 0.774
+   },
+   "across": {
+    "40 -> 42": 0.761,
+    "40 -> 43": 0.661,
+    "42 -> 40": 0.82,
+    "42 -> 43": 0.687,
+    "43 -> 40": 0.728,
+    "43 -> 42": 0.708
+   },
+   "across_mean": 0.728,
+   "across_mean_40_42_43": 0.728
+  }
+ },
+ "measures_alone_top10": [
+  {
+   "measure": "chord_tones_on_downbeat",
+   "family": "harmony",
+   "auc": 0.695,
+   "strength": 0.195,
+   "kept_mean": 0.722,
+   "builds_mean": 0.55
+  },
+  {
+   "measure": "distinct_durations",
+   "family": "rhythm",
+   "auc": 0.312,
+   "strength": 0.188,
+   "kept_mean": 4.035,
+   "builds_mean": 4.817
+  },
+  {
+   "measure": "chord_tones",
+   "family": "harmony",
+   "auc": 0.688,
+   "strength": 0.188,
+   "kept_mean": 0.639,
+   "builds_mean": 0.552
+  },
+  {
+   "measure": "non_chord_resolved_by_step",
+   "family": "harmony",
+   "auc": 0.68,
+   "strength": 0.18,
+   "kept_mean": 0.501,
+   "builds_mean": 0.355
+  },
+  {
+   "measure": "chord_tones_on_beat",
+   "family": "harmony",
+   "auc": 0.672,
+   "strength": 0.172,
+   "kept_mean": 0.669,
+   "builds_mean": 0.572
+  },
+  {
+   "measure": "first_onset",
+   "family": "rhythm",
+   "auc": 0.33,
+   "strength": 0.17,
+   "kept_mean": 0.371,
+   "builds_mean": 0.684
+  },
+  {
+   "measure": "turns_per_move",
+   "family": "pitch",
+   "auc": 0.331,
+   "strength": 0.169,
+   "kept_mean": 0.584,
+   "builds_mean": 0.659
+  },
+  {
+   "measure": "chord_tones_on_long_notes",
+   "family": "harmony",
+   "auc": 0.665,
+   "strength": 0.165,
+   "kept_mean": 0.716,
+   "builds_mean": 0.608
+  },
+  {
+   "measure": "gap_eighth",
+   "family": "rhythm",
+   "auc": 0.338,
+   "strength": 0.162,
+   "kept_mean": 0.465,
+   "builds_mean": 0.573
+  },
+  {
+   "measure": "outside_scale",
+   "family": "pitch",
+   "auc": 0.655,
+   "strength": 0.155,
+   "kept_mean": 0.071,
+   "builds_mean": 0.006
+  }
+ ],
+ "measures_alone": [
+  {
+   "measure": "range",
+   "family": "pitch",
+   "auc": 0.527,
+   "strength": 0.027,
+   "kept_mean": 10.72,
+   "builds_mean": 10.244
+  },
+  {
+   "measure": "pitch_sd",
+   "family": "pitch",
+   "auc": 0.53,
+   "strength": 0.03,
+   "kept_mean": 2.91,
+   "builds_mean": 2.783
+  },
+  {
+   "measure": "distinct_pitches",
+   "family": "pitch",
+   "auc": 0.479,
+   "strength": 0.021,
+   "kept_mean": 6.382,
+   "builds_mean": 6.438
+  },
+  {
+   "measure": "repeat",
+   "family": "pitch",
+   "auc": 0.49,
+   "strength": 0.01,
+   "kept_mean": 0.269,
+   "builds_mean": 0.284
+  },
+  {
+   "measure": "step",
+   "family": "pitch",
+   "auc": 0.571,
+   "strength": 0.071,
+   "kept_mean": 0.437,
+   "builds_mean": 0.393
+  },
+  {
+   "measure": "third",
+   "family": "pitch",
+   "auc": 0.542,
+   "strength": 0.042,
+   "kept_mean": 0.19,
+   "builds_mean": 0.178
+  },
+  {
+   "measure": "fourth_fifth",
+   "family": "pitch",
+   "auc": 0.389,
+   "strength": 0.111,
+   "kept_mean": 0.08,
+   "builds_mean": 0.112
+  },
+  {
+   "measure": "past_fifth",
+   "family": "pitch",
+   "auc": 0.411,
+   "strength": 0.089,
+   "kept_mean": 0.023,
+   "builds_mean": 0.033
+  },
+  {
+   "measure": "mean_interval",
+   "family": "pitch",
+   "auc": 0.431,
+   "strength": 0.069,
+   "kept_mean": 2.081,
+   "builds_mean": 2.232
+  },
+  {
+   "measure": "ascending",
+   "family": "pitch",
+   "auc": 0.478,
+   "strength": 0.022,
+   "kept_mean": 0.464,
+   "builds_mean": 0.47
+  },
+  {
+   "measure": "turns_per_move",
+   "family": "pitch",
+   "auc": 0.331,
+   "strength": 0.169,
+   "kept_mean": 0.584,
+   "builds_mean": 0.659
+  },
+  {
+   "measure": "longest_run_one_way",
+   "family": "pitch",
+   "auc": 0.571,
+   "strength": 0.071,
+   "kept_mean": 3.299,
+   "builds_mean": 3.05
+  },
+  {
+   "measure": "leap_then_back_by_step",
+   "family": "pitch",
+   "auc": 0.451,
+   "strength": 0.049,
+   "kept_mean": 0.273,
+   "builds_mean": 0.305
+  },
+  {
+   "measure": "on_tonic",
+   "family": "pitch",
+   "auc": 0.556,
+   "strength": 0.056,
+   "kept_mean": 0.229,
+   "builds_mean": 0.212
+  },
+  {
+   "measure": "on_third",
+   "family": "pitch",
+   "auc": 0.549,
+   "strength": 0.049,
+   "kept_mean": 0.198,
+   "builds_mean": 0.188
+  },
+  {
+   "measure": "on_fifth",
+   "family": "pitch",
+   "auc": 0.521,
+   "strength": 0.021,
+   "kept_mean": 0.163,
+   "builds_mean": 0.164
+  },
+  {
+   "measure": "outside_scale",
+   "family": "pitch",
+   "auc": 0.655,
+   "strength": 0.155,
+   "kept_mean": 0.071,
+   "builds_mean": 0.006
+  },
+  {
+   "measure": "last_note_tonic",
+   "family": "pitch",
+   "auc": 0.574,
+   "strength": 0.074,
+   "kept_mean": 0.277,
+   "builds_mean": 0.129
+  },
+  {
+   "measure": "first_note_tonic_triad",
+   "family": "pitch",
+   "auc": 0.544,
+   "strength": 0.044,
+   "kept_mean": 0.748,
+   "builds_mean": 0.66
+  },
+  {
+   "measure": "peak_position",
+   "family": "pitch",
+   "auc": 0.494,
+   "strength": 0.006,
+   "kept_mean": 0.313,
+   "builds_mean": 0.294
+  },
+  {
+   "measure": "low_position",
+   "family": "pitch",
+   "auc": 0.579,
+   "strength": 0.079,
+   "kept_mean": 0.37,
+   "builds_mean": 0.297
+  },
+  {
+   "measure": "peak_count",
+   "family": "pitch",
+   "auc": 0.454,
+   "strength": 0.046,
+   "kept_mean": 3.678,
+   "builds_mean": 4.427
+  },
+  {
+   "measure": "time_in_top_third",
+   "family": "pitch",
+   "auc": 0.545,
+   "strength": 0.045,
+   "kept_mean": 0.391,
+   "builds_mean": 0.361
+  },
+  {
+   "measure": "pitch_bits",
+   "family": "pitch",
+   "auc": 0.463,
+   "strength": 0.037,
+   "kept_mean": 2.86,
+   "builds_mean": 2.84
+  },
+  {
+   "measure": "on_beat3",
+   "family": "rhythm",
+   "auc": 0.5,
+   "strength": 0.0,
+   "kept_mean": 0.124,
+   "builds_mean": 0.122
+  },
+  {
+   "measure": "on_beats_2_4",
+   "family": "rhythm",
+   "auc": 0.46,
+   "strength": 0.04,
+   "kept_mean": 0.21,
+   "builds_mean": 0.219
+  },
+  {
+   "measure": "on_offbeat_eighth",
+   "family": "rhythm",
+   "auc": 0.395,
+   "strength": 0.105,
+   "kept_mean": 0.371,
+   "builds_mean": 0.409
+  },
+  {
+   "measure": "on_sixteenth",
+   "family": "rhythm",
+   "auc": 0.39,
+   "strength": 0.11,
+   "kept_mean": 0.094,
+   "builds_mean": 0.115
+  },
+  {
+   "measure": "gap_sixteenth",
+   "family": "rhythm",
+   "auc": 0.38,
+   "strength": 0.12,
+   "kept_mean": 0.107,
+   "builds_mean": 0.141
+  },
+  {
+   "measure": "gap_eighth",
+   "family": "rhythm",
+   "auc": 0.338,
+   "strength": 0.162,
+   "kept_mean": 0.465,
+   "builds_mean": 0.573
+  },
+  {
+   "measure": "gap_quarter",
+   "family": "rhythm",
+   "auc": 0.646,
+   "strength": 0.146,
+   "kept_mean": 0.186,
+   "builds_mean": 0.103
+  },
+  {
+   "measure": "longest_over_median_note",
+   "family": "rhythm",
+   "auc": 0.403,
+   "strength": 0.097,
+   "kept_mean": 3.535,
+   "builds_mean": 3.699
+  },
+  {
+   "measure": "distinct_durations",
+   "family": "rhythm",
+   "auc": 0.312,
+   "strength": 0.188,
+   "kept_mean": 4.035,
+   "builds_mean": 4.817
+  },
+  {
+   "measure": "pushed",
+   "family": "rhythm",
+   "auc": 0.512,
+   "strength": 0.012,
+   "kept_mean": 0.123,
+   "builds_mean": 0.108
+  },
+  {
+   "measure": "first_onset",
+   "family": "rhythm",
+   "auc": 0.33,
+   "strength": 0.17,
+   "kept_mean": 0.371,
+   "builds_mean": 0.684
+  },
+  {
+   "measure": "empty_bars",
+   "family": "rhythm",
+   "auc": 0.557,
+   "strength": 0.057,
+   "kept_mean": 0.468,
+   "builds_mean": 0.244
+  },
+  {
+   "measure": "notes_per_bar_sd",
+   "family": "rhythm",
+   "auc": 0.471,
+   "strength": 0.029,
+   "kept_mean": 1.692,
+   "builds_mean": 1.708
+  },
+  {
+   "measure": "unit2_returns",
+   "family": "form",
+   "auc": 0.511,
+   "strength": 0.011,
+   "kept_mean": 0.172,
+   "builds_mean": 0.151
+  },
+  {
+   "measure": "unit3_returns",
+   "family": "form",
+   "auc": 0.529,
+   "strength": 0.029,
+   "kept_mean": 0.315,
+   "builds_mean": 0.257
+  },
+  {
+   "measure": "unit4_to_unit2",
+   "family": "form",
+   "auc": 0.547,
+   "strength": 0.047,
+   "kept_mean": 0.188,
+   "builds_mean": 0.093
+  },
+  {
+   "measure": "chord_tones",
+   "family": "harmony",
+   "auc": 0.688,
+   "strength": 0.188,
+   "kept_mean": 0.639,
+   "builds_mean": 0.552
+  },
+  {
+   "measure": "chord_tones_on_beat",
+   "family": "harmony",
+   "auc": 0.672,
+   "strength": 0.172,
+   "kept_mean": 0.669,
+   "builds_mean": 0.572
+  },
+  {
+   "measure": "chord_tones_off_beat",
+   "family": "harmony",
+   "auc": 0.624,
+   "strength": 0.124,
+   "kept_mean": 0.608,
+   "builds_mean": 0.533
+  },
+  {
+   "measure": "chord_tones_on_downbeat",
+   "family": "harmony",
+   "auc": 0.695,
+   "strength": 0.195,
+   "kept_mean": 0.722,
+   "builds_mean": 0.55
+  },
+  {
+   "measure": "chord_tones_on_long_notes",
+   "family": "harmony",
+   "auc": 0.665,
+   "strength": 0.165,
+   "kept_mean": 0.716,
+   "builds_mean": 0.608
+  },
+  {
+   "measure": "non_chord_resolved_by_step",
+   "family": "harmony",
+   "auc": 0.68,
+   "strength": 0.18,
+   "kept_mean": 0.501,
+   "builds_mean": 0.355
+  }
+ ]
+}

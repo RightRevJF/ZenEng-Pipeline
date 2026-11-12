@@ -1,0 +1,41 @@
+- **How it was ported (384).**
+  - gen_v119.py writes melody_v119_p40.py to melody_v119_p45.py from the v118 files (songs/p50).
+  - Every patch replaces whole statements, and the run stops unless each matches exactly once in each file.
+  - The fixes are switched on by step (ZE_STEP). Step 1's code paths are unchanged at steps 2 and 3, so its runs can be made again from the final files.
+  - Each step's patched paths were run in a 40-build smoke run of all five songs before its runs of record. The paths covered were unit returns, refits, span give-ups and widenings, 386's moves, 389's fallbacks, 394's placings and withdrawals, 390, and 424.
+- **385.** 349's target is a share of all of the build's notes. 375 only chooses where the notes go: the places are the notes whose chord allows an outside pitch class without a clash.
+- **386.** After the build is assembled, every sung note is read against its chord's own tones that lie outside the scale. This covers returning and copied lines. A note a semitone from such a tone is moved as 215 moves a tritone: a step or two, to a chord tone first, never to another clash. Pinned notes and short off-beat passing notes are left alone.
+  - Under the writer's Q1 A, 267 reads a return's pitches as drawn, before 386's moves.
+  - In the smoke run, 386 as first written made 267 kill half of song 43's builds (20 of 40, against 3 with 386 off). The session stopped and asked.
+- **387.** 356's stop is printed and moves or freezes no knob.
+- **388.** Two side runs on song 40 (main, 1,000 builds each, step-2 code): one with 378 off, and one with the landing left to the kept table's draw (ZE_PIN388=1). Nothing was changed after them.
+- **389.** 366's rate is drawn for each band of section density, aimed at that band's share in runs.
+  - The share is read off the kept table as a chain over the bar's 16 positions, then scaled so that the pooled table gives the kept 31%. The pooled table reads 0.294. The four bands read 27.1%, 29.1%, 31.7% and 36.1%.
+  - A line that may not run falls back to runs at half its tries, or at once when no entry and landing fit. Before, it fell back only at the free tries.
+- **390.** A unit that the plan's lines already return (copies, returns and plan lines of the section, at the unit's offset) is not drawn again. 371's rates are read and aimed on the units free to draw.
+- **391.** 378's reading takes only drawn lines. At half its tries a line's span is drawn again from the kept 5th to 95th percentiles for its notes. Only after that is it given up.
+- **392 (song 45).** The chorus floor for drawn notes is the verse's drawn median plus the writer's lift of three semitones (Q14 A), and at most three under the chorus top.
+- **393.** Verse 2's share, both 331's calibration and the readings, is read on the lines with verse 1's syllable count. The rest is printed apart. Song 45 has no such line, so its share is read on all lines.
+- **394.** A passing note in a line that returns is placed in every occurrence of the tune, at the same place, as the same move from the note it replaces. If any occurrence cannot take it, it is withdrawn from all of them. An occurrence already singing the passing pitch counts as having it.
+- **395.** 311 and 324 are read in the section's own key where the record lifts it (song 45's last chorus and tag, a whole step up). A song with no tonic ending reads 324 as not applicable.
+- **396, 397, 422.** Separation is read by sep_v120.py.
+  - It uses the 30 agreed measures, against CoCoPops (314 windows) and BiMMuDa 1958–1991 (231 windows) pooled.
+  - Kept songs are held out by song in both collections.
+  - The families within the 30 are pitch (23), rhythm (4) and form (3).
+  - The six harmony measures are read on CoCoPops alone and printed apart.
+- **398.** Four knobs, one for each rate, each starting at one and aimed on unaimed builds toward the kept means: chord tones overall (63.9%), on a beat (66.9%), on a downbeat (72.2%), and a non-chord note left by step to a chord tone (50.1%).
+  - The first three weight a chord tone in the walk. The fourth weights a step to a chord tone after a note off its chord.
+  - 249's ct_on and ct_off pairs leave its aimed calibration, so that each measure has one knob.
+- **399 and 401.** Not ported: v120 withdraws them (421). Step 2's main runs, which had them in, were made before v120 arrived and are set aside (withdrawn_step2/). They are not runs of record.
+- **400.** One knob on the walk's choice to turn, in both pools, aimed on unaimed builds at the kept 0.584. 249's turn pair leaves its calibration.
+- **424 (v120).** One knob for each aim, on unaimed builds, toward both collections pooled (314 and 231 windows):
+  - leaps of a fourth or fifth: a weight on that interval class, aimed at 8.3%;
+  - the window's last note on the tonic: a weight on the tonic for the last note of a line in a window's eighth bar, in the walk and in the ending's draw, aimed at 29.9%;
+  - empty bars: a rate at which a line of two bars or more is drawn to leave its slot's last bar unsung. It starts at a quarter and is aimed at 0.48 bars in eight. Failing that, the line gives it up at half its tries.
+  - Gaps of an eighth and turns per move stay as 354 and 400 have them. Notes outside the scale are 385's.
+- **420, 421.**
+  - The tests, costs (340, 347) and separation are read on the 30 agreed measures only, against both collections pooled.
+  - A test on a measure the collections disagree on is printed as a reading, with both collections' means: pushed, onsets on a sixteenth, distinct note lengths, outside the scale and the off-beat eighth.
+  - The gap shares are tested on the sixteenth and the eighth only.
+  - The harmony tests (345, 398) are printed apart.
+  - 343 is a reading. Its palette, drawn from the kept counts, stays in the draw as in v118: v120 asks only that no knob aim the count.

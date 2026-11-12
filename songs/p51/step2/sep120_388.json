@@ -1,0 +1,243 @@
+{
+ "kept": {
+  "cocopops_windows": 314,
+  "bimmuda_windows": 231,
+  "songs": 285
+ },
+ "agreed": [
+  "range",
+  "pitch_sd",
+  "distinct_pitches",
+  "repeat",
+  "step",
+  "third",
+  "fourth_fifth",
+  "past_fifth",
+  "mean_interval",
+  "ascending",
+  "turns_per_move",
+  "longest_run_one_way",
+  "leap_then_back_by_step",
+  "on_tonic",
+  "on_third",
+  "on_fifth",
+  "last_note_tonic",
+  "first_note_tonic_triad",
+  "peak_position",
+  "low_position",
+  "peak_count",
+  "time_in_top_third",
+  "pitch_bits",
+  "on_beats_2_4",
+  "gap_sixteenth",
+  "gap_eighth",
+  "empty_bars",
+  "unit2_returns",
+  "unit3_returns",
+  "unit4_to_unit2"
+ ],
+ "beside": {
+  "collections_against_each_other": 0.56,
+  "window140_builds_pooled": 0.75
+ },
+ "window140": {
+  "on the agreed measures": {
+   "count": 30,
+   "CoCoPops against BiMMuDa 1958-1991": [
+    0.555,
+    0.023,
+    314,
+    231
+   ],
+   "builds against CoCoPops": [
+    0.768,
+    0.02,
+    314
+   ],
+   "builds against BiMMuDa 1958-1991": [
+    0.728,
+    0.022,
+    231
+   ],
+   "builds against BiMMuDa 1980-1999": [
+    0.663,
+    0.036,
+    129
+   ],
+   "builds against both kept collections pooled (1958-1991)": [
+    0.75,
+    0.018,
+    545
+   ]
+  },
+  "on all 40": {
+   "CoCoPops against BiMMuDa 1958-1991": [
+    0.786,
+    0.019,
+    314,
+    231
+   ],
+   "builds against CoCoPops": [
+    0.89,
+    0.016,
+    314
+   ],
+   "builds against BiMMuDa 1958-1991": [
+    0.803,
+    0.022,
+    231
+   ],
+   "builds against both kept collections pooled (1958-1991)": [
+    0.834,
+    0.02,
+    545
+   ]
+  }
+ },
+ "builds_read": {
+  "s1": 400,
+  "off378": 400,
+  "pin388": 400
+ },
+ "family": {
+  "agreed 30": {
+   "within": {
+    "s1": 0.888,
+    "off378": 0.882,
+    "pin388": 0.885
+   },
+   "across": {
+    "s1 -> off378": 0.88,
+    "s1 -> pin388": 0.885,
+    "off378 -> s1": 0.889,
+    "off378 -> pin388": 0.879,
+    "pin388 -> s1": 0.889,
+    "pin388 -> off378": 0.873
+   },
+   "across_mean": 0.882,
+   "across_mean_40_42_43": null
+  },
+  "pitch (agreed)": {
+   "within": {
+    "s1": 0.839,
+    "off378": 0.856,
+    "pin388": 0.852
+   },
+   "across": {
+    "s1 -> off378": 0.851,
+    "s1 -> pin388": 0.856,
+    "off378 -> s1": 0.844,
+    "off378 -> pin388": 0.848,
+    "pin388 -> s1": 0.848,
+    "pin388 -> off378": 0.846
+   },
+   "across_mean": 0.849,
+   "across_mean_40_42_43": null
+  },
+  "rhythm (agreed)": {
+   "within": {
+    "s1": 0.746,
+    "off378": 0.7,
+    "pin388": 0.705
+   },
+   "across": {
+    "s1 -> off378": 0.702,
+    "s1 -> pin388": 0.71,
+    "off378 -> s1": 0.749,
+    "off378 -> pin388": 0.709,
+    "pin388 -> s1": 0.734,
+    "pin388 -> off378": 0.685
+   },
+   "across_mean": 0.715,
+   "across_mean_40_42_43": null
+  },
+  "form": {
+   "within": {
+    "s1": 0.505,
+    "off378": 0.486,
+    "pin388": 0.553
+   },
+   "across": {
+    "s1 -> off378": 0.507,
+    "s1 -> pin388": 0.487,
+    "off378 -> s1": 0.516,
+    "off378 -> pin388": 0.476,
+    "pin388 -> s1": 0.485,
+    "pin388 -> off378": 0.461
+   },
+   "across_mean": 0.489,
+   "across_mean_40_42_43": null
+  },
+  "harmony (CoCoPops alone, apart)": {
+   "within": {
+    "s1": 0.704,
+    "off378": 0.686,
+    "pin388": 0.661
+   },
+   "across": {
+    "s1 -> off378": 0.68,
+    "s1 -> pin388": 0.676,
+    "off378 -> s1": 0.691,
+    "off378 -> pin388": 0.672,
+    "pin388 -> s1": 0.691,
+    "pin388 -> off378": 0.675
+   },
+   "across_mean": 0.681,
+   "across_mean_40_42_43": null
+  }
+ },
+ "collections_against_each_other": 0.545,
+ "costs_agreed_30": {
+  "gap": 3.75,
+  "eight": [
+   [
+    "pitch_sd",
+    0.58,
+    2.967,
+    2.672
+   ],
+   [
+    "gap_eighth",
+    0.51,
+    0.475,
+    0.566
+   ],
+   [
+    "range",
+    0.41,
+    10.895,
+    9.929
+   ],
+   [
+    "mean_interval",
+    0.38,
+    2.109,
+    2.264
+   ],
+   [
+    "distinct_pitches",
+    0.36,
+    6.439,
+    6.757
+   ],
+   [
+    "empty_bars",
+    0.3,
+    0.484,
+    0.184
+   ],
+   [
+    "turns_per_move",
+    0.18,
+    0.587,
+    0.659
+   ],
+   [
+    "last_note_tonic",
+    0.16,
+    0.299,
+    0.15
+   ]
+  ]
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "surprisal on kept chart songs (the engine's reading with its POP909 model, not cross-validated on these songs)": {
+  "songs": 139,
+  "percentiles (1, 5, 25, 50, 75, 95, 99)": [
+   0.0782,
+   0.2358,
+   0.5224,
+   0.6667,
+   0.7533,
+   0.9167,
+   0.9842
+  ],
+  "286's soft and hard limits (POP909)": [
+   0.3333,
+   0.245
+  ],
+  "kept at or above the soft limit": 0.914,
+  "kept at or above the hard limit": 0.942,
+  "the reading's parts, kept medians: floor bits, spike bits, stray notes": [
+   2.54,
+   2.22,
+   4.0
+  ]
+ },
+ "378 kept lines: the share of the time to the next line that a line sings (first onset to the end of its last note)": {
+  "lines": 3830,
+  "all (5, 25, 50, 75, 95)": [
+   0.316,
+   0.533,
+   0.71,
+   0.867,
+   1.0
+  ],
+  "lines that fill under half their slot": 0.17,
+  "lines whose syllables in eighths would fill half the slot or more": {
+   "lines": 1914,
+   "share sung (5, 25, 50, 75, 95)": [
+    0.5,
+    0.688,
+    0.818,
+    0.938,
+    1.0
+   ],
+   "of these, filling under half": 0.046
+  },
+  "first onset to last onset over the slot (5, 25, 50, 75, 95)": [
+   0.219,
+   0.4,
+   0.562,
+   0.722,
+   0.875
+  ],
+  "by note count": {
+   "3 to 5": [
+    0.222,
+    0.429,
+    0.583,
+    0.75,
+    1.0
+   ],
+   "6 to 8": [
+    0.381,
+    0.531,
+    0.66,
+    0.8,
+    1.0
+   ],
+   "9 to 12": [
+    0.474,
+    0.656,
+    0.762,
+    0.875,
+    1.0
+   ],
+   "13 to 24": [
+    0.625,
+    0.783,
+    0.875,
+    0.938,
+    1.0
+   ]
+  }
+ }
+}
