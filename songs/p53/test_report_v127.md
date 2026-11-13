@@ -1185,7 +1185,7 @@ At the windows' own density (kept figure, run): **run1** 3.5 to 4.5 notes a bar:
 
 ### 494. Song 45's new rhythm deaths are 457's; its joins before a copy are neither 406's nor 457's.
 
-**Problem:** At Part 2 song 45 lost 69 builds for want of a rhythm and 103 at a join before a copy. At Part 1 it lost 1 and 31.
+**Problem:** At Part 2 song 45 lost 69 builds for want of a rhythm and 103 at a join before a copy. At Part 1 it lost 6 and 31.
 
 **Evidence** (side runs, song 45, main, Part 2's code):
 
