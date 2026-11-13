@@ -1,0 +1,13 @@
+- **The port** (ZE_PART=1): 500, 501, 502, 503, 504, 505, 508, 513, 519 and 520, ported once with no new aim (521).
+  - Songs 40, 42 and 43 stay on their 438 charts (Run 3's Part 2).
+  - Songs 44 and 45 stay on their own charts (Run 3's Part 1).
+  - All five songs were run, 1,000 builds main and control, each made twice at the seeds of record.
+- **The check:** ZE_PART=0 from the final files reproduces Run 3 (song 43 main).
+- **A side run:** song 45, main, with 501 off (its joins before a line).
+- **The bass (516, 517):** the records of songs 40, 43 and 44 were rebuilt again with bass_v129.py, read beside the hand-written bass and Run 3's routine.
+- **Readings,** each on main and control:
+  - every test (readings_v129.py);
+  - separation on the agreed 30 (sep_v129.py), Run 3 read the same way;
+  - Window 147's measures with the engine's window (reread_v129.py, 519);
+  - the kept pass rates (kept_pass_v129.py).
+- **The comparison:** Run 3's runs of record (songs 40, 42, 43: Part 2; 44, 45: Part 1).

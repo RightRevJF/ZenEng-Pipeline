@@ -1,4 +1,4 @@
-"""v128 Run 3, Part 3: the bass written by rule from the chart, the kick and the vocal's rests (439; amends 233-235), and read (444-448).
+"""v129 (516, 517 on v128's Part 3): the bass written by rule from the chart, the kick and the vocal's rests (439; amends 233-235), and read (444-448).
   439  write_bass(rec): the record's bars (the chord at each half-bar), its kicks (drum note 36) and its lead (where the voice rests).
   445  each section's bass is a two-bar figure and its variants, laid out over eight bars as A B A C A B A D (C and D the fills of bars 4 and 8,
        or of a bar whose second half the voice leaves empty); never one bar repeated through.
@@ -14,10 +14,10 @@
        (zeneng_v124_bass_between_the_chords.json); Window 118's bands are not used.
   449  nothing here takes a listener rating as its target: the bands are of what kept bass lines do.
 A draw that breaks a test in some eight bars is drawn again (at most 60 times a section, from the section's own seed); what stands is read.
-Usage: python3 bass_v128.py   (rebuilds the records of songs 40, 43 and 44 into records/, and writes records/bass_readings_v128.json)"""
+Usage: python3 bass_v129.py   (rebuilds the records of songs 40, 43 and 44 into records/, and writes records/bass_readings_v129.json)"""
 import json, re, pickle, collections, random, os, sys
 import numpy as np
-H = "/home/claude/p54"
+H = "/home/claude/p55"
 TB = json.load(open(f"{H}/tables/zeneng_v124_bass_between_the_chords.json"))
 exec(re.search(r"^def measures\(.*?(?=^\S)", TB["code"], re.S | re.M).group(0))          # Window 144's reading of a bass
 POPQ = TB["findings"]["quartiles and mean: pop, rock, rock and roll, alternative, country (198 patterns)"]
@@ -72,9 +72,14 @@ def vary(rng, cell, fill=False):
 def write_section(rng, rec, bars, H2, K, rest, lo, scale, kind):
     kk0 = K.get(bars[0], set()) | (K.get(bars[1], set()) if len(bars) > 1 else set())
     dens = max(DENS.get(kind, 6), len([k for k in kk0 if k % 6 == 0]) / 0.52)          # 448: no more than about half the notes on a kick
-    A = draw_cell(rng, kk0, dens); B = vary(rng, A); C = vary(rng, B, fill=True); D = vary(rng, A, fill=True)
+    A = draw_cell(rng, kk0, dens); B = vary(rng, A); C = vary(rng, B, fill=True)
     if B == A: B = vary(rng, A)
-    plan = [A, B, A, C, A, B, A, D]
+    D = vary(rng, vary(rng, A))                                                              # 517: a third cell in the second four bars
+    for _ in range(6):
+        if D not in (A, B): break
+        D = vary(rng, D)
+    E = vary(rng, D, fill=True)
+    plan = [A, B, A, C, A, B, D, E]                                                          # 517: A B A C A B D E
     W = dict(rep=rng.uniform(0.9, 1.4), fifth=rng.uniform(0.5, 1.0), oct=rng.uniform(0.1, 0.3), third=rng.uniform(0.2, 0.5), sev=rng.uniform(0.1, 0.35), pas=rng.uniform(0.2, 0.5))
     fig = {}                                                                                 # the figure: an interval for each place of cell A, kept for the A bars
     ev = []; prev = None; oct_run = 0
@@ -127,6 +132,10 @@ def read_window(B, K, b0, nb):
         mono.append(x)
     kk = [((b - b0) * BAR + k) / 12 for b in range(b0, b0 + nb) for k in sorted(K.get(b, ()))]
     m = measures(mono, kk, nb) if len(mono) >= 8 else None
+    if m:                                                                                    # 516: 448's share read on the bars that have a kick
+        kb_ = {b - b0 for b in range(b0, b0 + nb) if K.get(b)}; ks_ = {int(round(x * 12)) for x in kk}
+        on_k = [int(round(x[0] * 12)) for x in mono if int(x[0] // 4) in kb_]
+        m[0]["bass_with_kick_kicked_bars"] = float(np.mean([t in ks_ for t in on_k])) if on_k else float("nan")
     return (m[0] if m else None), mono
 def alt_octaves(mono):
     iv = [abs(b[2] - a[2]) for a, b in zip(mono, mono[1:])]; run = best = 0
@@ -147,7 +156,7 @@ def tests(m, mono):
          "446 2-4 pitch classes a bar": 2.0 <= m["pitch_classes_per_bar"] <= 4.0, "446 38-73% on the bar's first note": 0.38 <= m.get("on_the_bars_first_note", -1) <= 0.73,
          "447 repeats 20-61%": 0.20 <= m["iv_repeat"] <= 0.61, "447 steps 9-32%": 0.09 <= m["iv_step"] <= 0.32, "447 octaves under 29%": m["iv_octave"] < 0.29,
          "447 no alternating octaves": not alt_octaves(mono), "448 a note on 70% of kicks": m.get("kick_with_bass", 1.0) >= 0.70,
-         "448 35-59% of notes on a kick": 0.35 <= m.get("bass_with_kick", 0.47) <= 0.59}
+         "448 35-59% of notes on a kick (bars with a kick, 516)": (0.35 <= m["bass_with_kick_kicked_bars"] <= 0.59) if np.isfinite(m.get("bass_with_kick_kicked_bars", np.nan)) else None}
     s = m.get("into_the_bar_by_step_of_changes")
     T["448 a step into the next bar in 25-50% of changes"] = (0.25 <= s <= 0.50) if (s is not None and np.isfinite(s)) else None
     return T
@@ -162,7 +171,7 @@ def windows_of(rec):
 def write_bass(rec, lo, key, song):
     H2 = chart(rec); K = kicks(rec); rest = voice_rest(rec); scale = scale_of(key); B = []; tries = {}
     for sec, bs in section_bars(rec).items():
-        kind = rec["bars"][bs[0]]["kind"]; rng = random.Random(f"439 bass {song} {sec}"); best = None
+        kind = rec["bars"][bs[0]]["kind"]; rng = random.Random(f"439 bass {song} {sec} v129"); best = None
         for it in range(60):
             ev = write_section(rng, rec, bs, H2, K, rest, lo, scale, kind)
             bad = 0
@@ -184,7 +193,7 @@ def read_song(rec, B):
     return rows
 def summary(rows):
     ms = ("notes_per_bar", "pitch_classes_per_bar", "on_the_bars_first_note", "iv_repeat", "iv_step", "iv_octave", "bar_rhythm_same_as_last", "distinct_bar_rhythms",
-          "kick_with_bass", "bass_with_kick", "into_the_bar_by_step_of_changes", "bars_one_pitch_class", "on_sixteenth")
+          "kick_with_bass", "bass_with_kick", "bass_with_kick_kicked_bars", "into_the_bar_by_step_of_changes", "bars_one_pitch_class", "on_sixteenth")
     R = [r for r in rows if "m" in r]; out = {}
     for m in ms:
         v = [r["m"][m] for r in R if m in r["m"]]
@@ -206,8 +215,8 @@ if __name__ == "__main__":
         RES[s] = dict(title=rec["title"], record=cf["rec"], notes=dict(old=len(old), new=len(B)), tries_and_windows_failing=tries,
                       root_at_changes=dict(old=round(ra_old[0], 3), new=round(ra_new[0], 3), changes=ra_new[1]),
                       old=summary(read_song(rec, old)), new=summary(read_song(rec, B)), windows_new=read_song(rec, B), windows_old=read_song(rec, old))
-        new = dict(rec); new["bass"] = B; new["bass_written_by"] = "bass_v128.py write_bass (439, 445-448; Run 3 Part 3)"; new["bass_hand_written"] = old
-        pickle.dump(new, open(f"{H}/records/song_record_p{s}_v128.pkl", "wb"))
+        new = dict(rec); new["bass"] = B; new["bass_written_by"] = "bass_v129.py write_bass (439, 445-448, 516, 517; v129)"; new["bass_hand_written"] = old
+        pickle.dump(new, open(f"{H}/records/song_record_p{s}_v129.pkl", "wb"))
         print(s, rec["title"], "notes", len(old), "->", len(B), "tries", tries)
         for k in ("tests: windows passing, of windows read",): print("  old", RES[s]["old"][k]); print("  new", RES[s]["new"][k])
-    json.dump(RES, open(f"{H}/records/bass_readings_v128.json", "w"), indent=1, default=str)
+    json.dump(RES, open(f"{H}/records/bass_readings_v129.json", "w"), indent=1, default=str)
