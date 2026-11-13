@@ -1,0 +1,15 @@
+- **The song (522):** song 46, *Dry Ground*, on the default path, written from the writer's intake (Q1–Q13) and his locked lyric.
+  - The engine: v129's code of record for song 43 (q = 118, four on the floor, A minor, the tenor row C3–A4), with the song's form, lyric and design written in by gen_v130.py, plus 530 and 531 (adopted as proposed) and 524 (the form's rule).
+  - Drawn on a 438 chart, with 440's step tested on the finished chart (513).
+  - 1,000 builds main and control, each made twice at PYTHONHASHSEED 0 (seed 20261559).
+  - The pick of record: the engine's default (362, with 472), taken as drawn with no hand edits.
+- **The record:** built from both the chart and the pick (build_p56.py). The bass was written by the routine (bass_v130.py: 439, 445–448, 516, 517 and 538).
+- **Side runs:** song 46, main and control, with 501 off (531's check).
+- **Readings,** each on main and control:
+  - every test (readings_v130.py);
+  - separation on the agreed 30, song 46 beside songs 40, 42 and 43 (their v129 runs of record);
+  - Window 147's measures with the engine's window (reread_v130.py), the four songs together and song 46 alone;
+  - the judge of record (519);
+  - the bass (538), beside v129's routine on the same record;
+  - the kept pass rates (kept_pass_v129.json).
+- **Regression (523):** songs 40–45, main and control, rerun once from their v129 files and compared with their orders of record.
