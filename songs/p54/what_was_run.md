@@ -1,0 +1,12 @@
+- **Part 1, clean-up** (ZE_PART=1): 491, 476 (with 477), 465, 458, 484, 478, 486, 489, 490 and 494, on Run 2's Part 3 code. All five songs were run, 1,000 builds main and control, each made twice at the seeds of record.
+  - Side runs on song 45, main: Part 1's code with 452 off, and with 455 off (494).
+  - The check: song 43, main, at ZE_PART=1 from the final files.
+- **Part 2, the chart** (ZE_PART=2): 438, 440 and the chord at the note. Songs 40, 42 and 43 were run, main and control, each made twice.
+- **Part 3, the bass** (bass_v128.py, no melody run): the song records of songs 40, 43 and 44 were rebuilt with the routine's bass, and the bass was read against the Lucerne quartiles beside the hand-written one.
+- **Readings:**
+  - every test on main and control (readings_v128.py);
+  - separation on the agreed 30, main and control (sep_v128.py);
+  - Window 147's reread with song 43 on A minor, main and control (reread_v128.py);
+  - the v128 judge on Run 2's Part 2 builds (check476.py);
+  - the kept pass rates (kept_pass_v128.py).
+- **The comparison:** Run 2's Part 3 (songs/p53/part3), main and control.

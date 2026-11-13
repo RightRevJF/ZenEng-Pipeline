@@ -76,3 +76,19 @@ r["491"] = (dict(design_deaths=sum(v_ for k_, v_ in D["deaths"].items() if k_.st
             if SONG_ == "45" else dict(note="467's and 408's knobs withdrawn (all songs); the floor is song 45's", held="n/a"))
 r["494"] = dict(at_once=st.get("494: unit-return line falls back at once (no entry and landing fit)", 0), at_half=st.get("457: unit-return line falls back to the weighted copy", 0),
                 rhythm_deaths=D["deaths"].get("rhythm: no placement", 0), joins=dict((k_, v_) for k_, v_ in D["deaths"].items() if "join" in k_ or "breath" in k_), held="printed")
+# 438, 440 (Part 2): the chart drawn, and the bass at the change
+c438 = D["rerun"].get("chart438")
+if c438:
+    kq2, kqh = c438["kept"]["two_or_more"], c438["kept"]["holding"]; a438 = c438["after"]
+    ok2 = (a438["two_or_more"] == 0 and c438["targets"]["none_drawn"]) or (kq2[0] <= a438["two_or_more"] <= kq2[1] and a438["two_or_more"] > 0)
+    r["438"] = dict(before=c438["before"], after=a438, targets=c438["targets"], kept=c438["kept"], ops=len(c438["ops"]), held=bool(ok2 and kqh[0] <= a438["holding"] <= kqh[1]))
+    H2_ = D.get("chords2") or []; B8_ = D.get("bass8") or {}
+    def bpc_(c_): return B8_.get(c_, P.M.CH[c_][0])
+    ch_ = [(h_, c_) for h_, c_ in enumerate(H2_) if h_ == 0 or c_ != H2_[h_ - 1]]
+    inv_ = [(j_, h_, c_) for j_, (h_, c_) in enumerate(ch_) if c_ in B8_]
+    def bm_(a_, b_): d_ = (b_ - a_) % 12; return d_ if d_ <= 6 else d_ - 12
+    stp_ = [any(abs(bm_(bpc_(ch_[j_ + d_][1]), bpc_(c_))) in (1, 2) for d_ in (-1, 1) if 0 <= j_ + d_ < len(ch_)) for j_, h_, c_ in inv_]
+    rs_ = 1 - len(inv_) / max(1, len(ch_))
+    r["440"] = dict(changes=len(ch_), inversions=[c_ for _, _, c_ in inv_], root_share=round(rs_, 3), with_a_step=stp_, held=bool(rs_ >= 0.9 and all(stp_) and len(inv_) <= len(ch_) / 12))
+else:
+    r["438"] = dict(note="the song's own chart (Part 2 draws it)", held="n/a"); r["440"] = dict(note="the root at every change (the chart's own)", held="n/a")

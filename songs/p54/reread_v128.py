@@ -1,5 +1,5 @@
 """v128 Run 3 (481: every song on its own tonic, song 43 on A natural minor): Windows 141-143 read again on each run of this session, as Window 145 and 147 read them (zeneng_v125_port_reread.json's code, the
-first 400 complete builds of each main run, one chord a bar from the chart, each song on its own tonic), beside Billboard and
+first 400 complete builds of each main run (RR_MODE=ctl: control), the chord at the note (v128: the half-bar chart where the run has one), each song on its own tonic), beside Billboard and
 Rolling Stone, and each run against the run before it: which readings moved toward the kept songs and which away.
 Usage: python3 reread_v127.py OUT.json name=prefix [name=prefix ...]   (prefix: .../melody_vNNN; the song and _main.pkl are added)"""
 import sys, json, pickle, collections, re, os
@@ -20,8 +20,11 @@ FE = T122["measures (agreed by both collections, and the chord tones)"]         
 NAME = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
 def rm(c): c = c.split("/")[0]; r = NAME[c[0]] + (1 if "#" in c[:2] else -1 if (len(c) > 1 and c[1] == "b") else 0); return r % 12, ("m" in c[1:3] and "maj" not in c)
 def pcs(c): r, m = rm(c); return frozenset({r, (r + (3 if m else 4)) % 12, (r + 7) % 12})
-def eng(c): r, m = rm(c); return (r, frozenset((0, 3 if m else 4, 7)), 0, False)
+def eng(c):
+    r, m = rm(c); b = ((rm(c.split("/")[1])[0] - r) % 12) if "/" in c else 0   # 440: a chord over its third or fifth
+    return (r, frozenset((0, 3 if m else 4, 7)), b, False)
 SECS = {"Verse 1": ("verse", "1"), "Verse 2": ("verse", "2"), "Chorus 1": ("chorus", "1"), "Bridge": ("bridge", "1")}; TON = {"40": 2, "42": 10, "43": 9, "44": 3, "45": 7}; MINOR8 = {"43"}   # v128 481: song 43 on A, natural minor
+if os.environ.get("RR_SONGS"): TON = {k: v for k, v in TON.items() if k in os.environ["RR_SONGS"].split(",")}   # Part 2: songs 40, 42 and 43 only
 KS = T122["kept figures by section (both collections pooled)"]
 FV = T127["reread"]["first verse and chorus: every measure"]; FO = T127["reread"]["the melody over chord and bass"]
 def kept_of(tab, m):
@@ -35,7 +38,7 @@ for ver, pre in RUNS:
         for bi, c in enumerate([c for c in P["every"] if not c.get("partial")][:400]):
             for name, (sec, k) in SECS.items():
                 if name not in st or st[name][1] < 8: continue
-                b0 = st[name][0]; raw = sorted(((t[0] - b0 * 48) / 12, t[2], P["chords"][t[0] // 48]) for t in c["notes"] if b0 * 48 <= t[0] < (b0 + 8) * 48 and t[3] == name)
+                b0 = st[name][0]; raw = sorted(((t[0] - b0 * 48) / 12, t[2], (P["chords2"][t[0] // 24] if P.get("chords2") else P["chords"][t[0] // 48])) for t in c["notes"] if b0 * 48 <= t[0] < (b0 + 8) * 48 and t[3] == name)
                 m = om([(t, p, pcs(ch)) for t, p, ch in raw], ton, s in MINOR8)
                 if m: rows.append(dict(m, ver=ver, song=s, build=bi, sec=sec, k=k)); wins[(ver, s, bi, sec, k)] = [(t, p) for t, p, ch in raw]
                 if k == "1" and sec in ("verse", "chorus"):

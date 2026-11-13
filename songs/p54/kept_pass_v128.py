@@ -51,9 +51,10 @@ put("465", "a drawn line's class: the kept shares are the kept lines' own (a rea
 put("458", "drawn lines' median rate inside the kept 25th-75th: half of kept lines by definition")
 put("478", "verse 2's repeats and steps within five points of verse 1's: not computable song by song (no paired kept verses here)")
 put("484", "pitch kept 72-79%: the kept collections' figure (no song-by-song figure here)")
+put("438", "both shares inside their kept middle halves: half of kept songs on each by definition; the joint share is not in the table (no song rows)")
 put("441", "first-beat root within six points of 24%, third within six of 26% (no song-level kept table here)")
 for t in ("311", "314", "315", "317", "319", "320", "321", "324", "325", "326", "332", "333", "335", "352", "353", "362", "363", "367", "369", "373", "374", "375", "376", "377",
-          "379", "380", "381", "382", "383", "384", "386", "387", "392", "395", "417", "419", "464", "412", "470", "471", "472", "473", "476", "477", "491", "494", "356", "368", "394", "389", "405", "490"):
+          "379", "380", "381", "382", "383", "384", "386", "387", "392", "395", "417", "419", "464", "412", "470", "471", "472", "473", "476", "477", "491", "494", "440", "356", "368", "394", "389", "405", "490"):
     put(t, "a check of the engine's own rule, a count of deaths or breaks, or a design: no kept rate")
 for t in ("316", "318", "327", "328", "334", "336", "337", "340", "342", "388", "396", "428", "486", "489", "399", "341", "345", "346", "347", "348", "366", "359"):
     if t not in K: put(t, "a reading, a cost, or a share read on builds (no song-level kept test)")

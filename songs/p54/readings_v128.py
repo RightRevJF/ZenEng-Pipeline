@@ -626,6 +626,8 @@ TEST.update({
     "490": ("a weight on an onset in a run, by band; drawable runs within ten points on bands of 200 onsets or more", "kept by band (389)"),
     "491": ("467's and 408's knobs withdrawn; song 45's chorus floor no lower than its lift allows: design deaths under one in twenty", "the design (a check)"),
     "494": ("457 falls back at once when no entry and landing fit the strict copy", "printed"),
+    "438": ("the chart's share of bars with two or more changes inside the kept middle half (or none, drawn at the kept rate), and of bars holding the last bar's chord inside its middle half", "kept 0-0.33; 0.08-0.44; none in 25% and 37% of songs"),
+    "440": ("the bass on the root at nine changes in ten or more; a third or fifth with a step on one side; at most one chord in twelve", "the rule (a check)"),
     "464": ("song 45: deaths at 267 at or under v118's (267 reads the bridge G before its raise)", "v118 (songs/p50)"),
     "470": ("the content judge of record is the refit: its mean on complete builds, beside the v108 content", "kept median 1.97"),
     "471": ("the floor on the v108 judge; the share of complete builds under the refit's kept 5th percentile (-0.51) printed", "under a third on every song moves it"),
@@ -663,6 +665,8 @@ def reading(k, r):
     if k == "490": return f"run weights {x['knobs']}; drawable runs (kept, (onsets, share)) {x['drawable_runs']}"
     if k == "491": return f"design deaths {x['design_deaths']}; survivors {x['survivors']}" if "design_deaths" in x else x["note"]
     if k == "494": return f"at once {x['at_once']}, at half {x['at_half']}; rhythm deaths {x['rhythm_deaths']}; joins {x['joins']}"
+    if k == "438": return f"two or more {x['before']['two_or_more']} -> {x['after']['two_or_more']} (target {x['targets']['two_or_more']}), held bars {x['before']['holding']} -> {x['after']['holding']} (target {x['targets']['holding']}); edits {x['ops']}" if "after" in x else x["note"]
+    if k == "440": return f"root at {x['root_share']:.1%} of {x['changes']} changes; inversions {x['inversions']} (a step beside each: {x['with_a_step']})" if "changes" in x else x["note"]
     if k == "456": return f"walked windows {x['walked_windows']}, on the tonic {x['walked_tonic']:.1%} (collections {x['collections']})"
     if k == "464": return f"deaths at 267 {x['deaths267']} (before {x['before']}, v118 {x['v118']})" if "deaths267" in x else x["note"]
     if k == "459": return f"share {x['share']}; bars read {x['bars_read']}; builds with no such bar {x['builds_with_no_bar']}; rate {x['rate']}" if "share" in x else x.get("note", "")
