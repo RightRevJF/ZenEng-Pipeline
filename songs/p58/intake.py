@@ -44,3 +44,5 @@ SINGERS = {"lead": "high tenor, about D3-C5; the bridge's designed top C#5", "ha
 LOG.append({"q": "the pick's chorus sits about three semitones under the verse (its register draw at the kept 3rd percentile; 63% of survivors sing the chorus over the verse)",
             "options": {"A": "keep the engine's pick as drawn (the default path, no hand edits)", "B": "add a design: the chorus above the verse (its median at least two semitones over); run again and take the engine's pick", "C": "take the judge's best build among those with the chorus over the verse, from this run"},
             "recommended": "B", "answer": "B"})
+BLIND_PICK = {"q": "the blind pick: which line would you quote", "options": {"A": "I never felt the sun, but I could count it in a leaf", "B": "I watched a heartbeat stumble, and the stumble kept it sane", "C": "I read the rings inside a spruce like letters from the rain"}, "slots": {"A": "Middle", "B": "Annotated", "C": "Remembered"}, "answer": "B.  Absolutely.", "slot_picked": "Annotated"}
+LOG.append(BLIND_PICK)

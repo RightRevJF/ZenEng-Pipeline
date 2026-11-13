@@ -29,6 +29,8 @@ Deaths, main: the chorus-above-verse gate 46; limits 21; bridge opening unrelate
 
 Remembered: "I read the rings inside a spruce like letters from the rain". Middle (top quartile under both): "I never felt the sun, but I could count it in a leaf". Annotated: "I watched a heartbeat stumble, and the stumble kept it sane".
 
+The writer picked B (shuffled order: A Middle, B Annotated, C Remembered): **Annotated**, "Absolutely." Tally, 30 songs: Annotated top 13, Remembered 8, Middle 8, Refrain 1.
+
 ## Findings (580–)
 
 ### 580. 547: a judge that has not seen song 48 tells it from the kept songs as it tells song 40, and more easily than songs 43, 46 and 47.
