@@ -1,0 +1,14 @@
+- **The song:** song 47, *The Singer Doesn't Stop*, on the default path, written from the writer's intake and his locked lyric. The source was his paper "Analytic Continuation Through Death"; the genre, at his wish, contemporary Christian. It is built with dense, wordy verse lines, as the other AI suggested, the case 534 still needed.
+  - **The engine:** v129's code of record for song 43 with the song's frame, form, lyric and designs written in by gen_v131.py. It carries v130's 531 and 524 (the per-slot count) and v131's 525 and 540 (classes from zeneng_v131_kept_slots.json, by the slot's bars and the line's notes), 541 and 542.
+  - **Drawn on a 438 chart:** 440's step tested on the finished chart (513).
+  - **The runs:** 1,000 builds main and control, each made twice at PYTHONHASHSEED 0 (seed 20261560).
+  - **The pick of record:** the engine's default (362, with 472), taken as drawn with no hand edits.
+- **527 at intake:** each line's slot was set against the kept slots for its syllable count (the file's table by syllables) and shown to the writer. No line was flagged: no slot was one that under a tenth of kept lines of that count take.
+- **The record:** built from both the chart and the pick (build_p57.py). The second bridge's first fourteen bars are lifted a whole step in the record (the design). The bass is by the routine (bass_v131.py: v130's routine with the scale read by the bar).
+- **Readings,** each on main and control:
+  - every test (readings_v131.py);
+  - 526, the judge that has not seen the song (judge526.py, as the other AI specified): the 37 measures, C = 0.3, both kept collections split by piece in eight splits, fitted on songs 40–46 and tested on 47, and each of 40–46 held out in turn;
+  - the standing judge's scores (519);
+  - separation on the agreed 30 within the song, beside songs 40, 42 and 43;
+  - Window 147's measures (reread_v131.py), the five songs 40, 42, 43, 46 and 47 together and song 47 alone; empty bars and the stream beside the kept figures (527).
+- **Regression (523):** songs 40–45 (v129) and 46 (v130), main and control, rerun once and compared with their orders of record.

@@ -1,0 +1,554 @@
+{
+ "about": "v131: reread_v129.py with songs 46 and 47 (A minor, read on its own tonic).\nv129 (519: the window the engine's way, every note sung in its eight bars, the chord at the note; 481: every song on its own tonic): Windows 141-143 read again on each run of this session, as Window 145 and 147 read them (zeneng_v125_port_reread.json's code, the\nfirst 400 complete builds of each main run (RR_MODE=ctl: control), the chord at the note (v128: the half-bar chart where the run has one), each song on its own tonic), beside Billboard and\nRolling Stone, and each run against the run before it: which readings moved toward the kept songs and which away.",
+ "runs": [
+  "v131"
+ ],
+ "builds read (each run, song)": 400,
+ "first verse and chorus": {
+  "notes_per_bar": {
+   "billboard": 3.937,
+   "rolling_stone": 4.143,
+   "kept_sd": 1.363,
+   "v131": 5.6481,
+   "v131_by_song": [
+    5.6481
+   ],
+   "v131_sd_from_kept": 1.18
+  },
+  "range": {
+   "billboard": 10.67,
+   "rolling_stone": 10.587,
+   "kept_sd": 3.844,
+   "v131": 10.4,
+   "v131_by_song": [
+    10.4
+   ],
+   "v131_sd_from_kept": -0.06
+  },
+  "distinct_pitches": {
+   "billboard": 6.362,
+   "rolling_stone": 6.453,
+   "kept_sd": 1.825,
+   "v131": 6.7012,
+   "v131_by_song": [
+    6.7012
+   ],
+   "v131_sd_from_kept": 0.16
+  },
+  "repeat": {
+   "billboard": 0.273,
+   "rolling_stone": 0.291,
+   "kept_sd": null,
+   "v131": 0.2658,
+   "v131_by_song": [
+    0.2658
+   ],
+   "v131_sd_from_kept": null
+  },
+  "step": {
+   "billboard": 0.436,
+   "rolling_stone": 0.417,
+   "kept_sd": 0.15,
+   "v131": 0.4277,
+   "v131_by_song": [
+    0.4277
+   ],
+   "v131_sd_from_kept": 0.01
+  },
+  "third": {
+   "billboard": 0.191,
+   "rolling_stone": 0.191,
+   "kept_sd": 0.13,
+   "v131": 0.1794,
+   "v131_by_song": [
+    0.1794
+   ],
+   "v131_sd_from_kept": -0.09
+  },
+  "fourth_fifth": {
+   "billboard": 0.079,
+   "rolling_stone": 0.079,
+   "kept_sd": 0.0687,
+   "v131": 0.1021,
+   "v131_by_song": [
+    0.1021
+   ],
+   "v131_sd_from_kept": 0.34
+  },
+  "mean_interval": {
+   "billboard": 2.071,
+   "rolling_stone": 2.03,
+   "kept_sd": 0.5667,
+   "v131": 2.1854,
+   "v131_by_song": [
+    2.1854
+   ],
+   "v131_sd_from_kept": 0.24
+  },
+  "turns_per_move": {
+   "billboard": 0.584,
+   "rolling_stone": 0.594,
+   "kept_sd": 0.1452,
+   "v131": 0.561,
+   "v131_by_song": [
+    0.561
+   ],
+   "v131_sd_from_kept": -0.19
+  },
+  "last_note_tonic": {
+   "billboard": 0.282,
+   "rolling_stone": 0.328,
+   "kept_sd": 0.4632,
+   "v131": 0.0338,
+   "v131_by_song": [
+    0.0338
+   ],
+   "v131_sd_from_kept": -0.59
+  },
+  "peak_position": {
+   "billboard": 0.315,
+   "rolling_stone": 0.293,
+   "kept_sd": 0.29,
+   "v131": 0.3777,
+   "v131_by_song": [
+    0.3777
+   ],
+   "v131_sd_from_kept": 0.25
+  },
+  "on_beats_2_4": {
+   "billboard": 0.21,
+   "rolling_stone": 0.201,
+   "kept_sd": 0.087,
+   "v131": 0.2203,
+   "v131_by_song": [
+    0.2203
+   ],
+   "v131_sd_from_kept": 0.17
+  },
+  "gap_eighth": {
+   "billboard": 0.465,
+   "rolling_stone": 0.449,
+   "kept_sd": 0.1938,
+   "v131": 0.4805,
+   "v131_by_song": [
+    0.4805
+   ],
+   "v131_sd_from_kept": 0.12
+  },
+  "gap_quarter": {
+   "billboard": 0.186,
+   "rolling_stone": 0.175,
+   "kept_sd": 0.1526,
+   "v131": 0.1012,
+   "v131_by_song": [
+    0.1012
+   ],
+   "v131_sd_from_kept": -0.52
+  },
+  "gap_longer": {
+   "billboard": 0.2,
+   "rolling_stone": 0.177,
+   "kept_sd": 0.1188,
+   "v131": 0.1215,
+   "v131_by_song": [
+    0.1215
+   ],
+   "v131_sd_from_kept": -0.56
+  },
+  "first_onset": {
+   "billboard": 0.574,
+   "rolling_stone": 0.869,
+   "kept_sd": 2.45,
+   "v131": 1.8962,
+   "v131_by_song": [
+    1.8962
+   ],
+   "v131_sd_from_kept": 0.48
+  },
+  "bar_rhythm_repeats": {
+   "billboard": 0.229,
+   "rolling_stone": 0.192,
+   "kept_sd": 0.2222,
+   "v131": 0.1485,
+   "v131_by_song": [
+    0.1485
+   ],
+   "v131_sd_from_kept": -0.28
+  },
+  "equal_gap_run_max": {
+   "billboard": 4.867,
+   "rolling_stone": 4.378,
+   "kept_sd": 2.4839,
+   "v131": 7.0575,
+   "v131_by_song": [
+    7.0575
+   ],
+   "v131_sd_from_kept": 0.98
+  },
+  "gap_same_as_before": {
+   "billboard": 0.387,
+   "rolling_stone": 0.364,
+   "kept_sd": 0.164,
+   "v131": 0.4664,
+   "v131_by_song": [
+    0.4664
+   ],
+   "v131_sd_from_kept": 0.55
+  },
+  "gap_entropy": {
+   "billboard": 1.836,
+   "rolling_stone": 1.9,
+   "kept_sd": 0.4512,
+   "v131": 1.7044,
+   "v131_by_song": [
+    1.7044
+   ],
+   "v131_sd_from_kept": -0.36
+  },
+  "most_onsets_in_a_beat": {
+   "billboard": 2.634,
+   "rolling_stone": 2.801,
+   "kept_sd": 0.8451,
+   "v131": 3.3838,
+   "v131_by_song": [
+    3.3838
+   ],
+   "v131_sd_from_kept": 0.79
+  },
+  "phrase_starts_same_place": {
+   "billboard": 0.551,
+   "rolling_stone": 0.521,
+   "kept_sd": 0.1931,
+   "v131": 0.4292,
+   "v131_by_song": [
+    0.4292
+   ],
+   "v131_sd_from_kept": -0.55
+  },
+  "zigzag_of_three": {
+   "billboard": 0.315,
+   "rolling_stone": 0.333,
+   "kept_sd": 0.2095,
+   "v131": 0.288,
+   "v131_by_song": [
+    0.288
+   ],
+   "v131_sd_from_kept": -0.17
+  },
+  "chord_tones": {
+   "billboard": 0.644,
+   "rolling_stone": 0.622,
+   "kept_sd": 0.1579,
+   "v131": 0.5849,
+   "v131_by_song": [
+    0.5849
+   ],
+   "v131_sd_from_kept": -0.3
+  },
+  "chord_tones_on_beat": {
+   "billboard": 0.674,
+   "rolling_stone": 0.643,
+   "kept_sd": 0.1667,
+   "v131": 0.593,
+   "v131_by_song": [
+    0.593
+   ],
+   "v131_sd_from_kept": -0.39
+  },
+  "chord_tones_off_beat": {
+   "billboard": 0.612,
+   "rolling_stone": 0.603,
+   "kept_sd": 0.2,
+   "v131": 0.5982,
+   "v131_by_song": [
+    0.5982
+   ],
+   "v131_sd_from_kept": -0.05
+  },
+  "chord_tones_on_downbeat": {
+   "billboard": 0.729,
+   "rolling_stone": 0.705,
+   "kept_sd": 0.26,
+   "v131": 0.5507,
+   "v131_by_song": [
+    0.5507
+   ],
+   "v131_sd_from_kept": -0.64
+  },
+  "empty_bars": {
+   "billboard": 0.515,
+   "rolling_stone": 0.736,
+   "kept_sd": 0.9692,
+   "v131": 0.0325,
+   "v131_by_song": [
+    0.0325
+   ],
+   "v131_sd_from_kept": -0.61
+  }
+ },
+ "the melody over chord and bass": {
+  "downbeat_chord_tone": {
+   "billboard": 0.737,
+   "rolling_stone": 0.691,
+   "kept_sd": 0.2833,
+   "v131": 0.5507,
+   "v131_by_song": [
+    0.5507
+   ],
+   "v131_sd_from_kept": -0.58
+  },
+  "downbeat_on_root": {
+   "billboard": 0.261,
+   "rolling_stone": 0.227,
+   "kept_sd": 0.275,
+   "v131": 0.1692,
+   "v131_by_song": [
+    0.1692
+   ],
+   "v131_sd_from_kept": -0.27
+  },
+  "downbeat_on_third": {
+   "billboard": 0.242,
+   "rolling_stone": 0.27,
+   "kept_sd": 0.2857,
+   "v131": 0.2241,
+   "v131_by_song": [
+    0.2241
+   ],
+   "v131_sd_from_kept": -0.11
+  },
+  "downbeat_on_fifth": {
+   "billboard": 0.225,
+   "rolling_stone": 0.217,
+   "kept_sd": 0.2455,
+   "v131": 0.1574,
+   "v131_by_song": [
+    0.1574
+   ],
+   "v131_sd_from_kept": -0.26
+  },
+  "melody_on_root": {
+   "billboard": 0.234,
+   "rolling_stone": 0.217,
+   "kept_sd": 0.1588,
+   "v131": 0.2156,
+   "v131_by_song": [
+    0.2156
+   ],
+   "v131_sd_from_kept": -0.06
+  },
+  "melody_on_third": {
+   "billboard": 0.201,
+   "rolling_stone": 0.199,
+   "kept_sd": 0.1,
+   "v131": 0.1564,
+   "v131_by_song": [
+    0.1564
+   ],
+   "v131_sd_from_kept": -0.44
+  },
+  "melody_on_fifth": {
+   "billboard": 0.204,
+   "rolling_stone": 0.215,
+   "kept_sd": 0.15,
+   "v131": 0.2133,
+   "v131_by_song": [
+    0.2133
+   ],
+   "v131_sd_from_kept": 0.03
+  },
+  "melody_a_step_above_a_chord_tone": {
+   "billboard": 0.233,
+   "rolling_stone": 0.251,
+   "kept_sd": 0.1312,
+   "v131": 0.2686,
+   "v131_by_song": [
+    0.2686
+   ],
+   "v131_sd_from_kept": 0.2
+  },
+  "over_bass_second_or_seventh": {
+   "billboard": 0.18,
+   "rolling_stone": 0.19,
+   "kept_sd": 0.1087,
+   "v131": 0.2362,
+   "v131_by_song": [
+    0.2362
+   ],
+   "v131_sd_from_kept": 0.47
+  },
+  "parallel_perfect": {
+   "billboard": 0.147,
+   "rolling_stone": 0.102,
+   "kept_sd": 0.22,
+   "v131": 0.0431,
+   "v131_by_song": [
+    0.0431
+   ],
+   "v131_sd_from_kept": -0.37
+  },
+  "contrary_of_moving": {
+   "billboard": 0.435,
+   "rolling_stone": 0.394,
+   "kept_sd": 0.315,
+   "v131": 0.6018,
+   "v131_by_song": [
+    0.6018
+   ],
+   "v131_sd_from_kept": 0.59
+  }
+ },
+ "chorus first beat on the third (billboard 0.247, rolling stone 0.294)": {
+  "v131": 0.3037
+ },
+ "chorus first beat on the third, by song": {
+  "v131": [
+   0.3037
+  ]
+ },
+ "the second verse less the first, paired by build (434's test: under 0.15 kept sd on 20 of 27; kept: Billboard 23, Rolling Stone 23)": {
+  "v131": {
+   "pairs": 400,
+   "measures under 0.15 kept sd, of 27": 17,
+   "by song (of 27)": {
+    "47": 20
+   },
+   "every measure (kept sd)": {
+    "notes_per_bar": 0.12,
+    "range": 0.03,
+    "distinct_pitches": 0.14,
+    "repeat": 0.02,
+    "step": 0.23,
+    "third": -0.27,
+    "fourth_fifth": -0.05,
+    "mean_interval": -0.22,
+    "turns_per_move": -0.03,
+    "last_note_tonic": 0.0,
+    "peak_position": 0.01,
+    "on_beats_2_4": -0.03,
+    "gap_eighth": 0.06,
+    "gap_quarter": -0.08,
+    "gap_longer": -0.04,
+    "first_onset": -0.01,
+    "bar_rhythm_repeats": -0.29,
+    "equal_gap_run_max": 0.12,
+    "gap_same_as_before": -0.15,
+    "gap_entropy": -0.15,
+    "most_onsets_in_a_beat": -0.02,
+    "phrase_starts_same_place": 0.12,
+    "zigzag_of_three": -0.03,
+    "chord_tones": 0.4,
+    "chord_tones_on_beat": 0.15,
+    "chord_tones_off_beat": 0.41,
+    "chord_tones_on_downbeat": 0.31
+   },
+   "chord tones on the beat, verse 1 / verse 2 (by song)": {
+    "47": [
+     0.683,
+     0.71
+    ]
+   },
+   "chord tones on the beat, verse 1 / verse 2 (pooled)": [
+    0.683,
+    0.71
+   ],
+   "verse 1 / verse 2 / kept verse 2": {
+    "chord_tones_on_beat": [
+     0.683,
+     0.71,
+     0.667
+    ],
+    "chord_tones": [
+     0.617,
+     0.675,
+     0.643
+    ],
+    "repeat": [
+     0.306,
+     0.309,
+     0.295
+    ],
+    "step": [
+     0.395,
+     0.435,
+     0.408
+    ],
+    "equal_gap_run_max": [
+     8.48,
+     8.775,
+     4.901
+    ],
+    "gap_eighth": [
+     0.435,
+     0.447,
+     0.458
+    ]
+   },
+   "pair (bars the same rhythm, onsets shared, pitch kept, notes ratio)": [
+    0.17,
+    0.804,
+    0.725,
+    1.023
+   ]
+  }
+ },
+ "at the windows' own density (kept, run)": {
+  "v131": {
+   "3.5 to 4.5 notes a bar": {
+    "equal_gap_run_max": [
+     4.582,
+     5.635
+    ],
+    "gap_same_as_before": [
+     0.389,
+     0.415
+    ],
+    "zigzag_of_three": [
+     0.315,
+     0.215
+    ],
+    "gap_eighth": [
+     0.489,
+     0.526
+    ],
+    "turns_per_move": [
+     0.579,
+     0.481
+    ],
+    "range": [
+     11.146,
+     10.405
+    ],
+    "windows": 400
+   },
+   "5.5 to 9 notes a bar": {
+    "equal_gap_run_max": [
+     6.172,
+     8.48
+    ],
+    "gap_same_as_before": [
+     0.435,
+     0.518
+    ],
+    "zigzag_of_three": [
+     0.328,
+     0.361
+    ],
+    "gap_eighth": [
+     0.463,
+     0.435
+    ],
+    "turns_per_move": [
+     0.591,
+     0.641
+    ],
+    "range": [
+     12.234,
+     10.395
+    ],
+    "windows": 400
+   }
+  }
+ },
+ "moved toward kept, or away": {}
+}
