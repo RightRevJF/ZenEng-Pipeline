@@ -1,0 +1,604 @@
+{
+ "about": "ZenEng v126, Window 146 (fix 470): the content judge of record. score = intercept + sum over measures of weight * (value - mean) / sd; a measure a window lacks takes fill_missing_with. Read on the first eight bars of the first verse and of the first chorus; a build's content score is read as the v108 judge's was. The four new measures are computed by cand() in zeneng_v121_blind_spots.json; the chord-tone measures and the rest by the judge's own measure code. The order judge of zeneng_v108_judges.json is unchanged.",
+ "content_judge": {
+  "measures": [
+   "range",
+   "pitch_sd",
+   "distinct_pitches",
+   "repeat",
+   "step",
+   "third",
+   "fourth_fifth",
+   "past_fifth",
+   "mean_interval",
+   "ascending",
+   "turns_per_move",
+   "longest_run_one_way",
+   "leap_then_back_by_step",
+   "on_tonic",
+   "on_third",
+   "on_fifth",
+   "last_note_tonic",
+   "first_note_tonic_triad",
+   "peak_position",
+   "low_position",
+   "peak_count",
+   "time_in_top_third",
+   "pitch_bits",
+   "on_beats_2_4",
+   "gap_sixteenth",
+   "gap_eighth",
+   "unit2_returns",
+   "unit3_returns",
+   "unit4_to_unit2",
+   "equal_gap_run_max",
+   "gap_same_as_before",
+   "gap_entropy",
+   "zigzag_of_three",
+   "chord_tones",
+   "chord_tones_on_beat",
+   "chord_tones_off_beat",
+   "chord_tones_on_downbeat"
+  ],
+  "fill_missing_with": [
+   9.0,
+   2.4435182815774503,
+   6.0,
+   0.24324324324324326,
+   0.42105263157894735,
+   0.16981132075471697,
+   0.0784313725490196,
+   0.0,
+   2.064516129032258,
+   0.47619047619047616,
+   0.6333333333333333,
+   3.0,
+   0.2857142857142857,
+   0.13513513513513514,
+   0.14285714285714285,
+   0.15625,
+   0.0,
+   1.0,
+   0.140625,
+   0.15625,
+   3.0,
+   0.330188679245283,
+   2.7616185393070913,
+   0.23809523809523808,
+   0.0975609756097561,
+   0.6176470588235294,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   0.5333333333333333,
+   1.6342958812911665,
+   0.37142857142857144,
+   0.6153846153846154,
+   0.6666666666666666,
+   0.5714285714285714,
+   0.7142857142857143
+  ],
+  "mean": [
+   9.09647952376065,
+   2.5243695160283797,
+   6.1741763317253415,
+   0.2700521096050198,
+   0.4276096100594893,
+   0.1893978128374439,
+   0.0902182185988268,
+   0.022722248899220275,
+   2.0896555394512215,
+   0.4773142970107153,
+   0.6358280484805562,
+   3.24766499024941,
+   0.30704188776945385,
+   0.1747899175476311,
+   0.1648421587475704,
+   0.17332138557008983,
+   0.11444113722672689,
+   0.6445653289541209,
+   0.2738953597026925,
+   0.26642712930651063,
+   4.871805398747819,
+   0.35377719458429635,
+   2.810319774672211,
+   0.23123971547061825,
+   0.13455629543958314,
+   0.5870312162727879,
+   0.1317869239453967,
+   0.2579287693728831,
+   0.11485168839166582,
+   6.388894590988402,
+   0.5135870489950558,
+   1.6455438640464375,
+   0.3879179384928389,
+   0.6181548625122788,
+   0.6707826447352475,
+   0.5633999371813407,
+   0.704132026412125
+  ],
+  "sd": [
+   3.0932894834391473,
+   0.7943316116991758,
+   1.662274155938912,
+   0.15970208713676096,
+   0.15898766179676194,
+   0.1222031003255128,
+   0.06971330766933204,
+   0.037229169555516535,
+   0.6058645706141805,
+   0.07688844095224205,
+   0.11996791417082033,
+   0.8738203366586897,
+   0.24434651447060082,
+   0.16811292109413833,
+   0.14952262846971193,
+   0.14118990319771296,
+   0.31834629468077735,
+   0.47864482203862485,
+   0.2837281108671825,
+   0.25651332031979834,
+   4.970991339271059,
+   0.187056211432369,
+   0.3655374456456352,
+   0.0593224280683375,
+   0.14781642871104947,
+   0.17900220673330444,
+   0.33825896975898057,
+   0.4374945934553628,
+   0.3188428736309618,
+   2.301673021078512,
+   0.15086492937919363,
+   0.40542797637588185,
+   0.17852871617790364,
+   0.10404392040273734,
+   0.12815026438655364,
+   0.1572961252668311,
+   0.19458203312294306
+  ],
+  "weight": [
+   1.3564206946315163,
+   0.8722017381613849,
+   -1.4470836363467556,
+   -0.26732765684484344,
+   0.2811819003743885,
+   0.18714839589823312,
+   -0.017371909820421153,
+   -0.6358113629929322,
+   -1.0522721849137462,
+   -0.3056525874533008,
+   -0.5377029402888833,
+   -0.27510507353880276,
+   -0.0747821169426642,
+   0.8958051826741202,
+   0.6687408107810945,
+   0.6150542272173308,
+   0.4566720076076771,
+   0.023356069687726598,
+   0.24082096507401968,
+   0.2757246253780134,
+   -0.12019878239616584,
+   0.05769831498678504,
+   0.6591564781501758,
+   -0.3188682713627251,
+   -0.7901381113784282,
+   -1.3928671820351501,
+   0.09660061412203673,
+   0.029300009945423616,
+   0.30818227112099655,
+   -0.23227645913049993,
+   -0.3164758053117505,
+   -0.6583042472361216,
+   0.4038296275566647,
+   -0.19707189779249704,
+   -0.14771138424431562,
+   0.22143728323036158,
+   0.21759989804847657
+  ],
+  "intercept": -1.3735837820546164
+ },
+ "findings": {
+  "measures": 37,
+  "kept windows (CoCoPops, BiMMuDa 1958-1991)": [
+   314,
+   231
+  ],
+  "build windows, first verse and chorus (five songs, every complete build)": 9198,
+  "1. separation, held out by song and by piece": {
+   "the refit (37 measures)": {
+    "by held-out song": {
+     "40": 0.864,
+     "42": 0.799,
+     "43": 0.773,
+     "44": 0.852,
+     "45": 0.95
+    },
+    "mean": 0.848
+   },
+   "the 29 agreed alone": {
+    "by held-out song": {
+     "40": 0.861,
+     "42": 0.82,
+     "43": 0.737,
+     "44": 0.863,
+     "45": 0.941
+    },
+    "mean": 0.845
+   },
+   "agreed and the four": {
+    "by held-out song": {
+     "40": 0.876,
+     "42": 0.817,
+     "43": 0.756,
+     "44": 0.848,
+     "45": 0.957
+    },
+    "mean": 0.851
+   },
+   "the judge of record's content score (46 measures, v108 fit)": {
+    "by held-out song": {
+     "40": 0.779,
+     "42": 0.735,
+     "43": 0.779,
+     "44": 0.857,
+     "45": 0.696
+    },
+    "mean": 0.769
+   }
+  },
+  "the refit on kept windows: mean, sd, 25th percentile": [
+   1.92,
+   2.21,
+   0.4
+  ],
+  "costs: measure, points, kept mean, builds' mean": [
+   [
+    "gap_eighth",
+    0.93,
+    0.475,
+    0.594
+   ],
+   [
+    "range",
+    0.84,
+    10.895,
+    8.99
+   ],
+   [
+    "pitch_sd",
+    0.51,
+    2.967,
+    2.498
+   ],
+   [
+    "last_note_tonic",
+    0.28,
+    0.299,
+    0.104
+   ],
+   [
+    "gap_same_as_before",
+    0.27,
+    0.394,
+    0.521
+   ],
+   [
+    "on_tonic",
+    0.26,
+    0.222,
+    0.172
+   ],
+   [
+    "turns_per_move",
+    0.23,
+    0.587,
+    0.639
+   ],
+   [
+    "equal_gap_run_max",
+    0.16,
+    4.886,
+    6.478
+   ],
+   [
+    "on_third",
+    0.16,
+    0.198,
+    0.163
+   ],
+   [
+    "on_beats_2_4",
+    0.12,
+    0.21,
+    0.232
+   ],
+   [
+    "low_position",
+    0.09,
+    0.348,
+    0.262
+   ],
+   [
+    "unit4_to_unit2",
+    0.08,
+    0.194,
+    0.11
+   ]
+  ],
+  "gap, points": 3.49,
+  "weights, heaviest": [
+   [
+    "distinct_pitches",
+    -1.45
+   ],
+   [
+    "gap_eighth",
+    -1.39
+   ],
+   [
+    "range",
+    1.36
+   ],
+   [
+    "mean_interval",
+    -1.05
+   ],
+   [
+    "on_tonic",
+    0.9
+   ],
+   [
+    "pitch_sd",
+    0.87
+   ],
+   [
+    "gap_sixteenth",
+    -0.79
+   ],
+   [
+    "on_third",
+    0.67
+   ],
+   [
+    "pitch_bits",
+    0.66
+   ],
+   [
+    "gap_entropy",
+    -0.66
+   ],
+   [
+    "past_fifth",
+    -0.64
+   ],
+   [
+    "on_fifth",
+    0.62
+   ],
+   [
+    "turns_per_move",
+    -0.54
+   ],
+   [
+    "last_note_tonic",
+    0.46
+   ]
+  ],
+  "2. kept verse 1 and verse 2 (CoCoPops) under the refit: means, difference in kept sd": [
+   1.94,
+   2.0,
+   0.03,
+   167,
+   160
+  ],
+  "2. the builds' verse 1 and verse 2 under the refit, by song: means, difference in kept sd": {
+   "40": [
+    -1.6,
+    -2.33,
+    -0.33
+   ],
+   "42": [
+    -1.26,
+    -1.48,
+    -0.1
+   ],
+   "43": [
+    -1.26,
+    -1.32,
+    -0.03
+   ],
+   "44": [
+    -2.06,
+    -2.52,
+    -0.21
+   ],
+   "45": [
+    -2.7,
+    -3.02,
+    -0.15
+   ]
+  },
+  "2. sections under the refit, builds pooled (kept verse 1 mean 1.94)": {
+   "Verse 1": -1.75,
+   "Chorus 1": -1.39,
+   "Verse 2": -2.1,
+   "Bridge": -1.28
+  },
+  "3, 4, 6. the pick": {
+   "40": {
+    "clean survivors read": 578,
+    "pick of record": "281eeb103fa6",
+    "refit's pick": "f84a9d4381c2",
+    "same": false,
+    "the pick of record's rank under the refit": 72,
+    "the refit's pick's rank under the judge of record": 35,
+    "with verse 2 read: pick": "f84a9d4381c2",
+    "same as the refit's": true,
+    "the refit's pick's rank with verse 2 read": 1,
+    "rank correlation, refit content against the record's content": 0.36
+   },
+   "42": {
+    "clean survivors read": 605,
+    "pick of record": "fafc0b21932b",
+    "refit's pick": "89f3759b1d95",
+    "same": false,
+    "the pick of record's rank under the refit": 91,
+    "the refit's pick's rank under the judge of record": 27,
+    "with verse 2 read: pick": "569fce8f69e9",
+    "same as the refit's": false,
+    "the refit's pick's rank with verse 2 read": 6,
+    "rank correlation, refit content against the record's content": 0.35
+   },
+   "43": {
+    "clean survivors read": 551,
+    "pick of record": "51e5863d9a5e",
+    "refit's pick": "1780b0c80fe2",
+    "same": false,
+    "the pick of record's rank under the refit": 4,
+    "the refit's pick's rank under the judge of record": 287,
+    "with verse 2 read: pick": "0d9a3a5c8321",
+    "same as the refit's": false,
+    "the refit's pick's rank with verse 2 read": 2,
+    "rank correlation, refit content against the record's content": 0.33
+   },
+   "44": {
+    "clean survivors read": 532,
+    "pick of record": "ed1df06df46e",
+    "refit's pick": "9a4f1d0d473a",
+    "same": false,
+    "the pick of record's rank under the refit": 40,
+    "the refit's pick's rank under the judge of record": 5,
+    "with verse 2 read: pick": "5de8381d6878",
+    "same as the refit's": false,
+    "the refit's pick's rank with verse 2 read": 3,
+    "rank correlation, refit content against the record's content": 0.36
+   },
+   "45": {
+    "clean survivors read": 466,
+    "pick of record": "ba3895cd61cf",
+    "refit's pick": "90182ace95fd",
+    "same": false,
+    "the pick of record's rank under the refit": 18,
+    "the refit's pick's rank under the judge of record": 9,
+    "with verse 2 read: pick": "340aff34babd",
+    "same as the refit's": false,
+    "the refit's pick's rank with verse 2 read": 17,
+    "rank correlation, refit content against the record's content": 0.38
+   }
+  },
+  "5. song 45, chorus 1, as drawn and as re-set": {
+   "refit": [
+    -1.07,
+    -1.51
+   ],
+   "judge of record's content": [
+    4.44,
+    0.16
+   ],
+   "against the edit": [
+    [
+     "gap_eighth",
+     -0.6,
+     0.462,
+     0.538
+    ],
+    [
+     "peak_position",
+     -0.42,
+     0.766,
+     0.266
+    ],
+    [
+     "on_beats_2_4",
+     -0.27,
+     0.225,
+     0.275
+    ],
+    [
+     "mean_interval",
+     -0.27,
+     1.949,
+     2.103
+    ],
+    [
+     "pitch_bits",
+     -0.13,
+     2.641,
+     2.569
+    ]
+   ],
+   "for it": [
+    [
+     "gap_sixteenth",
+     0.82,
+     0.308,
+     0.154
+    ],
+    [
+     "ascending",
+     0.24,
+     0.455,
+     0.394
+    ],
+    [
+     "gap_same_as_before",
+     0.17,
+     0.553,
+     0.474
+    ],
+    [
+     "on_fifth",
+     0.11,
+     0.05,
+     0.075
+    ],
+    [
+     "gap_entropy",
+     0.09,
+     1.909,
+     1.856
+    ]
+   ]
+  },
+  "floor: kept songs' mean over their windows, 5th and 25th percentile": [
+   -0.51,
+   0.87
+  ],
+  "floor: share of each song's complete builds under the kept 5th percentile": {
+   "40": 0.81,
+   "42": 0.72,
+   "43": 0.65,
+   "44": 0.91,
+   "45": 1.0
+  },
+  "floor: windows under kept percentiles": {
+   "under the kept 5th percentile (-1.54)": {
+    "40": 0.53,
+    "42": 0.39,
+    "43": 0.29,
+    "44": 0.6,
+    "45": 0.95
+   },
+   "under the kept 10th percentile (-0.76)": {
+    "40": 0.75,
+    "42": 0.64,
+    "43": 0.55,
+    "44": 0.87,
+    "45": 1.0
+   },
+   "under the kept 25th percentile (0.40)": {
+    "40": 0.94,
+    "42": 0.9,
+    "43": 0.86,
+    "44": 0.98,
+    "45": 1.0
+   }
+  },
+  "pitches for the range: distinct pitches over range, kept and builds": [
+   0.62,
+   0.71
+  ]
+ },
+ "code": "\"\"\"Fix 425: the content judge refitted on agreed measures, both melody collections, the v119 port's builds. Predictions in\nPREDICTION.md. Run: python3 refit.py\"\"\"\nimport json, sys, io, contextlib, pickle, re, warnings, collections, numpy as np, pandas as pd\nwarnings.filterwarnings(\"ignore\")\nfrom sklearn.metrics import roc_auc_score; from scipy.stats import spearmanr\nsys.path[:0] = [\"/home/claude/zeneng/corpus/second\", \"/home/claude/zeneng/corpus/family\", \"/home/claude/zeneng/corpus/distance\", \"/home/claude/zeneng/corpus/blind\"]\nimport blind_study as BS\nwith contextlib.redirect_stdout(io.StringIO()): import second_study as S\nD = S.D; CS = D.CS; R = json.load(open(\"/home/claude/zeneng/corpus/second/robust_findings.json\")); AG = [m for m in R[\"measures the two collections agree on (gap under 0.2 sd)\"] if m != \"empty_bars\"]\nFOUR = [\"equal_gap_run_max\", \"gap_same_as_before\", \"gap_entropy\", \"zigzag_of_three\"]; HARM = [\"chord_tones\", \"chord_tones_on_beat\", \"chord_tones_off_beat\", \"chord_tones_on_downbeat\"]; FE = AG + FOUR + HARM\nKC = pd.read_pickle(\"/home/claude/zeneng/corpus/blind/cocopops_with_candidates.pkl\"); KB = pd.read_pickle(\"/home/claude/zeneng/corpus/blind/bimmuda_with_candidates.pkl\"); KB = KB[(KB.year >= 1958) & (KB.year <= 1991)].copy()\nfor h in HARM: KB[h] = np.nan\nK = pd.concat([KC.assign(body=\"cocopops\"), KB.assign(body=\"bimmuda\")], ignore_index=True); K[\"piece\"] = K.body + \":\" + K.piece.astype(str)\nJR = json.load(open(\"/tmp/claude-0/-home-claude/cb605329-bb43-51d1-8654-049a35ebdf3e/scratchpad/tables/zeneng_v108_judges.json\"))[\"content_judge\"]\ndef old(Dx): X = Dx.reindex(columns=JR[\"measures\"]).astype(float).values.copy(); X = np.where(np.isnan(X), np.array(JR[\"fill_missing_with\"]), X); return ((X - np.array(JR[\"mean\"])) / np.array(JR[\"sd\"])) @ np.array(JR[\"weight\"]) + JR[\"intercept\"]\nNAME = {\"C\": 0, \"D\": 2, \"E\": 4, \"F\": 5, \"G\": 7, \"A\": 9, \"B\": 11}\ndef pcs(c):\n    c = c.split(\"/\")[0]; r = NAME[c[0]] + (1 if \"#\" in c[:2] else -1 if (len(c) > 1 and c[1] == \"b\") else 0); m = \"m\" in c[1:3] and \"maj\" not in c; return {r % 12, (r + (3 if m else 4)) % 12, (r + 7) % 12}\ndef rowof(N, ton, minor=False):\n    r = CS.row(N, ton, minor)\n    if not r: return None\n    c = BS.cand(N)\n    if c is None: return None\n    r.update(c); return r\nTON = {\"40\": 2, \"42\": 10, \"43\": 0, \"44\": 3, \"45\": 7}; SECS = (\"Verse 1\", \"Chorus 1\", \"Verse 2\", \"Bridge\"); rows = []; meta = {}\nfor s, ton in TON.items():\n    P = pickle.load(open(f\"/home/claude/p51/melody_v119_p{s}_main.pkl\", \"rb\")); st = {}; i = 0\n    for name, kind, nb in P[\"form\"]: st[name] = (i, nb); i += nb\n    meta[s] = dict(pick=P[\"pick\"][\"fp\"])\n    for bi, c in enumerate(P[\"every\"]):\n        if c.get(\"partial\"): continue\n        for name in SECS:\n            if name not in st or st[name][1] < 8: continue\n            b0 = st[name][0]; N = sorted(((t[0] - b0 * 48) / 12, t[1] / 12, t[2], pcs(P[\"chords\"][t[0] // 48])) for t in c[\"notes\"] if b0 * 48 <= t[0] < (b0 + 8) * 48 and t[3] == name)\n            r = rowof(N, ton)\n            if r: rows.append(dict(r, song=s, build=bi, fp=c[\"fp\"], sec=name, alive=c[\"cause\"] is None, clean=(c[\"cause\"] is None and not c[\"soft\"]), old_content=c[\"judge\"][\"content\"] if c.get(\"judge\") else np.nan, old_order=c[\"judge\"][\"order\"] if c.get(\"judge\") else np.nan, old_combined=c[\"judge\"][\"combined\"] if c.get(\"judge\") else np.nan))\nB = pd.DataFrame(rows); B.to_pickle(\"builds_v119_rows.pkl\"); B1 = B[B.sec.isin((\"Verse 1\", \"Chorus 1\"))]\n# kept second verses (CoCoPops), by the same row\nexec(open(\"/home/claude/zeneng/corpus/whole/whole_study.py\").read().split(\"def om(\")[0].split(\"RS = Path\")[0]); from pathlib import Path\nBBd = Path(\"/home/claude/corpus/try2/CoCoPops/Billboard/Data\")\ndef marks_of(f):\n    bi = None; mk = []\n    for l in f.read_text(errors=\"ignore\").splitlines():\n        if l.startswith(\"=\"):\n            m = re.match(r\"^=+(\\d+)\", l); bi = int(m.group(1)) if m else bi; continue\n        m = re.match(r\"^\\*>Label>([A-Za-z]+)\", l)\n        if m and bi is not None: mk.append((bi, m.group(1).lower()))\n    return mk\nd = pd.read_csv(\"/home/claude/zeneng/corpus/cocopops_notes.csv.gz\", low_memory=False); d = d[d.dur > 0]; k2 = []\nfor s, g in d.groupby(\"song\", sort=False):\n    if g.beat.quantile(.99) >= 4: continue\n    fs = [x for x in (BBd / f\"{s}.varms.hum\", BBd / f\"{s}.hum\") if x.exists()]\n    if not fs: continue\n    cnt = collections.Counter(); I = {}\n    for b, lab in marks_of(fs[0]): cnt[lab] += 1; I[(lab, cnt[lab])] = b\n    ton = int(g.key_pc.iloc[0]); minor = str(g[\"mode\"].iloc[0]) == \"minor\"; g = g.sort_values(\"abs_beat\")\n    for w in ((\"verse\", 1), (\"verse\", 2)):\n        if w not in I: continue\n        b0 = I[w]; x = g[(g.bar >= b0) & (g.bar < b0 + 8)]; r = rowof([((q.bar - b0) * 4 + q.beat, q.dur, int(q.pitch), GA.roman_pcs(q.roman, ton)) for q in x.itertuples()], ton, minor)\n        if r: k2.append(dict(r, piece=s, k=w[1]))\nK2 = pd.DataFrame(k2)\nout = {\"measures\": len(FE), \"kept windows (CoCoPops, BiMMuDa 1958-1991)\": [int((K.body == \"cocopops\").sum()), int((K.body == \"bimmuda\").sum())], \"build windows, first verse and chorus (five songs, every complete build)\": len(B1)}\nrng = np.random.default_rng(425)\ndef fit(Kd, Bd, feats):\n    m = D.lin(); X = pd.concat([Kd[feats], Bd[feats]]).astype(float); y = np.r_[np.ones(len(Kd)), np.zeros(len(Bd))]; m.fit(X, y, logisticregression__sample_weight=np.r_[np.full(len(Kd), len(Bd) / len(Kd)), np.ones(len(Bd))]); return m\ndef cv(feats, scorer=None, reps=6):\n    res = collections.defaultdict(list)\n    for _ in range(reps):\n        ps = K.piece.unique(); rng.shuffle(ps); h = set(ps[: len(ps) // 2]); ktr, kte = K[K.piece.isin(h)], K[~K.piece.isin(h)]\n        for s in TON:\n            tr, te = B1[B1.song != s], B1[B1.song == s]; te = te.sample(min(len(te), 3 * len(kte)), random_state=int(rng.integers(1e6)))\n            if scorer is None: m = fit(ktr, tr.sample(min(len(tr), 6 * len(ktr)), random_state=int(rng.integers(1e6))), feats); sk, sb = m.decision_function(kte[feats].astype(float)), m.decision_function(te[feats].astype(float))\n            else: sk, sb = scorer(kte), scorer(te)\n            res[s].append(roc_auc_score(np.r_[np.ones(len(sk)), np.zeros(len(sb))], np.r_[sk, sb]))\n    return {\"by held-out song\": {s: round(float(np.mean(v)), 3) for s, v in res.items()}, \"mean\": round(float(np.mean([np.mean(v) for v in res.values()])), 3)}\nout[\"1. separation, held out by song and by piece\"] = {\"the refit (37 measures)\": cv(FE), \"the 29 agreed alone\": cv(AG), \"agreed and the four\": cv(AG + FOUR), \"the judge of record's content score (46 measures, v108 fit)\": cv(None, scorer=old)}\nM = fit(K, B1, FE); pipe = M; imp, sc, lr = M.steps[0][1], M.steps[1][1], M.steps[2][1]\njudge = dict(measures=FE, fill_missing_with=[float(x) for x in imp.statistics_], mean=[float(x) for x in sc.mean_], sd=[float(x) for x in sc.scale_], weight=[float(x) for x in lr.coef_[0]], intercept=float(lr.intercept_[0]))\nscore = lambda Dx: M.decision_function(Dx[FE].astype(float))\nks = score(K); ksd = float(ks.std()); out[\"the refit on kept windows: mean, sd, 25th percentile\"] = [round(float(ks.mean()), 2), round(ksd, 2), round(float(np.percentile(ks, 25)), 2)]\nzk = (imp.transform(K[FE].astype(float)) - sc.mean_) / sc.scale_; zb = (imp.transform(B1[FE].astype(float)) - sc.mean_) / sc.scale_; cost = lr.coef_[0] * (zk.mean(0) - zb.mean(0)); o = np.argsort(-cost)\nout[\"costs: measure, points, kept mean, builds' mean\"] = [[FE[i], round(float(cost[i]), 2), round(float(K[FE[i]].mean()), 3), round(float(B1[FE[i]].mean()), 3)] for i in o[:12]]; out[\"gap, points\"] = round(float(cost.sum()), 2)\nout[\"weights, heaviest\"] = [[FE[i], round(float(lr.coef_[0][i]), 2)] for i in np.argsort(-np.abs(lr.coef_[0]))[:14]]\n# 2. second verses\nB = B.assign(new=score(B)); a, b = score(K2[K2.k == 1]), score(K2[K2.k == 2]); out[\"2. kept verse 1 and verse 2 (CoCoPops) under the refit: means, difference in kept sd\"] = [round(float(a.mean()), 2), round(float(b.mean()), 2), round(float((b.mean() - a.mean()) / ksd), 2), len(a), len(b)]\nout[\"2. the builds' verse 1 and verse 2 under the refit, by song: means, difference in kept sd\"] = {s: [round(float(B[(B.song == s) & (B.sec == \"Verse 1\")].new.mean()), 2), round(float(B[(B.song == s) & (B.sec == \"Verse 2\")].new.mean()), 2), round(float((B[(B.song == s) & (B.sec == \"Verse 2\")].new.mean() - B[(B.song == s) & (B.sec == \"Verse 1\")].new.mean()) / ksd), 2)] for s in TON}\nout[\"2. sections under the refit, builds pooled (kept verse 1 mean %.2f)\" % a.mean()] = {x: round(float(B[B.sec == x].new.mean()), 2) for x in SECS}\n# 3, 4, 6. the pick\npk = {}\nfor s in TON:\n    G = B[B.song == s]; pv = G.pivot_table(index=\"fp\", columns=\"sec\", values=\"new\"); info = G.drop_duplicates(\"fp\").set_index(\"fp\")[[\"clean\", \"alive\", \"old_content\", \"old_order\", \"old_combined\"]]; T = pv.join(info).dropna(subset=[\"Verse 1\", \"Chorus 1\"])\n    T[\"new12\"] = (T[\"Verse 1\"] + T[\"Chorus 1\"]) / 2; T[\"new123\"] = T[[\"Verse 1\", \"Chorus 1\", \"Verse 2\"]].mean(axis=1) if \"Verse 2\" in T else np.nan\n    T[\"c12\"] = (T.new12 + T.old_order / 2) / 2 * 2; T[\"c123\"] = (T.new123 + T.old_order / 2) / 2 * 2          # the order judge kept: old order is a sum over two windows\n    C = T[T.clean]; rec = meta[s][\"pick\"]; p12 = C.c12.idxmax(); p123 = C.c123.idxmax() if C.c123.notna().any() else None; rk = lambda col, fp: int((C[col] > C.loc[fp, col]).sum()) + 1 if fp in C.index else None\n    pk[s] = {\"clean survivors read\": len(C), \"pick of record\": rec, \"refit's pick\": p12, \"same\": bool(rec == p12), \"the pick of record's rank under the refit\": rk(\"c12\", rec), \"the refit's pick's rank under the judge of record\": rk(\"old_combined\", p12), \"with verse 2 read: pick\": p123, \"same as the refit's\": bool(p123 == p12), \"the refit's pick's rank with verse 2 read\": rk(\"c123\", p12), \"rank correlation, refit content against the record's content\": round(float(spearmanr(T.new12, T.old_content).correlation), 2)}\nout[\"3, 4, 6. the pick\"] = pk\n# 5. song 45's re-set line\nP = pickle.load(open(\"/home/claude/p49/melody_p45_main.pkl\", \"rb\")); c = next(x for x in P[\"every\"] if x[\"fp\"] == \"10c3fce99da2\"); st = {}; i = 0\nfor name, kind, nb in P[\"form\"]: st.setdefault(name, i); i += nb\nb0 = st[\"Chorus 1\"]; drawn = [t for t in c[\"notes\"] if t[3] == \"Chorus 1\" and b0 * 48 <= t[0] < (b0 + 8) * 48]; U = (b0 + 2) * 48; CH1 = [(6, 6, 62), (12, 12, 59), (24, 6, 57), (30, 6, 55), (36, 12, 52), (48, 12, 57), (60, 24, 55)]\nedited = sorted([t for t in drawn if t[4] != \"Chorus 1:1\"] + [(U + t, dd, p, \"Chorus 1\", \"Chorus 1:1\") for t, dd, p in CH1], key=lambda t: t[0])\nwr = lambda notes: rowof([((t[0] - b0 * 48) / 12, t[1] / 12, t[2], pcs(P[\"chords\"][t[0] // 48])) for t in notes], 7); ra, rb = wr(drawn), wr(edited); s1 = lambda r: float(score(pd.DataFrame([r]))[0])\nza, zb_ = [(imp.transform(pd.DataFrame([r])[FE].astype(float)) - sc.mean_) / sc.scale_ for r in (ra, rb)]; dl = lr.coef_[0] * (zb_ - za)[0]; oo = np.argsort(dl)\nout[\"5. song 45, chorus 1, as drawn and as re-set\"] = {\"refit\": [round(s1(ra), 2), round(s1(rb), 2)], \"judge of record's content\": [round(float(old(pd.DataFrame([ra]))[0]), 2), round(float(old(pd.DataFrame([rb]))[0]), 2)], \"against the edit\": [[FE[i], round(float(dl[i]), 2), round(float(ra[FE[i]]), 3), round(float(rb[FE[i]]), 3)] for i in oo[:5]], \"for it\": [[FE[i], round(float(dl[i]), 2), round(float(ra[FE[i]]), 3), round(float(rb[FE[i]]), 3)] for i in oo[::-1][:5]]}\njson.dump(judge, open(\"judge_v126.json\", \"w\"), indent=1); json.dump(out, open(\"refit_findings.json\", \"w\"), indent=1); print(json.dumps(out, indent=1))\n"
+}
