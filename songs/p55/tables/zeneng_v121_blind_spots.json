@@ -1,0 +1,672 @@
+{
+ "about": "ZenEng v121, Window 141: six measures the judge lacked (426), with both kept collections' means and the builds'; the code that reads them; the aims (427); the provisional judge on the 30 agreed measures and the six.",
+ "accepted (426)": [
+  "equal_gap_run_max",
+  "gap_same_as_before",
+  "gap_entropy",
+  "most_onsets_in_a_beat",
+  "phrase_starts_same_place",
+  "zigzag_of_three"
+ ],
+ "every candidate": [
+  {
+   "measure": "equal_gap_run_max",
+   "cocopops": 4.889,
+   "bimmuda": 4.883,
+   "builds": 6.183,
+   "collections_gap": -0.0,
+   "builds_vs_cocopops": 0.5,
+   "builds_vs_bimmuda": 0.5,
+   "by_song_vs_kept": [
+    0.81,
+    0.22,
+    0.48
+   ],
+   "accepted": true
+  },
+  {
+   "measure": "gap_same_as_before",
+   "cocopops": 0.387,
+   "bimmuda": 0.403,
+   "builds": 0.485,
+   "collections_gap": 0.1,
+   "builds_vs_cocopops": 0.62,
+   "builds_vs_bimmuda": 0.52,
+   "by_song_vs_kept": [
+    0.74,
+    0.45,
+    0.51
+   ],
+   "accepted": true
+  },
+  {
+   "measure": "gap_entropy",
+   "cocopops": 1.843,
+   "bimmuda": 1.789,
+   "builds": 1.673,
+   "collections_gap": -0.12,
+   "builds_vs_cocopops": -0.39,
+   "builds_vs_bimmuda": -0.26,
+   "by_song_vs_kept": [
+    -0.45,
+    -0.34,
+    -0.18
+   ],
+   "accepted": true
+  },
+  {
+   "measure": "gap_changes_per_bar",
+   "cocopops": 2.181,
+   "bimmuda": 2.338,
+   "builds": 2.198,
+   "collections_gap": 0.18,
+   "builds_vs_cocopops": 0.02,
+   "builds_vs_bimmuda": -0.16,
+   "by_song_vs_kept": [
+    0.04,
+    -0.01,
+    -0.24
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "same_pitch_run_max",
+   "cocopops": 3.583,
+   "bimmuda": 3.74,
+   "builds": 4.075,
+   "collections_gap": 0.08,
+   "builds_vs_cocopops": 0.26,
+   "builds_vs_bimmuda": 0.18,
+   "by_song_vs_kept": [
+    0.22,
+    0.16,
+    0.27
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "notes_in_runs_of_4",
+   "cocopops": 0.114,
+   "bimmuda": 0.126,
+   "builds": 0.151,
+   "collections_gap": 0.07,
+   "builds_vs_cocopops": 0.2,
+   "builds_vs_bimmuda": 0.13,
+   "by_song_vs_kept": [
+    0.17,
+    0.1,
+    0.23
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "most_onsets_in_a_beat",
+   "cocopops": 2.631,
+   "bimmuda": 2.775,
+   "builds": 3.085,
+   "collections_gap": 0.18,
+   "builds_vs_cocopops": 0.57,
+   "builds_vs_bimmuda": 0.39,
+   "by_song_vs_kept": [
+    0.6,
+    0.37,
+    0.45
+   ],
+   "accepted": true
+  },
+  {
+   "measure": "most_onsets_in_a_bar",
+   "cocopops": 6.258,
+   "bimmuda": 6.753,
+   "builds": 6.741,
+   "collections_gap": 0.27,
+   "builds_vs_cocopops": 0.26,
+   "builds_vs_bimmuda": -0.01,
+   "by_song_vs_kept": [
+    0.2,
+    -0.01,
+    0.19
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "longest_gap_beats",
+   "cocopops": 4.794,
+   "bimmuda": 4.175,
+   "builds": 4.17,
+   "collections_gap": -0.31,
+   "builds_vs_cocopops": -0.31,
+   "builds_vs_bimmuda": -0.0,
+   "by_song_vs_kept": [
+    -0.31,
+    -0.04,
+    -0.12
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "fullest_bar_over_mean",
+   "cocopops": 1.639,
+   "bimmuda": 1.639,
+   "builds": 1.493,
+   "collections_gap": 0.0,
+   "builds_vs_cocopops": -0.4,
+   "builds_vs_bimmuda": -0.4,
+   "by_song_vs_kept": [
+    -0.7,
+    -0.5,
+    -0.0
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "phrases",
+   "cocopops": 6.051,
+   "bimmuda": 5.307,
+   "builds": 5.202,
+   "collections_gap": -0.34,
+   "builds_vs_cocopops": -0.39,
+   "builds_vs_bimmuda": -0.05,
+   "by_song_vs_kept": [
+    -0.41,
+    -0.27,
+    0.03
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "phrase_notes_median",
+   "cocopops": 5.973,
+   "bimmuda": 7.502,
+   "builds": 7.507,
+   "collections_gap": 0.28,
+   "builds_vs_cocopops": 0.28,
+   "builds_vs_bimmuda": 0.0,
+   "by_song_vs_kept": [
+    0.37,
+    0.16,
+    -0.11
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "phrase_notes_sd",
+   "cocopops": 3.255,
+   "bimmuda": 2.865,
+   "builds": 2.711,
+   "collections_gap": -0.13,
+   "builds_vs_cocopops": -0.18,
+   "builds_vs_bimmuda": -0.05,
+   "by_song_vs_kept": [
+    -0.06,
+    -0.05,
+    -0.24
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "phrase_starts_same_place",
+   "cocopops": 0.545,
+   "bimmuda": 0.555,
+   "builds": 0.47,
+   "collections_gap": 0.05,
+   "builds_vs_cocopops": -0.37,
+   "builds_vs_bimmuda": -0.42,
+   "by_song_vs_kept": [
+    -0.33,
+    -0.42,
+    -0.43
+   ],
+   "accepted": true
+  },
+  {
+   "measure": "phrase_span_share",
+   "cocopops": 0.455,
+   "bimmuda": 0.496,
+   "builds": 0.523,
+   "collections_gap": 0.24,
+   "builds_vs_cocopops": 0.4,
+   "builds_vs_bimmuda": 0.16,
+   "by_song_vs_kept": [
+    0.68,
+    0.24,
+    -0.08
+   ],
+   "accepted": false
+  },
+  {
+   "measure": "zigzag_of_three",
+   "cocopops": 0.317,
+   "bimmuda": 0.333,
+   "builds": 0.409,
+   "collections_gap": 0.08,
+   "builds_vs_cocopops": 0.45,
+   "builds_vs_bimmuda": 0.37,
+   "by_song_vs_kept": [
+    0.53,
+    0.35,
+    0.35
+   ],
+   "accepted": true
+  }
+ ],
+ "separation": {
+  "5. separation, the builds against both collections pooled": {
+   "the 30 agreed measures": [
+    0.748,
+    0.019
+   ],
+   "with the accepted candidates": [
+    0.793,
+    0.017
+   ],
+   "the accepted candidates alone": [
+    0.733,
+    0.011
+   ]
+  },
+  "the two collections against each other": {
+   "the 30 agreed": [
+    0.544,
+    0.023
+   ],
+   "with the accepted candidates": [
+    0.555,
+    0.031
+   ],
+   "the candidates alone": [
+    0.526,
+    0.032
+   ]
+  }
+ },
+ "song 45's re-set line (430)": {
+  "6. song 45, Chorus 1": {
+   "the line as drawn (twelfths of a beat from the line's bar: onset, length, pitch)": [
+    [
+     6,
+     3,
+     60
+    ],
+    [
+     9,
+     3,
+     59
+    ],
+    [
+     12,
+     3,
+     54
+    ],
+    [
+     15,
+     3,
+     55
+    ],
+    [
+     18,
+     3,
+     52
+    ],
+    [
+     21,
+     3,
+     54
+    ],
+    [
+     24,
+     6,
+     55
+    ]
+   ],
+   "as the writer re-set it": [
+    [
+     6,
+     6,
+     62
+    ],
+    [
+     12,
+     12,
+     59
+    ],
+    [
+     24,
+     6,
+     57
+    ],
+    [
+     30,
+     6,
+     55
+    ],
+    [
+     36,
+     12,
+     52
+    ],
+    [
+     48,
+     12,
+     57
+    ],
+    [
+     60,
+     24,
+     55
+    ]
+   ],
+   "judge on the 30 agreed measures: drawn, edited": [
+    0.13,
+    -0.93
+   ],
+   "judge with the accepted candidates: drawn, edited": [
+    1.02,
+    0.3
+   ],
+   "the accepted candidates: kept mean, drawn, edited": {
+    "equal_gap_run_max": [
+     4.886,
+     7.0,
+     7.0
+    ],
+    "gap_same_as_before": [
+     0.394,
+     0.553,
+     0.474
+    ],
+    "gap_entropy": [
+     1.82,
+     1.909,
+     1.856
+    ],
+    "most_onsets_in_a_beat": [
+     2.692,
+     4.0,
+     3.0
+    ],
+    "phrase_starts_same_place": [
+     0.549,
+     0.8,
+     0.8
+    ],
+    "zigzag_of_three": [
+     0.324,
+     0.258,
+     0.258
+    ]
+   },
+   "nearer the kept mean after the edit": {
+    "equal_gap_run_max": null,
+    "gap_same_as_before": true,
+    "gap_entropy": true,
+    "most_onsets_in_a_beat": true,
+    "phrase_starts_same_place": null,
+    "zigzag_of_three": null
+   }
+  },
+  "6b. what moved the judge on the re-set line (measure, drawn, edited, points)": [
+   [
+    "empty_bars",
+    1.0,
+    0.0,
+    -0.65
+   ],
+   [
+    "peak_position",
+    0.766,
+    0.266,
+    -0.42
+   ],
+   [
+    "mean_interval",
+    1.949,
+    2.103,
+    -0.25
+   ],
+   [
+    "gap_eighth",
+    0.462,
+    0.538,
+    -0.21
+   ],
+   [
+    "pitch_bits",
+    2.641,
+    2.569,
+    -0.18
+   ],
+   [
+    "on_beats_2_4",
+    0.225,
+    0.275,
+    -0.14
+   ],
+   [
+    "low_position",
+    0.297,
+    0.344,
+    0.03
+   ],
+   [
+    "ascending",
+    0.455,
+    0.394,
+    0.07
+   ],
+   [
+    "on_fifth",
+    0.05,
+    0.075,
+    0.1
+   ],
+   [
+    "leap_then_back_by_step",
+    0.667,
+    0.5,
+    0.15
+   ],
+   [
+    "most_onsets_in_a_beat",
+    4.0,
+    3.0,
+    1.18
+   ]
+  ]
+ },
+ "code: cand(N) reads a window's notes (t in beats from the window's first barline, length, pitch)": "def cand(N):\n    \"\"\"N: (t in beats from the window's first barline, dur, pitch, ...), sorted. Onsets and pitches only.\"\"\"\n    t = np.array([n[0] for n in N], float); p = np.array([n[2] for n in N]); g = np.round(np.diff(t) * 12).astype(int); g = g[g > 0]; f = {}\n    if len(g) < 8: return None\n    # the even stream\n    runs = []; r = 1\n    for a, b in zip(g, g[1:]):\n        if a == b: r += 1\n        else: runs.append(r); r = 1\n    runs.append(r); f[\"equal_gap_run_max\"] = max(runs); f[\"gap_same_as_before\"] = float((g[1:] == g[:-1]).mean()); pr = np.array([c / len(g) for c in collections.Counter(g).values()]); f[\"gap_entropy\"] = float(-(pr * np.log2(pr)).sum())\n    f[\"gap_changes_per_bar\"] = float((g[1:] != g[:-1]).sum() / 8)\n    # repeated pitch\n    rp = []; r = 1\n    for a, b in zip(p, p[1:]):\n        if a == b: r += 1\n        else: rp.append(r); r = 1\n    rp.append(r); f[\"same_pitch_run_max\"] = max(rp); f[\"notes_in_runs_of_4\"] = float(sum(x for x in rp if x >= 4) / len(p))\n    # the burst\n    tt = np.round(t * 12).astype(int); f[\"most_onsets_in_a_beat\"] = max(int(((tt >= s) & (tt < s + 12)).sum()) for s in range(0, 32 * 12, 3)); f[\"most_onsets_in_a_bar\"] = max(int(((tt >= s) & (tt < s + 48)).sum()) for s in range(0, 32 * 12, 48))\n    f[\"longest_gap_beats\"] = float(g.max() / 12); f[\"fullest_bar_over_mean\"] = f[\"most_onsets_in_a_bar\"] / (len(t) / 8)\n    # phrases: onsets parted by a beat and a half or more\n    cut = [0] + [i + 1 for i, x in enumerate(np.diff(tt)) if x >= 18] + [len(tt)]; ph = [(tt[a], b - a, tt[b - 1] - tt[a]) for a, b in zip(cut, cut[1:])]\n    f[\"phrases\"] = len(ph); f[\"phrase_notes_median\"] = float(np.median([x[1] for x in ph])); f[\"phrase_notes_sd\"] = float(np.std([x[1] for x in ph])); st = [x[0] % 48 for x in ph]\n    f[\"phrase_starts_same_place\"] = float(max(collections.Counter(st).values()) / len(st)); f[\"phrase_span_share\"] = float(sum(x[2] for x in ph) / (32 * 12))\n    # the line's turning: up-down-up or down-up-down in three moves\n    mv = np.sign(np.diff(p)); mv = mv[mv != 0]; f[\"zigzag_of_three\"] = float(np.mean([(a != b) and (b != c) for a, b, c in zip(mv, mv[1:], mv[2:])])) if len(mv) >= 3 else np.nan\n    return f\n",
+ "provisional judge (not the judge of record)": {
+  "about": "ZenEng v121: a content judge on the 30 agreed measures and the six accepted candidates, kept windows of both collections (CoCoPops 314, BiMMuDa 1958-1991 231) against the v118 builds of songs 40, 42, 43; a provisional fit for reading, not the judge of record.",
+  "measures": [
+   "range",
+   "pitch_sd",
+   "distinct_pitches",
+   "repeat",
+   "step",
+   "third",
+   "fourth_fifth",
+   "past_fifth",
+   "mean_interval",
+   "ascending",
+   "turns_per_move",
+   "longest_run_one_way",
+   "leap_then_back_by_step",
+   "on_tonic",
+   "on_third",
+   "on_fifth",
+   "last_note_tonic",
+   "first_note_tonic_triad",
+   "peak_position",
+   "low_position",
+   "peak_count",
+   "time_in_top_third",
+   "pitch_bits",
+   "on_beats_2_4",
+   "gap_sixteenth",
+   "gap_eighth",
+   "empty_bars",
+   "unit2_returns",
+   "unit3_returns",
+   "unit4_to_unit2",
+   "equal_gap_run_max",
+   "gap_same_as_before",
+   "gap_entropy",
+   "most_onsets_in_a_beat",
+   "phrase_starts_same_place",
+   "zigzag_of_three"
+  ],
+  "fill_missing_with": [
+   10.0,
+   2.7207248574598646,
+   6.0,
+   0.2564102564102564,
+   0.3888888888888889,
+   0.15789473684210525,
+   0.09090909090909091,
+   0.02564102564102564,
+   2.193548387096774,
+   0.46875,
+   0.6428571428571429,
+   3.0,
+   0.25,
+   0.16216216216216217,
+   0.16216216216216217,
+   0.1282051282051282,
+   0.0,
+   1.0,
+   0.234375,
+   0.1875,
+   3.0,
+   0.3516483516483516,
+   2.801285759290651,
+   0.225,
+   0.09090909090909091,
+   0.6111111111111112,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   6.0,
+   0.5,
+   1.7129014136158993,
+   3.0,
+   0.5,
+   0.375
+  ],
+  "mean": [
+   10.364685908319185,
+   2.816764582376501,
+   6.438030560271647,
+   0.28178510192694284,
+   0.39899230027112426,
+   0.18072329290650305,
+   0.1068062244498645,
+   0.03169308044556535,
+   2.2092273854909337,
+   0.4683011144828333,
+   0.6458863259997312,
+   3.101188455008489,
+   0.29350005898575365,
+   0.19759773032204758,
+   0.19243768104547462,
+   0.15909784861991183,
+   0.1738539898132428,
+   0.633276740237691,
+   0.3001167197226938,
+   0.30596704867006225,
+   4.2933786078098475,
+   0.3641409721198236,
+   2.8420959730191044,
+   0.2177205699553033,
+   0.13719136110305127,
+   0.5544397235345023,
+   0.28862478777589134,
+   0.15280135823429541,
+   0.266553480475382,
+   0.11307300509337861,
+   5.942614601018676,
+   0.46846693606095563,
+   1.7005317382701146,
+   3.0118845500848894,
+   0.48447187127153174,
+   0.39312607308335684
+  ],
+  "sd": [
+   3.041999573289435,
+   0.8674497277071725,
+   1.5510487801004613,
+   0.1848211058691611,
+   0.17941052209330183,
+   0.12975668606153656,
+   0.08303901676005564,
+   0.0407100191010329,
+   0.6786914608523206,
+   0.07558216254427792,
+   0.1261272128639665,
+   0.9030876746949315,
+   0.248804204211619,
+   0.16546923985118414,
+   0.15755644342680405,
+   0.14592413348209118,
+   0.3789838783368756,
+   0.48191006475442594,
+   0.27661355672371735,
+   0.27553614028048373,
+   4.506645569555399,
+   0.20374812017805732,
+   0.41591752359048534,
+   0.06745657227872001,
+   0.14796835445860632,
+   0.21650084981760664,
+   0.5431058673542998,
+   0.3597959187595795,
+   0.4421568980823913,
+   0.31668201813890756,
+   2.389514578544591,
+   0.17161456771030395,
+   0.44222177771019516,
+   0.7961247482993346,
+   0.160496648856346,
+   0.18546602810308632
+  ],
+  "weight": [
+   0.7108527831947415,
+   0.3861262407949835,
+   -0.8071006085058254,
+   -0.3118515417776545,
+   0.3903085203270325,
+   0.33178208926917,
+   -0.3317934228560606,
+   -0.6850366077819237,
+   -1.0926984861392959,
+   -0.08417594383664077,
+   -1.0406677153770114,
+   0.03905131529720554,
+   -0.21814064009801654,
+   0.8822587495430885,
+   0.3830260706321633,
+   0.5742935003769961,
+   0.43786932122667355,
+   0.12590438769095585,
+   0.23358727493660766,
+   0.16841095116416221,
+   -0.16963719197705554,
+   0.13548234858497765,
+   1.043503198993104,
+   -0.1850442482443038,
+   0.005722870006309377,
+   -0.6047266906155725,
+   0.35049696927210816,
+   0.013046217303192083,
+   -0.03001476528077295,
+   0.293289753264001,
+   -0.3040911924933894,
+   0.2327894293195747,
+   0.45986912510463274,
+   -0.9367228871519927,
+   0.49515460473149664,
+   0.7129915243271513
+  ],
+  "intercept": -0.8668528504079046
+ }
+}

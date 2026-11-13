@@ -1,0 +1,492 @@
+{
+ "about": "ZenEng v129, Window 149 (fix 519): the content judge of record, replacing zeneng_v128_judge.json. Fitted on Run 3's builds as the engine itself reads them (its win_N, feats and cand: every note sung in the window's eight bars, the chord at the note). score = intercept + sum of weight * (value - mean) / sd; a measure a window lacks takes fill_missing_with. The kept fifth percentiles that fix 471 reads are in the judge: of windows, and of a kept song's mean over its windows (the second is the one a build's mean is set beside). The order judge of zeneng_v108_judges.json is unchanged; the pick's score is the mean of content and order (477).",
+ "content_judge": {
+  "measures": [
+   "range",
+   "pitch_sd",
+   "distinct_pitches",
+   "repeat",
+   "step",
+   "third",
+   "fourth_fifth",
+   "past_fifth",
+   "mean_interval",
+   "ascending",
+   "turns_per_move",
+   "longest_run_one_way",
+   "leap_then_back_by_step",
+   "on_tonic",
+   "on_third",
+   "on_fifth",
+   "last_note_tonic",
+   "first_note_tonic_triad",
+   "peak_position",
+   "low_position",
+   "peak_count",
+   "time_in_top_third",
+   "pitch_bits",
+   "on_beats_2_4",
+   "gap_sixteenth",
+   "gap_eighth",
+   "unit2_returns",
+   "unit3_returns",
+   "unit4_to_unit2",
+   "equal_gap_run_max",
+   "gap_same_as_before",
+   "gap_entropy",
+   "zigzag_of_three",
+   "chord_tones",
+   "chord_tones_on_beat",
+   "chord_tones_off_beat",
+   "chord_tones_on_downbeat"
+  ],
+  "fill_missing_with": [
+   9.0,
+   2.531708918085506,
+   6.0,
+   0.24390243902439024,
+   0.425,
+   0.17142857142857143,
+   0.07692307692307693,
+   0.0,
+   2.088235294117647,
+   0.4722222222222222,
+   0.6111111111111112,
+   3.0,
+   0.3333333333333333,
+   0.17073170731707318,
+   0.13157894736842105,
+   0.1346153846153846,
+   0.0,
+   1.0,
+   0.15625,
+   0.171875,
+   3.0,
+   0.3333333333333333,
+   2.7978496255522236,
+   0.225,
+   0.10256410256410256,
+   0.5806451612903226,
+   0.0,
+   0.0,
+   0.0,
+   5.0,
+   0.4444444444444444,
+   1.7664348218996155,
+   0.3333333333333333,
+   0.6216216216216216,
+   0.6842105263157895,
+   0.5714285714285714,
+   0.7142857142857143
+  ],
+  "mean": [
+   9.53349925335988,
+   2.6315202543964604,
+   6.4399203583872575,
+   0.2679808935168517,
+   0.4284588908630295,
+   0.19074499790827357,
+   0.088368456364977,
+   0.024446761346868223,
+   2.115051929404237,
+   0.4709813045373153,
+   0.617948690572675,
+   3.312394225983076,
+   0.3328993720850643,
+   0.19912180913312036,
+   0.1521108274288249,
+   0.15868397893908953,
+   0.13359880537580887,
+   0.6696864111498257,
+   0.2844885504811681,
+   0.2797204289032686,
+   4.401891488302638,
+   0.35292367175955397,
+   2.834964474999859,
+   0.22047631246085342,
+   0.14195619179528146,
+   0.5463559265597435,
+   0.1443504230960677,
+   0.29895470383275263,
+   0.1425584868093579,
+   5.3498257839721255,
+   0.4370163217067565,
+   1.7571715723088024,
+   0.3545007759754436,
+   0.6235573418006363,
+   0.6788426631191293,
+   0.5678185350711114,
+   0.7115985209414776
+  ],
+  "sd": [
+   2.9028740414410534,
+   0.7835001180763905,
+   1.5737705682601333,
+   0.16211224243812655,
+   0.1638300895110365,
+   0.12209310073675882,
+   0.06864178465573216,
+   0.03685977267900407,
+   0.6106791989074527,
+   0.06958790665749941,
+   0.1116927300571854,
+   0.8647575190975502,
+   0.25461092975385957,
+   0.16677400626898536,
+   0.13680151503864088,
+   0.12941643892117138,
+   0.3402207585935426,
+   0.47032597405532717,
+   0.2894852543136086,
+   0.25641077476483054,
+   4.293680912129346,
+   0.1866228231791826,
+   0.3595545623128753,
+   0.06158000695544224,
+   0.14125202188052044,
+   0.18645278290753217,
+   0.3514447018352303,
+   0.457799944177611,
+   0.3496220311250194,
+   2.0449579168152194,
+   0.14356178566821806,
+   0.4047847414857387,
+   0.1647660517959615,
+   0.10552355248905476,
+   0.1283452190136554,
+   0.1532943821120609,
+   0.201660506167397
+  ],
+  "weight": [
+   1.2695399549475905,
+   0.7348759933681945,
+   -1.484364188264948,
+   -0.5303989829164266,
+   0.36360671645595927,
+   0.23796165271688755,
+   0.16004860771889878,
+   -0.3696455378904453,
+   -1.3120692992106868,
+   -0.17581587293574802,
+   -0.9967350798993538,
+   -0.3622482786652593,
+   -0.14112553094293362,
+   0.822486380717161,
+   0.835083116901898,
+   0.65931495053949,
+   0.4037841670587602,
+   -0.14919754198973045,
+   0.19613589173815635,
+   0.2169914134304477,
+   -0.18136690845808454,
+   0.07779475804696903,
+   0.6511833707191018,
+   -0.25381216409956275,
+   -0.7081924973006933,
+   -1.3876830809439693,
+   0.03337760855759248,
+   -0.09666632828547835,
+   0.22638706398113792,
+   0.007388241835326776,
+   0.17931216021989582,
+   -0.41803381569068604,
+   0.84983516347726,
+   -0.41407753336006514,
+   0.2175086488507095,
+   0.44201767079104093,
+   0.03128686988817432
+  ],
+  "intercept": -1.017000989386195,
+  "kept windows: 5th, 25th, 50th percentile, mean, sd": [
+   -1.361,
+   0.153,
+   1.308,
+   1.433,
+   1.917
+  ],
+  "kept songs' mean over their windows (CoCoPops): 5th, 25th, 50th percentile": [
+   -0.723,
+   0.49,
+   1.419
+  ]
+ },
+ "findings": {
+  "build windows read by the engine's own code (first verse and chorus)": 9500,
+  "missing measures in the engine's rows": [],
+  "2. the v128 judge: the engine's score and this paper's on the same rows, mean by song (verse 1), and the largest difference on any window": {
+   "40": [
+    -0.454,
+    -0.454
+   ],
+   "42": [
+    -1.043,
+    -1.043
+   ],
+   "43": [
+    -0.652,
+    -0.652
+   ],
+   "44": [
+    -1.791,
+    -1.791
+   ],
+   "45": [
+    -1.918,
+    -1.918
+   ],
+   "largest": 0.0
+  },
+  "3. separation, held out by song and by piece": {
+   "by song": {
+    "40": 0.748,
+    "42": 0.786,
+    "43": 0.72,
+    "44": 0.848,
+    "45": 0.912
+   },
+   "spread over eight splits, by song": {
+    "40": 0.015,
+    "42": 0.016,
+    "43": 0.015,
+    "44": 0.027,
+    "45": 0.017
+   },
+   "mean": 0.803,
+   "songs 40, 42, 43": 0.751,
+   "Run 2 Part 2, this paper's reading": 0.817
+  },
+  "5. complete builds under the kept songs' fifth percentile (-0.72), by song": {
+   "40": 0.51,
+   "42": 0.66,
+   "43": 0.47,
+   "44": 0.88,
+   "45": 0.96
+  },
+  "mean score of a build, by song (kept songs' median 1.42)": {
+   "40": -0.71,
+   "42": -1.07,
+   "43": -0.59,
+   "44": -1.6,
+   "45": -1.94
+  },
+  "4. costs: measure, points, kept mean, builds' mean": [
+   [
+    "range",
+    0.63,
+    10.895,
+    9.455
+   ],
+   [
+    "gap_eighth",
+    0.56,
+    0.475,
+    0.55
+   ],
+   [
+    "pitch_sd",
+    0.33,
+    2.967,
+    2.612
+   ],
+   [
+    "on_third",
+    0.29,
+    0.198,
+    0.149
+   ],
+   [
+    "turns_per_move",
+    0.29,
+    0.587,
+    0.62
+   ],
+   [
+    "last_note_tonic",
+    0.21,
+    0.299,
+    0.124
+   ],
+   [
+    "on_tonic",
+    0.12,
+    0.222,
+    0.198
+   ],
+   [
+    "gap_sixteenth",
+    0.11,
+    0.121,
+    0.143
+   ],
+   [
+    "chord_tones_off_beat",
+    0.07,
+    0.608,
+    0.566
+   ],
+   [
+    "low_position",
+    0.06,
+    0.348,
+    0.276
+   ]
+  ],
+  "gap, points": 2.59,
+  "costs on songs 40, 42, 43 alone": [
+   [
+    "gap_eighth",
+    0.67,
+    0.475,
+    0.564
+   ],
+   [
+    "distinct_pitches",
+    0.46,
+    6.439,
+    6.928
+   ],
+   [
+    "mean_interval",
+    0.23,
+    2.109,
+    2.216
+   ],
+   [
+    "turns_per_move",
+    0.18,
+    0.587,
+    0.608
+   ],
+   [
+    "on_third",
+    0.17,
+    0.198,
+    0.171
+   ],
+   [
+    "range",
+    0.15,
+    10.895,
+    10.559
+   ],
+   [
+    "last_note_tonic",
+    0.13,
+    0.299,
+    0.193
+   ],
+   [
+    "past_fifth",
+    0.11,
+    0.024,
+    0.035
+   ]
+  ],
+  "gap on songs 40, 42, 43, points": 2.22,
+  "means by song, the engine's reading": {
+   "range": {
+    "40": 10.231,
+    "42": 10.883,
+    "43": 10.572,
+    "44": 7.938,
+    "45": 7.364,
+    "kept": 10.895
+   },
+   "gap_eighth": {
+    "40": 0.557,
+    "42": 0.589,
+    "43": 0.547,
+    "44": 0.52,
+    "45": 0.537,
+    "kept": 0.475
+   },
+   "gap_same_as_before": {
+    "40": 0.459,
+    "42": 0.44,
+    "43": 0.406,
+    "44": 0.409,
+    "45": 0.492,
+    "kept": 0.394
+   },
+   "empty_bars": {
+    "40": 0.158,
+    "42": 0.351,
+    "43": 0.151,
+    "44": 0.204,
+    "45": 0.069,
+    "kept": 0.484
+   },
+   "last_note_tonic": {
+    "40": 0.314,
+    "42": 0.199,
+    "43": 0.067,
+    "44": 0.012,
+    "45": 0.014,
+    "kept": 0.299
+   },
+   "turns_per_move": {
+    "40": 0.609,
+    "42": 0.605,
+    "43": 0.608,
+    "44": 0.642,
+    "45": 0.636,
+    "kept": 0.587
+   },
+   "distinct_pitches": {
+    "40": 6.953,
+    "42": 6.878,
+    "43": 6.953,
+    "44": 5.679,
+    "45": 5.617,
+    "kept": 6.439
+   },
+   "chord_tones": {
+    "40": 0.657,
+    "42": 0.634,
+    "43": 0.615,
+    "44": 0.588,
+    "45": 0.621,
+    "kept": 0.639
+   },
+   "notes_per_bar": {
+    "40": 4.931,
+    "42": 4.541,
+    "43": 4.269,
+    "44": 4.147,
+    "45": 5.674,
+    "kept": 4.081
+   }
+  },
+  "pooled means, five songs (the engine's reading)": {
+   "gap_same_as_before": 0.44,
+   "equal_gap_run_max": 5.376,
+   "zigzag_of_three": 0.356,
+   "gap_eighth": 0.55,
+   "range": 9.455,
+   "empty_bars": 0.189,
+   "chord_tones": 0.623,
+   "chord_tones_on_downbeat": 0.711,
+   "turns_per_move": 0.62,
+   "last_note_tonic": 0.124
+  },
+  "verse 1 and verse 2, pooled (the engine's reading)": {
+   "chord_tones_on_beat": [
+    0.68,
+    0.723
+   ],
+   "repeat": [
+    0.282,
+    0.301
+   ],
+   "step": [
+    0.426,
+    0.43
+   ],
+   "equal_gap_run_max": [
+    5.735,
+    6.536
+   ]
+  }
+ },
+ "how the builds were read": "\"\"\"One song's builds read by the engine's own window, measures and candidates (songs/p54, read only). Usage: python3 engine_rows.py SONG PART\"\"\"\nimport sys, os, json, pickle, importlib, io, contextlib, numpy as np, pandas as pd\ns, part = sys.argv[1], sys.argv[2]; os.environ[\"ZE_PART\"] = part; sys.argv = [\"x\", \"1\", \"main\"]; sys.path[:0] = [\"/home/claude/p54\", \"/home/claude/p40\"]\nwith contextlib.redirect_stdout(io.StringIO()): P = importlib.import_module(f\"melody_v128_p{s}\")\nD = pickle.load(open(f\"/home/claude/p54/melody_v128_p{s}_main.pkl\", \"rb\")); rows = []\nfor bi, c in enumerate(D[\"every\"]):\n    if c.get(\"partial\"): continue\n    ns = [dict(on=o, dur=d, p=p, sec=x, line=l) for o, d, p, x, l, st, sy in c[\"notes\"]]\n    for sec in (\"Verse 1\", \"Chorus 1\", \"Verse 2\", \"Bridge\"):\n        if sec not in P.BAR0: continue\n        N = P.win_N(ns, P.BAR0[sec]); f = P.feats(N, P.mton())\n        if not f: continue\n        r = dict(f); r.update(P.cand(sorted(N)) or {}); r.update(song=s, build=bi, fp=c[\"fp\"], sec=sec, alive=c[\"cause\"] is None, clean=(c[\"cause\"] is None and not c[\"soft\"]), engine_refit=P.refit_score(f, N), n_notes=len(N))\n        rows.append(r)\npd.DataFrame(rows).to_pickle(f\"/home/claude/zeneng/corpus/run3/engine_rows_{s}.pkl\"); print(s, len(rows), D[\"survivors\"], D.get(\"order_fp\"))\n"
+}

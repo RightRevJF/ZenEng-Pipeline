@@ -1,0 +1,314 @@
+{
+ "about": "ZenEng v117, Window 137: the yardstick (374), the limits of fix 286 read on kept chart songs (367, 373), and the v88 table's long-run gaps beside the kept songs' (372).",
+ "yardstick (374)": {
+  "what": "AUC of a fresh linear judge (the 46 content measures) telling one group of kept windows from another, kept songs held out; [mean, sd over splits, windows in each group]",
+  "1958-1969 against 1980-1991": [
+   0.567,
+   0.055,
+   96,
+   114
+  ],
+  "1960s against 1970s": [
+   0.629,
+   0.049,
+   82,
+   104
+  ],
+  "1970s against 1980s": [
+   0.452,
+   0.047,
+   104,
+   103
+  ],
+  "verse windows against chorus windows": [
+   0.539,
+   0.035,
+   169,
+   145
+  ],
+  "major against minor songs": [
+   0.497,
+   0.05,
+   244,
+   70
+  ],
+  "a random half of the songs against the other (six splits)": [
+   0.504,
+   0.035
+  ],
+  "the builds against kept windows (Window 136)": {
+   "within a song, v115": [
+    0.966,
+    0.954,
+    0.942
+   ],
+   "across songs, v115, mean": 0.909
+  },
+  "369 row order agrees with the v105 kept-window file": true,
+  "367 the rhythm band on kept songs (bits a note; the engine's reading, every sung onset)": {
+   "songs": 103,
+   "percentiles (1, 5, 25, 50, 75, 95, 99)": [
+    1.575,
+    1.808,
+    2.197,
+    2.454,
+    2.935,
+    3.715,
+    4.086
+   ],
+   "286's limits, read on the 515 POP909 pairs: soft, hard": [
+    [
+     1.5809,
+     2.9273
+    ],
+    [
+     1.3686,
+     3.6124
+    ]
+   ],
+   "kept songs inside 286's soft limits": 0.728
+  },
+  "fairness: v112 builds against kept, trained on only 50 kept windows and 50 build windows [mean, sd]": {
+   "40": [
+    0.946,
+    0.016
+   ],
+   "42": [
+    0.934,
+    0.016
+   ]
+  }
+ },
+ "cmp and memory on kept chart songs (373)": {
+  "kept chart songs": 139,
+  "cmp": {
+   "kept percentiles (1, 5, 25, 50, 75, 95, 99)": [
+    0.188,
+    0.3057,
+    0.4405,
+    0.5332,
+    0.5984,
+    0.7277,
+    0.7659
+   ],
+   "286's soft and hard limits (POP909)": [
+    0.338,
+    0.0915
+   ],
+   "kept at or above the soft limit": 0.935,
+   "kept at or above the hard limit": 1.0
+  },
+  "memory": {
+   "kept percentiles (1, 5, 25, 50, 75, 95, 99)": [
+    0.0,
+    0.1199,
+    0.3268,
+    0.5462,
+    0.7044,
+    0.8336,
+    0.8991
+   ],
+   "286's soft and hard limits (POP909)": [
+    0.2266,
+    0.0762
+   ],
+   "kept at or above the soft limit": 0.906,
+   "kept at or above the hard limit": 0.95
+  }
+ },
+ "the v88 pop table against the kept songs (372)": {
+  "order of shares": [
+   "sixteenth",
+   "eighth",
+   "quarter",
+   "longer than a quarter",
+   "other (dotted, triplet)"
+  ],
+  "the v88 pop table, simulated": [
+   0.196,
+   0.444,
+   0.176,
+   0.126,
+   0.057
+  ],
+  "its notes a bar": 3.68,
+  "kept chart songs, every sung gap": [
+   0.097,
+   0.496,
+   0.188,
+   0.199,
+   0.021
+  ],
+  "kept songs": 105,
+  "kept notes a bar over whole songs (25, 50, 75)": [
+   3.04,
+   3.73,
+   4.27
+  ],
+  "a table of the same form fitted on the kept songs, simulated": [
+   0.097,
+   0.494,
+   0.187,
+   0.2,
+   0.022
+  ],
+  "gaps under half a bar only: sixteenth, eighth, dotted eighth, quarter, dotted quarter": {
+   "v88 pop table": [
+    0.213,
+    0.48,
+    0.058,
+    0.191,
+    0.045
+   ],
+   "kept chart songs": [
+    0.111,
+    0.572,
+    0.025,
+    0.216,
+    0.065
+   ]
+  },
+  "by position in the bar (sixteenths 0-15): P(eighth next) table, kept; P(quarter next) table, kept; kept count": [
+   [
+    0,
+    0.324,
+    0.442,
+    0.229,
+    0.198,
+    5527
+   ],
+   [
+    1,
+    0.174,
+    0.18,
+    0.014,
+    0.003,
+    339
+   ],
+   [
+    2,
+    0.577,
+    0.52,
+    0.141,
+    0.172,
+    3175
+   ],
+   [
+    3,
+    0.159,
+    0.248,
+    0.01,
+    0.016,
+    367
+   ],
+   [
+    4,
+    0.558,
+    0.58,
+    0.246,
+    0.237,
+    3496
+   ],
+   [
+    5,
+    0.232,
+    0.228,
+    0.01,
+    0.037,
+    381
+   ],
+   [
+    6,
+    0.507,
+    0.574,
+    0.174,
+    0.164,
+    3243
+   ],
+   [
+    7,
+    0.177,
+    0.164,
+    0.018,
+    0.026,
+    390
+   ],
+   [
+    8,
+    0.405,
+    0.473,
+    0.28,
+    0.276,
+    3571
+   ],
+   [
+    9,
+    0.208,
+    0.202,
+    0.015,
+    0.022,
+    322
+   ],
+   [
+    10,
+    0.605,
+    0.537,
+    0.164,
+    0.091,
+    2991
+   ],
+   [
+    11,
+    0.167,
+    0.214,
+    0.016,
+    0.015,
+    323
+   ],
+   [
+    12,
+    0.564,
+    0.409,
+    0.249,
+    0.399,
+    3279
+   ],
+   [
+    13,
+    0.158,
+    0.089,
+    0.011,
+    0.035,
+    314
+   ],
+   [
+    14,
+    0.542,
+    0.847,
+    0.147,
+    0.018,
+    2209
+   ],
+   [
+    15,
+    0.089,
+    0.004,
+    0.014,
+    0.0,
+    233
+   ]
+  ]
+ },
+ "the rhythm band with the pooled kept table (373)": {
+  "songs": 105,
+  "percentiles (1, 5, 25, 50, 75, 95, 99)": [
+   1.429,
+   1.621,
+   1.934,
+   2.246,
+   2.735,
+   3.377,
+   3.612
+  ]
+ }
+}

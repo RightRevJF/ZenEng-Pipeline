@@ -1,0 +1,1702 @@
+{
+ "about": "ZenEng v124, Window 144. The bass between the chords, read on the Lucerne Groove Library (Bechtold, Jerjen, Hoesl, Kilchenmann and Senn): 434 eight-bar bass and drum patterns transcribed by hand from records. Quartiles (25th, 50th, 75th, then the mean) for fixes 444-448, all patterns and the pop and rock subset; by style; the code that reads a bass (position in beats, length, pitch) with its kick positions. A bar's first-beat note stands for its root: the patterns have no chords.",
+ "findings": {
+  "patterns": 434,
+  "bass notes": 25086,
+  "by style": {
+   "Rock": 70,
+   "Funk": 57,
+   "RockNRoll": 40,
+   "Jazz": 40,
+   "Pop": 39,
+   "Blues": 32,
+   "AlternativeIndie": 27,
+   "Disco": 24,
+   "CountryWestern": 22,
+   "DanceElectronic": 21,
+   "RnB": 20,
+   "ReggaeDubDancehall": 19,
+   "HeavyMetal": 15,
+   "RapHipHop": 8
+  },
+  "years": [
+   1956,
+   1979,
+   2017
+  ],
+  "percentiles (5, 25, 50, 75, 95)": {
+   "notes_per_bar": [
+    3.25,
+    5.375,
+    7.0,
+    8.75,
+    12.669
+   ],
+   "on_beat": [
+    0.204,
+    0.312,
+    0.429,
+    0.5,
+    0.731
+   ],
+   "on_offbeat_eighth": [
+    0.0,
+    0.227,
+    0.305,
+    0.456,
+    0.534
+   ],
+   "on_sixteenth": [
+    0.0,
+    0.0,
+    0.185,
+    0.408,
+    0.556
+   ],
+   "on_triplet": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.259
+   ],
+   "bars_with_a_note_on_beat1": [
+    0.25,
+    0.75,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "empty_bars": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "pitch_classes_per_bar": [
+    1.331,
+    2.5,
+    3.25,
+    4.0,
+    5.25
+   ],
+   "bars_one_pitch_class": [
+    0.0,
+    0.0,
+    0.0,
+    0.125,
+    0.75
+   ],
+   "distinct_pitch_classes": [
+    3.0,
+    5.0,
+    6.0,
+    8.0,
+    10.0
+   ],
+   "range": [
+    5.0,
+    10.0,
+    15.0,
+    19.0,
+    24.35
+   ],
+   "median_pitch": [
+    42.0,
+    45.0,
+    48.0,
+    51.0,
+    56.0
+   ],
+   "on_the_bars_first_note": [
+    0.199,
+    0.333,
+    0.469,
+    0.636,
+    0.939
+   ],
+   "a_fifth_from_it": [
+    0.0,
+    0.0,
+    0.077,
+    0.167,
+    0.3
+   ],
+   "a_third_from_it": [
+    0.0,
+    0.0,
+    0.062,
+    0.14,
+    0.3
+   ],
+   "a_seventh_from_it": [
+    0.0,
+    0.0,
+    0.069,
+    0.162,
+    0.313
+   ],
+   "another_note": [
+    0.0,
+    0.072,
+    0.184,
+    0.291,
+    0.518
+   ],
+   "iv_repeat": [
+    0.018,
+    0.155,
+    0.28,
+    0.451,
+    0.837
+   ],
+   "iv_step": [
+    0.0,
+    0.137,
+    0.248,
+    0.356,
+    0.553
+   ],
+   "iv_semitone": [
+    0.0,
+    0.0,
+    0.066,
+    0.153,
+    0.312
+   ],
+   "iv_third": [
+    0.0,
+    0.036,
+    0.119,
+    0.2,
+    0.395
+   ],
+   "iv_fourth_fifth": [
+    0.0,
+    0.036,
+    0.097,
+    0.182,
+    0.355
+   ],
+   "iv_octave": [
+    0.0,
+    0.0,
+    0.018,
+    0.078,
+    0.288
+   ],
+   "iv_other": [
+    0.0,
+    0.0,
+    0.043,
+    0.116,
+    0.28
+   ],
+   "bar_rhythm_same_as_last": [
+    0.0,
+    0.0,
+    0.0,
+    0.429,
+    1.0
+   ],
+   "bar_rhythm_same_as_two_back": [
+    0.0,
+    0.042,
+    0.333,
+    0.667,
+    1.0
+   ],
+   "bar_figure_same_as_last": [
+    0.0,
+    0.0,
+    0.0,
+    0.107,
+    0.857
+   ],
+   "bar_figure_same_as_two_back": [
+    0.0,
+    0.0,
+    0.167,
+    0.5,
+    1.0
+   ],
+   "distinct_bar_rhythms": [
+    1.0,
+    2.0,
+    4.0,
+    6.0,
+    7.0
+   ],
+   "top_bar_rhythm_share": [
+    0.188,
+    0.286,
+    0.5,
+    0.625,
+    1.0
+   ],
+   "last_bar_differs_from_the_first_seven": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0
+   ],
+   "bar_4_or_8_has_more_notes": [
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    1.0
+   ],
+   "sounding_share_of_gap": [
+    0.615,
+    0.8,
+    0.892,
+    0.973,
+    1.0
+   ],
+   "short_notes": [
+    0.0,
+    0.019,
+    0.157,
+    0.313,
+    0.593
+   ],
+   "sounding_share": [
+    0.415,
+    0.672,
+    0.832,
+    0.961,
+    1.0
+   ],
+   "kick_with_bass": [
+    0.375,
+    0.636,
+    0.831,
+    0.969,
+    1.0
+   ],
+   "bass_with_kick": [
+    0.19,
+    0.322,
+    0.436,
+    0.569,
+    0.857
+   ],
+   "kicks_per_bar": [
+    2.0,
+    3.0,
+    4.0,
+    4.75,
+    6.875
+   ],
+   "beat1_kick_and_bass": [
+    0.056,
+    0.625,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "bass_between_kicks_off_the_beat": [
+    0.0,
+    0.221,
+    0.404,
+    0.511,
+    0.658
+   ],
+   "into_the_bar_same": [
+    0.0,
+    0.0,
+    0.0,
+    0.167,
+    0.832
+   ],
+   "into_the_bar_semitone": [
+    0.0,
+    0.0,
+    0.0,
+    0.25,
+    0.714
+   ],
+   "into_the_bar_whole_step": [
+    0.0,
+    0.0,
+    0.0,
+    0.286,
+    0.714
+   ],
+   "into_the_bar_third": [
+    0.0,
+    0.0,
+    0.0,
+    0.143,
+    0.667
+   ],
+   "into_the_bar_fourth_or_fifth": [
+    0.0,
+    0.0,
+    0.143,
+    0.429,
+    0.714
+   ],
+   "into_the_bar_octave": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.571
+   ],
+   "into_the_bar_other": [
+    0.0,
+    0.0,
+    0.0,
+    0.143,
+    0.714
+   ],
+   "into_the_bar_by_step_of_changes": [
+    0.0,
+    0.0,
+    0.286,
+    0.714,
+    1.0
+   ]
+  },
+  "mean": {
+   "notes_per_bar": 7.225,
+   "on_beat": 0.429,
+   "on_offbeat_eighth": 0.315,
+   "on_sixteenth": 0.217,
+   "on_triplet": 0.031,
+   "bars_with_a_note_on_beat1": 0.853,
+   "empty_bars": 0.014,
+   "pitch_classes_per_bar": 3.281,
+   "bars_one_pitch_class": 0.134,
+   "distinct_pitch_classes": 6.175,
+   "range": 14.903,
+   "median_pitch": 48.394,
+   "on_the_bars_first_note": 0.501,
+   "a_fifth_from_it": 0.103,
+   "a_third_from_it": 0.09,
+   "a_seventh_from_it": 0.099,
+   "another_note": 0.208,
+   "iv_repeat": 0.336,
+   "iv_step": 0.257,
+   "iv_semitone": 0.098,
+   "iv_third": 0.139,
+   "iv_fourth_fifth": 0.126,
+   "iv_octave": 0.065,
+   "iv_other": 0.077,
+   "bar_rhythm_same_as_last": 0.27,
+   "bar_rhythm_same_as_two_back": 0.42,
+   "bar_figure_same_as_last": 0.13,
+   "bar_figure_same_as_two_back": 0.277,
+   "distinct_bar_rhythms": 4.039,
+   "top_bar_rhythm_share": 0.511,
+   "last_bar_differs_from_the_first_seven": 0.472,
+   "bar_4_or_8_has_more_notes": 0.435,
+   "sounding_share_of_gap": 0.867,
+   "short_notes": 0.207,
+   "sounding_share": 0.793,
+   "kick_with_bass": 0.779,
+   "bass_with_kick": 0.461,
+   "kicks_per_bar": 4.071,
+   "beat1_kick_and_bass": 0.804,
+   "bass_between_kicks_off_the_beat": 0.372,
+   "into_the_bar_same": 0.147,
+   "into_the_bar_semitone": 0.148,
+   "into_the_bar_whole_step": 0.174,
+   "into_the_bar_third": 0.128,
+   "into_the_bar_fourth_or_fifth": 0.205,
+   "into_the_bar_octave": 0.074,
+   "into_the_bar_other": 0.124,
+   "into_the_bar_by_step_of_changes": 0.382
+  },
+  "the last note of a bar into the first of the next, pooled": {
+   "fourth_or_fifth": 0.206,
+   "whole_step": 0.176,
+   "semitone": 0.15,
+   "same": 0.14,
+   "third": 0.133,
+   "other": 0.123,
+   "octave": 0.073,
+   "pairs": 2537
+  },
+  "the engine's cells: value and its place among the 444 patterns (share at or below)": {
+   "song 40, verse": {
+    "notes_per_bar": [
+     4.0,
+     0.12
+    ],
+    "pitch_classes_per_bar": [
+     1.75,
+     0.1
+    ],
+    "bars_one_pitch_class": [
+     0.25,
+     0.83
+    ],
+    "on_the_bars_first_note": [
+     0.812,
+     0.89
+    ],
+    "iv_repeat": [
+     0.581,
+     0.83
+    ],
+    "iv_octave": [
+     0.0,
+     0.46
+    ],
+    "iv_step": [
+     0.129,
+     0.24
+    ],
+    "bar_rhythm_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "bar_figure_same_as_last": [
+     0.286,
+     0.85
+    ],
+    "distinct_bar_rhythms": [
+     1.0,
+     0.11
+    ],
+    "kick_with_bass": [
+     1.0,
+     1.0
+    ],
+    "bass_with_kick": [
+     0.5,
+     0.66
+    ],
+    "on_beat": [
+     0.5,
+     0.77
+    ],
+    "on_sixteenth": [
+     0.0,
+     0.35
+    ],
+    "sounding_share_of_gap": [
+     0.891,
+     0.5
+    ],
+    "last_bar_differs_from_the_first_seven": [
+     0.0,
+     0.53
+    ]
+   },
+   "song 40, chorus": {
+    "notes_per_bar": [
+     8.0,
+     0.7
+    ],
+    "pitch_classes_per_bar": [
+     2.5,
+     0.3
+    ],
+    "bars_one_pitch_class": [
+     0.0,
+     0.7
+    ],
+    "on_the_bars_first_note": [
+     0.672,
+     0.78
+    ],
+    "iv_repeat": [
+     0.254,
+     0.46
+    ],
+    "iv_octave": [
+     0.143,
+     0.85
+    ],
+    "iv_step": [
+     0.143,
+     0.26
+    ],
+    "bar_rhythm_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "bar_figure_same_as_last": [
+     0.143,
+     0.81
+    ],
+    "distinct_bar_rhythms": [
+     1.0,
+     0.11
+    ],
+    "kick_with_bass": [
+     1.0,
+     1.0
+    ],
+    "bass_with_kick": [
+     0.375,
+     0.38
+    ],
+    "on_beat": [
+     0.5,
+     0.77
+    ],
+    "on_sixteenth": [
+     0.0,
+     0.35
+    ],
+    "sounding_share_of_gap": [
+     0.833,
+     0.32
+    ],
+    "last_bar_differs_from_the_first_seven": [
+     0.0,
+     0.53
+    ]
+   },
+   "song 43, verse": {
+    "notes_per_bar": [
+     8.0,
+     0.7
+    ],
+    "pitch_classes_per_bar": [
+     1.0,
+     0.03
+    ],
+    "bars_one_pitch_class": [
+     1.0,
+     1.0
+    ],
+    "on_the_bars_first_note": [
+     1.0,
+     1.0
+    ],
+    "iv_repeat": [
+     0.0,
+     0.03
+    ],
+    "iv_octave": [
+     0.889,
+     1.0
+    ],
+    "iv_step": [
+     0.0,
+     0.07
+    ],
+    "bar_rhythm_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "bar_figure_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "distinct_bar_rhythms": [
+     1.0,
+     0.11
+    ],
+    "kick_with_bass": [
+     1.0,
+     1.0
+    ],
+    "bass_with_kick": [
+     0.5,
+     0.66
+    ],
+    "on_beat": [
+     0.5,
+     0.77
+    ],
+    "on_sixteenth": [
+     0.0,
+     0.35
+    ],
+    "sounding_share_of_gap": [
+     0.833,
+     0.32
+    ],
+    "last_bar_differs_from_the_first_seven": [
+     0.0,
+     0.53
+    ]
+   },
+   "song 43, chorus": {
+    "notes_per_bar": [
+     8.0,
+     0.7
+    ],
+    "pitch_classes_per_bar": [
+     1.0,
+     0.03
+    ],
+    "bars_one_pitch_class": [
+     1.0,
+     1.0
+    ],
+    "on_the_bars_first_note": [
+     1.0,
+     1.0
+    ],
+    "iv_repeat": [
+     0.0,
+     0.03
+    ],
+    "iv_octave": [
+     0.889,
+     1.0
+    ],
+    "iv_step": [
+     0.0,
+     0.07
+    ],
+    "bar_rhythm_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "bar_figure_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "distinct_bar_rhythms": [
+     1.0,
+     0.11
+    ],
+    "kick_with_bass": [
+     1.0,
+     1.0
+    ],
+    "bass_with_kick": [
+     0.5,
+     0.66
+    ],
+    "on_beat": [
+     0.5,
+     0.77
+    ],
+    "on_sixteenth": [
+     0.0,
+     0.35
+    ],
+    "sounding_share_of_gap": [
+     0.833,
+     0.32
+    ],
+    "last_bar_differs_from_the_first_seven": [
+     0.0,
+     0.53
+    ]
+   },
+   "song 44, verse": {
+    "notes_per_bar": [
+     4.0,
+     0.12
+    ],
+    "pitch_classes_per_bar": [
+     1.0,
+     0.03
+    ],
+    "bars_one_pitch_class": [
+     1.0,
+     1.0
+    ],
+    "on_the_bars_first_note": [
+     1.0,
+     1.0
+    ],
+    "iv_repeat": [
+     0.774,
+     0.93
+    ],
+    "iv_octave": [
+     0.0,
+     0.46
+    ],
+    "iv_step": [
+     0.065,
+     0.13
+    ],
+    "bar_rhythm_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "bar_figure_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "distinct_bar_rhythms": [
+     1.0,
+     0.11
+    ],
+    "kick_with_bass": [
+     1.0,
+     1.0
+    ],
+    "bass_with_kick": [
+     1.0,
+     1.0
+    ],
+    "on_beat": [
+     1.0,
+     1.0
+    ],
+    "on_sixteenth": [
+     0.0,
+     0.35
+    ],
+    "sounding_share_of_gap": [
+     0.833,
+     0.32
+    ],
+    "last_bar_differs_from_the_first_seven": [
+     0.0,
+     0.53
+    ]
+   },
+   "song 44, chorus": {
+    "notes_per_bar": [
+     8.0,
+     0.7
+    ],
+    "pitch_classes_per_bar": [
+     1.0,
+     0.03
+    ],
+    "bars_one_pitch_class": [
+     1.0,
+     1.0
+    ],
+    "on_the_bars_first_note": [
+     1.0,
+     1.0
+    ],
+    "iv_repeat": [
+     0.0,
+     0.03
+    ],
+    "iv_octave": [
+     0.889,
+     1.0
+    ],
+    "iv_step": [
+     0.016,
+     0.07
+    ],
+    "bar_rhythm_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "bar_figure_same_as_last": [
+     1.0,
+     1.0
+    ],
+    "distinct_bar_rhythms": [
+     1.0,
+     0.11
+    ],
+    "kick_with_bass": [
+     1.0,
+     1.0
+    ],
+    "bass_with_kick": [
+     0.5,
+     0.66
+    ],
+    "on_beat": [
+     0.5,
+     0.77
+    ],
+    "on_sixteenth": [
+     0.0,
+     0.35
+    ],
+    "sounding_share_of_gap": [
+     0.833,
+     0.32
+    ],
+    "last_bar_differs_from_the_first_seven": [
+     0.0,
+     0.53
+    ]
+   }
+  },
+  "4. transcriptions beside sequenced copies": {
+   "notes_per_bar": {
+    "transcriptions (25, 50, 75)": [
+     5.375,
+     7.0,
+     8.75
+    ],
+    "sequenced copies (25, 50, 75)": [
+     3.683,
+     4.736,
+     6.49
+    ],
+    "each median inside the other's middle half": false
+   },
+   "on_beat": {
+    "transcriptions (25, 50, 75)": [
+     0.312,
+     0.429,
+     0.5
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.428,
+     0.511,
+     0.649
+    ],
+    "each median inside the other's middle half": false
+   },
+   "on_offbeat_eighth": {
+    "transcriptions (25, 50, 75)": [
+     0.227,
+     0.305,
+     0.456
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.178,
+     0.329,
+     0.452
+    ],
+    "each median inside the other's middle half": true
+   },
+   "on_sixteenth": {
+    "transcriptions (25, 50, 75)": [
+     0.0,
+     0.185,
+     0.408
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.0,
+     0.059,
+     0.274
+    ],
+    "each median inside the other's middle half": true
+   },
+   "bars_with_a_note_on_beat1": {
+    "transcriptions (25, 50, 75)": [
+     0.75,
+     1.0,
+     1.0
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.883,
+     0.983,
+     1.0
+    ],
+    "each median inside the other's middle half": true
+   },
+   "bars_one_pitch_class": {
+    "transcriptions (25, 50, 75)": [
+     0.0,
+     0.0,
+     0.125
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.054,
+     0.188,
+     0.435
+    ],
+    "each median inside the other's middle half": false
+   },
+   "iv_repeat": {
+    "transcriptions (25, 50, 75)": [
+     0.155,
+     0.28,
+     0.451
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.213,
+     0.369,
+     0.549
+    ],
+    "each median inside the other's middle half": true
+   },
+   "iv_step": {
+    "transcriptions (25, 50, 75)": [
+     0.137,
+     0.248,
+     0.356
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.112,
+     0.206,
+     0.306
+    ],
+    "each median inside the other's middle half": true
+   },
+   "iv_third": {
+    "transcriptions (25, 50, 75)": [
+     0.036,
+     0.119,
+     0.2
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.031,
+     0.07,
+     0.134
+    ],
+    "each median inside the other's middle half": true
+   },
+   "iv_fourth_fifth": {
+    "transcriptions (25, 50, 75)": [
+     0.036,
+     0.097,
+     0.182
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.079,
+     0.158,
+     0.264
+    ],
+    "each median inside the other's middle half": true
+   },
+   "iv_octave": {
+    "transcriptions (25, 50, 75)": [
+     0.0,
+     0.018,
+     0.078
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.0,
+     0.013,
+     0.051
+    ],
+    "each median inside the other's middle half": true
+   },
+   "bar_rhythm_same_as_last": {
+    "transcriptions (25, 50, 75)": [
+     0.0,
+     0.0,
+     0.429
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.114,
+     0.322,
+     0.634
+    ],
+    "each median inside the other's middle half": false
+   },
+   "bar_rhythm_same_as_two_back": {
+    "transcriptions (25, 50, 75)": [
+     0.042,
+     0.333,
+     0.667
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.25,
+     0.468,
+     0.71
+    ],
+    "each median inside the other's middle half": true
+   },
+   "bar_figure_same_as_last": {
+    "transcriptions (25, 50, 75)": [
+     0.0,
+     0.0,
+     0.107
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.0,
+     0.028,
+     0.129
+    ],
+    "each median inside the other's middle half": true
+   },
+   "top_bar_rhythm_share": {
+    "transcriptions (25, 50, 75)": [
+     0.286,
+     0.5,
+     0.625
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.25,
+     0.394,
+     0.633
+    ],
+    "each median inside the other's middle half": true
+   },
+   "range": {
+    "transcriptions (25, 50, 75)": [
+     10.0,
+     15.0,
+     19.0
+    ],
+    "sequenced copies (25, 50, 75)": [
+     11.0,
+     14.0,
+     17.0
+    ],
+    "each median inside the other's middle half": true
+   },
+   "median_pitch": {
+    "transcriptions (25, 50, 75)": [
+     45.0,
+     48.0,
+     51.0
+    ],
+    "sequenced copies (25, 50, 75)": [
+     33.0,
+     36.0,
+     40.0
+    ],
+    "each median inside the other's middle half": false
+   },
+   "kick_with_bass": {
+    "transcriptions (25, 50, 75)": [
+     0.636,
+     0.831,
+     0.969
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.658,
+     0.82,
+     0.938
+    ],
+    "each median inside the other's middle half": true
+   },
+   "bass_with_kick": {
+    "transcriptions (25, 50, 75)": [
+     0.322,
+     0.436,
+     0.569
+    ],
+    "sequenced copies (25, 50, 75)": [
+     0.391,
+     0.512,
+     0.672
+    ],
+    "each median inside the other's middle half": true
+   }
+  },
+  "4. agreeing": [
+   14,
+   19
+  ],
+  "by style (median)": {
+   "AlternativeIndie": {
+    "notes_per_bar": 7.5,
+    "pitch_classes_per_bar": 2.5,
+    "on_the_bars_first_note": 0.562,
+    "iv_repeat": 0.406,
+    "iv_step": 0.175,
+    "bar_rhythm_same_as_last": 0.143,
+    "kick_with_bass": 0.97,
+    "bass_with_kick": 0.492,
+    "on_sixteenth": 0.108,
+    "sounding_share_of_gap": 0.941,
+    "patterns": 27
+   },
+   "Blues": {
+    "notes_per_bar": 6.812,
+    "pitch_classes_per_bar": 3.75,
+    "on_the_bars_first_note": 0.429,
+    "iv_repeat": 0.184,
+    "iv_step": 0.312,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.765,
+    "bass_with_kick": 0.428,
+    "on_sixteenth": 0.26,
+    "sounding_share_of_gap": 0.85,
+    "patterns": 32
+   },
+   "CountryWestern": {
+    "notes_per_bar": 6.5,
+    "pitch_classes_per_bar": 3.75,
+    "on_the_bars_first_note": 0.367,
+    "iv_repeat": 0.22,
+    "iv_step": 0.282,
+    "bar_rhythm_same_as_last": 0.143,
+    "kick_with_bass": 0.955,
+    "bass_with_kick": 0.485,
+    "on_sixteenth": 0.024,
+    "sounding_share_of_gap": 0.969,
+    "patterns": 22
+   },
+   "DanceElectronic": {
+    "notes_per_bar": 6.5,
+    "pitch_classes_per_bar": 3.625,
+    "on_the_bars_first_note": 0.496,
+    "iv_repeat": 0.265,
+    "iv_step": 0.286,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.625,
+    "bass_with_kick": 0.375,
+    "on_sixteenth": 0.382,
+    "sounding_share_of_gap": 0.892,
+    "patterns": 21
+   },
+   "Disco": {
+    "notes_per_bar": 6.5,
+    "pitch_classes_per_bar": 3.188,
+    "on_the_bars_first_note": 0.476,
+    "iv_repeat": 0.208,
+    "iv_step": 0.261,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.75,
+    "bass_with_kick": 0.42,
+    "on_sixteenth": 0.205,
+    "sounding_share_of_gap": 0.878,
+    "patterns": 24
+   },
+   "Funk": {
+    "notes_per_bar": 8.25,
+    "pitch_classes_per_bar": 3.75,
+    "on_the_bars_first_note": 0.382,
+    "iv_repeat": 0.21,
+    "iv_step": 0.294,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.812,
+    "bass_with_kick": 0.328,
+    "on_sixteenth": 0.367,
+    "sounding_share_of_gap": 0.861,
+    "patterns": 57
+   },
+   "HeavyMetal": {
+    "notes_per_bar": 7.75,
+    "pitch_classes_per_bar": 2.75,
+    "on_the_bars_first_note": 0.5,
+    "iv_repeat": 0.557,
+    "iv_step": 0.154,
+    "bar_rhythm_same_as_last": 0.429,
+    "kick_with_bass": 0.857,
+    "bass_with_kick": 0.612,
+    "on_sixteenth": 0.0,
+    "sounding_share_of_gap": 0.977,
+    "patterns": 15
+   },
+   "Jazz": {
+    "notes_per_bar": 7.0,
+    "pitch_classes_per_bar": 3.812,
+    "on_the_bars_first_note": 0.333,
+    "iv_repeat": 0.184,
+    "iv_step": 0.318,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.75,
+    "bass_with_kick": 0.428,
+    "on_sixteenth": 0.354,
+    "sounding_share_of_gap": 0.866,
+    "patterns": 40
+   },
+   "Pop": {
+    "notes_per_bar": 5.75,
+    "pitch_classes_per_bar": 2.75,
+    "on_the_bars_first_note": 0.556,
+    "iv_repeat": 0.38,
+    "iv_step": 0.182,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.875,
+    "bass_with_kick": 0.5,
+    "on_sixteenth": 0.083,
+    "sounding_share_of_gap": 0.878,
+    "patterns": 39
+   },
+   "RapHipHop": {
+    "notes_per_bar": 6.438,
+    "pitch_classes_per_bar": 3.0,
+    "on_the_bars_first_note": 0.5,
+    "iv_repeat": 0.259,
+    "iv_step": 0.303,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.693,
+    "bass_with_kick": 0.425,
+    "on_sixteenth": 0.35,
+    "sounding_share_of_gap": 0.837,
+    "patterns": 8
+   },
+   "ReggaeDubDancehall": {
+    "notes_per_bar": 6.125,
+    "pitch_classes_per_bar": 3.0,
+    "on_the_bars_first_note": 0.409,
+    "iv_repeat": 0.276,
+    "iv_step": 0.209,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.739,
+    "bass_with_kick": 0.486,
+    "on_sixteenth": 0.231,
+    "sounding_share_of_gap": 0.841,
+    "patterns": 19
+   },
+   "RnB": {
+    "notes_per_bar": 7.625,
+    "pitch_classes_per_bar": 4.125,
+    "on_the_bars_first_note": 0.343,
+    "iv_repeat": 0.216,
+    "iv_step": 0.327,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.693,
+    "bass_with_kick": 0.372,
+    "on_sixteenth": 0.214,
+    "sounding_share_of_gap": 0.852,
+    "patterns": 20
+   },
+   "Rock": {
+    "notes_per_bar": 7.562,
+    "pitch_classes_per_bar": 2.775,
+    "on_the_bars_first_note": 0.519,
+    "iv_repeat": 0.412,
+    "iv_step": 0.195,
+    "bar_rhythm_same_as_last": 0.143,
+    "kick_with_bass": 0.853,
+    "bass_with_kick": 0.473,
+    "on_sixteenth": 0.019,
+    "sounding_share_of_gap": 0.947,
+    "patterns": 70
+   },
+   "RockNRoll": {
+    "notes_per_bar": 7.0,
+    "pitch_classes_per_bar": 2.75,
+    "on_the_bars_first_note": 0.573,
+    "iv_repeat": 0.394,
+    "iv_step": 0.203,
+    "bar_rhythm_same_as_last": 0.286,
+    "kick_with_bass": 0.917,
+    "bass_with_kick": 0.475,
+    "on_sixteenth": 0.0,
+    "sounding_share_of_gap": 0.985,
+    "patterns": 40
+   }
+  },
+  "by years (median)": {
+   "1956-1969": {
+    "notes_per_bar": 5.875,
+    "pitch_classes_per_bar": 3.25,
+    "on_the_bars_first_note": 0.403,
+    "iv_repeat": 0.267,
+    "bar_rhythm_same_as_last": 0.143,
+    "kick_with_bass": 0.845,
+    "on_sixteenth": 0.0,
+    "patterns": 69
+   },
+   "1970-1979": {
+    "notes_per_bar": 6.75,
+    "pitch_classes_per_bar": 3.375,
+    "on_the_bars_first_note": 0.461,
+    "iv_repeat": 0.277,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.806,
+    "on_sixteenth": 0.244,
+    "patterns": 147
+   },
+   "1980-1991": {
+    "notes_per_bar": 7.625,
+    "pitch_classes_per_bar": 3.0,
+    "on_the_bars_first_note": 0.5,
+    "iv_repeat": 0.334,
+    "bar_rhythm_same_as_last": 0.143,
+    "kick_with_bass": 0.909,
+    "on_sixteenth": 0.082,
+    "patterns": 98
+   },
+   "1992-2017": {
+    "notes_per_bar": 7.5,
+    "pitch_classes_per_bar": 3.208,
+    "on_the_bars_first_note": 0.472,
+    "iv_repeat": 0.266,
+    "bar_rhythm_same_as_last": 0.0,
+    "kick_with_bass": 0.767,
+    "on_sixteenth": 0.279,
+    "patterns": 118
+   }
+  },
+  "6. rank correlation with the urge to move": {
+   "on_sixteenth": -0.246,
+   "on_offbeat_eighth": 0.222,
+   "pitch_classes_per_bar": -0.196,
+   "on_beat": 0.195,
+   "kicks_per_bar": -0.195,
+   "range": -0.166,
+   "on_triplet": -0.165,
+   "distinct_bar_rhythms": -0.164,
+   "kick_with_bass": 0.16,
+   "on_the_bars_first_note": 0.159,
+   "into_the_bar_same": 0.157,
+   "a_fifth_from_it": -0.154,
+   "last_bar_differs_from_the_first_seven": -0.153,
+   "top_bar_rhythm_share": 0.142,
+   "iv_other": -0.141,
+   "bar_rhythm_same_as_two_back": 0.14,
+   "iv_repeat": 0.133,
+   "iv_semitone": -0.128,
+   "a_third_from_it": -0.126,
+   "iv_fourth_fifth": -0.126,
+   "distinct_pitch_classes": -0.125,
+   "iv_octave": -0.124,
+   "bar_figure_same_as_two_back": 0.123,
+   "bars_one_pitch_class": 0.111,
+   "into_the_bar_semitone": -0.106,
+   "bar_rhythm_same_as_last": 0.097,
+   "bar_figure_same_as_last": 0.089,
+   "notes_per_bar": -0.084,
+   "another_note": -0.075,
+   "iv_step": -0.075,
+   "a_seventh_from_it": -0.055,
+   "into_the_bar_third": -0.052,
+   "empty_bars": -0.043,
+   "median_pitch": -0.043,
+   "beat1_kick_and_bass": 0.043,
+   "sounding_share_of_gap": 0.039,
+   "into_the_bar_by_step_of_changes": -0.039,
+   "bar_4_or_8_has_more_notes": -0.036,
+   "iv_third": -0.034,
+   "into_the_bar_other": 0.024,
+   "bass_between_kicks_off_the_beat": -0.021,
+   "sounding_share": 0.019,
+   "bass_with_kick": -0.015,
+   "bars_with_a_note_on_beat1": -0.012,
+   "short_notes": -0.011,
+   "into_the_bar_whole_step": -0.008,
+   "into_the_bar_fourth_or_fifth": -0.008,
+   "into_the_bar_octave": 0.003
+  },
+  "quartiles and mean: all patterns": {
+   "notes_per_bar": [
+    5.375,
+    7.0,
+    8.75,
+    7.225
+   ],
+   "pitch_classes_per_bar": [
+    2.5,
+    3.25,
+    4.0,
+    3.281
+   ],
+   "bars_one_pitch_class": [
+    0.0,
+    0.0,
+    0.125,
+    0.134
+   ],
+   "on_the_bars_first_note": [
+    0.333,
+    0.469,
+    0.636,
+    0.501
+   ],
+   "a_fifth_from_it": [
+    0.0,
+    0.077,
+    0.167,
+    0.103
+   ],
+   "a_third_from_it": [
+    0.0,
+    0.062,
+    0.14,
+    0.09
+   ],
+   "a_seventh_from_it": [
+    0.0,
+    0.069,
+    0.162,
+    0.099
+   ],
+   "another_note": [
+    0.072,
+    0.184,
+    0.291,
+    0.208
+   ],
+   "iv_repeat": [
+    0.155,
+    0.28,
+    0.451,
+    0.336
+   ],
+   "iv_step": [
+    0.137,
+    0.248,
+    0.356,
+    0.257
+   ],
+   "iv_third": [
+    0.036,
+    0.119,
+    0.2,
+    0.139
+   ],
+   "iv_fourth_fifth": [
+    0.036,
+    0.097,
+    0.182,
+    0.126
+   ],
+   "iv_octave": [
+    0.0,
+    0.018,
+    0.078,
+    0.065
+   ],
+   "bar_rhythm_same_as_last": [
+    0.0,
+    0.0,
+    0.429,
+    0.27
+   ],
+   "bar_rhythm_same_as_two_back": [
+    0.042,
+    0.333,
+    0.667,
+    0.42
+   ],
+   "bar_figure_same_as_two_back": [
+    0.0,
+    0.167,
+    0.5,
+    0.277
+   ],
+   "distinct_bar_rhythms": [
+    2.0,
+    4.0,
+    6.0,
+    4.039
+   ],
+   "top_bar_rhythm_share": [
+    0.286,
+    0.5,
+    0.625,
+    0.511
+   ],
+   "kick_with_bass": [
+    0.636,
+    0.831,
+    0.969,
+    0.779
+   ],
+   "bass_with_kick": [
+    0.322,
+    0.436,
+    0.569,
+    0.461
+   ],
+   "beat1_kick_and_bass": [
+    0.625,
+    1.0,
+    1.0,
+    0.804
+   ],
+   "on_beat": [
+    0.312,
+    0.429,
+    0.5,
+    0.429
+   ],
+   "on_offbeat_eighth": [
+    0.227,
+    0.305,
+    0.456,
+    0.315
+   ],
+   "on_sixteenth": [
+    0.0,
+    0.185,
+    0.408,
+    0.217
+   ],
+   "sounding_share_of_gap": [
+    0.8,
+    0.892,
+    0.973,
+    0.867
+   ],
+   "last_bar_differs_from_the_first_seven": [
+    0.0,
+    0.0,
+    1.0,
+    0.472
+   ],
+   "bar_4_or_8_has_more_notes": [
+    0.0,
+    0.0,
+    1.0,
+    0.435
+   ],
+   "bars_with_a_note_on_beat1": [
+    0.75,
+    1.0,
+    1.0,
+    0.853
+   ]
+  },
+  "quartiles and mean: pop, rock, rock and roll, alternative, country (198 patterns)": {
+   "notes_per_bar": [
+    5.125,
+    7.0,
+    8.0,
+    6.898
+   ],
+   "pitch_classes_per_bar": [
+    2.125,
+    2.837,
+    3.75,
+    2.886
+   ],
+   "bars_one_pitch_class": [
+    0.0,
+    0.0,
+    0.375,
+    0.205
+   ],
+   "on_the_bars_first_note": [
+    0.375,
+    0.524,
+    0.725,
+    0.557
+   ],
+   "a_fifth_from_it": [
+    0.0,
+    0.061,
+    0.162,
+    0.09
+   ],
+   "a_third_from_it": [
+    0.0,
+    0.045,
+    0.121,
+    0.081
+   ],
+   "a_seventh_from_it": [
+    0.0,
+    0.053,
+    0.129,
+    0.082
+   ],
+   "another_note": [
+    0.062,
+    0.158,
+    0.28,
+    0.189
+   ],
+   "iv_repeat": [
+    0.2,
+    0.362,
+    0.606,
+    0.413
+   ],
+   "iv_step": [
+    0.092,
+    0.2,
+    0.324,
+    0.224
+   ],
+   "iv_third": [
+    0.03,
+    0.107,
+    0.202,
+    0.142
+   ],
+   "iv_fourth_fifth": [
+    0.029,
+    0.079,
+    0.164,
+    0.111
+   ],
+   "iv_octave": [
+    0.0,
+    0.0,
+    0.048,
+    0.046
+   ],
+   "bar_rhythm_same_as_last": [
+    0.0,
+    0.143,
+    0.571,
+    0.321
+   ],
+   "bar_rhythm_same_as_two_back": [
+    0.167,
+    0.5,
+    0.792,
+    0.451
+   ],
+   "bar_figure_same_as_two_back": [
+    0.0,
+    0.167,
+    0.5,
+    0.292
+   ],
+   "distinct_bar_rhythms": [
+    2.0,
+    3.0,
+    5.0,
+    3.687
+   ],
+   "top_bar_rhythm_share": [
+    0.375,
+    0.5,
+    0.75,
+    0.549
+   ],
+   "kick_with_bass": [
+    0.696,
+    0.915,
+    1.0,
+    0.824
+   ],
+   "bass_with_kick": [
+    0.346,
+    0.484,
+    0.588,
+    0.495
+   ],
+   "beat1_kick_and_bass": [
+    0.75,
+    1.0,
+    1.0,
+    0.847
+   ],
+   "on_beat": [
+    0.37,
+    0.483,
+    0.538,
+    0.478
+   ],
+   "on_offbeat_eighth": [
+    0.239,
+    0.364,
+    0.492,
+    0.341
+   ],
+   "on_sixteenth": [
+    0.0,
+    0.02,
+    0.28,
+    0.148
+   ],
+   "sounding_share_of_gap": [
+    0.839,
+    0.932,
+    0.995,
+    0.894
+   ],
+   "last_bar_differs_from_the_first_seven": [
+    0.0,
+    0.0,
+    1.0,
+    0.364
+   ],
+   "bar_4_or_8_has_more_notes": [
+    0.0,
+    0.0,
+    1.0,
+    0.384
+   ],
+   "bars_with_a_note_on_beat1": [
+    1.0,
+    1.0,
+    1.0,
+    0.884
+   ]
+  },
+  "extremes": {
+   "largest share of octave moves in any pattern": 0.746,
+   "patterns with one pitch class in every bar": 0.035,
+   "patterns with one bar rhythm throughout": 0.111,
+   "patterns with a bass note on every kick": 0.217,
+   "patterns whose bars repeat at two bars and not at one": 0.069,
+   "patterns whose bars repeat every bar (0.8 or more)": 0.159
+  }
+ },
+ "code": "\"\"\"The bass between the chords, from records: the Lucerne Groove Library. Predictions in PREDICTION.md. Run: python3 -I lucerne_study.py\"\"\"\nimport json, re, pickle, collections, warnings, numpy as np, pandas as pd\nwarnings.filterwarnings(\"ignore\")\nE_ = pd.read_csv(\"/home/claude/corpus/lucerne/events.csv\"); S = pd.read_csv(\"/home/claude/corpus/lucerne/stimuli.csv\")\nPCN = {\"C\": 0, \"D\": 2, \"E\": 4, \"F\": 5, \"G\": 7, \"A\": 9, \"B\": 11, \"H\": 11}\ndef pitch(n):\n    m = re.match(r\"^([A-H])([#b]?)(-?\\d)$\", str(n))\n    return None if not m else 12 * (int(m.group(3)) + 1) + PCN[m.group(1)] + (m.group(2) == \"#\") - (m.group(2) == \"b\")\ndef measures(B, K, nbars=8):\n    \"\"\"B: bass (position in beats, duration in beats, pitch), sorted; K: kick positions. Eight bars of four beats.\"\"\"\n    if len(B) < 8: return None\n    t = np.array([b[0] for b in B]); du = np.array([b[1] for b in B]); p = np.array([b[2] for b in B]); f = {}; q = lambda x: int(round(x * 12))\n    T = np.array([q(x) for x in t]); KK = sorted({q(x) for x in K}); fr = T % 12; beat = (T // 12) % 4\n    f[\"notes_per_bar\"] = len(B) / nbars; f[\"on_beat\"] = (fr == 0).mean(); f[\"on_offbeat_eighth\"] = (fr == 6).mean(); f[\"on_sixteenth\"] = np.isin(fr, (3, 9)).mean(); f[\"on_triplet\"] = np.isin(fr, (4, 8)).mean()\n    bars = collections.defaultdict(list)\n    for x, d, y in zip(T, du, p): bars[int(x // 48)].append((int(x % 48), int(y), float(d)))\n    f[\"bars_with_a_note_on_beat1\"] = np.mean([any(o == 0 for o, _, _ in bars.get(b, [])) for b in range(nbars)]); f[\"empty_bars\"] = np.mean([b not in bars for b in range(nbars)])\n    f[\"pitch_classes_per_bar\"] = np.mean([len({y % 12 for _, y, _ in v}) for v in bars.values()]); f[\"bars_one_pitch_class\"] = np.mean([len({y % 12 for _, y, _ in v}) == 1 for v in bars.values()]); f[\"distinct_pitch_classes\"] = len(set(p % 12)); f[\"range\"] = p.max() - p.min(); f[\"median_pitch\"] = float(np.median(p))\n    first = {b: v[0][1] % 12 for b, v in bars.items() if v[0][0] == 0}                       # the bar's first-beat note as its stand-in root\n    rel = [(y - first[b]) % 12 for b, v in bars.items() if b in first for _, y, _ in v]\n    if len(rel) >= 8: f[\"on_the_bars_first_note\"] = np.mean([r == 0 for r in rel]); f[\"a_fifth_from_it\"] = np.mean([r == 7 for r in rel]); f[\"a_third_from_it\"] = np.mean([r in (3, 4) for r in rel]); f[\"a_seventh_from_it\"] = np.mean([r in (10, 11) for r in rel]); f[\"another_note\"] = np.mean([r in (1, 2, 5, 6, 8, 9) for r in rel])\n    iv = np.abs(np.diff(p)); f[\"iv_repeat\"] = (iv == 0).mean(); f[\"iv_step\"] = np.isin(iv, (1, 2)).mean(); f[\"iv_semitone\"] = (iv == 1).mean(); f[\"iv_third\"] = np.isin(iv, (3, 4)).mean(); f[\"iv_fourth_fifth\"] = np.isin(iv, (5, 7)).mean(); f[\"iv_octave\"] = (iv == 12).mean(); f[\"iv_other\"] = (~np.isin(iv, (0, 1, 2, 3, 4, 5, 7, 12))).mean()\n    rh = {b: tuple(o for o, _, _ in v) for b, v in bars.items()}; fg = {b: tuple((o, y - v[0][1]) for o, y, _ in v) for b, v in bars.items()}\n    f[\"bar_rhythm_same_as_last\"] = np.mean([rh.get(b) == rh.get(b - 1) for b in range(1, nbars) if b in rh]); f[\"bar_rhythm_same_as_two_back\"] = np.mean([rh.get(b) == rh.get(b - 2) for b in range(2, nbars) if b in rh]); f[\"bar_figure_same_as_last\"] = np.mean([fg.get(b) == fg.get(b - 1) for b in range(1, nbars) if b in fg]); f[\"bar_figure_same_as_two_back\"] = np.mean([fg.get(b) == fg.get(b - 2) for b in range(2, nbars) if b in fg])\n    f[\"distinct_bar_rhythms\"] = len(set(rh.values())); f[\"top_bar_rhythm_share\"] = max(collections.Counter(rh.values()).values()) / len(rh)\n    f[\"last_bar_differs_from_the_first_seven\"] = float(rh.get(nbars - 1) not in [rh.get(b) for b in range(nbars - 1)]) if nbars - 1 in rh else np.nan; f[\"bar_4_or_8_has_more_notes\"] = float(np.mean([len(bars.get(b, [])) for b in (3, 7)]) > np.mean([len(bars.get(b, [])) for b in (0, 1, 2, 4, 5, 6)]))\n    gap = np.diff(T) / 12; f[\"sounding_share_of_gap\"] = float(np.mean(np.minimum(1, du[:-1] / np.maximum(gap, 1e-6)))) ; f[\"short_notes\"] = float(np.mean(du[:-1] / np.maximum(gap, 1e-6) <= 0.5)); f[\"sounding_share\"] = min(1.0, du.sum() / (4 * nbars))\n    if KK:\n        ks = set(KK); bs = set(T.tolist()); f[\"kick_with_bass\"] = np.mean([k in bs for k in KK]); f[\"bass_with_kick\"] = np.mean([x in ks for x in T]); f[\"kicks_per_bar\"] = len(KK) / nbars\n        b1 = [b * 48 for b in range(nbars)]; f[\"beat1_kick_and_bass\"] = np.mean([(x in ks) and (x in bs) for x in b1]); f[\"bass_between_kicks_off_the_beat\"] = np.mean([(x not in ks) and (x % 12 != 0) for x in T])\n    ap = collections.Counter()\n    for b in range(nbars - 1):\n        if b in bars and b + 1 in bars and bars[b + 1][0][0] == 0 and len(bars[b]) >= 2:\n            d = abs(bars[b][-1][1] - bars[b + 1][0][1]); ap[\"same\" if d == 0 else \"semitone\" if d == 1 else \"whole_step\" if d == 2 else \"third\" if d in (3, 4) else \"fourth_or_fifth\" if d in (5, 7) else \"octave\" if d == 12 else \"other\"] += 1\n    n = sum(ap.values())\n    if n >= 4:\n        for k in (\"same\", \"semitone\", \"whole_step\", \"third\", \"fourth_or_fifth\", \"octave\", \"other\"): f[\"into_the_bar_\" + k] = ap[k] / n\n        ch = n - ap[\"same\"]; f[\"into_the_bar_by_step_of_changes\"] = (ap[\"semitone\"] + ap[\"whole_step\"]) / ch if ch >= 3 else np.nan\n    return {k: float(v) for k, v in f.items()}, ap\nif __name__ == \"__main__\":\n    rows = []; AP = collections.Counter()\n    for sg, g in E_.groupby(\"siglum\", sort=False):\n        g = g[g.position < 32]; B = sorted((float(r.position), float(r.duration) / 100, pitch(r.name)) for r in g.itertuples() if pitch(r.name) is not None and float(r.duration) > 0); K = [float(r.position) for r in g.itertuples() if r.name == \"BD\"]\n        mono = []\n        for b in B:\n            if mono and abs(mono[-1][0] - b[0]) < 1e-6:\n                if b[2] < mono[-1][2]: mono[-1] = b\n                continue\n            mono.append(b)\n        m = measures(mono, K)\n        if m: rows.append(dict(m[0], siglum=sg)); AP.update(m[1])\n    L = pd.DataFrame(rows).merge(S[[\"Stimulus\", \"Title\", \"Band\", \"Year\", \"Style\", \"Tempo\", \"MOV\", \"PLE\", \"Swing8\", \"Swing16\"]], left_on=\"siglum\", right_on=\"Stimulus\", how=\"left\"); L.to_pickle(\"lucerne_measures.pkl\")\n    MS = [c for c in rows[0] if c != \"siglum\"]; MS = [m for m in L.columns if m in set().union(*[set(r) for r in rows]) and m != \"siglum\"]\n    Q = lambda D, m: [round(float(D[m].quantile(x)), 3) for x in (.05, .25, .5, .75, .95)]\n    out = {\"patterns\": len(L), \"bass notes\": int(sum(r[\"notes_per_bar\"] * 8 for r in rows)), \"by style\": L.Style.value_counts().to_dict(), \"years\": [int(L.Year.min()), int(L.Year.median()), int(L.Year.max())], \"percentiles (5, 25, 50, 75, 95)\": {m: Q(L, m) for m in MS}, \"mean\": {m: round(float(L[m].mean()), 3) for m in MS}}\n    tot = sum(AP.values()); out[\"the last note of a bar into the first of the next, pooled\"] = {k: round(v / tot, 3) for k, v in AP.most_common()} | {\"pairs\": tot}\n    # the engine's cells\n    NAME = {\"C\": 0, \"D\": 2, \"E\": 4, \"F\": 5, \"G\": 7, \"A\": 9, \"B\": 11}\n    def rt(c, lo): r = NAME[c[0]] + (1 if \"#\" in c[:2] else -1 if (len(c) > 1 and c[1] == \"b\") else 0); return lo + (r - lo) % 12\n    def approach(a, b, scale):\n        if a == b: return a + 7\n        for d in (-2, 2, -1, 1):\n            if (b + d) % 12 in scale: return b + d if abs(b + d - a) <= 7 else (b + d - 12 if b + d - 12 >= 33 else b + d)\n        return b - 5 if b - 5 >= 33 else b + 7\n    eng = {}\n    for s, ton in ((\"40\", 2), (\"43\", 0), (\"44\", 3)):\n        P = pickle.load(open(f\"/home/claude/p50/melody_v118_p{s}_main.pkl\", \"rb\")); st = {}; i = 0\n        for name, kind, nb in P[\"form\"]: st[name] = (i, nb); i += nb\n        scale = {(ton + x) % 12 for x in (0, 2, 4, 5, 7, 9, 11)}\n        for sec in (\"Verse 1\", \"Chorus 1\"):\n            b0 = st[sec][0]; ch = P[\"chords\"][b0:b0 + 9]; B = []; K = []\n            for k in range(8):\n                c, nx = ch[k], ch[min(k + 1, len(ch) - 1)]\n                if s == \"40\":\n                    r = rt(c, 36); a = approach(r, rt(nx, 36), scale)\n                    if sec == \"Verse 1\": B += [(4 * k + e / 12, d / 12, x) for e, d, x in ((0, 17, r), (18, 5, r), (24, 17, r), (42, 5, a))]; K += [4 * k, 4 * k + 2]\n                    else: B += [(4 * k + j / 2, 5 / 12, x) for j, x in enumerate([r, r, r + 7, r, r, r + 12, r + 7, a])]; K += [4 * k, 4 * k + 2, 4 * k + 2.5]\n                else:\n                    r = rt(c, 33 if s == \"43\" else 34)\n                    if s == \"44\" and sec == \"Verse 1\": B += [(4 * k + j, 10 / 12, r) for j in range(4)]\n                    else: B += [(4 * k + j / 2, 5 / 12, r + 12 if j % 2 else r) for j in range(8)]\n                    K += [4 * k + j for j in range(4)]\n            eng[f\"song {s}, {sec.split()[0].lower()}\"] = measures(B, K)[0]\n    pct = lambda m, v: round(float((L[m].dropna() <= v).mean()), 2)\n    out[\"the engine's cells: value and its place among the 444 patterns (share at or below)\"] = {k: {m: [round(v[m], 3), pct(m, v[m])] for m in (\"notes_per_bar\", \"pitch_classes_per_bar\", \"bars_one_pitch_class\", \"on_the_bars_first_note\", \"iv_repeat\", \"iv_octave\", \"iv_step\", \"bar_rhythm_same_as_last\", \"bar_figure_same_as_last\", \"distinct_bar_rhythms\", \"kick_with_bass\", \"bass_with_kick\", \"on_beat\", \"on_sixteenth\", \"sounding_share_of_gap\", \"last_bar_differs_from_the_first_seven\") if m in v} for k, v in eng.items()}\n    # the sequenced copies of Window 118 beside the transcriptions\n    LK = json.load(open(\"/home/claude/zeneng/corpus/bass_figures/lakh_bass_findings.json\"))[\"percentiles (5, 25, 50, 75, 95)\"]\n    mp = {\"notes_per_bar\": \"notes_per_bar\", \"on_beat\": \"on_beat\", \"on_offbeat_eighth\": \"on_offbeat_eighth\", \"on_sixteenth\": \"on_sixteenth\", \"bars_with_a_note_on_beat1\": \"bars_with_a_note_on_beat1\", \"bars_one_pitch_class\": \"bars_one_pitch\", \"iv_repeat\": \"iv_repeat\", \"iv_step\": \"iv_step\", \"iv_third\": \"iv_third\", \"iv_fourth_fifth\": \"iv_fourth_fifth\", \"iv_octave\": \"iv_octave\", \"bar_rhythm_same_as_last\": \"bar_rhythm_same_as_last\", \"bar_rhythm_same_as_two_back\": \"bar_rhythm_same_as_two_back\", \"bar_figure_same_as_last\": \"bar_figure_same_as_last\", \"top_bar_rhythm_share\": \"top_bar_rhythm_share\", \"range\": \"range\", \"median_pitch\": \"median_pitch\", \"kick_with_bass\": \"kick_with_bass\", \"bass_with_kick\": \"bass_with_kick\"}\n    cmp_ = {}\n    for a, b in mp.items():\n        if b not in LK: continue\n        x, y = Q(L, a), LK[b]; cmp_[a] = {\"transcriptions (25, 50, 75)\": x[1:4], \"sequenced copies (25, 50, 75)\": y[1:4], \"each median inside the other's middle half\": bool(y[1] <= x[2] <= y[3] and x[1] <= y[2] <= x[3])}\n    out[\"4. transcriptions beside sequenced copies\"] = cmp_; out[\"4. agreeing\"] = [sum(v[\"each median inside the other's middle half\"] for v in cmp_.values()), len(cmp_)]\n    # by style, and against the ratings\n    out[\"by style (median)\"] = {st_: {m: round(float(g[m].median()), 3) for m in (\"notes_per_bar\", \"pitch_classes_per_bar\", \"on_the_bars_first_note\", \"iv_repeat\", \"iv_step\", \"bar_rhythm_same_as_last\", \"kick_with_bass\", \"bass_with_kick\", \"on_sixteenth\", \"sounding_share_of_gap\")} | {\"patterns\": len(g)} for st_, g in L.groupby(\"Style\")}\n    out[\"by years (median)\"] = {k: {m: round(float(g[m].median()), 3) for m in (\"notes_per_bar\", \"pitch_classes_per_bar\", \"on_the_bars_first_note\", \"iv_repeat\", \"bar_rhythm_same_as_last\", \"kick_with_bass\", \"on_sixteenth\")} | {\"patterns\": len(g)} for k, g in ((\"1956-1969\", L[L.Year < 1970]), (\"1970-1979\", L[(L.Year >= 1970) & (L.Year < 1980)]), (\"1980-1991\", L[(L.Year >= 1980) & (L.Year < 1992)]), (\"1992-2017\", L[L.Year >= 1992]))}\n    cr = {m: round(float(L[[m, \"MOV\"]].dropna().corr(method=\"spearman\").iloc[0, 1]), 3) for m in MS}; out[\"6. rank correlation with the urge to move\"] = dict(sorted(cr.items(), key=lambda kv: -abs(kv[1])))\n    json.dump(out, open(\"lucerne_findings.json\", \"w\"), indent=1); print(json.dumps(out, indent=1))\n"
+}
