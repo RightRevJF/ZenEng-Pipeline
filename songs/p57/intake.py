@@ -67,3 +67,6 @@ NEVER_SAY = []
 NEVER_PHRASES = []
 SINGERS = {"lead": "tenor, search row C3-G4; the lifted second bridge reaches A4 (Q: the bridge's build, A)"}
 WRITER_NOTES = ["Words and music: Jason Bryant"]
+LOG.append({"q": "blind pick (10.20): which line stays with you most (shuffled)",
+            "options": {"A": "Not a copy, not a cover", "B": "'Cause the singer doesn't stop", "C": "Every scar and every stumble"},
+            "slots": {"A": "Annotated", "B": "Remembered", "C": "Middle"}, "recommended": None, "answer": "A", "slot_picked": "Annotated"})

@@ -21,4 +21,4 @@ Songs 40–46 are closed (523). Their orders of record, main / control, each rep
 
 ## Blind-pick tally
 
-The tally stands at 28 songs: Annotated top 11, Remembered top 8, Middle 8, Refrain 1. Songs 40, 41, 43, 44, 45, 46 and 47 have not yet been offered. Song 47's three slots: Remembered, "'Cause the singer doesn't stop"; middle (top quartile under both), "Every scar and every stumble"; Annotated, "Not a copy, not a cover".
+The tally stands at 29 songs: Annotated top 12, Remembered top 8, Middle 8, Refrain 1. Song 47: the writer picked A, the Annotated slot ("Not a copy, not a cover"). Songs 40, 41, 43, 44, 45 and 46 have not yet been offered. Song 47's three slots: Remembered, "'Cause the singer doesn't stop"; middle (top quartile under both), "Every scar and every stumble"; Annotated, "Not a copy, not a cover".

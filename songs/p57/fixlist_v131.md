@@ -155,4 +155,4 @@ Songs 40–46 are closed (523), each rerun once in this session; each reproduced
 
 ## Blind-pick tally
 
-28 songs: Annotated top 11, Remembered top 8, Middle 8, Refrain 1. Not yet offered: songs 40, 41, 43, 44, 45, 46 and 47.
+29 songs: Annotated top 12, Remembered top 8, Middle 8, Refrain 1. Song 47: Annotated ("Not a copy, not a cover"). Not yet offered: songs 40, 41, 43, 44, 45 and 46.
