@@ -24,3 +24,4 @@ shares, the dense lines' runs, 579's classes, 589). Report: test_report_v136.md;
 gen_v137_p58.py writes melody_v137_p58.py from melody_v136_p58.py with 600-603; tables/zeneng_v137_span.json. 602 over 262 by the writer's
 ruling (intake.py). run_v137.sh (logs in run137/); read_v137.py -> read/read_v137.json (600-603 tests, 604's split, 557 by section).
 Report: test_report_v137.md; findings_v137.md (610-617).
+Side run for 610 (not of record): gen_v137s_p58.py -> melody_v137s_p58.py, run_v137s.sh (run137s/), read_v137s.py -> read/read_v137s.json (finding 618).

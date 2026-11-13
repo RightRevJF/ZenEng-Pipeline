@@ -35,6 +35,7 @@
 | 604: chorus split (designed / form / rest) | +0.92 / −0.35 / −2.83 | +0.84 / −0.33 / −2.84 (main) | printed (615) |
 | Survivors | 886 / 937 | 887 / 911 | — |
 | Join deaths | 1 / 0 | 3 / 0 | main over 577's test |
+| Side run for 610 (not of record) | — | spans move by 0.03 at most | 618 |
 
 ## Findings (610–)
 
@@ -202,3 +203,34 @@ The verse's gain came from 602 and 603, not from 600:
 **Fix:** None; the join deaths to be read again once 610 changes where the verse's lines end.
 
 **Check:** As 577's.
+
+### 618. The side run for 610 (not of record): with the slot end lifted the spans barely move; the breath before the next line is the deeper limit.
+
+**Problem:** For lines drawn under 600, the side run let the last onset run to the slot's end less the breath, and dropped 406's landing weights while the span is held (gen_v137s_p58.py). The dense cells still fall short, for three reasons:
+
+- **212's breath:** at least 18 twelfths from a line's last onset to the next line's first. In a two-bar slot that caps the span near 0.81, under the 7.5-and-over cell's kept median of 0.875. Kept dense lines breathe about an eighth (roughly 10 to 13 twelfths at the cell's median and 75th percentile); the verse's lines here take 18 / 21 / 27 at the quartiles.
+- **465's class 0 with a pickup:** the line must be done by tick 72 for the next line to pick up into its last bar, and 601 draws that class at 51% for these lines.
+- **Copied rhythms:** most verse and bridge lines take their rhythm from an earlier line, either a unit's bars (361) or verse 1 sung again, and inherit its span.
+
+610's spans were read against the nominal two bars. Read as the kept table reads them, from a line's first onset to the next line's first onset, the shortfall is the same.
+
+**Evidence** (main; drawn lines in two-bar slots; the span over the time to the next line's first onset; 25th / 50th / 75th):
+
+| Cell | v136 | v137 | Side run | Kept |
+|---|---|---|---|---|
+| 6.5 to 7.5 | 0.70 / 0.75 / 0.79 | 0.69 / 0.73 / 0.79 | 0.72 / 0.76 / 0.79 | 0.77 / 0.79 / 0.86 |
+| 7.5 and over | 0.72 / 0.77 / 0.80 | 0.71 / 0.77 / 0.79 | 0.72 / 0.77 / 0.80 | 0.81 / 0.88 / 0.90 |
+| 3.5 to 4.5 | 0.44 / 0.50 / 0.56 | 0.41 / 0.49 / 0.56 | 0.42 / 0.50 / 0.60 | 0.44 / 0.53 / 0.64 |
+
+The side run's other readings (main / control):
+
+- **557:** verse −0.86 / −0.92; chorus −2.27 / −2.26; both windows −1.56 / −1.59. The verse sits a tenth or two under v137's run of record.
+- **601, class 0 by the rate as sung:** 8 to 10 0.544 / 0.546 (kept 0.51, passes); 10 and over 0.663 / 0.661 (kept 0.34); under 8 0.368 / 0.344 (kept 0.65).
+- **602:** 17.4% / 19.4% (kept 19%).
+- **603:** past a fifth 2.5% / 2.3%; mean interval 2.13 / 2.23.
+- **Gaps:** verse sixteenths 49.3% / 49.3% (kept for its cells 37.8% / 35.9%).
+- **Survivors:** 866 / 910; orders 087dd81361f9 / 5468a5af6262. Limit deaths 50 / 33; the chorus above the verse 68 / 42.
+
+**Fix:** For dense lines, take the breath before the next line from kept dense lines (about an eighth at the median) rather than 212's fixed 18 twelfths. Read 465's class 0 with a pickup against the span 600 draws. Let copied rhythms (361, sung again) keep their source's span only where the source met its own.
+
+**Check:** As 600's, read from first onset to the next line's first onset.
