@@ -92,15 +92,15 @@ Remembered: "I read the rings inside a spruce like letters from the rain". Middl
 
 **Check:** Class 0 within ten points of the kept share for 13 notes and over.
 
-### 585. 572's last join recurs: one death a run at verse 1's fourth line.
+### 585. 572's last join recurs once a run, inside v135's amended test (577).
 
-**Problem:** As on song 47: one build a run dies where the return of the line before it finds no fit after the breath and the source's one redraw is not enough.
+**Problem:** None under 577. As on song 47, one build in a thousand a run dies where the return of the line before it finds no fit after the breath and the source's one redraw is not enough.
 
-**Evidence:** join deaths 1 / 1 at ('Verse 1', 3); 560 drew 293 / 281 lines with its bound and redrew 9 / 30.
+**Evidence:** join deaths 1 / 1 in 1,000 / 1,000 builds, at ('Verse 1', 3); 560 drew 293 / 281 lines with its bound and redrew 9 / 30.
 
-**Fix:** 572's proposal: a second redraw of the source before the build dies.
+**Fix:** None; 577's second redraw of the source comes with v135.
 
-**Check:** No join deaths at a line that returns the line before it.
+**Check:** Under two join deaths in a thousand at a line that returns the line before it (577): passes on v134.
 
 ### 586. The writer's chorus above the verse: the default register draw put the first pick's chorus three semitones under its verse.
 
