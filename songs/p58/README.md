@@ -18,3 +18,9 @@ The source pieces are not in the repo.
 gen_v136_p58.py writes melody_v136_p58.py from melody_v134_p58.py with 573 and 577 (v135) and 578 and 579 (v136); tables/zeneng_v136_slot_rate.json.
 run_v136.sh (main and control, once, the v134 seed and designs; logs in run136/). read_v136.py -> read/read_v136.json (557 by section, 578's gap
 shares, the dense lines' runs, 579's classes, 589). Report: test_report_v136.md; findings_v136.md (590-595). The song's record stays on v134.
+
+## v137 (Module 27.81, Window 157)
+
+gen_v137_p58.py writes melody_v137_p58.py from melody_v136_p58.py with 600-603; tables/zeneng_v137_span.json. 602 over 262 by the writer's
+ruling (intake.py). run_v137.sh (logs in run137/); read_v137.py -> read/read_v137.json (600-603 tests, 604's split, 557 by section).
+Report: test_report_v137.md; findings_v137.md (610-617).
