@@ -12,3 +12,9 @@ in a two-bar slot. Written on v134 as the dense song the judge has not seen (571
 - Report: test_report_p58.md; findings_p58.md (580-588; v135 used 577).
 
 The source pieces are not in the repo.
+
+## v136 (Module 27.80, Window 156): the regression run
+
+gen_v136_p58.py writes melody_v136_p58.py from melody_v134_p58.py with 573 and 577 (v135) and 578 and 579 (v136); tables/zeneng_v136_slot_rate.json.
+run_v136.sh (main and control, once, the v134 seed and designs; logs in run136/). read_v136.py -> read/read_v136.json (557 by section, 578's gap
+shares, the dense lines' runs, 579's classes, 589). Report: test_report_v136.md; findings_v136.md (590-595). The song's record stays on v134.
