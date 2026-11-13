@@ -1,0 +1,8 @@
+- **The refit judge and Part 0** (470–473, 464, 459) went in with Part 1 and have no run of their own.
+- **Part 1, the second verse** (434, 435). **Part 2, rhythm** (452, 455, 406, 457). **Part 3, pitch** (408 with 468, 467, 461 with 450, 456).
+  - 465 and 458 were not ported: their kept tables are not in hand, and the writer chose (Q1 A) to run Part 2 without them.
+- **After each part:** all five songs, 1,000 builds in the main run and 1,000 in the control, each made twice, at PYTHONHASHSEED 0, with Run 1's seeds.
+- **Predictions:** each part's were committed and pushed before its runs of record (predictions_part1.md, _part2.md, _part3.md). They are scored below.
+- **Side runs**, none a run of record (song 45, main, at Part 2's code): 406 off and 457 off, to name the source of its new joins before a copy.
+- **Separation's own spread:** separation was read again on the control runs of Run 1 and of each part.
+- **Infrastructure:** the session's cloud machine restarted twice during Part 1. The runs resumed where they stopped, and none was cut short in its record.
