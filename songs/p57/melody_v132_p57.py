@@ -433,15 +433,12 @@ K527 = json.load(open("/home/claude/p57/tables/zeneng_v131_kept_slots.json"))["5
 def k527(n_): return K527[str(n_)] if str(n_) in K527 else K527["16 and over"] if n_ >= 16 else K527["3"]
 ROOM527 = [(s_, i_, len(LINES[s_][i_]), slot_len(s_, i_), round(k527(len(LINES[s_][i_]))["shares"][min(slot_len(s_, i_), 5) - 1], 3)) for s_ in SUNG for i_ in range(len(LINES[s_]))]
 FLAG527 = [x for x in ROOM527 if x[4] < 0.10]                                               # 527: a slot under a tenth of kept lines of its syllables (shown at intake)
-def med550(n_):
-    """550: the kept median slot in bars for a line of n syllables (Table ER)."""
-    sh_ = k527(n_)["shares"]; c_ = 0.0
-    for b_, x_ in enumerate(sh_):
-        c_ += x_
-        if c_ >= 0.5: return b_ + 1
-    return 5
-KEPT550 = round(sum(K527[k_]["lines"] * sum(K527[k_]["shares"][:med550(int(k_.split()[0])) - 1]) for k_ in K527) / sum(K527[k_]["lines"] for k_ in K527), 3)   # kept lines under their median slot
+_F550 = json.load(open("/home/claude/p57/tables/zeneng_v132_figures.json"))["550, slots in whole bars (1: 6 beats or less; 2: to 10; 3: to 14; 4: to 18; 5: to 24), the file's bars"]
+MED550 = {int(k_): int(v_) for k_, v_ in _F550["median slot by syllables (3 to 15; 16 = 16 and over)"].items()}
+def med550(n_): return MED550[min(16, max(3, n_))]                                       # 550: the kept median slot in whole bars for the line's syllables
+KEPT550 = dict(pooled=round(_F550["pooled share of kept lines under"], 3), **{k_: round(_F550["across kept sections"]["4 lines or more"][k_], 3) for k_ in ("25th", "50th", "75th", "90th", "95th")})
 SEC550 = {s_: round(float(np.mean([slot_len(s_, i_) < med550(len(LINES[s_][i_])) for i_ in range(len(LINES[s_]))])), 3) for s_ in SUNG}
+FLAG550 = {s_: v_ for s_, v_ in SEC550.items() if v_ > 0.63}                                # 550: a section over the kept 90th (0.63) is shown to the writer
 
 def rhythm_bits_kept(notes):
     """372/373: the rhythm band, bits a note, read with the pooled kept table."""
@@ -657,7 +654,7 @@ def line_rhythm(sy, rng, tmin, sec, last_max=None, fix=None, entry=None, prior=N
     if ON12("551") and i is not None and not fix and len(sy) >= 3:                       # 551: the line's syllables a beat over the kept span its notes sing
         r551_ = rate551(len(sy), sec, i, span_to)
         if r551_ > 2.0:
-            D551 = True; b551_ = band504(len(sy), sec, i); RTS = KRT[b551_]; CAP551_ = CAP551.get(b551_)
+            D551 = True; b551_ = band504(len(sy), sec, i); RTS = KRT[b551_]; CAP551_ = cap551(len(sy), kband(4 * r551_))   # the cap for the rate expected; held to the rate drawn below
             STATS[f"551: dense line drawn from the kept table ({b551_})"] += 1
     SPAN_E[0] = None
     step = 3                                                                            # 288: the sixteenth grid, at the class table's rates and the window's aim
@@ -882,10 +879,13 @@ def line_rhythm(sy, rng, tmin, sec, last_max=None, fix=None, entry=None, prior=N
         STATS["361: unit bars copied" if allbars else "293: bars copied" if not pair else "310: partner bars copied"] += len(cb)
         if sb and not pair: STATS["322: partner's stresses kept"] += 1
         if sb and pair: STATS["330: copy failed, partner's stresses kept"] += 1
-        if D551:
+        if D551:                                                                            # 551: the line's longest run of equal gaps against the kept 95th for its own rate
             g551_ = [b_ - a_ for a_, b_ in zip(ons, ons[1:])]; rr_, mx_ = 1, 1
             for a_, b_ in zip(g551_, g551_[1:]): rr_ = rr_ + 1 if a_ == b_ else 1; mx_ = max(mx_, rr_)
-            STATS["551: dense lines placed"] += 1; STATS["551: dense lines, longest equal-gap run (sum)"] += mx_
+            own_ = kband(4 * (n - 1) / max(0.25, (ons[-1] - ons[0]) / BEAT)); c551_ = cap551(n, own_)
+            if mx_ > c551_ and _try < NT // 2: STATS["551: over the cap for the line's own rate, redrawn"] += 1; continue
+            if mx_ > c551_: STATS["551: over the cap, given up for a line"] += 1
+            STATS["551: dense lines placed"] += 1; STATS["551: dense lines, longest equal-gap run (sum)"] += mx_; STATS[f"551: placed at the line's own rate {own_}"] += 1
         if ON("405") and i is not None and CUR405[0] is not None:                         # 405: a line that could be placed without runs
             CUR405[0][f"{sec}:{i}"] = bool(not runs_ok and (mr405 or not may_run[0])); STATS["405: line drawable without runs" if CUR405[0][f"{sec}:{i}"] else ("405: line with no room on the eighth grid" if runs_ok else "405: line fell back to runs")] += 1
         if h465:                                                                           # 465: held to the end: the melisma's bar, and the next line's entry
@@ -2028,9 +2028,11 @@ def rate551(n_, sec, i, span_to):
     """551: syllables a beat over the kept span a line of n notes sings in its slot (the kept middle share of the time to the next line)."""
     sp_ = span_mid(n_); to_ = span_to if span_to else slot_len(sec, i) * BAR
     return (n_ - 1) / max(0.25, (0.5 * (sp_[0] + sp_[1]) * to_) / BEAT)
-CAP551 = {}
-try: CAP551 = {k_: float(v_) for k_, v_ in json.load(open("/home/claude/p57/tables/zeneng_v132_cap551.json"))["kept 95th percentile of the longest equal-gap run, by band"].items()}
-except FileNotFoundError: pass                                                           # 551: the cap needs the band's kept 95th (asked for)
+_F132 = json.load(open("/home/claude/p57/tables/zeneng_v132_figures.json"))
+CAP551 = {b_: int(v_["95th"]) for b_, v_ in _F132["551: kept lines (CoCoPops, Window 138's lines, 3 notes or more), longest run of equal gaps within the line, by the line's own rate ((notes - 1) / beats from first to last onset, times 4)"].items()}
+CAP551_9 = {b_: int(v_["95th"]) for b_, v_ in _F132["551: the same, lines of nine notes or more"].items()}
+CHK551 = {b_: v_["95th"] for b_, v_ in _F132["551: kept windows (545), longest run of equal gaps in the window (equal_gap_run_max, counted in gaps, a twelfth of a beat grid), by the window's notes a bar"].items()}   # a check only
+def cap551(n_, band_): return (CAP551_9 if n_ >= 9 else CAP551)[band_]                   # 551: the kept 95th within a line, by the line's own rate
 def draw465(rng, n, tmin, end, step, feas=None):
     """465: the class drawn, and the bar its last onset must fall in (relative ticks), or None."""
     c_ = C465[0]
@@ -2388,7 +2390,7 @@ if __name__ == "__main__":
     rerun["knobs398_400"] = {k_: round(LK[k_], 4) for k_ in ("ct398", "ctb398", "ctd398", "res398", "turn400")}
     rerun["knobs127"] = {k_: round(LK[k_], 4) for k_ in ("gs452", "er452", "zz452", "ctd398V", "ctd398C", "th461", "sb461", "rg467", "turn400")}   # 520: no knob named for 408 or 455
     rerun["chart438"] = CHART438
-    rerun["v132_part"] = V132; rerun["v132_on"] = sorted(f_ for f_ in P132 if ON12(f_)); rerun["sec550"] = SEC550; rerun["kept550"] = KEPT550; rerun["cap551"] = CAP551
+    rerun["v132_part"] = V132; rerun["v132_on"] = sorted(f_ for f_ in P132 if ON12(f_)); rerun["sec550"] = SEC550; rerun["flag550"] = FLAG550; rerun["kept550"] = KEPT550; rerun["cap551"] = dict(all=CAP551, nine=CAP551_9, window_check=CHK551)
     rerun["v132_stats"] = {k_: v_ for k_, v_ in sorted(STATS.items()) if k_[:4] in ("551:", "552:", "555:", "556:")}; rerun["cal553"] = list(CAL553)
     rerun["judge548"] = dict(measures=len(RJ["measures"]), file="zeneng_v132_judge.json" if ON12("548") else "v129")
     rerun["v131_part"] = V131; rerun["v131_on"] = sorted(f_ for f_ in P131 if ON11(f_)); rerun["room527"] = ROOM527; rerun["flag527"] = FLAG527
