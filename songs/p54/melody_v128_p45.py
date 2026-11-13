@@ -7,6 +7,7 @@ P128 = {f_: 1 for f_ in ("491", "476", "465", "458", "484", "478", "486", "489",
 OFF8 = set(filter(None, _os8.environ.get("ZE_OFF", "").split(",")))
 def ON8(f_): return P128.get(f_, 0) <= V128 and f_ not in OFF8
 OPT465 = _os8.environ.get("ZE_465", "A")                                                     # 465: A, class 0 through the next line's pickup; B, the slot's classes alone
+SONG8 = "45"
 """ZenEng v127 Run 2 (Modules 27.69-27.71) onto Run 1 (songs/p52), by gen_v127.py. ZE_PART: 0 = the judge (470-473), 464, 459; 1 = and 434, 435;
 2 = and 452, 455, 406, 465, 457, 458; 3 = and 408/468, 467, 461/450, 456. ZE_OFF switches a fix off (side runs only).
 """
@@ -228,6 +229,100 @@ STOP_BARS = set()
 KIND = {nm: kind for nm, kind, _ in FORM}; SECLEN = {nm: nb for nm, _, nb in FORM}
 SUNG = ["Verse 1", "Chorus 1", "Verse 2", "Chorus 2", "Bridge", "Last Chorus", "Tag"]
 M.FORM, M.PLAN, M.BAR0, M.CHORD, M.NBARS, M.KIND, M.SUNG = FORM, PLAN, BAR0, CHORD, NBARS, KIND, SUNG
+
+import random as _rnd8
+K438 = json.load(open(f"{H118}/tables/zeneng_v123_bass_at_the_chord.json"))
+Q438 = K438["the chart, by song: kept quartiles (438, 440)"]; Z438 = K438["kept songs with no bar of two changes"]
+BASS8 = {}                                                                                 # 440: a chord written over its third or fifth: the bass's pitch class
+PCN8 = {0: "C", 1: "C#", 2: "D", 3: "Eb", 4: "E", 5: "F", 6: "F#", 7: "G", 8: "Ab", 9: "A", 10: "Bb", 11: "B"}
+def bass_of(ch): return BASS8.get(ch, M.CH[ch][0])
+def chart_shares(H):
+    """438: H, the chord of every half-bar; a change is a half-bar whose chord (root, bass, kind) differs from the one before."""
+    ev = collections.Counter()
+    for h_ in range(len(H)):
+        if h_ == 0 or H[h_] != H[h_ - 1]: ev[h_ // 2] += 1
+    nb_ = len(H) // 2
+    return sum(1 for v_ in ev.values() if v_ >= 2) / nb_, 1 - len(ev) / nb_, sum(ev.values())
+def draw_chart(song):
+    """438 and 440: the song's chart drawn once from its own seed; returns the half-bar chart and what was done."""
+    r_ = _rnd8.Random(f"438 chart {song}")
+    secs = []; b_ = 0
+    for nm_, kind_, nb_ in FORM: secs.append((nm_, kind_, b_, nb_)); b_ += nb_
+    units = {}; sec_unit = {}
+    for nm_, kind_, b0_, nb_ in secs:
+        key_ = (kind_, tuple(CHORD[b0_:b0_ + nb_])); units.setdefault(key_, [h_ for c_ in CHORD[b0_:b0_ + nb_] for h_ in (c_, c_)]); sec_unit[nm_] = key_
+    def full():
+        H_ = []
+        for nm_, kind_, b0_, nb_ in secs: H_ += units[sec_unit[nm_]]
+        return H_
+    s2_0, sh_0, _ = chart_shares(full())
+    none2 = r_.random() < (Z438[0] + Z438[1]) / 2
+    t2 = 0.0 if none2 else r_.uniform(max(1.0 / NBARS, Q438["bars_with_two_or_more_changes"]["q25"]), Q438["bars_with_two_or_more_changes"]["q75"])
+    th = r_.uniform(Q438["bars_with_no_change"]["q25"], Q438["bars_with_no_change"]["q75"])
+    names = [c_ for c_ in M.CH if "/" not in c_]; ops = []
+    def fifth_above(c_):
+        rt_ = (M.CH[c_][0] + 7) % 12; cs_ = [x_ for x_ in names if M.CH[x_][0] == rt_]
+        return cs_[0] if cs_ else None
+    for it_ in range(400):                                                                   # holds first, toward the drawn share
+        s2_, sh_, _ = chart_shares(full())
+        if sh_ >= th - 0.5 / NBARS: break
+        cand_ = [(k_, j_) for k_, U_ in units.items() for j_ in range(1, len(U_) // 2 - 1)
+                 if U_[2 * j_] == U_[2 * j_ + 1] and U_[2 * j_] != U_[2 * j_ - 1] and U_[2 * j_ + 2] != U_[2 * j_ - 1]]
+        if not cand_: break
+        k_, j_ = r_.choice(sorted(cand_)); U_ = units[k_]; U_[2 * j_] = U_[2 * j_ + 1] = U_[2 * j_ - 1]; ops.append(("hold", k_[0], j_))
+    for it_ in range(400):                                                                   # then bars of two changes
+        s2_, sh_, _ = chart_shares(full())
+        if s2_ >= t2 - 0.5 / NBARS: break
+        cand_ = []
+        for k_, U_ in units.items():
+            for j_ in range(1, len(U_) // 2 - 1):
+                a_, nx_ = U_[2 * j_], U_[2 * j_ + 2]
+                if U_[2 * j_ + 1] != a_ or a_ == U_[2 * j_ - 1]: continue
+                x_ = fifth_above(nx_)
+                if x_ is None or x_ in (a_, nx_): x_ = nx_ if nx_ != a_ else None
+                if x_ is not None: cand_.append((k_, j_, x_))
+        if not cand_: break
+        k_, j_, x_ = r_.choice(sorted(cand_)); units[k_][2 * j_ + 1] = x_; ops.append(("two", k_[0], j_, x_))
+    inv = []
+    if r_.random() >= (0.427 + 0.648) / 2:                                                   # 440: a song with inversions, at most one chord in twelve
+        _, _, nev_ = chart_shares(full()); kt_ = r_.randint(1, max(1, nev_ // 12)); got_ = 0
+        def bm(a_, b2_): d_ = (b2_ - a_) % 12; return d_ if d_ <= 6 else d_ - 12
+        for it_ in range(200):
+            cand_ = []
+            for k_, U_ in units.items():
+                n_sec_ = sum(1 for v_ in sec_unit.values() if v_ == k_)
+                if got_ + n_sec_ > kt_: continue
+                for h_ in range(1, len(U_) - 1):
+                    c_ = U_[h_]
+                    if "/" in c_ or c_ == U_[h_ - 1]: continue
+                    nx_ = next((U_[q_] for q_ in range(h_ + 1, len(U_)) if U_[q_] != c_), None)
+                    if nx_ is None: continue
+                    rt_ = M.CH[c_][0]; th_ = next((t_ for t_ in M.CH[c_][1] if (t_ - rt_) % 12 in (3, 4)), None)
+                    for bp_ in [x_ for x_ in (th_, (rt_ + 7) % 12) if x_ is not None]:
+                        l_, rr_ = abs(bm(bass_of(U_[h_ - 1]), bp_)) in (1, 2), abs(bm(bp_, bass_of(nx_))) in (1, 2)
+                        if l_ or rr_: cand_.append((3 if (l_ and rr_) else 1, k_, h_, bp_, n_sec_))
+            if not cand_: break
+            w_, k_, h_, bp_, n_sec_ = r_.choices(sorted(cand_, key=lambda x_: (x_[1], x_[2], x_[3])), [x_[0] for x_ in sorted(cand_, key=lambda x_: (x_[1], x_[2], x_[3]))])[0]
+            U_ = units[k_]; c_ = U_[h_]; nm8 = f"{c_}/{PCN8[bp_]}"
+            M.CH[nm8] = M.CH[c_]; BASS8[nm8] = bp_
+            for q_ in range(h_, len(U_)):
+                if U_[q_] != c_: break
+                U_[q_] = nm8
+            got_ += n_sec_; inv.append((k_[0], h_, nm8))
+            if got_ >= kt_: break
+    H_ = full(); s2_, sh_, nev_ = chart_shares(full())
+    return H_, dict(targets=dict(two_or_more=round(t2, 3), holding=round(th, 3), none_drawn=none2), before=dict(two_or_more=round(s2_0, 3), holding=round(sh_0, 3)),
+                    after=dict(two_or_more=round(s2_, 3), holding=round(sh_, 3), changes=nev_), ops=ops, inversions=inv,
+                    kept=dict(two_or_more=(Q438["bars_with_two_or_more_changes"]["q25"], Q438["bars_with_two_or_more_changes"]["q75"]), holding=(Q438["bars_with_no_change"]["q25"], Q438["bars_with_no_change"]["q75"]), none_rate=Z438))
+CHART438 = None
+if ON8("438"):
+    CHORD2, CHART438 = draw_chart(SONG8)
+    CHORD[:] = CHORD2[0::2]                                                                 # the bar's first chord (readers of the bar)
+else:
+    CHORD2 = [h_ for c_ in CHORD for h_ in (c_, c_)]
+if ON8("at_note"):
+    def _chord_at8(t): return CHORD2[max(0, min(2 * NBARS - 1, t // 24))]                   # the chord at the note: the half-bar it falls in
+    M.chord_at = _chord_at8
 M.SPANS8 = [(s, 0) for s in SUNG if SECLEN[s] >= 8] + [(s, 8) for s in SUNG if SECLEN[s] >= 16]; M.SPANS16 = [s for s in SUNG if SECLEN[s] >= 16]
 SECS = 60 / M.QBPM * 4 * NBARS
 
@@ -754,7 +849,7 @@ def chord_w(p, n, ch):
     if ON7("461") and DRAWN398[0]:                                                         # 461: the chorus's first-beat third; 450: a second or seventh from the bass
         r461 = (p - M.CH[ch][0]) % 12
         if AIM.p == "C" and n["on"] % BAR == 0 and r461 in (3, 4) and p % 12 in tones: w *= LK["th461"]
-        if r461 in (1, 2, 10, 11): w *= LK["sb461"]
+        if ((p - bass_of(ch)) % 12 if ON8("440") else r461) in (1, 2, 10, 11): w *= LK["sb461"]
     if n.get("dur", 0) >= 12 and p % 12 in tones: w *= LK["ctl"]                           # 345: a long note on a chord tone
     return w
 def extra_w(p):
@@ -1822,7 +1917,7 @@ def outer_reads(notes, b0):
     rel_ = [((n_["p"] - M.CH[M.chord_at(n_["on"])][0]) % 12, n_["p"] % 12 in M.CH[M.chord_at(n_["on"])][1], n_["on"] % BAR == 0) for n_ in W_]
     db_ = [x_ for x_ in rel_ if x_[2]]
     return dict(db_ct=float(np.mean([x_[1] for x_ in db_])) if len(db_) >= 3 else None, db_third=float(np.mean([x_[0] in (3, 4) for x_ in db_])) if len(db_) >= 3 else None,
-                sb=float(np.mean([x_[0] in (1, 2, 10, 11) for x_ in rel_])))
+                sb=float(np.mean([((n_["p"] - bass_of(M.chord_at(n_["on"]))) % 12 if ON8("440") else x_[0]) in (1, 2, 10, 11) for n_, x_ in zip(W_, rel_)])))
 K435 = [0.75]                                                                            # 435: the kept three in four; 484: aimed on unaimed builds
 import re as _re8
 _T122 = json.load(open(f"{H118}/tables/zeneng_v122_whole_song.json"))["code"]
@@ -2112,6 +2207,7 @@ if __name__ == "__main__":
     rerun["calibration_rounds"] = CAL_ROUNDS[0]; rerun["stop356"] = list(STOP356); rerun["off"] = sorted(OFF)
     rerun["knobs398_400"] = {k_: round(LK[k_], 4) for k_ in ("ct398", "ctb398", "ctd398", "res398", "turn400")}
     rerun["knobs127"] = {k_: round(LK[k_], 4) for k_ in ("gs452", "er452", "zz452", "ctd398V", "ctd398C", "th461", "sb461", "rg467", "sh408", "turn400")} | {"s16_by_band": {b_: round(v_, 4) for b_, v_ in S16B.items()}}
+    rerun["chart438"] = CHART438
     rerun["v128_part"] = V128; rerun["v128_on"] = sorted(f_ for f_ in P128 if ON8(f_)); rerun["opt465"] = OPT465
     rerun["knobs128"] = dict(k435=round(K435[0], 4), rep478=round(LK["rep478"], 4), stp478=round(LK["stp478"], 4), r490={b_: round(v_, 4) for b_, v_ in R490.items()},
                              b489={b_: {k_: round(x_, 4) for k_, x_ in v_.items()} for b_, v_ in B489.items()})
@@ -2129,6 +2225,6 @@ if __name__ == "__main__":
     print("rerun:", rerun)
     pickle.dump(dict(would=would, deaths=deaths, made=made, survivors=len(alive), order_fp=order, alive=alive[:80], short=[c["fp"] for c in short],
                      pick=pick, pick_v108=PICK108[0], pick_ranks=PICK108[1], pick_352=pick_352, clean=len(clean), pick_255=pick_255, pick_old_fit=pick_old, comp_first=alive[0] if alive else None, judge_first=byj[0] if byj else None, all=allb, every=every, stats=dict(STATS),
-                     calibration=cal_log, knobs=KNOBS, line_knobs=dict(LK), rerun=rerun, form=FORM, chords=CHORD,
+                     calibration=cal_log, knobs=KNOBS, line_knobs=dict(LK), rerun=rerun, form=FORM, chords=CHORD, chords2=CHORD2, bass8=dict(BASS8),
                      all_alive=[(c["fp"], c["judge"]["combined"], c["judge"]["content"], c["judge"]["order"], c["meas"]["composite"], c["meas"]["composite_old_fit"]) for c in alive]),
                 open(f"/home/claude/p54/melody_v128_p45_{MODE}{_TAG}.pkl", "wb"))

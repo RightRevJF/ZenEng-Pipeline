@@ -403,7 +403,7 @@ for v in MODES:
         for n in nts(b): byl_[n["line"]].append(n)
         for n in nts(b):
             if n["on"] % BEAT and n["dur"] < 12: continue
-            ch_ = CH_[n["on"] // BAR]; tones_ = M.CH[ch_][1]; out_ = [t_ for t_ in tones_ if t_ not in M.SCALE]
+            ch_ = M.chord_at(n["on"]); tones_ = M.CH[ch_][1]; out_ = [t_ for t_ in tones_ if t_ not in M.SCALE]
             if out_:
                 seen_ += 1; bad_ = any((n["p"] - t_) % 12 in (1, 11) for t_ in out_) and n["p"] % 12 not in tones_; viol += bad_
                 if bad_:
@@ -433,7 +433,7 @@ for v in MODES:
     offp = 0
     for b in Al:
         for n in nts(b):
-            if n["p"] % 12 not in M.SUNGPC and n["p"] % 12 not in M.CH[CH_[n["on"] // BAR]][1]: offp += 1
+            if n["p"] % 12 not in M.SUNGPC and n["p"] % 12 not in M.CH[M.chord_at(n["on"])][1]: offp += 1
     r["381"] = dict(notes_outside_the_sung_pitch_classes=offp, passing_placed=st.get("358: chromatic passing notes placed", 0), held=bool(offp == 0))
     r["382"] = dict(limits=r["373"]["limits"], lost_to_limits=round(lim_ / D["made"], 3), surprisal_breaks=W_.get("limit broken: surprisal", 0), memory_breaks=W_.get("limit broken: memory", 0),
                     beside_design=(dg if dg else "no design narrows a section or repeats a figure"), held=bool(lim_ / D["made"] < 0.2))

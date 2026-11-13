@@ -248,7 +248,7 @@ def port(song, patches):
         k = s.count(old)
         if k != cnt: sys.exit(f"song {song}: patch not matched {k} times (want {cnt}): {old[:90]!r}")
         s = s.replace(old, new)
-    s = HEADER + s
+    s = HEADER + f'SONG8 = "{song}"\n' + s
     open(f"{DST}/melody_v128_p{song}.py", "w").write(s); compile(s, f"melody_v128_p{song}.py", "exec")
     print(song, "ok", len(s.splitlines()), "lines")
 
