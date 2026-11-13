@@ -1,0 +1,306 @@
+{
+ "about": "547 (526 specified): song 48 read first by a judge that has not seen it: the judge of record's 39 measures (zeneng_v132_judge.json); median\nfill (the fitting set's), z-scored, L2 logistic, C = 0.3, kept and build sides weighted alike; windows: the first verse's and first chorus's\nfirst eight bars, the engine's own reading (519: the run's stored window readings, and cand() for the four stream measures on the same\nnotes); kept side: CoCoPops and BiMMuDa 1958-1991 (zeneng_v132_kept_windows.json), split in half by piece, fitted on one half and tested on\nthe other, eight splits, mean and spread; the songs before it: 40, 42, 43, 44, 45 (v129), 46 (v130) and 47 (v134, closed) at their code of record. Song 48 is\nscored by a judge fitted on all seven; each of the seven by a judge refitted on the other six. Main and control apart. First 400 complete builds.",
+ "measures": [
+  "range",
+  "pitch_sd",
+  "distinct_pitches",
+  "repeat",
+  "step",
+  "third",
+  "fourth_fifth",
+  "past_fifth",
+  "mean_interval",
+  "ascending",
+  "turns_per_move",
+  "longest_run_one_way",
+  "leap_then_back_by_step",
+  "on_tonic",
+  "on_third",
+  "on_fifth",
+  "last_note_tonic",
+  "first_note_tonic_triad",
+  "peak_position",
+  "low_position",
+  "peak_count",
+  "time_in_top_third",
+  "pitch_bits",
+  "on_beats_2_4",
+  "gap_sixteenth",
+  "gap_eighth",
+  "unit2_returns",
+  "unit3_returns",
+  "unit4_to_unit2",
+  "equal_gap_run_max",
+  "gap_same_as_before",
+  "gap_entropy",
+  "zigzag_of_three",
+  "chord_tones",
+  "chord_tones_on_beat",
+  "chord_tones_off_beat",
+  "chord_tones_on_downbeat",
+  "empty_bars",
+  "notes_per_bar"
+ ],
+ "kept": {
+  "windows": 545,
+  "pieces": 285
+ },
+ "draws": {
+  "main": {
+   "builds read": {
+    "40": 400,
+    "42": 400,
+    "43": 400,
+    "44": 400,
+    "45": 400,
+    "46": 400,
+    "47": 400,
+    "48": 400
+   },
+   "splits": [
+    {
+     "48 (fitted on 40-47)": 0.7891805555555556,
+     "40 (fitted on the other six)": 0.796537037037037,
+     "42 (fitted on the other six)": 0.7735833333333333,
+     "43 (fitted on the other six)": 0.7215879629629629,
+     "44 (fitted on the other six)": 0.8801435185185186,
+     "45 (fitted on the other six)": 0.9329259259259259,
+     "46 (fitted on the other six)": 0.6996666666666667,
+     "47 (fitted on the other six)": 0.7359212962962963
+    },
+    {
+     "48 (fitted on 40-47)": 0.8145413669064748,
+     "40 (fitted on the other six)": 0.82857464028777,
+     "42 (fitted on the other six)": 0.7869109712230216,
+     "43 (fitted on the other six)": 0.7275854316546763,
+     "44 (fitted on the other six)": 0.8590152877697843,
+     "45 (fitted on the other six)": 0.890328237410072,
+     "46 (fitted on the other six)": 0.7015782374100719,
+     "47 (fitted on the other six)": 0.7745413669064748
+    },
+    {
+     "48 (fitted on 40-47)": 0.8412241379310346,
+     "40 (fitted on the other six)": 0.8294568965517242,
+     "42 (fitted on the other six)": 0.8038965517241379,
+     "43 (fitted on the other six)": 0.7441206896551724,
+     "44 (fitted on the other six)": 0.8825517241379311,
+     "45 (fitted on the other six)": 0.910698275862069,
+     "46 (fitted on the other six)": 0.7193448275862069,
+     "47 (fitted on the other six)": 0.771655172413793
+    },
+    {
+     "48 (fitted on 40-47)": 0.7937820512820513,
+     "40 (fitted on the other six)": 0.827032967032967,
+     "42 (fitted on the other six)": 0.7901098901098901,
+     "43 (fitted on the other six)": 0.7495879120879122,
+     "44 (fitted on the other six)": 0.8497161172161173,
+     "45 (fitted on the other six)": 0.9090201465201464,
+     "46 (fitted on the other six)": 0.7268543956043957,
+     "47 (fitted on the other six)": 0.697742673992674
+    },
+    {
+     "48 (fitted on 40-47)": 0.821625,
+     "40 (fitted on the other six)": 0.8107962962962965,
+     "42 (fitted on the other six)": 0.778412037037037,
+     "43 (fitted on the other six)": 0.7607037037037037,
+     "44 (fitted on the other six)": 0.8936944444444445,
+     "45 (fitted on the other six)": 0.9261481481481482,
+     "46 (fitted on the other six)": 0.7119259259259261,
+     "47 (fitted on the other six)": 0.7323842592592593
+    },
+    {
+     "48 (fitted on 40-47)": 0.8175827205882353,
+     "40 (fitted on the other six)": 0.7892601102941175,
+     "42 (fitted on the other six)": 0.7967095588235295,
+     "43 (fitted on the other six)": 0.6916314338235294,
+     "44 (fitted on the other six)": 0.8617601102941176,
+     "45 (fitted on the other six)": 0.9265211397058823,
+     "46 (fitted on the other six)": 0.6787362132352941,
+     "47 (fitted on the other six)": 0.7472426470588236
+    },
+    {
+     "48 (fitted on 40-47)": 0.8049193548387097,
+     "40 (fitted on the other six)": 0.7733557347670251,
+     "42 (fitted on the other six)": 0.7664874551971326,
+     "43 (fitted on the other six)": 0.7271102150537635,
+     "44 (fitted on the other six)": 0.8925582437275985,
+     "45 (fitted on the other six)": 0.9325851254480286,
+     "46 (fitted on the other six)": 0.7114068100358423,
+     "47 (fitted on the other six)": 0.7328808243727598
+    },
+    {
+     "48 (fitted on 40-47)": 0.7647940074906368,
+     "40 (fitted on the other six)": 0.7998127340823971,
+     "42 (fitted on the other six)": 0.7517462546816479,
+     "43 (fitted on the other six)": 0.7425702247191012,
+     "44 (fitted on the other six)": 0.892626404494382,
+     "45 (fitted on the other six)": 0.8992837078651686,
+     "46 (fitted on the other six)": 0.6796816479400749,
+     "47 (fitted on the other six)": 0.7328885767790262
+    }
+   ],
+   "mean and spread": {
+    "48 (fitted on 40-47)": [
+     0.806,
+     0.022
+    ],
+    "40 (fitted on the other six)": [
+     0.807,
+     0.019
+    ],
+    "42 (fitted on the other six)": [
+     0.781,
+     0.016
+    ],
+    "43 (fitted on the other six)": [
+     0.733,
+     0.02
+    ],
+    "44 (fitted on the other six)": [
+     0.877,
+     0.016
+    ],
+    "45 (fitted on the other six)": [
+     0.916,
+     0.015
+    ],
+    "46 (fitted on the other six)": [
+     0.704,
+     0.016
+    ],
+    "47 (fitted on the other six)": [
+     0.741,
+     0.023
+    ]
+   }
+  },
+  "ctl": {
+   "builds read": {
+    "40": 400,
+    "42": 400,
+    "43": 400,
+    "44": 400,
+    "45": 400,
+    "46": 400,
+    "47": 400,
+    "48": 400
+   },
+   "splits": [
+    {
+     "48 (fitted on 40-47)": 0.7742731481481482,
+     "40 (fitted on the other six)": 0.820462962962963,
+     "42 (fitted on the other six)": 0.7806296296296296,
+     "43 (fitted on the other six)": 0.7415462962962963,
+     "44 (fitted on the other six)": 0.9036342592592592,
+     "45 (fitted on the other six)": 0.9739583333333334,
+     "46 (fitted on the other six)": 0.7275,
+     "47 (fitted on the other six)": 0.6640925925925927
+    },
+    {
+     "48 (fitted on 40-47)": 0.7982778776978419,
+     "40 (fitted on the other six)": 0.8410341726618705,
+     "42 (fitted on the other six)": 0.794986510791367,
+     "43 (fitted on the other six)": 0.7490872302158272,
+     "44 (fitted on the other six)": 0.8965692446043165,
+     "45 (fitted on the other six)": 0.9431654676258994,
+     "46 (fitted on the other six)": 0.7207329136690648,
+     "47 (fitted on the other six)": 0.6953821942446043
+    },
+    {
+     "48 (fitted on 40-47)": 0.8285818965517241,
+     "40 (fitted on the other six)": 0.835198275862069,
+     "42 (fitted on the other six)": 0.8220603448275863,
+     "43 (fitted on the other six)": 0.7562456896551725,
+     "44 (fitted on the other six)": 0.9161810344827588,
+     "45 (fitted on the other six)": 0.960081896551724,
+     "46 (fitted on the other six)": 0.7478189655172414,
+     "47 (fitted on the other six)": 0.6708620689655173
+    },
+    {
+     "48 (fitted on 40-47)": 0.7799679487179487,
+     "40 (fitted on the other six)": 0.8392857142857144,
+     "42 (fitted on the other six)": 0.822930402930403,
+     "43 (fitted on the other six)": 0.7730494505494506,
+     "44 (fitted on the other six)": 0.8910302197802198,
+     "45 (fitted on the other six)": 0.9592628205128205,
+     "46 (fitted on the other six)": 0.7413278388278389,
+     "47 (fitted on the other six)": 0.5727014652014653
+    },
+    {
+     "48 (fitted on 40-47)": 0.7912962962962963,
+     "40 (fitted on the other six)": 0.8300185185185185,
+     "42 (fitted on the other six)": 0.791138888888889,
+     "43 (fitted on the other six)": 0.7791435185185185,
+     "44 (fitted on the other six)": 0.9287314814814814,
+     "45 (fitted on the other six)": 0.9704722222222222,
+     "46 (fitted on the other six)": 0.721837962962963,
+     "47 (fitted on the other six)": 0.6127083333333334
+    },
+    {
+     "48 (fitted on 40-47)": 0.7919898897058825,
+     "40 (fitted on the other six)": 0.8053446691176471,
+     "42 (fitted on the other six)": 0.8004779411764706,
+     "43 (fitted on the other six)": 0.7129687499999999,
+     "44 (fitted on the other six)": 0.9059283088235294,
+     "45 (fitted on the other six)": 0.9702987132352942,
+     "46 (fitted on the other six)": 0.7073391544117648,
+     "47 (fitted on the other six)": 0.6258272058823529
+    },
+    {
+     "48 (fitted on 40-47)": 0.7786917562724014,
+     "40 (fitted on the other six)": 0.811146953405018,
+     "42 (fitted on the other six)": 0.761173835125448,
+     "43 (fitted on the other six)": 0.7490905017921148,
+     "44 (fitted on the other six)": 0.9181317204301075,
+     "45 (fitted on the other six)": 0.9717786738351255,
+     "46 (fitted on the other six)": 0.7356227598566307,
+     "47 (fitted on the other six)": 0.5992204301075268
+    },
+    {
+     "48 (fitted on 40-47)": 0.7483941947565542,
+     "40 (fitted on the other six)": 0.8054775280898876,
+     "42 (fitted on the other six)": 0.7750374531835205,
+     "43 (fitted on the other six)": 0.7578792134831459,
+     "44 (fitted on the other six)": 0.9142088014981273,
+     "45 (fitted on the other six)": 0.946938202247191,
+     "46 (fitted on the other six)": 0.716619850187266,
+     "47 (fitted on the other six)": 0.6047565543071161
+    }
+   ],
+   "mean and spread": {
+    "48 (fitted on 40-47)": [
+     0.786,
+     0.021
+    ],
+    "40 (fitted on the other six)": [
+     0.823,
+     0.014
+    ],
+    "42 (fitted on the other six)": [
+     0.794,
+     0.02
+    ],
+    "43 (fitted on the other six)": [
+     0.752,
+     0.019
+    ],
+    "44 (fitted on the other six)": [
+     0.909,
+     0.012
+    ],
+    "45 (fitted on the other six)": [
+     0.962,
+     0.011
+    ],
+    "46 (fitted on the other six)": [
+     0.727,
+     0.013
+    ],
+    "47 (fitted on the other six)": [
+     0.631,
+     0.039
+    ]
+   }
+  }
+ }
+}
