@@ -36,6 +36,11 @@ def tq(s):
 def rng_(k):
     ps = [p for e in R["parts"][k] for p in e["p"]]; return f"{nm(min(ps))}–{nm(max(ps))}"
 def med(xs): xs = sorted(xs); return xs[len(xs) // 2]
+def near(x):
+    SC = {9, 11, 1, 2, 4, 6, 8}; r = round(x)
+    if r % 12 in SC: return nm(r)
+    lo = max(q for q in range(r - 2, r + 1) if q % 12 in SC); hi = min(q for q in range(r, r + 3) if q % 12 in SC); return f"{nm(lo)} to {nm(hi)}"
+def KIND_C(n): return n["sec"].startswith("Chorus") or n["sec"] == "Last Chorus"
 def notes(ns): return ", ".join(nm(n["midi"]) for n in ns)
 ps = [n["midi"] for n in R["lead"]]; vlo, vhi = nm(min(ps)), nm(max(ps))
 def table(s, only=None):
@@ -63,13 +68,15 @@ A(f"**Form ({R['nbars']} bars, about {mm}:{ss:02d}).** Verse lines take four bar
 A("| Section | Bars | Tempo | Chords |\n|---|---|---|---|")
 for s, nb, st, mets, mv in R["plan"]:
     A(f"| {s} | {span(s)} | {tq(s)} | {sec_chords(s)} |")
-A(f"\n**The singer.** A baritone, {vlo} to {vhi}. The verses sit low (around {nm(med(vps))}); the choruses lift about {med(cps) - med(vps)} semitones (around {nm(med(cps))}). The top before the final chorus is {nm(hold['midi'])}; the bridge reaches {nm(d4['midi'])} once; {vhi} comes only at the very end.\n")
+_va = [n["midi"] for n in R["lead"] if n["sec"].startswith("Verse")]; _ca = [n["midi"] for n in R["lead"] if KIND_C(n) and n["line"] < 7]
+_lift = round(2 * (sum(_ca) / len(_ca) - sum(_va) / len(_va))) / 2
+A(f"\n**The singer.** A baritone, {vlo} to {vhi}. The verses sit low (around {near(sum(_va) / len(_va))} on average); the choruses sit about {_lift:g} semitones higher (around {near(sum(_ca) / len(_ca))}). The top before the final chorus is {nm(hold['midi'])}; the bridge reaches {nm(d4['midi'])} once; {vhi} comes only at the very end.\n")
 A("# Section by section\n")
 A("Pitches are where the voice sounds. Bar numbers count from the first bar of the intro; tempos are as written (felt in brackets).\n")
 A(f"## Intro (bars {span('Intro')}, {tq('Intro')})\n\nThe acoustic guitar alone, fingerpicked: the thumb on the root and fifth, the fingers on the upper chord notes between, in written eighths.\n")
 A(f"## Verse 1 (bars {span('Verse 1')}, {tq('Verse 1')})\n"); A(table("Verse 1"))
 _v0 = v("Verse 1", 0)
-A(f"\nVoice and acoustic guitar only, {nm(min(vps))} to {nm(max(vps))}. Each line is sung over about two of its four written bars; the guitar fills the rest. \"There's a chair in the waiting room\" starts on {nm(_v0[0]['midi'])} on the downbeat of bar {barno(_v0[0]['on'])}, close to speech; \"a second stretched thin like a wire pulled tight\" (bar {line_bars('Verse 1', 2)[0] + 1}) is the title line.\n")
+A(f"\nVoice and acoustic guitar only, {nm(min(vps))} to {nm(max(vps))}. Each line is sung over about two of its four written bars; the guitar fills the rest. \"There's a chair in the waiting room\" starts on {nm(_v0[0]['midi'])} on the downbeat of bar {barno(_v0[0]['on'])}, close to speech; \"a second stretched thin like a wire pulled tight\" (sung from bar {barno(v('Verse 1', 2)[0]['on'])}) is the title line.\n")
 A(f"## Pre-chorus 1 (bars {span('Pre 1')}, {tq('Pre 1')})\n"); A(table("Pre 1"))
 _p = [n['midi'] for j in range(2) for n in v('Pre 1', j)]
 A(f"\nThe bass comes in on held roots and a clean electric guitar swells; the tempo pushes forward into the chorus. The bass line climbs B, C♯, D, E under the voice ({nm(min(_p))}–{nm(max(_p))}).\n")

@@ -32,7 +32,7 @@ author: "Words and music: Jason Bryant"
 | Last Chorus | 165–186 | ♩ = 132 (felt 66) | D ×2, A/C♯ ×2, Bm7 ×2, E ×2, F♯m7 ×2, D ×2, G ×3, Asus4 ×2, A ×5 |
 | Tag | 187–194 | ♩ = 110 (felt 55) | F♯m7 ×2, Dadd9 ×2, A ×4 |
 
-**The singer.** A baritone, A2 to E4. The verses sit low (around E3); the choruses lift about 5 semitones (around A3). The top before the final chorus is C♯4; the bridge reaches D4 once; E4 comes only at the very end.
+**The singer.** A baritone, A2 to E4. The verses sit low (around E3 to F♯3 on average); the choruses sit about 3.5 semitones higher (around G♯3). The top before the final chorus is C♯4; the bridge reaches D4 once; E4 comes only at the very end.
 
 # Section by section
 
@@ -51,7 +51,7 @@ The acoustic guitar alone, fingerpicked: the thumb on the root and fifth, the fi
 | 13–16 | F♯m7 Dadd9 | a second stretched thin like a wire pulled tight |
 | 17–20 | Asus2 E/G♯ | the TV on mute with somebody's news |
 
-Voice and acoustic guitar only, B2 to A3. Each line is sung over about two of its four written bars; the guitar fills the rest. "There's a chair in the waiting room" starts on F♯3 on the downbeat of bar 5, close to speech; "a second stretched thin like a wire pulled tight" (bar 13) is the title line.
+Voice and acoustic guitar only, B2 to A3. Each line is sung over about two of its four written bars; the guitar fills the rest. "There's a chair in the waiting room" starts on F♯3 on the downbeat of bar 5, close to speech; "a second stretched thin like a wire pulled tight" (sung from bar 14) is the title line.
 
 ## Pre-chorus 1 (bars 21–24, ♩ = 116 → 132 (felt 58 → 66))
 
