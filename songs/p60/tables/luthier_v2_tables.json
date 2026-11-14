@@ -1,0 +1,197 @@
+{
+ "about": "Luthier v2, fixes 630, 631, 634. Kept songs as luthier_v1_structure.json.",
+ "607: a kept song's gain under the kept couplings, bits a bar (per song; all 159 songs, two thirds of which the couplings were fitted on): 5th, 25th, 50th, 75th, 95th, mean": [
+  -0.129,
+  0.002,
+  0.138,
+  0.33,
+  0.615,
+  0.174
+ ],
+ "607: share of kept songs with a gain at or over 0, 0.10, 0.16": [
+  0.761,
+  0.585,
+  0.434
+ ],
+ "610/618: kept lines in two-bar slots, by notes over the slot's bars: the breath, last onset of the line to first onset of the next, in twelfths of a beat (18 = a dotted quarter): lines; 10th, 25th, 50th, 75th percentile; share under 18; share of lines beginning before their bar line or after beat 1 (not on the downbeat)": {
+  "under 3.5": [
+   765,
+   36.0,
+   45.0,
+   57.0,
+   66.0,
+   0.004,
+   0.711
+  ],
+  "3.5 to 4.5": [
+   436,
+   24.0,
+   36.0,
+   42.0,
+   54.0,
+   0.007,
+   0.823
+  ],
+  "4.5 to 5.5": [
+   277,
+   18.0,
+   30.0,
+   30.0,
+   42.0,
+   0.061,
+   0.758
+  ],
+  "5.5 to 6.5": [
+   174,
+   12.0,
+   18.0,
+   21.0,
+   30.0,
+   0.236,
+   0.718
+  ],
+  "6.5 to 7.5": [
+   97,
+   10.8,
+   12.0,
+   18.0,
+   24.0,
+   0.381,
+   0.784
+  ],
+  "7.5 and over": [
+   61,
+   6.0,
+   9.0,
+   12.0,
+   18.0,
+   0.738,
+   0.689
+  ]
+ },
+ "634: how the bits saved are read (Table FD)": {
+  "symbols": "gaps: the difference of successive onsets in twelfths of a beat, clipped to 1..96, classed by the cut points 3, 4, 6, 9, 12, 18, 24, 48 (nine classes); intervals: the difference of successive pitches clipped to -7..+7 (fifteen classes); over all sung notes of the song in order",
+  "halves": "the symbol sequence cut at its midpoint; the first half's counts are the song's own model (no smoothing)",
+  "corpus model": "counts pooled over the kept songs' whole sequences, plus 0.5 a class (for a kept song, the corpus is the half of the kept songs it is not in)",
+  "score": "mean over the second half of -log2( share * own + (1 - share) * corpus ), less the same with share 0; reported at the best share of 0.3, 0.5, 0.7, 0.85",
+  "kept": {
+   "a gap": 0.291,
+   "an interval": 0.177,
+   "best share": 0.85
+  }
+ },
+ "versions of song 48 beside density peers (the paper's reading; [score less the band's kept mean, share under the band's kept 5th])": {
+  "s48main": {
+   "both": [
+    -1.83,
+    0.344
+   ],
+   "Verse 1": [
+    -1.38,
+    0.269
+   ],
+   "Chorus 1": [
+    -2.29,
+    0.418
+   ]
+  },
+  "s48ctl": {
+   "both": [
+    -1.97,
+    0.376
+   ],
+   "Verse 1": [
+    -1.4,
+    0.277
+   ],
+   "Chorus 1": [
+    -2.53,
+    0.474
+   ]
+  },
+  "s48v136main": {
+   "both": [
+    -1.79,
+    0.336
+   ],
+   "Verse 1": [
+    -1.32,
+    0.276
+   ],
+   "Chorus 1": [
+    -2.26,
+    0.396
+   ]
+  },
+  "s48v136ctl": {
+   "both": [
+    -1.86,
+    0.347
+   ],
+   "Verse 1": [
+    -1.4,
+    0.29
+   ],
+   "Chorus 1": [
+    -2.32,
+    0.404
+   ]
+  },
+  "s48v137main": {
+   "both": [
+    -1.54,
+    0.288
+   ],
+   "Verse 1": [
+    -0.76,
+    0.145
+   ],
+   "Chorus 1": [
+    -2.32,
+    0.431
+   ]
+  },
+  "s48v137ctl": {
+   "both": [
+    -1.57,
+    0.278
+   ],
+   "Verse 1": [
+    -0.69,
+    0.1
+   ],
+   "Chorus 1": [
+    -2.46,
+    0.456
+   ]
+  },
+  "s48l1main": {
+   "both": [
+    -1.44,
+    0.252
+   ],
+   "Verse 1": [
+    -0.76,
+    0.133
+   ],
+   "Chorus 1": [
+    -2.12,
+    0.371
+   ]
+  },
+  "s48l1ctl": {
+   "both": [
+    -1.54,
+    0.238
+   ],
+   "Verse 1": [
+    -0.81,
+    0.107
+   ],
+   "Chorus 1": [
+    -2.27,
+    0.369
+   ]
+  }
+ }
+}
