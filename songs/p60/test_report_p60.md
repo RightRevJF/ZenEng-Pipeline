@@ -89,13 +89,14 @@ Built from the pick of record: the lead sheet, full score, parts (harmony, guita
 
 # The blind pick (10.20)
 
-Three slots, offered after delivery in shuffled order:
+Three slots, offered after delivery in shuffled order (A annotated, B remembered, C middle). **The writer chose C, "And I think somebody's watching this": the Middle slot.** The tally is now 32 songs: Annotated top 14, Middle 9, Remembered 8, Refrain 1.
+
+The slots:
 
 - **Remembered:** "I think God likes the small things" (the most-repeated hook line)
 - **Middle:** "And I think somebody's watching this"
 - **Annotated:** "A bumblebee goes bouncing by"
 
-The writer's answer is logged here when he gives it.
 
 # Findings
 

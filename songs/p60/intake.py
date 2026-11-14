@@ -16,3 +16,4 @@ DESIGN_BRIDGE = "Bridge lines 1-3 low (A2-F#3); a beat of silence before 'and th
 DELIVERABLES = {"garageband_midi": False, "full_score": True}
 NEVER_SAY = []   # the writer's own lyric
 LOG.append({"q": "the judge's pick (f583fd857dda): build from it, hear the one build without runs, or a chorus design and a rerun", "options": {"A": "this melody works for the song: build everything from it", "B": "hear the one build without the runs first", "C": "give the chorus more motion by design and rerun"}, "recommended": "A (if the demo sounds right)", "answer": "A"})
+LOG.append({"q": "the blind pick (10.20): which line stays with you most", "options": {"A": "A bumblebee goes bouncing by (annotated)", "B": "I think God likes the small things (remembered)", "C": "And I think somebody's watching this (middle)"}, "recommended": None, "answer": "C", "slot": "middle"})
