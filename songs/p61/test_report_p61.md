@@ -74,7 +74,9 @@ The lead sheet (a tempo mark at every tempo change, felt tempo shown), full scor
 
 # The blind pick (10.20)
 
-Three slots, to be offered in shuffled order:
+Three slots, offered in shuffled order (A annotated, B middle, C remembered). **The writer chose C, "a second stretched thin like a wire pulled tight": the Remembered slot,** the title line. The tally is now 33 songs: Annotated top 14, Middle 9, Remembered 9, Refrain 1.
+
+The slots:
 
 - **Remembered:** "a second stretched thin like a wire pulled tight"
 - **Middle:** "it rings with every voice you've known" (top quartile under both)
