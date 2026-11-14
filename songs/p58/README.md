@@ -25,3 +25,10 @@ gen_v137_p58.py writes melody_v137_p58.py from melody_v136_p58.py with 600-603; 
 ruling (intake.py). run_v137.sh (logs in run137/); read_v137.py -> read/read_v137.json (600-603 tests, 604's split, 557 by section).
 Report: test_report_v137.md; findings_v137.md (610-617).
 Side run for 610 (not of record): gen_v137s_p58.py -> melody_v137s_p58.py, run_v137s.sh (run137s/), read_v137s.py -> read/read_v137s.json (finding 618).
+
+## Luthier v1 (formerly ZenEng v138; Module 27.82, Window 158)
+
+gen_l1_p58.py writes melody_l1_p58.py from melody_v137_p58.py with 605 (the section's template) and 606 (the song's palette);
+tables/luthier_v1_structure.json. luthier_read.py: 605-607's readings. run_l1.sh (runl1/); read_l1.py -> read/read_l1.json and
+read/l1_pick_candidates.json (every survivor's coupling gain and judge score, for 607's pick once the kept quartile is supplied);
+read_608.py -> read/read_608.json. Report: test_report_l1.md; findings_l1.md (619-626; 610-618 are v137's).
