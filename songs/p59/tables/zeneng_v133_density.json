@@ -1,0 +1,360 @@
+{
+ "about": "ZenEng v133, fixes 557 and 558 (answers 561). Bands are of notes a bar: for a window, onsets over eight bars; for a line, (notes - 1) / beats from first to last onset, times 4.",
+ "557: kept windows by band on zeneng_v132_judge.json: n, mean, 5th, 25th, 50th percentile (last figure: mean on the v129 judge)": {
+  "under 3.5": [
+   194,
+   2.142190945216273,
+   -0.5888959405673659,
+   0.8464939455800177,
+   1.991469998691072,
+   2.1063343031027184
+  ],
+  "3.5 to 4.5": [
+   162,
+   1.2263270328957754,
+   -1.1284614519379543,
+   0.1291997968252297,
+   1.1642794948378288,
+   1.4007477955952845
+  ],
+  "4.5 to 5.5": [
+   105,
+   0.7158877834694707,
+   -1.7128638896905524,
+   -0.19439399162000548,
+   0.5778339298767161,
+   0.8949973704054868
+  ],
+  "5.5 and over": [
+   84,
+   0.5579027448410796,
+   -1.5977592344733806,
+   -0.7442671328080348,
+   0.4266600378318357,
+   0.6102789253274723
+  ]
+ },
+ "557: songs 40-47 beside their density peers": {
+  "s40": {
+   "notes a bar": 4.95,
+   "windows by band": {
+    "4.5 to 5.5": 0.93,
+    "5.5 and over": 0.06,
+    "3.5 to 4.5": 0.0
+   },
+   "mean score": -0.9,
+   "mean score less the kept mean of the window's band": -1.61,
+   "windows under their band's kept 5th": 0.27,
+   "under their band's kept 25th": 0.717
+  },
+  "s42": {
+   "notes a bar": 4.54,
+   "windows by band": {
+    "4.5 to 5.5": 0.53,
+    "3.5 to 4.5": 0.46,
+    "5.5 and over": 0.01
+   },
+   "mean score": -0.96,
+   "mean score less the kept mean of the window's band": -1.91,
+   "windows under their band's kept 5th": 0.381,
+   "under their band's kept 25th": 0.751
+  },
+  "s43": {
+   "notes a bar": 4.27,
+   "windows by band": {
+    "3.5 to 4.5": 0.53,
+    "4.5 to 5.5": 0.47,
+    "5.5 and over": 0.0
+   },
+   "mean score": -0.67,
+   "mean score less the kept mean of the window's band": -1.66,
+   "windows under their band's kept 5th": 0.304,
+   "under their band's kept 25th": 0.696
+  },
+  "s44": {
+   "notes a bar": 4.15,
+   "windows by band": {
+    "3.5 to 4.5": 0.93,
+    "4.5 to 5.5": 0.07
+   },
+   "mean score": -1.59,
+   "mean score less the kept mean of the window's band": -2.78,
+   "windows under their band's kept 5th": 0.663,
+   "under their band's kept 25th": 0.951
+  },
+  "s45": {
+   "notes a bar": 5.68,
+   "windows by band": {
+    "5.5 and over": 0.5,
+    "4.5 to 5.5": 0.5
+   },
+   "mean score": -2.11,
+   "mean score less the kept mean of the window's band": -2.75,
+   "windows under their band's kept 5th": 0.731,
+   "under their band's kept 25th": 0.927
+  },
+  "s46main": {
+   "notes a bar": 3.64,
+   "windows by band": {
+    "3.5 to 4.5": 0.67,
+    "under 3.5": 0.32,
+    "4.5 to 5.5": 0.01
+   },
+   "mean score": -0.44,
+   "mean score less the kept mean of the window's band": -1.96,
+   "windows under their band's kept 5th": 0.368,
+   "under their band's kept 25th": 0.716
+  },
+  "s46ctl": {
+   "notes a bar": 3.53,
+   "windows by band": {
+    "3.5 to 4.5": 0.56,
+    "under 3.5": 0.44
+   },
+   "mean score": -0.5,
+   "mean score less the kept mean of the window's band": -2.13,
+   "windows under their band's kept 5th": 0.397,
+   "under their band's kept 25th": 0.759
+  },
+  "s47main": {
+   "notes a bar": 5.65,
+   "windows by band": {
+    "5.5 and over": 0.5,
+    "3.5 to 4.5": 0.5
+   },
+   "mean score": -1.0,
+   "mean score less the kept mean of the window's band": -1.89,
+   "windows under their band's kept 5th": 0.363,
+   "under their band's kept 25th": 0.759
+  },
+  "s47ctl": {
+   "notes a bar": 5.62,
+   "windows by band": {
+    "5.5 and over": 0.5,
+    "3.5 to 4.5": 0.5
+   },
+   "mean score": -0.99,
+   "mean score less the kept mean of the window's band": -1.88,
+   "windows under their band's kept 5th": 0.35,
+   "under their band's kept 25th": 0.783
+  }
+ },
+ "558 and 561: kept lines by the line's own rate": {
+  "5.5 to 8": {
+   "all lines": {
+    "lines": 1544,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     3.0,
+     5.0,
+     8.0
+    ],
+    "gap equal to the gap before, mean": 0.5085096138513275,
+    "gaps of a sixteenth, an eighth": [
+     0.10076187505680213,
+     0.6181835742456184
+    ]
+   },
+   "lines of nine notes or more": {
+    "lines": 869,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     4.0,
+     6.0,
+     10.0
+    ],
+    "gap equal to the gap before, mean": 0.5330328083465092,
+    "gaps of a sixteenth, an eighth": [
+     0.11737098125057548,
+     0.6240716867411875
+    ]
+   }
+  },
+  "8 and over": {
+   "all lines": {
+    "lines": 1471,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     3.0,
+     5.0,
+     9.0
+    ],
+    "gap equal to the gap before, mean": 0.6788159973788189,
+    "gaps of a sixteenth, an eighth": [
+     0.30769237386476084,
+     0.6123621183880893
+    ]
+   },
+   "lines of nine notes or more": {
+    "lines": 423,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     4.0,
+     6.5,
+     12.0
+    ],
+    "gap equal to the gap before, mean": 0.5894129207507707,
+    "gaps of a sixteenth, an eighth": [
+     0.38821626939731246,
+     0.4736888662756352
+    ]
+   }
+  },
+  "8 to 10": {
+   "all lines": {
+    "lines": 1069,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     3.0,
+     5.0,
+     9.0
+    ],
+    "gap equal to the gap before, mean": 0.7214856399825287,
+    "gaps of a sixteenth, an eighth": [
+     0.1724947279658286,
+     0.7397339950073586
+    ]
+   },
+   "lines of nine notes or more": {
+    "lines": 310,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     4.0,
+     8.0,
+     13.0
+    ],
+    "gap equal to the gap before, mean": 0.5975316638967412,
+    "gaps of a sixteenth, an eighth": [
+     0.2910113898778627,
+     0.5579552156559434
+    ]
+   }
+  },
+  "10 and over": {
+   "all lines": {
+    "lines": 402,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     3.0,
+     4.0,
+     6.0
+    ],
+    "gap equal to the gap before, mean": 0.5653487139376108,
+    "gaps of a sixteenth, an eighth": [
+     0.6672104919392847,
+     0.273654317129386
+    ]
+   },
+   "lines of nine notes or more": {
+    "lines": 113,
+    "longest equal-gap run: 50th, 75th, 95th": [
+     4.0,
+     6.0,
+     10.0
+    ],
+    "gap equal to the gap before, mean": 0.5671402625627094,
+    "gaps of a sixteenth, an eighth": [
+     0.6548845229462457,
+     0.24251569540930343
+    ]
+   }
+  },
+  "sections": {
+   "kept sections of four lines or more": 627,
+   "share of kept lines of nine notes or more that are at eight notes a bar and over": 0.1927107061503417,
+   "sections with a dense line (nine notes or more at eight a bar and over)": 0.2886762360446571,
+   "with two in a row": 0.10526315789473684,
+   "with three in a row": 0.0430622009569378,
+   "with four in a row": 0.017543859649122806,
+   "sections all dense": 0.006379585326953748
+  },
+  "kept windows by notes a bar: n, empty bars, gap same as before, equal-gap run mean": {
+   "under 3.5": [
+    194,
+    0.8556701030927835,
+    0.3253248692155428,
+    3.6752577319587627
+   ],
+   "3.5 to 4.5": [
+    162,
+    0.43209876543209874,
+    0.4039673852055408,
+    4.8580246913580245
+   ],
+   "4.5 to 5.5": [
+    105,
+    0.22857142857142856,
+    0.45415014217955935,
+    6.038095238095238
+   ],
+   "5.5 and over": [
+    84,
+    0.047619047619047616,
+    0.4559971017346042,
+    6.2976190476190474
+   ]
+  },
+  "correlation of empty bars and notes a bar, kept windows": -0.4080299537610383
+ },
+ "558: kept run lengths": {
+  "kept lines of nine notes or more: every run of equal gaps in the line, by length in gaps (1 = a gap unlike its neighbours; 12 = 12 or more): counts, then shares": {
+   "5.5 to 8": {
+    "runs": 6431,
+    "counts": [
+     3902,
+     1215,
+     503,
+     340,
+     167,
+     118,
+     66,
+     44,
+     30,
+     29,
+     6,
+     11
+    ],
+    "shares": [
+     0.6067485616544861,
+     0.18892862696314724,
+     0.0782148965946198,
+     0.05286891618721816,
+     0.025967967656663038,
+     0.01834862385321101,
+     0.010262789612812937,
+     0.006841859741875292,
+     0.004664904369460426,
+     0.004509407557145078,
+     0.0009329808738920852,
+     0.001710464935468823
+    ],
+    "mean run": 1.9150987404758202
+   },
+   "8 and over": {
+    "runs": 2644,
+    "counts": [
+     1502,
+     532,
+     245,
+     144,
+     66,
+     45,
+     13,
+     19,
+     19,
+     21,
+     14,
+     24
+    ],
+    "shares": [
+     0.5680786686838124,
+     0.20121028744326777,
+     0.09266263237518911,
+     0.05446293494704992,
+     0.024962178517397883,
+     0.0170196671709531,
+     0.004916792738275341,
+     0.0071860816944024205,
+     0.0071860816944024205,
+     0.00794251134644478,
+     0.00529500756429652,
+     0.009077155824508321
+    ],
+    "mean run": 2.0964447806354007
+   }
+  }
+ }
+}

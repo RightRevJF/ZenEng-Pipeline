@@ -1,0 +1,1050 @@
+{
+ "about": "ZenEng v137, fixes 600-602. Kept lines by the rate the slot gives the line (notes over the slot's bars), in the cells of fix 600: the four bands of zeneng_v136_slot_rate.json below 5.5, and 5.5 to 6.5, 6.5 to 7.5, 7.5 and over. For each cell: gap values, runs of equal gaps by length, the span (first to last onset as a share of the slot) at the quartiles, the line's own rate. Then the last note of kept windows by the chord under it (602).",
+ "600: cells at 5.5 and over, all slots": {
+  "5.5 to 6.5": {
+   "lines": 439,
+   "gap values, shares": {
+    "sixteenth": 0.1666,
+    "triplet eighth": 0.0072,
+    "eighth": 0.6188,
+    "dotted eighth": 0.0329,
+    "quarter": 0.1133,
+    "dotted quarter": 0.026,
+    "half": 0.0093,
+    "longer than a half": 0.0047,
+    "other": 0.0212
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5859,
+    0.1915,
+    0.0846,
+    0.0681,
+    0.0254,
+    0.0187,
+    0.0049,
+    0.0209
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    5.0,
+    10.0
+   ],
+   "gap equal to the gap before": 0.583,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.6,
+    0.75,
+    0.844
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    6.29,
+    7.2,
+    8.0
+   ]
+  },
+  "6.5 to 7.5": {
+   "lines": 204,
+   "gap values, shares": {
+    "sixteenth": 0.2827,
+    "triplet eighth": 0.0097,
+    "eighth": 0.5696,
+    "dotted eighth": 0.0491,
+    "quarter": 0.0444,
+    "dotted quarter": 0.0143,
+    "half": 0.0046,
+    "longer than a half": 0.0042,
+    "other": 0.0213
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5606,
+    0.203,
+    0.0857,
+    0.0581,
+    0.0217,
+    0.0305,
+    0.0089,
+    0.0315
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    6.0,
+    10.0
+   ],
+   "gap equal to the gap before": 0.62,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.667,
+    0.769,
+    0.846
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    7.43,
+    8.0,
+    8.8
+   ]
+  },
+  "7.5 and over": {
+   "lines": 267,
+   "gap values, shares": {
+    "sixteenth": 0.5118,
+    "triplet eighth": 0.0056,
+    "eighth": 0.3843,
+    "dotted eighth": 0.0538,
+    "quarter": 0.0225,
+    "dotted quarter": 0.002,
+    "half": 0.0,
+    "longer than a half": 0.0004,
+    "other": 0.0197
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5337,
+    0.2146,
+    0.0938,
+    0.0789,
+    0.0444,
+    0.0164,
+    0.0082,
+    0.0099
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    5.0,
+    7.0
+   ],
+   "gap equal to the gap before": 0.658,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.667,
+    0.786,
+    0.875
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    8.0,
+    9.6,
+    12.31
+   ]
+  }
+ },
+ "600: cells at 5.5 and over, two-bar slots": {
+  "5.5 to 6.5": {
+   "lines": 174,
+   "gap values, shares": {
+    "sixteenth": 0.1815,
+    "triplet eighth": 0.011,
+    "eighth": 0.6122,
+    "dotted eighth": 0.0336,
+    "quarter": 0.1194,
+    "dotted quarter": 0.0154,
+    "half": 0.0044,
+    "longer than a half": 0.0017,
+    "other": 0.0209
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5547,
+    0.1945,
+    0.0967,
+    0.0759,
+    0.0242,
+    0.0219,
+    0.0058,
+    0.0265
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    6.0,
+    10.0
+   ],
+   "gap equal to the gap before": 0.58,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.688,
+    0.767,
+    0.821
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    6.55,
+    7.27,
+    8.0
+   ]
+  },
+  "6.5 to 7.5": {
+   "lines": 97,
+   "gap values, shares": {
+    "sixteenth": 0.2852,
+    "triplet eighth": 0.0163,
+    "eighth": 0.5679,
+    "dotted eighth": 0.0464,
+    "quarter": 0.0464,
+    "dotted quarter": 0.0172,
+    "half": 0.0077,
+    "longer than a half": 0.0026,
+    "other": 0.0103
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5672,
+    0.1989,
+    0.081,
+    0.07,
+    0.0203,
+    0.0184,
+    0.0074,
+    0.0368
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    6.0,
+    13.0
+   ],
+   "gap equal to the gap before": 0.588,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.765,
+    0.786,
+    0.857
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    7.38,
+    8.0,
+    8.62
+   ]
+  },
+  "7.5 and over": {
+   "lines": 61,
+   "gap values, shares": {
+    "sixteenth": 0.5039,
+    "triplet eighth": 0.0019,
+    "eighth": 0.3687,
+    "dotted eighth": 0.0749,
+    "quarter": 0.0292,
+    "dotted quarter": 0.0029,
+    "half": 0.0,
+    "longer than a half": 0.001,
+    "other": 0.0175
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5676,
+    0.1943,
+    0.099,
+    0.0705,
+    0.0343,
+    0.0248,
+    0.0019,
+    0.0076
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    6.0,
+    9.0
+   ],
+   "gap equal to the gap before": 0.514,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.812,
+    0.875,
+    0.903
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    8.62,
+    9.33,
+    10.0
+   ]
+  }
+ },
+ "600: cells below 5.5, all slots": {
+  "under 3.5": {
+   "lines": 1657,
+   "gap values, shares": {
+    "sixteenth": 0.0572,
+    "triplet eighth": 0.0032,
+    "eighth": 0.4448,
+    "dotted eighth": 0.0189,
+    "quarter": 0.2767,
+    "dotted quarter": 0.094,
+    "half": 0.0571,
+    "longer than a half": 0.0285,
+    "other": 0.0197
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.7055,
+    0.1823,
+    0.0648,
+    0.029,
+    0.01,
+    0.0045,
+    0.0019,
+    0.0019
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    2.0,
+    3.0,
+    5.0
+   ],
+   "gap equal to the gap before": 0.411,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.312,
+    0.438,
+    0.562
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    4.0,
+    4.8,
+    6.4
+   ]
+  },
+  "3.5 to 4.5": {
+   "lines": 839,
+   "gap values, shares": {
+    "sixteenth": 0.0868,
+    "triplet eighth": 0.0086,
+    "eighth": 0.5714,
+    "dotted eighth": 0.0225,
+    "quarter": 0.2024,
+    "dotted quarter": 0.0563,
+    "half": 0.0198,
+    "longer than a half": 0.0121,
+    "other": 0.0201
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.6508,
+    0.1775,
+    0.0714,
+    0.0437,
+    0.0249,
+    0.0162,
+    0.0103,
+    0.0051
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    3.0,
+    4.0,
+    7.0
+   ],
+   "gap equal to the gap before": 0.493,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.438,
+    0.562,
+    0.692
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    5.0,
+    6.0,
+    8.0
+   ]
+  },
+  "4.5 to 5.5": {
+   "lines": 542,
+   "gap values, shares": {
+    "sixteenth": 0.1411,
+    "triplet eighth": 0.0132,
+    "eighth": 0.5739,
+    "dotted eighth": 0.0337,
+    "quarter": 0.1562,
+    "dotted quarter": 0.0313,
+    "half": 0.0126,
+    "longer than a half": 0.0076,
+    "other": 0.0304
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5897,
+    0.2033,
+    0.0984,
+    0.053,
+    0.0236,
+    0.0109,
+    0.0069,
+    0.0142
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    3.0,
+    5.0,
+    8.0
+   ],
+   "gap equal to the gap before": 0.551,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.546,
+    0.679,
+    0.75
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    5.82,
+    6.55,
+    8.0
+   ]
+  }
+ },
+ "600: cells below 5.5, two-bar slots": {
+  "under 3.5": {
+   "lines": 765,
+   "gap values, shares": {
+    "sixteenth": 0.0754,
+    "triplet eighth": 0.0016,
+    "eighth": 0.4758,
+    "dotted eighth": 0.0296,
+    "quarter": 0.2436,
+    "dotted quarter": 0.0795,
+    "half": 0.0528,
+    "longer than a half": 0.0172,
+    "other": 0.0245
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.691,
+    0.1864,
+    0.0634,
+    0.0437,
+    0.0111,
+    0.0038,
+    0.0005,
+    0.0
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    2.0,
+    3.0,
+    4.0
+   ],
+   "gap equal to the gap before": 0.429,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.308,
+    0.4,
+    0.533
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    4.0,
+    5.09,
+    6.67
+   ]
+  },
+  "3.5 to 4.5": {
+   "lines": 436,
+   "gap values, shares": {
+    "sixteenth": 0.0922,
+    "triplet eighth": 0.0143,
+    "eighth": 0.6151,
+    "dotted eighth": 0.028,
+    "quarter": 0.1592,
+    "dotted quarter": 0.0526,
+    "half": 0.0099,
+    "longer than a half": 0.0024,
+    "other": 0.0263
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.6206,
+    0.1885,
+    0.0552,
+    0.0571,
+    0.0317,
+    0.0247,
+    0.0184,
+    0.0038
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    3.0,
+    5.0,
+    7.0
+   ],
+   "gap equal to the gap before": 0.538,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.438,
+    0.533,
+    0.644
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    5.22,
+    6.22,
+    8.0
+   ]
+  },
+  "4.5 to 5.5": {
+   "lines": 277,
+   "gap values, shares": {
+    "sixteenth": 0.1547,
+    "triplet eighth": 0.0166,
+    "eighth": 0.5911,
+    "dotted eighth": 0.03,
+    "quarter": 0.1514,
+    "dotted quarter": 0.0283,
+    "half": 0.0096,
+    "longer than a half": 0.0012,
+    "other": 0.0171
+   },
+   "runs of equal gaps by length 1..8 (8 = 8 or more), shares": [
+    0.5548,
+    0.2177,
+    0.1024,
+    0.0653,
+    0.0266,
+    0.0089,
+    0.0097,
+    0.0145
+   ],
+   "longest run in the line: 50th, 75th, 95th": [
+    4.0,
+    5.0,
+    8.0
+   ],
+   "gap equal to the gap before": 0.547,
+   "first to last onset as a share of the slot: 25th, 50th, 75th": [
+    0.562,
+    0.677,
+    0.706
+   ],
+   "the line's own rate, notes a bar: 25th, 50th, 75th": [
+    5.87,
+    6.55,
+    8.0
+   ]
+  }
+ },
+ "602: kept windows' last note on the tonic by the chord under it": {
+  "windows read": 537,
+  "by collection": {
+   "bb": 292,
+   "rs": 245
+  },
+  "all": {
+   "windows": 537,
+   "last note on the tonic": 0.313
+  },
+  "tonic a tone of the chord": {
+   "windows": 323,
+   "last note on the tonic": 0.393
+  },
+  "tonic not a tone of the chord": {
+   "windows": 214,
+   "last note on the tonic": 0.192
+  },
+  "share of windows whose last note stands over a chord with the tonic in it": 0.601,
+  "by chord": {
+   "I (tonic triad's root and fifth in the chord)": {
+    "windows": 208,
+    "last note on the tonic": 0.385,
+    "share": 0.387
+   },
+   "V (dominant: 7, 11, 2)": {
+    "windows": 136,
+    "last note on the tonic": 0.191,
+    "share": 0.253
+   },
+   "other": {
+    "windows": 104,
+    "last note on the tonic": 0.26,
+    "share": 0.194
+   },
+   "IV (5, 9, 0)": {
+    "windows": 73,
+    "last note on the tonic": 0.384,
+    "share": 0.136
+   },
+   "vi (9, 0, 4)": {
+    "windows": 16,
+    "last note on the tonic": 0.438,
+    "share": 0.03
+   }
+  },
+  "verses": {
+   "tonic in chord": {
+    "windows": 190,
+    "last note on the tonic": 0.358
+   },
+   "not": {
+    "windows": 111,
+    "last note on the tonic": 0.18
+   },
+   "under V": {
+    "windows": 67,
+    "last note on the tonic": 0.194
+   },
+   "under I": {
+    "windows": 126,
+    "last note on the tonic": 0.357
+   }
+  },
+  "choruses": {
+   "tonic in chord": {
+    "windows": 133,
+    "last note on the tonic": 0.444
+   },
+   "not": {
+    "windows": 103,
+    "last note on the tonic": 0.204
+   },
+   "under I": {
+    "windows": 82,
+    "last note on the tonic": 0.427
+   }
+  }
+ },
+ "604: song 48 under v136, costs beside peers by section": {
+  "s48main": {
+   "windows": 1990,
+   "raw score": -0.66,
+   "less the band's kept mean": -1.79,
+   "under the band's kept 5th": 0.336,
+   "by section": {
+    "Verse 1": {
+     "notes a bar": 7.24,
+     "bands": {
+      "5.5 and over": 1.0
+     },
+     "rel": -1.32,
+     "u5": 0.276,
+     "gap same as before": 0.436,
+     "equal gap run": 5.47,
+     "range": 12.4,
+     "empty bars": 0.0,
+     "costs beside peers: measure, points, kept band mean (z), song (z)": [
+      [
+       "gap_sixteenth",
+       0.93,
+       0.97,
+       2.02
+      ],
+      [
+       "mean_interval",
+       0.54,
+       -0.25,
+       0.24
+      ],
+      [
+       "past_fifth",
+       0.39,
+       -0.07,
+       0.69
+      ],
+      [
+       "last_note_tonic",
+       0.27,
+       0.4,
+       -0.3
+      ],
+      [
+       "distinct_pitches",
+       0.16,
+       0.65,
+       0.79
+      ],
+      [
+       "chord_tones_off_beat",
+       0.14,
+       0.07,
+       -0.18
+      ],
+      [
+       "ascending",
+       0.13,
+       -0.28,
+       0.24
+      ],
+      [
+       "chord_tones_on_beat",
+       0.09,
+       0.01,
+       -0.31
+      ],
+      [
+       "pitch_sd",
+       0.08,
+       0.63,
+       0.52
+      ],
+      [
+       "turns_per_move",
+       0.08,
+       -0.13,
+       0.0
+      ],
+      [
+       "chord_tones_on_downbeat",
+       0.07,
+       0.08,
+       -0.26
+      ],
+      [
+       "peak_count",
+       0.06,
+       -0.02,
+       0.35
+      ]
+     ],
+     "gains": [
+      [
+       "gap_eighth",
+       -0.63
+      ],
+      [
+       "chord_tones",
+       -0.28
+      ],
+      [
+       "on_tonic",
+       -0.18
+      ]
+     ]
+    },
+    "Chorus 1": {
+     "notes a bar": 3.49,
+     "bands": {
+      "under 3.5": 0.53,
+      "3.5 to 4.5": 0.47
+     },
+     "rel": -2.26,
+     "u5": 0.396,
+     "gap same as before": 0.366,
+     "equal gap run": 4.16,
+     "range": 12.3,
+     "empty bars": 0.19,
+     "costs beside peers: measure, points, kept band mean (z), song (z)": [
+      [
+       "distinct_pitches",
+       0.73,
+       -0.1,
+       0.53
+      ],
+      [
+       "gap_sixteenth",
+       0.61,
+       -0.44,
+       0.24
+      ],
+      [
+       "gap_eighth",
+       0.41,
+       -0.51,
+       -0.18
+      ],
+      [
+       "last_note_tonic",
+       0.39,
+       0.61,
+       -0.37
+      ],
+      [
+       "empty_bars",
+       0.38,
+       1.0,
+       -0.03
+      ],
+      [
+       "ascending",
+       0.32,
+       -0.18,
+       1.15
+      ],
+      [
+       "on_fifth",
+       0.24,
+       0.01,
+       -0.42
+      ],
+      [
+       "longest_run_one_way",
+       0.22,
+       -0.05,
+       0.9
+      ],
+      [
+       "mean_interval",
+       0.16,
+       0.07,
+       0.23
+      ],
+      [
+       "unit4_to_unit2",
+       0.15,
+       0.13,
+       -0.39
+      ],
+      [
+       "chord_tones_off_beat",
+       0.13,
+       0.15,
+       -0.07
+      ],
+      [
+       "gap_entropy",
+       0.12,
+       0.38,
+       0.74
+      ]
+     ],
+     "gains": [
+      [
+       "range",
+       -0.73
+      ],
+      [
+       "peak_position",
+       -0.34
+      ],
+      [
+       "chord_tones_on_beat",
+       -0.12
+      ]
+     ]
+    }
+   },
+   "by band": {
+    "under 3.5": {
+     "share": 0.27,
+     "rel": -2.56,
+     "u5": 0.412
+    },
+    "3.5 to 4.5": {
+     "share": 0.23,
+     "rel": -1.92,
+     "u5": 0.378
+    },
+    "5.5 and over": {
+     "share": 0.5,
+     "rel": -1.32,
+     "u5": 0.276
+    }
+   }
+  },
+  "s48ctl": {
+   "windows": 1994,
+   "raw score": -0.62,
+   "less the band's kept mean": -1.86,
+   "under the band's kept 5th": 0.347,
+   "by section": {
+    "Verse 1": {
+     "notes a bar": 7.18,
+     "bands": {
+      "5.5 and over": 1.0
+     },
+     "rel": -1.4,
+     "u5": 0.29,
+     "gap same as before": 0.427,
+     "equal gap run": 5.25,
+     "range": 12.4,
+     "empty bars": 0.0,
+     "costs beside peers: measure, points, kept band mean (z), song (z)": [
+      [
+       "gap_sixteenth",
+       0.98,
+       0.97,
+       2.07
+      ],
+      [
+       "mean_interval",
+       0.53,
+       -0.25,
+       0.24
+      ],
+      [
+       "past_fifth",
+       0.4,
+       -0.07,
+       0.71
+      ],
+      [
+       "last_note_tonic",
+       0.27,
+       0.4,
+       -0.3
+      ],
+      [
+       "distinct_pitches",
+       0.19,
+       0.65,
+       0.81
+      ],
+      [
+       "ascending",
+       0.11,
+       -0.28,
+       0.18
+      ],
+      [
+       "pitch_sd",
+       0.11,
+       0.63,
+       0.48
+      ],
+      [
+       "zigzag_of_three",
+       0.08,
+       -0.04,
+       -0.18
+      ],
+      [
+       "first_note_tonic_triad",
+       0.07,
+       -0.1,
+       0.25
+      ],
+      [
+       "peak_count",
+       0.07,
+       -0.02,
+       0.36
+      ],
+      [
+       "peak_position",
+       0.06,
+       0.32,
+       -0.03
+      ],
+      [
+       "chord_tones_on_beat",
+       0.06,
+       0.01,
+       -0.19
+      ]
+     ],
+     "gains": [
+      [
+       "gap_eighth",
+       -0.73
+      ],
+      [
+       "on_tonic",
+       -0.29
+      ],
+      [
+       "chord_tones",
+       -0.16
+      ]
+     ]
+    },
+    "Chorus 1": {
+     "notes a bar": 3.39,
+     "bands": {
+      "under 3.5": 0.76,
+      "3.5 to 4.5": 0.24
+     },
+     "rel": -2.32,
+     "u5": 0.404,
+     "gap same as before": 0.335,
+     "equal gap run": 3.71,
+     "range": 12.2,
+     "empty bars": 0.19,
+     "costs beside peers: measure, points, kept band mean (z), song (z)": [
+      [
+       "distinct_pitches",
+       0.82,
+       -0.19,
+       0.52
+      ],
+      [
+       "gap_sixteenth",
+       0.75,
+       -0.52,
+       0.32
+      ],
+      [
+       "empty_bars",
+       0.45,
+       1.2,
+       -0.02
+      ],
+      [
+       "last_note_tonic",
+       0.39,
+       0.63,
+       -0.37
+      ],
+      [
+       "ascending",
+       0.35,
+       -0.19,
+       1.25
+      ],
+      [
+       "gap_eighth",
+       0.34,
+       -0.64,
+       -0.37
+      ],
+      [
+       "chord_tones",
+       0.25,
+       0.11,
+       0.51
+      ],
+      [
+       "longest_run_one_way",
+       0.24,
+       -0.14,
+       0.87
+      ],
+      [
+       "on_fifth",
+       0.22,
+       -0.05,
+       -0.46
+      ],
+      [
+       "gap_entropy",
+       0.15,
+       0.46,
+       0.93
+      ],
+      [
+       "unit4_to_unit2",
+       0.14,
+       0.09,
+       -0.4
+      ],
+      [
+       "pitch_bits",
+       0.12,
+       0.14,
+       -0.06
+      ]
+     ],
+     "gains": [
+      [
+       "range",
+       -0.82
+      ],
+      [
+       "peak_position",
+       -0.35
+      ],
+      [
+       "chord_tones_on_beat",
+       -0.21
+      ]
+     ]
+    }
+   },
+   "by band": {
+    "under 3.5": {
+     "share": 0.38,
+     "rel": -2.5,
+     "u5": 0.44
+    },
+    "3.5 to 4.5": {
+     "share": 0.12,
+     "rel": -1.74,
+     "u5": 0.293
+    },
+    "5.5 and over": {
+     "share": 0.5,
+     "rel": -1.4,
+     "u5": 0.29
+    }
+   }
+  },
+  "kept, by band: gap same as before, equal gap run, range, empty bars": {
+   "under 3.5": [
+    0.325,
+    3.675,
+    9.82,
+    0.856
+   ],
+   "3.5 to 4.5": [
+    0.404,
+    4.858,
+    11.111,
+    0.432
+   ],
+   "4.5 to 5.5": [
+    0.454,
+    6.038,
+    11.552,
+    0.229
+   ],
+   "5.5 and over": [
+    0.456,
+    6.298,
+    12.143,
+    0.048
+   ]
+  }
+ }
+}

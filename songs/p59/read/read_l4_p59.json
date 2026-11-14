@@ -1,0 +1,2268 @@
+{
+ "49 main": {
+  "runs": {
+   "made": 1000,
+   "complete": 916,
+   "survivors": 628,
+   "order": "a467ceb242b7",
+   "deaths": {
+    "bridge opening unrelated (208; 279)": 111,
+    "design: the chorus above the verse: chorus 1's median (its hooks aside) two semitones or more over verse 1's": 110,
+    "rhythm: no placement": 65,
+    "key word on a chord tone (134; 279)": 35,
+    "limits: a hard limit or three soft breaks (276/277, with 286's seven)": 19,
+    "join: no held end and breath before the copy (212)": 17,
+    "chorus opening another tune (227; 279)": 7,
+    "the judge's floor (254; 279)": 6,
+    "align: the words do not fit the returning tune": 2
+   },
+   "pick": "eaf2dcc068b6",
+   "calibration_rounds": 6
+  },
+  "join deaths, where": {
+   "('Chorus 2', 4, 'copy')": 4,
+   "('Chorus 2', 1, 'copy')": 4,
+   "('Verse 1', 4, 'plan')": 3,
+   "('Chorus 2', 2, 'copy')": 3,
+   "('Verse 1', 5, 'plan')": 2,
+   "('Chorus 2', 3, 'copy')": 1
+  },
+  "limit deaths, by limit": {
+   "spectral": 15,
+   "rhythm band": 2,
+   "surprisal": 2
+  },
+  "557: by section": {
+   "Verse 1": {
+    "rel": -1.24,
+    "under5": 0.246,
+    "npb": 4.02
+   },
+   "Chorus 1": {
+    "rel": -1.78,
+    "under5": 0.251,
+    "npb": 3.41
+   }
+  },
+  "557: both windows": {
+   "rel": -1.51,
+   "under5": 0.248
+  },
+  "604: score less the band's kept mean in three parts (total, on designed lines, from the form, the rest; check: the measures' parts summed)": {
+   "Verse 1": [
+    -1.24,
+    0.0,
+    0.68,
+    -1.92,
+    -1.24
+   ],
+   "Chorus 1": [
+    -1.78,
+    -0.32,
+    0.76,
+    -2.22,
+    -1.78
+   ]
+  },
+  "604: costliest measures (points as a cost, of which on designed lines)": {
+   "Verse 1": [
+    [
+     "gap_eighth",
+     0.91,
+     -0.0
+    ],
+    [
+     "turns_per_move",
+     0.36,
+     -0.0
+    ],
+    [
+     "pitch_bits",
+     0.25,
+     -0.0
+    ],
+    [
+     "distinct_pitches",
+     0.23,
+     -0.0
+    ],
+    [
+     "last_note_tonic",
+     0.19,
+     -0.0
+    ],
+    [
+     "gap_sixteenth",
+     0.18,
+     -0.0
+    ],
+    [
+     "on_third",
+     0.14,
+     -0.0
+    ],
+    [
+     "chord_tones_off_beat",
+     0.09,
+     -0.0
+    ],
+    [
+     "ascending",
+     0.07,
+     -0.0
+    ],
+    [
+     "range",
+     0.07,
+     -0.0
+    ],
+    [
+     "equal_gap_run_max",
+     0.07,
+     -0.0
+    ],
+    [
+     "unit4_to_unit2",
+     0.07,
+     -0.0
+    ]
+   ],
+   "Chorus 1": [
+    [
+     "gap_eighth",
+     1.39,
+     0.09
+    ],
+    [
+     "ascending",
+     0.45,
+     0.27
+    ],
+    [
+     "pitch_bits",
+     0.38,
+     0.0
+    ],
+    [
+     "chord_tones_off_beat",
+     0.34,
+     -0.01
+    ],
+    [
+     "range",
+     0.31,
+     -0.21
+    ],
+    [
+     "chord_tones_on_beat",
+     0.29,
+     0.23
+    ],
+    [
+     "longest_run_one_way",
+     0.27,
+     0.2
+    ],
+    [
+     "on_beats_2_4",
+     0.16,
+     0.07
+    ],
+    [
+     "distinct_pitches",
+     0.16,
+     0.28
+    ],
+    [
+     "pitch_sd",
+     0.16,
+     -0.13
+    ],
+    [
+     "peak_position",
+     0.14,
+     0.22
+    ],
+    [
+     "first_note_tonic_triad",
+     0.12,
+     0.08
+    ]
+   ]
+  },
+  "604: on designed lines, by measure (largest costs, then largest gains; points as a cost)": {
+   "Chorus 1": {
+    "costs": [
+     [
+      "distinct_pitches",
+      0.28
+     ],
+     [
+      "ascending",
+      0.27
+     ],
+     [
+      "chord_tones_on_beat",
+      0.23
+     ],
+     [
+      "peak_position",
+      0.22
+     ],
+     [
+      "longest_run_one_way",
+      0.2
+     ],
+     [
+      "zigzag_of_three",
+      0.14
+     ]
+    ],
+    "gains": [
+     [
+      "turns_per_move",
+      -0.34
+     ],
+     [
+      "chord_tones",
+      -0.29
+     ],
+     [
+      "range",
+      -0.21
+     ],
+     [
+      "on_fifth",
+      -0.15
+     ],
+     [
+      "pitch_sd",
+      -0.13
+     ],
+     [
+      "gap_sixteenth",
+      -0.12
+     ]
+    ]
+   }
+  },
+  "604: largest gains": {
+   "Verse 1": [
+    [
+     "empty_bars",
+     -0.67
+    ],
+    [
+     "zigzag_of_three",
+     -0.24
+    ],
+    [
+     "gap_entropy",
+     -0.14
+    ]
+   ],
+   "Chorus 1": [
+    [
+     "empty_bars",
+     -0.67
+    ],
+    [
+     "chord_tones",
+     -0.63
+    ],
+    [
+     "turns_per_move",
+     -0.34
+    ]
+   ]
+  },
+  "600: drawn lines' spans by cell (lines; 25th, 50th, 75th; kept)": {
+   "3.5 to 4.5": {
+    "lines": 19288,
+    "drawn": [
+     0.375,
+     0.438,
+     0.562
+    ],
+    "kept": [
+     0.438,
+     0.533,
+     0.644
+    ]
+   },
+   "4.5 to 5.5": {
+    "lines": 2004,
+    "drawn": [
+     0.5,
+     0.562,
+     0.688
+    ],
+    "kept": [
+     0.562,
+     0.677,
+     0.706
+    ]
+   },
+   "5.5 to 6.5": {
+    "lines": 72,
+    "drawn": [
+     0.648,
+     0.688,
+     0.75
+    ],
+    "kept": [
+     0.688,
+     0.767,
+     0.821
+    ]
+   }
+  },
+  "600: gap values by section (sixteenth, eighth, quarter: drawn / kept for the lines' cells; choruses on drawn lines)": {
+   "Verse 1": {
+    "sixteenth": [
+     0.143,
+     0.112
+    ],
+    "eighth": [
+     0.728,
+     0.608
+    ],
+    "quarter": [
+     0.081,
+     0.157
+    ]
+   },
+   "Chorus 1": {
+    "sixteenth": [
+     0.103,
+     0.092
+    ],
+    "eighth": [
+     0.693,
+     0.615
+    ],
+    "quarter": [
+     0.124,
+     0.159
+    ]
+   },
+   "Verse 2": {
+    "sixteenth": [
+     0.253,
+     0.11
+    ],
+    "eighth": [
+     0.563,
+     0.609
+    ],
+    "quarter": [
+     0.116,
+     0.157
+    ]
+   },
+   "Bridge": {
+    "sixteenth": [
+     0.091,
+     0.092
+    ],
+    "eighth": [
+     0.757,
+     0.615
+    ],
+    "quarter": [
+     0.096,
+     0.159
+    ]
+   }
+  },
+  "600: dense lines' longest equal-gap run (50th, 75th, 90th, 95th; kept median 4)": {
+   "lines": 1782,
+   "q": [
+    5.0,
+    7.0,
+    8.0,
+    8.0
+   ]
+  },
+  "601: class 0 by the rate as sung (lines, shares 0/1/2/3, kept class 0)": {},
+  "602: the window's last note on the tonic, by the chord under it (windows, share; kept 0.39 / 0.19); designed set aside": {
+   "Verse 1": {
+    "tonic not in the chord": [
+     916,
+     0.148
+    ],
+    "designed": 0
+   },
+   "Chorus 1": {
+    "tonic in the chord": [
+     916,
+     0.308
+    ],
+    "designed": 0
+   }
+  },
+  "603: verse window, leaps past a fifth and mean interval (kept dense 0.02, 1.94)": {
+   "past_fifth": 0.019,
+   "mean_interval": 2.105
+  },
+  "607: recurrence within sections (exactly the same; Jaccard 0.6 or more), by bars apart; kept beside": {
+   "1": [
+    0.001,
+    0.012,
+    0.032,
+    0.153
+   ],
+   "2": [
+    0.077,
+    0.351,
+    0.111,
+    0.29
+   ],
+   "4": [
+    0.191,
+    0.395,
+    0.201,
+    0.385
+   ],
+   "8": [
+    0.244,
+    0.446,
+    0.249,
+    0.422
+   ],
+   "16": [
+    0.0,
+    0.0,
+    0.242,
+    0.426
+   ]
+  },
+  "607: coupling gain, bits a bar (mean; 25th, 50th, 75th; kept held out 0.16)": [
+   0.244,
+   [
+    0.146,
+    0.232,
+    0.328
+   ]
+  ],
+  "607: bits saved on the second half (w: corpus bits a gap, saved a gap, corpus bits an interval, saved an interval; kept 0.29 and 0.18 at 0.85)": {
+   "0.1": [
+    2.116,
+    0.02,
+    3.194,
+    0.028
+   ],
+   "0.3": [
+    2.116,
+    0.053,
+    3.194,
+    0.07
+   ],
+   "0.5": [
+    2.116,
+    0.076,
+    3.194,
+    0.096
+   ],
+   "0.7": [
+    2.116,
+    0.087,
+    3.194,
+    0.108
+   ],
+   "0.85": [
+    2.116,
+    0.086,
+    3.194,
+    0.106
+   ],
+   "0.9": [
+    2.116,
+    0.082,
+    3.194,
+    0.102
+   ]
+  },
+  "607: survivors' coupling gain (n; share at or over 0, 0.1, 0.16; the pick's own)": [
+   628,
+   0.982,
+   0.849,
+   0.734,
+   0.347
+  ],
+  "631: spans to the next line's first onset by cell (lines; 25th, 50th, 75th; kept)": {
+   "3.5 to 4.5": {
+    "lines": 15901,
+    "drawn": [
+     0.394,
+     0.467,
+     0.538
+    ],
+    "kept": [
+     0.438,
+     0.533,
+     0.644
+    ]
+   },
+   "4.5 to 5.5": {
+    "lines": 1779,
+    "drawn": [
+     0.471,
+     0.556,
+     0.636
+    ],
+    "kept": [
+     0.562,
+     0.677,
+     0.706
+    ]
+   },
+   "5.5 to 6.5": {
+    "lines": 60,
+    "drawn": [
+     0.586,
+     0.657,
+     0.706
+    ],
+    "kept": [
+     0.688,
+     0.767,
+     0.821
+    ]
+   }
+  },
+  "631: breaths by cell (10th, 25th, 50th, 75th; kept)": {
+   "3.5 to 4.5": [
+    [
+     36.0,
+     42.0,
+     54.0,
+     60.0
+    ],
+    [
+     24.0,
+     36.0,
+     42.0,
+     54.0
+    ]
+   ],
+   "4.5 to 5.5": [
+    [
+     30.0,
+     36.0,
+     42.0,
+     54.0
+    ],
+    [
+     18.0,
+     30.0,
+     30.0,
+     42.0
+    ]
+   ],
+   "5.5 to 6.5": [
+    [
+     27.0,
+     30.0,
+     36.0,
+     42.8
+    ],
+    [
+     12.0,
+     18.0,
+     21.0,
+     30.0
+    ]
+   ]
+  },
+  "631: drawn lines beginning on their downbeat, by cell (share; kept)": {
+   "3.5 to 4.5": [
+    0.301,
+    0.177
+   ],
+   "4.5 to 5.5": [
+    0.274,
+    0.242
+   ],
+   "5.5 to 6.5": [
+    0.194,
+    0.282
+   ]
+  },
+  "635: class 0 by group and the rate as sung (lines, share 0; kept)": {},
+  "650: per-note reading (sung note beats a neighbour on ease; beats every neighbour) mean; kept 0.89, 0.727": [
+   0.871,
+   0.677
+  ],
+  "650: the power (calibrated)": 3.1013,
+  "683: mean ease, bits a note (mean; 25th, 50th, 75th); kept 3.84, songs 3.29-4.35": [
+   4.349,
+   [
+    4.217,
+    4.348,
+    4.472
+   ]
+  ],
+  "683: repeated notes, share of moves: the song (mean; kept 0.287, songs 0.187-0.378); each window (mean; its band; the band's kept 25th, 50th, 75th)": {
+   "song": 0.245,
+   "Verse 1": [
+    0.262,
+    "3.5 to 4.5",
+    [
+     0.154,
+     0.258,
+     0.362
+    ]
+   ],
+   "Chorus 1": [
+    0.24,
+    "under 3.5",
+    [
+     0.121,
+     0.227,
+     0.367
+    ]
+   ]
+  },
+  "651: bars of 3 notes or more on a figure already sung (mean; 25th, 50th, 75th); kept 0.488 (0.349, 0.617)": [
+   0.453,
+   [
+    0.418,
+    0.451,
+    0.489
+   ]
+  ],
+  "651: the rate (calibrated)": 0.8287,
+  "652: share of bars whose rhythm a kept song sings, by notes in the bar (build; kept; song 48 under Luthier v1)": {
+   "1": [
+    0.991,
+    0.995,
+    0.981
+   ],
+   "2": [
+    0.827,
+    0.978,
+    0.934
+   ],
+   "3": [
+    0.826,
+    0.898,
+    0.745
+   ],
+   "4": [
+    0.904,
+    0.878,
+    0.59
+   ],
+   "5": [
+    0.819,
+    0.783,
+    0.567
+   ],
+   "6": [
+    0.862,
+    0.693,
+    0.257
+   ],
+   "7": [
+    0.628,
+    0.524,
+    0.172
+   ],
+   "8": [
+    0.492,
+    0.408,
+    0.064
+   ],
+   "9+": [
+    0.017,
+    0.036,
+    0.004
+   ],
+   "all": [
+    0.813,
+    0.808,
+    0.485
+   ]
+  },
+  "652: dense lines' longest equal-gap run (50th, 75th; lines)": [
+   4.0,
+   7.0,
+   871
+  ],
+  "653: drawn lines' entries before / on / after the bar line, by cell (build; kept)": {
+   "3.5 to 4.5": [
+    [
+     0.238,
+     0.301,
+     0.46
+    ],
+    [
+     0.326,
+     0.177,
+     0.498
+    ],
+    19288
+   ],
+   "4.5 to 5.5": [
+    [
+     0.446,
+     0.274,
+     0.28
+    ],
+    [
+     0.264,
+     0.242,
+     0.495
+    ],
+    2004
+   ],
+   "5.5 to 6.5": [
+    [
+     0.625,
+     0.194,
+     0.181
+    ],
+    [
+     0.333,
+     0.282,
+     0.385
+    ],
+    72
+   ]
+  },
+  "653: spans over the slot to the next line's first onset, by cell and entry on the downbeat (25th, 50th, 75th; kept; tested under 5.5)": {
+   "3.5 to 4.5 | other": [
+    [
+     0.375,
+     0.438,
+     0.529
+    ],
+    [
+     0.438,
+     0.5,
+     0.625
+    ],
+    10903,
+    true
+   ],
+   "3.5 to 4.5 | on the downbeat": [
+    [
+     0.438,
+     0.5,
+     0.588
+    ],
+    [
+     0.529,
+     0.615,
+     0.692
+    ],
+    4998,
+    true
+   ],
+   "4.5 to 5.5 | other": [
+    [
+     0.455,
+     0.545,
+     0.615
+    ],
+    [
+     0.562,
+     0.656,
+     0.706
+    ],
+    1271,
+    true
+   ],
+   "4.5 to 5.5 | on the downbeat": [
+    [
+     0.5,
+     0.588,
+     0.667
+    ],
+    [
+     0.607,
+     0.688,
+     0.706
+    ],
+    508,
+    true
+   ],
+   "5.5 to 6.5 | other": [
+    [
+     0.579,
+     0.632,
+     0.697
+    ],
+    [
+     0.667,
+     0.75,
+     0.812
+    ],
+    49,
+    false
+   ]
+  },
+  "653: breaths by cell and entry (25th, 50th, 75th; kept)": {
+   "3.5 to 4.5 | other": [
+    [
+     45.0,
+     54.0,
+     60.0
+    ],
+    [
+     36.0,
+     45.0,
+     54.0
+    ]
+   ],
+   "3.5 to 4.5 | on the downbeat": [
+    [
+     42.0,
+     48.0,
+     54.0
+    ],
+    [
+     24.0,
+     36.0,
+     48.0
+    ]
+   ],
+   "4.5 to 5.5 | other": [
+    [
+     36.0,
+     45.0,
+     54.0
+    ],
+    [
+     30.0,
+     30.0,
+     42.0
+    ]
+   ],
+   "4.5 to 5.5 | on the downbeat": [
+    [
+     30.0,
+     39.0,
+     48.0
+    ],
+    [
+     30.0,
+     30.0,
+     36.0
+    ]
+   ],
+   "5.5 to 6.5 | other": [
+    [
+     30.0,
+     42.0,
+     45.0
+    ],
+    [
+     18.0,
+     24.0,
+     30.0
+    ]
+   ]
+  },
+  "653: rhythm deaths for want of a placement, a thousand builds": 65.0,
+  "654: four bars apart within a section: the same rhythm; Jaccard 0.6 or more (kept 0.201; 0.38 six places in ten)": [
+   0.191,
+   0.395
+  ],
+  "655: the chorus's drawn lines against the build's own palette, capped, for the cell (sung share, palette share; within ten points)": {
+   "3.5 to 4.5 | 3": [
+    0.103,
+    0.068,
+    32976
+   ],
+   "3.5 to 4.5 | 6": [
+    0.693,
+    0.537,
+    32976
+   ],
+   "3.5 to 4.5 | 12": [
+    0.124,
+    0.249,
+    32976
+   ]
+  },
+  "655: builds spared by the band; unspared for want of the kept song's reading": [
+   1,
+   0
+  ],
+  "657: survivors beside Luthier v1 (850 main, 891 ctl) and v2 (627, 629)": 628,
+  "l3 counts": {
+   "633: the line takes the template's split of syllables": 916,
+   "651: bar takes a figure already sung": 5308,
+   "651: bars eligible": 7867,
+   "651: figure drawn but not placeable on the chord": 1151,
+   "653: a kept line drawn whole (entry, span, breath)": 21971,
+   "653: breath held to the cell's kept 75th": 4008,
+   "653: entry as the kept line had it": 9403,
+   "653: entry of the kept line's kind, the nearest": 17945,
+   "653: the kept line's entry out of reach (a try)": 5464,
+   "655: palette capped at the cell's kept 95th": 12463,
+   "655: palette inside the cell's caps": 22813,
+   "680: drawn line sung in whole kept bars": 4851,
+   "680: drawn line sung in whole kept bars (with the template's bars)": 3413,
+   "680: last bar the fitting bar that ends latest": 2756,
+   "680: last bar within an eighth of the kept line's last onset": 3679,
+   "680: no whole kept bars fit; the line drawn as before": 74,
+   "680: no whole kept bars fit; the line drawn as before (template bars)": 3246,
+   "681: the breath before a line sung again shortened to its source's entry": 749,
+   "682: template bars not taken exactly (counts or room)": 1326,
+   "682: template bars taken exactly": 781,
+   "683: repeats held at the share (lowered)": 48980,
+   "683: repeats held at the share (raised)": 34182
+  },
+  "685: the judge of record beside density peers is printed and does not decide a test": {
+   "rel": -1.51,
+   "under5": 0.248
+  },
+  "650/651 calibration": [
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.865
+     ],
+     "every": [
+      0.727,
+      0.656
+     ],
+     "power": 1.216
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.385,
+     "rate": 0.454
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.861
+     ],
+     "every": [
+      0.727,
+      0.655
+     ],
+     "power": 1.529
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.42,
+     "rate": 0.556
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.866
+     ],
+     "every": [
+      0.727,
+      0.673
+     ],
+     "power": 1.846
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.423,
+     "rate": 0.653
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.86
+     ],
+     "every": [
+      0.727,
+      0.654
+     ],
+     "power": 2.354
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.419,
+     "rate": 0.757
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.862
+     ],
+     "every": [
+      0.727,
+      0.662
+     ],
+     "power": 2.939
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.446,
+     "rate": 0.82
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.883
+     ],
+     "every": [
+      0.727,
+      0.699
+     ],
+     "power": 3.101
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.483,
+     "rate": 0.829
+    }
+   }
+  ],
+  "630": {
+   "share": 0.769,
+   "before": "eaf2dcc068b6",
+   "rank": 1,
+   "pick": "eaf2dcc068b6",
+   "gain": 0.347
+  },
+  "counts": {
+   "361: lines drawn on a returning unit": 653,
+   "361: unit 2 returns unit 1 (bar grid), drawn": 688,
+   "361: unit bars copied": 2309,
+   "361: unit return given up for a line": 52,
+   "600: line at its drawn span": 7352,
+   "600: no first onset leaves room for the drawn span (a try)": 3987,
+   "600: no rhythm at the drawn span (a try)": 8162,
+   "600: span drawn (3.5 to 4.5, two-bar)": 23330,
+   "600: span drawn (4.5 to 5.5, two-bar)": 362,
+   "600: the drawn span given up for a line": 3325,
+   "602: window's last line not drawn here (Chorus 2, copy)": 1000,
+   "602: window's last line not drawn here (Last Chorus, copy)": 1000,
+   "602: window's last line not drawn here (Verse 2, again)": 1000,
+   "602: window's last note drawn (not tonic, tonic in the chord)": 587,
+   "602: window's last note drawn (not tonic, tonic not in the chord)": 1465,
+   "602: window's last note drawn (tonic, tonic in the chord)": 317,
+   "602: window's last note drawn (tonic, tonic not in the chord)": 349,
+   "602: window's last note drawn (tonic, tonic not in the chord), not reachable": 1,
+   "605: a bar given the template's bar": 8700,
+   "605: template bar not sung or not yet drawn": 1980,
+   "606: a line's gaps drawn from the mixed table": 23692,
+   "606: palette drawn": 1000,
+   "631: line may end at the next line's first onset less its breath": 23692,
+   "631: no class reachable at the span drawn; classes as before": 19,
+   "633: the line takes the template's split of syllables": 916,
+   "634: a line's gaps drawn at the palette's shares": 23692
+  },
+  "605: the template's rate (calibrated)": 0.5433,
+  "605: calibration rounds (kept, read, rate)": [
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.185
+    ],
+    "8": [
+     0.249,
+     0.199
+    ],
+    "rate": 0.542
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.183
+    ],
+    "8": [
+     0.249,
+     0.235
+    ],
+    "rate": 0.595
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.2
+    ],
+    "8": [
+     0.249,
+     0.244
+    ],
+    "rate": 0.598
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.206
+    ],
+    "8": [
+     0.249,
+     0.256
+    ],
+    "rate": 0.583
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.198
+    ],
+    "8": [
+     0.249,
+     0.228
+    ],
+    "rate": 0.59
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.218
+    ],
+    "8": [
+     0.249,
+     0.263
+    ],
+    "rate": 0.543
+   }
+  ]
+ },
+ "49 ctl": {
+  "runs": {
+   "made": 1000,
+   "complete": 930,
+   "survivors": 618,
+   "order": "e8691d73b008",
+   "deaths": {
+    "bridge opening unrelated (208; 279)": 124,
+    "design: the chorus above the verse: chorus 1's median (its hooks aside) two semitones or more over verse 1's": 118,
+    "rhythm: no placement": 48,
+    "key word on a chord tone (134; 279)": 36,
+    "join: no held end and breath before the copy (212)": 21,
+    "limits: a hard limit or three soft breaks (276/277, with 286's seven)": 18,
+    "the judge's floor (254; 279)": 11,
+    "chorus opening another tune (227; 279)": 5,
+    "align: the words do not fit the returning tune": 1
+   },
+   "pick": "0ceda77a44fd",
+   "calibration_rounds": 6
+  },
+  "join deaths, where": {
+   "('Chorus 2', 1, 'copy')": 6,
+   "('Chorus 2', 4, 'copy')": 4,
+   "('Chorus 2', 5, 'copy')": 3,
+   "('Verse 1', 5, 'plan')": 3,
+   "('Verse 1', 4, 'plan')": 2,
+   "('Chorus 2', 2, 'copy')": 1,
+   "('Last Chorus', 4, 'copy')": 1,
+   "('Chorus 2', 3, 'copy')": 1
+  },
+  "limit deaths, by limit": {
+   "spectral": 13,
+   "surprisal": 3,
+   "rhythm band": 2,
+   "max_lengths_8_bars": 1
+  },
+  "557: by section": {
+   "Verse 1": {
+    "rel": -1.13,
+    "under5": 0.2,
+    "npb": 4.02
+   },
+   "Chorus 1": {
+    "rel": -1.59,
+    "under5": 0.209,
+    "npb": 3.41
+   }
+  },
+  "557: both windows": {
+   "rel": -1.36,
+   "under5": 0.204
+  },
+  "604: score less the band's kept mean in three parts (total, on designed lines, from the form, the rest; check: the measures' parts summed)": {
+   "Verse 1": [
+    -1.13,
+    0.0,
+    0.64,
+    -1.77,
+    -1.13
+   ],
+   "Chorus 1": [
+    -1.59,
+    -0.3,
+    0.78,
+    -2.07,
+    -1.59
+   ]
+  },
+  "604: costliest measures (points as a cost, of which on designed lines)": {
+   "Verse 1": [
+    [
+     "gap_eighth",
+     0.92,
+     -0.0
+    ],
+    [
+     "turns_per_move",
+     0.44,
+     -0.0
+    ],
+    [
+     "pitch_bits",
+     0.32,
+     -0.0
+    ],
+    [
+     "distinct_pitches",
+     0.19,
+     -0.0
+    ],
+    [
+     "last_note_tonic",
+     0.18,
+     -0.0
+    ],
+    [
+     "on_third",
+     0.16,
+     -0.0
+    ],
+    [
+     "gap_sixteenth",
+     0.15,
+     -0.0
+    ],
+    [
+     "chord_tones_off_beat",
+     0.12,
+     -0.0
+    ],
+    [
+     "on_fifth",
+     0.09,
+     -0.0
+    ],
+    [
+     "equal_gap_run_max",
+     0.07,
+     -0.0
+    ],
+    [
+     "range",
+     0.07,
+     -0.0
+    ],
+    [
+     "ascending",
+     0.07,
+     -0.0
+    ]
+   ],
+   "Chorus 1": [
+    [
+     "gap_eighth",
+     1.4,
+     0.08
+    ],
+    [
+     "ascending",
+     0.43,
+     0.28
+    ],
+    [
+     "pitch_bits",
+     0.4,
+     -0.0
+    ],
+    [
+     "chord_tones_off_beat",
+     0.31,
+     -0.0
+    ],
+    [
+     "range",
+     0.29,
+     -0.21
+    ],
+    [
+     "chord_tones_on_beat",
+     0.29,
+     0.23
+    ],
+    [
+     "longest_run_one_way",
+     0.26,
+     0.2
+    ],
+    [
+     "on_beats_2_4",
+     0.17,
+     0.07
+    ],
+    [
+     "distinct_pitches",
+     0.15,
+     0.28
+    ],
+    [
+     "peak_position",
+     0.15,
+     0.21
+    ],
+    [
+     "pitch_sd",
+     0.13,
+     -0.14
+    ],
+    [
+     "first_note_tonic_triad",
+     0.12,
+     0.09
+    ]
+   ]
+  },
+  "604: on designed lines, by measure (largest costs, then largest gains; points as a cost)": {
+   "Chorus 1": {
+    "costs": [
+     [
+      "distinct_pitches",
+      0.28
+     ],
+     [
+      "ascending",
+      0.28
+     ],
+     [
+      "chord_tones_on_beat",
+      0.23
+     ],
+     [
+      "peak_position",
+      0.21
+     ],
+     [
+      "longest_run_one_way",
+      0.2
+     ],
+     [
+      "zigzag_of_three",
+      0.15
+     ]
+    ],
+    "gains": [
+     [
+      "turns_per_move",
+      -0.36
+     ],
+     [
+      "chord_tones",
+      -0.3
+     ],
+     [
+      "range",
+      -0.21
+     ],
+     [
+      "on_fifth",
+      -0.15
+     ],
+     [
+      "pitch_sd",
+      -0.14
+     ],
+     [
+      "gap_sixteenth",
+      -0.12
+     ]
+    ]
+   }
+  },
+  "604: largest gains": {
+   "Verse 1": [
+    [
+     "empty_bars",
+     -0.63
+    ],
+    [
+     "zigzag_of_three",
+     -0.35
+    ],
+    [
+     "mean_interval",
+     -0.16
+    ]
+   ],
+   "Chorus 1": [
+    [
+     "empty_bars",
+     -0.7
+    ],
+    [
+     "chord_tones",
+     -0.6
+    ],
+    [
+     "mean_interval",
+     -0.32
+    ]
+   ]
+  },
+  "600: drawn lines' spans by cell (lines; 25th, 50th, 75th; kept)": {
+   "3.5 to 4.5": {
+    "lines": 20749,
+    "drawn": [
+     0.375,
+     0.438,
+     0.562
+    ],
+    "kept": [
+     0.438,
+     0.533,
+     0.644
+    ]
+   },
+   "4.5 to 5.5": {
+    "lines": 915,
+    "drawn": [
+     0.5,
+     0.594,
+     0.688
+    ],
+    "kept": [
+     0.562,
+     0.677,
+     0.706
+    ]
+   },
+   "5.5 to 6.5": {
+    "lines": 2,
+    "drawn": [
+     0.641,
+     0.656,
+     0.672
+    ],
+    "kept": [
+     0.688,
+     0.767,
+     0.821
+    ]
+   }
+  },
+  "600: gap values by section (sixteenth, eighth, quarter: drawn / kept for the lines' cells; choruses on drawn lines)": {
+   "Verse 1": {
+    "sixteenth": [
+     0.139,
+     0.112
+    ],
+    "eighth": [
+     0.731,
+     0.608
+    ],
+    "quarter": [
+     0.084,
+     0.157
+    ]
+   },
+   "Chorus 1": {
+    "sixteenth": [
+     0.099,
+     0.092
+    ],
+    "eighth": [
+     0.7,
+     0.615
+    ],
+    "quarter": [
+     0.121,
+     0.159
+    ]
+   },
+   "Verse 2": {
+    "sixteenth": [
+     0.253,
+     0.098
+    ],
+    "eighth": [
+     0.541,
+     0.613
+    ],
+    "quarter": [
+     0.134,
+     0.158
+    ]
+   },
+   "Bridge": {
+    "sixteenth": [
+     0.083,
+     0.092
+    ],
+    "eighth": [
+     0.766,
+     0.615
+    ],
+    "quarter": [
+     0.097,
+     0.159
+    ]
+   }
+  },
+  "600: dense lines' longest equal-gap run (50th, 75th, 90th, 95th; kept median 4)": {
+   "lines": 1233,
+   "q": [
+    5.0,
+    7.0,
+    8.0,
+    8.0
+   ]
+  },
+  "601: class 0 by the rate as sung (lines, shares 0/1/2/3, kept class 0)": {},
+  "602: the window's last note on the tonic, by the chord under it (windows, share; kept 0.39 / 0.19); designed set aside": {
+   "Verse 1": {
+    "tonic not in the chord": [
+     930,
+     0.16
+    ],
+    "designed": 0
+   },
+   "Chorus 1": {
+    "tonic in the chord": [
+     930,
+     0.371
+    ],
+    "designed": 0
+   }
+  },
+  "603: verse window, leaps past a fifth and mean interval (kept dense 0.02, 1.94)": {
+   "past_fifth": 0.018,
+   "mean_interval": 2.043
+  },
+  "607: recurrence within sections (exactly the same; Jaccard 0.6 or more), by bars apart; kept beside": {
+   "1": [
+    0.0,
+    0.011,
+    0.032,
+    0.153
+   ],
+   "2": [
+    0.074,
+    0.346,
+    0.111,
+    0.29
+   ],
+   "4": [
+    0.198,
+    0.413,
+    0.201,
+    0.385
+   ],
+   "8": [
+    0.25,
+    0.453,
+    0.249,
+    0.422
+   ],
+   "16": [
+    0.0,
+    0.0,
+    0.242,
+    0.426
+   ]
+  },
+  "607: coupling gain, bits a bar (mean; 25th, 50th, 75th; kept held out 0.16)": [
+   0.254,
+   [
+    0.152,
+    0.242,
+    0.347
+   ]
+  ],
+  "607: bits saved on the second half (w: corpus bits a gap, saved a gap, corpus bits an interval, saved an interval; kept 0.29 and 0.18 at 0.85)": {
+   "0.1": [
+    2.114,
+    0.02,
+    3.169,
+    0.027
+   ],
+   "0.3": [
+    2.114,
+    0.052,
+    3.169,
+    0.068
+   ],
+   "0.5": [
+    2.114,
+    0.075,
+    3.169,
+    0.094
+   ],
+   "0.7": [
+    2.114,
+    0.087,
+    3.169,
+    0.107
+   ],
+   "0.85": [
+    2.114,
+    0.087,
+    3.169,
+    0.106
+   ],
+   "0.9": [
+    2.114,
+    0.084,
+    3.169,
+    0.102
+   ]
+  },
+  "607: survivors' coupling gain (n; share at or over 0, 0.1, 0.16; the pick's own)": [
+   618,
+   0.981,
+   0.869,
+   0.73,
+   0.45
+  ],
+  "631: spans to the next line's first onset by cell (lines; 25th, 50th, 75th; kept)": {
+   "3.5 to 4.5": {
+    "lines": 17148,
+    "drawn": [
+     0.4,
+     0.467,
+     0.545
+    ],
+    "kept": [
+     0.438,
+     0.533,
+     0.644
+    ]
+   },
+   "4.5 to 5.5": {
+    "lines": 832,
+    "drawn": [
+     0.5,
+     0.579,
+     0.647
+    ],
+    "kept": [
+     0.562,
+     0.677,
+     0.706
+    ]
+   }
+  },
+  "631: breaths by cell (10th, 25th, 50th, 75th; kept)": {
+   "3.5 to 4.5": [
+    [
+     36.0,
+     42.0,
+     51.0,
+     57.0
+    ],
+    [
+     24.0,
+     36.0,
+     42.0,
+     54.0
+    ]
+   ],
+   "4.5 to 5.5": [
+    [
+     30.0,
+     33.0,
+     42.0,
+     48.0
+    ],
+    [
+     18.0,
+     30.0,
+     30.0,
+     42.0
+    ]
+   ]
+  },
+  "631: drawn lines beginning on their downbeat, by cell (share; kept)": {
+   "3.5 to 4.5": [
+    0.304,
+    0.177
+   ],
+   "4.5 to 5.5": [
+    0.305,
+    0.242
+   ]
+  },
+  "635: class 0 by group and the rate as sung (lines, share 0; kept)": {},
+  "650: per-note reading (sung note beats a neighbour on ease; beats every neighbour) mean; kept 0.89, 0.727": [
+   0.871,
+   0.676
+  ],
+  "650: the power (calibrated)": 3.0349,
+  "683: mean ease, bits a note (mean; 25th, 50th, 75th); kept 3.84, songs 3.29-4.35": [
+   4.326,
+   [
+    4.206,
+    4.327,
+    4.457
+   ]
+  ],
+  "683: repeated notes, share of moves: the song (mean; kept 0.287, songs 0.187-0.378); each window (mean; its band; the band's kept 25th, 50th, 75th)": {
+   "song": 0.252,
+   "Verse 1": [
+    0.276,
+    "3.5 to 4.5",
+    [
+     0.154,
+     0.258,
+     0.362
+    ]
+   ],
+   "Chorus 1": [
+    0.243,
+    "under 3.5",
+    [
+     0.121,
+     0.227,
+     0.367
+    ]
+   ]
+  },
+  "651: bars of 3 notes or more on a figure already sung (mean; 25th, 50th, 75th); kept 0.488 (0.349, 0.617)": [
+   0.459,
+   [
+    0.424,
+    0.458,
+    0.491
+   ]
+  ],
+  "651: the rate (calibrated)": 0.8444,
+  "652: share of bars whose rhythm a kept song sings, by notes in the bar (build; kept; song 48 under Luthier v1)": {
+   "1": [
+    0.992,
+    0.995,
+    0.981
+   ],
+   "2": [
+    0.841,
+    0.978,
+    0.934
+   ],
+   "3": [
+    0.826,
+    0.898,
+    0.745
+   ],
+   "4": [
+    0.907,
+    0.878,
+    0.59
+   ],
+   "5": [
+    0.83,
+    0.783,
+    0.567
+   ],
+   "6": [
+    0.865,
+    0.693,
+    0.257
+   ],
+   "7": [
+    0.62,
+    0.524,
+    0.172
+   ],
+   "8": [
+    0.509,
+    0.408,
+    0.064
+   ],
+   "9+": [
+    0.005,
+    0.036,
+    0.004
+   ],
+   "all": [
+    0.819,
+    0.808,
+    0.485
+   ]
+  },
+  "652: dense lines' longest equal-gap run (50th, 75th; lines)": [
+   4.0,
+   7.0,
+   293
+  ],
+  "653: drawn lines' entries before / on / after the bar line, by cell (build; kept)": {
+   "3.5 to 4.5": [
+    [
+     0.245,
+     0.304,
+     0.451
+    ],
+    [
+     0.326,
+     0.177,
+     0.498
+    ],
+    20749
+   ],
+   "4.5 to 5.5": [
+    [
+     0.388,
+     0.305,
+     0.307
+    ],
+    [
+     0.264,
+     0.242,
+     0.495
+    ],
+    915
+   ],
+   "5.5 to 6.5": [
+    [
+     1.0,
+     0.0,
+     0.0
+    ],
+    [
+     0.333,
+     0.282,
+     0.385
+    ],
+    2
+   ]
+  },
+  "653: spans over the slot to the next line's first onset, by cell and entry on the downbeat (25th, 50th, 75th; kept; tested under 5.5)": {
+   "3.5 to 4.5 | other": [
+    [
+     0.379,
+     0.438,
+     0.533
+    ],
+    [
+     0.438,
+     0.5,
+     0.625
+    ],
+    11774,
+    true
+   ],
+   "3.5 to 4.5 | on the downbeat": [
+    [
+     0.438,
+     0.5,
+     0.588
+    ],
+    [
+     0.529,
+     0.615,
+     0.692
+    ],
+    5374,
+    true
+   ],
+   "4.5 to 5.5 | other": [
+    [
+     0.5,
+     0.576,
+     0.643
+    ],
+    [
+     0.562,
+     0.656,
+     0.706
+    ],
+    569,
+    true
+   ],
+   "4.5 to 5.5 | on the downbeat": [
+    [
+     0.529,
+     0.588,
+     0.667
+    ],
+    [
+     0.607,
+     0.688,
+     0.706
+    ],
+    263,
+    true
+   ]
+  },
+  "653: breaths by cell and entry (25th, 50th, 75th; kept)": {
+   "3.5 to 4.5 | other": [
+    [
+     42.0,
+     54.0,
+     60.0
+    ],
+    [
+     36.0,
+     45.0,
+     54.0
+    ]
+   ],
+   "3.5 to 4.5 | on the downbeat": [
+    [
+     42.0,
+     48.0,
+     54.0
+    ],
+    [
+     24.0,
+     36.0,
+     48.0
+    ]
+   ],
+   "4.5 to 5.5 | other": [
+    [
+     36.0,
+     42.0,
+     51.0
+    ],
+    [
+     30.0,
+     30.0,
+     42.0
+    ]
+   ],
+   "4.5 to 5.5 | on the downbeat": [
+    [
+     30.0,
+     42.0,
+     48.0
+    ],
+    [
+     30.0,
+     30.0,
+     36.0
+    ]
+   ]
+  },
+  "653: rhythm deaths for want of a placement, a thousand builds": 48.0,
+  "654: four bars apart within a section: the same rhythm; Jaccard 0.6 or more (kept 0.201; 0.38 six places in ten)": [
+   0.198,
+   0.413
+  ],
+  "655: the chorus's drawn lines against the build's own palette, capped, for the cell (sung share, palette share; within ten points)": {
+   "3.5 to 4.5 | 3": [
+    0.099,
+    0.067,
+    33480
+   ],
+   "3.5 to 4.5 | 6": [
+    0.7,
+    0.538,
+    33480
+   ],
+   "3.5 to 4.5 | 12": [
+    0.121,
+    0.248,
+    33480
+   ]
+  },
+  "655: builds spared by the band; unspared for want of the kept song's reading": [
+   1,
+   0
+  ],
+  "657: survivors beside Luthier v1 (850 main, 891 ctl) and v2 (627, 629)": 618,
+  "l3 counts": {
+   "633: the line takes the template's split of syllables": 1063,
+   "651: bar takes a figure already sung": 5684,
+   "651: bars eligible": 8182,
+   "651: figure drawn but not placeable on the chord": 1210,
+   "653: a kept line drawn whole (entry, span, breath)": 22237,
+   "653: breath held to the cell's kept 75th": 3940,
+   "653: entry as the kept line had it": 8667,
+   "653: entry of the kept line's kind, the nearest": 17493,
+   "653: the kept line's entry out of reach (a try)": 4997,
+   "655: palette capped at the cell's kept 95th": 12840,
+   "655: palette inside the cell's caps": 22926,
+   "680: drawn line sung in whole kept bars": 4998,
+   "680: drawn line sung in whole kept bars (with the template's bars)": 3433,
+   "680: last bar the fitting bar that ends latest": 2896,
+   "680: last bar within an eighth of the kept line's last onset": 3668,
+   "680: no whole kept bars fit; the line drawn as before": 52,
+   "680: no whole kept bars fit; the line drawn as before (template bars)": 3402,
+   "681: the breath before a line sung again shortened to its source's entry": 715,
+   "682: template bars not taken exactly (counts or room)": 1518,
+   "682: template bars taken exactly": 896,
+   "683: repeats held at the share (lowered)": 47071,
+   "683: repeats held at the share (raised)": 33237
+  },
+  "685: the judge of record beside density peers is printed and does not decide a test": {
+   "rel": -1.36,
+   "under5": 0.204
+  },
+  "650/651 calibration": [
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.867
+     ],
+     "every": [
+      0.727,
+      0.653
+     ],
+     "power": 1.201
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.393,
+     "rate": 0.443
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.863
+     ],
+     "every": [
+      0.727,
+      0.656
+     ],
+     "power": 1.49
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.408,
+     "rate": 0.563
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.87
+     ],
+     "every": [
+      0.727,
+      0.675
+     ],
+     "power": 1.748
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.417,
+     "rate": 0.669
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.868
+     ],
+     "every": [
+      0.727,
+      0.675
+     ],
+     "power": 2.087
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.431,
+     "rate": 0.754
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.869
+     ],
+     "every": [
+      0.727,
+      0.667
+     ],
+     "power": 2.471
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.448,
+     "rate": 0.814
+    }
+   },
+   {
+    "650 (kept, reading, power)": {
+     "neighbour": [
+      0.89,
+      0.864
+     ],
+     "every": [
+      0.727,
+      0.662
+     ],
+     "power": 3.035
+    },
+    "651 (kept, reading, rate)": {
+     "kept": 0.488,
+     "read": 0.468,
+     "rate": 0.844
+    }
+   }
+  ],
+  "630": {
+   "share": 0.78,
+   "before": "0ceda77a44fd",
+   "rank": 1,
+   "pick": "0ceda77a44fd",
+   "gain": 0.45
+  },
+  "counts": {
+   "361: lines drawn on a returning unit": 481,
+   "361: unit 2 returns unit 1 (bar grid), drawn": 503,
+   "361: unit bars copied": 2474,
+   "361: unit return given up for a line": 59,
+   "600: line at its drawn span": 7354,
+   "600: no first onset leaves room for the drawn span (a try)": 3701,
+   "600: no rhythm at the drawn span (a try)": 7516,
+   "600: span drawn (3.5 to 4.5, two-bar)": 23545,
+   "600: span drawn (4.5 to 5.5, two-bar)": 336,
+   "600: the drawn span given up for a line": 3265,
+   "602: window's last line not drawn here (Chorus 2, copy)": 1000,
+   "602: window's last line not drawn here (Last Chorus, copy)": 1000,
+   "602: window's last line not drawn here (Verse 2, again)": 1000,
+   "602: window's last note drawn (not tonic, tonic in the chord)": 556,
+   "602: window's last note drawn (not tonic, tonic not in the chord)": 1486,
+   "602: window's last note drawn (tonic, tonic in the chord)": 377,
+   "602: window's last note drawn (tonic, tonic not in the chord)": 326,
+   "602: window's last note drawn (tonic, tonic not in the chord), not reachable": 1,
+   "605: a bar given the template's bar": 9511,
+   "605: template bar not sung or not yet drawn": 2062,
+   "606: a line's gaps drawn from the mixed table": 23881,
+   "606: palette drawn": 1000,
+   "631: line may end at the next line's first onset less its breath": 23881,
+   "631: no class reachable at the span drawn; classes as before": 19,
+   "633: the line takes the template's split of syllables": 1063,
+   "634: a line's gaps drawn at the palette's shares": 23881
+  },
+  "605: the template's rate (calibrated)": 0.5907,
+  "605: calibration rounds (kept, read, rate)": [
+   {
+    "1": [
+     0.032,
+     0.001
+    ],
+    "4": [
+     0.201,
+     0.17
+    ],
+    "8": [
+     0.249,
+     0.228
+    ],
+    "rate": 0.591
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.194
+    ],
+    "8": [
+     0.249,
+     0.255
+    ],
+    "rate": 0.611
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.217
+    ],
+    "8": [
+     0.249,
+     0.257
+    ],
+    "rate": 0.566
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.195
+    ],
+    "8": [
+     0.249,
+     0.224
+    ],
+    "rate": 0.584
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.181
+    ],
+    "8": [
+     0.249,
+     0.247
+    ],
+    "rate": 0.649
+   },
+   {
+    "1": [
+     0.032,
+     0.0
+    ],
+    "4": [
+     0.201,
+     0.221
+    ],
+    "8": [
+     0.249,
+     0.257
+    ],
+    "rate": 0.591
+   }
+  ]
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "about": "Luthier v4, fixes 680, 683. Kept figures for 683's guards, and the paper's readings of song 48 under Luthier v2 and v3.",
+ "683: kept songs (each read against the other kept songs)": {
+  "typicality bits a note": 5.49,
+  "ease bits a note": 3.84,
+  "ease bits a note, per song 25th, 50th, 75th": [
+   3.29,
+   3.87,
+   4.35
+  ],
+  "repeated notes, share of moves": 0.287,
+  "repeats per song 25th, 50th, 75th": [
+   0.187,
+   0.284,
+   0.378
+  ]
+ },
+ "683: mean ease bits a note is read as the tables file of v3 defines the ease model: the mean over a build's tokens of -log2 of the ease probability (the kept model mixed half and half with the song so far once it holds 8 tokens)": "",
+ "683: repeated notes by a window's notes a bar, kept windows (share of moves that repeat the note): under 3.5, 3.5 to 4.5, 4.5 to 5.5, 5.5 and over": {
+  "under 3.5": {
+   "25th": 0.121,
+   "50th": 0.227,
+   "75th": 0.367,
+   "windows": 194
+  },
+  "3.5 to 4.5": {
+   "25th": 0.154,
+   "50th": 0.258,
+   "75th": 0.362,
+   "windows": 162
+  },
+  "4.5 to 5.5": {
+   "25th": 0.139,
+   "50th": 0.229,
+   "75th": 0.378,
+   "windows": 105
+  },
+  "5.5 and over": {
+   "25th": 0.195,
+   "50th": 0.34,
+   "75th": 0.436,
+   "windows": 84
+  }
+ },
+ "680: the palette's weight on a kept bar": "the product, over the bar's gaps between successive onsets, of the build's capped palette share for each gap's class; multiplied by the bar's times sung",
+ "song 48 under Luthier v2 and v3, the paper's readings (main; B control)": {
+  "per note and bits": {
+   "v2": {
+    "typicality bits a note": 5.64,
+    "ease bits a note": 4.43,
+    "repeated notes, share of moves": 0.32,
+    "sung note the easier; easier than every neighbour": [
+     0.824,
+     0.605
+    ]
+   },
+   "A": {
+    "typicality bits a note": 5.55,
+    "ease bits a note": 4.44,
+    "repeated notes, share of moves": 0.307,
+    "sung note the easier; easier than every neighbour": [
+     0.812,
+     0.577
+    ]
+   },
+   "B": {
+    "typicality bits a note": 5.11,
+    "ease bits a note": 3.99,
+    "repeated notes, share of moves": 0.317,
+    "sung note the easier; easier than every neighbour": [
+     0.881,
+     0.713
+    ]
+   },
+   "B control": {
+    "typicality bits a note": 5.15,
+    "ease bits a note": 4.05,
+    "repeated notes, share of moves": 0.356,
+    "sung note the easier; easier than every neighbour": [
+     0.885,
+     0.711
+    ]
+   },
+   "song 43": {
+    "typicality bits a note": 5.48,
+    "ease bits a note": 4.22,
+    "repeated notes, share of moves": 0.297,
+    "sung note the easier; easier than every neighbour": [
+     0.843,
+     0.635
+    ]
+   },
+   "song 46": {
+    "typicality bits a note": 5.78,
+    "ease bits a note": 4.62,
+    "repeated notes, share of moves": 0.266,
+    "sung note the easier; easier than every neighbour": [
+     0.815,
+     0.574
+    ]
+   }
+  },
+  "structure": {
+   "v2": {
+    "bars sung in a kept song": 0.511,
+    "by notes in the bar": {
+     "1": 0.98,
+     "2": 0.91,
+     "3": 0.76,
+     "4": 0.93,
+     "5": 0.55,
+     "6": 0.34,
+     "7": 0.25,
+     "8": 0.12,
+     "9": 0.01
+    },
+    "figure already sung": 0.303,
+    "coupling gain": 0.075,
+    "same rhythm 4, 8 bars apart": [
+     0.083,
+     0.077
+    ]
+   },
+   "A": {
+    "bars sung in a kept song": 0.587,
+    "by notes in the bar": {
+     "1": 0.99,
+     "2": 0.92,
+     "3": 0.86,
+     "4": 0.94,
+     "5": 0.6,
+     "6": 0.4,
+     "7": 0.41,
+     "8": 0.25,
+     "9": 0.02
+    },
+    "figure already sung": 0.295,
+    "coupling gain": 0.059,
+    "same rhythm 4, 8 bars apart": [
+     0.081,
+     0.053
+    ]
+   },
+   "B": {
+    "bars sung in a kept song": 0.598,
+    "by notes in the bar": {
+     "1": 0.99,
+     "2": 0.92,
+     "3": 0.82,
+     "4": 0.94,
+     "5": 0.62,
+     "6": 0.42,
+     "7": 0.42,
+     "8": 0.25,
+     "9": 0.01
+    },
+    "figure already sung": 0.451,
+    "coupling gain": 0.057,
+    "same rhythm 4, 8 bars apart": [
+     0.082,
+     0.056
+    ]
+   },
+   "B control": {
+    "bars sung in a kept song": 0.574,
+    "by notes in the bar": {
+     "1": 0.99,
+     "2": 0.86,
+     "3": 0.8,
+     "4": 0.94,
+     "5": 0.58,
+     "6": 0.39,
+     "7": 0.34,
+     "8": 0.24,
+     "9": 0.01
+    },
+    "figure already sung": 0.433,
+    "coupling gain": 0.075,
+    "same rhythm 4, 8 bars apart": [
+     0.089,
+     0.064
+    ]
+   }
+  }
+ }
+}
