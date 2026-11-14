@@ -7,7 +7,7 @@ This list is cumulative since the spec's last version (Luthier v6, Module 27.87,
 | Song | Title | Path | Runs, main / control | Judge of v132 beside density peers (printed), verse / chorus | Pick (715), main / control | Blind pick |
 | --- | --- | --- | --- | --- | --- | --- |
 | 48 | The Ratios Hold | Luthier v6 at the v134 seed and designs; gen_l6_p58.py on v4 | 21a41b55f90a / 3021b2a276db (731 / 724) | −1.22 / −1.27; −1.81 / −1.81 | d90e96033615 / 41a342a191fe | Annotated |
-| 49 | The World Is Asking | Luthier v6; gen_l6_p59.py on song 48's v6 file | ef9d3a2a2039 / bf016d1e7243 (660 / 662) | −1.27 / −1.21; −1.61 / −1.60 | 625a95a05b1f / 8ab6722be0f2 | offered |
+| 49 | The World Is Asking | Luthier v6; gen_l6_p59.py on song 48's v6 file | ef9d3a2a2039 / bf016d1e7243 (660 / 662) | −1.27 / −1.21; −1.61 / −1.60 | 625a95a05b1f / 8ab6722be0f2; of record e2b80cdc3a1c (728) | offered |
 
 ## The port check (715, 710)
 
@@ -75,7 +75,7 @@ Readings most often charged (main): bits saved a gap low 286, pitch figures sung
 ## Order of work
 
 1. 721: the pickup's stress rule and verse 2's inherited entries keep entries off the kept shares.
-2. 723: 717's kept figures carry repeats past 713's ceiling.
+2. 723 and 728: 717's kept figures carry repeats past 713's ceiling, and the judge does not see it in a window.
 3. 722: 717's rate saturates at 1.0.
 4. 725: bits saved a gap stay a third of the kept figure; the dense verse's sixteenths.
 5. 726: song 49's template bar against 308's cap (699 stands).
@@ -164,7 +164,17 @@ Readings most often charged (main): bits saved a gap low 286, pitch figures sung
 
 **Check:** Printed.
 
-Song 49's pick of record stays eaf2dcc068b6 (v4) until the writer decides whether its documents are rebuilt from the v6 pick, 625a95a05b1f. Its blind pick is offered; the tally is updated when he answers.
+### 728. The judge reads repeats over the whole song, so its pick can chant a verse
+
+**Problem:** 715's eligibility asks the song's repeated notes and ease to lie in the kept middle half; 713's ceiling is a test on each window. On both songs the judge's main pick lies inside the first and outside the second.
+
+**Evidence:** Song 49, main: the judge's pick 625a95a05b1f, charge 0, the 86.8% place. Its song repeats a note in 34% of its moves (kept middle half 19% to 38%), but Verse 1's window in 59% and Verse 2's in 58%, against the kept 75th of 36% for their density: the verse's first two lines sing eight D3s, then eight C3s. Of the 470 eligible clean survivors, 135 keep every section window under the ceiling. Song 48, main: the pick d90e96033615 has Verse 1 at 46% against 43.6% (its control pick stays under). The writer heard both and chose a re-pick for song 49: among the 135, the judge's own rule (least charge, then nearest the kept medians among the 54 within 0.02) gives e2b80cdc3a1c, charge 0.0005, the 86.2% place, now its pick of record, with every document rebuilt from it.
+
+**Fix (proposed):** Add to 715's eligibility what 713 tests: every section window's repeats under the kept 75th for its density; or let the judge read repeated notes by window.
+
+**Check:** The pick's windows under 713's ceiling on songs 48 and 49.
+
+Song 49's pick of record is now e2b80cdc3a1c (the writer's choice, 728); the lead sheet, full score, parts, number chart, MusicXML, demo, songbook and test report were rebuilt from it, every readback matching and 43 of 43 consistency checks passing. Its blind pick is offered; the tally is updated when he answers.
 
 ## Regression line
 

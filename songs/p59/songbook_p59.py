@@ -54,9 +54,14 @@ A("# Section by section\n")
 A("Pitches are where the voice sounds. Bar numbers count from the first bar of the intro.\n")
 A(f"## Intro (bars {span('Intro')})\n\nThe acoustic guitar alone, fingerpicked: the thumb on the root and fifth, the fingers between. In bars 3–4 the piano plays the hook's figure an octave up, softly, before anyone has sung it.\n")
 A(f"## Verse 1 (bars {span('Verse 1')})\n"); A(table("Verse 1"))
-A(f"\nPlain and close, {nm(min(vps))} to {nm(max(vps))}. \"There's a door\" begins on {nm(v('Verse 1', 0)[0]['midi'])} just after the downbeat and settles on G for \"house.\" The second half of the verse (from bar {line_bars('Verse 1', 4)[0] + 1}) sings the first half's shapes again over the same chords; the acoustic bass enters there. \"I told myself it was the wind\" ends on {nm(v('Verse 1', 7)[-1]['midi'])}, not home: the chorus answers it.\n")
+_e0 = v('Verse 1', 0)[0]['on'] - BST[line_bars('Verse 1', 0)[0]]
+ENT0 = "just before the bar line (a pickup into \"door\")" if _e0 < 0 else ("on the downbeat" if _e0 == 0 else "just after the downbeat")
+_l1 = v('Verse 1', 1); LIFT1 = (f"\"Painted shut before I was born\" climbs from {nm(_l1[0]['midi'])} to {nm(_l1[-1]['midi'])}." if _l1[-1]['midi'] - _l1[0]['midi'] >= 7 else "")
+A(f"\nPlain and close, {nm(min(vps))} to {nm(max(vps))}. \"There's a door\" begins on {nm(v('Verse 1', 0)[0]['midi'])} {ENT0} and comes to rest on {nm(v('Verse 1', 0)[-1]['midi'])} for \"house.\" {LIFT1} The second half of the verse (from bar {line_bars('Verse 1', 4)[0] + 1}) sings the first half's shapes again over the same chords; the acoustic bass enters there. \"I told myself it was the wind\" ends on {nm(v('Verse 1', 7)[-1]['midi'])}, not home: the chorus answers it.\n")
 A(f"## Chorus 1 (bars {span('Chorus 1')})\n"); A(table("Chorus 1"))
-A(f"\nThe chorus lifts and opens. The hook, \"But the world is asking\" (bars {line_bars('Chorus 1', 0)[0] + 1}–{line_bars('Chorus 1', 0)[1]}): {', '.join(nm(n['midi']) for n in hk)}, climbing to {nm(hk[-1]['midi'])} on \"ask-\" and holding \"-ing\" there into the D chord, unresolved. Line 7, \"The world is asking\" (bars {line_bars('Chorus 1', 6)[0] + 1}–{line_bars('Chorus 1', 6)[1]}), is the same figure without \"But.\" \"Will I let the question in\" ends on {nm(v('Chorus 1', 7)[-1]['midi'])} over D: the question stays open.\n")
+_c1 = [n['midi'] for n in v('Chorus 1', 1)]; _hk = [n['midi'] for n in hk]
+HK2 = (" Line 2 takes up the same climb at once (" + ", ".join(nm(p) for p in _c1) + "), so the hook is heard twice before the chorus moves on." if _c1[:len(_hk) - 1] == _hk[:len(_hk) - 1] or _c1[:5] == _hk[-5:] else "")
+A(f"\nThe chorus lifts and opens. The hook, \"But the world is asking\" (bars {line_bars('Chorus 1', 0)[0] + 1}–{line_bars('Chorus 1', 0)[1]}): {', '.join(nm(n['midi']) for n in hk)}, climbing to {nm(hk[-1]['midi'])} on \"ask-\" and holding \"-ing\" there into the D chord, unresolved. Line 7, \"The world is asking\" (bars {line_bars('Chorus 1', 6)[0] + 1}–{line_bars('Chorus 1', 6)[1]}), is the same figure without \"But.\"{HK2} \"Will I let the question in\" ends on {nm(v('Chorus 1', 7)[-1]['midi'])} over D: the question stays open.\n")
 A(f"## Verse 2 (bars {span('Verse 2')})\n"); A(table("Verse 2"))
 A("\nThe verse tune again, fitted to new words: the three strangers and the circle. The piano answers at the end of each bar; brushes on the rim.\n")
 A(f"## Chorus 2 (bars {span('Chorus 2')})\n\nAs chorus 1, the strings higher, brushes on the snare.\n")
@@ -82,7 +87,8 @@ for (s, i), ns in by.items():
     if s == "Chorus 2":
         if i == 0: A(f"| {span('Chorus 2')} | (chorus) |")
         continue
-    A(f"| {barno(ns[0]['on'])} | {WORDS[s][i]} |")
+    b_ = line_bars(s, i)[0] + 1; f_ = barno(ns[0]['on'])
+    A(f"| {b_}{f' (pickup in {f_})' if f_ < b_ else ''} | {WORDS[s][i]} |")
 A('\n```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```\n')
 A("## Producer one-sheet\n")
 A("**The emotional target.** Honest wonder, not certainty. The verses are a quiet confession; the chorus is a question asked out loud; the bridge is a prayer without proof; the last line is an answer of trust, not a victory.\n")
@@ -104,7 +110,10 @@ A("*References* (checked by search):\n")
 A("- **Gregory Alan Isakov, \"The Stable Song.\"** Track 2 of *That Sea, the Gambler* (self-released, 2007), 6:00; later on *Gregory Alan Isakov with the Colorado Symphony* (2016).\n- **Josh Garrels, \"Farther Along.\"** From *Love & War & The Sea in Between* (Small Voice Records, 2011), Christianity Today's album of the year for 2011.\n- **Sufjan Stevens, \"Mystery of Love.\"** From the *Call Me by Your Name* soundtrack (2017), produced by Thomas Bartlett; an acoustic ballad, 4:08; nominated for the Academy Award for Best Original Song.\n")
 A("*Non-negotiables.* As on the one-sheet.\n")
 A("## Session notes\n")
-A(f"- **Tempo and click.** ♩ = {R['qbpm']} throughout, 4/4; the click in quarters.\n- **Key.** G major. The flat seventh (F) appears as a passing note in the bridge.\n- **Chords per bar.** As in the section tables; most bars hold one chord, some two (two beats each).\n- **Range.** Voice {vlo}–{vhi}; harmony as above.\n- **Tracking.** Guitar and a guide vocal to the click first; then bass, piano and strings; then drums (brushes; sticks for the last chorus); the lead vocal; the harmonies with the finished lead in the headphones.\n- **Blend and panning.** Voice centre; guitar left of centre, piano right; strings wide; bass and kick centre; harmonies slightly left and right.\n- **The silent bar.** Bar {line_bars('Bridge', 4)[0] + 1}, the bridge's ninth: every track silent; cut reverb tails before it.\n")
+_f7 = [(s_, i_) for (s_, i_), ns_ in by.items() if any(n_['midi'] % 12 == 5 for n_ in ns_)]
+_f7s = sorted({s_ for s_, _ in _f7}, key=lambda x_: list(B0).index(x_))
+F7 = ("The flat seventh (F) appears as a passing note in the voice in " + (" and ".join(", ".join(("the " if x_ == "Bridge" else "") + x_.lower() for x_ in _f7s).rsplit(", ", 1)) if len(_f7s) > 1 else _f7s[0].lower()) + " (bars " + ", ".join(str(b_) for b_ in sorted({barno(n_['on']) for k_ in _f7 for n_ in by[k_] if n_['midi'] % 12 == 5})) + ").") if _f7 else "No note outside the scale in the voice."
+A(f"- **Tempo and click.** ♩ = {R['qbpm']} throughout, 4/4; the click in quarters.\n- **Key.** G major. {F7}\n- **Chords per bar.** As in the section tables; most bars hold one chord, some two (two beats each).\n- **Range.** Voice {vlo}–{vhi}; harmony as above.\n- **Tracking.** Guitar and a guide vocal to the click first; then bass, piano and strings; then drums (brushes; sticks for the last chorus); the lead vocal; the harmonies with the finished lead in the headphones.\n- **Blend and panning.** Voice centre; guitar left of centre, piano right; strings wide; bass and kick centre; harmonies slightly left and right.\n- **The silent bar.** Bar {line_bars('Bridge', 4)[0] + 1}, the bridge's ninth: every track silent; cut reverb tails before it.\n")
 A("## Score and parts\n")
 A("- Lead sheet: voice, words and chord symbols (PDF).\n- Full score: every part on one set of systems (PDF).\n- Parts: harmony vocals (high, low), acoustic guitar, piano, strings, acoustic bass and drums (PDF).\n- Number chart (PDF).\n- MusicXML: the lead sheet and the full score (.musicxml and .mxl).\n- Demo: MP3 and a General MIDI file.\n")
 open("/home/claude/p59/songbook.md", "w").write("\n".join(o) + "\n")
