@@ -32,3 +32,8 @@ gen_l1_p58.py writes melody_l1_p58.py from melody_v137_p58.py with 605 (the sect
 tables/luthier_v1_structure.json. luthier_read.py: 605-607's readings. run_l1.sh (runl1/); read_l1.py -> read/read_l1.json and
 read/l1_pick_candidates.json (every survivor's coupling gain and judge score, for 607's pick once the kept quartile is supplied);
 read_608.py -> read/read_608.json. Report: test_report_l1.md; findings_l1.md (619-626; 610-618 are v137's).
+
+## Luthier v2 (Module 27.83, Window 159)
+
+gen_l2_p58.py writes melody_l2_p58.py from melody_l1_p58.py with 630, 631, 633, 634; tables/luthier_v2_tables.json. run_l2.sh (runl2/);
+read_l2.py -> read/read_l2.json, read/l2_pick_candidates.json. Report: test_report_l2.md; findings_l2.md (638-645).
