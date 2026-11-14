@@ -42,7 +42,7 @@ table.nums td sup {{ font-size: 6.5pt; font-weight: normal; color: #444; }}
 table.nums tr td:last-child {{ border-right: 1.5px solid #111; }}
 .drum {{ font-size: 7.8pt; line-height: 1.2; }} .foot {{ font-size: 8pt; border-top: 1px solid #555; margin-top: 6px; padding-top: 4px; line-height: 1.35; }}
 </style></head><body>
-<div class="hdr"><h1>The World Is Asking</h1>
+<div class="hdr"><h1>The World Is Asking <span style="font-weight:normal;font-size:60%">(new melody)</span></h1>
 <div class="meta">♩ = 84 &nbsp;·&nbsp; KEY: G major &nbsp;·&nbsp; 4/4 &nbsp;·&nbsp; FEEL: indie folk, walking, fingerpicked &nbsp;·&nbsp; {int(secs // 60)}:{int(round(secs % 60)):02d}</div>
 <div class="cred">Words and music: Jason Bryant · 2026</div></div>
 {body}

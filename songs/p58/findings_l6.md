@@ -7,7 +7,7 @@ This list is cumulative since the spec's last version (Luthier v6, Module 27.87,
 | Song | Title | Path | Runs, main / control | Judge of v132 beside density peers (printed), verse / chorus | Pick (715), main / control | Blind pick |
 | --- | --- | --- | --- | --- | --- | --- |
 | 48 | The Ratios Hold | Luthier v6 at the v134 seed and designs; gen_l6_p58.py on v4 | 21a41b55f90a / 3021b2a276db (731 / 724) | −1.22 / −1.27; −1.81 / −1.81 | d90e96033615 / 41a342a191fe | Annotated |
-| 49 | The World Is Asking | Luthier v6; gen_l6_p59.py on song 48's v6 file | ef9d3a2a2039 / bf016d1e7243 (660 / 662) | −1.27 / −1.21; −1.61 / −1.60 | 625a95a05b1f / 8ab6722be0f2; of record e2b80cdc3a1c (728) | offered |
+| 49 | The World Is Asking | Luthier v6; gen_l6_p59.py on song 48's v6 file | ef9d3a2a2039 / bf016d1e7243 (660 / 662) | −1.27 / −1.21; −1.61 / −1.60 | 625a95a05b1f / 8ab6722be0f2; of record e2b80cdc3a1c (728) | Annotated |
 
 ## The port check (715, 710)
 
@@ -174,7 +174,7 @@ Readings most often charged (main): bits saved a gap low 286, pitch figures sung
 
 **Check:** The pick's windows under 713's ceiling on songs 48 and 49.
 
-Song 49's pick of record is now e2b80cdc3a1c (the writer's choice, 728); the lead sheet, full score, parts, number chart, MusicXML, demo, songbook and test report were rebuilt from it, every readback matching and 43 of 43 consistency checks passing. Its blind pick is offered; the tally is updated when he answers.
+Song 49's pick of record is now e2b80cdc3a1c (the writer's choice, 728); the lead sheet, full score, parts, number chart, MusicXML, demo, songbook and test report were rebuilt from it, every readback matching and 43 of 43 consistency checks passing. Its blind pick: Annotated, "I don't have proof, I have a door." The rebuilt files are named "The World Is Asking (new melody)".
 
 ## Regression line
 
@@ -182,4 +182,4 @@ Songs 40–47 are closed (523, 571). Song 48's record stands on v134 (5440fb310f
 
 ## Blind-pick tally
 
-30 songs: Annotated top 13, Remembered top 8, Middle 8, Refrain 1. Song 49 offered, not yet answered. Not yet offered: songs 40, 41, 43, 44, 45 and 46.
+31 songs: Annotated top 14, Remembered top 8, Middle 8, Refrain 1. Song 49: Annotated ("I don't have proof, I have a door"). Not yet offered: songs 40, 41, 43, 44, 45 and 46.

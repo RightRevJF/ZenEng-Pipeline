@@ -81,7 +81,7 @@ def spell(pt):
         for pp in ((n.pitches if isinstance(n, chord.Chord) else [n.pitch]) if not isinstance(n, (note.Unpitched, percussion.PercussionChord)) else []):
             if pp.accidental is not None and pp.accidental.name == "flat": pp.getEnharmonic(inPlace=True)
 def score(title, parts):
-    s = stream.Score(); s.insert(0, metadata.Metadata()); s.metadata.title = "The World Is Asking"; s.metadata.movementName = title
+    s = stream.Score(); s.insert(0, metadata.Metadata()); s.metadata.title = "The World Is Asking (new melody)"; s.metadata.movementName = title
     s.metadata.composer = "Words and music: Jason Bryant"
     for p in parts: spell(p); s.insert(0, p)
     return s

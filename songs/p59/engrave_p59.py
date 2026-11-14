@@ -151,9 +151,9 @@ NOTE1 = f"Chorus: “The world is asking” climbs {' '.join(nm_(n['midi']) for 
 NOTE1a = f"Last chorus: “Speak, I'm listening” comes down {' '.join(nm_(n['midi']) for n in _lc)}, home at last. Harmony on the hooks and on every line of the last chorus."
 NOTE1b = f"Bridge: the first four lines low and close; a bar of silence before “Here I am”; “Speak, I'm listening” held on {nm_(_b5[-1]['midi'])}, open."
 NOTE2 = "Verses: plain and spoken, close to the guitar; let the chorus be the first time the voice opens up."
-FOOT = f"The World Is Asking · Words and music: Jason Bryant · ♩ = 84 · G major · {_mm}:{_ss:02d}"
+FOOT = f"The World Is Asking (new melody) · Words and music: Jason Bryant · ♩ = 84 · G major · {_mm}:{_ss:02d}"
 if __name__ == "__main__":
-    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "The World Is Asking" subtitle = "Lead sheet" composer = "Words and music: Jason Bryant" meter = "Indie folk · ♩ = 84" tagline = ##f }}
+    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "The World Is Asking" subtitle = "Lead sheet (new melody)" composer = "Words and music: Jason Bryant" meter = "Indie folk · ♩ = 84" tagline = ##f }}
 \\score {{ <<
   \\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(VREST)} }}
   \\new Staff \\with {{ instrumentName = "Voice" }} {{ \\clef "bass" \\new Voice = "v" {{ {VBODY} }} }}
@@ -176,7 +176,7 @@ if __name__ == "__main__":
         ev = [dict(e) for e in src]
         by, want = pitched(ev); bd, rest = body(by, marks)
         checks[k] = readback(k, by, want)
-        books.append(f'''\\bookpart {{ \\header {{ subtitle = "{name}" }}
+        books.append(f'''\\bookpart {{ \\header {{ subtitle = "{name} (new melody)" }}
 \\score {{ << \\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(rest)} }}
   \\new Staff {{ {clef} {bd} }} >> \\layout {{ }} }} }}''')
     DN = {36: "bd", 38: "sn", 37: "ss", 42: "hh", 46: "hho", 49: "cymc", 51: "cymr", 48: "tomh", 45: "tommh", 41: "tomfl"}
@@ -206,10 +206,10 @@ if __name__ == "__main__":
             u, k = REST_UNIT[met]; dt.append(f"R{u}*{k * run}"); bi += run; continue
         dt += drumbar(bi); bi += 1
     dt.append('\\bar "|."')
-    books.append(f'''\\bookpart {{ \\header {{ subtitle = "Drums" }}
+    books.append(f'''\\bookpart {{ \\header {{ subtitle = "Drums (new melody)" }}
 \\score {{ \\new DrumStaff \\with {{ drumStyleTable = #drums-style }} \\drummode {{ {" ".join(dt)} }} \\layout {{ }} }} }}''')
     nh = sum(len(v) for v in HITS.values()); nd = len({(e["on"], p) for e in P_.get("drums", []) for p in e["p"]})
-    parts = HEAD % (16, FOOT, FOOT) + '\\header { title = "The World Is Asking" subtitle = "Parts" composer = "Words and music: Jason Bryant" tagline = ##f }\n' + "\n".join(books)
+    parts = HEAD % (16, FOOT, FOOT) + '\\header { title = "The World Is Asking" subtitle = "Parts (new melody)" composer = "Words and music: Jason Bryant" tagline = ##f }\n' + "\n".join(books)
     path, warns = compile_ly(parts, "The World Is Asking - parts", cwd=OUT)
     print("parts:", [w for w in warns][:6], len(warns))
     for k, v in checks.items(): print(f"  readback {k}:", "matches" if v[0] else "MISMATCH", v[1:])

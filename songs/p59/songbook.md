@@ -1,6 +1,6 @@
 ---
 title: "The World Is Asking"
-subtitle: "Songbook and production notes"
+subtitle: "Songbook and production notes (new melody)"
 author: "Words and music: Jason Bryant"
 ---
 

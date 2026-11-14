@@ -103,7 +103,9 @@ Rebuilt on 14 November from the v6 pick of record, e2b80cdc3a1c: the lead sheet,
 
 # The blind pick (10.20)
 
-Three slots, to be offered in shuffled order:
+Three slots, offered in shuffled order (A middle, B annotated, C remembered). **The writer chose B, "I don't have proof, I have a door": the Annotated slot.** The tally is now 31 songs: Annotated top 14, Remembered top 8, Middle 8, Refrain 1.
+
+The slots:
 
 - **Remembered:** "But the world is asking"
 - **Middle:** "In the first light of it all" (top quartile under both)

@@ -40,7 +40,7 @@ b4, b5 = v("Bridge", 4), v("Bridge", 5)
 vps = [n["midi"] for j in range(8) for n in v("Verse 1", j)]; cps = [n["midi"] for j in (1, 2, 3, 4, 5, 7) for n in v("Chorus 1", j)]
 bps = [n["midi"] for j in range(4) for n in v("Bridge", j)]
 o = []; A = o.append
-A('---\ntitle: "The World Is Asking"\nsubtitle: "Songbook and production notes"\nauthor: "Words and music: Jason Bryant"\n---\n')
+A('---\ntitle: "The World Is Asking"\nsubtitle: "Songbook and production notes (new melody)"\nauthor: "Words and music: Jason Bryant"\n---\n')
 A("# At a glance\n")
 A("**What it's about.** A man grew up in a house with a door painted shut, taught to trust only what he could touch, and to call any knock in the night the wind. The chorus turns: the world is asking, in the smallest hum, in the stutter of a heart, in the first light of everything. Three strangers working far apart found the same small circle coming round. The bridge answers without proof: a door left open a crack, and a prayer to whoever is asking. \"Here I am. Speak, I'm listening.\"\n")
 A(f"**How it goes.** Indie folk, ♩ = {R['qbpm']}, G major, for a baritone. A fingerpicked acoustic guitar carries the verses; the choruses open into strummed guitar, piano, strings and brushes. The hook, \"The world is asking,\" climbs and hangs on D, the fifth, a question left open. The bridge drops low and close, falls silent for a bar, and asks to be spoken to. Only the last chorus's last line comes home to G.\n")
