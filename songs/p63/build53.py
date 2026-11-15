@@ -143,6 +143,9 @@ def moved(ch, voicing, ceiling):
     ups = tones_in(ch, top + 1, ceiling - 2); downs = tones_in(ch, below + 2, top - 1)
     if ups: return v[:-1] + [ups[0]]
     if downs: return v[:-1] + [downs[-1]]
+    if len(v) == 2:                                                   # two notes and no room for the top: the lower note moves
+        alt = [q for q in tones_in(ch, v[0] - 5, top - 2) if q != v[0]]
+        if alt: return sorted([min(alt, key=lambda q: abs(q - v[0])), top])
     if len(v) >= 3:                                                   # no room for the top: the next voice down moves instead
         lo2 = v[-3] if len(v) > 3 else v[0] - 8
         alt = [q for q in tones_in(ch, lo2 + 1, top - 1) if q != below and q not in v]
@@ -161,6 +164,7 @@ def inner_layer(notes, path, segl, off, shift, last_end=None, fill=True, eighths
         for si, (o, d, A, T, B) in enumerate(segl[k]):
             if last_end and k == len(notes) - 1 and si == len(segl[k]) - 1: d = nd - o
             f = fill_between(ch, A, s) if fill else None
+            if fill and f is None: f = next((q for q in reversed(tones_in(ch, max(A - 8, 52), A - 3))), None)     # no room above the alto: a chord tone under it
             base = sorted({A} | ({f} if f else set()))
             pieces = [(o, d)]
             if d >= 24 and (n["on"] + o) % 12 == 0:
@@ -226,13 +230,9 @@ for notes, path, segl, off, part in ((VERSE, pathAV, SEG_AV, OFF["A_verse"], "ve
                 if last is not None and last["p"] == abt[vi] + 1: last["dur"] += d
                 else: put(vn, t + o, d, abt[vi] + 1); last = V[vn][-1]
         for o, d, A, T, B in segl[k]: put("org_ped", t + o, d, B + 1)
-# verses 1-3: the right hand in hymnal harmony (sopranos, altos and a filling chord tone), the left hand broken
-for k, n in enumerate(VERSE):
-    ch = pathAV[k][0]; t = n["on"] + OFF["A_verse"]; s = n["p"]
-    for o, d, A, T, B in SEG_AV[k]:
-        f = fill_between(ch, A, s)
-        if f is None: f = next((q for q in reversed(tones_in(ch, max(A - 8, 55), A - 3))), None)          # no room between: a chord tone under the alto
-        put("org_rh", t + o, d, [q + 1 for q in sorted({A, s} | ({f} if f else set()))])
+# verses 1-3 (fourth edition): the tune on top and an inner line under it (the altos with their passing notes and a filling chord
+# tone, moving to a neighbouring chord tone on the held beats), so the harmony stays the hymnal one; the left hand broken
+tune_layer(VERSE, OFF["A_verse"], 1); inner_layer(VERSE, pathAV, SEG_AV, OFF["A_verse"], 1)
 lh_broken(VERSE, pathAV, OFF["A_verse"], 1, VERSE[0]["on"], VERSE[-1]["on"] + VERSE[-1]["dur"])
 # refrain: the tune on top, the inner line, the rocking left hand
 tune_layer(REFRAIN, OFF["A_refrain"], 1); inner_layer(REFRAIN, pathAR, SEG_AR, OFF["A_refrain"], 1)
@@ -358,9 +358,16 @@ for voice in ("org_rh", "org_rh_in", "org_lh", "org_ped"):
     V[voice] = merge_holds(V[voice])
     for a, b in zip(V[voice], V[voice][1:]):                                       # the organ legato: a beat's gap closed by the note before
         if 0 < b["on"] - (a["on"] + a["dur"]) <= 12: a["dur"] = b["on"] - a["on"]
+# breaths (749.19, 749.20): a beat's breath before the third line of every verse and refrain (after the half-stanza), sung by every
+# part and taken by the organ's hands where their note ends there; held pedal points and notes running through are left
+BREATH_REL = 276
+BREATHS = [OFF[k] + BREATH_REL for k in ("A_verse", "A_refrain", "B_verse", "B_refrain")]
+for voice in ("S", "A", "T", "B", "Desc", "org_rh", "org_rh_in", "org_lh", "org_ped"):
+    for e in V.get(voice, []):
+        if e["on"] + e["dur"] in BREATHS and e["dur"] > 12 and e["on"] < e["on"] + e["dur"] - 12: e["dur"] -= 12; e["breath"] = True
 REC = dict(title=L.TITLE, voices={k: v for k, v in V.items()}, offsets=OFF, end=END, bars=80, pickup=0, keys=[(0, "E-flat major"), (L0, "F major")], link_bar=41, coda_bar=77,
            paths=dict(A=pathA, verse4=path4, final_refrain=pathFR), costs=dict(A=costA, verse4=cost4, final_refrain=costFR), descant_dspace=DESC,
-           reharm=REHARM, verse_chords=G.VERSE_CH, refrain_chords=G.REFRAIN_CH, fp=M["pick"]["fp"], qpm=88)
+           reharm=REHARM, verse_chords=G.VERSE_CH, refrain_chords=G.REFRAIN_CH, fp=M["pick"]["fp"], qpm=88, breaths=BREATHS)
 json.dump(REC, open(f"{H}/song_record.json", "w"))
 if __name__ == "__main__":
     print({k: len(v) for k, v in V.items()}, "costs", {k: round(v, 1) for k, v in REC["costs"].items()})

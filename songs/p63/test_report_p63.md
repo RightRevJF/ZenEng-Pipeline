@@ -169,6 +169,35 @@ What did not: the right hand over the whole song is 0.89 onsets a beat, still un
 
 New tools: organ_readings53.py (the readings above, by the tables' own texture rules) and clash53.py (semitone clashes, organ outer parallels). Consistency: 55 of 55 checks pass, among them the new ones for the inner line, the pedal parallels, the clash count, the Lieder ranges, the unchanged choir parts and the registrations.
 
+
+# Fourth edition: the new findings applied
+
+The choir's notes and the descant keep their pitches and onsets (a check). The changes:
+
+- **Breaths (749.19, 749.20):** every part takes a beat's breath before the third line of each verse and refrain, after the half-stanza: bars 16 and 32, and in F bars 52 and 68. The tune had no breath of a beat or more anywhere. The organ's hands lift where their notes end there; held pedal points carry on.
+- **Verses 1-3 (749.16):** the organ's right hand now carries the tune over an inner line, as the refrains do. The line is the altos (with their passing notes) plus a filling chord tone, moving to a neighbouring chord tone on held beats, so the harmony stays the hymnal one. Where there is no room above the alto, the filling note goes under it, and the lower note moves when the upper can't.
+- **Each return higher (749.17):** the registration now builds through the three refrains (1st time Swell flutes; 2nd, add the Great open diapason; 3rd, add the Great principal 4′) and through the verses (v. 3 on the Great diapasons).
+- **The intensity curve as sung (749.17):** intensity53.py reads the record in performed order (144 bars: three times verse and refrain). Per bar it takes the singers' top note, whether the choir sings, how many parts sound, the organ's onsets, and the dynamic with its registration step. Each verse and each refrain is above the one before. The high point falls at 0.87 of the song, at the final refrain's arrival, with the release over its last line ("hush now", p) and the coda. That is 0.02 past the 0.85 the finding proposes. It is kept because a carol's last refrain is its arrival.
+
+Organ against the Lieder 3/4 table, third edition to fourth:
+
+| Section | Right hand a beat | Complementarity |
+|---|---|---|
+| Verses 1-3 | 0.67 → 0.96 | 0.39 → 0.41 |
+| Refrain | 0.79 → 0.90 | 0.67 → 0.67 |
+| Final refrain | 1.10 → 1.23 | 0.68 → 0.68 |
+| Whole song | 0.89 → 0.99 | 0.67 → 0.67 |
+
+Semitone clashes stay at 18 eighths, with no outer parallels.
+
+Against the popular corpus:
+
+- **Melody:** the tune is at the 41st percentile for melody surprise, the 26th (verse) and 44th (refrain) for rhythm surprise, and the 20th for chords.
+- **Verse re-entry:** after the new breath, the verse's re-entry note is a little more surprising than the verse's average (3.15 against 3.12 bits).
+- **Refrain re-entry:** the refrain's re-entry is plain (1.56 against 2.45 bits). Its fresh moment comes four beats later, at the leap to the summit on "world". Making the re-entry itself fresher would mean changing a pitch of the locked tune, so it is left to the writer.
+
+Consistency: 59 of 59 checks pass, including new ones for the breaths, the verse inner line, the rising returns and the late high point.
+
 # Findings
 
 ## 749.11 A hymn needs a hymn mode and hymn tables

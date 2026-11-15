@@ -7,7 +7,7 @@ import mido
 import lyric_p63 as L
 H = "/home/claude/p63"; OUT = f"{H}/out"; os.makedirs(OUT, exist_ok=True)
 R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; BAR = 36; L0 = 40 * BAR; END = R["end"]
-ED = " (third edition)"
+ED = " (fourth edition)"
 SP_EF = {0: "c", 1: "des", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "ges", 7: "g", 8: "aes", 9: "a", 10: "bes", 11: "b"}
 SP_F = {0: "c", 1: "cis", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "fis", 7: "g", 8: "gis", 9: "a", 10: "bes", 11: "b"}
 def pname(m, t):
@@ -77,7 +77,7 @@ def glob():
 GLOB = glob()
 NOTE36 = 's2.*39 s2 s4^\\markup \\italic \\small \\column { "Verses 2 and 3: back to bar 8, beat 3" "After verse 3: on to bar 41" } s2.*40'
 
-FOOT = "Sung to Sleep (third edition) · Words and music: Jason Bryant · ♩ = 88 · E-flat major, verse 4 in F major"
+FOOT = "Sung to Sleep (fourth edition) · Words and music: Jason Bryant · ♩ = 88 · E-flat major, verse 4 in F major"
 HEAD = r'''\version "2.24.3"
 #(set-global-staff-size %s)
 \paper { #(set-paper-size "letter") left-margin = 14\mm right-margin = 14\mm top-margin = 12\mm bottom-margin = 14\mm ragged-last-bottom = ##t
@@ -91,8 +91,8 @@ SOP, ALT, TEN, BAS = music("S", DYN_S, True), music("A"), music("T"), music("B")
 DES = music("Desc", DYN_D, True)
 ORH, OLH, OPED = music("org_rh", DYN_O), music("org_lh"), music("org_ped")
 ORHI = voice_ly(V.get("org_rh_in", []), fermata_last=False, spacer=True)
-REG = {1: ["Sw. Flutes 8′ 4′", "Ped. Bourdon 16′, Sw. to Ped."], 9: ["v. 1: Sw. Flutes 8′ 4′", "v. 2: Gt. Open Diapason 8′", "v. 3: Sw. Strings and Celeste 8′, Flute 4′"],
-       25: ["Sw. Flutes 8′ 4′, tremulant"], 41: ["Gt. Diapasons 8′ 4′, Sw. to Gt."], 45: ["Gt. Diapasons 8′ 4′ 2′, Sw. Reed 8′, Sw. to Gt.", "Ped. 16′ 8′"],
+REG = {1: ["Sw. Flutes 8′ 4′", "Ped. Bourdon 16′, Sw. to Ped."], 9: ["v. 1: Sw. Flutes 8′ 4′", "v. 2: Gt. Open Diapason 8′", "v. 3: Gt. Diapasons 8′ 4′, Sw. to Gt."],
+       25: ["1st time: Sw. Flutes 8′ 4′", "2nd: add Gt. Open Diapason 8′", "3rd: add Gt. Principal 4′"], 41: ["Gt. Diapasons 8′ 4′, Sw. to Gt."], 45: ["Gt. Diapasons 8′ 4′ 2′, Sw. Reed 8′, Sw. to Gt.", "Ped. 16′ 8′"],
        61: ["Full Sw. to Gt., Gt. Mixture", "Ped. 16′ 8′ 4′"], 77: ["Sw. Flutes 8′", "Ped. Bourdon 16′"]}
 def reg_voice():
     out = []
@@ -155,8 +155,8 @@ def readback():
         res[n] = (g == want, len(g), len(want))
     return res
 if __name__ == "__main__":
-    w1 = compile_ly(doc("Hymn page (choir) · third edition", False, 17), f"Sung to Sleep{ED} - hymn page")
-    w2 = compile_ly(doc("Full score (organ) · third edition", True, 15), f"Sung to Sleep{ED} - full score (organ)")
+    w1 = compile_ly(doc("Hymn page (choir) · fourth edition", False, 17), f"Sung to Sleep{ED} - hymn page")
+    w2 = compile_ly(doc("Full score (organ) · fourth edition", True, 15), f"Sung to Sleep{ED} - full score (organ)")
     print("hymn page warnings", w1[:5], len(w1)); print("full score warnings", w2[:5], len(w2))
     rb = readback(); print({k: v for k, v in rb.items()})
     json.dump({k: list(v) for k, v in rb.items()}, open(f"{OUT}/readback.json", "w"))
