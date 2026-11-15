@@ -36,7 +36,20 @@ chk("B-flat maj7 under 'and some morning it opens'", R["bars"][B0["Last Chorus"]
 chk("voice in the scale (D major)", all(p % 12 in {2, 4, 6, 7, 9, 11, 1} for p in ps))
 chk("no run of four of one pitch in a line (749.2)", all(not any(v[k]["midi"] == v[k + 1]["midi"] == v[k + 2]["midi"] == v[k + 3]["midi"] for k in range(len(v) - 3)) for v in by.values()))
 chk("no note of no length, no two onsets alike in a line (749.1)", all(n["dur"] > 0 for n in lead) and all(len({n["on"] for n in v}) == len(v) for v in by.values()))
-chk("chorus 2 sung exactly as chorus 1", all([(n["on"] - B0["Chorus 2"] * 36, n["midi"]) for n in by[("Chorus 2", j)]] == [(n["on"] - B0["Chorus 1"] * 36, n["midi"]) for n in by[("Chorus 1", j)]] for j in range(5)))
+import json as _j, harm68 as _h
+VAR = _j.load(open(f"{H}/melody_varied.json"))["variation"]
+def _rel(s, j): return [(n["on"] - B0[s] * 36, n["midi"]) for n in by[(s, j)]]
+chk("chorus 2: first line and hook exactly as chorus 1", _rel("Chorus 2", 0) == _rel("Chorus 1", 0) and _rel("Chorus 2", 4) == _rel("Chorus 1", 4))
+chk("chorus 2: one held note lifted on each inner line, rhythm unchanged (749.8)", all([t for t, _ in _rel("Chorus 2", j)] == [t for t, _ in _rel("Chorus 1", j)] and sum(a[1] != b[1] for a, b in zip(_rel("Chorus 2", j), _rel("Chorus 1", j))) == 1 for j in (1, 2, 3)))
+chk("chorus 2: every lift upward, to a chord tone, at or under C#5", all(e["now"] > e["was"] and e["now"] <= 73 for e in VAR["log"] if e.get("now")))
+chk("final chorus: line 2 as chorus 2", _rel("Last Chorus", 1) == _rel("Chorus 2", 1))
+HS = [n for n in lead if n["role"] == "hook" or n["sec"] == "Last Chorus"]
+RH, RL = _h.readings(HS, R["harm_hi"]), _h.readings(HS, R["harm_lo"])
+chk("harmony: no parallel fifths or octaves with the lead (749.9)", RH["parallel fifths or octaves"] == 0 and RL["parallel fifths or octaves"] == 0)
+chk("harmony: neither part moves with the lead more than half the time (749.9)", RH["moves with the lead (similar)"] <= 0.5 and RL["moves with the lead (similar)"] <= 0.5)
+chk("harmony: high part sings every syllable of the harmony span", [n["on"] for n in R["harm_hi"]] == [n["on"] for n in HS])
+chk("harmony: high a third to a sixth above, low below the lead", all(3 <= h["midi"] - n["midi"] <= 9 for h, n in zip(R["harm_hi"], HS)) and all(_h.sounding(R["harm_lo"], n["on"]) is None or _h.sounding(R["harm_lo"], n["on"]) < n["midi"] for n in HS))
+chk("songbook: chorus 2's lifts", "chorus 2 sits a little higher" in SB)
 vm = sorted(n["midi"] for j in range(4) for n in by[("Verse 1", j)]); cm = sorted(n["midi"] for j in range(4) for n in by[("Chorus 1", j)])
 chk("the chorus above the verse (median two or more)", cm[len(cm) // 2] - vm[len(vm) // 2] >= 2)
 chk("songbook: no engine terms", not re.search(r"\b(engine|judge|survivor|gate|calibrat|fix \d|ZenEng|Luthier|Essen|sketch)\b", SB, re.I))

@@ -181,8 +181,8 @@ if __name__ == "__main__":
     ok = readback("voice", VOX, VWANT); print("  readback voice:", "matches" if ok[0] else "MISMATCH", ok[1:])
     P_ = REC["parts"]
     HM = {"Chorus 1": "the hook", "Last Chorus": "every line"}
-    parts_src = [("harm_hi", "Harmony vocal (high)", [dict(n, p=[n["midi"]]) for n in REC["harm_hi"]], "", HM),
-                 ("harm_lo", "Harmony vocal (low)", [dict(n, p=[n["midi"]]) for n in REC["harm_lo"]], "", HM),
+    parts_src = [("harm_hi", "Harmony vocal (high)", [dict(n, p=[n["midi"]]) for n in REC["harm_hi"]], "", {"Chorus 1": "with the words: the hook", "Last Chorus": "with the words: every line"}),
+                 ("harm_lo", "Harmony vocal (low)", [dict(n, p=[n["midi"]]) for n in REC["harm_lo"]], "", {"Chorus 1": "ooh: the hook", "Last Chorus": "ooh: every line"}),
                  ("guitar", "Acoustic guitar", P_.get("guitar", []), "\\clef \"treble_8\"", {"Intro": "fingerpicked, alone; bass note on 1 and 4", "Bridge": "OUT", "Verse 4": "back in"}),
                  ("piano", "Piano", P_.get("piano", []), "", {"Chorus 1": "on the beats, soft", "Verse 2": "answers at the line ends", "Bridge": "held chords, very soft"}),
                  ("cello", "Cello", P_.get("cello", []), "\\clef bass", {"Chorus 2": "in: long notes", "Interlude": "the hook's tune", "Bridge": "with the piano"}),

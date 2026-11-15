@@ -11,7 +11,7 @@ chord's approach on its second."""
 import json, pickle, collections
 import pyphen
 H = "/home/claude/p62"
-F = json.load(open(f"{H}/melody_final.json")); c = F["pick"]
+F = json.load(open(f"{H}/melody_varied.json")); c = F["pick"]                           # the pick with chorus 2 varied (vary68.py, 749.8)
 import importlib.util as _u
 _s = _u.spec_from_file_location("lyr", f"{H}/lyric_p62.py"); L = _u.module_from_spec(_s); _s.loader.exec_module(L)
 import gen68 as G
@@ -76,14 +76,12 @@ def down_to(p, pcs, k=1):
         while q % 12 not in pcs: q -= 1
     return q
 def chord_at_rec(t): return CHORD[min(NB - 1, t // BAR)]
-# ---- harmony: on the hook in every chorus; every line of the final chorus ----
-harm_hi, harm_lo = [], []
-for n in lead:
-    if not (n["role"] == "hook" or n["sec"] == "Last Chorus"): continue
-    ct = tones(chord_at_rec(n["on"])); sc = SCALE | (ct if chord_at_rec(n["on"]) == "Bbmaj7" else set())
-    hi_ = next((q for q in range(n["midi"] + 3, n["midi"] + 6) if q % 12 in ct), up_to(n["midi"], sc, 2))
-    lo_ = next((q for q in range(n["midi"] - 3, n["midi"] - 6, -1) if q % 12 in ct), down_to(n["midi"], sc, 2))
-    harm_hi.append(dict(n, midi=hi_, singer="harmony high")); harm_lo.append(dict(n, midi=lo_, singer="harmony low"))
+# ---- harmony: on the hook in every chorus; every line of the final chorus; written as lines (harm68.py, 749.9) ----
+import harm68
+HSPAN = [n for n in lead if n["role"] == "hook" or n["sec"] == "Last Chorus"]
+_hp = harm68.high(HSPAN, lambda t: tones(chord_at_rec(t)))
+harm_hi = [dict(n, midi=p, singer="harmony high") for n, p in zip(HSPAN, _hp)]
+harm_lo = [dict(n, singer="harmony low", stress=False, first=True, hyph=False, role="ooh") for n in harm68.low(HSPAN, lambda t: tones(chord_at_rec(t)))]
 parts = collections.defaultdict(list)
 def ev(part, on, dur, p, vel, art=""): parts[part].append(dict(on=on, dur=dur, p=p if isinstance(p, list) else [p], vel=int(max(1, min(127, vel))), art=art))
 def pick6(st, ch, vel):

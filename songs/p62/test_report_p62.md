@@ -92,6 +92,58 @@ Three slots, offered shuffled (A middle, B annotated, C remembered). **The write
 - **Middle:** "and I said there's a door, and it's going to open" (top quartile under both)
 - **Annotated:** "and I said hello through the plaster that night"
 
+# After delivery: chorus 2 varied, the harmony rewritten
+
+The writer: "One of the comments that I get frequently from other ais is that the chorus music stays identical throughout the song and that the harmony don't move far. Is that deliberate or a limitation of the engine?" The answer: the copy is deliberate, the lack of any rule for varying a returning chorus is a limitation, and the harmony rule (the nearest chord tone a third or fourth away, in the lead's rhythm) is a limitation. He chose C: revise song 52 as a test, then add the findings with the before and after.
+
+**Chorus 2 (vary68.py).** The first line and the hook stay exact. On each inner line, the longest held note that is stressed (or the line's last) is lifted to the nearest chord tone above, within a minor third (a fourth for a line's last note), at or under C♯5, no run of four, no leap past a fifth. The final chorus's second line takes chorus 2's version.
+
+| Line | Word | Chorus 1 | Chorus 2 |
+|---|---|---|---|
+| 2 | "sunlight" (bar 34) | A4 | B4 |
+| 3 | "door" (bar 36) | E4 | A4 |
+| 4 | "all" (bar 38) | A4 | B4 |
+
+3 of chorus 2's 49 notes changed (none before); rhythm unchanged; every gate still passes; the readings' charge unchanged at 1.69. The melody's fingerprint is now 9bf4a225b954 (drawn as 8f4cc7fe75bf).
+
+**The harmony (harm68.py).** The high part sings the words, chosen as one line over each phrase by least cost: small moves and held notes cheap, contrary and oblique motion cheaper than similar, parallel fifths and octaves and tritones ruled out, thirds the home interval. The low part sings "ooh" in long notes under the lead, at most one change a beat, chord tones only, no second, seventh or tritone against a lead note of an eighth or longer.
+
+Read at each pair of the lead's onsets inside the harmony (the hook in every chorus, every line of the final chorus):
+
+| Reading | High, before | High, after | Low, before | Low, after |
+|---|---|---|---|---|
+| Moves with the lead (similar) | 74% | 22% | 85% | 15% |
+| Moves against it (contrary) | 0% | 12% | 0% | 2% |
+| Holds while it moves, or the reverse (oblique) | 26% | 66% | 15% | 83% |
+| Parallel fifths or octaves | 0 | 0 | 0 | 0 |
+| Distinct distances from the lead | 3 | 6 | 3 | 9 |
+| Farthest from the lead (semitones) | 5 | 9 | 5 | 12 |
+| Notes | 70 | 70 | 70 | 18 |
+| Held notes (a dotted quarter or more) | 9 | 9 | 9 | 17 |
+| Mean move (semitones) | 2.1 | 1.0 | 2.2 | 3.1 |
+
+Every document rebuilt from the new record; every staff reads back note for note; consistency 52/52 (eight new checks: chorus 2's first line and hook exact, one lift per inner line, lifts upward and under C♯5, the final chorus's second line as chorus 2's, no parallel fifths or octaves, neither part moving with the lead more than half the time, the high part on every syllable, the parts on their sides of the lead).
+
+## 749.8 A returning chorus has no rule for change
+
+**Problem.** 'copy' sings chorus 2 exactly as chorus 1. The hook should return unchanged, but a whole chorus sung note for note again reads as a loop, and readers flag it.
+
+**Evidence.** Song 52 before: chorus 2 differed from chorus 1 in 0 of 49 notes; songs 48 to 51 the same. After the lift rule: 3 of 49, each a held note raised to a chord tone, the hook and first line exact, every gate and the charge unchanged.
+
+**Fix (proposed).** 'copy' becomes 'return': the first line and the hook exact; on each inner line, at most one held note lifted as above; the final chorus takes the returning chorus's lifts on its copied lines. Optional later: a rhythmic variant for a line whose words change.
+
+**Check.** On songs 48 to 52, each returning chorus differs from the first in 1 to 10% of its notes, never in its hook, and passes every gate.
+
+## 749.9 The harmony shadows the lead
+
+**Problem.** The harmony parts take the nearest chord tone a third or fourth from each lead note, in the lead's rhythm, so they move with the lead almost all the time, never against it, and keep to three distances from it.
+
+**Evidence.** As in the table: before, the high part moved with the lead 74% of the time and never against it; the low part 85%. After: 22% and 15%, contrary motion 12% and 2%, holding 66% and 83%, and no parallel fifths or octaves in either version.
+
+**Fix (proposed).** Harmony written as lines (harm68.py): a high part with the words chosen by least cost over the phrase, and a low "ooh" part in long notes; readings for motion against the lead added to the checks.
+
+**Check.** Each part moves with the lead under half the time, no parallel fifths or octaves, on songs 48 to 52.
+
 # Findings
 
 ## 749.4 Luthier draws only in 4/4; the metre should be a parameter, with kept tables per metre

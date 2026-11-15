@@ -72,7 +72,7 @@ Verse 1's tunes, fitted to the new words. The bass stays; the piano answers at t
 
 ## Chorus 2 (bars 31–40)
 
-As chorus 1; the cello joins on long notes.
+The same words and the same hook as chorus 1, but chorus 2 sits a little higher: three held notes are lifted, "sunlight" (bar 34) up from A4 to B4; "door" (bar 36) up from E4 to A4; and "all" (bar 38) up from A4 to B4. The first line and the hook are exactly as before. The cello joins on long notes.
 
 ## Interlude (bars 41–44)
 
@@ -122,7 +122,7 @@ The guitar and bass return, with the piano high and soft.
 | 77–78 | Em9 Asus4 | there's a door in the wall |
 | 79–80 | Gmaj7 Dadd9 | there's a door in the wall |
 
-The fullest the song gets, with harmony on every line. The first two lines are sung as in chorus 1. Under "and some morning it opens" the harmony turns to B♭maj7 (bar 74), the one chord from outside the key. The hook comes twice: first as in every chorus, D5 on "door" and "wall" open; then A4, B4, B4, A4, F♯4, D4, "door" on B4 over Gmaj7 and "wall" home on D4 over Dadd9 (bar 80), held into the outro.
+The fullest the song gets, with harmony on every line. The first line is sung as in chorus 1, the second as in chorus 2 (the lifted "sunlight"). Under "and some morning it opens" the harmony turns to B♭maj7 (bar 74), the one chord from outside the key. The hook comes twice: first as in every chorus, D5 on "door" and "wall" open; then A4, B4, B4, A4, F♯4, D4, "door" on B4 over Gmaj7 and "wall" home on D4 over Dadd9 (bar 80), held into the outro.
 
 ## Outro (bars 81–84)
 
@@ -130,9 +130,9 @@ Guitar and cello, softer each bar and slowing a little; the last bar a Dadd9, le
 
 # For each player
 
-**Voice.** An alto, B3 to D5. Sing it as Nora would talk to Bernard through the wall: close, unhurried, not performed. Let the 6/8 rock you; the stressed words fall on the two beats. Open up on "door" and leave "wall" unfinished in choruses 1 and 2. In the bridge come right down until "and you were there." Save the settled, final "wall" for the very end.
+**Voice.** An alto, B3 to D5. Sing it as Nora would talk to Bernard through the wall: close, unhurried, not performed. Let the 6/8 rock you; the stressed words fall on the two beats. Open up on "door" and leave "wall" unfinished in choruses 1 and 2. Learn chorus 2 as its own: three held notes sit higher than in chorus 1. In the bridge come right down until "and you were there." Save the settled, final "wall" for the very end.
 
-**Harmony vocals.** Two parts, one above and one below, on the hook in every chorus and on every line of the final chorus (high F4–F♯5, low A3–B4). Blend under the lead.
+**Harmony vocals.** Two parts with different jobs, on the hook in every chorus and on every line of the final chorus. The high part (G4–F♯5) sings the words with the lead, a third to a sixth above, as a line of its own: it often holds a note while the lead moves under it (on the hook, F♯5 held while the lead climbs to "door"). The low part (A3–F♯4) sings "ooh" in long notes under the lead, changing at most once a beat. Blend under the lead.
 
 **Acoustic guitar** (E2–F♯4). Steel-string, fingerpicked in six eighths throughout: the bass note on the first and fourth, the chord between. Out in the bridge; back for verse 4.
 
