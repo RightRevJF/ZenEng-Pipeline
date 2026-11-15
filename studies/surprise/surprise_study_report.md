@@ -55,6 +55,26 @@ Two things hold up in both models:
 3. **Don't chase novelty for its own sake.** Nothing here rewards a high-surprise melody.
 4. **Keep effects in proportion.** Even the strongest measure explains a few percent of views. The notes matter, but fame and exposure matter far more.
 
+
+# Our songs against the corpus
+
+The same model, trained on all 21,998 clips, scored six songs whose records are on disk. The percentile is each song's place among the Hooktheory clips: a lower percentile means less surprising, which is the direction that went with more views.
+
+| Song | Melody surprise | Percentile | Chord surprise | Percentile | Chords reduced to triads: percentile |
+|---|---|---|---|---|---|
+| Nothing Important | 3.11 bits | 62nd | 2.53 bits | 21st | 28th |
+| Blue Movie | 3.21 bits | 67th | 1.76 bits | 5th | 7th |
+| Keeping Time | 2.94 bits | 53rd | 2.15 bits | 13th | 16th |
+| Before It's Done | 2.88 bits | 50th | 2.73 bits | 27th | 38th |
+| The Room Next Door (song 52, third edition) | 2.98 bits | 55th | 6.48 bits | 90th | 62nd |
+| Sung to Sleep (song 53) | 2.74 bits | 41st | 2.47 bits | 20th | 20th |
+
+The Hooktheory medians are 2.89 bits for melody and 3.79 bits for chords. Reduced to triads, the chord median on held-out clips is 3.06 bits.
+
+- **Chords:** the engine's chords sit well inside the conventional, more-viewed side. Song 52 looked unusual mainly because it writes out colour chords (add9, maj7, ninths) that Hooktheory transcribers usually simplify. Reduced to plain triads, it falls from the 90th to the 62nd percentile.
+- **Melodies:** every song sits near the middle of the corpus (41st to 67th percentile). The melodies are where the engine has room to move toward the more-viewed side.
+- **Sung to Sleep:** its tune and chords are already more predictable than most popular songs. That fits a carol, though the reference here is pop, not hymns. By this measure, the plainness Jason noticed is not a weakness in the notes. What still looks simple is the texture and arrangement.
+
 # Next
 
 - Score these songs with the UMCS scorer and see whether it ranks the more-watched songs higher.
