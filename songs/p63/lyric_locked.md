@@ -1,4 +1,4 @@
-Locked (Common Meter, 8.6.8.6; narrator; refrain after every verse)
+Locked, revised 15 Nov after an outside critique (Common Meter, 8.6.8.6; narrator; refrain after every verse)
 
 Verse 1
 Before the hills, before the sea
@@ -8,7 +8,7 @@ the stars began to blaze
 
 Refrain
 Hush now, the Song of God is small
-hush now, the stars are near
+hush now, the stars stoop near
 the One who sang the world awake
 is sleeping, sleeping here
 
@@ -28,4 +28,4 @@ Verse 4
 And he will sing again one day
 when all the night is done
 and over us, with joy, the Song
-will sing us, every one
+will sing us home, each one
