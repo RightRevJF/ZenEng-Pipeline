@@ -10,7 +10,7 @@
 Usage: python3 perception.py record.json [record2.json ...]"""
 import json, sys, math, collections
 import numpy as np
-LOW_LIMIT = {1: 52, 2: 51, 3: 48, 4: 46, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 41, 11: 41}   # lowest note of the pair: E3, Eb3, C3, Bb2, Bb2, B2, Bb1, F2...
+LOW_LIMIT = {1: 60, 2: 60, 3: 53, 4: 53, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 41, 11: 41}   # Luthier Module 9.14: no second below C4 (60), no third below F3 (53); fourths and wider as arrangers' tables
 def hz(m): return 440.0 * 2 ** ((m - 69) / 12)
 def erb(f): return 24.7 * (4.37 * f / 1000 + 1)
 def sethares(f1, f2, a1, a2):

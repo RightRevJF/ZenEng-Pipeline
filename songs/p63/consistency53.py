@@ -45,8 +45,11 @@ def sounding(v, t):
     return out
 def organ_at(t): return sounding("org_rh", t) | sounding("org_rh_in", t) | sounding("org_lh", t) | sounding("org_ped", t)
 inA = [(e["on"], e["p"]) for v in ("S", "A", "T", "B") for e in V[v] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
-inSAB = [(e["on"], e["p"]) for v in ("S", "A", "B") for e in V[v] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
-chk("verses 1-3 and refrains: every soprano, alto and bass note sounds in the organ (third edition: the left hand broken or rocking, not the tenor)", all(p in organ_at(t) for t, p in inSAB))
+inSA = [(e["on"], e["p"]) for v in ("S", "A") for e in V[v] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
+inB = [(e["on"], e["p"]) for e in V["B"] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
+_sa_share = sum(p in organ_at(t) for t, p in inSA) / len(inSA)
+chk("verses 1-3 and refrains: the sopranos' and altos' notes sound in the organ (%.0f%%; a few altos thinned where they would crowd the left hand), and every bass note in the pedal, written in the pedal's octave (fourth edition)" % (100 * _sa_share),
+    _sa_share >= 0.9 and all(any((q - p) % 12 == 0 for q in sounding("org_ped", t)) for t, p in inB))
 _chg = [e for e in V["T"] if O["A_verse"] - 12 <= e["on"] < O["A_refrain"] and e["on"] % 36 == 0]
 chk("verses 1-3: the tenor's note in the organ's left hand on every downbeat", all(e["p"] in sounding("org_lh", e["on"]) for e in _chg))
 _rhA = [e for e in V["org_rh"] if O["A_verse"] - 12 <= e["on"] < O["A_refrain"]]

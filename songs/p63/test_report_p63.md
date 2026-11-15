@@ -221,6 +221,16 @@ Each sung line lasted about 8.2 seconds at ♩ = 88 (median of 19 lines), just o
 
 Consistency: 62 of 62 checks pass, with new ones for the low intervals, the tune on top and no choir crossings.
 
+
+**Brought to Luthier's own limits (Module 9.14).** Luthier v7 already holds these voice-leading rules (Huron 2001), with stricter low-interval limits than the first sketch here: no third below F3 and no second below C4. Measured by them, the organ broke the limits at 117 places, mostly the pedal doubling the choir's basses at pitch, with the left hand a third above it. The fixes:
+
+- **The pedal in its own octave:** the pedal is now written there (C2 to D3), sounding an octave lower again on the 16′ stops.
+- **The link's left hand:** now open fifths.
+- **Voicings:** verse 4's voicings are chosen clear of the limits.
+- **The rest:** any remaining close pair is settled by moving the left-hand note an octave, or by thinning an inner chord. The pedal never moves.
+
+Violations: 0. The tune is on top at 99.2% of sung onsets. 99% of the sopranos' and altos' notes still sound in the organ, and every bass note sounds in the pedal at the octave. Clashes are 20 eighths, with no outer parallels. All 62 checks pass.
+
 # Findings
 
 ## 749.11 A hymn needs a hymn mode and hymn tables

@@ -246,11 +246,16 @@ for i, (nm_, rh, ped, lh) in enumerate(LINK):
     put("org_lh", t, dur, sorted(lh)); put("org_ped", t, dur, ped)
 # verse 4 (F; D-space +3): the choir in unison; the organ's free harmony
 import itertools
+LOWLIM = {1: 60, 2: 60, 3: 53, 4: 53, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 41, 11: 41}      # Luthier Module 9.14, sounding pitch
+def low_ok(c, shift=3): return all(not (0 < b - a < 12 and a + shift < LOWLIM[b - a]) for a, b in zip(c, c[1:]))
 def voicings(ch, lo, hi):
-    """four-note chords of ch inside [lo, hi], every pitch class present, spanning at most a tenth"""
+    """four-note chords of ch inside [lo, hi], every pitch class present, spanning at most a tenth, clear of the low-interval limits"""
     P = set(pcs(ch)); tones = tones_in(ch, lo, hi)
     for gap, span in ((3, 16), (2, 19), (1, 24)):
-        out = [list(c) for c in itertools.combinations(tones, 4) if {q % 12 for q in c} >= P and c[-1] - c[0] <= span and all(c[i + 1] - c[i] >= gap for i in range(3))]
+        out = [list(c) for c in itertools.combinations(tones, 4) if {q % 12 for q in c} >= P and c[-1] - c[0] <= span and all(c[i + 1] - c[i] >= gap for i in range(3)) and low_ok(c)]
+        if out: return out
+    for gap, span in ((3, 16), (2, 19), (1, 24)):
+        out = [list(c) for c in itertools.combinations(tones, 3) if {q % 12 for q in c} >= set(pcs(ch)[:3]) and c[-1] - c[0] <= span and low_ok(c)]
         if out: return out
     return [list(c) for c in itertools.combinations(tones, 3) if {q % 12 for q in c} >= set(pcs(ch)[:3])]
 def nearest(cands, prev):
@@ -362,16 +367,47 @@ for voice in ("org_rh", "org_rh_in", "org_lh", "org_ped"):
         if 0 < b["on"] - (a["on"] + a["dur"]) <= 12: a["dur"] = b["on"] - a["on"]
 # low intervals (psychoacoustics): a left-hand note that makes a close interval with the pedal or another left-hand note below the
 # arranger's low-interval limit goes up an octave (the roughness model ranks these; the limits are a rule of thumb)
-LOW_LIMIT = {1: 52, 2: 51, 3: 48, 4: 46, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 41, 11: 41}
-def _sound(voice, t): return [q for e in V[voice] if e["on"] <= t < e["on"] + e["dur"] for q in (e["p"] if isinstance(e["p"], list) else [e["p"]])]
+LOW_LIMIT = {1: 60, 2: 60, 3: 53, 4: 53, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 41, 11: 41}   # Luthier Module 9.14 (Huron 2001): no second below C4, no third below F3
+# the pedal written in its own octave (C2 to D3), as organ pedal parts are, sounding an octave lower still on the 16' stops; it no
+# longer doubles the choir's basses at pitch, which crowded the left hand
+for e in V["org_ped"]:
+    if e["p"] > 50: e["p"] -= 12
+# the link's left hand in open fifths and octaves (no close third or second in the low register)
 for e in V["org_lh"]:
-    for _ in range(2):
-        ps_ = e["p"] if isinstance(e["p"], list) else [e["p"]]
-        below = _sound("org_ped", e["on"]) + [q for q in _sound("org_lh", e["on"]) if q not in ps_]
-        allp = sorted(set(below + ps_)); bad = [x for a, b in zip(allp, allp[1:]) if 0 < b - a < 12 and a < LOW_LIMIT[b - a] for x in (a, b) if x in ps_]
-        if not bad: break
-        new = [q + 12 if q in bad and q + 12 <= 65 else q for q in ps_]
-        e["p"] = sorted(set(new)) if isinstance(e["p"], list) else new[0]
+    if isinstance(e["p"], list) and L0 <= e["on"] < OFF["B_verse"] - 12:
+        r = min(e["p"]); e["p"] = [r, r + 7] if r + 7 <= 64 else [r]
+def _sounding_ev(t):
+    out = []
+    for v_ in ("org_ped", "org_lh", "org_rh_in", "org_rh"):
+        for e in V[v_]:
+            if e["on"] <= t < e["on"] + e["dur"]:
+                for q in (e["p"] if isinstance(e["p"], list) else [e["p"]]): out.append((q, v_, e))
+    return sorted(out, key=lambda x: x[0])
+def _set(e, old, new):
+    if isinstance(e["p"], list):
+        ps_ = [q for q in e["p"] if q != old] + ([new] if new is not None else []); e["p"] = sorted(set(ps_)) if ps_ else e["p"]
+    elif new is not None: e["p"] = new
+def _fix(q, v_, e, other_below):
+    """one close pair: move or thin the note that belongs to the hand that can give way"""
+    n = len(e["p"]) if isinstance(e["p"], list) else 1
+    if v_ == "org_lh":
+        if q + 12 <= 65: _set(e, q, q + 12); return True
+        if n > 1: _set(e, q, None); return True
+    if v_ in ("org_rh_in", "org_rh") and n > 1: _set(e, q, None); return True
+    if v_ in ("org_rh_in", "org_rh") and q + 12 <= 79: _set(e, q, q + 12); return True
+    return False
+for _pass in range(6):
+    changed = False
+    for t in sorted({e["on"] for v_ in ("org_ped", "org_lh", "org_rh_in", "org_rh") for e in V[v_]}):
+        S = _sounding_ev(t)
+        for (a_, va, ea), (b_, vb, eb) in zip(S, S[1:]):
+            if 0 < b_ - a_ < 12 and a_ < LOW_LIMIT[b_ - a_]:
+                # prefer to move the left hand, then thin an inner or right-hand chord; the pedal never moves
+                order = sorted([(a_, va, ea, True), (b_, vb, eb, False)], key=lambda x: {"org_lh": 0, "org_rh_in": 1, "org_rh": 2, "org_ped": 9}[x[1]])
+                for q, v_, e, is_low in order:
+                    if v_ != "org_ped" and _fix(q, v_, e, is_low): changed = True; break
+                break
+    if not changed: break
 # breaths (749.19, 749.20): a beat's breath before the third line of every verse and refrain (after the half-stanza), sung by every
 # part and taken by the organ's hands where their note ends there; held pedal points and notes running through are left
 BREATH_REL = 276
