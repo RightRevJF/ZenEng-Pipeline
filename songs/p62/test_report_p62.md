@@ -86,7 +86,7 @@ The lead sheet, full score, parts (harmony high and low, acoustic guitar, piano,
 
 # The blind pick (10.20)
 
-Three slots, to be offered in shuffled order:
+Three slots, offered shuffled (A middle, B annotated, C remembered). **The writer chose B, the annotated slot.**
 
 - **Remembered:** "there's a door in the wall"
 - **Middle:** "and I said there's a door, and it's going to open" (top quartile under both)
