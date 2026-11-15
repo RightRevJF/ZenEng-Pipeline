@@ -35,7 +35,7 @@ Across songs, the note measures add 3.3% to the explained variation in log views
 | Chord repetition within the clip | +0.047 | < .001 | +0.005 | .75 |
 | Melody surprise squared (inverted U) | +0.015 | .002 | +0.004 | .56 |
 
-Across songs, n = 10,847 (standard errors clustered by artist). Within artist, n = 7,687 songs by 1,858 artists with at least two songs.
+Across songs, n = 10,847 (standard errors clustered by artist). Within artist, n = 7,687 songs by 1,469 artists with at least two songs.
 
 Two things hold up in both models:
 
