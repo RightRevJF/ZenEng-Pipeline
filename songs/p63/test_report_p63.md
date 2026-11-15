@@ -217,7 +217,7 @@ The fixes:
 
 Roughness (Sethares, six harmonics) is unchanged across the editions: a mean of 0.57 a slice. Semitone clashes are 20 eighths, against 18 in the third edition and 28 in the second.
 
-Each sung line lasts about 8.2 seconds at ♩ = 88 (median of 19 lines), just over the 8-second limit of short-term memory for a phrase. At ♩ = 92 a line would last 7.8 seconds. The tempo was the writer's choice, so it is left as it is and raised with him.
+Each sung line lasted about 8.2 seconds at ♩ = 88 (median of 19 lines), just over the 8-second limit of short-term memory for a phrase. At the writer's choice, the tempo is now ♩ = 92 ("gently rocking" still), and a line lasts 7.8 seconds.
 
 Consistency: 62 of 62 checks pass, with new ones for the low intervals, the tune on top and no choir crossings.
 

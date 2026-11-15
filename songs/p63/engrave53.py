@@ -64,7 +64,7 @@ DYN_S = {276: "\\mp", 864: "\\p", 1572: "\\mf", 2160: "\\f", O["B_refrain"] + 42
 DYN_O = {0: "\\p", 276: "\\mp", 864: "\\p", L0: "\\mf", 2160: "\\f", O["B_refrain"] + 420: "\\p", 76 * 36: "\\pp"}
 DYN_D = {2160: "\\f"}
 def glob():
-    g = ['\\time 3/4', '\\key ees \\major', '\\tempo "Gently rocking" 4 = 88']
+    g = ['\\time 3/4', '\\key ees \\major', '\\tempo "Gently rocking" 4 = 92']
     marks = {1: "Organ: introduction", 9: "Verses 1–3", 25: "Refrain (after verses 1, 2 and 3)", 41: "Organ: to F major", 45: "Verse 4: unison (men an octave lower)", 61: "Final refrain: in parts, sopranos' descant", 77: "Organ: coda"}
     for b in range(1, 81):
         if b == 41: g.append('\\key f \\major')
@@ -77,7 +77,7 @@ def glob():
 GLOB = glob()
 NOTE36 = 's2.*39 s2 s4^\\markup \\italic \\small \\column { "Verses 2 and 3: back to bar 8, beat 3" "After verse 3: on to bar 41" } s2.*40'
 
-FOOT = "Sung to Sleep (fourth edition) · Words and music: Jason Bryant · ♩ = 88 · E-flat major, verse 4 in F major"
+FOOT = "Sung to Sleep (fourth edition) · Words and music: Jason Bryant · ♩ = 92 · E-flat major, verse 4 in F major"
 HEAD = r'''\version "2.24.3"
 #(set-global-staff-size %s)
 \paper { #(set-paper-size "letter") left-margin = 14\mm right-margin = 14\mm top-margin = 12\mm bottom-margin = 14\mm ragged-last-bottom = ##t
@@ -139,7 +139,7 @@ def readback():
     names = ["S", "A", "T", "B", "Desc", "org_rh", "org_rh_in", "org_lh", "org_ped"]
     staves = " ".join(f'\\new Staff {{ \\new Voice {{ \\global {{}} }} }} ' for _ in [])
     body = " ".join(f'\\new Staff << \\new Voice {{ \\global }} \\new Voice {{ {voice_ly(V[n], fermata_last=False)} }} >>' for n in names)
-    src = f'\\version "2.24.3"\nglobal = {{ {GLOB.replace(chr(92) + "break", "")} }}\n\\score {{ << {body} >> \\midi {{ \\tempo 4 = 88 }} }}\n'
+    src = f'\\version "2.24.3"\nglobal = {{ {GLOB.replace(chr(92) + "break", "")} }}\n\\score {{ << {body} >> \\midi {{ \\tempo 4 = 92 }} }}\n'
     compile_ly(src, "readback")
     mf = mido.MidiFile(f"{OUT}/readback.midi"); tpq = mf.ticks_per_beat; got = []
     for tr in mf.tracks:

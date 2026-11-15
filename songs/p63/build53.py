@@ -381,7 +381,7 @@ for voice in ("S", "A", "T", "B", "Desc", "org_rh", "org_rh_in", "org_lh", "org_
         if e["on"] + e["dur"] in BREATHS and e["dur"] > 12 and e["on"] < e["on"] + e["dur"] - 12: e["dur"] -= 12; e["breath"] = True
 REC = dict(title=L.TITLE, voices={k: v for k, v in V.items()}, offsets=OFF, end=END, bars=80, pickup=0, keys=[(0, "E-flat major"), (L0, "F major")], link_bar=41, coda_bar=77,
            paths=dict(A=pathA, verse4=path4, final_refrain=pathFR), costs=dict(A=costA, verse4=cost4, final_refrain=costFR), descant_dspace=DESC,
-           reharm=REHARM, verse_chords=G.VERSE_CH, refrain_chords=G.REFRAIN_CH, fp=M["pick"]["fp"], qpm=88, breaths=BREATHS)
+           reharm=REHARM, verse_chords=G.VERSE_CH, refrain_chords=G.REFRAIN_CH, fp=M["pick"]["fp"], qpm=92, breaths=BREATHS)
 json.dump(REC, open(f"{H}/song_record.json", "w"))
 if __name__ == "__main__":
     print({k: len(v) for k, v in V.items()}, "costs", {k: round(v, 1) for k, v in REC["costs"].items()})
