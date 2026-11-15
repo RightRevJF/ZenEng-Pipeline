@@ -1,3 +1,4 @@
+import sys
 """Sung to Sleep (song 53): both documents against the record, and the readings for the test report (written to readings53.json)."""
 import json, re, subprocess, os, collections, itertools
 import harm68
@@ -107,6 +108,12 @@ for k, v in RD.items(): chk(f"harmony: {k}: no parallel fifths or octaves with t
 SEC = collections.OrderedDict((p, sum(e["p"] for e in S if e["part"] == p) / sum(1 for e in S if e["part"] == p)) for p in ("verse", "refrain", "verse4", "refrain_final"))
 first_top = min(e["on"] for e in S if e["p"] == max(x["p"] for x in S)) // 36 + 1
 json.dump(dict(harmony=RD, section_means=SEC, top_bar=first_top, top_share=(first_top - 1) / 80), open(f"{H}/readings53.json", "w"))
+
+sys.path.insert(0, "/home/claude/shape"); import perception as PC
+_P = PC.check(R)
+chk("perception: no close intervals in the organ below the low-interval limits", _P["low_interval_violations"] == 0)
+chk("perception: the sung tune on top (organ above it at no more than 2% of sung onsets)", _P["accomp_above_share"] <= 0.02)
+chk("perception: no crossings among the four choir parts", _P["choir_crossings"] == 0)
 for n, ok in C: print(("PASS " if ok else "FAIL ") + n)
 print(f"{sum(ok for _, ok in C)}/{len(C)} checks pass")
 json.dump(C, open(f"{OUT}/consistency.json", "w"))

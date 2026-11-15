@@ -198,6 +198,29 @@ Against the popular corpus:
 
 Consistency: 59 of 59 checks pass, including new ones for the breaths, the verse inner line, the rising returns and the late high point.
 
+
+# Perception checks (psychoacoustics round)
+
+Three checks from the research round "Psychoacoustics for the songwriting engine" were built in studies/psychoacoustics/perception.py and run on all four editions. Each was confirmed or corrected in the fourth edition:
+
+| Check | 1st | 2nd | 3rd | 4th, before the fix | 4th, final |
+|---|---|---|---|---|---|
+| Organ pairs below the low-interval limits (mud) | 11 | 7 | 7 | 7 | 0 |
+| Sung onsets with the organ above the tune (top voice lost) | 0% | 0% | 22% | 22% | 0.8% |
+| Sung onsets with the organ a second or less from the tune | n/a | n/a | 17% | 12% | 11% |
+| Choir crossings | 0 | 0 | 0 | 0 | 0 |
+
+The fixes:
+
+- **Mud:** a left-hand note that makes a close interval below its limit with the pedal or another left-hand note moves up an octave. The limits are an arranger's rule of thumb; the roughness model only ranks the intervals.
+- **The tune on top:** verse 4's chords stay strictly under the unison tune. That restores the second edition's rule (749.8), which the third edition had relaxed for fuller voicings, and both checks now agree.
+
+Roughness (Sethares, six harmonics) is unchanged across the editions: a mean of 0.57 a slice. Semitone clashes are 20 eighths, against 18 in the third edition and 28 in the second.
+
+Each sung line lasts about 8.2 seconds at ♩ = 88 (median of 19 lines), just over the 8-second limit of short-term memory for a phrase. At ♩ = 92 a line would last 7.8 seconds. The tempo was the writer's choice, so it is left as it is and raised with him.
+
+Consistency: 62 of 62 checks pass, with new ones for the low intervals, the tune on top and no choir crossings.
+
 # Findings
 
 ## 749.11 A hymn needs a hymn mode and hymn tables

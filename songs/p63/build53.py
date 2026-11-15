@@ -279,19 +279,21 @@ for t in range(VERSE[0]["on"], end4, 12):
     tus = [tu1] + [n["p"] for n in VERSE if t < n["on"] < t + 12]                                       # the tune at the beat and on its half
     okp = lambda top: last_top is None or not (parallel(last_top, top, PED4.get(t - 12, PED4[t]), PED4[t]) or any(parallel(last_top, top, tu0, x) for x in tus))   # no parallel fifths or octaves with the pedal or the tune
     if change:
-        cands = sorted(voicings(ch, 57, 72), key=lambda c: (sum(abs(x - y) for x, y in zip(c, prev_v)), abs(c[-1] - prev_v[-1])) if prev_v else abs(c[-1] - 69))
+        tune_now = VERSE[k]["p"]; hi_v = min(72, tune_now - 1)                                   # the sung tune stays on top (top-voice salience)
+        cands = sorted(voicings(ch, 52, hi_v) or voicings(ch, 48, hi_v), key=lambda c: (sum(abs(x - y) for x, y in zip(c, prev_v)), abs(c[-1] - prev_v[-1])) if prev_v else abs(c[-1] - 69))
         base = next((c for c in cands if okp(c[-1])), cands[0])
         sus = prev_v is not None and prev_v[-1] % 12 not in pcs(ch) and 0 < prev_v[-1] - base[-1] <= 2      # the old top held over the change, resolving down by step
         v = base[:-1] + [prev_v[-1]] if sus else base; alt = -1 if sus else 0                 # after a suspension the next beat resolves it
         put("org_rh", t + OFF["B_verse"], 12, [q + 3 for q in v], **({"sus": True} if sus else {}))
         cur = base
     else:
-        alt += 1; m = moved(ch, cur, 77) if alt % 2 == 1 else None
+        alt += 1; m = moved(ch, cur, VERSE[k]["p"] + 1) if alt % 2 == 1 else None
         if m and not okp(m[-1]): m = None
         v = m or cur
         if t == end4 - 12 and parallel(v[-1], REFRAIN[0]["p"], PED4[t], 62 - 24): v = cur if m else (moved(ch, cur, 77) or cur)   # into the final refrain: no octaves with its tonic pedal
+        if v[-1] >= VERSE[k]["p"]: v = cur if cur[-1] < VERSE[k]["p"] else v
         if not okp(v[-1]) or (t == end4 - 12 and parallel(v[-1], REFRAIN[0]["p"], PED4[t], 62 - 24)):
-            alts = [c for c in voicings(ch, 57, 72) if okp(c[-1]) and not (t == end4 - 12 and parallel(c[-1], REFRAIN[0]["p"], PED4[t], 62 - 24))]
+            alts = [c for c in voicings(ch, 52, min(72, VERSE[k]["p"] - 1)) if okp(c[-1]) and not (t == end4 - 12 and parallel(c[-1], REFRAIN[0]["p"], PED4[t], 62 - 24))]
             if alts: v = min(alts, key=lambda c: sum(abs(x - y) for x, y in zip(c, cur)))
         put("org_rh", t + OFF["B_verse"], 12, [q + 3 for q in v])
     prev_v = cur; last_top = v[-1]
@@ -358,6 +360,18 @@ for voice in ("org_rh", "org_rh_in", "org_lh", "org_ped"):
     V[voice] = merge_holds(V[voice])
     for a, b in zip(V[voice], V[voice][1:]):                                       # the organ legato: a beat's gap closed by the note before
         if 0 < b["on"] - (a["on"] + a["dur"]) <= 12: a["dur"] = b["on"] - a["on"]
+# low intervals (psychoacoustics): a left-hand note that makes a close interval with the pedal or another left-hand note below the
+# arranger's low-interval limit goes up an octave (the roughness model ranks these; the limits are a rule of thumb)
+LOW_LIMIT = {1: 52, 2: 51, 3: 48, 4: 46, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 41, 11: 41}
+def _sound(voice, t): return [q for e in V[voice] if e["on"] <= t < e["on"] + e["dur"] for q in (e["p"] if isinstance(e["p"], list) else [e["p"]])]
+for e in V["org_lh"]:
+    for _ in range(2):
+        ps_ = e["p"] if isinstance(e["p"], list) else [e["p"]]
+        below = _sound("org_ped", e["on"]) + [q for q in _sound("org_lh", e["on"]) if q not in ps_]
+        allp = sorted(set(below + ps_)); bad = [x for a, b in zip(allp, allp[1:]) if 0 < b - a < 12 and a < LOW_LIMIT[b - a] for x in (a, b) if x in ps_]
+        if not bad: break
+        new = [q + 12 if q in bad and q + 12 <= 65 else q for q in ps_]
+        e["p"] = sorted(set(new)) if isinstance(e["p"], list) else new[0]
 # breaths (749.19, 749.20): a beat's breath before the third line of every verse and refrain (after the half-stanza), sung by every
 # part and taken by the organ's hands where their note ends there; held pedal points and notes running through are left
 BREATH_REL = 276
