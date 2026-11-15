@@ -81,7 +81,7 @@ def spell(pt):
         for pp in ((n.pitches if isinstance(n, chord.Chord) else [n.pitch]) if not isinstance(n, (note.Unpitched, percussion.PercussionChord)) else []):
             if pp.accidental is not None and pp.accidental.name == "flat": pp.getEnharmonic(inPlace=True)
 def score(title, parts):
-    s = stream.Score(); s.insert(0, metadata.Metadata()); s.metadata.title = REC["title"]; s.metadata.movementName = title
+    s = stream.Score(); s.insert(0, metadata.Metadata()); s.metadata.title = REC["title"]; s.metadata.movementName = title + " (second edition)"
     s.metadata.composer = "Words and music: Jason Bryant"
     for p in parts: spell(p); s.insert(0, p)
     return s
@@ -104,7 +104,7 @@ if __name__ == "__main__":
             "Acoustic guitar": len(events(P_["guitar"])), "Piano": len(events(P_["piano"])), "Cello": len(events(P_["cello"])), "Acoustic bass": len(events(P_["bass"]))}
     for lab, parts in (("lead sheet", [voice_part()]), ("full score", full_parts())):
         s = score(lab.capitalize(), parts)
-        base = f"{OUT}/{REC['title']} - {lab}"
+        base = f"{OUT}/{REC['file_title']} - {lab}"
         print("  wrote", s.write("mxl", fp=base + ".mxl"), s.write("musicxml", fp=base + ".musicxml"))
         back = converter.parse(base + ".mxl")
         for p in back.parts:
@@ -113,7 +113,7 @@ if __name__ == "__main__":
             print(f"{lab}: {nm}: {n_on} onsets read back, record {want.get(nm)}", "OK" if n_on == want.get(nm) else "CHECK")
         if lab == "lead sheet":
             ly = [n.lyric for n in back.parts[0].recurse().notes if n.lyric]; print("  lyrics read back:", len(ly), "record", len(LY))
-    back = converter.parse(f"{OUT}/{REC['title']} - full score.musicxml")
+    back = converter.parse(f"{OUT}/{REC['file_title']} - full score.musicxml")
     for p in back.parts:
         if p.partName in ("Voice", "Acoustic bass", "Piano"):
             got = sorted(x.midi for n in p.recurse().notes if not isinstance(n, harmony.ChordSymbol) and not (n.tie is not None and n.tie.type in ("stop", "continue")) for x in n.pitches)

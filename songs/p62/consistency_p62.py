@@ -4,7 +4,7 @@ H = "/home/claude/p62"
 R = pickle.load(open(f"{H}/song_record.pkl", "rb")); RB = pickle.load(open(f"{H}/out/readback.pkl", "rb")); RS = pickle.load(open(f"{H}/out/readback_score.pkl", "rb"))
 DM = pickle.load(open(f"{H}/out/demo_report.pkl", "rb"))
 SB = open(f"{H}/songbook.md").read(); NV = open(f"{H}/out/nashville.html").read()
-def pdf(n): return subprocess.run(["pdftotext", f"{H}/out/The Room Next Door - {n}.pdf", "-"], capture_output=True, text=True).stdout
+def pdf(n): return subprocess.run(["pdftotext", f"{H}/out/The Room Next Door (second edition) - {n}.pdf", "-"], capture_output=True, text=True).stdout
 LY, PT, SC = pdf("lead sheet").replace("’", "'"), pdf("parts"), pdf("full score")
 PN = ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "B♭", "B"]
 def nm(p): return f"{PN[p % 12]}{p // 12 - 1}"

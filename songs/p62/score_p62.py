@@ -34,7 +34,7 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
   \context { \DrumStaff \RemoveEmptyStaves \override VerticalAxisGroup.remove-first = ##t }
   \context { \Lyrics \override LyricText.font-size = #-0.5 } }
 '''
-src = HEAD % (E.FOOT, E.FOOT) + f'''\\header {{ title = "{E.TITLE}" subtitle = "Full score" composer = "Words and music: Jason Bryant" tagline = ##f }}
+src = HEAD % (E.FOOT, E.FOOT) + f'''\\header {{ title = "{E.TITLE}" subtitle = "Full score · second edition" composer = "Words and music: Jason Bryant" tagline = ##f }}
 \\score {{ <<
   \\new ChordNames \\with {{ chordChanges = ##t chordNameExceptions = #chExceptions }} \\chordmode {{ {CH} }}
   \\new ChoirStaff <<

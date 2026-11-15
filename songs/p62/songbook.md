@@ -1,6 +1,6 @@
 ---
 title: "The Room Next Door"
-subtitle: "Songbook and production notes"
+subtitle: "Songbook and production notes, second edition"
 author: "Words and music: Jason Bryant"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "The Room Next Door: test report"
+title: "The Room Next Door: test report, second edition"
 subtitle: "Words and music: Jason Bryant"
 ---
 

@@ -46,7 +46,7 @@ table.nums tr td:last-child {{ border-right: 1.5px solid #111; }}
 </style></head><body>
 <div class="hdr"><h1>The Room Next Door</h1>
 <div class="meta">♩. = 54 &nbsp;·&nbsp; KEY: D major &nbsp;·&nbsp; 6/8, IN TWO &nbsp;·&nbsp; FEEL: intimate folk ballad, gently rocking &nbsp;·&nbsp; {int(secs // 60)}:{int(round(secs % 60)):02d}</div>
-<div class="cred">Words and music: Jason Bryant · 2026</div></div>
+<div class="cred">Words and music: Jason Bryant · second edition · 2026</div></div>
 {body}
 <div class="foot"><b>Numbers.</b> D major: 1 = D, 2m = Em, 3m = F♯m, 4 = G, 5 = A, 6m = Bm, ♭7 = C, ♭6 = B♭ (borrowed). /3 = over the third (D/F♯ = 1/3, G/B = 4/6). One cell is one bar of 6/8: two beats. Every sung line is two bars.</div>
 </body></html>"""
@@ -55,6 +55,6 @@ async def main():
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
         b_ = await p.chromium.launch(); pg = await b_.new_page(); await pg.set_content(doc); await pg.wait_for_timeout(300)
-        await pg.pdf(path="/home/claude/p62/out/The Room Next Door - Nashville chart.pdf", format="Letter", landscape=True, margin=dict(top="0.35in", bottom="0.3in", left="0.4in", right="0.4in"), scale=0.86, print_background=True)
+        await pg.pdf(path="/home/claude/p62/out/The Room Next Door (second edition) - Nashville chart.pdf", format="Letter", landscape=True, margin=dict(top="0.35in", bottom="0.3in", left="0.4in", right="0.4in"), scale=0.86, print_background=True)
         await b_.close()
 asyncio.run(main()); print("ok")

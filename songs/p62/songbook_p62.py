@@ -38,7 +38,7 @@ def near(x):
     return f"{nm(r - 1)} to {nm(r + 1)}"
 lift = round(2 * (sum(ca) / len(ca) - sum(va) / len(va))) / 2
 o = []; A = o.append
-A('---\ntitle: "The Room Next Door"\nsubtitle: "Songbook and production notes"\nauthor: "Words and music: Jason Bryant"\n---\n')
+A('---\ntitle: "The Room Next Door"\nsubtitle: "Songbook and production notes, second edition"\nauthor: "Words and music: Jason Bryant"\n---\n')
 A("# At a glance\n")
 A("**What it's about.** Nora's husband Bernard has died in the sitting room. She keeps his cup, his chair and the book he left face down, and she moves her own chair to the north wall, where the plaster is warm the way only a south wall should be. She talks to him through it. One morning the room next door comes as close as a breath, and she understands what she had been too close to see: a wall with a door in it is not the same as a wall without one. The song is from the writer's parable \"The Room Next Door\" in *Wild Fruit*.\n")
 A(f"**How it goes.** An intimate folk ballad in 6/8, D major, at a dotted quarter of 54: count it in two, gently rocking. A fingerpicked acoustic guitar carries it; soft piano and an acoustic bass come in at the first chorus, a cello at the second. The hook, \"there's a door in the wall,\" lifts to the song's top note, {nm(max(n['midi'] for n in door))}, on \"door\" and leaves \"wall\" open. The bridge drops to piano and cello alone. At the very end the hook is sung twice, and the second time it comes home.\n")
@@ -123,5 +123,5 @@ A(f"- **Tempo and click.** Dotted quarter = 54 (quarter = 81), 6/8 throughout; c
 A("## Score and parts\n")
 A("- Lead sheet: voice, words and chord symbols (PDF).\n- Full score: every part on one set of systems (PDF).\n- Parts: harmony vocals (high, low), acoustic guitar, piano, cello and acoustic bass (PDF).\n- Number chart (PDF).\n- MusicXML: the lead sheet and the full score (.musicxml and .mxl).\n- Demo: MP3 and a General MIDI file.\n")
 open(f"{H}/songbook.md", "w").write("\n".join(o) + "\n")
-subprocess.run(["pandoc", f"{H}/songbook.md", "--reference-doc=/home/claude/carol/songbook/ref.docx", "-o", f"{H}/out/The Room Next Door - songbook.docx"], check=True)
+subprocess.run(["pandoc", f"{H}/songbook.md", "--reference-doc=/home/claude/carol/songbook/ref.docx", "-o", f"{H}/out/The Room Next Door (second edition) - songbook.docx"], check=True)
 print("ok", len("\n".join(o)))

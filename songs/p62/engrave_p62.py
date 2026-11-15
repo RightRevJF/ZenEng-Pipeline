@@ -166,9 +166,9 @@ NOTE1a = f"Final chorus: the hook twice; the second time “door” on {nm_(_h2[
 NOTE1b = f"Bridge: a hush, piano and cello; “and you were there” lifts to {nm_(max(n['midi'] for n in _th))}, and “gone” holds open into the last verse."
 NOTE2 = "Verses: close and plain, as if talking to him through the wall."
 TITLE = REC["title"]; FT = REC["file_title"]
-FOOT = f"{TITLE} · Words and music: Jason Bryant · ♩. = 54, 6/8 · D major · {_mm}:{_ss:02d}"
+FOOT = f"{TITLE} (second edition) · Words and music: Jason Bryant · ♩. = 54, 6/8 · D major · {_mm}:{_ss:02d}"
 if __name__ == "__main__":
-    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "{TITLE}" subtitle = "Lead sheet" composer = "Words and music: Jason Bryant" tagline = ##f }}
+    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "{TITLE}" subtitle = "Lead sheet · second edition" composer = "Words and music: Jason Bryant" tagline = ##f }}
 \\score {{ <<
   \\new ChordNames \\with {{ chordChanges = ##t chordNameExceptions = #chExceptions }} \\chordmode {{ {chords_for(VREST)} }}
   \\new Staff \\with {{ instrumentName = "Voice" }} {{ \\clef "treble" \\new Voice = "v" {{ {VBODY} }} }}
@@ -196,7 +196,7 @@ if __name__ == "__main__":
 \\score {{ << \\new ChordNames \\with {{ chordChanges = ##t chordNameExceptions = #chExceptions }} \\chordmode {{ {chords_for(rest)} }}
   \\new Staff {{ {clef} {bd} }} >> \\layout {{ }} }} }}''')
     nh = nd = 0
-    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
+    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts · second edition" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
     path, warns = compile_ly(parts, f"{FT} - parts", cwd=OUT)
     print("parts:", [w for w in warns][:6], len(warns))
     for k, v in checks.items(): print(f"  readback {k}:", "matches" if v[0] else "MISMATCH", v[1:])

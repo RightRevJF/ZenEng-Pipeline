@@ -139,7 +139,7 @@ def tidy(lst):
 PARTS = {k: tidy(v) for k, v in parts.items()}
 plan = [(nm, nb, G.BAR0[nm] * BAR, ["6/8"] * nb, nm) for nm, nb in G.FORM]
 secs = NB * BAR / 12 * 60 / QB
-rec = dict(title=L.TITLE, file_title=L.TITLE, nbars=NB, bars=bars, chords2=[h for ch in CHORD for h in (ch, ch)], plan=plan, lead=lead, harm_hi=harm_hi, harm_lo=harm_lo,
+rec = dict(title=L.TITLE, file_title=L.TITLE + " (second edition)", edition="second edition", nbars=NB, bars=bars, chords2=[h for ch in CHORD for h in (ch, ch)], plan=plan, lead=lead, harm_hi=harm_hi, harm_lo=harm_lo,
            parts=PARTS, slot="twelfth of a quarter; a 6/8 bar of 36", qbpm=QB, dotted=54, seconds=secs, tw_sec=60 / QB / 12, end=NB * BAR, meters={},
            fp=c["fp"], survivors=F["survivors"], built=F["made"], readings=c["readings"], charge=c["charge"], distance=c["distance"], plans=c["plans"], text=TEXT,
            design=dict(door=G.DOOR, home=G.HOME, there=G.THERE, registers=G.REG), seed=F["seed"], hand_edits=[])
