@@ -50,6 +50,9 @@ vm = sorted(n["midi"] for j in range(4) for n in by[("Verse 1", j)]); cm = sorte
 chk("the chorus above the verse (median two or more)", cm[len(cm) // 2] - vm[len(vm) // 2] >= 2)
 chk("choruses 2, 3 and the final chorus: lines 1-4 and 7 as chorus 1 (the final chorus's line 7 over G: F#3 to G3)", all([n["midi"] for n in by[(s, j)]] == [n["midi"] for n in by[("Chorus 1", j)]] for s in ("Chorus 2", "Chorus 3", "Last Chorus") for j in (0, 1, 2, 3, 6) if (s, j) != ("Last Chorus", 6))
     and [n["midi"] + (1 if n["midi"] % 12 == 6 else 0) for n in by[("Chorus 1", 6)]] == [n["midi"] for n in by[("Last Chorus", 6)]])
+def _bar_notes(sec, k): t0 = (B0[sec] + k) * 48; return [(n["on"] - t0, n["midi"], n["dur"]) for n in lead if t0 <= n["on"] < t0 + 48]
+_l56 = set(range(7, 12))                                                                 # chorus bars 8-12: lines 5 and 6 (new words) and the pickup into them
+chk("choruses 2 and 3: every bar outside lines 5-6 sung exactly as chorus 1 (pitch, onset, length)", all(_bar_notes(s_, k) == _bar_notes("Chorus 1", k) for s_ in ("Chorus 2", "Chorus 3") for k in range(20) if k not in _l56))
 chk("verse lines four bars, the rest two (the hook's and the tag's last lines held)", all(R["design"]["slots"][s] == [4] * 4 for s in ("Verse 1", "Verse 2", "Verse 3", "Verse 4")) and R["design"]["slots"]["Chorus 1"] == [2] * 7 + [6])
 chk("songbook: no engine terms", not re.search(r"\b(engine|judge|survivor|gate|calibrat|fix \d|ZenEng|Luthier|Boundary)\b", SB, re.I))
 chk("songbook: the range", f"{nm(min(ps))} to {nm(max(ps))}" in SB)

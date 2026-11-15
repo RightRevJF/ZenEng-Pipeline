@@ -70,7 +70,8 @@ The lead sheet (a tempo mark at every tempo change, felt tempo shown), full scor
 
 - Every pitched staff of the lead sheet, parts and full score reads back from LilyPond's MIDI note for note; every drum hit is written.
 - MusicXML reads back with music21: onsets and pitches match the record.
-- Consistency: 55/55 checks pass, including the hook's C♯4 hold over Dmaj7 in choruses 1–3, E4 only in the final chorus over Asus4 into A, no full A on a downbeat before it, the bridge's two passes and D4, the silent bar, the tag's return and A2, and every tempo of the plan in the songbook.
+- The writer's flag (14 Nov): in the engine's copies some choruses held a line's last note a sixteenth longer or shorter than chorus 1 (bars 28 and 36 showed a tied sixteenth in some choruses, not in others). The record now holds every chorus line's last note to where chorus 1's ends, where the next note allows (eight notes changed, pitches and onsets untouched). Choruses 2 and 3 now match chorus 1 bar for bar outside lines 5 and 6, whose new words shift a few notes (bars 73 and 75; 112, 113 and 115); the songbook says so.
+- Consistency: 56/56 checks pass, including the hook's C♯4 hold over Dmaj7 in choruses 1–3, E4 only in the final chorus over Asus4 into A, no full A on a downbeat before it, the bridge's two passes and D4, the silent bar, the tag's return and A2, and every tempo of the plan in the songbook.
 
 # The blind pick (10.20)
 

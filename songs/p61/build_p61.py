@@ -70,6 +70,19 @@ for n in c["notes"]:
     sec, i = n["line"].split(":"); i = int(i); tx, hy = TEXT[sec][i][n["syl"]]
     lead.append(dict(on=n["on"], on_engine=n["on"], dur=n["dur"], midi=n["p"], sec=sec, line=i, syl=n["syl"], first=not n["slur"], text=tx, hyph=hy,
                      stress=P.LINES[sec][i][n["syl"]][1], role=M.WORDS_OF[sec][i][0], singer="voice"))
+# ---- the choruses' held ends matched to chorus 1's (the writer's flag, 14 Nov): every line's last note held to where chorus 1's is, where the next note allows ----
+def _lines(sec): return {i: [n for n in lead if n["sec"] == sec and n["line"] == i] for i in range(len(P.LINES[sec]))}
+DURFIX = []
+_c1 = _lines("Chorus 1"); _ons = sorted(n["on"] for n in lead)
+for _s in ("Chorus 2", "Chorus 3", "Last Chorus"):
+    _cs = _lines(_s)
+    for _j in range(7):
+        if not _cs[_j] or not _c1[_j]: continue
+        a_, b_ = _c1[_j][-1], _cs[_j][-1]
+        want = (a_["on"] + a_["dur"] - P.line_start("Chorus 1", _j)) - (b_["on"] - P.line_start(_s, _j))
+        nxt = next((o for o in _ons if o > b_["on"]), None)
+        if want > 0 and want != b_["dur"] and (nxt is None or b_["on"] + want <= nxt):
+            DURFIX.append((_s, _j, b_["dur"], want)); b_["dur"] = want
 CH = dict(M.CH)
 def tones(ch): return CH[ch][1]
 def up_to(p, pcs, k=1):
@@ -236,9 +249,11 @@ rec = dict(title="A Wire Pulled Tight", file_title="A Wire Pulled Tight (v6)", n
            plans=c["meta"]["plans"], hand_edits=c["hand_edits"], picked_from=c["picked_from"], kinds={f"{a}:{b}": v for (a, b), v in c["meta"]["kinds"].items()},
            rerun=F["run"]["rerun"], text=TEXT, registers=c["meta"]["registers"], carriers=c["meta"]["carriers"],
            design=dict(gates=P.DESIGN_GATES, hook=P.HOOK, hook_final=P.HOOKL, bridge=P.LIFTD, tag=P.TAGL, bridge_low=P.BRIDGE_LOW, slots={s: P.slots_of(s) for s in P.SUNG}),
-           chart438=F["run"]["rerun"].get("chart438"), bass_written_by="bass_v134.py write_bass (the sung sections, on the engine's grid)", bass_tries=tries)
+           chart438=F["run"]["rerun"].get("chart438"), bass_written_by="bass_v134.py write_bass (the sung sections, on the engine's grid)", bass_tries=tries,
+           durfix=dict(rule="the choruses' held line ends matched to chorus 1's (the writer's flag, 14 Nov); pitches and onsets untouched", changes=DURFIX))
 pickle.dump(rec, open("/home/claude/p61/song_record.pkl", "wb"))
 if __name__ == "__main__":
+    print("held ends matched:", DURFIX)
     print(NB, "bars,", f"{secs:.0f} s ({int(secs // 60)}:{secs % 60:04.1f});", len(lead), "sung;", {k: len(v) for k, v in PARTS.items()}, "harmony", len(harm_hi), "bass tries", tries)
     for sec in P.SUNG:
         for i, ws in enumerate(TEXT[sec]): print(sec, i, " ".join(t_ + ("-" if h else "") for t_, h in ws))

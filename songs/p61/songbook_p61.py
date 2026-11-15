@@ -88,6 +88,15 @@ A("\nVerse 1's tunes, fitted to new words. Brushes come in; the overdriven guita
 A(f"## Pre-chorus 2 (bars {span('Pre 2')}, {tq('Pre 2')})\n"); A(table("Pre 2"))
 A("\nStrummed now; a snare roll in the last half-bar.\n")
 A(f"## Chorus 2 (bars {span('Chorus 2')}, {tq('Chorus 2')})\n\nAs chorus 1, with new words on lines 5 and 6:\n"); A(table("Chorus 2", only=(4, 5)))
+def _diffbars(sec):
+    out = []
+    for k in range(NBS["Chorus 1"]):
+        a_ = [(n["on"] - BST[B0["Chorus 1"] + k], n["midi"], n["dur"]) for n in R["lead"] if B0["Chorus 1"] + k == barno(n["on"]) - 1]
+        b_ = [(n["on"] - BST[B0[sec] + k], n["midi"], n["dur"]) for n in R["lead"] if B0[sec] + k == barno(n["on"]) - 1]
+        if a_ != b_: out.append(B0[sec] + k + 1)
+    return out
+def _bl(xs): return ", ".join(str(x) for x in xs[:-1]) + (" and " if len(xs) > 1 else "") + str(xs[-1])
+A(f"\nThe new words are fitted to chorus 1's tune, so a few notes and rhythms shift where they fall (bars {_bl(_diffbars('Chorus 2'))}); every other bar is sung exactly as in chorus 1. The same holds in chorus 3 (bars {_bl(_diffbars('Chorus 3'))}).\n")
 A("\nThe full kit, snare on 3; the overdriven guitar opens up; clean arpeggios and the organ on top.\n")
 A(f"## Verse 3 (bars {span('Verse 3')}, {tq('Verse 3')})\n"); A(table("Verse 3"))
 A("\nThe full kit; the overdriven guitar palm-muted in eighths.\n")
@@ -101,7 +110,7 @@ A(f"## Bridge (bars {span('Bridge')}, {tq('Bridge')})\n"); A(table("Bridge"))
 A(f"\nTwice through D F♯/A♯ Bm G. The first pass (bars {B0['Bridge'] + 1}–{B0['Bridge'] + 8}) strips back to the acoustic guitar and the kick, low and plain ({nm(min(b1ps))}–{nm(max(b1ps))}): sing \"and I put the clock down\" straight. The second pass builds (kit, strumming, organ, then the overdriven guitar from bar {B0['Bridge'] + 13}) and the melody presses up: \"none of it was ever lost\" climbs {notes(bd)}, touching {nm(d4['midi'])} over Bm in bar {barno(d4['on'])}. A fill, and a full stop.\n")
 A(f"## Approach (bars {span('Approach')}, {tq('Approach')})\n\nBar {A0 + 1}: silence, everyone (two felt beats). Bars {A0 + 2}–{A0 + 8}: the acoustic guitar alone, G for five bars and Asus2 for two, slowing. Don't fill it.\n")
 A(f"## Final chorus (bars {span('Last Chorus')}, {tq('Last Chorus')})\n\nAs chorus 1, with new words on lines 5 and 6:\n"); A(table("Last Chorus", only=(4, 5, 6, 7)))
-A(f"\nThe full band, steady: big but not louder than the bridge. At the G (bars {LC0 + 13}–{LC0 + 15}) everything thins to the voice, the acoustic guitar and the organ. Then \"time is breaking through\" climbs {notes(hl)}: \"through\" lands on {nm(holdl['midi'])} over Asus4 in bar {barno(holdl['on'])} with the band back in, and the Asus4 releases to A in bar {LC0 + 18}, a crash and the first full A chord on a downbeat in the song. Hold {nm(holdl['midi'])} through bar {barno(holdl['on'] + holdl['dur'] - 1)} and let the chord ring. Harmony on every line.\n")
+A(f"\nThe full band, steady: big but not louder than the bridge. Over the G, \"and somewhere in the stillness\" takes G3 where the other choruses sing F♯3. At the G (bars {LC0 + 13}–{LC0 + 15}) everything thins to the voice, the acoustic guitar and the organ. Then \"time is breaking through\" climbs {notes(hl)}: \"through\" lands on {nm(holdl['midi'])} over Asus4 in bar {barno(holdl['on'])} with the band back in, and the Asus4 releases to A in bar {LC0 + 18}, a crash and the first full A chord on a downbeat in the song. Hold {nm(holdl['midi'])} through bar {barno(holdl['on'] + holdl['dur'] - 1)} and let the chord ring. Harmony on every line.\n")
 A(f"## Tag (bars {span('Tag')}, {tq('Tag')})\n"); A(table("Tag"))
 A(f"\nThe acoustic guitar alone. The opening line comes back exactly as verse 1 sang it; then \"and the weight inside it is a grace\" settles to {nm(tg[-1]['midi'])} on \"grace\" over A (bar {barno(tg[-1]['on'])}). The last A rings and decays. No fade.\n")
 A("# For each player\n")

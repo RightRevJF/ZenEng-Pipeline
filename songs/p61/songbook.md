@@ -106,6 +106,9 @@ As chorus 1, with new words on lines 5 and 6:
 | 73–74 | F♯m7 | I have lived every one |
 | 75–76 | D | the ones that went like afternoon |
 
+The new words are fitted to chorus 1's tune, so a few notes and rhythms shift where they fall (bars 73 and 75); every other bar is sung exactly as in chorus 1. The same holds in chorus 3 (bars 112, 113 and 115).
+
+
 The full kit, snare on 3; the overdriven guitar opens up; clean arpeggios and the organ on top.
 
 ## Verse 3 (bars 85–100, ♩ = 136 (felt 68))
@@ -180,7 +183,7 @@ As chorus 1, with new words on lines 5 and 6:
 | 177–178 | G | and somewhere in the stillness |
 | 179–186 | G Asus4 A | time is breaking through |
 
-The full band, steady: big but not louder than the bridge. At the G (bars 177–179) everything thins to the voice, the acoustic guitar and the organ. Then "time is breaking through" climbs B3, C♯4, D4, D4, E4: "through" lands on E4 over Asus4 in bar 180 with the band back in, and the Asus4 releases to A in bar 182, a crash and the first full A chord on a downbeat in the song. Hold E4 through bar 186 and let the chord ring. Harmony on every line.
+The full band, steady: big but not louder than the bridge. Over the G, "and somewhere in the stillness" takes G3 where the other choruses sing F♯3. At the G (bars 177–179) everything thins to the voice, the acoustic guitar and the organ. Then "time is breaking through" climbs B3, C♯4, D4, D4, E4: "through" lands on E4 over Asus4 in bar 180 with the band back in, and the Asus4 releases to A in bar 182, a crash and the first full A chord on a downbeat in the song. Hold E4 through bar 186 and let the chord ring. Harmony on every line.
 
 ## Tag (bars 187–194, ♩ = 110 (felt 55))
 
