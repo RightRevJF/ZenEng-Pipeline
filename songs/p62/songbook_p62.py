@@ -114,7 +114,7 @@ for lab, s1, lv, wh in (("Intro, verse 1", "Verse 1", "pp", "one guitar and the 
                         ("Final chorus", "Last Chorus", "mp+", "the fullest; harmony on every line; B♭maj7; the hook home"), ("Outro", "Outro", "pp", "guitar and cello, slowing")):
     sp_ = f"1–{B0['Verse 1'] + NBS['Verse 1']}" if s1 == "Verse 1" else span(s1)
     A(f"| {lab} | {sp_} | {lv} | {wh} |")
-A(f"\n**The non-negotiables.** The 6/8 rock, felt in two. {nm(dd['midi'])} only on \"door.\" \"Wall\" open in choruses 1 and 2, home on {nm(home[-1]['midi'])} only at the end. The bridge without guitar or bass. B♭maj7 under \"and some morning it opens.\" Nothing louder than mezzo-forte.\n")
+A(f"\n**The non-negotiables.** The 6/8 rock, felt in two. {nm(dd['midi'])} only on \"door,\" {vhi} once, on the last chorus's first \"door.\" The climb from verse 3: the later verses higher, the last chorus the highest. \"Wall\" open in choruses 1 and 2, home on {nm(home[-1]['midi'])} only at the end. The bridge without guitar or bass. B♭maj7 under \"and some morning it opens.\" Nothing louder than mezzo-forte.\n")
 A("**The mix priorities.** The voice close and dry enough to hear the breath. The guitar's picking at the centre, slightly left; the cello right; the piano soft and behind. In the bridge, room sound around the piano and cello.\n")
 A('\n```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```\n')
 A("## Production brief\n")
