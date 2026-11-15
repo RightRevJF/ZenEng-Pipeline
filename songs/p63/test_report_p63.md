@@ -136,6 +136,39 @@ The alto now moves almost as hymn altos do; the tenor and bass are closer than b
 
 **Documents.** Organ full score and hymn page, second edition (80 bars, the same layout); every voice read back from MIDI; consistency 46/46.
 
+
+# Third edition: the organ part by section role
+
+The second edition's organ was measured against a new table, the piano parts of the 326 art songs in 3/4 in OpenScore Lieder (CC0, tables/metre_atlas/accompaniment_lieder.json), and the research round "Accompaniment corpora and music theory" was run first, at the writer's request. Its first rule, from organ practice, is that each section gets a role: the inner verses stay in the hymnal harmony and change colour, while the introduction, the passages between verses and the last verse carry the free, fuller writing. The third edition's organ follows that plan. The choir's parts and the descant are unchanged (a check).
+
+| Section | Role in the third edition |
+|---|---|
+| Introduction, bars 1-8 | the tune in the right hand over an inner line that moves when the tune holds; the rocking left hand; the last bar over B-flat |
+| Verses 1-3, bars 9-24 | hymnal harmony in the right hand; the left hand a broken chord in quarters, the tenor's note on every downbeat; colour changed by registration verse by verse |
+| Refrain, bars 25-40 | the tune on top, an inner line moving in quarters under its held notes, the rocking left hand |
+| Link, bars 41-44 | broken eighths in the right hand, held chords in the left, the pedal stepping down E-flat, D, C |
+| Verse 4, bars 45-60 | free harmony around the unison tune: four-note chords that change on every beat, suspensions at changes, the pedal written first and stepping into each new bass, quarters in the left hand |
+| Final refrain, bars 61-76 | the tune on top, the inner line in eighths under held notes, the rocking left hand, the tonic and dominant pedals |
+
+Before and after, against the Lieder 3/4 middle half (right hand 1.13-1.95 onsets a beat; left hand 0.88-1.51; complementarity, the share of accompaniment onsets where the tune has none, 0.50-0.73). The organ's left hand is read with its pedal, since a pianist's left hand carries the bass.
+
+| Section | Right hand a beat | Left hand and pedal a beat | Complementarity | Commonest texture |
+|---|---|---|---|---|
+| introduction | 0.62 → 0.96 | 1.96 → 1.96 | 0.98 → 0.98 | mixed → mixed |
+| verses 1-3 | 0.67 → 0.67 | 0.48 → 0.83 | 0.18 → 0.39 | sustained → block |
+| refrain | 0.56 → 0.79 | 0.48 → 1.96 | 0.13 → 0.67 | sustained → broken |
+| link | 0.42 → 1.92 | 1.92 → 0.42 | 0.96 → 0.96 | mixed → broken |
+| verse 4 | 0.44 → 0.79 | 1.96 → 1.0 | 0.68 → 0.42 | broken → block |
+| final refrain | 0.38 → 1.1 | 1.98 → 1.98 | 0.68 → 0.68 | broken → broken |
+| coda | 0.5 → 0.5 | 1.0 → 1.0 | 1.0 → 1.0 | sustained → sustained |
+| whole | 0.52 → 0.89 | 1.32 → 1.42 | 0.65 → 0.67 | broken → broken |
+
+What changed: the refrain's complementarity rose from 0.13 to 0.67 and the verses' from 0.18 to 0.39; held, sustained bars fell from 19% of the song to 5%; verse 4 and the final refrain now move in both hands. Semitone clashes between organ and choir fell from 28 eighths to 18, and the parallel octaves between the organ's top and its pedal (four in the second edition, at bars 8, 41, 52 and 75) are gone.
+
+What did not: the right hand over the whole song is 0.89 onsets a beat, still under the Lieder floor of 1.13. That is mostly the plan. The verses keep the hymnal right hand (0.67) because organists keep inner verses close to the hymnal harmony, and there is no table of organ hymn accompaniment to say what an organ's right hand should do; a piano part is a loose stand-in. The verses can't change from one to the next in notes, because verses 1-3 share the printed bars, so their variety is in the registration printed over bar 9.
+
+New tools: organ_readings53.py (the readings above, by the tables' own texture rules) and clash53.py (semitone clashes, organ outer parallels). Consistency: 55 of 55 checks pass, among them the new ones for the inner line, the pedal parallels, the clash count, the Lieder ranges, the unchanged choir parts and the registrations.
+
 # Findings
 
 ## 749.11 A hymn needs a hymn mode and hymn tables
@@ -177,3 +210,13 @@ The alto now moves almost as hymn altos do; the tenor and bass are closer than b
 **Fix (proposed).** An accompaniment module for keyboard-led songs: a texture plan by section that builds through the song (doubling and support early, independence late), figures by metre (the rocking eighths in 3/4), pedal points at phrase openings and before cadences, suspensions at chord changes, an introduction from the refrain's tune and a coda from its last phrase.
 
 **Check.** On any keyboard-led song: the accompaniment's texture grows by section, the late sections do not double the tune, and every note fits its chord or resolves by step.
+
+## 749.16 An accompaniment plan by section role
+
+**Problem.** The engine gives every section of an accompaniment the same treatment, so a song with repeated verses sounds static and an organ part looks thin even when each bar is correct (song 53, first and second editions: the organ's right hand 0.52 onsets a beat, 19% of bars held chords).
+
+**Evidence.** Organ practice gives each verse a role: hymnal harmony with changes of colour for the inner verses, free harmony for the introduction, the interludes and the last verse (the research report "Accompaniment corpora and music theory"). Human arrangements repeat an accompaniment within a section type and change it between types; same-type sections are about 1.68 times more alike (POP909 studies). Song 53's third edition, written to such a plan, raised the organ's right hand to 0.89 onsets a beat and the refrain's complementarity from 0.13 to 0.67, with fewer clashes and no outer parallels.
+
+**Fix.** Before arranging, assign each section a role (introduction, support, lift, interlude, climax, close) and a texture for each hand from the accompaniment tables (by metre: textures, onsets a beat, complementarity). Write the bass first in free sections. Repeat a section's texture when the section repeats and change it when the role changes. Where repeats share printed bars, vary by registration or orchestration. Patterns are stored apart from chords and fitted to each chord, as the published systems do.
+
+**Check.** Per section, each hand's onsets a beat and complementarity sit inside the table's middle half for its role, or the plan says why not. Sustained bars are no more than the table's share. There are no parallel fifths or octaves between the outer voices, and no more clashes than the plain hymnal version.

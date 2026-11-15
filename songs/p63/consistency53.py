@@ -3,14 +3,14 @@ import json, re, subprocess, os, collections, itertools
 import harm68
 H = "/home/claude/p63"; OUT = f"{H}/out"
 R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; RB = json.load(open(f"{OUT}/readback.json"))
-def pdf(n): return subprocess.run(["pdftotext", "-layout", f"{OUT}/Sung to Sleep (second edition) - {n}.pdf", "-"], capture_output=True, text=True).stdout
+def pdf(n): return subprocess.run(["pdftotext", "-layout", f"{OUT}/Sung to Sleep (third edition) - {n}.pdf", "-"], capture_output=True, text=True).stdout
 HP, FS = pdf("hymn page"), pdf("full score (organ)")
 C = []
 def chk(name, ok): C.append((name, bool(ok)))
 for nm, txt in (("hymn page", HP), ("full score", FS)): chk(f"credit line on the {nm}", "Words and music: Jason Bryant" in txt)
 for k, v in RB.items(): chk(f"readback: {k}", v[0])
 def system_bars(txt): return [int(x) for x in re.findall(r"^\s*(\d{1,2})\s*$|^\s*(\d{1,2})\s+[A-Z]", txt, re.M) for x in x if x] if False else [int(m) for m in re.findall(r"(?m)^\s{0,6}(\d{1,2})\b", txt) if 1 < int(m) <= 70]
-src_h = open(f"{OUT}/Sung to Sleep (second edition) - hymn page.ly").read(); src_f = open(f"{OUT}/Sung to Sleep (second edition) - full score (organ).ly").read()
+src_h = open(f"{OUT}/Sung to Sleep (third edition) - hymn page.ly").read(); src_f = open(f"{OUT}/Sung to Sleep (third edition) - full score (organ).ly").read()
 g = lambda s: re.search(r"global = \{(.*?)\n", s).group(1)
 chk("the two documents share one global line (time, keys, bar lines, marks, a break every fourth bar; 80 bars)", g(src_h) == g(src_f) and g(src_h).count("\\break") == 19 and g(src_h).count("s2.") == 80)
 chk("the same notes for every choir voice in both documents", all(re.search(re.escape(x), src_f) for x in re.findall(r'\\new Voice = "(?:sop|alt|ten|bas|desc)" \{ \\voice\w+ (.*?) \}', src_h)))
@@ -42,15 +42,32 @@ def sounding(v, t):
     for e in V[v]:
         if e["on"] <= t < e["on"] + e["dur"]: out |= set(e["p"] if isinstance(e["p"], list) else [e["p"]])
     return out
-def organ_at(t): return sounding("org_rh", t) | sounding("org_lh", t) | sounding("org_ped", t)
+def organ_at(t): return sounding("org_rh", t) | sounding("org_rh_in", t) | sounding("org_lh", t) | sounding("org_ped", t)
 inA = [(e["on"], e["p"]) for v in ("S", "A", "T", "B") for e in V[v] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
-chk("verses 1-3 and refrains: every choir note sounds in the organ (a fuller form of the choir's harmony)", all(p in organ_at(t) for t, p in inA))
-_rhA = [e for e in V["org_rh"] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
-chk("verses 1-3 and refrains: the organ fuller than the choir (three notes in the right hand on most chords)", sum(isinstance(e["p"], list) and len(e["p"]) == 3 for e in _rhA) > len(_rhA) / 2)
+inSAB = [(e["on"], e["p"]) for v in ("S", "A", "B") for e in V[v] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
+chk("verses 1-3 and refrains: every soprano, alto and bass note sounds in the organ (third edition: the left hand broken or rocking, not the tenor)", all(p in organ_at(t) for t, p in inSAB))
+_chg = [e for e in V["T"] if O["A_verse"] - 12 <= e["on"] < O["A_refrain"] and e["on"] % 36 == 0]
+chk("verses 1-3: the tenor's note in the organ's left hand on every downbeat", all(e["p"] in sounding("org_lh", e["on"]) for e in _chg))
+_rhA = [e for e in V["org_rh"] if O["A_verse"] - 12 <= e["on"] < O["A_refrain"]]
+chk("verses 1-3: the organ fuller than the choir (three notes in the right hand on most chords)", sum(isinstance(e["p"], list) and len(e["p"]) == 3 for e in _rhA) > len(_rhA) / 2)
 chk("introduction: 8 bars, the organ alone; coda: 4 bars, the organ alone", not any(e["on"] < 8 * 36 - 12 for e in S) and not any(e["on"] >= 76 * 36 for v in ("S", "A", "T", "B", "Desc") for e in V[v])
     and any(e["on"] >= 76 * 36 for e in V["org_rh"]) and any(e["on"] < 8 * 36 for e in V["org_lh"]))
 chk("introduction: the rocking left hand in eighths, a held pedal", sum(e["dur"] == 6 for e in V["org_lh"] if e["on"] < 8 * 36) >= 40)
-chk("verse 4: the organ does not double the tune (its right hand below the choir throughout) (749.8)", all(max(sounding("org_rh", e["on"]) or {0}) < e["p"] for e in S if e["part"] == "verse4"))
+_v4 = range(O["B_verse"], O["B_refrain"], 12)
+_tune = lambda t: next((e["p"] for e in S if e["part"] == "verse4" and e["on"] <= t < e["on"] + e["dur"]), None)
+_same = [t for t in _v4 if _tune(t) and max(sounding("org_rh", t) or {0}) == _tune(t)]
+chk("verse 4: the organ plays its own line, not the tune (its top on the tune's pitch at under a quarter of the beats) (749.8)", len(_same) < len(_v4) / 4)
+chk("verse 4: the organ's right hand strikes on most beats (a new chord, or the inner line moving)", sum(1 for t in _v4 if any(e["on"] == t for e in V["org_rh"])) >= 0.75 * len(_v4))
+import clash53, organ_readings53 as ORD
+_c3, _, _par3 = clash53.run(f"{H}/song_record.json"); _c2, _, _ = clash53.run(f"{H}/song_record_v2.json")
+chk("organ: no parallel fifths or octaves between its top and the pedal", not _par3)
+chk("organ and choir: no more semitone clashes than the second edition", sum(_c3.values()) <= sum(_c2.values()))
+_rd = ORD.read(f"{H}/song_record.json"); _T = json.load(open("/home/claude/atlas/tables/accompaniment_lieder.json"))["by_metre"]["3/4"]
+chk("organ, whole song: complementarity inside the Lieder 3/4 middle half", _T["complementarity"][0] <= _rd["whole"]["complementarity"] <= _T["complementarity"][2])
+chk("organ, whole song: the left hand with the pedal inside the Lieder 3/4 middle half (onsets a beat)", _T["lh_onsets_a_beat"][0] <= _rd["whole"]["lh_ped_a_beat"] <= _T["lh_onsets_a_beat"][2])
+_V2 = json.load(open(f"{H}/song_record_v2.json"))["voices"]
+chk("the choir's parts and the descant unchanged from the second edition", all(_V2[v] == V[v] for v in ("S", "A", "T", "B", "Desc")))
+chk("registration printed for each section of the organ part", all(x in src_f for x in ("Sw. Flutes 8′ 4′", "v. 2: Gt. Open Diapason 8′", "Full Sw. to Gt., Gt. Mixture")))
 chk("verse 4: a suspension at a chord change", any(e.get("sus") for e in V["org_rh"]))
 FR0 = O["B_refrain"]
 chk("final refrain: the rocking left hand in every bar", all(any(FR0 + b * 36 <= e["on"] < FR0 + (b + 1) * 36 and e["dur"] == 6 for e in V["org_lh"]) for b in range(16)))

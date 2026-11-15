@@ -7,7 +7,7 @@ import mido
 import lyric_p63 as L
 H = "/home/claude/p63"; OUT = f"{H}/out"; os.makedirs(OUT, exist_ok=True)
 R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; BAR = 36; L0 = 40 * BAR; END = R["end"]
-ED = " (second edition)"
+ED = " (third edition)"
 SP_EF = {0: "c", 1: "des", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "ges", 7: "g", 8: "aes", 9: "a", 10: "bes", 11: "b"}
 SP_F = {0: "c", 1: "cis", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "fis", 7: "g", 8: "gis", 9: "a", 10: "bes", 11: "b"}
 def pname(m, t):
@@ -29,15 +29,15 @@ def segs(t, d):
             if L_ > s: L_ = s
             out.append((t, L_)); t += L_; s -= L_; d -= L_
     return out
-def rest_toks(t, d):
-    toks = []
+def rest_toks(t, d, spacer=False):
+    toks = []; r = "s" if spacer else "r"
     for a, s in segs(t, d):
-        toks.append("R2." if (s == 36 and a % BAR == 0) else ("r" + DUR[s]) if s in DUR else " ".join(["r4"] * (s // 12)))
+        toks.append(("s2." if spacer else "R2.") if (s == 36 and a % BAR == 0) else (r + DUR[s]) if s in DUR else " ".join([r + "4"] * (s // 12)))
     return toks
-def voice_ly(ev, dyn=None, fermata_last=True, slurs=False):
+def voice_ly(ev, dyn=None, fermata_last=True, slurs=False, spacer=False):
     toks = []; t = 0; dyn = dyn or {}
     for i, e in enumerate(ev):
-        if e["on"] > t: toks += rest_toks(t, e["on"] - t)
+        if e["on"] > t: toks += rest_toks(t, e["on"] - t, spacer)
         ss = segs(e["on"], e["dur"])
         for j, (a, s) in enumerate(ss):
             tk = pname(e["p"], a) + DUR[s]
@@ -48,7 +48,7 @@ def voice_ly(ev, dyn=None, fermata_last=True, slurs=False):
             if slurs and j == 0 and e.get("melisma"): tk += ")"
             toks.append(tk)
         t = e["on"] + e["dur"]
-    if t < END: toks += rest_toks(t, END - t)
+    if t < END: toks += rest_toks(t, END - t, spacer)
     return " ".join(toks)
 def lyr_syls(line): return [(w.replace('"', '\\"'), j) for w, j in L.syls(line)]
 def lyr_text(lines):
@@ -77,7 +77,7 @@ def glob():
 GLOB = glob()
 NOTE36 = 's2.*39 s2 s4^\\markup \\italic \\small \\column { "Verses 2 and 3: back to bar 8, beat 3" "After verse 3: on to bar 41" } s2.*40'
 
-FOOT = "Sung to Sleep (second edition) · Words and music: Jason Bryant · ♩ = 88 · E-flat major, verse 4 in F major"
+FOOT = "Sung to Sleep (third edition) · Words and music: Jason Bryant · ♩ = 88 · E-flat major, verse 4 in F major"
 HEAD = r'''\version "2.24.3"
 #(set-global-staff-size %s)
 \paper { #(set-paper-size "letter") left-margin = 14\mm right-margin = 14\mm top-margin = 12\mm bottom-margin = 14\mm ragged-last-bottom = ##t
@@ -90,6 +90,17 @@ def music(v, dyn=None, slurs=False): return voice_ly(V[v], dyn, slurs=slurs)
 SOP, ALT, TEN, BAS = music("S", DYN_S, True), music("A"), music("T"), music("B")
 DES = music("Desc", DYN_D, True)
 ORH, OLH, OPED = music("org_rh", DYN_O), music("org_lh"), music("org_ped")
+ORHI = voice_ly(V.get("org_rh_in", []), fermata_last=False, spacer=True)
+REG = {1: ["Sw. Flutes 8′ 4′", "Ped. Bourdon 16′, Sw. to Ped."], 9: ["v. 1: Sw. Flutes 8′ 4′", "v. 2: Gt. Open Diapason 8′", "v. 3: Sw. Strings and Celeste 8′, Flute 4′"],
+       25: ["Sw. Flutes 8′ 4′, tremulant"], 41: ["Gt. Diapasons 8′ 4′, Sw. to Gt."], 45: ["Gt. Diapasons 8′ 4′ 2′, Sw. Reed 8′, Sw. to Gt.", "Ped. 16′ 8′"],
+       61: ["Full Sw. to Gt., Gt. Mixture", "Ped. 16′ 8′ 4′"], 77: ["Sw. Flutes 8′", "Ped. Bourdon 16′"]}
+def reg_voice():
+    out = []
+    for b in range(1, 81):
+        if b in REG: out.append('s2.^\\markup \\tiny \\italic \\column { ' + " ".join(f'"{x}"' for x in REG[b]) + ' }')
+        else: out.append("s2.")
+    return " ".join(out)
+REGV = reg_voice()
 KEEP = "\\with { \\override VerticalAxisGroup.remove-empty = ##f }"
 def choir_block():
     return f'''
@@ -108,7 +119,7 @@ def choir_block():
 def organ_block():
     return f'''
   \\new PianoStaff \\with {{ instrumentName = "Organ" shortInstrumentName = "Org." }} <<
-    \\new Staff = "rh" {KEEP} << \\new Voice {{ \\global }} \\new Voice {{ {ORH} }} >>
+    \\new Staff = "rh" {KEEP} << \\new Voice {{ \\global }} \\new Voice {{ {REGV} }} \\new Voice {{ \\voiceOne {ORH} }} \\new Voice {{ \\voiceTwo {ORHI} }} >>
     \\new Staff = "lh" {KEEP} << \\clef bass \\new Voice {{ \\global }} \\new Voice {{ {OLH} }} >>
   >>
   \\new Staff = "ped" \\with {{ instrumentName = "Pedal" shortInstrumentName = "Ped." \\override VerticalAxisGroup.remove-empty = ##f }} << \\clef bass \\new Voice {{ \\global }} \\new Voice {{ {OPED} }} >>'''
@@ -125,7 +136,7 @@ def compile_ly(src, base):
     return [l for l in r.stderr.splitlines() if "warning" in l.lower()]
 def readback():
     """every voice on its own staff, LilyPond's MIDI, notes compared with the record (sounding pitch, onset)"""
-    names = ["S", "A", "T", "B", "Desc", "org_rh", "org_lh", "org_ped"]
+    names = ["S", "A", "T", "B", "Desc", "org_rh", "org_rh_in", "org_lh", "org_ped"]
     staves = " ".join(f'\\new Staff {{ \\new Voice {{ \\global {{}} }} }} ' for _ in [])
     body = " ".join(f'\\new Staff << \\new Voice {{ \\global }} \\new Voice {{ {voice_ly(V[n], fermata_last=False)} }} >>' for n in names)
     src = f'\\version "2.24.3"\nglobal = {{ {GLOB.replace(chr(92) + "break", "")} }}\n\\score {{ << {body} >> \\midi {{ \\tempo 4 = 88 }} }}\n'
@@ -144,8 +155,8 @@ def readback():
         res[n] = (g == want, len(g), len(want))
     return res
 if __name__ == "__main__":
-    w1 = compile_ly(doc("Hymn page (choir) · second edition", False, 17), f"Sung to Sleep{ED} - hymn page")
-    w2 = compile_ly(doc("Full score (organ) · second edition", True, 15), f"Sung to Sleep{ED} - full score (organ)")
+    w1 = compile_ly(doc("Hymn page (choir) · third edition", False, 17), f"Sung to Sleep{ED} - hymn page")
+    w2 = compile_ly(doc("Full score (organ) · third edition", True, 15), f"Sung to Sleep{ED} - full score (organ)")
     print("hymn page warnings", w1[:5], len(w1)); print("full score warnings", w2[:5], len(w2))
     rb = readback(); print({k: v for k, v in rb.items()})
     json.dump({k: list(v) for k, v in rb.items()}, open(f"{OUT}/readback.json", "w"))
