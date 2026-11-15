@@ -3,14 +3,14 @@ import json, re, subprocess, os, collections, itertools
 import harm68
 H = "/home/claude/p63"; OUT = f"{H}/out"
 R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; RB = json.load(open(f"{OUT}/readback.json"))
-def pdf(n): return subprocess.run(["pdftotext", "-layout", f"{OUT}/Sung to Sleep - {n}.pdf", "-"], capture_output=True, text=True).stdout
+def pdf(n): return subprocess.run(["pdftotext", "-layout", f"{OUT}/Sung to Sleep (second edition) - {n}.pdf", "-"], capture_output=True, text=True).stdout
 HP, FS = pdf("hymn page"), pdf("full score (organ)")
 C = []
 def chk(name, ok): C.append((name, bool(ok)))
 for nm, txt in (("hymn page", HP), ("full score", FS)): chk(f"credit line on the {nm}", "Words and music: Jason Bryant" in txt)
 for k, v in RB.items(): chk(f"readback: {k}", v[0])
 def system_bars(txt): return [int(x) for x in re.findall(r"^\s*(\d{1,2})\s*$|^\s*(\d{1,2})\s+[A-Z]", txt, re.M) for x in x if x] if False else [int(m) for m in re.findall(r"(?m)^\s{0,6}(\d{1,2})\b", txt) if 1 < int(m) <= 70]
-src_h = open(f"{OUT}/Sung to Sleep - hymn page.ly").read(); src_f = open(f"{OUT}/Sung to Sleep - full score (organ).ly").read()
+src_h = open(f"{OUT}/Sung to Sleep (second edition) - hymn page.ly").read(); src_f = open(f"{OUT}/Sung to Sleep (second edition) - full score (organ).ly").read()
 g = lambda s: re.search(r"global = \{(.*?)\n", s).group(1)
 chk("the two documents share one global line (time, keys, bar lines, marks, a break every fourth bar; 80 bars)", g(src_h) == g(src_f) and g(src_h).count("\\break") == 19 and g(src_h).count("s2.") == 80)
 chk("the same notes for every choir voice in both documents", all(re.search(re.escape(x), src_f) for x in re.findall(r'\\new Voice = "(?:sop|alt|ten|bas|desc)" \{ \\voice\w+ (.*?) \}', src_h)))

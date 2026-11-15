@@ -17,7 +17,8 @@ then F5) and the descant's top (A5) both in the final refrain."""
 import json, copy, collections
 import harmonize53 as HZ, harm68, lyric_p63 as L, gen34 as G
 H = "/home/claude/p63"
-M = json.load(open(f"{H}/melody_final.json")); TUNE = M["pick"]["tune"]
+MELODY = "melody_final_v2.json"                                   # the second edition: the hymn-mode tune (gen34h.py)
+M = json.load(open(f"{H}/{MELODY}")); TUNE = M["pick"]["tune"]
 BAR = 36
 REHARM = ["F#m", "Em7", "Bm7", "A7", "G", "Em7", "C", "A7", "Bm7", "F#7", "Bm", "Em7", "G", "A7", "D", "D"]
 def sec_notes(sec):
@@ -44,6 +45,8 @@ def set_ranges(shift):
 def harmonize(notes, chs, shift, final=True):
     set_ranges(shift)
     cost, path, _, _ = HZ.harmonize(hz_input(notes, chs, final=final), 8)
+    for k, n in enumerate(notes):                                     # under the tune's slurred second note the lower voices hold
+        if n["melisma"] and k: path[k] = (path[k - 1][0],) + tuple(path[k - 1][1:])
     return path, cost
 # section A (E-flat, sounding +1): verse and refrain as one phrase chain
 pathA, costA = harmonize(VERSE + REFRAIN, G.VERSE_CH + G.REFRAIN_CH, 0)
@@ -59,11 +62,46 @@ def descant(notes, path, lo=64, hi=78, pin_world=78):
     def tones_at(t):
         k = next(i for i, n in enumerate(notes) if n["on"] == t)
         if notes[k]["p"] == 74 and notes[k]["on"] % BAR == 0: return {pin_world % 12}          # the pin inside the search, so its neighbours fit it
-        return set(chords[k])
+        return set(chords[k]) - {pin_world % 12}                                             # the summit's pitch class nowhere else: A5 once
     ps = harm68.high(span, tones_at, lo=lo, hi=hi)
     assert all(p == pin_world for p, n in zip(ps, notes) if n["p"] == 74 and n["on"] % BAR == 0)
     return ps
 DESC = descant(REFRAIN, pathFR)
+SCALE_D = {2, 4, 6, 7, 9, 11, 1}
+def passing(notes, path, rate=(0.07, 0.10)):
+    """passing notes in the lower voices (the metre atlas: 7% to 10% of a 3/4 hymn's inner-voice notes are shorter than the beat).
+    Where a voice moves by a third between two notes of one line and the first is a quarter or a half, its second half takes the scale
+    tone between, unless that makes parallel fifths or octaves with any voice into the next chord, crosses a neighbouring voice, or
+    lands under a melisma. One voice a note, the alto first, then the tenor, then the bass; quarters (the eighth-note pairs) are kept
+    near the hymn rate, halves added after them. Returns per note a list of segments (offset, length, A, T, B)."""
+    segs = [[(0, n["dur"], *path[k][1:])] for k, n in enumerate(notes)]
+    cands = []
+    for k in range(len(notes) - 1):
+        n, m = notes[k], notes[k + 1]
+        if n["line"] != m["line"] or n["dur"] not in (12, 24) or n.get("slur") or m.get("melisma") and False: continue
+        if notes[k]["melisma"] or n["slur"]: continue
+        (c0, A0, T0, B0), (c1, A1, T1, B1) = path[k], path[k + 1]
+        for vi, (x0, x1) in enumerate(((A0, A1), (T0, T1), (B0, B1))):
+            if abs(x1 - x0) not in (3, 4): continue
+            if vi == 2 and n["dur"] == 12: continue                         # the bass passes only on longer notes (hymn basses: 5% short notes)
+            mid = [q for q in range(min(x0, x1) + 1, max(x0, x1)) if q % 12 in SCALE_D]
+            if len(mid) != 1: continue
+            q = mid[0]; v0 = [n["p"], A0, T0, B0]; v1 = [m["p"], A1, T1, B1]; vm = list(v0); vm[vi + 1] = q
+            ok = all(vm[i] >= vm[i + 1] for i in range(3))
+            for i in range(4):
+                for j in range(i + 1, 4):
+                    if (i == vi + 1 or j == vi + 1):
+                        im, i1 = abs(vm[i] - vm[j]) % 12, abs(v1[i] - v1[j]) % 12
+                        if im == i1 and im in (0, 7) and vm[i] != v1[i] and vm[j] != v1[j]: ok = False
+            if ok: cands.append((k, vi, q, n["dur"])); break
+    short_total = sum(1 for k, n in enumerate(notes) for _ in range(3))
+    want = int(round(rate[1] * short_total / 2))                            # each pair of eighths adds two short notes to one voice
+    quarters = [c for c in cands if c[3] == 12][:want]; halves = [c for c in cands if c[3] == 24]
+    for k, vi, q, d in quarters + halves:
+        A, T, B = segs[k][0][2:]; v = [A, T, B]; v2 = list(v); v2[vi] = q
+        segs[k] = [(0, d // 2, *v), (d // 2, d // 2, *v2)]
+    return segs
+SEG_AV, SEG_AR, SEG_FR = passing(VERSE, pathAV), passing(REFRAIN, pathAR), passing(REFRAIN, pathFR)
 # ---- the timeline, sounding pitch ----
 OFF = {"A_verse": 288, "A_refrain": 864, "B_verse": 1584, "B_refrain": 2160}
 L0 = 40 * BAR; CODA = 76 * BAR; END = 80 * BAR
@@ -95,17 +133,22 @@ for bar in range(8):
     ch, A, T, B = pathAR[k]; dur = 24 if bar == 7 else 36
     for on, d, p in rocking(ch, t, dur, 1): put("org_lh", on, d, p)
     put("org_ped", t, dur, B + 1)
-# section A (E-flat): the choir as before; the organ a fuller form of it (a filled chord in each hand), common tones held
-for notes, path, off, part in ((VERSE, pathAV, OFF["A_verse"], "verse"), (REFRAIN, pathAR, OFF["A_refrain"], "refrain")):
+# section A (E-flat): the choir with its passing notes; the organ a fuller form of it (a filled chord in each hand), common tones held
+for notes, path, segl, off, part in ((VERSE, pathAV, SEG_AV, OFF["A_verse"], "verse"), (REFRAIN, pathAR, SEG_AR, OFF["A_refrain"], "refrain")):
     for k, n in enumerate(notes):
-        ch, A, T, B = path[k]; t = n["on"] + off; s = n["p"]
+        ch = path[k][0]; t = n["on"] + off; s = n["p"]
         put("S", t, n["dur"], s + 1, syl=n["syl"], line=n["line"], part=part, slur=n["slur"], melisma=n["melisma"], chord=ch)
-        put("A", t, n["dur"], A + 1); put("T", t, n["dur"], T + 1); put("B", t, n["dur"], B + 1)
-        f = fill_between(ch, A, s)
-        if f is None: f = next((q for q in reversed(tones_in(ch, max(A - 8, 55), A - 3))), None)          # no room between: a chord tone under the alto
-        rh = sorted({A, s} | ({f} if f else set()))
-        g = next((q for q in reversed(tones_in(ch, max(B + 3, 48), T - 3))), None); lh = sorted({T} | ({g} if g else set()))
-        put("org_rh", t, n["dur"], [q + 1 for q in rh]); put("org_lh", t, n["dur"], [q + 1 for q in lh]); put("org_ped", t, n["dur"], B + 1)
+        for vi, vn in enumerate(("A", "T", "B")):                     # a voice without the passing note keeps one note
+            last = None
+            for o, d, *abt in segl[k]:
+                if last is not None and last["p"] == abt[vi] + 1: last["dur"] += d
+                else: put(vn, t + o, d, abt[vi] + 1); last = V[vn][-1]
+        for o, d, A, T, B in segl[k]:
+            f = fill_between(ch, A, s)
+            if f is None: f = next((q for q in reversed(tones_in(ch, max(A - 8, 55), A - 3))), None)          # no room between: a chord tone under the alto
+            rh = sorted({A, s} | ({f} if f else set()))
+            g = next((q for q in reversed(tones_in(ch, max(B + 3, 48), T - 3))), None); lh = sorted({T} | ({g} if g else set()))
+            put("org_rh", t + o, d, [q + 1 for q in rh]); put("org_lh", t + o, d, [q + 1 for q in lh]); put("org_ped", t + o, d, B + 1)
 # link (sounding pitch, F's signature from bar 41): E-flat, G minor 7, C7sus4, C7; the rocking figure over each bar
 LINK = [("Eb", [67, 70, 75], 39, [51, 58, 55]), ("Gm7", [65, 70, 74], 43, [55, 62, 58]), ("C7sus4", [65, 70, 72], 48, [48, 55, 53]), ("C7", [64, 70, 72], 48, [48, 55, 52])]          # left hand: root, fifth, third (the fourth in the sus chord), inside a fifth
 for i, (nm_, rh, ped, (r, f5, t3)) in enumerate(LINK):
@@ -151,7 +194,12 @@ for k, n in enumerate(REFRAIN):
     ch, A, T, B = pathFR[k]; t = n["on"] + OFF["B_refrain"]; d = n["dur"]
     if k == len(REFRAIN) - 1: d = CODA - t
     put("S", t, d, n["p"] + 3, syl=n["syl"], line=n["line"], part="refrain_final", slur=n["slur"], melisma=n["melisma"], chord=ch)
-    put("A", t, d, A + 3); put("T", t, d, T + 3); put("B", t, d, B + 3)
+    for vi, vn in enumerate(("A", "T", "B")):
+        last = None
+        for o, dd, *abt in SEG_FR[k]:
+            dd = d - o if (k == len(REFRAIN) - 1 and o + dd >= n["dur"]) else dd
+            if last is not None and last["p"] == abt[vi] + 3: last["dur"] += dd
+            else: put(vn, t + o, dd, abt[vi] + 3); last = V[vn][-1]
     put("Desc", t, d, DESC[k] + 3, syl=n["syl"], line=n["line"], slur=n["slur"], melisma=n["melisma"])
 segsF = []
 for k, n in enumerate(REFRAIN):

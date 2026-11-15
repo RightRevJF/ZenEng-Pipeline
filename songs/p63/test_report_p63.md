@@ -1,5 +1,5 @@
 ---
-title: "Sung to Sleep: test report"
+title: "Sung to Sleep: test report (second edition)"
 subtitle: "Words and music: Jason Bryant"
 ---
 
@@ -100,6 +100,41 @@ Against the tune, verse 4's organ right hand moves with it 43% of the time and h
 - Hymn page for the choir (PDF, 4 pages): the same bars, systems and notes without the organ staves.
 - Every voice read back from LilyPond's MIDI note for note (sopranos, altos, tenors, basses, descant, organ right hand, left hand, pedal).
 - Consistency: 46/46 checks pass, among them: one shared global line in both documents (80 bars); the same choir notes in both; the keys; the tune's tops and the descant's top on "world"; the descant above the sopranos; the refrain's designs; verse 4 in unison over a different harmony; the organ's introduction and coda alone, its fuller chords in verses 1-3, its right hand below the tune in verse 4, a suspension, the rocking left hand in every bar of the final refrain, the two pedal points; no parallel fifths or octaves in any part; the voices in their ranges; no Nashville chart.
+
+# Second edition: built from the metre atlas
+
+The writer, after the atlas was built: "Any chance once you build the tables, we can return to the recent hymn and finish it using the engine with the table you created?" The engine still draws in 4/4 only (749.4 is not ported), so the second edition is the sketch rebuilt on the atlas's tables; the rerun on the engine stays in the order of work. He chose A: a second edition now, measured before and after.
+
+**What changed.** The tune (gen34h.py, pick 9025fdbc9b1e, seed 20261115+4532, 2740 survivors of 3,000) draws its bars from the Open Hymnal Project's 3/4 hymn bars, with a slurred second note where a hymn bar has more onsets than the frame has syllables (dotted quarter and eighth; two quarters; two eighths on the weak syllable; up to two slurs a line), and is charged against the 3/4 hymn quartiles (46 hymns) on every reading. The quarter-and-half bar was left out: in a strophic hymn it lengthens an unstressed syllable in every verse. The designs stand (Hush now low and still; the climb to D5 on world; the second sleeping a step above the first; here home on D4). The four parts: the beam search weighted toward hymn motion (the alto rewarded for parallel thirds and sixths with the tune; contrary motion rewarded mainly in the bass); the lower voices hold under the tune's slurred notes; passing notes added where a voice moves by a third (eighth pairs in the alto and tenor near the hymn rate; the bass only on longer notes). The organ doubles the passing notes in verses 1 to 3 and the refrains; verse 4, the final refrain and the coda keep their own accompaniment.
+
+**The tune against 3/4 hymn tunes** (quartiles from 46 hymns):
+
+| Reading | First edition | Second edition | Hymns (25th, 50th, 75th) |
+|---|---|---|---|
+| repeated notes | 23% (outside) | 21% (outside) | 14%, 17%, 21% |
+| moves by step | 50% | 54% | 49%, 57%, 62% |
+| moves by leap | 8% | 8% | 7%, 9%, 11% |
+| range | 13.00 | 13.00 | 12.00, 12.00, 14.00 |
+| longest run of one pitch | 3.00 | 3.00 | 2.00, 3.00, 3.00 |
+| distinct rhythms over bars | 14% (outside) | 18% | 16%, 22%, 32% |
+| notes a bar | 2.18 | 2.21 | 2.12, 2.34, 2.66 |
+| onsets on the beat | 100% | 95% | 84%, 94%, 100% |
+| gaps of half a beat | 0% | 7% | 0%, 7%, 24% |
+| gaps of a beat or more | 100% | 93% | 74%, 92%, 100% |
+
+All 19 readings: first edition 17 inside the hymn quartiles, second 18 (repeated notes 21.3%, a hair over the hymn 75th of 21.26%). Notes a bar rose from 1.97 to 2.21; half-beat gaps from 0% to 7%.
+
+**The four parts against 3/4 hymn settings** (with the tune / against it / holding; notes shorter than the beat):
+
+| Voice | First edition | Second edition | Hymns (medians) | Short notes, first | Short notes, second | Short notes, hymns |
+|---|---|---|---|---|---|---|
+| Alto | 21% / 27% / 52% | 36% / 12% / 52% | 39% / 13% / 47% | 0% | 9% | 8% |
+| Tenor | 15% / 45% / 40% | 23% / 28% / 49% | 35% / 24% / 40% | 0% | 5% | 7% |
+| Bass | 17% / 44% / 39% | 16% / 43% / 41% | 26% / 34% / 38% | 0% | 0% | 5% |
+
+The alto now moves almost as hymn altos do; the tenor and bass are closer than before but still move against the tune more, and with it less, than hymn tenors and basses. No parallel fifths or octaves in either edition. A first pass split the unchanged voices around each passing note into repeated eighths (21% short notes in every voice); fixed.
+
+**Documents.** Organ full score and hymn page, second edition (80 bars, the same layout); every voice read back from MIDI; consistency 46/46.
 
 # Findings
 

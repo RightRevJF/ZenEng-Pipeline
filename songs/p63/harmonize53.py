@@ -14,6 +14,7 @@ DIATONIC_ALTS = ["D", "Em", "F#m", "G", "A", "Bm", "A7", "Em7", "Bm7"]
 RANGE = {"A": (55, 69), "T": (48, 66), "B": (38, 60)}
 MEDIAN_COMPASS = {"A": (58, 67), "T": (52, 62), "B": (43, 57)}     # Window 57
 LEADING = 1   # C#
+HYMN_MOTION = True                                                       # song 53, second edition: motion weighted toward the 3/4 hymn tables
 
 def motion_cost(a, b):
     d = abs(a - b)
@@ -75,8 +76,10 @@ def trans_cost(prev, cur, s0, s1, holds):
         nh[v] = holds[v] + 1 if a == b else 0
         if a == b and tune_moves and nh[v] > 2: c += 0.8
     ds = s1 - s0
-    for a, b in ((A0, A1), (T0, T1), (B0, B1)):
-        if ds and (b - a) and (ds > 0) != (b - a > 0): c -= 0.3       # contrary motion earns
+    for vi, (a, b) in enumerate(((A0, A1), (T0, T1), (B0, B1))):
+        if ds and (b - a) and (ds > 0) != (b - a > 0): c -= (0.3 if not HYMN_MOTION else (0.12 if vi == 2 else 0.05))   # contrary motion earns (the bass most, in hymn motion)
+    if HYMN_MOTION and ds and (A1 - A0) and (ds > 0) == (A1 - A0 > 0) and (s0 - A0) % 12 in (3, 4, 8, 9) and (s1 - A1) % 12 in (3, 4, 8, 9):
+        c -= 0.9                                                       # the alto in parallel thirds or sixths with the tune (the metre atlas: altos move with the soprano 39% of the time in 3/4 hymns)
     db = abs(B1 - B0)
     if db in (1, 2): c -= 0.45                                         # bass step earns
     elif db > 7: c += 4.0
