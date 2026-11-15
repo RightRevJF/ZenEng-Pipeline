@@ -12,12 +12,12 @@ for k, v in RB.items(): chk(f"readback: {k}", v[0])
 def system_bars(txt): return [int(x) for x in re.findall(r"^\s*(\d{1,2})\s*$|^\s*(\d{1,2})\s+[A-Z]", txt, re.M) for x in x if x] if False else [int(m) for m in re.findall(r"(?m)^\s{0,6}(\d{1,2})\b", txt) if 1 < int(m) <= 70]
 src_h = open(f"{OUT}/Sung to Sleep - hymn page.ly").read(); src_f = open(f"{OUT}/Sung to Sleep - full score (organ).ly").read()
 g = lambda s: re.search(r"global = \{(.*?)\n", s).group(1)
-chk("the two documents share one global line (time, keys, bar lines, marks, a break every fourth bar)", g(src_h) == g(src_f) and g(src_h).count("\\break") == 17)
+chk("the two documents share one global line (time, keys, bar lines, marks, a break every fourth bar; 80 bars)", g(src_h) == g(src_f) and g(src_h).count("\\break") == 19 and g(src_h).count("s2.") == 80)
 chk("the same notes for every choir voice in both documents", all(re.search(re.escape(x), src_f) for x in re.findall(r'\\new Voice = "(?:sop|alt|ten|bas|desc)" \{ \\voice\w+ (.*?) \}', src_h)))
-O = R["offsets"]; L0 = 36 * 36
+O = R["offsets"]; L0 = 40 * 36
 def span(v, a, b): return [e for e in V[v] if a <= e["on"] < b]
 S = V["S"]
-chk("key: E-flat to bar 36, F from bar 37", R["keys"] == [[-12, "E-flat major"], [L0, "F major"]] and "\\key ees \\major" in g(src_h) and "\\key f \\major" in g(src_h))
+chk("key: E-flat to bar 40, F from bar 41", R["keys"] == [[0, "E-flat major"], [L0, "F major"]] and "\\key ees \\major" in g(src_h) and "\\key f \\major" in g(src_h))
 top_A = [e for e in span("S", 0, L0) if e["p"] == max(x["p"] for x in span("S", 0, L0))]
 chk("the tune's top in verses 1-3 and refrain, E-flat5, only on 'world'", len(top_A) == 1 and top_A[0]["p"] == 75 and top_A[0]["part"] == "refrain" and top_A[0]["syl"] == 5 and top_A[0]["line"] == 2)
 top_B = [e for e in S if e["p"] == max(x["p"] for x in S)]
@@ -37,7 +37,24 @@ p4 = [c for c, *_ in R["paths"]["verse4"]]; pA = [c for c, *_ in R["paths"]["A"]
 chk("verse 4: the organ's own harmony (chords differ from verse 1-3's on most notes) (749.8)", sum(a != b for a, b in zip(p4, pA)) >= len(p4) // 2)
 def doubles(cv, ov, a, b):
     c = {(e["on"], e["p"]) for e in span(cv, a, b)}; o = {(e["on"], e["p"]) for e in span(ov, a, b)}; return c == o
-chk("the organ doubles the choir in verses 1-3, refrains and the final refrain", all(doubles(c, o, a, b) for c, o in (("S", "org_rh_s"), ("A", "org_rh_a"), ("T", "org_lh"), ("B", "org_ped")) for a, b in ((O["A_verse"] - 12, L0), (O["B_refrain"] - 12, R["end"]))))
+def sounding(v, t):
+    out = set()
+    for e in V[v]:
+        if e["on"] <= t < e["on"] + e["dur"]: out |= set(e["p"] if isinstance(e["p"], list) else [e["p"]])
+    return out
+def organ_at(t): return sounding("org_rh", t) | sounding("org_lh", t) | sounding("org_ped", t)
+inA = [(e["on"], e["p"]) for v in ("S", "A", "T", "B") for e in V[v] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
+chk("verses 1-3 and refrains: every choir note sounds in the organ (a fuller form of the choir's harmony)", all(p in organ_at(t) for t, p in inA))
+_rhA = [e for e in V["org_rh"] if O["A_verse"] - 12 <= e["on"] < 40 * 36]
+chk("verses 1-3 and refrains: the organ fuller than the choir (three notes in the right hand on most chords)", sum(isinstance(e["p"], list) and len(e["p"]) == 3 for e in _rhA) > len(_rhA) / 2)
+chk("introduction: 8 bars, the organ alone; coda: 4 bars, the organ alone", not any(e["on"] < 8 * 36 - 12 for e in S) and not any(e["on"] >= 76 * 36 for v in ("S", "A", "T", "B", "Desc") for e in V[v])
+    and any(e["on"] >= 76 * 36 for e in V["org_rh"]) and any(e["on"] < 8 * 36 for e in V["org_lh"]))
+chk("introduction: the rocking left hand in eighths, a held pedal", sum(e["dur"] == 6 for e in V["org_lh"] if e["on"] < 8 * 36) >= 40)
+chk("verse 4: the organ does not double the tune (its right hand below the choir throughout) (749.8)", all(max(sounding("org_rh", e["on"]) or {0}) < e["p"] for e in S if e["part"] == "verse4"))
+chk("verse 4: a suspension at a chord change", any(e.get("sus") for e in V["org_rh"]))
+FR0 = O["B_refrain"]
+chk("final refrain: the rocking left hand in every bar", all(any(FR0 + b * 36 <= e["on"] < FR0 + (b + 1) * 36 and e["dur"] == 6 for e in V["org_lh"]) for b in range(16)))
+chk("final refrain: a tonic pedal under 'Hush now' (bars 61-64), a dominant pedal under 'is sleeping, sleeping' (bars 73-74)", any(e["on"] == FR0 and e["dur"] == 4 * 36 and e["p"] == 41 for e in V["org_ped"]) and any(e["on"] == FR0 + 12 * 36 and e["dur"] == 2 * 36 and e["p"] == 48 for e in V["org_ped"]))
 from harmonize53 import stats, CHORDS
 par = 0
 for path_key, notes_off in (("A", None), ("verse4", None), ("final_refrain", None)):
@@ -53,11 +70,16 @@ def rd(part, voice):
     return harm68.readings(lead, pv)
 RD = {f"{part} {v}": rd(part, v) for part in ("verse", "refrain", "refrain_final") for v in ("A", "T", "B")}
 RD["refrain_final Desc"] = rd("refrain_final", "Desc")
-RD["verse4 organ alto (org_rh_a)"] = rd("verse4", "org_rh_a"); RD["verse4 organ tenor (org_lh)"] = rd("verse4", "org_lh"); RD["verse4 pedal"] = rd("verse4", "org_ped")
+def rd_org(part, voice, pick):
+    lead = [dict(e, midi=e["p"], sec=e["part"]) for e in S if e["part"] == part]; a, b = lead[0]["on"], lead[-1]["on"] + lead[-1]["dur"]
+    pv = [dict(e, midi=pick(e["p"] if isinstance(e["p"], list) else [e["p"]])) for e in V[voice] if a <= e["on"] < b]
+    return harm68.readings(lead, pv)
+RD["verse4 organ right hand (top)"] = rd_org("verse4", "org_rh", max); RD["verse4 pedal"] = rd_org("verse4", "org_ped", min)
+RD["refrain_final pedal"] = rd_org("refrain_final", "org_ped", min)
 for k, v in RD.items(): chk(f"harmony: {k}: no parallel fifths or octaves with the tune", v["parallel fifths or octaves"] == 0)
 SEC = collections.OrderedDict((p, sum(e["p"] for e in S if e["part"] == p) / sum(1 for e in S if e["part"] == p)) for p in ("verse", "refrain", "verse4", "refrain_final"))
 first_top = min(e["on"] for e in S if e["p"] == max(x["p"] for x in S)) // 36 + 1
-json.dump(dict(harmony=RD, section_means=SEC, top_bar=first_top, top_share=(first_top - 1) / 70), open(f"{H}/readings53.json", "w"))
+json.dump(dict(harmony=RD, section_means=SEC, top_bar=first_top, top_share=(first_top - 1) / 80), open(f"{H}/readings53.json", "w"))
 for n, ok in C: print(("PASS " if ok else "FAIL ") + n)
 print(f"{sum(ok for _, ok in C)}/{len(C)} checks pass")
 json.dump(C, open(f"{OUT}/consistency.json", "w"))

@@ -24,7 +24,7 @@ The engine draws in 4/4 only (749.4), so the tune was drawn by a 3/4 sketch of i
 
 The four parts: the carol pipeline's beam search (harmonize53.py; two chords added for the verse-4 organ setting, F♯7 and C in D, sounding A7 and E♭ in F). The descant: song 52's harmony-as-lines search (harm68.high) above the sopranos in their rhythm and words, chord tones of the four-part chord, "world" pinned a third above (A5) inside the search.
 
-Both documents come from one record on one timeline and share one line of time, keys, bar lines, marks and a break every fourth bar, so bars 1-70 fall on the same systems in both (engrave53.py).
+Both documents come from one record on one timeline and share one line of time, keys, bar lines, marks and a break every fourth bar, so bars 1-80 fall on the same systems in both (engrave53.py).
 
 # The melody search
 
@@ -75,14 +75,31 @@ Song 52's shadow harmony moved with the lead 74% to 85% of the time and never ag
 
 - Verses 1-3 and their refrains share one setting (a hymn's form). Verse 4 changes three things: the key (F), the texture (the choir in unison, the men an octave lower) and the harmony (the organ's own chords: F♯ minor, E minor 7, B minor 7, A7, G, E minor 7, C, A7 ... in D, a different chord on 25 of its 31 notes).
 - The final refrain: four parts again, a fresh setting in F, and the descant above.
-- The shape: average sounding pitch of the tune, verses 1-3 A♭4, refrains 1-3 G4, verse 4 C5, final refrain B4 (each a step above its first); the tune's top, F5, in bar 65 of 70 (91% of the way in), with the descant's A5 on the same beat. The tune's E♭5 sounds once in the first section, on the refrains' "world".
+- The shape: average sounding pitch of the tune, verses 1-3 A♭4, refrains 1-3 G4, verse 4 C5, final refrain B4 (each a step above its first); the tune's top, F5, in bar 71 of 80 (88% of the way in), with the descant's A5 on the same beat. The tune's E♭5 sounds once in the first section, on the refrains' "world".
+
+# The organ part, rewritten after delivery
+
+The writer: "The organ music looks incredibly easy. Are you sure that's right?" It was right note for note and too plain for the request: outside a 4-bar introduction, a 2-bar link and verse 4's own chords, the organ played the choir's four parts (soprano and alto in the right hand, the tenor alone in the left, the bass in the pedal), the way an organist plays from a hymnal, and verse 4 and the introduction were in the same four-part texture. He chose A: build through the carol.
+
+| | First version | Now |
+|---|---|---|
+| Introduction | 4 bars: the refrain's last line in four parts | 8 bars: the refrain's first line, then its last, the tune with one voice under it in the right hand, the left hand rocking in eighths (root, fifth, third inside a fifth), a held pedal |
+| Verses 1-3 and refrains | the four choir parts doubled | a fuller form of them: a third note in the right hand on 41 of 57 chords, a filled chord in the left hand, common tones held |
+| Link | 2 bars, G minor 7 to C7 | 4 bars, E♭, G minor 7, C7sus4, C7, the rocking figure going on |
+| Verse 4 | the organ's own chords, in four plain parts with the tune on top | its own accompaniment: chords held below the tune (never doubling it), a suspension at a chord change, the rocking left hand, the pedal on the new bass line |
+| Final refrain | the choir's four parts doubled | held chords with the tune on top, the rocking left hand in every bar, a tonic pedal under "Hush now" (bars 61-64) and a dominant pedal under "is sleeping, sleeping" (bars 73-74) |
+| Coda | none | 4 bars: the refrain's last phrase once more over a tonic pedal, IV to I, the last chord held |
+| Left hand in eighths | 0 | 263 notes |
+| Length | 70 bars | 80 bars |
+
+Against the tune, verse 4's organ right hand moves with it 43% of the time and holds 48%; the final refrain's pedal moves with the tune 9% of the time and holds 65%; no parallels.
 
 # Documents
 
-- Full score for the organist (PDF, 7 pages): descant (final refrain only), the choir on two staves with every verse between them, the organ's manuals and pedal. The organ plays alone in the introduction (the refrain's last line) and the link (G minor 7, C7sus4, C7), doubles the choir in verses 1-3 and every refrain, and plays its own harmony under the unison verse 4.
+- Full score for the organist (PDF, 7 pages, 80 bars): descant (final refrain only), the choir on two staves with every verse between them, the organ's manuals and pedal (see the organ part below).
 - Hymn page for the choir (PDF, 4 pages): the same bars, systems and notes without the organ staves.
-- Every voice read back from LilyPond's MIDI note for note (sopranos, altos, tenors, basses, descant, organ right hand upper and lower, left hand, pedal).
-- Consistency: 40/40 checks pass, among them: one shared global line in both documents; the same choir notes in both; the keys; the tune's tops and the descant's top on "world"; the descant above the sopranos; the refrain's designs; verse 4 in unison over a different harmony; the organ doubling the choir where it should; no parallel fifths or octaves in any part; the voices in their ranges; no Nashville chart.
+- Every voice read back from LilyPond's MIDI note for note (sopranos, altos, tenors, basses, descant, organ right hand, left hand, pedal).
+- Consistency: 46/46 checks pass, among them: one shared global line in both documents (80 bars); the same choir notes in both; the keys; the tune's tops and the descant's top on "world"; the descant above the sopranos; the refrain's designs; verse 4 in unison over a different harmony; the organ's introduction and coda alone, its fuller chords in verses 1-3, its right hand below the tune in verse 4, a suspension, the rocking left hand in every bar of the final refrain, the two pedal points; no parallel fifths or octaves in any part; the voices in their ranges; no Nashville chart.
 
 # Findings
 
@@ -100,7 +117,7 @@ Song 52's shadow harmony moved with the lead 74% to 85% of the time and never ag
 
 **Problem.** The engine has no descant. Song 53's descant was written with song 52's harmony-as-lines search (above the sopranos, their rhythm and words, chord tones, the summit pinned).
 
-**Evidence.** The descant's readings: moves with the tune 26%, against it 35%, holds 39%; no parallels; its top, A5, once on "world". A first pass pinned the summit after the search and left a parallel fifth beside it (G4 to F4 under D5 to C5, bar 57); the pin moved inside the search, and the floor was lowered to let the line step down; the parallel went.
+**Evidence.** The descant's readings: moves with the tune 26%, against it 35%, holds 39%; no parallels; its top, A5, once on "world". A first pass pinned the summit after the search and left a parallel fifth beside it (G4 to F4 under D5 to C5, in the refrain's first line); the pin moved inside the search, and the floor was lowered to let the line step down; the parallel went.
 
 **Fix (proposed).** A descant module: a line above the tune for the last stanza or refrain, its own rhythm allowed (longer notes), the summit placed late and pinned inside the search, kept tables from published descants.
 
@@ -110,8 +127,18 @@ Song 52's shadow harmony moved with the lead 74% to 85% of the time and never ag
 
 **Problem.** A choir and an organist need their pages to agree bar for bar. Engraving each document separately leaves bar numbers, breaks and notes free to drift.
 
-**Evidence.** Song 53's two documents come from one record and share one line (time, keys, bar lines, marks, a break every fourth bar); bars 1-70 fall on the same systems in both; every voice read back from MIDI; the choir notes compared between the two sources.
+**Evidence.** Song 53's two documents come from one record and share one line (time, keys, bar lines, marks, a break every fourth bar); bars 1-80 fall on the same systems in both; every voice read back from MIDI; the choir notes compared between the two sources.
 
 **Fix (proposed).** The engine's standard for choral output: one timeline record, one shared global line with forced breaks, every document written from it, and the readback per voice.
 
 **Check.** On any choral song: the same bars at the start of every system in every document, and every voice matching the record.
+
+## 749.14 The engine has no accompaniment
+
+**Problem.** Nothing in the engine writes an accompaniment. Song 53's first organ part doubled the choir's four parts for most of the carol, and its introduction and verse 4 were in the same texture: correct, and too plain for an organist's score.
+
+**Evidence.** First version: outside the introduction and link, the organ's notes were the choir's (right hand two notes, left hand one, pedal the bass); no eighth notes; a 4-bar introduction; no coda. Rewritten: the introduction 8 bars; three notes in the right hand on 41 of 57 chords in verses 1-3; the left hand rocking in eighths (263 notes); verse 4's right hand below the tune throughout, with a suspension; the final refrain over a tonic and a dominant pedal; a 4-bar coda; every note read back from MIDI.
+
+**Fix (proposed).** An accompaniment module for keyboard-led songs: a texture plan by section that builds through the song (doubling and support early, independence late), figures by metre (the rocking eighths in 3/4), pedal points at phrase openings and before cadences, suspensions at chord changes, an introduction from the refrain's tune and a coda from its last phrase.
+
+**Check.** On any keyboard-led song: the accompaniment's texture grows by section, the late sections do not double the tune, and every note fits its chord or resolves by step.

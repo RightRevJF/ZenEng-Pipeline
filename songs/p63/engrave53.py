@@ -6,14 +6,15 @@ import json, subprocess, os, collections
 import mido
 import lyric_p63 as L
 H = "/home/claude/p63"; OUT = f"{H}/out"; os.makedirs(OUT, exist_ok=True)
-R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; BAR = 36; L0 = 36 * BAR; END = R["end"]
+R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; BAR = 36; L0 = 40 * BAR; END = R["end"]
 ED = ""
 SP_EF = {0: "c", 1: "des", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "ges", 7: "g", 8: "aes", 9: "a", 10: "bes", 11: "b"}
 SP_F = {0: "c", 1: "cis", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "fis", 7: "g", 8: "gis", 9: "a", 10: "bes", 11: "b"}
 def pname(m, t):
+    if isinstance(m, list): return "<" + " ".join(pname(q, t) for q in m) + ">"
     n = (SP_F if t >= L0 else SP_EF)[m % 12]; o = m // 12 - 1 - 3
     return n + ("'" * o if o > 0 else "," * (-o))
-DUR = {12: "4", 24: "2", 36: "2."}
+DUR = {6: "8", 12: "4", 18: "4.", 24: "2", 36: "2."}
 def segs(t, d):
     out = []
     while d > 0:
@@ -25,7 +26,7 @@ def rest_toks(t, d):
         toks.append("R2." if (s == 36 and a % BAR == 0) else ("r" + DUR[s]) if s in DUR else " ".join(["r4"] * (s // 12)))
     return toks
 def voice_ly(ev, dyn=None, fermata_last=True, slurs=False):
-    toks = []; t = -12; dyn = dyn or {}
+    toks = []; t = 0; dyn = dyn or {}
     for i, e in enumerate(ev):
         if e["on"] > t: toks += rest_toks(t, e["on"] - t)
         ss = segs(e["on"], e["dur"])
@@ -50,23 +51,22 @@ def lyr_text(lines):
 LY1 = ('\\set stanza = "1." ' + lyr_text(L.VERSES[0]) + " " + lyr_text(L.REFRAIN) + ' \\set stanza = "4." ' + lyr_text(L.VERSES[3]) + " " + lyr_text(L.REFRAIN))
 LY2 = '\\set stanza = "2." ' + lyr_text(L.VERSES[1]); LY3 = '\\set stanza = "3." ' + lyr_text(L.VERSES[2]); LYD = lyr_text(L.REFRAIN)
 O = R["offsets"]
-DYN_S = {132: "\\mp", 720: "\\p", 1356: "\\mf", 1944: "\\f", O["B_refrain"] + 420: "\\p"}
-DYN_O = {-12: "\\p", 132: "\\mp", 720: "\\p", L0: "\\mf", 1944: "\\f", O["B_refrain"] + 420: "\\p"}
-DYN_D = {1944: "\\f"}
+DYN_S = {276: "\\mp", 864: "\\p", 1572: "\\mf", 2160: "\\f", O["B_refrain"] + 420: "\\p"}
+DYN_O = {0: "\\p", 276: "\\mp", 864: "\\p", L0: "\\mf", 2160: "\\f", O["B_refrain"] + 420: "\\p", 76 * 36: "\\pp"}
+DYN_D = {2160: "\\f"}
 def glob():
-    g = ['\\time 3/4', '\\key ees \\major', '\\tempo "Gently rocking" 4 = 88', '\\partial 4', 's4']
-    marks = {1: "Organ: introduction", 5: "Verses 1–3", 21: "Refrain (after verses 1, 2 and 3)", 37: "Organ: to F major", 39: "Verse 4: unison (men an octave lower)", 55: "Final refrain: in parts, sopranos' descant"}
-    for b in range(1, 71):
-        if b == 37: g.append('\\key f \\major')
+    g = ['\\time 3/4', '\\key ees \\major', '\\tempo "Gently rocking" 4 = 88']
+    marks = {1: "Organ: introduction", 9: "Verses 1–3", 25: "Refrain (after verses 1, 2 and 3)", 41: "Organ: to F major", 45: "Verse 4: unison (men an octave lower)", 61: "Final refrain: in parts, sopranos' descant", 77: "Organ: coda"}
+    for b in range(1, 81):
+        if b == 41: g.append('\\key f \\major')
         if b in marks: g.append(f'\\mark \\markup \\small \\bold "{marks[b]}"')
         g.append('s2.')
-        if b in (20, 38, 54): g.append('\\bar "||"')
-        if b == 36: g.append('\\bar "||"')
-        if b == 70: g.append('\\bar "|."')
+        if b in (8, 24, 40, 44, 60, 76): g.append('\\bar "||"')
+        if b == 80: g.append('\\bar "|."')
         elif b % 4 == 0: g.append('\\break')
     return " ".join(g)
 GLOB = glob()
-NOTE36 = '\\partial 4 s4 s2.*35 s2 s4^\\markup \\italic \\small \\column { "Verses 2 and 3: back to bar 4, beat 3" "After verse 3: on to bar 37" } s2.*34'
+NOTE36 = 's2.*39 s2 s4^\\markup \\italic \\small \\column { "Verses 2 and 3: back to bar 8, beat 3" "After verse 3: on to bar 41" } s2.*40'
 
 FOOT = "Sung to Sleep · Words and music: Jason Bryant · ♩ = 88 · E-flat major, verse 4 in F major"
 HEAD = r'''\version "2.24.3"
@@ -80,7 +80,7 @@ HEAD = r'''\version "2.24.3"
 def music(v, dyn=None, slurs=False): return voice_ly(V[v], dyn, slurs=slurs)
 SOP, ALT, TEN, BAS = music("S", DYN_S, True), music("A"), music("T"), music("B")
 DES = music("Desc", DYN_D, True)
-ORH_S, ORH_A, OLH, OPED = music("org_rh_s", DYN_O), music("org_rh_a"), music("org_lh"), music("org_ped")
+ORH, OLH, OPED = music("org_rh", DYN_O), music("org_lh"), music("org_ped")
 KEEP = "\\with { \\override VerticalAxisGroup.remove-empty = ##f }"
 def choir_block():
     return f'''
@@ -99,7 +99,7 @@ def choir_block():
 def organ_block():
     return f'''
   \\new PianoStaff \\with {{ instrumentName = "Organ" shortInstrumentName = "Org." }} <<
-    \\new Staff = "rh" {KEEP} << \\new Voice {{ \\global }} \\new Voice {{ \\voiceOne {ORH_S} }} \\new Voice {{ \\voiceTwo {ORH_A} }} >>
+    \\new Staff = "rh" {KEEP} << \\new Voice {{ \\global }} \\new Voice {{ {ORH} }} >>
     \\new Staff = "lh" {KEEP} << \\clef bass \\new Voice {{ \\global }} \\new Voice {{ {OLH} }} >>
   >>
   \\new Staff = "ped" \\with {{ instrumentName = "Pedal" shortInstrumentName = "Ped." \\override VerticalAxisGroup.remove-empty = ##f }} << \\clef bass \\new Voice {{ \\global }} \\new Voice {{ {OPED} }} >>'''
@@ -116,7 +116,7 @@ def compile_ly(src, base):
     return [l for l in r.stderr.splitlines() if "warning" in l.lower()]
 def readback():
     """every voice on its own staff, LilyPond's MIDI, notes compared with the record (sounding pitch, onset)"""
-    names = ["S", "A", "T", "B", "Desc", "org_rh_s", "org_rh_a", "org_lh", "org_ped"]
+    names = ["S", "A", "T", "B", "Desc", "org_rh", "org_lh", "org_ped"]
     staves = " ".join(f'\\new Staff {{ \\new Voice {{ \\global {{}} }} }} ' for _ in [])
     body = " ".join(f'\\new Staff << \\new Voice {{ \\global }} \\new Voice {{ {voice_ly(V[n], fermata_last=False)} }} >>' for n in names)
     src = f'\\version "2.24.3"\nglobal = {{ {GLOB.replace(chr(92) + "break", "")} }}\n\\score {{ << {body} >> \\midi {{ \\tempo 4 = 88 }} }}\n'
@@ -126,11 +126,11 @@ def readback():
         t = 0; ns = []
         for m in tr:
             t += m.time
-            if m.type == "note_on" and m.velocity > 0: ns.append((round(t * 12 / tpq) - 12, m.note))
+            if m.type == "note_on" and m.velocity > 0: ns.append((round(t * 12 / tpq), m.note))
         if ns: got.append(sorted(ns))
     res = {}
     for n, g in zip(names, got):
-        want = sorted((e["on"], e["p"]) for e in V[n])
+        want = sorted((e["on"], q) for e in V[n] for q in (e["p"] if isinstance(e["p"], list) else [e["p"]]))
         # tied segments sound once; a note's onset is its first segment
         res[n] = (g == want, len(g), len(want))
     return res
