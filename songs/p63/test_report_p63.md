@@ -1,0 +1,117 @@
+---
+title: "Sung to Sleep: test report"
+subtitle: "Words and music: Jason Bryant"
+---
+
+# Intake
+
+| Question | Answer |
+|---|---|
+| What next | The next song in 3/4, building the chorus, harmony and whole-song changes in from the start (A) |
+| The request | "I really want to do another Christmas Carol, this one, with a full score for the organist and a hymn sheet for the choir perfectly aligned. Would this time signature work for that?" (yes: 3/4 suits a carol) |
+| The idea | A brainstorm from the theology of the first carol ("the Word that had to learn words"); five sparks offered; the writer chose the Song sung to sleep (Job 38:7): "A. But I don't want it sung as Mary. A narrator like most Carols is fine" |
+| Shape | Four verses, a refrain after each, the descant over the last verse and refrain (A) |
+| Lyric | Draft 1; "I hate lullay as a word, makes no sense" (the refrain opens "Hush now"); verse 2 rewritten for distinctiveness ("the voice that called the light to be / now cried for Mary there"); the refrain's melody to lift gently and stay warm under repetition; locked at draft 3: "A. And remember, we are learning. I want you to make the adjustments musically we talked about where possible" |
+| Key | E♭ major, the last verse up a step to F (A); "Just a full score for the organist and a hymn page for the choir" (no Nashville chart) |
+| Tempo | Gently rocking, quarter = 88 (A) |
+| Title | Sung to Sleep (A) |
+| Refrain melody | "Hush now" low and still; line 3 climbs to the tune's top on "world"; the second "sleeping" a step above the first, home on "here" (A) |
+| Last verse | An organ link to F; verse 4 in unison over the organ's own harmony; the final refrain in four parts with the sopranos' descant, the last "here" held (A) |
+
+# Method
+
+The engine draws in 4/4 only (749.4), so the tune was drawn by a 3/4 sketch of its method (gen34.py) with kept tables from the Essen folk-song collection: 1,601 tunes in 3/4 (tables_34.py, with song 52's builder: bar 36 twelfths, beats at 0, 12 and 24). The hymn form sets the rhythm's frame: Common Meter, every stressed syllable on a downbeat, every line opening on a pickup except the refrain's "Hush now" lines; inside it each bar is drawn from the kept 3/4 bars (half and quarter, quarter and half, or a slurred pair, at most one slur a line). Pitches from the kept interval shares, chord tones weighted on downbeats. Written in D and transposed: verses 1-3 and refrains to E♭, verse 4 and the final refrain to F.
+
+The four parts: the carol pipeline's beam search (harmonize53.py; two chords added for the verse-4 organ setting, F♯7 and C in D, sounding A7 and E♭ in F). The descant: song 52's harmony-as-lines search (harm68.high) above the sopranos in their rhythm and words, chord tones of the four-part chord, "world" pinned a third above (A5) inside the search.
+
+Both documents come from one record on one timeline and share one line of time, keys, bar lines, marks and a break every fourth bar, so bars 1-70 fall on the same systems in both (engrave53.py).
+
+# The melody search
+
+3,000 builds, seed 20261115+453; 2739 survivors. Deaths: refrain 2: 184, refrain 3: 77 (the refrain's line 3 climb with D5 once on "world"; line 4's step and its home). The pick: **01be9dada5fb**, charge 0.61, distance 8.9, taken as drawn.
+
+| Reading | The pick | Median survivor | Kept 3/4 (25th, 50th, 75th) |
+|---|---|---|---|
+| repeated notes | 23% | 32% | 11%, 18%, 26% |
+| moves by step | 50% | 43% | 38%, 48%, 60% |
+| moves by leap | 8% | 10% | 7%, 11%, 17% |
+| turns of direction | 40% | 41% | 33%, 40%, 47% |
+| range | 13 | 12.00 | 12.00, 13.00, 14.00 |
+| distinct pitches | 8 | 7.00 | 7.00, 8.00, 9.00 |
+| longest run of one pitch | 3 | 4.00 | 2.00, 3.00, 4.00 |
+| distinct rhythms over bars | 16% | 16% | 35%, 47%, 67% |
+| notes a bar | 1.97 | 1.90 | 2.84, 3.48, 4.00 (set by the hymn form; not charged) |
+| onsets on the beat | 100% | 100% | 57%, 67%, 82% (set by the hymn form; not charged) |
+| onsets on the bar's first beat | 46% | 47% | 23%, 26%, 33% (set by the hymn form; not charged) |
+| gaps of a sixteenth | 0% | 0% | 0%, 0%, 9% (set by the hymn form; not charged) |
+| gaps of an eighth | 0% | 0% | 25%, 48%, 64% (set by the hymn form; not charged) |
+| gaps of a quarter or more | 100% | 100% | 24%, 39%, 70% (set by the hymn form; not charged) |
+
+Distinct rhythms over bars sits under the kept range (16% against 35%): every survivor's does, since the hymn frame allows only three bar rhythms (finding 749.11).
+
+# The harmony (749.9)
+
+Each part against the tune, at each pair of the tune's onsets, by section:
+
+| Part | Moves with the tune | Against it | Holds while it moves (or the reverse) | Parallel fifths or octaves | Distinct distances |
+|---|---|---|---|---|---|
+| verse A | 17% | 22% | 61% | 0 | 8 |
+| verse T | 9% | 41% | 50% | 0 | 10 |
+| verse B | 21% | 33% | 46% | 0 | 12 |
+| refrain A | 21% | 33% | 46% | 0 | 9 |
+| refrain T | 18% | 50% | 32% | 0 | 9 |
+| refrain B | 8% | 58% | 33% | 0 | 14 |
+| refrain_final A | 26% | 26% | 48% | 0 | 7 |
+| refrain_final T | 17% | 43% | 39% | 0 | 10 |
+| refrain_final B | 21% | 42% | 38% | 0 | 10 |
+| refrain_final Desc | 26% | 35% | 39% | 0 | 6 |
+| verse4 organ alto (org_rh_a) | 26% | 22% | 52% | 0 | 9 |
+| verse4 organ tenor (org_lh) | 22% | 43% | 35% | 0 | 12 |
+| verse4 pedal | 21% | 33% | 46% | 0 | 14 |
+
+Song 52's shadow harmony moved with the lead 74% to 85% of the time and never against it; here no part moves with the tune more than 26% of the time, and the tenor and bass move against it 33% to 58% of the time.
+
+# Variety and shape (749.8, 749.10)
+
+- Verses 1-3 and their refrains share one setting (a hymn's form). Verse 4 changes three things: the key (F), the texture (the choir in unison, the men an octave lower) and the harmony (the organ's own chords: F♯ minor, E minor 7, B minor 7, A7, G, E minor 7, C, A7 ... in D, a different chord on 25 of its 31 notes).
+- The final refrain: four parts again, a fresh setting in F, and the descant above.
+- The shape: average sounding pitch of the tune, verses 1-3 A♭4, refrains 1-3 G4, verse 4 C5, final refrain B4 (each a step above its first); the tune's top, F5, in bar 65 of 70 (91% of the way in), with the descant's A5 on the same beat. The tune's E♭5 sounds once in the first section, on the refrains' "world".
+
+# Documents
+
+- Full score for the organist (PDF, 7 pages): descant (final refrain only), the choir on two staves with every verse between them, the organ's manuals and pedal. The organ plays alone in the introduction (the refrain's last line) and the link (G minor 7, C7sus4, C7), doubles the choir in verses 1-3 and every refrain, and plays its own harmony under the unison verse 4.
+- Hymn page for the choir (PDF, 4 pages): the same bars, systems and notes without the organ staves.
+- Every voice read back from LilyPond's MIDI note for note (sopranos, altos, tenors, basses, descant, organ right hand upper and lower, left hand, pedal).
+- Consistency: 40/40 checks pass, among them: one shared global line in both documents; the same choir notes in both; the keys; the tune's tops and the descant's top on "world"; the descant above the sopranos; the refrain's designs; verse 4 in unison over a different harmony; the organ doubling the choir where it should; no parallel fifths or octaves in any part; the voices in their ranges; no Nashville chart.
+
+# Findings
+
+## 749.11 A hymn needs a hymn mode and hymn tables
+
+**Problem.** The engine has no strophic mode: one tune for every stanza, the rhythm's frame set by the stanza's meter (here Common Meter, iambic), stressed syllables on downbeats. And the Essen folk tables do not describe hymn tunes: in a hymn frame every bar is one of three rhythms.
+
+**Evidence.** Song 53's sketch built the frame by hand and drew inside it. Every survivor's distinct rhythms over bars sat under the kept 3/4 range (the pick 16%, kept 35% to 67%); onsets on the beat 100% (kept 57% to 82%); notes a bar 1.9 (kept 2.8 to 4.0): all set by the form, so printed, not charged.
+
+**Fix (proposed).** A hymn mode: the stanza's meter (CM, LM, SM, 87.87 and so on) gives each line's pickup, stressed downbeats and held ending; the tune is drawn once and checked against every stanza's stresses. Kept tables from a hymnal corpus (tunes with their meters) for the readings the frame leaves free.
+
+**Check.** A Common Meter tune whose rhythm readings sit inside kept hymn-tune quartiles, sung to every stanza with every stressed syllable on a downbeat.
+
+## 749.12 A descant module
+
+**Problem.** The engine has no descant. Song 53's descant was written with song 52's harmony-as-lines search (above the sopranos, their rhythm and words, chord tones, the summit pinned).
+
+**Evidence.** The descant's readings: moves with the tune 26%, against it 35%, holds 39%; no parallels; its top, A5, once on "world". A first pass pinned the summit after the search and left a parallel fifth beside it (G4 to F4 under D5 to C5, bar 57); the pin moved inside the search, and the floor was lowered to let the line step down; the parallel went.
+
+**Fix (proposed).** A descant module: a line above the tune for the last stanza or refrain, its own rhythm allowed (longer notes), the summit placed late and pinned inside the search, kept tables from published descants.
+
+**Check.** No parallels with the tune or the bass, the summit in the last quarter, the line above the tune throughout.
+
+## 749.13 Choral documents from one timeline
+
+**Problem.** A choir and an organist need their pages to agree bar for bar. Engraving each document separately leaves bar numbers, breaks and notes free to drift.
+
+**Evidence.** Song 53's two documents come from one record and share one line (time, keys, bar lines, marks, a break every fourth bar); bars 1-70 fall on the same systems in both; every voice read back from MIDI; the choir notes compared between the two sources.
+
+**Fix (proposed).** The engine's standard for choral output: one timeline record, one shared global line with forced breaks, every document written from it, and the readback per voice.
+
+**Check.** On any choral song: the same bars at the start of every system in every document, and every voice matching the record.
