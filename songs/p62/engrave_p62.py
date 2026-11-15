@@ -161,14 +161,14 @@ def line_notes(sec, i): return [n for n in REC["lead"] if n["sec"] == sec and n[
 _d = line_notes("Chorus 1", 4); _h2 = line_notes("Last Chorus", 5); _th = line_notes("Bridge", 3)
 _mm = int(REC["seconds"] // 60); _ss = int(round(REC["seconds"] % 60))
 NOTE0 = f"The voice: an alto, {nm_(min(_ps))}–{nm_(max(_ps))}. Count it in two: two dotted-quarter beats a bar, gently rocking."
-NOTE1 = f"Chorus: “there's a door in the wall” lifts to {nm_(max(n['midi'] for n in _d))} on “door,” the song's only {nm_(max(n['midi'] for n in _d))}, and leaves “wall” open on {nm_(_d[-1]['midi'])}."
+NOTE1 = f"Chorus: “there's a door in the wall” lifts to {nm_(max(n['midi'] for n in _d))} on “door” ({nm_(max(_ps))} in the last chorus, the song's top), and leaves “wall” open on {nm_(_d[-1]['midi'])}."
 NOTE1a = f"Final chorus: the hook twice; the second time “door” on {nm_(_h2[2]['midi'])} and “wall” home on {nm_(_h2[-1]['midi'])}, held into the outro. Harmony on every line."
 NOTE1b = f"Bridge: a hush, piano and cello; “and you were there” lifts to {nm_(max(n['midi'] for n in _th))}, and “gone” holds open into the last verse."
 NOTE2 = "Verses: close and plain, as if talking to him through the wall."
 TITLE = REC["title"]; FT = REC["file_title"]
-FOOT = f"{TITLE} (second edition) · Words and music: Jason Bryant · ♩. = 54, 6/8 · D major · {_mm}:{_ss:02d}"
+FOOT = f"{TITLE} (third edition) · Words and music: Jason Bryant · ♩. = 54, 6/8 · D major · {_mm}:{_ss:02d}"
 if __name__ == "__main__":
-    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "{TITLE}" subtitle = "Lead sheet · second edition" composer = "Words and music: Jason Bryant" tagline = ##f }}
+    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "{TITLE}" subtitle = "Lead sheet · third edition" composer = "Words and music: Jason Bryant" tagline = ##f }}
 \\score {{ <<
   \\new ChordNames \\with {{ chordChanges = ##t chordNameExceptions = #chExceptions }} \\chordmode {{ {chords_for(VREST)} }}
   \\new Staff \\with {{ instrumentName = "Voice" }} {{ \\clef "treble" \\new Voice = "v" {{ {VBODY} }} }}
@@ -196,7 +196,7 @@ if __name__ == "__main__":
 \\score {{ << \\new ChordNames \\with {{ chordChanges = ##t chordNameExceptions = #chExceptions }} \\chordmode {{ {chords_for(rest)} }}
   \\new Staff {{ {clef} {bd} }} >> \\layout {{ }} }} }}''')
     nh = nd = 0
-    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts · second edition" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
+    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts · third edition" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
     path, warns = compile_ly(parts, f"{FT} - parts", cwd=OUT)
     print("parts:", [w for w in warns][:6], len(warns))
     for k, v in checks.items(): print(f"  readback {k}:", "matches" if v[0] else "MISMATCH", v[1:])

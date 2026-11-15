@@ -1,5 +1,5 @@
 ---
-title: "The Room Next Door: test report, second edition"
+title: "The Room Next Door: test report, third edition"
 subtitle: "Words and music: Jason Bryant"
 ---
 
@@ -143,6 +143,45 @@ Every document rebuilt from the new record; every staff reads back note for note
 **Fix (proposed).** Harmony written as lines (harm68.py): a high part with the words chosen by least cost over the phrase, and a low "ooh" part in long notes; readings for motion against the lead added to the checks.
 
 **Check.** Each part moves with the lead under half the time, no parallel fifths or octaves, on songs 48 to 52.
+
+# Third edition: the song shaped as a whole
+
+The writer: "The melody's long range structure still doesn't change much. Is that by design or limitation?" The answer: the strophic verse is by design; that nothing plans or reads the song as a whole is a limitation (every reading is local: per note, per bar, per two-bar window; registers come from a section's kind, never its place). He chose B: try a song-wide shape on song 52 as a third edition, measured before and after.
+
+**The plan (shape68.py).** Verses 1 and 2 as drawn; verse 3 about three quarters of a semitone higher on average, verse 4 about one and three quarters, cap B4; choruses 1 and 2 as they are; the last chorus's lines above chorus 2's, cap C♯5; the bridge the hush; the song's top moved late: the last chorus's first "door" on E5, once. A section meets its target by whole lines moving up one step of the scale (the latest line first, each once), the shape kept; a stressed, long or on-the-beat note out of its chord moves to the nearest chord tone, a note over the cap comes down, over B♭ no F♯, C♯ or B, the voice in the scale, no run of four (the weakest note of one takes the next fit), no leap past a fifth. A first try that lifted single notes again and again (134 lifts, notes moved up to a fifth) bent the tunes and pushed leaps out of the kept range; it was dropped.
+
+Lines moved: Verse 3 line 4 (7 notes); Verse 3 line 3 (9 notes); Verse 3 line 2 (6 notes); Verse 4 line 4 (10 notes); Verse 4 line 3 (12 notes); Verse 4 line 2 (8 notes); Verse 4 line 1 (11 notes); Last Chorus line 4 (7 notes); Last Chorus line 3 (10 notes); Last Chorus line 2 (11 notes); Last Chorus line 1 (8 notes); and "door" D5 to E5 (bar 77).
+
+| Section | Mean pitch before | After | Change |
+|---|---|---|---|
+| Verse 1 | 64.5 | 64.5 | +0.0 |
+| Chorus 1 | 67.9 | 67.9 | +0.0 |
+| Verse 2 | 64.6 | 64.6 | +0.0 |
+| Chorus 2 | 68.1 | 68.1 | +0.0 |
+| Verse 3 | 64.4 | 65.5 | +1.0 |
+| Bridge | 63.9 | 63.9 | +0.0 |
+| Verse 4 | 64.3 | 66.4 | +2.1 |
+| Last Chorus | 67.3 | 68.7 | +1.4 |
+
+| Song-level reading | Before | After |
+|---|---|---|
+| Verse 4 over verse 1 | -0.19 | +1.88 |
+| The verses rise in order | no | yes |
+| Last chorus over chorus 1 (lines before the hook) | -0.75 | +0.99 |
+| Top note; bar of its first sounding | D5; bar 21 | E5; bar 77 |
+| Share of the song before the top | 24% | 90% |
+
+The note-level readings barely move: charge unchanged at 1.69; leaps 12.5% (12.5% before; kept range 7.0 to 16.7); longest run of one pitch 4 across a line join (each line still under four). The melody's fingerprint is now e1051a4a6d7f. The voice's range is now B3 to E5. The harmony, rewritten against the new lead: high part with the lead 23%, against 15%, holding 62%; low part 17%, 2%, 81%; no parallels. Documents rebuilt, every staff reads back, consistency 55/55 (three new checks: the verses rise, the last chorus the highest chorus, the top in the song's last fifth; the hook checks moved to E5 in the last chorus).
+
+## 749.10 Nothing plans or reads the song as a whole
+
+**Problem.** Every reading the engine charges is local, and every register comes from the section's kind. So the verses sit at one height, the last chorus is no higher than the first, and the song's top comes early.
+
+**Evidence.** Song 52 before: verses 1 to 4 within 0.2 semitones of each other on average (B3 to A4 each); the last chorus's lines 0.75 below chorus 1's; the top, D5, first in bar 21 of 84 (24% of the way in). After the plan above: verses 64.5, 64.6, 65.5, 66.4; the last chorus's lines 1.0 above chorus 1's; the top, E5, in bar 77 (90%); the note-level readings and charge unchanged.
+
+**Fix (proposed).** A song plan read before the melody is drawn: a target mean for each section by its place (the strophic sections may hold, the later ones rise), and the song's top placed late; reached by moving whole lines by a step of the scale, as tried. Song-level readings added to the judge: the verses' rise, the last chorus against the first, the top's place. A key change is a later option.
+
+**Check.** On songs 48 to 52: the later verses at or above the first, the last chorus above the first, the top in the last third, with every note-level reading still in its kept range.
 
 # Findings
 

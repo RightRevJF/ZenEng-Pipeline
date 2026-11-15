@@ -1,6 +1,6 @@
 ---
 title: "The Room Next Door"
-subtitle: "Songbook and production notes, second edition"
+subtitle: "Songbook and production notes, third edition"
 author: "Words and music: Jason Bryant"
 ---
 
@@ -8,7 +8,7 @@ author: "Words and music: Jason Bryant"
 
 **What it's about.** Nora's husband Bernard has died in the sitting room. She keeps his cup, his chair and the book he left face down, and she moves her own chair to the north wall, where the plaster is warm the way only a south wall should be. She talks to him through it. One morning the room next door comes as close as a breath, and she understands what she had been too close to see: a wall with a door in it is not the same as a wall without one. The song is from the writer's parable "The Room Next Door" in *Wild Fruit*.
 
-**How it goes.** An intimate folk ballad in 6/8, D major, at a dotted quarter of 54: count it in two, gently rocking. A fingerpicked acoustic guitar carries it; soft piano and an acoustic bass come in at the first chorus, a cello at the second. The hook, "there's a door in the wall," lifts to the song's top note, D5, on "door" and leaves "wall" open. The bridge drops to piano and cello alone. At the very end the hook is sung twice, and the second time it comes home.
+**How it goes.** An intimate folk ballad in 6/8, D major, at a dotted quarter of 54: count it in two, gently rocking. A fingerpicked acoustic guitar carries it; soft piano and an acoustic bass come in at the first chorus, a cello at the second. The hook, "there's a door in the wall," lifts to D5 on "door" and leaves "wall" open. The song climbs as it goes: the third and fourth verses sit higher than the first two, the last chorus is the highest chorus, and its first "door" reaches E5, the song's top, once. The bridge drops to piano and cello alone. At the very end the hook is sung twice, and the second time it comes home.
 
 **Form (84 bars, about 3:07).** Every sung line takes two bars of 6/8, twelve eighth notes, which is about one syllable to an eighth.
 
@@ -26,7 +26,7 @@ author: "Words and music: Jason Bryant"
 | Last Chorus | 69–80 | Gmaj7 D/F♯ Em9 Bm7 Gmaj7 B♭maj7 Bm7 Gadd9 Em9 Asus4 Gmaj7 Dadd9 |
 | Outro | 81–84 | Gmaj7 D/F♯ Em9 Dadd9 |
 
-**The singer.** An alto, B3 to D5. The verses sit low (around E4 on average); the choruses sit about 3 semitones higher (around G4). D5 comes only on "door."
+**The singer.** An alto, B3 to E5. The verses sit low (around E4 to F♯4 on average); the choruses sit about 2.5 semitones higher (around G4 to A4). D5 comes only on "door"; E5 only once, on the last chorus's first "door."
 
 # Section by section
 
@@ -87,7 +87,7 @@ The cello sings the hook's tune an octave down over Bm7 and Gmaj7, then holds wh
 | 49–50 | Bm7 Gmaj7 | and I said hello through the plaster that night |
 | 51–52 | Em9 Asus4 | and I slept the whole night through, the first time since you |
 
-Verse 1's tunes again; the cello holds a long note every other bar.
+Verse 1's tunes again, but from the second line on each tune moves up a step of the scale (the shape kept), so the verse rises as the story turns: about 1 semitone above verse 1 on average. The cello holds a long note every other bar.
 
 ## Bridge (bars 53–60)
 
@@ -109,7 +109,7 @@ The hush: the guitar and bass stop; soft held piano chords and the cello. The fi
 | 65–66 | Bm7 Gmaj7 | and I said there's a door, and it's going to open |
 | 67–68 | Em9 Asus4 | and I know who'll be there when I take the step |
 
-The guitar and bass return, with the piano high and soft.
+The guitar and bass return, with the piano high and soft. All four of verse 1's tunes now sit a step of the scale higher (the shape kept), about 2 semitones above verse 1 on average: the highest verse.
 
 ## Final chorus (bars 69–80)
 
@@ -122,7 +122,7 @@ The guitar and bass return, with the piano high and soft.
 | 77–78 | Em9 Asus4 | there's a door in the wall |
 | 79–80 | Gmaj7 Dadd9 | there's a door in the wall |
 
-The fullest the song gets, with harmony on every line. The first line is sung as in chorus 1, the second as in chorus 2 (the lifted "sunlight"). Under "and some morning it opens" the harmony turns to B♭maj7 (bar 74), the one chord from outside the key. The hook comes twice: first as in every chorus, D5 on "door" and "wall" open; then A4, B4, B4, A4, F♯4, D4, "door" on B4 over Gmaj7 and "wall" home on D4 over Dadd9 (bar 80), held into the outro.
+The fullest the song gets, with harmony on every line. Every line before the hook sits a step of the scale above chorus 1's (the shape kept), so this is the highest chorus. Under "and some morning it opens" the harmony turns to B♭maj7 (bar 74), the one chord from outside the key. The hook comes twice: first with "door" lifted to E5, the song's top and its only E5 (bar 77), and "wall" open; then A4, B4, B4, A4, F♯4, D4, "door" on B4 over Gmaj7 and "wall" home on D4 over Dadd9 (bar 80), held into the outro.
 
 ## Outro (bars 81–84)
 
@@ -130,9 +130,9 @@ Guitar and cello, softer each bar and slowing a little; the last bar a Dadd9, le
 
 # For each player
 
-**Voice.** An alto, B3 to D5. Sing it as Nora would talk to Bernard through the wall: close, unhurried, not performed. Let the 6/8 rock you; the stressed words fall on the two beats. Open up on "door" and leave "wall" unfinished in choruses 1 and 2. Learn chorus 2 as its own: three held notes sit higher than in chorus 1. In the bridge come right down until "and you were there." Save the settled, final "wall" for the very end.
+**Voice.** An alto, B3 to E5. Sing it as Nora would talk to Bernard through the wall: close, unhurried, not performed. Let the 6/8 rock you; the stressed words fall on the two beats. Open up on "door" and leave "wall" unfinished in choruses 1 and 2. Learn chorus 2 as its own: three held notes sit higher than in chorus 1. From verse 3 on, the tunes you know sit a step higher; let the song climb to the E5 on the last chorus's first "door." In the bridge come right down until "and you were there." Save the settled, final "wall" for the very end.
 
-**Harmony vocals.** Two parts with different jobs, on the hook in every chorus and on every line of the final chorus. The high part (G4–F♯5) sings the words with the lead, a third to a sixth above, as a line of its own: it often holds a note while the lead moves under it (on the hook, F♯5 held while the lead climbs to "door"). The low part (A3–F♯4) sings "ooh" in long notes under the lead, changing at most once a beat. Blend under the lead.
+**Harmony vocals.** Two parts with different jobs, on the hook in every chorus and on every line of the final chorus. The high part (A4–G5) sings the words with the lead, a third to a sixth above, as a line of its own: it often holds a note while the lead moves under it (on the hook, F♯5 held while the lead climbs to "door"). The low part (A3–G4) sings "ooh" in long notes under the lead, changing at most once a beat. Blend under the lead.
 
 **Acoustic guitar** (E2–F♯4). Steel-string, fingerpicked in six eighths throughout: the bass note on the first and fourth, the chord between. Out in the bridge; back for verse 4.
 
@@ -242,7 +242,7 @@ The song is a woman alone in a quiet house, so it starts with one guitar and nev
 - **Tempo and click.** Dotted quarter = 54 (quarter = 81), 6/8 throughout; click on the dotted quarters, two a bar. The outro slows a little to its last chord: follow the guitar, no click.
 - **Key.** D major. The voice stays in the scale; the B♭maj7 and Cadd9 are in the band only.
 - **Chords per bar.** One chord a bar, as in the section tables.
-- **Range.** Voice B3–D5; harmony as above.
+- **Range.** Voice B3–E5; harmony as above.
 - **Tracking.** Guitar and a guide vocal to the click first; then bass and piano; then cello; the lead vocal; the harmonies with the finished lead in the headphones.
 - **Blend and panning.** Voice centre; guitar slightly left; cello right; piano right of centre; bass centre; harmonies slightly left and right.
 - **The bridge.** Guitar and bass silent for all eight bars.

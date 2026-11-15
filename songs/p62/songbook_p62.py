@@ -38,16 +38,16 @@ def near(x):
     return f"{nm(r - 1)} to {nm(r + 1)}"
 lift = round(2 * (sum(ca) / len(ca) - sum(va) / len(va))) / 2
 o = []; A = o.append
-A('---\ntitle: "The Room Next Door"\nsubtitle: "Songbook and production notes, second edition"\nauthor: "Words and music: Jason Bryant"\n---\n')
+A('---\ntitle: "The Room Next Door"\nsubtitle: "Songbook and production notes, third edition"\nauthor: "Words and music: Jason Bryant"\n---\n')
 A("# At a glance\n")
 A("**What it's about.** Nora's husband Bernard has died in the sitting room. She keeps his cup, his chair and the book he left face down, and she moves her own chair to the north wall, where the plaster is warm the way only a south wall should be. She talks to him through it. One morning the room next door comes as close as a breath, and she understands what she had been too close to see: a wall with a door in it is not the same as a wall without one. The song is from the writer's parable \"The Room Next Door\" in *Wild Fruit*.\n")
-A(f"**How it goes.** An intimate folk ballad in 6/8, D major, at a dotted quarter of 54: count it in two, gently rocking. A fingerpicked acoustic guitar carries it; soft piano and an acoustic bass come in at the first chorus, a cello at the second. The hook, \"there's a door in the wall,\" lifts to the song's top note, {nm(max(n['midi'] for n in door))}, on \"door\" and leaves \"wall\" open. The bridge drops to piano and cello alone. At the very end the hook is sung twice, and the second time it comes home.\n")
+A(f"**How it goes.** An intimate folk ballad in 6/8, D major, at a dotted quarter of 54: count it in two, gently rocking. A fingerpicked acoustic guitar carries it; soft piano and an acoustic bass come in at the first chorus, a cello at the second. The hook, \"there's a door in the wall,\" lifts to {nm(max(n['midi'] for n in door))} on \"door\" and leaves \"wall\" open. The song climbs as it goes: the third and fourth verses sit higher than the first two, the last chorus is the highest chorus, and its first \"door\" reaches {vhi}, the song's top, once. The bridge drops to piano and cello alone. At the very end the hook is sung twice, and the second time it comes home.\n")
 A(f"**Form ({R['nbars']} bars, about {mm}:{ss:02d}).** Every sung line takes two bars of 6/8, twelve eighth notes, which is about one syllable to an eighth.\n")
 A("| Section | Bars | Chords |\n|---|---|---|")
 for s, nb, st, mets, mv in R["plan"]:
     ch = {"Chorus 2": "as chorus 1", "Verse 2": "as verse 1", "Verse 3": "as verse 1", "Verse 4": "as verse 1"}.get(s) or sec_chords(s)
     A(f"| {s} | {span(s)} | {ch} |")
-A(f"\n**The singer.** An alto, {vlo} to {vhi}. The verses sit low (around {near(sum(va) / len(va))} on average); the choruses sit about {lift:g} semitones higher (around {near(sum(ca) / len(ca))}). {vhi} comes only on \"door.\"\n")
+A(f"\n**The singer.** An alto, {vlo} to {vhi}. The verses sit low (around {near(sum(va) / len(va))} on average); the choruses sit about {lift:g} semitones higher (around {near(sum(ca) / len(ca))}). {nm(max(n['midi'] for n in door))} comes only on \"door\"; {vhi} only once, on the last chorus's first \"door.\"\n")
 A("# Section by section\n")
 A("Pitches are where the voice sounds. Bar numbers count from the first bar of the intro.\n")
 A(f"## Intro (bars {span('Intro')})\n\nThe acoustic guitar alone, fingerpicked in six: the bass note on the first and fourth eighths, the chord's upper notes between.\n")
@@ -68,18 +68,22 @@ def _lift(e):
 A(f"## Chorus 2 (bars {span('Chorus 2')})\n\nThe same words and the same hook as chorus 1, but chorus 2 sits a little higher: three held notes are lifted, {'; '.join(_lift(e) for e in VL[:-1])}; and {_lift(VL[-1])}. The first line and the hook are exactly as before. The cello joins on long notes.\n")
 A(f"## Interlude (bars {span('Interlude')})\n\nThe cello sings the hook's tune an octave down over Bm7 and Gmaj7, then holds while the guitar picks on.\n")
 A(f"## Verse 3 (bars {span('Verse 3')})\n"); A(table("Verse 3"))
-A("\nVerse 1's tunes again; the cello holds a long note every other bar.\n")
+_SH = __import__("json").load(open(f"{H}/melody_shaped.json"))["shape"]
+_shl = lambda s: sorted(e["line"] for e in _SH["log"] if e["sec"] == s and e["line"] != 4 or (e["sec"] == s and s != "Last Chorus"))
+_vm = _SH["after"]["section means"]
+def _st(x): r = round(2 * x) / 2; return f"{r:g} semitone" + ("" if r == 1 else "s")
+A(f"\nVerse 1's tunes again, but from the second line on each tune moves up a step of the scale (the shape kept), so the verse rises as the story turns: about {_st(_vm['Verse 3'] - _vm['Verse 1'])} above verse 1 on average. The cello holds a long note every other bar.\n")
 A(f"## Bridge (bars {span('Bridge')})\n"); A(table("Bridge"))
 bl = [n["midi"] for j in range(3) for n in by[("Bridge", j)]]
 tt = next(n for n in there if n["midi"] == max(m["midi"] for m in there))
 A(f"\nThe hush: the guitar and bass stop; soft held piano chords and the cello. The first three lines stay low and level ({nm(min(bl))}–{nm(max(bl))}). Over Cadd9 (bar {B0['Bridge'] + 6}, borrowed from D minor) the room comes close. Then \"and you were there\" lifts {notes(there[:4])}, reaching {nm(tt['midi'])} on \"there\" (bar {barno(tt['on'])}), and \"gone\" holds open on {nm(there[-1]['midi'])} over A7sus4.\n")
 A(f"## Verse 4 (bars {span('Verse 4')})\n"); A(table("Verse 4"))
-A("\nThe guitar and bass return, with the piano high and soft.\n")
+A(f"\nThe guitar and bass return, with the piano high and soft. All four of verse 1's tunes now sit a step of the scale higher (the shape kept), about {_st(_vm['Verse 4'] - _vm['Verse 1'])} above verse 1 on average: the highest verse.\n")
 A(f"## Final chorus (bars {span('Last Chorus')})\n"); A(table("Last Chorus"))
-A(f"\nThe fullest the song gets, with harmony on every line. The first line is sung as in chorus 1, the second as in chorus 2 (the lifted \"sunlight\"). Under \"and some morning it opens\" the harmony turns to B♭maj7 (bar {B0['Last Chorus'] + 6}), the one chord from outside the key. The hook comes twice: first as in every chorus, {nm(dd['midi'])} on \"door\" and \"wall\" open; then {notes(home)}, \"door\" on {nm(home[2]['midi'])} over Gmaj7 and \"wall\" home on {nm(home[-1]['midi'])} over Dadd9 (bar {barno(home[-1]['on'])}), held into the outro.\n")
+A(f"\nThe fullest the song gets, with harmony on every line. Every line before the hook sits a step of the scale above chorus 1's (the shape kept), so this is the highest chorus. Under \"and some morning it opens\" the harmony turns to B♭maj7 (bar {B0['Last Chorus'] + 6}), the one chord from outside the key. The hook comes twice: first with \"door\" lifted to {vhi}, the song's top and its only {vhi} (bar {barno(next(n for n in by[('Last Chorus', 4)] if n['midi'] == max(m['midi'] for m in by[('Last Chorus', 4)]))['on'])}), and \"wall\" open; then {notes(home)}, \"door\" on {nm(home[2]['midi'])} over Gmaj7 and \"wall\" home on {nm(home[-1]['midi'])} over Dadd9 (bar {barno(home[-1]['on'])}), held into the outro.\n")
 A(f"## Outro (bars {span('Outro')})\n\nGuitar and cello, softer each bar and slowing a little; the last bar a Dadd9, let ring.\n")
 A("# For each player\n")
-A(f"**Voice.** An alto, {vlo} to {vhi}. Sing it as Nora would talk to Bernard through the wall: close, unhurried, not performed. Let the 6/8 rock you; the stressed words fall on the two beats. Open up on \"door\" and leave \"wall\" unfinished in choruses 1 and 2. Learn chorus 2 as its own: three held notes sit higher than in chorus 1. In the bridge come right down until \"and you were there.\" Save the settled, final \"wall\" for the very end.\n")
+A(f"**Voice.** An alto, {vlo} to {vhi}. Sing it as Nora would talk to Bernard through the wall: close, unhurried, not performed. Let the 6/8 rock you; the stressed words fall on the two beats. Open up on \"door\" and leave \"wall\" unfinished in choruses 1 and 2. Learn chorus 2 as its own: three held notes sit higher than in chorus 1. From verse 3 on, the tunes you know sit a step higher; let the song climb to the {vhi} on the last chorus's first \"door.\" In the bridge come right down until \"and you were there.\" Save the settled, final \"wall\" for the very end.\n")
 A(f"**Harmony vocals.** Two parts with different jobs, on the hook in every chorus and on every line of the final chorus. The high part ({nm(min(n['midi'] for n in R['harm_hi']))}–{nm(max(n['midi'] for n in R['harm_hi']))}) sings the words with the lead, a third to a sixth above, as a line of its own: it often holds a note while the lead moves under it (on the hook, {nm(R['harm_hi'][0]['midi'])} held while the lead climbs to \"door\"). The low part ({nm(min(n['midi'] for n in R['harm_lo']))}–{nm(max(n['midi'] for n in R['harm_lo']))}) sings \"ooh\" in long notes under the lead, changing at most once a beat. Blend under the lead.\n")
 A(f"**Acoustic guitar** ({rng_('guitar')}). Steel-string, fingerpicked in six eighths throughout: the bass note on the first and fourth, the chord between. Out in the bridge; back for verse 4.\n")
 A(f"**Piano** ({rng_('piano')}). On the two beats of each bar in the choruses, soft; answers at the line ends in verse 2; held chords in the bridge; high and quiet in verse 4.\n")
@@ -123,5 +127,5 @@ A(f"- **Tempo and click.** Dotted quarter = 54 (quarter = 81), 6/8 throughout; c
 A("## Score and parts\n")
 A("- Lead sheet: voice, words and chord symbols (PDF).\n- Full score: every part on one set of systems (PDF).\n- Parts: harmony vocals (high, low), acoustic guitar, piano, cello and acoustic bass (PDF).\n- Number chart (PDF).\n- MusicXML: the lead sheet and the full score (.musicxml and .mxl).\n- Demo: MP3 and a General MIDI file.\n")
 open(f"{H}/songbook.md", "w").write("\n".join(o) + "\n")
-subprocess.run(["pandoc", f"{H}/songbook.md", "--reference-doc=/home/claude/carol/songbook/ref.docx", "-o", f"{H}/out/The Room Next Door (second edition) - songbook.docx"], check=True)
+subprocess.run(["pandoc", f"{H}/songbook.md", "--reference-doc=/home/claude/carol/songbook/ref.docx", "-o", f"{H}/out/The Room Next Door (third edition) - songbook.docx"], check=True)
 print("ok", len("\n".join(o)))

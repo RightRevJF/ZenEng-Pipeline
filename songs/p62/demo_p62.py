@@ -7,7 +7,7 @@ import numpy as np, mido
 from scipy.io import wavfile
 REC = pickle.load(open("/home/claude/p62/song_record.pkl", "rb"))
 OUT = "/home/claude/p62/out"; os.makedirs(OUT, exist_ok=True)
-BASE = f"{OUT}/The Room Next Door (second edition) - demo"
+BASE = f"{OUT}/The Room Next Door (third edition) - demo"
 T = 480; TW = T // 12
 BARS = REC["bars"]; lead = REC["lead"]
 def tk(e): return int(round(e * TW))

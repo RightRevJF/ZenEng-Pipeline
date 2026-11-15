@@ -27,7 +27,7 @@ def _trans(hp, lp, h, l, linked=True):
     elif dl and dh: c -= W['contrary']                                                        # contrary
     elif dl and not dh: c -= 0.3                                                    # oblique
     return c
-def high(lead_span, tones_at, lo=57, hi=78):
+def high(lead_span, tones_at, lo=57, hi=79):
     """lead_span: lead notes in order (dicts with on, dur, midi, stress, line, sec); one DP over the span (line joins relaxed)."""
     cands = []
     for n in lead_span:

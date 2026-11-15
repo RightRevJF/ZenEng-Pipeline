@@ -4,7 +4,7 @@ H = "/home/claude/p62"
 R = pickle.load(open(f"{H}/song_record.pkl", "rb")); RB = pickle.load(open(f"{H}/out/readback.pkl", "rb")); RS = pickle.load(open(f"{H}/out/readback_score.pkl", "rb"))
 DM = pickle.load(open(f"{H}/out/demo_report.pkl", "rb"))
 SB = open(f"{H}/songbook.md").read(); NV = open(f"{H}/out/nashville.html").read()
-def pdf(n): return subprocess.run(["pdftotext", f"{H}/out/The Room Next Door (second edition) - {n}.pdf", "-"], capture_output=True, text=True).stdout
+def pdf(n): return subprocess.run(["pdftotext", f"{H}/out/The Room Next Door (third edition) - {n}.pdf", "-"], capture_output=True, text=True).stdout
 LY, PT, SC = pdf("lead sheet").replace("’", "'"), pdf("parts"), pdf("full score")
 PN = ["C", "C♯", "D", "D♯", "E", "F", "F♯", "G", "G♯", "A", "B♭", "B"]
 def nm(p): return f"{PN[p % 12]}{p // 12 - 1}"
@@ -26,8 +26,13 @@ chk("9.12: each chorus above its verse", E["Chorus 1"] > E["Verse 1"] and E["Cho
 chk("9.12: the last chorus the top", E["Last Chorus"] >= max(E.values()) - 1e-9)
 chk("9.12: the bridge the hush", E["Bridge"] == min(v for k, v in E.items() if k not in ("Intro", "Outro")))
 chk("metre: 6/8 throughout, 84 bars of 36 ticks", all(b["meter"] == "6/8" and b["len"] == 36 for b in R["bars"]) and len(R["bars"]) == 84)
-chk("hook: 'door' on D5 in every first hook, 'wall' open on A4 over Asus4", all([n["midi"] for n in by[(s, 4)]] == [69, 71, 74, 71, 69, 69] and chord_on(by[(s, 4)][-1]) == "Asus4" for s in ("Chorus 1", "Chorus 2", "Last Chorus")))
-chk("hook: D5 the top, sung only on 'door'", max(ps) == 74 and all(n["text"].lower().startswith("door") for n in lead if n["midi"] == 74))
+chk("hook: 'door' on D5 in choruses 1 and 2, E5 in the last; 'wall' open on A4 over Asus4", all([n["midi"] for n in by[(s, 4)]] == [69, 71, 74 if s != "Last Chorus" else 76, 71, 69, 69] and chord_on(by[(s, 4)][-1]) == "Asus4" for s in ("Chorus 1", "Chorus 2", "Last Chorus")))
+chk("hook: E5 the top, sung once; D5 and E5 only on 'door' (749.10)", max(ps) == 76 and sum(p == 76 for p in ps) == 1 and all(n["text"].lower().startswith("door") for n in lead if n["midi"] >= 74))
+_SH = _j_.load(open(f"{H}/melody_shaped.json"))["shape"]["after"] if (_j_ := __import__("json")) else None
+_m = _SH["section means"]
+chk("shape: the verses rise (3 above 2, 4 above 3) (749.10)", _m["Verse 1"] - 0.1 <= _m["Verse 2"] < _m["Verse 3"] < _m["Verse 4"])
+chk("shape: the last chorus the highest chorus (749.10)", _m["Last Chorus"] > _m["Chorus 1"] and _SH["last chorus over chorus 1, lines before the hook (semitones)"] > 0)
+chk("shape: the song's top in its last fifth (749.10)", _SH["share of the song before it"] >= 0.8)
 chk("hook: the second time home on D4 over Dadd9", by[("Last Chorus", 5)][-1]["midi"] == 62 and chord_on(by[("Last Chorus", 5)][-1]) == "Dadd9")
 chk("bridge: first three lines B3-F#4 or lower, guitar and bass out", all(n["midi"] <= 66 for j in range(3) for n in by[("Bridge", j)]) and not any(B0["Bridge"] * 36 <= e["on"] < B0["Verse 4"] * 36 for k in ("guitar", "bass") for e in R["parts"][k]))
 th = by[("Bridge", 3)]
@@ -42,7 +47,7 @@ def _rel(s, j): return [(n["on"] - B0[s] * 36, n["midi"]) for n in by[(s, j)]]
 chk("chorus 2: first line and hook exactly as chorus 1", _rel("Chorus 2", 0) == _rel("Chorus 1", 0) and _rel("Chorus 2", 4) == _rel("Chorus 1", 4))
 chk("chorus 2: one held note lifted on each inner line, rhythm unchanged (749.8)", all([t for t, _ in _rel("Chorus 2", j)] == [t for t, _ in _rel("Chorus 1", j)] and sum(a[1] != b[1] for a, b in zip(_rel("Chorus 2", j), _rel("Chorus 1", j))) == 1 for j in (1, 2, 3)))
 chk("chorus 2: every lift upward, to a chord tone, at or under C#5", all(e["now"] > e["was"] and e["now"] <= 73 for e in VAR["log"] if e.get("now")))
-chk("final chorus: line 2 as chorus 2", _rel("Last Chorus", 1) == _rel("Chorus 2", 1))
+chk("final chorus: rhythm of lines 1-2 as chorus 1", [t for t, _ in _rel("Last Chorus", 0)] == [t for t, _ in _rel("Chorus 1", 0)] and [t for t, _ in _rel("Last Chorus", 1)] == [t for t, _ in _rel("Chorus 1", 1)])
 HS = [n for n in lead if n["role"] == "hook" or n["sec"] == "Last Chorus"]
 RH, RL = _h.readings(HS, R["harm_hi"]), _h.readings(HS, R["harm_lo"])
 chk("harmony: no parallel fifths or octaves with the lead (749.9)", RH["parallel fifths or octaves"] == 0 and RL["parallel fifths or octaves"] == 0)

@@ -11,7 +11,7 @@ chord's approach on its second."""
 import json, pickle, collections
 import pyphen
 H = "/home/claude/p62"
-F = json.load(open(f"{H}/melody_varied.json")); c = F["pick"]                           # the pick with chorus 2 varied (vary68.py, 749.8)
+F = json.load(open(f"{H}/melody_shaped.json")); c = F["pick"]                           # chorus 2 varied (749.8) and the song shaped (shape68.py, 749.10)                           # the pick with chorus 2 varied (vary68.py, 749.8)
 import importlib.util as _u
 _s = _u.spec_from_file_location("lyr", f"{H}/lyric_p62.py"); L = _u.module_from_spec(_s); _s.loader.exec_module(L)
 import gen68 as G
@@ -139,7 +139,7 @@ def tidy(lst):
 PARTS = {k: tidy(v) for k, v in parts.items()}
 plan = [(nm, nb, G.BAR0[nm] * BAR, ["6/8"] * nb, nm) for nm, nb in G.FORM]
 secs = NB * BAR / 12 * 60 / QB
-rec = dict(title=L.TITLE, file_title=L.TITLE + " (second edition)", edition="second edition", nbars=NB, bars=bars, chords2=[h for ch in CHORD for h in (ch, ch)], plan=plan, lead=lead, harm_hi=harm_hi, harm_lo=harm_lo,
+rec = dict(title=L.TITLE, file_title=L.TITLE + " (third edition)", edition="third edition", nbars=NB, bars=bars, chords2=[h for ch in CHORD for h in (ch, ch)], plan=plan, lead=lead, harm_hi=harm_hi, harm_lo=harm_lo,
            parts=PARTS, slot="twelfth of a quarter; a 6/8 bar of 36", qbpm=QB, dotted=54, seconds=secs, tw_sec=60 / QB / 12, end=NB * BAR, meters={},
            fp=c["fp"], survivors=F["survivors"], built=F["made"], readings=c["readings"], charge=c["charge"], distance=c["distance"], plans=c["plans"], text=TEXT,
            design=dict(door=G.DOOR, home=G.HOME, there=G.THERE, registers=G.REG), seed=F["seed"], hand_edits=[])
