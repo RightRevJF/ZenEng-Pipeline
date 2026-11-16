@@ -1,0 +1,271 @@
+{
+ "about": "ZenEng v132: three figures for fixes 551, 547 and 550.",
+ "551: kept windows (545), longest run of equal gaps in the window (equal_gap_run_max, counted in gaps, a twelfth of a beat grid), by the window's notes a bar": {
+  "under 3.5": {
+   "n": 194,
+   "50th": 3.0,
+   "75th": 4.0,
+   "90th": 6.0,
+   "95th": 6.349999999999994,
+   "max": 12.0
+  },
+  "3.5 to 4.5": {
+   "n": 162,
+   "50th": 4.0,
+   "75th": 6.0,
+   "90th": 8.0,
+   "95th": 9.0,
+   "max": 13.0
+  },
+  "4.5 to 5.5": {
+   "n": 105,
+   "50th": 5.0,
+   "75th": 7.0,
+   "90th": 10.0,
+   "95th": 11.0,
+   "max": 22.0
+  },
+  "5.5 and over": {
+   "n": 84,
+   "50th": 5.0,
+   "75th": 8.0,
+   "90th": 11.0,
+   "95th": 12.0,
+   "max": 14.0
+  }
+ },
+ "551: kept lines (CoCoPops, Window 138's lines, 3 notes or more), longest run of equal gaps within the line, by the line's own rate ((notes - 1) / beats from first to last onset, times 4)": {
+  "under 3.5": {
+   "n": 444,
+   "50th": 2.0,
+   "75th": 2.0,
+   "90th": 3.0,
+   "95th": 4.0,
+   "max": 9.0
+  },
+  "3.5 to 4.5": {
+   "n": 754,
+   "50th": 2.0,
+   "75th": 3.0,
+   "90th": 4.0,
+   "95th": 5.0,
+   "max": 13.0
+  },
+  "4.5 to 5.5": {
+   "n": 930,
+   "50th": 3.0,
+   "75th": 4.0,
+   "90th": 5.0,
+   "95th": 6.0,
+   "max": 10.0
+  },
+  "5.5 and over": {
+   "n": 3015,
+   "50th": 3.0,
+   "75th": 5.0,
+   "90th": 7.0,
+   "95th": 8.0,
+   "max": 23.0
+  }
+ },
+ "551: the same, lines of nine notes or more": {
+  "under 3.5": {
+   "n": 128,
+   "50th": 2.0,
+   "75th": 3.0,
+   "90th": 4.0,
+   "95th": 5.0,
+   "max": 9.0
+  },
+  "3.5 to 4.5": {
+   "n": 344,
+   "50th": 3.0,
+   "75th": 4.0,
+   "90th": 5.0,
+   "95th": 7.0,
+   "max": 13.0
+  },
+  "4.5 to 5.5": {
+   "n": 431,
+   "50th": 3.0,
+   "75th": 5.0,
+   "90th": 6.0,
+   "95th": 7.0,
+   "max": 10.0
+  },
+  "5.5 and over": {
+   "n": 1292,
+   "50th": 4.0,
+   "75th": 6.0,
+   "90th": 9.0,
+   "95th": 10.0,
+   "max": 23.0
+  }
+ },
+ "550: a section is a run of consecutive kept lines under one section label in one song (a line and its next line in the same section, as the slots file); under = strictly less than the kept median for the line's syllable count": "",
+ "550, slots in whole bars (1: 6 beats or less; 2: to 10; 3: to 14; 4: to 18; 5: to 24), the file's bars": {
+  "median slot by syllables (3 to 15; 16 = 16 and over)": {
+   "3": 1.0,
+   "4": 2.0,
+   "5": 2.0,
+   "6": 2.0,
+   "7": 2.0,
+   "8": 2.0,
+   "9": 2.0,
+   "10": 3.0,
+   "11": 2.0,
+   "12": 4.0,
+   "13": 3.0,
+   "14": 4.0,
+   "15": 4.0,
+   "16": 4.0
+  },
+  "pooled share of kept lines under": 0.196048632218845,
+  "lines": 3948,
+  "across kept sections": {
+   "3 lines or more": {
+    "sections": 590,
+    "25th": 0.0,
+    "50th": 0.0,
+    "75th": 0.3333333333333333,
+    "90th": 0.625,
+    "95th": 0.8,
+    "mean": 0.18911030072267315,
+    "share of sections with no line under": 0.5644067796610169,
+    "share with half or more under": 0.17627118644067796,
+    "share with every line under": 0.02711864406779661
+   },
+   "4 lines or more": {
+    "sections": 430,
+    "25th": 0.0,
+    "50th": 0.0,
+    "75th": 0.3560606060606061,
+    "90th": 0.625,
+    "95th": 0.8,
+    "mean": 0.20443816455746627,
+    "share of sections with no line under": 0.513953488372093,
+    "share with half or more under": 0.20232558139534884,
+    "share with every line under": 0.023255813953488372
+   },
+   "verses, 4 lines or more": {
+    "sections": 227,
+    "25th": 0.0,
+    "50th": 0.07407407407407407,
+    "75th": 0.39230769230769236,
+    "90th": 0.6416666666666669,
+    "95th": 0.8127272727272725,
+    "mean": 0.21816784416475932,
+    "share of sections with no line under": 0.4933920704845815,
+    "share with half or more under": 0.22466960352422907,
+    "share with every line under": 0.030837004405286344
+   },
+   "choruses, 4 lines or more": {
+    "sections": 155,
+    "25th": 0.0,
+    "50th": 0.0,
+    "75th": 0.2857142857142857,
+    "90th": 0.5,
+    "95th": 0.8,
+    "mean": 0.1895710740872031,
+    "share of sections with no line under": 0.5290322580645161,
+    "share with half or more under": 0.16774193548387098,
+    "share with every line under": 0.012903225806451613
+   },
+   "4 lines or more, lines averaging 12 syllables or more": {
+    "sections": 23,
+    "25th": 0.0,
+    "50th": 0.25,
+    "75th": 0.6125,
+    "90th": 0.8,
+    "95th": 0.9799999999999998,
+    "mean": 0.34249482401656317,
+    "share of sections with no line under": 0.391304347826087,
+    "share with half or more under": 0.391304347826087,
+    "share with every line under": 0.08695652173913043
+   }
+  }
+ },
+ "550, slots in beats": {
+  "median slot by syllables (3 to 15; 16 = 16 and over)": {
+   "3": 5.5,
+   "4": 7.5,
+   "5": 8.0,
+   "6": 8.0,
+   "7": 8.0,
+   "8": 8.0,
+   "9": 9.0,
+   "10": 13.75,
+   "11": 9.5,
+   "12": 14.5,
+   "13": 14.0,
+   "14": 14.5,
+   "15": 16.0,
+   "16": 16.0
+  },
+  "pooled share of kept lines under": 0.4394630192502533,
+  "lines": 3948,
+  "across kept sections": {
+   "3 lines or more": {
+    "sections": 590,
+    "25th": 0.0,
+    "50th": 0.3798076923076923,
+    "75th": 0.75,
+    "90th": 1.0,
+    "95th": 1.0,
+    "mean": 0.42890873012937125,
+    "share of sections with no line under": 0.2745762711864407,
+    "share with half or more under": 0.45932203389830506,
+    "share with every line under": 0.1288135593220339
+   },
+   "4 lines or more": {
+    "sections": 430,
+    "25th": 0.1456043956043956,
+    "50th": 0.42857142857142855,
+    "75th": 0.75,
+    "90th": 1.0,
+    "95th": 1.0,
+    "mean": 0.4528437614953388,
+    "share of sections with no line under": 0.22325581395348837,
+    "share with half or more under": 0.4930232558139535,
+    "share with every line under": 0.12558139534883722
+   },
+   "verses, 4 lines or more": {
+    "sections": 227,
+    "25th": 0.125,
+    "50th": 0.4,
+    "75th": 0.75,
+    "90th": 1.0,
+    "95th": 1.0,
+    "mean": 0.4316245503322545,
+    "share of sections with no line under": 0.23788546255506607,
+    "share with half or more under": 0.44933920704845814,
+    "share with every line under": 0.12334801762114538
+   },
+   "choruses, 4 lines or more": {
+    "sections": 155,
+    "25th": 0.16666666666666666,
+    "50th": 0.5,
+    "75th": 0.75,
+    "90th": 0.9666666666666662,
+    "95th": 1.0,
+    "mean": 0.4657859502925917,
+    "share of sections with no line under": 0.2129032258064516,
+    "share with half or more under": 0.5419354838709678,
+    "share with every line under": 0.1032258064516129
+   },
+   "4 lines or more, lines averaging 12 syllables or more": {
+    "sections": 23,
+    "25th": 0.125,
+    "50th": 0.5,
+    "75th": 0.8285714285714285,
+    "90th": 1.0,
+    "95th": 1.0,
+    "mean": 0.47520703933747416,
+    "share of sections with no line under": 0.2608695652173913,
+    "share with half or more under": 0.5217391304347826,
+    "share with every line under": 0.17391304347826086
+   }
+  }
+ },
+ "547": "zeneng_v132_kept_windows.json: the 545 kept windows with the 39 measures."
+}

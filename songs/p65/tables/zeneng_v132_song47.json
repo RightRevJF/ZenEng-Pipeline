@@ -1,0 +1,604 @@
+{
+ "2. the judge of record: mean score of a build; share under the kept songs' fifth percentile (-0.72)": {
+  "s40": [
+   -0.83,
+   0.572
+  ],
+  "s42": [
+   -0.96,
+   0.603
+  ],
+  "s43": [
+   -0.54,
+   0.43
+  ],
+  "s44": [
+   -1.53,
+   0.863
+  ],
+  "s45": [
+   -1.79,
+   0.883
+  ],
+  "s46main": [
+   -0.37,
+   0.38
+  ],
+  "s46ctl": [
+   -0.47,
+   0.39
+  ],
+  "s47main": [
+   -0.39,
+   0.358
+  ],
+  "s47ctl": [
+   -0.52,
+   0.424
+  ]
+ },
+ "3. song 47 from the kept mean, in kept sd: measure, main, control, kept mean, song 47's mean, in the judge's 37": [
+  [
+   "notes_per_bar",
+   1.15,
+   1.13,
+   4.081,
+   5.648,
+   false
+  ],
+  [
+   "first_onset",
+   1.02,
+   1.02,
+   0.79,
+   1.897,
+   false
+  ],
+  [
+   "longest_gap_beats",
+   -0.87,
+   -0.89,
+   4.532,
+   2.738,
+   false
+  ],
+  [
+   "most_onsets_in_a_beat",
+   0.86,
+   0.95,
+   2.692,
+   3.387,
+   false
+  ],
+  [
+   "gap_sixteenth",
+   0.85,
+   0.74,
+   0.121,
+   0.263,
+   true
+  ],
+  [
+   "pushed",
+   -0.85,
+   -0.88,
+   0.14,
+   0.043,
+   false
+  ],
+  [
+   "equal_gap_run_max",
+   0.84,
+   0.72,
+   4.886,
+   7.076,
+   true
+  ],
+  [
+   "most_onsets_in_a_bar",
+   0.74,
+   0.72,
+   6.468,
+   7.857,
+   false
+  ],
+  [
+   "npvi",
+   -0.7,
+   -0.72,
+   58.302,
+   46.305,
+   false
+  ],
+  [
+   "gap_changes_per_bar",
+   0.62,
+   0.65,
+   2.247,
+   2.778,
+   false
+  ],
+  [
+   "phrase_starts_same_place",
+   -0.61,
+   -0.63,
+   0.549,
+   0.427,
+   false
+  ],
+  [
+   "sounding_share",
+   0.57,
+   0.57,
+   0.674,
+   0.754,
+   false
+  ],
+  [
+   "distinct_bar_rhythms",
+   0.57,
+   0.56,
+   6.083,
+   6.941,
+   false
+  ],
+  [
+   "phrase_span_share",
+   0.57,
+   0.59,
+   0.472,
+   0.571,
+   false
+  ],
+  [
+   "last_note_tonic",
+   -0.56,
+   -0.55,
+   0.299,
+   0.043,
+   true
+  ],
+  [
+   "longest_rest",
+   -0.56,
+   -0.57,
+   3.221,
+   2.098,
+   false
+  ]
+ ],
+ "4. separation from held-out kept windows, by measure set (mean, spread over eight splits)": {
+  "the judge's 37": {
+   "song 47 main, unseen": [
+    0.744,
+    0.024
+   ],
+   "song 47 control, unseen": [
+    0.769,
+    0.024
+   ],
+   "s40, held out": [
+    0.769,
+    0.015
+   ],
+   "s42, held out": [
+    0.788,
+    0.018
+   ],
+   "s43, held out": [
+    0.716,
+    0.019
+   ],
+   "s44, held out": [
+    0.881,
+    0.013
+   ],
+   "s45, held out": [
+    0.869,
+    0.023
+   ],
+   "s46main, held out": [
+    0.733,
+    0.024
+   ],
+   "song 47 control, by a judge fitted on its main run": [
+    0.93,
+    0.012
+   ]
+  },
+  "with empty bars and notes a bar": {
+   "song 47 main, unseen": [
+    0.765,
+    0.029
+   ],
+   "song 47 control, unseen": [
+    0.785,
+    0.032
+   ],
+   "s40, held out": [
+    0.783,
+    0.02
+   ],
+   "s42, held out": [
+    0.787,
+    0.015
+   ],
+   "s43, held out": [
+    0.733,
+    0.025
+   ],
+   "s44, held out": [
+    0.889,
+    0.017
+   ],
+   "s45, held out": [
+    0.877,
+    0.027
+   ],
+   "s46main, held out": [
+    0.706,
+    0.019
+   ],
+   "song 47 control, by a judge fitted on its main run": [
+    0.947,
+    0.009
+   ]
+  },
+  "with empty bars only": {
+   "song 47 main, unseen": [
+    0.77,
+    0.025
+   ],
+   "song 47 control, unseen": [
+    0.785,
+    0.025
+   ],
+   "s40, held out": [
+    0.79,
+    0.017
+   ],
+   "s42, held out": [
+    0.786,
+    0.014
+   ],
+   "s43, held out": [
+    0.733,
+    0.024
+   ],
+   "s44, held out": [
+    0.889,
+    0.016
+   ],
+   "s45, held out": [
+    0.896,
+    0.021
+   ],
+   "s46main, held out": [
+    0.711,
+    0.014
+   ],
+   "song 47 control, by a judge fitted on its main run": [
+    0.945,
+    0.011
+   ]
+  },
+  "with the four most distant measures not among the 37": {
+   "song 47 main, unseen": [
+    0.575,
+    0.044
+   ],
+   "song 47 control, unseen": [
+    0.598,
+    0.041
+   ],
+   "s40, held out": [
+    0.783,
+    0.016
+   ],
+   "s42, held out": [
+    0.808,
+    0.014
+   ],
+   "s43, held out": [
+    0.728,
+    0.021
+   ],
+   "s44, held out": [
+    0.867,
+    0.018
+   ],
+   "s45, held out": [
+    0.899,
+    0.022
+   ],
+   "s46main, held out": [
+    0.707,
+    0.012
+   ],
+   "song 47 control, by a judge fitted on its main run": [
+    0.976,
+    0.005
+   ]
+  }
+ },
+ "5. refit on seven songs, the 37 measures: costs (measure, points, kept mean, builds' mean); gap": [
+  [
+   [
+    "range",
+    0.55,
+    10.895,
+    9.445
+   ],
+   [
+    "gap_eighth",
+    0.53,
+    0.475,
+    0.552
+   ],
+   [
+    "pitch_sd",
+    0.34,
+    2.967,
+    2.587
+   ],
+   [
+    "last_note_tonic",
+    0.24,
+    0.299,
+    0.114
+   ],
+   [
+    "turns_per_move",
+    0.18,
+    0.587,
+    0.621
+   ],
+   [
+    "on_third",
+    0.16,
+    0.198,
+    0.165
+   ],
+   [
+    "on_tonic",
+    0.15,
+    0.222,
+    0.188
+   ],
+   [
+    "gap_sixteenth",
+    0.11,
+    0.121,
+    0.145
+   ]
+  ],
+  2.24
+ ],
+ "5. refit on seven songs with empty bars and notes a bar: costs; gap": [
+  [
+   [
+    "range",
+    0.57,
+    10.895,
+    9.445
+   ],
+   [
+    "gap_eighth",
+    0.54,
+    0.475,
+    0.552
+   ],
+   [
+    "pitch_sd",
+    0.35,
+    2.967,
+    2.587
+   ],
+   [
+    "empty_bars",
+    0.24,
+    0.484,
+    0.189
+   ],
+   [
+    "last_note_tonic",
+    0.22,
+    0.299,
+    0.114
+   ],
+   [
+    "turns_per_move",
+    0.17,
+    0.587,
+    0.621
+   ],
+   [
+    "on_third",
+    0.15,
+    0.198,
+    0.165
+   ],
+   [
+    "on_tonic",
+    0.15,
+    0.222,
+    0.188
+   ]
+  ],
+  2.43
+ ],
+ "5. weights of the two added measures": {
+  "empty_bars": 0.37,
+  "notes_per_bar": 0.19
+ },
+ "5. the 39-measure judge: mean score of a build; share under the kept songs' fifth percentile (-0.86)": {
+  "s40": [
+   -0.9,
+   0.546
+  ],
+  "s42": [
+   -0.96,
+   0.547
+  ],
+  "s43": [
+   -0.67,
+   0.442
+  ],
+  "s44": [
+   -1.59,
+   0.844
+  ],
+  "s45": [
+   -2.11,
+   0.937
+  ],
+  "s46main": [
+   -0.44,
+   0.352
+  ],
+  "s46ctl": [
+   -0.5,
+   0.348
+  ],
+  "s47main": [
+   -1.0,
+   0.603
+  ],
+  "s47ctl": [
+   -0.99,
+   0.589
+  ]
+ },
+ "means: kept; songs 40, 42, 43, 44, 45, 46; song 47 main / control": {
+  "empty_bars": [
+   0.484,
+   [
+    0.14,
+    0.347,
+    0.097,
+    0.121,
+    0.041,
+    0.511
+   ],
+   0.034,
+   0.032
+  ],
+  "notes_per_bar": [
+   4.081,
+   [
+    4.946,
+    4.535,
+    4.267,
+    4.15,
+    5.678,
+    3.638
+   ],
+   5.648,
+   5.621
+  ],
+  "gap_same_as_before": [
+   0.394,
+   [
+    0.491,
+    0.445,
+    0.41,
+    0.422,
+    0.504,
+    0.415
+   ],
+   0.466,
+   0.459
+  ],
+  "equal_gap_run_max": [
+   4.886,
+   [
+    6.179,
+    5.171,
+    5.18,
+    4.737,
+    6.308,
+    5.097
+   ],
+   7.076,
+   6.755
+  ],
+  "most_onsets_in_a_beat": [
+   2.692,
+   [
+    2.804,
+    2.949,
+    2.726,
+    2.771,
+    3.558,
+    2.683
+   ],
+   3.387,
+   3.458
+  ],
+  "gap_eighth": [
+   0.475,
+   [
+    0.601,
+    0.58,
+    0.566,
+    0.546,
+    0.535,
+    0.544
+   ],
+   0.484,
+   0.509
+  ],
+  "gap_sixteenth": [
+   0.121,
+   [
+    0.121,
+    0.137,
+    0.091,
+    0.092,
+    0.241,
+    0.091
+   ],
+   0.263,
+   0.244
+  ],
+  "range": [
+   10.895,
+   [
+    9.921,
+    10.755,
+    10.515,
+    7.967,
+    6.599,
+    9.894
+   ],
+   10.368,
+   10.188
+  ],
+  "last_note_tonic": [
+   0.299,
+   [
+    0.278,
+    0.169,
+    0.064,
+    0.012,
+    0.019,
+    0.195
+   ],
+   0.043,
+   0.045
+  ],
+  "chord_tones": [
+   0.639,
+   [
+    0.635,
+    0.621,
+    0.612,
+    0.594,
+    0.611,
+    0.635
+   ],
+   0.589,
+   0.637
+  ]
+ }
+}
