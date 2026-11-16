@@ -10,16 +10,16 @@ This one file holds everything the songwriting session learned and wrote while L
 
 **For Jason, to share it:** attach this file to the maintainer's chat and send this line:
 
-> Please read the Start here page of this file first, then the fix list for v8 (Part 1) and the new rules (Part 2). Parts 3 to 13 are the evidence behind them. Prepare Luthier v8 from it.
+> Please read the Start here page of this file first, then the fix list for v8 (Part 1) and the new rules (Part 2). Parts 3 to 14 are the evidence behind them. Prepare Luthier v8 from it.
 
-**For the maintainer:** read Parts 1 and 2 in full. They say what to change. Parts 3 to 13 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62 and songs/p63), for anyone who has access. This file does not depend on it.
+**For the maintainer:** read Parts 1 and 2 in full. They say what to change. Parts 3 to 14 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62 and songs/p63), for anyone who has access. This file does not depend on it.
 
 ## What is in this file
 
 | Part | What it is | Page |
 | ----- | ---------------------------------------------------------- | ------ |
-| 1 | **Luthier fix list for v8 (since v7).** All 32 findings, 740 to 749.22, each with Problem, Evidence, Fix and Check; the songs table; the order of work for v8 | {P1} |
-| 2 | **For Luthier's maintainer: avenues and new rules.** The nine new rules with evidence grades, the next avenues ranked, and what not to repeat | {P2} |
+| 1 | **Luthier fix list for v8 (since v7).** All 33 findings, 740 to 749.23, each with Problem, Evidence, Fix and Check; the songs table; the order of work for v8 | {P1} |
+| 2 | **For Luthier's maintainer: avenues and new rules.** The ten new rules with evidence grades, the next avenues ranked, and what not to repeat | {P2} |
 | 3 | Metre atlas: kept tables for every common time signature, with round 2 (art songs, lead sheets, Turkish additive metres) | {P3} |
 | 4 | Time signature research and song data | {P4} |
 | 5 | Accompaniment corpora and music theory | {P5} |
@@ -31,6 +31,7 @@ This one file holds everything the songwriting session learned and wrote while L
 | 11 | Psychoacoustics for the songwriting engine | {P11} |
 | 12 | What musicians re-record (covers study) | {P12} |
 | 13 | Sung to Sleep (song 53): test report, first to fourth edition | {P13} |
+| 14 | Chromatic harmony: views, covers and our songs | {P14} |
 
 ## What we learned, in brief
 
@@ -41,6 +42,7 @@ This one file holds everything the songwriting session learned and wrote while L
 5. **The moments people love.** Listeners mark moments where the melody thins for a beat or two and then re-enters on a fresh note, a little past the middle of the song. Luthier already has this rule; this is listener evidence for it (749.19).
 6. **How it sounds.** Checks for roughness, low crowded chords and the sung tune staying on top. They restate Luthier Module 9.14 and port it to organ and choir (749.21).
 7. **What musicians reward.** Songs that musicians re-record most have harmony that moves within sections and melodies with room in them. This is a separate channel from views, found in two sources (749.22).
+8. **Chromatic harmony.** Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose (gospel, jazz, prog, art song), with applied dominants the safest kind, not a new default (749.23).
 
 The main new idea: **judge every song on two channels**, what audiences reward and what musicians reward, and prefer songs that do well on both.
 
