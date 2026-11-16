@@ -148,4 +148,4 @@ Readback: every staff of the lead sheet, the full score and the parts matches th
 
 # Blind pick
 
-The three 10.20 slots (`q1020.py`): remembered, "For a boy who's been gone too long"; middle, "The man Mama prayed I'd be"; annotated, "And sir I'm finally fixin' to be". To be offered in shuffled order.
+The three 10.20 slots (`q1020.py`): remembered, "For a boy who's been gone too long"; middle, "The man Mama prayed I'd be"; annotated, "And sir I'm finally fixin' to be". Offered shuffled as A (annotated), B (remembered), C (middle); the writer chose C, "The man Mama prayed I'd be": Middle.
