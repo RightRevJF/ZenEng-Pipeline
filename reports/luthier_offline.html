@@ -81,11 +81,12 @@ re-record (covers study)</a></li>
 <li><a href="#part-14" id="toc-part-14">Part 14. Chromatic harmony:
 views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-15" id="toc-part-15">Part 15. The Man Mama Prayed I’d Be (song 54): test report</a></li>
+<li><a href="#part-16" id="toc-part-16">Part 16. Your Yard Man (song 55): test report</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: song 54, run on Luthier v7 on 16 November, with its findings (749.24 to 749.29) and test report (Part 15). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1 and 2 in full. They say what to change. Parts 3 to 15 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63 and songs/p64), for anyone with access. This page does not depend on it.</p>
+<p>This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1 and 2 in full. They say what to change. Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64 and songs/p65), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -101,7 +102,7 @@ views, covers, our songs, hymns and art song</a></li>
 <tbody>
 <tr class="odd">
 <td><a href="#part-1">1</a></td>
-<td><strong>Luthier fix list for v8 (since v7).</strong> All 39 findings, 740 to 749.29, each with Problem, Evidence, Fix and Check; the songs table; the order of work for v8</td>
+<td><strong>Luthier fix list for v8 (since v7).</strong> All 41 findings, 740 to 749.31, each with Problem, Evidence, Fix and Check; the songs table; the order of work for v8</td>
 </tr>
 <tr class="even">
 <td><a href="#part-2">2</a></td>
@@ -159,6 +160,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-15">15</a></td>
 <td>The Man Mama Prayed I’d Be (song 54, on Luthier v7): test report</td>
 </tr>
+<tr class="even">
+<td><a href="#part-16">16</a></td>
+<td>Your Yard Man (song 55, on Luthier v7): test report</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -172,12 +177,14 @@ views, covers, our songs, hymns and art song</a></li>
 <li><strong>What musicians reward.</strong> Songs that musicians re-record most have harmony that moves within sections and melodies with room in them. This is a separate channel from views, found in two sources (749.22).</li>
 <li><strong>Chromatic harmony.</strong> Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose, not a new default. Hymns and art songs show what each style expects: in hymns, one or two applied dominants a verse are ordinary; art songs live in chromatic harmony at about three times the popular share (749.23).</li>
 <li><strong>Back on the engine (song 54).</strong> A country story song on Luthier v7 found the engine assumes a bridge, still loses two-thirds of its builds on long lines with borrowed rhythms, and lets most survivors sing two syllables on one note; the judge picked one, so the pick of record is the judge’s own rule without that fault. Two of the new rules need reading by texture and by song type (749.24 to 749.29).</li>
+<li><strong>Song 55, a second country song.</strong> The same two-syllables fault decided the pick again (42% of clean survivors), so it is general. Most builds died at the chorus’s one-bar lines drawn fresh, a new place for placement deaths, and short lines in two-bar slots can open long rests between their words (749.30, 749.31).</li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
 <ul>
 <li>Song 53 (Sung to Sleep): a one-note change to the refrain’s re-entry is offered and waits for Jason’s approval; the blind pick is still to come; the engine’s own rerun waits for v8.</li>
 <li>Song 54 (The Man Mama Prayed I’d Be): delivered; blind pick taken (Middle); a made-for-real rerun is offered.</li>
+<li>Song 55 (Your Yard Man): delivered; blind pick taken (Remembered, the hook); a made-for-real rerun is offered.</li>
 <li>Song 52 (The Room Next Door) and song 53 were written outside the engine, so v8 should be able to write them itself.</li>
 </ul>
 <h3 id="data-and-cautions">Data and cautions</h3>
@@ -187,7 +194,8 @@ views, covers, our songs, hymns and art song</a></li>
 <p>Nov 14, 2026 · <span class="citation" data-cites="Jason">@Jason</span> Bryant</p>
 <p>This list is cumulative since the spec’s last version (Luthier v7, Module 27.88, Window 164). Songs 48 (The Ratios Hold) and 49 (The World Is Asking) were each rerun once on Luthier v7, main and control, at the same seeds and designs. Fixes 730 to 736 were ported onto the v6 engine in one pass; 737, 738 and 739 are readings. The pick is luthier_judge5.pick, not edited or refitted. Song 49’s pick of record stays e2b80cdc3a1c. Song 50 (The Small Things), a new song, was run once on the same v7 engine with its own key (D major), plan, designs and lyric, at seed 20261113+450; its pick of record is the judge’s pick, f583fd857dda, taken as drawn. Song 51 (A Wire Pulled Tight), the writer’s song from an earlier engine with its lyric revised, was run on the same v7 engine in A major with a tempo plan (q = 116 rising to 164, written at double tempo with a half-time feel; the beat grid 4/4), 194 bars, at seed 20261113+451; its pick of record, 89e71513033a, is the writer’s choice over the judge’s pick. Song 51’s findings are numbered 749.1 to 749.3, since 740 to 749 are taken and 750 is the next fix. Words and music: Jason Bryant. Findings run from 740, as the paper asked. Each has Problem, Evidence, Fix and Check.</p>
 <p><strong>Since the engine went offline (14 to 15 November).</strong> The engine was offline, so two songs were written by sketches outside it, in metres the engine cannot yet write: song 52 (The Room Next Door, 6/8, three editions) and song 53 (Sung to Sleep, a 3/4 carol for organ and choir, four editions). Nine research rounds and studies ran alongside: the metre atlas, accompaniment, song shapes, surprise against expectation (YouTube views), the moments people love (timestamped comments), the rhythm layer, psychoacoustics, and covers (SHS100K and Discogs-VI). A tenth, on chromatic harmony, followed the maintainer’s review of 28 songs. Their findings are 749.4 to 749.23 below.</p>
-<p><strong>Song 54 (16 November), back on the engine.</strong> The Man Mama Prayed I’d Be, a country story song (the writer’s earlier lyric, renovated), was run on the same v7 engine by gen_l7_p64.py from song 51’s file: G major, q = 120, 126 bars, every line in two bars, no bridge, the chart drawn by 438 (the default path), seed 20261113+454. Main 63a84b18e7dc (185 survivors, 143 clean) and control c43334ae0deb (192), each made twice, reproduced. The judge’s pick d48480b70b0d sang two syllables on one onset; the pick of record, d12c2728e6f1, is 730’s own rule over the clean survivors without that fault (the rule song 51’s re-pick used). Its findings are 749.24 to 749.29; the next is 749.30.</p>
+<p><strong>Song 54 (16 November), back on the engine.</strong> The Man Mama Prayed I’d Be, a country story song (the writer’s earlier lyric, renovated), was run on the same v7 engine by gen_l7_p64.py from song 51’s file: G major, q = 120, 126 bars, every line in two bars, no bridge, the chart drawn by 438 (the default path), seed 20261113+454. Main 63a84b18e7dc (185 survivors, 143 clean) and control c43334ae0deb (192), each made twice, reproduced. The judge’s pick d48480b70b0d sang two syllables on one onset; the pick of record, d12c2728e6f1, is 730’s own rule over the clean survivors without that fault (the rule song 51’s re-pick used). Its findings are 749.24 to 749.29.</p>
+<p><strong>Song 55 (16 November).</strong> Your Yard Man, a country song with a call-and-answer hook (the writer’s lyric, rebuilt), was run on the same v7 engine by gen_l7_p65.py from song 54’s file: A major, q = 120, 102 bars, no bridge, verse lines in two bars, the chorus’s frame lines in one bar and its middle lines in two, the call and the answer as designs (317), the chart drawn by 438, seed 20261113+455. Main 000c3f344509 (153 survivors, 107 clean) and control 42fad285b3c0 (149, 109 clean), each made twice, reproduced. The judge’s pick eb35d48bcd4d sang two syllables on one onset; the pick of record, 8fcba32b9784, is 730’s own rule over the clean survivors without that fault, as on song 54. Its findings are 749.30 and 749.31, with new evidence for 749.26; the next is 749.32.</p>
 <p>Two companion documents go with this list:</p>
 <ul>
 <li><strong>“Luthier research compendium - 15 November 2026”</strong> (one file): every report, study, atlas and test report written in that time.</li>
@@ -279,6 +287,15 @@ views, covers, our songs, hymns and art song</a></li>
 <td>not read</td>
 <td>d12c2728e6f1 (730’s rule without two syllables on one onset, 749.26)</td>
 <td>Middle</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>Your Yard Man</td>
+<td>000c3f344509 / 42fad285b3c0 (153 / 149)</td>
+<td>eb35d48bcd4d / d0624bc19957</td>
+<td>not read</td>
+<td>8fcba32b9784 (730’s rule without two syllables on one onset, 749.26)</td>
+<td>Remembered</td>
 </tr>
 </tbody>
 </table>
@@ -884,6 +901,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li>749.29: g-dropped forms, “‘n’” and “a.m.” read by the lexicon; one question for the rest.</li>
 <li>749.27 and 749.28: read 749.21’s band-over-the-tune limit by texture, and 749.17 and 749.19’s places by the song’s turn when the type is Narrative.</li>
 </ul>
+<p>Song 55’s findings, in order:</p>
+<ul>
+<li>749.26 (with 749.1), again: 45 of song 55’s 107 clean survivors and the judge’s pick. Still first; it has now decided two picks running.</li>
+<li>749.30 (with 741, 747, 749.3, 749.25): placement deaths at one-bar lines drawn fresh. Read the one-bar draw’s failures by step and let a line of up to seven syllables take any span that fits the bar.</li>
+<li>749.31: cap a short line’s inner rest at the kept lines’ 90th percentile, or give the line one bar.</li>
+</ul>
 <h3 id="findings">Findings</h3>
 <h4 id="the-judge-reads-repeats-by-window-and-its-pick-still-chants-across-two-lines">740. The judge reads repeats by window, and its pick still chants across two lines</h4>
 <p><strong>Problem:</strong> 730 places the most-repeating window among kept windows. A window repeats in a share of its moves, so a chant that fills one window’s first two lines and nothing else can stand under the upper quartile. Song 49’s pick under v7 does.</p>
@@ -1130,8 +1153,9 @@ views, covers, our songs, hymns and art song</a></li>
 <h4 id="two-syllables-on-one-onset-in-most-of-the-clean-survivors">749.26. Two syllables on one onset, in most of the clean survivors</h4>
 <p><strong>Problem:</strong> 749.1 again, and larger: 87 of song 54’s 143 clean survivors (61%) sing two syllables on one onset, and the judge’s pick d48480b70b0d was one of them (“coffee” and “can”, verse 4: the second syllable of “coffee” has no length).</p>
 <p><strong>Evidence:</strong> Main run. Re-picked by 730’s rule over the other 56 (42 eligible): d12c2728e6f1, charge 0.0005, place 0.862, its most-repeating window 0.843.</p>
+<p><strong>Evidence, song 55:</strong> 45 of 107 clean survivors (42%) sing two syllables on one onset, and the judge’s pick eb35d48bcd4d was one (“half-ton”, verse 3). Re-picked by the same rule over the other 62 (16 eligible): 8fcba32b9784, charge 0.007, place 0.849, its most-repeating window 0.571. The fault is general, not song 54’s.</p>
 <p><strong>Fix (proposed):</strong> A note of no length is a death (or 715 makes the build ineligible); find where the second onset is lost.</p>
-<p><strong>Check:</strong> No survivor with two syllables on one onset, on songs 49 to 54; a pick that had none unchanged.</p>
+<p><strong>Check:</strong> No survivor with two syllables on one onset, on songs 49 to 55; a pick that had none unchanged.</p>
 <h4 id="the-band-over-the-tune-limit-does-not-carry-over-to-a-low-lead">749.27. The band-over-the-tune limit does not carry over to a low lead</h4>
 <p><strong>Problem:</strong> 749.21’s limit (the accompaniment above the sung tune at most 2% of the time) was set on organ and choir, where the tune is the top line. With a baritone under guitars, fiddle and steel, most of his notes have something above them, as on most country records.</p>
 <p><strong>Evidence:</strong> Song 54: him 81%, her 15% (her accompaniment kept below her); within a second of the tune 13%; the voices 5.2 dB over the band; no low-interval breaks once the acoustic voicings were rewritten (586 before).</p>
@@ -1148,19 +1172,30 @@ views, covers, our songs, hymns and art song</a></li>
 <p><strong>Fix (proposed):</strong> Derive -in’ forms from the -ing entry; read “‘n’” as unstressed AH0 N and “a.m.” as one word, EY2 EH1 M; ask only words with no derivable reading, all in one question.</p>
 <p><strong>Check:</strong> Song 54’s lyric needs only “mildewed” asked.</p>
 <p>Also read on song 54 (no finding): melody surprise 3.05 bits against the popular median 2.89, rhythm 3.42 against 2.49 (749.18, 749.20 not met; the engine does not yet charge them); chords 1.85 against 3.79; no chord outside the key (749.23); phrases 1.0 to 6.8 seconds (749.21). The pick of record’s longest run of one pitch is 9 (the kept 90th percentile 9.5).</p>
+<h4 id="one-bar-lines-die-in-fresh-draws">749.30. One-bar lines die in fresh draws</h4>
+<p><strong>Problem:</strong> The chorus’s one-bar frame lines (4 to 6 syllables) carried most of song 55’s placement deaths: 678 of the main run’s thousand builds died for want of a placement, 591 of them at chorus 1’s lines 2 to 4 and 79 more at chorus 2’s copy of line 2.</p>
+<p><strong>Evidence:</strong> By line, main: chorus 1 line 2 (“That’s all I aim to be”, 6 syllables) 259; line 3 (5) 177; line 4 (5) 155; chorus 2 line 2 79. A trace (songs/p65/diag/trace_place.py, 60 control builds): chorus 1 line 4 failed 14 calls of 35 and line 2 11 of 49, drawn fresh (no borrowed rhythm, unlike 749.25), with the same room in failed and kept calls. The cause is inside the draw for a one-bar slot, the span (600) by the look of it, not the window.</p>
+<p><strong>Fix (proposed):</strong> Read the one-bar draw’s failures by step (span, gaps, run lengths), and let a one-bar line of up to seven syllables take any span that fits the bar.</p>
+<p><strong>Check:</strong> Song 55’s main run keeps its pick; deaths at the one-bar lines under one in ten; songs 48 to 54 reproduce.</p>
+<h4 id="a-short-line-spread-across-two-bars-with-a-long-rest-inside">749.31. A short line spread across two bars with a long rest inside</h4>
+<p><strong>Problem:</strong> Lines of four to six syllables in two-bar slots can be drawn with a rest of three beats or more between their words, and every reader passes them.</p>
+<p><strong>Evidence:</strong> Song 55’s pick of record: “To be plumb (a rest of 3.5 beats) sick of it” and “Never got (3.5 beats) to”, chorus 1 line 8 and chorus 2 line 8.</p>
+<p><strong>Fix (proposed):</strong> Cap a line’s inner rest at the kept lines’ 90th percentile for its syllables and slot, or give such lines one bar.</p>
+<p><strong>Check:</strong> No pick with an inner rest over the kept 90th percentile; song 55’s other lines unchanged.</p>
+<p>Also read on song 55 (no finding): melody surprise 3.01 bits against the popular median 2.89, rhythm 3.63 against 2.49 (749.18, 749.20 not met); chords 2.14 against 3.79; no chord outside the key (749.23); phrases 0.8 to 6.0 seconds (749.21); the band above the sung line 85% of the time, a low lead again (749.27); the breath at 0.657 and the top at 0.824 to 0.961 (749.17, 749.19); the verses at B2 to B3, lower than the place asked at intake (314). The pick of record’s longest run of one pitch is 6 (the kept median).</p>
 <h3 id="running-total">Running total</h3>
 <ul>
-<li><strong>Songs on Luthier v7:</strong> 5 (48 The Ratios Hold, 49 The World Is Asking, 50 The Small Things, 51 A Wire Pulled Tight, 54 The Man Mama Prayed I’d Be). Song 52 (The Room Next Door, 6/8) was drawn by a compound-metre sketch, not the engine.</li>
-<li><strong>Findings since v7:</strong> 39 (740 to 749, 749.1 to 749.29). One is a bug (749.1); four (749.4 to 749.7) are the plan for metres other than 4/4; three (749.8 to 749.10) are about variety and the song’s shape, each tried on song 52 with the before and after and carried into song 53; four (749.11 to 749.14) are for hymns, choral output and accompaniment; one (749.15) hands over the metre atlas; one (749.16) is the accompaniment plan by section role, tried on song 53’s third edition; one (749.17) is the song-wide intensity curve from the shapes study; one (749.18) is the surprise-against-expectation measure from the YouTube study; one (749.19) is the breath-then-fresh-re-entry rule from timestamped comments; one (749.20) is the rhythm layer; one (749.21) is the perception checks from the psychoacoustics round; one (749.22) is the two-channel judge from the covers study; one (749.23) is the chromatic-harmony test, a style option rather than a default; six (749.24 to 749.29) are song 54’s: the assumed bridge, placement deaths with borrowed rhythms, two syllables on one onset in most survivors, a perception limit that does not carry to a low lead, the shape targets in a story song, and the lexicon’s dialect forms; the rest are readings or proposals.</li>
-<li><strong>Picks of record not the judge’s:</strong> 3 of 5 (songs 49, 51 and 54): two for chanting (728, 740, 746, 749.2), song 54’s for two syllables on one onset (749.1, 749.26).</li>
+<li><strong>Songs on Luthier v7:</strong> 6 (48 The Ratios Hold, 49 The World Is Asking, 50 The Small Things, 51 A Wire Pulled Tight, 54 The Man Mama Prayed I’d Be, 55 Your Yard Man). Song 52 (The Room Next Door, 6/8) was drawn by a compound-metre sketch, not the engine.</li>
+<li><strong>Findings since v7:</strong> 41 (740 to 749, 749.1 to 749.31). One is a bug (749.1); four (749.4 to 749.7) are the plan for metres other than 4/4; three (749.8 to 749.10) are about variety and the song’s shape, each tried on song 52 with the before and after and carried into song 53; four (749.11 to 749.14) are for hymns, choral output and accompaniment; one (749.15) hands over the metre atlas; one (749.16) is the accompaniment plan by section role, tried on song 53’s third edition; one (749.17) is the song-wide intensity curve from the shapes study; one (749.18) is the surprise-against-expectation measure from the YouTube study; one (749.19) is the breath-then-fresh-re-entry rule from timestamped comments; one (749.20) is the rhythm layer; one (749.21) is the perception checks from the psychoacoustics round; one (749.22) is the two-channel judge from the covers study; one (749.23) is the chromatic-harmony test, a style option rather than a default; six (749.24 to 749.29) are song 54’s: the assumed bridge, placement deaths with borrowed rhythms, two syllables on one onset in most survivors, a perception limit that does not carry to a low lead, the shape targets in a story song, and the lexicon’s dialect forms; two (749.30 and 749.31) are song 55’s: one-bar lines that die in fresh draws, and a long rest inside a short line; the rest are readings or proposals.</li>
+<li><strong>Picks of record not the judge’s:</strong> 4 of 6 (songs 49, 51, 54 and 55): two for chanting (728, 740, 746, 749.2), songs 54 and 55 for two syllables on one onset (749.1, 749.26).</li>
 <li><strong>Failing on every song:</strong> bits saved a gap (744); the per-note share against every neighbour (745, 734); unstressed entries on the bar line (742, 749).</li>
-<li><strong>Placement deaths over target:</strong> songs 49, 50, 51 and 54 (741, 747, 749.3, 749.25).</li>
+<li><strong>Placement deaths over target:</strong> songs 49, 50, 51, 54 and 55 (741, 747, 749.3, 749.25, 749.30).</li>
 <li><strong>Not yet possible on the engine:</strong> any metre but 4/4 (song 50 asked for 6/8 and was set in swung 4/4; song 51’s tempo plan was written at double tempo in 4/4); song 52 is in true 6/8, by the sketch, with kept 6/8 tables from Essen (749.4 to 749.7); song 53 is in 3/4, by the hymn sketch, with hymn tables (749.11), and the metre atlas holds kept tables for every common metre (749.15).</li>
 </ul>
 <h3 id="regression-line">Regression line</h3>
-<p>Songs 40–47 are closed (523, 571). Song 48’s record stands on v134 (5440fb310f58 / ce6f70d21d6a). Its reruns: v136 473ea72c00d9 / 54d5fcc4eae6; v137 104d263b6bd6 / 25552792b7c3; Luthier v1 da01fc0096fb / 1ddae17ce4bc; Luthier v2 e6f259b64c38 / a6023c8db5cb; Luthier v3 run A c6ee6ce5c6a4 / da3ddf5aaf62, run B 2276b48371d3 / 7d544b83f0f7; Luthier v4 e897f1e17e02 / 8924d5f25684; Luthier v6 21a41b55f90a / 3021b2a276db; Luthier v7 db3ed0fc13ab / 44de852103a9. Song 49: Luthier v4 a467ceb242b7 / e8691d73b008; Luthier v6 ef9d3a2a2039 / bf016d1e7243 (pick of record e2b80cdc3a1c); Luthier v7 cb0a317e10d9 / 9787becabe8d. Song 50: Luthier v7 46073782f2d5 / cd7f41ab51d3 (pick of record f583fd857dda). Song 51: Luthier v7 a37686ce104b / 37c6e1ffbafb (pick of record 89e71513033a). Song 54: Luthier v7 63a84b18e7dc / c43334ae0deb (pick of record d12c2728e6f1).</p>
+<p>Songs 40–47 are closed (523, 571). Song 48’s record stands on v134 (5440fb310f58 / ce6f70d21d6a). Its reruns: v136 473ea72c00d9 / 54d5fcc4eae6; v137 104d263b6bd6 / 25552792b7c3; Luthier v1 da01fc0096fb / 1ddae17ce4bc; Luthier v2 e6f259b64c38 / a6023c8db5cb; Luthier v3 run A c6ee6ce5c6a4 / da3ddf5aaf62, run B 2276b48371d3 / 7d544b83f0f7; Luthier v4 e897f1e17e02 / 8924d5f25684; Luthier v6 21a41b55f90a / 3021b2a276db; Luthier v7 db3ed0fc13ab / 44de852103a9. Song 49: Luthier v4 a467ceb242b7 / e8691d73b008; Luthier v6 ef9d3a2a2039 / bf016d1e7243 (pick of record e2b80cdc3a1c); Luthier v7 cb0a317e10d9 / 9787becabe8d. Song 50: Luthier v7 46073782f2d5 / cd7f41ab51d3 (pick of record f583fd857dda). Song 51: Luthier v7 a37686ce104b / 37c6e1ffbafb (pick of record 89e71513033a). Song 54: Luthier v7 63a84b18e7dc / c43334ae0deb (pick of record d12c2728e6f1). Song 55: Luthier v7 000c3f344509 / 42fad285b3c0 (pick of record 8fcba32b9784).</p>
 <h3 id="blind-pick-tally">Blind-pick tally</h3>
-<p>35 songs: Annotated top 15, Middle 10, Remembered top 9, Refrain 1 (song 52: Annotated, “and I said hello through the plaster that night”) (song 50: Middle, “And I think somebody’s watching this”; song 51: Remembered, “a second stretched thin like a wire pulled tight”; song 54: Middle, “The man Mama prayed I’d be”). Not yet offered: songs 40, 41, 43, 44, 45 and 46.</p>
+<p>36 songs: Annotated top 15, Middle 10, Remembered top 10, Refrain 1 (song 52: Annotated, “and I said hello through the plaster that night”) (song 50: Middle, “And I think somebody’s watching this”; song 51: Remembered, “a second stretched thin like a wire pulled tight”; song 54: Middle, “The man Mama prayed I’d be”; song 55: Remembered, “I’m your yard man”). Not yet offered: songs 40, 41, 43, 44, 45 and 46.</p>
 
 <h1 id="part-2">Part 2. For Luthier’s maintainer: avenues and new
 rules</h1>
@@ -9287,6 +9322,218 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <p><strong>Check.</strong> Song 54’s lyric needs only “mildewed” asked.</p>
 <h2 id="blind-pick">Blind pick</h2>
 <p>The three 10.20 slots (<code>q1020.py</code>): remembered, “For a boy who’s been gone too long”; middle, “The man Mama prayed I’d be”; annotated, “And sir I’m finally fixin’ to be”. Offered shuffled as A (annotated), B (remembered), C (middle); the writer chose C, “The man Mama prayed I’d be”: Middle.</p>
+
+<h1 id="part-16">Part 16. Your Yard Man (song 55): test report</h1>
+<p><em>Words and music: Jason Bryant. 16 November 2026. Folder songs/p65.</em></p>
+<h2 id="intake">Intake</h2>
+<p>Nine questions, one a turn, logged verbatim in <code>intake.py</code>. The writer asked for song 54’s treatment: his earlier lyric renovated, the same lane.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>The song</td>
+<td>The writer’s earlier lyric (the yard man), “same kind of treatment as the last one, use the ideas and structure but craft a lyric that actually works”</td>
+</tr>
+<tr class="even">
+<td>Never-say</td>
+<td>B: song 54’s list as it is (no truck, no beer: “half-ton” and no drink named)</td>
+</tr>
+<tr class="odd">
+<td>Title</td>
+<td>A: Your Yard Man (“I’m your yard man … but I’m my own man”)</td>
+</tr>
+<tr class="even">
+<td>Draft 1</td>
+<td>Notes: the travel jokes decline (Australia sitcom-like); verse 2 the least distinctive; the emotional range narrow</td>
+</tr>
+<tr class="odd">
+<td>Draft 2</td>
+<td>A: locked. Verse 2 became his daddy (thirty-one years at the mill; his last summers watching his son cut his grass); chorus 2 turns on it (the summers Daddy never got to); Holland first, Paris last after the hat</td>
+</tr>
+<tr class="even">
+<td>Unknown word</td>
+<td>A: callin’ as CALL-in</td>
+</tr>
+<tr class="odd">
+<td>Key and voice</td>
+<td>A: A major, baritone, the chorus to E4 on “yard”</td>
+</tr>
+<tr class="even">
+<td>Form</td>
+<td>A: q = 120; intro 4; (verse 16, chorus 14) ×2; break 4; verse 16; chorus 14; tag 2; ending 2 = 102 bars, about 3:24</td>
+</tr>
+<tr class="odd">
+<td>Type</td>
+<td>A: N/A, Narrative primary, Anthem secondary</td>
+</tr>
+<tr class="even">
+<td>The hook</td>
+<td>A: the call (“I’m your yard man”, E4 on “yard”) and its answer (“but I’m my own man”, home on A)</td>
+</tr>
+</tbody>
+</table>
+<p>The band was taken as song 54’s (the writer: “same kind of treatment”); one singer. “own” is read stressed in this song.</p>
+<h2 id="method">Method</h2>
+<p>The engine path on Luthier v7 as ported. <code>gen_l7_p65.py</code> writes <code>melody_l7_p65.py</code> from song 54’s file (with its guards for a song with no bridge), changing only the song’s own parts, each patch asserted once: the lyric and lexicon, A major, q = 120, the form, verse lines in two bars, the chorus’s frame lines (1–4, 9–10) in one bar and its middle lines in two, the tag’s lines in one; the chart drawn by 438 with the designs’ bars kept on A; the call and the answer as designs (317). Seed 20261113 + 455.</p>
+<h2 id="the-melody-search">The melody search</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Run</th>
+<th>Built</th>
+<th>Survivors</th>
+<th>Clean</th>
+<th>Order</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Main</td>
+<td>1,000</td>
+<td>153 (15.3%)</td>
+<td>107</td>
+<td>000c3f344509 (made twice, reproduced)</td>
+</tr>
+<tr class="even">
+<td>Control (243 off)</td>
+<td>1,000</td>
+<td>149 (14.9%)</td>
+<td>109</td>
+<td>42fad285b3c0 (made twice, reproduced)</td>
+</tr>
+</tbody>
+</table>
+<p>Deaths, main: no placement 678; joins (212) 124; the chorus above the verse 23; limits 14; align 7; the judge’s floor 1. The hook and tag designs never failed. By line, the placement deaths fall on the chorus’s one-bar lines: chorus 1 line 2 (“That’s all I aim to be”, 6 syllables) 259; line 3 (5) 177; line 4 (5) 155; chorus 2 line 2, its copy, 79 (749.30).</p>
+<h2 id="the-pick">The pick</h2>
+<p>The judge’s pick (730), eb35d48bcd4d (charge 0.011, place 0.849; 24 eligible of 107 clean), sings two syllables on one onset in verse 3 (“half-ton”). 45 of the 107 clean survivors carry the same fault (749.26, again). The pick of record is 8fcba32b9784, by 730’s own rule over the 62 clean survivors without it (16 eligible): charge 0.007, place 0.849, its most-repeating window at 0.571 (inside 0.55–0.93), distance 5.45. It passes <code>evaluate</code> and every design gate; no hand edits.</p>
+<p>The chant check: the longest run of one pitch is 6 (verse 1, line 1; kept median 6). First-eight-bar repeats: verses 0.23–0.31, choruses 0.21–0.28.</p>
+<p>The line read: verses B2–B3 (lower than the C♯3–C♯4 offered at intake: the register draw does not take the stated verse place, as 314 says); choruses E3–E4; E4 only on the hook; the widest leap a fifth. Two of the middle lines spread across their two bars with a long rest inside: “To be plumb … sick of it” and “Never got … to” (749.31).</p>
+<h2 id="research-checks-section-2b">Research checks (section 2b)</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>Reading</th>
+<th>Target</th>
+<th>Held?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>749.18, 749.20 surprise, melody</td>
+<td>3.01 bits</td>
+<td>popular median 2.89 or under</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>surprise, chords</td>
+<td>2.14 bits</td>
+<td>3.79 or under</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>surprise, rhythm</td>
+<td>3.63 bits</td>
+<td>2.49 or under</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>syncopation</td>
+<td>0.23 a note</td>
+<td>popular 0.29</td>
+<td>read</td>
+</tr>
+<tr class="odd">
+<td>stress</td>
+<td>60% of stressed syllables on a beat, 38% on 1 or 3</td>
+<td>(no kept band for country)</td>
+<td>read</td>
+</tr>
+<tr class="even">
+<td>749.17 intensity</td>
+<td>top at chorus 3, 0.824–0.961; release in the tag and ending; each chorus above its verse, each return above the last; verse 2 the quietest verse</td>
+<td>0.65–0.85</td>
+<td>Close (the top’s start inside)</td>
+</tr>
+<tr class="odd">
+<td>749.19 breath</td>
+<td>the break’s last bar (bar 68, 0.657) the acoustic alone; verse 3 re-enters on E3</td>
+<td>0.55–0.60</td>
+<td>Near</td>
+</tr>
+<tr class="even">
+<td>749.21 low intervals</td>
+<td>0</td>
+<td>0</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>band over the sung line</td>
+<td>85%; within a second 14% (749.27)</td>
+<td>2%</td>
+<td>No (a low lead)</td>
+</tr>
+<tr class="even">
+<td>phrases</td>
+<td>median 2.25 s, 0.8–6.0 s, none over 6</td>
+<td>2–6 s</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>749.22 two channels</td>
+<td>chord changes a bar: verses 0.56, choruses 0.86; rests 43% of beats</td>
+<td>moving harmony, room</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>749.23 chromatic</td>
+<td>none</td>
+<td>the pop budget</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="arrangement-and-documents">Arrangement and documents</h2>
+<p>The record holds the voice, the harmony on the call and answer (and chorus 3’s lines 2–4) and eight parts. The 9.12 arc: verse 1 0.69, chorus 1 0.82, verse 2 0.66, chorus 2 0.91, break 0.74 (ending at 0.36), verse 3 0.81, chorus 3 0.99, tag a build from the stop. Stems: the voice +4.8 dB.</p>
+<p>Readback: every staff of the lead sheet, the full score and the parts matches the record; drums 1,218 of 1,218; MusicXML onsets and 357 lyrics read back. <code>consistency_p65.py</code>: 62 of 62. The one-sheet fits one page in the Word copy.</p>
+<h2 id="findings">Findings</h2>
+<h3 id="one-bar-lines-die-in-fresh-draws">749.30 One-bar lines die in fresh draws</h3>
+<p><strong>Problem.</strong> The chorus’s one-bar frame lines (4 to 6 syllables) carried most of song 55’s placement deaths: 678 a thousand, 590 of them on chorus lines 2 to 4 and their copies.</p>
+<p><strong>Evidence.</strong> The trace (songs/p65/diag/trace_place.py, 60 control builds): chorus 1 line 4 failed 14 calls of 35 and line 2 11 of 49, drawn fresh (no borrowed rhythm), with the same room in failed and kept calls. The cause is inside the draw for a one-bar slot, the span (600) by the look of it, not the window.</p>
+<p><strong>Fix.</strong> Read the one-bar draw’s failures by step (span, gaps, run lengths) and let a one-bar line of up to seven syllables take any span that fits the bar.</p>
+<p><strong>Check.</strong> Song 55’s main run keeps its pick; deaths at the one-bar lines under one in ten.</p>
+<h3 id="a-short-line-spread-across-two-bars-with-a-long-rest-inside">749.31 A short line spread across two bars with a long rest inside</h3>
+<p><strong>Problem.</strong> Lines of four to six syllables in two-bar slots can be drawn with a rest of three beats or more between their words.</p>
+<p><strong>Evidence.</strong> The pick of record: “To be plumb (3.5 beats) sick of it” and “Never got (3.5 beats) to”. They pass every reader.</p>
+<p><strong>Fix.</strong> Cap a line’s inner rest at the kept lines’ 90th percentile for its syllables and slot, or give such lines one bar.</p>
+<p><strong>Check.</strong> No pick with an inner rest over the kept 90th percentile.</p>
+<h3 id="again">749.26, again</h3>
+<p><strong>Evidence added.</strong> Song 55: 45 of 107 clean survivors sing two syllables on one onset, and the judge’s pick was one (verse 3). The fault is general, not song 54’s.</p>
+<h2 id="blind-pick">Blind pick</h2>
+<p>The three 10.20 slots: remembered, “I’m your yard man”; middle, “But I’m my own man”; annotated, “Half-ton, trailer, mower on the back”.</p>
+<p>Offered shuffled as A annotated, B remembered, C middle. The writer chose <strong>B, “I’m your yard man”: the remembered slot.</strong></p>
 
 <a class="top" href="#start">Top</a>
 </body>
