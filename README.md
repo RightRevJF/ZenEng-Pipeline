@@ -1,16 +1,16 @@
 # ZenEng song pipeline
 
-The working code behind Jason Bryant's ZenEng songs (songs 21–25, ZenEng v64 with the v65 fixes run as ports). The engine's rules live in the ZenEng spec; this repo holds the scripts that carry them out for one song at a time.
+The working code behind Jason Bryant's ZenEng songs (songs 11 to 53; folder pNN holds song NN−10), the metre atlas, and the research studies of 14 to 15 November 2026. A new chat window starts from SKILL.md (the songwrite skill). The engine's rules live in the ZenEng spec; this repo holds the scripts that carry them out for one song at a time.
 
 ## Set up a new workspace
 
 ```
 git clone <this repo> /home/claude/zeneng-pipeline
 cd /home/claude/zeneng-pipeline && bash setup.sh
-bash newsong.sh 26          # makes /home/claude/p26 from the template (the latest finished song)
+bash newsong.sh 64          # makes /home/claude/p64 (song 54) from the template; for a real song, build from the latest song of the same kind
 ```
 
-`setup.sh` installs LilyPond, FluidSynth (with the FluidR3 GM soundfont), pandoc, ffmpeg and the Python packages, downloads the spaCy models and Playwright's Chromium, and links `lib/carol` and `lib/pop` to `/home/claude/carol` and `/home/claude/pop`, where the scripts expect them.
+`setup.sh` installs LilyPond, FluidSynth (with the FluidR3 GM soundfont), pandoc, ffmpeg and the Python packages, downloads the spaCy models and Playwright's Chromium, and links `lib/carol` and `lib/pop` to `/home/claude/carol` and `/home/claude/pop`, the songs to `/home/claude/pNN`, the metre atlas to `/home/claude/atlas` and the studies to `/home/claude/shape`, where the scripts expect them.
 
 ## What's here
 

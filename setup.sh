@@ -7,7 +7,7 @@ if command -v apt-get >/dev/null; then
   $SUDO apt-get update -qq || true
   $SUDO apt-get install -y -qq lilypond fluidsynth fluid-soundfont-gm pandoc ffmpeg >/dev/null || echo "apt install incomplete: check lilypond, fluidsynth, fluid-soundfont-gm, pandoc, ffmpeg"
 fi
-pip install -q --break-system-packages numpy scipy mido pyphen spacy pronouncing wordfreq cmudict playwright || pip install -q numpy scipy mido pyphen spacy pronouncing wordfreq cmudict playwright
+pip install -q --break-system-packages numpy scipy mido pyphen spacy pronouncing wordfreq cmudict playwright music21 statsmodels || pip install -q numpy scipy mido pyphen spacy pronouncing wordfreq cmudict playwright music21 statsmodels
 python3 -m spacy download en_core_web_sm -q || true
 python3 -m spacy download en_core_web_md -q || true
 python3 -m playwright install chromium >/dev/null 2>&1 || true
@@ -21,6 +21,9 @@ for d in "$REPO"/songs/p*; do
   n=$(basename "$d")
   if [ -e "/home/claude/$n" ] && [ ! -L "/home/claude/$n" ]; then :; else ln -sfn "$d" "/home/claude/$n"; fi
 done
+# the metre atlas and the studies, at the paths the song scripts use (/home/claude/atlas, /home/claude/shape)
+if [ ! -e /home/claude/atlas ]; then mkdir -p /home/claude/atlas; ln -sfn "$REPO/tables/metre_atlas" /home/claude/atlas/tables; for f in "$REPO"/tables/metre_atlas/*.py; do ln -sfn "$f" /home/claude/atlas/; done; fi
+if [ ! -e /home/claude/shape ]; then mkdir -p /home/claude/shape; for f in "$REPO"/studies/*/*; do [ -f "$f" ] && ln -sfn "$f" /home/claude/shape/; done; fi
 echo "checks:"; lilypond --version | head -1; fluidsynth --version 2>&1 | head -1; pandoc --version | head -1
 ls /usr/share/sounds/sf2/FluidR3_GM.sf2 >/dev/null && echo "soundfont ok"
 python3 -c "import sys; sys.path[:0]=['/home/claude/carol','/home/claude/pop']; import lily, measures, lyricsearch, popsearch; print('libraries ok')"
