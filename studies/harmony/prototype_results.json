@@ -1,0 +1,303 @@
+{
+ "bridge (major)": {
+  "train": 249,
+  "held_out": 68,
+  "first_tvd": {
+   "model": 0.295,
+   "unigram": 0.233
+  },
+  "last_tvd": {
+   "model": 0.375,
+   "unigram": 0.418
+  },
+  "distinct": {
+   "kept": 4.0,
+   "model": 4,
+   "unigram": 5.0
+  },
+  "tonic": {
+   "kept": 0.172,
+   "model": 0.133,
+   "unigram": 0.125
+  },
+  "changes_a_bar": {
+   "kept": 1.0,
+   "model": 0.941,
+   "unigram": 0.941
+  },
+  "out_of_key": {
+   "kept": 0.296,
+   "model": 0.286
+  },
+  "bits_per_change": {
+   "model": 3.98,
+   "unigram": 4.79
+  },
+  "examples": [
+   "IV I IV I IV I IV V",
+   "I IV",
+   "vi II I bVII IV vi IV I V IV I vi V ii IVsus IV V",
+   "IV I IV V I",
+   "v ii V I v I IV i IV V I IV V",
+   "iii vi IV V I vi iii IV I vi I IV I V IV"
+  ]
+ },
+ "chorus (major)": {
+  "train": 1317,
+  "held_out": 329,
+  "first_tvd": {
+   "model": 0.105,
+   "unigram": 0.316
+  },
+  "last_tvd": {
+   "model": 0.14,
+   "unigram": 0.307
+  },
+  "distinct": {
+   "kept": 4,
+   "model": 4.0,
+   "unigram": 6.0
+  },
+  "tonic": {
+   "kept": 0.286,
+   "model": 0.29,
+   "unigram": 0.261
+  },
+  "changes_a_bar": {
+   "kept": 1.0,
+   "model": 1.143,
+   "unigram": 1.143
+  },
+  "out_of_key": {
+   "kept": 0.192,
+   "model": 0.195
+  },
+  "bits_per_change": {
+   "model": 3.45,
+   "unigram": 4.44
+  },
+  "examples": [
+   "V vi IV V vi",
+   "I V I II V I Isus I Isus",
+   "I5 V I vi V I vi IV V I ii V",
+   "I ii IV I iii ii V I IV V I",
+   "I",
+   "I vi IV I IV I V IV V IV"
+  ]
+ },
+ "chorus (minor)": {
+  "train": 287,
+  "held_out": 80,
+  "first_tvd": {
+   "model": 0.24,
+   "unigram": 0.364
+  },
+  "last_tvd": {
+   "model": 0.285,
+   "unigram": 0.325
+  },
+  "distinct": {
+   "kept": 3.0,
+   "model": 4.0,
+   "unigram": 6.0
+  },
+  "tonic": {
+   "kept": 0.3,
+   "model": 0.25,
+   "unigram": 0.222
+  },
+  "changes_a_bar": {
+   "kept": 0.9,
+   "model": 1.091,
+   "unigram": 1.077
+  },
+  "out_of_key": {
+   "kept": 0.209,
+   "model": 0.248
+  },
+  "bits_per_change": {
+   "model": 4.4,
+   "unigram": 4.38
+  },
+  "examples": [
+   "i IV i IV i biii bVII bVII+ bVII VI VI5 II",
+   "i",
+   "bIII bVI bIII bVI bIII bVI bIII bVI bIII bVII bVI i ii bIII IV V bIII",
+   "i bVII bVI v bVII bVI v iv bVI bVII",
+   "iv v iv",
+   "bVI bIII bVI i bVI bVII"
+  ]
+ },
+ "pre (major)": {
+  "train": 181,
+  "held_out": 38,
+  "first_tvd": {
+   "model": 0.278,
+   "unigram": 0.348
+  },
+  "last_tvd": {
+   "model": 0.46,
+   "unigram": 0.735
+  },
+  "distinct": {
+   "kept": 4.0,
+   "model": 4,
+   "unigram": 5.0
+  },
+  "tonic": {
+   "kept": 0.0,
+   "model": 0.101,
+   "unigram": 0.135
+  },
+  "changes_a_bar": {
+   "kept": 1.0,
+   "model": 1.143,
+   "unigram": 1.132
+  },
+  "out_of_key": {
+   "kept": 0.246,
+   "model": 0.273
+  },
+  "bits_per_change": {
+   "model": 4.26,
+   "unigram": 4.77
+  },
+  "examples": [
+   "IV iii IV Vsus",
+   "I bVII IV",
+   "I IV I V",
+   "IV IVsus IV",
+   "I bVIIsus vi bVI bVIIsus I vi II V IV",
+   "I bVII IV I IV V I IV I"
+  ]
+ },
+ "pre (minor)": {
+  "train": 51,
+  "held_out": 15,
+  "first_tvd": {
+   "model": 0.55,
+   "unigram": 0.689
+  },
+  "last_tvd": {
+   "model": 0.801,
+   "unigram": 0.783
+  },
+  "distinct": {
+   "kept": 5,
+   "model": 5,
+   "unigram": 5.0
+  },
+  "tonic": {
+   "kept": 0.2,
+   "model": 0.154,
+   "unigram": 0.162
+  },
+  "changes_a_bar": {
+   "kept": 1.444,
+   "model": 1.193,
+   "unigram": 1.2
+  },
+  "out_of_key": {
+   "kept": 0.174,
+   "model": 0.264
+  },
+  "bits_per_change": {
+   "model": 5.52,
+   "unigram": 4.39
+  },
+  "examples": [
+   "bVI bVII i V",
+   "bVIIsus i bVII bVI bVII",
+   "iv I bIIo I5",
+   "iv v bIII bIII bII",
+   "bVI V i",
+   "i bVI bVII i bVI bVII i bVI bVII i bVII bVI bVII i bVII bVI i bVII bVI i bVII bVI i"
+  ]
+ },
+ "verse (major)": {
+  "train": 1351,
+  "held_out": 339,
+  "first_tvd": {
+   "model": 0.099,
+   "unigram": 0.465
+  },
+  "last_tvd": {
+   "model": 0.14,
+   "unigram": 0.319
+  },
+  "distinct": {
+   "kept": 4,
+   "model": 4.0,
+   "unigram": 6.0
+  },
+  "tonic": {
+   "kept": 0.344,
+   "model": 0.33,
+   "unigram": 0.292
+  },
+  "changes_a_bar": {
+   "kept": 0.909,
+   "model": 0.957,
+   "unigram": 0.966
+  },
+  "out_of_key": {
+   "kept": 0.187,
+   "model": 0.186
+  },
+  "bits_per_change": {
+   "model": 3.81,
+   "unigram": 4.52
+  },
+  "examples": [
+   "I ii iii V vi iii IV I iii ii IV I",
+   "I Vsus V Vsus V Isus IV iv I",
+   "I IV I ii Vsus I vi IV V I bII",
+   "I vi IV I",
+   "I IV #IVo I V",
+   "I ii V I vi IV I vi IV I"
+  ]
+ },
+ "verse (minor)": {
+  "train": 293,
+  "held_out": 68,
+  "first_tvd": {
+   "model": 0.151,
+   "unigram": 0.5
+  },
+  "last_tvd": {
+   "model": 0.262,
+   "unigram": 0.325
+  },
+  "distinct": {
+   "kept": 3.0,
+   "model": 4.0,
+   "unigram": 6.0
+  },
+  "tonic": {
+   "kept": 0.487,
+   "model": 0.323,
+   "unigram": 0.217
+  },
+  "changes_a_bar": {
+   "kept": 0.938,
+   "model": 0.941,
+   "unigram": 0.97
+  },
+  "out_of_key": {
+   "kept": 0.132,
+   "model": 0.229
+  },
+  "bits_per_change": {
+   "model": 4.62,
+   "unigram": 4.33
+  },
+  "examples": [
+   "I5 V bVI bII bVII bIII IV bVI bIII i IV bIII i",
+   "i IV i IV i IV bIII bVI bIII bVII",
+   "i IV i IV i IV i IV i IV i IV i IV i IV i IV i IV i IV V",
+   "i iv v i IV V",
+   "i IV i IV i IV i",
+   "bVII bIII i iv i iv i"
+  ]
+ }
+}
