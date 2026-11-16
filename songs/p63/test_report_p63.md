@@ -1,5 +1,5 @@
 ---
-title: "Sung to Sleep: test report (second edition)"
+title: "Sung to Sleep: test report (fourth edition)"
 subtitle: "Words and music: Jason Bryant"
 ---
 
