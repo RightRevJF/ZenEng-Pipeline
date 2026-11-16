@@ -1,14 +1,14 @@
 # Start here {#start}
 
-This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026): the fix list for v8, the new rules, and every report and study. It is written for Luthier's maintainer, the AI that keeps the spec. Words and music: Jason Bryant.
+This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: song 54, run on Luthier v7 on 16 November, with its findings (749.24 to 749.29) and test report (Part 15). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier's maintainer, the AI that keeps the spec. Words and music: Jason Bryant.
 
-**For the maintainer:** read Parts 1 and 2 in full. They say what to change. Parts 3 to 14 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62 and songs/p63), for anyone with access. This page does not depend on it.
+**For the maintainer:** read Parts 1 and 2 in full. They say what to change. Parts 3 to 15 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63 and songs/p64), for anyone with access. This page does not depend on it.
 
 ## What is on this page
 
 | Part | What it is |
 | --- | ------------------------------------------------------------ |
-| [1](#part-1) | **Luthier fix list for v8 (since v7).** All 33 findings, 740 to 749.23, each with Problem, Evidence, Fix and Check; the songs table; the order of work for v8 |
+| [1](#part-1) | **Luthier fix list for v8 (since v7).** All 39 findings, 740 to 749.29, each with Problem, Evidence, Fix and Check; the songs table; the order of work for v8 |
 | [2](#part-2) | **For Luthier's maintainer: avenues and new rules.** The ten new rules with evidence grades, the next avenues ranked, and what not to repeat |
 | [3](#part-3) | Metre atlas: kept tables for every common time signature, with round 2 (art songs, lead sheets, Turkish additive metres) |
 | [4](#part-4) | Time signature research and song data |
@@ -22,6 +22,7 @@ This page holds everything the songwriting session learned and wrote while Luthi
 | [12](#part-12) | What musicians re-record (covers study) |
 | [13](#part-13) | Sung to Sleep (song 53): test report, first to fourth edition |
 | [14](#part-14) | Chromatic harmony: views, covers, our songs, hymns and art song |
+| [15](#part-15) | The Man Mama Prayed I'd Be (song 54, on Luthier v7): test report |
 
 ## What we learned, in brief
 
@@ -33,12 +34,14 @@ This page holds everything the songwriting session learned and wrote while Luthi
 6. **How it sounds.** Checks for roughness, low crowded chords and the sung tune staying on top. They restate Luthier Module 9.14 and port it to organ and choir (749.21).
 7. **What musicians reward.** Songs that musicians re-record most have harmony that moves within sections and melodies with room in them. This is a separate channel from views, found in two sources (749.22).
 8. **Chromatic harmony.** Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose, not a new default. Hymns and art songs show what each style expects: in hymns, one or two applied dominants a verse are ordinary; art songs live in chromatic harmony at about three times the popular share (749.23).
+9. **Back on the engine (song 54).** A country story song on Luthier v7 found the engine assumes a bridge, still loses two-thirds of its builds on long lines with borrowed rhythms, and lets most survivors sing two syllables on one note; the judge picked one, so the pick of record is the judge's own rule without that fault. Two of the new rules need reading by texture and by song type (749.24 to 749.29).
 
 The main new idea: **judge every song on two channels**, what audiences reward and what musicians reward, and prefer songs that do well on both.
 
 ## Still open
 
 - Song 53 (Sung to Sleep): a one-note change to the refrain's re-entry is offered and waits for Jason's approval; the blind pick is still to come; the engine's own rerun waits for v8.
+- Song 54 (The Man Mama Prayed I'd Be): delivered; blind pick taken (Middle); a made-for-real rerun is offered.
 - Song 52 (The Room Next Door) and song 53 were written outside the engine, so v8 should be able to write them itself.
 
 ## Data and cautions
