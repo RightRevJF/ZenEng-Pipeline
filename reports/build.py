@@ -27,6 +27,6 @@ names = {4: "Time signature research and song data", 5: "Accompaniment corpora a
          8: "Surprise against expectation and YouTube views", 9: "Moments people love", 10: "The rhythm layer", 11: "Psychoacoustics for the songwriting engine",
          12: "What musicians re-record (covers study)", 13: "Sung to Sleep (song 53): test report"}
 for k in range(4, 14): w.add_outline_item(f"Part {k}. {names[k]}", P[f"P{k}"] - 1)
-s0 = len(w.pages); w.append("part14.pdf", import_outline=False); w.add_outline_item("Part 14. Chromatic harmony: views, covers and our songs", s0)
+s0 = len(w.pages); w.append("part14.pdf", import_outline=False); w.add_outline_item("Part 14. Chromatic harmony: views, covers, hymns and art song", s0)
 w.add_metadata({"/Title": "Luthier: everything learned while the engine was offline (14 to 15 November 2026)", "/Author": "Jason Bryant"})
 out = "Luthier - everything learned while offline (14-15 November 2026).pdf"; w.write(out); print(out, len(w.pages), P)

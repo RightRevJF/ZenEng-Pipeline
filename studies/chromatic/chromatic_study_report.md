@@ -1,6 +1,6 @@
 ---
 title: "Chromatic harmony: views, covers and our songs"
-subtitle: "A test of whether the engine should live in chromatic harmony (finding 749.23), 15 November 2026"
+subtitle: "A test of whether the engine should live in chromatic harmony, with hymns and art song for comparison (finding 749.23), 15 November 2026"
 author: "Words and music: Jason Bryant"
 ---
 
@@ -70,10 +70,37 @@ The maintainer's reading is right: the engine uses chromatic chords as single co
 
 Evidence grade: **B** for the views penalty (large sample, holds within artist); **C** for applied dominants and covers (one source leaning, not replicated).
 
+## Hymns and art song
+
+The popular corpus says nothing about the styles where chromatic harmony is ordinary, so the same chord measures were taken from Roman-numeral analyses: When in Rome (Gotham and others, CC BY-SA 4.0; human analyses of Goudimel's psalms, Bach's chorales and OpenScore Lieder) and the OpenScore Lieder corpus's automatic analyses (AugmentedNet, CC0 scores). Each chord is read in its local key, so a modulation is not counted; the second column counts it, against the piece's first key. Popular songs are read in a single key (sections with a key change were left out). Medians throughout; applied dominants, mixture and other are shares of chord changes; chromatic passages are the share of 8-bar spans (for popular songs, of sections) with two or more chromatic chords.
+
+| Corpus | Pieces | Chromatic share (median; 90th) | With modulations | Applied dominants | Mixture | Other | Chromatic passages |
+| ---------- | ------- | --------- | -------- | -------- | ------- | ------ | -------- |
+| Popular (Hooktheory) | 10,749 | 4.4%; 40.1% | n/a | 0% | 0% | 0% | 0% |
+| Psalms (Goudimel) | 41 | 4.2%; 9.1% | 7.1% | 2.4% | 0% | 0% | 20% |
+| Chorales (Bach) | 371 | 6.2%; 14.8% | 15.6% | 2.1% | 1.8% | 2.4% | 50% |
+| Art song (human) | 179 | 13.3%; 27.8% | 25.0% | 2.7% | 1.8% | 7.5% | 46% |
+| Art song (automatic) | 1,083 | 15.4%; 29.8% | 27.2% | 3.8% | 2.5% | 9.1% | 50% |
+
+English hymns (Open Hymnal, 295 four-part hymns) have no analyses, so they were measured from the notes: the share of beats whose sounding notes leave the key. The median hymn has 4.7% such beats (90th percentile 19.8%); the same measure gives 12.5% for Bach's chorales, close to their analysed figure with modulations counted (15.6%). The most chromatic hymns by this measure are mostly modal Lutheran tunes, whose modal notes count as chromatic, plus Victorian tunes such as St. Louis ("O Little Town of Bethlehem").
+
+1. **The kind differs more than the amount.** Popular songs that use chromatic chords use mostly mixture (mean 6.3% of chord changes, against 1.6% for applied dominants). Hymns and art songs use applied dominants as much as or more than mixture, and art songs add diminished sevenths, augmented sixths and the Neapolitan ("other").
+2. **Plain hymns are barely more chromatic than popular songs,** but steadily so: one or two applied dominants a verse, rarely more (90th percentile 9%).
+3. **Bach and art song live in chromatic harmony:** about half of their 8-bar spans hold two or more chromatic chords. Art songs have about three times the chromatic share of popular songs.
+4. **Our songs** (median 2.5% of chord mentions, mostly ♭VII) sit below plain hymns, and use the popular kind (mixture) even in the hymn-like songs. Song 53 has one applied dominant (F♯7 to B minor, in the last verse's reharmonisation) and one ♭VII; song 52 uses ♭VII and ♭VI.
+
+**For the engine:** the chromatic home should carry style norms, not one number:
+
+- **Hymn mode (749.11):** applied dominants are ordinary vocabulary, about 2% to 4% of chord changes (one or two a verse, often at a cadence: V/V, V/vi, V/ii), costing nothing in hymn mode. Mixture stays rare (under 2%).
+- **Chorale or art-song style:** chromatic chords in about half of 8-bar spans; local chromatic share of 6% (chorale) to 13% to 15% (art song); add diminished sevenths, augmented sixths and the Neapolitan; tonicise and modulate freely.
+- **Popular styles:** keep the v7 budget; mixture is the native kind there, and the kind audiences penalise most.
+
+Cautions: Roman-numeral analyses label every chord, including passing ones, while Hooktheory transcribers simplify, so the popular figures may be a little low by comparison. The automatic Lieder analyses broadly agree with the human ones (a little more chromatic). Modal tunes inflate the English-hymn note measure.
+
 ## Cautions
 
-Hooktheory is mostly popular song, so the result says nothing about hymns or art song, where chromatic harmony is ordinary. Users transcribe sections, not whole songs. Genre is only partly controlled (within artist helps). Views measure exposure as much as music.
+The views and covers results come from popular song only; hymns and art song were measured for how chromatic they are, not for outcomes. Users transcribe sections, not whole songs. Genre is only partly controlled (within artist helps). Views measure exposure as much as music.
 
 ## Files
 
-studies/chromatic: chromatic_features.py, study_chromatic.py, chromatic_our_songs.py, chromatic_results.json, chromatic_our_songs.json.
+studies/chromatic: chromatic_features.py, study_chromatic.py, chromatic_our_songs.py, chromatic_styles.py, chromatic_hymn_beats.py, and their results (chromatic_results.json, chromatic_our_songs.json, chromatic_styles.json, chromatic_hymn_beats.json).

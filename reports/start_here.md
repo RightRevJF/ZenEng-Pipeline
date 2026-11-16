@@ -31,7 +31,7 @@ This one file holds everything the songwriting session learned and wrote while L
 | 11 | Psychoacoustics for the songwriting engine | {P11} |
 | 12 | What musicians re-record (covers study) | {P12} |
 | 13 | Sung to Sleep (song 53): test report, first to fourth edition | {P13} |
-| 14 | Chromatic harmony: views, covers and our songs | {P14} |
+| 14 | Chromatic harmony: views, covers, our songs, hymns and art song | {P14} |
 
 ## What we learned, in brief
 
@@ -42,7 +42,7 @@ This one file holds everything the songwriting session learned and wrote while L
 5. **The moments people love.** Listeners mark moments where the melody thins for a beat or two and then re-enters on a fresh note, a little past the middle of the song. Luthier already has this rule; this is listener evidence for it (749.19).
 6. **How it sounds.** Checks for roughness, low crowded chords and the sung tune staying on top. They restate Luthier Module 9.14 and port it to organ and choir (749.21).
 7. **What musicians reward.** Songs that musicians re-record most have harmony that moves within sections and melodies with room in them. This is a separate channel from views, found in two sources (749.22).
-8. **Chromatic harmony.** Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose (gospel, jazz, prog, art song), with applied dominants the safest kind, not a new default (749.23).
+8. **Chromatic harmony.** Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose, not a new default. Hymns and art songs show what each style expects: in hymns, one or two applied dominants a verse are ordinary; art songs live in chromatic harmony at about three times the popular share (749.23).
 
 The main new idea: **judge every song on two channels**, what audiences reward and what musicians reward, and prefer songs that do well on both.
 
