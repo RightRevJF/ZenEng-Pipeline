@@ -98,3 +98,5 @@ Readback: every staff of the lead sheet, the full score and the parts matches th
 # Blind pick
 
 The three 10.20 slots: remembered, "I'm your yard man"; middle, "But I'm my own man"; annotated, "Half-ton, trailer, mower on the back".
+
+Offered shuffled as A annotated, B remembered, C middle. The writer chose **B, "I'm your yard man": the remembered slot.**
