@@ -64,7 +64,7 @@ CH = {k: (v[0], set(v[1])) for k, v in M.CH.items() if "/" not in k}
 for k in set(H2):                                                                            # 440's inversions: the chord's tones, its bass apart
     if k not in CH: CH[k] = (CH[k.split("/")[0]][0], CH[k.split("/")[0]][1])
 # ---- the band writer ----
-LANE = dict(genre="rock", chords=CH, parts={"organ": "piano", "rhythm": "guitar"})
+LANE = dict(genre="rock", chords=CH, parts={"organ": "piano", "rhythm": "guitar"}, tune_on_top=False)   # a baritone under organ and guitars: 749.27
 rec0 = dict(bars=bars, lead=lead)
 parts, BREP = write_band(rec0, LANE, seed="song 57", ramp=("Jam",))
 parts = collections.defaultdict(list, {k: list(v) for k, v in parts.items()})

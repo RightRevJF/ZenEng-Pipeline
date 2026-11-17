@@ -13,8 +13,9 @@ What it decides, and from where:
                               guitars): the pattern whose onsets a bar sit nearest the level's target, the target read along the kept
                               quartiles of onsets a bar (low level the 25th percentile, high the 75th); ties by kept share.
   voicing                     notes together from the kept quartiles (low level fewer), inside the kept register (low and high
-                              quartiles), Module 9.14's low-interval limits, and under the voice while it sings (749.21: accompaniment
-                              above the sung tune at most 2% of the time), each chord led to the nearest voicing of the next.
+                              quartiles), Module 9.14's low-interval limits, each chord led to the nearest voicing of the next; where the
+                              tune is the top line, under the voice (749.21: above it at most 2% of the time); for a lead below the band
+                              (749.27's proposed reading), no chord tone within a second of a sung note.
   drums                       the genre's kept kick and snare patterns (the commonest kick at low levels, busier ones higher); hats in
                               eighths (the kept share), ride at the top levels; a fill on a section's last bar (kept fill rate a few
                               bars in a hundred, flat across the eight-bar unit), a crash on its first; a light swing is the demo's.
@@ -75,10 +76,13 @@ class Band:
         self.parts[part].append(dict(on=on, dur=dur, p=p if isinstance(p, list) else [p], vel=int(max(1, min(127, vel))), art=art))
     def tones(self, ch): return self.CH[ch][1]
     def root(self, ch): return self.CH[ch][0]
-    def voicing(self, part, ch, n, lo, hi, cap):
-        """n chord tones in [lo, hi], under cap (the voice), inside 9.14's limits, nearest the part's last voicing."""
+    def voicing(self, part, ch, n, lo, hi, cap, sung=()):
+        """n chord tones in [lo, hi], inside 9.14's limits, nearest the part's last voicing. Where the tune is the top line (lane
+        tune_on_top), under cap (the voice: 749.21); for a lead below the band (749.27), no chord tone within a second of a sung note."""
         pcs = self.tones(ch); cands = []
-        pool = [q for q in range(lo, min(hi, cap) + 1) if q % 12 in pcs]
+        if not self.lane.get("tune_on_top", True): cap = hi
+        near = {q for p in sung for q in range(p - 2, p + 3) if q != p}
+        pool = [q for q in range(lo, min(hi, cap) + 1) if q % 12 in pcs and q not in near]
         if len(pool) < n: pool = [q for q in range(lo - 5, min(hi, cap) + 1) if q % 12 in pcs]
         if not pool: pool = []
         def ok(v):
@@ -91,14 +95,15 @@ class Band:
             for base in range(min(hi, cap) - 19, 27, -1):                                       # or the root and its octave; else a rest
                 if base % 12 != r0: continue
                 for v in ([base, base + 7, base + 12], [base, base + 7], [base, base + 12], [base]):
-                    if max(v) <= cap and ok(v) and v[0] >= 28: self.prev[part] = v; return v[: max(1, min(len(v), n))]
+                    if max(v) <= cap and ok(v) and v[0] >= 40: self.prev[part] = v; return v[: max(1, min(len(v), n))]
             return []
         last = self.prev.get(part)
         key = (lambda v: sum(abs(a - b) for a, b in zip(sorted(v), sorted(last))) if last and len(last) == len(v) else -sum(v) * 0.01)
         best = min(cands, key=lambda v: (key(v), -len({q % 12 for q in v}), -max(v)))
         self.prev[part] = best; return best
+    def sung_at(self, t0, t1): return sorted({p for s in range(t0 // 3, max(t0 // 3 + 1, t1 // 3)) for p in self.voice.get(s, [])})
     def cap_at(self, t0, t1, default=127):
-        sung = [p for s in range(t0 // 3, max(t0 // 3 + 1, t1 // 3)) for p in self.voice.get(s, [])]
+        sung = self.sung_at(t0, t1)
         return (min(sung) - 1) if sung else default
     def chordal(self, part, inst, x, level, vel):
         G = self.G[inst]; tgt = interp_q(G["onsets_a_bar"], level); pat = pattern_for(G["rhythm"], tgt)
@@ -111,11 +116,11 @@ class Band:
             ch = x["chord"] if 3 * i < 24 else x["chord2"]
             if 3 * i < 24 <= 3 * nxt and x["chord2"] != x["chord"]: d = 24 - 3 * i            # the chord changes at the half bar
             cap = self.cap_at(t, t + d)
-            vc = self.voicing(part, ch, n_tog, lo, hi, cap)
+            vc = self.voicing(part, ch, n_tog, lo, hi, cap, self.sung_at(t, t + d))
             if vc: self.ev(part, t, max(3, int(d * held)), vc, vel - (6 if i % 4 else 0))
             if 3 * i < 24 <= 3 * nxt and x["chord2"] != x["chord"]:
                 cap2 = self.cap_at(x["start"] + 24, x["start"] + 3 * nxt)
-                vc2 = self.voicing(part, x["chord2"], n_tog, lo, hi, cap2)
+                vc2 = self.voicing(part, x["chord2"], n_tog, lo, hi, cap2, self.sung_at(x["start"] + 24, x["start"] + 3 * nxt))
                 if vc2: self.ev(part, x["start"] + 24, max(3, int((3 * nxt - 24) * held)), vc2, vel - 4)
         return pat
     def drums(self, x, level, vel, fill, crash, ride):

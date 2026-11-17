@@ -1,0 +1,129 @@
+{
+ "surprise": {
+  "melody_ic": 2.478790178847122,
+  "melody_median": 2.8858041559091627,
+  "chord_ic": 1.6123021836592937,
+  "chord_median": 3.7869975332489734,
+  "rhythm_ic": 3.127422605293068,
+  "rhythm_median": 2.4883964413263766,
+  "cheung_melody": -0.17396946457418902,
+  "sync_per_note": 0.27472527472527475,
+  "sync_median": 0.2857142857142857,
+  "rest_share": 0.4815737051792829,
+  "rest_median": 0.125,
+  "length_variety": 1.7696204553991943,
+  "variety_median": 1.5157895841746822,
+  "density": 0.9063745019920318,
+  "density_median": 1.0833333333333333
+ },
+ "stress": {
+  "stressed": 209,
+  "on_a_beat": 0.44976076555023925,
+  "on_1_or_3": 0.24880382775119617,
+  "unstressed_on_1_or_3": 0.17479674796747968
+ },
+ "intensity": {
+  "top": "Chorus 3",
+  "top_place": [
+   0.828,
+   0.938
+  ],
+  "release": [
+   [
+    "Tag",
+    0.86
+   ],
+   [
+    "Ending",
+    0.59
+   ]
+  ],
+  "choruses": [
+   [
+    "Chorus 1",
+    0.88
+   ],
+   [
+    "Chorus 2",
+    0.9
+   ],
+   [
+    "Chorus 3",
+    0.97
+   ]
+  ],
+  "each_return_higher": true,
+  "each_chorus_over_its_verse": true,
+  "verses": [
+   [
+    "Verse 1",
+    0.58
+   ],
+   [
+    "Verse 2",
+    0.72
+   ],
+   [
+    "Verse 3",
+    0.64
+   ]
+  ]
+ },
+ "breath": {
+  "silence_bar": 59,
+  "silence_place": 0.453,
+  "re_entry_bar": 91,
+  "re_entry_place": 0.703,
+  "re_entry": [
+   57,
+   "came",
+   "E"
+  ],
+  "rule": "the jam starts from silence (the form, B) and builds; verse 3 re-enters"
+ },
+ "perception": {
+  "low_interval_violations": {},
+  "low_examples": [],
+  "band_above_tune": 1.0,
+  "band_above_by_singer": {
+   "him": 1.0
+  },
+  "band_within_second": 0.13186813186813187,
+  "phrases": 43,
+  "phrase_median_s": 2.9464285714285716,
+  "phrase_range_s": [
+   1.9,
+   7.6
+  ],
+  "phrases_over_6s": 2,
+  "phrases_over_8s": 0
+ },
+ "channels": {
+  "chord_changes_per_bar": {
+   "Intro": 0.75,
+   "Verse 1": 1.0,
+   "Chorus 1": 1.33,
+   "Verse 2": 1.0,
+   "Chorus 2": 1.33,
+   "Bridge": 0.86,
+   "Jam": 0.75,
+   "Verse 3": 1.06,
+   "Chorus 3": 1.29,
+   "Tag": 1.17,
+   "Ending": 1.0
+  },
+  "distinct_chords": [
+   "A",
+   "B",
+   "Bm",
+   "C#m",
+   "D",
+   "E"
+  ],
+  "chromatic_chords": [
+   "Bm",
+   "D"
+  ],
+  "chromatic_share": null
+ }
+}
