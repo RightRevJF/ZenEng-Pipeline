@@ -42,3 +42,7 @@ LOG.append({"q": "after Part 21: add metre as Part 21, then start the genre rese
 LOG.append({"q": "genre study done: next", "options": {"A": "add as Part 22", "B": "read the eight sources found in reference lists first (van der Merwe, Kubik, Weisethaunet, Wagner, Moore, van der Bliek, Day-O'Connell, Stoia 2021)", "C": "something else"}, "recommended": "A", "answer": "B"})
 
 LOG.append({"q": "further reading added: next", "options": {"A": "add as Part 22", "B": "read the four new sources first (Titon, Curry 2015, Wagner 2004, Doll 2025)", "C": "something else"}, "recommended": "A", "answer": "A"})
+
+LOG.append({"q": "Part 22 added: next", "options": {"A": "stop the research and send the file to the maintainer", "B": "one more study: how melodies set English words (stress, vowels and high notes)", "C": "something else"}, "recommended": "A", "answer": "B", "note": "verbatim: 'B.  Then add everything to a final report for the maintainer'"})
+
+LOG.append({"q": "words study (in progress after B)", "answer": "delivered", "note": "Doc Setting words for Luthier v8 (https://claude.ai/artifact/4xcqBYhnS8uLAFCzeuqtA2); measurement in studies/words; then the final report for the maintainer as asked"})
