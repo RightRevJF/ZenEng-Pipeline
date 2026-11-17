@@ -56,3 +56,7 @@ LOG.append({"q": "keep researching (after B)", "answer": "done", "note": "second
 LOG.append({"q": "Part 23 extended: next", "options": {"A": "send the final report to the maintainer now", "B": "keep going on words: read Hayes and MacEachern, Temperley 2019, VanderStel and Temperley 2022, Proto and Dell", "C": "something else"}, "recommended": "A", "answer": "B"})
 
 LOG.append({"q": "keep going on words (after B)", "answer": "done", "note": "third round folded into Part 23 (Proto 2013 with Dell and Halle conditions, Temperley 2019 and 2021, VanderStel and Temperley 2022, Hayes and MacEachern 1998, Taniguchi); Pop20c measured by period (pop20c_test.py); final report rebuilt, 245 pages"})
+
+LOG.append({"q": "across the century added: next", "options": {"A": "send the final report to the maintainer now", "B": "keep going: read VanderStel and Temperley in full and measure the 20 post-2000 songs", "C": "something else"}, "recommended": "A", "answer": "B"})
+
+LOG.append({"q": "keep going (after B)", "answer": "done", "note": "fourth round folded into Part 23 as After 2000 (White 2022 manuscript, Condit-Schultz 2019); pop20c_rhythm.py measured rhythm by period with the post-2000 songs and songs 54 and 55; VanderStel and Temperley full paper not reachable; final report rebuilt, 246 pages"})

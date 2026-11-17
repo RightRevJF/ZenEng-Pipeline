@@ -32,9 +32,17 @@ md = md[:a] + """- `parse_words.py`: every sung syllable of CoCoPops Billboard a
 
 - `pop20c_test.py`: the same measures by period on the Pop20c corpus, 1900 to 1999.
 
-- `words_results.json`, `words_more_results.json` and `pop20c_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
+- `pop20c_rhythm.py`: melodic rhythm by period, with the post-2000 songs.
+
+- `words_results.json`, `words_more_results.json`, `pop20c_results.json` and `pop20c_rhythm_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
 if "Data: [CoCoPops]" not in md: md = md.replace("Data: CoCoPops, CC BY", "Data: [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops), CC BY", 1)
 md = re.sub(r"(?m)^### (\*\*)?(Sources read:|Checks for the port:|Measured:)(\*\*)?$", r"\2", md)
 md = md.replace("(Proto 2013)", "([Proto 2013](https://hispadoc.es/descarga/articulo/4147297.pdf))")
 md = re.sub(r"(\d{4})\u2013 (\d{4})", lambda m: m.group(1) + "\u2013" + m.group(2), md)
+md = re.sub(r"\n\n### (inside the word, not a lengthening rule\.)", lambda m: " " + m.group(1), md)
+# a table split across a page: the second half's broken header and wrapped cells
+i = md.find("|1980–1999 (17)|10%|")
+if i > 0:
+    j = md.find("\n", i); k = md.find("\n\nThe anticipation peaks", j)
+    md = md[:j] + "\n|2000–2019 (11)|11%|42%|13%|26%|6.1|\n|Song 54|13%|41%|13%|21%|4.2|\n|Song 55|12%|40%|15%|38%|4.4|" + md[k:] if "|Period|Notes on|" in md[j:k] else md
 open("words.md", "w").write(md); print("ok", md.count("data:image"))

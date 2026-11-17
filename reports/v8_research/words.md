@@ -1,4 +1,4 @@
-**Summary.** Luthier v7 already measures stress on the beat, line endings and vowels on held notes, but it set aside a rule for a word's pitch shape and any vowel table for men, and its songs put weak syllables on the downbeat. In 199 Billboard songs and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time, and a word's stressed syllable is lower than its other syllables in 18% to 20% of words. Songs 54 and 55 do both about twice as often (10% to 12%, and 34%), mostly through line openings like "And" and "But" on the bar line. On vowels, height alone barely matters; held high notes do, with men's held top notes open 61% of the time and reduced only 7%. v8 should grade its stress cost, give weak line openings a pickup, add a word-shape rule for pitch, and add a vowel rule for held high notes by voice, all as weights in Part 21's placement. A second round of reading adds two measured rules: stress and metre should move together between neighbouring syllables (song 54 opposes them 47% of the time across words, against 29% in the corpus), and words ending in a voiced consonant take longer notes (55% against 33%). Across the century (the Pop20c corpus, 1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles, so the downbeat band is fixed and the contour targets depend on era and style.
+**Summary.** Luthier v7 already measures stress on the beat, line endings and vowels on held notes, but it set aside a rule for a word's pitch shape and any vowel table for men, and its songs put weak syllables on the downbeat. In 199 Billboard songs and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time, and a word's stressed syllable is lower than its other syllables in 18% to 20% of words. Songs 54 and 55 do both about twice as often (10% to 12%, and 34%), mostly through line openings like "And" and "But" on the bar line. On vowels, height alone barely matters; held high notes do, with men's held top notes open 61% of the time and reduced only 7%. v8 should grade its stress cost, give weak line openings a pickup, add a word-shape rule for pitch, and add a vowel rule for held high notes by voice, all as weights in Part 21's placement. A second round of reading adds two measured rules: stress and metre should move together between neighbouring syllables (song 54 opposes them 47% of the time across words, against 29% in the corpus), and words ending in a voiced consonant take longer notes (55% against 33%). Across the century (the Pop20c corpus, 1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles, so the downbeat band is fixed and the contour targets depend on era and style. After 2000 melodies carry more notes a bar (about 6 against 4.8) and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it.
 
 ## What Luthier v7 does now
 
@@ -70,7 +70,7 @@ Vowels lose their identity as the sung pitch climbs toward the vowel's first res
 
 - **Where identification fails.** Above about C5 (523 Hz), listeners' identification of every vowel but /a/ falls toward chance ([Friedrichs et al.](https://discovery.ucl.ac.uk/id/eprint/10142399/1/Friedrichs_Manuscript_Revised_v2.pdf)). Smith and Scott (1980) found isolated soprano vowels above F5 lost half their intelligibility against C♯5, but with a raised larynx, as in popular styles, the drop between C♯5 and F5 was only 10% [(Collister and Huron 2008](https://d-scholarship.pitt.edu/19444/1/EMR000050a%2DCollister%2DHuron.pdf)).
 
-- **Men too, at their own pitches.** Chan and Kuang (JASA) played words sung by a soprano, mezzo, tenor and baritone from C2 to D6 to 102 listeners: identification declines as the fundamental approaches the first formant, sung vowels decline earlier than synthesized ones, AE and EH are easily confused, and IY is not safe when sung [(summary)](https://synapsesocial.com/papers/W7160911134). Its cause is both the singers' adjustments and the spectrum itself.
+**Men too, at their own pitches.** Chan and Kuang (JASA) played words sung by a soprano, mezzo, tenor and baritone from C2 to D6 to 102 listeners: identification declines as the fundamental approaches the first formant, sung vowels decline earlier than synthesized ones, AE and EH are easily confused, and IY is not safe when sung [(summary)](https://synapsesocial.com/papers/W7160911134). Its cause is both the singers' adjustments and the spectrum itself.
 
 - **What male belters do.** Six male music-theatre singers, recorded on [e] and [ɔ] at the top of their belt range (about 250 to 440 Hz, roughly B3 to A4), tuned the first resonance to the second harmonic in every quality ([Bourne et al. 2016)](https://isidore.science/document/10670/1.ih8oq6). Titze's belt examples modify toward /æ/, /a/ and a bright rounded vowel in the G4 to C5 range, and his instructor did not count /i/ as a belt vowel ([Titze)](https://vocology.utah.edu/_resources/documents/formant_frequency_shifts_titze.pdf).
 
@@ -169,6 +169,38 @@ Measured on Pop20c (the most popular song of each year, transcribed from recordi
 
 The weak-syllable floor on beat 1 holds in every period, so v8's band for it needs no era setting. The stressed syllable's place inside its word settles at about a fifth from the 1950s on. Stresses on offbeat eighths more than double, and the share of stress and metre moving against each other rises with them (it counts anticipations as opposed); that target has to be set by era and style. Songs 54 and 55's weak syllables on beat 1 (10% to 12%) exceed every period.
 
+## After 2000
+
+Since 2000 sung melody has got faster and more even: more notes to the bar, more sixteenths, fewer notes on the downbeat, and fewer of the anticipations that marked latecentury rock. Songs 54 and 55 already have a modern rhythm; what they lack is the word placement inside it.
+
+- **Faster, more even, more repetitive.** White (2022) compared 192 melodies from 1957–1997 with 24 hits from 2015–2019 ([manuscript)](https://par.nsf.gov/servlets/purl/10356498):
+
+   - Notes per second rose from 1.87 to 2.71, and notes per bar from about 4.3 to 6.8.
+
+   - Onsets are spread more evenly across the bar (entropy 0.81 to 0.89), with fewer on the downbeat and on the bar's last eighth.
+
+   - Four-note rhythm cells repeat much more (fit slope −4.2 to −6.9).
+
+   - The rap, hip-hop and trap songs deliver faster than the pop ones (3.6 against 2.5 notes per second); the author warns the genre split is statistically fragile.
+
+- **The late century, more syncopated than any songbook.** In 124 Billboard songs from 1958–1991, about 28% of all notes are onset syncopations under a broadened definition, and syncopations on the fourth position (anticipations) outnumber those on the second; ones followed by a rest are rare ([Condit-Schultz 2019)](https://www.osu.tests.sfulib4.publicknowledgeproject.org/index.php/EMR/article/view/7098/5459).
+
+- **The century's trend.** Syncopation rises throughout the century, the strong forms faster and later than the weak ([VanderStel and Temperley 2022)](https://x-mol.com/paper/1686891139678621696); the full paper was not reachable.
+
+Measured on Pop20c, rhythm only so the 20 post-2000 transcriptions (no lyrics) can join, turned into note lists by the corpus's own script; songs on a sixteenth grid; medians of songs ( `studies/words/pop20c_rhythm.py`):
+
+|Period (songs)|Notes on beat 1|Notes on offbeat eighths|Notes on sixteenths|Offbeat eighths that anticipate an empty beat|Notes per sung bar|
+|---|---|---|---|---|---|
+|1900–1929 (29)|21%|27%|1%|31%|3.3|
+|1930–1954 (12)|20%|35%|2%|44%|3.4|
+|1955–1979 (19)|17%|42%|2%|36%|3.6|
+|1980–1999 (17)|10%|41%|4%|53%|4.8|
+|2000–2019 (11)|11%|42%|13%|26%|6.1|
+|Song 54|13%|41%|13%|21%|4.2|
+|Song 55|12%|40%|15%|38%|4.4|
+
+The anticipation peaks in 1980–1999 and falls back after 2000 as sixteenths fill the gaps, as White found. Songs 54 and 55 sit between the late century and today on every rhythm measure; their problem is not the rhythm but which syllables it puts where (the sections above). Only 11 of the 20 post-2000 songs sit on a sixteenth grid, so that row is rough.
+
 ## What v8 should do
 
 Keep v7's word rules and add three: a graded cost for weak syllables on strong beats, a word-shape rule for pitch, and a vowel rule for held high notes by voice. Each fits Part 21's weighted placement, where a setting is the best compromise rather than a pass or a death.
@@ -195,6 +227,8 @@ Two more, from the further reading:
 
 - **Length follows the ending as well as the vowel.** In the placement score, a word ending in a voiced consonant leans to a longer note (about 55% against 33%), alongside v7's tense-vowel lean, which songs 54 and 55 currently invert. Fit the weights per style, as Hayes's speakers differ (Part 21's weighted placement).
 
+- **Set the rhythm targets by era.** Notes per bar, sixteenths and the anticipation rate change by era (about 4.8 notes a bar, 4% sixteenths and half of offbeat eighths anticipating in 1980–1999; about 6 notes a bar, 13% sixteenths and a quarter anticipating after 2000). The style's era should choose them; weak syllables stay off beat 1 in every era, and the word's pitch shape holds from the 1950s on.
+
 Checks for the port:
 
 - Rerun songs 54 and 55 and compare with the corpus bands above: weak syllables and function words on beat 1, word-internal pitch and length, weak-syllable peaks, vowels on held high notes.
@@ -215,7 +249,9 @@ In the repo, `studies/words/`:
 
 - `pop20c_test.py`: the same measures by period on the Pop20c corpus, 1900 to 1999.
 
-- `words_results.json`, `words_more_results.json` and `pop20c_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.
+- `pop20c_rhythm.py`: melodic rhythm by period, with the post-2000 songs.
+
+- `words_results.json`, `words_more_results.json`, `pop20c_results.json` and `pop20c_rhythm_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.
 
 Data: [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops), CC BY-NC 4.0, derived counts only; stress from the CMU Pronouncing Dictionary (via the `pronouncing` package) for Billboard. Luthier v7 Windows 25, 39, 69 and 98 and Module 10.19 for what the engine already does.
 
@@ -247,8 +283,6 @@ Sources read:
 
 - Titze, formant frequency shifts in belting [(PDF](https://vocology.utah.edu/_resources/documents/formant_frequency_shifts_titze.pdf)); Titze and Worley (2009), _JASA_ [(PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2757425)).
 
-- Nix (2004), "Vowel Modification Revisited" ([abstract)](https://ncvs.org/archive/pas/2004/abstracts/nix1.htm).
+Nix (2004), "Vowel Modification Revisited" ([abstract)](https://ncvs.org/archive/pas/2004/abstracts/nix1.htm).
 
-Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), "Comparing Musical Textsetting in French and in English Songs", abstract; de Castro Arrazola (2018), _Typological Tendencies in Verse and Their Cognitive Grounding_ , chapters 6 and 7; Tan, Lustig and Temperley (2019), "Anticipatory Syncopation in Rock: A Corpus Study", _Music Perception_ 36.4; White (2022), "A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music", _Journal of Mathematics and Music_ 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), "Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting", CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), "A Generative Textsetting Model", _Current Musicology_ 55; Henrich et al. (2011) on resonance tuning by voice type, _JASA_ . Third round (the section
-
-"Across the century"): Proto (2013), "Prominence Matching in English Songs: A Historical Perspective", Signa 22, with Dell and Halle's two conditions; Temperley (2019), "SecondPosition Syncopation in European and American Vocal Music", Empirical Musicology Review 14; Temperley (2021), "The Origins of Syncopation in American Popular Music", Popular Music 40, abstract; VanderStel and Temperley (2022), "The Evolution of Syncopation in Twentieth-Century American Popular Music", Journal of New Music Research 51, abstract, and their Pop20c corpus (github.com/vanderstel/pop-corpus; no licence stated, derived counts only); Hayes and MacEachern (1998), "Quatrain Form in English Folk Verse", Language 74, through Hayes's class notes; Taniguchi, sung word recognition, AMLaP abstract. Proto and Dell (2013) on Italian songs: abstract only (song rhythm is anchored in measured time and has more than two levels of prominence, unlike literary verse).
+Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), "Comparing Musical Textsetting in French and in English Songs", abstract; de Castro Arrazola (2018), _Typological Tendencies in Verse and Their Cognitive Grounding_ , chapters 6 and 7; Tan, Lustig and Temperley (2019), "Anticipatory Syncopation in Rock: A Corpus Study", _Music Perception_ 36.4; White (2022), "A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music", _Journal of Mathematics and Music_ 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), "Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting", CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), "A Generative Textsetting Model", _Current Musicology_ 55; Henrich et al. (2011) on resonance tuning by voice type, _JASA_ . Third round (the section "Across the century"): Proto (2013), "Prominence Matching in English Songs: A Historical Perspective", Signa 22, with Dell and Halle's two conditions; Temperley (2019), "SecondPosition Syncopation in European and American Vocal Music", Empirical Musicology Review 14; Temperley (2021), "The Origins of Syncopation in American Popular Music", Popular Music 40, abstract; VanderStel and Temperley (2022), "The Evolution of Syncopation in Twentieth-Century American Popular Music", Journal of New Music Research 51, abstract, and their Pop20c corpus (github.com/vanderstel/pop-corpus; no licence stated, derived counts only); Hayes and MacEachern (1998), "Quatrain Form in English Folk Verse", Language 74, through Hayes's class notes; Taniguchi, sung word recognition, AMLaP abstract. Fourth round (the section "After 2000"): White (2022), the manuscript of "A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music" (par.nsf.gov); Condit-Schultz (2019), "Expanding and Contracting Definitions of Syncopation: Commentary on Temperley 2019", Empirical Musicology Review 14; the Pop20c post-2000 transcriptions. VanderStel and Temperley (2022) in full was not reachable. Proto and Dell (2013) on Italian songs: abstract only (song rhythm is anchored in measured time and has more than two levels of prominence, unlike literary verse).
