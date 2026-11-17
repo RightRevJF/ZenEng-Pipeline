@@ -94,11 +94,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-28" id="toc-part-28">Part 28. Tempo, feel and song length for Luthier v8: by era and genre</a></li>
 <li><a href="#part-29" id="toc-part-29">Part 29. Instrumental solos and breaks for Luthier v8</a></li>
 <li><a href="#part-30" id="toc-part-30">Part 30. The hook for Luthier v8: what makes a chorus stick</a></li>
+<li><a href="#part-31" id="toc-part-31">Part 31. What arXiv adds for Luthier v8: a pass across the research topics</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
 <p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with thirteen research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament, key-choice, tempo, solo and hook writers v8 needs (Parts 17 to 29). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 30 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo, studies/solos and studies/hooks), for anyone with access. This page does not depend on it.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 31 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo, studies/solos and studies/hooks), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -232,6 +233,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-30">30</a></td>
 <td>The hook for Luthier v8: what makes a chorus stick (recognition research, chorus against verse in 22,407 sections, the fastest-recognised songs, where titles go, eleven new lines of work)</td>
 </tr>
+<tr class="odd">
+<td><a href="#part-31">31</a></td>
+<td>What arXiv adds for Luthier v8: a pass across the research topics (no rule reversed; Chordonomicon; a long-note band; skip and replay curves)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -260,6 +265,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Tempo, feel and length (Part 28).</strong> v7 has one tempo figure (104 bpm, all eras), channel design specs, a fixed 2:1 shuffle and no length band. Top-five hits ran 116 bpm in the 1960s, 91 in the 1990s (a third under 80) and 108 since 2010; R&amp;B is the slow genre, minor-key hits are not slower, and a fifth of hits sit in the 80 to 95 zone v7 says to avoid. 12/8 was a third of 1950s hits and has vanished; tempo has been steady since click tracks. Swing ratio depends on tempo (about 3.5:1 slow, 2:1 medium, near straight fast). Hit length went from 2:31 (early 1960s) to 4:12 (late 1980s) and back to about 3:15. v8 should read tempo, feel and length bands from the chosen era and style and render swing by tempo.</p></li>
 <li><p><strong>Solos and breaks (Part 29).</strong> v7 writes the instrument around the voice but has no solo. In 739 Billboard songs the share with a solo grew from 22% (1958 to 1964) to 46% (1985 to 1991), and declined after with hip-hop’s rise; a solo is about 8 bars and 20 seconds, starts just past the middle (0.45 to 0.65), usually follows the second chorus and leads into the last verse or chorus, and plays its own chords half the time. Short links of 4 to 8 bars are nearly universal. v8 should write two kinds of instrumental section, link and solo, with bands for length, place and material and a solo default by era and style.</p></li>
 <li><p><strong>The hook (Part 30).</strong> v7 has more hook theory than any other area but never tested a hook against recognition, and its strength indicators reward an unusual interval. The research that measured memory (the Hooked game) found the voice, typical sound and melody, and repetition made sections recognisable; distinctiveness did not. In 22,407 Hooktheory sections a chorus is mainly higher than its verse, only a little more repetitive and no more typical; the 14 fastest-recognised songs’ choruses sit at the 81st percentile for typical cells and the 33rd for interval variety. Titles in 156 Billboard hits: in the chorus in 87%, about twice a chorus and 8 times a song, in its first line more often than its last. Songs 52 to 56 have choruses at the 1st to 6th percentile for repeating themselves. v8 should score typicality instead of an unusual interval, make the chorus repeat its own cell, place the title as hits do, and carry identity in rhythm.</p></li>
+<li><p><strong>What arXiv adds (Part 31).</strong> A pass over arXiv and PsyArXiv for all 13 research topics found no paper that reverses a rule in Parts 18 to 30. One real miss: Chordonomicon, 666,000+ songs’ chords with sections, genres and dates, public but not downloadable from the research workspace; it could retest harmony, chromatic chords and keys at about 900 times McGill’s size. Two additions: long notes on stressed syllables at least 75% of the time (human lyrics 73% to 82%; songs 54 and 56 at 65% and 68%), and a floor on predictability (elevator-music covers are rated less pleasurable than the originals).</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -15584,6 +15590,233 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p><a href="https://csmonitor.com/Science/2014/1101/Catchiest-song-of-all-time-A-Spice-Girls-tune-say-British-scientists">Hooked on Music top 20, Christian Science Monitor, November 2014</a></p></li>
 </ul>
 <p>arXiv: <a href="https://arxiv.org/abs/2405.12847v1">2405.12847,</a> <a href="https://arxiv.org/abs/2505.19429v1">2505.19429,</a> <a href="https://arxiv.org/abs/2309.06102v1">2309.06102,</a> <a href="https://arxiv.org/pdf/2209.00182">2209.00182,</a> <a href="https://arxiv.org/abs/2410.19540">2410.19540</a>, <a href="https://arxiv.org/abs/2205.14700">2205.14700,</a> <a href="https://arxiv.org/pdf/2502.08122v1">2502.08122;</a> <a href="https://papers.neurips.cc/paper_files/paper/2023/file/7f880e3a325b06e3601af1384a653038-Paper-Datasets_and_Benchmarks.pdf">Mr. HiSum (NeurIPS 2023)</a></p>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-31">Part 31. What arXiv adds for Luthier v8: a pass across the research topics</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/2Bb4nWLjQY3B6tXjUyN6nF">What arXiv adds for Luthier v8: a pass across the research topics</a>.</p>
+<h3 id="summary">Summary</h3>
+<p>arXiv adds tools and data, not corrections. Across the 13 topics no paper reverses a rule in Parts 18 to 30, so a full redo of every research round is not warranted.</p>
+<ul>
+<li><p><strong>One real miss:</strong> Chordonomicon, 666,000+ songs’ chords with sections, genres and dates. It was skipped earlier as unavailable; it is public, but its file host is blocked from this workspace. It could retest harmony, chromatic chords and keys at about 900 times McGill’s size.</p></li>
+<li><p><strong>Two small additions:</strong> a long-note band for word setting (songs 54 and 56 fall short of it), and a floor on predictability (elevator music).</p></li>
+<li><p><strong>Outcome signals:</strong> Spotify’s skip curves (skips cluster at the start and at transitions) and YouTube’s replay curves, both measuring listeners moment by moment.</p></li>
+<li><p><strong>Tools:</strong> Python versions of the standard melodic features and of IDyOM, to check the studies’ own measures.</p></li>
+</ul>
+<p>Most music-psychology and music-theory work, which the earlier parts rest on, is published outside arXiv, so its absence there is expected.</p>
+<h3 id="how-the-pass-was-done">1. How the pass was done</h3>
+<p>Each of the 13 research topics behind Parts 18 to 30 was searched on arXiv, with PsyArXiv and the ISMIR archive where arXiv was thin, for papers mostly from 2022 to 2026. A paper counts only if it changes a rule in Parts 18 to 30, adds data the engine could use, or gives a better way to measure an outcome. Papers on audio generation, voice cloning or model training alone are noted once and skipped.</p>
+<p>The workspace cannot query arXiv’s own search, so the pass uses web search restricted to arXiv and reads the papers it returns. That means a paper with unusual wording can be missed; each topic got at least two different searches to reduce that.</p>
+<h3 id="topic-by-topic">2. Topic by topic</h3>
+<p>No arXiv paper reverses a rule in Parts 18 to 30. Most of what arXiv holds on these topics is generation methods; the useful part is data, tools and outcome measures.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic (Part)</th>
+<th>What arXiv adds</th>
+<th>Changes a rule?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Harmony (18)</td>
+<td><a href="https://arxiv.org/abs/2410.22046">Chordonomicon:</a>over 666,000 songs’ chord progressions with section labels, genre, release date and Spotify IDs. <a href="https://arxiv.org/html/2601.02099">BeatlesFC</a>:harmonic-function labels for the Beatles (predominant 16.5%, dominant 13.2% of chords)</td>
+<td>Not yet. Chordonomicon could retest Part 18 at about 900 times McGill’s size (section 3)</td>
+</tr>
+<tr class="even">
+<td>The band (19)</td>
+<td>Accompaniment and texture generators ( <a href="https://arxiv.org/pdf/2108.11213v1">AccoMontage,</a> <a href="https://arxiv.org/html/2409.11753">METEOR,</a> <a href="https://arxiv.org/html/2405.09901v1">whole-song hierarchical generation</a>); no new corpus statistics</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Tension (20)</td>
+<td>A tension model on tonal interval vectors steered generation and passed a listening test ( 2511.19342); learned chord embeddings compared with human tension ratings ( 2609.36460)</td>
+<td>No; a second tension reader to check Part 20’s against</td>
+</tr>
+<tr class="even">
+<td>Metre above the bar (21)</td>
+<td>Models that find 2-, 4-, 8- and 16-bar hypermeter in MIDI ( <a href="https://arxiv.org/pdf/2209.10259">2209.10259,</a> <a href="https://arxiv.org/pdf/2210.17183">2210.17183</a>); over half of POP909’s phrases repeat at once( <a href="https://arxiv.org/pdf/2209.00182">2209.00182</a>)</td>
+<td>No; confirms, and gives a check for our songs</td>
+</tr>
+<tr class="odd">
+<td>Melody by genre (22)</td>
+<td>Melodic diversity shaped by information and motor limits across cultures ( 2408.12635); melody and rhythm compared in 27,628 songs from 59 countries ( 2605.05982); a Python package of the standard melodic features ( <a href="https://arxiv.org/html/2608.19061">2608.19061)</a></td>
+<td>No; the package could replace our own feature code</td>
+</tr>
+<tr class="even">
+<td>Setting words (23)</td>
+<td>In human-written lyrics, syllable stress tracks metric strength, melodic peaks and note length; one version of the paper puts long notes on stressed syllables 73% of the time, another 82% ( <a href="https://arxiv.org/html/2307.02146v1">LOAF-M2L)</a></td>
+<td>Adds a band (below)</td>
+</tr>
+<tr class="odd">
+<td>Harmony voices (24)</td>
+<td>Voice separation and an automatic four-part vocal harmonizer ( <a href="https://arxiv.org/pdf/2506.18143">2506.18143)</a></td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Song edges (25)</td>
+<td>Spotify skips follow one shape: most skips come in the first seconds, with spikes at transitions such as a chorus starting or a voice entering, and a rise near the end that is not universal ( <a href="https://arxiv.org/html/2005.06987">Donier 2020)</a></td>
+<td>No; supports Part 25’s short intros and early voice</td>
+</tr>
+<tr class="odd">
+<td>Ornament (26)</td>
+<td>Singing-technique labels in 168 J-pop songs ( 2210.17367)and a nine-language technique corpus ( <a href="https://arxiv.org/html/2409.13832v8">GTSinger)</a></td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Key (27)</td>
+<td>Little: keys skew major in high-valence clips ( 2407.20176)</td>
+<td>No</td>
+</tr>
+<tr class="odd">
+<td>Tempo and length (28)</td>
+<td>Number-one songs have tripled their chart lifetime since the 1960s ( <a href="https://arxiv.org/pdf/2405.07574v1">2405.07574</a>); Hot 100 songs’ complexity sits closer to the mean than random songs’ ( <a href="https://arxiv.org/pdf/1907.04292">1907.04292)</a></td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Solos (29)</td>
+<td>Large guitar tablature sets ( <a href="https://ar5iv.labs.arxiv.org/html/2107.14653">DadaGP,</a> <a href="https://arxiv.org/pdf/2509.22655">GOAT</a>)</td>
+<td>No; DadaGP could give solo note statistics Part 29 lacked</td>
+</tr>
+<tr class="odd">
+<td>The hook (30)</td>
+<td>Covered in Part 30 (replay curves, memorability, hook labels)</td>
+<td>Already in Part 30</td>
+</tr>
+<tr class="even">
+<td>Surprise (Part 8, for completeness)</td>
+<td>A Python reimplementation of IDyOM ( GraphIDyOM); surprisal from a diffusion model shows the inverted U with liking ( <a href="https://arxiv.org/pdf/2310.03500">2310.03500)</a></td>
+<td>No; a check on our own surprise model</td>
+</tr>
+</tbody>
+</table>
+<p>One PsyArXiv study is worth a line: elevator-music covers of popular songs were rated less pleasurable, surprising and arousing than the originals <a href="https://osf.io/preprints/psyarxiv/xqs8b_v1">(PsyArXiv xqs8b</a>). Predictable wins (Parts 8 and 30), but there is a floor; Part 30’s target of the 75th percentile for typical cells, not the 100th, keeps clear of it.</p>
+<h3 id="datasets-and-outcome-signals-arxiv-points-to">3. Datasets and outcome signals arXiv points to</h3>
+<p>The real miss is one dataset. Chordonomicon was set aside earlier because its local folder was empty; arXiv shows it is public, with section labels, genres and dates. Its file host is blocked from this workspace, so it needs another route.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resource</th>
+<th>What it holds</th>
+<th>Would retest</th>
+<th>Reachable here?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Chordonomicon</td>
+<td>666,000+ songs’ chords (about 52 million chords), with verse, chorus, bridge and other parts, genre, release date and Spotify IDs; 1.3 GB, CC BY-NC</td>
+<td>Part 18 (harmony by section), Part 14 (chromatic chords by genre), Part 27 (keys by genre and era), all at a scale McGill’s 739 songs cannot reach</td>
+<td>No: the Hugging Face file host refused the download (policy block)</td>
+</tr>
+<tr class="even">
+<td>SongFormDB</td>
+<td>Song structure labels for over 14,000 songs</td>
+<td>Part 25 (edges), Part 21 (section lengths)</td>
+<td>Not tried</td>
+</tr>
+<tr class="odd">
+<td>FaiSonic MMD</td>
+<td>500 songs (250 English) with phrases, sections, chords and beats on the recordings</td>
+<td>Part 21 (phrase lengths)</td>
+<td>Not tried</td>
+</tr>
+<tr class="even">
+<td>DadaGP</td>
+<td>Tokenised GuitarPro songs, solos included</td>
+<td>Part 29 (solo melody)</td>
+<td>Not tried</td>
+</tr>
+<tr class="odd">
+<td><a href="https://arxiv.org/html/2210.17367v2">J-pop singing techniques</a></td>
+<td>168 songs with timed technique labels</td>
+<td>Part 26 (ornament rates)</td>
+<td>Not tried</td>
+</tr>
+<tr class="even">
+<td>YouTube “most replayed” (Rhapsody)</td>
+<td>A 100-step replay curve per popular video</td>
+<td>Parts 9 and 30 (moments and hooks)</td>
+<td>No (YouTube pages)</td>
+</tr>
+<tr class="odd">
+<td>Spotify skip curves (Donier 2020)</td>
+<td>The shape of skipping through a song</td>
+<td>Part 25</td>
+<td>Published curves only</td>
+</tr>
+</tbody>
+</table>
+<p>The tools are smaller wins: a Python package of standard melodic features <a href="https://arxiv.org/html/2608.19061">(2608.19061</a>) and a Python IDyOM (<a href="https://arxiv.org/html/2607.25787">2607.25787)</a> would let the studies’ homemade measures be checked against the field’s standard ones.</p>
+<h3 id="what-changes-in-parts-18-to-30">4. What changes in Parts 18 to 30</h3>
+<p>Two small additions now, three retests later. Nothing already written needs correcting.</p>
+<h4 id="now">Now</h4>
+<ol type="1">
+<li><p><strong>Part 23, a long-note band.</strong> Human lyrics put most long notes on stressed syllables (73% to 82% in the two versions of LOAF-M2L). Read the same way here (notes at least 1.5 times the song’s median length): song 54 puts 65% of its long notes on stressed syllables, song 55 77%, song 56 68%. Two of three sit below the band. Check for v8: at least 75% of long notes on stressed syllables, reported per section. The paper’s own definition of a long note may differ, so the band is approximate.</p></li>
+<li><p><strong>Parts 8 and 30, a floor on predictability.</strong> The elevator-music result supports keeping the typicality target at the 75th percentile rather than pushing it higher.</p></li>
+</ol>
+<h4 id="later-each-needing-data-this-workspace-cannot-fetch">Later, each needing data this workspace cannot fetch</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Retest</th>
+<th>Data</th>
+<th>What it would settle</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Parts 18, 14 and 27 at scale</td>
+<td><a href="https://arxiv.org/html/2410.22046">Chordonomicon</a></td>
+<td>Whether harmony by section, chromatic use and key choice hold by genre and decade across 666,000 songs</td>
+</tr>
+<tr class="even">
+<td>Part 29’s solo melody</td>
+<td>DadaGP</td>
+<td>How solo lines move: range, speed, repetition, bends</td>
+</tr>
+<tr class="odd">
+<td>Parts 9 and 30 on replays</td>
+<td>YouTube’s replay curves</td>
+<td>Which moments and hooks listeners go back to, for thousands of songs</td>
+</tr>
+</tbody>
+</table>
+<h4 id="for-the-fix-list-if-added">For the fix list (if added)</h4>
+<ul>
+<li><p><strong>Long notes on stressed syllables:</strong> Problem: songs 54 and 56 put a third of their long notes on unstressed syllables. Fix: a gate of at least 75% per section. Check: songs 52 to 56 rerun.</p></li>
+<li><p><strong>Chordonomicon retest:</strong> a study, not a fix; logged so v8’s harmony tables can be checked at scale once the data is reachable.</p></li>
+</ul>
+<h3 id="sources">5. Sources</h3>
+<p>All papers are linked where they are used in sections 2 to 4. The main ones:</p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2410.22046">Chordonomicon (arXiv 2410.22046)</a> and its <a href="https://huggingface.co/datasets/ailsntua/Chordonomicon">Hugging Face page</a></p></li>
+<li><p><a href="https://arxiv.org/html/2005.06987">Donier 2020, The universality of skipping behaviours on music streaming platforms (arXiv 2005.06987)</a></p></li>
+<li><p><a href="https://arxiv.org/html/2307.02146v1">LOAF-M2L (arXiv 2307.02146)</a></p></li>
+<li><p><a href="https://arxiv.org/abs/2505.19429v1">Rhapsody (arXiv 2505.19429)</a></p></li>
+<li><p>SongFormer and <a href="https://arxiv.org/abs/2510.02797">SongFormDB</a> (arXiv 2510.02797)</p></li>
+<li><p><a href="https://arxiv.org/html/2611.13503">FaiSonic MMD</a> (arXiv 2611.13503)</p></li>
+<li><p><a href="https://ar5iv.labs.arxiv.org/html/2107.14653">DadaGP</a> (arXiv 2107.14653)</p></li>
+<li><p><a href="https://arxiv.org/html/2608.19061">Computational features for symbolic melody analysis (arXiv 2608.19061);</a> <a href="https://arxiv.org/html/2607.25787">GraphIDyOM (arXiv 2607.25787)</a></p></li>
+<li><p><a href="https://osf.io/preprints/psyarxiv/xqs8b_v1">Elevator music as a tool for the quantitative characterization of reward (PsyArXiv)</a></p></li>
+<li><p>Songs 54 to 56’s long notes: read from songs/p64 to p66 song_record.pkl</p></li>
+</ul>
 
 <a class="top" href="#start">Top</a>
 </body>
