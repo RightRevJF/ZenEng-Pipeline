@@ -1,0 +1,1359 @@
+{
+ "clips": 22407,
+ "songs": 13441,
+ "sections": {
+  "chorus": 7509,
+  "verse": 5727,
+  "pre-chorus": 1321,
+  "verse and pre-chorus": 706,
+  "intro and verse": 967,
+  "chorus lead-out": 301,
+  "intro": 2572,
+  "bridge": 1055,
+  "solo": 418,
+  "pre-chorus and chorus": 482,
+  "instrumental": 755,
+  "outro": 464,
+  "other": 130
+ },
+ "chorus_vs_verse": {
+  "songs": 2839,
+  "density": {
+   "median_diff": -0.0188,
+   "mean_diff": -0.0298,
+   "higher_pct": 47.0,
+   "ties_pct": 2.5,
+   "p": 0.0018243672872143245,
+   "effect_iqr": -0.031,
+   "n": 2839
+  },
+  "range": {
+   "median_diff": 0.0,
+   "mean_diff": 0.305,
+   "higher_pct": 53.6,
+   "ties_pct": 11.9,
+   "p": 0.0004002101031436935,
+   "effect_iqr": 0.0,
+   "n": 2839
+  },
+  "mean_pitch": {
+   "median_diff": 1.5256,
+   "mean_diff": 1.6024,
+   "higher_pct": 66.8,
+   "ties_pct": 0.2,
+   "p": 4.8315253577868535e-73,
+   "effect_iqr": 0.193,
+   "n": 2839
+  },
+  "i_entropy": {
+   "median_diff": 0.0012,
+   "mean_diff": 0.0076,
+   "higher_pct": 50.2,
+   "ties_pct": 0.1,
+   "p": 0.8363605139924767,
+   "effect_iqr": 0.002,
+   "n": 2839
+  },
+  "recurrence": {
+   "median_diff": 0.0322,
+   "mean_diff": 0.0435,
+   "higher_pct": 55.5,
+   "ties_pct": 2.3,
+   "p": 8.486209573141103e-09,
+   "effect_iqr": 0.06,
+   "n": 2839
+  },
+  "convention": {
+   "median_diff": -0.1152,
+   "mean_diff": -0.128,
+   "higher_pct": 46.4,
+   "ties_pct": 0.1,
+   "p": 0.00013705086484856212,
+   "effect_iqr": -0.068,
+   "n": 2839
+  },
+  "ic_mean": {
+   "median_diff": 0.063,
+   "mean_diff": 0.0604,
+   "higher_pct": 54.1,
+   "ties_pct": 0.1,
+   "p": 1.200001724791459e-05,
+   "effect_iqr": 0.076,
+   "n": 2839
+  },
+  "h_mean": {
+   "median_diff": 0.0068,
+   "mean_diff": 0.0052,
+   "higher_pct": 52.0,
+   "ties_pct": 0.1,
+   "p": 0.03079664537740024,
+   "effect_iqr": 0.039,
+   "n": 2839
+  },
+  "top_cell_n": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0067,
+   "higher_pct": 51.1,
+   "ties_pct": 28.0,
+   "p": 0.34155347317534507,
+   "effect_iqr": 0.0,
+   "n": 2839
+  },
+  "top_cell_cover": {
+   "median_diff": 0.0106,
+   "mean_diff": 0.0129,
+   "higher_pct": 53.9,
+   "ties_pct": 1.8,
+   "p": 5.0336651539277087e-05,
+   "effect_iqr": 0.068,
+   "n": 2839
+  },
+  "top_cell_pos": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0013,
+   "higher_pct": 49.3,
+   "ties_pct": 28.4,
+   "p": 0.5202230415757311,
+   "effect_iqr": 0.0,
+   "n": 2839
+  },
+  "up_rhythm": {
+   "median_diff": 0.0,
+   "mean_diff": -0.1406,
+   "higher_pct": 46.1,
+   "ties_pct": 22.8,
+   "p": 0.0004051116345584816,
+   "effect_iqr": 0.0,
+   "n": 2753
+  },
+  "up_pitch": {
+   "median_diff": 0.0,
+   "mean_diff": -0.1742,
+   "higher_pct": 47.4,
+   "ties_pct": 16.4,
+   "p": 0.016549792937133028,
+   "effect_iqr": 0.0,
+   "n": 2660
+  },
+  "opens_down": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0553,
+   "higher_pct": 57.9,
+   "ties_pct": 65.0,
+   "p": 7.036093065341606e-07,
+   "effect_iqr": 0.0,
+   "n": 2839
+  },
+  "n": {
+   "median_diff": -1.0,
+   "mean_diff": -1.6154,
+   "higher_pct": 47.1,
+   "ties_pct": 2.4,
+   "p": 0.0020820222396027294,
+   "effect_iqr": -0.034,
+   "n": 2839
+  },
+  "beats": {
+   "median_diff": 0.0,
+   "mean_diff": -0.4052,
+   "higher_pct": 51.1,
+   "ties_pct": 36.6,
+   "p": 0.3703012234403591,
+   "effect_iqr": 0.0,
+   "n": 2839
+  }
+ },
+ "prechorus_vs_verse": {
+  "songs": 871,
+  "density": {
+   "median_diff": -0.0226,
+   "mean_diff": -0.0173,
+   "higher_pct": 47.7,
+   "ties_pct": 1.7,
+   "p": 0.18250119963247213,
+   "effect_iqr": -0.038,
+   "n": 871
+  },
+  "range": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0551,
+   "higher_pct": 52.2,
+   "ties_pct": 10.6,
+   "p": 0.22313304158914546,
+   "effect_iqr": 0.0,
+   "n": 871
+  },
+  "mean_pitch": {
+   "median_diff": 1.2963,
+   "mean_diff": 1.3484,
+   "higher_pct": 63.7,
+   "ties_pct": 0.5,
+   "p": 7.320594998781624e-16,
+   "effect_iqr": 0.153,
+   "n": 871
+  },
+  "i_entropy": {
+   "median_diff": -0.0376,
+   "mean_diff": -0.0409,
+   "higher_pct": 46.6,
+   "ties_pct": 0.5,
+   "p": 0.04880065181687544,
+   "effect_iqr": -0.062,
+   "n": 871
+  },
+  "recurrence": {
+   "median_diff": -0.0744,
+   "mean_diff": -0.0727,
+   "higher_pct": 37.1,
+   "ties_pct": 2.2,
+   "p": 4.544026910832217e-14,
+   "effect_iqr": -0.154,
+   "n": 871
+  },
+  "convention": {
+   "median_diff": -0.0778,
+   "mean_diff": -0.0928,
+   "higher_pct": 47.1,
+   "ties_pct": 0.5,
+   "p": 0.08943293161098045,
+   "effect_iqr": -0.046,
+   "n": 871
+  },
+  "ic_mean": {
+   "median_diff": 0.0791,
+   "mean_diff": 0.1095,
+   "higher_pct": 56.6,
+   "ties_pct": 0.5,
+   "p": 0.00010580378070627627,
+   "effect_iqr": 0.094,
+   "n": 871
+  },
+  "h_mean": {
+   "median_diff": 0.0136,
+   "mean_diff": 0.0184,
+   "higher_pct": 54.3,
+   "ties_pct": 0.5,
+   "p": 0.011921513734462149,
+   "effect_iqr": 0.079,
+   "n": 871
+  },
+  "top_cell_n": {
+   "median_diff": 0.0,
+   "mean_diff": -0.4604,
+   "higher_pct": 36.6,
+   "ties_pct": 25.3,
+   "p": 6.867486551501555e-12,
+   "effect_iqr": 0.0,
+   "n": 871
+  },
+  "top_cell_cover": {
+   "median_diff": 0.0095,
+   "mean_diff": 0.0185,
+   "higher_pct": 53.4,
+   "ties_pct": 2.2,
+   "p": 0.05078099871358057,
+   "effect_iqr": 0.062,
+   "n": 871
+  },
+  "top_cell_pos": {
+   "median_diff": 0.0,
+   "mean_diff": -0.0011,
+   "higher_pct": 46.9,
+   "ties_pct": 28.5,
+   "p": 0.12783222536514663,
+   "effect_iqr": 0.0,
+   "n": 871
+  },
+  "up_rhythm": {
+   "median_diff": 0.0,
+   "mean_diff": -0.2009,
+   "higher_pct": 46.5,
+   "ties_pct": 22.0,
+   "p": 0.0797599761458316,
+   "effect_iqr": 0.0,
+   "n": 846
+  },
+  "up_pitch": {
+   "median_diff": 0.0,
+   "mean_diff": -0.3473,
+   "higher_pct": 45.9,
+   "ties_pct": 16.1,
+   "p": 0.03815652685069743,
+   "effect_iqr": 0.0,
+   "n": 809
+  },
+  "opens_down": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0448,
+   "higher_pct": 56.7,
+   "ties_pct": 66.4,
+   "p": 0.026251064730808262,
+   "effect_iqr": 0.0,
+   "n": 871
+  },
+  "n": {
+   "median_diff": -9.0,
+   "mean_diff": -10.3318,
+   "higher_pct": 34.6,
+   "ties_pct": 2.2,
+   "p": 2.001028678172328e-19,
+   "effect_iqr": -0.321,
+   "n": 871
+  },
+  "beats": {
+   "median_diff": 0.0,
+   "mean_diff": -8.5626,
+   "higher_pct": 25.9,
+   "ties_pct": 34.9,
+   "p": 2.0222011557829714e-31,
+   "effect_iqr": 0.0,
+   "n": 871
+  }
+ },
+ "intro_vs_verse": {
+  "songs": 1026,
+  "density": {
+   "median_diff": 0.125,
+   "mean_diff": 0.2399,
+   "higher_pct": 60.8,
+   "ties_pct": 1.7,
+   "p": 8.742122417205009e-12,
+   "effect_iqr": 0.186,
+   "n": 1026
+  },
+  "range": {
+   "median_diff": 0.0,
+   "mean_diff": 0.654,
+   "higher_pct": 50.2,
+   "ties_pct": 9.4,
+   "p": 0.9216423607763701,
+   "effect_iqr": 0.0,
+   "n": 1026
+  },
+  "mean_pitch": {
+   "median_diff": 0.172,
+   "mean_diff": -0.0105,
+   "higher_pct": 50.7,
+   "ties_pct": 0.1,
+   "p": 0.6619244473642976,
+   "effect_iqr": 0.02,
+   "n": 1026
+  },
+  "i_entropy": {
+   "median_diff": -0.0811,
+   "mean_diff": -0.147,
+   "higher_pct": 44.8,
+   "ties_pct": 0.4,
+   "p": 0.0010122838249331954,
+   "effect_iqr": -0.126,
+   "n": 1026
+  },
+  "recurrence": {
+   "median_diff": 0.1272,
+   "mean_diff": 0.156,
+   "higher_pct": 63.5,
+   "ties_pct": 2.2,
+   "p": 9.693997838509631e-18,
+   "effect_iqr": 0.223,
+   "n": 1026
+  },
+  "convention": {
+   "median_diff": -0.2787,
+   "mean_diff": -0.1997,
+   "higher_pct": 42.0,
+   "ties_pct": 0.3,
+   "p": 3.87009088886116e-07,
+   "effect_iqr": -0.153,
+   "n": 1026
+  },
+  "ic_mean": {
+   "median_diff": 0.2421,
+   "mean_diff": 0.3176,
+   "higher_pct": 61.2,
+   "ties_pct": 0.2,
+   "p": 6.670086638866794e-13,
+   "effect_iqr": 0.257,
+   "n": 1026
+  },
+  "h_mean": {
+   "median_diff": 0.0475,
+   "mean_diff": 0.0456,
+   "higher_pct": 61.7,
+   "ties_pct": 0.2,
+   "p": 6.25073160523172e-14,
+   "effect_iqr": 0.257,
+   "n": 1026
+  },
+  "top_cell_n": {
+   "median_diff": 0.0,
+   "mean_diff": 1.229,
+   "higher_pct": 58.5,
+   "ties_pct": 19.9,
+   "p": 1.1776648762368698e-06,
+   "effect_iqr": 0.0,
+   "n": 1026
+  },
+  "top_cell_cover": {
+   "median_diff": 0.0909,
+   "mean_diff": 0.1237,
+   "higher_pct": 71.3,
+   "ties_pct": 1.4,
+   "p": 4.042906085451801e-43,
+   "effect_iqr": 0.5,
+   "n": 1026
+  },
+  "top_cell_pos": {
+   "median_diff": 0.0,
+   "mean_diff": -0.0137,
+   "higher_pct": 44.1,
+   "ties_pct": 31.5,
+   "p": 0.0019625375155725468,
+   "effect_iqr": 0.0,
+   "n": 1026
+  },
+  "up_rhythm": {
+   "median_diff": 0.0,
+   "mean_diff": 0.2172,
+   "higher_pct": 50.8,
+   "ties_pct": 19.2,
+   "p": 0.6692523474399261,
+   "effect_iqr": 0.0,
+   "n": 976
+  },
+  "up_pitch": {
+   "median_diff": 0.0,
+   "mean_diff": -0.2793,
+   "higher_pct": 42.7,
+   "ties_pct": 14.4,
+   "p": 3.858263727168588e-05,
+   "effect_iqr": 0.0,
+   "n": 931
+  },
+  "opens_down": {
+   "median_diff": 0.0,
+   "mean_diff": 0.2076,
+   "higher_pct": 76.2,
+   "ties_pct": 60.3,
+   "p": 4.733384871377194e-27,
+   "effect_iqr": 0.0,
+   "n": 1026
+  },
+  "n": {
+   "median_diff": -9.0,
+   "mean_diff": -6.4795,
+   "higher_pct": 37.2,
+   "ties_pct": 2.0,
+   "p": 4.688752835133195e-16,
+   "effect_iqr": -0.29,
+   "n": 1026
+  },
+  "beats": {
+   "median_diff": -16.0,
+   "mean_diff": -14.0719,
+   "higher_pct": 22.6,
+   "ties_pct": 22.2,
+   "p": 5.953160694581784e-57,
+   "effect_iqr": -0.5,
+   "n": 1026
+  }
+ },
+ "chorus_vs_prechorus": {
+  "songs": 949,
+  "density": {
+   "median_diff": 0.0156,
+   "mean_diff": 0.0009,
+   "higher_pct": 51.9,
+   "ties_pct": 1.6,
+   "p": 0.2520986967176759,
+   "effect_iqr": 0.025,
+   "n": 949
+  },
+  "range": {
+   "median_diff": 0.0,
+   "mean_diff": 0.6006,
+   "higher_pct": 55.2,
+   "ties_pct": 13.1,
+   "p": 0.0034253077539881994,
+   "effect_iqr": 0.0,
+   "n": 949
+  },
+  "mean_pitch": {
+   "median_diff": 1.1292,
+   "mean_diff": 1.1736,
+   "higher_pct": 62.3,
+   "ties_pct": 0.5,
+   "p": 4.1538963514013836e-14,
+   "effect_iqr": 0.152,
+   "n": 949
+  },
+  "i_entropy": {
+   "median_diff": 0.0677,
+   "mean_diff": 0.0636,
+   "higher_pct": 56.2,
+   "ties_pct": 0.4,
+   "p": 0.00015815012390789785,
+   "effect_iqr": 0.113,
+   "n": 949
+  },
+  "recurrence": {
+   "median_diff": 0.1167,
+   "mean_diff": 0.125,
+   "higher_pct": 64.0,
+   "ties_pct": 1.9,
+   "p": 9.706538357867508e-18,
+   "effect_iqr": 0.208,
+   "n": 949
+  },
+  "convention": {
+   "median_diff": -0.0597,
+   "mean_diff": -0.1193,
+   "higher_pct": 48.1,
+   "ties_pct": 0.4,
+   "p": 0.26870845410396316,
+   "effect_iqr": -0.036,
+   "n": 949
+  },
+  "ic_mean": {
+   "median_diff": -0.0387,
+   "mean_diff": -0.058,
+   "higher_pct": 47.4,
+   "ties_pct": 0.4,
+   "p": 0.11837325631939488,
+   "effect_iqr": -0.048,
+   "n": 949
+  },
+  "h_mean": {
+   "median_diff": -0.0116,
+   "mean_diff": -0.0128,
+   "higher_pct": 46.1,
+   "ties_pct": 0.4,
+   "p": 0.019124849957259157,
+   "effect_iqr": -0.069,
+   "n": 949
+  },
+  "top_cell_n": {
+   "median_diff": 0.0,
+   "mean_diff": 0.5153,
+   "higher_pct": 66.4,
+   "ties_pct": 27.5,
+   "p": 4.863361952169322e-18,
+   "effect_iqr": 0.0,
+   "n": 949
+  },
+  "top_cell_cover": {
+   "median_diff": -0.0081,
+   "mean_diff": -0.0204,
+   "higher_pct": 45.9,
+   "ties_pct": 1.6,
+   "p": 0.01408152089379795,
+   "effect_iqr": -0.049,
+   "n": 949
+  },
+  "top_cell_pos": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0029,
+   "higher_pct": 53.6,
+   "ties_pct": 30.2,
+   "p": 0.0676629629746624,
+   "effect_iqr": 0.0,
+   "n": 949
+  },
+  "up_rhythm": {
+   "median_diff": 0.0,
+   "mean_diff": -0.0153,
+   "higher_pct": 50.1,
+   "ties_pct": 24.4,
+   "p": 0.9697236246898928,
+   "effect_iqr": 0.0,
+   "n": 918
+  },
+  "up_pitch": {
+   "median_diff": 0.0,
+   "mean_diff": 0.013,
+   "higher_pct": 49.2,
+   "ties_pct": 16.8,
+   "p": 0.6847581626574317,
+   "effect_iqr": 0.0,
+   "n": 882
+  },
+  "opens_down": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0643,
+   "higher_pct": 60.0,
+   "ties_pct": 67.9,
+   "p": 0.0005692147333336953,
+   "effect_iqr": 0.0,
+   "n": 949
+  },
+  "n": {
+   "median_diff": 11.0,
+   "mean_diff": 12.4489,
+   "higher_pct": 70.4,
+   "ties_pct": 2.0,
+   "p": 1.86115256775988e-36,
+   "effect_iqr": 0.379,
+   "n": 949
+  },
+  "beats": {
+   "median_diff": 8.0,
+   "mean_diff": 11.6781,
+   "higher_pct": 77.9,
+   "ties_pct": 27.1,
+   "p": 2.9123893348255505e-51,
+   "effect_iqr": 0.25,
+   "n": 949
+  }
+ },
+ "bridge_vs_chorus": {
+  "songs": 665,
+  "density": {
+   "median_diff": -0.0398,
+   "mean_diff": -0.0227,
+   "higher_pct": 45.4,
+   "ties_pct": 1.2,
+   "p": 0.019172669312795685,
+   "effect_iqr": -0.064,
+   "n": 665
+  },
+  "range": {
+   "median_diff": 0.0,
+   "mean_diff": 1.0586,
+   "higher_pct": 56.4,
+   "ties_pct": 11.4,
+   "p": 0.0022678011898643905,
+   "effect_iqr": 0.0,
+   "n": 665
+  },
+  "mean_pitch": {
+   "median_diff": -0.0196,
+   "mean_diff": -0.0006,
+   "higher_pct": 49.8,
+   "ties_pct": 0.0,
+   "p": 0.93818840944001,
+   "effect_iqr": -0.003,
+   "n": 665
+  },
+  "i_entropy": {
+   "median_diff": 0.0196,
+   "mean_diff": -0.0327,
+   "higher_pct": 51.0,
+   "ties_pct": 0.0,
+   "p": 0.641720768626881,
+   "effect_iqr": 0.032,
+   "n": 665
+  },
+  "recurrence": {
+   "median_diff": -0.0613,
+   "mean_diff": -0.0657,
+   "higher_pct": 41.0,
+   "ties_pct": 1.7,
+   "p": 4.500534188545395e-06,
+   "effect_iqr": -0.109,
+   "n": 665
+  },
+  "convention": {
+   "median_diff": 0.0077,
+   "mean_diff": 0.0958,
+   "higher_pct": 50.4,
+   "ties_pct": 0.0,
+   "p": 0.8767469481648109,
+   "effect_iqr": 0.005,
+   "n": 665
+  },
+  "ic_mean": {
+   "median_diff": 0.1081,
+   "mean_diff": 0.1161,
+   "higher_pct": 56.7,
+   "ties_pct": 0.0,
+   "p": 0.0006329792147723833,
+   "effect_iqr": 0.131,
+   "n": 665
+  },
+  "h_mean": {
+   "median_diff": -0.0091,
+   "mean_diff": -0.0079,
+   "higher_pct": 47.7,
+   "ties_pct": 0.0,
+   "p": 0.24466668960984916,
+   "effect_iqr": -0.053,
+   "n": 665
+  },
+  "top_cell_n": {
+   "median_diff": 0.0,
+   "mean_diff": 0.1203,
+   "higher_pct": 47.8,
+   "ties_pct": 26.0,
+   "p": 0.34377329331063955,
+   "effect_iqr": 0.0,
+   "n": 665
+  },
+  "top_cell_cover": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0118,
+   "higher_pct": 50.8,
+   "ties_pct": 2.0,
+   "p": 0.7245175690648206,
+   "effect_iqr": 0.0,
+   "n": 665
+  },
+  "top_cell_pos": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0328,
+   "higher_pct": 56.1,
+   "ties_pct": 24.4,
+   "p": 0.00740609558565079,
+   "effect_iqr": 0.0,
+   "n": 665
+  },
+  "up_rhythm": {
+   "median_diff": 0.0,
+   "mean_diff": 0.1411,
+   "higher_pct": 51.4,
+   "ties_pct": 22.8,
+   "p": 0.5602439187562346,
+   "effect_iqr": 0.0,
+   "n": 645
+  },
+  "up_pitch": {
+   "median_diff": 0.0,
+   "mean_diff": 0.0787,
+   "higher_pct": 50.7,
+   "ties_pct": 16.7,
+   "p": 0.7911124305837273,
+   "effect_iqr": 0.0,
+   "n": 616
+  },
+  "opens_down": {
+   "median_diff": 0.0,
+   "mean_diff": -0.0286,
+   "higher_pct": 46.1,
+   "ties_pct": 63.2,
+   "p": 0.25010179375828373,
+   "effect_iqr": 0.0,
+   "n": 665
+  },
+  "n": {
+   "median_diff": -2.0,
+   "mean_diff": 0.5353,
+   "higher_pct": 47.3,
+   "ties_pct": 2.1,
+   "p": 0.18263119259613123,
+   "effect_iqr": -0.067,
+   "n": 665
+  },
+  "beats": {
+   "median_diff": 0.0,
+   "mean_diff": 1.7004,
+   "higher_pct": 51.4,
+   "ties_pct": 26.0,
+   "p": 0.5578622113638515,
+   "effect_iqr": 0.0,
+   "n": 665
+  }
+ },
+ "bands": {
+  "chorus": {
+   "density": [
+    0.625,
+    0.828,
+    1.125,
+    1.438,
+    1.812
+   ],
+   "range": [
+    7.0,
+    9.0,
+    12.0,
+    16.0,
+    21.0
+   ],
+   "mean_pitch": [
+    49.65,
+    52.524,
+    55.859,
+    59.92,
+    63.521
+   ],
+   "i_entropy": [
+    2.085,
+    2.454,
+    2.77,
+    3.058,
+    3.303
+   ],
+   "recurrence": [
+    0.02,
+    0.137,
+    0.397,
+    0.699,
+    0.876
+   ],
+   "convention": [
+    -12.455,
+    -11.702,
+    -10.886,
+    -10.009,
+    -9.091
+   ],
+   "ic_mean": [
+    2.227,
+    2.473,
+    2.806,
+    3.289,
+    3.919
+   ],
+   "h_mean": [
+    2.554,
+    2.632,
+    2.717,
+    2.803,
+    2.882
+   ],
+   "top_cell_n": [
+    2.0,
+    2.0,
+    3.0,
+    4.0,
+    6.0
+   ],
+   "top_cell_cover": [
+    0.138,
+    0.182,
+    0.25,
+    0.348,
+    0.471
+   ],
+   "top_cell_pos": [
+    0.0,
+    0.0,
+    0.0,
+    0.105,
+    0.286
+   ],
+   "up_rhythm": [
+    5.0,
+    6.0,
+    6.0,
+    7.0,
+    9.0
+   ],
+   "up_pitch": [
+    7.0,
+    8.0,
+    9.0,
+    11.0,
+    12.0
+   ],
+   "opens_down": [
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "n": [
+    24.0,
+    33.0,
+    45.0,
+    62.0,
+    83.0
+   ],
+   "beats": [
+    32.0,
+    32.0,
+    36.0,
+    64.0,
+    68.0
+   ]
+  },
+  "verse": {
+   "density": [
+    0.592,
+    0.781,
+    1.031,
+    1.375,
+    1.781
+   ],
+   "range": [
+    7.0,
+    10.0,
+    12.0,
+    16.0,
+    22.0
+   ],
+   "mean_pitch": [
+    47.524,
+    50.763,
+    54.892,
+    59.398,
+    62.922
+   ],
+   "i_entropy": [
+    2.134,
+    2.485,
+    2.814,
+    3.098,
+    3.353
+   ],
+   "recurrence": [
+    0.0,
+    0.078,
+    0.286,
+    0.562,
+    0.8
+   ],
+   "convention": [
+    -12.466,
+    -11.708,
+    -10.879,
+    -10.019,
+    -9.063
+   ],
+   "ic_mean": [
+    2.22,
+    2.48,
+    2.823,
+    3.323,
+    3.958
+   ],
+   "h_mean": [
+    2.555,
+    2.637,
+    2.727,
+    2.812,
+    2.888
+   ],
+   "top_cell_n": [
+    1.0,
+    2.0,
+    2.0,
+    4.0,
+    6.0
+   ],
+   "top_cell_cover": [
+    0.126,
+    0.169,
+    0.235,
+    0.32,
+    0.436
+   ],
+   "top_cell_pos": [
+    0.0,
+    0.0,
+    0.0,
+    0.118,
+    0.317
+   ],
+   "up_rhythm": [
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0
+   ],
+   "up_pitch": [
+    7.0,
+    8.0,
+    9.0,
+    11.0,
+    12.0
+   ],
+   "opens_down": [
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "n": [
+    25.0,
+    32.0,
+    45.0,
+    63.0,
+    85.0
+   ],
+   "beats": [
+    32.0,
+    32.0,
+    40.0,
+    64.0,
+    72.0
+   ]
+  },
+  "pre-chorus": {
+   "density": [
+    0.625,
+    0.812,
+    1.083,
+    1.406,
+    1.781
+   ],
+   "range": [
+    7.0,
+    9.0,
+    12.0,
+    16.0,
+    21.0
+   ],
+   "mean_pitch": [
+    48.769,
+    51.984,
+    55.208,
+    59.535,
+    63.605
+   ],
+   "i_entropy": [
+    2.127,
+    2.458,
+    2.772,
+    3.033,
+    3.267
+   ],
+   "recurrence": [
+    0.0,
+    0.049,
+    0.248,
+    0.532,
+    0.799
+   ],
+   "convention": [
+    -12.321,
+    -11.563,
+    -10.818,
+    -9.886,
+    -8.946
+   ],
+   "ic_mean": [
+    2.244,
+    2.496,
+    2.809,
+    3.305,
+    3.911
+   ],
+   "h_mean": [
+    2.56,
+    2.649,
+    2.732,
+    2.812,
+    2.889
+   ],
+   "top_cell_n": [
+    1.0,
+    2.0,
+    2.0,
+    4.0,
+    5.0
+   ],
+   "top_cell_cover": [
+    0.138,
+    0.186,
+    0.25,
+    0.348,
+    0.467
+   ],
+   "top_cell_pos": [
+    0.0,
+    0.0,
+    0.0,
+    0.103,
+    0.308
+   ],
+   "up_rhythm": [
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0
+   ],
+   "up_pitch": [
+    7.0,
+    8.0,
+    9.0,
+    11.0,
+    13.0
+   ],
+   "opens_down": [
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "n": [
+    21.0,
+    28.0,
+    38.0,
+    51.0,
+    69.0
+   ],
+   "beats": [
+    20.0,
+    32.0,
+    32.0,
+    48.0,
+    64.0
+   ]
+  },
+  "intro": {
+   "density": [
+    0.604,
+    0.854,
+    1.211,
+    1.75,
+    2.105
+   ],
+   "range": [
+    7.0,
+    10.0,
+    14.0,
+    19.0,
+    26.0
+   ],
+   "mean_pitch": [
+    47.315,
+    51.748,
+    56.135,
+    60.28,
+    64.337
+   ],
+   "i_entropy": [
+    1.931,
+    2.392,
+    2.793,
+    3.126,
+    3.413
+   ],
+   "recurrence": [
+    0.012,
+    0.177,
+    0.548,
+    0.839,
+    0.956
+   ],
+   "convention": [
+    -13.076,
+    -12.266,
+    -11.307,
+    -10.226,
+    -8.976
+   ],
+   "ic_mean": [
+    2.239,
+    2.627,
+    3.119,
+    3.828,
+    4.676
+   ],
+   "h_mean": [
+    2.577,
+    2.685,
+    2.784,
+    2.873,
+    2.966
+   ],
+   "top_cell_n": [
+    1.0,
+    2.0,
+    3.0,
+    5.0,
+    8.0
+   ],
+   "top_cell_cover": [
+    0.16,
+    0.222,
+    0.32,
+    0.462,
+    0.632
+   ],
+   "top_cell_pos": [
+    0.0,
+    0.0,
+    0.0,
+    0.079,
+    0.29
+   ],
+   "up_rhythm": [
+    5.0,
+    5.0,
+    6.0,
+    8.0,
+    10.0
+   ],
+   "up_pitch": [
+    6.0,
+    7.0,
+    9.0,
+    10.0,
+    13.0
+   ],
+   "opens_down": [
+    0.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "n": [
+    20.0,
+    27.0,
+    39.0,
+    60.0,
+    95.0
+   ],
+   "beats": [
+    16.0,
+    32.0,
+    32.0,
+    48.0,
+    64.0
+   ]
+  },
+  "bridge": {
+   "density": [
+    0.562,
+    0.778,
+    1.056,
+    1.362,
+    1.75
+   ],
+   "range": [
+    7.0,
+    10.0,
+    13.0,
+    18.0,
+    25.0
+   ],
+   "mean_pitch": [
+    48.908,
+    52.1,
+    55.944,
+    60.158,
+    63.314
+   ],
+   "i_entropy": [
+    2.069,
+    2.461,
+    2.786,
+    3.082,
+    3.374
+   ],
+   "recurrence": [
+    0.0,
+    0.053,
+    0.261,
+    0.545,
+    0.805
+   ],
+   "convention": [
+    -12.444,
+    -11.646,
+    -10.907,
+    -9.956,
+    -8.979
+   ],
+   "ic_mean": [
+    2.22,
+    2.519,
+    2.889,
+    3.505,
+    4.252
+   ],
+   "h_mean": [
+    2.542,
+    2.636,
+    2.725,
+    2.814,
+    2.886
+   ],
+   "top_cell_n": [
+    1.0,
+    2.0,
+    2.0,
+    4.0,
+    6.0
+   ],
+   "top_cell_cover": [
+    0.127,
+    0.17,
+    0.25,
+    0.342,
+    0.449
+   ],
+   "top_cell_pos": [
+    0.0,
+    0.0,
+    0.0,
+    0.159,
+    0.438
+   ],
+   "up_rhythm": [
+    5.0,
+    6.0,
+    7.0,
+    8.0,
+    9.0
+   ],
+   "up_pitch": [
+    6.0,
+    8.0,
+    9.0,
+    11.0,
+    12.0
+   ],
+   "opens_down": [
+    0.0,
+    0.0,
+    1.0,
+    1.0,
+    1.0
+   ],
+   "n": [
+    23.0,
+    30.0,
+    42.0,
+    61.0,
+    90.0
+   ],
+   "beats": [
+    28.0,
+    32.0,
+    36.0,
+    64.0,
+    80.0
+   ]
+  }
+ },
+ "unique_by": {
+  "chorus": {
+   "rhythm_none": 2.5,
+   "pitch_none": 4.3,
+   "rhythm_by6": 48.8,
+   "rhythm_by8": 86.0,
+   "pitch_by6": 7.6,
+   "pitch_by8": 38.6
+  },
+  "verse": {
+   "rhythm_none": 2.1,
+   "pitch_none": 4.1,
+   "rhythm_by6": 47.7,
+   "rhythm_by8": 85.8,
+   "pitch_by6": 7.6,
+   "pitch_by8": 37.8
+  },
+  "intro": {
+   "rhythm_none": 4.2,
+   "pitch_none": 7.0,
+   "rhythm_by6": 51.4,
+   "rhythm_by8": 80.4,
+   "pitch_by6": 14.6,
+   "pitch_by8": 46.3
+  }
+ },
+ "chorus_cell": {
+  "returns_median": 3.0,
+  "returns_p25": 2.0,
+  "returns_p75": 4.0,
+  "first_in_first_quarter": 88.1,
+  "cover_median": 0.25
+ }
+}
