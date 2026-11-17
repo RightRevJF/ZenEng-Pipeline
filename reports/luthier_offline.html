@@ -96,11 +96,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-30" id="toc-part-30">Part 30. The hook for Luthier v8: what makes a chorus stick</a></li>
 <li><a href="#part-31" id="toc-part-31">Part 31. What arXiv adds for Luthier v8: a pass across the research topics</a></li>
 <li><a href="#part-32" id="toc-part-32">Part 32. Lyric craft for Luthier v8: what makes words great</a></li>
+<li><a href="#part-33" id="toc-part-33">Part 33. Song 57, Jehovah's Band: written by the engine and the v8 prototype writers</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with fourteen research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament, key-choice, tempo, solo, hook and lyric writers v8 needs, and an arXiv pass over them (Parts 17 to 32). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 32 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo, studies/solos, studies/hooks and studies/lyrics), for anyone with access. This page does not depend on it.</p>
+<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with fourteen research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament, key-choice, tempo, solo, hook and lyric writers v8 needs, and an arXiv pass over them (Parts 17 to 32), and song 57, written by the engine and three prototype writers (Part 33, findings 749.32 to 749.39). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2, 17 and 33 in full. They say what to change. Parts 18 to 32 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo, studies/solos, studies/hooks and studies/lyrics; the prototype writers in writers/ and song 57 in songs/p67), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -242,6 +243,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-32">32</a></td>
 <td>Lyric craft for Luthier v8: what makes words great (peers against the chart; a repetition band; range of feeling; a story dial; rules L1 to L7)</td>
 </tr>
+<tr class="odd">
+<td><a href="#part-33">33</a></td>
+<td>Song 57, Jehovah’s Band: written by the engine and the v8 prototype writers (findings 749.32 to 749.39)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -272,6 +277,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>The hook (Part 30).</strong> v7 has more hook theory than any other area but never tested a hook against recognition, and its strength indicators reward an unusual interval. The research that measured memory (the Hooked game) found the voice, typical sound and melody, and repetition made sections recognisable; distinctiveness did not. In 22,407 Hooktheory sections a chorus is mainly higher than its verse, only a little more repetitive and no more typical; the 14 fastest-recognised songs’ choruses sit at the 81st percentile for typical cells and the 33rd for interval variety. Titles in 156 Billboard hits: in the chorus in 87%, about twice a chorus and 8 times a song, in its first line more often than its last. Songs 52 to 56 have choruses at the 1st to 6th percentile for repeating themselves. v8 should score typicality instead of an unusual interval, make the chorus repeat its own cell, place the title as hits do, and carry identity in rhythm.</p></li>
 <li><p><strong>What arXiv adds (Part 31).</strong> A pass over arXiv and PsyArXiv for all 13 research topics found no paper that reverses a rule in Parts 18 to 30. One real miss: Chordonomicon, 666,000+ songs’ chords with sections, genres and dates, public but not downloadable from the research workspace; it could retest harmony, chromatic chords and keys at about 900 times McGill’s size. Two additions: long notes on stressed syllables at least 75% of the time (human lyrics 73% to 82%; songs 54 and 56 at 65% and 68%), and a floor on predictability (elevator-music covers are rated less pleasurable than the originals).</p></li>
 <li><p><strong>Lyric craft (Part 32).</strong> v7’s lyric research tests the chart. Against a peers’ judge (64 songs from Rolling Stone’s 500 Greatest Songs, voted by more than 250 artists and critics, against 209 Hot 100 songs of the same years, all from CoCoPops), greatest-list songs repeat fewer of their lines (0.42 against 0.57, the one result that survives correction), use fewer rare words and swing wider in feeling from line to line; the story proxy was null. Jason’s lyrics are unusually concrete; songs 54 and 55 repeat too few lines, and songs 53, 55 and 56 hold a narrow range of feeling. Rules L1 to L7: repetition between the two medians, carried by the chorus; the arc of feeling printed with the lyric; sad endings offered as options; a story dial; absolutes allowed.</p></li>
+<li><p><strong>Song 57, written by the engine and three prototype writers (Part 33).</strong> Jehovah’s Band (a Grateful Dead-style jam, E major, 112 bpm, 128 bars) is the first song with nothing written by hand after the lyric: the melody is v7’s search picked by Part 30 and 31’s gates and luthier_judge5, and the chords, band and lead guitar come from writers/chords.py, band.py and solo.py, built from the harmony, arrangement and solo tables (the bass from bass_v134.py). The chord writer drew the bVII chorus unforced; the jam builds from silence. No melody build reaches Part 31’s long-note band (best 0.74 of 0.75), the title line has no hook gates and sits low, the chorus barely lifts, 102 of 277 clean survivors fail evaluate again, and the band’s level curve does not read the lyric. Findings 749.32 to 749.39; the last proposes porting the three writers into v8.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -16236,6 +16242,530 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>arXiv: <a href="https://arxiv.org/pdf/1708.03492">1708.03492</a>, <a href="https://arxiv.org/pdf/2006.08108v1">2006.08108,</a> <a href="https://arxiv.org/pdf/2505.10793">2505.10793,</a> <a href="https://arxiv.org/pdf/2604.25937">2604.25937</a>, <a href="https://arxiv.org/html/2307.02146v1">2307.02146</a></p></li>
 <li><p>Luthier v7, Windows 27, 31, 34, 58, 60, 61, 64, 65 and 91 (the spec)</p></li>
 </ul>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-33">Part 33. Song 57, Jehovah's Band: written by the engine and the v8 prototype writers</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The repository copy is songs/p67/test_report_p67.md.</p>
+<p><em>Words and music: Jason Bryant. 17 November 2026.</em></p>
+<h2 id="summary">Summary</h2>
+<p>Song 57 is the first song in which nothing was written by hand after the lyric. The melody is Luthier v7’s search, picked by the research gates of Parts 30 and 31 and then luthier_judge5. The chords, the band and the lead guitar come from three new writers built from the v8 research tables (writers/chords.py, writers/band.py, writers/solo.py), and the bass from the engine’s own routine. The lyric was written with the writer, scored on the hook and lyric rules (Parts 30 and 32), and passed the mouth test before any music.</p>
+<ul>
+<li><strong>Melody search:</strong> 1,000 main, 298 survivors (29.8%), order 82afd3ac7e99; control 322 survivors, order 29669d99b962. Both reproduced on the second pass.</li>
+<li><strong>Research gates:</strong> of 175 clean survivors that re-evaluate clean, none passes all five; the long-note gate (R5) fails every one (best 0.74 against 0.75). The pick, be9dba1f3d5c, fails only R5 (0.588).</li>
+<li><strong>Checks:</strong> 56/56 consistency checks pass; every staff of every engraving reads back from MIDI.</li>
+</ul>
+<h2 id="intake">Intake</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Source</td>
+<td>the writer’s ‘Acid Soaked Ramblings of Poetry’, the pilgrimage seam (A)</td>
+</tr>
+<tr class="even">
+<td>Lane</td>
+<td>Grateful Dead-style jam (A)</td>
+</tr>
+<tr class="odd">
+<td>Never-say</td>
+<td>trip-song cliches; the trip never named (A: ‘like White Rabbit’)</td>
+</tr>
+<tr class="even">
+<td>Title</td>
+<td>Jehovah’s Band (A)</td>
+</tr>
+<tr class="odd">
+<td>Lyric</td>
+<td>four drafts on the writer’s notes; draft 4 locked (B)</td>
+</tr>
+<tr class="even">
+<td>Key</td>
+<td>E major with the bVII (A)</td>
+</tr>
+<tr class="odd">
+<td>How the music is made</td>
+<td>build the missing writers as code first (A)</td>
+</tr>
+<tr class="even">
+<td>Tempo and feel</td>
+<td>112 bpm, loping 4/4, light swing (A)</td>
+</tr>
+<tr class="odd">
+<td>Form</td>
+<td>128 bars, about 4:34, a 32-bar jam from silence (B)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-lyric-on-the-new-rules">The lyric on the new rules</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reading</th>
+<th>Draft 4</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repeated lines</td>
+<td>0.42</td>
+<td>L1: 0.42 to 0.57</td>
+</tr>
+<tr class="even">
+<td>Range of feeling (line valence spread)</td>
+<td>0.25 (47th pct of greatest-list songs)</td>
+<td>L2: at least 0.22</td>
+</tr>
+<tr class="odd">
+<td>Rare content words</td>
+<td>1.6%</td>
+<td>L5: about 4% at most</td>
+</tr>
+<tr class="even">
+<td>Concreteness</td>
+<td>100th pct</td>
+<td>L7: a style dial</td>
+</tr>
+<tr class="odd">
+<td>Past tense / places</td>
+<td>97th / 92nd pct</td>
+<td>L4: report</td>
+</tr>
+<tr class="even">
+<td>Title per chorus / in line 1 / in the song</td>
+<td>2 / yes / 8</td>
+<td>H3: about 2 / first line / about 8</td>
+</tr>
+<tr class="odd">
+<td>Mouth test</td>
+<td>34 lines, 8 minor flags, no tongue-twister, density at most 4.4 syllables a second</td>
+<td>Principle 4</td>
+</tr>
+</tbody>
+</table>
+<p>VADER reads image lines as neutral and ‘laughed’ as positive, so the bridge (the extinction) reads near neutral; the low is carried by meaning the measure cannot see.</p>
+<h2 id="the-writers-v8-prototypes">The writers (v8 prototypes)</h2>
+<h3 id="chords-writerschords.py">Chords (writers/chords.py)</h3>
+<p>A variable-order Markov model per section kind and mode over 739 McGill Billboard songs, 1965-1979 weighted three times; candidates kept by the kept quartiles of distinct chords, tonic share, changes a bar and out-of-key share, the kept first and last chords and loop periods, and 749.22’s moving harmony; the bVII (the key question) required song-wide.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Chords (one cell a bar)</th>
+<th>Score</th>
+<th>Flags</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intro</td>
+<td>E A / A E / E / E A</td>
+<td>0.202</td>
+<td>none</td>
+</tr>
+<tr class="even">
+<td>Verse</td>
+<td>E / A / E A / E / A / E / E / B A</td>
+<td>0.215</td>
+<td>none</td>
+</tr>
+<tr class="odd">
+<td>Chorus</td>
+<td>E D / A E / E D / A E / E D / A E / E D / A E …</td>
+<td>0.169</td>
+<td>none</td>
+</tr>
+<tr class="even">
+<td>Bridge</td>
+<td>C#m / D C#m / C#m Bm / Bm D / D C#m / D / C#m / Bm D …</td>
+<td>0.212</td>
+<td>none</td>
+</tr>
+<tr class="odd">
+<td>Jam</td>
+<td>E / E / D / A E / E / E / D / A E …</td>
+<td>0.106</td>
+<td>none</td>
+</tr>
+<tr class="even">
+<td>Outro</td>
+<td>E A / E / A / E A / E / E A</td>
+<td>0.133</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p>The chorus drew E-D-A-E unforced; the bridge never touches I (50% out of key, inside the kept quartiles for bridges). 438’s chart then added its holds and inversions as for every v7 song.</p>
+<h3 id="band-writersband.py">Band (writers/band.py)</h3>
+<p>The genre’s kept tables (LPD-5, rock: patterns, onsets a bar, notes together, register), POP909’s texture by role for the level curve (749.17), Module 9.14’s limits, and 749.27’s reading for a low lead (no chord tone within a second of a sung note). The bass is bass_v134.py’s routine on every section.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Level</th>
+<th>Organ</th>
+<th>Rhythm guitar</th>
+<th>Kick</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intro</td>
+<td>0.25</td>
+<td>x…x…x…x…</td>
+<td>x…x…x…x…</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="even">
+<td>Verse 1</td>
+<td>0.46</td>
+<td>x…x…x…x…</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="odd">
+<td>Chorus 1</td>
+<td>0.75</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="even">
+<td>Verse 2</td>
+<td>0.52</td>
+<td>x…x…x…x…</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="odd">
+<td>Chorus 2</td>
+<td>0.84</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…x…x…x…</td>
+</tr>
+<tr class="even">
+<td>Bridge</td>
+<td>0.68</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="odd">
+<td>Jam</td>
+<td>0.00 to 0.57</td>
+<td>x…x…x…x…</td>
+<td>x…x…x…x…</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="even">
+<td>Verse 3</td>
+<td>0.57</td>
+<td>x…x…x…x…</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="odd">
+<td>Chorus 3</td>
+<td>1.00</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…x…x…x…</td>
+</tr>
+<tr class="even">
+<td>Tag</td>
+<td>0.75</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+<tr class="odd">
+<td>Ending</td>
+<td>0.42</td>
+<td>x…x…x…x…</td>
+<td>x.x.x.x.x.x.x.x.</td>
+<td>x…..x.x…….</td>
+</tr>
+</tbody>
+</table>
+<p>The jam’s entries (bar of the jam): organ 1, bass 5, drums 9, rhythm 13, lead 17.</p>
+<h3 id="lead-guitar-writerssolo.py">Lead guitar (writers/solo.py)</h3>
+<p>Trained on 398 Hooktheory solo and instrumental sections in major and Mixolydian keys: scale degree with the bucketed interval (orders 0-3), kept one-bar onset patterns by level, chord tones on beats 1 and 3 at the kept rate (0.76), the centre climbing with the level; each eight bars drawn 60 times and the draw kept whose cell recurrence sits nearest the kept median (0.445) with surprise at or under the kept median.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Window</th>
+<th>Recurrence</th>
+<th>Surprise (bits)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jam 17-24</td>
+<td>0.422 (kept 0.445)</td>
+<td>2.057 (kept 1.942)</td>
+</tr>
+<tr class="even">
+<td>Jam 25-32</td>
+<td>0.377 (kept 0.445)</td>
+<td>1.864 (kept 1.942)</td>
+</tr>
+</tbody>
+</table>
+<p>Fills in the voice’s rests at bars 16, 20, 26, 36, 40, 54, 58, 110, 118, 122, 126; the intro plays the chorus’s title line twice (v7’s instrumental hook; H5).</p>
+<h2 id="the-melody-search">The melody search</h2>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Main</th>
+<th>Control</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Built</td>
+<td>1,000</td>
+<td>1,000</td>
+</tr>
+<tr class="even">
+<td>Survivors</td>
+<td>298 (29.8%)</td>
+<td>322 (32.2%)</td>
+</tr>
+<tr class="odd">
+<td>Order (pass 1 = pass 2)</td>
+<td>82afd3ac7e99</td>
+<td>29669d99b962</td>
+</tr>
+<tr class="even">
+<td>Rhythm: no placement</td>
+<td>581</td>
+<td>545</td>
+</tr>
+<tr class="odd">
+<td>Join: no held end and breath before the copy</td>
+<td>48</td>
+<td>56</td>
+</tr>
+<tr class="even">
+<td>Align: the words do not fit the returning tune</td>
+<td>38</td>
+<td>46</td>
+</tr>
+<tr class="odd">
+<td>Key word on a chord tone</td>
+<td>22</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-pick">The pick</h2>
+<p>Of 277 clean survivors, 102 fail evaluate when it runs again on the same notes (all ‘returns related (267)’, the bridge’s line 5 returning its line 1); the pick is taken only from the 175 that pass again, as songs 54 to 56’s picks were asserted to.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Gate</th>
+<th>Rule</th>
+<th>Failing (of 175)</th>
+<th>Median, best</th>
+<th>Pick</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R1</td>
+<td>chorus above verse (mean pitch)</td>
+<td>43</td>
+<td>1.08, 5.77</td>
+<td>0.34</td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td>chorus recurrence at or above the 50th length-matched pct and above the verse’s</td>
+<td>168</td>
+<td>31.2, 62.8</td>
+<td>51.3</td>
+</tr>
+<tr class="odd">
+<td>R3</td>
+<td>typical cells at or above the 60th pct</td>
+<td>111</td>
+<td>54.3, 94.3</td>
+<td>79.6</td>
+</tr>
+<tr class="even">
+<td>R4</td>
+<td>variety and surprise at or under the 50th pct</td>
+<td>128</td>
+<td>62.2, 90.0</td>
+<td>30.1</td>
+</tr>
+<tr class="odd">
+<td>R5</td>
+<td>long notes on stressed syllables at least 75%</td>
+<td>175</td>
+<td>0.555, 0.74</td>
+<td>0.588</td>
+</tr>
+</tbody>
+</table>
+<p>Reported, not gated: the title’s stressed syllables on a beat 0.375 (H3: about 73%), held 1.0 times the median note (H3: 1.3); the uniqueness point 6 notes with rhythm (H4: 8 or under). The pick’s longest run of one pitch is 9 (kept median 6, 90th percentile 9.5). Taken as drawn: no hand edits.</p>
+<h2 id="research-checks-749.4-to-749.27">Research checks (749.4 to 749.27)</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th>Reading</th>
+<th>Rule</th>
+<th>Held?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Melody surprise (749.18)</td>
+<td>2.48 bits</td>
+<td>at or under 2.89</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Chord surprise</td>
+<td>1.61</td>
+<td>at or under 3.79</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Rhythm surprise (749.20)</td>
+<td>3.13</td>
+<td>at or under 2.49</td>
+<td>no</td>
+</tr>
+<tr class="even">
+<td>Rest share</td>
+<td>0.48</td>
+<td>median 0.125</td>
+<td>high</td>
+</tr>
+<tr class="odd">
+<td>Stressed syllables on a beat</td>
+<td>0.45</td>
+<td>report</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>The top (749.17)</td>
+<td>Chorus 3 at 0.828 to 0.938</td>
+<td>0.65 to 0.85</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Each chorus above the one before</td>
+<td>True</td>
+<td>9.12</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Verses</td>
+<td>Verse 1 0.58, Verse 2 0.72, Verse 3 0.64</td>
+<td>each return above</td>
+<td>verse 3 below verse 2</td>
+</tr>
+<tr class="odd">
+<td>The breath (749.19)</td>
+<td>silence at 0.453, re-entry at 0.703</td>
+<td>0.55 to 0.60</td>
+<td>later (the form’s jam)</td>
+</tr>
+<tr class="even">
+<td>Low intervals (749.21)</td>
+<td>0</td>
+<td>none</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>Band above the tune</td>
+<td>1.00</td>
+<td>749.27: a low lead</td>
+<td>read by 749.27</td>
+</tr>
+<tr class="even">
+<td>Within a second of the tune</td>
+<td>0.13</td>
+<td>report</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Phrases</td>
+<td>1.9 to 7.6 s, none over 8</td>
+<td>2 to 6 (8 at most)</td>
+<td>yes</td>
+</tr>
+<tr class="even">
+<td>Chords outside the key (749.23)</td>
+<td>Bm, D</td>
+<td>pop budget</td>
+<td>the bVII and v the writer asked for</td>
+</tr>
+<tr class="odd">
+<td>Stems</td>
+<td>voice +5.0 dB</td>
+<td>at least +3</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="findings-from-749.32">Findings (from 749.32)</h2>
+<p><strong>749.32. No build reaches Part 31’s long-note band.</strong> <em>Problem:</em> 0 of 175 clean survivors put 75% of their long notes on stressed syllables (median 0.555, best 0.74). <em>Evidence:</em> the gate table above. <em>Fix:</em> weight long durations toward stressed syllables in the placement draw, not after it. <em>Check:</em> songs 54 to 57 rerun; at least half the clean survivors reach 0.75.</p>
+<p><strong>749.33. The engine’s title line has no hook gates.</strong> <em>Problem:</em> without song 56’s designs the title line is low and narrow: E, F#, F#, F#, E, F#, E, F#, E, C#; its stressed syllables are on a beat 38% of the time and held no longer than the median note. <em>Fix:</em> port H3 (on a beat, held 1.3 times the median) and H1’s one fresh note as search gates. <em>Check:</em> the title readings pass on songs 54 to 57.</p>
+<p><strong>749.34. The chorus barely lifts.</strong> <em>Problem:</em> the pick’s chorus sits 0.34 semitones over its verse and 43 of 175 sit under it. <em>Fix:</em> port H5’s lift (Part 30: higher in 67% of songs, +1.5) as a register draw, not a design. <em>Check:</em> R1 on every clean survivor.</p>
+<p><strong>749.35. Evaluate disagrees with the run.</strong> <em>Problem:</em> 102 of 277 clean survivors fail evaluate on the same notes (‘returns related (267)’, the bridge’s line 5 returning line 1). <em>Fix:</em> find the state 267 reads that the run and evaluate set differently. <em>Check:</em> every survivor re-evaluates clean.</p>
+<p><strong>749.36. 749.21’s limit empties the band under a low lead.</strong> <em>Problem:</em> with the tune kept on top, the band writer could voice almost nothing under a baritone singing C#3 to A3 (verse 1’s organ fell to 6 chords). <em>Fix:</em> 749.27’s reading, used here: no chord tone within a second of a sung note, the voice +3 dB over the band. <em>Check:</em> low-interval breaks 0, within a second under a quarter of notes (0.13 here).</p>
+<p><strong>749.37. The level curve does not read the lyric.</strong> <em>Problem:</em> the band writer’s curve comes from section roles, so the bridge, the song’s extinction, sits at 0.68, louder than both verses, and verse 3 reads below verse 2. <em>Fix:</em> let the lyric’s arc (L2’s section valence, or the writer’s turn) move the curve. <em>Check:</em> the bridge under its neighbours where the lyric falls.</p>
+<p><strong>749.38. Two-bar slots leave long rests.</strong> <em>Problem:</em> rest share 0.48 against the corpus 0.125, rhythm surprise 3.13 against 2.49: lines of 7 to 18 syllables all take two bars. <em>Fix:</em> Part 21’s slots in seconds (749.25, 749.30, 749.31). <em>Check:</em> rest share under 0.3.</p>
+<p><strong>749.39. The three writers are ready to port.</strong> writers/chords.py, writers/band.py and writers/solo.py are deterministic per seed, read only kept tables, and report every choice. <em>Fix:</em> port them into v8 as the harmony, arrangement and solo writers (Parts 18, 19, 29). <em>Check:</em> songs 52 to 57 written with no hand-written chords, band or solos.</p>
+<h2 id="documents">Documents</h2>
+<p>Lead sheet, full score, parts (voice, organ, rhythm guitar, lead guitar, bass, drums), number chart, MusicXML (lead sheet and full score), demo MP3 and General MIDI, songbook and production notes. The players’ notes are written from the writers’ reports. The blind pick of the quotable line (10.20) was not drawn for this song.</p>
 
 <a class="top" href="#start">Top</a>
 </body>
