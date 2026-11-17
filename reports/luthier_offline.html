@@ -87,11 +87,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-21" id="toc-part-21">Part 21. Metre research for Luthier v8: bars, phrases and hypermeter</a></li>
 <li><a href="#part-22" id="toc-part-22">Part 22. Melody by genre for Luthier v8: scales, blue notes and the divorce</a></li>
 <li><a href="#part-23" id="toc-part-23">Part 23. Setting words for Luthier v8: stress, vowels and high notes</a></li>
+<li><a href="#part-24" id="toc-part-24">Part 24. Harmony voices for Luthier v8: duets, backing vocals and choirs</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with six research studies for the harmony, band, tension, metre, melody and word-setting writers v8 needs (Parts 17 to 23). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 23 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre and studies/words), for anyone with access. This page does not depend on it.</p>
+<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with seven research studies for the harmony, band, tension, metre, melody, word-setting and harmony-voice writers v8 needs (Parts 17 to 24). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 24 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words and studies/voices), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -197,6 +198,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-23">23</a></td>
 <td>Setting words for Luthier v8: stress, vowels and high notes (weak syllables on beat 1, a word’s pitch shape, the line’s last stress, vowels on held high notes by voice, songs 54 and 55 against two corpora)</td>
 </tr>
+<tr class="even">
+<td><a href="#part-24">24</a></td>
+<td>Harmony voices for Luthier v8: duets, backing vocals and choirs (what v7’s second-voice rules do, singing traditions, lead against harmony in 10,529 scores, six kinds of second voice)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -218,6 +223,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Metre above the bar (Part 21).</strong> All four placement failures of songs 54 to 56 come from fixing a line’s length in bars before the words are known. In 9,313 lines of 198 Billboard songs, lines are timed in seconds: slow songs give a line fewer bars (6 to 8 syllables in one bar 36% of the time, against 6% in fast songs). v8 should set slots in seconds, choose the felt tempo at intake, let phrases expand, overlap or shrink at kept rates, and place words by weighted rules (Hayes) instead of failing. This closes 749.25, 749.30 and 749.31.</p></li>
 <li><p><strong>Melody by genre (Part 22).</strong> v7 writes every melody from the 7-note scale and forbids the flat third against a major chord (fix 200) and the flat fifth (tri()). In 165 major-key Billboard songs the typical melody puts 85% of its notes on one five-note scale, notes fix 200 forbids appear in 63% of songs (69% of soul songs), and tri() mostly blocks plain diatonic notes. Songs 54 and 55 have no flat 3 or flat 7, and song 54 sings the leading tone at three and a half times the country rate. v8 should take its pitch table from the style, place flat 3, flat 7 and flat 5 where soul and blues put them, narrow tri(), and treat the leading tone as a moving note.</p></li>
 <li><p><strong>Setting words (Part 23).</strong> v7 measures stress on the beat, line endings and vowels on held notes, but its songs put weak syllables on the downbeat and it has no rule for a word’s pitch shape or a man’s vowels. In 199 Billboard and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time and a word’s stressed syllable is lower than the rest of the word in 18% to 20% of words; songs 54 and 55 do both about twice as often, mostly through line openings like “And” on the bar line. Height alone barely changes the vowel; held high notes do (men’s held top notes 61% open, 7% reduced). v8 should grade its stress cost, give weak openings a pickup, add a word-shape rule for pitch and a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre move together between neighbouring syllables, and words ending in a voiced consonant take longer notes. Across the century (1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles: the downbeat band is fixed, the contour targets depend on era and style. After 2000 melodies carry more notes a bar and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 the word rules hold as before. Hymns, folk songs and standards with words attached (PDMX and OpenEWLD, 4,535 English songs) give hymn mode its own bands: weak syllables on beat 1 up to about 10% in 4/4 and 17% in 3/4, and a looser word pitch shape.</p></li>
+<li><p><strong>Harmony voices (Part 24).</strong> v7 has a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves) and labels for other ensembles, but only the duet rule writes notes, and every second voice in songs 53 to 56 was written by hand; three of the four broke the rule (a harmony above the lead, a two-note answer, a descant and choir). Singing traditions define the harmony as the next chord tone, above the lead as often as below. In 10,529 scores with two or more vocal parts (PDMX), v7’s allowed intervals cover about a fifth of real harmony; the second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still in about half its moves; parallel fifths are rare (about 1 per 100 moves, 3 in pop); second voices sing more as the song goes on. v8 should write six kinds of second voice (double, harmony line, pad, answer, descant, parts), a harmony line by chord tone on the side the style calls for, and entries that grow with the song.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -12354,6 +12360,576 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </ul>
 <p>Nix (2004), “Vowel Modification Revisited” (<a href="https://ncvs.org/archive/pas/2004/abstracts/nix1.htm">abstract)</a>.</p>
 <p>Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), “Comparing Musical Textsetting in French and in English Songs”, abstract; de Castro Arrazola (2018), <em>Typological Tendencies in Verse and Their Cognitive Grounding</em> , chapters 6 and 7; Tan, Lustig and Temperley (2019), “Anticipatory Syncopation in Rock: A Corpus Study”, <em>Music Perception</em> 36.4; White (2022), “A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music”, <em>Journal of Mathematics and Music</em> 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), “Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting”, CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), “A Generative Textsetting Model”, <em>Current Musicology</em> 55; Henrich et al. (2011) on resonance tuning by voice type, <em>JASA</em> . Third round (the section “Across the century”): Proto (2013), “Prominence Matching in English Songs: A Historical Perspective”, Signa 22, with Dell and Halle’s two conditions; Temperley (2019), “SecondPosition Syncopation in European and American Vocal Music”, Empirical Musicology Review 14; Temperley (2021), “The Origins of Syncopation in American Popular Music”, Popular Music 40, abstract; VanderStel and Temperley (2022), “The Evolution of Syncopation in Twentieth-Century American Popular Music”, Journal of New Music Research 51, abstract, and their Pop20c corpus (github.com/vanderstel/pop-corpus; no licence stated, derived counts only); Hayes and MacEachern (1998), “Quatrain Form in English Folk Verse”, Language 74, through Hayes’s class notes; Taniguchi, sung word recognition, AMLaP abstract. Fourth round (the section “After 2000”): White (2022), the manuscript of “A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music” (par.nsf.gov); Condit-Schultz (2019), “Expanding and Contracting Definitions of Syncopation: Commentary on Temperley 2019”, Empirical Musicology Review 14; the Pop20c post-2000 transcriptions. VanderStel and Temperley (2022) in full was not reachable. Fifth round (the section “Words after 2000”): BiMMuDa, Hamilton and Pearce, github.com/madelinehamilton/BiMMuDa (no licence stated; derived counts only, lyrics never reproduced). Sixth round (the section “Hymns, folk songs and standards”), from a search of Zenodo: PDMX, Long et al., zenodo.org/records/15571083 (CC BY 4.0); OpenEWLD, Simonetta, github.com/00sapo/OpenEWLD (public-domain scores, MITlicensed code). Found on Zenodo but restricted (access on request): DALI (about 5,000 songs with lyrics and vocal notes timed to recordings, CC BY-NC-SA), the Enhanced Wikifonia Leadsheet Dataset. Proto and Dell (2013) on Italian songs: abstract only (song rhythm is anchored in measured time and has more than two levels of prominence, unlike literary verse).</p>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-24">Part 24. Harmony voices for Luthier v8: duets, backing vocals and choirs</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/WfTuzxkKzyUPiCvhFn75Dz">Harmony voices for Luthier v8: duets, backing vocals and choirs</a>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><p><strong>v7 has more than an on/off switch</strong> (my earlier claim was wrong): second-singer rows, ensemble kinds, a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves), the never-together duet, the backing echo and a unison anchor. But only the duet harmony has a writer, and every second voice in songs 53 to 56 was written by hand.</p></li>
+<li><p><strong>Three of those four songs broke v7’s default:</strong> a harmony above the lead (54, 55), a two-note answer (56), a descant and choir (53).</p></li>
+<li><p><strong>Traditions agree the harmony is a chord tone, not a fixed interval,</strong> and put it above the lead as often as below: the bluegrass and country tenor, the barbershop tenor, the brother-duet third above.</p></li>
+<li><p><strong>10,529 PDMX scores measured.</strong> v7’s allowed set (3, 4, 8 or 9 semitones below) covers only about a fifth of real harmony pairs. The second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still (static or oblique) in about half of all motions. Parallel fifths are rare (about 1 per 100 motions; 3 in pop). Second voices sound under more of the lead as the song goes on, in every group.</p></li>
+<li><p><strong>What v8 should build (section 5):</strong> six kinds of second voice with their own writers (double, harmony line, pad, answer, descant, parts); a harmony line by chord tone on the side the style calls for, with motion bands; parallel octaves only in a marked doubling passage; entries that grow with the song’s intensity curve; and the measurement run on every output.</p></li>
+<li><p><strong>DALI:</strong> the GitHub repo has no annotations; they are in restricted Zenodo record 3576083 and need an access request.</p></li>
+</ul>
+<h3 id="what-luthier-v7-does-now">1. What Luthier v7 does now</h3>
+<p>A correction first. When I proposed this topic I said v7 has only an on/off backing-vocal row. That was wrong. A reread of v7 finds seven rules that touch a second voice:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule in v7</th>
+<th>What it does</th>
+<th>What it leaves out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11.2 amended (v58): second- singer rows</td>
+<td>Each singer gets a voice row and a register, so a duet can be written for two real voices</td>
+<td>Nothing about how the two lines relate</td>
+</tr>
+<tr class="even">
+<td>v59: ensemble kinds</td>
+<td>Names solo, duet, band with backing vocals, choir</td>
+<td>The kinds are labels; only the duet has a writer</td>
+</tr>
+<tr class="odd">
+<td>v70 fix 2 (Window 88, song 22): the duet harmony</td>
+<td>A harmony derived from the melody: a third below by default, else a sixth (3, 4, 8 or 9 semitones); every note a chord tone; never crossing; inside the singer’s row; one top note under the lead’s peak in the final chorus; no parallel fifths or octaves</td>
+<td>Harmony above the lead; motion other than parallel; where harmonies enter and leave; more than two voices</td>
+</tr>
+<tr class="even">
+<td>Fix 61: the never-together duet</td>
+<td>A duet can be marked so the voices only alternate</td>
+<td>Overlap, echoes, a call answered</td>
+</tr>
+<tr class="odd">
+<td>Fix 84: the backing echo</td>
+<td>Backing voices repeat the lead’s last words, a third under or in unison</td>
+<td>Chords of two or three voices; pads on a vowel</td>
+</tr>
+<tr class="even">
+<td>The unison anchor</td>
+<td>Two voices meet in unison or the octave at an anchor</td>
+<td>When, and how often</td>
+</tr>
+<tr class="odd">
+<td>Production table: backing vocals OPTIONAL/ON</td>
+<td>Whether backing vocals exist in the mix</td>
+<td>Their notes</td>
+</tr>
+</tbody>
+</table>
+<p>Two more places bear on it. Window 57 measured the Open Hymnal’s four-part hymns, and Module 9.14 sets voice-leading and low-interval limits that apply to any added voice. A complaint about descants is on file (line 3181 of the spec) with no rule behind it.</p>
+<h4 id="what-the-recent-songs-needed">What the recent songs needed</h4>
+<ul>
+<li><p><strong>Song 53, Sung to Sleep (carol, organ and choir).</strong> Four-part choir in hymn mode and a soprano descant over the last verse and refrain. All of it was written by hand on the sketch path; v7 has no descant writer.</p></li>
+<li><p><strong>Songs 54 and 55 (country, the yard-man and lake songs).</strong> A harmony voice a third above the lead on the hook, “the crowd singing back”, and on chorus 3’s middle lines. v7’s rule says a third below. The above-harmony was written by my hand, as were the duet tag’s lines (him a third below in his octave, her above him).</p></li>
+<li><p><strong>Song 56, Terpsichore.</strong> Backing voices answer the lead with a two-note chord over his held note in chorus 3 and the outro. That is call and response, which v7 can’t write; fix 84’s echo repeats the lead’s words in his rhythm.</p></li>
+</ul>
+<p>So every second voice in the last four songs was hand-made, and three of the four broke v7’s default (above, not below; a chord, not a line). Jason’s ruling on song 56 stands behind this report: the engine should be writing everything.</p>
+<h3 id="the-academic-record">2. The academic record</h3>
+<p>The record on backing vocals is thin. A 2023 Trondheim master’s thesis on backing vocals in pop says the topic has had little research attention, and Susan Fast and Jacqueline Warwick (cited in a 2024 Goldsmiths thesis) note there is no definitive history of the backing singer. Rock theory has mostly studied chords, not lines: Everett’s survey of rock’s tonal systems finds harmony matters more than counterpoint in most rock. Lacasse’s work on vocal staging covers how recorded voices are placed (doubling, panning, reverb), not their notes. So the best guidance comes from the traditions that teach harmony singing by name, and from perception research.</p>
+<h4 id="what-each-tradition-does">What each tradition does</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tradition</th>
+<th>Where the melody sits</th>
+<th>The harmony voice</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Plain backing vocal (pop, rock)</td>
+<td>Lead on top or in the middle</td>
+<td>One line above or below, mostly thirds or sixths that fit the chords; some bands hold long, slow notes under the chorus</td>
+<td>Encyclopedic summaries of vocal harmony</td>
+</tr>
+<tr class="even">
+<td>Brother duet</td>
+<td>Lower voice</td>
+<td>A tenor in parallel</td>
+<td>Scaruffi; Country</td>
+</tr>
+<tr class="odd">
+<td>(Delmore, Louvin,</td>
+<td></td>
+<td>thirds above, the</td>
+<td>Music Hall of Fame</td>
+</tr>
+<tr class="even">
+<td>Everly)</td>
+<td></td>
+<td>two moving as one</td>
+<td>summaries</td>
+</tr>
+<tr class="odd">
+<td>Bluegrass trio</td>
+<td>Middle (the “standard stack”)</td>
+<td>Tenor: the next chord tone above, following the melody’s shape. Baritone: the next chord tone below. Variants: the high lead (both parts under the melody) and the high baritone (both above)</td>
+<td>No Depression on the Osborne Brothers; bluegrass references</td>
+</tr>
+<tr class="even">
+<td>Barbershop</td>
+<td>Second from the top, the lead</td>
+<td>Tenor above, bass lowest, baritone fills the chord, often below the lead; four parts on every melody note</td>
+<td>Barbershop Harmony Society definition</td>
+</tr>
+<tr class="odd">
+<td>Gospel choir</td>
+<td>Usually soprano; the tenor often takes it in some arrangers’ work</td>
+<td>Starts in unison or call and response and builds to full parts as the song goes on</td>
+<td>Fiveable summary; ACDA on Hogan</td>
+</tr>
+<tr class="even">
+<td>Hymn (SATB)</td>
+<td>Soprano</td>
+<td>Alto, tenor, bass in chordal rhythm with the tune</td>
+<td>Window 57 of the spec already</td>
+</tr>
+</tbody>
+</table>
+<p>Three points follow. First, the harmony above the lead is as normal as the one below: country and bluegrass put the tenor above by default, which is what songs 54 and 55 needed. Second, the harmony is defined by the chord, not by a fixed interval: the next chord tone above or below. A third is what that usually gives, but on some melody notes it gives a fourth or a sixth. Third, harmonies are placed: gospel builds from unison to parts, and pop holds them for the chorus.</p>
+<h4 id="what-perception-research-says-about-lines">What perception research says about lines</h4>
+<p>Huron’s derivation of voice-leading rules from perception (Music Perception, 2001; the MIT Press book, 2016) gives the reasons behind v7’s rule. Unisons, octaves and fifths fuse most readily, so parallel motion in them makes two voices sound like one. That is why classical rules ban parallel fifths and octaves, and it is also why close-harmony styles use parallel motion on purpose: Huron treats close harmony as a texture that seeks fusion, where counterpoint seeks independence. He also documents that the highest voice dominates attention, and that listeners can track only a few lines at once. For a backing vocal, then, the question is not “is it independent?” but “is it meant to blend into the lead or to answer it?” v7 has one rule for both.</p>
+<h3 id="perception-and-practice-tuning-blend-balance">3. Perception and practice: tuning, blend, balance</h3>
+<p>These bear on how the demo renders voices and what the songbook tells singers. They don’t change the notes.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Finding</th>
+<th>Numbers</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unison voices should match pitch closely</td>
+<td>Listeners preferred 0 to 5 cents of scatter; 14 cents was tolerable</td>
+<td>Ternström 1993, J Voice</td>
+</tr>
+<tr class="even">
+<td>Real choirs scatter more than that</td>
+<td>Typically 20 to 30 cents between singers in unison</td>
+<td>Ternström 2003 review; Jers and Ternström</td>
+</tr>
+<tr class="odd">
+<td>Choirs bend thirds</td>
+<td>Major thirds sung wide (about 416 cents), minor thirds narrow (about 276)</td>
+<td>Ternström 2003 review</td>
+</tr>
+<tr class="even">
+<td>Small ensembles stay near equal temperament</td>
+<td>A student quintet tuned close to equal temperament, major thirds slightly toward just</td>
+<td>D’Amario, Daffern, Howard and Pennill</td>
+</tr>
+<tr class="odd">
+<td>Barbershop tunes chords just</td>
+<td>The dominant seventh’s seventh sung about 31 cents flat of the piano; dominant sevenths are 35 to 60% of traditional barbershop chords</td>
+<td>Hagerman and Sundberg 1980; harmonic-seventh references; Choralnet</td>
+</tr>
+<tr class="even">
+<td>Singers need to hear themselves</td>
+<td>Preferred self-to-other ratio about +6 dB (0 to +15)</td>
+<td>Ternström 1999, JASA</td>
+</tr>
+<tr class="odd">
+<td>The top voice takes the ear</td>
+<td>The highest voice is perceptually dominant</td>
+<td>Huron 2016</td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-this-means-for-luthier">What this means for Luthier</h4>
+<ul>
+<li><p><strong>A harmony above the lead competes with it.</strong> Because the top voice takes attention, an above-harmony must sit lower in the mix and be sung lighter. Songs 54 and 55’s songbooks already say “never louder”; v8 should make that a production rule tied to the harmony’s side, not a note in prose.</p></li>
+<li><p><strong>Unison doubling needs a tight match.</strong> A doubled lead (the most common backing part in modern pop) should be described as a double, tuned within a few cents, not as a harmony.</p></li>
+<li><p><strong>The demo renders equal temperament.</strong> That is right for band songs. For a cappella or choir passages the songbook can tell singers to tune thirds and sevenths by ear; the score stays as written.</p></li>
+<li><p><strong>Practice warns against nonstop parallel thirds.</strong> Worship-band teaching material says singers who find the third and never leave it make a part that wears out; it recommends oblique motion, holding a note while the lead moves. Section 4 measures how often real scores do that.</p></li>
+</ul>
+<h3 id="measured-lead-against-harmony-in-10529-scores">4. Measured: lead against harmony in 10,529 scores</h3>
+<p><strong>Data.</strong> PDMX (Zenodo 15571083, CC BY 4.0): scores with words, deduplicated, no licence conflict, two or more parts. 12,852 qualified; 10,529 had two or more vocal parts and parsed. The lead is the part with the most syllables. At each lead note, the other part’s sounding note gives the interval; consecutive pairs give the motion. The clean duet group is “2 voices, both with words” (799 scores, 100,865 note pairs).</p>
+<p><strong>Caveats.</strong> PDMX is user-made MuseScore scores, so popular songs are arrangements, not studio parts. The popular duet sample is small (48 scores, 9,170 pairs). Chords aren’t in the files, so chord-tone membership isn’t tested here.</p>
+<h4 id="the-tables">The tables</h4>
+<p><strong>Intervals</strong> (share of sounding pairs, %)</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Scores</th>
+<th>Below</th>
+<th>3rds</th>
+<th>6ths</th>
+<th>5ths</th>
+<th>Unison, 8ve</th>
+<th>Dissonant</th>
+<th>v7’s set</th>
+<th>Crossed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Popular duets</td>
+<td>48</td>
+<td>67</td>
+<td>25</td>
+<td>9</td>
+<td>14</td>
+<td>26</td>
+<td>16</td>
+<td>18</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>Folk duets</td>
+<td>22</td>
+<td>65</td>
+<td>28</td>
+<td>13</td>
+<td>9</td>
+<td>28</td>
+<td>17</td>
+<td>18</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Sacred duets</td>
+<td>28</td>
+<td>53</td>
+<td>23</td>
+<td>19</td>
+<td>11</td>
+<td>30</td>
+<td>10</td>
+<td>13</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>Classical duets</td>
+<td>701</td>
+<td>73</td>
+<td>31</td>
+<td>14</td>
+<td>12</td>
+<td>25</td>
+<td>11</td>
+<td>21</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>All duets</td>
+<td>799</td>
+<td>72</td>
+<td>30</td>
+<td>13</td>
+<td>12</td>
+<td>26</td>
+<td>11</td>
+<td>21</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>All, 3 voices</td>
+<td>1,335</td>
+<td>66</td>
+<td>33</td>
+<td>14</td>
+<td>14</td>
+<td>20</td>
+<td>10</td>
+<td>20</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>All, 4+ voices</td>
+<td>8,059</td>
+<td>61</td>
+<td>29</td>
+<td>15</td>
+<td>15</td>
+<td>20</td>
+<td>10</td>
+<td>18</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Popular, 4+ voices</td>
+<td>273</td>
+<td>60</td>
+<td>22</td>
+<td>13</td>
+<td>14</td>
+<td>23</td>
+<td>17</td>
+<td>13</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>“Below” is the share of pairs where the second voice is the lower part. “Dissonant” is seconds, sevenths and tritones.</p>
+<p><strong>Motion and placement</strong> (%, except the per-100 columns)</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Same onset</th>
+<th>Static or oblique</th>
+<th>Contrary</th>
+<th>Parallel</th>
+<th>Parallel 5ths per 100</th>
+<th>Parallel 8ves, unisons per 100</th>
+<th>Present, first → last fifth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Popular duets</td>
+<td>77</td>
+<td>52</td>
+<td>10</td>
+<td>28</td>
+<td>3.3</td>
+<td>10.8</td>
+<td>63 → 78</td>
+</tr>
+<tr class="even">
+<td>Folk duets</td>
+<td>81</td>
+<td>53</td>
+<td>12</td>
+<td>26</td>
+<td>0.5</td>
+<td>10.6</td>
+<td>66 → 76</td>
+</tr>
+<tr class="odd">
+<td>Sacred duets</td>
+<td>78</td>
+<td>47</td>
+<td>14</td>
+<td>31</td>
+<td>0.6</td>
+<td>16.4</td>
+<td>72 → 90</td>
+</tr>
+<tr class="even">
+<td>Classical duets</td>
+<td>77</td>
+<td>45</td>
+<td>18</td>
+<td>28</td>
+<td>0.9</td>
+<td>10.2</td>
+<td>69 → 81</td>
+</tr>
+<tr class="odd">
+<td>All duets</td>
+<td>77</td>
+<td>46</td>
+<td>17</td>
+<td>28</td>
+<td>1.1</td>
+<td>10.5</td>
+<td>68 → 81</td>
+</tr>
+<tr class="even">
+<td>All, 3 voices</td>
+<td>75</td>
+<td>48</td>
+<td>21</td>
+<td>20</td>
+<td>0.7</td>
+<td>4.7</td>
+<td>74 → 85</td>
+</tr>
+<tr class="odd">
+<td>All, 4+ voices</td>
+<td>72</td>
+<td>54</td>
+<td>21</td>
+<td>14</td>
+<td>0.5</td>
+<td>2.9</td>
+<td>68 → 78</td>
+</tr>
+<tr class="even">
+<td>Popular, 4+ voices</td>
+<td>61</td>
+<td>67</td>
+<td>9</td>
+<td>16</td>
+<td>1.4</td>
+<td>6.9</td>
+<td>70 → 79</td>
+</tr>
+</tbody>
+</table>
+<p>Intervals are by class, so a tenth counts as a third. “In v7’s set” means exactly 3, 4, 8 or 9 semitones below the lead, which is v7’s whole allowed vocabulary.</p>
+<h4 id="what-the-numbers-say">What the numbers say</h4>
+<ol type="1">
+<li><p><strong>v7’s set covers about a fifth of real harmony.</strong> Thirds and sixths together are 34% to 45% of sounding pairs. Restricted to below the lead and inside the octave, as v7 requires, they are 13% to 21%.</p></li>
+<li><p><strong>The harmony is above the lead a third of the time</strong> (28% in duets, 33% in popular duets). v7 forbids it.</p></li>
+<li><p><strong>About a quarter of all pairs are unison or octave.</strong> These are doubling stretches, where the two voices sing the same tune. Parallel unisons and octaves run 10 to 16 per 100 motions in duets. v7’s ban on parallel octaves rules out the commonest duet texture.</p></li>
+<li><p><strong>Parallel fifths really are rare:</strong> under 1 per 100 motions except in popular duets (3.3). v7’s ban fits everything but pop.</p></li>
+<li><p><strong>Real harmony holds still.</strong> About half of all motions are static or oblique; parallel motion is 28% in duets and 14% in four parts; contrary motion 10% to 21%. A rule that adds a fixed interval to the melody is parallel by construction, so v7’s writer would invert this profile.</p></li>
+<li><p><strong>Dissonance is normal on the way through:</strong> 10% to 17% of pairs are seconds, sevenths or tritones, nearly all short passing notes.</p></li>
+<li><p><strong>The voices mostly move together:</strong> 77% of lead notes start with the harmony note (61% in popular four-part, where pads and held notes are common).</p></li>
+<li><p><strong>Harmony grows through the song.</strong> In every group the second voice sounds under more of the lead in the last fifth than in the first: popular duets go from 63% to 78%, sacred duets from 72% to 90%.</p></li>
+</ol>
+<p>Song 53’s choir could not be measured here: its scores live in the song’s output folder, which is not in the repo. The measurement can be rerun on it when the folder is rebuilt (the parser reads the engine’s own MusicXML).</p>
+<h3 id="what-v8-should-do">5. What v8 should do</h3>
+<p>Keep what v7’s rule gets right: chord tones on strong notes, inside the singer’s row, no crossing, the harmony’s peak under the lead’s. Replace the rest with a writer for each kind of second voice, and bands from section 4.</p>
+<h4 id="v1.-six-kinds-of-second-voice-each-with-its-own-writer">V1. Six kinds of second voice, each with its own writer</h4>
+<p>v59’s ensemble kinds become writers. Each passage of a second voice is one of:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>What it is</th>
+<th>Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Double</td>
+<td>The lead’s tune in unison or an octave away</td>
+<td>Pop choruses, duets’ shared lines, hymns</td>
+</tr>
+<tr class="even">
+<td>Harmony line</td>
+<td>A line above or below that follows the lead’s rhythm</td>
+<td>Songs 54 and 55’s hook, duets</td>
+</tr>
+<tr class="odd">
+<td>Pad</td>
+<td>Held vowels (“ooh”, “ah”) on chord tones under the lead</td>
+<td>Pop and gospel backing</td>
+</tr>
+<tr class="even">
+<td>Answer</td>
+<td>Its own words between or over the lead’s phrases</td>
+<td>Song 56; gospel call and response</td>
+</tr>
+<tr class="odd">
+<td>Descant</td>
+<td>An independent line above a choir or congregation</td>
+<td>Song 53’s last verse</td>
+</tr>
+<tr class="even">
+<td>Parts</td>
+<td>Three or four voices on every melody note (trio stack, barbershop, SATB)</td>
+<td>Song 53; bluegrass; hymns</td>
+</tr>
+</tbody>
+</table>
+<p>The intake asks which kinds the song uses and where. Fix 84’s echo becomes a case of Answer, fix 61’s never-together duet a constraint on Double and Answer.</p>
+<h4 id="v2.-the-harmony-line-by-chord-tone-on-either-side">V2. The harmony line by chord tone, on either side</h4>
+<ul>
+<li><p><strong>Side by style.</strong> Above (the tenor) for country, bluegrass, brother duets and anthems; below for pop, folk and singer-songwriter by default; the intake can override. v7’s “a third below” becomes the pop default, not the rule.</p></li>
+<li><p><strong>The note.</strong> The next chord tone above (or below) the lead’s note, as bluegrass and barbershop teach. That gives a third most of the time and a fourth or sixth where the chord requires. On short weak notes a passing note may stand (10% to 17% of pairs are dissonant in real scores).</p></li>
+<li><p><strong>Bands for a harmony line,</strong> from the duet scores: thirds and sixths at least 35% of pairs; static or oblique 45% to 55%; parallel 25% to 35%; contrary at least 10%; crossing at most 6%.</p></li>
+<li><p><strong>Parallel fifths</strong> at most 1 per 100 motions, 3.5 in pop. <strong>Parallel unisons and octaves</strong> only inside a passage marked Double.</p></li>
+</ul>
+<h4 id="v3.-where-second-voices-go">V3. Where second voices go</h4>
+<ul>
+<li><p>Presence grows: the share of the lead covered by a second voice in the song’s last fifth exceeds the first fifth’s by at least 10 points (every group measured did so).</p></li>
+<li><p>The first entry is on a hook or chorus; the last chorus adds lines (songs 54 and 55 already did this by hand). Gospel and worship songs may build from unison through Answer to Parts.</p></li>
+<li><p>Tie the entries to the song-wide intensity curve (749.17), so a new voice is one of the steps that lift each return.</p></li>
+</ul>
+<h4 id="v4.-production-and-the-songbook">V4. Production and the songbook</h4>
+<ul>
+<li><p>A second voice above the lead is mixed and sung lighter than one below (the top voice takes the ear). The production table states the side, not only ON.</p></li>
+<li><p>Doubles are described as doubles, tuned tight; a cappella passages tell singers to tune thirds and sevenths by ear.</p></li>
+</ul>
+<h4 id="v5.-tests">V5. Tests</h4>
+<ul>
+<li><p><code>voices_pdmx.py</code> ’s measures, run on every engine output through <code>parse_parts.py</code></p></li>
+<li><p>(it reads the engine’s MusicXML), reported against the V2 and V3 bands in the test report.</p></li>
+<li><p>A control run with v7’s rule: the profile should show the near-total parallel motion section 4 predicts, so the change is visible.</p></li>
+<li><p>Rerun on song 53’s choir once its output folder is rebuilt, and on songs 54 to 56’s hand-written parts as the first targets the engine must match.</p></li>
+</ul>
+<h3 id="files-and-sources">6. Files and sources</h3>
+<h4 id="in-the-repo-studiesvoices">In the repo (studies/voices)</h4>
+<ul>
+<li><p><code>parse_parts.py</code> : every part of a MusicXML score, aligned in time (reads PDMX and</p></li>
+<li><p>the engine’s own scores).</p></li>
+<li><p><code>voices_pdmx.py</code> : the section 4 measurement; <code>voices_pdmx_results.json</code> : its</p></li>
+<li><p>results; <code>README.md</code> .</p></li>
+</ul>
+<h4 id="data">Data</h4>
+<p>PDMX, Long et al., Zenodo record 15571083, CC BY 4.0.</p>
+<ul>
+<li>DALI (Meseguer-Brocal et al.): the annotations are in restricted Zenodo record 3576083; GitHub holds only code and metadata. Not used yet; access must be requested.</li>
+</ul>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><p>Huron, D. (2001). Tone and voice: a derivation of the rules of voice-leading from perceptual principles. Music Perception 19(1), 1–64.</p></li>
+<li><p>Huron, D. (2016). Voice Leading: The Science behind a Musical Art. MIT Press.</p></li>
+<li><p>Ternström, S. (1993). Perceptual evaluations of voice scatter in unison choir sounds. Journal of Voice 7(2), 129–135.</p></li>
+<li><p>Ternström, S. (1999). Preferred self-to-other ratios in choir singing. JASA 105(6), 3563– 3574.</p></li>
+<li><p>Ternström, S. (2003). Choir acoustics: an overview of scientific research published to date. International Journal of Research in Choral Singing 1(1), 3–11.</p></li>
+<li><p>Hagerman, B. and Sundberg, J. (1980). Fundamental frequency adjustment in barbershop singing. KTH STL-QPSR 21(1).</p></li>
+<li><p>Devaney, J., Mandel, M. and Fujinaga, I. (2012). A study of intonation in three-part singing using AMPACT. ISMIR 2012, 511–516.</p></li>
+<li><p>D’Amario, S., Daffern, H., Howard, D. and Pennill, N. Tuning in a newly formed singing quintet (White Rose eprint 157113).</p></li>
+<li><p>Everett, W. (2004). Making sense of rock’s tonal systems. Music Theory Online 10(4).</p></li>
+<li><p>Lacasse, S. (2000). Listen to my voice: the evocative power of vocal staging in recorded rock music. PhD thesis, Liverpool.</p></li>
+<li><p>The Art of Backing Vocals (2023), master’s thesis, NTNU (hdl.handle.net/11250/3097093).</p></li>
+<li><p>Finney, R. (2024), PhD thesis on the background vocal, Goldsmiths (citing Fast and Warwick).</p></li>
+<li><p>Barbershop Harmony Society, definition of the barbershop style (via Sunshine District and Wikipedia).</p></li>
+<li><p>No Depression, “Osborne Brothers: a high lead, a long run”; Wikipedia, Bluegrass music (stacks); California Bluegrass Association, “The Perfect Stack”.</p></li>
+<li><p>Scaruffi, P., The Everly Brothers (the Delmore tradition of harmonic thirds).</p></li>
+<li><p>ACDA Choral Journal, December 2020 (Battiste on Moses Hogan’s arrangements).</p></li>
+<li><p>The Church Collective, “Structuring Vocals, Part One: Oblique Harmony” (2016).</p></li>
+<li><p>Wikipedia, Vocal harmony; Barbershop music; Harmonic seventh.</p></li>
+</ul>
+<p>Not reached: Hagerman and Sundberg’s full paper and Ternström’s 2003 review were read only through abstracts and citing papers.</p>
 
 <a class="top" href="#start">Top</a>
 </body>
