@@ -95,11 +95,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-29" id="toc-part-29">Part 29. Instrumental solos and breaks for Luthier v8</a></li>
 <li><a href="#part-30" id="toc-part-30">Part 30. The hook for Luthier v8: what makes a chorus stick</a></li>
 <li><a href="#part-31" id="toc-part-31">Part 31. What arXiv adds for Luthier v8: a pass across the research topics</a></li>
+<li><a href="#part-32" id="toc-part-32">Part 32. Lyric craft for Luthier v8: what makes words great</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with thirteen research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament, key-choice, tempo, solo and hook writers v8 needs (Parts 17 to 29). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 31 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo, studies/solos and studies/hooks), for anyone with access. This page does not depend on it.</p>
+<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with fourteen research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament, key-choice, tempo, solo, hook and lyric writers v8 needs, and an arXiv pass over them (Parts 17 to 32). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 32 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo, studies/solos, studies/hooks and studies/lyrics), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -237,6 +238,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-31">31</a></td>
 <td>What arXiv adds for Luthier v8: a pass across the research topics (no rule reversed; Chordonomicon; a long-note band; skip and replay curves)</td>
 </tr>
+<tr class="even">
+<td><a href="#part-32">32</a></td>
+<td>Lyric craft for Luthier v8: what makes words great (peers against the chart; a repetition band; range of feeling; a story dial; rules L1 to L7)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -266,6 +271,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Solos and breaks (Part 29).</strong> v7 writes the instrument around the voice but has no solo. In 739 Billboard songs the share with a solo grew from 22% (1958 to 1964) to 46% (1985 to 1991), and declined after with hip-hop’s rise; a solo is about 8 bars and 20 seconds, starts just past the middle (0.45 to 0.65), usually follows the second chorus and leads into the last verse or chorus, and plays its own chords half the time. Short links of 4 to 8 bars are nearly universal. v8 should write two kinds of instrumental section, link and solo, with bands for length, place and material and a solo default by era and style.</p></li>
 <li><p><strong>The hook (Part 30).</strong> v7 has more hook theory than any other area but never tested a hook against recognition, and its strength indicators reward an unusual interval. The research that measured memory (the Hooked game) found the voice, typical sound and melody, and repetition made sections recognisable; distinctiveness did not. In 22,407 Hooktheory sections a chorus is mainly higher than its verse, only a little more repetitive and no more typical; the 14 fastest-recognised songs’ choruses sit at the 81st percentile for typical cells and the 33rd for interval variety. Titles in 156 Billboard hits: in the chorus in 87%, about twice a chorus and 8 times a song, in its first line more often than its last. Songs 52 to 56 have choruses at the 1st to 6th percentile for repeating themselves. v8 should score typicality instead of an unusual interval, make the chorus repeat its own cell, place the title as hits do, and carry identity in rhythm.</p></li>
 <li><p><strong>What arXiv adds (Part 31).</strong> A pass over arXiv and PsyArXiv for all 13 research topics found no paper that reverses a rule in Parts 18 to 30. One real miss: Chordonomicon, 666,000+ songs’ chords with sections, genres and dates, public but not downloadable from the research workspace; it could retest harmony, chromatic chords and keys at about 900 times McGill’s size. Two additions: long notes on stressed syllables at least 75% of the time (human lyrics 73% to 82%; songs 54 and 56 at 65% and 68%), and a floor on predictability (elevator-music covers are rated less pleasurable than the originals).</p></li>
+<li><p><strong>Lyric craft (Part 32).</strong> v7’s lyric research tests the chart. Against a peers’ judge (64 songs from Rolling Stone’s 500 Greatest Songs, voted by more than 250 artists and critics, against 209 Hot 100 songs of the same years, all from CoCoPops), greatest-list songs repeat fewer of their lines (0.42 against 0.57, the one result that survives correction), use fewer rare words and swing wider in feeling from line to line; the story proxy was null. Jason’s lyrics are unusually concrete; songs 54 and 55 repeat too few lines, and songs 53, 55 and 56 hold a narrow range of feeling. Rules L1 to L7: repetition between the two medians, carried by the chorus; the arc of feeling printed with the lyric; sad endings offered as options; a story dial; absolutes allowed.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -15816,6 +15822,419 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p><a href="https://arxiv.org/html/2608.19061">Computational features for symbolic melody analysis (arXiv 2608.19061);</a> <a href="https://arxiv.org/html/2607.25787">GraphIDyOM (arXiv 2607.25787)</a></p></li>
 <li><p><a href="https://osf.io/preprints/psyarxiv/xqs8b_v1">Elevator music as a tool for the quantitative characterization of reward (PsyArXiv)</a></p></li>
 <li><p>Songs 54 to 56’s long notes: read from songs/p64 to p66 song_record.pkl</p></li>
+</ul>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-32">Part 32. Lyric craft for Luthier v8: what makes words great</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/D5HXXMxiKS8RHJzhUjwi6o">Lyric craft for Luthier v8: what makes words great</a>.</p>
+<h3 id="summary">Summary</h3>
+<p>The songs artists and critics call greatest repeat fewer of their lines than ordinary hits (0.42 against 0.57 of lines), use plainer words and range wider in feeling. The chart rewards repetition; peers reward lines that keep moving.</p>
+<ul>
+<li><p><strong>v7</strong> already holds the deepest lyric research in the spec, but almost all of it asks whether a lyric charted. After v7’s own language correction, what stands is chorus repetition, predictability, constraints per line, “you” as object and familiar words.</p></li>
+<li><p><strong>New research:</strong> story can now be measured (agents, events, a world), and Grammynominated country songs tell more of it than their album-mates. Songs with sad endings and fall-then-rise or rise-then-fall shapes did better in a national contest. Lyrics draw an interest of their own, apart from plays.</p></li>
+<li><p><strong>Measured on 64 greatest-list songs against 209 Hot 100 songs (1958 to 1991):</strong> fewer repeated lines (the one result that survives a strict correction), fewer rare words, a wider range of feeling, more absolutes. A crude story proxy did not separate them.</p></li>
+<li><p><strong>Songs 52 to 56:</strong> unusually concrete and varied words, a strength. Songs 54 and 55 repeat too few lines even by the peers’ standard, and songs 53, 55 and 56 hold a narrow range of feeling.</p></li>
+<li><p><strong>For v8:</strong> seven rules (section 5): repetition between the two channels’ medians, carried by the chorus; a range of feeling with the arc printed; low endings offered; a story dial for story styles; plain words; absolutes allowed; concreteness kept as style.</p></li>
+</ul>
+<h3 id="what-luthier-v7-does-now">1. What Luthier v7 does now</h3>
+<p>v7’s lyric research is the deepest in the spec: more than a dozen windows on 15,941 lyrics, tested against the chart, against songs that lasted and against the hymnal. Two gaps remain. Almost every test asked whether a lyric charted, never whether people who judge songs think it is good, and nothing measures story.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Area in v7</th>
+<th>What it found</th>
+<th>Standing after v7’s own correction (Windows 64 and 65)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repetition (Window 27)</td>
+<td>Chorus type-token ratio 0.23 against the verse’s 0.575; hits repeat more even in verses</td>
+<td>Stands</td>
+</tr>
+<tr class="even">
+<td>Predictability (Window 58)</td>
+<td>Hits are more predictable word by word; inside the chart, bigger hits more so</td>
+<td>Stands, weaker</td>
+</tr>
+<tr class="odd">
+<td>Constraints per line (Window 59)</td>
+<td>A line held by rhyme, metre, repetition and a concrete act lasts; about 1.5 constraints a line in every lasting form</td>
+<td>Stands on persistence and the hymnal</td>
+</tr>
+<tr class="even">
+<td>Address (Windows 31, 34)</td>
+<td>“You” as the object of a line, from Packard and Berger</td>
+<td>Rests on their experiments</td>
+</tr>
+<tr class="odd">
+<td>Common words (Window 34)</td>
+<td>Familiar words are sung more intelligibly</td>
+<td>Rests on Johnson, Huron and Collister; the chart signal fell to chance</td>
+</tr>
+<tr class="even">
+<td>Concreteness and the senses (Windows 32, 91)</td>
+<td>Plain concreteness null; hits lean on body words, songs that last on visual words</td>
+<td>Stands, as a dial</td>
+</tr>
+<tr class="odd">
+<td>Meaning (Window 60)</td>
+<td>Hits range in meaning; the title’s company changes by the last chorus</td>
+<td>Chart support gone; kept as craft rules</td>
+</tr>
+<tr class="even">
+<td>Blending (Window 61)</td>
+<td>Remote word pairs and two-world titles</td>
+<td>Chart support gone or reversed</td>
+</tr>
+<tr class="odd">
+<td>The quotable line (Module 10.20)</td>
+<td>Lines ranked against each other; the writer’s blind picks as the label</td>
+<td>Stands</td>
+</tr>
+<tr class="even">
+<td>The writing room (Modules 10.10 to 10.16, 28)</td>
+<td>Story questions, twelve candidates by named moves, coaching, never-say lists, the mouth test</td>
+<td>Process, not tested against an outcome</td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-the-recent-songs-needed">What the recent songs needed</h4>
+<p>Songs 52 to 56 were written from Jason’s own poems and stories, so the writing room’s coaching and the mouth test did most of the work. What no rule told them is how much story a song should tell, where its feeling should end, and how its words compare with songs that musicians and critics call great.</p>
+<h3 id="the-academic-record">2. The academic record</h3>
+<p>Since v7’s lyric windows, the research has moved to three things v7 never measured: story, the emotional arc, and judgements by peers rather than sales. All three point the same way: what peers reward in words is not simply what charts reward.</p>
+<h4 id="story">Story</h4>
+<p><strong>Narrativity, measured.</strong> Bamman and colleagues scored lyrics on three axes (particular agents, events in sequence, an inhabitable world) and trained a model that matches human ratings closely (Spearman 0.84; frontier language models managed 0.53 to 0.59). In 5,745 Billboard year-end hits, mean narrativity rose from 2.58 to 3.72 between 1960 and 2024, led by hip hop (4.01) and country (3.43); disco and soul were lowest <a href="https://anthology.ach.org/volumes/vol0003/measuring-stories-in-contemporary-songs/10.63744@w9C0wDxmZTVt.pdf">(Bamman et al. 2025)</a>.</p>
+<ul>
+<li><p><strong>Peers reward it in country.</strong> Grammy-nominated Best Country songs scored 3.61 against 3.40 for non-nominated songs from the same album (n = 259, p = 0.002). Song of the Year nominees scored 4.2% higher, at the edge of significance; rock, R&amp;B and rap showed no gap.</p></li>
+<li><p><strong>What carries it.</strong> Past-tense verbs, time words, places and concrete objects; firstperson pronouns alone predicted nothing.</p></li>
+<li><p><strong>The arc.</strong> In 12,280 lyrics and 2,823 greatest hits, songs set the stage early, move the plot steadily and peak in internal tension in the middle. Country and rap set the scene in more detail; pop moves faster and holds more conflict (<a href="https://doaj.org/article/b8e7f4e79e52458589979532040b2095">Alberhasky and Durkee 2024</a>).</p></li>
+</ul>
+<h4 id="the-emotional-arc">The emotional arc</h4>
+<p>In a German national song contest (176 songs, 2005 to 2015), songs with sad endings drew more points than happy endings (4.06 against 3.35 on a 0 to 12 scale), and higher emotional peaks drew fewer. Of the classic story shapes, “man in a hole” (fall, then rise) and “Icarus” (rise, then fall) did best <a href="https://link.springer.com/article/10.1007/s10824-025-09532-6">(Rösch and Rauch 2025</a>). Correlational, one contest, but the only outcome study of lyric arcs.</p>
+<h4 id="what-changed-in-the-words">What changed in the words</h4>
+<p>Across 353,320 English lyrics from 1970 to 2020, lyrics became simpler, more repetitive, more negative and more personal. People’s views of the lyrics on Genius behave differently from their listening counts, so lyrics hold an interest of their own (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10978890">Parada- Cabaleiro et al. 2024)</a>.</p>
+<h4 id="already-in-v7-and-still-standing">Already in v7 and still standing</h4>
+<p>Chorus repetition and the chart (Nunes, Ordanini and Valsesia 2015), “you” as the object of the line (Packard and Berger 2020), moderate topic atypicality (Berger and Packard 2018), constraints per line (Rubin), familiar words for sung intelligibility (Johnson, Huron and Collister 2014), and concrete object words as the mark of professional poems (Kao and Jurafsky). This study does not repeat them.</p>
+<h3 id="new-vectors-from-bibliographies-and-arxiv">3. New vectors from bibliographies and arXiv</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Vector</th>
+<th>Where it came from</th>
+<th>What it adds</th>
+<th>Here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Peers against the chart</td>
+<td>Rolling Stone’s 500 Greatest Songs (a poll of more than 250 artists, musicians, producers and critics), with 80 of its songs transcribed with lyrics in CoCoPops</td>
+<td>An outcome for “great” rather than “hit”</td>
+<td>Used (section 4)</td>
+</tr>
+<tr class="even">
+<td>A narrativity model</td>
+<td>Bamman et al. 2025 (a fine-tuned RoBERTa beats frontier language models on this task)</td>
+<td>Story as a measured dial for the writing room</td>
+<td>Its features used as a proxy</td>
+</tr>
+<tr class="odd">
+<td>Paired by album</td>
+<td>Bamman et al. 2025, Grammy nominees against their album-mates</td>
+<td>Holds artist, era and production constant</td>
+<td>A design for a later study</td>
+</tr>
+<tr class="even">
+<td>Emotional arcs</td>
+<td>Rösch and Rauch 2025, after Reagan et al. 2016’s six story shapes</td>
+<td>The shape of feeling through a song, and its ending</td>
+<td>Used (range and ending)</td>
+</tr>
+<tr class="odd">
+<td>Lyric views</td>
+<td>Parada-Cabaleiro et al. 2024</td>
+<td>Interest in the words themselves, separate from plays</td>
+<td>Not reachable here</td>
+</tr>
+<tr class="even">
+<td>Annotated lines</td>
+<td>arXiv <a href="https://arxiv.org/pdf/1708.03492">1708.03492</a> (803,720 Genius lyric-annotation pairs); <a href="https://arxiv.org/pdf/2006.08108v1">2006.08108</a></td>
+<td>Which lines listeners stop to explain: a line-level outcome</td>
+<td>A later study</td>
+</tr>
+<tr class="odd">
+<td>Expert ratings of whole songs</td>
+<td>arXiv <a href="https://arxiv.org/pdf/2505.10793">SongEval (2505.10793)</a>, 2,399 songs rated by 16 professionals on coherence, memorability, phrasing, structure and musicality; <a href="https://arxiv.org/pdf/2604.25937">SongBench (2604.25937)</a></td>
+<td>A human-rated outcome for whole songs, mostly AI-generated</td>
+<td>For testing v8’s demos later</td>
+</tr>
+<tr class="even">
+<td>Long notes on stressed syllables</td>
+<td>arXiv <a href="https://arxiv.org/html/2307.02146v1">LOAF-M2L (2307.02146)</a></td>
+<td>73% to 82% in human lyrics (Part 31)</td>
+<td>Carried over</td>
+</tr>
+</tbody>
+</table>
+<h3 id="measured-greatest-list-songs-against-ordinary-hits">4. Measured: greatest-list songs against ordinary hits</h3>
+<p>The songs artists and critics call greatest repeat fewer of their lines than ordinary hits, use fewer rare words, and swing wider in feeling from line to line. Story features did not separate them.</p>
+<p>CoCoPops transcribes, as sung, 64 songs from Rolling Stone’s 500 Greatest Songs and 209 songs from a random sample of the Hot 100, both from 1958 to 1991 and by the same project (studies/lyrics). Lines were cut by one rule for both: a gap of half a beat, a word held two beats, or a new section. Each comparison is shuffled within decades to control for era.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Greatest (median)</th>
+<th>Hot 100 (median)</th>
+<th>AUC (greatest higher above 0.5)</th>
+<th>p within decade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Repeated lines (share of lines sung more than once)</td>
+<td>0.42</td>
+<td>0.57</td>
+<td>0.37</td>
+<td>0.001</td>
+</tr>
+<tr class="even">
+<td>Rare content words (Zipf under 3)</td>
+<td>3.2%</td>
+<td>4.8%</td>
+<td>0.41</td>
+<td>0.03</td>
+</tr>
+<tr class="odd">
+<td>Feeling’s range across lines (spread of line valence)</td>
+<td>0.26</td>
+<td>0.22</td>
+<td>0.60</td>
+<td>0.02</td>
+</tr>
+<tr class="even">
+<td>Absolutes per line (always, never, forever)</td>
+<td>0.054</td>
+<td>0.034</td>
+<td>0.60</td>
+<td>0.01</td>
+</tr>
+<tr class="odd">
+<td>Words per line</td>
+<td>4.4</td>
+<td>3.8</td>
+<td>0.62</td>
+<td>0.003</td>
+</tr>
+<tr class="even">
+<td>Proper nouns per 100 words</td>
+<td>0.6</td>
+<td>1.2</td>
+<td>0.42</td>
+<td>0.06</td>
+</tr>
+<tr class="odd">
+<td>“You” per word</td>
+<td>0.031</td>
+<td>0.047</td>
+<td>0.43</td>
+<td>0.10</td>
+</tr>
+<tr class="even">
+<td>Concreteness of content words</td>
+<td>2.90</td>
+<td>3.01</td>
+<td>0.44</td>
+<td>0.11</td>
+</tr>
+<tr class="odd">
+<td>Narrativity index (past tense, time, place, names, he/she/they)</td>
+<td>−0.15</td>
+<td>−0.08</td>
+<td>0.45</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td>Lexical variety, rhyme density, ending, mean valence</td>
+<td></td>
+<td></td>
+<td>0.47 to 0.51</td>
+<td>over 0.5</td>
+</tr>
+</tbody>
+</table>
+<p>Twenty-four measures were compared, so only the repeated-lines result clearly survives a strict correction. The words-per-line gap may partly reflect how the two sets were encoded. The story proxy is cruder than Bamman’s model, so its null says little about story itself.</p>
+<p>This is the music’s two-channel pattern again (Parts 7 and 12). The chart rewards repetition; the people who judge songs reward lines that keep moving. Part 30’s hook rules and this result fit together: the chorus repeats its cell and its hook phrase, and the rest of the song keeps changing.</p>
+<h4 id="songs-52-to-56">Songs 52 to 56</h4>
+<p>Percentiles against the greatest-list songs (song 53 is read from its lyric as written, so its repetition is not comparable):</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Song</th>
+<th>Repeated lines</th>
+<th>Rare words</th>
+<th>Feeling’s range</th>
+<th>Concreteness</th>
+<th>Lexical variety</th>
+<th>“You”</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>52</td>
+<td>53 (0.43)</td>
+<td>6</td>
+<td>69</td>
+<td>91</td>
+<td>73</td>
+<td>53</td>
+</tr>
+<tr class="even">
+<td>53</td>
+<td>not comparable</td>
+<td>52</td>
+<td>6</td>
+<td>83</td>
+<td>67</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>54</td>
+<td>19 (0.28)</td>
+<td>48</td>
+<td>41</td>
+<td>100</td>
+<td>97</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>55</td>
+<td>19 (0.27)</td>
+<td>55</td>
+<td>14</td>
+<td>98</td>
+<td>95</td>
+<td>41</td>
+</tr>
+<tr class="odd">
+<td>56</td>
+<td>61 (0.50)</td>
+<td>25</td>
+<td>14</td>
+<td>83</td>
+<td>53</td>
+<td>78</td>
+</tr>
+</tbody>
+</table>
+<p>Jason’s lyrics are unusually concrete and varied: four of five songs sit in the top fifth for concreteness. Songs 54 and 55 repeat fewer lines than four in five greatest-list songs, so their choruses carry too little return even by the peers’ standard. Songs 53, 55 and 56 hold a narrow range of feeling across their lines.</p>
+<h3 id="what-v8-should-do">5. What v8 should do</h3>
+<p>v8’s writing room should aim for both channels: a chorus that returns, a song whose lines move, a wide range of feeling, and story where the style calls for it. Each rule has a check that runs on every lyric. If added to the fix list, they would follow Part 30’s numbers.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule</th>
+<th>What v8 does</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L1. Repetition by channel</td>
+<td>The share of lines sung more than once sits between 0.42 (the greatest-list median) and 0.57 (the Hot 100 median). The chorus and hook phrase carry the repeats (Part 30, H2 and H3); verses do not repeat lines</td>
+<td>lyrics_our_songs.py; songs 54 and 55 (0.28, 0.27) would be raised</td>
+</tr>
+<tr class="even">
+<td>L2. A range of feeling</td>
+<td>Line-by-line feeling spreads at least as wide as the Hot 100 median (valence spread 0.22, aim 0.26). The arc is printed with the lyric: where it falls, where it turns, where it ends</td>
+<td>Songs 53, 55 and 56 (6th to 14th percentile) flagged</td>
+</tr>
+<tr class="odd">
+<td>L3. Endings may land low</td>
+<td>A sad or bittersweet ending, and a fall-then-rise or rise-then-fall shape, are offered as options at the story questions; the arc is reported, not scored</td>
+<td>Report only (one contest study)</td>
+</tr>
+<tr class="even">
+<td>L4. A story dial</td>
+<td>For story styles (country, folk, narrative, hymn testimony), the writing room asks for agents, events in order and a place, and reports past-tense verbs, time words, places and concrete objects per 100 words</td>
+<td>Report; a narrativity model can replace the proxy later</td>
+</tr>
+<tr class="odd">
+<td>L5. Plain words</td>
+<td>Rare content words at most about 4% (greatest-list median 3.2%), which also serves sung intelligibility (v7’s familiarity rule)</td>
+<td>Already near for all five songs</td>
+</tr>
+<tr class="even">
+<td>L6. Absolutes allowed</td>
+<td>Remove the verse penalty v7 keeps on always, never and forever (Window 34); greatest-list songs use more of them</td>
+<td>Module 28’s imagery term</td>
+</tr>
+<tr class="odd">
+<td>L7. Keep the concreteness</td>
+<td>Jason’s concreteness is a strength, not a lever; leave it as a style dial (v7, Window 91)</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tests-for-v8">Tests for v8</h4>
+<ol type="1">
+<li><p>Songs 52 to 56 rerun on lyrics_our_songs.py: repeated lines within L1’s band (song 53 read as sung), feeling’s range at or above 0.22.</p></li>
+<li><p>Every lyric prints its arc, its story readings and its repetition against both medians.</p></li>
+<li><p>A blind pick by Jason between a v7 lyric revision and an L1 to L4 revision of one song, his choice logged.</p></li>
+</ol>
+<h3 id="files-and-sources">6. Files and sources</h3>
+<h4 id="in-the-repo-studieslyrics">In the repo (studies/lyrics)</h4>
+<ul>
+<li><p>lyrics_features.py: the measures, for CoCoPops Rolling Stone and Billboard transcriptions (one line rule for both); lyrics_rows.json, lyrics_rows_scored.json (derived numbers only, no lyrics)</p></li>
+<li><p>lyrics_analyse.py: greatest-list against Hot 100, shuffled within decades; lyrics_results.json</p></li>
+</ul>
+<p>lyrics_our_songs.py: songs 52 to 56; lyrics_our_songs.json</p>
+<h4 id="data">Data</h4>
+<ul>
+<li>CoCoPops Rolling Stone (80 songs with syllables) and Billboard (214) transcriptions; Brysbaert concreteness norms; wordfreq; the CMU pronouncing dictionary; VADER; spaCy</li>
+</ul>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><p><a href="https://anthology.ach.org/volumes/vol0003/measuring-stories-in-contemporary-songs/10.63744@w9C0wDxmZTVt.pdf">Bamman, Baur, Cramer, Ho and McEnaney 2025, Measuring the stories in contemporary songs</a></p></li>
+<li><p><a href="https://doaj.org/article/b8e7f4e79e52458589979532040b2095">Alberhasky and Durkee 2024, Songs tell a story: the arc of narrative for music</a></p></li>
+<li><p><a href="https://link.springer.com/article/10.1007/s10824-025-09532-6">Rösch and Rauch 2025, Do songs tell stories? Emotional arcs and success in a national song contest</a></p></li>
+<li><p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10978890">Parada-Cabaleiro et al. 2024, Song lyrics have become simpler and more repetitive over the last five decades</a></p></li>
+<li><p><a href="https://www.rollingstone.com/music/music-lists/best-songs-of-all-time-1224767/green-day-basket-case-1225188">Rolling Stone, The 500 Greatest Songs of All Time (how the list was made)</a></p></li>
+<li><p>arXiv: <a href="https://arxiv.org/pdf/1708.03492">1708.03492</a>, <a href="https://arxiv.org/pdf/2006.08108v1">2006.08108,</a> <a href="https://arxiv.org/pdf/2505.10793">2505.10793,</a> <a href="https://arxiv.org/pdf/2604.25937">2604.25937</a>, <a href="https://arxiv.org/html/2307.02146v1">2307.02146</a></p></li>
+<li><p>Luthier v7, Windows 27, 31, 34, 58, 60, 61, 64, 65 and 91 (the spec)</p></li>
 </ul>
 
 <a class="top" href="#start">Top</a>
