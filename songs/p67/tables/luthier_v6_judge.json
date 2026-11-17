@@ -1,0 +1,630 @@
+{
+ "about": "Luthier v6, fix 715: the two-sided judge. Its tests on kept songs, the ruler, the engine's songs on it, and the picks it makes on song 48's runs (clean survivors), for checking a port: the reader's pick() should give these.",
+ "the judge on kept songs and on the engine": {
+  "J4 AUC, songs held out: damage in the fitting; left out": {
+   "a twentieth of the notes moved to a neighbour": [
+    0.657,
+    0.602
+   ],
+   "a tenth moved": [
+    0.827,
+    0.772
+   ],
+   "a fifth moved": [
+    0.956,
+    0.939
+   ],
+   "bars shuffled": [
+    0.856,
+    0.772
+   ],
+   "pitches shuffled within each bar": [
+    0.922,
+    0.918
+   ],
+   "pitches shuffled over the song": [
+    0.996,
+    0.996
+   ],
+   "half the bars' rhythms from other kept songs": [
+    0.821,
+    0.767
+   ],
+   "every other bar shifted three or four semitones": [
+    0.979,
+    0.974
+   ],
+   "half the bars' rhythms re-drawn from the song's own onset places": [
+    0.76,
+    0.714
+   ]
+  },
+  "intact picked first of ten (alone at the top)": 0.717,
+  "rank correlation of kept J4 with notes a bar": -0.137,
+  "share of kept songs with no charge at all": 0.019,
+  "the ruler: a damaged kept song's median place among kept songs": {
+   "a twentieth of the notes moved to a neighbour": 0.22,
+   "a tenth moved": 0.101,
+   "a fifth moved": 0.044,
+   "bars shuffled": 0.119,
+   "pitches shuffled within each bar": 0.025,
+   "pitches shuffled over the song": 0.0,
+   "half the bars' rhythms from other kept songs": 0.138,
+   "every other bar shifted three or four semitones": 0.013,
+   "half the bars' rhythms re-drawn from the song's own onset places": 0.157
+  },
+  "J4 charges (per kept sd beyond the kept middle half): [too high, too low]": {
+   "ease bits a note": [
+    0.94,
+    0.0
+   ],
+   "typicality bits a note": [
+    0.0,
+    0.0
+   ],
+   "rhythm bits a bar": [
+    0.0,
+    0.0
+   ],
+   "rhythm bits saved by structure": [
+    0.0,
+    0.16
+   ],
+   "pitch figure bits a bar": [
+    0.37,
+    0.0
+   ],
+   "pitch figure bits saved by structure": [
+    0.0,
+    0.23
+   ],
+   "gain under the couplings": [
+    0.0,
+    0.27
+   ],
+   "bars sung in another kept song": [
+    0.19,
+    0.0
+   ],
+   "pitch figures sung in another kept song": [
+    0.0,
+    0.09
+   ],
+   "bars on a figure already sung": [
+    0.0,
+    0.2
+   ],
+   "bits saved a gap": [
+    0.0,
+    0.05
+   ],
+   "repeated notes": [
+    0.01,
+    0.0
+   ],
+   "same rhythm four bars on": [
+    0.0,
+    0.0
+   ]
+  },
+  "the engine on J4": {
+   "40": {
+    "median build's place among kept songs": 0.657,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.973,
+     0.707
+    ],
+    "largest charges": [
+     [
+      "bars sung in another kept song high",
+      0.03
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.03
+     ],
+     [
+      "ease bits a note high",
+      0.02
+     ]
+    ],
+    "total charge, mean": 0.11
+   },
+   "42": {
+    "median build's place among kept songs": 0.226,
+    "over the kept 5th, 25th, 50th": [
+     0.993,
+     0.487,
+     0.153
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.19
+     ],
+     [
+      "ease bits a note high",
+      0.19
+     ],
+     [
+      "bars on a figure already sung low",
+      0.06
+     ]
+    ],
+    "total charge, mean": 0.56
+   },
+   "43": {
+    "median build's place among kept songs": 0.333,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.7,
+     0.173
+    ],
+    "largest charges": [
+     [
+      "gain under the couplings low",
+      0.13
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.09
+     ],
+     [
+      "ease bits a note high",
+      0.09
+     ]
+    ],
+    "total charge, mean": 0.39
+   },
+   "44": {
+    "median build's place among kept songs": 0.535,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.88,
+     0.52
+    ],
+    "largest charges": [
+     [
+      "ease bits a note high",
+      0.07
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.06
+     ],
+     [
+      "gain under the couplings low",
+      0.04
+     ]
+    ],
+    "total charge, mean": 0.2
+   },
+   "45": {
+    "median build's place among kept songs": 0.176,
+    "over the kept 5th, 25th, 50th": [
+     0.993,
+     0.227,
+     0.013
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.23
+     ],
+     [
+      "pitch figure bits saved by structure low",
+      0.14
+     ],
+     [
+      "ease bits a note high",
+      0.12
+     ]
+    ],
+    "total charge, mean": 0.75
+   },
+   "46": {
+    "median build's place among kept songs": 0.154,
+    "over the kept 5th, 25th, 50th": [
+     0.98,
+     0.22,
+     0.033
+    ],
+    "largest charges": [
+     [
+      "ease bits a note high",
+      0.34
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.17
+     ],
+     [
+      "bars on a figure already sung low",
+      0.12
+     ]
+    ],
+    "total charge, mean": 0.86
+   },
+   "47": {
+    "median build's place among kept songs": 0.462,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.927,
+     0.42
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.1
+     ],
+     [
+      "bits saved a gap low",
+      0.07
+     ],
+     [
+      "pitch figure bits saved by structure low",
+      0.03
+     ]
+    ],
+    "total charge, mean": 0.21
+   },
+   "48 v134": {
+    "median build's place among kept songs": 0.22,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.393,
+     0.08
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.28
+     ],
+     [
+      "ease bits a note high",
+      0.18
+     ],
+     [
+      "pitch figure bits saved by structure low",
+      0.05
+     ]
+    ],
+    "total charge, mean": 0.6
+   },
+   "48 v137": {
+    "median build's place among kept songs": 0.195,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.307,
+     0.1
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.28
+     ],
+     [
+      "ease bits a note high",
+      0.26
+     ],
+     [
+      "pitch figure bits saved by structure low",
+      0.06
+     ]
+    ],
+    "total charge, mean": 0.68
+   },
+   "48 Luthier v1": {
+    "median build's place among kept songs": 0.214,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.36,
+     0.107
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.25
+     ],
+     [
+      "ease bits a note high",
+      0.22
+     ],
+     [
+      "pitch figure bits saved by structure low",
+      0.06
+     ]
+    ],
+    "total charge, mean": 0.6
+   },
+   "48 Luthier v2": {
+    "median build's place among kept songs": 0.198,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.36,
+     0.1
+    ],
+    "largest charges": [
+     [
+      "ease bits a note high",
+      0.26
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.25
+     ],
+     [
+      "pitch figures sung in another kept song low",
+      0.06
+     ]
+    ],
+    "total charge, mean": 0.67
+   },
+   "48 v3 run A": {
+    "median build's place among kept songs": 0.22,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.367,
+     0.1
+    ],
+    "largest charges": [
+     [
+      "pitch figure bits a bar high",
+      0.24
+     ],
+     [
+      "ease bits a note high",
+      0.21
+     ],
+     [
+      "pitch figure bits saved by structure low",
+      0.06
+     ]
+    ],
+    "total charge, mean": 0.63
+   },
+   "48 v3 run B": {
+    "median build's place among kept songs": 0.799,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.96,
+     0.78
+    ],
+    "largest charges": [
+     [
+      "pitch figures sung in another kept song low",
+      0.03
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.03
+     ],
+     [
+      "ease bits a note high",
+      0.02
+     ]
+    ],
+    "total charge, mean": 0.11
+   },
+   "48 v4": {
+    "median build's place among kept songs": 0.642,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.993,
+     0.827
+    ],
+    "largest charges": [
+     [
+      "pitch figures sung in another kept song low",
+      0.06
+     ],
+     [
+      "pitch figure bits a bar high",
+      0.01
+     ],
+     [
+      "rhythm bits saved by structure low",
+      0.01
+     ]
+    ],
+    "total charge, mean": 0.09
+   },
+   "48 v4 control": {
+    "median build's place among kept songs": 0.66,
+    "over the kept 5th, 25th, 50th": [
+     1.0,
+     0.993,
+     0.847
+    ],
+    "largest charges": [
+     [
+      "pitch figures sung in another kept song low",
+      0.05
+     ],
+     [
+      "rhythm bits saved by structure low",
+      0.01
+     ],
+     [
+      "bars sung in another kept song high",
+      0.01
+     ]
+    ],
+    "total charge, mean": 0.1
+   }
+  },
+  "kept songs' total charge: 25th, 50th, 75th, 95th": [
+   0.07,
+   0.16,
+   0.43,
+   1.92
+  ]
+ },
+ "picks on song 48": {
+  "Luthier v2": {
+   "clean survivors": 305,
+   "eligible": 29,
+   "median place among kept songs": 0.176,
+   "charge: median build; kept median 0.16": 0.71,
+   "builds within 0.02 of the least charge": 1,
+   "the pick": {
+    "fp": "6b23f879bcd6",
+    "charge": 0.031,
+    "place": 0.843,
+    "distance from the kept medians": 6.46,
+    "ease bits a note": 3.82,
+    "repeats": 0.367,
+    "gain": 0.14,
+    "bars sung in another kept song": 0.59
+   },
+   "the judge of record's pick": "bfb7c746a67c",
+   "its charge, place": [
+    1.23,
+    0.107
+   ],
+   "most common charges": [
+    [
+     "pitch figure bits a bar high",
+     300
+    ],
+    [
+     "pitch figures sung in another kept song low",
+     281
+    ],
+    [
+     "ease bits a note high",
+     260
+    ],
+    [
+     "bars on a figure already sung low",
+     254
+    ]
+   ],
+   "mean ease bits a note": 4.5
+  },
+  "v3 run B": {
+   "clean survivors": 242,
+   "eligible": 98,
+   "median place among kept songs": 0.642,
+   "charge: median build; kept median 0.16": 0.09,
+   "builds within 0.02 of the least charge": 25,
+   "the pick": {
+    "fp": "d12fc936a701",
+    "charge": 0.0,
+    "place": 0.868,
+    "distance from the kept medians": 3.24,
+    "ease bits a note": 3.84,
+    "repeats": 0.287,
+    "gain": 0.048,
+    "bars sung in another kept song": 0.7
+   },
+   "the judge of record's pick": "a6cb970ba33e",
+   "its charge, place": [
+    0.0,
+    0.868
+   ],
+   "most common charges": [
+    [
+     "pitch figures sung in another kept song low",
+     181
+    ],
+    [
+     "pitch figure bits a bar high",
+     80
+    ],
+    [
+     "bits saved a gap low",
+     62
+    ],
+    [
+     "rhythm bits saved by structure low",
+     50
+    ]
+   ],
+   "mean ease bits a note": 4.1
+  },
+  "v4": {
+   "clean survivors": 562,
+   "eligible": 507,
+   "median place among kept songs": 0.642,
+   "charge: median build; kept median 0.16": 0.09,
+   "builds within 0.02 of the least charge": 59,
+   "the pick": {
+    "fp": "f867204f03ac",
+    "charge": 0.0,
+    "place": 0.868,
+    "distance from the kept medians": 2.73,
+    "ease bits a note": 3.88,
+    "repeats": 0.261,
+    "gain": 0.062,
+    "bars sung in another kept song": 0.64
+   },
+   "the judge of record's pick": "ea7f5ae3eb75",
+   "its charge, place": [
+    0.05,
+    0.83
+   ],
+   "most common charges": [
+    [
+     "pitch figures sung in another kept song low",
+     479
+    ],
+    [
+     "bits saved a gap low",
+     196
+    ],
+    [
+     "rhythm bits saved by structure low",
+     185
+    ],
+    [
+     "bars sung in another kept song high",
+     129
+    ]
+   ],
+   "mean ease bits a note": 3.94
+  },
+  "v4 control": {
+   "clean survivors": 520,
+   "eligible": 478,
+   "median place among kept songs": 0.642,
+   "charge: median build; kept median 0.16": 0.08,
+   "builds within 0.02 of the least charge": 78,
+   "the pick": {
+    "fp": "5d7d02f8a36c",
+    "charge": 0.015,
+    "place": 0.843,
+    "distance from the kept medians": 2.69,
+    "ease bits a note": 3.94,
+    "repeats": 0.267,
+    "gain": 0.089,
+    "bars sung in another kept song": 0.66
+   },
+   "the judge of record's pick": "cd8adf428fc1",
+   "its charge, place": [
+    0.1,
+    0.629
+   ],
+   "most common charges": [
+    [
+     "pitch figures sung in another kept song low",
+     416
+    ],
+    [
+     "bits saved a gap low",
+     216
+    ],
+    [
+     "rhythm bits saved by structure low",
+     168
+    ],
+    [
+     "bars sung in another kept song high",
+     128
+    ]
+   ],
+   "mean ease bits a note": 3.93
+  }
+ }
+}
