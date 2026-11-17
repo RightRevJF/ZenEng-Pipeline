@@ -17,7 +17,8 @@ for l in lines:
         tgt = len(out) - 1
         if out[tgt].startswith("|---"): tgt -= 1
         p = cells(out[tgt]) if tgt >= 0 and out[tgt].startswith("|") else None
-        if p is not None and len(p) == len(c) and (empty * 2 >= len(c) or not c[0].strip()):
+        after_sep = out[-1].startswith("|---")
+        if p is not None and len(p) == len(c) and (empty * 2 >= len(c) or not c[0].strip() or empty >= 3 or (after_sep and empty >= 1)):
             out[tgt] = "|" + "|".join(join(a, b) for a, b in zip(p, c)) + "|"; continue
     out.append(l)
 md = "\n".join(out)

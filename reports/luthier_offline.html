@@ -90,11 +90,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-24" id="toc-part-24">Part 24. Harmony voices for Luthier v8: duets, backing vocals and choirs</a></li>
 <li><a href="#part-25" id="toc-part-25">Part 25. Song edges for Luthier v8: intros, endings, the way in and out</a></li>
 <li><a href="#part-26" id="toc-part-26">Part 26. Vocal ornament and expression for Luthier v8: melisma, slides, vibrato, breath</a></li>
+<li><a href="#part-27" id="toc-part-27">Part 27. Key choice for Luthier v8: by genre, instrument and singer</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with nine research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge and ornament writers v8 needs (Parts 17 to 26). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 26 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges and studies/ornament), for anyone with access. This page does not depend on it.</p>
+<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with ten research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament and key-choice writers v8 needs (Parts 17 to 27). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 27 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament and studies/keys), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -212,6 +213,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-26">26</a></td>
 <td>Vocal ornament and expression for Luthier v8: melisma, slides, vibrato, breath (what v7 does, delivery research, melisma in 6,716 songs, a written and a performed tier)</td>
 </tr>
+<tr class="odd">
+<td><a href="#part-27">27</a></td>
+<td>Key choice for Luthier v8: by genre, instrument and singer (keys by lead instrument, era and genre in 739 Billboard and 381 top-five songs, the tonic in the sung range)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -236,6 +241,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Harmony voices (Part 24).</strong> v7 has a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves) and labels for other ensembles, but only the duet rule writes notes, and every second voice in songs 53 to 56 was written by hand; three of the four broke the rule (a harmony above the lead, a two-note answer, a descant and choir). Singing traditions define the harmony as the next chord tone, above the lead as often as below. In 10,529 scores with two or more vocal parts (PDMX), v7’s allowed intervals cover about a fifth of real harmony; the second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still in about half its moves; parallel fifths are rare (about 1 per 100 moves, 3 in pop); second voices sing more as the song goes on. v8 should write six kinds of second voice (double, harmony line, pad, answer, descant, parts), a harmony line by chord tone on the side the style calls for, and entries that grow with the song.</p></li>
 <li><p><strong>Song edges (Part 25).</strong> v7 checks intros and endings (a 4-bar median intro, a chorus-arrival limit, four ending kinds) but writes neither, and every intro in songs 52 to 56 was 4 bars. In 739 Billboard songs intros doubled from about 9 seconds (4 bars) in 1958 to 1964 to 17 (8 bars) in 1985 to 1991, and later studies find the voice arriving within about 5 seconds by 2015; length does not separate hits from misses, so it is an era setting. A quarter of streaming plays end in the first five seconds, so something identifiable should sound there. 61% of the Billboard songs fade; cold endings land on the tonic 81% of the time, by V–I, IV–I (Temperley’s grand plagal cadence) or ♭VII–I. A fade keeps the listener’s pulse running past the end; a final slowing adds no pleasure. v8 should write six intro kinds with era bands, ending kinds that name the cadence and add the fade, bookend and coda, and render fades and held last chords.</p></li>
 <li><p><strong>Vocal ornament (Part 26).</strong> v7 counts melisma (two-note turns at corpus rates, none on a cadence note) and renders a delayed MIDI vibrato, and nothing else of delivery; no score or songbook for songs 52 to 56 named a scoop, fall, cry, run or vibrato style. In 6,716 songs, chart pop sets 8% to 11% of syllables on more than one note, arrangements half that, hymns and folk about 5% to 8%, standards almost none; melismas gather at phrase ends at 2.5 to 3 times their share, are two notes three times in four, and grow through the song, which runs against v7’s cadence-note ban. Scoops are the commonest pop inflection, the country breaking voice falls on grief words, and gospel runs are pentatonic, 4 to 7 notes, at the ends of long notes. v8 should write melisma by style bands and placement, treat runs as designed moments, and name and render the performed inflections and vibrato by style.</p></li>
+<li><p><strong>Key choice (Part 27).</strong> v7 picks a key from the hook and the voice only (27.14); songs 52 to 56 got instrument-friendly keys because they were chosen by hand. In 739 Billboard songs, guitar-led songs sit in open-string keys 65% of the time and in E, A or B major twice as often as piano-led songs; piano, strings and synthesizer songs use flat keys about twice as often as guitar songs. Minor rose from 11% of hits before 1970 to about half after 1990, and open-string keys fell from about half to under a third; country and rock stay in open major keys, R&amp;B, soul and hip-hop in flat keys and minor. A hit’s sung range is about an octave with its floor on the tonic or the dominant below, so the key follows from the voice’s floor and the frame; key colour is a myth on equal-tempered instruments. v8 should choose the frame from the voice, filter by the lead instrument (with a capo when needed), set the mode default by genre and era, then rank by the hook.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -13875,6 +13881,407 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>Bartlett, I. and Naismith, M. (2020), CCM pedagogy of R&amp;B, via the Voice Science lexicon.</p></li>
 </ul>
 <p>Not reached: no open corpus of gospel, R&amp;B or soul transcriptions with words; DALI (restricted Zenodo 3576083) would give melisma counts from aligned recordings.</p>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-27">Part 27. Key choice for Luthier v8: by genre, instrument and singer</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/33a22MifajNw9xoU1pc57Q">Key choice for Luthier v8: by genre, instrument and singer</a>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><p><strong>v7 picks a key from the hook and the voice only</strong> (27.14 ranks keys by where the hook’s degrees land). Songs 52 to 56 got instrument-friendly keys (D, E♭, G, A, E minor) because they were chosen by hand.</p></li>
+<li><p><strong>Instruments shape keys.</strong> In 739 Billboard songs, guitar-led songs sit in open-string keys 65% of the time and in E, A or B major twice as often as piano-led songs; piano, strings and synthesizer songs use flat keys about twice as often as guitar songs. Spotify’s 30 million tracks lean the same way (G, C, D, A major first).</p></li>
+<li><p><strong>Minor rose and open-string keys fell:</strong> BiMMuDa’s hits go from 11% minor before 1970 to about half after 1990, and from about half in open-string keys to under a third. Country and rock stay in open major keys; R&amp;B, soul and hip-hop live in flat keys and minor.</p></li>
+<li><p><strong>The singer:</strong> a hit’s sung range is about an octave, with its floor on the tonic or the dominant below and its top near the fifth above the octave, so the key follows from the voice’s floor and the frame. Key colour is a myth on equal-tempered instruments (Powell and Dibben).</p></li>
+<li><p><strong>What v8 should do:</strong> choose the frame from the voice, filter by the lead instrument (with a capo when needed), set the mode default by genre and era, and only then rank by the hook as 27.14 does now.</p></li>
+</ul>
+<h3 id="what-luthier-v7-does-now">1. What Luthier v7 does now</h3>
+<p>v7 chooses a key from the voice and the hook alone.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule in v7</th>
+<th>What it says</th>
+<th>What it leaves out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>27.14, the key from the contract</td>
+<td>When the writer names no key, list for each key the pitches where the hook’s required degrees land inside the voice’s approach window; rank keys by how many; offer two to hear</td>
+<td>The instruments, the genre, the era, the key the band will want to play in</td>
+</tr>
+<tr class="even">
+<td>Module 11.2, the voice rows</td>
+<td>One table of ranges, breaks and finals per voice (male 52–66, break 64; female 57–71, break 69; gospel, worship, congregational and bass rows) serves the search, 27.14 and the range check</td>
+<td>How a real singer’s key relates to their range</td>
+</tr>
+<tr class="odd">
+<td>Fix 20, the capo</td>
+<td>An intake field; capo shapes printed beside concert chords</td>
+<td>When a capo is the right answer</td>
+</tr>
+<tr class="even">
+<td>Fix 92, editions</td>
+<td>A second edition by transposition or octave, with an ossia</td>
+<td>Choosing which editions a song needs</td>
+</tr>
+<tr class="odd">
+<td>Fix 34, spelling</td>
+<td>Pitches spelled from the key (sharps in sharp keys, flats in flat keys)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Module 9-M.4, metal</td>
+<td>The tonic is the lowest open string of the tuning</td>
+<td>The same logic for every guitar song</td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-the-recent-songs-used">What the recent songs used</h4>
+<ul>
+<li><p><strong>Song 52</strong> (6/8 guitar ballad): D major. <strong>Song 53</strong> (carol, organ and choir): E♭ major, the last verse up to F. <strong>Song 54</strong> (country): G major. <strong>Song 55</strong> (country): A major. <strong>Song 56</strong> (soul ballad): E minor.</p></li>
+<li><p>Four of the five sit in the keys a guitar plays openly (D, G, A, E minor) and the organ carol in a flat key, which is what players of those instruments would expect. Each was chosen at intake by hand; nothing in v7 asked for an open-string key, or said that a carol for organ and choir usually sits in a flat key.</p></li>
+</ul>
+<h3 id="the-academic-record">2. The academic record</h3>
+<ul>
+<li><p><strong>Instruments shape the key.</strong> Spotify’s Kenny Ning analysed the keys of some 30 million tracks (2015): G major 10.7% and C major 10.2%, then D and A; more than a third of all songs sit in G, C, D or A major, and the commonest minors (A, E, B minor) are their relatives. His explanation: E suits guitar but not piano, C suits piano but not guitar, and G suits both. Guitar teaching sources say the same about open strings (E, A, D, G and their minors).</p></li>
+<li><p><strong>Minor has risen.</strong> Schellenberg and von Scheve (Psychology of Aesthetics, Creativity, and the Arts, 2012; over 1,000 Billboard year-end top-40 songs, 1965–2009) found the share of minor-mode hits doubled over five decades, while tempo fell and songs got longer. Press summaries of the paper give 85% major in the 1960s against 42.5% in 2005–09.</p></li>
+<li><p><strong>Key colour is a myth on equal-tempered instruments.</strong> Powell and Dibben (Musicae Scientiae, 2005): about three quarters of participants claimed key-mood associations, which matched 18th-century beliefs (sharps bright, flats mellow), but no one could identify mood from key or key from mood, and moving a piece to another key didn’t change its perceived mood. What does change is pitch height relative to the voice, and the instrument’s open strings and tone.</p></li>
+<li><p><strong>Hymnals choose keys for the congregation.</strong> Joey Stanley’s count of the Latter-day Saint hymnal (341 hymns) finds G major 22%, D 16%, C, E♭ and F about 14% each, B♭ 11%, A♭ 6%, and almost no A or D♭. Half the hymns top out at D5, and only about 2% go above E5.</p></li>
+<li><p><strong>Untrained voices are narrow.</strong> Kuhn, Wachhaus, Moore and Pantle (Journal of Research in Music Education, 1979; 597 non-music undergraduates) found 98% could sing comfortably from B♭3 to G4, 84% from G3 to B4, 75% from G♭3 to C5. Worshipleading advice built on it: lower the key when the tune goes above C5 unless people sing parts.</p></li>
+</ul>
+<h3 id="measured-keys-by-instrument-era-and-genre">3. Measured: keys by instrument, era and genre</h3>
+<p><strong>Data.</strong> McGill Billboard (739 songs, 1958–1991): the annotated tonic, mode from the tonic chord, and the lead instrument the annotators marked most often. BiMMuDa (381 top-five singles, 1950–2022): tonic, mode and genre from its metadata. “Open-string keys” means E, A, D, G and C major and E, A and D minor; “flat keys” means F, B♭, E♭, A♭ and D♭ major.</p>
+<h4 id="by-lead-instrument-mcgill-billboard">By lead instrument (McGill Billboard)</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lead instrument</th>
+<th>Songs</th>
+<th>Minor</th>
+<th>Open-string keys</th>
+<th>Flat keys (of major)</th>
+<th>E, A or B major (of major)</th>
+<th>Commonest keys</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Guitar</td>
+<td>335</td>
+<td>17%</td>
+<td>65%</td>
+<td>23%</td>
+<td>31%</td>
+<td>D, G, E, A, C</td>
+</tr>
+<tr class="even">
+<td>Piano</td>
+<td>48</td>
+<td>2%</td>
+<td>56%</td>
+<td>43%</td>
+<td>15%</td>
+<td>C, G, B♭, D♭</td>
+</tr>
+<tr class="odd">
+<td>Synthesizer</td>
+<td>61</td>
+<td>34%</td>
+<td>49%</td>
+<td>42%</td>
+<td>20%</td>
+<td>G, A♭, D, E</td>
+</tr>
+<tr class="even">
+<td>Strings</td>
+<td>30</td>
+<td>13%</td>
+<td>50%</td>
+<td>50%</td>
+<td>15%</td>
+<td>C, E♭, F</td>
+</tr>
+<tr class="odd">
+<td>Horns or sax</td>
+<td>59</td>
+<td>15%</td>
+<td>64%</td>
+<td>30%</td>
+<td>16%</td>
+<td>C, D, F, E♭</td>
+</tr>
+<tr class="even">
+<td>All</td>
+<td>739</td>
+<td>17%</td>
+<td>62%</td>
+<td>29%</td>
+<td>27%</td>
+<td>C, D, G, E, A</td>
+</tr>
+</tbody>
+</table>
+<h4 id="by-era-and-genre-bimmuda-with-mcgill-for-comparison">By era and genre (BiMMuDa, with McGill for comparison)</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Songs</th>
+<th>Minor</th>
+<th>Open-string keys</th>
+<th>Flat keys (of major)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1950–69</td>
+<td>102</td>
+<td>11%</td>
+<td>52%</td>
+<td>42%</td>
+</tr>
+<tr class="even">
+<td>1970–89</td>
+<td>102</td>
+<td>32%</td>
+<td>46%</td>
+<td>29%</td>
+</tr>
+<tr class="odd">
+<td>1990–2009</td>
+<td>102</td>
+<td>49%</td>
+<td>36%</td>
+<td>44%</td>
+</tr>
+<tr class="even">
+<td>2010–22</td>
+<td>75</td>
+<td>45%</td>
+<td>31%</td>
+<td>46%</td>
+</tr>
+<tr class="odd">
+<td>McGill, 1958–69 / 1970–79 / 1980–91</td>
+<td>237 / 260 / 242</td>
+<td>10% / 16% / 26%</td>
+<td>61% / 62% / 62%</td>
+<td>34% / 27% / 25%</td>
+</tr>
+<tr class="even">
+<td>Rock</td>
+<td>81</td>
+<td>30%</td>
+<td>53%</td>
+<td>23%</td>
+</tr>
+<tr class="odd">
+<td>Country</td>
+<td>16</td>
+<td>0%</td>
+<td>62%</td>
+<td>31%</td>
+</tr>
+<tr class="even">
+<td>Pop</td>
+<td>139</td>
+<td>27%</td>
+<td>43%</td>
+<td>42%</td>
+</tr>
+<tr class="odd">
+<td>Funk and soul</td>
+<td>44</td>
+<td>36%</td>
+<td>36%</td>
+<td>50%</td>
+</tr>
+<tr class="even">
+<td>R&amp;B</td>
+<td>42</td>
+<td>48%</td>
+<td>31%</td>
+<td>50%</td>
+</tr>
+<tr class="odd">
+<td>Hip-hop</td>
+<td>31</td>
+<td>68%</td>
+<td>26%</td>
+<td>60%</td>
+</tr>
+</tbody>
+</table>
+<p>I also read the notated key signatures of 16,000 PDMX and OpenEWLD scores, but usermade scores default heavily to C and lead sheets are often transposed for convenience, so those counts describe the notation, not the records, and are left out.</p>
+<h4 id="what-the-numbers-say">What the numbers say</h4>
+<ol type="1">
+<li><p><strong>Guitar songs sit in guitar keys.</strong> Guitar-led Billboard songs use open-string keys 65% of the time and the sharp guitar keys (E, A, B major) twice as often as piano-led songs (31% against 15%). Piano, strings and synthesizer songs use flat keys about twice as often as guitar songs (42% to 50% against 23%).</p></li>
+<li><p><strong>Minor rose steadily:</strong> 10% to 26% in Billboard between the 1960s and the 1980s, 11% to about half in BiMMuDa by 1990–2009, which agrees with Schellenberg and von Scheve.</p></li>
+<li><p><strong>Open-string keys fell as guitars gave way to keyboards and production:</strong> from about half of BiMMuDa’s hits before 1970 to under a third after 2010.</p></li>
+<li><p><strong>Genre separates sharply:</strong> country and rock live in open-string major keys; R&amp;B, funk, soul and hip-hop in flat keys and minor. Hip-hop is two-thirds minor.</p></li>
+<li><p><strong>Songs 52 to 56 match their instruments:</strong> four guitar-led songs in D, G, A and E minor, and an organ carol in E♭.</p></li>
+</ol>
+<h3 id="the-singer-where-the-tonic-sits-in-the-range">4. The singer: where the tonic sits in the range</h3>
+<p>A key is a choice of where the song’s frame lands in a voice. I measured where the tonic falls inside the sung range of real hits (the range taken as the 5th to 95th percentile of the melody’s notes, so a stray note doesn’t decide it).</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Corpus</th>
+<th>Songs</th>
+<th>Range (semitones), median and middle half</th>
+<th>Lowest note above the tonic below it</th>
+<th>Highest note above that tonic</th>
+<th>Commonest lowest notes</th>
+<th>Commonest highest notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BiMMuDa, 1950–2022</td>
+<td>374</td>
+<td>12 (10–14)</td>
+<td>median 5</td>
+<td>median 17</td>
+<td>the tonic (26%), the dominant (22%)</td>
+<td>the 5th above the octave (20%), the 3rd above it (11%)</td>
+</tr>
+<tr class="even">
+<td>CoCoPops Billboard</td>
+<td>214</td>
+<td>12 (9–14)</td>
+<td>median 5</td>
+<td>median 16.5</td>
+<td>the tonic (32%), the dominant (14%), the 6th (14%)</td>
+<td>the 5th above the octave (17%), the 3rd above it (13%)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Two frames cover most songs.</strong> The melody’s floor is the tonic (an “authentic” range, 1 up to 8 and a little over) or the dominant below it (a “plagal” range, 5 to 5 an octave up). The ceiling is most often the fifth above the upper tonic.</p>
+<ul>
+<li><p><strong>The sung range of a hit is about an octave,</strong> with the middle half 9 to 14 semitones. v7’s voice rows are 14 to 17 semitones wide, so a song uses most of a row, not all of it.</p></li>
+<li><p><strong>So the key follows from the voice and the frame.</strong> For a singer whose comfortable floor is L, the tonic is L (authentic frame) or L plus 5 (plagal frame); the top lands near the tonic plus 16 to 19. Choosing between the two frames, and among nearby keys the instruments like, is the real decision.</p></li>
+<li><p><strong>For a congregation,</strong> a floor around B♭3 to D4 and a top at D5 (Kuhn and colleagues; the hymnal’s commonest top note) give the familiar hymn keys of G, D, E♭ and F when the melody spans tonic to tonic or 5 to 5.</p></li>
+</ul>
+<h3 id="what-v8-should-do">5. What v8 should do</h3>
+<p>Keep 27.14’s hook check. Put it third, after the voice and the instruments.</p>
+<h4 id="k1.-the-voice-and-the-frame-first">K1. The voice and the frame first</h4>
+<ul>
+<li><p>From the voice row and the melody’s frame, list the candidate tonics: the row’s floor as the tonic (authentic frame) or the floor plus 5 (plagal frame), with the song’s span (median 12, middle half 9 to 14) under the row’s top. This turns 27.14’s search over all twelve keys into two or three candidates.</p></li>
+<li><p>For congregational songs, keep the top at D5 (E♭5 at most) and the floor at about B♭3, as hymnals do.</p></li>
+</ul>
+<h4 id="k2.-the-instruments-next">K2. The instruments next</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lead instrument</th>
+<th>Prefer</th>
+<th>Avoid unless asked</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Acoustic or electric guitar</td>
+<td>E, A, D, G, C major; E, A, D, B minor; a capo for anything else, printed as shapes</td>
+<td>E♭, A♭, D♭without a capo</td>
+</tr>
+<tr class="even">
+<td>Piano</td>
+<td>C, G, F, B♭, D, E♭</td>
+<td>Many-sharp keys (B, F♯)</td>
+</tr>
+<tr class="odd">
+<td>Organ and choir; hymns</td>
+<td>G, D, E♭, F, C, B♭</td>
+<td>A and D♭(rare in hymnals)</td>
+</tr>
+<tr class="even">
+<td>Horns, strings</td>
+<td>F, B♭, E♭, C</td>
+<td>E, A, B major</td>
+</tr>
+<tr class="odd">
+<td>Synthesizer, production-led pop, R&amp;B, hip-hop</td>
+<td>No instrumental constraint: choose by voice; flat keys and minor common</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fiddle, mandolin, banjo (country, bluegrass)</td>
+<td>G, D, A, E, C</td>
+<td>Flat keys</td>
+</tr>
+</tbody>
+</table>
+<p>When the voice’s candidates and the instrument’s preferences don’t meet, offer the capo (guitar) or say which is being given up.</p>
+<h4 id="k3.-mode-by-genre-and-era">K3. Mode by genre and era</h4>
+<ul>
+<li><p>Default minor share by genre and era for the mode question at intake: country and 1960s pop about one song in ten; rock about three in ten; pop after 1990 about half; R&amp;B about half; hip-hop about two thirds.</p></li>
+<li><p>Don’t attach moods to particular keys (Powell and Dibben); the mood comes from mode, tempo and where the melody sits in the voice.</p></li>
+</ul>
+<h4 id="k4.-then-the-hook">K4. Then the hook</h4>
+<p>27.14 ranks the remaining candidates by where the hook’s required degrees land in the voice’s approach window, and offers two to hear, as now.</p>
+<h4 id="k5.-tests">K5. Tests</h4>
+<ul>
+<li><p>The key report prints the frame (authentic or plagal), the span against the row, the instrument’s preference, the capo if used, and the hook’s landing.</p></li>
+<li><p>Songs 52 to 56 as targets: the chooser should arrive at D, E♭, G, A and E minor or name the near alternative and why.</p></li>
+</ul>
+<h3 id="files-and-sources">6. Files and sources</h3>
+<h4 id="in-the-repo-studieskeys">In the repo (studies/keys)</h4>
+<ul>
+<li><p><code>keys_corpora.py</code> : keys and modes by lead instrument and era (McGill Billboard), by</p></li>
+<li><p>era and genre (BiMMuDa), and the notated keys of PDMX and OpenEWLD (not used in the report); <code>keys_results.json</code> .</p></li>
+<li><p><code>tonic_in_range.py</code> : where the tonic sits in the sung range (BiMMuDa, CoCoPops</p></li>
+<li><p>Billboard); <code>tonic_in_range.json</code> .</p></li>
+</ul>
+<h4 id="data">Data</h4>
+<ul>
+<li>McGill Billboard annotations via ChoCo (Zenodo 7706751); BiMMuDa (Hamilton and Pearce); CoCoPops Billboard; PDMX (Zenodo 15571083); OpenEWLD.</li>
+</ul>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><p>Ning, K. (2015). The most popular keys of all music on Spotify (Spotify Insights; reported by Hypebot, Gizmodo and Digital Trends).</p></li>
+<li><p>Schellenberg, E. G. and von Scheve, C. (2012). Emotional cues in American popular music: five decades of the Top 40. Psychology of Aesthetics, Creativity, and the Arts.</p></li>
+<li><p>Powell, J. and Dibben, N. (2005). Key-mood association: a self perpetuating myth. Musicae Scientiae 9(2).</p></li>
+<li><p>Stanley, J. LDS Hymn Stats: key signatures; highest soprano notes.</p></li>
+<li><p>Kuhn, T. L., Wachhaus, G., Moore, R. S. and Pantle, J. E. (1979). Undergraduate nonmusic major vocal ranges. Journal of Research in Music Education; as summarised by Reformed Worship, “Highs and lows of singing”.</p></li>
+<li><p>Guitar Command, guitar keys and open strings.</p></li>
+</ul>
+<p>Not measured: the fiddle, mandolin and banjo row of K2 comes from practice, not counts; no corpus marks those instruments with keys.</p>
 
 <a class="top" href="#start">Top</a>
 </body>
