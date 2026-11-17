@@ -38,3 +38,5 @@ LOG.append({"q": "music-theory gaps in Luthier v7: three high-impact research ar
 LOG.append({"q": "next after the tension study", "options": {"A": "research metre above the bar next", "B": "research melodic tonality by genre", "C": "add the tension report to the maintainer's file now (Part 20)"}, "recommended": "A", "answer": "C.  Then A", "note": "Part 20 added to the page and PDF (211 pages), commit 3086fd2; metre study delivered as a Doc: https://claude.ai/artifact/4i2phRJCimMJTCPJo95Sqi (studies/metre, commit c3f7fdc)"})
 
 LOG.append({"q": "after Part 21: add metre as Part 21, then start the genre research", "answer": "C", "note": "genre study delivered as the Doc Melody by genre for Luthier v8 (https://claude.ai/artifact/QYV56dyEeDLUfVb3xTnhAZ); measurement in studies/genre"})
+
+LOG.append({"q": "genre study done: next", "options": {"A": "add as Part 22", "B": "read the eight sources found in reference lists first (van der Merwe, Kubik, Weisethaunet, Wagner, Moore, van der Bliek, Day-O'Connell, Stoia 2021)", "C": "something else"}, "recommended": "A", "answer": "B"})
