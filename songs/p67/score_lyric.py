@@ -27,3 +27,12 @@ if "-v" in sys.argv:
     for l in lines:
         if l in seen: continue
         seen.add(l); print(f"{LF.VADER.polarity_scores(l)['compound']:+.2f}  {l}")
+if "-a" in sys.argv:
+    print("L4 story readings per 100 words:", {k: round(f[k] * (100 if f[k] < 1 else 1), 2) for k in ("past", "time", "place", "propn", "third") if f.get(k) is not None},
+          "| greatest-list pct:", {k: pct(k) for k in ("past", "time", "place", "propn", "third") if f.get(k) is not None})
+    print(f"L3 ending (last fifth minus the rest) {f['ending']:+.2f}; sad ending: {bool(f['sad_end'])}")
+    arc = []
+    for s in order:
+        if s == "Jam": arc.append((s, None)); continue
+        ls = secs[s] if secs[s] else secs["Chorus"]; arc.append((s, np.mean([LF.VADER.polarity_scores(l)["compound"] for l in ls])))
+    print("L2 arc:", " | ".join(f"{s} {'(jam)' if v is None else f'{v:+.2f}'}" for s, v in arc))
