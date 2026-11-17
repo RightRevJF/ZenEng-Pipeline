@@ -88,11 +88,12 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-22" id="toc-part-22">Part 22. Melody by genre for Luthier v8: scales, blue notes and the divorce</a></li>
 <li><a href="#part-23" id="toc-part-23">Part 23. Setting words for Luthier v8: stress, vowels and high notes</a></li>
 <li><a href="#part-24" id="toc-part-24">Part 24. Harmony voices for Luthier v8: duets, backing vocals and choirs</a></li>
+<li><a href="#part-25" id="toc-part-25">Part 25. Song edges for Luthier v8: intros, endings, the way in and out</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with seven research studies for the harmony, band, tension, metre, melody, word-setting and harmony-voice writers v8 needs (Parts 17 to 24). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 24 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words and studies/voices), for anyone with access. This page does not depend on it.</p>
+<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with eight research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice and song-edge writers v8 needs (Parts 17 to 25). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 25 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices and studies/edges), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -202,6 +203,10 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-24">24</a></td>
 <td>Harmony voices for Luthier v8: duets, backing vocals and choirs (what v7’s second-voice rules do, singing traditions, lead against harmony in 10,529 scores, six kinds of second voice)</td>
 </tr>
+<tr class="odd">
+<td><a href="#part-25">25</a></td>
+<td>Song edges for Luthier v8: intros, endings, the way in and out (what v7 checks, intro length by era, fade-outs and cadences in 739 Billboard songs, six intro kinds)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -224,6 +229,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Melody by genre (Part 22).</strong> v7 writes every melody from the 7-note scale and forbids the flat third against a major chord (fix 200) and the flat fifth (tri()). In 165 major-key Billboard songs the typical melody puts 85% of its notes on one five-note scale, notes fix 200 forbids appear in 63% of songs (69% of soul songs), and tri() mostly blocks plain diatonic notes. Songs 54 and 55 have no flat 3 or flat 7, and song 54 sings the leading tone at three and a half times the country rate. v8 should take its pitch table from the style, place flat 3, flat 7 and flat 5 where soul and blues put them, narrow tri(), and treat the leading tone as a moving note.</p></li>
 <li><p><strong>Setting words (Part 23).</strong> v7 measures stress on the beat, line endings and vowels on held notes, but its songs put weak syllables on the downbeat and it has no rule for a word’s pitch shape or a man’s vowels. In 199 Billboard and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time and a word’s stressed syllable is lower than the rest of the word in 18% to 20% of words; songs 54 and 55 do both about twice as often, mostly through line openings like “And” on the bar line. Height alone barely changes the vowel; held high notes do (men’s held top notes 61% open, 7% reduced). v8 should grade its stress cost, give weak openings a pickup, add a word-shape rule for pitch and a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre move together between neighbouring syllables, and words ending in a voiced consonant take longer notes. Across the century (1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles: the downbeat band is fixed, the contour targets depend on era and style. After 2000 melodies carry more notes a bar and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 the word rules hold as before. Hymns, folk songs and standards with words attached (PDMX and OpenEWLD, 4,535 English songs) give hymn mode its own bands: weak syllables on beat 1 up to about 10% in 4/4 and 17% in 3/4, and a looser word pitch shape.</p></li>
 <li><p><strong>Harmony voices (Part 24).</strong> v7 has a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves) and labels for other ensembles, but only the duet rule writes notes, and every second voice in songs 53 to 56 was written by hand; three of the four broke the rule (a harmony above the lead, a two-note answer, a descant and choir). Singing traditions define the harmony as the next chord tone, above the lead as often as below. In 10,529 scores with two or more vocal parts (PDMX), v7’s allowed intervals cover about a fifth of real harmony; the second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still in about half its moves; parallel fifths are rare (about 1 per 100 moves, 3 in pop); second voices sing more as the song goes on. v8 should write six kinds of second voice (double, harmony line, pad, answer, descant, parts), a harmony line by chord tone on the side the style calls for, and entries that grow with the song.</p></li>
+<li><p><strong>Song edges (Part 25).</strong> v7 checks intros and endings (a 4-bar median intro, a chorus-arrival limit, four ending kinds) but writes neither, and every intro in songs 52 to 56 was 4 bars. In 739 Billboard songs intros doubled from about 9 seconds (4 bars) in 1958 to 1964 to 17 (8 bars) in 1985 to 1991, and later studies find the voice arriving within about 5 seconds by 2015; length does not separate hits from misses, so it is an era setting. A quarter of streaming plays end in the first five seconds, so something identifiable should sound there. 61% of the Billboard songs fade; cold endings land on the tonic 81% of the time, by V–I, IV–I (Temperley’s grand plagal cadence) or ♭VII–I. A fade keeps the listener’s pulse running past the end; a final slowing adds no pleasure. v8 should write six intro kinds with era bands, ending kinds that name the cadence and add the fade, bookend and coda, and render fades and held last chords.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -12930,6 +12936,555 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>Wikipedia, Vocal harmony; Barbershop music; Harmonic seventh.</p></li>
 </ul>
 <p>Not reached: Hagerman and Sundberg’s full paper and Ternström’s 2003 review were read only through abstracts and citing papers.</p>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-25">Part 25. Song edges for Luthier v8: intros, endings, the way in and out</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/Fh1UcSKfZisqVde8ewz62m">Song edges for Luthier v8: intros, endings, the way in and out</a>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><p><strong>v7 checks the edges but doesn’t write them.</strong> It has an intro-bar median (4), a chorusarrival limit, the peak-end design spec and four ending kinds (resolved, open, abrupt, return). Every intro and ending in songs 52 to 56 was chosen by hand, and all five intros are 4 bars.</p></li>
+<li><p><strong>Intro length is an era setting.</strong> In 739 Billboard songs the intro doubled from about 9 seconds (1958–64) to 17 (1985–91), 4 bars to 8; Léveillé Gauvin found the time to the voice then fell to about 5 seconds by 2015. Neither length nor time to the voice separates hits from misses, so v7’s single median of 4 bars is right only for a 1960s sound.</p></li>
+<li><p><strong>The first five seconds matter:</strong> a quarter of Spotify plays end there. Whatever the era, something identifiable (hook tune, riff or voice) should sound in them.</p></li>
+<li><p><strong>Endings:</strong> 61% of Billboard songs to 1991 fade (71% in the late 1970s); fades then nearly vanished. Cold endings land on the tonic 81% of the time, by V–I (a third), IV–I (nearly a third; Temperley’s grand plagal cadence, which songs 54 and 55 used) or ♭VII–I (growing after 1980). A fade keeps listeners’ pulse running past the end; a final slowing adds no pleasure.</p></li>
+<li><p><strong>What v8 should build (section 5):</strong> six intro kinds (own figure, hook preview, verse vamp, buildup, voice first, none) with era bands; ending kinds that name the cadence and add the fade, the bookend and the coda; a fade only where the song shouldn’t end; the demo rendering fades and held last chords; and bands for the commercial profile.</p></li>
+</ul>
+<h3 id="what-luthier-v7-does-now">1. What Luthier v7 does now</h3>
+<p>v7 has more at the edges than its form tables suggest, but almost all of it is a check, not a writer.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule in v7</th>
+<th>What it says</th>
+<th>What it leaves out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Window 29 (form)</td>
+<td>Intro bars: median 4 (middle half 3 to 8) in Billboard and POP909; first chorus at bar 20, 45 seconds in, 21% of the way through</td>
+<td>How long an intro is by era or genre; outro length</td>
+</tr>
+<tr class="even">
+<td>Design spec, chorus arrival</td>
+<td>If the chorus doesn’t arrive by bar 16 to 20, the intro or verse is too long</td>
+<td>Nothing on what the intro holds</td>
+</tr>
+<tr class="odd">
+<td>Window 29: form features</td>
+<td>Intro length, time to the chorus and song length don’t separate top-ten records from the rest (AUC 0.50 to 0.56)</td>
+<td>Whether that holds after 1991</td>
+</tr>
+<tr class="even">
+<td>Peak-end design spec; the role table</td>
+<td>“The bridge is the peak. The tag is the end.” The tag carries the simplest material, voices forward, call and response</td>
+<td>How the last bars are built</td>
+</tr>
+<tr class="odd">
+<td>11.9, fixes 77 and 93: the ending’s kind</td>
+<td>Resolved, open, abrupt, or return (a hook phrase over an open last chord), checked against the last chord and the outro’s length</td>
+<td>A fade-out; a slowing; a held last chord; a cold stop on the beat</td>
+</tr>
+<tr class="even">
+<td>Fix 71: the commercial profile</td>
+<td>Prints length, intro seconds, the bar the title arrives, chorus repetitions, the ending</td>
+<td>Bands to check them against</td>
+</tr>
+<tr class="odd">
+<td>Fixes 21 and 23: the quote and the one-phrase peak</td>
+<td>An intro can quote a sung section’s tune; a one-phrase intro peaks in its second half</td>
+<td>Riff intros, vocal-first starts, chord-only intros</td>
+</tr>
+<tr class="even">
+<td>Arrangement rule (Window on the band)</td>
+<td>The intro has half the fullest band or fewer; bars before the voice 4.25 to 9 in the band files</td>
+<td>(Part 19 found real intros carry about 70% of the fullest band)</td>
+</tr>
+<tr class="odd">
+<td>The M/N Nocturne type</td>
+<td>Its tag fades: tempo down, last sound fades rather than concludes</td>
+<td>Fades for any other type</td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-the-recent-songs-did">What the recent songs did</h4>
+<ul>
+<li><p><strong>Song 52 (6/8 ballad):</strong> a 4-bar guitar intro on the verse’s chords; a 4-bar outro on new chords, guitar and cello, slowing to the last chord.</p></li>
+<li><p><strong>Song 53 (carol):</strong> a 4-bar organ introduction, the last refrain’s final word held by the choir, then an organ coda.</p></li>
+<li><p><strong>Songs 54 and 55 (country):</strong> a 4-bar intro with the fiddle playing the hook; a tag, then a 2-bar ending, IV to I, the fiddle bringing the hook home, the last chord ringing. No fade.</p></li>
+<li><p><strong>Song 56:</strong> a 4-bar intro planned; the ending waits for v8.</p></li>
+</ul>
+<p>Every intro was 4 bars and every ending was chosen by hand. None of the songs asked whether 4 bars suits a song of its era and style, whether to start with the voice, or whether to fade.</p>
+<h3 id="the-academic-record">2. The academic record</h3>
+<p>Pop theory has studied song middles far more than edges. Nick Braae’s 2026 Music Theory Online article on closure in 1970s rock opens by noting that intros have had some attention and endings much less. What exists:</p>
+<h4 id="intros">Intros</h4>
+<ul>
+<li><p><strong>Summach’s module theory</strong> (dissertation, Yale 2012, top-20 rock 1955 to 1989) treats the intro as its own module. An intro often shares material with the outro, giving a “bookend”; several intro modules in a row are possible, and having none is less common than having more than one.</p></li>
+<li><p><strong>The buildup introduction</strong> (Robin Attas, dissertation 2011 and later work; Nicole Biamonte in the Routledge Companion): layers of the groove enter one at a time, so the intro teaches the listener the beat and the band before the voice. Attas calls intros “a site for first impressions”. Spicer’s accumulative form (2004) is the largerscale version.</p></li>
+<li><p><strong>The attention economy.</strong> Hubert Léveillé Gauvin (Musicae Scientiae, 2018) measured 303 US top-10 singles from 1986 to 2015: the time before the voice fell from about 20 seconds to about 5, tempo rose, and the title arrived sooner. A second test, 60 hits paired with less popular songs by the same artists, found none of these features separated the hit from the miss. Both halves agree with v7’s Window 29: intro length tracks the era, not success.</p></li>
+</ul>
+<h4 id="endings">Endings</h4>
+<ul>
+<li><p><strong>Kinds.</strong> Teaching texts and Braae’s model list the usual closing devices: a final tonic chord (often held), completion of the melody on the tonic, a ritardando, the fade-out, a coda of new material, and a modulation in the last section. Braae sorts them into structural closing markers (that make the music complete) and rhetorical ones (that signal “this is the end”), following David Heetderks’s term “closing markers”. Codas present new material; outros repeat old material with closing rhetoric (Open Music Theory, after Summach).</p></li>
+<li><p><strong>The grand plagal cadence.</strong> Temperley (Music Theory Online, 2011) names a rock ending: a strongly emphasised IV to I, often with a held last chord, that comes once, near the end. Songs 54 and 55 ended this way by instinct; v7 has no name for it.</p></li>
+<li><p><strong>Terminally climactic form.</strong> Osborn (2013) describes songs, mostly post-1990s alternative rock, whose last section is new material and the climax. Spicer’s cumulative form ends at its fullest texture.</p></li>
+<li><p><strong>The fade-out’s rise and fall.</strong> William Weir’s survey of Billboard’s year-end top 10 since 1946 (reported by NPR, 2014) found fade-outs peaked in 1985, when all ten year-end songs faded, then declined through the 1990s until they almost vanished.</p></li>
+</ul>
+<p>v7 already has resolved, open, abrupt and return endings. Missing from it: the fade, the held final chord, the slowing, the grand plagal cadence, the bookend, the buildup intro, and the coda of new material.</p>
+<h3 id="listeners-the-first-seconds-and-the-last">3. Listeners: the first seconds and the last</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Finding</th>
+<th>Numbers</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Listeners decide fast</td>
+<td>24% of Spotify plays skipped within 5 seconds, 29% within 10, 35% within 30; 48.6% before the song ends; skipping highest in teenagers</td>
+<td>Paul Lamere, “The Skip” (Spotify data, billions of plays, 2014)</td>
+</tr>
+<tr class="even">
+<td>Hits got to the voice sooner</td>
+<td>Time before the voice in US top-10 singles fell from about 20 s (mid-1980s) to about 5 s (2015); tempo rose; the title came sooner</td>
+<td>Léveillé Gauvin, Musicae Scientiae 2018 (303 songs, 1986–2015)</td>
+</tr>
+<tr class="odd">
+<td>But it doesn’t pick the hit</td>
+<td>Hits and less popular songs by the same artists did not differ on any of these features</td>
+<td>Léveillé Gauvin 2018, study 2 (60 pairs, 2015)</td>
+</tr>
+<tr class="even">
+<td>A fade keeps the song going in the head</td>
+<td>With a fade-out, listeners went on tapping the pulse after the sound stopped; with an arranged (“cold”) end they stopped tapping before the end</td>
+<td>Kopiez and colleagues (Hannover), “When the pulse of the song goes on”, Psychology of Music (80 listeners, three versions of one song)</td>
+</tr>
+<tr class="odd">
+<td>A final slowing doesn’t add pleasure</td>
+<td>Ordinary final ritardandi did not make endings more pleasant; exaggerated ones made them less pleasant; the closing harmony mattered more</td>
+<td>Kleinsmith, Friedman and Neill 2016 and follow-up</td>
+</tr>
+<tr class="even">
+<td>Closure is expectation met</td>
+<td>A cadence’s last event is highly predictable, and predictability drops right after it, which is felt as an ending</td>
+<td>Huron 2006; Sears, Caplin and McAdams</td>
+</tr>
+<tr class="odd">
+<td>Phrase ends are lengthened</td>
+<td>Performers, and even non-musicians pacing chords themselves, lengthen phrase ends</td>
+<td>Palmer 1989; dwell-time studies</td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-this-means-for-luthier">What this means for Luthier</h4>
+<ul>
+<li><p><strong>The first five seconds matter on streaming.</strong> A quarter of plays end there, before most intros finish. That argues for an intro that carries something identifiable (the hook’s tune, a riff, the voice) rather than for a short intro as such, since length alone didn’t separate hits from misses.</p></li>
+<li><p><strong>Era sets the length.</strong> A song written to sound like 1975 can take 15 seconds before the voice; a song meant for streaming now wants the voice or the hook within about 5.</p></li>
+<li><p><strong>A fade is a meaning, not a default.</strong> It leaves the pulse running: right for a song that shouldn’t end (a vamp, an endless love, a nocturne), wrong for a song that resolves. v7 offers it only to the nocturne.</p></li>
+<li><p><strong>The ending is in the harmony.</strong> The cadence carries closure more than a slowing does. A held last chord after a strong cadence is the reliable close; a ritardando is optional and should be slight.</p></li>
+</ul>
+<h3 id="measured-739-billboard-songs-and-909-pop909-songs">4. Measured: 739 Billboard songs and 909 POP909 songs</h3>
+<p><strong>Data.</strong> The McGill Billboard annotations (Burgoyne, Wild and Fujinaga; 739 distinct songs charted 1958 to 1991) mark sections with times, the lead voice’s entry, the lead instrument, fade-outs and every chord. POP909 (909 Chinese pop songs, 2000s and 2010s) has human structure labels with intro and outro lengths in bars. After 1991 I rely on Léveillé Gauvin’s measurements (section 3); BiMMuDa’s melody files proved unreliable for the voice’s entry (a rap verse before the sung tune counts as silence).</p>
+<h4 id="intros-1">Intros</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Songs</th>
+<th>Song length (s)</th>
+<th>Has an intro</th>
+<th>Intro (s), median and middle half</th>
+<th>Intro (bars)</th>
+<th>Voice enters (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1958–64</td>
+<td>121</td>
+<td>151</td>
+<td>89%</td>
+<td>9 (7–13)</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>1965–69</td>
+<td>116</td>
+<td>171</td>
+<td>90%</td>
+<td>10 (7–15)</td>
+<td>4</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>1970–74</td>
+<td>131</td>
+<td>199</td>
+<td>91%</td>
+<td>13 (9–19)</td>
+<td>5</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>1975–79</td>
+<td>129</td>
+<td>216</td>
+<td>95%</td>
+<td>15 (10–19)</td>
+<td>8</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>1980–84</td>
+<td>125</td>
+<td>230</td>
+<td>98%</td>
+<td>15 (9–21)</td>
+<td>8</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>1985–91</td>
+<td>117</td>
+<td>252</td>
+<td>93%</td>
+<td>17 (12–24)</td>
+<td>8</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td>All</td>
+<td>739</td>
+<td>206</td>
+<td>93%</td>
+<td>13 (9–19)</td>
+<td>6 (4–8)</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>POP909</td>
+<td>909</td>
+<td></td>
+<td>96%</td>
+<td></td>
+<td>8 (4–8)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>What the intro plays.</strong> 55% of intros have material of their own, used nowhere else; 27% share it with an instrumental section later (interlude, solo, outro: the riff or instrumental refrain); 11% play the verse’s music and 7% the chorus’s.</p></li>
+<li><p><strong>Who leads it.</strong> Where the annotators marked a lead instrument, guitar led most often before 1980, synthesizer after 1985. The voice starts inside the intro in 8% of songs (spoken words, vocal ad-libs, an a cappella line).</p></li>
+<li><p><strong>Bookends.</strong> 13% of songs end on the intro’s material.</p></li>
+</ul>
+<p>v7’s “median 4 bars” holds for 1958 to 1969 only. From 1975 the Billboard median is 8 bars, and POP909’s is 8. The 45 seconds to the first chorus v7 quotes is an average over eras whose intros doubled in length.</p>
+<h4 id="endings-1">Endings</h4>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Fade-out</th>
+<th>Cold endings: last section outro or coda</th>
+<th>chorus</th>
+<th>verse</th>
+<th>Last chord the tonic</th>
+<th>V–I</th>
+<th>IV–I</th>
+<th>♭VII–I</th>
+<th>Outro, fades (s)</th>
+<th>Outro, cold (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1958–64</td>
+<td>49%</td>
+<td>29%</td>
+<td>32%</td>
+<td>27%</td>
+<td>94%</td>
+<td>50%</td>
+<td>29%</td>
+<td>2%</td>
+<td>9</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>1965–69</td>
+<td>58%</td>
+<td>49%</td>
+<td>24%</td>
+<td>18%</td>
+<td>86%</td>
+<td>24%</td>
+<td>43%</td>
+<td>8%</td>
+<td>11</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>1970–74</td>
+<td>56%</td>
+<td>57%</td>
+<td>26%</td>
+<td>9%</td>
+<td>79%</td>
+<td>30%</td>
+<td>28%</td>
+<td>7%</td>
+<td>15</td>
+<td>28</td>
+</tr>
+<tr class="even">
+<td>1975–79</td>
+<td>71%</td>
+<td>55%</td>
+<td>32%</td>
+<td>8%</td>
+<td>76%</td>
+<td>26%</td>
+<td>32%</td>
+<td>8%</td>
+<td>16</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td>1980–84</td>
+<td>66%</td>
+<td>70%</td>
+<td>19%</td>
+<td>9%</td>
+<td>79%</td>
+<td>33%</td>
+<td>28%</td>
+<td>14%</td>
+<td>17</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>1985–91</td>
+<td>69%</td>
+<td>42%</td>
+<td>36%</td>
+<td>6%</td>
+<td>67%</td>
+<td>25%</td>
+<td>14%</td>
+<td>11%</td>
+<td>19</td>
+<td>27</td>
+</tr>
+<tr class="odd">
+<td>All</td>
+<td>61%</td>
+<td>49%</td>
+<td>28%</td>
+<td>14%</td>
+<td>81%</td>
+<td>33%</td>
+<td>29%</td>
+<td>8%</td>
+<td>15</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<p>The chord columns are for songs that don’t fade. POP909: 70% of songs have an outro (median 4 bars, middle half 2 to 6), and 71% end on instrumental bars after the last sung section.</p>
+<ol type="1">
+<li><p><strong>Fades were the majority ending from 1965 to 1991,</strong> rising to 71% in the late 1970s. That agrees with Weir’s year-end count peaking in 1985. The later collapse (section 2) is after this corpus.</p></li>
+<li><p><strong>A cold ending lands on the tonic 81% of the time,</strong> but the approach varies: V–I in a third, IV–I (the plagal close) in nearly a third, ♭VII–I in about one in ten, growing after 1980. The plagal close peaked in the late 1960s (43%).</p></li>
+<li><p><strong>Before 1965, a third of songs ended on the last verse or chorus itself;</strong> later, most cold endings have an outro or coda (70% in 1980–84). Outros grew from about 13 seconds to over 20.</p></li>
+<li><p><strong>Fades run 9 to 19 seconds</strong> from the start of the fading section, lengthening by era, typically 8 bars of a repeated chorus or vamp.</p></li>
+</ol>
+<h3 id="what-v8-should-do">5. What v8 should do</h3>
+<p>Keep v7’s ending kinds, chorus-arrival check and commercial profile. Add a writer for each edge, with bands by era and style.</p>
+<h4 id="e1.-six-kinds-of-intro">E1. Six kinds of intro</h4>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>What it is</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Own figure</td>
+<td>A riff or figure used nowhere else, or only in instrumental sections</td>
+<td>55% own material, 27% shared with an instrumental section (Billboard)</td>
+</tr>
+<tr class="even">
+<td>Hook preview</td>
+<td>The chorus’s or hook’s tune on an instrument</td>
+<td>Songs 54 and 55’s fiddle; 7% play the chorus’s music</td>
+</tr>
+<tr class="odd">
+<td>Verse vamp</td>
+<td>The verse’s chords and groove, the band settling in</td>
+<td>11% play the verse’s music</td>
+</tr>
+<tr class="even">
+<td>Buildup</td>
+<td>Layers enter one at a time until the band is full</td>
+<td>Attas; Spicer’s accumulative form</td>
+</tr>
+<tr class="odd">
+<td>Voice first</td>
+<td>The voice alone or nearly alone: a pickup line, an a cappella phrase, a spoken word</td>
+<td>8% of Billboard intros carry the voice</td>
+</tr>
+<tr class="even">
+<td>None</td>
+<td>The voice on bar 1</td>
+<td>7% of Billboard songs; common after 2000 (Léveillé Gauvin)</td>
+</tr>
+</tbody>
+</table>
+<p>The intake (or the style default) chooses one; the arrangement writer’s layer counts (Part 19) fill it.</p>
+<h4 id="e2.-intro-length-by-era-and-the-first-five-seconds">E2. Intro length by era, and the first five seconds</h4>
+<ul>
+<li><p><strong>Bands from the tables:</strong> a 1958–69 sound, 4 bars and about 9 to 10 seconds before the voice; a 1975–91 sound, 8 bars and about 15 to 19 seconds; a streaming-era sound, the voice or the hook’s tune within about 5 seconds.</p></li>
+<li><p><strong>The first five seconds carry something identifiable</strong> : the hook’s tune, the riff, or the voice. This is a check for every era, since a quarter of streaming plays end there and length alone doesn’t make hits.</p></li>
+<li><p>Window 29’s chorus-arrival bar should be read with the era’s intro, not the cross-era median.</p></li>
+</ul>
+<h4 id="e3.-the-endings-kinds">E3. The ending’s kinds</h4>
+<p>v7’s resolved, open, abrupt and return stay. Make “resolved” say how, and add three:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>Built as</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Resolved: authentic</td>
+<td>V–I, last chord held</td>
+<td>The default before 1965 (half of cold endings)</td>
+</tr>
+<tr class="even">
+<td>Resolved: plagal</td>
+<td>IV–I, once, emphasised, last chord held (Temperley’s grand plagal cadence)</td>
+<td>Rock, country, gospel, hymns; songs 54 and 55</td>
+</tr>
+<tr class="odd">
+<td>Resolved: ♭VII–I</td>
+<td>The Mixolydian close</td>
+<td>Rock after 1980 (about one in ten)</td>
+</tr>
+<tr class="even">
+<td>Fade</td>
+<td>The chorus or a vamp repeated, about 8 bars and 10 to 20 seconds, the level falling to nothing</td>
+<td>Only where the song shouldn’t end: a vamp, an ongoing state, the nocturne. The last words heard are the hook’s</td>
+</tr>
+<tr class="odd">
+<td>Bookend</td>
+<td>The intro’s material returns to close</td>
+<td>13% of songs</td>
+</tr>
+<tr class="even">
+<td>Coda</td>
+<td>New material at the end, possibly the climax (Osborn’s terminally climactic form)</td>
+<td>Alternative rock, worship builds</td>
+</tr>
+<tr class="odd">
+<td>Open, abrupt, return</td>
+<td>As in v7</td>
+<td>As in v7</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Slowing:</strong> optional and slight. Listeners find ordinary final ritardandi no more pleasant and exaggerated ones less pleasant; the cadence does the work.</p></li>
+<li><p><strong>Outro length:</strong> cold outros of 4 to 15 bars (median 7, Billboard); POP909 median 4. A song ending straight on the last chorus is a pre-1965 sound.</p></li>
+</ul>
+<h4 id="e4.-the-demo-and-the-documents">E4. The demo and the documents</h4>
+<ul>
+<li><p>The demo renders a fade (a volume ramp over the fading bars) and a held last chord (a fermata, written in the score and rendered in the MIDI).</p></li>
+<li><p>The songbook says which ending it is and how to play it live: a fade needs a live ending, usually the hook once more and a held chord.</p></li>
+</ul>
+<h4 id="e5.-tests">E5. Tests</h4>
+<ul>
+<li><p>The commercial profile (fix 71) gets bands: intro bars and seconds against the chosen era, the voice’s entry, what sounds in the first five seconds, the ending’s kind and last two chords, the outro’s length.</p></li>
+<li><p>Songs 52 to 56 as the first test: all five have 4-bar intros, right for a 1960s sound and short for a 1975–91 sound; songs 54 and 55’s IV–I endings match the grand plagal kind; none fades.</p></li>
+</ul>
+<h3 id="files-and-sources">6. Files and sources</h3>
+<h4 id="in-the-repo-studiesedges">In the repo (studies/edges)</h4>
+<ul>
+<li><p><code>edges_billboard.py</code> : per-song intro, voice entry, intro material and lead, ending kind,</p></li>
+<li><p>outro, last two chords, bookend; <code>edges_billboard.json</code> .</p></li>
+<li><p><code>edges_tables.py</code> : the section 4 tables by period; <code>edges_tables.json</code> .</p></li>
+<li><p><code>edges_pop909.py</code> : POP909 intro and outro bars; <code>edges_pop909.json</code> .</p></li>
+</ul>
+<h4 id="data">Data</h4>
+<ul>
+<li><p>McGill Billboard annotations (Burgoyne, Wild and Fujinaga 2011), salami_chords.txt via ChoCo (Zenodo 7706751), with billboard-2.0-index.csv for chart dates.</p></li>
+<li><p>POP909 (Wang et al. 2020) with Dai, Zhang and Dannenberg’s structure labels.</p></li>
+</ul>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><p>Léveillé Gauvin, H. (2018). Drawing listener attention in popular music: testing five musical features arising from the theory of attention economy. Musicae Scientiae 22(3), 291–304.</p></li>
+<li><p>Lamere, P. (2014). The Skip. Music Machinery blog (Spotify data), as reported by Spin, RAIN News and Hypebot.</p></li>
+<li><p>Kopiez, R. and colleagues. When the pulse of the song goes on: fade-out in popular music and the pulse continuity phenomenon. Psychology of Music.</p></li>
+<li><p>Kleinsmith, A., Friedman, R. and Neill, W. T. (2016), and the follow-up on final ritardandi and diminuendi.</p></li>
+<li><p>Weir, W. (2014). The fade-out survey of Billboard’s year-end top 10 since 1946, NPR interview.</p></li>
+<li><p>Temperley, D. (2011). The cadential IV in rock. Music Theory Online 17(1).</p></li>
+<li><p>Braae, N. (2026). Structural and rhetorical closure in 1970s rock songs. Music Theory Online 32(1).</p></li>
+<li><p>Heetderks, D. Play with closing markers. Music Theory Spectrum.</p></li>
+<li><p>Osborn, B. (2013). Subverting the verse–chorus paradigm: terminally climactic forms in recent rock music. Music Theory Spectrum 35(1).</p></li>
+<li><p>Summach, J. (2012). Form in top-20 rock music, 1955–89. PhD dissertation, Yale; module definitions via Open Music Theory.</p></li>
+<li><p>Attas, R. (2011). Meter as process in groove-based popular music. PhD dissertation, UBC; and Biamonte, N., Rhythmic functions in pop-rock music, Routledge Companion to Popular Music Analysis.</p></li>
+<li><p>Spicer, M. (2004). (Ac)cumulative form in pop-rock music. Twentieth-Century Music 1(1).</p></li>
+<li><p>Huron, D. (2006). Sweet Anticipation. MIT Press; Sears, D., Caplin, W. and McAdams, S. (2014). Perceiving the classical cadence. Music Perception.</p></li>
+<li><p>Palmer, C. (1989). Mapping musical thought to musical performance; dwell-time studies of phrase-final lengthening.</p></li>
+</ul>
+<p>Not reached: the full texts of Kopiez and colleagues and of Léveillé Gauvin were read through abstracts and reports, so their exact effect sizes aren’t quoted.</p>
 
 <a class="top" href="#start">Top</a>
 </body>
