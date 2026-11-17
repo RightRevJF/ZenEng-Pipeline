@@ -36,7 +36,9 @@ md = md[:a] + """- `parse_words.py`: every sung syllable of CoCoPops Billboard a
 
 - `bimmuda_words.py`: the word measures on BiMMuDa, 1950 to 2022, words attached by exact count.
 
-- `words_results.json`, `words_more_results.json`, `pop20c_results.json`, `pop20c_rhythm_results.json` and `bimmuda_words_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
+- `mxl_words.py`, `score_words.py`, `pdmx_words.py` and `openewld_words.py`: the measures on scores with words attached (PDMX, OpenEWLD).
+
+- `words_results.json`, `words_more_results.json`, `pop20c_results.json`, `pop20c_rhythm_results.json`, `bimmuda_words_results.json`, `pdmx_words_results.json` and `openewld_words_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
 if "Data: [CoCoPops]" not in md: md = md.replace("Data: CoCoPops, CC BY", "Data: [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops), CC BY", 1)
 md = re.sub(r"(?m)^### (\*\*)?(Sources read:|Checks for the port:|Measured:)(\*\*)?$", r"\2", md)
 md = re.sub(r"(?m)^### (In the repo, `studies/words/`:)$", r"\1", md)
@@ -48,4 +50,20 @@ i = md.find("|1980–1999 (17)|10%|")
 if i > 0:
     j = md.find("\n", i); k = md.find("\n\nThe anticipation peaks", j)
     md = md[:j] + "\n|2000–2019 (11)|11%|42%|13%|26%|6.1|\n|Song 54|13%|41%|13%|21%|4.2|\n|Song 55|12%|40%|15%|38%|4.4|" + md[k:] if "|Period|Notes on|" in md[j:k] else md
+md = re.sub(r"\n\n### (anticipation of the last stress is new\.)", lambda m: " " + m.group(1), md)
+md = md.replace("### What it shows:", "What it shows:")
+a = md.find("|Corpus, style")
+if a > 0:
+    b = md.find("\n\nWhat it shows:", a)
+    md = md[:a] + """| Corpus, style and metre (songs) | Weak syllables on beat 1 | Function words on beat 1 | Stresses on beat 1 | Stress lower than its word | Opposed across words | Voiced / voiceless ending long | Held top notes: open / reduced |
+|---|---|---|---|---|---|---|---|
+| PDMX popular, 4/4 (483) | 6.2% | 7.3% | 22% | 25% | 27% | 55% / 38% | 57% / 12% |
+| PDMX hymns and sacred, 4/4 (223) | 9.7% | 12.5% | 36% | 28% | 17% | 47% / 37% | 51% / 19% |
+| PDMX hymns and sacred, 3/4 (60) | 15.6% | 19.5% | 57% | 33% | 18% | 59% / 52% | 57% / 19% |
+| PDMX folk, 4/4 (185) | 9.1% | 11.1% | 31% | 22% | 20% | 52% / 37% | 55% / 16% |
+| PDMX folk, 3/4 (42) | 16.9% | 18.3% | 53% | 36% | 22% | 49% / 42% | 55% / 14% |
+| PDMX other classical, 4/4 (2,590) | 9.3% | 10.5% | 36% | 28% | 18% | 50% / 41% | 54% / 18% |
+| PDMX other classical, 3/4 (553) | 11.0% | 13.3% | 61% | 30% | 8% | 57% / 50% | 53% / 19% |
+| OpenEWLD standards before 1930, 4/4 (98) | 9.7% | 12.1% | 43% | 33% | 17% | 49% / 44% | 48% / 17% |
+| OpenEWLD standards 1930 on, 4/4 (66) | 7.2% | 9.3% | 42% | 36% | 12% | 59% / 44% | 47% / 20% |""" + md[b:]
 open("words.md", "w").write(md); print("ok", md.count("data:image"))

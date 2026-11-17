@@ -64,3 +64,9 @@ LOG.append({"q": "keep going (after B)", "answer": "done", "note": "fourth round
 LOG.append({"q": "after 2000 added: next", "options": {"A": "send the final report to the maintainer now", "B": "one more round: find a modern corpus with lyrics to check the word rules after 2000", "C": "something else"}, "recommended": "A", "answer": "B"})
 
 LOG.append({"q": "one more round (after B)", "answer": "done", "note": "BiMMuDa (1950-2022, top five Billboard year-end) word measures by period, words attached by exact count with a stress-free line-end check (145 of 165 sections); added to Part 23 as Words after 2000; final report rebuilt, 248 pages"})
+
+LOG.append({"q": "(Jason asked) Have you scoured zenodo for corpera?", "answer": "not before; searched the Zenodo API (reachable from the workspace): PDMX open (CC BY 4.0; 42,526 scores with lyrics attached, 23,475 deduplicated without licence conflicts; mostly classical and hymns, about 1,100 folk, a few hundred pop and rock); DALI and Enhanced Wikifonia restricted (request access); OpenEWLD public-domain lead sheets on GitHub; OpenScore Lieder already used by v7"})
+
+LOG.append({"q": "Zenodo corpora: next", "options": {"A": "run PDMX and OpenEWLD (English hymns, folk, standards with words attached) and add hymn and folk bands to Part 23", "B": "send the final report now", "C": "Jason requests DALI access first"}, "recommended": "A", "answer": "A"})
+
+LOG.append({"q": "run PDMX and OpenEWLD (after A)", "answer": "done", "note": "4,176 English PDMX scores and 359 OpenEWLD lead sheets with words attached; hymn, folk, standards and popular bands by metre added to Part 23 (Hymns, folk songs and standards); song 53 sits inside the hymn band; final report rebuilt, 250 pages"})

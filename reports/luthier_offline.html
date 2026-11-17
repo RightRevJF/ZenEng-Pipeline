@@ -217,7 +217,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Tension (Part 20).</strong> Harmonic tension and energy are two curves. In 214 Billboard hits the chords are most tense in the pre-chorus and bridge, with V just before each chorus and I on its first bar, while listeners’ energy peaks in the chorus; both build late (about 0.68 and 0.74 of the song). v7’s 1-to-3 chord value predicts nothing; models that fit listeners read trends and give harmony a memory of 20 to 30 seconds. v8 should plan both curves before writing and gate its writers by them.</p></li>
 <li><p><strong>Metre above the bar (Part 21).</strong> All four placement failures of songs 54 to 56 come from fixing a line’s length in bars before the words are known. In 9,313 lines of 198 Billboard songs, lines are timed in seconds: slow songs give a line fewer bars (6 to 8 syllables in one bar 36% of the time, against 6% in fast songs). v8 should set slots in seconds, choose the felt tempo at intake, let phrases expand, overlap or shrink at kept rates, and place words by weighted rules (Hayes) instead of failing. This closes 749.25, 749.30 and 749.31.</p></li>
 <li><p><strong>Melody by genre (Part 22).</strong> v7 writes every melody from the 7-note scale and forbids the flat third against a major chord (fix 200) and the flat fifth (tri()). In 165 major-key Billboard songs the typical melody puts 85% of its notes on one five-note scale, notes fix 200 forbids appear in 63% of songs (69% of soul songs), and tri() mostly blocks plain diatonic notes. Songs 54 and 55 have no flat 3 or flat 7, and song 54 sings the leading tone at three and a half times the country rate. v8 should take its pitch table from the style, place flat 3, flat 7 and flat 5 where soul and blues put them, narrow tri(), and treat the leading tone as a moving note.</p></li>
-<li><p><strong>Setting words (Part 23).</strong> v7 measures stress on the beat, line endings and vowels on held notes, but its songs put weak syllables on the downbeat and it has no rule for a word’s pitch shape or a man’s vowels. In 199 Billboard and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time and a word’s stressed syllable is lower than the rest of the word in 18% to 20% of words; songs 54 and 55 do both about twice as often, mostly through line openings like “And” on the bar line. Height alone barely changes the vowel; held high notes do (men’s held top notes 61% open, 7% reduced). v8 should grade its stress cost, give weak openings a pickup, add a word-shape rule for pitch and a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre move together between neighbouring syllables, and words ending in a voiced consonant take longer notes. Across the century (1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles: the downbeat band is fixed, the contour targets depend on era and style. After 2000 melodies carry more notes a bar and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 the word rules hold as before.</p></li>
+<li><p><strong>Setting words (Part 23).</strong> v7 measures stress on the beat, line endings and vowels on held notes, but its songs put weak syllables on the downbeat and it has no rule for a word’s pitch shape or a man’s vowels. In 199 Billboard and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time and a word’s stressed syllable is lower than the rest of the word in 18% to 20% of words; songs 54 and 55 do both about twice as often, mostly through line openings like “And” on the bar line. Height alone barely changes the vowel; held high notes do (men’s held top notes 61% open, 7% reduced). v8 should grade its stress cost, give weak openings a pickup, add a word-shape rule for pitch and a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre move together between neighbouring syllables, and words ending in a voiced consonant take longer notes. Across the century (1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles: the downbeat band is fixed, the contour targets depend on era and style. After 2000 melodies carry more notes a bar and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 the word rules hold as before. Hymns, folk songs and standards with words attached (PDMX and OpenEWLD, 4,535 English songs) give hymn mode its own bands: weak syllables on beat 1 up to about 10% in 4/4 and 17% in 3/4, and a looser word pitch shape.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -11774,7 +11774,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 
 <h1 id="part-23">Part 23. Setting words for Luthier v8: stress, vowels and high notes</h1>
 <p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/4xcqBYhnS8uLAFCzeuqtA2">Setting words for Luthier v8: stress, vowels and high notes</a>.</p>
-<p><strong>Summary.</strong> Luthier v7 already measures stress on the beat, line endings and vowels on held notes, but it set aside a rule for a word’s pitch shape and any vowel table for men, and its songs put weak syllables on the downbeat. In 199 Billboard songs and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time, and a word’s stressed syllable is lower than its other syllables in 18% to 20% of words. Songs 54 and 55 do both about twice as often (10% to 12%, and 34%), mostly through line openings like “And” and “But” on the bar line. On vowels, height alone barely matters; held high notes do, with men’s held top notes open 61% of the time and reduced only 7%. v8 should grade its stress cost, give weak line openings a pickup, add a word-shape rule for pitch, and add a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre should move together between neighbouring syllables (song 54 opposes them 47% of the time across words, against 29% in the corpus), and words ending in a voiced consonant take longer notes (55% against 33%). Across the century (the Pop20c corpus, 1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles, so the downbeat band is fixed and the contour targets depend on era and style. After 2000 melodies carry more notes a bar (about 6 against 4.8) and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 (BiMMuDa) the word rules hold as before: weak syllables on beat 1 are if anything rarer, and the voiced-ending lean remains.</p>
+<p><strong>Summary.</strong> Luthier v7 already measures stress on the beat, line endings and vowels on held notes, but it set aside a rule for a word’s pitch shape and any vowel table for men, and its songs put weak syllables on the downbeat. In 199 Billboard songs and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time, and a word’s stressed syllable is lower than its other syllables in 18% to 20% of words. Songs 54 and 55 do both about twice as often (10% to 12%, and 34%), mostly through line openings like “And” and “But” on the bar line. On vowels, height alone barely matters; held high notes do, with men’s held top notes open 61% of the time and reduced only 7%. v8 should grade its stress cost, give weak line openings a pickup, add a word-shape rule for pitch, and add a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre should move together between neighbouring syllables (song 54 opposes them 47% of the time across words, against 29% in the corpus), and words ending in a voiced consonant take longer notes (55% against 33%). Across the century (the Pop20c corpus, 1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles, so the downbeat band is fixed and the contour targets depend on era and style. After 2000 melodies carry more notes a bar (about 6 against 4.8) and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 (BiMMuDa) the word rules hold as before: weak syllables on beat 1 are if anything rarer, and the voiced-ending lean remains. Hymns, folk songs and standards with words attached (PDMX and OpenEWLD, 4,535 songs) give v8 its hymn-mode bands: weak syllables on beat 1 up to about 10% in 4/4 and 17% in 3/4, stresses on beat 1 more often, and a looser word pitch shape; song 53, written by sketch, sits inside them.</p>
 <h3 id="what-luthier-v7-does-now">What Luthier v7 does now</h3>
 <p>v7 is already strong on words: it measured stress, vowels and line endings on large corpora and built them in. Its gaps are the ones it named itself: no rule for a word’s pitch shape, nothing that keeps weak syllables off the downbeat beyond the stress floor, and no vowel table for men.</p>
 <p>What it has (Luthier v7):</p>
@@ -11819,11 +11819,9 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <p>The simplest test of a pitch-accent rule is inside the word, where nothing else changes: is the stressed syllable of “mother” or “believe” higher than the other one? That is what the corpus measure below does.</p>
 <h3 id="vowels-and-high-notes-what-the-research-says">Vowels and high notes: what the research says</h3>
 <p>Vowels lose their identity as the sung pitch climbs toward the vowel’s first resonance, and singers answer by adjusting the vowel rather than avoiding it. For men in pop the critical zone is the top of the chest voice, about E4 to A4, where belters tune a resonance to the second harmonic.</p>
+<p><strong>Where identification fails.</strong> Above about C5 (523 Hz), listeners’ identification of every vowel but /a/ falls toward chance (<a href="https://discovery.ucl.ac.uk/id/eprint/10142399/1/Friedrichs_Manuscript_Revised_v2.pdf">Friedrichs et al.</a>). Smith and Scott (1980) found isolated soprano vowels above F5 lost half their intelligibility against C♯5, but with a raised larynx, as in popular styles, the drop between C♯5 and F5 was only 10% <a href="https://d-scholarship.pitt.edu/19444/1/EMR000050a%2DCollister%2DHuron.pdf">(Collister and Huron 2008</a>).</p>
 <ul>
-<li><strong>Where identification fails.</strong> Above about C5 (523 Hz), listeners’ identification of every vowel but /a/ falls toward chance (<a href="https://discovery.ucl.ac.uk/id/eprint/10142399/1/Friedrichs_Manuscript_Revised_v2.pdf">Friedrichs et al.</a>). Smith and Scott (1980) found isolated soprano vowels above F5 lost half their intelligibility against C♯5, but with a raised larynx, as in popular styles, the drop between C♯5 and F5 was only 10% <a href="https://d-scholarship.pitt.edu/19444/1/EMR000050a%2DCollister%2DHuron.pdf">(Collister and Huron 2008</a>).</li>
-</ul>
-<p><strong>Men too, at their own pitches.</strong> Chan and Kuang (JASA) played words sung by a soprano, mezzo, tenor and baritone from C2 to D6 to 102 listeners: identification declines as the fundamental approaches the first formant, sung vowels decline earlier than synthesized ones, AE and EH are easily confused, and IY is not safe when sung <a href="https://synapsesocial.com/papers/W7160911134">(summary)</a>. Its cause is both the singers’ adjustments and the spectrum itself.</p>
-<ul>
+<li><p><strong>Men too, at their own pitches.</strong> Chan and Kuang (JASA) played words sung by a soprano, mezzo, tenor and baritone from C2 to D6 to 102 listeners: identification declines as the fundamental approaches the first formant, sung vowels decline earlier than synthesized ones, AE and EH are easily confused, and IY is not safe when sung <a href="https://synapsesocial.com/papers/W7160911134">(summary)</a>. Its cause is both the singers’ adjustments and the spectrum itself.</p></li>
 <li><p><strong>What male belters do.</strong> Six male music-theatre singers, recorded on [e] and [ɔ] at the top of their belt range (about 250 to 440 Hz, roughly B3 to A4), tuned the first resonance to the second harmonic in every quality (<a href="https://isidore.science/document/10670/1.ih8oq6">Bourne et al. 2016)</a>. Titze’s belt examples modify toward /æ/, /a/ and a bright rounded vowel in the G4 to C5 range, and his instructor did not count /i/ as a belt vowel (<a href="https://vocology.utah.edu/_resources/documents/formant_frequency_shifts_titze.pdf">Titze)</a>.</p></li>
 <li><p><strong>Belt against opera.</strong> Titze and Worley model belting as vowels shaped like a megaphone, keeping the fundamental and second harmonic below the first formant, where operatic singing lifts the harmonics over it (<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2757425">JASA 2009</a>).</p></li>
 <li><p><strong>Modification is the norm.</strong> Pedagogy describes shading vowels so the sung pitch or a harmonic sits near a formant, varying with voice size, note length, loudness and approach (<a href="https://ncvs.org/archive/pas/2004/abstracts/nix1.htm">Nix 2004</a>).</p></li>
@@ -12163,12 +12161,145 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </table>
 <p>Compare these within the corpus only. BiMMuDa writes songs at a slower beat than the other corpora (15% to 22% of its notes are sixteenths in every era, against 1% to 4% in Pop20c before 2000), so its “beat 1” takes in more of what other transcribers would write as beat 3; its levels run higher for that reason. Within it, the after-2000 songs keep weak syllables off beat 1 at least as well as earlier hits, sing the stressed syllable below the rest of its word about a quarter of the time as before, and keep the voiced-ending lean (40% against 29%). Stress and metre pull apart across words most in 1980–1999 and a little less after 2000, matching the fall in anticipations above.</p>
 <p>For v8 the word rules carry into a modern style unchanged; only the rhythm targets (notes per bar, sixteenths, anticipations) need the era setting.</p>
+<h3 id="hymns-folk-songs-and-standards">Hymns, folk songs and standards</h3>
+<p>Two open corpora with the words attached to the notes give v8 bands for its hymn mode and its folk and older-style songs. These styles allow more weak syllables on beat 1 than pop (about 10% in 4/4, about 16% in 3/4), put stresses on beat 1 more often, and let a word’s stress sit below the rest of the word more often; the voiced-ending lean holds in all of them.</p>
+<ul>
+<li><p><strong>PDMX</strong> (Long et al.; public-domain MuseScore scores, <a href="https://zenodo.org/records/15571083">Zenodo record 15571083,</a> CC BY 4.0): of 254,077 scores, 15,522 have at least 30 lyric syllables, no duplicates and no licence conflict; 4,176 of them are in English (85% of words in the CMU dictionary) and in 4/4 or 3/4. Categories come from PDMX’s genre and tag fields.</p></li>
+<li><p><strong>OpenEWLD</strong> (Simonetta; the public-domain part of the Wikifonia lead sheets, <a href="https://github.com/00sapo/OpenEWLD">GitHub)</a>: 359 English standards and popular songs, dated by first performance.</p></li>
+</ul>
+<p>The words come from the scores themselves, so no alignment is guessed. The scores are transcriptions and arrangements by MuseScore users, of uneven quality; the large numbers are what make them usable ( <code>studies/words/mxl_words.py</code>, <code>score_words.py</code>, <code>pdmx_words.py</code>, <code>openewld_words.py</code>).</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Corpus, style and metre (songs)</th>
+<th>Weak syllables on beat 1</th>
+<th>Function words on beat 1</th>
+<th>Stresses on beat 1</th>
+<th>Stress lower than its word</th>
+<th>Opposed across words</th>
+<th>Voiced / voiceless ending long</th>
+<th>Held top notes: open / reduced</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PDMX popular, 4/4 (483)</td>
+<td>6.2%</td>
+<td>7.3%</td>
+<td>22%</td>
+<td>25%</td>
+<td>27%</td>
+<td>55% / 38%</td>
+<td>57% / 12%</td>
+</tr>
+<tr class="even">
+<td>PDMX hymns and sacred, 4/4 (223)</td>
+<td>9.7%</td>
+<td>12.5%</td>
+<td>36%</td>
+<td>28%</td>
+<td>17%</td>
+<td>47% / 37%</td>
+<td>51% / 19%</td>
+</tr>
+<tr class="odd">
+<td>PDMX hymns and sacred, 3/4 (60)</td>
+<td>15.6%</td>
+<td>19.5%</td>
+<td>57%</td>
+<td>33%</td>
+<td>18%</td>
+<td>59% / 52%</td>
+<td>57% / 19%</td>
+</tr>
+<tr class="even">
+<td>PDMX folk, 4/4 (185)</td>
+<td>9.1%</td>
+<td>11.1%</td>
+<td>31%</td>
+<td>22%</td>
+<td>20%</td>
+<td>52% / 37%</td>
+<td>55% / 16%</td>
+</tr>
+<tr class="odd">
+<td>PDMX folk, 3/4 (42)</td>
+<td>16.9%</td>
+<td>18.3%</td>
+<td>53%</td>
+<td>36%</td>
+<td>22%</td>
+<td>49% / 42%</td>
+<td>55% / 14%</td>
+</tr>
+<tr class="even">
+<td>PDMX other classical, 4/4 (2,590)</td>
+<td>9.3%</td>
+<td>10.5%</td>
+<td>36%</td>
+<td>28%</td>
+<td>18%</td>
+<td>50% / 41%</td>
+<td>54% / 18%</td>
+</tr>
+<tr class="odd">
+<td>PDMX other classical, 3/4 (553)</td>
+<td>11.0%</td>
+<td>13.3%</td>
+<td>61%</td>
+<td>30%</td>
+<td>8%</td>
+<td>57% / 50%</td>
+<td>53% / 19%</td>
+</tr>
+<tr class="even">
+<td>OpenEWLD standards before 1930, 4/4 (98)</td>
+<td>9.7%</td>
+<td>12.1%</td>
+<td>43%</td>
+<td>33%</td>
+<td>17%</td>
+<td>49% / 44%</td>
+<td>48% / 17%</td>
+</tr>
+<tr class="odd">
+<td>OpenEWLD standards 1930 on, 4/4 (66)</td>
+<td>7.2%</td>
+<td>9.3%</td>
+<td>42%</td>
+<td>36%</td>
+<td>12%</td>
+<td>59% / 44%</td>
+<td>47% / 20%</td>
+</tr>
+</tbody>
+</table>
+<p>What it shows:</p>
+<ul>
+<li><p><strong>The method checks out.</strong> PDMX’s popular songs land close to Billboard: weak syllables on beat 1 6% against 4%, stresses on beat 1 22% against 19%.</p></li>
+<li><p><strong>Hymn and folk bands.</strong> In 4/4, weak syllables on beat 1 run about 9% to 10% and stresses take beat 1 a third of the time; in 3/4, where beat 1 is the bar’s only strong beat, weak syllables on it run about 16% to 17% and stresses take it over half the time. Song 53, written by sketch in 3/4, has no weak syllable on beat 1 and puts 47% to 50% of its stresses there: inside the hymn band, and stricter.</p></li>
+<li><p><strong>The word’s pitch shape is looser in older styles.</strong> The stress sits below the rest of its word in 22% to 36% of words in hymns, folk songs and standards, against 18% to 25% in pop. The target should be set by style.</p></li>
+<li><p><strong>Stress and metre pull apart less</strong> in hymns and classical song (8% to 18% across words) than in pop (27%), as expected of styles with little syncopation.</p></li>
+<li><p><strong>Voiced endings take longer notes in every category</strong> , by 5 to 17 points; the gap is smallest in early standards and 3/4 hymns.</p></li>
+<li><p><strong>Held top notes</strong> carry an open vowel 47% to 57% of the time everywhere; reduced vowels there run 12% in pop and 17% to 20% in hymns, classical song and standards, where a held “the” or “-ing” on a long final note is common.</p></li>
+</ul>
 <h3 id="what-v8-should-do">What v8 should do</h3>
 <p>Keep v7’s word rules and add three: a graded cost for weak syllables on strong beats, a word-shape rule for pitch, and a vowel rule for held high notes by voice. Each fits Part 21’s weighted placement, where a setting is the best compromise rather than a pass or a death.</p>
 <ol type="1">
 <li><p><strong>Grade the stress cost</strong> (Hayes and Kaun; Hayes’s constraints):</p>
 <ul>
-<li>a weak syllable on beat 1 costs most, on beat 3 next; a stress on an offbeat costs little, and nothing when it anticipates an empty beat (10.19 stands); a mismatch inside a word costs more than one across words; a line’s end is strict and its start free.</li>
+<li><p>a weak syllable on beat 1 costs most, on beat 3 next; a stress on an offbeat costs little, and nothing when it anticipates an empty beat (10.19 stands);</p></li>
+<li><p>a mismatch inside a word costs more than one across words; a line’s end is strict and its start free.</p></li>
 </ul></li>
 <li><p><strong>Weak line openings take a pickup.</strong> An unstressed first syllable (“And”, “But”, “I”, “To”, “a”) goes before the bar line, or the line starts on its first stress. This is 742 and 749’s fix, now with a band: weak syllables on beat 1 at most about 6% of weak syllables (corpus 4% to 6%; songs 54 and 55, 10% to 12%), and one-syllable function words on beat 1 at most about 6% of them.</p></li>
 <li><p><strong>A word-shape rule for pitch</strong> (the pitch-accent rule v7 left out): in a word of two or more syllables, the stressed syllable is at or above the word’s other syllables. Target: lower at most about 20% of such words (corpus 18% to 20%; songs 54 and 55, 34%), and a weak syllable a local peak at most about 10% of the time, about half the rate of stressed syllables.</p></li>
@@ -12182,13 +12313,14 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p><strong>Stress and metre move together.</strong> Score each pair of neighbouring syllables: opposed movement inside a word costs most when the stress falls (target at most about 15%), across words at most about 30% (about 15% to 20% for a pre-1980 style, up to about 38% for a 1980s one), with an anticipation counted as parallel; at a line’s start only a falling opposition costs.</p></li>
 <li><p><strong>Length follows the ending as well as the vowel.</strong> In the placement score, a word ending in a voiced consonant leans to a longer note (about 55% against 33%), alongside v7’s tense-vowel lean, which songs 54 and 55 currently invert. Fit the weights per style, as Hayes’s speakers differ (Part 21’s weighted placement).</p></li>
 <li><p><strong>Set the rhythm targets by era.</strong> Notes per bar, sixteenths and the anticipation rate change by era (about 4.8 notes a bar, 4% sixteenths and half of offbeat eighths anticipating in 1980–1999; about 6 notes a bar, 13% sixteenths and a quarter anticipating after 2000). The style’s era should choose them; weak syllables stay off beat 1 in every era, and the word’s pitch shape holds from the 1950s on.</p></li>
+<li><p><strong>Bands by style for hymn mode and folk.</strong> Weak syllables on beat 1 at most about 10% in 4/4 and 17% in 3/4 (pop about 6%); stresses on beat 1 about a third of stresses in 4/4 and a half in 3/4; the stress below the rest of its word at most about 30% (pop about 22%); held top notes open at least about half the time. From PDMX and OpenEWLD (“Hymns, folk songs and standards”).</p></li>
 </ul>
 <p>Checks for the port:</p>
 <ul>
 <li><p>Rerun songs 54 and 55 and compare with the corpus bands above: weak syllables and function words on beat 1, word-internal pitch and length, weak-syllable peaks, vowels on held high notes.</p></li>
 <li><p>The corpus checks reproduce from <code>studies/words/words_results.json</code>.</p></li>
-<li><p>No placement death from the new costs: they weigh, they do not forbid (Part 21).</p></li>
 </ul>
+<p>No placement death from the new costs: they weigh, they do not forbid (Part 21).</p>
 <h3 id="files-and-sources">Files and sources</h3>
 <p>In the repo, <code>studies/words/</code>:</p>
 <ul>
@@ -12198,7 +12330,8 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p><code>pop20c_test.py</code>: the same measures by period on the Pop20c corpus, 1900 to 1999.</p></li>
 <li><p><code>pop20c_rhythm.py</code>: melodic rhythm by period, with the post-2000 songs.</p></li>
 <li><p><code>bimmuda_words.py</code>: the word measures on BiMMuDa, 1950 to 2022, words attached by exact count.</p></li>
-<li><p><code>words_results.json</code>, <code>words_more_results.json</code>, <code>pop20c_results.json</code>, <code>pop20c_rhythm_results.json</code> and <code>bimmuda_words_results.json</code>: every figure in this report. <code>sung_syllables.json</code> is not committed; the parser rebuilds it.</p></li>
+<li><p><code>mxl_words.py</code>, <code>score_words.py</code>, <code>pdmx_words.py</code> and <code>openewld_words.py</code>: the measures on scores with words attached (PDMX, OpenEWLD).</p></li>
+<li><p><code>words_results.json</code>, <code>words_more_results.json</code>, <code>pop20c_results.json</code>, <code>pop20c_rhythm_results.json</code>, <code>bimmuda_words_results.json</code>, <code>pdmx_words_results.json</code> and <code>openewld_words_results.json</code>: every figure in this report. <code>sung_syllables.json</code> is not committed; the parser rebuilds it.</p></li>
 </ul>
 <p>Data: <a href="https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops">CoCoPops</a>, CC BY-NC 4.0, derived counts only; stress from the CMU Pronouncing Dictionary (via the <code>pronouncing</code> package) for Billboard. Luthier v7 Windows 25, 39, 69 and 98 and Module 10.19 for what the engine already does.</p>
 <p>Sources read:</p>
@@ -12210,7 +12343,9 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>Palmer and Kelly (1992), “Linguistic Prosody and Musical Meter in Song”, <em>Journal of Memory and Language</em> <a href="https://www.examenapium.it/cs/biblio/Palmer1992.pdf">(PDF</a>).</p></li>
 <li><p>Nichols, Morris, Basu and Raphael (2009), “Relationships Between Lyrics and Melody in Popular Music”, ISMIR (<a href="https://archives.ismir.net/ismir2009/paper/000084.pdf">PDF</a>).</p></li>
 <li><p>Chen and Mok (2014), rhythm of music and speech in English songs, <em>Speech Prosody</em> <a href="https://www.cuhk.edu.hk/lin/people/peggy/ChenMok_SP2014.pdf">(PDF</a>).</p></li>
-<li><p>Kabak and Domene Moreno, stress-melody alignment in Turkish and English children’s songs (<a href="https://glowlinguistics.org/42/wp-content/uploads/sites/4/2019/03/glow_oslo_2019_with_names.pdf">abstract)</a>.</p></li>
+</ul>
+<p>Kabak and Domene Moreno, stress-melody alignment in Turkish and English children’s songs (<a href="https://glowlinguistics.org/42/wp-content/uploads/sites/4/2019/03/glow_oslo_2019_with_names.pdf">abstract)</a>.</p>
+<ul>
 <li><p>Zahner, Kember and Braun (2017), pitch accent and lexical activation, Interspeech <a href="https://ling.uni-konstanz.de/securedl/sdl-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MzA1NzQ4MzUsImV4cCI6MTczMTI2NjAzNSwidXNlciI6MCwiZ3JvdXBzIjpbMCwtMV0sImZpbGUiOiJmaWxlYWRtaW4vbGluZy9hZy1icmF1bi16aW5uL0NvbmZlcmVuY2VfUGFwZXJzL0ludGVyc3BlZWNoMjAxN19NdXNpY2FsX1phaG5lcktlbWJlckJyYXVuLnBkZiIsInBhZ2UiOjk5MzQwfQ.CTB2a5yyhXRv-cR4pT0MVC5blbB8rVEC7hzllBZv3G8/Interspeech2017_Musical_ZahnerKemberBraun.pdf">(PDF</a>).</p></li>
 <li><p>Friedrichs et al., vowel identification at high pitch (<a href="https://discovery.ucl.ac.uk/id/eprint/10142399/1/Friedrichs_Manuscript_Revised_v2.pdf">manuscript</a>).</p></li>
 <li><p>Collister and Huron (2008), sung intelligibility, <em>Empirical Musicology Review</em> (<a href="https://d-scholarship.pitt.edu/19444/1/EMR000050a%2DCollister%2DHuron.pdf">PDF</a>). Chan and Kuang, sung vowel identification from C2 to D6, <em>JASA</em> (<a href="https://synapsesocial.com/papers/W7160911134">summary)</a>.</p></li>
@@ -12218,7 +12353,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>Titze, formant frequency shifts in belting <a href="https://vocology.utah.edu/_resources/documents/formant_frequency_shifts_titze.pdf">(PDF</a>); Titze and Worley (2009), <em>JASA</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2757425">(PMC</a>).</p></li>
 </ul>
 <p>Nix (2004), “Vowel Modification Revisited” (<a href="https://ncvs.org/archive/pas/2004/abstracts/nix1.htm">abstract)</a>.</p>
-<p>Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), “Comparing Musical Textsetting in French and in English Songs”, abstract; de Castro Arrazola (2018), <em>Typological Tendencies in Verse and Their Cognitive Grounding</em> , chapters 6 and 7; Tan, Lustig and Temperley (2019), “Anticipatory Syncopation in Rock: A Corpus Study”, <em>Music Perception</em> 36.4; White (2022), “A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music”, <em>Journal of Mathematics and Music</em> 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), “Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting”, CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), “A Generative Textsetting Model”, <em>Current Musicology</em> 55; Henrich et al. (2011) on resonance tuning by voice type, <em>JASA</em> . Third round (the section “Across the century”): Proto (2013), “Prominence Matching in English Songs: A Historical Perspective”, Signa 22, with Dell and Halle’s two conditions; Temperley (2019), “SecondPosition Syncopation in European and American Vocal Music”, Empirical Musicology Review 14; Temperley (2021), “The Origins of Syncopation in American Popular Music”, Popular Music 40, abstract; VanderStel and Temperley (2022), “The Evolution of Syncopation in Twentieth-Century American Popular Music”, Journal of New Music Research 51, abstract, and their Pop20c corpus (github.com/vanderstel/pop-corpus; no licence stated, derived counts only); Hayes and MacEachern (1998), “Quatrain Form in English Folk Verse”, Language 74, through Hayes’s class notes; Taniguchi, sung word recognition, AMLaP abstract. Fourth round (the section “After 2000”): White (2022), the manuscript of “A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music” (par.nsf.gov); Condit-Schultz (2019), “Expanding and Contracting Definitions of Syncopation: Commentary on Temperley 2019”, Empirical Musicology Review 14; the Pop20c post-2000 transcriptions. VanderStel and Temperley (2022) in full was not reachable. Fifth round (the section “Words after 2000”): BiMMuDa, Hamilton and Pearce, github.com/madelinehamilton/BiMMuDa (no licence stated; derived counts only, lyrics never reproduced). Proto and Dell (2013) on Italian songs: abstract only (song rhythm is anchored in measured time and has more than two levels of prominence, unlike literary verse).</p>
+<p>Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), “Comparing Musical Textsetting in French and in English Songs”, abstract; de Castro Arrazola (2018), <em>Typological Tendencies in Verse and Their Cognitive Grounding</em> , chapters 6 and 7; Tan, Lustig and Temperley (2019), “Anticipatory Syncopation in Rock: A Corpus Study”, <em>Music Perception</em> 36.4; White (2022), “A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music”, <em>Journal of Mathematics and Music</em> 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), “Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting”, CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), “A Generative Textsetting Model”, <em>Current Musicology</em> 55; Henrich et al. (2011) on resonance tuning by voice type, <em>JASA</em> . Third round (the section “Across the century”): Proto (2013), “Prominence Matching in English Songs: A Historical Perspective”, Signa 22, with Dell and Halle’s two conditions; Temperley (2019), “SecondPosition Syncopation in European and American Vocal Music”, Empirical Musicology Review 14; Temperley (2021), “The Origins of Syncopation in American Popular Music”, Popular Music 40, abstract; VanderStel and Temperley (2022), “The Evolution of Syncopation in Twentieth-Century American Popular Music”, Journal of New Music Research 51, abstract, and their Pop20c corpus (github.com/vanderstel/pop-corpus; no licence stated, derived counts only); Hayes and MacEachern (1998), “Quatrain Form in English Folk Verse”, Language 74, through Hayes’s class notes; Taniguchi, sung word recognition, AMLaP abstract. Fourth round (the section “After 2000”): White (2022), the manuscript of “A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music” (par.nsf.gov); Condit-Schultz (2019), “Expanding and Contracting Definitions of Syncopation: Commentary on Temperley 2019”, Empirical Musicology Review 14; the Pop20c post-2000 transcriptions. VanderStel and Temperley (2022) in full was not reachable. Fifth round (the section “Words after 2000”): BiMMuDa, Hamilton and Pearce, github.com/madelinehamilton/BiMMuDa (no licence stated; derived counts only, lyrics never reproduced). Sixth round (the section “Hymns, folk songs and standards”), from a search of Zenodo: PDMX, Long et al., zenodo.org/records/15571083 (CC BY 4.0); OpenEWLD, Simonetta, github.com/00sapo/OpenEWLD (public-domain scores, MITlicensed code). Found on Zenodo but restricted (access on request): DALI (about 5,000 songs with lyrics and vocal notes timed to recordings, CC BY-NC-SA), the Enhanced Wikifonia Leadsheet Dataset. Proto and Dell (2013) on Italian songs: abstract only (song rhythm is anchored in measured time and has more than two levels of prominence, unlike literary verse).</p>
 
 <a class="top" href="#start">Top</a>
 </body>
