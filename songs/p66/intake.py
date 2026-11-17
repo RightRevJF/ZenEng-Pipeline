@@ -40,3 +40,5 @@ LOG.append({"q": "next after the tension study", "options": {"A": "research metr
 LOG.append({"q": "after Part 21: add metre as Part 21, then start the genre research", "answer": "C", "note": "genre study delivered as the Doc Melody by genre for Luthier v8 (https://claude.ai/artifact/QYV56dyEeDLUfVb3xTnhAZ); measurement in studies/genre"})
 
 LOG.append({"q": "genre study done: next", "options": {"A": "add as Part 22", "B": "read the eight sources found in reference lists first (van der Merwe, Kubik, Weisethaunet, Wagner, Moore, van der Bliek, Day-O'Connell, Stoia 2021)", "C": "something else"}, "recommended": "A", "answer": "B"})
+
+LOG.append({"q": "further reading added: next", "options": {"A": "add as Part 22", "B": "read the four new sources first (Titon, Curry 2015, Wagner 2004, Doll 2025)", "C": "something else"}, "recommended": "A", "answer": "A"})
