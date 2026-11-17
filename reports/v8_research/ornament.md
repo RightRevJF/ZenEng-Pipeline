@@ -70,7 +70,7 @@ v7's own theory corpus already shows the plain end: the median standard has no m
 |The scoop is the commonest pop inflection|Scooping was the most frequent technique, then vibrato, bend and drop; every singer scooped more than 29 times in four songs' openings; techniques last 0.1 to 1 s (mean 0.4 s) and cover 23% of singing time|The same J-pop study|
 |Listeners hear through a scoop, and hear it|Pitch is judged as an average across the note and the scoop is also heard against its context|Larrouy-Maestri and Pfordresher, "Pitch perception in music: do scoops matter?" (2018)|
 |Melisma costs a little intelligibility|Word understanding 84% to 77% on melismas, only on one-syllable words|Johnson, Huron and Collister 2014 (already in v7)|
-|Phrases fit a breath|Kept phrases run 2 to 6 seconds, 8 at most|v7 finding 749.21 (perception checks)|
+|Phrases fit a breath|A phrase is held in memory up to about 8 seconds; v7's Window 3 sets phrases of 5 to 8 seconds|Part 11 (psychoacoustics) and fix-list finding 749.21; v7 Window 3|
 
 ### What this means for Luthier
 
@@ -82,7 +82,7 @@ v7's own theory corpus already shows the plain end: the median standard has no m
 
 ## 4. Measured: melisma in 6,716 songs
 
-**Data.** CoCoPops transcriptions of 214 Billboard songs (1958–1991) and 80 Rolling Stone 200 songs, sung syllables with their notes; 5,981 English songs with words in PDMX (Zenodo 15571083), by PDMX's genre and tag categories; 441 OpenEWLD standards. A melisma is a syllable sung on two or more different notes (ties merged). Phrase end: the syllable before a rest, the end, or line-ending punctuation (MusicXML), or the last syllable of a transcribed line (Billboard).
+**Data.** CoCoPops transcriptions of 214 Billboard songs (1958–1991) and 80 Rolling Stone 200 songs, sung syllables with their notes; 5,981 English songs with words in PDMX (Zenodo 15571083), by PDMX's genre and tag categories (the word-setting study, Part 23, used 4,176 of the same scores: those in 4/4 or 3/4 that its stress measures read); 441 OpenEWLD standards. A melisma is a syllable sung on two or more different notes (ties merged). Phrase end: the syllable before a rest, the end, or line-ending punctuation (MusicXML), or the last syllable of a transcribed line (Billboard).
 
 ### Rates, lengths and placement
 
@@ -136,7 +136,7 @@ Split ornament into two tiers: what is written (notes in the tune) and what is p
 
 - A run is 4 to 7 notes, pentatonic or blues-scale, on a long note at a phrase end, concentrated near the song's peak and in its last sections, rarely in verse 1.
 
-- Because no counted corpus exists, a run is a designed moment (11.9's vocabulary), chosen at intake for the styles that use them, and written in the score as an optional small-note line or described in the songbook as the singer's to add.
+Because no counted corpus exists, a run is a designed moment (11.9's vocabulary), chosen at intake for the styles that use them, and written in the score as an optional small-note line or described in the songbook as the singer's to add.
 
 ### O3. The performed tier: a vocabulary by style
 
@@ -156,7 +156,7 @@ The intake's style picks the column; the songbook's "for the singer" paragraph n
 
 - Set vibrato rate and depth by style; none on notes under about half a second.
 
-- Breath: keep v7's comma rule and the 2-to-6-second phrase check; render a short gap before each new line.
+- Breath: keep v7's comma rule, Window 3's 5 to 8 seconds and 749.21's 8-second ceiling; render a short gap before each new line.
 
 ### O5. Tests
 
@@ -202,8 +202,6 @@ The intake's style picks the column; the songbook's "for the singer" paragraph n
 
 - Larrouy-Maestri, P. and Pfordresher, P. (2018). Pitch perception in music: do scoops matter?
 
-- Johnson, R., Huron, D. and Collister, L. (2014), on sung intelligibility (in v7).
-
-- Bartlett, I. and Naismith, M. (2020), CCM pedagogy of R&B, via the Voice Science lexicon.
+- Johnson, R., Huron, D. and Collister, L. (2014), on sung intelligibility (in v7). Bartlett, I. and Naismith, M. (2020), CCM pedagogy of R&B, via the Voice Science lexicon.
 
 Not reached: no open corpus of gospel, R&B or soul transcriptions with words; DALI (restricted Zenodo 3576083) would give melisma counts from aligned recordings.

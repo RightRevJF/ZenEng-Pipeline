@@ -33,7 +33,7 @@ v7 chooses a key from the voice and the hook alone.
 
 - **Instruments shape the key.** Spotify's Kenny Ning analysed the keys of some 30 million tracks (2015): G major 10.7% and C major 10.2%, then D and A; more than a third of all songs sit in G, C, D or A major, and the commonest minors (A, E, B minor) are their relatives. His explanation: E suits guitar but not piano, C suits piano but not guitar, and G suits both. Guitar teaching sources say the same about open strings (E, A, D, G and their minors).
 
-- **Minor has risen.** Schellenberg and von Scheve (Psychology of Aesthetics, Creativity, and the Arts, 2012; over 1,000 Billboard year-end top-40 songs, 1965–2009) found the share of minor-mode hits doubled over five decades, while tempo fell and songs got longer. Press summaries of the paper give 85% major in the 1960s against 42.5% in 2005–09.
+- **Minor has risen.** Schellenberg and von Scheve (Psychology of Aesthetics, Creativity, and the Arts, 2012; over 1,000 Billboard year-end top-40 songs, 1965–2009) found the share of minor-mode hits doubled over five decades, while tempo fell and songs got longer (Part 28 shows tempo rising again after the 1990s). Press summaries of the paper give 85% major in the 1960s against 42.5% in 2005–09.
 
 - **Key colour is a myth on equal-tempered instruments.** Powell and Dibben (Musicae Scientiae, 2005): about three quarters of participants claimed key-mood associations, which matched 18th-century beliefs (sharps bright, flats mellow), but no one could identify mood from key or key from mood, and moving a piece to another key didn't change its perceived mood. What does change is pitch height relative to the voice, and the instrument's open strings and tone.
 
@@ -78,7 +78,7 @@ I also read the notated key signatures of 16,000 PDMX and OpenEWLD scores, but u
 
 1. **Guitar songs sit in guitar keys.** Guitar-led Billboard songs use open-string keys 65% of the time and the sharp guitar keys (E, A, B major) twice as often as piano-led songs (31% against 15%). Piano, strings and synthesizer songs use flat keys about twice as often as guitar songs (42% to 50% against 23%).
 
-2. **Minor rose steadily:** 10% to 26% in Billboard between the 1960s and the 1980s, 11% to about half in BiMMuDa by 1990–2009, which agrees with Schellenberg and von Scheve.
+2. **Minor rose steadily:** 10% to 26% in Billboard between the 1960s and the 1980s, 11% to about half in BiMMuDa by 1990–2009, which agrees with Schellenberg and von Scheve. CoCoPops's 214 transcribed Billboard songs (Part 22) give 23% minor by the melody's key against McGill's 17% by the tonic chord: the same era, two definitions.
 
 3. **Open-string keys fell as guitars gave way to keyboards and production:** from about half of BiMMuDa's hits before 1970 to under a third after 2010.
 

@@ -1,6 +1,6 @@
 ## Summary
 
-- **v7 has more than an on/off switch** (my earlier claim was wrong): second-singer rows, ensemble kinds, a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves), the never-together duet, the backing echo and a unison anchor. But only the duet harmony has a writer, and every second voice in songs 53 to 56 was written by hand.
+- **v7 has more than an on/off switch** (my earlier claim was wrong): second-singer rows, ensemble kinds, a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves), the never-together duet, the backing echo and a unison anchor. But only the duet harmony has a writer, and every second voice in songs 53 to 56 was written outside the engine.
 
 - **Three of those four songs broke v7's default:** a harmony above the lead (54, 55), a two-note answer (56), a descant and choir (53).
 
@@ -18,7 +18,7 @@ A correction first. When I proposed this topic I said v7 has only an on/off back
 
 |Rule in v7|What it does|What it leaves out|
 |---|---|---|
-|11.2 amended (v58): second- singer rows|Each singer gets a voice row and a register, so a duet can be written for two real voices|Nothing about how the two lines relate|
+|11.2 amended (v58): second-singer rows|Each singer gets a voice row and a register, so a duet can be written for two real voices|Nothing about how the two lines relate|
 |v59: ensemble kinds|Names solo, duet, band with backing vocals, choir|The kinds are labels; only the duet has a writer|
 |v70 fix 2 (Window 88, song 22): the duet harmony|A harmony derived from the melody: a third below by default, else a sixth (3, 4, 8 or 9 semitones); every note a chord tone; never crossing; inside the singer's row; one top note under the lead's peak in the final chorus; no parallel fifths or octaves|Harmony above the lead; motion other than parallel; where harmonies enter and leave; more than two voices|
 |Fix 61: the never-together duet|A duet can be marked so the voices only alternate|Overlap, echoes, a call answered|
@@ -28,15 +28,17 @@ A correction first. When I proposed this topic I said v7 has only an on/off back
 
 Two more places bear on it. Window 57 measured the Open Hymnal's four-part hymns, and Module 9.14 sets voice-leading and low-interval limits that apply to any added voice. A complaint about descants is on file (line 3181 of the spec) with no rule behind it.
 
+The fix list (Part 1) already holds two findings here. **749.9** found song 52's harmony parts shadowing the lead (the high part moving with it 74% of the time, never against it) and rewrote them as lines chosen by least cost, contrary and oblique motion cheaper than similar; its check asks that each harmony part move with the lead under half the time. **749.12** proposes a descant module, from song 53's descant. This report extends both: 749.9's check is the motion band below, and the descant is one of the six kinds in V1.
+
 ### What the recent songs needed
 
-- **Song 53, Sung to Sleep (carol, organ and choir).** Four-part choir in hymn mode and a soprano descant over the last verse and refrain. All of it was written by hand on the sketch path; v7 has no descant writer.
+- **Song 53, Sung to Sleep (carol, organ and choir).** Four-part choir in hymn mode and a soprano descant over the last verse and refrain. All of it was written on the sketch path, outside the engine: the choir in hymn mode, the descant with fix-list finding 749.9's harmony-as-lines search. v7 has no descant writer; finding 749.12 proposes one.
 
-- **Songs 54 and 55 (country, the yard-man and lake songs).** A harmony voice a third above the lead on the hook, "the crowd singing back", and on chorus 3's middle lines. v7's rule says a third below. The above-harmony was written by my hand, as were the duet tag's lines (him a third below in his octave, her above him).
+- **Songs 54 and 55 (country: The Man Mama Prayed I'd Be and Your Yard Man).** A harmony voice a third above the lead on the hook, "the crowd singing back", and on chorus 3's middle lines. v7's rule says a third below. The above-harmony was written by my hand, as were song 54's duet tag lines (him a third below in his octave, her above him).
 
 - **Song 56, Terpsichore.** Backing voices answer the lead with a two-note chord over his held note in chorus 3 and the outro. That is call and response, which v7 can't write; fix 84's echo repeats the lead's words in his rhythm.
 
-So every second voice in the last four songs was hand-made, and three of the four broke v7's default (above, not below; a chord, not a line). Jason's ruling on song 56 stands behind this report: the engine should be writing everything.
+So every second voice in the last four songs was made outside the engine, and three of the four broke v7's default (above, not below; a chord, not a line). Jason's ruling on song 56 stands behind this report: the engine should be writing everything.
 
 ## 2. The academic record
 
@@ -47,9 +49,7 @@ The record on backing vocals is thin. A 2023 Trondheim master's thesis on backin
 |Tradition|Where the melody sits|The harmony voice|Source|
 |---|---|---|---|
 |Plain backing vocal (pop, rock)|Lead on top or in the middle|One line above or below, mostly thirds or sixths that fit the chords; some bands hold long, slow notes under the chorus|Encyclopedic summaries of vocal harmony|
-|Brother duet|Lower voice|A tenor in parallel|Scaruffi; Country|
-|(Delmore, Louvin,||thirds above, the|Music Hall of Fame|
-|Everly)||two moving as one|summaries|
+|Brother duet (Delmore, Louvin, Everly)|Lower voice|A tenor in parallel thirds above, the two moving as one|Scaruffi; Country Music Hall of Fame summaries|
 |Bluegrass trio|Middle (the "standard stack")|Tenor: the next chord tone above, following the melody's shape. Baritone: the next chord tone below. Variants: the high lead (both parts under the melody) and the high baritone (both above)|No Depression on the Osborne Brothers; bluegrass references|
 |Barbershop|Second from the top, the lead|Tenor above, bass lowest, baritone fills the chord, often below the lead; four parts on every melody note|Barbershop Harmony Society definition|
 |Gospel choir|Usually soprano; the tenor often takes it in some arrangers' work|Starts in unison or call and response and builds to full parts as the song goes on|Fiveable summary; ACDA on Hogan|
@@ -168,7 +168,7 @@ The intake asks which kinds the song uses and where. Fix 84's echo becomes a cas
 
 - **The note.** The next chord tone above (or below) the lead's note, as bluegrass and barbershop teach. That gives a third most of the time and a fourth or sixth where the chord requires. On short weak notes a passing note may stand (10% to 17% of pairs are dissonant in real scores).
 
-- **Bands for a harmony line,** from the duet scores: thirds and sixths at least 35% of pairs; static or oblique 45% to 55%; parallel 25% to 35%; contrary at least 10%; crossing at most 6%.
+- **Bands for a harmony line,** from the duet scores: thirds and sixths at least 35% of pairs; static or oblique about half (45% to 55% in duets, up to about two thirds where held notes are common, as in popular four-part writing and song 52's revised high part, 66%); parallel 25% to 35%; contrary at least 10%; crossing at most 6%.
 
 - **Parallel fifths** at most 1 per 100 motions, 3.5 in pop. **Parallel unisons and octaves** only inside a passage marked Double.
 
@@ -210,7 +210,7 @@ The intake asks which kinds the song uses and where. Fix 84's echo becomes a cas
 
 ### Data
 
-PDMX, Long et al., Zenodo record 15571083, CC BY 4.0.
+- PDMX, Long et al., Zenodo record 15571083, CC BY 4.0.
 
 - DALI (Meseguer-Brocal et al.): the annotations are in restricted Zenodo record 3576083; GitHub holds only code and metadata. Not used yet; access must be requested.
 
@@ -222,7 +222,7 @@ PDMX, Long et al., Zenodo record 15571083, CC BY 4.0.
 
 - Ternström, S. (1993). Perceptual evaluations of voice scatter in unison choir sounds. Journal of Voice 7(2), 129–135.
 
-- Ternström, S. (1999). Preferred self-to-other ratios in choir singing. JASA 105(6), 3563– 3574.
+- Ternström, S. (1999). Preferred self-to-other ratios in choir singing. JASA 105(6), 3563–3574.
 
 - Ternström, S. (2003). Choir acoustics: an overview of scientific research published to date. International Journal of Research in Choral Singing 1(1), 3–11.
 

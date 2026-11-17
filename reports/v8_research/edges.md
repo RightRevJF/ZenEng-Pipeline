@@ -1,6 +1,6 @@
 ## Summary
 
-- **v7 checks the edges but doesn't write them.** It has an intro-bar median (4), a chorusarrival limit, the peak-end design spec and four ending kinds (resolved, open, abrupt, return). Every intro and ending in songs 52 to 56 was chosen by hand, and all five intros are 4 bars.
+- **v7 checks the edges but doesn't write them.** It has an intro-bar median (4), a chorusarrival limit, the peak-end design spec and four ending kinds (resolved, open, abrupt, return). Every intro and ending in songs 52 to 56 was chosen by hand, and four of the five intros are 4 bars (song 53's organ introduction grew to 8).
 
 - **Intro length is an era setting.** In 739 Billboard songs the intro doubled from about 9 seconds (1958–64) to 17 (1985–91), 4 bars to 8; Léveillé Gauvin found the time to the voice then fell to about 5 seconds by 2015. Neither length nor time to the voice separates hits from misses, so v7's single median of 4 bars is right only for a 1960s sound.
 
@@ -30,13 +30,13 @@ v7 has more at the edges than its form tables suggest, but almost all of it is a
 
 - **Song 52 (6/8 ballad):** a 4-bar guitar intro on the verse's chords; a 4-bar outro on new chords, guitar and cello, slowing to the last chord.
 
-- **Song 53 (carol):** a 4-bar organ introduction, the last refrain's final word held by the choir, then an organ coda.
+- **Song 53 (carol):** a 4-bar organ introduction in the first edition, rewritten to 8 bars in the third; the last refrain's final word held by the choir, then an organ coda.
 
 - **Songs 54 and 55 (country):** a 4-bar intro with the fiddle playing the hook; a tag, then a 2-bar ending, IV to I, the fiddle bringing the hook home, the last chord ringing. No fade.
 
 - **Song 56:** a 4-bar intro planned; the ending waits for v8.
 
-Every intro was 4 bars and every ending was chosen by hand. None of the songs asked whether 4 bars suits a song of its era and style, whether to start with the voice, or whether to fade.
+Every intro began at 4 bars (song 53's grew to 8 in its third edition), and every ending was chosen by hand. None of the songs asked whether 4 bars suits a song of its era and style, whether to start with the voice, or whether to fade.
 
 ## 2. The academic record
 
@@ -48,7 +48,7 @@ Pop theory has studied song middles far more than edges. Nick Braae's 2026 Music
 
 - **The buildup introduction** (Robin Attas, dissertation 2011 and later work; Nicole Biamonte in the Routledge Companion): layers of the groove enter one at a time, so the intro teaches the listener the beat and the band before the voice. Attas calls intros "a site for first impressions". Spicer's accumulative form (2004) is the largerscale version.
 
-- **The attention economy.** Hubert Léveillé Gauvin (Musicae Scientiae, 2018) measured 303 US top-10 singles from 1986 to 2015: the time before the voice fell from about 20 seconds to about 5, tempo rose, and the title arrived sooner. A second test, 60 hits paired with less popular songs by the same artists, found none of these features separated the hit from the miss. Both halves agree with v7's Window 29: intro length tracks the era, not success.
+- **The attention economy.** Hubert Léveillé Gauvin (Musicae Scientiae, 2018) measured 303 US top-10 singles from 1986 to 2015: the time before the voice fell from about 20 seconds to about 5, tempo rose (Part 28 places this after the 1990s low), and the title arrived sooner. A second test, 60 hits paired with less popular songs by the same artists, found none of these features separated the hit from the miss. Both halves agree with v7's Window 29: intro length tracks the era, not success.
 
 ### Endings
 
@@ -165,7 +165,7 @@ v7's resolved, open, abrupt and return stay. Make "resolved" say how, and add th
 |Resolved: authentic|V–I, last chord held|The default before 1965 (half of cold endings)|
 |Resolved: plagal|IV–I, once, emphasised, last chord held (Temperley's grand plagal cadence)|Rock, country, gospel, hymns; songs 54 and 55|
 |Resolved: ♭VII–I|The Mixolydian close|Rock after 1980 (about one in ten)|
-|Fade|The chorus or a vamp repeated, about 8 bars and 10 to 20 seconds, the level falling to nothing|Only where the song shouldn't end: a vamp, an ongoing state, the nocturne. The last words heard are the hook's|
+|Fade|The chorus or a vamp repeated, about 8 bars and 10 to 20 seconds, the level falling to nothing|Only where the song shouldn't end: a vamp, an ongoing state, the nocturne. The last words heard are the hook's. On streaming, long fades and trailing silence attract skips (Montecchio and colleagues, Part 6), so keep fades short there|
 |Bookend|The intro's material returns to close|13% of songs|
 |Coda|New material at the end, possibly the climax (Osborn's terminally climactic form)|Alternative rock, worship builds|
 |Open, abrupt, return|As in v7|As in v7|
@@ -184,7 +184,7 @@ v7's resolved, open, abrupt and return stay. Make "resolved" say how, and add th
 
 - The commercial profile (fix 71) gets bands: intro bars and seconds against the chosen era, the voice's entry, what sounds in the first five seconds, the ending's kind and last two chords, the outro's length.
 
-- Songs 52 to 56 as the first test: all five have 4-bar intros, right for a 1960s sound and short for a 1975–91 sound; songs 54 and 55's IV–I endings match the grand plagal kind; none fades.
+- Songs 52 to 56 as the first test: four have 4-bar intros, right for a 1960s sound and short for a 1975–91 sound, and song 53's 8-bar organ introduction suits a carol; songs 54 and 55's IV–I endings match the grand plagal kind; none fades.
 
 ## 6. Files and sources
 

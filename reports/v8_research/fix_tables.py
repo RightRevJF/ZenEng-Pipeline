@@ -18,7 +18,7 @@ for l in lines:
         if out[tgt].startswith("|---"): tgt -= 1
         p = cells(out[tgt]) if tgt >= 0 and out[tgt].startswith("|") else None
         after_sep = out[-1].startswith("|---")
-        if p is not None and len(p) == len(c) and (empty * 2 >= len(c) or not c[0].strip() or empty >= 3 or (after_sep and empty >= 1) or (not after_sep and p[0].rstrip().endswith(","))):
+        if p is not None and len(p) == len(c) and (empty * 2 >= len(c) or not c[0].strip() or (empty >= 3 and (not c[0].strip()[:1].isupper() or not c[1].strip())) or (after_sep and empty >= 1) or (not after_sep and p[0].rstrip().endswith(",")) or (not after_sep and re.match(r"[a-z]+[ ,)]", c[0].strip()))):
             out[tgt] = "|" + "|".join(join(a, b) for a, b in zip(p, c)) + "|"; continue
     out.append(l)
 md = "\n".join(out)
@@ -29,4 +29,5 @@ for _ in range(3):
     md = re.sub(r"((\|[^\n]*\|)\n\|---[^\n]*\|(?:\n\|[^\n]*\|)*)\n\n(\|[^\n]*\|)\n\|---[^\n]*\|", lambda m: m.group(1) if m.group(2) == m.group(3) else m.group(0), md)
 md = re.sub(r"(\d)– (\d)", r"\1–\2", md)
 md = md.replace("one- syllable", "one-syllable")
+md = re.sub(r"([a-z])- ([a-z])", r"\1-\2", md)
 open(name + ".md", "w").write(md); print(name, md.count("\n|---"))

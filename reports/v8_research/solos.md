@@ -65,9 +65,9 @@ Analysts describe three common materials: the verse's chords (the "solo over the
 
 ## 3. Measured: 739 Billboard songs and 909 POP909 songs
 
-**Data.** The McGill Billboard annotations label each section (solo, interlude, instrumental, theme), give its time, chords and section letter (shared letters mean shared music), and mark the lead instrument and the lead voice. A mid-song instrumental section here is one
+**Data.** The McGill Billboard annotations label each section (solo, interlude, instrumental, theme), give its time, chords and section letter (shared letters mean shared music), and mark the lead instrument and the lead voice. A mid-song instrumental section here is one that is neither the first nor the last section. POP909's structure labels mark instrumental
 
-that is neither the first nor the last section. POP909's structure labels mark instrumental sections in lower case.
+sections in lower case. The lead-voice share here (median 81%) is higher than the 72% in v7's band window, which read Lakh MIDI files rather than annotations; the trend over time is the point here, not the level.
 
 ### How often (McGill Billboard)
 
@@ -136,7 +136,7 @@ The intake asks whether the song has a solo, defaulting by era and style: rare i
 
 ### S3. The documents
 
-- The lead sheet prints the solo's chords and a written line (or slashes with "solo, 8 bars" when it's to be improvised); the parts give the soloist the line or the changes; the songbook says what the solo should do in a sentence.
+The lead sheet prints the solo's chords and a written line (or slashes with "solo, 8 bars" when it's to be improvised); the parts give the soloist the line or the changes; the songbook says what the solo should do in a sentence.
 
 ### S4. Tests
 

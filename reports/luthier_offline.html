@@ -248,8 +248,8 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Metre above the bar (Part 21).</strong> All four placement failures of songs 54 to 56 come from fixing a line’s length in bars before the words are known. In 9,313 lines of 198 Billboard songs, lines are timed in seconds: slow songs give a line fewer bars (6 to 8 syllables in one bar 36% of the time, against 6% in fast songs). v8 should set slots in seconds, choose the felt tempo at intake, let phrases expand, overlap or shrink at kept rates, and place words by weighted rules (Hayes) instead of failing. This closes 749.25, 749.30 and 749.31.</p></li>
 <li><p><strong>Melody by genre (Part 22).</strong> v7 writes every melody from the 7-note scale and forbids the flat third against a major chord (fix 200) and the flat fifth (tri()). In 165 major-key Billboard songs the typical melody puts 85% of its notes on one five-note scale, notes fix 200 forbids appear in 63% of songs (69% of soul songs), and tri() mostly blocks plain diatonic notes. Songs 54 and 55 have no flat 3 or flat 7, and song 54 sings the leading tone at three and a half times the country rate. v8 should take its pitch table from the style, place flat 3, flat 7 and flat 5 where soul and blues put them, narrow tri(), and treat the leading tone as a moving note.</p></li>
 <li><p><strong>Setting words (Part 23).</strong> v7 measures stress on the beat, line endings and vowels on held notes, but its songs put weak syllables on the downbeat and it has no rule for a word’s pitch shape or a man’s vowels. In 199 Billboard and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time and a word’s stressed syllable is lower than the rest of the word in 18% to 20% of words; songs 54 and 55 do both about twice as often, mostly through line openings like “And” on the bar line. Height alone barely changes the vowel; held high notes do (men’s held top notes 61% open, 7% reduced). v8 should grade its stress cost, give weak openings a pickup, add a word-shape rule for pitch and a vowel rule for held high notes by voice, all as weights in Part 21’s placement. A second round of reading adds two measured rules: stress and metre move together between neighbouring syllables, and words ending in a voiced consonant take longer notes. Across the century (1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles: the downbeat band is fixed, the contour targets depend on era and style. After 2000 melodies carry more notes a bar and more sixteenths, with fewer anticipations; songs 54 and 55 already have that rhythm, and what they lack is the word placement inside it. In hits from 2000 to 2022 the word rules hold as before. Hymns, folk songs and standards with words attached (PDMX and OpenEWLD, 4,535 English songs) give hymn mode its own bands: weak syllables on beat 1 up to about 10% in 4/4 and 17% in 3/4, and a looser word pitch shape.</p></li>
-<li><p><strong>Harmony voices (Part 24).</strong> v7 has a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves) and labels for other ensembles, but only the duet rule writes notes, and every second voice in songs 53 to 56 was written by hand; three of the four broke the rule (a harmony above the lead, a two-note answer, a descant and choir). Singing traditions define the harmony as the next chord tone, above the lead as often as below. In 10,529 scores with two or more vocal parts (PDMX), v7’s allowed intervals cover about a fifth of real harmony; the second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still in about half its moves; parallel fifths are rare (about 1 per 100 moves, 3 in pop); second voices sing more as the song goes on. v8 should write six kinds of second voice (double, harmony line, pad, answer, descant, parts), a harmony line by chord tone on the side the style calls for, and entries that grow with the song.</p></li>
-<li><p><strong>Song edges (Part 25).</strong> v7 checks intros and endings (a 4-bar median intro, a chorus-arrival limit, four ending kinds) but writes neither, and every intro in songs 52 to 56 was 4 bars. In 739 Billboard songs intros doubled from about 9 seconds (4 bars) in 1958 to 1964 to 17 (8 bars) in 1985 to 1991, and later studies find the voice arriving within about 5 seconds by 2015; length does not separate hits from misses, so it is an era setting. A quarter of streaming plays end in the first five seconds, so something identifiable should sound there. 61% of the Billboard songs fade; cold endings land on the tonic 81% of the time, by V–I, IV–I (Temperley’s grand plagal cadence) or ♭VII–I. A fade keeps the listener’s pulse running past the end; a final slowing adds no pleasure. v8 should write six intro kinds with era bands, ending kinds that name the cadence and add the fade, bookend and coda, and render fades and held last chords.</p></li>
+<li><p><strong>Harmony voices (Part 24).</strong> v7 has a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves) and labels for other ensembles, but only the duet rule writes notes, and every second voice in songs 53 to 56 was written outside the engine (fix-list findings 749.9 and 749.12 already cover harmony as lines and a descant); three of the four broke the rule (a harmony above the lead, a two-note answer, a descant and choir). Singing traditions define the harmony as the next chord tone, above the lead as often as below. In 10,529 scores with two or more vocal parts (PDMX), v7’s allowed intervals cover about a fifth of real harmony; the second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still in about half its moves; parallel fifths are rare (about 1 per 100 moves, 3 in pop); second voices sing more as the song goes on. v8 should write six kinds of second voice (double, harmony line, pad, answer, descant, parts), a harmony line by chord tone on the side the style calls for, and entries that grow with the song.</p></li>
+<li><p><strong>Song edges (Part 25).</strong> v7 checks intros and endings (a 4-bar median intro, a chorus-arrival limit, four ending kinds) but writes neither; four of the five intros in songs 52 to 56 were 4 bars (song 53’s organ introduction grew to 8). In 739 Billboard songs intros doubled from about 9 seconds (4 bars) in 1958 to 1964 to 17 (8 bars) in 1985 to 1991, and later studies find the voice arriving within about 5 seconds by 2015; length does not separate hits from misses, so it is an era setting. A quarter of streaming plays end in the first five seconds, so something identifiable should sound there. 61% of the Billboard songs fade; cold endings land on the tonic 81% of the time, by V–I, IV–I (Temperley’s grand plagal cadence) or ♭VII–I. A fade keeps the listener’s pulse running past the end; a final slowing adds no pleasure. v8 should write six intro kinds with era bands, ending kinds that name the cadence and add the fade, bookend and coda, and render fades and held last chords.</p></li>
 <li><p><strong>Vocal ornament (Part 26).</strong> v7 counts melisma (two-note turns at corpus rates, none on a cadence note) and renders a delayed MIDI vibrato, and nothing else of delivery; no score or songbook for songs 52 to 56 named a scoop, fall, cry, run or vibrato style. In 6,716 songs, chart pop sets 8% to 11% of syllables on more than one note, arrangements half that, hymns and folk about 5% to 8%, standards almost none; melismas gather at phrase ends at 2.5 to 3 times their share, are two notes three times in four, and grow through the song, which runs against v7’s cadence-note ban. Scoops are the commonest pop inflection, the country breaking voice falls on grief words, and gospel runs are pentatonic, 4 to 7 notes, at the ends of long notes. v8 should write melisma by style bands and placement, treat runs as designed moments, and name and render the performed inflections and vibrato by style.</p></li>
 <li><p><strong>Key choice (Part 27).</strong> v7 picks a key from the hook and the voice only (27.14); songs 52 to 56 got instrument-friendly keys because they were chosen by hand. In 739 Billboard songs, guitar-led songs sit in open-string keys 65% of the time and in E, A or B major twice as often as piano-led songs; piano, strings and synthesizer songs use flat keys about twice as often as guitar songs. Minor rose from 11% of hits before 1970 to about half after 1990, and open-string keys fell from about half to under a third; country and rock stay in open major keys, R&amp;B, soul and hip-hop in flat keys and minor. A hit’s sung range is about an octave with its floor on the tonic or the dominant below, so the key follows from the voice’s floor and the frame; key colour is a myth on equal-tempered instruments. v8 should choose the frame from the voice, filter by the lead instrument (with a capo when needed), set the mode default by genre and era, then rank by the hook.</p></li>
 <li><p><strong>Tempo, feel and length (Part 28).</strong> v7 has one tempo figure (104 bpm, all eras), channel design specs, a fixed 2:1 shuffle and no length band. Top-five hits ran 116 bpm in the 1960s, 91 in the 1990s (a third under 80) and 108 since 2010; R&amp;B is the slow genre, minor-key hits are not slower, and a fifth of hits sit in the 80 to 95 zone v7 says to avoid. 12/8 was a third of 1950s hits and has vanished; tempo has been steady since click tracks. Swing ratio depends on tempo (about 3.5:1 slow, 2:1 medium, near straight fast). Hit length went from 2:31 (early 1960s) to 4:12 (late 1980s) and back to about 3:15. v8 should read tempo, feel and length bands from the chosen era and style and render swing by tempo.</p></li>
@@ -12397,7 +12397,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/WfTuzxkKzyUPiCvhFn75Dz">Harmony voices for Luthier v8: duets, backing vocals and choirs</a>.</p>
 <h3 id="summary">Summary</h3>
 <ul>
-<li><p><strong>v7 has more than an on/off switch</strong> (my earlier claim was wrong): second-singer rows, ensemble kinds, a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves), the never-together duet, the backing echo and a unison anchor. But only the duet harmony has a writer, and every second voice in songs 53 to 56 was written by hand.</p></li>
+<li><p><strong>v7 has more than an on/off switch</strong> (my earlier claim was wrong): second-singer rows, ensemble kinds, a duet harmony rule (a third or sixth below, chord tones, no crossing, no parallel fifths or octaves), the never-together duet, the backing echo and a unison anchor. But only the duet harmony has a writer, and every second voice in songs 53 to 56 was written outside the engine.</p></li>
 <li><p><strong>Three of those four songs broke v7’s default:</strong> a harmony above the lead (54, 55), a two-note answer (56), a descant and choir (53).</p></li>
 <li><p><strong>Traditions agree the harmony is a chord tone, not a fixed interval,</strong> and put it above the lead as often as below: the bluegrass and country tenor, the barbershop tenor, the brother-duet third above.</p></li>
 <li><p><strong>10,529 PDMX scores measured.</strong> v7’s allowed set (3, 4, 8 or 9 semitones below) covers only about a fifth of real harmony pairs. The second voice is above the lead 28% of the time, in unison or octaves about a quarter of the time, and holds still (static or oblique) in about half of all motions. Parallel fifths are rare (about 1 per 100 motions; 3 in pop). Second voices sound under more of the lead as the song goes on, in every group.</p></li>
@@ -12421,7 +12421,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>11.2 amended (v58): second- singer rows</td>
+<td>11.2 amended (v58): second-singer rows</td>
 <td>Each singer gets a voice row and a register, so a duet can be written for two real voices</td>
 <td>Nothing about how the two lines relate</td>
 </tr>
@@ -12458,13 +12458,14 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </tbody>
 </table>
 <p>Two more places bear on it. Window 57 measured the Open Hymnal’s four-part hymns, and Module 9.14 sets voice-leading and low-interval limits that apply to any added voice. A complaint about descants is on file (line 3181 of the spec) with no rule behind it.</p>
+<p>The fix list (Part 1) already holds two findings here. <strong>749.9</strong> found song 52’s harmony parts shadowing the lead (the high part moving with it 74% of the time, never against it) and rewrote them as lines chosen by least cost, contrary and oblique motion cheaper than similar; its check asks that each harmony part move with the lead under half the time. <strong>749.12</strong> proposes a descant module, from song 53’s descant. This report extends both: 749.9’s check is the motion band below, and the descant is one of the six kinds in V1.</p>
 <h4 id="what-the-recent-songs-needed">What the recent songs needed</h4>
 <ul>
-<li><p><strong>Song 53, Sung to Sleep (carol, organ and choir).</strong> Four-part choir in hymn mode and a soprano descant over the last verse and refrain. All of it was written by hand on the sketch path; v7 has no descant writer.</p></li>
-<li><p><strong>Songs 54 and 55 (country, the yard-man and lake songs).</strong> A harmony voice a third above the lead on the hook, “the crowd singing back”, and on chorus 3’s middle lines. v7’s rule says a third below. The above-harmony was written by my hand, as were the duet tag’s lines (him a third below in his octave, her above him).</p></li>
+<li><p><strong>Song 53, Sung to Sleep (carol, organ and choir).</strong> Four-part choir in hymn mode and a soprano descant over the last verse and refrain. All of it was written on the sketch path, outside the engine: the choir in hymn mode, the descant with fix-list finding 749.9’s harmony-as-lines search. v7 has no descant writer; finding 749.12 proposes one.</p></li>
+<li><p><strong>Songs 54 and 55 (country: The Man Mama Prayed I’d Be and Your Yard Man).</strong> A harmony voice a third above the lead on the hook, “the crowd singing back”, and on chorus 3’s middle lines. v7’s rule says a third below. The above-harmony was written by my hand, as were song 54’s duet tag lines (him a third below in his octave, her above him).</p></li>
 <li><p><strong>Song 56, Terpsichore.</strong> Backing voices answer the lead with a two-note chord over his held note in chorus 3 and the outro. That is call and response, which v7 can’t write; fix 84’s echo repeats the lead’s words in his rhythm.</p></li>
 </ul>
-<p>So every second voice in the last four songs was hand-made, and three of the four broke v7’s default (above, not below; a chord, not a line). Jason’s ruling on song 56 stands behind this report: the engine should be writing everything.</p>
+<p>So every second voice in the last four songs was made outside the engine, and three of the four broke v7’s default (above, not below; a chord, not a line). Jason’s ruling on song 56 stands behind this report: the engine should be writing everything.</p>
 <h3 id="the-academic-record">2. The academic record</h3>
 <p>The record on backing vocals is thin. A 2023 Trondheim master’s thesis on backing vocals in pop says the topic has had little research attention, and Susan Fast and Jacqueline Warwick (cited in a 2024 Goldsmiths thesis) note there is no definitive history of the backing singer. Rock theory has mostly studied chords, not lines: Everett’s survey of rock’s tonal systems finds harmony matters more than counterpoint in most rock. Lacasse’s work on vocal staging covers how recorded voices are placed (doubling, panning, reverb), not their notes. So the best guidance comes from the traditions that teach harmony singing by name, and from perception research.</p>
 <h4 id="what-each-tradition-does">What each tradition does</h4>
@@ -12491,22 +12492,10 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <td>Encyclopedic summaries of vocal harmony</td>
 </tr>
 <tr class="even">
-<td>Brother duet</td>
+<td>Brother duet (Delmore, Louvin, Everly)</td>
 <td>Lower voice</td>
-<td>A tenor in parallel</td>
-<td>Scaruffi; Country</td>
-</tr>
-<tr class="odd">
-<td>(Delmore, Louvin,</td>
-<td></td>
-<td>thirds above, the</td>
-<td>Music Hall of Fame</td>
-</tr>
-<tr class="even">
-<td>Everly)</td>
-<td></td>
-<td>two moving as one</td>
-<td>summaries</td>
+<td>A tenor in parallel thirds above, the two moving as one</td>
+<td>Scaruffi; Country Music Hall of Fame summaries</td>
 </tr>
 <tr class="odd">
 <td>Bluegrass trio</td>
@@ -12904,7 +12893,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <ul>
 <li><p><strong>Side by style.</strong> Above (the tenor) for country, bluegrass, brother duets and anthems; below for pop, folk and singer-songwriter by default; the intake can override. v7’s “a third below” becomes the pop default, not the rule.</p></li>
 <li><p><strong>The note.</strong> The next chord tone above (or below) the lead’s note, as bluegrass and barbershop teach. That gives a third most of the time and a fourth or sixth where the chord requires. On short weak notes a passing note may stand (10% to 17% of pairs are dissonant in real scores).</p></li>
-<li><p><strong>Bands for a harmony line,</strong> from the duet scores: thirds and sixths at least 35% of pairs; static or oblique 45% to 55%; parallel 25% to 35%; contrary at least 10%; crossing at most 6%.</p></li>
+<li><p><strong>Bands for a harmony line,</strong> from the duet scores: thirds and sixths at least 35% of pairs; static or oblique about half (45% to 55% in duets, up to about two thirds where held notes are common, as in popular four-part writing and song 52’s revised high part, 66%); parallel 25% to 35%; contrary at least 10%; crossing at most 6%.</p></li>
 <li><p><strong>Parallel fifths</strong> at most 1 per 100 motions, 3.5 in pop. <strong>Parallel unisons and octaves</strong> only inside a passage marked Double.</p></li>
 </ul>
 <h4 id="v3.-where-second-voices-go">V3. Where second voices go</h4>
@@ -12934,16 +12923,16 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>results; <code>README.md</code> .</p></li>
 </ul>
 <h4 id="data">Data</h4>
-<p>PDMX, Long et al., Zenodo record 15571083, CC BY 4.0.</p>
 <ul>
-<li>DALI (Meseguer-Brocal et al.): the annotations are in restricted Zenodo record 3576083; GitHub holds only code and metadata. Not used yet; access must be requested.</li>
+<li><p>PDMX, Long et al., Zenodo record 15571083, CC BY 4.0.</p></li>
+<li><p>DALI (Meseguer-Brocal et al.): the annotations are in restricted Zenodo record 3576083; GitHub holds only code and metadata. Not used yet; access must be requested.</p></li>
 </ul>
 <h4 id="sources">Sources</h4>
 <ul>
 <li><p>Huron, D. (2001). Tone and voice: a derivation of the rules of voice-leading from perceptual principles. Music Perception 19(1), 1–64.</p></li>
 <li><p>Huron, D. (2016). Voice Leading: The Science behind a Musical Art. MIT Press.</p></li>
 <li><p>Ternström, S. (1993). Perceptual evaluations of voice scatter in unison choir sounds. Journal of Voice 7(2), 129–135.</p></li>
-<li><p>Ternström, S. (1999). Preferred self-to-other ratios in choir singing. JASA 105(6), 3563– 3574.</p></li>
+<li><p>Ternström, S. (1999). Preferred self-to-other ratios in choir singing. JASA 105(6), 3563–3574.</p></li>
 <li><p>Ternström, S. (2003). Choir acoustics: an overview of scientific research published to date. International Journal of Research in Choral Singing 1(1), 3–11.</p></li>
 <li><p>Hagerman, B. and Sundberg, J. (1980). Fundamental frequency adjustment in barbershop singing. KTH STL-QPSR 21(1).</p></li>
 <li><p>Devaney, J., Mandel, M. and Fujinaga, I. (2012). A study of intonation in three-part singing using AMPACT. ISMIR 2012, 511–516.</p></li>
@@ -12967,7 +12956,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/Fh1UcSKfZisqVde8ewz62m">Song edges for Luthier v8: intros, endings, the way in and out</a>.</p>
 <h3 id="summary">Summary</h3>
 <ul>
-<li><p><strong>v7 checks the edges but doesn’t write them.</strong> It has an intro-bar median (4), a chorusarrival limit, the peak-end design spec and four ending kinds (resolved, open, abrupt, return). Every intro and ending in songs 52 to 56 was chosen by hand, and all five intros are 4 bars.</p></li>
+<li><p><strong>v7 checks the edges but doesn’t write them.</strong> It has an intro-bar median (4), a chorusarrival limit, the peak-end design spec and four ending kinds (resolved, open, abrupt, return). Every intro and ending in songs 52 to 56 was chosen by hand, and four of the five intros are 4 bars (song 53’s organ introduction grew to 8).</p></li>
 <li><p><strong>Intro length is an era setting.</strong> In 739 Billboard songs the intro doubled from about 9 seconds (1958–64) to 17 (1985–91), 4 bars to 8; Léveillé Gauvin found the time to the voice then fell to about 5 seconds by 2015. Neither length nor time to the voice separates hits from misses, so v7’s single median of 4 bars is right only for a 1960s sound.</p></li>
 <li><p><strong>The first five seconds matter:</strong> a quarter of Spotify plays end there. Whatever the era, something identifiable (hook tune, riff or voice) should sound in them.</p></li>
 <li><p><strong>Endings:</strong> 61% of Billboard songs to 1991 fade (71% in the late 1970s); fades then nearly vanished. Cold endings land on the tonic 81% of the time, by V–I (a third), IV–I (nearly a third; Temperley’s grand plagal cadence, which songs 54 and 55 used) or ♭VII–I (growing after 1980). A fade keeps listeners’ pulse running past the end; a final slowing adds no pleasure.</p></li>
@@ -13039,18 +13028,18 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h4 id="what-the-recent-songs-did">What the recent songs did</h4>
 <ul>
 <li><p><strong>Song 52 (6/8 ballad):</strong> a 4-bar guitar intro on the verse’s chords; a 4-bar outro on new chords, guitar and cello, slowing to the last chord.</p></li>
-<li><p><strong>Song 53 (carol):</strong> a 4-bar organ introduction, the last refrain’s final word held by the choir, then an organ coda.</p></li>
+<li><p><strong>Song 53 (carol):</strong> a 4-bar organ introduction in the first edition, rewritten to 8 bars in the third; the last refrain’s final word held by the choir, then an organ coda.</p></li>
 <li><p><strong>Songs 54 and 55 (country):</strong> a 4-bar intro with the fiddle playing the hook; a tag, then a 2-bar ending, IV to I, the fiddle bringing the hook home, the last chord ringing. No fade.</p></li>
 <li><p><strong>Song 56:</strong> a 4-bar intro planned; the ending waits for v8.</p></li>
 </ul>
-<p>Every intro was 4 bars and every ending was chosen by hand. None of the songs asked whether 4 bars suits a song of its era and style, whether to start with the voice, or whether to fade.</p>
+<p>Every intro began at 4 bars (song 53’s grew to 8 in its third edition), and every ending was chosen by hand. None of the songs asked whether 4 bars suits a song of its era and style, whether to start with the voice, or whether to fade.</p>
 <h3 id="the-academic-record">2. The academic record</h3>
 <p>Pop theory has studied song middles far more than edges. Nick Braae’s 2026 Music Theory Online article on closure in 1970s rock opens by noting that intros have had some attention and endings much less. What exists:</p>
 <h4 id="intros">Intros</h4>
 <ul>
 <li><p><strong>Summach’s module theory</strong> (dissertation, Yale 2012, top-20 rock 1955 to 1989) treats the intro as its own module. An intro often shares material with the outro, giving a “bookend”; several intro modules in a row are possible, and having none is less common than having more than one.</p></li>
 <li><p><strong>The buildup introduction</strong> (Robin Attas, dissertation 2011 and later work; Nicole Biamonte in the Routledge Companion): layers of the groove enter one at a time, so the intro teaches the listener the beat and the band before the voice. Attas calls intros “a site for first impressions”. Spicer’s accumulative form (2004) is the largerscale version.</p></li>
-<li><p><strong>The attention economy.</strong> Hubert Léveillé Gauvin (Musicae Scientiae, 2018) measured 303 US top-10 singles from 1986 to 2015: the time before the voice fell from about 20 seconds to about 5, tempo rose, and the title arrived sooner. A second test, 60 hits paired with less popular songs by the same artists, found none of these features separated the hit from the miss. Both halves agree with v7’s Window 29: intro length tracks the era, not success.</p></li>
+<li><p><strong>The attention economy.</strong> Hubert Léveillé Gauvin (Musicae Scientiae, 2018) measured 303 US top-10 singles from 1986 to 2015: the time before the voice fell from about 20 seconds to about 5, tempo rose (Part 28 places this after the 1990s low), and the title arrived sooner. A second test, 60 hits paired with less popular songs by the same artists, found none of these features separated the hit from the miss. Both halves agree with v7’s Window 29: intro length tracks the era, not success.</p></li>
 </ul>
 <h4 id="endings">Endings</h4>
 <ul>
@@ -13445,7 +13434,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <tr class="even">
 <td>Fade</td>
 <td>The chorus or a vamp repeated, about 8 bars and 10 to 20 seconds, the level falling to nothing</td>
-<td>Only where the song shouldn’t end: a vamp, an ongoing state, the nocturne. The last words heard are the hook’s</td>
+<td>Only where the song shouldn’t end: a vamp, an ongoing state, the nocturne. The last words heard are the hook’s. On streaming, long fades and trailing silence attract skips (Montecchio and colleagues, Part 6), so keep fades short there</td>
 </tr>
 <tr class="odd">
 <td>Bookend</td>
@@ -13476,7 +13465,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h4 id="e5.-tests">E5. Tests</h4>
 <ul>
 <li><p>The commercial profile (fix 71) gets bands: intro bars and seconds against the chosen era, the voice’s entry, what sounds in the first five seconds, the ending’s kind and last two chords, the outro’s length.</p></li>
-<li><p>Songs 52 to 56 as the first test: all five have 4-bar intros, right for a 1960s sound and short for a 1975–91 sound; songs 54 and 55’s IV–I endings match the grand plagal kind; none fades.</p></li>
+<li><p>Songs 52 to 56 as the first test: four have 4-bar intros, right for a 1960s sound and short for a 1975–91 sound, and song 53’s 8-bar organ introduction suits a carol; songs 54 and 55’s IV–I endings match the grand plagal kind; none fades.</p></li>
 </ul>
 <h3 id="files-and-sources">6. Files and sources</h3>
 <h4 id="in-the-repo-studiesedges">In the repo (studies/edges)</h4>
@@ -13655,8 +13644,8 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </tr>
 <tr class="even">
 <td>Phrases fit a breath</td>
-<td>Kept phrases run 2 to 6 seconds, 8 at most</td>
-<td>v7 finding 749.21 (perception checks)</td>
+<td>A phrase is held in memory up to about 8 seconds; v7’s Window 3 sets phrases of 5 to 8 seconds</td>
+<td>Part 11 (psychoacoustics) and fix-list finding 749.21; v7 Window 3</td>
 </tr>
 </tbody>
 </table>
@@ -13667,7 +13656,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p><strong>Runs are notes</strong> and belong in the score when they’re part of the song (a written turn or run), and in the songbook as optional when they’re the singer’s to add.</p></li>
 </ul>
 <h3 id="measured-melisma-in-6716-songs">4. Measured: melisma in 6,716 songs</h3>
-<p><strong>Data.</strong> CoCoPops transcriptions of 214 Billboard songs (1958–1991) and 80 Rolling Stone 200 songs, sung syllables with their notes; 5,981 English songs with words in PDMX (Zenodo 15571083), by PDMX’s genre and tag categories; 441 OpenEWLD standards. A melisma is a syllable sung on two or more different notes (ties merged). Phrase end: the syllable before a rest, the end, or line-ending punctuation (MusicXML), or the last syllable of a transcribed line (Billboard).</p>
+<p><strong>Data.</strong> CoCoPops transcriptions of 214 Billboard songs (1958–1991) and 80 Rolling Stone 200 songs, sung syllables with their notes; 5,981 English songs with words in PDMX (Zenodo 15571083), by PDMX’s genre and tag categories (the word-setting study, Part 23, used 4,176 of the same scores: those in 4/4 or 3/4 that its stress measures read); 441 OpenEWLD standards. A melisma is a syllable sung on two or more different notes (ties merged). Phrase end: the syllable before a rest, the end, or line-ending punctuation (MusicXML), or the last syllable of a transcribed line (Billboard).</p>
 <h4 id="rates-lengths-and-placement">Rates, lengths and placement</h4>
 <table>
 <colgroup>
@@ -13808,9 +13797,9 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </ul>
 <h4 id="o2.-runs-gospel-rb-soul-worship">O2. Runs (gospel, R&amp;B, soul, worship)</h4>
 <ul>
-<li><p>A run is 4 to 7 notes, pentatonic or blues-scale, on a long note at a phrase end, concentrated near the song’s peak and in its last sections, rarely in verse 1.</p></li>
-<li><p>Because no counted corpus exists, a run is a designed moment (11.9’s vocabulary), chosen at intake for the styles that use them, and written in the score as an optional small-note line or described in the songbook as the singer’s to add.</p></li>
+<li>A run is 4 to 7 notes, pentatonic or blues-scale, on a long note at a phrase end, concentrated near the song’s peak and in its last sections, rarely in verse 1.</li>
 </ul>
+<p>Because no counted corpus exists, a run is a designed moment (11.9’s vocabulary), chosen at intake for the styles that use them, and written in the score as an optional small-note line or described in the songbook as the singer’s to add.</p>
 <h4 id="o3.-the-performed-tier-a-vocabulary-by-style">O3. The performed tier: a vocabulary by style</h4>
 <table>
 <colgroup>
@@ -13858,7 +13847,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <ul>
 <li><p>Render scoops (a short bend up into the note, under half a second) on stressed long notes and falls on line-final notes, by style.</p></li>
 <li><p>Set vibrato rate and depth by style; none on notes under about half a second.</p></li>
-<li><p>Breath: keep v7’s comma rule and the 2-to-6-second phrase check; render a short gap before each new line.</p></li>
+<li><p>Breath: keep v7’s comma rule, Window 3’s 5 to 8 seconds and 749.21’s 8-second ceiling; render a short gap before each new line.</p></li>
 </ul>
 <h4 id="o5.-tests">O5. Tests</h4>
 <ul>
@@ -13889,8 +13878,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>Prame, E. (1994). Measurements of the vibrato rate of ten singers. JASA 96, 1979–1984. Larrouy-Maestri, P. and colleagues (2014). Operatic voices, J Voice (vibrato review).</p></li>
 <li><p>“Analysis and detection of singing techniques in repertoires of J-POP solo singers” (2022), arXiv 2210.17367.</p></li>
 <li><p>Larrouy-Maestri, P. and Pfordresher, P. (2018). Pitch perception in music: do scoops matter?</p></li>
-<li><p>Johnson, R., Huron, D. and Collister, L. (2014), on sung intelligibility (in v7).</p></li>
-<li><p>Bartlett, I. and Naismith, M. (2020), CCM pedagogy of R&amp;B, via the Voice Science lexicon.</p></li>
+<li><p>Johnson, R., Huron, D. and Collister, L. (2014), on sung intelligibility (in v7). Bartlett, I. and Naismith, M. (2020), CCM pedagogy of R&amp;B, via the Voice Science lexicon.</p></li>
 </ul>
 <p>Not reached: no open corpus of gospel, R&amp;B or soul transcriptions with words; DALI (restricted Zenodo 3576083) would give melisma counts from aligned recordings.</p>
 
@@ -13962,7 +13950,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h3 id="the-academic-record">2. The academic record</h3>
 <ul>
 <li><p><strong>Instruments shape the key.</strong> Spotify’s Kenny Ning analysed the keys of some 30 million tracks (2015): G major 10.7% and C major 10.2%, then D and A; more than a third of all songs sit in G, C, D or A major, and the commonest minors (A, E, B minor) are their relatives. His explanation: E suits guitar but not piano, C suits piano but not guitar, and G suits both. Guitar teaching sources say the same about open strings (E, A, D, G and their minors).</p></li>
-<li><p><strong>Minor has risen.</strong> Schellenberg and von Scheve (Psychology of Aesthetics, Creativity, and the Arts, 2012; over 1,000 Billboard year-end top-40 songs, 1965–2009) found the share of minor-mode hits doubled over five decades, while tempo fell and songs got longer. Press summaries of the paper give 85% major in the 1960s against 42.5% in 2005–09.</p></li>
+<li><p><strong>Minor has risen.</strong> Schellenberg and von Scheve (Psychology of Aesthetics, Creativity, and the Arts, 2012; over 1,000 Billboard year-end top-40 songs, 1965–2009) found the share of minor-mode hits doubled over five decades, while tempo fell and songs got longer (Part 28 shows tempo rising again after the 1990s). Press summaries of the paper give 85% major in the 1960s against 42.5% in 2005–09.</p></li>
 <li><p><strong>Key colour is a myth on equal-tempered instruments.</strong> Powell and Dibben (Musicae Scientiae, 2005): about three quarters of participants claimed key-mood associations, which matched 18th-century beliefs (sharps bright, flats mellow), but no one could identify mood from key or key from mood, and moving a piece to another key didn’t change its perceived mood. What does change is pitch height relative to the voice, and the instrument’s open strings and tone.</p></li>
 <li><p><strong>Hymnals choose keys for the congregation.</strong> Joey Stanley’s count of the Latter-day Saint hymnal (341 hymns) finds G major 22%, D 16%, C, E♭ and F about 14% each, B♭ 11%, A♭ 6%, and almost no A or D♭. Half the hymns top out at D5, and only about 2% go above E5.</p></li>
 <li><p><strong>Untrained voices are narrow.</strong> Kuhn, Wachhaus, Moore and Pantle (Journal of Research in Music Education, 1979; 597 non-music undergraduates) found 98% could sing comfortably from B♭3 to G4, 84% from G3 to B4, 75% from G♭3 to C5. Worshipleading advice built on it: lower the key when the tune goes above C5 unless people sing parts.</p></li>
@@ -14150,7 +14138,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h4 id="what-the-numbers-say">What the numbers say</h4>
 <ol type="1">
 <li><p><strong>Guitar songs sit in guitar keys.</strong> Guitar-led Billboard songs use open-string keys 65% of the time and the sharp guitar keys (E, A, B major) twice as often as piano-led songs (31% against 15%). Piano, strings and synthesizer songs use flat keys about twice as often as guitar songs (42% to 50% against 23%).</p></li>
-<li><p><strong>Minor rose steadily:</strong> 10% to 26% in Billboard between the 1960s and the 1980s, 11% to about half in BiMMuDa by 1990–2009, which agrees with Schellenberg and von Scheve.</p></li>
+<li><p><strong>Minor rose steadily:</strong> 10% to 26% in Billboard between the 1960s and the 1980s, 11% to about half in BiMMuDa by 1990–2009, which agrees with Schellenberg and von Scheve. CoCoPops’s 214 transcribed Billboard songs (Part 22) give 23% minor by the melody’s key against McGill’s 17% by the tonic chord: the same era, two definitions.</p></li>
 <li><p><strong>Open-string keys fell as guitars gave way to keyboards and production:</strong> from about half of BiMMuDa’s hits before 1970 to under a third after 2010.</p></li>
 <li><p><strong>Genre separates sharply:</strong> country and rock live in open-string major keys; R&amp;B, funk, soul and hip-hop in flat keys and minor. Hip-hop is two-thirds minor.</p></li>
 <li><p><strong>Songs 52 to 56 match their instruments:</strong> four guitar-led songs in D, G, A and E minor, and an organ carol in E♭.</p></li>
@@ -14334,7 +14322,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 </tr>
 <tr class="odd">
 <td>Earworms</td>
-<td>Earworm tunes run about 9 bpm faster than matched non- earworms</td>
+<td>Earworm tunes run about 9 bpm faster than matched non-earworms</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -14669,7 +14657,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h4 id="what-the-numbers-say">What the numbers say</h4>
 <ol type="1">
 <li><p><strong>Tempo is an era setting, with a 1990s dip.</strong> Hits ran fastest in the 1960s (median 116), slowest in the 1990s (91, a third of them under 80), and have climbed back to 108 since 2010. Both published trends are in this curve: Schellenberg and von Scheve’s fall to the 1990s, Léveillé Gauvin’s rise after it.</p></li>
-<li><p><strong>v7’s 104 bpm is the all-era median.</strong> It fits the 1970s, 1980s and 2000s and misses the 1960s and 1990s by more than 10 bpm.</p></li>
+<li><p><strong>v7’s 104 bpm is the all-era median.</strong> It fits the 1970s, 1980s and 2000s and misses the 1960s and 1990s by more than 10 bpm. De Clercq’s figure of about 120 for songs in four (Part 21) differs by corpus (rock and chart corpora against top-five singles), by average (a mean against a median) and by whether slow songs are counted at their felt or doubled pulse; read together, a median near 104 and a felt pulse usually between 100 and 120.</p></li>
 <li><p><strong>v7’s two channels are real but leaky.</strong> Half of hits sit in its motor band (95–130) and 15% under 80, but a fifth sit in the 80–95 zone it calls a place to avoid.</p></li>
 <li><p><strong>R&amp;B is the slow genre</strong> (median 93, a quarter under 80); rock the fastest and widest (28% over 130). Minor-key hits are not slower than major ones (108 against 101), the opposite of the sad-is-slow expectation.</p></li>
 <li><p><strong>The swung ballad metre vanished.</strong> 12/8 (the doo-wop and soul ballad shuffle) was a third of 1950s hits and is absent after 2010; hits now are almost all straight 4/4. Compound and triple metres are a choice of style or era, not a default.</p></li>
@@ -14806,8 +14794,8 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h4 id="what-a-solo-plays">What a solo plays</h4>
 <p>Analysts describe three common materials: the verse’s chords (the “solo over the verse”), the chorus’s chords, and new chords of the solo’s own; and three common contents: a melodic restatement of the tune, an improvised line on the section’s scale, and a riffbased break. None of the sources gives counts; section 3 counts the chords.</p>
 <h3 id="measured-739-billboard-songs-and-909-pop909-songs">3. Measured: 739 Billboard songs and 909 POP909 songs</h3>
-<p><strong>Data.</strong> The McGill Billboard annotations label each section (solo, interlude, instrumental, theme), give its time, chords and section letter (shared letters mean shared music), and mark the lead instrument and the lead voice. A mid-song instrumental section here is one</p>
-<p>that is neither the first nor the last section. POP909’s structure labels mark instrumental sections in lower case.</p>
+<p><strong>Data.</strong> The McGill Billboard annotations label each section (solo, interlude, instrumental, theme), give its time, chords and section letter (shared letters mean shared music), and mark the lead instrument and the lead voice. A mid-song instrumental section here is one that is neither the first nor the last section. POP909’s structure labels mark instrumental</p>
+<p>sections in lower case. The lead-voice share here (median 81%) is higher than the 72% in v7’s band window, which read Lakh MIDI files rather than annotations; the trend over time is the point here, not the level.</p>
 <h4 id="how-often-mcgill-billboard">How often (McGill Billboard)</h4>
 <table>
 <colgroup>
@@ -15023,9 +15011,7 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p><strong>Intensity:</strong> at or above the chorus before it (749.17’s rising returns); the arrangement thins only if the song’s plan puts a breakdown there instead.</p></li>
 </ul>
 <h4 id="s3.-the-documents">S3. The documents</h4>
-<ul>
-<li>The lead sheet prints the solo’s chords and a written line (or slashes with “solo, 8 bars” when it’s to be improvised); the parts give the soloist the line or the changes; the songbook says what the solo should do in a sentence.</li>
-</ul>
+<p>The lead sheet prints the solo’s chords and a written line (or slashes with “solo, 8 bars” when it’s to be improvised); the parts give the soloist the line or the changes; the songbook says what the solo should do in a sentence.</p>
 <h4 id="s4.-tests">S4. Tests</h4>
 <ul>
 <li><p>The form report prints each instrumental section’s kind, length, place and material against these bands and the era’s solo share.</p></li>

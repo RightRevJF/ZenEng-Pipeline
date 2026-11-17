@@ -16,7 +16,7 @@
 |---|---|---|
 |Window on tempo (top-five singles)|104 bpm at the median (middle half 88–120, 10th–90th 72–138); in Billboard-matched Lakh songs hits sit at 114 against 120 for other charting songs|Tempo by era and by genre|
 |The two channels (design spec)|65–80 bpm for contemplative songs (the cardiac channel), 95–120 for energetic and dance (the motor channel), 80–95 a transition zone where the song must commit|Whether real songs cluster this way|
-|Earworms|Earworm tunes run about 9 bpm faster than matched non- earworms||
+|Earworms|Earworm tunes run about 9 bpm faster than matched non-earworms||
 |Chorus arrival|The chorus within 60 seconds; at 65–80 bpm a 16-bar path takes 55–60 s, at 95–120 about 32–40 s|Era (Part 25)|
 |Shuffle and groove|The blues shuffle divides the beat long-short (about 2:1); groove peaks at moderate syncopation (Witek and others); microtiming in Module 9.2|How much swing by style and tempo; half-time feels|
 |Fix 71 and Protocol 0b|The commercial profile prints the song's length; form options print their length at intake|A length band to check it against|
@@ -110,7 +110,7 @@ After 1991 the year-end count in section 2 continues the curve: medians of 4:21 
 
 1. **Tempo is an era setting, with a 1990s dip.** Hits ran fastest in the 1960s (median 116), slowest in the 1990s (91, a third of them under 80), and have climbed back to 108 since 2010. Both published trends are in this curve: Schellenberg and von Scheve's fall to the 1990s, Léveillé Gauvin's rise after it.
 
-2. **v7's 104 bpm is the all-era median.** It fits the 1970s, 1980s and 2000s and misses the 1960s and 1990s by more than 10 bpm.
+2. **v7's 104 bpm is the all-era median.** It fits the 1970s, 1980s and 2000s and misses the 1960s and 1990s by more than 10 bpm. De Clercq's figure of about 120 for songs in four (Part 21) differs by corpus (rock and chart corpora against top-five singles), by average (a mean against a median) and by whether slow songs are counted at their felt or doubled pulse; read together, a median near 104 and a felt pulse usually between 100 and 120.
 
 3. **v7's two channels are real but leaky.** Half of hits sit in its motor band (95–130) and 15% under 80, but a fifth sit in the 80–95 zone it calls a place to avoid.
 

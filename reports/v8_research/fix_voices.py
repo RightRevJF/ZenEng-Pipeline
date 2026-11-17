@@ -2,6 +2,7 @@
 import re
 md = open("voices.md").read()
 md = md.replace("#### **Motion and placement** (%, except the per-100 columns)", "**Motion and placement** (%, except the per-100 columns)")
+md = md.replace("#### **Intervals** (share of sounding pairs, %)", "**Intervals** (share of sounding pairs, %)")
 md = md.replace("\nV1. Six kinds of second voice, each with its own writer\n", "\n### V1. Six kinds of second voice, each with its own writer\n")
 md = md.replace("arrangements). The Church Collective,", "arrangements).\n\n- The Church Collective,")
 md = md.replace("#### Wikipedia, Vocal harmony;", "- Wikipedia, Vocal harmony;")
