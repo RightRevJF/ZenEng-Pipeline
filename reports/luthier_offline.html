@@ -91,11 +91,13 @@ views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-25" id="toc-part-25">Part 25. Song edges for Luthier v8: intros, endings, the way in and out</a></li>
 <li><a href="#part-26" id="toc-part-26">Part 26. Vocal ornament and expression for Luthier v8: melisma, slides, vibrato, breath</a></li>
 <li><a href="#part-27" id="toc-part-27">Part 27. Key choice for Luthier v8: by genre, instrument and singer</a></li>
+<li><a href="#part-28" id="toc-part-28">Part 28. Tempo, feel and song length for Luthier v8: by era and genre</a></li>
+<li><a href="#part-29" id="toc-part-29">Part 29. Instrumental solos and breaks for Luthier v8</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with ten research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament and key-choice writers v8 needs (Parts 17 to 27). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 27 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament and studies/keys), for anyone with access. This page does not depend on it.</p>
+<p>This is the final edition of the report, and nothing more will be added before v8. This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with twelve research studies for the harmony, band, tension, metre, melody, word-setting, harmony-voice, song-edge, ornament, key-choice, tempo and solo writers v8 needs (Parts 17 to 29). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 29 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony, studies/arrangement, studies/tension, studies/metre, studies/genre, studies/words, studies/voices, studies/edges, studies/ornament, studies/keys, studies/tempo and studies/solos), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -217,6 +219,14 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-27">27</a></td>
 <td>Key choice for Luthier v8: by genre, instrument and singer (keys by lead instrument, era and genre in 739 Billboard and 381 top-five songs, the tonic in the sung range)</td>
 </tr>
+<tr class="even">
+<td><a href="#part-28">28</a></td>
+<td>Tempo, feel and song length for Luthier v8: by era and genre (tempo by era, genre and mode, metre and feel, length 1958 to now)</td>
+</tr>
+<tr class="odd">
+<td><a href="#part-29">29</a></td>
+<td>Instrumental solos and breaks for Luthier v8 (how often, where, how long, over what chords and on what instrument, 1958 to 1991; links in POP909)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
@@ -242,6 +252,8 @@ views, covers, our songs, hymns and art song</a></li>
 <li><p><strong>Song edges (Part 25).</strong> v7 checks intros and endings (a 4-bar median intro, a chorus-arrival limit, four ending kinds) but writes neither, and every intro in songs 52 to 56 was 4 bars. In 739 Billboard songs intros doubled from about 9 seconds (4 bars) in 1958 to 1964 to 17 (8 bars) in 1985 to 1991, and later studies find the voice arriving within about 5 seconds by 2015; length does not separate hits from misses, so it is an era setting. A quarter of streaming plays end in the first five seconds, so something identifiable should sound there. 61% of the Billboard songs fade; cold endings land on the tonic 81% of the time, by V–I, IV–I (Temperley’s grand plagal cadence) or ♭VII–I. A fade keeps the listener’s pulse running past the end; a final slowing adds no pleasure. v8 should write six intro kinds with era bands, ending kinds that name the cadence and add the fade, bookend and coda, and render fades and held last chords.</p></li>
 <li><p><strong>Vocal ornament (Part 26).</strong> v7 counts melisma (two-note turns at corpus rates, none on a cadence note) and renders a delayed MIDI vibrato, and nothing else of delivery; no score or songbook for songs 52 to 56 named a scoop, fall, cry, run or vibrato style. In 6,716 songs, chart pop sets 8% to 11% of syllables on more than one note, arrangements half that, hymns and folk about 5% to 8%, standards almost none; melismas gather at phrase ends at 2.5 to 3 times their share, are two notes three times in four, and grow through the song, which runs against v7’s cadence-note ban. Scoops are the commonest pop inflection, the country breaking voice falls on grief words, and gospel runs are pentatonic, 4 to 7 notes, at the ends of long notes. v8 should write melisma by style bands and placement, treat runs as designed moments, and name and render the performed inflections and vibrato by style.</p></li>
 <li><p><strong>Key choice (Part 27).</strong> v7 picks a key from the hook and the voice only (27.14); songs 52 to 56 got instrument-friendly keys because they were chosen by hand. In 739 Billboard songs, guitar-led songs sit in open-string keys 65% of the time and in E, A or B major twice as often as piano-led songs; piano, strings and synthesizer songs use flat keys about twice as often as guitar songs. Minor rose from 11% of hits before 1970 to about half after 1990, and open-string keys fell from about half to under a third; country and rock stay in open major keys, R&amp;B, soul and hip-hop in flat keys and minor. A hit’s sung range is about an octave with its floor on the tonic or the dominant below, so the key follows from the voice’s floor and the frame; key colour is a myth on equal-tempered instruments. v8 should choose the frame from the voice, filter by the lead instrument (with a capo when needed), set the mode default by genre and era, then rank by the hook.</p></li>
+<li><p><strong>Tempo, feel and length (Part 28).</strong> v7 has one tempo figure (104 bpm, all eras), channel design specs, a fixed 2:1 shuffle and no length band. Top-five hits ran 116 bpm in the 1960s, 91 in the 1990s (a third under 80) and 108 since 2010; R&amp;B is the slow genre, minor-key hits are not slower, and a fifth of hits sit in the 80 to 95 zone v7 says to avoid. 12/8 was a third of 1950s hits and has vanished; tempo has been steady since click tracks. Swing ratio depends on tempo (about 3.5:1 slow, 2:1 medium, near straight fast). Hit length went from 2:31 (early 1960s) to 4:12 (late 1980s) and back to about 3:15. v8 should read tempo, feel and length bands from the chosen era and style and render swing by tempo.</p></li>
+<li><p><strong>Solos and breaks (Part 29).</strong> v7 writes the instrument around the voice but has no solo. In 739 Billboard songs the share with a solo grew from 22% (1958 to 1964) to 46% (1985 to 1991), and declined after with hip-hop’s rise; a solo is about 8 bars and 20 seconds, starts just past the middle (0.45 to 0.65), usually follows the second chorus and leads into the last verse or chorus, and plays its own chords half the time. Short links of 4 to 8 bars are nearly universal. v8 should write two kinds of instrumental section, link and solo, with bands for length, place and material and a solo default by era and style.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -14282,6 +14294,762 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <li><p>Guitar Command, guitar keys and open strings.</p></li>
 </ul>
 <p>Not measured: the fiddle, mandolin and banjo row of K2 comes from practice, not counts; no corpus marks those instruments with keys.</p>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-28">Part 28. Tempo, feel and song length for Luthier v8: by era and genre</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/N8b6K3PQUQVztahQHuhPcb">Tempo, feel and song length for Luthier v8: by era and genre</a>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><p><strong>v7 has one tempo figure (104 bpm, all eras), channel design specs, a fixed 2:1 shuffle and no length band.</strong> Songs 52 to 56 chose tempo and length by hand.</p></li>
+<li><p><strong>Tempo is an era setting.</strong> Top-five hits ran 116 bpm in the 1960s, 91 in the 1990s (a third under 80) and 108 since 2010; both published trends sit on this curve. R&amp;B is the slow genre; minor-key hits aren’t slower. A fifth of hits sit in the 80–95 zone v7 says to avoid.</p></li>
+<li><p><strong>Feel changed:</strong> 12/8 was a third of 1950s hits and has vanished; hits are now almost all straight 4/4, and tempo has grown steadier since click tracks (1979 on). Swing ratio depends on tempo: about 3.5:1 slow, 2:1 medium, near straight fast.</p></li>
+<li><p><strong>Length:</strong> median 2:31 in the early 1960s, 4:12 by 1985–91, a 1992 peak, and about 3:15 now.</p></li>
+<li><p><strong>What v8 should do:</strong> tempo, feel and length bands read from the chosen era and style; swing rendered by tempo; tempo steady unless designed otherwise; the form’s length checked against the era.</p></li>
+</ul>
+<h3 id="what-luthier-v7-does-now">1. What Luthier v7 does now</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule in v7</th>
+<th>What it says</th>
+<th>What it leaves out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Window on tempo (top-five singles)</td>
+<td>104 bpm at the median (middle half 88–120, 10th–90th 72–138); in Billboard-matched Lakh songs hits sit at 114 against 120 for other charting songs</td>
+<td>Tempo by era and by genre</td>
+</tr>
+<tr class="even">
+<td>The two channels (design spec)</td>
+<td>65–80 bpm for contemplative songs (the cardiac channel), 95–120 for energetic and dance (the motor channel), 80–95 a transition zone where the song must commit</td>
+<td>Whether real songs cluster this way</td>
+</tr>
+<tr class="odd">
+<td>Earworms</td>
+<td>Earworm tunes run about 9 bpm faster than matched non- earworms</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Chorus arrival</td>
+<td>The chorus within 60 seconds; at 65–80 bpm a 16-bar path takes 55–60 s, at 95–120 about 32–40 s</td>
+<td>Era (Part 25)</td>
+</tr>
+<tr class="odd">
+<td>Shuffle and groove</td>
+<td>The blues shuffle divides the beat long-short (about 2:1); groove peaks at moderate syncopation (Witek and others); microtiming in Module 9.2</td>
+<td>How much swing by style and tempo; half-time feels</td>
+</tr>
+<tr class="even">
+<td>Fix 71 and Protocol 0b</td>
+<td>The commercial profile prints the song’s length; form options print their length at intake</td>
+<td>A length band to check it against</td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-the-recent-songs-used">What the recent songs used</h4>
+<ul>
+<li><p><strong>Tempos:</strong> song 52 at ♩. = 54 in 6/8 (♩ = 81); song 53 at about ♩ = 88 to 92 in 3/4; songs 54 and 55 at ♩ = 120, straight; song 56 planned at ♩ = 72.</p></li>
+<li><p><strong>Lengths:</strong> form options at intake printed lengths from about 3 to almost 5 minutes, and the writer chose among them with nothing to say which lengths suit the era or the genre.</p></li>
+<li><p><strong>Feel:</strong> straight eighths in 54 and 55 by choice; no song so far asked whether the style wants swing, a shuffle, or a half-time feel.</p></li>
+</ul>
+<h3 id="the-academic-record">2. The academic record</h3>
+<h4 id="tempo">Tempo</h4>
+<ul>
+<li><p><strong>A preferred tempo near 120.</strong> Moelants (2002) combined DJ bpm lists with tapping experiments and found tempi concentrated between about 115 and 127 bpm, peaking at 125; later work places preferred tempo in popular music nearer 120 than the 100 once claimed (de Clercq 2023 reviews this). Groove experiments find an optimum for drum breaks around 100 to 120 bpm.</p></li>
+<li><p><strong>Hit tempo moved, both ways.</strong> Schellenberg and von Scheve (2012; over 1,000 Billboard top-40 hits, 1965–2009) found average tempo fell from about 116 bpm in the 1960s to about 100 in the 2000s. Léveillé Gauvin (2018; top-10 hits 1986–2015) found tempo rising over his later window. The two overlap only from 1986, and the rise came after the 1990s low.</p></li>
+<li><p><strong>Tempo got steadier.</strong> Carter and von Appen (Integral, 2025; Billboard hits 1966–1995) found a steep fall in tempo variability from 1979, which they attribute to click tracks and sequencing; Condit-Schultz and Clark (2024; 45,000 Spotify tracks) found tempo stability rising in rock, country and blues across the 20th century.</p></li>
+</ul>
+<h4 id="feel">Feel</h4>
+<ul>
+<li><p><strong>Swing depends on tempo.</strong> Friberg and Sundström (Music Perception, 2002) measured jazz drummers’ ride cymbal: the long-short swing ratio reached 3.5:1 at slow tempos and fell to 1:1 at fast ones; the textbook 2:1 holds only at medium tempos. v7’s “about 2:1” shuffle is right only there.</p></li>
+<li><p><strong>Groove peaks at moderate syncopation</strong> (Witek and colleagues; already in v7).</p></li>
+</ul>
+<h4 id="song-length">Song length</h4>
+<ul>
+<li><p><strong>Up, then down.</strong> A 2025 count of all 6,618 Billboard year-end hits (1959–2025, Spotify durations) gives median lengths of 2:44 (1960s), 3:35 (1970s), 4:06 (1980s), 4:21 (1990s), 3:58 (2000s), 3:40 (2010s) and 3:15 (2020s). The mean peaked at 4:39 in 1992 and bottomed at 3:13 in 2019. Two thirds of 2019’s hits ran 2:30 to 3:30. Weighting by Spotify plays lengthens the average slightly: the biggest hits aren’t the shortest.</p></li>
+<li><p><strong>Earlier counts agree.</strong> Schellenberg and von Scheve found hits lengthening from under three minutes in the 1960s to about four in the 2000s; MIDiA Research found top-10 hits shortening by 16% from 2000 to 2020, to 3:42, with intros falling from 13.1 to 7.4 seconds.</p></li>
+</ul>
+<h3 id="measured-tempo-metre-and-length">3. Measured: tempo, metre and length</h3>
+<p><strong>Data.</strong> BiMMuDa’s metadata (381 top-five singles, 1950–2022): tempo, time signature, mode and genre per song. McGill Billboard (739 songs, 1958–1991): metre and length from the annotations.</p>
+<h4 id="tempo-by-era-bimmuda">Tempo by era (BiMMuDa)</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Era</th>
+<th>Songs</th>
+<th>Tempo (bpm), median and middle half</th>
+<th>Under 80</th>
+<th>80–95</th>
+<th>95–130</th>
+<th>Over 130</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1950–59</td>
+<td>52</td>
+<td>102 (87–126)</td>
+<td>12%</td>
+<td>27%</td>
+<td>40%</td>
+<td>21%</td>
+</tr>
+<tr class="even">
+<td>1960–69</td>
+<td>50</td>
+<td>116 (95–128)</td>
+<td>8%</td>
+<td>16%</td>
+<td>50%</td>
+<td>26%</td>
+</tr>
+<tr class="odd">
+<td>1970–79</td>
+<td>52</td>
+<td>104 (84–115)</td>
+<td>17%</td>
+<td>17%</td>
+<td>56%</td>
+<td>10%</td>
+</tr>
+<tr class="even">
+<td>1980–89</td>
+<td>50</td>
+<td>104 (91–117)</td>
+<td>14%</td>
+<td>18%</td>
+<td>56%</td>
+<td>12%</td>
+</tr>
+<tr class="odd">
+<td>1990–99</td>
+<td>52</td>
+<td>91 (70–102)</td>
+<td>33%</td>
+<td>28%</td>
+<td>31%</td>
+<td>8%</td>
+</tr>
+<tr class="even">
+<td>2000–09</td>
+<td>50</td>
+<td>104 (87–119)</td>
+<td>14%</td>
+<td>22%</td>
+<td>58%</td>
+<td>6%</td>
+</tr>
+<tr class="odd">
+<td>2010–22</td>
+<td>75</td>
+<td>108 (91–128)</td>
+<td>9%</td>
+<td>18%</td>
+<td>53%</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>All</td>
+<td>381</td>
+<td>104 (88–120)</td>
+<td>15%</td>
+<td>21%</td>
+<td>49%</td>
+<td>15%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tempo-by-genre-and-mode-bimmuda">Tempo by genre and mode (BiMMuDa)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Songs</th>
+<th>Median (middle half)</th>
+<th>Under 80</th>
+<th>Over 130</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>R&amp;B</td>
+<td>42</td>
+<td>93 (80–110)</td>
+<td>24%</td>
+<td>12%</td>
+</tr>
+<tr class="even">
+<td>Pop</td>
+<td>139</td>
+<td>103 (87–120)</td>
+<td>16%</td>
+<td>11%</td>
+</tr>
+<tr class="odd">
+<td>Country</td>
+<td>16</td>
+<td>105 (89–119)</td>
+<td>6%</td>
+<td>12%</td>
+</tr>
+<tr class="even">
+<td>Hip-hop</td>
+<td>31</td>
+<td>105 (90–126)</td>
+<td>6%</td>
+<td>16%</td>
+</tr>
+<tr class="odd">
+<td>Rock</td>
+<td>81</td>
+<td>107 (86–132)</td>
+<td>16%</td>
+<td>28%</td>
+</tr>
+<tr class="even">
+<td>Funk and soul</td>
+<td>44</td>
+<td>109 (93–120)</td>
+<td>16%</td>
+<td>5%</td>
+</tr>
+<tr class="odd">
+<td>Major</td>
+<td>253</td>
+<td>101 (84–122)</td>
+<td>19%</td>
+<td>15%</td>
+</tr>
+<tr class="even">
+<td>Minor</td>
+<td>128</td>
+<td>108 (94–120)</td>
+<td>8%</td>
+<td>14%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="metre-and-feel">Metre and feel</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>4/4</th>
+<th>12/8</th>
+<th>6/8</th>
+<th>3/4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BiMMuDa 1950–59</td>
+<td>54%</td>
+<td>35%</td>
+<td>4%</td>
+<td>6%</td>
+</tr>
+<tr class="even">
+<td>BiMMuDa 1960–69</td>
+<td>88%</td>
+<td>8%</td>
+<td>2%</td>
+<td>0%</td>
+</tr>
+<tr class="odd">
+<td>BiMMuDa 1970–79</td>
+<td>87%</td>
+<td>12%</td>
+<td>0%</td>
+<td>2%</td>
+</tr>
+<tr class="even">
+<td>BiMMuDa 1980–2009</td>
+<td>92–94%</td>
+<td>2–6%</td>
+<td>0–2%</td>
+<td>0–2%</td>
+</tr>
+<tr class="odd">
+<td>BiMMuDa 2010–22</td>
+<td>97%</td>
+<td>0%</td>
+<td>3%</td>
+<td>0%</td>
+</tr>
+<tr class="even">
+<td>McGill 1958–64</td>
+<td>81%</td>
+<td>12%</td>
+<td>3%</td>
+<td>2%</td>
+</tr>
+<tr class="odd">
+<td>McGill 1985–91</td>
+<td>100%</td>
+<td>0%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="length-mcgill-billboard">Length (McGill Billboard)</h4>
+<table>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Songs</th>
+<th>Length, median (middle half)</th>
+<th>Under 3:00</th>
+<th>Over 4:00</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1958–64</td>
+<td>121</td>
+<td>2:31 (2:20–2:42)</td>
+<td>91%</td>
+<td>2%</td>
+</tr>
+<tr class="even">
+<td>1965–69</td>
+<td>116</td>
+<td>2:51 (2:28–3:16)</td>
+<td>66%</td>
+<td>10%</td>
+</tr>
+<tr class="odd">
+<td>1970–74</td>
+<td>131</td>
+<td>3:19 (2:54–3:55)</td>
+<td>33%</td>
+<td>23%</td>
+</tr>
+<tr class="even">
+<td>1975–79</td>
+<td>129</td>
+<td>3:36 (3:11–4:09)</td>
+<td>19%</td>
+<td>29%</td>
+</tr>
+<tr class="odd">
+<td>1980–84</td>
+<td>125</td>
+<td>3:50 (3:26–4:10)</td>
+<td>11%</td>
+<td>36%</td>
+</tr>
+<tr class="even">
+<td>1985–91</td>
+<td>117</td>
+<td>4:12 (3:45–4:34)</td>
+<td>3%</td>
+<td>56%</td>
+</tr>
+</tbody>
+</table>
+<p>After 1991 the year-end count in section 2 continues the curve: medians of 4:21 (1990s), 3:58, 3:40 and 3:15 (2020s).</p>
+<h4 id="what-the-numbers-say">What the numbers say</h4>
+<ol type="1">
+<li><p><strong>Tempo is an era setting, with a 1990s dip.</strong> Hits ran fastest in the 1960s (median 116), slowest in the 1990s (91, a third of them under 80), and have climbed back to 108 since 2010. Both published trends are in this curve: Schellenberg and von Scheve’s fall to the 1990s, Léveillé Gauvin’s rise after it.</p></li>
+<li><p><strong>v7’s 104 bpm is the all-era median.</strong> It fits the 1970s, 1980s and 2000s and misses the 1960s and 1990s by more than 10 bpm.</p></li>
+<li><p><strong>v7’s two channels are real but leaky.</strong> Half of hits sit in its motor band (95–130) and 15% under 80, but a fifth sit in the 80–95 zone it calls a place to avoid.</p></li>
+<li><p><strong>R&amp;B is the slow genre</strong> (median 93, a quarter under 80); rock the fastest and widest (28% over 130). Minor-key hits are not slower than major ones (108 against 101), the opposite of the sad-is-slow expectation.</p></li>
+<li><p><strong>The swung ballad metre vanished.</strong> 12/8 (the doo-wop and soul ballad shuffle) was a third of 1950s hits and is absent after 2010; hits now are almost all straight 4/4. Compound and triple metres are a choice of style or era, not a default.</p></li>
+<li><p><strong>Length follows the format.</strong> From 2:31 in the early 1960s to 4:12 by 1985–91 and back to about 3:15 now.</p></li>
+</ol>
+<h3 id="what-v8-should-do">4. What v8 should do</h3>
+<p>The same principle as Part 25’s intros: tempo, feel and length are era and style settings. Give the intake an era (or “now”) and a style, and read the defaults and bands from the tables.</p>
+<h4 id="t1.-tempo-bands-by-era-and-style">T1. Tempo bands by era and style</h4>
+<ul>
+<li><p>Default tempo: the era’s median, adjusted by genre (R&amp;B about 10 bpm slower, rock and funk a little faster); the band is the era’s middle half. Now: 108 (91–128). A 1990s sound: 91 (70–102). A 1960s sound: 116 (95–128).</p></li>
+<li><p>Keep v7’s channels as a description (contemplative under 80, motor 95–130), but drop the instruction to avoid 80–95: a fifth of hits live there.</p></li>
+<li><p>Don’t slow a song because it’s minor; mode doesn’t set tempo in hits.</p></li>
+<li><p>Tempo is steady by default (click-track era); a free or drifting tempo (a rubato intro, a slowing outro) is a designed moment.</p></li>
+</ul>
+<h4 id="t2.-feel">T2. Feel</h4>
+<ul>
+<li><p>Feel is an intake choice: straight, shuffle (swung eighths), 12/8 or 6/8, triple, half-time. Straight 4/4 is the default for anything after 1980; 12/8 is a 1950s and early-1960s ballad or soul sound, and blues and country shuffles are style choices.</p></li>
+<li><p><strong>Swing ratio by tempo</strong> , from Friberg and Sundström: about 3:1 at slow tempos, 2:1 around medium, approaching straight at fast tempos. The demo renders the ratio for the tempo rather than a fixed 2:1.</p></li>
+</ul>
+<h4 id="t3.-length">T3. Length</h4>
+<ul>
+<li><p>Bands by era, checked by the commercial profile (fix 71): 1960s about 2:20 to 3:15; 1970s 2:55 to 4:10; 1980s 3:25 to 4:35; 1990s around 4:20; now about 2:30 to 3:30 (two thirds of 2019’s hits), median about 3:15.</p></li>
+<li><p>The form options at intake print their length against the band, so the writer sees when a form runs long for the era.</p></li>
+</ul>
+<h4 id="t4.-tests">T4. Tests</h4>
+<ul>
+<li><p>The test report prints tempo, feel and length against the chosen era’s bands, and the swing ratio the demo used.</p></li>
+<li><p>Songs 52 to 56 as targets: 54 and 55 at 120 sit in the modern band; 56 at 72 is in the slow tail, right for a soul ballad; the 4- to 5-minute forms offered at intake are long for now and right for the 1980s and 1990s.</p></li>
+</ul>
+<h3 id="files-and-sources">5. Files and sources</h3>
+<h4 id="in-the-repo-studiestempo">In the repo (studies/tempo)</h4>
+<ul>
+<li><p><code>tempo_corpora.py</code> : tempo by era, genre and mode, and time signatures (BiMMuDa);</p></li>
+<li><p>metre and length by period (McGill Billboard, lengths from ../edges/edges_billboard.json); <code>tempo_results.json</code> .</p></li>
+</ul>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><p>Moelants, D. (2002). Preferred tempo reconsidered. ICMPC 7; via Dancetempo (JNMR) and de Clercq (2023), Harmonic rhythm in popular music.</p></li>
+<li><p>Schellenberg, E. G. and von Scheve, C. (2012). Emotional cues in American popular music: five decades of the Top 40. Psychology of Aesthetics, Creativity, and the Arts. Léveillé Gauvin, H. (2018). Drawing listener attention in popular music. Musicae Scientiae 22(3).</p></li>
+<li><p>Carter, D. S. and von Appen, R. (2025). Tempo variability in Billboard Hot 100 songs, 1966–1995. Integral 38.</p></li>
+<li><p>Condit-Schultz, N. and Clark, B. (2024). Have we sold our souls to the drum machine? A historical analysis of tempo stability in Western music recordings.</p></li>
+<li><p>Friberg, A. and Sundström, A. (2002). Swing ratios and ensemble timing in jazz performance. Music Perception 19(3).</p></li>
+<li><p>“Are songs really getting shorter? 6,618 Hot 100 hits, 1959–2025” (DEV Community, 2025), Billboard year-end hits with Spotify durations.</p></li>
+<li><p>MIDiA Research, How the DNA of a hit has changed over 20 years.</p></li>
+<li><p>Etani and colleagues (2018), optimal tempo for groove, Frontiers in Psychology.</p></li>
+</ul>
+
+<a class="top" href="#start">Top</a>
+
+<h1 id="part-29">Part 29. Instrumental solos and breaks for Luthier v8</h1>
+<p>17 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/15DNkqn3qsUxZM72N5kxxr">Instrumental solos and breaks for Luthier v8</a>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><p><strong>v7 writes the instrument around the voice (figures, riffs, fills, answers) but has no solo,</strong> and only metal places one. Songs 52 to 55 had 2- to 4-bar links quoting the hook; none had a solo.</p></li>
+<li><p><strong>Solos rose, then fell.</strong> In 739 Billboard songs the share with a solo grew from 22% (1958–64) to 46% (1985–91); three quarters of 1980s hits had a mid-song instrumental section. Later sources describe the decline: instrumental content in number ones fell with hip-hop’s rise in the 1990s, and about half of Japan’s 2021 year-end hits had no solo at all.</p></li>
+<li><p><strong>A solo is about 8 bars and 20 seconds,</strong> starts just past the middle (0.45 to 0.65 of the song), most often follows the second chorus and leads into the last verse or chorus, and plays its own chords half the time (the verse’s 30%, the chorus’s 20%). Guitar leads about half; saxophone led early-1960s solos; synthesizer appeared in the 1980s.</p></li>
+<li><p><strong>Short links are nearly universal:</strong> 4 bars in nine of ten POP909 songs, 8-bar interludes in Billboard.</p></li>
+<li><p><strong>What v8 should do:</strong> two kinds of instrumental section (link and solo) with bands for length, place and material; a solo default by era and style; the solo’s line from the style’s lead instrument, restating or elaborating the tune or building on its scale, and handing back to the voice for a fresh re-entry.</p></li>
+</ul>
+<h3 id="what-luthier-v7-does-now">1. What Luthier v7 does now</h3>
+<p>v7 writes the instrument around the voice in detail, and has no solo.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rule in v7</th>
+<th>What it says</th>
+<th>What it leaves out</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>27.21 and fixes 10, 21, 35, 90, 91</td>
+<td>The instrumental line’s kinds: a figure, a riff repeated in every instrumental section, a quote of a sung section, a texture, a restatement, an answer</td>
+<td>A solo: an instrumental section of its own, with its own line</td>
+</tr>
+<tr class="even">
+<td>The band window (fills)</td>
+<td>The voice sounds through 72% of a song, the lead instrument 55%; of the lead’s time, 18% in intros, interludes and outros; fills of 2 to 3 beats and 4 to 6 notes in the voice’s gaps</td>
+<td>How long instrumental sections are, and where</td>
+</tr>
+<tr class="odd">
+<td>Form options (fixes 13, 31, 56)</td>
+<td>Interludes priced into the form’s length</td>
+<td>Whether a song of this era and style should have one</td>
+</tr>
+<tr class="even">
+<td>Module 9-M (metal)</td>
+<td>The solo or breakdown goes in the bridge</td>
+<td>Every other style</td>
+</tr>
+<tr class="odd">
+<td>The blues window</td>
+<td>Bars 11–12 of a twelve-bar are the instrument’s answer</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Stop-time breaks (karaoke corpus)</td>
+<td>A break before a line occurs about 2,900 times in 1,014 songs</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="what-the-recent-songs-did">What the recent songs did</h4>
+<ul>
+<li><p><strong>Song 52:</strong> a 4-bar interlude where the cello sings the hook.</p></li>
+<li><p><strong>Song 53:</strong> a 2-bar organ link between verses.</p></li>
+<li><p><strong>Song 54:</strong> a 4-bar turnaround with the fiddle playing the hook and the steel answering.</p></li>
+<li><p><strong>Song 55:</strong> a 4-bar break of fiddle call and answer with a steel reply, the last bar the acoustic alone.</p></li>
+<li><p><strong>Song 56:</strong> no instrumental section planned beyond intro and outro.</p></li>
+</ul>
+<p>All four instrumental sections were 2 to 4 bars and quoted the hook. None of the songs had a solo, and nothing in v7 says whether a song of its style and era would.</p>
+<h3 id="the-academic-record">2. The academic record</h3>
+<h4 id="where-a-solo-goes-in-the-form">Where a solo goes in the form</h4>
+<ul>
+<li><strong>In verse-chorus form,</strong> Open Music Theory (Hughes and Lavengood, after Covach 2005) describes the solo as able to stand in for a section: in their model analysis the last cycle begins with a guitar solo that functions as a bridge and replaces the verse.</li>
+</ul>
+<p>Covach’s compound AABA reading of rock puts the contrasting middle (bridge or solo) after the second verse-chorus cycle.</p>
+<ul>
+<li><p><strong>In blues-based forms,</strong> Carter (Music Theory Online 31.1, 2025), studying blues-based songs, names a “solo-bridge model”, AABA interrupted by an instrumental solo before the bridge, and an AABA-solo-BA “two-bridge” model.</p></li>
+<li><p><strong>In metal,</strong> a 2022 Oregon dissertation on verse-chorus-bridge form shows bridges given to instrumental passages and dance sections, diverting the usual chorus goal; v7’s metal module already puts the solo or breakdown there.</p></li>
+<li><p><strong>At the end,</strong> Osborn’s terminally climactic forms and Spicer’s cumulative form let the last section, often instrumental, be the climax (Part 25).</p></li>
+</ul>
+<h4 id="how-common-solos-are">How common solos are</h4>
+<ul>
+<li><p><strong>Guitar solos in number ones</strong> (Michael Rays, Number One with an Axe, rating every Billboard number one from 1955): the high-water mark was 1957, 40% of number ones; the early 1960s were a “drought” with under 10%; in 1965 only 20% had a guitar solo though 68% had a riff.</p></li>
+<li><p><strong>Instrumental content in number ones</strong> (Chris Dalla Riva, 1940–2021): the average share of a hit without voice declined in two steps, the sharpest beginning in the 1950s and in the 1990s with hip-hop’s rise.</p></li>
+<li><p><strong>Now:</strong> a 2021 count of Japan’s year-end Kohaku hits found nearly 70% had no guitar solo and almost half had no solo of any kind. Hit Songs Deconstructed reports electric guitar on 61% of US top-10 hits in the first half of 2025, up from 38% in 2024, so instrument use swings with fashion.</p></li>
+</ul>
+<h4 id="what-a-solo-plays">What a solo plays</h4>
+<p>Analysts describe three common materials: the verse’s chords (the “solo over the verse”), the chorus’s chords, and new chords of the solo’s own; and three common contents: a melodic restatement of the tune, an improvised line on the section’s scale, and a riffbased break. None of the sources gives counts; section 3 counts the chords.</p>
+<h3 id="measured-739-billboard-songs-and-909-pop909-songs">3. Measured: 739 Billboard songs and 909 POP909 songs</h3>
+<p><strong>Data.</strong> The McGill Billboard annotations label each section (solo, interlude, instrumental, theme), give its time, chords and section letter (shared letters mean shared music), and mark the lead instrument and the lead voice. A mid-song instrumental section here is one</p>
+<p>that is neither the first nor the last section. POP909’s structure labels mark instrumental sections in lower case.</p>
+<h4 id="how-often-mcgill-billboard">How often (McGill Billboard)</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Songs</th>
+<th>With a solo</th>
+<th>With any mid-song instrumental section</th>
+<th>Share of the song with a lead voice, median</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1958–64</td>
+<td>121</td>
+<td>22%</td>
+<td>41%</td>
+<td>87%</td>
+</tr>
+<tr class="even">
+<td>1965–69</td>
+<td>116</td>
+<td>30%</td>
+<td>58%</td>
+<td>83%</td>
+</tr>
+<tr class="odd">
+<td>1970–74</td>
+<td>131</td>
+<td>34%</td>
+<td>53%</td>
+<td>77%</td>
+</tr>
+<tr class="even">
+<td>1975–79</td>
+<td>129</td>
+<td>34%</td>
+<td>60%</td>
+<td>82%</td>
+</tr>
+<tr class="odd">
+<td>1980–84</td>
+<td>125</td>
+<td>41%</td>
+<td>75%</td>
+<td>79%</td>
+</tr>
+<tr class="even">
+<td>1985–91</td>
+<td>117</td>
+<td>46%</td>
+<td>77%</td>
+<td>76%</td>
+</tr>
+<tr class="odd">
+<td>All</td>
+<td>739</td>
+<td>35%</td>
+<td>61%</td>
+<td>81%</td>
+</tr>
+</tbody>
+</table>
+<p>POP909 (Chinese pop, 2000s–2010s): 92% of songs have a mid-song instrumental section, median 4 bars (middle half 3–4), at 47% of the song.</p>
+<h4 id="what-a-solo-is-342-solos">What a solo is (342 solos)</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Period</th>
+<th>Solos</th>
+<th>Length (s)</th>
+<th>Length (bars)</th>
+<th>Starts at (share of song)</th>
+<th>Plays the chords of: own / verse / chorus</th>
+<th>Lead: guitar / horns or sax / synthesizer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1958–64</td>
+<td>32</td>
+<td>16 (12–21)</td>
+<td>8 (8–12)</td>
+<td>0.53</td>
+<td>34 / 34 / 28%</td>
+<td>28 / 31 / 0%</td>
+</tr>
+<tr class="even">
+<td>1965–69</td>
+<td>49</td>
+<td>19 (13–28)</td>
+<td>9 (8–16)</td>
+<td>0.57</td>
+<td>63 / 24 / 10%</td>
+<td>49 / 10 / 0%</td>
+</tr>
+<tr class="odd">
+<td>1970–74</td>
+<td>64</td>
+<td>20 (15–33)</td>
+<td>8 (8–16)</td>
+<td>0.51</td>
+<td>50 / 28 / 22%</td>
+<td>59 / 8 / 0%</td>
+</tr>
+<tr class="even">
+<td>1975–79</td>
+<td>59</td>
+<td>27 (17–32)</td>
+<td>12 (8–16)</td>
+<td>0.54</td>
+<td>41 / 36 / 22%</td>
+<td>51 / 10 / 2%</td>
+</tr>
+<tr class="odd">
+<td>1980–84</td>
+<td>65</td>
+<td>20 (16–28)</td>
+<td>9 (8–16)</td>
+<td>0.57</td>
+<td>45 / 34 / 17%</td>
+<td>45 / 17 / 14%</td>
+</tr>
+<tr class="even">
+<td>1985–91</td>
+<td>73</td>
+<td>19 (16–28)</td>
+<td>8 (8–16)</td>
+<td>0.52</td>
+<td>51 / 27 / 21%</td>
+<td>41 / 10 / 8%</td>
+</tr>
+<tr class="odd">
+<td>All</td>
+<td>342</td>
+<td>20 (15–30)</td>
+<td>9 (8–16)</td>
+<td>0.54 (0.45–0.65)</td>
+<td>48 / 30 / 20%</td>
+<td>47 / 13 / 5%</td>
+</tr>
+</tbody>
+</table>
+<p>The other mid-song instrumental sections (interludes, instrumental themes): median 8 bars (4–12), 15 seconds.</p>
+<p><strong>Where it sits:</strong> a solo follows a chorus 40% of the time, a verse 18%, the bridge 11%, and leads into a verse 33%, a chorus 24%, a second solo 10%, the fade 7%.</p>
+<h4 id="what-the-numbers-say">What the numbers say</h4>
+<ol type="1">
+<li><p><strong>Solos rose through the corpus:</strong> from about a fifth of early-1960s hits to nearly half by 1985–91, and three quarters of 1980s hits had some mid-song instrumental section. The literature’s later decline (Dalla Riva; the Kohaku count) falls after 1991, so v8 needs an era setting here too.</p></li>
+<li><p><strong>A solo is 8 bars, sometimes 16, about 20 seconds,</strong> and sits just past the middle of the song (median 0.54, middle half 0.45 to 0.65), the same place as v7’s breath-and-reentry window (749.19, 0.55 to 0.60).</p></li>
+<li><p><strong>Half of solos have chords of their own;</strong> the rest play over the verse (30%) or the chorus (20%). Almost none use the bridge’s chords: the solo is the bridge, or sits next to it.</p></li>
+<li><p><strong>The usual path is chorus, solo, verse or chorus:</strong> the solo is the contrast after the second chorus, before the last cycle.</p></li>
+<li><p><strong>The lead instrument follows the era:</strong> saxophone and horns led early-1960s solos as often as guitar; guitar led about half from 1965 on; synthesizer took 14% in the early 1980s.</p></li>
+<li><p><strong>Short instrumental links are everywhere:</strong> a 4-bar link in nine of ten POP909 songs, and 8-bar interludes in Billboard. Songs 52, 54 and 55’s 4-bar breaks fit this, not the solo.</p></li>
+</ol>
+<h3 id="what-v8-should-do">4. What v8 should do</h3>
+<h4 id="s1.-two-kinds-of-instrumental-section">S1. Two kinds of instrumental section</h4>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kind</th>
+<th>What it is</th>
+<th>Length</th>
+<th>Where</th>
+<th>Material</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Link (interlude, turnaround, break)</td>
+<td>A short instrumental passage between sections, usually playing the hook or the riff</td>
+<td>2 to 8 bars (POP909 median 4; Billboard interludes 8)</td>
+<td>Between a chorus and the next verse; may recur</td>
+<td>The intro’s figure, the hook, or a call and answer (songs 52, 54, 55)</td>
+</tr>
+<tr class="even">
+<td>Solo</td>
+<td>An instrumental section that takes the song’s middle</td>
+<td>8 bars, sometimes 16; about 20 seconds</td>
+<td>After the second chorus, starting at 0.45 to 0.65 of the song, leading into the last verse or chorus; may replace the bridge or follow it</td>
+<td>Its own chords (half), the verse’s (30%) or the chorus’s (20%)</td>
+</tr>
+</tbody>
+</table>
+<p>The intake asks whether the song has a solo, defaulting by era and style: rare in an early1960s sound (about one in five); common in a 1970s or 1980s rock or pop-rock sound (a third to a half); uncommon now outside rock, country and worship. Songs without a solo still get links.</p>
+<h4 id="s2.-the-solos-line">S2. The solo’s line</h4>
+<ul>
+<li><p><strong>Instrument:</strong> the style’s lead (guitar in rock and country; saxophone in early-1960s pop, soul and R&amp;B; synthesizer in 1980s pop; fiddle or steel in country; organ or piano in gospel).</p></li>
+<li><p><strong>Content, in three kinds:</strong> a restatement of the hook or verse tune on the instrument (the safest, and what songs 52 to 55’s links did), an elaboration (the tune with fills and runs), or a new line built on the section’s scale, using 27.21’s figure and riff tools.</p></li>
+<li><p><strong>Shape:</strong> it rises to its peak in its second half and hands back to the voice with a fill (the band window’s fill rules), so the voice’s re-entry is the fresh moment of 749.19.</p></li>
+<li><p><strong>Intensity:</strong> at or above the chorus before it (749.17’s rising returns); the arrangement thins only if the song’s plan puts a breakdown there instead.</p></li>
+</ul>
+<h4 id="s3.-the-documents">S3. The documents</h4>
+<ul>
+<li>The lead sheet prints the solo’s chords and a written line (or slashes with “solo, 8 bars” when it’s to be improvised); the parts give the soloist the line or the changes; the songbook says what the solo should do in a sentence.</li>
+</ul>
+<h4 id="s4.-tests">S4. Tests</h4>
+<ul>
+<li><p>The form report prints each instrumental section’s kind, length, place and material against these bands and the era’s solo share.</p></li>
+<li><p>The solo’s line passes the instrumental-line floors (27.21) and the perception checks (no masking of the voice, which is silent there).</p></li>
+<li><p>First targets: song 54 or 55 rerun with an 8-bar fiddle solo over the verse’s chords after chorus 2, and song 56 with a saxophone or guitar solo over its own chords before the bridge.</p></li>
+</ul>
+<h3 id="files-and-sources">5. Files and sources</h3>
+<h4 id="in-the-repo-studiessolos">In the repo (studies/solos)</h4>
+<ul>
+<li><p><code>solos_billboard.py</code> : solos and other mid-song instrumental sections in McGill</p></li>
+<li><p>Billboard (length, place, neighbours, material, lead instrument), per song (solo, instrumental, share with lead voice); <code>solos_results.json</code> .</p></li>
+<li><p><code>solos_pop909.py</code> : mid-song instrumental sections in POP909; <code>solos_pop909.json</code> .</p></li>
+</ul>
+<h4 id="sources">Sources</h4>
+<ul>
+<li><p>Covach, J. (2005). Form in rock music: a primer. In Engaging Music; via Open Music Theory (Hughes and Lavengood), Verse-chorus form.</p></li>
+<li><p>Carter (2025), on form in blues-based songs (the solo-bridge and two-bridge models), Music Theory Online 31(1), mto.25.31.1.carter.</p></li>
+<li><p>Formal dialectic in heavy metal music (PhD dissertation, University of Oregon, 2022). Osborn, B. (2013), terminally climactic forms; Spicer, M. (2004), (ac)cumulative form.</p></li>
+<li><p>Rays, M. Number One with an Axe; Culture Sonar series on guitar in number-one hits (1955–1984).</p></li>
+<li><p>Dalla Riva, C. The decline and fall of the hit instrumental song. The Honest Broker. Soundhouse (Japan), guitar solos in the 2021 Kohaku Uta Gassen songs.</p></li>
+<li><p>Hit Songs Deconstructed, The State of the Hot 100 Top 10, 2025 mid-year report (preview).</p></li>
+<li><p>McGill Billboard annotations (Burgoyne, Wild and Fujinaga) via ChoCo; POP909 (Wang et al.) with Dai, Zhang and Dannenberg’s structure labels.</p></li>
+</ul>
+<p>Not reached: the counts behind Dalla Riva’s chart, and any study of what solos play note by note in popular song.</p>
 
 <a class="top" href="#start">Top</a>
 </body>
