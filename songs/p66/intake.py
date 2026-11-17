@@ -52,3 +52,7 @@ LOG.append({"q": "final report", "answer": "done", "note": "Part 23 added; the f
 LOG.append({"q": "final report done: next", "options": {"A": "send it to the maintainer now", "B": "read the unread sources first (Halle and Lerdahl, Dell and Halle, others) and fold them into Part 23", "C": "something else"}, "recommended": "A", "answer": "B", "note": "verbatim: 'B.  Keep researching'"})
 
 LOG.append({"q": "keep researching (after B)", "answer": "done", "note": "second round of reading on setting words folded into Part 23 (Hayes maxent, Dell and Halle, de Castro Arrazola, Tan et al., White 2022, Gilroy et al. 2024); words_more.py measured stress-metre contours and voiced endings; final report rebuilt, 243 pages"})
+
+LOG.append({"q": "Part 23 extended: next", "options": {"A": "send the final report to the maintainer now", "B": "keep going on words: read Hayes and MacEachern, Temperley 2019, VanderStel and Temperley 2022, Proto and Dell", "C": "something else"}, "recommended": "A", "answer": "B"})
+
+LOG.append({"q": "keep going on words (after B)", "answer": "done", "note": "third round folded into Part 23 (Proto 2013 with Dell and Halle conditions, Temperley 2019 and 2021, VanderStel and Temperley 2022, Hayes and MacEachern 1998, Taniguchi); Pop20c measured by period (pop20c_test.py); final report rebuilt, 245 pages"})

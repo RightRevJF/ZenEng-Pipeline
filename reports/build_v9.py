@@ -1,4 +1,4 @@
-"""The final report rebuilt after the second round of reading on setting words (17 Nov): Start here re-rendered, Parts 1 to 22 taken
+"""The final report rebuilt after the further reading on setting words (17 Nov; rerun after each round): Start here re-rendered, Parts 1 to 22 taken
 unchanged from the final report, and Part 23 replaced by its Doc's new PDF export. Run in /home/claude/handoff with r3/words.pdf."""
 import subprocess, shutil
 from pypdf import PdfReader, PdfWriter

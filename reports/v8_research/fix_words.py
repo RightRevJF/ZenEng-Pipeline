@@ -30,7 +30,11 @@ md = md[:a] + """- `parse_words.py`: every sung syllable of CoCoPops Billboard a
 
 - `words_more.py`: the follow-ups from the further reading (stress and metre as contours, voiced endings and length).
 
-- `words_results.json` and `words_more_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
+- `pop20c_test.py`: the same measures by period on the Pop20c corpus, 1900 to 1999.
+
+- `words_results.json`, `words_more_results.json` and `pop20c_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
 if "Data: [CoCoPops]" not in md: md = md.replace("Data: CoCoPops, CC BY", "Data: [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops), CC BY", 1)
 md = re.sub(r"(?m)^### (\*\*)?(Sources read:|Checks for the port:|Measured:)(\*\*)?$", r"\2", md)
+md = md.replace("(Proto 2013)", "([Proto 2013](https://hispadoc.es/descarga/articulo/4147297.pdf))")
+md = re.sub(r"(\d{4})\u2013 (\d{4})", lambda m: m.group(1) + "\u2013" + m.group(2), md)
 open("words.md", "w").write(md); print("ok", md.count("data:image"))

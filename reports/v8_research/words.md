@@ -1,4 +1,4 @@
-**Summary.** Luthier v7 already measures stress on the beat, line endings and vowels on held notes, but it set aside a rule for a word's pitch shape and any vowel table for men, and its songs put weak syllables on the downbeat. In 199 Billboard songs and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time, and a word's stressed syllable is lower than its other syllables in 18% to 20% of words. Songs 54 and 55 do both about twice as often (10% to 12%, and 34%), mostly through line openings like "And" and "But" on the bar line. On vowels, height alone barely matters; held high notes do, with men's held top notes open 61% of the time and reduced only 7%. v8 should grade its stress cost, give weak line openings a pickup, add a word-shape rule for pitch, and add a vowel rule for held high notes by voice, all as weights in Part 21's placement. A second round of reading adds two measured rules: stress and metre should move together between neighbouring syllables (song 54 opposes them 47% of the time across words, against 29% in the corpus), and words ending in a voiced consonant take longer notes (55% against 33%).
+**Summary.** Luthier v7 already measures stress on the beat, line endings and vowels on held notes, but it set aside a rule for a word's pitch shape and any vowel table for men, and its songs put weak syllables on the downbeat. In 199 Billboard songs and 80 Rolling Stone 200 songs, weak syllables take beat 1 only 4% to 6% of the time, and a word's stressed syllable is lower than its other syllables in 18% to 20% of words. Songs 54 and 55 do both about twice as often (10% to 12%, and 34%), mostly through line openings like "And" and "But" on the bar line. On vowels, height alone barely matters; held high notes do, with men's held top notes open 61% of the time and reduced only 7%. v8 should grade its stress cost, give weak line openings a pickup, add a word-shape rule for pitch, and add a vowel rule for held high notes by voice, all as weights in Part 21's placement. A second round of reading adds two measured rules: stress and metre should move together between neighbouring syllables (song 54 opposes them 47% of the time across words, against 29% in the corpus), and words ending in a voiced consonant take longer notes (55% against 33%). Across the century (the Pop20c corpus, 1900 to 1999), weak syllables on beat 1 stay near 5% in every period while syncopation more than doubles, so the downbeat band is fixed and the contour targets depend on era and style.
 
 ## What Luthier v7 does now
 
@@ -6,9 +6,9 @@ v7 is already strong on words: it measured stress, vowels and line endings on la
 
 What it has (Luthier v7):
 
-**Stress on the beat (Window 25).** On 646,345 karaoke syllables, a syllable on a strong beat is stressed 75% of the time against a base rate of 54%. The engine's alignment floor reads stressed syllables on beats, with monosyllabic function words counted unstressed.
+- **Stress on the beat (Window 25).** On 646,345 karaoke syllables, a syllable on a strong beat is stressed 75% of the time against a base rate of 54%. The engine's alignment floor reads stressed syllables on beats, with monosyllabic function words counted unstressed.
 
-**Anticipation credited (Module 10.19, Window 69).** A stressed syllable an eighth before an empty strong beat counts as on it (rock does this with about a quarter of its stresses).
+- **Anticipation credited (Module 10.19, Window 69).** A stressed syllable an eighth before an empty strong beat counts as on it (rock does this with about a quarter of its stresses).
 
 - **Length.** Stressed syllables are only a tenth longer; the title's last stress is held about 1.5 times; a line's last note runs about 1.9 times the rest, and a line that ends short is named. English popular song holds a word's last syllable rather than its stressed one (Window 98).
 
@@ -142,6 +142,33 @@ Measured:
 
 - **Voiced endings get longer notes.** One-syllable content words ending in a voiced consonant ("bed", "love", "eyes") take a note longer than the song's median 55% of the time; those ending voiceless ("bet", "life", "ice") 33%, with line-final words left out. Crossed with the vowel: tense and voiced 58%, tense and voiceless 35%, lax and voiced 52%, lax and voiceless 29%. In real songs the voicing effect (about 22 points) is larger than the vowel's (about 6), the reverse of the laboratory. Songs 54 and 55 show the voicing lean weakly and sing tense vowels on long notes less often than lax ones (26% against 29%, and 40% against 44%).
 
+## Across the century
+
+A third round of reading, and a third corpus, show which word rules are fixed and which move with the era. Weak syllables on beat 1 stay at about 5% in every period from 1900 to 1999; syncopation, and with it the share of stresses set against the metre, more than doubles.
+
+- **Where English allows a mismatch.** Dell and Halle (2009), as summarised by Proto: in English folk songs a stress-to-beat mismatch is not allowed inside a word, nor across a word boundary when the unstressed syllable comes first ([Proto 2013](https://hispadoc.es/descarga/articulo/4147297.pdf)). So "MOther" set backwards is out, and so is "the MAN" with "the" on the beat and "man" off it; "MAN the" the other way round is tolerated.
+
+- **Mismatches have grown rarer over the centuries.** In nearly 90 English songs from the 13th century to Shakespeare's time, about half had at least one mismatch inside a word; present-day English folk song is stricter, and the old leftover is the inversion at the right edge of a phrase ([Proto 2013](https://hispadoc.es/descarga/articulo/4147297.pdf)).
+
+- **Listeners hear it.** In a sung-word recognition study, words were recognised more often when their stress matched metrical prominence, and wrong answers followed the metre ("disease" sung with the accent on its first syllable heard as "dizzy") [(Taniguchi, AMLaP abstract](https://www.uni-saarland.de/fileadmin/upload/fakultaet-p/amlap/Abstracts/submission_181.pdf)).
+
+- **Two kinds of syncopation, two roots.** Second-position syncopation (an accent on the second quarter of a half-note or quarter-note unit) is common in 19th-century English, Scottish and American song and rare in German, Italian and French; its strongest forms are almost only British, and Temperley ties the snap to short stressed English syllables ([Temperley 2019](https://www.osu.tests.sfulib4.publicknowledgeproject.org/index.php/EMR/article/view/6986/5453)). Fourth-position syncopation, the anticipatory kind, appears in no published 19th-century vocal music and first shows in ragtime around 1900 ([Temperley 2021)](https://core-prod.cambridgecore.org/core/journals/popular-music/article/origins-of-syncopation-in-american-popular-music/941F3ADA4C6254F1D26025152F4806F3).
+
+- **Syncopation rose all century.** In the most popular American song of each year from 1900 to 1999, syncopation increases throughout, and its strong forms rise faster and later than its weak ones ([VanderStel and Temperley 2022)](https://x-mol.com/paper/1686891139678621696).
+
+- **Line ends mark the stanza.** In Appalachian folk quatrains, truncated lines (a silent last beat) mark line, couplet or quatrain ends; 4444 (203) and 4343 (188) are the commonest forms, and 4333 is essentially absent while 3343 is tolerated, a long-last tendency [(Hayes and MacEachern 1998, class notes)](https://www.brucehayes.org/251HayesSchuhMetrics/handouts/12QuatrainI.pdf). Part 21's phrase rules already cover this at the level of bars.
+
+Measured on Pop20c (the most popular song of each year, transcribed from recordings, with stress; 77 songs in simple quadruple time, `studies/words/pop20c_test.py`):
+
+|Period (songs)|Weak syllables on beat 1|One-syllable function words on beat 1|Stresses on an offbeat eighth|Of those, anticipations|Stress lower than its word|Opposed across words|Opposed inside words|
+|---|---|---|---|---|---|---|---|
+|1900–1929 (29)|5%|7%|14%|55%|31%|15%|5%|
+|1930–1954 (12)|5%|7%|26%|80%|28%|19%|8%|
+|1955–1979 (19)|7%|8%|24%|56%|21%|18%|10%|
+|1980–1999 (17)|5%|5%|34%|65%|23%|38%|26%|
+
+The weak-syllable floor on beat 1 holds in every period, so v8's band for it needs no era setting. The stressed syllable's place inside its word settles at about a fifth from the 1950s on. Stresses on offbeat eighths more than double, and the share of stress and metre moving against each other rises with them (it counts anticipations as opposed); that target has to be set by era and style. Songs 54 and 55's weak syllables on beat 1 (10% to 12%) exceed every period.
+
 ## What v8 should do
 
 Keep v7's word rules and add three: a graded cost for weak syllables on strong beats, a word-shape rule for pitch, and a vowel rule for held high notes by voice. Each fits Part 21's weighted placement, where a setting is the best compromise rather than a pass or a death.
@@ -164,7 +191,7 @@ Keep v7's word rules and add three: a graded cost for weak syllables on strong b
 
 Two more, from the further reading:
 
-- **Stress and metre move together.** Score each pair of neighbouring syllables: opposed movement inside a word costs most when the stress falls (target at most about 15%), across words at most about 30%, with an anticipation counted as parallel; at a line's start only a falling opposition costs.
+- **Stress and metre move together.** Score each pair of neighbouring syllables: opposed movement inside a word costs most when the stress falls (target at most about 15%), across words at most about 30% (about 15% to 20% for a pre-1980 style, up to about 38% for a 1980s one), with an anticipation counted as parallel; at a line's start only a falling opposition costs.
 
 - **Length follows the ending as well as the vowel.** In the placement score, a word ending in a voiced consonant leans to a longer note (about 55% against 33%), alongside v7's tense-vowel lean, which songs 54 and 55 currently invert. Fit the weights per style, as Hayes's speakers differ (Part 21's weighted placement).
 
@@ -186,7 +213,9 @@ In the repo, `studies/words/`:
 
 - `words_more.py`: the follow-ups from the further reading (stress and metre as contours, voiced endings and length).
 
-- `words_results.json` and `words_more_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.
+- `pop20c_test.py`: the same measures by period on the Pop20c corpus, 1900 to 1999.
+
+- `words_results.json`, `words_more_results.json` and `pop20c_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.
 
 Data: [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops), CC BY-NC 4.0, derived counts only; stress from the CMU Pronouncing Dictionary (via the `pronouncing` package) for Billboard. Luthier v7 Windows 25, 39, 69 and 98 and Module 10.19 for what the engine already does.
 
@@ -212,14 +241,14 @@ Sources read:
 
 - Friedrichs et al., vowel identification at high pitch ([manuscript](https://discovery.ucl.ac.uk/id/eprint/10142399/1/Friedrichs_Manuscript_Revised_v2.pdf)).
 
-- Collister and Huron (2008), sung intelligibility, _Empirical Musicology Review_ ([PDF](https://d-scholarship.pitt.edu/19444/1/EMR000050a%2DCollister%2DHuron.pdf)).
-
-- Chan and Kuang, sung vowel identification from C2 to D6, _JASA_ ([summary)](https://synapsesocial.com/papers/W7160911134).
+- Collister and Huron (2008), sung intelligibility, _Empirical Musicology Review_ ([PDF](https://d-scholarship.pitt.edu/19444/1/EMR000050a%2DCollister%2DHuron.pdf)). Chan and Kuang, sung vowel identification from C2 to D6, _JASA_ ([summary)](https://synapsesocial.com/papers/W7160911134).
 
 - Bourne et al. (2016), "Physiological and Acoustic Characteristics of the Male Music Theatre Voice", _JASA_ [(record)](https://isidore.science/document/10670/1.ih8oq6).
 
-Titze, formant frequency shifts in belting [(PDF](https://vocology.utah.edu/_resources/documents/formant_frequency_shifts_titze.pdf)); Titze and Worley (2009), _JASA_ [(PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2757425)).
+- Titze, formant frequency shifts in belting [(PDF](https://vocology.utah.edu/_resources/documents/formant_frequency_shifts_titze.pdf)); Titze and Worley (2009), _JASA_ [(PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2757425)).
 
-Nix (2004), "Vowel Modification Revisited" ([abstract)](https://ncvs.org/archive/pas/2004/abstracts/nix1.htm).
+- Nix (2004), "Vowel Modification Revisited" ([abstract)](https://ncvs.org/archive/pas/2004/abstracts/nix1.htm).
 
-Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), "Comparing Musical Textsetting in French and in English Songs", abstract; de Castro Arrazola (2018), _Typological Tendencies in Verse and Their Cognitive Grounding_ , chapters 6 and 7; Tan, Lustig and Temperley (2019), "Anticipatory Syncopation in Rock: A Corpus Study", _Music Perception_ 36.4; White (2022), "A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music", _Journal of Mathematics and Music_ 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), "Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting", CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), "A Generative Textsetting Model", _Current Musicology_ 55; Henrich et al. (2011) on resonance tuning by voice type, _JASA_ . Found on the way, not read: Hayes and MacEachern (1998); Temperley (2019), "Second-Position Syncopation in European and American Vocal Music"; VanderStel and Temperley (2022) on the evolution of syncopation; Proto and Dell (2013).
+Further reading (the section above): Hayes, maxent slides; Dell and Halle (2009), "Comparing Musical Textsetting in French and in English Songs", abstract; de Castro Arrazola (2018), _Typological Tendencies in Verse and Their Cognitive Grounding_ , chapters 6 and 7; Tan, Lustig and Temperley (2019), "Anticipatory Syncopation in Rock: A Corpus Study", _Music Perception_ 36.4; White (2022), "A Comparative Analysis of Melodic Rhythm in Two Corpora of American Popular Music", _Journal of Mathematics and Music_ 16.2, abstract; Gilroy, Blumenfeld and Toivonen (2024), "Both Intrinsic and Allophonic Vowel Duration Matter in Textsetting", CogSci. Not reachable (blocked to automated reading): Halle and Lerdahl (1993), "A Generative Textsetting Model", _Current Musicology_ 55; Henrich et al. (2011) on resonance tuning by voice type, _JASA_ . Third round (the section
+
+"Across the century"): Proto (2013), "Prominence Matching in English Songs: A Historical Perspective", Signa 22, with Dell and Halle's two conditions; Temperley (2019), "SecondPosition Syncopation in European and American Vocal Music", Empirical Musicology Review 14; Temperley (2021), "The Origins of Syncopation in American Popular Music", Popular Music 40, abstract; VanderStel and Temperley (2022), "The Evolution of Syncopation in Twentieth-Century American Popular Music", Journal of New Music Research 51, abstract, and their Pop20c corpus (github.com/vanderstel/pop-corpus; no licence stated, derived counts only); Hayes and MacEachern (1998), "Quatrain Form in English Folk Verse", Language 74, through Hayes's class notes; Taniguchi, sung word recognition, AMLaP abstract. Proto and Dell (2013) on Italian songs: abstract only (song rhythm is anchored in measured time and has more than two levels of prominence, unlike literary verse).

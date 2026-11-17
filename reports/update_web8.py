@@ -1,4 +1,4 @@
-"""The web page after the second round of reading on setting words (17 Nov): Start here re-rendered from web_start.md, and Part 23
+"""The web page after the further reading on setting words (17 Nov; rerun after each round): Start here re-rendered from web_start.md, and Part 23
 replaced by its Doc's new PDF export turned into markdown (/home/claude/handoff/r3/clean.py, then fix_words.py). Parts 1 to 22 kept."""
 import re, subprocess
 H = "luthier_offline.html"; s = open(H).read()
