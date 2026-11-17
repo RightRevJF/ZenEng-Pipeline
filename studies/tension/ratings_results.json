@@ -1,0 +1,157 @@
+{
+ "correlations": {
+  "tps_tonic": {
+   "r": 0.026,
+   "ci": [
+    -0.001,
+    0.055
+   ],
+   "median_song_r": 0.03,
+   "share_positive": 0.61
+  },
+  "tps_seq": {
+   "r": 0.028,
+   "ci": [
+    0.002,
+    0.055
+   ],
+   "median_song_r": 0.02,
+   "share_positive": 0.59
+  },
+  "old": {
+   "r": 0.017,
+   "ci": [
+    -0.008,
+    0.044
+   ],
+   "median_song_r": 0.015,
+   "share_positive": 0.6
+  },
+  "diss": {
+   "r": 0.003,
+   "ci": [
+    -0.035,
+    0.047
+   ],
+   "median_song_r": -0.002,
+   "share_positive": 0.5
+  },
+  "pitch": {
+   "r": 0.142,
+   "ci": [
+    0.07,
+    0.215
+   ],
+   "median_song_r": 0.105,
+   "share_positive": 0.68
+  },
+  "pmax": {
+   "r": 0.129,
+   "ci": [
+    0.068,
+    0.193
+   ],
+   "median_song_r": 0.1,
+   "share_positive": 0.68
+  },
+  "onset_rate": {
+   "r": 0.038,
+   "ci": [
+    -0.006,
+    0.081
+   ],
+   "median_song_r": 0.022,
+   "share_positive": 0.55
+  },
+  "sung": {
+   "r": 0.045,
+   "ci": [
+    -0.001,
+    0.093
+   ],
+   "median_song_r": 0.047,
+   "share_positive": 0.6
+  },
+  "nct": {
+   "r": -0.004,
+   "ci": [
+    -0.024,
+    0.017
+   ],
+   "median_song_r": 0.004,
+   "share_positive": 0.51
+  },
+  "rms": {
+   "r": 0.064,
+   "ci": [
+    -0.088,
+    0.199
+   ],
+   "median_song_r": 0.203,
+   "share_positive": 0.74
+  }
+ },
+ "models": {
+  "old chord value alone": {
+   "best_tau_harmony_s": 32,
+   "best_tau_other_s": 0,
+   "r2_cv": 0.009,
+   "r2_no_memory": -0.0,
+   "r2_short_memory_all": 0.001
+  },
+  "Lerdahl distance from tonic alone": {
+   "best_tau_harmony_s": 32,
+   "best_tau_other_s": 0,
+   "r2_cv": 0.017,
+   "r2_no_memory": 0.0,
+   "r2_short_memory_all": 0.005
+  },
+  "harmony (Lerdahl + dissonance)": {
+   "best_tau_harmony_s": 32,
+   "best_tau_other_s": 0,
+   "r2_cv": 0.014,
+   "r2_no_memory": -0.0,
+   "r2_short_memory_all": 0.003
+  },
+  "melody and texture only": {
+   "best_tau_harmony_s": 0,
+   "best_tau_other_s": 8,
+   "r2_cv": 0.06,
+   "r2_no_memory": 0.023,
+   "r2_short_memory_all": 0.06
+  },
+  "score: all": {
+   "best_tau_harmony_s": 32,
+   "best_tau_other_s": 8,
+   "r2_cv": 0.066,
+   "r2_no_memory": 0.023,
+   "r2_short_memory_all": 0.059
+  },
+  "recording loudness alone": {
+   "best_tau_harmony_s": 0,
+   "best_tau_other_s": 8,
+   "r2_cv": 0.084,
+   "r2_no_memory": 0.056,
+   "r2_short_memory_all": 0.084
+  },
+  "score + loudness": {
+   "best_tau_harmony_s": 32,
+   "best_tau_other_s": 8,
+   "r2_cv": 0.126,
+   "r2_no_memory": 0.075,
+   "r2_short_memory_all": 0.122
+  }
+ },
+ "harmony_window_curve": {
+  "0": 0.0592,
+  "2": 0.0586,
+  "4": 0.0583,
+  "8": 0.059,
+  "12": 0.0603,
+  "16": 0.0617,
+  "20": 0.0629,
+  "24": 0.0641,
+  "32": 0.0659,
+  "48": 0.068
+ }
+}
