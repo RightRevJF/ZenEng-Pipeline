@@ -38,7 +38,7 @@ def clean(name):
         out.append(l); i += 1
     md = "\n".join(out)
     md = re.sub(r"\A\s*# .*\n", "", md.lstrip())          # the title (the part heading carries it)
-    md = re.sub(r"\A\s*Nov 16, 2026 · @Jason Bryant[^\n]*\n", "", md)
+    md = re.sub(r"\A\s*Nov 1[67], 2026 · @Jason Bryant[^\n]*\n", "", md)
     md = re.sub(r"\n{3,}", "\n\n", md)
     # restore links in order
     pos = 0

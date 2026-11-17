@@ -46,3 +46,5 @@ LOG.append({"q": "further reading added: next", "options": {"A": "add as Part 22
 LOG.append({"q": "Part 22 added: next", "options": {"A": "stop the research and send the file to the maintainer", "B": "one more study: how melodies set English words (stress, vowels and high notes)", "C": "something else"}, "recommended": "A", "answer": "B", "note": "verbatim: 'B.  Then add everything to a final report for the maintainer'"})
 
 LOG.append({"q": "words study (in progress after B)", "answer": "delivered", "note": "Doc Setting words for Luthier v8 (https://claude.ai/artifact/4xcqBYhnS8uLAFCzeuqtA2); measurement in studies/words; then the final report for the maintainer as asked"})
+
+LOG.append({"q": "final report", "answer": "done", "note": "Part 23 added; the file renamed Luthier - final report for v8 (14-17 November 2026).pdf, 240 pages; web page retitled Luthier: the final report for v8"})
