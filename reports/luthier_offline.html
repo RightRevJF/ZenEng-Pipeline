@@ -82,11 +82,14 @@ re-record (covers study)</a></li>
 views, covers, our songs, hymns and art song</a></li>
 <li><a href="#part-15" id="toc-part-15">Part 15. The Man Mama Prayed I’d Be (song 54): test report</a></li>
 <li><a href="#part-16" id="toc-part-16">Part 16. Your Yard Man (song 55): test report</a></li>
+<li><a href="#part-17" id="toc-part-17">Part 17. Luthier audit: harmony and arrangement</a></li>
+<li><a href="#part-18" id="toc-part-18">Part 18. Harmony research for Luthier v8: what follows what</a></li>
+<li><a href="#part-19" id="toc-part-19">Part 19. Arrangement research for Luthier v8: what the band does</a></li>
 </ul>
 </nav>
 <h1 id="start">Start here</h1>
-<p>This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
-<p><strong>For the maintainer:</strong> read Parts 1 and 2 in full. They say what to change. Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64 and songs/p65), for anyone with access. This page does not depend on it.</p>
+<p>This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with two research studies for the harmony and band writers v8 needs (Parts 17 to 19). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier’s maintainer, the AI that keeps the spec. Words and music: Jason Bryant.</p>
+<p><strong>For the maintainer:</strong> read Parts 1, 2 and 17 in full. They say what to change. Parts 18 and 19 are the research for the two new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony and studies/arrangement), for anyone with access. This page does not depend on it.</p>
 <h3 id="what-is-on-this-page">What is on this page</h3>
 <table>
 <colgroup>
@@ -164,20 +167,35 @@ views, covers, our songs, hymns and art song</a></li>
 <td><a href="#part-16">16</a></td>
 <td>Your Yard Man (song 55, on Luthier v7): test report</td>
 </tr>
+<tr class="odd">
+<td><a href="#part-17">17</a></td>
+<td><strong>Luthier audit: harmony and arrangement.</strong> What the engine writes and what an AI has written, item by item and song by song; the gaps; the order of work for v8 and the no-hand-input test</td>
+</tr>
+<tr class="even">
+<td><a href="#part-18">18</a></td>
+<td>Harmony research for Luthier v8: what follows what (the McGill Billboard songs, a prototype chord writer, tested)</td>
+</tr>
+<tr class="odd">
+<td><a href="#part-19">19</a></td>
+<td>Arrangement research for Luthier v8: what the band does (the academic record, POP909, the Lakh band by genre)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="what-we-learned-in-brief">What we learned, in brief</h3>
 <ol type="1">
-<li><strong>Time signatures.</strong> Pitch habits carry across metres; rhythm habits do not, so the engine needs rhythm tables for each metre. Kept tables now exist for every common metre, and English stress falls on strong beats in each (findings 749.4 to 749.7, 749.15).</li>
-<li><strong>Hymns and organ.</strong> Hymn tunes are plainer than folk tunes and need their own mode. Organ accompaniment should be written by the role of each section (749.11 to 749.14, 749.16).</li>
-<li><strong>Song shape.</strong> Songs share one shape, a build to a late high point. There are no shape types, and shape says almost nothing about success. Use it as a craft check (749.17).</li>
-<li><strong>What audiences reward.</strong> Across 10,847 songs, more predictable melody, chords and rhythm go with more YouTube views, even within one artist’s songs (749.18, 749.20).</li>
-<li><strong>The moments people love.</strong> Listeners mark moments where the melody thins for a beat or two and then re-enters on a fresh note, a little past the middle of the song. Luthier already has this rule; this is listener evidence for it (749.19).</li>
-<li><strong>How it sounds.</strong> Checks for roughness, low crowded chords and the sung tune staying on top. They restate Luthier Module 9.14 and port it to organ and choir (749.21).</li>
-<li><strong>What musicians reward.</strong> Songs that musicians re-record most have harmony that moves within sections and melodies with room in them. This is a separate channel from views, found in two sources (749.22).</li>
-<li><strong>Chromatic harmony.</strong> Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose, not a new default. Hymns and art songs show what each style expects: in hymns, one or two applied dominants a verse are ordinary; art songs live in chromatic harmony at about three times the popular share (749.23).</li>
-<li><strong>Back on the engine (song 54).</strong> A country story song on Luthier v7 found the engine assumes a bridge, still loses two-thirds of its builds on long lines with borrowed rhythms, and lets most survivors sing two syllables on one note; the judge picked one, so the pick of record is the judge’s own rule without that fault. Two of the new rules need reading by texture and by song type (749.24 to 749.29).</li>
-<li><strong>Song 55, a second country song.</strong> The same two-syllables fault decided the pick again (42% of clean survivors), so it is general. Most builds died at the chorus’s one-bar lines drawn fresh, a new place for placement deaths, and short lines in two-bar slots can open long rests between their words (749.30, 749.31).</li>
+<li><p><strong>Time signatures.</strong> Pitch habits carry across metres; rhythm habits do not, so the engine needs rhythm tables for each metre. Kept tables now exist for every common metre, and English stress falls on strong beats in each (findings 749.4 to 749.7, 749.15).</p></li>
+<li><p><strong>Hymns and organ.</strong> Hymn tunes are plainer than folk tunes and need their own mode. Organ accompaniment should be written by the role of each section (749.11 to 749.14, 749.16).</p></li>
+<li><p><strong>Song shape.</strong> Songs share one shape, a build to a late high point. There are no shape types, and shape says almost nothing about success. Use it as a craft check (749.17).</p></li>
+<li><p><strong>What audiences reward.</strong> Across 10,847 songs, more predictable melody, chords and rhythm go with more YouTube views, even within one artist’s songs (749.18, 749.20).</p></li>
+<li><p><strong>The moments people love.</strong> Listeners mark moments where the melody thins for a beat or two and then re-enters on a fresh note, a little past the middle of the song. Luthier already has this rule; this is listener evidence for it (749.19).</p></li>
+<li><p><strong>How it sounds.</strong> Checks for roughness, low crowded chords and the sung tune staying on top. They restate Luthier Module 9.14 and port it to organ and choir (749.21).</p></li>
+<li><p><strong>What musicians reward.</strong> Songs that musicians re-record most have harmony that moves within sections and melodies with room in them. This is a separate channel from views, found in two sources (749.22).</p></li>
+<li><p><strong>Chromatic harmony.</strong> Our songs use chromatic chords as single colours, mostly ♭VII. Audiences watch songs with more chromatic harmony less, and musicians do not re-record them more. So it should be a style the engine can choose, not a new default. Hymns and art songs show what each style expects: in hymns, one or two applied dominants a verse are ordinary; art songs live in chromatic harmony at about three times the popular share (749.23).</p></li>
+<li><p><strong>Back on the engine (song 54).</strong> A country story song on Luthier v7 found the engine assumes a bridge, still loses two-thirds of its builds on long lines with borrowed rhythms, and lets most survivors sing two syllables on one note; the judge picked one, so the pick of record is the judge’s own rule without that fault. Two of the new rules need reading by texture and by song type (749.24 to 749.29).</p></li>
+<li><p><strong>Song 55, a second country song.</strong> The same two-syllables fault decided the pick again (42% of clean survivors), so it is general. Most builds died at the chorus’s one-bar lines drawn fresh, a new place for placement deaths, and short lines in two-bar slots can open long rests between their words (749.30, 749.31).</p></li>
+<li><p><strong>Who writes what (the audit).</strong> In every song since v7 the engine wrote the sung melody and its rhythm, and the bass routine wrote the bass; an AI wrote each song’s chord plan and every other band part by hand, and songs 52 and 53 entirely. The goal is an engine that writes everything and uses AI only lightly, so v8 needs two new writers, harmony and arrangement, drawn from measured tables and tested, and a test that fails any song with a hand-typed chord or band note (Part 17).</p></li>
+<li><p><strong>Harmony (Part 18).</strong> On 739 Billboard songs each section kind has a sharp job (verses open on I three times in four, bridges end on V nearly half the time). A simple model of what follows what, trained on 592 songs, already passes as real on major-key verses and choruses; minor keys, bridges and pre-choruses need more data, and the writer needs a loop step, since real sections repeat a two- or four-bar cell.</p></li>
+<li><p><strong>The band (Part 19).</strong> Real intros carry about 70% of the fullest band; the chorus lifts by playing more notes (busier than the verse in 88% of 909 songs), not by moving higher; the bass plays about once a beat at any tempo; every genre’s commonest snare bar is 2 and 4, and genre shows in kick patterns, bass syncopation and piano voicing. The best published systems draw real phrases and fit them to new chords, which is how v8’s band writer should work.</p></li>
 </ol>
 <p>The main new idea: <strong>judge every song on two channels</strong>, what audiences reward and what musicians reward, and prefer songs that do well on both.</p>
 <h3 id="still-open">Still open</h3>
@@ -186,6 +204,7 @@ views, covers, our songs, hymns and art song</a></li>
 <li>Song 54 (The Man Mama Prayed I’d Be): delivered; blind pick taken (Middle); a made-for-real rerun is offered.</li>
 <li>Song 55 (Your Yard Man): delivered; blind pick taken (Remembered, the hook); a made-for-real rerun is offered.</li>
 <li>Song 52 (The Room Next Door) and song 53 were written outside the engine, so v8 should be able to write them itself.</li>
+<li>Song 56 (Terpsichore, a soul ballad): lyric locked and mouth-tested, and the engine’s melody runs are done; the song waits for v8’s harmony and band writers, so that the engine writes all of it.</li>
 </ul>
 <h3 id="data-and-cautions">Data and cautions</h3>
 <p>YouTube data is kept only as results: no comment text, usernames or audio. The Session’s tune data is not used, since its licence bans processing by AI. Every effect found is a few percent of the variance at most, so the new rules are targets and tie-breakers, not laws.</p>
@@ -9534,6 +9553,1382 @@ chromatic_styles.json, chromatic_hymn_beats.json).</p>
 <h2 id="blind-pick">Blind pick</h2>
 <p>The three 10.20 slots: remembered, “I’m your yard man”; middle, “But I’m my own man”; annotated, “Half-ton, trailer, mower on the back”.</p>
 <p>Offered shuffled as A annotated, B remembered, C middle. The writer chose <strong>B, “I’m your yard man”: the remembered slot.</strong></p>
+
+<h1 id="part-17">Part 17. Luthier audit: harmony and arrangement</h1>
+<p>16 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/4VpCZjhV64ua7EjPykjS1K">Luthier audit: harmony and arrangement</a>.</p>
+<h3 id="summary">Summary</h3>
+<p>The engine writes one thing: the sung melody. On harmony and arrangement, the record (Luthier v7, 15,350 lines, plus its tables) holds a great deal of research but almost no code that writes anything.</p>
+<ul>
+<li><p><strong>Harmony.</strong> 24 items, among them six measured tables. In code: the chord chart’s redraw (438), the bass’s inversions (440), and the melody’s fit to the chords (375, 386, 431, 432, 441, 442). Missing: anything that writes a section’s chord progression. Every song’s chord plan has been typed by an AI, including song 36’s “chords by the section jobs (177)”, which were a hand-written list.</p></li>
+<li><p><strong>Arrangement.</strong> Module 9 (9.1 to 9.14), the rock and metal modules (9-R, 9-M), Windows 118, 119, 143 and 144, and the offline findings 749.14, 749.16 and 749.21. In code: the bass routine (Windows 143 and 144) and the readers (9.12 energy arc, 9.13, 9.14). Missing: drums, the chordal part, instrumental figures, the texture plan and parts playing. Every band part but the bass has been written by an AI, per song, in that song’s build script.</p></li>
+</ul>
+<p>So a v8 that writes everything needs two new generators, harmony and arrangement, built the way the melody is: drawn from tables measured on real songs, and tested. Much of the measuring is done already; the main gaps are sequence data (what follows what) and data by genre and section role.</p>
+<h3 id="how-to-read-the-status">How to read the status</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Writes</strong></td>
+<td>The engine’s own code makes these notes or chords, the same way every run, with no AI choosing.</td>
+</tr>
+<tr class="even">
+<td>** Reads**</td>
+<td>The engine’s code measures or checks it (a reading, a gate, a consistency check) but writes nothing.</td>
+</tr>
+<tr class="odd">
+<td>** Table**</td>
+<td>The numbers were measured from real music and saved; no code writes from them yet.</td>
+</tr>
+<tr class="even">
+<td>** Rule**</td>
+<td>Written in the spec as what a song should do; applied only by an AI writing each song by hand, if at all.</td>
+</tr>
+<tr class="odd">
+<td>** Missing**</td>
+<td>Not in the record.</td>
+</tr>
+</tbody>
+</table>
+<p>Evidence is the fix or Window number in the spec, and the file where the code lives (the engine of record is <code>songs/p66/melody_l7_p66.py</code> ; the bass routine <code>bass_v134.py</code>).</p>
+<h3 id="harmony-what-the-record-holds">Harmony: what the record holds</h3>
+<p>Of 24 harmony items, the engine writes from four and reads four; the other sixteen are tables, rules or missing, and nothing writes from them. No code writes a chord progression.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Where</th>
+<th>What it says</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>The chart’s changes</td>
+<td>Window 143, fix 438</td>
+<td>A section’s bars with two changes, and bars holding the last chord, inside the kept quartiles (Table ED)</td>
+<td>** Writes**: adds or holds changes within a plan it is given</td>
+</tr>
+<tr class="even">
+<td>The bass under the chord</td>
+<td>440</td>
+<td>The root at nine changes in ten; a third or fifth in the bass with a step beside it</td>
+<td>** Writes**(inversions, <code>BASS8</code>)</td>
+</tr>
+<tr class="odd">
+<td>The melody against the chord</td>
+<td>375, 386, 431, 432, 441, 442</td>
+<td>Chord tones on the first beat near 72%; no note a semitone from a chord’s outside tone</td>
+<td>** Writes**the melody’s fit; the chords themselves are given</td>
+</tr>
+<tr class="even">
+<td>Modal chord tones in minor</td>
+<td>349, 353</td>
+<td>A minor song’s measures read on its own tonic; its outside notes at the kept minor rate</td>
+<td>** Writes**(melody only)</td>
+</tr>
+<tr class="odd">
+<td>Melody against bass, by class</td>
+<td>Window 95, 135 to 137</td>
+<td>Interval and motion shares at bass moves; hymn gates; the bass as a line in hymns</td>
+<td>** Reads**(printed); the hymn gate only in the sketch path</td>
+</tr>
+<tr class="even">
+<td>Cadences by strength</td>
+<td>138</td>
+<td>A full close ends on 1 over I; an open half on 2, 7 or 5 over V</td>
+<td>** Reads**; nothing writes the V or the I</td>
+</tr>
+<tr class="odd">
+<td>No contrary-motion rule</td>
+<td>443</td>
+<td>Direction against the bass is printed, never gated</td>
+<td>** Reads**</td>
+</tr>
+<tr class="even">
+<td>Harmony by class</td>
+<td>Window 105, 173 to 175; Table CN</td>
+<td>Vocabulary, root motion, chords a bar, tonic time, sevenths, inversions in seven bodies of music (24,137 Hooktheory pieces to 54 Mozart sonatas)</td>
+<td>** Table** (<code>zeneng_v88_tables.json</code>)</td>
+</tr>
+<tr class="odd">
+<td>Pull and distance</td>
+<td>175, Table CO</td>
+<td>Each chord’s pull toward the tonic and each move’s distance, by class</td>
+<td><strong>Table</strong></td>
+</tr>
+<tr class="even">
+<td>Section jobs</td>
+<td>Window 106, 176, 177; Table CP</td>
+<td>Verse opens on I and holds most tonic; chorus opens on I or IV and adds a chord; bridge and pre-chorus end on V; first and last chords and joins in 739 McGill songs</td>
+<td>** Table**; song 36’s “chords by the section jobs” were a hand-typed list</td>
+</tr>
+<tr class="odd">
+<td>The chorus changes the loop</td>
+<td>Window 28</td>
+<td>Chorus harmony differs from the verse’s; the chorus sits above</td>
+<td>** Rule**</td>
+</tr>
+<tr class="even">
+<td>Hits are not harmonically special</td>
+<td>Windows 28, 56</td>
+<td>No harmony feature separates top-ten records</td>
+<td>** Rule**(a caution)</td>
+</tr>
+<tr class="odd">
+<td>Harmony beyond the loop</td>
+<td>Window 56, Table AJ</td>
+<td>A second chord model for songs with sevenths (the standards)</td>
+<td>** Table**; the ledger (11.14) is not in the v7 pipeline</td>
+</tr>
+<tr class="even">
+<td>Expectation of chords</td>
+<td>Window 46; 749.18</td>
+<td>Chord surprise against a popular-music model; the sung line at or below the median</td>
+<td>** Reads**(research check, outside the engine)</td>
+</tr>
+<tr class="odd">
+<td>Modulation</td>
+<td>Window 55</td>
+<td>9% of McGill songs modulate, once, mostly up a semitone or tone, near the middle</td>
+<td>** Table**; the v7 engine’s lift is switched off (<code>LIFT2 = 0</code>)</td>
+</tr>
+<tr class="even">
+<td>Harmonic rhythm</td>
+<td>Part VII update; type tables (0.05 to 0.40 departure)</td>
+<td>Rate of change by type; one deceleration before the bridge or last chorus</td>
+<td>** Rule**</td>
+</tr>
+<tr class="odd">
+<td>Mode as colour palette</td>
+<td>Part IV-D; type tables</td>
+<td>A mode for each song type (Dorian for Paradox, Ionian or Dorian for Longing)</td>
+<td>** Rule**; chosen at intake from options an AI wrote</td>
+</tr>
+<tr class="even">
+<td>Chord vocabulary by type</td>
+<td>Module 0.4, type tables</td>
+<td>Allowed and forbidden chords by type (min7, sus4 for Paradox)</td>
+<td>** Rule**</td>
+</tr>
+<tr class="odd">
+<td>The deceptive cadence</td>
+<td>Window 8; item 111</td>
+<td>V to vi at a seam in a Longing song</td>
+<td>** Rule**</td>
+</tr>
+<tr class="even">
+<td>Blues and gospel harmony</td>
+<td>Windows 15, 16; Modules 21, 22</td>
+<td>The twelve-bar system; the vamp in a new key</td>
+<td>** Rule**</td>
+</tr>
+<tr class="odd">
+<td>Hymn setting</td>
+<td>Window 57; 749.11 to 749.13</td>
+<td>Four parts against hymn quartiles; passing notes in inner voices</td>
+<td>** Rule**; songs 52 and 53 by AI sketch scripts</td>
+</tr>
+<tr class="even">
+<td>Chromatic harmony as a style</td>
+<td>749.23</td>
+<td>Applied dominants and mixture rates by style</td>
+<td>** Table<strong>(studies/chromatic) and </strong> Rule**</td>
+</tr>
+<tr class="odd">
+<td>Harmony voices as lines</td>
+<td>749.9</td>
+<td>A harmony part written as a line, not a shadow of the lead</td>
+<td>** Rule**</td>
+</tr>
+<tr class="even">
+<td>A section’s chord</td>
+<td>none</td>
+<td>What follows what, by section</td>
+<td>** Missing**</td>
+</tr>
+<tr class="odd">
+<td>progression</td>
+<td></td>
+<td>and genre</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="arrangement-what-the-record-holds">Arrangement: what the record holds</h3>
+<p>Of 27 arrangement items, the engine writes two (the bass, and the demo’s audio from the record) and reads seven. Drums, the chordal part, fills, the intro figure, the texture plan and parts playing are measured or ruled but never written by code: each song’s build script, written by an AI, has done them by hand.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Where</th>
+<th>What it says</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>The bass as a line</td>
+<td>Window 118, 233; Windows 143, 144, 439, 444 to 448</td>
+<td>Root on 1 and at each change; a one-or two-bar cell; a note on most kicks; bands from 434 transcribed patterns</td>
+<td>** Writes**(<code>bass_v134.py</code>), on the engine’s grid only (it ran sixteenths at song 56’s 72)</td>
+</tr>
+<tr class="even">
+<td>Outer voices, twice</td>
+<td>234</td>
+<td>The outer-voice reading on the written bass and on the roots</td>
+<td>** Reads**</td>
+</tr>
+<tr class="odd">
+<td>The drum part</td>
+<td>Window 119, 236; Table DD</td>
+<td>Snare on 2 and 4, kick on 1 in nine bars of ten; one kick-and-snare bar a section; a fill in a section’s last bar; patterns from 2,667 band arrangements</td>
+<td>** Table** (<code>zeneng_v101_band_returns_eras.json</code>) and<strong>Rule</strong>; drums typed per song</td>
+</tr>
+<tr class="even">
+<td>The chordal part</td>
+<td>237; Table DE</td>
+<td>One bar rhythm a section from the kept vocabulary; three or four notes between MIDI 51 and 71, under the voice’s top</td>
+<td>** Table<strong>and</strong> Rule**; typed per song</td>
+</tr>
+<tr class="odd">
+<td>Parts playing</td>
+<td>238</td>
+<td>The intro half the fullest or fewer; the last chorus the fullest; each verse no fuller than its chorus</td>
+<td>** Table<strong>and</strong> Rule**</td>
+</tr>
+<tr class="even">
+<td>The instrumental figure</td>
+<td>235; Table (instrumental figures)</td>
+<td>Intro figure unrelated to the voice; fills of two to three beats and four to six notes, in the voice’s gaps, ending on a chord tone</td>
+<td>** Table** (<code>zeneng_v100_bass_and_figures.json</code>) and<strong>Rule</strong></td>
+</tr>
+<tr class="odd">
+<td>The instrumental hook</td>
+<td>Window 112, 209</td>
+<td>An instrumental line that returns as a hook</td>
+<td>** Rule**</td>
+</tr>
+<tr class="even">
+<td>The accompaniment follows the voice</td>
+<td>379</td>
+<td>No held sung note a semitone or minor ninth from a held accompaniment note</td>
+<td>** Reads**(consistency)</td>
+</tr>
+<tr class="odd">
+<td>Performance: microtiming, velocity, articulation, controllers, rubato</td>
+<td>9.1 to 9.5, 9.7</td>
+<td>Offsets by instrument; velocity and articulation by section; a rubato budget</td>
+<td>** Rule**; the demo applies only pink-noise velocity and timing (v43)</td>
+</tr>
+<tr class="even">
+<td>Instrument selection</td>
+<td>9.6</td>
+<td>Lead, double and prohibited instruments by context</td>
+<td>** Rule**; instruments chosen at intake from AI-written options</td>
+</tr>
+<tr class="odd">
+<td>Section entry and exit map</td>
+<td>9.8</td>
+<td>Which layer plays in which section (a twelve-layer Americana stack)</td>
+<td>** Rule**</td>
+</tr>
+<tr class="even">
+<td>MIDI drift patterns</td>
+<td>9.9</td>
+<td>Symptoms and corrections for mechanical demos</td>
+<td>** Rule**</td>
+</tr>
+<tr class="odd">
+<td>Timbral arc</td>
+<td>9.11</td>
+<td>Brightness, richness and intimacy by section</td>
+<td>** Rule**</td>
+</tr>
+<tr class="even">
+<td>The energy arc</td>
+<td>9.12; Window 38 (14,286 records)</td>
+<td>Each chorus above its verse; the last chorus or bridge the top; read by where a build arrives</td>
+<td>** Reads**(the demo’s report); arranged by hand to pass</td>
+</tr>
+<tr class="odd">
+<td>Register collision</td>
+<td>9.13</td>
+<td>Who sits in the singer’s octave, bar by bar</td>
+<td>** Reads**</td>
+</tr>
+<tr class="even">
+<td>Low-interval limits</td>
+<td>9.14; 749.21</td>
+<td>No second below C4, no third below F3</td>
+<td>** Reads**(<code>perception.py</code>); voicings kept inside by a hand function in each build</td>
+</tr>
+<tr class="odd">
+<td>Rock production</td>
+<td>9-R; Window 14</td>
+<td>Palm-muted verses, open choruses; the feel column</td>
+<td>** Rule**(rock songs arranged by hand)</td>
+</tr>
+<tr class="even">
+<td>Metal</td>
+<td>9-M</td>
+<td>Presets, voicings, the riff, the feel ladder</td>
+<td>** Rule**(the metal song arranged by hand)</td>
+</tr>
+<tr class="odd">
+<td>Audio by decade</td>
+<td>Window 40</td>
+<td>Loudness and onset rate by era</td>
+<td>** Table**(era defaults in the production notes)</td>
+</tr>
+<tr class="even">
+<td>The demo</td>
+<td>11.11</td>
+<td>Render and stems; the voice 3 dB over the band</td>
+<td>** Writes**the audio from the record (a fixed script)</td>
+</tr>
+<tr class="odd">
+<td>No accompaniment</td>
+<td>749.14</td>
+<td>Nothing in the engine writes an accompaniment</td>
+<td>** Missing**(the finding itself)</td>
+</tr>
+<tr class="even">
+<td>Accompaniment by section role</td>
+<td>749.16; Lieder tables</td>
+<td>A texture plan by section, measured against 1,403 Lieder (OpenScore, CC0)</td>
+<td>** Table<strong>(<code>accompaniment_lieder.json</code>) and </strong> Rule**; song 53 by hand</td>
+</tr>
+<tr class="odd">
+<td>One intensity curve</td>
+<td>749.17</td>
+<td>The high point at 0.65 to 0.85, a release after</td>
+<td>** Reads**(research check)</td>
+</tr>
+<tr class="even">
+<td>A breath, then a fresh re-entry</td>
+<td>749.19</td>
+<td>Thin the band a beat or two before the best moment</td>
+<td>** Rule**; placed by hand</td>
+</tr>
+<tr class="odd">
+<td>A low lead under the band</td>
+<td>749.27</td>
+<td>The 2% band-over-tune limit does not fit a baritone under guitars</td>
+<td>** Reads**(an open finding)</td>
+</tr>
+<tr class="even">
+<td>Harmony and backing voices</td>
+<td>749.9; 9-M.7</td>
+<td>Lines, not shadows; when a crowd voice joins</td>
+<td>** Rule**; typed per song</td>
+</tr>
+<tr class="odd">
+<td>Genre patterns</td>
+<td>none</td>
+<td>Grooves, comping</td>
+<td>** Missing**</td>
+</tr>
+<tr class="even">
+<td>(country, soul, gospel)</td>
+<td></td>
+<td>and fills by genre and section</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="who-has-written-what-songs-48-to-56">Who has written what, songs 48 to 56</h3>
+<p>In every song since v7 the engine wrote the sung melody and an AI wrote the chord plan and every band part but the bass. Read from each song’s generator and build script.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Song</th>
+<th>Melody</th>
+<th>Chord plan</th>
+<th>Hook’s notes</th>
+<th>Band</th>
+<th>Bass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>48 The Ratios Hold</td>
+<td>Engine</td>
+<td>AI</td>
+<td>Engine (no design)</td>
+<td>AI</td>
+<td>Engine routine</td>
+</tr>
+<tr class="even">
+<td>49 The World Is Asking</td>
+<td>Engine</td>
+<td>AI</td>
+<td>Engine (no design)</td>
+<td>AI</td>
+<td>Engine routine</td>
+</tr>
+<tr class="odd">
+<td>50 The Small Things</td>
+<td>Engine</td>
+<td>AI</td>
+<td>Engine (no design)</td>
+<td>AI</td>
+<td>Engine routine</td>
+</tr>
+<tr class="even">
+<td>51 A Wire Pulled Tight</td>
+<td>Engine</td>
+<td>AI</td>
+<td>AI design, the writer’s choice</td>
+<td>AI</td>
+<td>Engine routine</td>
+</tr>
+<tr class="odd">
+<td>52 The Room Next Door</td>
+<td>AI sketch script</td>
+<td>AI</td>
+<td>AI</td>
+<td>AI</td>
+<td>AI</td>
+</tr>
+<tr class="even">
+<td>53 Sung to Sleep</td>
+<td>AI sketch script</td>
+<td>AI</td>
+<td>AI</td>
+<td>AI</td>
+<td>AI</td>
+</tr>
+<tr class="odd">
+<td>54 The Man Mama Prayed I’d Be</td>
+<td>Engine</td>
+<td>AI</td>
+<td>AI design, the writer’s choice</td>
+<td>AI</td>
+<td>Engine routine</td>
+</tr>
+<tr class="even">
+<td>55 Your Yard Man</td>
+<td>Engine</td>
+<td>AI</td>
+<td>AI design, the writer’s choice</td>
+<td>AI</td>
+<td>Engine routine</td>
+</tr>
+<tr class="odd">
+<td>56 Terpsichore</td>
+<td>Engine (running)</td>
+<td>AI</td>
+<td>AI design, the writer’s choice</td>
+<td>AI draft, withdrawn</td>
+<td>AI draft, withdrawn</td>
+</tr>
+</tbody>
+</table>
+<p>The lyrics were the writer’s words, drafted or revised in session with an AI and locked by him; the engine’s line scorer (Module 28) and the mouth tests did not run on songs 54 and 55. The intake questions and their three options were written by an AI each time; the spec’s question tree (Q0 to Q8) is not a program.</p>
+<h3 id="the-gaps-and-the-research-that-would-fill-them">The gaps, and the research that would fill them</h3>
+<p>The record already describes what real harmony and bands do on average; what it lacks is what follows what, and how it differs by genre and by section. Those are the two things a generator needs.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Rank</th>
+<th>Gap</th>
+<th>What to research</th>
+<th>Data</th>
+<th>What the engine gets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H1</td>
+<td>A section’s chord progression</td>
+<td>Sequences of chords by section kind and genre: loops, lengths, harmonic rhythm, how a section ends and joins the next</td>
+<td>McGill Billboard (the raw annotations, not only Table CP); Hooktheory; a large genre-labelled chord collection</td>
+<td>A progression drawn per section from kept sequences, gated by Tables CN and CP</td>
+</tr>
+<tr class="even">
+<td>H2</td>
+<td>The order of chords and melody</td>
+<td>Whether real songwriting and the data favour chords first, melody first, or both together; how well a drawn progression fits a melody already drawn</td>
+<td>Hooktheory (melody and chords aligned)</td>
+<td>A decided order of work, and a fit test</td>
+</tr>
+<tr class="odd">
+<td>H3</td>
+<td>Mode and borrowed chords by genre</td>
+<td>Rates of minor, Dorian, Mixolydian, ♭VII,♭VI and applied dominants in country, soul, rock, worship and pop</td>
+<td>The same collections, by genre</td>
+<td>Per-genre vocabularies replacing the hand-picked type tables</td>
+</tr>
+<tr class="even">
+<td>H4</td>
+<td>Harmony and backing voices</td>
+<td>When a second voice joins, and at what interval; answers and crowd voices</td>
+<td>Arranging literature; multitrack vocals where they exist</td>
+<td>A harmony-voice writer with its own test</td>
+</tr>
+<tr class="odd">
+<td>A1</td>
+<td>Drums by genre and section</td>
+<td>Grooves, fills and crashes for country, soul, rock and pop, and how they change from verse to chorus</td>
+<td>Lakh MIDI with genre tags (the existing Table DD, split by genre); style-labelled drum performances</td>
+<td>A drum writer drawing a section’s pattern and fills from kept bars</td>
+</tr>
+<tr class="even">
+<td>A2</td>
+<td>Texture by section role</td>
+<td>Which parts enter, leave, thicken or thin, section by section, in pop records (749.16 has this only for Lieder)</td>
+<td>Multitrack MIDI with section labels (POP909’s structure; Lakh with sections found by repetition)</td>
+<td>A texture plan by section role, replacing the hand plans and the 9.8 stack</td>
+</tr>
+<tr class="odd">
+<td>A3</td>
+<td>The chordal part by instrument</td>
+<td>Comping rhythms, voicings and registers for piano, organ and guitar against the voice, by genre (Table DE pools all instruments)</td>
+<td>Lakh MIDI, split by instrument and genre</td>
+<td>A chordal-part writer with Table DE’s vocabulary per instrument</td>
+</tr>
+<tr class="even">
+<td>A4</td>
+<td>Fills and answers in the voice’s gaps</td>
+<td>Their length, register and notes by genre (the existing figure table pools them)</td>
+<td>Lakh MIDI lead tracks</td>
+<td>A fill writer for the gaps, never under a sung word (379)</td>
+</tr>
+<tr class="odd">
+<td>A5</td>
+<td>The bass at any tempo</td>
+<td>Bass cells by tempo and subdivision, so a</td>
+<td>The 434 transcribed patterns, read by tempo</td>
+<td>The routine made tempo-aware</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>ballad at 72 does not run sixteenths</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Two cautions from the record itself: harmony and arrangement features have never separated hits from other songs (Windows 28, 38, 56), so these tables should describe what real songs typically do, not promise success; and every new table needs a kept-song test, as the melody’s do.</p>
+<h3 id="proposed-order-of-work-for-v8-and-the-test">Proposed order of work for v8, and the test</h3>
+<p>Harmony first, then the band, then a test that makes “the engine writes everything” checkable.</p>
+<ol type="1">
+<li><p>** Research H1 to H3**, then build the harmony writer. The engine’s order becomes form, harmony, melody, arrangement; the chart redraw (438) and the bass’s inversions (440) stay as they are.</p></li>
+<li><p><strong>A5</strong> : make the bass routine read the tempo. A small job, and it removes the one place the routine failed.</p></li>
+<li><p><strong>Research A1 to A4</strong>, then build the drum, texture, chordal-part and fill writers, each with its own kept-song test.</p></li>
+<li><p><strong>H4</strong> : the harmony-voice writer.</p></li>
+<li><p><strong>The no-hand-input test.</strong> A run may take only the writer’s intake answers (from a fixed questionnaire written from the spec’s Q0 to Q8) and his locked lyric. The song’s generator may set only those. The test report lists every input that did not come from the engine, and a song fails if any chord or band note came from a hand-typed list.</p></li>
+<li><p><strong>Rerun songs 54 to 56</strong> under the test, and compare them by ear with the versions already delivered.</p></li>
+</ol>
+<p>Until then, a delivered song should say plainly what wrote it: the engine’s melody, an AI’s chords and band.</p>
+<h3 id="data-on-hand-and-data-to-fetch">Data on hand and data to fetch</h3>
+<p>The measured summaries are in the repo; the raw collections they came from are not, and the research needs them again.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Data</th>
+<th>What it gives</th>
+<th>Where it stands</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>zeneng_v88_tables.json</code></td>
+<td>Harmony by class and by section; outer voices; cadences</td>
+<td>In the repo (song folders’ tables)</td>
+</tr>
+<tr class="even">
+<td><code>zeneng_v101_band_returns_eras.json</code></td>
+<td>Drums, the chordal part and parts playing in 2,667 band arrangements</td>
+<td>In the repo</td>
+</tr>
+<tr class="odd">
+<td><code>zeneng_v100_bass_and_figures.json</code></td>
+<td>Bass lines in 2,165 songs; instrumental figures in 879</td>
+<td>In the repo</td>
+</tr>
+<tr class="even">
+<td><code>zeneng_v123</code>, <code>zeneng_v124</code></td>
+<td>The chart and the bass at and between the chords</td>
+<td>In the repo; used by the engine</td>
+</tr>
+<tr class="odd">
+<td><code>accompaniment_lieder.json</code></td>
+<td>Accompaniment textures in 1,403 Lieder</td>
+<td>In the repo (metre atlas)</td>
+</tr>
+<tr class="even">
+<td>McGill Billboard annotations</td>
+<td>Chords in time with section labels, 890 songs</td>
+<td>To fetch again (raw)</td>
+</tr>
+<tr class="odd">
+<td>Hooktheory</td>
+<td>Melody and chords aligned, about 24,000 pieces</td>
+<td>To fetch again (raw)</td>
+</tr>
+<tr class="even">
+<td>Lakh MIDI (clean subset) with genre tags</td>
+<td>Multitrack band parts by genre</td>
+<td>To fetch again (raw)</td>
+</tr>
+<tr class="odd">
+<td>POP909</td>
+<td>Pop songs with melody, accompaniment and structure</td>
+<td>To fetch</td>
+</tr>
+<tr class="even">
+<td>Chordonomicon</td>
+<td>Over 666,000 chord progressions labelled with verse, chorus and bridge, genre and release date (the paper says CC BY 4.0; its dataset card says CC BY-NC 4.0, non-commercial; its download host is refused by this session)</td>
+<td>New; to fetch</td>
+</tr>
+<tr class="odd">
+<td>Groove MIDI Dataset</td>
+<td>13.6 hours, 1,150 files of human drumming in many styles, by 10 drummers (CC BY 4.0)</td>
+<td>New; to fetch</td>
+</tr>
+</tbody>
+</table>
+<p>This session’s shell can reach only package sites and GitHub, so the large collections may need to be attached or fetched where the earlier studies fetched them; each study script’s docstring says how.</p>
+<p>Sources: <a href="https://arxiv.org/abs/2410.22046">Chordonomicon (arXiv 2410.22046);</a> <a href="https://magenta.tensorflow.org/datasets/groove">Groove MIDI Dataset (Magenta)</a>; Luthier v7 (Windows 28, 38, 56, 95, 105, 106, 118, 119, 143, 144; Module 9; 9-R; 9-M); the fix list for v8 (749.9, 749.14, 749.16, 749.17, 749.19, 749.21, 749.23, 749.27).</p>
+
+<h1 id="part-18">Part 18. Harmony research for Luthier v8: what follows what</h1>
+<p>16 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/9vgkWHkjy3PyVMB9iKDkBJ">Harmony research for Luthier v8: what follows what</a>.</p>
+<p>A chord writer for the engine is feasible from measured sequences: on verses and choruses in major keys, a simple model drawn from 592 training songs already passes as kept on every measure tried. Minor keys, bridges and pre-choruses need more data, genres need data this session cannot reach, and real progressions loop in a way the simple model does not.</p>
+<h3 id="the-data">The data</h3>
+<p>Two collections were read in full; the two largest genre-labelled collections could not be reached from this session.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Collection</th>
+<th>What it is</th>
+<th>Used for</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>McGill Billboard</td>
+<td>890 chart slots, 739 unique songs charting 1958 to 1991; chords bar by bar with section labels and the tonic; raw files from ChoCo v1.0.0 (Zenodo 7706751)</td>
+<td>Every measure here, and the prototype</td>
+<td>CC0</td>
+</tr>
+<tr class="even">
+<td>Rolling Stone 200</td>
+<td>de Clercq and Temperley’s Roman-numeral analyses of 200 songs, written as section rules</td>
+<td>The replication</td>
+<td>Research corpus</td>
+</tr>
+<tr class="odd">
+<td>Chordonomicon</td>
+<td>Over 666,000 user-made chord charts with section, genre and date labels</td>
+<td>Not reached: its download host is refused by this session’s network, and its dataset card says CC BY-NC 4.0 (non-commercial), against the paper’s CC BY 4.0</td>
+<td>CC BY-NC 4.0 (card)</td>
+</tr>
+<tr class="even">
+<td>de Clercq’s country corpus</td>
+<td>200 famed country songs in Nashville numbers</td>
+<td>Not reached (its site is refused)</td>
+<td>Unknown</td>
+</tr>
+</tbody>
+</table>
+<p>The Billboard songs carry no genre labels, so nothing below is by genre. Mode was read per song: minor when the tonic chord is minor more often than major (128 minor, 611 major).</p>
+<h3 id="what-the-published-research-says">What the published research says</h3>
+<p>Pop harmony has its own grammar, not common practice’s: IV and ♭VII matter as much as V, progressions loop, and genre labels are a weak guide.</p>
+<ul>
+<li><p><strong>Rock harmony (de Clercq and Temperley 2011).</strong> A hand analysis of 100 songs from Rolling Stone’s 500 Greatest Songs, 20 a decade from the 1950s to the 1990s, with over 90% agreement between the two analysts. IV is the most common chord after I and most often precedes it; the five commonest chords are I, IV, V, ♭VII and VI; II, VI and III form one group of chords that go together, and ♭VII, ♭III and ♭VI another, which the authors read as a modal organisation. <a href="https://rockcorpus.midside.com/2011_paper/declercq_temperley_2011.pdf">paper;</a> <a href="https://www.midside.com/presentations/declercq_2010_nemcog_slides.pdf">slides</a></p></li>
+<li><p><strong>Root motion.</strong> The asymmetries of common-practice music (fourths up preferred to fourths down) are mostly absent in rock, so a chord’s place before or after the tonic is the useful distinction. <a href="https://digitallibrary.vassar.edu/sites/default/files/2022-01/Harmony_and_Syntax_in_Contemporary_Pop_Music_0.pdf">summary</a></p></li>
+<li><p><strong>The McGill Billboard set (Burgoyne, Wild and Fujinaga 2011).</strong> 890 slots sampled at random from the Billboard charts, annotated by experts with sections and chords; released under CC0. <a href="https://ismir2011.ismir.net/papers/OS8-1.pdf">paper</a>; <a href="https://mirdata.readthedocs.io/en/0.3.8/_modules/mirdata/datasets/billboard.html">licence</a></p></li>
+<li><p><strong>Loops since 2000.</strong> A corpus of 2002 to 2021 songs is more repetitive than McGill’s; most chord loops appear in only one song, and the most schematic loops were shared more widely in the McGill era (Chander and Quinn 2023). <a href="https://easychair.org/publications/preprint/vRwsT">preprint</a> Loops of IV, V and vi hovering above the tonic (the “plateau loop”) became widespread in recent pop (Duinker 2019). <a href="https://mtosmt.org/ojs/index.php/mto/article/view/464">article</a> In post-2000 EDM-pop the loop is mostly one diatonic collection, with the melody moving independently above it (Park 2025). <a href="https://mtosmt.org/docs/diss-index.php?id=635">dissertation</a></p></li>
+<li><p><strong>Genre.</strong> User tags put as much as 60% of recent songs under “pop/rock”, and song-by-song uniqueness makes corpus averages a weak stand-in for any one song. <a href="https://www.osu.tests.sfulib4.publicknowledgeproject.org/index.php/EMR/article/view/5576/5604">article</a> Country was studied by corpus only recently: de Clercq built a 200-song country corpus to test the “three chords” caricature, which Jocelyn Neal calls a misconception. <a href="https://www.midside.com/presentations/declercq_2021_smt_miig_text.pdf">talk</a></p></li>
+<li><p><strong>Writing chords by model.</strong> MySong (Simon, Morris and Basu 2008) chose chords for a sung melody with a hidden Markov model trained on a song database, and listeners rated the results positively. <a href="https://microsoft.com/en-us/research/uploads/prod/2016/02/mysongchi2008.pdf">paper</a> A semi-Markov version adds each chord’s duration, so it finds where the harmony changes as well as what it changes to (Groves 2013). <a href="https://ojs.aaai.org/index.php/AIIDE/article/download/12654/12502/16171">paper</a> Comparative studies judge generated chords by listening tests on fit and interest against the human progression. <a href="https://arxiv.org/pdf/2001.02360">study</a></p></li>
+<li><p><strong>Chords first or melody first.</strong> Songwriters do both; some start from a progression and let its mood draw out melody and lyric, others hand a melody to a co-writer to harmonise. No study found settles which works better, so the engine should choose by its own test. <a href="https://secretsofsongwriting.com/tag/first">example</a></p></li>
+</ul>
+<h3 id="what-the-billboard-songs-show">What the Billboard songs show</h3>
+<p>Each section kind has its own job, and the jobs are sharp enough to write by: verses open on I three times in four, bridges end on V nearly half the time, and pre-choruses hardly touch the tonic.</p>
+<p><strong>Major keys</strong> (medians; first and last chord: share of sections; bigrams: share of a kind’s chord changes).</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Sections</th>
+<th>Bars</th>
+<th>Changes a bar</th>
+<th>Distinct chords</th>
+<th>Tonic’s share</th>
+<th>Commonest first</th>
+<th>Commonest last</th>
+<th>Commonest moves</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verse</td>
+<td>1,690</td>
+<td>12</td>
+<td>0.88</td>
+<td>4</td>
+<td>41%</td>
+<td>I 78%</td>
+<td>I 39%, V 29%</td>
+<td>IV→I 11%, I→IV 10%, V→I 8%</td>
+</tr>
+<tr class="even">
+<td>Pre-chorus</td>
+<td>219</td>
+<td>6</td>
+<td>1.00</td>
+<td>4</td>
+<td>13%</td>
+<td>IV 24%, I 23%, vi 16%</td>
+<td>V 39%, IV 15%</td>
+<td>IV→V 9%, I→IV 8%</td>
+</tr>
+<tr class="odd">
+<td>Chorus</td>
+<td>1,646</td>
+<td>8</td>
+<td>1.00</td>
+<td>4</td>
+<td>33%</td>
+<td>I 57%, IV 15%</td>
+<td>I 35%, V 28%</td>
+<td>IV→I 10%, I→IV 9%, V→I 8%</td>
+</tr>
+<tr class="even">
+<td>Bridge</td>
+<td>317</td>
+<td>8</td>
+<td>0.88</td>
+<td>4</td>
+<td>14%</td>
+<td>IV 34%, I 15%</td>
+<td>V 46%</td>
+<td>IV→I 8%, IV→V 7%</td>
+</tr>
+<tr class="odd">
+<td>Intro</td>
+<td>557</td>
+<td>5</td>
+<td>1.00</td>
+<td>3</td>
+<td>50%</td>
+<td>I 63%</td>
+<td>I 38%, V 22%</td>
+<td>IV→I 10%, I→IV 10%</td>
+</tr>
+<tr class="even">
+<td>Outro</td>
+<td>339</td>
+<td>10</td>
+<td>1.00</td>
+<td>3</td>
+<td>50%</td>
+<td>I 66%</td>
+<td>I 50%</td>
+<td>IV→I 12%, I→IV 12%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Minor keys</strong> (128 songs).</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Sections</th>
+<th>Changes a</th>
+<th>Distinct</th>
+<th>Tonic’s</th>
+<th>Commonest</th>
+<th>Commonest</th>
+<th>Commonest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>bar</td>
+<td></td>
+<td>share</td>
+<td>first</td>
+<td>last</td>
+<td>moves</td>
+</tr>
+<tr class="even">
+<td>Verse</td>
+<td>361</td>
+<td>0.69</td>
+<td>3</td>
+<td>48%</td>
+<td>i 76%</td>
+<td>i 41%, V 16%, ♭VII 11%</td>
+<td>i→IV 5%,♭VII→i 5%, i→♭VII 5%</td>
+</tr>
+<tr class="odd">
+<td>Pre-</td>
+<td>66</td>
+<td>1.13</td>
+<td>5</td>
+<td>17%</td>
+<td>♭VI 32%, i</td>
+<td>♭VII 21%, V</td>
+<td>♭VI→♭VII 10%</td>
+</tr>
+<tr class="even">
+<td>chorus</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>29%</td>
+<td>20%</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Chorus</td>
+<td>367</td>
+<td>1.00</td>
+<td>3</td>
+<td>31%</td>
+<td>i 54%</td>
+<td>i 23%,♭VII 17%, V 14%</td>
+<td>♭VII→i 6%, ♭VI→♭VII 6%, i→♭VI 5%</td>
+</tr>
+<tr class="even">
+<td>Bridge</td>
+<td>53</td>
+<td>0.88</td>
+<td>4</td>
+<td>24%</td>
+<td>♭VI 26%</td>
+<td>i 23%, V 21%</td>
+<td>♭VI→♭VII 8%</td>
+</tr>
+</tbody>
+</table>
+<p>What else the songs show:</p>
+<ul>
+<li><p><strong>Chords from outside the key.</strong> In major, ♭VII is in 18% of verses and choruses and 22% of bridges; II (V of V) in 12% to 22%. In minor, a major IV, Dorian’s raised sixth, is in 23% of verses and 24% of choruses, the commonest chord from outside the key.</p></li>
+<li><p><strong>The joins.</strong> A pre-chorus or bridge hands to the chorus on V→I most often (24% and 36% of joins); a chorus hands to a bridge on I→IV (18%).</p></li>
+<li><p><strong>Returns.</strong> A later verse keeps the first verse’s chords bar for bar 60% of the time, a chorus 55%, a pre-chorus 81%.</p></li>
+<li><p><strong>Loops.</strong> Under a strict reading (90% of bars repeat at the period), 29% of major choruses and 31% of verses loop in 1, 2, 4 or 8 bars, more in minor (47% of choruses); most sections vary their cell.</p></li>
+<li><p><strong>Over time.</strong> Harmony moved faster: the median verse changed chord every two bars in the 1950s and once a bar by the 1980s and 1990s.</p></li>
+</ul>
+<h3 id="a-prototype-chord-writer-tested">A prototype chord writer, tested</h3>
+<p>Where the data is plentiful, chords drawn from kept sequences pass as kept; where it is thin, the model does no better than drawing chords at random by frequency.</p>
+<p>The prototype is a variable-order Markov model (up to three chords of context) over each section kind’s chord changes, by mode, trained on 592 songs and read against the heldout 147. Each change’s length is drawn from the kind’s kept lengths. The baseline draws chords by their frequency alone. A first-chord or last-chord distance of 0 means the same distribution as the held-out songs, 1 means none in common.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Held out</th>
+<th>First chord: model / baseline</th>
+<th>Last chord: model / baseline</th>
+<th>Distinct chords: kept / model</th>
+<th>Tonic’s share: kept / model</th>
+<th>Bits a change: model / baseline</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verse, major</td>
+<td>339</td>
+<td><strong>0.10</strong>/ 0.47</td>
+<td>** 0.14**/ 0.32</td>
+<td>4 / 4</td>
+<td>34% / 33%</td>
+<td>** 3.81**/ 4.52</td>
+</tr>
+<tr class="even">
+<td>Chorus, major</td>
+<td>329</td>
+<td>** 0.11**/ 0.32</td>
+<td>** 0.14**/ 0.31</td>
+<td>4 / 4</td>
+<td>29% / 29%</td>
+<td>** 3.45**/ 4.44</td>
+</tr>
+<tr class="odd">
+<td>Bridge, major</td>
+<td>68</td>
+<td>0.30 / 0.23</td>
+<td>0.38 / 0.42</td>
+<td>4 / 4</td>
+<td>17% / 13%</td>
+<td>3.98 / 4.79</td>
+</tr>
+<tr class="even">
+<td>Pre-chorus, major</td>
+<td>38</td>
+<td>0.28 / 0.35</td>
+<td>0.46 / 0.74</td>
+<td>4 / 4</td>
+<td>0% / 10%</td>
+<td>4.26 / 4.77</td>
+</tr>
+<tr class="odd">
+<td>Verse, minor</td>
+<td>68</td>
+<td>0.15 / 0.50</td>
+<td>0.26 / 0.33</td>
+<td>3 / 4</td>
+<td>49% / 32%</td>
+<td>4.62 / 4.33</td>
+</tr>
+<tr class="even">
+<td>Chorus, minor</td>
+<td>80</td>
+<td>0.24 / 0.36</td>
+<td>0.29 / 0.33</td>
+<td>3 / 4</td>
+<td>30% / 25%</td>
+<td>4.40 / 4.38</td>
+</tr>
+</tbody>
+</table>
+<p>Three things it shows:</p>
+<ol type="1">
+<li><p>** Verses and choruses in major pass.** First and last chords, distinct chords, the tonic’s share and changes a bar all sit with the held-out songs, and the model predicts the next chord about one bit better than frequency alone.</p></li>
+<li><p><strong>Minor keys, bridges and pre-choruses do not.</strong> With 51 to 293 training sections, the model learns little beyond frequency (minor verses and choruses: no better in bits) and minor verses hold the tonic too little (32% against 49%). These need more songs, or rules from Table CP as gates.</p></li>
+<li><p><strong>It rambles where real songs loop.</strong> Drawn sections run on (“I ii iii V vi iii IV I iii ii IV I”) where kept ones repeat a two-or four-bar cell. The writer needs a structural step: draw a cell, then repeat or vary it at the kept rates.</p></li>
+</ol>
+<h3 id="the-same-measures-on-a-second-collection">The same measures on a second collection</h3>
+<p>The section jobs hold on the Rolling Stone 200, a different collection analysed by different people: endings agree almost exactly, openings closely.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>RS200 sections</th>
+<th>Last chord: RS200 / Billboard</th>
+<th>First chord: RS200 / Billboard</th>
+<th>Top moves, RS200</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verse</td>
+<td>219</td>
+<td>I 38%, V 29% / I 39%, V 29%</td>
+<td>I 69% / I 78%</td>
+<td>IV→I 13%, I→IV 12%, V→I 8%</td>
+</tr>
+<tr class="even">
+<td>Chorus</td>
+<td>162</td>
+<td>I 33%, V 27% / I 35%, V 28%</td>
+<td>I 43%, IV 15% / I 57%, IV 15%</td>
+<td>I→IV 13%, IV→I 11%, V→I 8%</td>
+</tr>
+<tr class="odd">
+<td>Bridge</td>
+<td>69</td>
+<td>V 59% / V 46%</td>
+<td>I 29%, IV 23% / IV 34%, I 15%</td>
+<td>IV→I 10%, I→IV 8%</td>
+</tr>
+<tr class="even">
+<td>Intro</td>
+<td>127</td>
+<td>I 38%, V 22% / I 38%, V 22%</td>
+<td>I 64% / I 63%</td>
+<td>I→IV 11%, IV→I 11%</td>
+</tr>
+</tbody>
+</table>
+<p>The RS200 figures mix major and minor songs (minor openings, i, take 12% to 15% of them), which accounts for most of the gap in first chords. Both collections change chord about once a bar and use three or four distinct chords a section.</p>
+<h3 id="what-this-means-for-v8s-harmony-writer">What this means for v8’s harmony writer</h3>
+<p>Build it in three layers, chords first, and test it the way the melody is tested.</p>
+<ol type="1">
+<li><p><strong>The cell.</strong> For each section, draw a loop cell of one, two or four bars from the kept cells of its kind and mode, or decide not to loop, at the kept rates (about seven sections in ten in major do not repeat strictly).</p></li>
+<li><p><strong>The sequence.</strong> Fill the cell, or the whole section when it does not loop, from the variable-order model of what follows what, by section kind and mode. Draw each chord’s length from the kind’s kept lengths, at the decade’s harmonic rhythm.</p></li>
+<li><p><strong>The jobs as gates.</strong> Keep a section only if its first and last chords, distinct chords, tonic share and out-of-key share fall inside the kept quartiles (Tables CN and CP and these new tables). A verse opens on I; a pre-chorus or bridge ends off the tonic, usually on V; joins follow the kept moves.</p></li>
+</ol>
+<p>Then the existing chart redraw (438) and the bass’s inversions (440) run unchanged, and the melody is drawn over the written chords, as it is now. Chords first suits the engine, whose melody search already aims at chord tones; the published systems that go melody first (MySong and its successors) remain a fallback if the fit test fails.</p>
+<p><strong>Mode and colour.</strong> Minor sections draw ♭VI, ♭VII, ♭III and Dorian’s IV at their kept rates; in major, ♭VII and II are the common outside chords. This replaces the hand-picked chord vocabularies by song type, which become a light preference on top.</p>
+<p><strong>What still needs data.</strong> Genre (country, soul, gospel, worship): the Billboard songs carry no labels, and the two labelled collections are unreachable here. Two routes: allow this session’s network to reach the Chordonomicon host (and settle its non-commercial licence for an engine that writes songs for release), or obtain de Clercq’s country corpus. Minor keys, bridges and pre-choruses: more songs, or the section-job gates carrying them until then.</p>
+<p><strong>The tests.</strong> (a) Every drawn section passes the gates; (b) on held-out songs the model beats frequency alone in bits a change for every kind it writes; (c) a listening check, drawn against kept progressions in the same section, as the published studies do; (d) the no-hand-input test from the audit: no chord in a song may come from a hand-typed list.</p>
+<h3 id="files-and-sources">Files and sources</h3>
+<p>The scripts and tables are in the repo under <code>studies/harmony</code> (commit d8055b9): <code>parse_billboard.py</code>, <code>measure_billboard.py</code> (writes <code>billboard_tables.json</code>), <code>prototype_writer.py</code> (writes <code>prototype_results.json</code>) and <code>rs200.py</code> (writes <code>rs200_tables.json</code>). The raw data is ChoCo v1.0.0 from <a href="https://zenodo.org/records/7706751">Zenodo record 7706751</a>, not kept in the repo. This study follows <a href="https://claude.ai/artifact/4VpCZjhV64ua7EjPykjS1K">the harmony and arrangement audit</a>.</p>
+<p>Sources:</p>
+<ul>
+<li><p>de Clercq and Temperley, <a href="https://rockcorpus.midside.com/2011_paper/declercq_temperley_2011.pdf">A corpus analysis of rock harmony</a> (Popular Music, 2011), and <a href="https://www.midside.com/presentations/declercq_2010_nemcog_slides.pdf">conference slides</a></p></li>
+<li><p><a href="https://digitallibrary.vassar.edu/sites/default/files/2022-01/Harmony_and_Syntax_in_Contemporary_Pop_Music_0.pdf">Harmony and Syntax in Contemporary Pop Music</a> (Vassar thesis)</p></li>
+<li><p>Burgoyne, Wild and Fujinaga, <a href="https://ismir2011.ismir.net/papers/OS8-1.pdf">An expert ground-truth set for audio chord recognition and music analysis</a> (ISMIR 2011); <a href="https://mirdata.readthedocs.io/en/0.3.8/_modules/mirdata/datasets/billboard.html">the CC0 licence, via mirdata</a></p></li>
+<li><p>Chander and Quinn, <a href="https://easychair.org/publications/preprint/vRwsT">The Decline of Harmonic Schemata in Popular Music Chord Loops</a> (2023)</p></li>
+<li><p>Duinker, <a href="https://mtosmt.org/ojs/index.php/mto/article/view/464">Plateau Loops and Hybrid Tonics in Recent Pop Music</a> (Music Theory Online, 2019)</p></li>
+<li><p>Park, <a href="https://mtosmt.org/docs/diss-index.php?id=635">Diatonic Chord Loops in Post-Millennial Pop Harmony</a> (dissertation, 2025) <a href="https://www.osu.tests.sfulib4.publicknowledgeproject.org/index.php/EMR/article/view/5576/5604">On genre labels and corpus averages</a> (Empirical Musicology Review) de Clercq, <a href="https://www.midside.com/presentations/declercq_2021_smt_miig_text.pdf">A Corpus Analysis of Harmony in Country Music</a> (talk, 2021)</p></li>
+<li><p>Simon, Morris and Basu, <a href="https://microsoft.com/en-us/research/uploads/prod/2016/02/mysongchi2008.pdf">MySong</a> (CHI 2008)</p></li>
+<li><p>Groves, <a href="https://ojs.aaai.org/index.php/AIIDE/article/download/12654/12502/16171">Automatic Harmonization Using a Hidden Semi-Markov Model</a> (2013)</p></li>
+<li><p><a href="https://arxiv.org/pdf/2001.02360">Automatic Melody Harmonization with Triad Chords: A Comparative Study</a> (2020)</p></li>
+<li><p><a href="https://arxiv.org/abs/2410.22046">Chordonomicon</a> (2024) and <a href="https://huggingface.co/datasets/ailsntua/Chordonomicon">its dataset card</a></p></li>
+<li><p><a href="https://secretsofsongwriting.com/tag/first">Chords or melody first</a> (Secrets of Songwriting)</p></li>
+</ul>
+
+<h1 id="part-19">Part 19. Arrangement research for Luthier v8: what the band does</h1>
+<p>16 November 2026. Words and music: Jason Bryant. The live copy is the Doc <a href="https://claude.ai/artifact/LKpemmb3kU5NWy4rPmnWTQ">Arrangement research for Luthier v8: what the band does</a>.</p>
+<p>A band writer for the engine can be drawn from measured parts the same way the melody is: real songs thin the intro to about 70% of their fullest band, thicken the chorus by about a quarter, play bass about once a beat at any tempo, and keep one drum bar for about half the song. Genre changes the details more than the plan.</p>
+<h3 id="the-data">The data</h3>
+<p>Two collections were measured; three more that would answer the open questions could not be reached from this session.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Collection</th>
+<th>What it is</th>
+<th>Used for</th>
+<th>Licence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>POP909 with phrase labels</td>
+<td>909 Chinese pop songs, each a lead melody, a secondary melody and a professional piano accompaniment; human phrase labels (intro, sung phrases A, B and others, instrumental phrases, outro) from Dai, Zhang and Dannenberg</td>
+<td>Texture by section role</td>
+<td>CC BY 4.0</td>
+</tr>
+<tr class="even">
+<td>Lakh Pianoroll Dataset (LPD-5 cleansed)</td>
+<td>21,425 songs in five parts (drums, piano, guitar, bass, strings), 4/4; 9,329 read, up to 1,500 per genre</td>
+<td>The band by genre</td>
+<td>CC BY 4.0</td>
+</tr>
+<tr class="odd">
+<td>Million Song Dataset artist terms (via Gold-Caps)</td>
+<td>Genre words per artist</td>
+<td>The genre of each Lakh song: the family of the artist’s top term</td>
+<td>CC BY 4.0</td>
+</tr>
+<tr class="even">
+<td>Groove MIDI Dataset</td>
+<td>Human drumming with fills labelled, many styles</td>
+<td>Not reached (its host is refused)</td>
+<td>CC BY 4.0</td>
+</tr>
+<tr class="odd">
+<td>Timbre in Popular Song (TiPS)</td>
+<td>Texture and timbre by section in 400 songs, 100 each of country, pop, metal and hip hop</td>
+<td>Not reached; only the pop part is published so far</td>
+<td>Open, in progress</td>
+</tr>
+<tr class="even">
+<td>Lakh MIDI (raw)</td>
+<td>The original files with every instrument</td>
+<td>Not reached (its host is refused); the piano-roll version above stands in</td>
+<td>CC BY 4.0</td>
+</tr>
+</tbody>
+</table>
+<p>Two limits run through the Lakh readings: piano rolls merge repeated strikes of one held pitch, so chordal onsets are undercounted; and genre comes from the artist, not the song.</p>
+<h3 id="the-academic-record">The academic record</h3>
+<p>Scholars describe a pop band as a few functional layers whose entrances and exits mark the form; the most successful accompaniment systems retrieve real phrases and fit them to new chords rather than inventing parts note by note.</p>
+<ul>
+<li><p><strong>Functional layers (Moore 2012; Lavengood 2020).</strong> Allan Moore’s four layers: the explicit beat, the functional bass, the harmonic filler and the melody. <a href="https://viva.pressbooks.pub/openmusictheory/chapter/texture-in-pop-music/">Open Music Theory</a> The harmonic filler fills the registral space between the bass and the melody. <a href="https://mtosmt.org/ojs/index.php/mto/article/view/515/79">Lavengood, MTO</a> Lavengood adds a fifth, the novelty layer: intermittent, cutting in and out, often in call and response with the melody, the least common of the layers. <a href="https://presentations.meganlavengood.com/2025-tops.html">slides</a></p></li>
+<li><p><strong>The bass as its own line (de Clercq 2019).</strong> Bass and harmony often move independently, a “harmonic-bass divorce” like the melody’s. <a href="https://www.midside.com/publications/declercq_2019_spectrum.pdf">article</a></p></li>
+<li><p><strong>Form by texture.</strong> Most work on pop form has centred on melody and harmony, with drums studied less (Geary 2024). <a href="https://www.mtosmt.org/issues/mto.24.30.2/mto.24.30.2.geary.pdf">MTO</a> Texture change cues listeners that a section is changing; the verse-to-chorus step intensifies by layering new instruments and changing register, and a late surge of new events often comes about two-thirds of the way through (Schwitzgebel 2025, after White 2020). <a href="https://mtosmt.org/issues/mto.25.31.1/mto.25.31.1.schwitzgebel.pdf">MTO</a> A 665-song <a href="https://www.mcgill.ca/timbre-orchestration/research/projects/strategic-projects/interactions-timbre">McGill</a> subset annotated for texture and timbre found these changes are formal markers, though only general trends were identified. McGill</p></li>
+<li><p><strong>Accumulation (Spicer 2004).</strong> “Accumulative” and “cumulative” forms build by layering, tied to multitrack recording. <a href="https://www.taylorfrancis.com/books/9781315088631/chapters/10.4324/9781315088631-15">chapter</a></p></li>
+<li><p><strong>Genre norms are still being measured.</strong> TiPS encodes texture by section in 400 songs from the 1990s across country, pop, metal and hip hop on Moore’s and Lavengood’s layers. <a href="https://timbreandorchestration.org/writings/project-reports/timbre-in-popular-song">project</a> Its genre norms have not been published yet.</p></li>
+<li><p><strong>Accompaniment systems.</strong> POP909 offers several professional piano arrangements of 909 popular songs for arrangement research. <a href="https://arxiv.org/abs/2008.07142v1">paper</a> AccoMontage arranges whole pieces by retrieving phrase montages from a database, recombining them by dynamic programming, then fitting their chords to the lead sheet, and beat learning-only baselines. <a href="https://arxiv.org/abs/2108.11213">paper</a> PopMAG generates multi-track accompaniment for pop. <a href="https://arxiv.deeppaper.ai/papers/2008.07703v1">summary</a></p></li>
+</ul>
+<h3 id="texture-by-section-role-pop909">Texture by section role (POP909)</h3>
+<p>The accompaniment lifts the chorus by playing more notes, not by moving register or holding longer: in 88% of songs the B phrases (usually the chorus) are busier than the A phrases (usually the verse).</p>
+<p>Medians over 11,431 labelled phrases in 909 songs (piano accompaniment).</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Phrase</th>
+<th>Phrases</th>
+<th>Piano notes a beat</th>
+<th>Notes struck together</th>
+<th>Share of time sounding</th>
+<th>Secondary melody, notes a beat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intro</td>
+<td>872</td>
+<td>2.31</td>
+<td>1.42</td>
+<td>86%</td>
+<td>1.24</td>
+</tr>
+<tr class="even">
+<td>A (usually the verse)</td>
+<td>2,936</td>
+<td>2.93</td>
+<td>1.51</td>
+<td>92%</td>
+<td>0.50</td>
+</tr>
+<tr class="odd">
+<td>B (usually the chorus)</td>
+<td>3,074</td>
+<td>3.78</td>
+<td>1.65</td>
+<td>92%</td>
+<td>0.63</td>
+</tr>
+<tr class="even">
+<td>Other sung phrases</td>
+<td>2,199</td>
+<td>3.56</td>
+<td>1.67</td>
+<td>91%</td>
+<td>0.69</td>
+</tr>
+<tr class="odd">
+<td>Instrumental phrases</td>
+<td>1,799</td>
+<td>3.25</td>
+<td>1.65</td>
+<td>92%</td>
+<td>1.36</td>
+</tr>
+<tr class="even">
+<td>Outro</td>
+<td>551</td>
+<td>2.82</td>
+<td>1.41</td>
+<td>91%</td>
+<td>1.06</td>
+</tr>
+</tbody>
+</table>
+<p>Paired within each song (865 songs with both): B over A by a median 0.73 notes a beat; B strikes more notes together in 61% of songs; register and sustain barely move (each about half up, half down). The secondary melody plays hardest where the voice rests: in intros and instrumental phrases at about twice its rate under sung phrases. The last chorus is no busier than the first (a median change of 0; busier in 49% of songs), unlike the build Window 38 reads in Western records; POP909’s piano-only Chinese pop may simply not build by the piano.</p>
+<h3 id="the-band-by-genre-lakh">The band by genre (Lakh)</h3>
+<p>The plan is shared across genres and the details are not: every genre’s commonest snare bar is 2 and 4 and in every genre shown the intro starts at about 70% of the fullest band, while kick patterns, bass syncopation and piano voicing tell country from soul.</p>
+<p>Medians unless noted; kick bars on sixteenths, x an onset, the bar starting left.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Genre</th>
+<th>Songs</th>
+<th>Snare on 2 and 4 (commonest bar)</th>
+<th>Commonest kick bars</th>
+<th>Hats in eighths / sixteenths</th>
+<th>Bass notes a beat</th>
+<th>Bass off the eighths</th>
+<th>Piano notes struck together</th>
+<th>Intro’s band, share of the fullest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Country</td>
+<td>805</td>
+<td>69%</td>
+<td><code>x.......x.......</code> 28%, <code>x.....x.x.......</code> 23%</td>
+<td>63% / 11%</td>
+<td>0.91</td>
+<td>1%</td>
+<td>1.90</td>
+<td>72%</td>
+</tr>
+<tr class="even">
+<td>Soul and R&amp;B</td>
+<td>598</td>
+<td>67%</td>
+<td><code>x...x...x...x...</code> 15%, <code>x.......x.......</code> 13%</td>
+<td>61% / 17%</td>
+<td>1.12</td>
+<td>11%</td>
+<td>2.16</td>
+<td>70%</td>
+</tr>
+<tr class="odd">
+<td>Gospel</td>
+<td>274</td>
+<td>62%</td>
+<td><code>x.......x.......</code> 18%, <code>x.....x.x.......</code> 18%</td>
+<td>59% / 12%</td>
+<td>0.92</td>
+<td>3%</td>
+<td>1.83</td>
+<td>69%</td>
+</tr>
+<tr class="even">
+<td>Pop</td>
+<td>1,495</td>
+<td>62%</td>
+<td><code>x...x...x...x...</code> 20%, <code>x.....x.x.......</code> 16%</td>
+<td>54% / 16%</td>
+<td>1.05</td>
+<td>5%</td>
+<td>1.89</td>
+<td>68%</td>
+</tr>
+<tr class="odd">
+<td>Rock</td>
+<td>1,498</td>
+<td>64%</td>
+<td><code>x.....x.x.......</code> 14%, <code>x.......x.......</code> 13%</td>
+<td>57% / 13%</td>
+<td>1.10</td>
+<td>2%</td>
+<td>1.92</td>
+<td>67%</td>
+</tr>
+<tr class="even">
+<td>Folk</td>
+<td>620</td>
+<td>59%</td>
+<td><code>x.......x.......</code> 14%, <code>x.....x.x.......</code> 14%</td>
+<td>56% / 12%</td>
+<td>0.98</td>
+<td>3%</td>
+<td>1.84</td>
+<td>70%</td>
+</tr>
+</tbody>
+</table>
+<p>What else the songs show:</p>
+<p><strong>One drum bar for half the song.</strong> The commonest kick-and-snare bar fills about half a song’s bars (country 61%, the steadiest; rock 48%), around ten other bars filling the rest.</p>
+<ul>
+<li><p><strong>The bass plays about once a beat at any tempo.</strong> Across all genres, a median 1.0 bass notes a beat below 85 beats a minute and 1.15 above 130. Slow songs syncopate more: 16% of bass notes fall off the eighths below 85, against 0.3% above 130. The engine’s routine, run at song 56’s doubled tempo, would have played about three a beat.</p></li>
+<li><p><strong>Chordal parts.</strong> Guitar’s commonest bar is straight eighths (15% to 23% of songs by genre). Country piano most often holds one chord a bar (20%), soul’s plays eighths (15%) with thicker chords. Strings hold whole notes. About half of chordal strikes land with a bass note (country guitar 44%, soul piano 57%). Registers, 10th to 90th percentile medians: piano about D3 to B4, guitar D3 to G4, strings A3 to F5.</p></li>
+<li><p><strong>Parts playing.</strong> The first tenth of a song carries about 70% of its fullest band, the second to the ninth tenths at the fullest, the last tenth about 93%. Drums enter by bar 1 or 2 in most songs.</p></li>
+<li><p><strong>What could not be read.</strong> Where fills fall: Lakh songs do not start on a phrase boundary, so fills by place in an 8-bar group come out flat. That needs phrase-aligned drums (the Groove MIDI Dataset labels its fills) or section labels.</p></li>
+</ul>
+<h3 id="what-this-means-for-v8s-arrangement-writer">What this means for v8’s arrangement writer</h3>
+<p>Build it the way AccoMontage and the melody search both work: draw real parts from kept tables, fit them to the engine’s chords, and gate them by the section plan.</p>
+<ol type="1">
+<li><p><strong>The section plan first.</strong> For each section, draw the number of parts and each part’s density from kept rates: the intro about 70% of the fullest band and its accompaniment about 0.6 times the chorus’s notes a beat; the chorus about a quarter busier than its verse; the middle of the song at the fullest; the last tenth about 93%. This writes Module 9.12’s arc and fix 238’s parts playing instead of hand-arranging to pass them.</p></li>
+<li><p><strong>The four layers, one writer each</strong> (Moore’s layers, as in the spec’s Window 118 and 119 rules):</p>
+<ul>
+<li><p><em>Explicit beat:</em> the genre’s kick-and-snare bar drawn from the kept bars, held for about half the song with about ten variants; hats or ride in eighths unless the genre’s sixteenth rate is drawn; a fill and crash at section ends (fix 236).</p></li>
+<li><p><em>Functional bass:</em> the routine, made tempo-aware: about one note a beat at any tempo, syncopating off the eighths at the slow-song rate (16% below 85 beats a minute) and the genre’s rate (soul 11%, country 1%).</p></li>
+<li><p><em>Harmonic filler:</em> one bar rhythm per section from the instrument’s and genre’s kept rhythms (fix 237), voiced on the engine’s chords inside Module 9.14’s limits and the kept registers, about half of its strikes with the bass.</p></li>
+<li><p><em>Novelty:</em> short answers only in the voice’s gaps (the kept fill table, fix 235), intermittent, call and response, never under a sung word (fix 379).</p></li>
+</ul></li>
+<li><p><strong>Tests.</strong> Every drawn arrangement passes 9.12, 9.13, 9.14, 236 to 238 and 379; its readings fall inside the genre’s kept quartiles above; and the no-hand-input test: no band note from a hand-typed list.</p></li>
+</ol>
+<p><strong>What still needs data.</strong> Fill placement and fill shapes by style (the Groove MIDI Dataset, refused here); texture by section in Western multitrack records (POP909 is Chinese pop and piano only; TiPS’s country, metal and hip-hop parts are unpublished); song-level genre labels (Lakh’s are the artist’s). Allowing this session’s network to reach those hosts, or attaching the files, would close most of it.</p>
+<h3 id="files-and-sources">Files and sources</h3>
+<p>The scripts and tables are in the repo under <code>studies/arrangement</code> (commit 36a16ef): <code>pop909_texture.py</code>, <code>lpd_genres.py</code>, <code>lpd_band.py</code> and <code>lpd_band_tables.py</code>, with their JSON outputs. The raw data is not kept in the repo. This study follows <a href="https://claude.ai/artifact/4VpCZjhV64ua7EjPykjS1K">the audit</a> and <a href="https://claude.ai/artifact/9vgkWHkjy3PyVMB9iKDkBJ">the harmony study</a>.</p>
+<p>Sources:</p>
+<ul>
+<li><p>Moore’s layers and Lavengood’s novelty layer: <a href="https://viva.pressbooks.pub/openmusictheory/chapter/texture-in-pop-music/">Open Music Theory, Texture in Pop Music</a>; Lavengood, <a href="https://mtosmt.org/ojs/index.php/mto/article/view/515/79">The Cultural Significance of Timbre Analysis</a> (MTO 2020); <a href="https://presentations.meganlavengood.com/2025-tops.html">Instrumental Timbre slides</a></p></li>
+<li><p>de Clercq, <a href="https://www.midside.com/publications/declercq_2019_spectrum.pdf">The Harmonic-Bass Divorce in Rock</a> (2019)</p></li>
+<li><p>Geary, <a href="https://www.mtosmt.org/issues/mto.24.30.2/mto.24.30.2.geary.pdf">drums and form</a> (MTO 2024)</p></li>
+<li><p>Schwitzgebel, <a href="https://mtosmt.org/issues/mto.25.31.1/mto.25.31.1.schwitzgebel.pdf">texture, cues and expectation in post-millennial pop</a> (MTO 2025)</p></li>
+<li><p><a href="https://www.mcgill.ca/timbre-orchestration/research/projects/strategic-projects/interactions-timbre">Interactions of timbre and form, McGill</a></p></li>
+<li><p>Spicer, <a href="https://www.taylorfrancis.com/books/9781315088631/chapters/10.4324/9781315088631-15">(Ac)cumulative form in pop-rock music</a> (2004)</p></li>
+<li><p><a href="https://timbreandorchestration.org/writings/project-reports/timbre-in-popular-song">The Timbre in Popular Song (TiPS) corpus</a> (2023)</p></li>
+<li><p>Wang et al., <a href="https://arxiv.org/abs/2008.07142v1">POP909</a> (ISMIR 2020); Dai, Zhang and Dannenberg, <a href="https://www.github.com/Dsqvival/hierarchical-structure-analysis">phrase labels</a> and <a href="https://arxiv.org/pdf/2010.07518">paper</a> (2020)</p></li>
+<li><p>Zhao and Xia, <a href="https://arxiv.org/abs/2108.11213">AccoMontage</a> (ISMIR 2021); Ren et al., <a href="https://arxiv.deeppaper.ai/papers/2008.07703v1">PopMAG</a> (2020)</p></li>
+<li><p><a href="https://zenodo.org/records/5646574">Lakh Pianoroll Dataset</a> (Zenodo); <a href="https://zenodo.org/records/10178563">Gold-Caps LMD-Matched</a> (Zenodo); <a href="https://magenta.tensorflow.org/datasets/groove">Groove MIDI Dataset</a></p></li>
+</ul>
 
 <a class="top" href="#start">Top</a>
 </body>

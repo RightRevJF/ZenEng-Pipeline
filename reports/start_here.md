@@ -6,13 +6,13 @@ author: "Words and music: Jason Bryant"
 
 # Start here
 
-This one file holds everything the songwriting session learned and wrote while Luthier was offline, and since: songs 54 and 55, run on Luthier v7 on 16 November, added their findings (749.24 to 749.31) and their test reports (Parts 15 and 16). Nothing else needs to be sent with it. It is written for Luthier's maintainer (the AI that keeps the spec), and Jason can read the first two pages to see what is in it.
+This one file holds everything the songwriting session learned and wrote while Luthier was offline, and since: songs 54 and 55, run on Luthier v7 on 16 November, added their findings (749.24 to 749.31) and their test reports (Parts 15 and 16), and an audit of what the engine itself writes, with two research studies for the harmony and band writers v8 needs, added Parts 17 to 19. Nothing else needs to be sent with it. It is written for Luthier's maintainer (the AI that keeps the spec), and Jason can read the first two pages to see what is in it.
 
 **For Jason, to share it:** attach this file to the maintainer's chat and send this line:
 
-> Please read the Start here page of this file first, then the fix list for v8 (Part 1) and the new rules (Part 2). Parts 3 to 16 are the evidence behind them. Prepare Luthier v8 from it.
+> Please read the Start here page of this file first, then the fix list for v8 (Part 1), the new rules (Part 2) and the audit (Part 17). Parts 18 and 19 are the research for v8's harmony and band writers; Parts 3 to 16 are the evidence behind the fixes. Prepare Luthier v8 from it.
 
-**For the maintainer:** read Parts 1 and 2 in full. They say what to change. Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64 and songs/p65), for anyone who has access. This file does not depend on it.
+**For the maintainer:** read Parts 1, 2 and 17 in full. They say what to change. Parts 18 and 19 are the research for the two new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony and studies/arrangement), for anyone who has access. This file does not depend on it.
 
 ## What is in this file
 
@@ -34,6 +34,9 @@ This one file holds everything the songwriting session learned and wrote while L
 | 14 | Chromatic harmony: views, covers, our songs, hymns and art song | {P14} |
 | 15 | The Man Mama Prayed I'd Be (song 54, on Luthier v7): test report | {P15} |
 | 16 | Your Yard Man (song 55, on Luthier v7): test report | {P16} |
+| 17 | **Luthier audit: harmony and arrangement.** What the engine writes and what an AI has written, item by item and song by song; the gaps; the order of work for v8 and the no-hand-input test | {P17} |
+| 18 | Harmony research for Luthier v8: what follows what (the McGill Billboard songs, a prototype chord writer, tested) | {P18} |
+| 19 | Arrangement research for Luthier v8: what the band does (the academic record, POP909, the Lakh band by genre) | {P19} |
 
 ## What we learned, in brief
 
@@ -49,6 +52,10 @@ This one file holds everything the songwriting session learned and wrote while L
 9. **Back on the engine (song 54).** A country story song on Luthier v7 found the engine assumes a bridge, still loses two-thirds of its builds on long lines with borrowed rhythms, and lets most survivors sing two syllables on one note; the judge picked one, so the pick of record is the judge's own rule without that fault. Two of the new rules need reading by texture and by song type (749.24 to 749.29).
 10. **Song 55, a second country song.** The same two-syllables fault decided the pick again (42% of clean survivors), so it is general. Most builds died at the chorus's one-bar lines drawn fresh, a new place for placement deaths, and short lines in two-bar slots can open long rests between their words (749.30, 749.31).
 
+11. **Who writes what (the audit).** In every song since v7 the engine wrote the sung melody and its rhythm, and the bass routine wrote the bass; an AI wrote each song's chord plan and every other band part by hand, and songs 52 and 53 entirely. The goal is an engine that writes everything and uses AI only lightly, so v8 needs two new writers, harmony and arrangement, drawn from measured tables and tested, and a test that fails any song with a hand-typed chord or band note (Part 17).
+12. **Harmony (Part 18).** On 739 Billboard songs each section kind has a sharp job (verses open on I three times in four, bridges end on V nearly half the time). A simple model of what follows what, trained on 592 songs, already passes as real on major-key verses and choruses; minor keys, bridges and pre-choruses need more data, and the writer needs a loop step, since real sections repeat a two- or four-bar cell.
+13. **The band (Part 19).** Real intros carry about 70% of the fullest band; the chorus lifts by playing more notes (busier than the verse in 88% of 909 songs), not by moving higher; the bass plays about once a beat at any tempo; every genre's commonest snare bar is 2 and 4, and genre shows in kick patterns, bass syncopation and piano voicing. The best published systems draw real phrases and fit them to new chords, which is how v8's band writer should work.
+
 The main new idea: **judge every song on two channels**, what audiences reward and what musicians reward, and prefer songs that do well on both.
 
 ## Still open
@@ -57,6 +64,7 @@ The main new idea: **judge every song on two channels**, what audiences reward a
 - Song 54 (The Man Mama Prayed I'd Be): delivered; blind pick taken (Middle); a made-for-real rerun is offered.
 - Song 55 (Your Yard Man): delivered; blind pick taken (Remembered, the hook); a made-for-real rerun is offered.
 - Song 52 (The Room Next Door) and song 53 were written outside the engine, so v8 should be able to write them itself.
+- Song 56 (Terpsichore, a soul ballad): lyric locked and mouth-tested, and the engine's melody runs are done; the song waits for v8's harmony and band writers, so that the engine writes all of it.
 
 ## Data and cautions
 
