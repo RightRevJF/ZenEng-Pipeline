@@ -48,3 +48,7 @@ LOG.append({"q": "Part 22 added: next", "options": {"A": "stop the research and 
 LOG.append({"q": "words study (in progress after B)", "answer": "delivered", "note": "Doc Setting words for Luthier v8 (https://claude.ai/artifact/4xcqBYhnS8uLAFCzeuqtA2); measurement in studies/words; then the final report for the maintainer as asked"})
 
 LOG.append({"q": "final report", "answer": "done", "note": "Part 23 added; the file renamed Luthier - final report for v8 (14-17 November 2026).pdf, 240 pages; web page retitled Luthier: the final report for v8"})
+
+LOG.append({"q": "final report done: next", "options": {"A": "send it to the maintainer now", "B": "read the unread sources first (Halle and Lerdahl, Dell and Halle, others) and fold them into Part 23", "C": "something else"}, "recommended": "A", "answer": "B", "note": "verbatim: 'B.  Keep researching'"})
+
+LOG.append({"q": "keep researching (after B)", "answer": "done", "note": "second round of reading on setting words folded into Part 23 (Hayes maxent, Dell and Halle, de Castro Arrazola, Tan et al., White 2022, Gilroy et al. 2024); words_more.py measured stress-metre contours and voiced endings; final report rebuilt, 243 pages"})
