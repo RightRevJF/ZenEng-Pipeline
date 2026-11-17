@@ -1,8 +1,8 @@
 # Start here {#start}
 
-This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with two research studies for the harmony and band writers v8 needs (Parts 17 to 19). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier's maintainer, the AI that keeps the spec. Words and music: Jason Bryant.
+This page holds everything the songwriting session learned and wrote while Luthier was offline (14 to 15 November 2026), and since: songs 54 and 55, run on Luthier v7 on 16 November, with their findings (749.24 to 749.31) and test reports (Parts 15 and 16), and an audit of what the engine itself writes, with three research studies for the harmony, band and tension writers v8 needs (Parts 17 to 20). Here: the fix list for v8, the new rules, and every report and study. It is written for Luthier's maintainer, the AI that keeps the spec. Words and music: Jason Bryant.
 
-**For the maintainer:** read Parts 1, 2 and 17 in full. They say what to change. Parts 18 and 19 are the research for the two new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony and studies/arrangement), for anyone with access. This page does not depend on it.
+**For the maintainer:** read Parts 1, 2 and 17 in full. They say what to change. Parts 18 to 20 are the research for the new writers; Parts 3 to 16 are the evidence; go to them when a fix or rule needs checking. The code, data tables and songs are also in the private GitHub repository RightRevJF/ZenEng-Pipeline (folders reports, studies, tables/metre_atlas, songs/p62, songs/p63, songs/p64, songs/p65 and songs/p66; the harmony and arrangement studies are in studies/harmony and studies/arrangement), for anyone with access. This page does not depend on it.
 
 ## What is on this page
 
@@ -27,6 +27,7 @@ This page holds everything the songwriting session learned and wrote while Luthi
 | [17](#part-17) | **Luthier audit: harmony and arrangement.** What the engine writes and what an AI has written, item by item and song by song; the gaps; the order of work for v8 and the no-hand-input test |
 | [18](#part-18) | Harmony research for Luthier v8: what follows what (the McGill Billboard songs, a prototype chord writer, tested) |
 | [19](#part-19) | Arrangement research for Luthier v8: what the band does (the academic record, POP909, the Lakh band by genre) |
+| [20](#part-20) | Tension research for Luthier v8: building and releasing tension (models tested against listeners, structure, pop theory, 214 Billboard songs measured) |
 
 ## What we learned, in brief
 
@@ -44,6 +45,8 @@ This page holds everything the songwriting session learned and wrote while Luthi
 11. **Who writes what (the audit).** In every song since v7 the engine wrote the sung melody and its rhythm, and the bass routine wrote the bass; an AI wrote each song's chord plan and every other band part by hand, and songs 52 and 53 entirely. The goal is an engine that writes everything and uses AI only lightly, so v8 needs two new writers, harmony and arrangement, drawn from measured tables and tested, and a test that fails any song with a hand-typed chord or band note (Part 17).
 12. **Harmony (Part 18).** On 739 Billboard songs each section kind has a sharp job (verses open on I three times in four, bridges end on V nearly half the time). A simple model of what follows what, trained on 592 songs, already passes as real on major-key verses and choruses; minor keys, bridges and pre-choruses need more data, and the writer needs a loop step, since real sections repeat a two- or four-bar cell.
 13. **The band (Part 19).** Real intros carry about 70% of the fullest band; the chorus lifts by playing more notes (busier than the verse in 88% of 909 songs), not by moving higher; the bass plays about once a beat at any tempo; every genre's commonest snare bar is 2 and 4, and genre shows in kick patterns, bass syncopation and piano voicing. The best published systems draw real phrases and fit them to new chords, which is how v8's band writer should work.
+
+14. **Tension (Part 20).** Harmonic tension and energy are two curves. In 214 Billboard hits the chords are most tense in the pre-chorus and bridge, with V just before each chorus and I on its first bar, while listeners' energy peaks in the chorus; both build late (about 0.68 and 0.74 of the song). v7's 1-to-3 chord value predicts nothing; models that fit listeners read trends and give harmony a memory of 20 to 30 seconds. v8 should plan both curves before writing and gate its writers by them.
 
 The main new idea: **judge every song on two channels**, what audiences reward and what musicians reward, and prefer songs that do well on both.
 

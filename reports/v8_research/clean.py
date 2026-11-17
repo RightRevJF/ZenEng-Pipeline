@@ -44,7 +44,10 @@ def clean(name):
     pos = 0
     for t, u in links(name + ".pdf"):
         k = md.find(t, pos)
+        if k < 0: k = md.find(t)
+        while k > 0 and md[k - 1] == "[": k = md.find(t, k + 1)
         if k < 0: print("  link text not found:", t[:50], file=sys.stderr); continue
         rep = f"[{t}]({u})"; md = md[:k] + rep + md[k + len(t):]; pos = k + len(rep)
     open(name + ".md", "w").write(md.strip() + "\n"); print(name, len(md))
-for n in ["audit", "harmony", "arrangement"]: clean(n)
+import sys
+for n in (sys.argv[1:] or ["audit", "harmony", "arrangement"]): clean(n)
