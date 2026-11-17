@@ -60,3 +60,7 @@ LOG.append({"q": "keep going on words (after B)", "answer": "done", "note": "thi
 LOG.append({"q": "across the century added: next", "options": {"A": "send the final report to the maintainer now", "B": "keep going: read VanderStel and Temperley in full and measure the 20 post-2000 songs", "C": "something else"}, "recommended": "A", "answer": "B"})
 
 LOG.append({"q": "keep going (after B)", "answer": "done", "note": "fourth round folded into Part 23 as After 2000 (White 2022 manuscript, Condit-Schultz 2019); pop20c_rhythm.py measured rhythm by period with the post-2000 songs and songs 54 and 55; VanderStel and Temperley full paper not reachable; final report rebuilt, 246 pages"})
+
+LOG.append({"q": "after 2000 added: next", "options": {"A": "send the final report to the maintainer now", "B": "one more round: find a modern corpus with lyrics to check the word rules after 2000", "C": "something else"}, "recommended": "A", "answer": "B"})
+
+LOG.append({"q": "one more round (after B)", "answer": "done", "note": "BiMMuDa (1950-2022, top five Billboard year-end) word measures by period, words attached by exact count with a stress-free line-end check (145 of 165 sections); added to Part 23 as Words after 2000; final report rebuilt, 248 pages"})

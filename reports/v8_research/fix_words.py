@@ -34,9 +34,12 @@ md = md[:a] + """- `parse_words.py`: every sung syllable of CoCoPops Billboard a
 
 - `pop20c_rhythm.py`: melodic rhythm by period, with the post-2000 songs.
 
-- `words_results.json`, `words_more_results.json`, `pop20c_results.json` and `pop20c_rhythm_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
+- `bimmuda_words.py`: the word measures on BiMMuDa, 1950 to 2022, words attached by exact count.
+
+- `words_results.json`, `words_more_results.json`, `pop20c_results.json`, `pop20c_rhythm_results.json` and `bimmuda_words_results.json`: every figure in this report. `sung_syllables.json` is not committed; the parser rebuilds it.""" + md[b:]
 if "Data: [CoCoPops]" not in md: md = md.replace("Data: CoCoPops, CC BY", "Data: [CoCoPops](https://github.com/Computational-Cognitive-Musicology-Lab/CoCoPops), CC BY", 1)
 md = re.sub(r"(?m)^### (\*\*)?(Sources read:|Checks for the port:|Measured:)(\*\*)?$", r"\2", md)
+md = re.sub(r"(?m)^### (In the repo, `studies/words/`:)$", r"\1", md)
 md = md.replace("(Proto 2013)", "([Proto 2013](https://hispadoc.es/descarga/articulo/4147297.pdf))")
 md = re.sub(r"(\d{4})\u2013 (\d{4})", lambda m: m.group(1) + "\u2013" + m.group(2), md)
 md = re.sub(r"\n\n### (inside the word, not a lengthening rule\.)", lambda m: " " + m.group(1), md)
