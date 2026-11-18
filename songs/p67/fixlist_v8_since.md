@@ -2,7 +2,7 @@
 
 18 November 2026 · Jason Bryant. Live copy: the Doc https://claude.ai/artifact/RsLofQqXxtUqSMFu61sAyy
 
-The songwriting session's findings since Luthier v8 stage 1 (Module 27.89, Window 165, fixes 750 to 755), for the maintainer. Stage 1 is merged into main; 749.35 is closed; two new findings, 749.40 and 749.41. Words and music on every song: Jason Bryant.
+The songwriting session's findings since Luthier v8 stage 1 (Module 27.89, Window 165, fixes 750 to 755), for the maintainer. Stages 1 and 2a (Luthier v9, Module 27.90, fixes 760 to 766) are merged into main; 749.35 is closed; six new findings, 749.40 to 749.45. The maintainer's message of 18 November still had 749.35 open and new numbers from 749.40: both are settled here. Words and music on every song: Jason Bryant.
 
 ## Stage 1 review
 
@@ -20,6 +20,20 @@ Branch luthier-v8-stage1 (c1ce8e2) was reviewed and merged into main by fast-for
 | 753 | sleepin', callin', nothin', 'n', 'cause, a.m. and p.m. read as meant (but see 749.41) |
 
 The branch also commits the spec itself (reports/Luthier_v8.docx); no finding.
+
+## Stage 2a review (Luthier v9)
+
+Stage 2a (3850f18; Module 27.90, Window 166, fixes 760 to 766) was reviewed and merged into main on 18 November (a7447c2). The review is lib/luthier/REVIEW_stage2a.md.
+
+| Check | Result |
+|---|---|
+| Every .py compiles; no .pkl, src/, out/ or key | yes; none |
+| gen_l9.py on song 57's v7 file gives the committed melody_l9_p67.py | byte for byte |
+| Song 55 main, 1,000, from the committed engine (songs/p65/runl9/review_main_v9.txt) | order 4f5d2cd5bbd8, 496 survivors, 53 placement deaths, pick a09b4cc4fd3a, 18 eligible: the log and Table FT |
+| Song 54 main, 1,000 (songs/p64/runl9/review_main_v9.txt) | order 9a5743a02cde, 580 survivors, 0 placement deaths: the log and Table FT |
+| slots.py, propose() | runs; song 57's lines at 112 bpm: two bars proposed for every line of 9 to 14 syllables, as written |
+
+Why the two gates now take the most builds (766): song 55's join before a copy comes from 212 reading a copied pair more strictly than its source was read (749.42), plus one design collision (749.43); song 54's design fails at the same rate as on v8 and is decided by where the verse sings (749.44).
 
 ## Findings
 
@@ -58,6 +72,39 @@ The branch also commits the spec itself (reports/Luthier_v8.docx); no finding.
 
 **Check:** "plan a. make" reads plan, a, make; "up at 5 a.m." reads ayem.
 
+### 749.42. The join before a copy asks more than the source's join
+
+ *Problem:* 212 reads a copied pair with GAP_MIN or a fresh breath,
+where the pair it copies was joined under 631's drawn breath. *Evidence:* above; 273 + 89 of 428 traced deaths on song 55. *Fix:* a line
+before a copy keeps the join its source kept (when both lines are copies or sung-again of a pair that joined legally, the copy's join
+is the source's), and 765's least breath applies to the copy's join as to the line's. *Check:* song 55's deaths at 212 fall to the
+hook-to-verse case or below; no copied pair dies on notes its source sang.
+
+
+### 749.43. Song 55's hook-to-verse join is a design collision
+
+ *Problem:* the designed answer ends on beat 4 and verse 2 enters
+a sixteenth after the downbeat (15 twelfths against 18). *Evidence:* 58 of 428 traced deaths. *Fix:* either let verse 2's entry move
+to the downbeat or later when the line before is designed, or read the join at the least breath the kept songs allow after a held
+note. *Check:* no build dies at Chorus 1 line 10 before Verse 2.
+
+
+### 749.44. The chorus-above-the-verse design is decided by where the verse sings
+
+ *Problem:* on song 54 the chorus is held under the
+hook's top and barely moves; the design passes or fails on the verse's median, which the register draw does not hold. *Evidence:*
+above. *Fix:* draw the verse's centre from the chorus's reachable median (at or under the chorus median less the design's lift), or
+hold the verse's walk near its centre; or check the design at intake as a constraint on the verse. *Check:* design deaths on song 54
+under one build in ten.
+
+
+### 749.45. Stage 2a's logs and slots.py's command line
+
+ The stage-2a logs record code hashes the committed engines do not give (song 55: 745cf9220e7c against
+276d01acc0ce), though both songs rerun to the logged results; and `slots.py`'s command line reads the bars given as syllables
+(`slots.py 112 13 10 7 2 2 1` proposes slots for lines of 2, 2 and 1 syllables). *Fix:* commit logs from the committed engines; parse
+the given bars after a separator. *Check:* hashes match; the command line flags a short slot.
+
 ## Carried from the final report
 
 Song 57's findings came in Part 33 of the final report (songs/p67/test_report_p67.md) and are open, for the maintainer to stage under 755. Their numbers are unchanged since the report except 749.32's and 749.34's counts, now read on the correct 247 survivors.
@@ -88,7 +135,7 @@ The v8 stage-1 orders (main / control), from the maintainer's runs; picks from T
 
 ## Running total
 
-- **Findings since v8:** 3 (749.35 closed; 749.40 and 749.41 open). Next new finding: 749.42; the paper's next fix: 760.
+- **Findings since v8:** 7 (749.35 closed; 749.40 to 749.45 open). Next new finding: 749.46; the paper's next fix: 770. Closed by v9 stage 2a: 741, 747, 749.3, 749.25, 749.30, 749.31.
 - **Carried open from the final report:** 7 (749.32 to 749.34, 749.36 to 749.39).
-- **Songs on v8:** none written yet. Song 58 starts from an l8 file (lib/luthier/gen_l8.py).
-- **Ported by the session since v8:** nothing, as asked; stage 2 comes next from the maintainer.
+- **Songs on v8:** none written yet. Song 58 starts from an l9 file (lib/luthier/gen_l9.py), its slots proposed by lib/luthier/slots.py with the flags printed.
+- **Ported by the session since v8:** nothing, as asked; stage 2b, then stage 3 (metre and hymns), come next from the maintainer.
