@@ -186,3 +186,14 @@ Same command. Results: `stage6b_results.json`.
 - The research report: `reports/Vectors for judging great songs.md`; notes in `research_notes/Vectors for judging great songs/`.
 - Side effect: the two new readings are in every kept table's quartiles, so the old two-sided charge of songs 52 and 53 from their hand specs changes in size (song 52: 3.315; pick unchanged).
 - 866 not built: a chord judge beyond 809, a kept pop corpus outside 4/4, lyric rules, a second channel for musicians, a reading of form.
+
+## Way 2: the same order at every scale — fixes 867, 868 (to be written into Luthier v21)
+
+`scaling.py`: detrended fluctuation analysis of a song's pitch series and of its onsets on a sixteenth grid. Study: `way2_scaling_study.py`, predictions `way2_PREDICTION.md`,
+results `way2_results.json`, `way2_confounds.json`.
+
+- Kept pop songs: pitch alpha 0.79 / 0.90 / 1.00 (shuffled 0.53); onsets 0.61 / 0.66 / 0.72 (shuffled 0.51). The engine's builds: pitch 0.72 (song 55), 0.82 (song 54);
+  onsets 0.46 to 0.48, under a shuffled series.
+- Shuffling a kept song's bars lowers its pitch alpha in 87 songs in 100: the reading of form the stage-7 gate lacked.
+- Against the chart record: pitch alpha 0.17 with weeks (0.12 holding year and length), within chance on 131 songs.
+- 867 both exponents join the readings and the 4/4 pop gate. 868 both join the directed readings, counted up to the kept median.

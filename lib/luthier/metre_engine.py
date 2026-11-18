@@ -263,6 +263,10 @@ class Engine:
         for k_ in sorted(byb):
             v = byb[k_]; rh = tuple(x for x, _ in v); fig = (rh, tuple(b_[1] - a_[1] for a_, b_ in zip(v, v[1:]))); nr += rh in seen_r; nf += fig in seen_f; seen_r.add(rh); seen_f.add(fig)
         r["bars on a rhythm already sung"] = nr / len(byb); r["bars on a figure already sung"] = nf / len(byb)
+        if "pitch scaling" in self.Q:                                                        # 867: long-range order (detrended fluctuation analysis), where the kept table holds it
+            import scaling as SC; S_ = SC.series([(n["on"], n["p"]) for n in notes]); a_ = SC.dfa(S_["pitch"]); b_ = SC.dfa(S_["onsets on the grid"])
+            if a_: r["pitch scaling"] = a_["alpha"]
+            if b_: r["rhythm scaling"] = b_["alpha"]
         return {k: v for k, v in r.items() if k in self.Q}
     def directed(self, notes):
         """863: readings with a direction known in advance, each made so that more is better. Surprise is each note's bits under the kept moves (given the move before where the
@@ -273,7 +277,11 @@ class Engine:
             d = b["p"] - a["p"]; ic.append(-math.log2(max(1e-9, self.ivp(d, last)))); last = d; fin.append((a["sec"], a["line"]) != (b["sec"], b["line"]))
         if not ic: return {"low surprise": 0.0, "sure endings": 0.0}
         endn = [x for x, f in zip(ic[:-1], fin[1:] + [True]) if f] + [ic[-1]]; inner = [x for x, f in zip(ic[:-1], fin[1:] + [True]) if not f]; floor = self.T.get("surprise_quartiles", [None])[0]; m = float(np.mean(ic))
-        return {"low surprise": -(max(m, floor) if floor else m), "sure endings": float(np.mean(inner) - np.mean(endn)) if inner and endn else 0.0}
+        out = {"low surprise": -(max(m, floor) if floor else m), "sure endings": float(np.mean(inner) - np.mean(endn)) if inner and endn else 0.0}
+        if "pitch scaling" in self.Q:                                                        # 868: order across scales, counted up to the kept median and no further (a leap: no listening study is behind it)
+            import scaling as SC; S_ = SC.series([(n["on"], n["p"]) for n in notes]); a_ = SC.dfa(S_["pitch"]); b_ = SC.dfa(S_["onsets on the grid"])
+            out["order across scales, pitch"] = min(a_["alpha"], self.Q["pitch scaling"][1]) if a_ else 0.0; out["order across scales, rhythm"] = min(b_["alpha"], self.Q["rhythm scaling"][1]) if b_ else 0.0
+        return out
     def charge(self, r):
         c = d = 0.0
         for k, (a, m, z) in self.Q.items():
