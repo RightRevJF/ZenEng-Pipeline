@@ -197,3 +197,14 @@ results `way2_results.json`, `way2_confounds.json`.
 - Shuffling a kept song's bars lowers its pitch alpha in 87 songs in 100: the reading of form the stage-7 gate lacked.
 - Against the chart record: pitch alpha 0.17 with weeks (0.12 holding year and length), within chance on 131 songs.
 - 867 both exponents join the readings and the 4/4 pop gate. 868 both join the directed readings, counted up to the kept median.
+
+## Luthier v21: the same order at every scale; the fix list for v21 — fixes 867–878
+
+Same commands. Results: `stage8_results.json` (four songs, the scaling study, the descant). Slower now: each build's scaling is read (about four minutes a song at 1,000 builds).
+
+- 867, 868 scaling (see the section above). 876, 877 where the voice stays out (`one_bar_share`; turns in `plan()`; kept figures in `tables/kept_silences.json`,
+  `tables/kept_long_silences.json`): press a kept song's silences over a bar down to a bar and its rhythm exponent falls from 0.66 to 0.53.
+- 869 answers 749.63 (slots); 870 answers 749.58 (`kept_rests`); 871 answers 749.64 (weak endings); 872-874 answer 749.60-749.62 (the pick: the old charge's least half,
+  then the joint gate, then the first build in the order built; directed readings printed only); 875 answers 749.59 (melismas); 878 answers 749.57 (`sung_shifts`, `descant_shift`).
+- Every committed record is new (four lyric songs, spec52 run and written chords, spec53 spec and parts, stage4_results.json). Song 53's tune pick is unchanged.
+- Not met: rhythm exponent under the kept middle half on songs 54 and 58; the descant's summit at note 24 of 34, not in the last quarter; song 52 has no build past the joint gate.

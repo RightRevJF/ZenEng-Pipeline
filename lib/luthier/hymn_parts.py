@@ -22,17 +22,18 @@ def perfect(a, b): return (a - b) % 12 in (0, 7)
 def bad_parallel(x0, y0, x1, y1):
     """two voices (upper x, lower y) moving the same way from a perfect fifth, octave or unison to the same interval"""
     return x0 != x1 and y0 != y1 and (x1 - x0) * (y1 - y0) > 0 and (x0 - y0) % 12 == (x1 - y1) % 12 and (x0 - y0) % 12 in (0, 7)
-def harmonise(tune, chord_of, CH, kept, shift=0):
+def harmonise(tune, chord_of, CH, kept, shifts=(0,)):
     """tune: [(on, dur, pitch)]; chord_of(i) -> chord name; CH: name -> pitch classes (root first). Returns [(A, T, B)] and the cost."""
     lam, mv = LAM, MOVE; states = []
     for i, (on, d, s) in enumerate(tune):
         pcs = CH[chord_of(i)]; root, third = pcs[0], pcs[1]; v = []
-        for b in range(RANGE["B"][0], RANGE["B"][1] + 1):
+        lo_s, hi_s = min(shifts), max(shifts)                                                    # 878 (749.57): every range is read as sung, in each key the spec says the tune is sung in
+        for b in range(RANGE["B"][0] - lo_s, RANGE["B"][1] - hi_s + 1):
             if b % 12 not in pcs: continue
             cb = 0.0 if b % 12 == root else 2.5 if b % 12 == third else 5.0
-            for t in range(max(RANGE["T"][0], b + 1), RANGE["T"][1] + 1):
+            for t in range(max(RANGE["T"][0] - lo_s, b + 1), RANGE["T"][1] - hi_s + 1):
                 if t % 12 not in pcs: continue
-                for a in range(max(RANGE["A"][0], t + 1), min(RANGE["A"][1], s - 1) + 1):
+                for a in range(max(RANGE["A"][0] - lo_s, t + 1), min(RANGE["A"][1] - hi_s, s - 1) + 1):
                     if a % 12 not in pcs or a - t > 12 or s - a > 12: continue
                     have = {a % 12, t % 12, b % 12} | ({s % 12} if s % 12 in pcs else set())
                     if root not in have or third not in have: continue
@@ -63,11 +64,14 @@ def descant(tune, parts, chord_of, CH, top_limit=81):
     """853: tune and parts for the passage; returns the descant's pitches"""
     n = len(tune); q0 = int(n * 0.75); peak_i = max(range(q0, n), key=lambda i: (tune[i][2], tune[i][1], -i))                 # the tune's highest (then longest) note of the last quarter
     top = max(p for p in range(tune[peak_i][2] + 3, top_limit + 1) if p % 12 in CH[chord_of(peak_i)])
+    tight = [i for i, (on, d, s) in enumerate(tune) if not [p for p in range(s + 1, top) if p % 12 in CH[chord_of(i)]]]      # 878: where the tune stands so high that only the summit is above it
+    if tight and peak_i not in tight: peak_i = tight[-1]; top = max(p for p in range(tune[peak_i][2] + 1, top_limit + 1) if p % 12 in CH[chord_of(peak_i)])
     states = []
     for i, (on, d, s) in enumerate(tune):
-        pcs = CH[chord_of(i)]; cap = top if i == peak_i else top - 1
+        pcs = CH[chord_of(i)]; cap = top if (i == peak_i or i in tight) else top - 1
         v = [p for p in range(s + 3, min(cap, s + 12) + 1) if p % 12 in pcs] if i != peak_i else [top]
-        if not v: v = [p for p in range(s + 1, cap + 1) if p % 12 in pcs][:3]
+        if i in tight and i != peak_i: v = [p for p in range(s + 1, cap + 1) if p % 12 in pcs]
+        if not v: v = [p for p in range(s + 1, cap + 1) if p % 12 in pcs]                         # the tune is high: any chord tone above it under the summit
         states.append(v)
     INF = 1e18; best = [dict() for _ in tune]
     for p in states[0]: best[0][p] = (0.02 * abs(p - (tune[0][2] + 7)), None)
@@ -76,8 +80,8 @@ def descant(tune, parts, chord_of, CH, top_limit=81):
         for p1 in states[i]:
             bj = (INF, None)
             for p0 in best[i - 1]:
-                if bad_parallel(p0, s0, p1, s1) or bad_parallel(p0, b0, p1, b1): continue
-                dv = p1 - p0; m = motion(ds, dv); c = best[i - 1][p0][0] + abs(dv) + (4.0 if abs(dv) > 5 else 0.0) + {"contrary": -1.5, "oblique": -1.0, "static": 0.0, "similar": 0.5}[m] + 0.02 * abs(p1 - (s1 + 7))
+                par = bad_parallel(p0, s0, p1, s1) or bad_parallel(p0, b0, p1, b1)                # forbidden in effect: taken only where no other line exists, and counted in the checks
+                dv = p1 - p0; m = motion(ds, dv); c = best[i - 1][p0][0] + (60.0 if par else 0.0) + abs(dv) + (4.0 if abs(dv) > 5 else 0.0) + {"contrary": -1.5, "oblique": -1.0, "static": 0.0, "similar": 0.5}[m] + 0.02 * abs(p1 - (s1 + 7))
                 if c < bj[0]: bj = (c, p0)
             if bj[1] is not None: best[i][p1] = bj
         if not best[i]: raise RuntimeError(f"no descant at note {i}")
@@ -112,8 +116,10 @@ if __name__ == "__main__":
     for name, pcs in spec["chords"].items():                                                 # root first: the chord's name gives its root
         r = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}[name[0]] + (1 if name[1:2] == "#" else -1 if name[1:2] == "b" else 0); third = next(p for p in pcs if (p - r) % 12 in (3, 4)); CH[name] = [r % 12, third] + [p for p in pcs if p not in (r % 12, third)]
     tune = [(n["on"], n["dur"], n["p"]) for n in ns]; chord_of = lambda i: chords[min(len(chords) - 1, max(0, tune[i][0]) // BAR)]
-    parts, cost = harmonise(tune, chord_of, CH, kept); r0 = next(i for i, n in enumerate(ns) if n["sec"] == spec["tune"][-1]["name"])
-    desc, peak, top = descant(tune[r0:], parts[r0:], lambda i: chord_of(i + r0), CH); ck = checks(tune, parts, kept, desc, r0, peak, top)
+    shifts = tuple(spec.get("sung_shifts", [0])); dshift = spec.get("descant_shift", max(shifts)); parts, cost = harmonise(tune, chord_of, CH, kept, shifts); r0 = next(i for i, n in enumerate(ns) if n["sec"] == spec["tune"][-1]["name"])
+    desc, peak, top = descant(tune[r0:], parts[r0:], lambda i: chord_of(i + r0), CH, top_limit=81 - dshift); ck = checks(tune, parts, kept, desc, r0, peak, top)
+    ck["sung in (semitones above the written key)"] = list(shifts); ck["the descant's summit as sung (A5 is 81)"] = top + dshift
+    ck["every voice in its range as sung"] = all(RANGE[k][0] <= min(x[j] for x in parts) + min(shifts) and max(x[j] for x in parts) + max(shifts) <= RANGE[k][1] for j, k in enumerate("ATB"))
     ck["bass on the root, share"] = round(sum(parts[i][2] % 12 == CH[chord_of(i)][0] for i in range(len(tune))) / len(tune), 2)
     ck["chords complete (root, third and fifth sounding), share"] = round(sum(len({tune[i][2] % 12, *[p % 12 for p in parts[i]]} & set(CH[chord_of(i)][:3])) == 3 for i in range(len(tune))) / len(tune), 2)
     rec = dict(title=spec.get("title"), metre=m, pick=run["pick"]["fp"], bar=BAR, cost=round(cost, 2), checks=ck,

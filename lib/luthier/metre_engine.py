@@ -34,7 +34,7 @@ class Engine:
     def __init__(self, spec):
         self.S = spec; T = json.load(open(os.path.join(ATLAS, (spec.get("table") or spec["metre"].replace("/", "-") + "_sung") + ".json"))); self.T = T      # 812: a spec may name its kept table
         self.BAR, self.BEATS = T["bar"], T["beats"]; self.BEAT = T["beat"] or min(b - a for a, b in zip(self.BEATS, self.BEATS[1:] + [self.BAR]))   # uneven metres: the shortest beat
-        self.END, self.REST = 6, 12; self.BREATH = self.END + self.REST          # 844 (749.53; amends 770, 832): a line's last note is an eighth at least (kept 5th percentile) and a quarter's rest follows (kept 10th), in every metre
+        self.END, self.REST = 6, 12; self.rest_now = 12; self.BREATH = self.END + self.REST          # 844 (749.53; amends 770, 832): a line's last note is an eighth at least (kept 5th percentile) and a quarter's rest follows (kept 10th), in every metre
         self.WIN = {int(k): [(tuple(p), c) for p, c in v] for k, v in T["two_bar_windows"].items()}
         self.BARS = collections.defaultdict(list)
         for p, c in T["bar_rhythms"]: self.BARS[len(p)].append((tuple(p), c))
@@ -71,6 +71,7 @@ class Engine:
             b = t >= 0 and self.on_beat(t)
             sc += (1.5 if b else -0.6) if st else (-0.8 if (b and t % self.BAR == 0) else 0.0)
         if sy[-1][1] and not self.on_beat(ons[-1]): sc -= 1.0
+        if len(sy) > 1 and not sy[-1][1] and sy[-2][1] and sy[-1][0] == sy[-2][0]: sc += 1.5 if ons[-1] - ons[-2] >= 12 else -1.5      # 871 (749.64): a line ending on a word's weak syllable gives the stressed one a quarter at least
         return sc
     def kept_windows(self, n, bars):
         if bars == 2: return self.WIN.get(n, [])
@@ -82,6 +83,10 @@ class Engine:
             if x[1]: break
             lead += 1
         end = slot - self.BREATH if cap is None else min(slot - self.BREATH, cap); out = []; bars = slot // self.BAR; early = []
+        if bars == 2 and self.S.get("one_bar_share") and rng.random() < self.S["one_bar_share"]:      # 876: the line sung in one bar of its two and the voice silent for the other, as kept songs leave whole bars empty
+            o1 = self.rhythm(rng, sy, tmin, self.BAR, cap=min(self.BAR - self.END, cap if cap is not None else 10 ** 6), hook=hook) if n <= 10 else None
+            if o1 is not None and o1[-1] < self.BAR - self.END + 1 and self.stats is not None:
+                if o1[-1] <= self.BAR - self.END: self.stats["876: a line sung in one bar, the next bar silent"] += 1; return o1
         for p in sorted({0, min(1, lead), min(2, lead)}):
             for w, c in self.kept_windows(n - p, bars):
                 if w[-1] > end or (w[0] != 0 and p > 0): continue
@@ -181,7 +186,7 @@ class Engine:
     def tmin(self, lines, k):
         if k == 0: return -12
         ps, pj = self.KEYS[k - 1]; sec, i = self.KEYS[k]
-        return max(-12, self.line_start(ps, pj) + lines[(ps, pj)][-1][0] + self.BREATH - self.line_start(sec, i))
+        return max(-12, self.line_start(ps, pj) + lines[(ps, pj)][-1][0] + self.END + self.rest_now - self.line_start(sec, i))
     @staticmethod
     def runs_ok(ps): return all(not (ps[k] == ps[k + 1] == ps[k + 2] == ps[k + 3]) for k in range(len(ps) - 3))
     def build(self, rng):
@@ -216,7 +221,11 @@ class Engine:
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
                 if r is not None and self.runs_ok([p for t, p in r]) and r[0][0] >= tm and (cap is None or r[-1][0] <= cap): lines[(sec, i)] = r; prev = r[-1][1]; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
-            ons = None; bw = self.S.get("borrow")                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
+            ons = None; bw = self.S.get("borrow")
+            if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0:               # 870 (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
+                self.rest_now = rng.choices(self.S["kept_rests"][0], self.S["kept_rests"][1])[0]; tm2 = self.tmin(lines, k); self.rest_now = self.REST
+                o2 = self.rhythm(rng, sy, tm2, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) if tm2 > tm else None
+                if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
             if bw and how[0] == "fresh":
                 j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
@@ -241,7 +250,7 @@ class Engine:
         for j, n in enumerate(flat):
             nx = flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR; last = j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"])
             how = self.HOW.get((n["sec"], n["line"]), ["fresh"]); dd = {t: d for t, p, d in how[1]} if how[0] == "design" else None
-            n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(self.END, min(nx - n["on"] - self.REST, 24)) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
+            n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(self.END, min(nx - n["on"] - self.REST, 24 if n["stress"] else max(self.END, min(24, n["on"] - flat[j - 1]["on"]) if j and flat[j - 1]["text"] == n["text"] and flat[j - 1]["stress"] else 24))) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
         for j in range(len(flat) - 1):
             if flat[j]["on"] + flat[j]["dur"] > flat[j + 1]["on"]: flat[j]["dur"] = flat[j + 1]["on"] - flat[j]["on"]
         return dict(notes=flat, plans=plans), None
@@ -326,17 +335,18 @@ class Engine:
             except Exception as e_: J = None; j7 = {"not used": str(e_)}
             if J is not None:
                 for c in alive: c["d7"] = J.distance(c["readings"]); c["directed"] = self.directed(c["notes"])
-                ok = [c for c in alive if c["d7"] <= J.gate]; band = [c for c in ok if J.band[0] <= c["d7"] <= J.band[1]]; pool = band or ok or alive
+                half = float(np.median([c["charge"] for c in alive])); first = [c for c in alive if c["charge"] <= half]                           # 874 (749.62): the old charge gates first: the least half of the builds
+                ok = [c for c in first if c["d7"] <= J.gate]; band = ok; pool = ok or first                                                         # 873 (749.61): the gate, and no band
                 names = list(pool[0]["directed"]); rk = {}
                 for n_ in names:
                     v = sorted(pool, key=lambda c: -c["directed"][n_])
                     for r_, c in enumerate(v): rk[(c["fp"], n_)] = r_
                 score = lambda c: sum(rk[(c["fp"], n_)] for n_ in names) / len(names)
-                short = sorted(pool, key=lambda c: (score(c), c["fp"]))[:5] if band else [min(pool, key=lambda c: (abs(c["d7"] - J.usual) if ok else c["d7"], c["fp"]))]
-                pick = short[0]
+                short = sorted(pool, key=lambda c: (score(c), c["fp"]))[:5]                                                                         # printed beside the pick, and chooses nothing (872)
+                pick = min(pool, key=lambda c: c["n"]) if ok else min(pool, key=lambda c: (c["d7"], c["fp"]))                                       # 872 (749.60): no reading has passed the bench, so the first build past both gates, in the order built
                 j7 = dict(kept_songs=J.n, readings_read_together=J.names, gate=round(J.gate, 3), a_kept_songs_usual_distance=round(J.usual, 3), kept_middle_half=[round(x, 3) for x in J.band], builds=len(alive), pass_the_gate=len(ok), in_the_kept_middle_half=len(band),
                           builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"],
-                          pool="the kept middle half" if band else "past the gate" if ok else "no build passed the gate: the least distance", shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
+                          pool="past both gates: the old charge's least half, then the joint gate; the pick is the first of them in the order built" if ok else "no build passed the joint gate: the least distance among the old charge's least half", gates_passed=dict(old_charge_least_half=len(first), joint_gate=len(ok)), shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
                           the_old_pick=dict(fp=old_pick, distance=round(next(c["d7"] for c in alive if c["fp"] == old_pick), 3), passes=bool(next(c["d7"] for c in alive if c["fp"] == old_pick) <= J.gate)), withheld_reading_old_charge_of_the_pick=round(pick["charge"], 3), the_old_pick_notes=[[n["on"], n["p"], n["sec"]] for n in next(c["notes"] for c in alive if c["fp"] == old_pick)])
         st = [n for n in pick["notes"] if n["stress"]]; E = {True: [0, 0, 0], False: [0, 0, 0]}
         for c in alive:

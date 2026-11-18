@@ -64,17 +64,23 @@
   "bass on the root, share": 0.83,
   "descant above the tune throughout": true,
   "descant: lowest, highest": [
-   73,
-   81
+   69,
+   78
   ],
-  "descant's summit sounds once, in the last quarter": true,
+  "descant's summit sounds once, in the last quarter": false,
   "descant: parallels with the tune or the bass": 0,
   "descant: with / against / one holds / both hold, share": [
-   0.18,
+   0.15,
    0.03,
    0.67,
-   0.12
+   0.15
   ],
+  "sung in (semitones above the written key)": [
+   1,
+   3
+  ],
+  "the descant's summit as sung (A5 is 81)": 81,
+  "every voice in its range as sung": true,
   "chords complete (root, third and fifth sounding), share": 0.83
  },
  "voices": {
@@ -1495,12 +1501,12 @@
    {
     "on": 900,
     "dur": 24,
-    "p": 78
+    "p": 74
    },
    {
     "on": 924,
     "dur": 12,
-    "p": 78
+    "p": 74
    },
    {
     "on": 936,
@@ -1510,17 +1516,17 @@
    {
     "on": 960,
     "dur": 12,
-    "p": 78
+    "p": 74
    },
    {
     "on": 972,
     "dur": 24,
-    "p": 76
+    "p": 74
    },
    {
     "on": 996,
     "dur": 12,
-    "p": 76
+    "p": 74
    },
    {
     "on": 1008,
@@ -1545,17 +1551,17 @@
    {
     "on": 1044,
     "dur": 24,
-    "p": 81
+    "p": 73
    },
    {
     "on": 1068,
     "dur": 12,
-    "p": 76
+    "p": 73
    },
    {
     "on": 1080,
     "dur": 60,
-    "p": 74
+    "p": 69
    }
   ]
  },
@@ -1628,8 +1634,8 @@
  ],
  "descant": {
   "over": "refrain",
-  "summit": 81,
-  "at_note": 31,
+  "summit": 78,
+  "at_note": 23,
   "of": 34
  }
 }

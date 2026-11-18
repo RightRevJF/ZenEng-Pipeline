@@ -11,5 +11,5 @@ refrain = dict(name="refrain", start=62, chords=["D", "D", "G", "D", "Bm", "G", 
                       dict(stress=IAMB6, rule=dict(lo=62, hi=71, end=[2], pairs=[dict(a=1, b=3, min=1, max=2)], end_leap_max=5))])              # the second 'sleeping' a step above the first; 'here' home
 spec = dict(title="Sung to Sleep (song 53)", mode="hymn", metre="3/4", seed=20261115 + 4532, scale=[2, 4, 6, 7, 9, 11, 1], compass=[61, 73], leap_max=7, slur_share=0.4,
             chords={"D": [2, 6, 9], "G": [7, 11, 2], "A": [9, 1, 4], "A7": [9, 1, 4, 7], "Bm": [11, 2, 6], "Em": [4, 7, 11], "Em7": [4, 7, 11, 2], "F#m": [6, 9, 1]},
-            only_over={"1": ["A", "A7"]}, tune=[verse, refrain])
+            only_over={"1": ["A", "A7"]}, tune=[verse, refrain], sung_shifts=[1, 3], descant_shift=3)      # 878: written in D; sung in E-flat, the last stanza and its refrain, with the descant, in F
 json.dump(spec, open(f"{H}/spec53.json", "w"), indent=1); print("wrote spec53.json")
