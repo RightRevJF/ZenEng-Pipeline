@@ -152,3 +152,10 @@ Evidence: orders and survivors reproduce on p64 and p65; gen_l11's unasserted re
 Fix: rerun the logs from the committed engines, or name the differing bytes. Check: each log's code_sha equals its engine's.
 
 Next finding 749.47; next fix 790.
+
+## Review of stage 3 (18 November 2026)
+
+Merged e9427ea. Both reruns identical to the committed logs. 794 confirmed. lib/luthier/REVIEW_stage3.md.
+749.47 793's floor widens real widths (notes a bar in most hymn metres); without it song 53 picks df80b1c9ac90; 794's 0.403 is 0.503 on kept widths.
+749.48 rhythm_line allows two slurred bars a line, not two slurs: song 53's verse line 1 has three.
+749.46 still open. Next finding 749.49; next fix 797.
