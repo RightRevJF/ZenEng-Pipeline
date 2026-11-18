@@ -16,7 +16,8 @@ over under through among as than that this these those who whom whose which what
 how why if then is are was were be been being am do does did have has had will would shall should
 can could may might must i me my mine we us our ours you your yours he him his she her hers it its
 they them their theirs all no not each every some any one both such own there here now o oh
-""".split())
+
+'n'""".split())
 # Hymnody's elisions (Module 11.19) plus sung forms used in this hymn.
 OVERRIDE = {
     "our": ["AW1 R"], "hour": ["AW1 R"], "prayer": ["P R EH1 R"], "fire": ["F AY1 R"],
@@ -24,6 +25,7 @@ OVERRIDE = {
     "emmanuel": ["EH0 M AE1 N Y UW0 EH2 L"],       # sung with a full final vowel, -EL
     "alleluia": ["AE2 L EH0 L UW1 Y AA0"],
     "mary's": ["M EH1 R IY0 Z"], "gladness": ["G L AE1 D N AH0 S"],
+    "'n'": ["AH0 N"], "ayem": ["EY2 EH1 M"], "peeem": ["P IY2 EH1 M"],                       # 753 (749.29)
 }
 REDUCED = {"AH0", "IH0", "ER0", "UH0"}
 OPEN = {"AA", "AE", "AH", "AO", "AW", "AY", "EH", "OW", "OY"}
@@ -44,12 +46,18 @@ WEAK_END = FUNCTION - {"you", "me", "i", "us", "we", "him", "her", "them", "here
                         "now", "all", "own", "mine", "yours", "ours"}
 
 def words(line):
-    return re.findall(r"[a-z']+", line.lower().replace("’", "'"))
+    line = line.lower().replace("’", "'")
+    line = re.sub(r"\ba\.\s?m\.?", " ayem ", line); line = re.sub(r"\bp\.\s?m\.?", " peeem ", line)   # 753 (749.29): a.m. and p.m. are one word each
+    return re.findall(r"[a-z']+", line)
 
 def phones(w):
     if w in OVERRIDE: return OVERRIDE[w][0]
     p = pronouncing.phones_for_word(w)
     if not p and w.endswith("'s"): p = pronouncing.phones_for_word(w[:-2])
+    if not p and w.endswith("in'"):                                                        # 753 (749.29): sleepin' read from sleeping, its last sound N
+        q = pronouncing.phones_for_word(w[:-1] + "g")
+        if q and q[0].endswith("IH0 NG"): return q[0][:-2] + "N"
+    if not p and w.strip("'") != w: p = pronouncing.phones_for_word(w.strip("'"))            # 'cause, 'til, singin (a stray apostrophe)
     if not p: raise KeyError(w)
     return p[0]
 

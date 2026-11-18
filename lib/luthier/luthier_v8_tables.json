@@ -1,0 +1,323 @@
+{
+ "about": "Luthier v8, stage 1 (Module 27.89, Window 165), fixes 750-755. Kept songs: 159 CoCoPops Billboard songs of 150 sung notes or more.",
+ "750: rhythms with an onset twice in luthier_v3_tables.json's 652 table (the engine's draw). The loader refuses them": [
+  {
+   "notes in the bar": "2",
+   "onsets": [
+    0,
+    0
+   ],
+   "times sung": 5,
+   "songs": 4
+  },
+  {
+   "notes in the bar": "3",
+   "onsets": [
+    0,
+    0,
+    6
+   ],
+   "times sung": 2,
+   "songs": 2
+  },
+  {
+   "notes in the bar": "6",
+   "onsets": [
+    0,
+    0,
+    12,
+    18,
+    24,
+    36
+   ],
+   "times sung": 3,
+   "songs": 2
+  }
+ ],
+ "750: the same in luthier_v6_kept_bars.json (the reading of 710). Read a bar with an onset twice as not sung in a kept song": [
+  {
+   "notes in the bar": "2",
+   "onsets": [
+    0,
+    0
+   ],
+   "times sung": 5,
+   "songs": 4
+  },
+  {
+   "notes in the bar": "3",
+   "onsets": [
+    0,
+    0,
+    6
+   ],
+   "times sung": 2,
+   "songs": 2
+  },
+  {
+   "notes in the bar": "3",
+   "onsets": [
+    0,
+    3,
+    0
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "3",
+   "onsets": [
+    0,
+    0,
+    42
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "5",
+   "onsets": [
+    0,
+    0,
+    12,
+    24,
+    36
+   ],
+   "times sung": 2,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "5",
+   "onsets": [
+    0,
+    0,
+    6,
+    9,
+    12
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "5",
+   "onsets": [
+    0,
+    0,
+    6,
+    24,
+    36
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "5",
+   "onsets": [
+    0,
+    0,
+    15,
+    18,
+    21
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "6",
+   "onsets": [
+    0,
+    0,
+    12,
+    18,
+    24,
+    36
+   ],
+   "times sung": 3,
+   "songs": 2
+  },
+  {
+   "notes in the bar": "6",
+   "onsets": [
+    0,
+    0,
+    6,
+    24,
+    42,
+    45
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "6",
+   "onsets": [
+    0,
+    0,
+    6,
+    18,
+    24,
+    30
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "7",
+   "onsets": [
+    0,
+    0,
+    6,
+    12,
+    30,
+    36,
+    42
+   ],
+   "times sung": 7,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "7",
+   "onsets": [
+    0,
+    0,
+    3,
+    18,
+    21,
+    24,
+    42
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "7",
+   "onsets": [
+    0,
+    0,
+    3,
+    18,
+    21,
+    27,
+    45
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "7",
+   "onsets": [
+    0,
+    0,
+    9,
+    15,
+    24,
+    33,
+    39
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "7",
+   "onsets": [
+    0,
+    0,
+    8,
+    16,
+    22,
+    30,
+    36
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "8",
+   "onsets": [
+    0,
+    0,
+    6,
+    12,
+    18,
+    21,
+    39,
+    42
+   ],
+   "times sung": 6,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "8",
+   "onsets": [
+    0,
+    0,
+    6,
+    12,
+    30,
+    34,
+    38,
+    46
+   ],
+   "times sung": 1,
+   "songs": 1
+  },
+  {
+   "notes in the bar": "10",
+   "onsets": [
+    0,
+    0,
+    3,
+    12,
+    18,
+    24,
+    30,
+    36,
+    39,
+    42
+   ],
+   "times sung": 1,
+   "songs": 1
+  }
+ ],
+ "750: why": "38 of the kept songs' 48,763 notes, in 15 songs, share an onset with the note before in the transcriptions",
+ "752: the reader": "luthier_judge6.py (needs luthier_judge5.py, luthier_judge4.py and luthier_judge4_data.json beside it). pick(builds) as before; pick(builds, runs='kept') uses the kept 75th percentile as the ceiling on runs.",
+ "752: kept songs": {
+  "kept songs": 159,
+  "share of notes in runs of four or more equal pitches: 25th, 50th, 75th, 90th": [
+   0.0286,
+   0.1185,
+   0.2191,
+   0.3395
+  ],
+  "longest run of one pitch: 50th, 75th, 90th, 95th": [
+   6.0,
+   7.5,
+   10.0,
+   11.1
+  ],
+  "moves by step (1 or 2 semitones): 25th, 50th, 75th": [
+   0.3476,
+   0.4132,
+   0.5051
+  ],
+  "moves by leap (5 semitones or more): 25th, 50th, 75th": [
+   0.0739,
+   0.1037,
+   0.1418
+  ],
+  "kept songs passing all of the stopgap's tests": 0.17
+ },
+ "752: limits the reader uses": {
+  "longest run of one pitch, at most": 10.0,
+  "moves by step, kept middle half": [
+   0.3476,
+   0.5051
+  ],
+  "moves by leap, kept middle half": [
+   0.0739,
+   0.1418
+  ],
+  "notes in runs of four or more: the writer's ceiling (kept median)": 0.1185,
+  "the kept 75th": 0.2191
+ }
+}
