@@ -161,3 +161,13 @@ Same command. Results: `stage6b_results.json`.
 - 849 readings in `checks`; 850 a gate `{"type": "hook beat"}`; 851 `again()` keeps a held note in its register without a clash.
 - Not met and said so in Window 175: melismas at a line's end (55 to 64 in 100 against the kept 20 in the 4/4 songs); the word weight on song 52.
 - Not done: 749.37, 749.12 (descant) and four-part hymns, 749.13.
+
+## Stage 6c (Luthier v19): four parts and a descant — fixes 852–857
+
+    python3 lib/luthier/metre_engine.py songs/p63/spec53.json 3000 && python3 lib/luthier/hymn_parts.py songs/p63/spec53.json    # spec53.parts.json, .parts.mid, .parts.txt
+
+- 852 four parts under the hymn tune as a shortest path (no draw): ranges, order, spacing, root and third sounding, no parallel perfect intervals, least movement,
+  a credit for each voice's motion against the tune at the kept share (`LAM`, `MOVE`, `BIAS`, fitted on song 53).
+- 853 a descant over the last section (749.12). 854 checks. 855 every voice on the tune's times (the first part of 749.13).
+- 856 answers 749.56: 839 lifts only a note a quarter long or more as sung. 857 answers 749.55: the song records are made again with the committed code.
+- The chords are still the spec's, one a bar. Results: `stage6c_results.json`.

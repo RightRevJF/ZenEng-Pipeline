@@ -372,20 +372,20 @@
  },
  "melody": {
   "made": 1000,
-  "survivors": 185,
+  "survivors": 186,
   "deaths": {
    "840: the title's stresses off the beat": 455,
-   "838: the chorus's lift is not the plan's": 204,
+   "838: the chorus's lift is not the plan's": 203,
    "731: stressed syllables on the beat too few": 156
   },
-  "pick": "3ee7ee914b97",
+  "pick": "5ac083901ada",
   "charge": 1.996,
-  "median_charge": 3.454211166109533,
+  "median_charge": 3.4753444683063544,
   "readings": {
    "repeated notes": 0.24739583333333334,
-   "moves by step": 0.5182291666666666,
-   "moves by leap": 0.10416666666666667,
-   "turns of direction": 0.4548611111111111,
+   "moves by step": 0.5208333333333334,
+   "moves by leap": 0.1015625,
+   "turns of direction": 0.4479166666666667,
    "range": 11,
    "distinct pitches": 7,
    "longest run of one pitch": 4,
@@ -514,9 +514,9 @@
   ],
   "entries": {
    "stressed openings before / on / after": [
-    0.012,
+    0.011,
     0.485,
-    0.504
+    0.503
    ],
    "unstressed openings before / on / after": [
     0.002,
@@ -529,7 +529,7 @@
    "760: a line set by the weighted rule": 6607,
    "818: a line sings an earlier line of its section again": 5768,
    "780: a copied line keeps its source's join": 8000,
-   "839: a returning line lifts one held note": 1905,
+   "839: a returning line lifts one held note": 422,
    "818: a line takes an earlier line's rhythm": 219,
    "653: a line in a kept window": 1014,
    "712: a line sung again that could not be fitted, drawn fresh": 608
@@ -2118,7 +2118,7 @@
    {
     "on": 1278,
     "dur": 6,
-    "midi": 65,
+    "midi": 62,
     "sec": "Chorus 2",
     "line": 1,
     "text": "falls",
@@ -2241,7 +2241,7 @@
    {
     "on": 1380,
     "dur": 6,
-    "midi": 67,
+    "midi": 64,
     "sec": "Chorus 2",
     "line": 3,
     "text": "can't",
@@ -7459,7 +7459,7 @@
   "the title's stressed syllables on a beat (kept 0.73)": 0.562,
   "title lines": 3,
   "length in seconds (kept quartiles 165, 206, 243)": 209,
-  "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": 0.6
+  "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": 0.7
  },
  "parts": {
   "chords": [
@@ -8355,16 +8355,6 @@
    },
    {
     "on": 1272,
-    "dur": 5,
-    "p": [
-     53,
-     57,
-     62
-    ],
-    "vel": 82
-   },
-   {
-    "on": 1278,
     "dur": 5,
     "p": [
      53,
@@ -16549,17 +16539,17 @@
     "on": 1278,
     "dur": 6,
     "p": [
-     62
+     57
     ],
     "vel": 70,
     "text": "falls",
-    "lead": 65
+    "lead": 62
    },
    {
     "on": 1296,
     "dur": 6,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "you're",
@@ -16569,7 +16559,7 @@
     "on": 1302,
     "dur": 6,
     "p": [
-     53
+     55
     ],
     "vel": 70,
     "text": "",
@@ -16679,17 +16669,17 @@
     "on": 1380,
     "dur": 6,
     "p": [
-     62
+     59
     ],
     "vel": 70,
     "text": "can't",
-    "lead": 67
+    "lead": 64
    },
    {
     "on": 1386,
     "dur": 6,
     "p": [
-     62
+     59
     ],
     "vel": 70,
     "text": "come",
@@ -19488,7 +19478,7 @@
  "band_checks": {
   "chord voicings inside the low-interval limits": true,
   "sung notes with accompaniment above them, share": 0.0,
-  "sung notes with accompaniment a second away, share": 0.113,
+  "sung notes with accompaniment a second away, share": 0.115,
   "harmony voice: interval classes, written / kept below the lead": {
    "3rd": [
     0.345,
@@ -19503,11 +19493,11 @@
     0.155
    ],
    "unison": [
-    0.102,
+    0.09,
     0.151
    ],
    "4th": [
-    0.215,
+    0.226,
     0.119
    ],
    "6th": [
@@ -19516,24 +19506,24 @@
    ]
   },
   "harmony voice: parallel perfect fifths, octaves and unisons a hundred motions, written / kept": [
-   6.9,
+   6.3,
    14.09
   ],
   "harmony voice: motion, written / kept": {
    "static": [
-    0.132,
+    0.126,
     0.225
    ],
    "oblique": [
-    0.356,
+    0.368,
     0.298
    ],
    "contrary": [
-    0.092,
+    0.08,
     0.099
    ],
    "parallel": [
-    0.31,
+    0.316,
     0.278
    ],
    "similar": [

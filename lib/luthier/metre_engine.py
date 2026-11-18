@@ -203,9 +203,10 @@ class Engine:
                 if src[0][0] < tm and src[0][0] < tm - (self.BREATH - 12): return None, ("join before a copy (780)", sec, i)     # 780: two fixed lines a beat apart or more
                 new = list(src)
                 if sec in (self.S.get("vary_returns") or ()) and how[1] != sec and i != 0 and f"{sec}:{i}" not in self.S.get("hooks", ()) and len(new) > 2:      # 839 (749.8): a returning line, not the section's first nor the title's, lifts one held note
-                    gaps = [(new[j + 1][0] - new[j][0]) if j + 1 < len(new) else 10 ** 6 for j in range(len(new))]; st_ = [x[1] for x in sy]
-                    j = max(range(len(new)), key=lambda j_: (st_[j_] if j_ < len(st_) else False, min(gaps[j_], 48), -j_)); t0, p0 = new[j]; ch = self.chord_at(U + t0); mu, lo, hi = self.reg(sec, i)
-                    for q in range(p0 + 1, p0 + (5 if j == len(new) - 1 else 4)):
+                    gaps = [(new[j + 1][0] - new[j][0]) if j + 1 < len(new) else min(24, slot - new[j][0] - self.REST) for j in range(len(new))]; st_ = [x[1] for x in sy]      # 856 (749.56): a note's sung length, the last note's as 844 leaves it
+                    held = [j_ for j_ in range(len(new)) if gaps[j_] >= 12] or list(range(len(new)))
+                    j = max(held, key=lambda j_: (st_[j_] if j_ < len(st_) else False, min(gaps[j_], 48), -j_)); t0, p0 = new[j]; ch = self.chord_at(U + t0); mu, lo, hi = self.reg(sec, i)
+                    for q in (range(p0 + 1, p0 + (5 if j == len(new) - 1 else 4)) if gaps[j] >= 12 else ()):                                 # only a note a quarter long or more is lifted
                         if q % 12 in ch and q % 12 in self.SCALE and q <= hi and (j == 0 or abs(q - new[j - 1][1]) <= 7) and (j == len(new) - 1 or abs(new[j + 1][1] - q) <= 7):
                             trial = new[:j] + [(t0, q)] + new[j + 1:]
                             if self.runs_ok([p_ for _, p_ in trial]): new = trial; self.stats["839: a returning line lifts one held note"] += 1
