@@ -29,6 +29,8 @@ LOW_LIMIT = {1: 60, 2: 60, 3: 53, 4: 53, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 
 ROLE = {"intro": "intro", "verse": "A", "chorus": "B", "bridge": "other sung", "pre": "other sung", "solo": "instrumental", "outro": "outro"}
 DR = dict(kick=36, snare=38, hat=42, tom_hi=48, tom_mid=45, tom_lo=41)
 ICLASS = {0: "unison", 3: "3rd", 4: "3rd", 5: "4th", 7: "5th", 8: "6th", 9: "6th", 12: "octave"}
+# 835: the draw is hemmed in by the chord and the scale, so each class carries a weight fitted until the written shares meet the kept ones (fitted on songs 54 and 55)
+HW = {"unison": 0.55, "3rd": 1.21, "4th": 1.13, "5th": 1.5, "6th": 1.05, "octave": 0.88}; HOLD, WITH, STAY = 8.0, 16.0, 8.0
 
 def edges(bpm, metre_beats, compound=False):
     """825: bars in and out. bpm counts the metre's beat."""
@@ -125,11 +127,12 @@ def arrange(rec, genre="pop", lead="guitar", seed=1):
             if p % 12 not in scale and p % 12 not in ct: continue
             if onbeat and p % 12 not in ct and iv != 0: continue
             if lastiv in (7, 12) and iv == lastiv and last is not None and p != last and rng.random() > 0.3: continue      # perfect fifths and octaves in a row kept rare (kept: 9 motions in 100)
-            w = below.get(cls, 0.01) / (2 if cls in ("3rd", "6th") else 1)                                     # a class of two sizes shares its weight
+            w = HW[cls] * below.get(cls, 0.01) / (2 if cls in ("3rd", "6th") else 1)                                     # a class of two sizes shares its weight
             if last is not None:
                 w *= math.exp(-abs(p - last) / 6.0)                                                            # the nearest move
-                if n["midi"] == lastlead and p == last and iv: w *= 8.0                                               # the lead holds: the harmony holds (kept: static 23 in 100)
-                elif n["midi"] != lastlead and iv and ICLASS[iv] == ICLASS.get(lastiv): w *= 3.0                     # the lead moves: the harmony moves with it (kept: parallel 28 in 100)
+                if n["midi"] == lastlead and p == last: w *= HOLD                                               # the lead holds: the harmony holds (kept: static 23 in 100)
+                elif n["midi"] != lastlead and iv and ICLASS[iv] == ICLASS.get(lastiv): w *= WITH
+                elif n["midi"] != lastlead and p == last: w *= STAY                                           # the lead moves over a held harmony note (kept: oblique 30 in 100)                     # the lead moves: the harmony moves with it (kept: parallel 28 in 100)
             cands.append((p, iv, w))
         if not cands: last = None; lastiv = None; continue
         p, iv, _ = rng.choices(cands, [c[2] for c in cands])[0]; hv.append(dict(on=n["on"], dur=n["dur"], p=[p], vel=70, text=n["text"], lead=n["midi"])); last = p; lastiv = iv; lastlead = n["midi"]
@@ -152,15 +155,15 @@ def checks(rec, chord, tones):
     hv = P.get("harmony", [])
     if hv:
         ivs = [e["lead"] - e["p"][0] for e in hv]; cls = collections.Counter(ICLASS[i] for i in ivs); n = len(ivs)
-        out["harmony voice: interval classes, written / kept below the lead"] = {k: [round(cls[k] / n, 3), VOX["below"].get(k)] for k in ("3rd", "5th", "octave", "unison", "4th", "6th")}
+        out["harmony voice: interval classes, written / kept below the lead"] = {k: [round(cls[k] / n, 3), round(VOX["below"].get(k) / sum(VOX["below"][c] for c in HW), 3)] for k in ("3rd", "5th", "octave", "unison", "4th", "6th")}
         par = sum(1 for a, b, x, y in zip(ivs, ivs[1:], hv, hv[1:]) if a == b and a in (7, 12, 0) and x["p"][0] != y["p"][0] and y["on"] - x["on"] < BAR)
         mot = collections.Counter();
         for x, y in zip(hv, hv[1:]):
             if y["on"] - x["on"] >= BAR: continue
-            dl, dh = y["lead"] - x["lead"], y["p"][0] - x["p"][0]; mot["static" if dl == 0 and dh == 0 else "oblique" if dl == 0 or dh == 0 else "contrary" if dl * dh < 0 else "parallel" if dl == dh else "similar"] += 1
+            dl, dh = y["lead"] - x["lead"], y["p"][0] - x["p"][0]; mot["static" if dl == 0 and dh == 0 else "oblique" if dl == 0 or dh == 0 else "contrary" if dl * dh < 0 else "parallel" if (dl == dh or ICLASS.get(x["lead"] - x["p"][0]) == ICLASS.get(y["lead"] - y["p"][0])) else "similar"] += 1
         m = sum(mot.values()) or 1
         out["harmony voice: parallel perfect fifths, octaves and unisons a hundred motions, written / kept"] = [round(100 * par / m, 1), VOX["parallel_P5_P8_per_100"]]
-        out["harmony voice: motion, written / kept"] = {k: [round(mot[k] / m, 3), VOX["motion"].get(k if k != "parallel" else "parallel exact")] for k in ("static", "oblique", "contrary", "parallel", "similar")}
+        out["harmony voice: motion, written / kept"] = {k: [round(mot[k] / m, 3), VOX["motion"].get(k) if k != "parallel" else round(VOX["motion"]["parallel exact"] + VOX["motion"]["parallel class"], 3)] for k in ("static", "oblique", "contrary", "parallel", "similar")}
         out["harmony voice crosses the lead"] = sum(e["p"][0] > e["lead"] for e in hv); out["harmony voice a second from the lead"] = sum(0 < e["lead"] - e["p"][0] <= 2 for e in hv)
     spt = 60.0 / rec["bpm"] / (18 if rec["metre"] in ("6/8", "9/8", "12/8") else 12); phrases = []; start = ns[0]["on"]
     for a, b in zip(ns, ns[1:]):
@@ -169,8 +172,25 @@ def checks(rec, chord, tones):
     out["sung phrases, seconds (median, longest)"] = [round(sorted(phrases)[len(phrases) // 2], 1), round(max(phrases), 1)]; out["sung phrases over eight seconds"] = sum(p > 8 for p in phrases)
     kicks = {e["on"] for e in P.get("drums", []) if e["p"] == [DR["kick"]]}; bs = P.get("bass", [])
     out["kicks with a bass note on them, share"] = round(sum(any(b["on"] == t for b in bs) for t in kicks) / max(1, len(kicks)), 3)
-    dens = collections.defaultdict(list)
-    for name, kind, nb in rec["form"]: dens[kind].append(1)
+    # 836: roughness (Sethares 1993 on Plomp and Levelt; six harmonics a note), of everything pitched that sounds at each sung onset. A ranking, not a test: it has no kept reference.
+    def hz(m_): return 440.0 * 2 ** ((m_ - 69) / 12)
+    def rough(ps_):
+        pr = [(hz(p) * h, 0.88 ** (h - 1)) for p in ps_ for h in range(1, 7)]; r = 0.0
+        for i in range(len(pr)):
+            for j in range(i + 1, len(pr)):
+                f1, f2 = sorted((pr[i][0], pr[j][0])); sc = 0.24 / (0.0207 * f1 + 18.96); d = f2 - f1; r += pr[i][1] * pr[j][1] * (math.exp(-3.5 * sc * d) - math.exp(-5.75 * sc * d))
+        return r / max(1, len(ps_) - 1)
+    pitched = [e for k in ("chords", "bass", "harmony") for e in P.get(k, [])]; pitched.sort(key=lambda e: e["on"]); R = []; idx = 0; live = []
+    for n in ns:
+        while idx < len(pitched) and pitched[idx]["on"] <= n["on"]: live.append(pitched[idx]); idx += 1
+        live = [e for e in live if e["on"] + e["dur"] > n["on"]]; S_ = sorted({n["midi"]} | {q for e in live for q in e["p"]})
+        if len(S_) > 1: R.append((rough(S_), n["on"] // BAR + 1))
+    if R:
+        v = sorted(r for r, _ in R); worst = []
+        for r, b in sorted(R, reverse=True):
+            if b not in worst: worst.append(b)
+            if len(worst) == 5: break
+        out["roughness at sung onsets (median, 90th percentile)"] = [round(v[len(v) // 2], 3), round(v[int(len(v) * 0.9)], 3)]; out["roughest bars"] = worst
     return out
 
 def midi(rec, path):

@@ -117,3 +117,13 @@ For the session: rerun the three commands against the `.song.txt` logs; write so
 
 Not done: the solo writer (the break plays the verse's tune), drums by kept table outside 4/4, the band by genre, the descant (749.12), choral pages (749.13), roughness.
 For the session: rerun; run `Writer("minor")` again on your forty songs; say whether the harmony voice and the break read right in song 58.
+
+## Stage 5c (Luthier v16): what could be mended now — fixes 833–837
+
+Same command as stage 5b. Results: `stage5c_results.json`.
+
+- 833 the clash rule under every chord for a note a beat long or more (`metre_engine.pitches`, `again`; spec flag `clash_rule`).
+- 834 a stressed opening may sing its kept window early, the class drawn first (spec flag `early_entries`).
+- 835 the harmony voice's fitted weights (`band.HW`, `HOLD`, `WITH`, `STAY`); the check now reads kept shares over the six classes written, and counts parallel motion by class.
+- 836 roughness as a reading (`band.checks`). 837 joins meet 802's test since 822.
+- Songs 52 and 53 from their hand specs are unchanged (the two flags are off there).

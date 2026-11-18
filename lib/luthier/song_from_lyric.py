@@ -17,6 +17,7 @@ Writes <lyric>.song.json (the record: chords, melody, bass, key, every reading) 
 import json, sys, os, re, copy, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [HERE, os.path.join(HERE, "..", "carol")]
 import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS, band as BD
+EARLY = True     # 834: a line that opens on a stress comes in before the bar line at the kept share, one time in five
 SCALES = {"major": [0, 2, 4, 5, 7, 9, 11], "minor": [0, 2, 3, 5, 7, 8, 10]}
 def kind_of(name):
     n = name.lower()
@@ -57,7 +58,7 @@ def plan(L):
     form.append(("Outro", "outro", n_out)); br = BD.break_after(form)
     if br is not None: form.insert(br + 1, ("Break", "solo", 8))                                # 830
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
-                registers={"Verse": [64, 60, 69], "Chorus": [68, 63, 74], "Bridge": [65, 60, 71]}, clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6))      # 818: kept songs sing six bars in ten on a rhythm already sung
+                registers={"Verse": [64, 60, 69], "Chorus": [68, 63, 74], "Bridge": [65, 60, 71]}, clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
     return spec, form, flags
 first_name = {}

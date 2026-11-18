@@ -81,7 +81,7 @@ class Engine:
         for x in sy:
             if x[1]: break
             lead += 1
-        end = slot - self.BREATH if cap is None else min(slot - self.BREATH, cap); out = []; bars = slot // self.BAR
+        end = slot - self.BREATH if cap is None else min(slot - self.BREATH, cap); out = []; bars = slot // self.BAR; early = []
         for p in sorted({0, min(1, lead), min(2, lead)}):
             for w, c in self.kept_windows(n - p, bars):
                 if w[-1] > end or (w[0] != 0 and p > 0): continue
@@ -89,6 +89,11 @@ class Engine:
                 if ons[0] < tmin: continue
                 e = ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
                 out.append((ons, math.log(c + 1) + 1.4 * self.stress_score(ons, sy) + math.log(e)))
+                if p == 0 and sy[0][1] and w[0] == 0 and self.S.get("early_entries"):               # 834: a line that opens on a stress may sing its kept window an eighth or a quarter early
+                    for sh in (6, 12):
+                        o2 = [x - sh for x in w]
+                        if o2[0] >= tmin: early.append((o2, math.log(c + 1) + 1.4 * self.stress_score([x for x in w], sy)))
+        if early and rng.random() < ENTRY[True][0]: out = early; self.stats["834: a stressed opening sung before the bar line"] += 1      # the entry's class first, at the kept share (771)
         if out:
             top = sorted(out, key=lambda x: -x[1])[:12]; ws = [math.exp(s - top[0][1]) for _, s in top]; self.stats["653: a line in a kept window"] += 1
             return rng.choices([o for o, _ in top], ws)[0]
@@ -122,8 +127,10 @@ class Engine:
         mu, lo, hi = self.reg(sec, i); ps = []; last = None
         for k, t in enumerate(ons):
             ch = self.chord_at(U + t); cands = [p for p in range(lo, hi + 1) if p % 12 in self.SCALE and not (avoid and p % 12 in avoid)]; ws = []
-            if self.S.get("clash_rule") and not ch <= self.SCALE:                                # 808: over a chord from outside the key, no scale tone a semitone from one of its tones
-                cands = [p for p in cands if p % 12 in ch or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]
+            long_ = k == len(ons) - 1 or ons[k + 1] - t >= self.BEAT
+            if self.S.get("clash_rule") and (long_ or not ch <= self.SCALE):                     # 808: over a chord from outside the key; 833: and under any chord on a note a beat long or more:
+                c2 = [p for p in cands if p % 12 in ch or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone
+                cands = c2 or cands
             for p in cands:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
@@ -154,6 +161,9 @@ class Engine:
         out = []; mu, lo, hi = self.reg(sec, i)
         for t, p in zip(on, ps):
             ch = self.chord_at(U + t)
+            j_ = on.index(t); long_ = j_ == len(on) - 1 or on[j_ + 1] - t >= self.BEAT
+            if self.S.get("clash_rule") and long_ and p % 12 not in ch and ((p + 1) % 12 in ch or (p - 1) % 12 in ch):                 # 833, in a line sung again
+                p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
             if self.on_beat(U + t) and p % 12 not in ch: p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
             while p > hi: p -= 12 if p - 12 >= lo else 1
             while p < lo: p += 1
