@@ -137,3 +137,14 @@ Same command. Results: `stage6a_results.json`; kept figures: `tables/register_pl
 - 839 (749.8) `vary_returns`: a section whose every line is copied lifts one held note a line. 840 `hooks`: the title's lines pulled to the beat.
 - 841 rest share: no rule (the engine rests less than kept songs; 749.38 answered). 842 the break only inside the kept lengths. 843 the plan's readings in `checks`.
 - Songs 52 and 53 from their hand specs are unchanged.
+
+## After the review of 5b and 5c: fixes 844, 845 (to be written into Luthier v18 with stage 6b)
+
+- 844 answers 749.53. A line's last note is an eighth at least and a quarter's rest follows it, in every metre (`self.END`, `self.REST`; kept line endings in
+  `tables/kept_line_endings.json`: 5,837 endings, length 5th percentile an eighth, median a quarter; rest 10th percentile a quarter). The next line's floor is
+  read from that. Songs 54, 55 and 52 from their lyrics: no line-final note under an eighth, no rest under a quarter, no sung phrase over eight seconds
+  (song 52: median 3.7 s, longest 4.8 s; 409 of 1,000 builds survive, up from 157).
+  This moves the breath in 6/8 and 3/4 from 12 to 18 twelfths, so song 52 from its hand spec is new: 2506 survivors, order d609db9d0ac1, pick 36cf66ee1827, 2.135.
+  Song 53 (hymn mode) is unchanged.
+- 845 answers 749.54. `spec52.written_chords.json`, its log and `stage4_results.json` are made again under the current engine; the stage 5a-6a song records too.
+- Not changed: 822 in major on your 100 songs (54 against the kept 41). Noted; it is inside ten points on mine (45) and I will look at the draw of added bars in 6b.
