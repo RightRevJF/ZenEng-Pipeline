@@ -1,6 +1,7 @@
 """A song as a picture of itself: the self-similarity matrix of its bars (melody and chords), from CoCoPops Humdrum files or a Luthier record.
 Each bar becomes a set of melody events (place in the bar to a sixteenth, pitch class above the tonic) and a set of chords (Roman numerals).
-Two bars' likeness: 0.7 x the Jaccard overlap of their melody events + 0.3 x that of their chords (chords alone where neither bar is sung)."""
+Two bars' likeness: 0.7 x the Jaccard overlap of their melody events + 0.3 x that of their chords (chords alone where neither bar is sung).
+A chord held over a bar line counts in the new bar; two bars with no notes and no chords are not alike."""
 import re, os, json
 import numpy as np
 LET = {"c": 0, "d": 2, "e": 4, "f": 5, "g": 7, "a": 9, "b": 11}
@@ -21,7 +22,7 @@ def read_hum(path):
     L = [l.rstrip("\n").split("\t") for l in open(path, encoding="utf-8", errors="ignore") if l.strip() and not l.startswith("!!")]
     head = next(r for r in L if r[0].startswith("**")); kern = head.index("**kern"); harm = head.index("**harm") if "**harm" in head else None
     meta = {m.group(1): m.group(2) for m in (re.match(r"!!!([^:]+):\s*(.*)", l) for l in open(path, encoding="utf-8", errors="ignore")) if m}
-    t = 0.0; tb = None; bars = []; cur = None; tonic = None; started = False
+    t = 0.0; tb = None; bars = []; cur = None; tonic = None; started = False; held = None          # held: the chord sounding, carried into each new bar
     for r in L[L.index(head) + 1:]:
         if len(r) <= kern: continue
         a = r[kern]
@@ -34,11 +35,12 @@ def read_hum(path):
             continue
         if a.startswith("!"): continue
         if a.startswith("="):
-            cur = dict(t0=t, mel=[], ch=set()); bars.append(cur); started = True; continue
+            cur = dict(t0=t, mel=[], ch={held} if held else set()); bars.append(cur); started = True; continue
         if not started: cur = dict(t0=t, mel=[], ch=set()); bars.append(cur); started = True
         if harm is not None and r[harm] not in (".", "") and not r[harm].startswith(("*", "!", "=")):
             c = re.sub(r"^\d+\.*", "", r[harm]).strip()
-            if c and c not in ("r", "N"): cur["ch"].add(c)
+            if c and c not in ("r", "N"): cur["ch"].add(c); held = c
+            elif c in ("r", "N"): held = None
         if tb:                                                                                # timebase grid: every row the same length, tokens carry no duration
             if a not in (".", "") and "r" not in a and kern_pitch(a) is not None and not a.startswith("]") and "_" not in a: cur["mel"].append((t, kern_pitch(a)))
             t += 4.0 / tb
@@ -74,5 +76,6 @@ def ssm(song):
     for i in range(n):
         for j in range(n):
             (ma, ca), (mb, cb) = S[i], S[j]
+            if not (ma or mb or ca or cb): M[i, j] = 1.0 if i == j else 0.0; continue                      # two empty bars say nothing about each other
             M[i, j] = 0.7 * J(ma, mb) + 0.3 * J(ca, cb) if (ma and mb) else (J(ca, cb) if not (ma or mb) else 0.3 * J(ca, cb))
     return M
