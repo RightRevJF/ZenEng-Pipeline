@@ -179,3 +179,10 @@ Merged e8edb79. Three song commands identical; 749.49-749.52 answered by 821-824
 749.53 832 clips line-final notes to a sixteenth (song 52: 24 of 36, song 54: 18 of 58, song 55: 18 of 56); in 6/8 the joins still rest 9 twelfths, 10 phrases over 8 s.
 749.54 spec52.written_chords.json and song52_written are 5b's; 833 changes their melodies.
 Next finding 749.55.
+
+## Review of stage 6a (18 November 2026)
+
+Merged 423a651. Songs 54, 52 identical; 55 differs in one reading. lib/luthier/REVIEW_stage6a.md. Open: 749.53, 749.54.
+749.55 lyric55.song.json prints the lift -2.5; the code reads -1.0 (and -2.5 would fail 838's gate).
+749.56 839 lifts the line's last note, which 832 has often cut to a sixteenth (song 52 Chorus 2: both).
+Next finding 749.57.
