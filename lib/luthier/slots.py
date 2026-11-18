@@ -4,7 +4,7 @@ line's slot, and a line given less than three-quarters of the kept slot is flagg
 
     from slots import propose
     propose([8, 9, 10, 6], bpm=120)            # -> a dict per line: kept seconds, bars at this tempo, whole bars proposed
-    python3 lib/luthier/slots.py 120 8 9 10 6 [given bars ...]
+    python3 lib/luthier/slots.py 120 8 9 10 6 -- 2 2 2 2      (the bars given, after --)
 
 Kept median slots (first onset of a line to the next line's first), seconds, by the bar's length and the line's syllables."""
 import json, os, sys
@@ -23,5 +23,7 @@ def propose(syllables, bpm, beats_per_bar=4, given=None):
         out.append(row)
     return out
 if __name__ == "__main__":
-    bpm = float(sys.argv[1]); nums = [int(x) for x in sys.argv[2:]]
-    for r in propose(nums, bpm): print(r)
+    bpm = float(sys.argv[1]); a = sys.argv[2:]                                             # 782 (749.45): syllables, then -- and the bars given
+    syl = [int(x) for x in (a[:a.index("--")] if "--" in a else a)]; giv = [float(x) for x in a[a.index("--") + 1:]] if "--" in a else None
+    if giv is not None and len(giv) != len(syl): raise SystemExit("give one slot (bars) for each line after --")
+    for r in propose(syl, bpm, given=giv): print(r)

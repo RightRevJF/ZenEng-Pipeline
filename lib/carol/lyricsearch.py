@@ -47,7 +47,7 @@ WEAK_END = FUNCTION - {"you", "me", "i", "us", "we", "him", "her", "them", "here
 
 def words(line):
     line = line.lower().replace("’", "'")
-    line = re.sub(r"\ba\.\s?m\.?", " ayem ", line); line = re.sub(r"\bp\.\s?m\.?", " peeem ", line)   # 753 (749.29): a.m. and p.m. are one word each
+    line = re.sub(r"\ba\.m\.?(?![a-z])", " ayem ", line); line = re.sub(r"\bp\.m\.?(?![a-z])", " peeem ", line)   # 753 (749.29), 781 (749.41): a.m. and p.m. as whole tokens only
     return re.findall(r"[a-z']+", line)
 
 def phones(w):

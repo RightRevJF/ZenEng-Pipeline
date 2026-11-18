@@ -41,3 +41,14 @@ pickup and splits a long note for each note lost. **773.** A line sung again fit
 **774.** The 75% long-note band (749.32) is not adopted: kept songs read 0.55 at the median (`kept2b.json`). `stage2b_results.json`
 has songs 49, 50, 51, 54, 55 on v9 and v10: deaths for want of a placement 0 on all five; entries by stress 19 of 30 shares
 within ten points (15 under v9). Song 54's median build stands lower on the judge of 715 (0.63 for 0.80); printed (777).
+
+## Stage 2c (Luthier v11, Module 27.92, Window 168; fixes 780 to 786): the session's review taken in
+
+`gen_l11.py` makes a song's v11 engine from its v7 file (stages 1 to 2c); run files go to `runl11/`. Start the next song from an `l11` file.
+
+**780** (749.42, 749.43): the join before a line fitted ahead asks the least breath (18 twelfths), not a drawn breath; a line sung again
+fitted ahead gives way and is drawn again; a copied line keeps the join its source kept; two fixed lines may join a beat (12 twelfths)
+apart, the kept 5th percentile. **781** (749.41): a.m. and p.m. only as whole tokens. **782** (749.45): `slots.py 112 13 10 7 -- 2 2 1`.
+**783** (749.35): the record's notes carry `moved386` as an eighth field. **784** (749.40, 749.45): the stale run logs of stages 1 to 2b
+are removed; `runl11/` logs are from the committed engines; `stage*_results.json` hold the earlier stages' figures.
+**785**: 749.44 (the chorus over the verse) goes to stage 6. `stage2c_results.json`: songs 49, 50, 51, 54, 55 on v10 and v11.
