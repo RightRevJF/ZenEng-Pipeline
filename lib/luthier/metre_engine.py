@@ -124,18 +124,23 @@ class Engine:
         return out
     # ---- pitches
     def pitches(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
-        mu, lo, hi = self.reg(sec, i); ps = []; last = None
+        mu, lo, hi = self.reg(sec, i); ps = []; last = None; sy = self.LINES[sec][i]
+        DG = self.S.get("degrees"); DW = (DG["weights"].get(self.KIND[sec]) or DG["weights"]["all"]) if DG else None; ton = DG["tonic"] if DG else 0; blue = set(DG.get("blue", ())) if DG else set()
+        WP = self.S.get("word_pitch")
         for k, t in enumerate(ons):
-            ch = self.chord_at(U + t); cands = [p for p in range(lo, hi + 1) if p % 12 in self.SCALE and not (avoid and p % 12 in avoid)]; ws = []
+            ch = self.chord_at(U + t); cands = [p for p in range(lo, hi + 1) if (p % 12 in self.SCALE or (p - ton) % 12 in blue) and not (avoid and p % 12 in avoid)]; ws = []
             long_ = k == len(ons) - 1 or ons[k + 1] - t >= self.BEAT
             if self.S.get("clash_rule") and (long_ or not ch <= self.SCALE):                     # 808: over a chord from outside the key; 833: and under any chord on a note a beat long or more:
-                c2 = [p for p in cands if p % 12 in ch or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone
+                c2 = [p for p in cands if p % 12 in ch or (p - ton) % 12 in blue or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone (846: or a blue note, which kept songs sing over the major third)
                 cands = c2 or cands
             for p in cands:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 w *= math.exp(-((p - mu) ** 2) / 50)
                 if len(ps) >= 2 and ps[-1] == ps[-2] == p: w = 0.0
+                if DW: w *= DW.get(str((p - ton) % 12), 0.0)                                      # 846: the kept share of each degree of the scale, blue notes among them
+                if WP and k > 0 and k < len(sy) and sy[k][0] == sy[k - 1][0] and sy[k][1] != sy[k - 1][1] and prev is not None:      # 847: inside a word, the stressed syllable against the other
+                    up = (p > prev) if sy[k][1] else (p < prev); w *= WP[1] if p == prev else WP[0] if up else WP[2]
                 if k == len(ons) - 1 and end_off is not None and p % 12 == end_off: w *= 0.05
                 ws.append(w)
             if sum(ws) <= 0: return None
@@ -163,11 +168,13 @@ class Engine:
             ch = self.chord_at(U + t)
             j_ = on.index(t); long_ = j_ == len(on) - 1 or on[j_ + 1] - t >= self.BEAT
             if self.S.get("clash_rule") and long_ and p % 12 not in ch and ((p + 1) % 12 in ch or (p - 1) % 12 in ch):                 # 833, in a line sung again
-                p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
+                p = min((p + d for d in (-1, 1, -2, 2, -3, 3, -4, 4) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch and lo <= p + d <= hi), key=lambda q_: abs(q_ - p), default=p)
             if self.on_beat(U + t) and p % 12 not in ch: p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
             while p > hi: p -= 12 if p - 12 >= lo else 1
             while p < lo: p += 1
             while p % 12 not in self.SCALE: p -= 1
+            if self.S.get("clash_rule") and long_ and p % 12 not in ch and ((p + 1) % 12 in ch or (p - 1) % 12 in ch):                 # 833 again, after the register has moved the note
+                p = min((p + d for d in (-1, 1, -2, 2, -3, 3, -4, 4) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch and lo <= p + d <= hi), key=lambda q_: abs(q_ - p), default=p)
             out.append((t, p))
         return out
     # ---- a build
@@ -271,6 +278,9 @@ class Engine:
             if gte["type"] == "plan lift":                                                    # 838: the chorus's median over the verse's within two semitones of the song's plan
                 v_ = [n["p"] for n in ns if self.KIND[n["sec"]] == "Verse"]; c_ = [n["p"] for n in ns if self.KIND[n["sec"]] == "Chorus"]
                 if v_ and c_ and abs(float(np.median(c_)) - float(np.median(v_)) - gte["lift"]) > gte.get("within", 2): return "838: the chorus's lift is not the plan's"
+            if gte["type"] == "hook beat":                                                    # 840: the title's stressed syllables on a beat, half of them at least (kept 73 in 100)
+                hk = set(self.S.get("hooks", ())); h_ = [n for n in ns if n["stress"] and f"{n['sec']}:{n['line']}" in hk]
+                if h_ and float(np.mean([self.on_beat(n["on"]) for n in h_])) < gte.get("at_least", 0.5): return "840: the title's stresses off the beat"
             if gte["type"] == "cap" and any(n["p"] > gte["pitch"] for n in ns if n["sec"] == gte["section"] and n["line"] in gte["lines"]): return "design: " + gte["name"]
         st = [n for n in ns if n["stress"] and self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design"]
         if st and np.mean([self.on_beat(n["on"]) for n in st]) < self.S.get("stressed on the beat, at least", 0.4): return "731: stressed syllables on the beat too few"

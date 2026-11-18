@@ -148,3 +148,16 @@ Same command. Results: `stage6a_results.json`; kept figures: `tables/register_pl
   Song 53 (hymn mode) is unchanged.
 - 845 answers 749.54. `spec52.written_chords.json`, its log and `stage4_results.json` are made again under the current engine; the stage 5a-6a song records too.
 - Not changed: 822 in major on your 100 songs (54 against the kept 41). Noted; it is inside ten points on mine (45) and I will look at the draw of added bars in 6b.
+
+## Stage 6b (Luthier v18): the notes a style sings — fixes 844–851
+
+Same command. Results: `stage6b_results.json`.
+
+- 844, 845: see the section above (749.53, 749.54).
+- 846 degrees of the scale by family and section (`spec["degrees"]`, from `studies/genre/genre_results.json`; `DEGREE_POWER = 0.5`); a song draws whether it sings
+  blue notes (flat third, flat seventh), which are free of the clash rules. Major keys only.
+- 847 `spec["word_pitch"]`: the stressed syllable of a word higher, level, lower (weights 3.0, 2.0, 0.2; kept 44 / 36 / 20).
+- 848 `melismas()` after the pick: the song's share drawn from the kept quartiles; word-final syllables on notes a quarter long or more; the second note a scale step below.
+- 849 readings in `checks`; 850 a gate `{"type": "hook beat"}`; 851 `again()` keeps a held note in its register without a clash.
+- Not met and said so in Window 175: melismas at a line's end (55 to 64 in 100 against the kept 20 in the 4/4 songs); the word weight on song 52.
+- Not done: 749.37, 749.12 (descant) and four-part hymns, 749.13.

@@ -17,6 +17,9 @@ Writes <lyric>.song.json (the record: chords, melody, bass, key, every reading) 
 import json, sys, os, re, copy, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [HERE, os.path.join(HERE, "..", "carol")]
 import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS, band as BD
+FAMILY = {"pop": "other", "rock": "other", "folk": "other", "soul / r&b": "soul", "gospel": "soul", "blues": "soul", "country": "country"}
+DEGREE_POWER = 0.5     # 846: fitted so the written degree shares meet the kept
+WORD_PITCH = [3.0, 2.0, 0.2]     # 847: weights for the stressed syllable of a word standing higher than, level with, lower than the other; fitted to the kept 44 / 36 / 20
 EARLY = True     # 834: a line that opens on a stress comes in before the bar line at the kept share, one time in five
 SCALES = {"major": [0, 2, 4, 5, 7, 9, 11], "minor": [0, 2, 3, 5, 7, 8, 10]}
 def kind_of(name):
@@ -67,8 +70,15 @@ def plan(L):
     reg = {k: [int(round(x)) for x in v] for k, v in reg.items()}; tw = [w for w, _, _, _ in LS.syllables(L["title"])] if L.get("title") else []
     hooks = [f"{name}:{i}" for name, lines in L["sections"] for i, ln in enumerate(lines) if tw and " ".join(tw) in " ".join(w for w, _, _, _ in LS.syllables(ln))]     # 840: the lines that sing the title
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
-                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2)], clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
+                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
+    if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
+        GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
+        rs = _r.Random(f"blue {L.get('seed', 1)} {L['title']}"); bluesong = rs.random() < GR["families"][fam if fam in GR["families"] else "all"]["b3_songs"]
+        def prof(key):
+            d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
+        spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
+    spec["word_pitch"] = WORD_PITCH
     return spec, form, flags
 first_name = {}
 def bass(form_bars, tonic_midi, barlen, beats, mode):
@@ -123,11 +133,34 @@ def write(L, N=1000, K=12):
                            kept=run["kept_quartiles"], uncharged=run["uncharged"], entries=run["entries"], stressed_on_beat=run["pick"]["stressed_on_beat"], stats=run["stats"],
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
-    rec["checks"] = checks(rec, fb, key["tonic_midi"], E); BD.arrange(rec, genre=L.get("genre", "pop"), lead=L.get("lead", "guitar"), seed=L.get("seed", 1))
+    melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E); BD.arrange(rec, genre=L.get("genre", "pop"), lead=L.get("lead", "guitar"), seed=L.get("seed", 1))
     if any(n == "Break" for n, _, _ in form):                                                # 830: the lead instrument plays the first verse's tune over the break
         b0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index("Break")]) * E.BAR; vname = next(n for n, k, b in form if k == "verse"); v0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index(vname)]) * E.BAR
         rec["parts"]["break"] = [dict(on=n["on"] - v0 + b0, dur=n["dur"], p=[n["midi"] + (12 if L.get("lead", "guitar") == "guitar" else 0)], vel=88) for n in rec["melody"]["notes"] if n["sec"] == vname and n["on"] - v0 < 8 * E.BAR - 6]
     return rec
+ORN = json.load(open(os.path.join(HERE, "..", "..", "studies", "ornament", "ornament_results.json")))["CoCoPops Billboard"]
+def melismas(rec, L, E, tonic_midi):
+    """848: after the pick, some syllables take a second note. The song's share is drawn from the kept songs' (quartiles 3.8, 8.6, 16.2 syllables in a hundred); a melisma
+    sits on a word's last syllable (kept 94 in 100), two and a half times as often at a line's end (kept 20 against 8), on a note a quarter long or more, and its
+    second note is the scale step below (kept: the first move down 59 in 100; two notes 73 in 100). The readings were taken before; the record keeps both."""
+    import random as _r2
+    rng = _r2.Random(f"melisma {L.get('seed', 1)} {L['title']}"); ns = rec["melody"]["notes"]; share = rng.choices([ORN["song_q"][0], ORN["song_median"], ORN["song_q"][1]], [0.25, 0.5, 0.25])[0] / 100.0
+    scale = {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}; lo = min(n["midi"] for n in ns); cands = []; w = []
+    for i, n in enumerate(ns):
+        nxt = ns[i + 1] if i + 1 < len(ns) else None; line_end = nxt is None or (nxt["sec"], nxt["line"]) != (n["sec"], n["line"]); word_end = line_end or nxt["text"] != n["text"]
+        if word_end and n["dur"] >= 12: cands.append(i); w.append(2.5 if line_end else 1.0)
+    want = min(len(cands), int(round(share * len(ns)))); chosen = set()
+    while len(chosen) < want:
+        j = rng.choices(range(len(cands)), w)[0]; chosen.add(cands[j]); w[j] = 0.0
+        if sum(w) <= 0: break
+    out = []
+    for i, n in enumerate(ns):
+        if i not in chosen: out.append(n); continue
+        q = n["midi"] - 1
+        while q % 12 not in scale: q -= 1
+        if q < lo - 2: out.append(n); continue
+        d1 = max(3, (n["dur"] // 2) // 3 * 3); out.append(dict(n, dur=d1, melisma="first")); out.append(dict(n, on=n["on"] + d1, dur=n["dur"] - d1, midi=q, text="", stress=False, melisma="second"))
+    rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = share
 def checks(rec, fb, tonic_midi, E):
     """815: what can be checked without ears"""
     ns = rec["melody"]["notes"]; bs = rec["bass"]; on = [n["on"] for n in ns]
@@ -138,7 +171,8 @@ def checks(rec, fb, tonic_midi, E):
     starts = sorted(chord_at)
     def ch(t): return chord_at[max(x for x in starts if x <= max(t, 0))]
     tp = tonic_midi % 12; beat_notes = [n for n in ns if (n["on"] % E.BAR) in E.BEATS]; tone = lambda n: (n["midi"] - tp) % 12 in C.tones(ch(n["on"]))
-    clash = [n for n in ns if n["dur"] >= E.BEAT and not tone(n) and any(((n["midi"] - tp) % 12 - x) % 12 in (1, 11) for x in C.tones(ch(n["on"])))]
+    blue_ = set(rec["spec"].get("degrees", {}).get("blue", ()))
+    clash = [n for n in ns if n["dur"] >= E.BEAT and not tone(n) and (n["midi"] - tp) % 12 not in blue_ and n.get("melisma") != "second" and any(((n["midi"] - tp) % 12 - x) % 12 in (1, 11) for x in C.tones(ch(n["on"])))]
     return {"no two sung notes on one onset": all(b > a for a, b in zip(on, on[1:])), "no sung note of no length": all(n["dur"] > 0 for n in ns),
             "the melody inside the voice": [min(n["midi"] for n in ns), max(n["midi"] for n in ns)], "sung notes on a beat that are chord tones, share": round(sum(tone(n) for n in beat_notes) / max(1, len(beat_notes)), 3),
             "sung notes a beat long or more a semitone from a chord tone": len(clash), "bass notes": len(bs), "the bass on the root where a chord begins": all(any(b["on"] == t and (b["midi"] - tp) % 12 == root_pc(rn) for b in bs) for t, rn in chord_at.items()),
@@ -162,7 +196,15 @@ def style_checks(rec, E):
             for x in v_: b.setdefault(x["on"] // E.BAR - s0[x["sec"]], []).append((x["on"] % E.BAR, x["midi"]))
             idx = [i for i in range(min(a), min(max(a), max(b)) + 1) if a.get(i) or b.get(i)]
             if idx: ret.append(sum(a.get(i) == b.get(i) for i in idx) / len(idx))
-    return {"the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": round(st_.median(c) - st_.median(v), 1) if v and c else None, "the plan's lift": rec["spec"].get("plan", {}).get("lift"),
+    syl = [n for n in ns if n.get("melisma") != "second"]; mel = [n for n in ns if n.get("melisma") == "first"]; idx = {id(n): i for i, n in enumerate(ns)}; le = we = 0
+    for n in mel:
+        i = idx[id(n)]; nxt = ns[i + 2] if i + 2 < len(ns) else None; lend = nxt is None or (nxt["sec"], nxt["line"]) != (n["sec"], n["line"]); le += lend; we += lend or nxt["text"] != n["text"]
+    lens = sorted(n["dur"] for n in syl); cut = lens[int(len(lens) * 0.75)]; longs = [n for n in syl if n["dur"] >= cut]; deg = {}
+    for n in ns: deg[(n["midi"] - rec["key"]["tonic_midi"]) % 12] = deg.get((n["midi"] - rec["key"]["tonic_midi"]) % 12, 0) + 1
+    extra = {"syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": round(100 * len(mel) / max(1, len(syl)), 1), "of those, at a line's end (kept 20 in 100); on a word's end (kept 94)": [round(100 * le / max(1, len(mel))), round(100 * we / max(1, len(mel)))],
+             "long notes on stressed syllables (kept quartiles 0.43, 0.55, 0.65)": round(sum(n["stress"] for n in longs) / max(1, len(longs)), 3),
+             "flat third; flat seventh; leading tone, share of notes (kept, this family)": [round(deg.get(3, 0) / len(ns), 3), round(deg.get(10, 0) / len(ns), 3), round(deg.get(11, 0) / len(ns), 3)], "a song with blue notes": rec["spec"].get("degrees", {}).get("blue_song")}
+    return {**extra, "the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": round(st_.median(c) - st_.median(v), 1) if v and c else None, "the plan's lift": rec["spec"].get("plan", {}).get("lift"),
             "rest share inside sung sections, median (kept quartiles 0.21, 0.30, 0.39)": round(st_.median(rests), 3), "the title's stressed syllables on a beat (kept 0.73)": round(sum((n["on"] % E.BAR) in E.BEATS for n in hs) / len(hs), 3) if hs else None,
             "title lines": len(hk), "length in seconds (kept quartiles 165, 206, 243)": round(secs), "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": round(st_.median(ret), 2) if ret else None}
 def midi(rec, path):
