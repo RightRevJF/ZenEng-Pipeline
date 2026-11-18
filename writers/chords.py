@@ -1,5 +1,9 @@
 """writers/chords.py: Luthier's chord writer (a prototype for v8, built from the harmony study, Part 18).
 
+RETIRED by fix 800 (Luthier v13): it failed the held-out test (lib/luthier/test_prototype_writer.py; at its own 400 candidates a section,
+major verses 2 bars in 100 out of the key against 14 kept, loops 7 in 100 against 26). It is kept unchanged only so song 57's
+chords_p67.json reproduces. New songs take their chords from lib/luthier/chord_writer.py.
+
 The engine writes the chords; nobody chooses them by hand. For each section of a song's form it draws candidate chord plans from a
 variable-order Markov model (orders 0-3, interpolated, Witten-Bell weights) trained on the McGill Billboard sections of that kind
 and mode (studies/harmony/billboard_sections.json, 739 songs 1958-1991), weighted toward the song's era, then keeps the candidate that
