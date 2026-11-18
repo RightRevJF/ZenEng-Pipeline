@@ -258,7 +258,22 @@ class Engine:
              "onsets on the beat": float(np.mean([self.on_beat(n["on"]) for n in notes])), "onsets on the bar's first beat": float(np.mean([n["on"] % BAR == 0 for n in notes])),
              "gaps of a sixteenth": float(np.mean(g == 3)), "gaps of an eighth": float(np.mean(g == 6)), "gaps of a quarter or more": float(np.mean(g >= 12)),
              "gaps of half a beat": float(np.mean(np.isclose(gb, 0.5))), "gaps of a third of a beat": float(np.mean(np.isclose(gb, 1 / 3))), "gaps of a beat or more": float(np.mean(gb >= 1)), "gaps under a third of a beat": float(np.mean(gb < 1 / 3 - 1e-9))}
+        seen_r = set(); seen_f = set(); nr = nf = 0; byb = collections.defaultdict(list)                  # 864: how much of the song comes back
+        for n in notes: byb[n["on"] // BAR].append((n["on"] % BAR, n["p"]))
+        for k_ in sorted(byb):
+            v = byb[k_]; rh = tuple(x for x, _ in v); fig = (rh, tuple(b_[1] - a_[1] for a_, b_ in zip(v, v[1:]))); nr += rh in seen_r; nf += fig in seen_f; seen_r.add(rh); seen_f.add(fig)
+        r["bars on a rhythm already sung"] = nr / len(byb); r["bars on a figure already sung"] = nf / len(byb)
         return {k: v for k, v in r.items() if k in self.Q}
+    def directed(self, notes):
+        """863: readings with a direction known in advance, each made so that more is better. Surprise is each note's bits under the kept moves (given the move before where the
+        table has pairs). 'low surprise': minus the mean, counted only above the kept lower quartile where the table gives one (too much is bad; a little too little is harmless).
+        'sure endings': the mean surprise of a line's other notes less that of its last note (endings more predictable than their lines)."""
+        ic = []; last = None; fin = []
+        for a, b in zip(notes, notes[1:]):
+            d = b["p"] - a["p"]; ic.append(-math.log2(max(1e-9, self.ivp(d, last)))); last = d; fin.append((a["sec"], a["line"]) != (b["sec"], b["line"]))
+        if not ic: return {"low surprise": 0.0, "sure endings": 0.0}
+        endn = [x for x, f in zip(ic[:-1], fin[1:] + [True]) if f] + [ic[-1]]; inner = [x for x, f in zip(ic[:-1], fin[1:] + [True]) if not f]; floor = self.T.get("surprise_quartiles", [None])[0]; m = float(np.mean(ic))
+        return {"low surprise": -(max(m, floor) if floor else m), "sure endings": float(np.mean(inner) - np.mean(endn)) if inner and endn else 0.0}
     def charge(self, r):
         c = d = 0.0
         for k, (a, m, z) in self.Q.items():
@@ -296,7 +311,25 @@ class Engine:
             r = self.readings(c["notes"]); ch, dist = self.charge(r); c.update(readings=r, charge=ch, distance=dist, n=k)
             c["fp"] = hashlib.sha1(json.dumps([(n["on"], n["p"]) for n in c["notes"]]).encode()).hexdigest()[:12]; alive.append(c)
         if not alive: return dict(made=N, survivors=0, deaths=dict(deaths), stats=dict(self.stats))
-        least = min(c["charge"] for c in alive); near = [c for c in alive if c["charge"] <= least + 0.05]; pick = min(near, key=lambda c: c["distance"])
+        least = min(c["charge"] for c in alive); near = [c for c in alive if c["charge"] <= least + 0.05]; pick = min(near, key=lambda c: c["distance"]); old_pick = pick["fp"]; j7 = None
+        if self.S.get("judge") == 7:                                                         # 860-863: the gate, the place a kept song usually stands, then readings whose direction is known
+            try:
+                import luthier_judge7 as J7; J = J7.Judge7(self.S.get("table") or self.S["metre"].replace("/", "-") + "_sung")
+            except Exception as e_: J = None; j7 = {"not used": str(e_)}
+            if J is not None:
+                for c in alive: c["d7"] = J.distance(c["readings"]); c["directed"] = self.directed(c["notes"])
+                ok = [c for c in alive if c["d7"] <= J.gate]; band = [c for c in ok if J.band[0] <= c["d7"] <= J.band[1]]; pool = band or ok or alive
+                names = list(pool[0]["directed"]); rk = {}
+                for n_ in names:
+                    v = sorted(pool, key=lambda c: -c["directed"][n_])
+                    for r_, c in enumerate(v): rk[(c["fp"], n_)] = r_
+                score = lambda c: sum(rk[(c["fp"], n_)] for n_ in names) / len(names)
+                short = sorted(pool, key=lambda c: (score(c), c["fp"]))[:5] if band else [min(pool, key=lambda c: (abs(c["d7"] - J.usual) if ok else c["d7"], c["fp"]))]
+                pick = short[0]
+                j7 = dict(kept_songs=J.n, readings_read_together=J.names, gate=round(J.gate, 3), a_kept_songs_usual_distance=round(J.usual, 3), kept_middle_half=[round(x, 3) for x in J.band], builds=len(alive), pass_the_gate=len(ok), in_the_kept_middle_half=len(band),
+                          builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"],
+                          pool="the kept middle half" if band else "past the gate" if ok else "no build passed the gate: the least distance", shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
+                          the_old_pick=dict(fp=old_pick, distance=round(next(c["d7"] for c in alive if c["fp"] == old_pick), 3), passes=bool(next(c["d7"] for c in alive if c["fp"] == old_pick) <= J.gate)), withheld_reading_old_charge_of_the_pick=round(pick["charge"], 3), the_old_pick_notes=[[n["on"], n["p"], n["sec"]] for n in next(c["notes"] for c in alive if c["fp"] == old_pick)])
         st = [n for n in pick["notes"] if n["stress"]]; E = {True: [0, 0, 0], False: [0, 0, 0]}
         for c in alive:
             first = {}
@@ -310,7 +343,7 @@ class Engine:
                     kept_quartiles=self.Q, uncharged=[k for k in UNCHARGED if k in self.Q], median_build={k: float(np.median([c["readings"][k] for c in alive])) for k in alive[0]["readings"]},
                     median_charge=float(np.median([c["charge"] for c in alive])), builds_with_no_charge=int(sum(c["charge"] == 0 for c in alive)),
                     entries={"stressed openings before / on / after": [round(x / max(1, sum(E[True])), 3) for x in E[True]], "unstressed openings before / on / after": [round(x / max(1, sum(E[False])), 3) for x in E[False]]},
-                    survivors_list=[dict(fp=c["fp"], charge=round(c["charge"], 4), distance=round(c["distance"], 3)) for c in alive])
+                    judge7=j7, survivors_list=[dict(fp=c["fp"], charge=round(c["charge"], 4), distance=round(c["distance"], 3)) for c in alive])
 
 class Hymn:
     """791, the hymn mode (749.11): one tune for every stanza, its rhythm set by the text's metre and the metre's kept hymn bars, read against hymn tunes of that metre.

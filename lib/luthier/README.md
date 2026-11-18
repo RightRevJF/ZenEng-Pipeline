@@ -171,3 +171,18 @@ Same command. Results: `stage6b_results.json`.
 - 853 a descant over the last section (749.12). 854 checks. 855 every voice on the tune's times (the first part of 749.13).
 - 856 answers 749.56: 839 lifts only a note a quarter long or more as sung. 857 answers 749.55: the song records are made again with the committed code.
 - The chords are still the spec's, one a bar. Results: `stage6c_results.json`.
+
+## Stage 7 (Luthier v20): the judge — fixes 858–866
+
+    python3 lib/luthier/luthier_judge7.py                                   # the gate's figures for each kept table
+    python3 lib/luthier/song_from_lyric.py songs/p64/lyric54.json 1000 12   # the pick is now judge 7's; the record's "judge7" block says how it was made
+
+- 858 `judge_bench.py` (needs the maintainer's corpus): A, kept songs damaged by known amounts; B, the kept songs' chart record. Predictions first: `stage7_PREDICTION.md`.
+- 859 the old judge answers damage (90 in 100 at a tenth of the notes) and does not rank kept songs (weeks -0.01, peak 0.09). It stays as a gate.
+- 860 `luthier_judge7.py`: the gate reads a build's readings together against the kept songs' own (`tables/metre_atlas/kept_readings.json`, made by `kept_rows.py`).
+- 861 the pick comes from the builds that stand where kept songs stand (the kept middle half of distance), not nearest the centre. 862 the record prints readings that did not choose.
+- 863 `Engine.directed`: low surprise (one-sided) and sure endings, ranked and averaged at equal weight; a shortlist of five. 864 two readings of how much comes back.
+- 865 `stage7_new_readings.py`: four readings tried against the chart record; chord rarity held weakly (0.11 on 731 songs; 0.07 held out), the rest did not. Results `stage7_results.json`.
+- The research report: `reports/Vectors for judging great songs.md`; notes in `research_notes/Vectors for judging great songs/`.
+- Side effect: the two new readings are in every kept table's quartiles, so the old two-sided charge of songs 52 and 53 from their hand specs changes in size (song 52: 3.315; pick unchanged).
+- 866 not built: a chord judge beyond 809, a kept pop corpus outside 4/4, lyric rules, a second channel for musicians, a reading of form.

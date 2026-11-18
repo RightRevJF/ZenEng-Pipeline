@@ -78,7 +78,7 @@ def plan(L):
         def prof(key):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
-    spec["word_pitch"] = WORD_PITCH
+    spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7
     return spec, form, flags
 first_name = {}
 def bass(form_bars, tonic_midi, barlen, beats, mode):
@@ -129,7 +129,7 @@ def write(L, N=1000, K=12):
     rec = dict(title=L["title"], metre=spec["metre"], bpm=L["bpm"], key=key, other_keys=keys[1:3], flags=flags, form=[[n, k, nb] for n, k, nb in form],
                chords={n: [" ".join(C.name(x, tonic) for x in bar) for bar in pl[n]] for n, _, _ in form}, roman={n: [" ".join(bar) for bar in pl[n]] for n, _, _ in form},
                chord_pick=dict(draft=seed, drafts=K, charge=round(c, 3), readings=cr, kept=W.Q),
-               melody=dict(made=run["made"], survivors=run["survivors"], deaths=run["deaths"], pick=run["pick"]["fp"], charge=run["pick"]["charge"], median_charge=run["median_charge"], readings=run["pick"]["readings"],
+               judge7=run.get("judge7"), melody=dict(made=run["made"], survivors=run["survivors"], deaths=run["deaths"], pick=run["pick"]["fp"], charge=run["pick"]["charge"], median_charge=run["median_charge"], readings=run["pick"]["readings"],
                            kept=run["kept_quartiles"], uncharged=run["uncharged"], entries=run["entries"], stressed_on_beat=run["pick"]["stressed_on_beat"], stats=run["stats"],
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
@@ -237,4 +237,5 @@ if __name__ == "__main__":
     print(f"{rec['title']} in {rec['metre']}, key {rec['key']['key']} ({rec['key']['lowest']}-{rec['key']['highest']}{', ' + rec['key']['capo'] if rec['key']['capo'] else ''}); chord draft {rec['chord_pick']['draft']} of {rec['chord_pick']['drafts']}, charge {rec['chord_pick']['charge']}")
     print(f"melody: {m['survivors']} of {m['made']} survive; pick {m['pick']} charge {m['charge']} (median build {m['median_charge']:.2f}); deaths {m['deaths']}")
     for n, k, nb in rec["form"]: print(f"  {n}: " + " | ".join(rec["chords"][n]))
+    print("judge 7:", {k: v for k, v in (rec.get("judge7") or {}).items() if k not in ("readings_read_together", "the_old_pick_notes")})
     print("checks:", rec["checks"]); print("band:", rec["band_sources"]); print("levels:", rec["levels"]); print("band checks:", rec["band_checks"]); print("flags:", rec["flags"])

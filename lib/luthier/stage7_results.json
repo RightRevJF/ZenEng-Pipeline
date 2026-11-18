@@ -1,0 +1,427 @@
+{
+ "bench_old": {
+  "charge": {
+   "judge": "luthier_judge6: the charge",
+   "songs": 159,
+   "A: median rise in the score, by damage": {
+    "10": 0.455,
+    "25": 2.964,
+    "50": 5.402,
+    "bars shuffled": 0.679,
+    "rhythm flattened": 1.903
+   },
+   "A: share of songs charged more, by damage": {
+    "10": 0.9,
+    "25": 1.0,
+    "50": 1.0,
+    "bars shuffled": 1.0,
+    "rhythm flattened": 1.0
+   },
+   "A: damage against score, median Spearman within a song": 1.0,
+   "A: songs whose score rises at every step": 0.9,
+   "B: goodness (minus the score) against weeks on the chart: Spearman, p": [
+    -0.007,
+    0.936
+   ],
+   "B: against peak position (higher is better)": [
+    0.088,
+    0.316
+   ],
+   "B: top third by weeks ranked over the bottom third (AUC; 0.5 is chance)": 0.467,
+   "B: songs with a chart record": 131
+  },
+  "place": {
+   "judge": "luthier_judge6: one minus the place among kept songs",
+   "songs": 159,
+   "A: median rise in the score, by damage": {
+    "10": 0.217,
+    "25": 0.406,
+    "50": 0.431,
+    "bars shuffled": 0.299,
+    "rhythm flattened": 0.399
+   },
+   "A: share of songs charged more, by damage": {
+    "10": 0.9,
+    "25": 1.0,
+    "50": 1.0,
+    "bars shuffled": 1.0,
+    "rhythm flattened": 1.0
+   },
+   "A: damage against score, median Spearman within a song": 1.0,
+   "A: songs whose score rises at every step": 0.85,
+   "B: goodness (minus the score) against weeks on the chart: Spearman, p": [
+    -0.006,
+    0.943
+   ],
+   "B: against peak position (higher is better)": [
+    0.087,
+    0.322
+   ],
+   "B: top third by weeks ranked over the bottom third (AUC; 0.5 is chance)": 0.468,
+   "B: songs with a chart record": 131
+  }
+ },
+ "bench_new": {
+  "judge": "luthier_judge7: the gate's distance",
+  "songs": 159,
+  "A: median rise in the score, by damage": {
+   "10": 0.359,
+   "25": 2.215,
+   "50": 4.877,
+   "bars shuffled": 0.076,
+   "rhythm flattened": 3.69
+  },
+  "A: share of songs charged more, by damage": {
+   "10": 0.75,
+   "25": 0.93,
+   "50": 1.0,
+   "bars shuffled": 0.53,
+   "rhythm flattened": 0.97
+  },
+  "A: damage against score, median Spearman within a song": 1.0,
+  "A: songs whose score rises at every step": 0.75,
+  "B: goodness (minus the score) against weeks on the chart: Spearman, p": [
+   0.158,
+   0.071
+  ],
+  "B: against peak position (higher is better)": [
+   0.088,
+   0.318
+  ],
+  "B: top third by weeks ranked over the bottom third (AUC; 0.5 is chance)": 0.592,
+  "B: songs with a chart record": 131,
+  "kept songs inside the gate (read with themselves in)": 0.912,
+  "gate": 3.4575231324244173,
+  "usual": 2.5576664369981206,
+  "band": [
+   2.0993976156655503,
+   3.011000904650672
+  ]
+ },
+ "new_readings": {
+  "songs": 131,
+  "ending gap": {
+   "peak": [
+    -0.142,
+    0.105
+   ],
+   "weeks": [
+    -0.045,
+    0.611
+   ],
+   "median": -0.031,
+   "quartiles": [
+    -0.484,
+    0.275
+   ]
+  },
+  "mean surprise": {
+   "peak": [
+    -0.026,
+    0.771
+   ],
+   "weeks": [
+    -0.012,
+    0.892
+   ],
+   "median": 2.956,
+   "quartiles": [
+    2.73,
+    3.146
+   ]
+  },
+  "N4: median peak by third of joint distance (near, middle, far)": [
+   8.0,
+   6.0,
+   9.5
+  ],
+  "N4: distance against goodness (Spearman, p)": [
+   -0.084,
+   0.34
+  ],
+  "N3": {
+   "songs": 731,
+   "rarity_vs_goodness": [
+    0.109,
+    0.003
+   ],
+   "verse_rarity": [
+    0.063,
+    0.1363
+   ],
+   "verse_minus_chorus": [
+    -0.007,
+    0.8596
+   ],
+   "songs_with_both": 563,
+   "top_against_bottom_quartile_d": 0.207,
+   "peak_quartiles": [
+    4.0,
+    34.0
+   ]
+  }
+ },
+ "rarity_checks": {
+  "rarity_year": 0.16110540369388124,
+  "peak_year": 0.04447999896430336,
+  "heldout": [
+   365,
+   0.06518868395888446,
+   0.21406021691108235
+  ]
+ },
+ "withheld": {
+  "songs/p65/lyric55.song.json": {
+   "new": {
+    "place": 0.862,
+    "charge": 0.003,
+    "eligible": false
+   },
+   "old": {
+    "place": 0.843,
+    "charge": 0.014,
+    "eligible": false
+   }
+  },
+  "songs/p64/lyric54.song.json": {
+   "new": {
+    "place": 0.868,
+    "charge": 0.0,
+    "eligible": false
+   },
+   "old": {
+    "place": 0.868,
+    "charge": 0.0,
+    "eligible": true
+   }
+  }
+ },
+ "songs": {
+  "55": {
+   "judge7": {
+    "kept_songs": 159,
+    "gate": 3.458,
+    "a_kept_songs_usual_distance": 2.558,
+    "kept_middle_half": [
+     2.099,
+     3.011
+    ],
+    "builds": 763,
+    "pass_the_gate": 762,
+    "in_the_kept_middle_half": 158,
+    "builds_distance_quartiles": [
+     1.551,
+     1.78,
+     2.061
+    ],
+    "pick_distance": 2.141,
+    "pick_directed": {
+     "low surprise": -2.869686815008918,
+     "sure endings": 0.8223078577631764
+    },
+    "pool": "the kept middle half",
+    "shortlist": [
+     {
+      "fp": "30d1ef7daab8",
+      "distance": 2.141,
+      "old_charge": 1.35,
+      "low surprise": -2.87,
+      "sure endings": 0.822
+     },
+     {
+      "fp": "0b624b2e0606",
+      "distance": 2.132,
+      "old_charge": 0.379,
+      "low surprise": -2.951,
+      "sure endings": 0.894
+     },
+     {
+      "fp": "e97ff6869ccb",
+      "distance": 2.294,
+      "old_charge": 1.091,
+      "low surprise": -2.972,
+      "sure endings": 0.852
+     },
+     {
+      "fp": "6b3da7d87994",
+      "distance": 2.214,
+      "old_charge": 0.332,
+      "low surprise": -2.871,
+      "sure endings": 0.571
+     },
+     {
+      "fp": "6a1c00838380",
+      "distance": 2.213,
+      "old_charge": 0.798,
+      "low surprise": -2.967,
+      "sure endings": 0.785
+     }
+    ],
+    "the_old_pick": {
+     "fp": "802878114dd9",
+     "distance": 1.394,
+     "passes": true
+    },
+    "withheld_reading_old_charge_of_the_pick": 1.35
+   },
+   "survivors": 763,
+   "pick": "30d1ef7daab8"
+  },
+  "54": {
+   "judge7": {
+    "kept_songs": 159,
+    "gate": 3.458,
+    "a_kept_songs_usual_distance": 2.558,
+    "kept_middle_half": [
+     2.099,
+     3.011
+    ],
+    "builds": 763,
+    "pass_the_gate": 760,
+    "in_the_kept_middle_half": 202,
+    "builds_distance_quartiles": [
+     1.514,
+     1.83,
+     2.152
+    ],
+    "pick_distance": 2.301,
+    "pick_directed": {
+     "low surprise": -2.73,
+     "sure endings": 0.7299124380481219
+    },
+    "pool": "the kept middle half",
+    "shortlist": [
+     {
+      "fp": "ec1f00c32dda",
+      "distance": 2.301,
+      "old_charge": 0.707,
+      "low surprise": -2.73,
+      "sure endings": 0.73
+     },
+     {
+      "fp": "6b67a72bac7c",
+      "distance": 2.225,
+      "old_charge": 1.438,
+      "low surprise": -2.852,
+      "sure endings": 1.204
+     },
+     {
+      "fp": "76ea372e94b3",
+      "distance": 2.154,
+      "old_charge": 1.072,
+      "low surprise": -2.73,
+      "sure endings": 0.51
+     },
+     {
+      "fp": "7404bfb052c7",
+      "distance": 2.747,
+      "old_charge": 1.52,
+      "low surprise": -2.744,
+      "sure endings": 0.511
+     },
+     {
+      "fp": "640adcef1d44",
+      "distance": 2.171,
+      "old_charge": 0.757,
+      "low surprise": -2.855,
+      "sure endings": 0.761
+     }
+    ],
+    "the_old_pick": {
+     "fp": "228b9097084d",
+     "distance": 0.878,
+     "passes": true
+    },
+    "withheld_reading_old_charge_of_the_pick": 0.707
+   },
+   "survivors": 763,
+   "pick": "ec1f00c32dda"
+  },
+  "52": {
+   "judge7": {
+    "kept_songs": 907,
+    "gate": 3.574,
+    "a_kept_songs_usual_distance": 2.538,
+    "kept_middle_half": [
+     2.118,
+     3.021
+    ],
+    "builds": 186,
+    "pass_the_gate": 2,
+    "in_the_kept_middle_half": 0,
+    "builds_distance_quartiles": [
+     4.258,
+     4.551,
+     4.859
+    ],
+    "pick_distance": 3.319,
+    "pick_directed": {
+     "low surprise": -3.0617073453773145,
+     "sure endings": 0.3620526060358995
+    },
+    "pool": "past the gate",
+    "shortlist": [
+     {
+      "fp": "5ac083901ada",
+      "distance": 3.319,
+      "old_charge": 3.164,
+      "low surprise": -3.062,
+      "sure endings": 0.362
+     }
+    ],
+    "the_old_pick": {
+     "fp": "5ac083901ada",
+     "distance": 3.319,
+     "passes": true
+    },
+    "withheld_reading_old_charge_of_the_pick": 3.164
+   },
+   "survivors": 186,
+   "pick": "5ac083901ada"
+  }
+ },
+ "grade_all_readings": {
+  "weeks_out_of_fold": 0.185,
+  "shuffled_95th": 0.215,
+  "peak_out_of_fold": 0.116,
+  "readings": 22,
+  "songs": 131
+ },
+ "gates": {
+  "4-4_pop_sung": {
+   "kept": 159,
+   "readings": 10,
+   "gate": 3.46,
+   "usual": 2.56,
+   "band": [
+    2.1,
+    3.01
+   ]
+  },
+  "6-8_sung": {
+   "kept": 907,
+   "readings": 10,
+   "gate": 3.57,
+   "usual": 2.54,
+   "band": [
+    2.12,
+    3.02
+   ]
+  },
+  "3-4_sung": {
+   "kept": 1585,
+   "readings": 10,
+   "gate": 3.53,
+   "usual": 2.5,
+   "band": [
+    2.09,
+    3.03
+   ]
+  }
+ },
+ "hand52": {
+  "pick": "36cf66ee1827",
+  "charge": 3.315,
+  "survivors": 2506
+ }
+}
