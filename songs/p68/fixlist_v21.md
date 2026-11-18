@@ -27,3 +27,7 @@ lyric52/54/55/58.song.json (+ .song.txt), spec52.run.json, spec53.run.json, spec
 
 ## What a person typed for song 58
 The title; the words by section, with section names marking returns (the second chorus typed out); seven settings: metre, bpm, voice, lead, mode, genre, seed. Bars a line could not be typed (749.63).
+
+## Two proposed vectors, tested and not supported (studies/tda/)
+- TDA of harmonic space (tda_mcgill.py, 733 McGill songs): distinct-chord readings are chord counts (clusters 0.996 with distinct chords); no reading against chart peak past |rho| 0.065 (all p > 0.07); beyond plain readings |rho| <= 0.05.
+- Harmonic transition networks (network_mcgill.py, 721 songs): median 6 chords a graph; 416 of 680 small-world; no reading against peak, alone or beyond plain readings; hub share -0.078 (p 0.036, one of ten), against the claim; shortcuts 0.031 (p 0.41).
