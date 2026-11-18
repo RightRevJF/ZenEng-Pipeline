@@ -26,3 +26,15 @@ The branch was cut before the 5b/5c review, so 749.53 and 749.54 are new to the 
 **Evidence.** Song 52's Chorus 2: both lifted notes ("falls", "wall") are 3 twelfths long. The rule I proposed (vary68) lifted a held note, one long enough to hear.
 **Fix.** Read "held" from the note's sung length after 832, or mend 749.53 first.
 **Check.** Every lifted note is a beat long or more.
+
+## Fixes 844 and 845 (c762df8), merged the same day
+
+| Check | Result | Held? |
+|---|---|---|
+| `song_from_lyric.py` songs 52, 54, 55 (1000, 12) | .song.txt and .song.json identical, all three | yes |
+| `metre_engine.py songs/p62/spec52.json 3000` | identical: 2506 survivors, order d609db9d0ac1, pick 36cf66ee1827 | yes |
+| 844 (749.53) on songs 55 and 52 | no line-final note under an eighth (shortest 6), no join under a quarter's rest, no phrase over eight seconds (song 52 median 3.7 s, longest 4.8) | yes, 749.53 closed |
+| 845 (749.54) and 749.55 | the records are made again; song 55 now reads its lift -1.0, as its gate does | yes, both closed |
+| 749.56 after 844 | song 52's Chorus 2 lifts "falls" (an eighth now) and "wall" (a half) | partly: one lifted note is still short |
+
+Song 52's hand spec still carries the retired gate "the chorus above the verse" (370 deaths). It is the hand spec's record, so I leave it.

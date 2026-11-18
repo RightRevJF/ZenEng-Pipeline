@@ -186,3 +186,4 @@ Merged 423a651. Songs 54, 52 identical; 55 differs in one reading. lib/luthier/R
 749.55 lyric55.song.json prints the lift -2.5; the code reads -1.0 (and -2.5 would fail 838's gate).
 749.56 839 lifts the line's last note, which 832 has often cut to a sixteenth (song 52 Chorus 2: both).
 Next finding 749.57.
+Merged c762df8 (844, 845): all reruns identical; 749.53, 749.54 and 749.55 closed; 749.56 partly (one lifted note an eighth). Next finding 749.57.
