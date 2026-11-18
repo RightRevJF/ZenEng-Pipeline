@@ -139,3 +139,16 @@ The v8 stage-1 orders (main / control), from the maintainer's runs; picks from T
 - **Carried open from the final report:** 7 (749.32 to 749.34, 749.36 to 749.39).
 - **Songs on v8:** none written yet. Song 58 starts from an l9 file (lib/luthier/gen_l9.py), its slots proposed by lib/luthier/slots.py with the flags printed.
 - **Ported by the session since v8:** nothing, as asked; stage 2b, then stage 3 (metre and hymns), come next from the maintainer.
+
+## Review of stages 2b and 2c (18 November 2026)
+
+Merged fe425dd (fast-forward); review 9c3af04, lib/luthier/REVIEW_stage2b_2c.md. 781, 782 hold. Songs 54, 55 reruns match runl11
+(orders 74942a1406ad, 6a9fcf413211). 783 holds: clean survivors re-evaluate 545/545, 609/609, 732/732; song 57 has 396 with a
+386 move, and with moved386 dropped 186 die at 267.
+
+### 749.46 The runl11 logs' code_sha is not the committed engines'
+Problem: 784 says runl11 logs are from the committed engines; their code_sha differs on p59, p60, p61, p64, p65 (see REVIEW_stage2b_2c.md).
+Evidence: orders and survivors reproduce on p64 and p65; gen_l11's unasserted replaces don't explain it.
+Fix: rerun the logs from the committed engines, or name the differing bytes. Check: each log's code_sha equals its engine's.
+
+Next finding 749.47; next fix 790.
