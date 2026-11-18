@@ -55,10 +55,19 @@ def plan(L):
             elif src is not None and i < len(src): how[f"{name}:{i}"] = ["again", first_name[base(name)], i]
             texts.setdefault(key, (name, i, sy[i]))
         if src is None: first[base(name)] = lines; first_name[base(name)] = name
-    form.append(("Outro", "outro", n_out)); br = BD.break_after(form)
-    if br is not None: form.insert(br + 1, ("Break", "solo", 8))                                # 830
+    form.append(("Outro", "outro", n_out)); br = BD.break_after(form); bar_s = 60.0 / L["bpm"] * beats
+    if br is not None and (sum(b for _, _, b in form) + 8) * bar_s <= BD.EDG["length"][2]: form.insert(br + 1, ("Break", "solo", 8))        # 830; 842: only while the song stays inside the kept songs' middle half of lengths
+    elif br is not None: flags.append("no break: with one the song would run past the kept 75th of lengths")
+    if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2]: flags.append(f"the song runs {round(sum(b for _, _, b in form) * bar_s)} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo")
+    RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; lift = int(round(_r.Random(f"plan {L.get('seed', 1)} {L['title']}").choice(RP["lifts"])))
+    V = C.VOICES[L.get("voice", "tenor")]; lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
+    vf, vc, vt = R_["verse"]["floor"][1], R_["verse"]["centre"][1], R_["verse"]["top"][1]                                               # the kept medians: floor on the tonic, centre a third above, top a sixth above
+    reg = {"Verse": [T0 + vc, T0 + vf, T0 + vt], "Chorus": [T0 + vc + lift, T0 + max(-3, min(lift, max(0, lift - 1))), T0 + vt + lift], "Bridge": [T0 + R_["bridge"]["centre"][1], T0 + R_["bridge"]["floor"][1], T0 + R_["bridge"]["top"][1]]}
+    vary = [name for name, lines in L["sections"] if lines and all(how.get(f"{name}:{i}", ["fresh"])[0] == "copy" for i in range(len(lines)))]      # 839: only a section that would return note for note
+    reg = {k: [int(round(x)) for x in v] for k, v in reg.items()}; tw = [w for w, _, _, _ in LS.syllables(L["title"])] if L.get("title") else []
+    hooks = [f"{name}:{i}" for name, lines in L["sections"] for i, ln in enumerate(lines) if tw and " ".join(tw) in " ".join(w for w, _, _, _ in LS.syllables(ln))]     # 840: the lines that sing the title
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
-                registers={"Verse": [64, 60, 69], "Chorus": [68, 63, 74], "Bridge": [65, 60, 71]}, clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
+                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2)], clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
     return spec, form, flags
 first_name = {}
@@ -133,7 +142,29 @@ def checks(rec, fb, tonic_midi, E):
     return {"no two sung notes on one onset": all(b > a for a, b in zip(on, on[1:])), "no sung note of no length": all(n["dur"] > 0 for n in ns),
             "the melody inside the voice": [min(n["midi"] for n in ns), max(n["midi"] for n in ns)], "sung notes on a beat that are chord tones, share": round(sum(tone(n) for n in beat_notes) / max(1, len(beat_notes)), 3),
             "sung notes a beat long or more a semitone from a chord tone": len(clash), "bass notes": len(bs), "the bass on the root where a chord begins": all(any(b["on"] == t and (b["midi"] - tp) % 12 == root_pc(rn) for b in bs) for t, rn in chord_at.items()),
-            "the bass under the voice everywhere": max(b["midi"] for b in bs) < min(n["midi"] for n in ns), "bass register": [min(b["midi"] for b in bs), max(b["midi"] for b in bs)]}
+            "the bass under the voice everywhere": max(b["midi"] for b in bs) < min(n["midi"] for n in ns), "bass register": [min(b["midi"] for b in bs), max(b["midi"] for b in bs)], **style_checks(rec, E)}
+def style_checks(rec, E):
+    """843: the readings of stage 6a, each beside its kept figure"""
+    import statistics as st_
+    ns = rec["melody"]["notes"]; by = {}
+    for n in ns: by.setdefault(n["sec"], []).append(n)
+    med = lambda k: [x["midi"] for s, v in by.items() if kind_of(s) == k for x in v]                 # every note of the kind, as the gate reads it
+    v, c = med("verse"), med("chorus"); rests = []
+    for s, v_ in by.items():
+        span = v_[-1]["on"] + v_[-1]["dur"] - v_[0]["on"]; sung = sum(min(x["dur"], (v_[i + 1]["on"] - x["on"]) if i + 1 < len(v_) else x["dur"]) for i, x in enumerate(v_)); rests.append(1 - sung / max(1, span))
+    hk = set(rec["spec"].get("hooks", [])); hs = [n for n in ns if f"{n['sec']}:{n['line']}" in hk and n["stress"]]; bar_s = 60.0 / rec["bpm"] * len(E.BEATS); secs = sum(b for _, _, b in rec["form"]) * bar_s
+    c1 = [x for s, v_ in by.items() if s == next((n for n, k, b in rec["form"] if k == "chorus"), None) for x in v_]; ret = []
+    for s, v_ in by.items():
+        if kind_of(s) == "chorus" and c1 and v_ is not c1 and v_[0]["sec"] != c1[0]["sec"]:
+            a = {}; b = {}; s0 = {}; t_ = 0
+            for nm_, k_, nb_ in rec["form"]: s0[nm_] = t_; t_ += nb_
+            for x in c1: a.setdefault(x["on"] // E.BAR - s0[x["sec"]], []).append((x["on"] % E.BAR, x["midi"]))
+            for x in v_: b.setdefault(x["on"] // E.BAR - s0[x["sec"]], []).append((x["on"] % E.BAR, x["midi"]))
+            idx = [i for i in range(min(a), min(max(a), max(b)) + 1) if a.get(i) or b.get(i)]
+            if idx: ret.append(sum(a.get(i) == b.get(i) for i in idx) / len(idx))
+    return {"the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": round(st_.median(c) - st_.median(v), 1) if v and c else None, "the plan's lift": rec["spec"].get("plan", {}).get("lift"),
+            "rest share inside sung sections, median (kept quartiles 0.21, 0.30, 0.39)": round(st_.median(rests), 3), "the title's stressed syllables on a beat (kept 0.73)": round(sum((n["on"] % E.BAR) in E.BEATS for n in hs) / len(hs), 3) if hs else None,
+            "title lines": len(hk), "length in seconds (kept quartiles 165, 206, 243)": round(secs), "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": round(st_.median(ret), 2) if ret else None}
 def midi(rec, path):
     import mido
     tpq = 480; f = 40; mid = mido.MidiFile(ticks_per_beat=tpq); bpm = rec["bpm"] * (1.5 if rec["metre"] in ("6/8", "9/8", "12/8") else 1.0)

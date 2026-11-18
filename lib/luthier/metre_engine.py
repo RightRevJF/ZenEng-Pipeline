@@ -76,7 +76,7 @@ class Engine:
         if bars == 2: return self.WIN.get(n, [])
         if bars == 1: return self.BARS.get(n, [])
         return []
-    def rhythm(self, rng, sy, tmin, slot, cap=None):
+    def rhythm(self, rng, sy, tmin, slot, cap=None, hook=False):
         n = len(sy); lead = 0
         for x in sy:
             if x[1]: break
@@ -88,7 +88,7 @@ class Engine:
                 ons = [-6 * (p - j) for j in range(p)] + list(w)
                 if ons[0] < tmin: continue
                 e = ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
-                out.append((ons, math.log(c + 1) + 1.4 * self.stress_score(ons, sy) + math.log(e)))
+                out.append((ons, math.log(c + 1) + (2.8 if hook else 1.4) * self.stress_score(ons, sy) + math.log(e)))        # 840: the title line's stresses pulled twice as hard to the beat
                 if p == 0 and sy[0][1] and w[0] == 0 and self.S.get("early_entries"):               # 834: a line that opens on a stress may sing its kept window an eighth or a quarter early
                     for sh in (6, 12):
                         o2 = [x - sh for x in w]
@@ -194,7 +194,16 @@ class Engine:
             if how[0] == "copy":
                 src = lines[(how[1], how[2])]
                 if src[0][0] < tm and src[0][0] < tm - (self.BREATH - 12): return None, ("join before a copy (780)", sec, i)     # 780: two fixed lines a beat apart or more
-                lines[(sec, i)] = list(src); prev = src[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; continue
+                new = list(src)
+                if sec in (self.S.get("vary_returns") or ()) and how[1] != sec and i != 0 and f"{sec}:{i}" not in self.S.get("hooks", ()) and len(new) > 2:      # 839 (749.8): a returning line, not the section's first nor the title's, lifts one held note
+                    gaps = [(new[j + 1][0] - new[j][0]) if j + 1 < len(new) else 10 ** 6 for j in range(len(new))]; st_ = [x[1] for x in sy]
+                    j = max(range(len(new)), key=lambda j_: (st_[j_] if j_ < len(st_) else False, min(gaps[j_], 48), -j_)); t0, p0 = new[j]; ch = self.chord_at(U + t0); mu, lo, hi = self.reg(sec, i)
+                    for q in range(p0 + 1, p0 + (5 if j == len(new) - 1 else 4)):
+                        if q % 12 in ch and q % 12 in self.SCALE and q <= hi and (j == 0 or abs(q - new[j - 1][1]) <= 7) and (j == len(new) - 1 or abs(new[j + 1][1] - q) <= 7):
+                            trial = new[:j] + [(t0, q)] + new[j + 1:]
+                            if self.runs_ok([p_ for _, p_ in trial]): new = trial; self.stats["839: a returning line lifts one held note"] += 1
+                            break
+                lines[(sec, i)] = new; prev = new[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; continue
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
                 if r is not None and self.runs_ok([p for t, p in r]) and r[0][0] >= tm and (cap is None or r[-1][0] <= cap): lines[(sec, i)] = r; prev = r[-1][1]; continue
@@ -207,7 +216,7 @@ class Engine:
                     if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
                         if x < bw["figure"] and self.runs_ok([p for t, p in r]): lines[(sec, i)] = r; prev = r[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
-            if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap)
+            if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
             if ons is None: return None, ("rhythm: the syllables cannot fit the window", sec, i)
             rule = self.S.get("line_rules", {}).get(f"{sec}:{i}", {}); ps = None
             for _ in range(20):
@@ -259,6 +268,9 @@ class Engine:
         for gte in self.S.get("gates", []):
             if gte["type"] == "median above" and med(gte["a"], gte.get("a_lines")) < med(gte["b"]) + gte["by"]: return "design: " + gte["name"]
             if gte["type"] == "top only in" and (max(n["p"] for n in ns) != gte["pitch"] or any(n["p"] >= gte["pitch"] and [n["sec"], n["line"]] not in gte["lines"] for n in ns)): return "design: " + gte["name"]
+            if gte["type"] == "plan lift":                                                    # 838: the chorus's median over the verse's within two semitones of the song's plan
+                v_ = [n["p"] for n in ns if self.KIND[n["sec"]] == "Verse"]; c_ = [n["p"] for n in ns if self.KIND[n["sec"]] == "Chorus"]
+                if v_ and c_ and abs(float(np.median(c_)) - float(np.median(v_)) - gte["lift"]) > gte.get("within", 2): return "838: the chorus's lift is not the plan's"
             if gte["type"] == "cap" and any(n["p"] > gte["pitch"] for n in ns if n["sec"] == gte["section"] and n["line"] in gte["lines"]): return "design: " + gte["name"]
         st = [n for n in ns if n["stress"] and self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design"]
         if st and np.mean([self.on_beat(n["on"]) for n in st]) < self.S.get("stressed on the beat, at least", 0.4): return "731: stressed syllables on the beat too few"

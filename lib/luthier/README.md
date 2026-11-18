@@ -127,3 +127,13 @@ Same command as stage 5b. Results: `stage5c_results.json`.
 - 835 the harmony voice's fitted weights (`band.HW`, `HOLD`, `WITH`, `STAY`); the check now reads kept shares over the six classes written, and counts parallel motion by class.
 - 836 roughness as a reading (`band.checks`). 837 joins meet 802's test since 822.
 - Songs 52 and 53 from their hand specs are unchanged (the two flags are off there).
+
+## Stage 6a (Luthier v17): the song's plan, from kept songs — fixes 838–843
+
+Same command. Results: `stage6a_results.json`; kept figures: `tables/register_plan.json` (made by `kept_plan.py`, which needs the maintainer's corpus).
+
+- 838 the chorus's lift drawn from the kept songs' own (median 1 semitone; 46 in 100 have none), registers from the kept medians, a gate `{"type": "plan lift"}`.
+  The old design "the chorus above the verse" is retired (749.34, 749.44).
+- 839 (749.8) `vary_returns`: a section whose every line is copied lifts one held note a line. 840 `hooks`: the title's lines pulled to the beat.
+- 841 rest share: no rule (the engine rests less than kept songs; 749.38 answered). 842 the break only inside the kept lengths. 843 the plan's readings in `checks`.
+- Songs 52 and 53 from their hand specs are unchanged.
