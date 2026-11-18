@@ -187,3 +187,11 @@ Merged 423a651. Songs 54, 52 identical; 55 differs in one reading. lib/luthier/R
 749.56 839 lifts the line's last note, which 832 has often cut to a sixteenth (song 52 Chorus 2: both).
 Next finding 749.57.
 Merged c762df8 (844, 845): all reruns identical; 749.53, 749.54 and 749.55 closed; 749.56 partly (one lifted note an eighth). Next finding 749.57.
+
+## Review of stages 6b and 6c (18 November 2026)
+
+Merged 55bbf7a. All reruns identical; 749.55 and 749.56 closed. lib/luthier/REVIEW_stage6b_6c.md.
+749.57 the descant's ceiling (A5) is read in the written key; song 53's final refrain is sung in F, so the summit sounds C6.
+749.58 rests between lines sit at the kept 10th percentile (a quarter at 69%, 61%, 100% of joins); rest shares 0.12-0.17 under the kept 0.21.
+749.59 melismas on function words: song 52 12 of 23 ("in", "a").
+Next finding 749.60.
