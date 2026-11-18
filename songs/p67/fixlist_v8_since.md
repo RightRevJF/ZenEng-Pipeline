@@ -168,3 +168,7 @@ Merged bf9b7a5. Both commands reproduce; 806 confirmed (749.46 closed); the prot
 749.51 minor at chromatic=1 leaves the key at 0.22 of bars, kept 0.11.
 749.52 sharp minor keys misspelled (G#m bVII Gb; D#m bIII Gb, bVII Db; Bbm as A#m with Db, Gb; choose_key Dbm).
 Open: 749.47, 749.48. Next finding 749.53.
+
+## Review of stage 5a (18 November 2026)
+
+Merged 49e542b. All five reruns identical; 810 and 811 hold. Song 58 waits for its lyric lock, then song_from_lyric.py. Open: 749.49-749.52. Next finding 749.53.
