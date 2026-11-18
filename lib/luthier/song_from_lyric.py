@@ -21,6 +21,8 @@ import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS, ban
 FAMILY = {"pop": "other", "rock": "other", "folk": "other", "soul / r&b": "soul", "gospel": "soul", "blues": "soul", "country": "country"}
 DEGREE_POWER = 0.5     # 846: fitted so the written degree shares meet the kept
 WORD_PITCH = [3.0, 2.0, 0.2]     # 847: weights for the stressed syllable of a word standing higher than, level with, lower than the other; fitted to the kept 44 / 36 / 20
+WORD_PLACE = 1.5; WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
+#  879, 880: fitted so the builds' shares (a function word on the bar's first beat, the step up from a light word to a stressed one) and their fits meet the kept
 ONE_BAR = 0.1    # 876: a fresh two-bar line sung in one bar with the next bar silent, one time in ten (kept: a one-bar silence 0.2 times in eight bars)
 EARLY = True     # 834: a line that opens on a stress comes in before the bar line at the kept share, one time in five
 SCALES = {"major": [0, 2, 4, 5, 7, 9, 11], "minor": [0, 2, 3, 5, 7, 8, 10]}
@@ -85,6 +87,9 @@ def plan(L):
         def prof(key):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
+    if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
+        import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
+    else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
     spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7; spec["one_bar_share"] = ONE_BAR; spec["kept_rests"] = [[12, 15, 18, 24, 36, 48], [0.2, 0.15, 0.1, 0.25, 0.15, 0.15]]      # 870: the kept rests after a line (10th percentile a quarter, 25th 15 twelfths, median a half, 75th a whole)
     return spec, form, flags
 first_name = {}
@@ -212,6 +217,10 @@ def style_checks(rec, E):
     extra = {"syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": round(100 * len(mel) / max(1, len(syl)), 1), "of those, at a line's end (kept 20 in 100); on a word's end (kept 94)": [round(100 * le / max(1, len(mel))), round(100 * we / max(1, len(mel)))],
              "long notes on stressed syllables (kept quartiles 0.43, 0.55, 0.65)": round(sum(n["stress"] for n in longs) / max(1, len(longs)), 3),
              "flat third; flat seventh; leading tone, share of notes (kept, this family)": [round(deg.get(3, 0) / len(ns), 3), round(deg.get(10, 0) / len(ns), 3), round(deg.get(11, 0) / len(ns), 3)], "a song with blue notes": rec["spec"].get("degrees", {}).get("blue_song")}
+    if rec["metre"] == "4/4":                                                                 # 883: the words' fit of the song as sung, beside the kept
+        import word_weight as WW_; K_ = WW_.table(); f_ = WW_.fit([n for n in ns if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True); kq = K_["fit_percentiles_10_25_50_75_90"]
+        extra[f"the words' fit: weightier syllables on more salient notes (kept 10th {kq[0]}, quartiles {kq[1]}, {kq[2]}, {kq[3]})"] = round(f_["all"], 3)
+        extra["the fit by length, by place in the bar, by height (kept medians %s, %s, %s)" % (K_["fit_by_length"][2], K_["fit_by_place"][2], K_["fit_by_height"][2])] = [round(f_[k], 3) for k in ("length", "place", "height")]
     return {**extra, "the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": round(st_.median(c) - st_.median(v), 1) if v and c else None, "the plan's lift": rec["spec"].get("plan", {}).get("lift"),
             "rest share inside sung sections, median (kept quartiles 0.21, 0.30, 0.39)": round(st_.median(rests), 3), "the title's stressed syllables on a beat (kept 0.73)": round(sum((n["on"] % E.BAR) in E.BEATS for n in hs) / len(hs), 3) if hs else None,
             "title lines": len(hk), "length in seconds (kept quartiles 165, 206, 243)": round(secs), "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": round(st_.median(ret), 2) if ret else None}

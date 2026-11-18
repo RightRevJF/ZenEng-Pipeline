@@ -23,6 +23,7 @@ A spec's 'how' gives each line one of: fresh; ["again", section, line]; ["copy",
 Onsets are twelfths of a quarter note from the line's slot start. Every choice is deterministic for a seed."""
 import json, random, sys, os, math, collections, hashlib
 import numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import word_weight as WW_
 HERE = os.path.dirname(os.path.abspath(__file__)); ATLAS = os.path.join(HERE, "..", "..", "tables", "metre_atlas")
 ENTRY = {True: (0.20, 0.42, 0.38), False: (0.43, 0.10, 0.47)}          # 771: before, on, after the bar line, by the first syllable's stress
 UNCHARGED = ("notes a bar", "notes a beat", "gaps of a sixteenth", "gaps of an eighth", "gaps of a quarter or more", "gaps of half a beat", "gaps of a third of a beat",
@@ -48,6 +49,10 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
+        ww = spec.get("word_weight"); self.WW = None                                          # 879-881 (way 3): what the kept songs do with a word's weight
+        if ww:
+            K = WW_.table(); self.WW = dict(place=[[math.log(max(1e-4, K["place_share_by_tier"][a][j]) / K["place_share_all"][j]) for j in range(5)] for a in range(3)], pp=ww.get("place", 1.0), sp=ww.get("step", 1.0), gate=ww.get("gate"), cost=ww.get("again_cost", 1.0), fresh=ww.get("fresh", True), again=ww.get("again", True),
+                                            step=[[[K["step_down_level_up_from_tier_to_tier"][a][b][d] / K["step_down_level_up_all"][d] for d in range(3)] for b in range(3)] for a in range(3)])
     # ---- the frame
     def line_start(self, sec, i): return (self.BAR0[sec] + sum(self.SLOTS[sec][:i])) * self.BAR
     def slot_len(self, sec, i): return self.SLOTS[sec][i] * self.BAR
@@ -65,8 +70,12 @@ class Engine:
         if row and sum(row.values()) >= 50: return (row.get(d, 0) + 12.5 * (self.IV.get(d, 0) + 0.5) / self.IVT) / (sum(row.values()) + 12.5)
         return (self.IV.get(d, 0) + 0.5) / self.IVT
     # ---- rhythm
-    def stress_score(self, ons, sy):
+    def stress_score(self, ons, sy, table=None):
         sc = 0.0
+        if self.WW and (self.WW["fresh"] if table is None else table):                                                                           # 879: each syllable's place in the bar scored by where kept songs sing a syllable of its weight (function word, weak syllable, stressed), over where they sing any
+            for t, a in zip(ons, WW_.tier(sy)): sc += self.WW["pp"] * self.WW["place"][a][WW_.place(t, self.BAR, self.BEAT)]
+            if len(sy) > 1 and not sy[-1][1] and sy[-2][1] and sy[-1][0] == sy[-2][0]: sc += 1.5 if ons[-1] - ons[-2] >= 12 else -1.5
+            return sc
         for t, (_, st) in zip(ons, sy):
             b = t >= 0 and self.on_beat(t)
             sc += (1.5 if b else -0.6) if st else (-0.8 if (b and t % self.BAR == 0) else 0.0)
@@ -111,6 +120,10 @@ class Engine:
         if m < n: return None
         st = [s for _, s in sy]; cap = int(0.75 * self.BAR) if n <= 8 else 10 ** 6                  # 761
         def pw(t, s): w = self.OW.get(t % self.BAR, 0.002); return w * ((2.6 if self.on_beat(t) else 0.45) if s else (0.5 if self.on_beat(t) else 1.3))
+        if self.WW and self.WW["fresh"]:                                                      # 879: the rule's places too, by the syllable's weight
+            tr = WW_.tier(sy); entry_st = st[0]; st = tr
+            def pw(t, a): return self.OW.get(t % self.BAR, 0.002) * math.exp(self.WW["pp"] * self.WW["place"][a][WW_.place(t, self.BAR, self.BEAT)])
+        else: entry_st = st[0]
         def gw(g): return (self.DUR.get(g, 0) + 1.0) / self.DT
         B = [[0.0] * m for _ in range(n)]
         for j in range(m): B[n - 1][j] = 1.0
@@ -119,7 +132,7 @@ class Engine:
                 B[k][j] = sum(gw(P[j2] - P[j]) * pw(P[j2], st[k + 1]) * B[k + 1][j2] for j2 in range(j + 1, m) if P[j2] - P[j] < cap)
         w0 = [pw(P[j], st[0]) * B[0][j] for j in range(m)]; cl = [0 if P[j] < 0 else 1 if P[j] == 0 else 2 for j in range(m)]
         if sum(w0) <= 0: return None
-        mass = [sum(w for w, c in zip(w0, cl) if c == q) for q in range(3)]; q = rng.choices(range(3), [ENTRY[st[0]][q] if mass[q] > 0 else 0 for q in range(3)])[0]   # 771: the entry's class at the kept share, then the place
+        mass = [sum(w for w, c in zip(w0, cl) if c == q) for q in range(3)]; q = rng.choices(range(3), [ENTRY[entry_st][q] if mass[q] > 0 else 0 for q in range(3)])[0]   # 771: the entry's class at the kept share, then the place
         w0 = [w if c == q else 0.0 for w, c in zip(w0, cl)]
         j = rng.choices(range(m), w0)[0]; out = [P[j]]
         for k in range(n - 1):
@@ -131,7 +144,7 @@ class Engine:
     def pitches(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
         mu, lo, hi = self.reg(sec, i); ps = []; last = None; sy = self.LINES[sec][i]
         DG = self.S.get("degrees"); DW = (DG["weights"].get(self.KIND[sec]) or DG["weights"]["all"]) if DG else None; ton = DG["tonic"] if DG else 0; blue = set(DG.get("blue", ())) if DG else set()
-        WP = self.S.get("word_pitch")
+        WP = self.S.get("word_pitch"); TR = WW_.tier(sy) if (self.WW and self.WW["sp"]) else None
         for k, t in enumerate(ons):
             ch = self.chord_at(U + t); cands = [p for p in range(lo, hi + 1) if (p % 12 in self.SCALE or (p - ton) % 12 in blue) and not (avoid and p % 12 in avoid)]; ws = []
             long_ = k == len(ons) - 1 or ons[k + 1] - t >= self.BEAT
@@ -146,6 +159,8 @@ class Engine:
                 if DW: w *= DW.get(str((p - ton) % 12), 0.0)                                      # 846: the kept share of each degree of the scale, blue notes among them
                 if WP and k > 0 and k < len(sy) and sy[k][0] == sy[k - 1][0] and sy[k][1] != sy[k - 1][1] and prev is not None:      # 847: inside a word, the stressed syllable against the other
                     up = (p > prev) if sy[k][1] else (p < prev); w *= WP[1] if p == prev else WP[0] if up else WP[2]
+                elif TR and k > 0 and k < len(sy) and sy[k][0] != sy[k - 1][0] and prev is not None:                                  # 880: between two words, the step's direction at the kept share for their weights, over the kept share for any two
+                    w *= self.WW["step"][TR[k - 1]][TR[k]][0 if p < prev else 1 if p == prev else 2] ** self.WW["sp"]
                 if k == len(ons) - 1 and end_off is not None and p % 12 == end_off: w *= 0.05
                 ws.append(w)
             if sum(ws) <= 0: return None
@@ -156,6 +171,36 @@ class Engine:
         floor = max(tmin, 0) if (sy[0][1] and not src_st0 and src[0][0] < 0) else tmin
         if floor != tmin: self.stats["772: a line sung again, stressed opening: its source's pickup dropped"] += 1
         keep = [(t, p) for t, p in src if t >= floor] or src[-1:]; on = [t for t, p in keep]; ps = [p for t, p in keep]; n = len(sy)
+        if self.WW and self.WW["again"] and abs(len(on) - n) <= 3:                                               # 882: the new words choose how they sit on the old tune: which notes are split, dropped or led into, by where kept songs sing each syllable's weight
+            def step_from(q0, nxt):
+                st_ = [q for q in (q0 + 1, q0 - 1, q0 + 2, q0 - 2) if q % 12 in self.SCALE]; return min(st_, key=lambda q_: abs(q_ - nxt))
+            def inserts(o, q):
+                for j in range(len(o)):
+                    g = (o[j + 1] if j + 1 < len(o) else slot - 6) - o[j]; h = o[j] + (g // 2 // 3) * 3
+                    if g >= 6 and h > o[j]: yield o[:j + 1] + [h] + o[j + 1:], q[:j + 1] + [None] + q[j + 1:]
+                if o[0] - 6 >= tmin: yield [o[0] - 6] + o, ["lead"] + q
+            def deletes(o, q):
+                for j in range(len(o) - 1): yield o[:j] + o[j + 1:], q[:j] + q[j + 1:]
+            states = {tuple(on): (list(on), list(ps), 0)}; d = n - len(on)
+            for _ in range(abs(d)):
+                nxt_ = {}
+                for o, q, c in states.values():
+                    for o2, q2 in (inserts(o, q) if d > 0 else deletes(o, q)): nxt_.setdefault(tuple(o2), (o2, q2, c + 1))
+                states = nxt_
+            if d == 0:                                                                        # the same count: the tune as it was, or one note dropped and one split
+                for o, q, c in list(states.values()):
+                    for o1, q1 in deletes(o, q):
+                        for o2, q2 in inserts(o1, q1): states.setdefault(tuple(o2), (o2, q2, 2))
+            cands = [(self.stress_score(o, sy, True) - self.WW["cost"] * c, -c, -k_, o, q) for k_, (o, q, c) in enumerate(states.values()) if o[0] >= tmin and all(y - x >= 3 for x, y in zip(o, o[1:]))]
+            if not cands: return None
+            _, c_, _, on, ps = max(cands, key=lambda x: x[:3]); c_ = -c_; ps = list(ps)                                                       # the best fit, each note split or dropped charged, so the tune is kept where the words allow
+            if c_: self.stats["882: a line sung again, its notes fitted to the new words' weights"] += 1
+            for j in range(len(ps)):
+                if ps[j] == "lead":
+                    f0 = next(q for q in ps[j + 1:] if q not in (None, "lead")); x = rng.random(); ps[j] = f0 if x < 0.32 else step_from(f0, f0 - 12 if x < 0.77 else f0 + 12)     # led into from below, level, or above at the kept shares for a light word before a stressed one
+            for j in range(len(ps)):
+                if ps[j] is None:
+                    nx = next((q for q in ps[j + 1:] if q is not None), ps[j - 1]); ps[j] = step_from(ps[j - 1], nx) if (rng.random() < 0.6 or (j > 1 and ps[j - 2] == ps[j - 1])) else ps[j - 1]
         while len(on) < n:
             gaps = [((on[j + 1] if j + 1 < len(on) else slot - 6) - on[j], j) for j in range(len(on))]; g, j = max(gaps)
             if g < 6: return None
@@ -336,7 +381,13 @@ class Engine:
             if J is not None:
                 for c in alive: c["d7"] = J.distance(c["readings"]); c["directed"] = self.directed(c["notes"])
                 half = float(np.median([c["charge"] for c in alive])); first = [c for c in alive if c["charge"] <= half]                           # 874 (749.62): the old charge gates first: the least half of the builds
-                ok = [c for c in first if c["d7"] <= J.gate]; band = ok; pool = ok or first                                                         # 873 (749.61): the gate, and no band
+                ok = [c for c in first if c["d7"] <= J.gate]; band = ok; wgate = None
+                if self.WW and self.WW.get("gate") is not None:                                                                                     # 881: the words' gate: a build whose words fit its notes less well than nine kept songs in ten is passed over
+                    for c in alive: c["fit"] = WW_.fit(c["notes"], self.BAR, self.BEAT)
+                    ok2 = [c for c in ok if c["fit"] >= self.WW["gate"]]; wgate = dict(at_least=self.WW["gate"], builds_fit_quartiles=[round(float(x), 3) for x in np.quantile([c["fit"] for c in alive], (0.25, 0.5, 0.75))], pass_among_all=int(sum(c["fit"] >= self.WW["gate"] for c in alive)), pass_after_the_other_gates=len(ok2))
+                    if ok2: ok = ok2
+                    else: wgate["no build past the joint gate also passed: the gate is waived"] = True
+                pool = ok or first                                                         # 873 (749.61): the gate, and no band
                 names = list(pool[0]["directed"]); rk = {}
                 for n_ in names:
                     v = sorted(pool, key=lambda c: -c["directed"][n_])
@@ -345,7 +396,7 @@ class Engine:
                 short = sorted(pool, key=lambda c: (score(c), c["fp"]))[:5]                                                                         # printed beside the pick, and chooses nothing (872)
                 pick = min(pool, key=lambda c: c["n"]) if ok else min(pool, key=lambda c: (c["d7"], c["fp"]))                                       # 872 (749.60): no reading has passed the bench, so the first build past both gates, in the order built
                 j7 = dict(kept_songs=J.n, readings_read_together=J.names, gate=round(J.gate, 3), a_kept_songs_usual_distance=round(J.usual, 3), kept_middle_half=[round(x, 3) for x in J.band], builds=len(alive), pass_the_gate=len(ok), in_the_kept_middle_half=len(band),
-                          builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"],
+                          builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"], words_gate=wgate, pick_words_fit=WW_.fit(pick["notes"], self.BAR, self.BEAT, parts=True),
                           pool="past both gates: the old charge's least half, then the joint gate; the pick is the first of them in the order built" if ok else "no build passed the joint gate: the least distance among the old charge's least half", gates_passed=dict(old_charge_least_half=len(first), joint_gate=len(ok)), shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
                           the_old_pick=dict(fp=old_pick, distance=round(next(c["d7"] for c in alive if c["fp"] == old_pick), 3), passes=bool(next(c["d7"] for c in alive if c["fp"] == old_pick) <= J.gate)), withheld_reading_old_charge_of_the_pick=round(pick["charge"], 3), the_old_pick_notes=[[n["on"], n["p"], n["sec"]] for n in next(c["notes"] for c in alive if c["fp"] == old_pick)])
         st = [n for n in pick["notes"] if n["stress"]]; E = {True: [0, 0, 0], False: [0, 0, 0]}
