@@ -159,3 +159,12 @@ Merged e9427ea. Both reruns identical to the committed logs. 794 confirmed. lib/
 749.47 793's floor widens real widths (notes a bar in most hymn metres); without it song 53 picks df80b1c9ac90; 794's 0.403 is 0.503 on kept widths.
 749.48 rhythm_line allows two slurred bars a line, not two slurs: song 53's verse line 1 has three.
 749.46 still open. Next finding 749.49; next fix 797.
+
+## Review of stage 4 (18 November 2026)
+
+Merged bf9b7a5. Both commands reproduce; 806 confirmed (749.46 closed); the prototype fails at 400 candidates too; writers/chords.py retired. lib/luthier/REVIEW_stage4.md.
+749.49 chord_writer.py's command rewrites stage4_results.json and drops the 801-805, prototype and song 52 blocks (no committed script writes them).
+749.50 a longer last chorus ends on the tonic 5 in 100 (major), 2 (minor); kept last sections 41, 31.
+749.51 minor at chromatic=1 leaves the key at 0.22 of bars, kept 0.11.
+749.52 sharp minor keys misspelled (G#m bVII Gb; D#m bIII Gb, bVII Db; Bbm as A#m with Db, Gb; choose_key Dbm).
+Open: 749.47, 749.48. Next finding 749.53.
