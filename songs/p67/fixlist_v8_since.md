@@ -172,3 +172,10 @@ Open: 749.47, 749.48. Next finding 749.53.
 ## Review of stage 5a (18 November 2026)
 
 Merged 49e542b. All five reruns identical; 810 and 811 hold. Song 58 waits for its lyric lock, then song_from_lyric.py. Open: 749.49-749.52. Next finding 749.53.
+
+## Review of stages 5b and 5c (18 November 2026)
+
+Merged e8edb79. Three song commands identical; 749.49-749.52 answered by 821-824. lib/luthier/REVIEW_stage5b_5c.md.
+749.53 832 clips line-final notes to a sixteenth (song 52: 24 of 36, song 54: 18 of 58, song 55: 18 of 56); in 6/8 the joins still rest 9 twelfths, 10 phrases over 8 s.
+749.54 spec52.written_chords.json and song52_written are 5b's; 833 changes their melodies.
+Next finding 749.55.
