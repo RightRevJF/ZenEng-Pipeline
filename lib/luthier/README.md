@@ -29,3 +29,15 @@ by place in the bar; the kept palette's gap shares; the sixteenth grid). **761.*
 syllables or fewer. **764.** A line leaves the next line room. **765.** The breath before a line gives way, down to 18 twelfths.
 Deaths for want of a placement, a thousand builds: song 54 652/664 to 0/0; song 55 682/676 to 53/50; song 51 487/486 to 0/0; song 50
 261/218 to 0/0; song 49 54/44 to 0/0. Start the next song from an `l9` file.
+
+## Stage 2b (Luthier v10, Module 27.91, Window 167; fixes 770 to 777)
+
+`gen_l10.py` makes a song's v10 engine from its v7 file (stages 1, 2a and 2b): `python3 lib/luthier/gen_l10.py /home/claude/p64`
+writes `melody_l10_p64.py`; run files go to `runl10/`. Start the next song from an `l10` file.
+
+**770.** The floor under a line's start is the least breath (18 twelfths), not the breath the line before drew. **771.** The first onset
+by the first syllable's stress in the old draw and in 760's rule. **772.** A line sung again that opens on a stress drops its source's
+pickup and splits a long note for each note lost. **773.** A line sung again fitted ahead gives way to the line before it.
+**774.** The 75% long-note band (749.32) is not adopted: kept songs read 0.55 at the median (`kept2b.json`). `stage2b_results.json`
+has songs 49, 50, 51, 54, 55 on v9 and v10: deaths for want of a placement 0 on all five; entries by stress 19 of 30 shares
+within ten points (15 under v9). Song 54's median build stands lower on the judge of 715 (0.63 for 0.80); printed (777).
