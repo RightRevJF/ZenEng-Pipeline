@@ -47,3 +47,31 @@ Song 55's pick carries an old charge of 1.35, the highest of its shortlist; song
 ## Song 58
 
 Written next with song_from_lyric.py, once the writer gives its settings.
+
+## Song 58 ("Same Time Tomorrow") with song_from_lyric.py
+
+`python3 lib/luthier/song_from_lyric.py songs/p68/lyric58.json 1000 12`, run twice: the same log both times. Key C (C3 to C4, baritone), chord draft 6 of 12,
+300 of 1000 builds survive, pick 0b3d5712f9c2, 229 seconds. Judge 7: 298 of 300 pass the gate, 269 stand in the kept middle half (builds' quartiles 2.34 to 2.72),
+so on this song the band is most of the builds, unlike songs 54 and 55 (749.61).
+
+**What a person typed** (lyric58.json): the title; the words by section, with section names that mark the returns (Chorus 1, Chorus 2, Last Chorus; the
+second chorus's words typed out in full); and seven settings: metre 4/4, bpm 84, voice baritone, lead guitar, mode major, genre folk, seed 1. The settings were
+the writer's choice from three offered. Nothing else was typed or chosen by hand. One thing a person could not type: how many bars a line takes (749.63).
+
+## 749.63 The slot rounds a ballad's lines down to one bar
+
+**Problem.** slots.py proposes the nearest whole number of bars to the kept median slot. At 84 a seven- or eight-syllable line's kept median (4.07 s) is 1.42 bars,
+so every such line gets one bar, though only 36 in 100 kept lines of that length fit in one bar or less.
+**Evidence.** Song 58: 38 of 57 lines in one bar. Its notes are 45 in 100 sixteenths, against the kept 4/4 pop share of 15; 548 of 1000 builds die "the syllables cannot fit the window".
+The lyric file has no way to ask for more room.
+**Fix.** Propose the fewest whole bars that hold at least half the kept lines of that length (here two), or let the lyric file set bars a line.
+**Check.** Sixteenths within ten points of the kept share on song 58; deaths for want of a fit under one in ten.
+
+## 749.64 A two-syllable word at a line's end holds its weak syllable
+
+**Problem.** 844's least length for a line's last note and 848's melisma both fall on the word's last syllable. In a word stressed on its first syllable
+(morning, heaven, reason) that is the weak one, so the weak syllable is held and the stressed one rushed.
+**Evidence.** Song 58: of 14 line-final words stressed on the first of two or more syllables, 7 hold the last syllable longer: "morning" 3 and 15 twelfths,
+"reason" 6 and 24, "heaven" 3 and 6, "pulpit", "frightened", "water". The mouth test named these words before the music.
+**Fix.** Give the line's long note, and any melisma, to the last stressed syllable; the unstressed tail an eighth.
+**Check.** No line-final word holds an unstressed syllable longer than its stressed one, unless kept songs do so at their rate.
