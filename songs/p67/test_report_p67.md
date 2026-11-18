@@ -11,7 +11,7 @@ author: "Words and music: Jason Bryant"
 Song 57 is the first song in which nothing was written by hand after the lyric. The melody is Luthier v7's search, picked by the research gates of Parts 30 and 31 and then luthier_judge5. The chords, the band and the lead guitar come from three new writers built from the v8 research tables (writers/chords.py, writers/band.py, writers/solo.py), and the bass from the engine's own routine. The lyric was written with the writer, scored on the hook and lyric rules (Parts 30 and 32), and passed the mouth test before any music.
 
 - **Melody search:** 1,000 main, 298 survivors (29.8%), order 82afd3ac7e99; control 322 survivors, order 29669d99b962. Both reproduced on the second pass.
-- **Research gates:** of 175 clean survivors that re-evaluate clean, none passes all five; the long-note gate (R5) fails every one (best 0.74 against 0.75). The pick, be9dba1f3d5c, fails only R5 (0.588).
+- **Research gates:** of the 247 clean survivors, none passes all five; the long-note gate (R5) fails every one (best 0.74 against 0.75). The pick, be9dba1f3d5c, fails only R5 (0.588).
 - **Checks:** 56/56 consistency checks pass; every staff of every engraving reads back from MIDI.
 
 # Intake
@@ -104,15 +104,15 @@ Fills in the voice's rests at bars 16, 20, 26, 36, 40, 54, 58, 110, 118, 122, 12
 
 # The pick
 
-Of 277 clean survivors, 102 fail evaluate when it runs again on the same notes (all 'returns related (267)', the bridge's line 5 returning its line 1); the pick is taken only from the 175 that pass again, as songs 54 to 56's picks were asserted to.
+The gates read the run's 247 clean survivors (no soft break, no cause of death). An earlier reading took 277, because the run's record also holds the 32 builds evaluate killed, and set aside 72 more that fail evaluate when it runs again on their stored notes; both were mistakes of the reading, traced under 749.35 below. On the correct 247 the pick is the same.
 
-| Gate | Rule | Failing (of 175) | Median, best | Pick |
+| Gate | Rule | Failing (of 247) | Median, best | Pick |
 |---|---|---|---|---|
-| R1 | chorus above verse (mean pitch) | 43 | 1.08, 5.77 | 0.34 |
-| R2 | chorus recurrence at or above the 50th length-matched pct and above the verse's | 168 | 31.2, 62.8 | 51.3 |
-| R3 | typical cells at or above the 60th pct | 111 | 54.3, 94.3 | 79.6 |
-| R4 | variety and surprise at or under the 50th pct | 128 | 62.2, 90.0 | 30.1 |
-| R5 | long notes on stressed syllables at least 75% | 175 | 0.555, 0.74 | 0.588 |
+| R1 | chorus above verse (mean pitch) | 51 | 1.18, 5.77 | 0.34 |
+| R2 | chorus recurrence at or above the 50th length-matched pct and above the verse's | 240 | 31.7, 62.8 | 51.3 |
+| R3 | typical cells at or above the 60th pct | 150 | 55.3, 94.3 | 79.6 |
+| R4 | variety and surprise at or under the 50th pct | 183 | 60.8, 90.3 | 30.1 |
+| R5 | long notes on stressed syllables at least 75% | 247 | 0.554, 0.74 | 0.588 |
 
 Reported, not gated: the title's stressed syllables on a beat 0.375 (H3: about 73%), held 1.0 times the median note (H3: 1.3); the uniqueness point 6 notes with rhythm (H4: 8 or under). The pick's longest run of one pitch is 9 (kept median 6, 90th percentile 9.5). Taken as drawn: no hand edits.
 
@@ -138,13 +138,13 @@ Reported, not gated: the title's stressed syllables on a beat 0.375 (H3: about 7
 
 # Findings (from 749.32)
 
-**749.32. No build reaches Part 31's long-note band.** *Problem:* 0 of 175 clean survivors put 75% of their long notes on stressed syllables (median 0.555, best 0.74). *Evidence:* the gate table above. *Fix:* weight long durations toward stressed syllables in the placement draw, not after it. *Check:* songs 54 to 57 rerun; at least half the clean survivors reach 0.75.
+**749.32. No build reaches Part 31's long-note band.** *Problem:* 0 of 247 clean survivors put 75% of their long notes on stressed syllables (median 0.554, best 0.74). *Evidence:* the gate table above. *Fix:* weight long durations toward stressed syllables in the placement draw, not after it. *Check:* songs 54 to 57 rerun; at least half the clean survivors reach 0.75.
 
 **749.33. The engine's title line has no hook gates.** *Problem:* without song 56's designs the title line is low and narrow: E, F#, F#, F#, E, F#, E, F#, E, C#; its stressed syllables are on a beat 38% of the time and held no longer than the median note. *Fix:* port H3 (on a beat, held 1.3 times the median) and H1's one fresh note as search gates. *Check:* the title readings pass on songs 54 to 57.
 
-**749.34. The chorus barely lifts.** *Problem:* the pick's chorus sits 0.34 semitones over its verse and 43 of 175 sit under it. *Fix:* port H5's lift (Part 30: higher in 67% of songs, +1.5) as a register draw, not a design. *Check:* R1 on every clean survivor.
+**749.34. The chorus barely lifts.** *Problem:* the pick's chorus sits 0.34 semitones over its verse and 51 of 247 sit at or under it. *Fix:* port H5's lift (Part 30: higher in 67% of songs, +1.5) as a register draw, not a design. *Check:* R1 on every clean survivor.
 
-**749.35. Evaluate disagrees with the run.** *Problem:* 102 of 277 clean survivors fail evaluate on the same notes ('returns related (267)', the bridge's line 5 returning line 1). *Fix:* find the state 267 reads that the run and evaluate set differently. *Check:* every survivor re-evaluates clean.
+**749.35 (closed 18 November). Evaluate seemed to disagree with the run.** Two causes, neither the engine's judgement. *First,* the session's pick read the run's record of builds as its survivors, but the record holds every build that reached evaluate, and 32 of the 277 it took had been killed there (key word on a chord tone, the chorus or bridge opening). *Second,* the run stores each build's notes without the field 386 leaves on a note it moves (moved386), and 267 reads a return before 386's moves; so evaluate run again on a stored build fails 267 wherever a return line had a 386 move (72 builds, all the bridge's line 5 returning its line 1). *Evidence:* a run of song 57 on v8 that stores moved386 with each note (melody_l8_p67_trace.py, the same order 39364f77a34e and 295 survivors as without it): every one of its 242 clean survivors passes evaluate again, against 179 when the field is dropped. The pick read on the correct 247 survivors is the same, be9dba1f3d5c. *Fix:* the run stores moved386 (with the other note fields a gate reads) in its record; picks read survivors as builds with no cause. *Check:* every clean survivor of a run re-evaluates clean from the stored record.
 
 **749.36. 749.21's limit empties the band under a low lead.** *Problem:* with the tune kept on top, the band writer could voice almost nothing under a baritone singing C#3 to A3 (verse 1's organ fell to 6 chords). *Fix:* 749.27's reading, used here: no chord tone within a second of a sung note, the voice +3 dB over the band. *Check:* low-interval breaks 0, within a second under a quarter of notes (0.13 here).
 
