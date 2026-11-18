@@ -34,7 +34,7 @@ class Engine:
     def __init__(self, spec):
         self.S = spec; T = json.load(open(os.path.join(ATLAS, (spec.get("table") or spec["metre"].replace("/", "-") + "_sung") + ".json"))); self.T = T      # 812: a spec may name its kept table
         self.BAR, self.BEATS = T["bar"], T["beats"]; self.BEAT = T["beat"] or min(b - a for a, b in zip(self.BEATS, self.BEATS[1:] + [self.BAR]))   # uneven metres: the shortest beat
-        self.BREATH = max(6, int(0.375 * self.BAR / 3) * 3)                                  # 770: the least breath, scaled to the bar (18 in 4/4, 12 in 6/8 and 3/4)
+        self.END, self.REST = 6, 12; self.BREATH = self.END + self.REST          # 844 (749.53; amends 770, 832): a line's last note is an eighth at least (kept 5th percentile) and a quarter's rest follows (kept 10th), in every metre
         self.WIN = {int(k): [(tuple(p), c) for p, c in v] for k, v in T["two_bar_windows"].items()}
         self.BARS = collections.defaultdict(list)
         for p, c in T["bar_rhythms"]: self.BARS[len(p)].append((tuple(p), c))
@@ -233,7 +233,7 @@ class Engine:
         for j, n in enumerate(flat):
             nx = flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR; last = j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"])
             how = self.HOW.get((n["sec"], n["line"]), ["fresh"]); dd = {t: d for t, p, d in how[1]} if how[0] == "design" else None
-            n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(3, min(nx - n["on"] - self.BREATH, 24)) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
+            n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(self.END, min(nx - n["on"] - self.REST, 24)) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
         for j in range(len(flat) - 1):
             if flat[j]["on"] + flat[j]["dur"] > flat[j + 1]["on"]: flat[j]["dur"] = flat[j + 1]["on"] - flat[j]["on"]
         return dict(notes=flat, plans=plans), None
