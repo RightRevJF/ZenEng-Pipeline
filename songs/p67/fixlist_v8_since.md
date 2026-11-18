@@ -195,3 +195,11 @@ Merged 55bbf7a. All reruns identical; 749.55 and 749.56 closed. lib/luthier/REVI
 749.58 rests between lines sit at the kept 10th percentile (a quarter at 69%, 61%, 100% of joins); rest shares 0.12-0.17 under the kept 0.21.
 749.59 melismas on function words: song 52 12 of 23 ("in", "a").
 Next finding 749.60.
+
+## Review of stage 7 (18 November 2026)
+
+Merged 0f5d1b6. All reruns identical. lib/luthier/REVIEW_stage7.md. Open: 749.57-749.59.
+749.60 863 ranks the pick by low surprise and sure endings; 865's bench rejected both (ending gap -0.142 against peak, the wrong sign; surprise -0.026).
+749.61 the kept band is the spread between songs: in 4/4 the gate passes 760 and 762 of 763 builds and the band takes the far quarter; in 6/8 2 of 186 pass.
+749.62 the old judge "stays as a gate" but chooses nothing; it is the bench's best damage detector.
+Next finding 749.63.
