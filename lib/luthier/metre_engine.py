@@ -28,17 +28,18 @@ ENTRY = {True: (0.20, 0.42, 0.38), False: (0.43, 0.10, 0.47)}          # 771: be
 UNCHARGED = ("notes a bar", "notes a beat", "gaps of a sixteenth", "gaps of an eighth", "gaps of a quarter or more", "gaps of half a beat", "gaps of a third of a beat",
              "gaps of a beat or more", "gaps under a third of a beat", "range", "distinct pitches")   # set by the lyric's density and the designs: printed, not charged
 
-def FLOOR(m): return 0.02 if m <= 1.5 else 1.0          # 793: where the kept songs all read alike, the width charged against is two points of share, or one count
+def FLOOR(m): return 0.02 if m <= 1.5 else 1.0          # 793, as mended by 810 (749.47): ONLY where the kept songs all read alike is the width two points of share, or one count
 
 class Engine:
     def __init__(self, spec):
-        self.S = spec; T = json.load(open(os.path.join(ATLAS, spec["metre"].replace("/", "-") + "_sung.json"))); self.T = T
+        self.S = spec; T = json.load(open(os.path.join(ATLAS, (spec.get("table") or spec["metre"].replace("/", "-") + "_sung") + ".json"))); self.T = T      # 812: a spec may name its kept table
         self.BAR, self.BEATS = T["bar"], T["beats"]; self.BEAT = T["beat"] or min(b - a for a, b in zip(self.BEATS, self.BEATS[1:] + [self.BAR]))   # uneven metres: the shortest beat
         self.BREATH = max(6, int(0.375 * self.BAR / 3) * 3)                                  # 770: the least breath, scaled to the bar (18 in 4/4, 12 in 6/8 and 3/4)
         self.WIN = {int(k): [(tuple(p), c) for p, c in v] for k, v in T["two_bar_windows"].items()}
         self.BARS = collections.defaultdict(list)
         for p, c in T["bar_rhythms"]: self.BARS[len(p)].append((tuple(p), c))
         self.IV = {int(k): v for k, v in T["intervals"].items()}; self.IVT = sum(self.IV.values())
+        self.IV2 = {int(k): {int(j): c for j, c in v.items()} for k, v in T.get("interval_pairs", {}).items()}     # 817: where the table has them, a move is drawn given the move before
         self.OW = {int(k): v for k, v in T["onset_weights"].items()}; self.DUR = {int(k): v for k, v in T["durations"].items()}; self.DT = sum(self.DUR.values())
         self.Q = T["readings_quartiles"]; self.SCALE = set(spec["scale"]); self.CH = {k: set(v) for k, v in spec["chords"].items()}
         self.BAR0 = {}; self.CHORD = []; b = 0
@@ -59,7 +60,10 @@ class Engine:
     def on_beat(self, t): return (t % self.BAR) in self.BEATS
     def reg(self, sec, i):
         R = self.S["registers"]; return tuple(R.get(f"{sec}:{i}") or R.get(sec) or R[self.KIND[sec]])
-    def ivp(self, d): return (self.IV.get(max(-12, min(12, d)), 0) + 0.5) / self.IVT
+    def ivp(self, d, last=None):
+        d = max(-12, min(12, d)); row = self.IV2.get(max(-12, min(12, last))) if last is not None else None
+        if row and sum(row.values()) >= 50: return (row.get(d, 0) + 12.5 * (self.IV.get(d, 0) + 0.5) / self.IVT) / (sum(row.values()) + 12.5)
+        return (self.IV.get(d, 0) + 0.5) / self.IVT
     # ---- rhythm
     def stress_score(self, ons, sy):
         sc = 0.0
@@ -72,12 +76,12 @@ class Engine:
         if bars == 2: return self.WIN.get(n, [])
         if bars == 1: return self.BARS.get(n, [])
         return []
-    def rhythm(self, rng, sy, tmin, slot):
+    def rhythm(self, rng, sy, tmin, slot, cap=None):
         n = len(sy); lead = 0
         for x in sy:
             if x[1]: break
             lead += 1
-        end = slot - self.BREATH; out = []; bars = slot // self.BAR
+        end = slot - self.BREATH if cap is None else min(slot - self.BREATH, cap); out = []; bars = slot // self.BAR
         for p in sorted({0, min(1, lead), min(2, lead)}):
             for w, c in self.kept_windows(n - p, bars):
                 if w[-1] > end or (w[0] != 0 and p > 0): continue
@@ -115,20 +119,20 @@ class Engine:
         return out
     # ---- pitches
     def pitches(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
-        mu, lo, hi = self.reg(sec, i); ps = []
+        mu, lo, hi = self.reg(sec, i); ps = []; last = None
         for k, t in enumerate(ons):
             ch = self.chord_at(U + t); cands = [p for p in range(lo, hi + 1) if p % 12 in self.SCALE and not (avoid and p % 12 in avoid)]; ws = []
             if self.S.get("clash_rule") and not ch <= self.SCALE:                                # 808: over a chord from outside the key, no scale tone a semitone from one of its tones
                 cands = [p for p in cands if p % 12 in ch or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]
             for p in cands:
-                w = self.ivp(p - prev) if prev is not None else math.exp(-abs(p - mu) / 3)
+                w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 w *= math.exp(-((p - mu) ** 2) / 50)
                 if len(ps) >= 2 and ps[-1] == ps[-2] == p: w = 0.0
                 if k == len(ons) - 1 and end_off is not None and p % 12 == end_off: w *= 0.05
                 ws.append(w)
             if sum(ws) <= 0: return None
-            p = rng.choices(cands, ws)[0]; ps.append(p); prev = p
+            p = rng.choices(cands, ws)[0]; last = (p - prev) if prev is not None else None; ps.append(p); prev = p
         return ps
     def again(self, rng, src, src_st0, sy, U, sec, i, tmin, slot):
         """712: the source's onsets and pitches fitted to new syllables; 772: a stressed opening drops its source's pickup."""
@@ -168,6 +172,12 @@ class Engine:
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
+            cap = None                                                                        # 816 (780, 773 carried): the line before a copied or designed line that comes in early gives way
+            if k + 1 < len(self.KEYS):
+                ns_, ni_ = self.KEYS[k + 1]; hn = self.HOW.get((ns_, ni_), ["fresh"]); f0 = None
+                if hn[0] == "design": f0 = hn[1][0][0]
+                elif hn[0] == "copy" and (hn[1], hn[2]) in lines: f0 = lines[(hn[1], hn[2])][0][0]
+                if f0 is not None: cap = self.line_start(ns_, ni_) + f0 - self.BREATH - U
             if how[0] == "plan":                                                              # a line that returns an earlier line of its section under a drawn plan
                 pl = plans[how[1]]; how = ["again", sec, pl.index(pl[i])] if pl.index(pl[i]) != i else ["fresh"]
             if how[0] == "design": lines[(sec, i)] = [(t, p) for t, p, d in how[1]]; prev = lines[(sec, i)][-1][1]; continue
@@ -177,9 +187,17 @@ class Engine:
                 lines[(sec, i)] = list(src); prev = src[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; continue
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
-                if r is not None and self.runs_ok([p for t, p in r]) and r[0][0] >= tm: lines[(sec, i)] = r; prev = r[-1][1]; continue
+                if r is not None and self.runs_ok([p for t, p in r]) and r[0][0] >= tm and (cap is None or r[-1][0] <= cap): lines[(sec, i)] = r; prev = r[-1][1]; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
-            ons = self.rhythm(rng, sy, tm, slot)
+            ons = None; bw = self.S.get("borrow")                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
+            if bw and how[0] == "fresh":
+                j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
+                if j is not None and x < bw["figure"] + bw["rhythm"]:
+                    r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot)
+                    if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
+                        if x < bw["figure"] and self.runs_ok([p for t, p in r]): lines[(sec, i)] = r; prev = r[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
+                        ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
+            if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap)
             if ons is None: return None, ("rhythm: the syllables cannot fit the window", sec, i)
             rule = self.S.get("line_rules", {}).get(f"{sec}:{i}", {}); ps = None
             for _ in range(20):
@@ -218,7 +236,7 @@ class Engine:
         c = d = 0.0
         for k, (a, m, z) in self.Q.items():
             if k not in r: continue
-            sp = max(z - a, FLOOR(m)); d += abs(r[k] - m) / sp
+            sp = ((z - a) or FLOOR(m)); d += abs(r[k] - m) / sp
             if k in UNCHARGED: continue
             c += max(0.0, a - r[k]) / sp + max(0.0, r[k] - z) / sp
         return c, d
@@ -310,10 +328,10 @@ class Hymn:
             g = 1
             while k + g < n and not st[k + g]: g += 1
             if k + g >= n and g == 1: break                                                  # the line's last syllable, stressed: held
-            opts = [o for o in self.options(g) if not (o[2] and slurs >= 2)]
+            opts = [o for o in self.options(g) if slurs + sum(x[2] for x in o[0]) <= 2]                    # 811 (749.48): two slurs a line, counted as slurs
             if ln.get("plain") is not None and k in ln["plain"]: opts = [o for o in opts if not o[2]]
             if not opts: return None
-            notes, w, sl = rng.choices(opts, [o[1] for o in opts])[0]; slurs += sl
+            notes, w, sl = rng.choices(opts, [o[1] for o in opts])[0]; slurs += sum(x[2] for x in notes)
             for j, (x, which, slur) in enumerate(notes): out.append([bar * C + x, (notes[j + 1][0] if j + 1 < len(notes) else C) - x, k + which, which == 0, slur])
             k += g; bar += 1
         if k < n: out.append([bar * C, C, n - 1, True, False])
@@ -372,7 +390,7 @@ class Hymn:
             if any(b["on"] <= a["on"] for a, b in zip(t, t[1:])) or any(n["dur"] <= 0 for n in t): deaths["751: two notes on one onset, or a note of no length"] += 1; continue
             r = self.readings(t); c = d = 0.0
             for q, (a, m, z) in self.Q.items():
-                sp = max(z - a, FLOOR(m)); d += abs(r[q] - m) / sp; c += max(0.0, a - r[q]) / sp + max(0.0, r[q] - z) / sp
+                sp = ((z - a) or FLOOR(m)); d += abs(r[q] - m) / sp; c += max(0.0, a - r[q]) / sp + max(0.0, r[q] - z) / sp
             alive.append(dict(notes=t, readings=r, charge=c, distance=d, n=k, fp=hashlib.sha1(json.dumps([(n["on"], n["p"]) for n in t]).encode()).hexdigest()[:12]))
         if not alive: return dict(made=N, survivors=0, deaths=dict(deaths), stats={})
         least = min(a["charge"] for a in alive); near = [a for a in alive if a["charge"] <= least + 0.05]; pick = min(near, key=lambda a: a["distance"])

@@ -93,7 +93,7 @@ class Writer:
     def charge(self, secs):
         r = self.readings(secs); c = d = 0.0
         for q, (a, m, z) in self.Q.items():
-            sp = max(z - a, 0.02 if m <= 1.5 else 1.0); d += abs(r[q] - m) / sp; c += max(0.0, a - r[q]) / sp + max(0.0, r[q] - z) / sp
+            sp = (z - a) or (0.02 if m <= 1.5 else 1.0); d += abs(r[q] - m) / sp; c += max(0.0, a - r[q]) / sp + max(0.0, r[q] - z) / sp
         return c, d, r
     def out_of_key(self, tok): return any(x not in IN[self.mode] for x in tok)
     def template(self, rng, k, n):

@@ -85,3 +85,20 @@ For the session to check: rerun both commands and compare with the logs; try a n
 
 Not met: 802's test (joins 0.25 from the kept against 0.21 between kept sets). Not proved: minor keys, bridges, pre-choruses (too few held-out sections).
 For the session: rerun both commands; try `Writer("minor")`; say whether `writers/chords.py` should now call this writer or be retired.
+
+## Stage 5a (Luthier v14): a song from its lyric, nothing chosen by hand — fixes 810–820
+
+    python3 lib/luthier/song_from_lyric.py songs/p64/lyric54.json 1000 12     # also songs/p65/lyric55.json (4/4), songs/p62/lyric52.json (6/8)
+
+Writes `<lyric>.song.json` (chords, melody, bass, key, readings, checks, flags), `.song.mid` and the log `.song.txt`. Results: `stage5a_results.json`.
+
+- 810 answers 749.47 (the floor only where the kept width is nothing); 811 answers 749.48 (two slurs a line, counted as slurs). Song 53's pick is now
+  940f349cbf60, charge 0.109; order c8b56170c542. Song 52 from its hand spec: 1308 survivors, order f4334c0710a7, pick 1b646bd13932 (816 removed its three join deaths).
+- 812 `tables/metre_atlas/4-4_pop_sung.json` (the 159 kept songs; made by `pop_table.py`, which needs the maintainer's corpus); a spec's `"table"` names it.
+- 813 bass by metre (in `song_from_lyric.bass`); 814 registers on the tonic (settings); 815 checks; 816 the line before a copied or designed line gives way;
+  817 a move given the move before; 818 `"borrow": {"rhythm": 0, "figure": 0.6}`; 819 words not in the lexicon; 820 the command above.
+- The 4/4 judge's reading of the metre engine's builds (`judge_read_4_4.py`, needs the maintainer's judge data): song 55 median place 0.56 (old engine 0.32),
+  song 54 0.87 (old 0.82).
+
+Stage 5b, not done: chordal parts and drums by metre, harmony voices, descant, choral pages, edges, solos, perception checks.
+For the session: rerun the three commands against the `.song.txt` logs; write song 58 with this command and say what a person still had to type.
