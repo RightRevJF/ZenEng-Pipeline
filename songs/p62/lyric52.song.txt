@@ -1,14 +1,18 @@
-The Room Next Door in 6/8, key A (57-71); chord draft 2 of 12, charge 0.0
-melody: 221 of 1000 survive; pick ca61539c5b4f charge 1.626 (median build 3.27); deaths {'731: stressed syllables on the beat too few': 779}
-  Intro: A D | A D | A D | A
-  Verse 1: A | F#m | D | E | A | F#m | D | A
-  Chorus 1: D | D | D | A | D | D | D | A | D | D
-  Verse 2: A | F#m | D | E | A | F#m | D | A
-  Chorus 2: D | D | D | A | D | D | D | A | D | D
-  Verse 3: A | F#m | D | E | A | F#m | D | A
-  Bridge: A | D | G | E | A | D | G | E
-  Verse 4: A | F#m | D | E | A | F#m | D | A
-  Last Chorus: D | D | D | A | D | D | D | A | D | D | E | F
-  Outro: A | F#m | D | A
-checks: {'no two sung notes on one onset': True, 'no sung note of no length': True, 'the melody inside the voice': [57, 71], 'sung notes on a beat that are chord tones, share': 0.902, 'sung notes a beat long or more a semitone from a chord tone': 0, 'bass notes': 160, 'the bass on the root where a chord begins': True, 'the bass under the voice everywhere': True, 'bass register': [28, 43]}
+The Room Next Door in 6/8, key A (57-71); chord draft 9 of 12, charge 0.037
+melody: 219 of 1000 survive; pick f4d971dfaf06 charge 1.63 (median build 3.17); deaths {'731: stressed syllables on the beat too few': 781}
+  Intro: A | E | A | A | D | E A
+  Verse 1: A | E | Bm | Bm E | A | E | Bm | E D E
+  Chorus 1: A | Bm | E | Bm | A | Bm | E | Bm | D A | D A
+  Verse 2: A | E | Bm | Bm E | A | E | Bm | E D E
+  Chorus 2: A | Bm | E | Bm | A | Bm | E | Bm | D A | D A
+  Break: A | E | Bm | Bm E | A | E | Bm | E D E
+  Verse 3: A | E | Bm | Bm E | A | E | Bm | E D E
+  Bridge: D E | A | D E | A F#m | D E | A | D E | D E
+  Verse 4: A | E | Bm | Bm E | A | E | Bm | E D E
+  Last Chorus: A | Bm | E | Bm | A | Bm | E | Bm | D A | D A | D | Bm E A
+  Outro: A | A | A | A | A | A | A | A
+checks: {'no two sung notes on one onset': True, 'no sung note of no length': True, 'the melody inside the voice': [57, 71], 'sung notes on a beat that are chord tones, share': 0.928, 'sung notes a beat long or more a semitone from a chord tone': 0, 'bass notes': 188, 'the bass on the root where a chord begins': False, 'the bass under the voice everywhere': True, 'bass register': [28, 42]}
+band: {'chords': 'kept piano accompaniments in this metre (Lieder; art song)', 'drums': 'no kept drum table for this metre: kick on the first beat, snare on the others, hats on the eighths (a rule)', 'harmony': 'kept shares of a voice below the lead, popular two-voice scores (PDMX)', 'levels': "kept piano density by role over the chorus's (POP909)", 'chord_patterns': {'verse': [0, 18], 'chorus': [0, 6, 12, 18, 24, 30]}, 'fills': [13, 31, 73], 'genre': 'pop', 'instrument': 'guitar'}
+levels: {'Intro': 0.61, 'Verse 1': 0.78, 'Chorus 1': 1.0, 'Verse 2': 0.78, 'Chorus 2': 1.0, 'Break': 0.86, 'Verse 3': 0.78, 'Bridge': 0.94, 'Verse 4': 0.78, 'Last Chorus': 1.0, 'Outro': 0.75}
+band checks: {'chord voicings inside the low-interval limits': True, 'sung notes with accompaniment above them, share': 0.0, 'sung notes with accompaniment a second away, share': 0.073, 'harmony voice: interval classes, written / kept below the lead': {'3rd': [0.288, 0.249], '5th': [0.192, 0.148], 'octave': [0.147, 0.131], 'unison': [0.199, 0.127], '4th': [0.096, 0.1], '6th': [0.077, 0.088]}, 'harmony voice: parallel perfect fifths, octaves and unisons a hundred motions, written / kept': [9.2, 14.09], 'harmony voice: motion, written / kept': {'static': [0.184, 0.225], 'oblique': [0.178, 0.298], 'contrary': [0.178, 0.099], 'parallel': [0.158, 0.226], 'similar': [0.303, 0.1]}, 'harmony voice crosses the lead': 0, 'harmony voice a second from the lead': 0, 'sung phrases, seconds (median, longest)': [8.1, 25.9], 'sung phrases over eight seconds': 8, 'kicks with a bass note on them, share': 1.0}
 flags: []

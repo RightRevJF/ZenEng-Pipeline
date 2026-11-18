@@ -13,7 +13,7 @@ def with_chords(spec, seed, tonic_pc, mode="major", chromatic=1.0, require=None)
     W = C.Writer(mode, chromatic=chromatic); form = [(name, kind_of(name), len(chs)) for name, chs in spec["form"]]
     names = [re.sub(r"^Last Chorus$", "Chorus 9", n) for n, _, _ in form]                    # a last chorus returns the chorus (801)
     plan = W.song([(n2, k, b) for n2, (_, k, b) in zip(names, form)], seed=seed, require=require); s = copy.deepcopy(spec); s["chords"] = {}; s["form"] = []
-    tonic = C.NAMES_S[tonic_pc] if C.NAMES_S[tonic_pc] not in ("A#", "D#", "G#", "C#") or mode == "minor" else C.NAMES_F[tonic_pc]
+    tonic = C.tonic_name(tonic_pc, mode)
     for (name, _), n2 in zip(spec["form"], names):
         bars = []
         for bar in plan[n2]:

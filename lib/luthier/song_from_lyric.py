@@ -16,7 +16,7 @@ Everything else is the engine's:
 Writes <lyric>.song.json (the record: chords, melody, bass, key, every reading) and <lyric>.song.mid. The same lyric and seed give the same song."""
 import json, sys, os, re, copy, hashlib
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [HERE, os.path.join(HERE, "..", "carol")]
-import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS
+import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS, band as BD
 SCALES = {"major": [0, 2, 4, 5, 7, 9, 11], "minor": [0, 2, 3, 5, 7, 8, 10]}
 def kind_of(name):
     n = name.lower()
@@ -40,7 +40,7 @@ def base(name): return re.sub(r"^(Last|Final)\s+", "", re.sub(r"\s*\d+$", "", na
 def plan(L):
     """lyric -> the melody spec without chords, and the form"""
     metre = L.get("metre", "4/4"); T = json.load(open(os.path.join(M.ATLAS, metre.replace("/", "-") + "_sung.json"))); beats = len(T["beats"])
-    sung = []; slots = {}; how = {}; first = {}; texts = {}; form = [("Intro", "intro", 4)]; flags = []
+    sung = []; slots = {}; how = {}; first = {}; texts = {}; n_in, n_out = BD.edges(L["bpm"], beats); form = [("Intro", "intro", n_in)]; flags = []      # 825
     for name, lines in L["sections"]:
         sy = [[(w, bool(st)) for w, v, st, fn in syllables(ln, flags)] for ln in lines]; k = kind_of(name)
         pr = SL.propose([len(x) for x in sy], L["bpm"], beats); sl = [max(1, min(4, r["whole bars proposed"])) for r in pr]
@@ -54,7 +54,8 @@ def plan(L):
             elif src is not None and i < len(src): how[f"{name}:{i}"] = ["again", first_name[base(name)], i]
             texts.setdefault(key, (name, i, sy[i]))
         if src is None: first[base(name)] = lines; first_name[base(name)] = name
-    form.append(("Outro", "outro", 4))
+    form.append(("Outro", "outro", n_out)); br = BD.break_after(form)
+    if br is not None: form.insert(br + 1, ("Break", "solo", 8))                                # 830
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
                 registers={"Verse": [64, 60, 69], "Chorus": [68, 63, 74], "Bridge": [65, 60, 71]}, clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6))      # 818: kept songs sing six bars in ten on a rhythm already sung
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
@@ -85,6 +86,9 @@ def write(L, N=1000, K=12):
     for seed in range(1, K + 1):
         pl = W.song(names, seed=seed * 1000 + L.get("seed", 1), require=L.get("require")); pl = {n: pl[wn[n]] for n, _, _ in form}; c, d, r = W.charge(list(pl.values())); drafts.append((c, d, seed, pl, r))
     least = min(x[0] for x in drafts); c, d, seed, pl, cr = min((x for x in drafts if x[0] <= least + 0.05), key=lambda x: (x[1], x[2]))              # 809
+    if "Break" in pl:                                                                        # 830: the break on the first verse's chords
+        v1 = next((pl[n] for n, k, b in form if k == "verse"), None)
+        if v1: pl["Break"] = [v1[i % len(v1)] for i in range(8)]
     spec["chords"] = {}; spec["form"] = []
     for n, k, b in form:
         bars = []
@@ -97,7 +101,7 @@ def write(L, N=1000, K=12):
     notes = run["pick"]["notes"]; lo, hi = min(n["p"] for n in notes) - 60, max(n["p"] for n in notes) - 60
     keys = C.choose_key(lo, hi, L.get("voice", "tenor"), L.get("lead", "guitar"), mode)
     if not keys: return dict(error="the melody does not fit the voice in any key", range=[lo, hi], flags=flags)
-    key = keys[0]; shift = key["tonic_midi"] - 60; tonic = key["key"].rstrip("m"); bt = 24 + key["tonic_midi"] % 12; bt = bt + 12 if bt < 28 else bt
+    key = keys[0]; shift = key["tonic_midi"] - 60; tonic = key["key"]; bt = 24 + key["tonic_midi"] % 12; bt = bt + 12 if bt < 28 else bt
     fb = []; b = 0
     for n, k, nb in form:
         for bar in pl[n]: fb.append((b, list(bar))); b += 1
@@ -109,7 +113,10 @@ def write(L, N=1000, K=12):
                            kept=run["kept_quartiles"], uncharged=run["uncharged"], entries=run["entries"], stressed_on_beat=run["pick"]["stressed_on_beat"], stats=run["stats"],
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
-    rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
+    rec["checks"] = checks(rec, fb, key["tonic_midi"], E); BD.arrange(rec, genre=L.get("genre", "pop"), lead=L.get("lead", "guitar"), seed=L.get("seed", 1))
+    if any(n == "Break" for n, _, _ in form):                                                # 830: the lead instrument plays the first verse's tune over the break
+        b0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index("Break")]) * E.BAR; vname = next(n for n, k, b in form if k == "verse"); v0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index(vname)]) * E.BAR
+        rec["parts"]["break"] = [dict(on=n["on"] - v0 + b0, dur=n["dur"], p=[n["midi"] + (12 if L.get("lead", "guitar") == "guitar" else 0)], vel=88) for n in rec["melody"]["notes"] if n["sec"] == vname and n["on"] - v0 < 8 * E.BAR - 6]
     return rec
 def checks(rec, fb, tonic_midi, E):
     """815: what can be checked without ears"""
@@ -152,8 +159,8 @@ if __name__ == "__main__":
     L = json.load(open(sys.argv[1])); N = int(sys.argv[2]) if len(sys.argv) > 2 else 1000; K = int(sys.argv[3]) if len(sys.argv) > 3 else 12
     rec = write(L, N, K); out = sys.argv[1].replace(".json", "") + ".song.json"; json.dump(rec, open(out, "w"), indent=1, default=float)
     if "error" in rec: print(rec["error"], rec.get("deaths"), rec.get("flags")); sys.exit(1)
-    midi(rec, out.replace(".json", ".mid")); m = rec["melody"]
+    BD.midi(rec, out.replace(".json", ".mid")); m = rec["melody"]
     print(f"{rec['title']} in {rec['metre']}, key {rec['key']['key']} ({rec['key']['lowest']}-{rec['key']['highest']}{', ' + rec['key']['capo'] if rec['key']['capo'] else ''}); chord draft {rec['chord_pick']['draft']} of {rec['chord_pick']['drafts']}, charge {rec['chord_pick']['charge']}")
     print(f"melody: {m['survivors']} of {m['made']} survive; pick {m['pick']} charge {m['charge']} (median build {m['median_charge']:.2f}); deaths {m['deaths']}")
     for n, k, nb in rec["form"]: print(f"  {n}: " + " | ".join(rec["chords"][n]))
-    print("checks:", rec["checks"]); print("flags:", rec["flags"])
+    print("checks:", rec["checks"]); print("band:", rec["band_sources"]); print("levels:", rec["levels"]); print("band checks:", rec["band_checks"]); print("flags:", rec["flags"])

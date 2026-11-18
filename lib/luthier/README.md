@@ -102,3 +102,18 @@ Writes `<lyric>.song.json` (chords, melody, bass, key, readings, checks, flags),
 
 Stage 5b, not done: chordal parts and drums by metre, harmony voices, descant, choral pages, edges, solos, perception checks.
 For the session: rerun the three commands against the `.song.txt` logs; write song 58 with this command and say what a person still had to type.
+
+## Stage 5b (Luthier v15): the band; the review of stage 4 taken in — fixes 821–832
+
+    python3 lib/luthier/chord_writer.py && python3 lib/luthier/write_song.py songs/p62/spec52.json 1000 12 && python3 lib/luthier/stage4_extras.py   # stage4_results.json, whole (824)
+    python3 lib/luthier/song_from_lyric.py songs/p64/lyric54.json 1000 12        # now with the band: parts, levels, band checks, a five-track MIDI
+
+- 821 answers 749.52 (`name`, `tonic_name`); 822 answers 749.50 (the last chord drawn first; the song's last sung section as kept songs end);
+  823 answers 749.51 (a song draws its own share from outside the key; `CHROMATIC_MAP`); 824 answers 749.49 (`stage4_extras.py`).
+- 825-832 `band.py`: edges, levels, drums, the chordal part, the harmony voice, the break, checks, and (in metre_engine) a line's last note leaves the least breath.
+  A lyric file may set `"genre"` (default pop). Results: `stage5b_results.json`.
+- These change every record since stage 4: song 52 from its lyric, songs 54 and 55, and the written-chords draft are all new; song 52 and 53 from their hand specs keep
+  their picks (1b646bd13932, 940f349cbf60).
+
+Not done: the solo writer (the break plays the verse's tune), drums by kept table outside 4/4, the band by genre, the descant (749.12), choral pages (749.13), roughness.
+For the session: rerun; run `Writer("minor")` again on your forty songs; say whether the harmony voice and the break read right in song 58.

@@ -24,6 +24,16 @@ IN = {"major": {"I", "ii", "iii", "IV", "V", "vi", "viio"}, "minor": {"i", "iio"
 NAMES_S = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]; NAMES_F = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
 DEG = {"I": 0, "II": 2, "III": 4, "IV": 5, "V": 7, "VI": 9, "VII": 11}; FLAT_KEYS = {"F", "Bb", "Eb", "Ab", "Db", "Gb"}
 
+CHROMATIC_BASE = {"major": 1.0, "minor": 1.0}
+# 823 (749.51): kept songs differ in how far they leave the key (half of them hardly at all), so a song draws its own share from the kept songs of its mode,
+# and the weight that gives that share is read from this table (the weight, and the mean share of bars from outside the key it gave over 60 written songs).
+CHROMATIC_MAP = {"major": [(0, 0.0), (0.25, 0.074), (0.5, 0.11), (1, 0.171), (2, 0.252), (4, 0.39), (8, 0.434), (16, 0.553)],
+                 "minor": [(0, 0.0), (0.25, 0.061), (0.5, 0.13), (1, 0.213), (2, 0.312), (4, 0.412), (8, 0.52), (16, 0.642)]}
+def weight_for(share, mode):
+    M_ = CHROMATIC_MAP[mode]
+    for (c0, s0), (c1, s1) in zip(M_, M_[1:]):
+        if share <= s1: return c0 + (c1 - c0) * (share - s0) / max(1e-9, s1 - s0)
+    return M_[-1][0]
 def norm(rn): return None if rn is None else re.sub(r"(5|sus\d?|add\d+|\+)$", "", rn)      # voicing marks folded into the chord; the band adds them back
 def bars_of(sec):
     out = []
@@ -69,12 +79,20 @@ class VOM:
 
 class Writer:
     def __init__(self, mode="major", songs=None, chromatic=1.0):
-        songs = songs if songs is not None else json.load(open(DATA)); self.mode = mode; self.chromatic = chromatic
+        songs = songs if songs is not None else json.load(open(DATA)); self.mode = mode; self.chromatic = chromatic * CHROMATIC_BASE[mode]
         S = sections(songs, mode); allS = sections(songs); self.kinds = sorted({k for k, _, _, _ in S})
         self.vom = {k: VOM([b for kk, b, _, _ in S if kk == k]) for k in self.kinds}; self.new = {(k, r): VOM([b for kk, b, _, _ in S if kk == k], r) for k in self.kinds for r in ("returns", "once")}
         self.tmpl = {}
         for k in self.kinds:
             own = [pattern(b) for kk, b, _, _ in S if kk == k]; self.tmpl[k] = own if len(own) >= 30 else [pattern(b) for kk, b, _, _ in allS if kk == k]   # few sections in this mode: structures from both
+        self.setting = chromatic; self.kept_out = []
+        for si in sorted({x[2] for x in S}):
+            bars = [t for k, b, i, _ in S if i == si and k in ("verse", "chorus", "bridge", "pre") for t in b]
+            if bars: self.kept_out.append(sum(1 / len(t) for t in bars for x in t if x not in IN[mode]) / len(bars))
+        last_of = {}
+        for k, b, si, j in S:
+            if k in ("verse", "chorus", "bridge", "pre") and j >= last_of.get(si, (-1,))[0]: last_of[si] = (j, b[-1][-1])
+        self.songend = collections.Counter(c for _, c in last_of.values()); self.kindend = {k: collections.Counter(b[-1][-1] for kk, b, _, _ in S if kk == k) for k in self.kinds}   # 822 (749.50): how kept songs end
         self.first = {k: collections.Counter(b[0][0] for kk, b, _, _ in S if kk == k) for k in self.kinds}
         self.join = collections.defaultdict(collections.Counter); by = collections.defaultdict(dict)
         for k, b, si, j in S: by[si][j] = (k, b)
@@ -100,19 +118,22 @@ class Writer:
         T = self.tmpl[k]; L = sorted({len(t) for t in T}, key=lambda x: (abs(x - n), x)); near = [t for t in T if len(t) == L[0]]; t = rng.choice(near)
         if len(t) >= n: return pattern(t[:n])
         return pattern([t[i % len(t)] for i in range(n)])                                    # a shorter kept section's structure, sung round again
-    def section(self, rng, k, n, prev=None, require=None, given=None):
+    def section(self, rng, k, n, prev=None, require=None, given=None, final=False, home=None):
         """one section of n bars; prev = (kind before, its last chord); given = bars already fixed (a return's prefix)"""
         V = self.vom[k]
         for _ in range(200):
             pat = self.template(rng, k, n) if not given else None; bars = list(given or []); lab = {}
+            E_ = self.songend if final else self.kindend[k]; cstar = rng.choices(sorted(E_), [E_[c] for c in sorted(E_)])[0]
+            if home is not None and rng.random() < home: cstar = "I" if self.mode == "major" else "i"                                  # 825: a song that ends cold ends on the tonic 81 times in a hundred             # 822: the section's last chord, drawn as kept sections (or kept songs) end
             if given: pat = pattern(list(given)) + [max(pattern(list(given))) + 1 + i for i in range(n - len(given))]
             for i in range(len(bars)): lab[pat[i]] = bars[i]
             for i in range(len(bars), n):
                 if pat[i] in lab: bars.append(lab[pat[i]]); continue
                 ctx = (["<s>"] + bars)[-2:]; used = set(lab.values()); cands = [t for t in V.toks if t not in used]; ws = []
+                if pat[i] == pat[n - 1] and any(t[-1] == cstar for t in cands): cands = [t for t in cands if t[-1] == cstar]
                 for t in cands:
                     w = self.new[(k, 'returns' if pat.count(pat[i]) > 1 else 'once')].p(ctx, t)                                                       # a new bar, given the two before: from kept bars that were new where they stood
-                    if self.out_of_key(t): w *= self.chromatic
+                    if self.out_of_key(t): w *= max(self.chromatic, 0.5) if (require and require in t) else self.chromatic      # a required chord is not shut out by the song's own share
                     if i + 1 < n and pat[i + 1] in lab: w *= V.p((ctx + [t])[-2:], lab[pat[i + 1]]) / max(1e-9, V.p((), lab[pat[i + 1]]))      # looks ahead to the bar that returns
                     if i == n - 1: w *= V.p((ctx + [t])[-2:], "</s>") / max(1e-9, V.p((), "</s>"))                                            # how sections of this kind end
                     elif pat[i] == pat[n - 1]: w *= V.p([t], "</s>") / max(1e-9, V.p((), "</s>"))                                             # this bar will return as the section's last
@@ -127,22 +148,29 @@ class Writer:
     def song(self, form, seed=0, require=None):
         """form: [(name, kind, bars)]. A name's trailing number marks a return: 'Verse 2' returns 'Verse 1' (801). require: a chord some section must carry (805)."""
         rng = random.Random(seed); plan = {}; firsts = {}; prev = None
+        self.chromatic = weight_for(rng.choice(self.kept_out) * self.setting, self.mode) if self.setting > 0 else 0.0           # 823: this song's own share from outside the key
         need = require; kinds = [k for _, k, _ in form]
         if require:                                                                           # the required chord goes where kept songs most often play it
             share = {k: sum(c[t] for ctx, c in self.vom[k].c.items() if ctx == () for t in c if t not in ("</s>",) and require in t) / max(1, sum(self.vom[k].c[()].values())) for k in set(kinds) if k in self.vom}
             where = max(sorted(share), key=lambda k: share[k])
-        for name, k, n in form:
-            k = k if k in self.vom else "verse"; base = re.sub(r"\s*\d+$", "", name); src = firsts.get(base)
-            if src is not None: bars = list(src[:n]) if n <= len(src) else self.section(rng, k, n, prev, given=src)
-            else: bars = self.section(rng, k, n, prev, require=need if (need and k == where) else None); firsts[base] = bars; need = None if (need and k == where) else need
+        lastsung = max((i for i, (_, k, _) in enumerate(form) if k in ("verse", "chorus", "bridge", "pre")), default=-1)
+        for fi, (name, k, n) in enumerate(form):
+            k = k if k in self.vom else "verse"; base = re.sub(r"\s*\d+$", "", name); src = firsts.get(base); fin = fi == lastsung
+            if src is not None: bars = list(src[:n]) if n <= len(src) else self.section(rng, k, n, prev, given=src, final=fin)
+            else: bars = self.section(rng, k, n, prev, require=need if (need and k == where) else None, final=fin, home=0.81 if (fi == len(form) - 1 and k == "outro") else None); firsts[base] = bars; need = None if (need and k == where) else need
             plan[name] = bars; prev = (k, bars[-1][-1])
         return plan
 
 def name(rn, tonic):
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)(o)?$", rn)
     if not m: return rn
-    acc, r, dim = m.groups(); root = NAMES_S.index(tonic) if tonic in NAMES_S else NAMES_F.index(tonic); pc = (root + DEG[r.upper()] + (-1 if acc == "b" else 1 if acc == "#" else 0)) % 12
-    nm = (NAMES_F if (tonic in FLAT_KEYS or acc == "b") else NAMES_S)[pc]; return nm + ("dim" if dim else "m" if r.islower() else "")
+    acc, r, dim = m.groups(); minor = tonic.endswith("m"); t = tonic[:-1] if minor else tonic; root = NAMES_S.index(t) if t in NAMES_S else NAMES_F.index(t)
+    pc = (root + DEG[r.upper()] + (-1 if acc == "b" else 1 if acc == "#" else 0)) % 12; rel = (root + 3) % 12 if minor else root                  # 821 (749.52): a key's chords are spelled from its signature,
+    flat = "b" in t or (t in ("D", "G", "C", "F") if minor else t == "F"); scale = {(rel + x) % 12 for x in (0, 2, 4, 5, 7, 9, 11)}                                                  # a minor key's from its relative major's
+    nm = (NAMES_F if flat else NAMES_S)[pc] if pc in scale else NAMES_S[pc] if len(NAMES_S[pc]) == 1 else (NAMES_F if (acc == "b" or flat) else NAMES_S)[pc]
+    return nm + ("dim" if dim else "m" if r.islower() else "")
+MAJOR_TONICS = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]; MINOR_TONICS = ["C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#", "A", "Bb", "B"]
+def tonic_name(pc, mode="major"): return MAJOR_TONICS[pc % 12] if mode == "major" else MINOR_TONICS[pc % 12] + "m"
 def tones(rn):
     """pitch classes above the tonic"""
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)(o)?$", rn); acc, r, dim = m.groups(); root = (DEG[r.upper()] + (-1 if acc == "b" else 1 if acc == "#" else 0)) % 12
@@ -166,9 +194,9 @@ def choose_key(low, high, voice="tenor", lead="guitar", mode="major"):
         for octv in range(2, 7):
             t = 12 * octv + pc
             if t + low >= lo and t + high <= hi:
-                nm = (NAMES_F if NAMES_F[pc] in FLAT_KEYS else NAMES_S)[pc]; mid = abs((t + low + t + high) / 2 - (lo + hi) / 2)
+                nm = (MAJOR_TONICS if mode == "major" else MINOR_TONICS)[pc]; mid = abs((t + low + t + high) / 2 - (lo + hi) / 2)
                 if lead == "guitar": fam = 0 if nm in OPEN[mode] else 1; capo = None if fam == 0 else min(((pc - NAMES_S.index(o)) % 12, o) for o in OPEN[mode])
-                else: fam = 0 if (nm in FLAT_KEYS or nm == "C") else 1; capo = None
+                else: fam = 0 if ((NAMES_F[(pc + 3) % 12] if mode == "minor" else nm) in FLAT_KEYS or (nm == "C" and mode == "major") or (nm == "A" and mode == "minor")) else 1; capo = None
                 out.append(dict(key=nm + ("m" if mode == "minor" else ""), tonic_midi=t, lowest=t + low, highest=t + high, from_middle=mid, instrument_key=fam == 0, capo=(f"capo {capo[0]}, {capo[1]} shapes" if capo and capo[0] <= 5 else None)))
     out.sort(key=lambda d: (not d["instrument_key"], d["from_middle"], d["key"])); return out
 
@@ -217,4 +245,5 @@ if __name__ == "__main__":
         for k in KS:
             if k in res[mode]["written"]: print(mode, k, res[mode]["written"][k]); print("     floor", {m: res[mode]["floor"][k][m] for m in ("first", "last", "chords", "bigrams", "bars")})
         print(mode, "joins", res[mode]["joins"])
-    json.dump(res, open(os.path.join(HERE, "stage4_results.json"), "w"), indent=1, default=str)
+    path = os.path.join(HERE, "stage4_results.json"); old = json.load(open(path)) if os.path.exists(path) else {}; old.update(json.loads(json.dumps(res, default=str)))      # 824 (749.49): the test rewrites its own keys only
+    json.dump(old, open(path, "w"), indent=1, default=str)
