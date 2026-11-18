@@ -52,3 +52,20 @@ apart, the kept 5th percentile. **781** (749.41): a.m. and p.m. only as whole to
 **783** (749.35): the record's notes carry `moved386` as an eighth field. **784** (749.40, 749.45): the stale run logs of stages 1 to 2b
 are removed; `runl11/` logs are from the committed engines; `stage*_results.json` hold the earlier stages' figures.
 **785**: 749.44 (the chorus over the verse) goes to stage 6. `stage2c_results.json`: songs 49, 50, 51, 54, 55 on v10 and v11.
+
+## Stage 3 (Luthier v12): the metre as a setting, and the hymn mode — fixes 790–796
+
+`metre_engine.py` is a melody engine with no metre in it. A song is a spec file; a metre is its table in `tables/metre_atlas/`.
+
+    python3 songs/p62/mkspec52.py && python3 lib/luthier/metre_engine.py songs/p62/spec52.json 3000   # song 52, 6/8
+    python3 songs/p63/mkspec53.py && python3 lib/luthier/metre_engine.py songs/p63/spec53.json 3000   # song 53, 3/4, hymn mode ("mode": "hymn")
+
+Each run writes `<spec>.run.json` (the pick's notes, readings, charge, deaths, every survivor's fingerprint) and is the same for a seed.
+Results: `stage3_results.json`; the two specs in other metres: `stage3_other_metres.json`. Committed logs: `songs/p62/spec52.run.txt`, `songs/p63/spec53.run.txt`.
+
+- 790 the engine (windows, entries by stress, weighted placement, least breath scaled to the bar, again, copy, deaths, pick by charge).
+- 791 the hymn mode; 792 its frame's unit is half a bar where the kept hymns stress the mid-bar beat; 793 a floor under a kept width of nothing.
+- 794 the sketch `songs/p63/gen34h.py` read its bars a beat late (`n["on"] + ... + 12`): its pick's charge 0.007 is 0.403 on true bars.
+- 795 density is printed, not charged (749.7 stands). 796 to stage 5: the bass by metre (749.6), descant (749.12), choral documents (749.13), and moving the 4/4 songs onto this engine.
+
+For the session to check: rerun both commands and compare with the logs; try a new song's spec in 6/8 or 3/4; read `Hymn.options` against hymn practice.
