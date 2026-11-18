@@ -79,3 +79,13 @@ def ssm(song):
             if not (ma or mb or ca or cb): M[i, j] = 1.0 if i == j else 0.0; continue                      # two empty bars say nothing about each other
             M[i, j] = 0.7 * J(ma, mb) + 0.3 * J(ca, cb) if (ma and mb) else (J(ca, cb) if not (ma or mb) else 0.3 * J(ca, cb))
     return M
+
+def lag_profile(M):
+    n = len(M); return np.array([np.mean(np.diagonal(M, k)) for k in range(1, n // 2 + 1)])
+def nest_fine(M, scales=(2, 4, 8, 16)):
+    """The same order at every scale, finer: at each scale k (bars), how far repetition at distance k stands above repetition at k-1 and k+1,
+    in units of the song's own spread of lag likeness; the mean over the scales the song is long enough for (and the least of them, 'every')."""
+    Lp = lag_profile(M); sd = float(np.std(Lp)) or 1e-9; pr = []
+    for k in scales:
+        if k + 1 <= len(Lp): pr.append((Lp[k - 1] - (Lp[k - 2] + Lp[k]) / 2) / sd)
+    return (float(np.mean(pr)), float(np.min(pr))) if pr else (float("nan"), float("nan"))
