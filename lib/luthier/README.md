@@ -15,3 +15,17 @@ syllables on one onset, the first with no length (749.1, 749.26). The loader kee
 
 Run: `PYTHONHASHSEED=0 python3 melody_l8_pNN.py 1000 main|ctl` (files go to `runl8/`). Every order differs from v7's, since three bars
 have left the draw. Start the next song's engine from an `l8` file, or run `gen_l8.py` on its `l7` file.
+
+## Stage 2a (Luthier v9, Module 27.90, Window 166; fixes 760 to 766)
+
+| File | What it is |
+|---|---|
+| `gen_l9.py` | Makes a song's v9 engine from its v7 file (stage 1's patches, then stage 2a's): `python3 lib/luthier/gen_l9.py /home/claude/p64` writes `melody_l9_p64.py`; run files go to `runl9/`. |
+| `slots.py` | 763: a line's slot proposed from its syllables and the tempo, in seconds (reads `studies/metre/metre_results.json`). Not yet applied to a song. |
+| `stage2_results.json` | Songs 49, 50, 51, 54, 55 on stage 1 and stage 2a, main and control. |
+
+**760.** A line the rhythm draw cannot place is set by weighted rules in the same window (kept shares of stressed and unstressed syllables
+by place in the bar; the kept palette's gap shares; the sixteenth grid). **761.** No gap of three beats inside a drawn line of eight
+syllables or fewer. **764.** A line leaves the next line room. **765.** The breath before a line gives way, down to 18 twelfths.
+Deaths for want of a placement, a thousand builds: song 54 652/664 to 0/0; song 55 682/676 to 53/50; song 51 487/486 to 0/0; song 50
+261/218 to 0/0; song 49 54/44 to 0/0. Start the next song from an `l9` file.
