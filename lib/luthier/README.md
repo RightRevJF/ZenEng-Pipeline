@@ -69,3 +69,19 @@ Results: `stage3_results.json`; the two specs in other metres: `stage3_other_met
 - 795 density is printed, not charged (749.7 stands). 796 to stage 5: the bass by metre (749.6), descant (749.12), choral documents (749.13), and moving the 4/4 songs onto this engine.
 
 For the session to check: rerun both commands and compare with the logs; try a new song's spec in 6/8 or 3/4; read `Hymn.options` against hymn practice.
+
+## Stage 4 (Luthier v13): the chord writer — fixes 800–809
+
+    python3 lib/luthier/chord_writer.py                                  # the held-out test -> stage4_results.json
+    python3 lib/luthier/write_song.py songs/p62/spec52.json 1000 12      # song 52: twelve chord drafts, the melody engine on each, the pick (809)
+
+- 800 `chord_writer.py`: structure from one kept section whole, bars from kept bars given the two before, one draw a section. It replaces `writers/chords.py`,
+  which on held-out songs left the key in 1 bar in 100 (kept 14), looped verses 7 in 100 (kept 26) and stood 0.41 from the kept in moves (kept sets: 0.18).
+  That test is `/home/claude/zeneng/corpus/v12/test_writer.py` (copied here as `test_prototype_writer.py`).
+- 801 returns keep their chords; 802 joins; 803 a bar's chords on the metre's beats (also in `metre_engine.chord_at`); 804 `choose_key`; 805 `chromatic=` and `require=`.
+- 806 answers 749.46: the code mark differed because `songs/p36/melody_p36.py` on the maintainer's machine had `alive` where the repository has `alive[:40]` in its
+  own `__main__` pickle line. No engine reads it. The maintainer's copy is now the repository's.
+- 807 `write_song.py`; 808 the clash rule (`"clash_rule": true` in a spec); 809 the pick among chord drafts by kept chord readings.
+
+Not met: 802's test (joins 0.25 from the kept against 0.21 between kept sets). Not proved: minor keys, bridges, pre-choruses (too few held-out sections).
+For the session: rerun both commands; try `Writer("minor")`; say whether `writers/chords.py` should now call this writer or be retired.

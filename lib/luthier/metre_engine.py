@@ -50,7 +50,12 @@ class Engine:
     # ---- the frame
     def line_start(self, sec, i): return (self.BAR0[sec] + sum(self.SLOTS[sec][:i])) * self.BAR
     def slot_len(self, sec, i): return self.SLOTS[sec][i] * self.BAR
-    def chord_at(self, t): return self.CH[self.CHORD[max(0, min(self.NBARS - 1, t // self.BAR))]]
+    def chord_at(self, t):
+        c = self.CHORD[max(0, min(self.NBARS - 1, t // self.BAR))]
+        if isinstance(c, str): return self.CH[c]
+        n = len(c); half = self.BAR // 2                                                     # 803: a bar of several chords: two on the halves (or the last beat), more beat by beat
+        at = [0] if n == 1 else [0, half if half in self.BEATS else self.BEATS[-1]] if n == 2 else ([0] + self.BEATS[len(self.BEATS) - n + 1:] if len(self.BEATS) >= n else [round(i * self.BAR / n / 3) * 3 for i in range(n)])
+        return self.CH[c[max(i for i, x in enumerate(at) if x <= max(0, t) % self.BAR)]]
     def on_beat(self, t): return (t % self.BAR) in self.BEATS
     def reg(self, sec, i):
         R = self.S["registers"]; return tuple(R.get(f"{sec}:{i}") or R.get(sec) or R[self.KIND[sec]])
@@ -113,6 +118,8 @@ class Engine:
         mu, lo, hi = self.reg(sec, i); ps = []
         for k, t in enumerate(ons):
             ch = self.chord_at(U + t); cands = [p for p in range(lo, hi + 1) if p % 12 in self.SCALE and not (avoid and p % 12 in avoid)]; ws = []
+            if self.S.get("clash_rule") and not ch <= self.SCALE:                                # 808: over a chord from outside the key, no scale tone a semitone from one of its tones
+                cands = [p for p in cands if p % 12 in ch or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]
             for p in cands:
                 w = self.ivp(p - prev) if prev is not None else math.exp(-abs(p - mu) / 3)
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
