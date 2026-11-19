@@ -90,3 +90,9 @@ Spotify's readings of the recording against G, 18,024 Hot 100 songs of 2005 or e
 valence -0.085 / -0.096; danceability -0.073 / -0.079; duration +0.067 / +0.040; instrumentalness +0.031 / +0.054; energy -0.026 / -0.049; mode -0.004 / -0.008; the rest under 0.03.
 All eleven together, fitted on one half and judged on the other: +0.101 (love +0.081, covers +0.080).
 Small, but the first readings in these studies to repeat on unseen songs: the songs still loved and covered sound less cheerful and less made for dancing than other hits of their year. Major or minor key is not it.
+
+# Mood from the written notes (19 Nov 2026). Study only; nothing built.
+Prediction in mood/PREDICTION.md. Step 1: a reader of the written tune tracks Spotify's cheerfulness at +0.24, +0.41, +0.30 and danceability at +0.25, +0.26, +0.23 (Hooktheory, Lakh, lyrics-melody; out of fold).
+Step 2, against G: written cheerfulness -0.018, -0.032, +0.056 (pooled p .54) FAIL; written danceability -0.054, -0.014, +0.061 (p .78) FAIL.
+The mark, on the same songs: Spotify's own cheerfulness -0.139, -0.079, -0.023 (pooled z -5.1); danceability -0.143, -0.067, -0.061 (z -5.2). The recording finding holds on these subsets.
+So part of a song's mood is on the page, but the part that goes with lasting love and covers is not: it is in the recording.
