@@ -358,3 +358,21 @@ the kept 10th or 90th on one side, and no more than two with all three beyond th
 - **The engine is sound by the rule, narrowly**: one song is over the bound by three thousandths; rhythm scaling (low) and pitch scaling (high) are the two leans the rule allows.
 - 749.94 (the songs sit nearer the kept middle than kept songs do: 9, 4, 6 checks outside the middle half against a kept 8, 10, 13) is an improvement, not mended here.
 - From here a finding made while the rule holds is an improvement, not a fault. Results: `stage16_results.json`.
+
+## Luthier v30 — sound on the pools (fixes 918–921)
+
+    PYTHONHASHSEED=0 python3 studies/soundness/neighbour.py songs/p65/lyric55.json songs/p64/lyric54.json songs/p68/lyric58.json   # 921: the pools, after every version (about 15 minutes)
+    python3 studies/soundness/soundness.py songs/p65/lyric55.song.json songs/p64/lyric54.song.json songs/p68/lyric58.song.json     # the three picks
+
+v29's pass by 0.003 did not hold (the session's `margin.py`): the rule is now read on the pools too. **Sound** = the three picks pass, and a pick drawn at random from each song's gated pool passes at least 90 times in 100 (three kept songs: 93).
+
+| Item | Fix | What was done |
+|---|---|---|
+| 749.95 | 918 | turns at the kept split (two bars 62, four bars 38) whatever the length, one of four bars at the least |
+| 749.97 | 919 | `melisma_notes(how=...)`: a copied line takes its source's melismas; `FIGURE_BORROW` 0.8 |
+| 749.94 | 920 | `spec["target"]`: one kept song drawn from the title's seed; its repeated-note, step and leap shares tilt the moves and centre the old charge's bounds for those readings; its range moves the tops. `AIM_REPEATS` (the share of lines sung again by the kept song's repetition) was tried and is off: it lowered rhythm scaling until the first picks leaned |
+| 749.96 | 921 | adopted; `studies/soundness/neighbour_v30.json` is this version's pool reading (and two trial readings beside it) |
+
+Pools: pass 93 in 100; a random pick outside the kept middle half on 19 song-checks (16 before the aim; three kept songs about 30; the check asks 21, not met).
+Picks: sound; rhythm scaling 0.576 / 0.574 / 0.572, on the bound again, with the pools saying the engine does not lean past it (2 draws in 100).
+Results: `stage17_results.json`.

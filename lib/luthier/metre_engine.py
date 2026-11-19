@@ -49,6 +49,13 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
+        self.TILT = None; tg = spec.get("target")                                               # 920 (749.94): the song is aimed at one kept song, not at the kept middle
+        if tg:
+            Q2 = dict(self.Q); t_ = tg["readings"]
+            for k_ in tg.get("charged", ("repeated notes", "moves by step", "moves by leap")):
+                if k_ in t_ and k_ in Q2: a_, m_, z_ = Q2[k_]; Q2[k_] = [t_[k_] - (m_ - a_), t_[k_], t_[k_] + (z_ - m_)]      # the charge's middle half, of the kept width, set about the kept song's own reading
+            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2
+            self.TILT = tuple(cl_(((t_[k_] + 0.02) / (self.T["readings_quartiles"][k_][1] + 0.02)) ** g_) for k_ in ("repeated notes", "moves by step", "moves by leap"))
         self._rc = {}; self.ALLW = None
         if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
             B_ = collections.defaultdict(list)
@@ -195,6 +202,7 @@ class Engine:
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 w *= math.exp(-((p - mu) ** 2) / 50)
                 if len(ps) >= 2 and ps[-1] == ps[-2] == p: w = 0.0
+                if self.TILT and prev is not None: d_ = abs(p - prev); w *= self.TILT[0] if d_ == 0 else self.TILT[1] if d_ <= 2 else self.TILT[2] if d_ >= 5 else 1.0      # 920: repeats, steps and leaps leaned toward the kept song's shares
                 if DW: w *= DW.get(str((p - ton) % 12), 0.0)                                      # 846: the kept share of each degree of the scale, blue notes among them
                 if WP and k > 0 and k < len(sy) and sy[k][0] == sy[k - 1][0] and sy[k][1] != sy[k - 1][1] and prev is not None:      # 847: inside a word, the stressed syllable against the other
                     up = (p > prev) if sy[k][1] else (p < prev); w *= WP[1] if p == prev else WP[0] if up else WP[2]

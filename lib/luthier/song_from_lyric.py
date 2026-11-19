@@ -24,6 +24,9 @@ WORD_PITCH = [3.0, 2.0, 0.2]     # 847: weights for the stressed syllable of a w
 WORD_SHORT = 4.0      # 891 (749.66): the charge on each stressed syllable a line sung again would leave a sixteenth long
 WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept median (0.13)
 WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm on offer, so the builds' fit by place meets the kept median (it was 1.5 when twelve rhythms were on offer)
+AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling)
+AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
+FIGURE_BORROW = 0.8   # 919 (749.97): raised from 0.6 so the builds' bars on a figure already sung meet the kept median (0.474)
 WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
 #  879, 880: fitted so the builds' shares (a function word on the bar's first beat, the step up from a light word to a stressed one) and their fits meet the kept
 ONE_BAR = 0.09   # 911 (749.89): recounted on the mended parse (a silence of one bar to two, per eight bars: 0.386 old, 0.35 with ties read)
@@ -76,9 +79,12 @@ def plan(L):
     rs_ = _r_.Random(f"silences {L.get('seed', 1)} {L['title']}"); want = rs_.choices([1, 2, 3], [0.25, 0.5, 0.25])[0] - (1 if any(n == "Break" for n, _, _ in form) else 0)
     chs = [i for i, (n, k, b) in enumerate(form) if k == "chorus" and any(k2 in ("verse", "chorus", "bridge") for _, k2, _ in form[i + 1:]) and form[i + 1][0] != "Break"]
     for j, i in enumerate(sorted(rs_.sample(chs, min(max(0, want), len(chs))), reverse=True)):
-        tb = rs_.choices([2, 4], [0.62, 0.38])[0]
-        if (sum(b for _, _, b in form) + tb) * bar_s > BD.EDG["length"][2]: tb = 2; flags.append("916: the song runs long: its turns are two bars")      # 916 (749.93; amends 888): the silences of 877 are kept whatever the length, at two bars; the bars in and out are shortened first (888)
+        tb = rs_.choices([2, 4], [0.62, 0.38])[0]                                              # 918 (749.95; amends 916): each turn at the kept split whatever the length, and one of four bars at the least in a song that has a turn:
+        if j == 0 and tb == 2 and not any(n_.startswith("Turn") and b_ == 4 for n_, _, b_ in form): tb4_ = True          # a two-bar silence seldom empties a four-bar stretch, and those are what a kept song's rhythm scaling follows
+        else: tb4_ = False
         form.insert(i + 1, (f"Turn {len(chs) - j}", "solo", tb))
+    turns_ = [q for q, (n_, k_, b_) in enumerate(form) if n_.startswith("Turn")]
+    if turns_ and not any(form[q][2] == 4 for q in turns_): form[turns_[0]] = (form[turns_[0]][0], "solo", 4)
     if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2] and not any(f.startswith("888: the song runs long") for f in flags):      # 916: read again once the turns are in, so the bars in and out give way before a turn does
         n_in2, n_out2 = BD.edges(L["bpm"], beats, q=0); form[0] = ("Intro", "intro", min(form[0][2], n_in2)); form[-1] = ("Outro", "outro", min(form[-1][2], n_out2)); flags.append(f"888: the song runs long: {form[0][2]} bars in and {form[-1][2]} out (the kept lower quartiles)")
     secs_ = round(sum(b for _, _, b in form) * bar_s)                                          # 894 (749.69): one length, counted once, after the form is final
@@ -92,8 +98,17 @@ def plan(L):
     reg = {k: [int(round(x)) for x in v] for k, v in reg.items()}; tw = [w for w, _, _, _ in LS.syllables(L["title"])] if L.get("title") else []
     hooks = [f"{name}:{i}" for name, lines in L["sections"] for i, ln in enumerate(lines) if tw and " ".join(tw) in " ".join(w for w, _, _, _ in LS.syllables(ln))]     # 840: the lines that sing the title
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
-                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=0.6), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
+                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=FIGURE_BORROW), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
+    if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
+        KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
+        ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_]))
+        tg_ = {k_: tr_[k_] for k_ in ("repeated notes", "moves by step", "moves by leap", "range", "bars on a figure already sung", "bars on a rhythm already sung", "distinct rhythms over bars")}
+        spec["target"] = dict(kept_song_row=ri_, readings=tg_, power=AIM_POWER)
+        if AIM_REPEATS: spec["borrow"]["figure"] = round(max(0.3, min(1.0, FIGURE_BORROW * (tg_["bars on a figure already sung"] + 0.05) / (AT_["bars on a figure already sung"][1] + 0.05))), 3)      # more or less of its lines sung again, as the kept song repeats more or less
+        if AIM_REPEATS: spec["borrow"]["rhythm"] = round(max(0.0, min(0.3, 1.0 - spec["borrow"]["figure"], tg_["bars on a rhythm already sung"] - AT_["bars on a rhythm already sung"][1])), 3)      # and, where the kept song repeats its rhythms more than most, some lines take an earlier line's rhythm with new notes
+        dr_ = max(-3, min(4, int(round((tg_["range"] - AT_["range"][1]) / 2.0))))             # and its tops set higher or lower by half the kept song's range over the kept median's, inside the voice
+        for k_ in ("Verse", "Chorus", "Bridge"): spec["registers"][k_][2] = min(spec["registers"][k_][2] + dr_, spec["registers"]["Verse"][1] + (V[1] - V[0])) if spec["registers"][k_][2] + dr_ > spec["registers"][k_][0] else spec["registers"][k_][2]
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
         rs = _r.Random(f"blue {L.get('seed', 1)} {L['title']}"); bluesong = rs.random() < GR["families"][fam if fam in GR["families"] else "all"]["b3_songs"]
@@ -145,7 +160,7 @@ def write(L, N=1000, K=12):
             for x in bar: spec["chords"][x] = sorted((t + 0) % 12 for t in C.tones(x))
             bars.append(bar[0] if len(bar) == 1 else list(bar))
         spec["form"].append([n, bars])
-    E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p")[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
+    E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"))[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
     run = E.run(N, L.get("seed", 1))
     if not run["survivors"]: return dict(error="no build survived", deaths=run["deaths"], flags=flags, spec=spec)
     notes = run["pick"]["notes"]; lo, hi = min(n["p"] for n in notes) - 60, max(n["p"] for n in notes) - 60
@@ -174,7 +189,7 @@ def write(L, N=1000, K=12):
         rec["parts"]["break"] = [dict(on=n["on"] - v0 + b0, dur=n["dur"], p=[n["midi"] + (12 if L.get("lead", "guitar") == "guitar" else 0)], vel=88) for n in rec["melody"]["notes"] if n["sec"] == vname and n["on"] - v0 < 8 * E.BAR - 6]
     return rec
 ORN = json.load(open(os.path.join(HERE, "..", "..", "studies", "ornament", "ornament_results.json")))["CoCoPops Billboard"]
-def melisma_notes(ns, L, scale, key="midi"):
+def melisma_notes(ns, L, scale, key="midi", how=None):
     """914 (749.91): 848's draw as a function of the notes alone, so the words' gate can read each build as sung. Returns the notes, the share drawn, the kept share at line ends."""
     """848: after the pick, some syllables take a second note. The song's share is drawn from the kept songs' (quartiles 3.8, 8.6, 16.2 syllables in a hundred); a melisma
     sits on a word's last syllable (kept 94 in 100), two and a half times as often at a line's end (kept 20 against 8), on a note a quarter long or more, and its
@@ -196,6 +211,13 @@ def melisma_notes(ns, L, scale, key="midi"):
         for _ in range(min(k_, len(idx))):
             if sum(ww) <= 0: break
             j = rng.choices(range(len(idx)), ww)[0]; chosen.add(cands[idx[j]]); ww[j] = 0.0
+    if how:                                                                                  # 919 (749.97): a line that returns note for note returns with its melismas: a copy takes its source's, syllable for syllable
+        idx_ = {}
+        for i, n in enumerate(ns): idx_.setdefault((n["sec"], n["line"]), []).append(i)
+        for (sec_, li_), ii in idx_.items():
+            h_ = how.get(f"{sec_}:{li_}")
+            if h_ and h_[0] == "copy" and (h_[1], int(h_[2])) in idx_ and len(idx_[(h_[1], int(h_[2]))]) == len(ii):
+                src_ = idx_[(h_[1], int(h_[2]))]; chosen -= set(ii); chosen |= {ii[k_] for k_, q_ in enumerate(src_) if q_ in chosen and ns[ii[k_]]["dur"] >= 6}
     out = []
     for i, n in enumerate(ns):
         if i not in chosen: out.append(n); continue
@@ -205,7 +227,7 @@ def melisma_notes(ns, L, scale, key="midi"):
         d1 = max(3, (n["dur"] // 2) // 3 * 3); out.append(dict(n, dur=d1, melisma="first")); out.append(dict(n, **{"on": n["on"] + d1, "dur": n["dur"] - d1, key: q, "text": "", "stress": False, "melisma": "second"}))
     return out, share, round(p_end, 3)
 def melismas(rec, L, E, tonic_midi):
-    out, share, p_end = melisma_notes(rec["melody"]["notes"], L, {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}); rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = share; rec["melody"]["melisma_line_end_share_kept_for_this_song"] = p_end
+    out, share, p_end = melisma_notes(rec["melody"]["notes"], L, {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}, how=rec["spec"].get("how")); rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = share; rec["melody"]["melisma_line_end_share_kept_for_this_song"] = p_end
 def checks(rec, fb, tonic_midi, E):
     """815: what can be checked without ears"""
     ns = rec["melody"]["notes"]; bs = rec["bass"]; on = [n["on"] for n in ns]
