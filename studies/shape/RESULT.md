@@ -53,3 +53,11 @@ on the 335 set-2 songs matched with an artist it is weaker (+0.03 to +0.10). Abo
 - No plain trait carries it. Region lean against pace, longest note, unevenness, span, step size, rise, repeated notes, tonic-chord notes: all under 0.2 either way; off-scale notes +0.18 / +0.16.
   Read straight off the songs, slower pace and long notes lean great in set 2 (+0.14) but not set 1 (+0.04).
 - So the reader reads a pattern over many kinds of phrase, not one nameable feature. Next: a third graded set, never seen, with the reader frozen.
+
+# The regions map on a third set (19 Nov 2026). Study only; nothing built.
+1,388 Lakh clean-MIDI songs, none in sets 1 or 2; codebook and reader frozen. Prediction in third/PREDICTION.md.
+Frozen reader against G: +0.008 (p .77). FAIL. Reader of set 1 alone -0.024; of set 2 alone +0.042; genre and decade held +0.009;
+the 712 best-scored voice tracks -0.006. Region leans of set 3 against set 1: -0.25; against set 2: -0.02 (sets 1 and 2 against each other +0.60, unexplained and now distrusted).
+Caveat stated beforehand: the voice track in this set is guessed. But the better-guessed half reads no higher, so that does not rescue it.
+Verdict on the whole study: across five runs and about 3,100 songs, no shape of the tune, hand-built or learned, tells good from great on songs it has not seen.
+Word-and-tune remains untested on enough well-aligned songs.
