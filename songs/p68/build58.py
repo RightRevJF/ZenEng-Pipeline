@@ -1,11 +1,12 @@
 """'Same Time Tomorrow' (song 58): the song record for the documents, read from songs/p68/lyric58.song.json (Luthier v22, song_from_lyric.py) and
 nothing else. Writes song_record.pkl in the form the p65 document scripts read: bars, half-bar chords, plan, the sung notes with their syllables,
 the harmony voice, the band's parts. No note is changed; syllables are spelled from the locked lyric (pyphen, fitted to the engine's count)."""
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo58 as KI
 import json, pickle, re, os, collections
 import pyphen
 HERE = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(os.path.join(HERE, "lyric58.song.json"))); L = json.load(open(os.path.join(HERE, "lyric58.json")))
-EDITION = " (third edition)"          # the first edition from the v22 record (commit 9ef68b2), the second from v24 (160e1ca); this one from the v25 record
+EDITION = " (fourth edition)"          # the first edition from the v22 record (commit 9ef68b2), the second from v24 (160e1ca), the third from v25 (686cd39); this one from the v26 record (key A)
 BAR = R["bar"]; QBPM = R["bpm"]; DIC = pyphen.Pyphen(lang="en_US")
 KIND = {"intro": "Intro", "verse": "Verse", "chorus": "Chorus", "solo": "Turn", "bridge": "Bridge", "outro": "Outro"}
 bars, plan, b = [], [], 0
@@ -14,7 +15,7 @@ for sec, kind, nb in R["form"]:
     for k in range(nb):
         ch = R["chords"][sec][k].split(); rn = R["roman"][sec][k].split()
         bars.append(dict(sec=sec, kind=KIND[kind], k=k, n=nb, b=b + k, meter="4/4", start=(b + k) * BAR, len=BAR, chord=ch[0], chord2=ch[-1],
-                         roman=rn[0], roman2=rn[-1], beats4=ch if len(ch) == 4 else None, qbpm=QBPM, key="C major", movement=sec, stop=False))
+                         roman=rn[0], roman2=rn[-1], beats4=ch if len(ch) == 4 else None, qbpm=QBPM, key=KI.KEYSTR, movement=sec, stop=False))
     b += nb
 chords2 = [x for bb in bars for x in (bb["chord"], bb["chord2"])]
 # the locked lyric, word by word, for spelling and capitals

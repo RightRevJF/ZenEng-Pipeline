@@ -1,13 +1,13 @@
-"""Same Time Tomorrow (song 58) -- the number chart: C major (1 = C), q = 84, a folk ballad, all 4/4; one cell a bar; a bar with two chords
+"""Same Time Tomorrow (song 58) -- the number chart, in the record's key (keyinfo58), q = 84, a folk ballad, all 4/4; one cell a bar; a bar with two chords
 shows both. Every section's notes are read from the record (where the stop falls, the hook's bars). HTML -> PDF, letter landscape."""
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo58 as KI
 import asyncio, pickle, collections
 REC = pickle.load(open("/home/claude/p68/song_record.pkl", "rb"))
 BARS = REC["bars"]
-RN = {"C": "1", "D": "2", "E": "3", "F": "4", "G": "5", "A": "6", "B": "7", "Bb": "♭7"}
 QN = {"": "", "m": "m", "7": "7", "m7": "m7", "sus4": "sus4", "sus2": "sus2", "maj7": "maj7"}
 def num(c):
     base, _, bs = c.partition("/"); rt_ = base[:2] if len(base) > 1 and base[1] in "#b" else base[:1]
-    return RN[rt_] + QN[base[len(rt_):]] + (f"/{RN[bs]}" if bs else "")
+    return KI.number(rt_) + QN[base[len(rt_):]] + (f"/{KI.number(bs)}" if bs else "")
 B0 = {s: st // 48 for s, nb, st, mets, mv in REC["plan"]}
 def title_desc(REC_):
     """where the title falls against the chorus's first bar, read from the record"""
@@ -52,10 +52,10 @@ table.nums tr td:last-child {{ border-right: 1.5px solid #111; }}
 .drum {{ font-size: 7.8pt; line-height: 1.2; }} .foot {{ font-size: 8pt; border-top: 1px solid #555; margin-top: 6px; padding-top: 4px; line-height: 1.35; }}
 </style></head><body>
 <div class="hdr"><h1>{REC['title']}</h1>
-<div class="meta">♩ = 84 &nbsp;·&nbsp; KEY: C major &nbsp;·&nbsp; 4/4 &nbsp;·&nbsp; FEEL: folk ballad &nbsp;·&nbsp; {int(secs // 60)}:{int(round(secs % 60)):02d}</div>
+<div class="meta">♩ = 84 &nbsp;·&nbsp; KEY: {KI.KEYSTR} &nbsp;·&nbsp; 4/4 &nbsp;·&nbsp; FEEL: folk ballad &nbsp;·&nbsp; {int(secs // 60)}:{int(round(secs % 60)):02d}</div>
 <div class="cred">Words and music: Jason Bryant · 2026</div></div>
 {body}
-<div class="foot"><b>Numbers.</b> C major: 1 = C, 2m = Dm, 3m = Em, 4 = F, 5 = G, 6m = Am. One cell is one bar; two numbers in a cell split it, two beats each; four numbers, a beat each.
+<div class="foot"><b>Numbers.</b> {KI.numbers_line()}. One cell is one bar; two numbers in a cell split it, two beats each; four numbers, a beat each.
 <b>Drums.</b> Kick 1 and 3, snare 2 and 4, hat eighths, from bar 2. <b>Voices.</b> One singer, a baritone; a harmony voice under him in the choruses.</div>
 </body></html>"""
 open("/home/claude/p68/out/nashville.html", "w").write(doc)

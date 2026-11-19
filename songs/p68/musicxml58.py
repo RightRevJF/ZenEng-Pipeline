@@ -1,6 +1,7 @@
 """musicxml_p65.py: 'Same Time Tomorrow' (song 58) as MusicXML, written from the song record (the events the demo plays, before humanizing), on
 the same grid as the lead sheet and parts. Two scores: the lead sheet (the voice, lyrics, chord symbols) and the full score (every part).
 Each as .musicxml and compressed .mxl. Read back with music21 and counted against the record. Words and music: Jason Bryant."""
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo58 as KI
 import pickle, collections, os, sys, copy
 from music21 import percussion, stream, note, chord, meter, key, tempo, metadata, harmony, instrument, clef, converter, pitch
 REC = pickle.load(open("/home/claude/p68/song_record.pkl", "rb")); OUT = "/home/claude/p68/out"
@@ -39,7 +40,7 @@ def build_part(name, inst, evs, lyr=None, clef_=None, drums=False, chords=False,
         m = stream.Measure(number=bi + 1)
         if bi == 0:
             if clef_: m.insert(0, clef_)
-            m.insert(0, key.Key("C"))
+            m.insert(0, key.Key(KI.TONIC))
         if bi == 0: m.insert(0, tempo.MetronomeMark(number=b["qbpm"], referent=note.Note(type="quarter")))
         if b["meter"] != met: met = b["meter"]; m.insert(0, meter.TimeSignature(met))
         if chords:
@@ -76,10 +77,16 @@ def build_part(name, inst, evs, lyr=None, clef_=None, drums=False, chords=False,
     for m in ms: m.makeRests(fillGaps=True, inPlace=True, timeRangeFromBarDuration=True)
     return p
 def spell(pt):
-    """C major: a flat spelled as its sharp (the only chromatic notes are the bass's C♯ and F♯)."""
-    for n in pt.recurse().notes:
-        for pp in ((n.pitches if isinstance(n, chord.Chord) else [n.pitch]) if not isinstance(n, (note.Unpitched, percussion.PercussionChord)) else []):
-            if pp.accidental is not None and pp.accidental.name == "flat": pp.getEnharmonic(inPlace=True)
+    """each note spelled as the engraving spells it (keyinfo58: the key's notes; a chromatic note by where it goes next)."""
+    ns = [n for n in pt.recurse().notes if not isinstance(n, (note.Unpitched, percussion.PercussionChord))]
+    for i, n in enumerate(ns):
+        single = not isinstance(n, chord.Chord); nxt = ns[i + 1] if i + 1 < len(ns) else None
+        nxt_p = nxt.pitch.midi if (single and nxt is not None and not isinstance(nxt, chord.Chord)) else None
+        for pp in (n.pitches if not single else [n.pitch]):
+            want = KI.name_dir(pp.midi, nxt_p if single else None).replace("♯", "#").replace("♭", "-")
+            if pp.name != want:
+                q = pp.getEnharmonic()
+                if q.name == want: pp.step, pp.accidental, pp.octave = q.step, q.accidental, q.octave
 def score(title, parts):
     s = stream.Score(); s.insert(0, metadata.Metadata()); s.metadata.title = REC["title"]; s.metadata.movementName = title
     s.metadata.composer = "Words and music: Jason Bryant"

@@ -1,10 +1,11 @@
 """'Same Time Tomorrow' (song 58): the songbook and production notes, for musicians only. Every bar number, pitch and chord named here is read
 from song_record.pkl (build58.py, from lyric58.song.json); the prose around them is written for this song. Writes songbook.md (for the Doc)
 and out/Same Time Tomorrow - songbook.docx (pandoc, the songbook reference document), with the producer one-sheet on its own page."""
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo58 as KI
 import pickle, os, re, subprocess, collections, json
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out")
 REC = pickle.load(open(os.path.join(HERE, "song_record.pkl"), "rb")); L = json.load(open(os.path.join(HERE, "lyric58.json")))
-NM = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"]
+NM = KI.NM
 def nm(p): return f"{NM[p % 12]}{p // 12 - 1}"
 BAR = 48; bar = lambda t: t // BAR + 1
 B1 = {s: st // BAR + 1 for s, nb, st, _, _ in REC["plan"]}; NB = {s: nb for s, nb, _, _, _ in REC["plan"]}
@@ -103,7 +104,7 @@ md = [f"# {REC['title']} ({REC['edition']}): songbook and production notes", "",
 md += ["## At a glance", "",
        "**What it is about.** An old preacher in his last days tells about the boy who comes to change his sheets, and the promise they make each other every evening: same time tomorrow. "
        "It is a small promise, kept daily, and by the last chorus it has come to hold up more than the pulpit ever did.", "",
-       f"**How to play it.** C major, ♩ = 84, 4/4, a folk ballad. {len(REC['bars'])} bars, about {mm}:{ss:02d}. One baritone voice ({rng[0]} to {rng[1]}), a harmony voice in the choruses, acoustic guitar, bass and drums.", "",
+       f"**How to play it.** {KI.KEYSTR}, ♩ = 84, 4/4, a folk ballad. {len(REC['bars'])} bars, about {mm}:{ss:02d}. One baritone voice ({rng[0]} to {rng[1]}), a harmony voice in the choruses, acoustic guitar, bass and drums.", "",
        "| Section | Bars | Bar numbers | Level |", "|---|---|---|---|"]
 for s, nb, st, _, _ in REC["plan"]: md.append(f"| {s} | {nb} | {st // BAR + 1}–{st // BAR + nb} | {LEVEL_WORD(REC['level'][s])} |")
 md += ["", "## Section by section", ""]
@@ -150,12 +151,12 @@ md += ["", "**Non-negotiables.**", "",
        "- The guitar under him, never a step from the note he sings.", f"- The last chorus’s last bar: {_lb}.", "",
        "**Mix priorities.** The voice in front and centre, dry and close. The harmony voice tucked under it, slightly right. The guitar left of centre, under the voice. Bass and kick locked together under everything. Nothing may cover the title line.", "",
        PB, "### Production brief", "",
-       f"**The song.** “{REC['title']}”, words and music by Jason Bryant: a folk ballad in C major at ♩ = 84, {mm}:{ss:02d}, for a baritone with a harmony voice, acoustic guitar, bass and drums.", "",
+       f"**The song.** “{REC['title']}”, words and music by Jason Bryant: a folk ballad in {KI.KEYSTR} at ♩ = 84, {mm}:{ss:02d}, for a baritone with a harmony voice, acoustic guitar, bass and drums.", "",
        "**References** (checked): Jason Isbell, “Elephant” (2013); John Prine, “Hello in There” (1971); Johnny Cash, “Hurt” (2002). What to take from each is on the one-sheet.", "",
        "**Non-negotiables.** As on the one-sheet.", "",
        "### Session notes", "",
        f"- Tempo and click: ♩ = 84 throughout, 4/4. The voice enters in bar {min(bar(n['on']) for n in LEAD)}.",
-       "- Key: C major. Chords bar by bar are on the number chart and above the lead sheet.",
+       f"- Key: {KI.KEYSTR}. Chords bar by bar are on the number chart and above the lead sheet.",
        f"- Range: voice {rng[0]} to {rng[1]}; harmony {hr[0]} to {hr[1]}.",
        "- Tracking: guitar and click first, then bass and drums, then the lead voice, then the harmony voice.",
        "- Blend and panning: voice centre; harmony slightly right; guitar left of centre; bass and kick centre.",

@@ -1,6 +1,7 @@
-"""Module 11.11 demo for 'Same Time Tomorrow' (song 58; a folk ballad, C major, q = 84, 4/4), adapted from demo_p65.py. Guide voice: a tenor sax
+"""Module 11.11 demo for 'Same Time Tomorrow' (song 58; a folk ballad, in the record's key, q = 84, 4/4), adapted from demo_p65.py. Guide voice: a tenor sax
 at pitch for the baritone; the harmony voice on a soft choir. Every part read from the song record and humanized here (pink-noise velocity and timing, v43; the
 drums kept on the grid). General MIDI and the MP3 (no GarageBand MIDI; a full score)."""
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo58 as KI
 import pickle, subprocess, os, sys
 import numpy as np, mido
 from scipy.io import wavfile
@@ -58,7 +59,7 @@ def write(path, gm=True, only=None):
     mf = mido.MidiFile(ticks_per_beat=T)
     t0 = mido.MidiTrack(); mf.tracks.append(t0)
     t0.append(mido.MetaMessage("track_name", name=REC["title"], time=0))
-    evs = [(0, 2, mido.MetaMessage("key_signature", key="C", time=0))]
+    evs = [(0, 2, mido.MetaMessage("key_signature", key=KI.TONIC, time=0))]
     q0 = None
     for x in BARS:                                                                           # the tempo plan (A), bar by bar
         if x["qbpm"] != q0: evs.append((tk(x["start"]), 0, mido.MetaMessage("set_tempo", tempo=mido.bpm2tempo(x["qbpm"]), time=0))); q0 = x["qbpm"]

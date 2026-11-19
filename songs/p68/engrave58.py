@@ -1,11 +1,12 @@
 """'Same Time Tomorrow' (song 58) -- the lead sheet and the parts, written bar by bar from song_record.pkl (build58.py, from lyric58.song.json).
-C major, q = 84, all 4/4; grid: twelfths of a beat. Chord symbols by the half-bar. The voices on treble_8 (sounding an octave lower).
+In the record's key (keyinfo58), q = 84, all 4/4; grid: twelfths of a beat. Chord symbols by the half-bar. The voices on treble_8 (sounding an octave lower).
 Adapted from songs/p65/engrave_p65.py. Every pitched staff is read back from LilyPond's MIDI; the drums counted."""
 import pickle, collections, os, sys, re, json
 sys.path[:0] = ["/home/claude/carol", "/home/claude/p68"]
 from lily import compile_ly, midi_readback
 REC = pickle.load(open("/home/claude/p68/song_record.pkl", "rb"))
-_NM = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"]; _ps = [n["midi"] for n in REC["lead"]]
+import keyinfo58 as KI
+_NM = KI.NM; _ps = [n["midi"] for n in REC["lead"]]
 OUT = "/home/claude/p68/out"; os.makedirs(OUT + "/check", exist_ok=True)
 BARS = REC["bars"]; NB = len(BARS); TOT = REC["end"]
 BST = [x["start"] for x in BARS]; BLEN = [x["len"] for x in BARS]
@@ -16,10 +17,10 @@ def bar_of(t):
         if BST[m] <= t: lo = m
         else: hi = m - 1
     return lo
-SP = {0: "c", 1: "cis", 2: "d", 3: "ees", 4: "e", 5: "f", 6: "fis", 7: "g", 8: "aes", 9: "a", 10: "bes", 11: "b"}             # C major
-def pname(p):
+SP = KI.SP             # the record's key
+def pname(p, nxt=None):
     o = p // 12 - 4
-    return SP[p % 12] + ("'" * o if o > 0 else "," * (-o))
+    return KI.lily_dir(p, nxt) + ("'" * o if o > 0 else "," * (-o))
 DUR = {3: "16", 6: "8", 9: "8.", 12: "4", 18: "4.", 24: "2", 36: "2.", 48: "1"}
 def split(pos, n, L):
     """a note of n twelfths at pos in a bar of L, written as tied values that keep the bar's beats (7/8: 2+2+3 eighths)."""
@@ -51,6 +52,7 @@ def pitched(notes):
         if dedup and dedup[-1]["on"] == n["on"]: dedup[-1] = dict(dedup[-1], p=sorted(set(dedup[-1]["p"] + n["p"]))); continue
         dedup.append(dict(n))
     notes = dedup
+    for i, n in enumerate(notes): n["nxt"] = notes[i + 1]["p"][0] if i + 1 < len(notes) and len(n["p"]) == 1 and len(notes[i + 1]["p"]) == 1 else None
     for i, n in enumerate(notes):
         nxt = notes[i + 1]["on"] if i + 1 < len(notes) else TOT
         n["dur"] = max(3, min(int(round(n["dur"] / 3)) * 3, nxt - n["on"]))
@@ -69,7 +71,7 @@ def pitched(notes):
                 tie = kind == "n" and not (k == len(sp) - 1 and m == d)
                 if kind == "r": tok = "r" + DUR[L]
                 else:
-                    ps = n["p"]; nm = pname(ps[0]) if len(ps) == 1 else "<" + " ".join(pname(p) for p in ps) + ">"
+                    ps = n["p"]; nm = pname(ps[0], n.get("nxt")) if len(ps) == 1 else "<" + " ".join(pname(p) for p in ps) + ">"
                     tok = nm + DUR[L] + ("~" if tie else "")
                     if n.get("slur_open") and first: tok += "("
                     if n.get("slur_close") and not tie and k == len(sp) - 1 and m == d: tok += ")"
@@ -82,7 +84,7 @@ REST_UNIT = {"4/4": ("1", 1), "7/8": ("8", 7), "5/4": ("4", 5)}
 RAMP = {}
 def tempo_tok(sec): return '\\tempo "Gently" 4 = 84' if sec == "Intro" else ""
 def body(bybar, marks, multirest=True):
-    toks = ["\\key c \\major"]; bi = 0; rest_bars = set(); met = None
+    toks = [KI.LILY_KEY]; bi = 0; rest_bars = set(); met = None
     def has_(i): return any(t[0] != "r" for t in bybar.get(i, []))
     while bi < NB:
         if BARS[bi]["meter"] != met: met = BARS[bi]["meter"]; toks.append(METER_TOK[met])
@@ -104,7 +106,7 @@ QUALN = {"": "", "m": ":m", "m7": ":m7", "add9": ":9^7", "sus2": ":sus2", "sus4"
 def cho(c, d):
     base, _, bs = c.partition("/")
     rt_ = base[:2] if len(base) > 1 and base[1] in "#b" else base[:1]; q_ = base[len(rt_):]
-    return f"{ROOTN[rt_]}{d}{QUALN[q_]}" + (f"/{ROOTN[bs]}" if bs else "")
+    return f"{KI.lily_root(rt_)}{d}{QUALN[q_]}" + (f"/{KI.lily_root(bs)}" if bs else "")
 def chords_for(rest_bars):
     out, i = [], 0
     while i < NB:
@@ -198,7 +200,7 @@ NOTE1 = (f"The title opens every chorus (bars {B1['Chorus 1']}, {B1['Chorus 2']}
 NOTE2 = "A harmony voice sings under him in all three choruses, in his rhythm and words, mostly a third to a fifth below."
 NOTE3 = "A folk ballad, ♩ = 84: the guitar strums eighths under him from bar 1 to the end; the bass on every beat; kick on 1 and 3, snare on 2 and 4, hat eighths."
 TITLE = REC["title"]; FT = REC["file_title"]
-FOOT = f"{TITLE} ({REC['edition']}) · Words and music: Jason Bryant · ♩ = 84, folk ballad · C major · {_mm}:{_ss:02d}"
+FOOT = f"{TITLE} ({REC['edition']}) · Words and music: Jason Bryant · ♩ = 84, folk ballad · {KI.KEYSTR} · {_mm}:{_ss:02d}"
 CHN = lambda rest: f'\\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(rest)} }}'
 _g = REC["parts"]["guitar"]; _b = REC["parts"]["bass"]
 ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses, which sit about " + f"{_LIFT:g}" + " semitones higher. Sing the title as written: " + _TD[0] + ".",

@@ -1,5 +1,6 @@
 """'Same Time Tomorrow' (song 58): every document against the record (lyric58.song.json, through song_record.pkl). Run after build58, engrave58,
 score58, musicxml58, nashville58, demo58 and songbook58. Prints each check and exits 1 if any fails."""
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo58 as KI
 import pickle, json, os, re, subprocess, sys, collections
 import mido
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out"); FT = None
@@ -26,10 +27,13 @@ for doc in ("lead sheet", "full score", "parts", "Nashville chart"):
     p = os.path.join(OUT, f"{FT} - {doc}.pdf"); ok = os.path.exists(p)
     txt = subprocess.run(["pdftotext", p, "-"], capture_output=True, text=True).stdout if ok else ""
     chk(f"{doc}: PDF written, credit line", ok and "Words and music: Jason Bryant" in txt, f"{subprocess.run(['pdfinfo', p], capture_output=True, text=True).stdout.split('Pages:')[1].split()[0] if ok else 0} pages")
-    if doc != "Nashville chart": chk(f"{doc}: footer tempo and key", "♩ = 84" in txt or "= 84" in txt)
+    if doc != "Nashville chart": chk(f"{doc}: footer tempo and key", ("♩ = 84" in txt or "= 84" in txt) and KI.KEYSTR in txt, KI.KEYSTR)
+    else: chk("Nashville chart: the record's key, 1 = its tonic", f"KEY: {KI.KEYSTR}" in txt.replace("\n", " ") or KI.KEYSTR in txt, KI.numbers_line())
+    if doc != "Nashville chart":
+        ly = os.path.join(OUT, f"{FT} - {doc}.ly"); chk(f"{doc}: key signature is the record's", os.path.exists(ly) and KI.LILY_KEY in open(ly).read() and "\\key c \\major" not in open(ly).read(), KI.LILY_KEY)
 # the number chart against the record
-nv = open(os.path.join(OUT, "nashville.html")).read(); RN = {"C": "1", "D": "2", "E": "3", "F": "4", "G": "5", "A": "6", "B": "7", "Bb": "♭7", "Eb": "♭3", "Ab": "♭6", "F#": "♯4"}
-num = lambda c: RN[c[:2] if len(c) > 1 and c[1] in "#b" else c[0]] + ("m" if c.endswith("m") else "")
+nv = open(os.path.join(OUT, "nashville.html")).read()
+num = lambda c: KI.number(c[:2] if len(c) > 1 and c[1] in "#b" else c[0]) + ("m" if c.endswith("m") else "")
 want = [" ".join(num(c) for c in (x["beats4"] or [])) if x.get("beats4") else (num(x["chord"]) if x["chord"] == x["chord2"] else num(x["chord"]) + " " + num(x["chord2"])) for x in REC["bars"]]
 cells = re.findall(r"<td>([^<]*)</td>", nv); chk("number chart: one cell a bar, as the record", cells == want, f"{len(cells)} cells")
 # MusicXML: counted by the writer; re-read the lead sheet's pitches
