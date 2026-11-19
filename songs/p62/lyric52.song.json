@@ -423,16 +423,17 @@
    "sure endings": -0.018359339601533797
   },
   "words_gate": null,
-  "pick_words_fit": {
-   "length": 0.21987796399842593,
-   "place": 0.3185451395731411,
-   "height": 0.037028231039236977,
-   "all": 0.2893008281067415
-  },
+  "pick_words_fit": null,
   "pool": "no build passed the joint gate: the least distance among the old charge's least half",
   "gates_passed": {
    "old_charge_least_half": 38,
-   "joint_gate": 0
+   "joint_gate": 0,
+   "words_gate": null
+  },
+  "gates_removed": {
+   "old_charge": 38,
+   "joint_gate": 38,
+   "words_gate": null
   },
   "shortlist": [
    {
@@ -2849,12 +2850,23 @@
    },
    {
     "on": 378,
-    "dur": 6,
+    "dur": 3,
     "midi": 64,
     "sec": "Verse 1",
     "line": 2,
     "text": "get",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 381,
+    "dur": 3,
+    "midi": 62,
+    "sec": "Verse 1",
+    "line": 2,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 384,
@@ -2912,12 +2924,23 @@
    },
    {
     "on": 408,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Verse 1",
     "line": 2,
     "text": "tired",
-    "stress": false
+    "stress": false,
+    "melisma": "first"
+   },
+   {
+    "on": 411,
+    "dur": 3,
+    "midi": 60,
+    "sec": "Verse 1",
+    "line": 2,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 414,
@@ -3146,12 +3169,23 @@
    },
    {
     "on": 576,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Chorus 1",
     "line": 1,
     "text": "like",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 579,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Chorus 1",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 582,
@@ -3164,12 +3198,23 @@
    },
    {
     "on": 588,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Chorus 1",
     "line": 1,
     "text": "sun's",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 591,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Chorus 1",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 594,
@@ -3263,23 +3308,12 @@
    },
    {
     "on": 648,
-    "dur": 9,
+    "dur": 18,
     "midi": 62,
     "sec": "Chorus 1",
     "line": 2,
     "text": "you're",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 657,
-    "dur": 9,
-    "midi": 60,
-    "sec": "Chorus 1",
-    "line": 2,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 666,
@@ -3467,23 +3501,12 @@
    },
    {
     "on": 792,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Chorus 1",
     "line": 4,
     "text": "there's",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 798,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Chorus 1",
-    "line": 4,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 804,
@@ -3496,23 +3519,12 @@
    },
    {
     "on": 810,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Chorus 1",
     "line": 4,
     "text": "door",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 816,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Chorus 1",
-    "line": 4,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 822,
@@ -3534,23 +3546,12 @@
    },
    {
     "on": 828,
-    "dur": 12,
+    "dur": 24,
     "midi": 67,
     "sec": "Chorus 1",
     "line": 4,
     "text": "wall",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 840,
-    "dur": 12,
-    "midi": 65,
-    "sec": "Chorus 1",
-    "line": 4,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 996,
@@ -3572,12 +3573,23 @@
    },
    {
     "on": 1014,
-    "dur": 6,
+    "dur": 3,
     "midi": 69,
     "sec": "Verse 2",
     "line": 0,
     "text": "kept",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 1017,
+    "dur": 3,
+    "midi": 67,
+    "sec": "Verse 2",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 1020,
@@ -3590,12 +3602,23 @@
    },
    {
     "on": 1026,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Verse 2",
     "line": 0,
     "text": "cup",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 1029,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Verse 2",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 1032,
@@ -3691,12 +3714,23 @@
    },
    {
     "on": 1098,
-    "dur": 6,
+    "dur": 3,
     "midi": 64,
     "sec": "Verse 2",
     "line": 1,
     "text": "open",
-    "stress": false
+    "stress": false,
+    "melisma": "first"
+   },
+   {
+    "on": 1101,
+    "dur": 3,
+    "midi": 62,
+    "sec": "Verse 2",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 1104,
@@ -3853,32 +3887,32 @@
    },
    {
     "on": 1200,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Verse 2",
     "line": 2,
     "text": "north",
-    "stress": true
-   },
-   {
-    "on": 1206,
-    "dur": 6,
-    "midi": 62,
-    "sec": "Verse 2",
-    "line": 2,
-    "text": "wall",
     "stress": true,
     "melisma": "first"
    },
    {
-    "on": 1212,
-    "dur": 9,
+    "on": 1203,
+    "dur": 3,
     "midi": 60,
     "sec": "Verse 2",
     "line": 2,
     "text": "",
     "stress": false,
     "melisma": "second"
+   },
+   {
+    "on": 1206,
+    "dur": 15,
+    "midi": 62,
+    "sec": "Verse 2",
+    "line": 2,
+    "text": "wall",
+    "stress": true
    },
    {
     "on": 1233,
@@ -4188,12 +4222,23 @@
    },
    {
     "on": 1422,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Chorus 2",
     "line": 1,
     "text": "falls",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 1425,
+    "dur": 3,
+    "midi": 60,
+    "sec": "Chorus 2",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 1440,
@@ -4273,23 +4318,12 @@
    },
    {
     "on": 1494,
-    "dur": 9,
+    "dur": 18,
     "midi": 67,
     "sec": "Chorus 2",
     "line": 2,
     "text": "door",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 1503,
-    "dur": 9,
-    "midi": 65,
-    "sec": "Chorus 2",
-    "line": 2,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 1524,
@@ -4401,23 +4435,12 @@
    },
    {
     "on": 1584,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Chorus 2",
     "line": 4,
     "text": "there's",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 1590,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Chorus 2",
-    "line": 4,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 1596,
@@ -4468,23 +4491,12 @@
    },
    {
     "on": 1620,
-    "dur": 12,
+    "dur": 24,
     "midi": 67,
     "sec": "Chorus 2",
     "line": 4,
     "text": "wall",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 1632,
-    "dur": 12,
-    "midi": 65,
-    "sec": "Chorus 2",
-    "line": 4,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 1932,
@@ -4506,12 +4518,23 @@
    },
    {
     "on": 1944,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Verse 3",
     "line": 0,
     "text": "margaret",
-    "stress": false
+    "stress": false,
+    "melisma": "first"
+   },
+   {
+    "on": 1947,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Verse 3",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 1950,
@@ -4659,12 +4682,23 @@
    },
    {
     "on": 2052,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Verse 3",
     "line": 1,
     "text": "way",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2055,
+    "dur": 3,
+    "midi": 60,
+    "sec": "Verse 3",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2058,
@@ -4893,12 +4927,23 @@
    },
    {
     "on": 2208,
-    "dur": 6,
+    "dur": 3,
     "midi": 69,
     "sec": "Verse 3",
     "line": 3,
     "text": "since",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2211,
+    "dur": 3,
+    "midi": 67,
+    "sec": "Verse 3",
+    "line": 3,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2214,
@@ -4983,12 +5028,23 @@
    },
    {
     "on": 2280,
-    "dur": 6,
+    "dur": 3,
     "midi": 64,
     "sec": "Bridge",
     "line": 0,
     "text": "coming",
-    "stress": false
+    "stress": false,
+    "melisma": "first"
+   },
+   {
+    "on": 2283,
+    "dur": 3,
+    "midi": 62,
+    "sec": "Bridge",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2286,
@@ -5073,12 +5129,23 @@
    },
    {
     "on": 2346,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Bridge",
     "line": 1,
     "text": "kettle",
-    "stress": false
+    "stress": false,
+    "melisma": "first"
+   },
+   {
+    "on": 2349,
+    "dur": 3,
+    "midi": 60,
+    "sec": "Bridge",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2352,
@@ -5118,12 +5185,23 @@
    },
    {
     "on": 2388,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Bridge",
     "line": 2,
     "text": "next",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2391,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Bridge",
+    "line": 2,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2394,
@@ -5181,23 +5259,12 @@
    },
    {
     "on": 2430,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Bridge",
     "line": 2,
     "text": "breath",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 2436,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Bridge",
-    "line": 2,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 2454,
@@ -5327,21 +5394,43 @@
    },
    {
     "on": 2538,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Verse 4",
     "line": 0,
     "text": "two",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2541,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Verse 4",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2544,
-    "dur": 6,
+    "dur": 3,
     "midi": 65,
     "sec": "Verse 4",
     "line": 0,
     "text": "cups",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2547,
+    "dur": 3,
+    "midi": 64,
+    "sec": "Verse 4",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2550,
@@ -5363,12 +5452,23 @@
    },
    {
     "on": 2562,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Verse 4",
     "line": 0,
     "text": "sat",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2565,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Verse 4",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2568,
@@ -5597,12 +5697,23 @@
    },
    {
     "on": 2718,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Verse 4",
     "line": 2,
     "text": "open",
-    "stress": false
+    "stress": false,
+    "melisma": "first"
+   },
+   {
+    "on": 2721,
+    "dur": 3,
+    "midi": 60,
+    "sec": "Verse 4",
+    "line": 2,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2742,
@@ -5705,12 +5816,23 @@
    },
    {
     "on": 2808,
-    "dur": 6,
+    "dur": 3,
     "midi": 62,
     "sec": "Last Chorus",
     "line": 0,
     "text": "it's",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2811,
+    "dur": 3,
+    "midi": 60,
+    "sec": "Last Chorus",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2814,
@@ -5795,12 +5917,23 @@
    },
    {
     "on": 2862,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Last Chorus",
     "line": 0,
     "text": "hand",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2865,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Last Chorus",
+    "line": 0,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2880,
@@ -5822,12 +5955,23 @@
    },
    {
     "on": 2892,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Last Chorus",
     "line": 1,
     "text": "sun's",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 2895,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Last Chorus",
+    "line": 1,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 2898,
@@ -6002,12 +6146,23 @@
    },
    {
     "on": 3006,
-    "dur": 6,
+    "dur": 3,
     "midi": 67,
     "sec": "Last Chorus",
     "line": 2,
     "text": "walk",
-    "stress": true
+    "stress": true,
+    "melisma": "first"
+   },
+   {
+    "on": 3009,
+    "dur": 3,
+    "midi": 65,
+    "sec": "Last Chorus",
+    "line": 2,
+    "text": "",
+    "stress": false,
+    "melisma": "second"
    },
    {
     "on": 3012,
@@ -6119,23 +6274,12 @@
    },
    {
     "on": 3096,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Last Chorus",
     "line": 4,
     "text": "there's",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 3102,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Last Chorus",
-    "line": 4,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 3108,
@@ -6206,23 +6350,12 @@
    },
    {
     "on": 3168,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Last Chorus",
     "line": 5,
     "text": "there's",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 3174,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Last Chorus",
-    "line": 5,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 3180,
@@ -6235,23 +6368,12 @@
    },
    {
     "on": 3186,
-    "dur": 6,
+    "dur": 12,
     "midi": 62,
     "sec": "Last Chorus",
     "line": 5,
     "text": "door",
-    "stress": true,
-    "melisma": "first"
-   },
-   {
-    "on": 3192,
-    "dur": 6,
-    "midi": 60,
-    "sec": "Last Chorus",
-    "line": 5,
-    "text": "",
-    "stress": false,
-    "melisma": "second"
+    "stress": true
    },
    {
     "on": 3198,
@@ -6292,6 +6414,7 @@
     "melisma": "second"
    }
   ],
+  "melisma_line_end_share_kept_for_this_song": 0.229,
   "melisma_share_drawn": 0.086
  },
  "bass": [
@@ -9507,12 +9630,12 @@
    28,
    43
   ],
-  "syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": 5.7,
-  "of those, at a line's end (kept 20 in 100); on a word's end (kept 94)": [
-   45,
+  "syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": 8.6,
+  "of those, at a line's end (kept 20 in 100 where 8 syllables in 100 end a phrase; for this song's line ends, 23); on a word's end (kept 94)": [
+   24,
    100
   ],
-  "long notes on stressed syllables (kept quartiles 0.43, 0.55, 0.65)": 0.522,
+  "long notes on stressed syllables (kept quartiles 0.43, 0.55, 0.65)": 0.5,
   "flat third; flat seventh; leading tone, share of notes (kept, this family)": [
    0.0,
    0.0,
@@ -9525,7 +9648,19 @@
   "the title's stressed syllables on a beat (kept 0.73)": 0.688,
   "title lines": 3,
   "length in seconds (kept quartiles 165, 206, 243)": 218,
-  "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": 0.8
+  "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": 0.3
+ },
+ "harmony_fit": {
+  "rounds": 5,
+  "miss": 0.104,
+  "weights": {
+   "unison": 1.371,
+   "3rd": 1.465,
+   "4th": 0.509,
+   "5th": 1.843,
+   "6th": 0.785,
+   "octave": 1.355
+  }
  },
  "parts": {
   "chords": [
@@ -9660,12 +9795,22 @@
     "vel": 74
    },
    {
+    "on": 252,
+    "dur": 15,
+    "p": [
+     55,
+     59,
+     64
+    ],
+    "vel": 74
+   },
+   {
     "on": 324,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
@@ -9673,19 +9818,9 @@
     "on": 342,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
-    ],
-    "vel": 74
-   },
-   {
-    "on": 396,
-    "dur": 15,
-    "p": [
-     50,
-     55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
@@ -9693,9 +9828,9 @@
     "on": 414,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
@@ -9703,9 +9838,19 @@
     "on": 468,
     "dur": 15,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
+    ],
+    "vel": 74
+   },
+   {
+    "on": 486,
+    "dur": 15,
+    "p": [
+     55,
+     60,
+     64
     ],
     "vel": 74
    },
@@ -9713,9 +9858,9 @@
     "on": 504,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9723,9 +9868,9 @@
     "on": 510,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9733,9 +9878,9 @@
     "on": 516,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9743,9 +9888,9 @@
     "on": 522,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9753,9 +9898,9 @@
     "on": 528,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9763,9 +9908,9 @@
     "on": 534,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9773,9 +9918,9 @@
     "on": 540,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -9861,16 +10006,6 @@
    },
    {
     "on": 594,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
-    "on": 600,
     "dur": 5,
     "p": [
      50,
@@ -10123,9 +10258,9 @@
     "on": 750,
     "dur": 5,
     "p": [
+     48,
      53,
-     57,
-     60
+     57
     ],
     "vel": 82
    },
@@ -10133,9 +10268,9 @@
     "on": 756,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -10143,9 +10278,9 @@
     "on": 762,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -10163,9 +10298,9 @@
     "on": 774,
     "dur": 5,
     "p": [
+     48,
      53,
-     57,
-     60
+     57
     ],
     "vel": 82
    },
@@ -10400,12 +10535,22 @@
     "vel": 74
    },
    {
+    "on": 1044,
+    "dur": 15,
+    "p": [
+     55,
+     59,
+     64
+    ],
+    "vel": 74
+   },
+   {
     "on": 1116,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
@@ -10413,14 +10558,14 @@
     "on": 1134,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
    {
-    "on": 1152,
+    "on": 1170,
     "dur": 15,
     "p": [
      55,
@@ -10430,22 +10575,22 @@
     "vel": 74
    },
    {
-    "on": 1188,
+    "on": 1206,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
    {
-    "on": 1206,
+    "on": 1224,
     "dur": 15,
     "p": [
-     50,
-     55,
-     59
+     57,
+     60,
+     64
     ],
     "vel": 74
    },
@@ -10460,12 +10605,22 @@
     "vel": 74
    },
    {
+    "on": 1278,
+    "dur": 15,
+    "p": [
+     55,
+     60,
+     64
+    ],
+    "vel": 74
+   },
+   {
     "on": 1296,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10473,9 +10628,9 @@
     "on": 1302,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10483,9 +10638,9 @@
     "on": 1308,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10493,9 +10648,9 @@
     "on": 1314,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10503,9 +10658,9 @@
     "on": 1320,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10513,9 +10668,9 @@
     "on": 1326,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10523,9 +10678,9 @@
     "on": 1332,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -10620,16 +10775,6 @@
     "vel": 82
    },
    {
-    "on": 1392,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
     "on": 1398,
     "dur": 5,
     "p": [
@@ -10670,16 +10815,6 @@
     "vel": 82
    },
    {
-    "on": 1422,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
     "on": 1428,
     "dur": 5,
     "p": [
@@ -10701,26 +10836,6 @@
    },
    {
     "on": 1440,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
-    "on": 1446,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
-    "on": 1452,
     "dur": 5,
     "p": [
      50,
@@ -10873,9 +10988,9 @@
     "on": 1542,
     "dur": 5,
     "p": [
+     48,
      53,
-     57,
-     60
+     57
     ],
     "vel": 82
    },
@@ -10883,9 +10998,9 @@
     "on": 1548,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -10893,9 +11008,9 @@
     "on": 1554,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -10913,9 +11028,9 @@
     "on": 1566,
     "dur": 5,
     "p": [
+     48,
      53,
-     57,
-     60
+     57
     ],
     "vel": 82
    },
@@ -10971,16 +11086,6 @@
    },
    {
     "on": 1602,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
-    "on": 1608,
     "dur": 5,
     "p": [
      50,
@@ -11220,22 +11325,22 @@
     "vel": 77
    },
    {
-    "on": 1944,
+    "on": 1980,
     "dur": 15,
     "p": [
      55,
-     60,
+     59,
      64
     ],
     "vel": 74
    },
    {
-    "on": 2052,
+    "on": 1998,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     64
     ],
     "vel": 74
    },
@@ -11243,14 +11348,14 @@
     "on": 2070,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
    {
-    "on": 2088,
+    "on": 2106,
     "dur": 15,
     "p": [
      55,
@@ -11260,22 +11365,32 @@
     "vel": 74
    },
    {
-    "on": 2124,
+    "on": 2142,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
    {
-    "on": 2142,
+    "on": 2160,
     "dur": 15,
     "p": [
-     50,
-     55,
-     59
+     57,
+     60,
+     64
+    ],
+    "vel": 74
+   },
+   {
+    "on": 2178,
+    "dur": 15,
+    "p": [
+     52,
+     57,
+     60
     ],
     "vel": 74
    },
@@ -11360,7 +11475,7 @@
     "vel": 79
    },
    {
-    "on": 2412,
+    "on": 2430,
     "dur": 15,
     "p": [
      53,
@@ -11370,42 +11485,12 @@
     "vel": 79
    },
    {
-    "on": 2448,
-    "dur": 15,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 79
-   },
-   {
-    "on": 2466,
-    "dur": 15,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 79
-   },
-   {
-    "on": 2484,
-    "dur": 15,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 79
-   },
-   {
     "on": 2502,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 79
    },
@@ -11420,12 +11505,32 @@
     "vel": 74
    },
    {
+    "on": 2574,
+    "dur": 15,
+    "p": [
+     55,
+     59,
+     64
+    ],
+    "vel": 74
+   },
+   {
+    "on": 2592,
+    "dur": 15,
+    "p": [
+     55,
+     60,
+     64
+    ],
+    "vel": 74
+   },
+   {
     "on": 2628,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
@@ -11433,39 +11538,19 @@
     "on": 2646,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 74
    },
    {
-    "on": 2700,
+    "on": 2682,
     "dur": 15,
     "p": [
-     50,
      55,
-     59
-    ],
-    "vel": 74
-   },
-   {
-    "on": 2718,
-    "dur": 15,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 74
-   },
-   {
-    "on": 2736,
-    "dur": 15,
-    "p": [
-     52,
-     57,
-     60
+     60,
+     64
     ],
     "vel": 74
    },
@@ -11490,22 +11575,22 @@
     "vel": 74
    },
    {
-    "on": 2808,
-    "dur": 5,
+    "on": 2790,
+    "dur": 15,
     "p": [
-     50,
      55,
-     59
+     60,
+     64
     ],
-    "vel": 82
+    "vel": 74
    },
    {
     "on": 2814,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -11513,9 +11598,9 @@
     "on": 2820,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -11523,9 +11608,9 @@
     "on": 2826,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -11533,9 +11618,9 @@
     "on": 2832,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -11543,9 +11628,9 @@
     "on": 2838,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -11553,9 +11638,9 @@
     "on": 2844,
     "dur": 5,
     "p": [
-     50,
      55,
-     59
+     59,
+     62
     ],
     "vel": 82
    },
@@ -11641,16 +11726,6 @@
    },
    {
     "on": 2898,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
-    "on": 2904,
     "dur": 5,
     "p": [
      50,
@@ -11903,9 +11978,9 @@
     "on": 3054,
     "dur": 5,
     "p": [
+     48,
      53,
-     57,
-     60
+     57
     ],
     "vel": 82
    },
@@ -11913,9 +11988,9 @@
     "on": 3060,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -11923,9 +11998,9 @@
     "on": 3066,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -11943,9 +12018,9 @@
     "on": 3078,
     "dur": 5,
     "p": [
-     48,
      53,
-     57
+     57,
+     60
     ],
     "vel": 82
    },
@@ -12001,16 +12076,6 @@
    },
    {
     "on": 3114,
-    "dur": 5,
-    "p": [
-     50,
-     55,
-     59
-    ],
-    "vel": 82
-   },
-   {
-    "on": 3120,
     "dur": 5,
     "p": [
      50,
@@ -12090,37 +12155,7 @@
     "vel": 82
    },
    {
-    "on": 3168,
-    "dur": 5,
-    "p": [
-     52,
-     57,
-     60
-    ],
-    "vel": 82
-   },
-   {
     "on": 3180,
-    "dur": 5,
-    "p": [
-     52,
-     57,
-     60
-    ],
-    "vel": 82
-   },
-   {
-    "on": 3186,
-    "dur": 5,
-    "p": [
-     52,
-     57,
-     60
-    ],
-    "vel": 82
-   },
-   {
-    "on": 3198,
     "dur": 5,
     "p": [
      52,
@@ -12141,16 +12176,6 @@
    },
    {
     "on": 3210,
-    "dur": 5,
-    "p": [
-     55,
-     60,
-     64
-    ],
-    "vel": 82
-   },
-   {
-    "on": 3216,
     "dur": 5,
     "p": [
      55,
@@ -18551,7 +18576,7 @@
     "on": 510,
     "dur": 6,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "the",
@@ -18561,7 +18586,7 @@
     "on": 516,
     "dur": 6,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "north",
@@ -18571,7 +18596,7 @@
     "on": 522,
     "dur": 6,
     "p": [
-     67
+     62
     ],
     "vel": 70,
     "text": "wall",
@@ -18581,7 +18606,7 @@
     "on": 528,
     "dur": 6,
     "p": [
-     64
+     62
     ],
     "vel": 70,
     "text": "love",
@@ -18591,7 +18616,7 @@
     "on": 534,
     "dur": 6,
     "p": [
-     59
+     57
     ],
     "vel": 70,
     "text": "but",
@@ -18611,7 +18636,7 @@
     "on": 546,
     "dur": 6,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "warm",
@@ -18621,7 +18646,7 @@
     "on": 552,
     "dur": 3,
     "p": [
-     52
+     57
     ],
     "vel": 70,
     "text": "to",
@@ -18631,7 +18656,7 @@
     "on": 555,
     "dur": 3,
     "p": [
-     53
+     62
     ],
     "vel": 70,
     "text": "my",
@@ -18649,19 +18674,29 @@
    },
    {
     "on": 576,
-    "dur": 6,
+    "dur": 3,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "like",
     "lead": 67
    },
    {
+    "on": 579,
+    "dur": 3,
+    "p": [
+     57
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 65
+   },
+   {
     "on": 582,
     "dur": 6,
     "p": [
-     59
+     57
     ],
     "vel": 70,
     "text": "the",
@@ -18669,13 +18704,23 @@
    },
    {
     "on": 588,
-    "dur": 6,
+    "dur": 3,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "sun's",
     "lead": 67
+   },
+   {
+    "on": 591,
+    "dur": 3,
+    "p": [
+     65
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 65
    },
    {
     "on": 594,
@@ -18691,7 +18736,7 @@
     "on": 600,
     "dur": 3,
     "p": [
-     60
+     55
     ],
     "vel": 70,
     "text": "coming",
@@ -18701,7 +18746,7 @@
     "on": 603,
     "dur": 3,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "in",
@@ -18711,7 +18756,7 @@
     "on": 606,
     "dur": 3,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "where",
@@ -18721,7 +18766,7 @@
     "on": 609,
     "dur": 3,
     "p": [
-     59
+     57
     ],
     "vel": 70,
     "text": "the",
@@ -18731,7 +18776,7 @@
     "on": 612,
     "dur": 6,
     "p": [
-     55
+     62
     ],
     "vel": 70,
     "text": "sunlight",
@@ -18741,7 +18786,7 @@
     "on": 618,
     "dur": 3,
     "p": [
-     55
+     57
     ],
     "vel": 70,
     "text": "sunlight",
@@ -18761,7 +18806,7 @@
     "on": 624,
     "dur": 6,
     "p": [
-     64
+     55
     ],
     "vel": 70,
     "text": "never",
@@ -18771,7 +18816,7 @@
     "on": 630,
     "dur": 6,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "falls",
@@ -18779,29 +18824,19 @@
    },
    {
     "on": 648,
-    "dur": 9,
+    "dur": 18,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "you're",
     "lead": 62
    },
    {
-    "on": 657,
-    "dur": 9,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 666,
     "dur": 6,
     "p": [
-     55
+     62
     ],
     "vel": 70,
     "text": "just",
@@ -18811,7 +18846,7 @@
     "on": 672,
     "dur": 6,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "in",
@@ -18821,7 +18856,7 @@
     "on": 678,
     "dur": 6,
     "p": [
-     62
+     57
     ],
     "vel": 70,
     "text": "the",
@@ -18841,7 +18876,7 @@
     "on": 690,
     "dur": 6,
     "p": [
-     57
+     64
     ],
     "vel": 70,
     "text": "next",
@@ -18851,7 +18886,7 @@
     "on": 696,
     "dur": 6,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "",
@@ -18861,7 +18896,7 @@
     "on": 702,
     "dur": 9,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "door",
@@ -18921,7 +18956,7 @@
     "on": 744,
     "dur": 3,
     "p": [
-     64
+     55
     ],
     "vel": 70,
     "text": "yet",
@@ -18931,7 +18966,7 @@
     "on": 747,
     "dur": 3,
     "p": [
-     60
+     55
     ],
     "vel": 70,
     "text": "but",
@@ -18941,7 +18976,7 @@
     "on": 750,
     "dur": 6,
     "p": [
-     59
+     50
     ],
     "vel": 70,
     "text": "i'm",
@@ -18951,7 +18986,7 @@
     "on": 756,
     "dur": 6,
     "p": [
-     57
+     53
     ],
     "vel": 70,
     "text": "not",
@@ -18961,7 +18996,7 @@
     "on": 762,
     "dur": 3,
     "p": [
-     57
+     48
     ],
     "vel": 70,
     "text": "shut",
@@ -18971,7 +19006,7 @@
     "on": 765,
     "dur": 3,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "out",
@@ -18981,7 +19016,7 @@
     "on": 768,
     "dur": 6,
     "p": [
-     59
+     60
     ],
     "vel": 70,
     "text": "at",
@@ -18991,7 +19026,7 @@
     "on": 774,
     "dur": 6,
     "p": [
-     57
+     62
     ],
     "vel": 70,
     "text": "all",
@@ -18999,29 +19034,19 @@
    },
    {
     "on": 792,
-    "dur": 6,
+    "dur": 12,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "there's",
     "lead": 62
    },
    {
-    "on": 798,
-    "dur": 6,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 804,
     "dur": 6,
     "p": [
-     57
+     60
     ],
     "vel": 70,
     "text": "a",
@@ -19029,29 +19054,19 @@
    },
    {
     "on": 810,
-    "dur": 6,
+    "dur": 12,
     "p": [
-     50
+     59
     ],
     "vel": 70,
     "text": "door",
     "lead": 62
    },
    {
-    "on": 816,
-    "dur": 6,
-    "p": [
-     53
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 822,
     "dur": 3,
     "p": [
-     53
+     57
     ],
     "vel": 70,
     "text": "in",
@@ -19061,7 +19076,7 @@
     "on": 825,
     "dur": 3,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "the",
@@ -19069,23 +19084,13 @@
    },
    {
     "on": 828,
-    "dur": 12,
+    "dur": 24,
     "p": [
-     59
+     67
     ],
     "vel": 70,
     "text": "wall",
     "lead": 67
-   },
-   {
-    "on": 840,
-    "dur": 12,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 65
    },
    {
     "on": 1296,
@@ -19101,7 +19106,7 @@
     "on": 1302,
     "dur": 6,
     "p": [
-     60
+     53
     ],
     "vel": 70,
     "text": "the",
@@ -19111,7 +19116,7 @@
     "on": 1308,
     "dur": 6,
     "p": [
-     60
+     53
     ],
     "vel": 70,
     "text": "north",
@@ -19121,7 +19126,7 @@
     "on": 1314,
     "dur": 6,
     "p": [
-     55
+     59
     ],
     "vel": 70,
     "text": "wall",
@@ -19131,7 +19136,7 @@
     "on": 1320,
     "dur": 6,
     "p": [
-     55
+     59
     ],
     "vel": 70,
     "text": "love",
@@ -19141,7 +19146,7 @@
     "on": 1326,
     "dur": 6,
     "p": [
-     55
+     59
     ],
     "vel": 70,
     "text": "but",
@@ -19151,7 +19156,7 @@
     "on": 1332,
     "dur": 6,
     "p": [
-     55
+     59
     ],
     "vel": 70,
     "text": "it's",
@@ -19161,7 +19166,7 @@
     "on": 1338,
     "dur": 6,
     "p": [
-     55
+     60
     ],
     "vel": 70,
     "text": "warm",
@@ -19171,7 +19176,7 @@
     "on": 1344,
     "dur": 3,
     "p": [
-     55
+     60
     ],
     "vel": 70,
     "text": "to",
@@ -19181,7 +19186,7 @@
     "on": 1347,
     "dur": 3,
     "p": [
-     57
+     62
     ],
     "vel": 70,
     "text": "my",
@@ -19191,7 +19196,7 @@
     "on": 1350,
     "dur": 6,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "hand",
@@ -19201,7 +19206,7 @@
     "on": 1368,
     "dur": 6,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "like",
@@ -19221,7 +19226,7 @@
     "on": 1380,
     "dur": 6,
     "p": [
-     62
+     59
     ],
     "vel": 70,
     "text": "sun's",
@@ -19231,7 +19236,7 @@
     "on": 1386,
     "dur": 6,
     "p": [
-     62
+     59
     ],
     "vel": 70,
     "text": "coming",
@@ -19241,7 +19246,7 @@
     "on": 1392,
     "dur": 3,
     "p": [
-     53
+     55
     ],
     "vel": 70,
     "text": "coming",
@@ -19251,7 +19256,7 @@
     "on": 1395,
     "dur": 3,
     "p": [
-     53
+     55
     ],
     "vel": 70,
     "text": "in",
@@ -19271,7 +19276,7 @@
     "on": 1401,
     "dur": 3,
     "p": [
-     57
+     55
     ],
     "vel": 70,
     "text": "the",
@@ -19291,7 +19296,7 @@
     "on": 1410,
     "dur": 3,
     "p": [
-     59
+     55
     ],
     "vel": 70,
     "text": "sunlight",
@@ -19301,7 +19306,7 @@
     "on": 1413,
     "dur": 3,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "never",
@@ -19311,7 +19316,7 @@
     "on": 1416,
     "dur": 6,
     "p": [
-     59
+     57
     ],
     "vel": 70,
     "text": "never",
@@ -19319,19 +19324,29 @@
    },
    {
     "on": 1422,
-    "dur": 6,
+    "dur": 3,
     "p": [
-     59
+     50
     ],
     "vel": 70,
     "text": "falls",
     "lead": 62
    },
    {
+    "on": 1425,
+    "dur": 3,
+    "p": [
+     48
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 60
+   },
+   {
     "on": 1440,
     "dur": 9,
     "p": [
-     59
+     55
     ],
     "vel": 70,
     "text": "you're",
@@ -19341,7 +19356,7 @@
     "on": 1449,
     "dur": 9,
     "p": [
-     57
+     53
     ],
     "vel": 70,
     "text": "",
@@ -19361,7 +19376,7 @@
     "on": 1464,
     "dur": 6,
     "p": [
-     59
+     55
     ],
     "vel": 70,
     "text": "in",
@@ -19371,7 +19386,7 @@
     "on": 1470,
     "dur": 6,
     "p": [
-     53
+     50
     ],
     "vel": 70,
     "text": "the",
@@ -19381,7 +19396,7 @@
     "on": 1476,
     "dur": 6,
     "p": [
-     55
+     50
     ],
     "vel": 70,
     "text": "room",
@@ -19401,7 +19416,7 @@
     "on": 1488,
     "dur": 6,
     "p": [
-     53
+     55
     ],
     "vel": 70,
     "text": "",
@@ -19409,29 +19424,19 @@
    },
    {
     "on": 1494,
-    "dur": 9,
+    "dur": 18,
     "p": [
-     59
+     55
     ],
     "vel": 70,
     "text": "door",
     "lead": 67
    },
    {
-    "on": 1503,
-    "dur": 9,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 65
-   },
-   {
     "on": 1524,
     "dur": 3,
     "p": [
-     60
+     55
     ],
     "vel": 70,
     "text": "and",
@@ -19441,7 +19446,7 @@
     "on": 1527,
     "dur": 3,
     "p": [
-     60
+     55
     ],
     "vel": 70,
     "text": "i",
@@ -19451,7 +19456,7 @@
     "on": 1530,
     "dur": 3,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "can't",
@@ -19461,7 +19466,7 @@
     "on": 1533,
     "dur": 3,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "come",
@@ -19471,7 +19476,7 @@
     "on": 1536,
     "dur": 3,
     "p": [
-     60
+     64
     ],
     "vel": 70,
     "text": "yet",
@@ -19491,7 +19496,7 @@
     "on": 1542,
     "dur": 6,
     "p": [
-     59
+     50
     ],
     "vel": 70,
     "text": "i'm",
@@ -19541,7 +19546,7 @@
     "on": 1566,
     "dur": 6,
     "p": [
-     53
+     62
     ],
     "vel": 70,
     "text": "all",
@@ -19549,29 +19554,19 @@
    },
    {
     "on": 1584,
-    "dur": 6,
+    "dur": 12,
     "p": [
-     55
+     62
     ],
     "vel": 70,
     "text": "there's",
     "lead": 62
    },
    {
-    "on": 1590,
-    "dur": 6,
-    "p": [
-     55
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 1596,
     "dur": 6,
     "p": [
-     59
+     57
     ],
     "vel": 70,
     "text": "a",
@@ -19581,7 +19576,7 @@
     "on": 1602,
     "dur": 6,
     "p": [
-     59
+     55
     ],
     "vel": 70,
     "text": "door",
@@ -19591,7 +19586,7 @@
     "on": 1608,
     "dur": 6,
     "p": [
-     57
+     53
     ],
     "vel": 70,
     "text": "",
@@ -19601,7 +19596,7 @@
     "on": 1614,
     "dur": 3,
     "p": [
-     57
+     53
     ],
     "vel": 70,
     "text": "in",
@@ -19611,7 +19606,7 @@
     "on": 1617,
     "dur": 3,
     "p": [
-     64
+     62
     ],
     "vel": 70,
     "text": "the",
@@ -19619,7 +19614,7 @@
    },
    {
     "on": 1620,
-    "dur": 12,
+    "dur": 24,
     "p": [
      62
     ],
@@ -19628,30 +19623,30 @@
     "lead": 67
    },
    {
-    "on": 1632,
-    "dur": 12,
-    "p": [
-     60
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 65
-   },
-   {
     "on": 2808,
-    "dur": 6,
+    "dur": 3,
     "p": [
-     62
+     50
     ],
     "vel": 70,
     "text": "it's",
     "lead": 62
    },
    {
+    "on": 2811,
+    "dur": 3,
+    "p": [
+     48
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 60
+   },
+   {
     "on": 2814,
     "dur": 6,
     "p": [
-     62
+     53
     ],
     "vel": 70,
     "text": "the",
@@ -19661,7 +19656,7 @@
     "on": 2820,
     "dur": 6,
     "p": [
-     62
+     53
     ],
     "vel": 70,
     "text": "north",
@@ -19671,7 +19666,7 @@
     "on": 2826,
     "dur": 6,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "wall",
@@ -19681,7 +19676,7 @@
     "on": 2832,
     "dur": 6,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "love",
@@ -19691,7 +19686,7 @@
     "on": 2838,
     "dur": 6,
     "p": [
-     57
+     55
     ],
     "vel": 70,
     "text": "and",
@@ -19739,13 +19734,23 @@
    },
    {
     "on": 2862,
-    "dur": 6,
+    "dur": 3,
     "p": [
      62
     ],
     "vel": 70,
     "text": "hand",
     "lead": 67
+   },
+   {
+    "on": 2865,
+    "dur": 3,
+    "p": [
+     62
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 65
    },
    {
     "on": 2880,
@@ -19769,7 +19774,7 @@
    },
    {
     "on": 2892,
-    "dur": 6,
+    "dur": 3,
     "p": [
      62
     ],
@@ -19778,10 +19783,20 @@
     "lead": 67
    },
    {
+    "on": 2895,
+    "dur": 3,
+    "p": [
+     62
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 65
+   },
+   {
     "on": 2898,
     "dur": 6,
     "p": [
-     55
+     59
     ],
     "vel": 70,
     "text": "coming",
@@ -19791,7 +19806,7 @@
     "on": 2904,
     "dur": 3,
     "p": [
-     53
+     57
     ],
     "vel": 70,
     "text": "coming",
@@ -19801,7 +19816,7 @@
     "on": 2907,
     "dur": 3,
     "p": [
-     53
+     60
     ],
     "vel": 70,
     "text": "in",
@@ -19811,7 +19826,7 @@
     "on": 2910,
     "dur": 3,
     "p": [
-     57
+     52
     ],
     "vel": 70,
     "text": "where",
@@ -19821,7 +19836,7 @@
     "on": 2913,
     "dur": 3,
     "p": [
-     57
+     59
     ],
     "vel": 70,
     "text": "the",
@@ -19831,7 +19846,7 @@
     "on": 2916,
     "dur": 6,
     "p": [
-     62
+     59
     ],
     "vel": 70,
     "text": "sunlight",
@@ -19841,7 +19856,7 @@
     "on": 2922,
     "dur": 3,
     "p": [
-     59
+     60
     ],
     "vel": 70,
     "text": "sunlight",
@@ -19851,7 +19866,7 @@
     "on": 2925,
     "dur": 3,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "never",
@@ -19871,7 +19886,7 @@
     "on": 2934,
     "dur": 6,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "falls",
@@ -19881,7 +19896,7 @@
     "on": 2952,
     "dur": 9,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "and",
@@ -19901,7 +19916,7 @@
     "on": 2964,
     "dur": 6,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "morning",
@@ -19921,7 +19936,7 @@
     "on": 2976,
     "dur": 6,
     "p": [
-     62
+     60
     ],
     "vel": 70,
     "text": "it",
@@ -19931,7 +19946,7 @@
     "on": 2982,
     "dur": 6,
     "p": [
-     57
+     55
     ],
     "vel": 70,
     "text": "opens",
@@ -19969,19 +19984,29 @@
    },
    {
     "on": 3006,
-    "dur": 6,
+    "dur": 3,
     "p": [
-     62
+     55
     ],
     "vel": 70,
     "text": "walk",
     "lead": 67
    },
    {
+    "on": 3009,
+    "dur": 3,
+    "p": [
+     53
+    ],
+    "vel": 70,
+    "text": "",
+    "lead": 65
+   },
+   {
     "on": 3012,
     "dur": 12,
     "p": [
-     62
+     65
     ],
     "vel": 70,
     "text": "through",
@@ -20021,7 +20046,7 @@
     "on": 3048,
     "dur": 3,
     "p": [
-     62
+     67
     ],
     "vel": 70,
     "text": "thing",
@@ -20031,7 +20056,7 @@
     "on": 3051,
     "dur": 3,
     "p": [
-     59
+     64
     ],
     "vel": 70,
     "text": "i'll",
@@ -20041,7 +20066,7 @@
     "on": 3054,
     "dur": 6,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "know",
@@ -20071,7 +20096,7 @@
     "on": 3069,
     "dur": 3,
     "p": [
-     60
+     62
     ],
     "vel": 70,
     "text": "after",
@@ -20081,7 +20106,7 @@
     "on": 3072,
     "dur": 6,
     "p": [
-     59
+     60
     ],
     "vel": 70,
     "text": "after",
@@ -20099,29 +20124,19 @@
    },
    {
     "on": 3096,
-    "dur": 6,
+    "dur": 12,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "there's",
     "lead": 62
    },
    {
-    "on": 3102,
-    "dur": 6,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 3108,
     "dur": 6,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "a",
@@ -20131,7 +20146,7 @@
     "on": 3114,
     "dur": 6,
     "p": [
-     62
+     59
     ],
     "vel": 70,
     "text": "door",
@@ -20141,7 +20156,7 @@
     "on": 3120,
     "dur": 6,
     "p": [
-     60
+     57
     ],
     "vel": 70,
     "text": "",
@@ -20151,7 +20166,7 @@
     "on": 3126,
     "dur": 3,
     "p": [
-     55
+     59
     ],
     "vel": 70,
     "text": "in",
@@ -20161,7 +20176,7 @@
     "on": 3129,
     "dur": 3,
     "p": [
-     69
+     65
     ],
     "vel": 70,
     "text": "the",
@@ -20181,7 +20196,7 @@
     "on": 3144,
     "dur": 12,
     "p": [
-     65
+     62
     ],
     "vel": 70,
     "text": "",
@@ -20189,7 +20204,7 @@
    },
    {
     "on": 3168,
-    "dur": 6,
+    "dur": 12,
     "p": [
      62
     ],
@@ -20198,20 +20213,10 @@
     "lead": 62
    },
    {
-    "on": 3174,
-    "dur": 6,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 3180,
     "dur": 6,
     "p": [
-     60
+     52
     ],
     "vel": 70,
     "text": "a",
@@ -20219,7 +20224,7 @@
    },
    {
     "on": 3186,
-    "dur": 6,
+    "dur": 12,
     "p": [
      62
     ],
@@ -20228,20 +20233,10 @@
     "lead": 62
    },
    {
-    "on": 3192,
-    "dur": 6,
-    "p": [
-     57
-    ],
-    "vel": 70,
-    "text": "",
-    "lead": 60
-   },
-   {
     "on": 3198,
     "dur": 3,
     "p": [
-     59
+     62
     ],
     "vel": 70,
     "text": "in",
@@ -20251,7 +20246,7 @@
     "on": 3201,
     "dur": 3,
     "p": [
-     65
+     62
     ],
     "vel": 70,
     "text": "the",
@@ -20261,7 +20256,7 @@
     "on": 3204,
     "dur": 12,
     "p": [
-     64
+     60
     ],
     "vel": 70,
     "text": "wall",
@@ -20271,7 +20266,7 @@
     "on": 3216,
     "dur": 12,
     "p": [
-     62
+     60
     ],
     "vel": 70,
     "text": "",
@@ -22083,9 +22078,17 @@
    },
    {
     "on": 1818,
-    "dur": 6,
+    "dur": 3,
     "p": [
      76
+    ],
+    "vel": 88
+   },
+   {
+    "on": 1821,
+    "dur": 3,
+    "p": [
+     74
     ],
     "vel": 88
    },
@@ -22139,9 +22142,17 @@
    },
    {
     "on": 1848,
-    "dur": 6,
+    "dur": 3,
     "p": [
      74
+    ],
+    "vel": 88
+   },
+   {
+    "on": 1851,
+    "dur": 3,
+    "p": [
+     72
     ],
     "vel": 88
    },
@@ -22302,60 +22313,65 @@
  },
  "band_checks": {
   "chord voicings inside the low-interval limits": true,
-  "sung notes with accompaniment above them, share": 0.0,
-  "sung notes with accompaniment a second away, share": 0.103,
+  "sung notes with the chordal part sounding under them, share (892)": 0.632,
+  "sung notes with accompaniment above them, share": 0.012,
+  "sung notes with accompaniment a second away, share": 0.0,
   "harmony voice: interval classes, written / kept below the lead": {
    "3rd": [
-    0.31,
+    0.298,
     0.295
    ],
    "5th": [
-    0.138,
+    0.152,
     0.176
    ],
    "octave": [
-    0.046,
+    0.175,
     0.155
    ],
    "unison": [
-    0.132,
+    0.164,
     0.151
    ],
    "4th": [
-    0.264,
+    0.135,
     0.119
    ],
    "6th": [
-    0.109,
+    0.076,
     0.104
    ]
   },
   "harmony voice: parallel perfect fifths, octaves and unisons a hundred motions, written / kept": [
-   4.7,
+   10.1,
    14.09
   ],
   "harmony voice: motion, written / kept": {
    "static": [
-    0.164,
+    0.179,
     0.225
    ],
    "oblique": [
-    0.24,
+    0.256,
     0.298
    ],
    "contrary": [
-    0.123,
+    0.185,
     0.099
    ],
    "parallel": [
-    0.374,
+    0.286,
     0.278
    ],
    "similar": [
-    0.099,
+    0.095,
     0.1
    ]
   },
+  "harmony voice: lowest note; notes under E2 (893)": [
+   48,
+   0
+  ],
   "harmony voice crosses the lead": 0,
   "harmony voice a second from the lead": 0,
   "sung phrases, seconds (median, longest)": [
@@ -22365,15 +22381,15 @@
   "sung phrases over eight seconds": 0,
   "kicks with a bass note on them, share": 1.0,
   "roughness at sung onsets (median, 90th percentile)": [
-   0.677,
-   1.005
+   0.588,
+   0.885
   ],
   "roughest bars": [
-   81,
-   39,
-   23,
-   87,
-   41
+   43,
+   21,
+   84,
+   45,
+   81
   ]
  }
 }
