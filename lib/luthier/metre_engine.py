@@ -344,7 +344,10 @@ class Engine:
                     if self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design":
                         ln = flat[i0:j + 1]; tr_ = WW_.tier([(x["text"], x["stress"]) for x in ln])[-1]; G_ = (flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR) - n["on"]; gi = min(range(len(GV)), key=lambda q: abs(GV[q] - G_))
                         w_ = C_[tr_][gi] if C_[tr_][gi].sum() >= 20 else C_[:, gi].sum(0); top = G_
-                        if n["on"] - ph0 > 8 * self.BEAT and G_ >= 12: top = G_ - self.BEAT // 2          # 909 (749.88): a phrase already past eight beats ends in half a beat of rest at the least, so run-ons do not chain
+                        nl_ = j + 1                                                               # 915 (749.92): look ahead: if this phrase and the whole next line would pass twelve beats, this line ends in a breath
+                        while nl_ + 1 < len(flat) and (flat[nl_ + 1]["sec"], flat[nl_ + 1]["line"]) == (flat[j + 1]["sec"], flat[j + 1]["line"]) if j + 1 < len(flat) else False: nl_ += 1
+                        ahead_ = (flat[nl_]["on"] + self.END - ph0) if j + 1 < len(flat) else 0
+                        if (n["on"] - ph0 > 8 * self.BEAT or ahead_ > 12 * self.BEAT) and G_ >= 12: top = G_ - self.BEAT // 2          # 909 (749.88): a phrase already past eight beats ends in half a beat of rest at the least, so run-ons do not chain
                         ok_ = [(v, x) for v, x in zip(DV, w_) if v <= top and x > 0]
                         n["dur"] = rng.choices([v for v, _ in ok_], [x for _, x in ok_])[0] if ok_ else max(3, min(top, 6))
                     if j + 1 < len(flat) and flat[j + 1]["on"] - n["on"] - n["dur"] >= self.BEAT // 2: ph0 = flat[j + 1]["on"]      # a breath: the next phrase begins
@@ -445,9 +448,11 @@ class Engine:
                 half = float(np.median([c["charge"] for c in alive])); first = [c for c in alive if c["charge"] <= half]                           # 874 (749.62): the old charge gates first: the least half of the builds
                 ok = [c for c in first if c["d7"] <= J.gate]; band = ok; wgate = None; n_joint = len(ok)
                 if self.WW and self.WW.get("gate") is not None:                                                                                     # 881: the words' gate: a build whose words fit its notes less well than nine kept songs in ten is passed over
-                    for c in alive: f_ = WW_.fit(c["notes"], self.BAR, self.BEAT, parts=True); c["fit"] = f_["all"]; c["fit_len"] = f_["length"]
-                    mf_ = float(np.median([c["fit"] for c in alive])); ml_ = float(np.median([c["fit_len"] for c in alive]))      # 908 (749.85): as the old charge gates at its better half (874), so does the words' fit, whole and by length; the kept 10th stays the floor
-                    ok2 = [c for c in ok if c["fit"] >= max(self.WW["gate"], mf_) and c["fit_len"] >= ml_]; wgate = dict(at_least=self.WW["gate"], the_builds_median_fit=round(mf_, 3), the_builds_median_fit_by_length=round(ml_, 3), builds_fit_quartiles=[round(float(x), 3) for x in np.quantile([c["fit"] for c in alive], (0.25, 0.5, 0.75))], pass_among_all=int(sum(c["fit"] >= self.WW["gate"] for c in alive)), pass_after_the_other_gates=len(ok2))
+                    sung_ = getattr(self, "as_sung", None)                                                                                         # 914 (749.91): the fit is read on the notes as sung, melismas placed, where the song's maker gives the engine the means
+                    for c in alive: f_ = WW_.fit([x for x in (sung_(c["notes"]) if sung_ else c["notes"]) if x.get("melisma") != "second"], self.BAR, self.BEAT, parts=True); c["fit"] = f_["all"]; c["fit_len"] = f_["length"]; c["fit_h"] = f_["height"]
+                    mf_ = float(np.median([c["fit"] for c in alive])); ml_ = float(np.median([c["fit_len"] for c in alive])); mh_ = float(np.median([c["fit_h"] for c in alive]))
+                    ok2 = [c for c in ok if c["fit"] >= self.WW["gate"] and c["fit_len"] >= ml_ and c["fit_h"] >= mh_]      # 913 (749.90; amends 908): the better half by length and by height; the whole fit, a third of it place, is held only to the kept floor
+                    wgate = dict(at_least=self.WW["gate"], the_builds_median_fit=round(mf_, 3), the_builds_median_fit_by_length=round(ml_, 3), the_builds_median_fit_by_height=round(mh_, 3), read="as sung" if sung_ else "before melismas", builds_fit_quartiles=[round(float(x), 3) for x in np.quantile([c["fit"] for c in alive], (0.25, 0.5, 0.75))], pass_among_all=int(sum(c["fit"] >= self.WW["gate"] for c in alive)), pass_after_the_other_gates=len(ok2))
                     if ok2: ok = ok2
                     else: wgate["no build past the joint gate also passed: the gate is waived"] = True
                 pool = ok or first                                                         # 873 (749.61): the gate, and no band
