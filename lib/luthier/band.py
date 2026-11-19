@@ -92,6 +92,14 @@ def arrange(rec, genre="pop", lead="guitar", seed=1):
                     if any(0 < y - x < 12 and x < LOW_LIMIT[y - x] for x, y in zip(v, v[1:])): continue
                     cost = sum(abs(x - y) for x, y in zip(v, prev)) if prev else -v[2] * 0.01
                     if best is None or (cost, v) < best: best = (cost, v)
+        if best is None and near:                                                              # 900 (749.79): no three notes clear the voice: the chord with the clashing tone left out, two notes
+            for i in range(len(pool)):
+                for j in range(i + 1, len(pool)):
+                    v = (pool[i], pool[j])
+                    if v[1] - v[0] > 12 or v[0] % 12 == v[1] % 12 or (0 < v[1] - v[0] < 12 and v[0] < LOW_LIMIT[v[1] - v[0]]): continue
+                    cost = sum(min(abs(x - y) for y in prev) for x in v) if prev else -v[1] * 0.01
+                    if best is None or (cost, v) < best: best = (cost, v)
+            if best is not None: return list(best[1])                                          # the voice leading still counts from the last full chord
         if best is None: return None
         prev = best[1]; return list(best[1])
     for bi in range(NB):
@@ -157,7 +165,7 @@ def arrange(rec, genre="pop", lead="guitar", seed=1):
     rec["parts"] = {k: v for k, v in parts.items()}; rec["levels"] = LV
     rec["band_sources"] = dict(chords=src_c, drums=src_d, harmony="kept shares of a voice below the lead, popular two-voice scores (PDMX)", levels="kept piano density by role over the chorus's (POP909)",
                                chord_patterns=dict(verse=verse_p, chorus=chorus_p), fills=sorted(fills), genre=genre, instrument=inst)
-    rec["band_checks"] = checks(rec, chord, tones); return rec
+    rec["band_instrument"] = inst; rec["band_checks"] = checks(rec, chord, tones); return rec
 
 def checks(rec, chord, tones):
     """831"""
@@ -168,7 +176,9 @@ def checks(rec, chord, tones):
     for n in ns:
         a = acc_at(n["on"]); above += any(q > n["midi"] for q in a); second += any(0 < abs(q - n["midi"]) <= 2 for q in a)
     out["sung notes with the chordal part sounding under them, share (892)"] = round(sum(1 for n in ns if acc_at(n["on"])) / len(ns), 3)
-    out["sung notes with accompaniment above them, share"] = round(above / len(ns), 3); out["sung notes with accompaniment a second away, share"] = round(second / len(ns), 3)
+    if rec.get("band_instrument") != "guitar": out["sung notes with accompaniment above them, share"] = round(above / len(ns), 3)      # 900 (749.79): the rule under it (749.21) was measured on piano song; a guitar is not read against it
+    else: out["sung notes with the guitar above them, share (no kept figure; not a fault)"] = round(above / len(ns), 3)
+    out["sung notes with accompaniment a second away, share"] = round(second / len(ns), 3)
     hv = P.get("harmony", [])
     if hv:
         ivs = [abs(e["lead"] - e["p"][0]) for e in hv]; cls = collections.Counter(ICLASS[i] for i in ivs); n = len(ivs)

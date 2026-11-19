@@ -49,6 +49,9 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
+        self.LE = None; self.gap_now = 12                                                     # 899 (749.76, 749.80): how kept lines end: the last syllable's length and the rest after it drawn together
+        if spec.get("line_ends"):
+            K_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json"))); C_ = np.array(K_["counts_by_tier_G_D"], float); self.LE = dict(GV=K_["G_values"], DV=K_["D_values"], C=C_, Gw=[float(x) for x in C_.sum((0, 2))])
         ww = spec.get("word_weight"); self.WW = None                                          # 879-881 (way 3): what the kept songs do with a word's weight
         if ww:
             K = WW_.table(); self.WW = dict(place=[[math.log(max(1e-4, K["place_share_by_tier"][a][j]) / K["place_share_all"][j]) for j in range(5)] for a in range(3)], pp=ww.get("place", 1.0), sp=ww.get("step", 1.0), gate=ww.get("gate"), cost=ww.get("again_cost", 1.0), fresh=ww.get("fresh", True), again=ww.get("again", True), lp=ww.get("length", 0.0), last=ww.get("last_note", False), short=ww.get("short_stress", 0.0),
@@ -88,7 +91,7 @@ class Engine:
         return sc
     def weak_end(self, ons, sy):
         """871 (749.64), widened by 890 (749.71): a line ending on a word's weak syllables gives that word's stressed syllable a quarter at least, whatever the word's length"""
-        if len(sy) < 2 or sy[-1][1]: return 0.0
+        if len(sy) < 2 or sy[-1][1] or self.LE: return 0.0                                    # 901 (749.78): retired where the kept line ends stand: kept singers hold the weak syllable longer than the stressed one at 47 line ends in 100 (619 of them)
         j = len(sy) - 1
         while j > 0 and sy[j - 1][0] == sy[-1][0] and not sy[j][1]: j -= 1
         if j == len(sy) - 1 or not sy[j][1] or sy[j][0] != sy[-1][0]: return 0.0
@@ -102,7 +105,7 @@ class Engine:
         for x in sy:
             if x[1]: break
             lead += 1
-        end = slot - self.BREATH if cap is None else min(slot - self.BREATH, cap); out = []; bars = slot // self.BAR; early = []
+        room_ = 12 if self.LE else self.BREATH; end = slot - room_ if cap is None else min(slot - room_, cap); out = []; bars = slot // self.BAR; early = []
         if bars == 2 and self.S.get("one_bar_share") and rng.random() < self.S["one_bar_share"]:      # 876: the line sung in one bar of its two and the voice silent for the other, as kept songs leave whole bars empty
             o1 = self.rhythm(rng, sy, tmin, self.BAR, cap=min(self.BAR - self.END, cap if cap is not None else 10 ** 6), hook=hook) if n <= 10 else None
             if o1 is not None and o1[-1] < self.BAR - self.END + 1 and self.stats is not None:
@@ -243,7 +246,7 @@ class Engine:
     def tmin(self, lines, k):
         if k == 0: return -12
         ps, pj = self.KEYS[k - 1]; sec, i = self.KEYS[k]
-        return max(-12, self.line_start(ps, pj) + lines[(ps, pj)][-1][0] + self.END + self.rest_now - self.line_start(sec, i))
+        return max(-12, self.line_start(ps, pj) + lines[(ps, pj)][-1][0] + (self.gap_now if self.LE else self.END + self.rest_now) - self.line_start(sec, i))      # 899: with the kept line ends, a line may begin a beat after the last began its last note (the kept 10th)
     @staticmethod
     def runs_ok(ps): return all(not (ps[k] == ps[k + 1] == ps[k + 2] == ps[k + 3]) for k in range(len(ps) - 3))
     def build(self, rng):
@@ -280,7 +283,8 @@ class Engine:
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
             if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0:               # 870 (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
-                self.rest_now = rng.choices(self.S["kept_rests"][0], self.S["kept_rests"][1])[0]; tm2 = self.tmin(lines, k); self.rest_now = self.REST
+                if self.LE: self.gap_now = rng.choices(self.LE["GV"], self.LE["Gw"])[0]; tm2 = self.tmin(lines, k); self.gap_now = 12      # 899: the time from the last line's last syllable to this line, drawn from the kept, where the slot leaves room
+                else: self.rest_now = rng.choices(self.S["kept_rests"][0], self.S["kept_rests"][1])[0]; tm2 = self.tmin(lines, k); self.rest_now = self.REST
                 o2 = self.rhythm(rng, sy, tm2, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) if tm2 > tm else None
                 if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
             if bw and how[0] == "fresh":
@@ -308,7 +312,17 @@ class Engine:
             nx = flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR; last = j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"])
             how = self.HOW.get((n["sec"], n["line"]), ["fresh"]); dd = {t: d for t, p, d in how[1]} if how[0] == "design" else None
             n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(self.END, min(nx - n["on"] - self.REST, 24 if n["stress"] else max(self.END, min(24, n["on"] - flat[j - 1]["on"]) if j and flat[j - 1]["text"] == n["text"] and flat[j - 1]["stress"] else 24))) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
-        if self.WW and self.WW["last"]:                                                       # 887 (amends 832, 844): a line's last note takes a kept length for its syllable's weight, of those that leave the rest; it is no longer held as long as the rest allows
+        if self.LE:                                                                           # 899 (749.76, 749.80; replaces 887 where the table stands): the last syllable's length drawn from the kept lengths for its weight
+            GV, DV, C_ = self.LE["GV"], self.LE["DV"], self.LE["C"]; i0 = 0                   # and for the time to the next line, so the note and the rest are drawn as a pair and a line may run on
+            for j, n in enumerate(flat):
+                if j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"]):
+                    if self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design":
+                        ln = flat[i0:j + 1]; tr_ = WW_.tier([(x["text"], x["stress"]) for x in ln])[-1]; G_ = (flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR) - n["on"]; gi = min(range(len(GV)), key=lambda q: abs(GV[q] - G_))
+                        w_ = C_[tr_][gi] if C_[tr_][gi].sum() >= 20 else C_[:, gi].sum(0); top = G_
+                        ok_ = [(v, x) for v, x in zip(DV, w_) if v <= top and x > 0]
+                        n["dur"] = rng.choices([v for v, _ in ok_], [x for _, x in ok_])[0] if ok_ else max(3, min(top, 6))
+                    i0 = j + 1
+        elif self.WW and self.WW["last"]:                                                     # 887 (amends 832, 844): a line's last note takes a kept length for its syllable's weight, of those that leave the rest; it is no longer held as long as the rest allows
             V, SH = self.WW["fin"]; i0 = 0
             for j, n in enumerate(flat):
                 if j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"]):
