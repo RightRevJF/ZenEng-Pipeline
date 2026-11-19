@@ -193,11 +193,12 @@ def checks(rec, chord, tones):
         out["harmony voice: motion, written / kept"] = {k: [round(mot[k] / m, 3), VOX["motion"].get(k) if k != "parallel" else round(VOX["motion"]["parallel exact"] + VOX["motion"]["parallel class"], 3)] for k in ("static", "oblique", "contrary", "parallel", "similar")}
         out["harmony voice: lowest note; notes under E2 (893)"] = [min(e["p"][0] for e in hv), sum(e["p"][0] < 40 for e in hv)]
         out["harmony voice crosses the lead"] = sum(e["p"][0] > e["lead"] for e in hv); out["harmony voice a second from the lead"] = sum(0 < e["lead"] - e["p"][0] <= 2 for e in hv)
-    spt = 60.0 / rec["bpm"] / (18 if rec["metre"] in ("6/8", "9/8", "12/8") else 12); phrases = []; start = ns[0]["on"]
+    unit = 18 if rec["metre"] in ("6/8", "9/8", "12/8") else 12; spt = 60.0 / rec["bpm"] / unit; phrases = []; start = ns[0]["on"]      # 906 (749.83): a breath is read at half a beat of silence, as kept singers take it, not a whole beat
     for a, b in zip(ns, ns[1:]):
-        if b["on"] - (a["on"] + a["dur"]) >= 12: phrases.append((a["on"] + a["dur"] - start) * spt); start = b["on"]
-    phrases.append((ns[-1]["on"] + ns[-1]["dur"] - start) * spt)
-    out["sung phrases, seconds (median, longest)"] = [round(sorted(phrases)[len(phrases) // 2], 1), round(max(phrases), 1)]; out["sung phrases over eight seconds"] = sum(p > 8 for p in phrases)
+        if b["on"] - (a["on"] + a["dur"]) >= unit // 2: phrases.append((a["on"] + a["dur"] - start) / unit); start = b["on"]
+    phrases.append((ns[-1]["on"] + ns[-1]["dur"] - start) / unit); KP = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json"))).get("phrases_split_at_half_a_beat", {})
+    out["sung phrases, seconds (median, longest)"] = [round(sorted(phrases)[len(phrases) // 2] * unit * spt, 1), round(max(phrases) * unit * spt, 1)]
+    out["sung phrases over 12 beats, share; the longest in beats (kept %s; each kept song's longest %s by quartile)" % (KP.get("share_over_12_beats"), KP.get("each_songs_longest_quartiles"))] = [round(sum(p_ > 12 for p_ in phrases) / len(phrases), 3), round(max(phrases), 1)]
     kicks = {e["on"] for e in P.get("drums", []) if e["p"] == [DR["kick"]]}; bs = P.get("bass", [])
     out["kicks with a bass note on them, share"] = round(sum(any(b["on"] == t for b in bs) for t in kicks) / max(1, len(kicks)), 3)
     # 836: roughness (Sethares 1993 on Plomp and Levelt; six harmonics a note), of everything pitched that sounds at each sung onset. A ranking, not a test: it has no kept reference.

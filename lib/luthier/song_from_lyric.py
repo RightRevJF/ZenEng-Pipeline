@@ -155,6 +155,8 @@ def write(L, N=1000, K=12):
                            kept=run["kept_quartiles"], uncharged=run["uncharged"], entries=run["entries"], stressed_on_beat=run["pick"]["stressed_on_beat"], stats=run["stats"],
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
+    import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
+    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []))}
     melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
     if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
         import word_weight as WW_; rec["judge7"]["pick_words_fit"] = {k: round(v, 3) for k, v in WW_.fit([n for n in rec["melody"]["notes"] if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True).items()}
@@ -260,7 +262,7 @@ def style_checks(rec, E):
         extra[f"the words' fit: weightier syllables on more salient notes (kept 10th {kq[0]}, quartiles {kq[1]}, {kq[2]}, {kq[3]})"] = round(f_["all"], 3)
         extra["the fit by length, by place in the bar, by height (kept medians %s, %s, %s)" % (K_["fit_by_length"][2], K_["fit_by_place"][2], K_["fit_by_height"][2])] = [round(f_[k], 3) for k in ("length", "place", "height")]
     return {**extra, "the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": round(st_.median(c) - st_.median(v), 1) if v and c else None, "the plan's lift": rec["spec"].get("plan", {}).get("lift"),
-            "rest share inside sung sections, median (kept quartiles 0.21, 0.30, 0.39)": round(st_.median(rests), 3), "the title's stressed syllables on a beat (kept 0.73)": round(sum((n["on"] % E.BAR) in E.BEATS for n in hs) / len(hs), 3) if hs else None,
+            "rest share inside sung sections, median (kept quartiles %s)" % ", ".join(str(x) for x in json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json")))["rest_share"][1:4]): round(st_.median(rests), 3), "the title's stressed syllables on a beat (kept 0.73)": round(sum((n["on"] % E.BAR) in E.BEATS for n in hs) / len(hs), 3) if hs else None,
             "title lines": len(hk), "length in seconds (kept quartiles 165, 206, 243)": round(secs), "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": round(st_.median(ret), 2) if ret else None}
 def midi(rec, path):
     import mido

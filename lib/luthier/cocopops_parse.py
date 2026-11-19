@@ -28,7 +28,7 @@ def kern_pitch(tok: str):
 
 
 def recip_dur(tok: str):
-    m = re.match(r"(\d+)(\.*)", tok)
+    m = re.match(r"(\d+)(\.*)", tok.lstrip("[({&"))        # 904 (749.82): a note that begins a tie, a slur or a phrase ('[8B', '(4c', '{8d') has its mark before its duration; it was dropped with its syllable
     if not m: return None
     n = int(m.group(1)); d = m.group(2).count(".")
     if n == 0: return 8.0

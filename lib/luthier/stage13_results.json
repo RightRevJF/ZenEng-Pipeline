@@ -1,0 +1,1451 @@
+{
+ "parser": {
+  "sung_notes_beginning_a_tie": 7833,
+  "voice_notes_before": 60706,
+  "voice_notes_after": 62471,
+  "melisma_share_before": 0.204,
+  "melisma_share_after": 0.124,
+  "kept_songs_before": 159,
+  "kept_songs_after": 160
+ },
+ "atlas": {
+  "onset_places": [
+   "bar start",
+   "half bar",
+   "another beat",
+   "off-beat eighth",
+   "finer"
+  ],
+  "onset_place_shares_before": [
+   0.177,
+   0.118,
+   0.216,
+   0.377,
+   0.113
+  ],
+  "onset_place_shares_after": [
+   0.128,
+   0.104,
+   0.211,
+   0.435,
+   0.121
+  ],
+  "quartiles_before": {
+   "repeated notes": [
+    0.186,
+    0.288,
+    0.378
+   ],
+   "moves by step": [
+    0.335,
+    0.408,
+    0.501
+   ],
+   "moves by leap": [
+    0.076,
+    0.105,
+    0.145
+   ],
+   "turns of direction": [
+    0.383,
+    0.438,
+    0.522
+   ],
+   "range": [
+    14.0,
+    17.0,
+    21.0
+   ],
+   "distinct pitches": [
+    9.0,
+    12.0,
+    14.0
+   ],
+   "longest run of one pitch": [
+    4.0,
+    6.0,
+    7.0
+   ],
+   "distinct rhythms over bars": [
+    0.294,
+    0.386,
+    0.518
+   ],
+   "notes a bar": [
+    3.326,
+    4.027,
+    4.846
+   ],
+   "onsets on the beat": [
+    0.433,
+    0.53,
+    0.585
+   ],
+   "onsets on the bar's first beat": [
+    0.148,
+    0.17,
+    0.21
+   ],
+   "gaps of a sixteenth": [
+    0.002,
+    0.045,
+    0.18
+   ],
+   "gaps of an eighth": [
+    0.344,
+    0.475,
+    0.609
+   ],
+   "gaps of a quarter or more": [
+    0.263,
+    0.356,
+    0.491
+   ],
+   "notes a beat": [
+    0.831,
+    1.007,
+    1.212
+   ],
+   "gaps of half a beat": [
+    0.344,
+    0.475,
+    0.609
+   ],
+   "gaps of a third of a beat": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "gaps of a beat or more": [
+    0.263,
+    0.356,
+    0.491
+   ],
+   "gaps under a third of a beat": [
+    0.002,
+    0.045,
+    0.18
+   ],
+   "bars on a rhythm already sung": [
+    0.482,
+    0.614,
+    0.706
+   ],
+   "bars on a figure already sung": [
+    0.349,
+    0.487,
+    0.591
+   ],
+   "pitch scaling": [
+    0.789,
+    0.905,
+    0.995
+   ],
+   "rhythm scaling": [
+    0.611,
+    0.662,
+    0.72
+   ]
+  },
+  "quartiles_after": {
+   "repeated notes": [
+    0.21,
+    0.312,
+    0.392
+   ],
+   "moves by step": [
+    0.329,
+    0.396,
+    0.489
+   ],
+   "moves by leap": [
+    0.073,
+    0.102,
+    0.14
+   ],
+   "turns of direction": [
+    0.373,
+    0.439,
+    0.51
+   ],
+   "range": [
+    14.0,
+    17.0,
+    21.0
+   ],
+   "distinct pitches": [
+    9.0,
+    11.5,
+    14.0
+   ],
+   "longest run of one pitch": [
+    4.75,
+    6.0,
+    8.0
+   ],
+   "distinct rhythms over bars": [
+    0.313,
+    0.405,
+    0.546
+   ],
+   "notes a bar": [
+    3.594,
+    4.297,
+    5.0
+   ],
+   "onsets on the beat": [
+    0.382,
+    0.451,
+    0.525
+   ],
+   "onsets on the bar's first beat": [
+    0.093,
+    0.124,
+    0.161
+   ],
+   "gaps of a sixteenth": [
+    0.001,
+    0.049,
+    0.184
+   ],
+   "gaps of an eighth": [
+    0.357,
+    0.468,
+    0.598
+   ],
+   "gaps of a quarter or more": [
+    0.253,
+    0.353,
+    0.481
+   ],
+   "notes a beat": [
+    0.898,
+    1.074,
+    1.25
+   ],
+   "gaps of half a beat": [
+    0.357,
+    0.468,
+    0.598
+   ],
+   "gaps of a third of a beat": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "gaps of a beat or more": [
+    0.253,
+    0.353,
+    0.481
+   ],
+   "gaps under a third of a beat": [
+    0.003,
+    0.049,
+    0.184
+   ],
+   "bars on a rhythm already sung": [
+    0.454,
+    0.595,
+    0.687
+   ],
+   "bars on a figure already sung": [
+    0.344,
+    0.474,
+    0.579
+   ],
+   "pitch scaling": [
+    0.792,
+    0.905,
+    1.023
+   ],
+   "rhythm scaling": [
+    0.608,
+    0.656,
+    0.721
+   ]
+  },
+  "surprise_before": [
+   2.73,
+   2.956,
+   3.146
+  ],
+  "surprise_after": [
+   2.709,
+   2.937,
+   3.121
+  ]
+ },
+ "tables": {
+  "kept_word_weight": {
+   "before": {
+    "source": "159 kept 4/4 songs (CoCoPops Billboard), syllables the lexicon holds; weights 0 function word, 0.4 weak syllable, 1 stressed",
+    "songs": 159,
+    "fit_percentiles_10_25_50_75_90": [
+     0.092,
+     0.202,
+     0.291,
+     0.384,
+     0.435
+    ],
+    "fit_by_length": [
+     -0.041,
+     0.025,
+     0.132,
+     0.235,
+     0.325
+    ],
+    "fit_by_place": [
+     0.066,
+     0.203,
+     0.311,
+     0.398,
+     0.491
+    ],
+    "fit_by_height": [
+     -0.039,
+     0.037,
+     0.104,
+     0.183,
+     0.258
+    ],
+    "songs_above_their_shuffled_words_95th": 0.893,
+    "fit_vs_weeks_on_chart": [
+     0.026,
+     0.772
+    ],
+    "fit_vs_peak": [
+     0.003,
+     0.976
+    ],
+    "graded_songs": 131,
+    "places": [
+     "bar start",
+     "half bar",
+     "another beat",
+     "off-beat eighth",
+     "finer"
+    ],
+    "tiers": [
+     "function word",
+     "weak syllable",
+     "stressed syllable"
+    ],
+    "place_share_by_tier": [
+     [
+      0.0569,
+      0.0815,
+      0.2716,
+      0.462,
+      0.128
+     ],
+     [
+      0.0246,
+      0.0295,
+      0.1835,
+      0.5844,
+      0.178
+     ],
+     [
+      0.2288,
+      0.1865,
+      0.2312,
+      0.2819,
+      0.0716
+     ]
+    ],
+    "place_share_all": [
+     0.1346,
+     0.125,
+     0.2417,
+     0.3913,
+     0.1073
+    ],
+    "step_down_level_up_from_tier_to_tier": [
+     [
+      [
+       0.3114,
+       0.4034,
+       0.2852
+      ],
+      [
+       0.5419,
+       0.2849,
+       0.1732
+      ],
+      [
+       0.2291,
+       0.3166,
+       0.4543
+      ]
+     ],
+     [
+      [
+       0.3101,
+       0.4467,
+       0.2432
+      ],
+      [
+       0.6585,
+       0.1951,
+       0.1463
+      ],
+      [
+       0.233,
+       0.3579,
+       0.4092
+      ]
+     ],
+     [
+      [
+       0.3952,
+       0.3898,
+       0.215
+      ],
+      [
+       0.4167,
+       0.391,
+       0.1923
+      ],
+      [
+       0.3096,
+       0.3864,
+       0.304
+      ]
+     ]
+    ],
+    "step_down_level_up_all": [
+     0.3058,
+     0.37,
+     0.3242
+    ],
+    "step_counts": [
+     [
+      4232.0,
+      179.0,
+      6551.0
+     ],
+     [
+      1032.0,
+      41.0,
+      1305.0
+     ],
+     [
+      5185.0,
+      312.0,
+      3605.0
+     ]
+    ],
+    "lengths": [
+     "a sixteenth",
+     "an eighth",
+     "a dotted eighth",
+     "a quarter",
+     "to a dotted quarter",
+     "a half or more"
+    ],
+    "length_share_by_tier": [
+     [
+      0.144,
+      0.559,
+      0.0374,
+      0.1923,
+      0.0642,
+      0.0031
+     ],
+     [
+      0.1611,
+      0.5828,
+      0.044,
+      0.1314,
+      0.0764,
+      0.0042
+     ],
+     [
+      0.1179,
+      0.54,
+      0.0372,
+      0.2418,
+      0.0587,
+      0.0044
+     ]
+    ],
+    "length_share_all": [
+     0.1338,
+     0.553,
+     0.0381,
+     0.2081,
+     0.0631,
+     0.0038
+    ],
+    "last_note_lengths_twelfths": [
+     3,
+     6,
+     9,
+     12,
+     18,
+     24,
+     36,
+     48
+    ],
+    "last_note_length_share_by_tier": [
+     [
+      0.022,
+      0.2579,
+      0.0172,
+      0.297,
+      0.1882,
+      0.1614,
+      0.0306,
+      0.0258
+     ],
+     [
+      0.0323,
+      0.3641,
+      0.023,
+      0.2327,
+      0.1959,
+      0.1175,
+      0.0138,
+      0.0207
+     ],
+     [
+      0.0335,
+      0.1837,
+      0.0201,
+      0.311,
+      0.139,
+      0.23,
+      0.0424,
+      0.0402
+     ]
+    ],
+    "last_note_counts": [
+     1047.0,
+     434.0,
+     1791.0
+    ]
+   },
+   "after": {
+    "source": "159 kept 4/4 songs (CoCoPops Billboard), syllables the lexicon holds; weights 0 function word, 0.4 weak syllable, 1 stressed",
+    "songs": 160,
+    "fit_percentiles_10_25_50_75_90": [
+     0.152,
+     0.248,
+     0.318,
+     0.402,
+     0.446
+    ],
+    "fit_by_length": [
+     0.041,
+     0.118,
+     0.209,
+     0.297,
+     0.369
+    ],
+    "fit_by_place": [
+     0.008,
+     0.115,
+     0.242,
+     0.333,
+     0.412
+    ],
+    "fit_by_height": [
+     -0.042,
+     0.045,
+     0.106,
+     0.178,
+     0.243
+    ],
+    "songs_above_their_shuffled_words_95th": 0.944,
+    "fit_vs_weeks_on_chart": [
+     0.042,
+     0.63
+    ],
+    "fit_vs_peak": [
+     0.027,
+     0.761
+    ],
+    "graded_songs": 132,
+    "places": [
+     "bar start",
+     "half bar",
+     "another beat",
+     "off-beat eighth",
+     "finer"
+    ],
+    "tiers": [
+     "function word",
+     "weak syllable",
+     "stressed syllable"
+    ],
+    "place_share_by_tier": [
+     [
+      0.0585,
+      0.0609,
+      0.2516,
+      0.4916,
+      0.1374
+     ],
+     [
+      0.0205,
+      0.019,
+      0.1815,
+      0.6036,
+      0.1754
+     ],
+     [
+      0.2015,
+      0.1554,
+      0.1994,
+      0.3544,
+      0.0893
+     ]
+    ],
+    "place_share_all": [
+     0.1245,
+     0.1023,
+     0.2167,
+     0.438,
+     0.1185
+    ],
+    "step_down_level_up_from_tier_to_tier": [
+     [
+      [
+       0.3128,
+       0.3903,
+       0.2969
+      ],
+      [
+       0.5102,
+       0.2993,
+       0.1905
+      ],
+      [
+       0.2413,
+       0.3035,
+       0.4552
+      ]
+     ],
+     [
+      [
+       0.3358,
+       0.4338,
+       0.2304
+      ],
+      [
+       0.7101,
+       0.1739,
+       0.1159
+      ],
+      [
+       0.2477,
+       0.3479,
+       0.4045
+      ]
+     ],
+     [
+      [
+       0.4045,
+       0.3747,
+       0.2208
+      ],
+      [
+       0.4572,
+       0.3346,
+       0.2082
+      ],
+      [
+       0.3216,
+       0.3739,
+       0.3046
+      ]
+     ]
+    ],
+    "step_down_level_up_all": [
+     0.3151,
+     0.3546,
+     0.3303
+    ],
+    "step_counts": [
+     [
+      4971.0,
+      294.0,
+      8540.0
+     ],
+     [
+      1224.0,
+      69.0,
+      1926.0
+     ],
+     [
+      6255.0,
+      514.0,
+      4590.0
+     ]
+    ],
+    "lengths": [
+     "a sixteenth",
+     "an eighth",
+     "a dotted eighth",
+     "a quarter",
+     "to a dotted quarter",
+     "a half or more"
+    ],
+    "length_share_by_tier": [
+     [
+      0.1573,
+      0.5899,
+      0.0333,
+      0.1764,
+      0.0418,
+      0.0014
+     ],
+     [
+      0.1807,
+      0.5891,
+      0.0326,
+      0.1523,
+      0.0427,
+      0.0026
+     ],
+     [
+      0.1081,
+      0.4982,
+      0.0474,
+      0.2748,
+      0.0662,
+      0.0052
+     ]
+    ],
+    "length_share_all": [
+     0.1368,
+     0.5459,
+     0.04,
+     0.2204,
+     0.0536,
+     0.0034
+    ],
+    "last_note_lengths_twelfths": [
+     3,
+     6,
+     9,
+     12,
+     18,
+     24,
+     36,
+     48
+    ],
+    "last_note_length_share_by_tier": [
+     [
+      0.0221,
+      0.198,
+      0.0251,
+      0.2663,
+      0.197,
+      0.1879,
+      0.0352,
+      0.0683
+     ],
+     [
+      0.0263,
+      0.3503,
+      0.021,
+      0.1804,
+      0.1944,
+      0.1313,
+      0.0578,
+      0.0385
+     ],
+     [
+      0.0201,
+      0.1059,
+      0.0184,
+      0.2513,
+      0.2174,
+      0.2616,
+      0.0586,
+      0.0667
+     ]
+    ],
+    "last_note_counts": [
+     995.0,
+     571.0,
+     2833.0
+    ]
+   }
+  },
+  "kept_line_ends": {
+   "before": {
+    "source": "159 kept 4/4 songs (CoCoPops Billboard); lyric lines by the transcribers' capitals or two beats of silence",
+    "line_ends": 5242,
+    "G_values": [
+     12,
+     18,
+     24,
+     30,
+     36,
+     42,
+     48,
+     60,
+     72,
+     96,
+     144
+    ],
+    "D_values": [
+     3,
+     6,
+     9,
+     12,
+     18,
+     24,
+     30,
+     36,
+     48,
+     60,
+     72,
+     96
+    ],
+    "G_percentiles_10_25_50_75_90": [
+     12.0,
+     24.0,
+     42.0,
+     72.0,
+     108.0
+    ],
+    "rest_percentiles_10_25_50_75_90": [
+     0.0,
+     6.0,
+     24.0,
+     43.75,
+     72.0
+    ],
+    "lines_run_on_with_under_a_beat_of_rest_share": 0.269,
+    "run_on_share_by_song_quartiles": [
+     0.064,
+     0.2,
+     0.387
+    ],
+    "syllables_a_line_quartiles": [
+     5.7,
+     7.4,
+     9.1
+    ],
+    "held_a_half_or_more_by_tier": [
+     0.353,
+     0.196,
+     0.273
+    ],
+    "an_eighth_or_less_by_tier": [
+     0.259,
+     0.424,
+     0.236
+    ]
+   },
+   "after": {
+    "source": "159 kept 4/4 songs (CoCoPops Billboard); lyric lines by the transcribers' capitals or two beats of silence",
+    "line_ends": 5542,
+    "G_values": [
+     12,
+     18,
+     24,
+     30,
+     36,
+     42,
+     48,
+     60,
+     72,
+     96,
+     144
+    ],
+    "D_values": [
+     3,
+     6,
+     9,
+     12,
+     18,
+     24,
+     30,
+     36,
+     48,
+     60,
+     72,
+     96
+    ],
+    "G_percentiles_10_25_50_75_90": [
+     12.0,
+     18.0,
+     39.0,
+     66.0,
+     96.0
+    ],
+    "rest_percentiles_10_25_50_75_90": [
+     0.0,
+     6.0,
+     24.0,
+     42.0,
+     72.0
+    ],
+    "lines_run_on_with_under_a_beat_of_rest_share": 0.295,
+    "run_on_share_by_song_quartiles": [
+     0.095,
+     0.253,
+     0.426
+    ],
+    "syllables_a_line_quartiles": [
+     6.2,
+     7.9,
+     9.9
+    ],
+    "held_a_half_or_more_by_tier": [
+     0.18,
+     0.115,
+     0.29
+    ],
+    "an_eighth_or_less_by_tier": [
+     0.358,
+     0.481,
+     0.182
+    ],
+    "phrases_split_at_half_a_beat": {
+     "share_over_12_beats": 0.042,
+     "beats_50_90_99": [
+      4.0,
+      9.0,
+      16.5
+     ],
+     "each_songs_longest_quartiles": [
+      8.0,
+      12.0,
+      15.5
+     ]
+    }
+   }
+  },
+  "kept_returns": {
+   "before": {
+    "verse": {
+     "returns": 189,
+     "songs": 122,
+     "share_of_lines_with_the_same_count": 0.389,
+     "identical_among_same_count": 0.478,
+     "same_count_pitch_kept": [
+      0.782,
+      0.964,
+      1.0
+     ],
+     "same_count_rhythm_kept": [
+      0.8,
+      0.923,
+      1.0
+     ],
+     "other_count_pitch_kept": [
+      0.628,
+      0.788,
+      0.885
+     ],
+     "other_count_rhythm_kept": [
+      0.574,
+      0.681,
+      0.806
+     ]
+    },
+    "chorus": {
+     "returns": 170,
+     "songs": 93,
+     "share_of_lines_with_the_same_count": 0.748,
+     "identical_among_same_count": 0.826,
+     "same_count_pitch_kept": [
+      0.944,
+      1.0,
+      1.0
+     ],
+     "same_count_rhythm_kept": [
+      0.982,
+      1.0,
+      1.0
+     ],
+     "other_count_pitch_kept": [
+      0.517,
+      0.795,
+      0.951
+     ],
+     "other_count_rhythm_kept": [
+      0.667,
+      0.8,
+      0.938
+     ]
+    }
+   },
+   "after": {
+    "verse": {
+     "returns": 186,
+     "songs": 120,
+     "share_of_lines_with_the_same_count": 0.399,
+     "identical_among_same_count": 0.49,
+     "same_count_pitch_kept": [
+      0.782,
+      0.963,
+      1.0
+     ],
+     "same_count_rhythm_kept": [
+      0.766,
+      0.938,
+      1.0
+     ],
+     "other_count_pitch_kept": [
+      0.618,
+      0.805,
+      0.906
+     ],
+     "other_count_rhythm_kept": [
+      0.558,
+      0.688,
+      0.819
+     ]
+    },
+    "chorus": {
+     "returns": 175,
+     "songs": 96,
+     "share_of_lines_with_the_same_count": 0.776,
+     "identical_among_same_count": 0.814,
+     "same_count_pitch_kept": [
+      0.952,
+      1.0,
+      1.0
+     ],
+     "same_count_rhythm_kept": [
+      0.969,
+      1.0,
+      1.0
+     ],
+     "other_count_pitch_kept": [
+      0.5,
+      0.808,
+      0.944
+     ],
+     "other_count_rhythm_kept": [
+      0.636,
+      0.8,
+      0.966
+     ]
+    }
+   }
+  }
+ },
+ "register_plan": {
+  "songs": [
+   138,
+   121
+  ],
+  "rest_share": [
+   [
+    0.16,
+    0.21,
+    0.3,
+    0.39,
+    0.47
+   ],
+   [
+    0.09,
+    0.14,
+    0.23,
+    0.33,
+    0.42
+   ]
+  ],
+  "returns": [
+   {
+    "note for note": 0.148,
+    "bars the same, median": 0.57
+   },
+   {
+    "note for note": 0.177,
+    "bars the same, median": 0.62
+   }
+  ]
+ },
+ "builds": {
+  "note": "40 builds a song with the rebuilt tables and the constants as they stood (songs 55, 54, 58)",
+  "fit": [
+   0.34,
+   0.26,
+   0.35
+  ],
+  "by_length": [
+   0.27,
+   0.2,
+   0.28
+  ],
+  "by_place": [
+   0.28,
+   0.24,
+   0.37
+  ],
+  "on_bar": [
+   0.139,
+   0.125,
+   0.123
+  ],
+  "on_beat": [
+   0.539,
+   0.495,
+   0.527
+  ],
+  "run_on": [
+   0.357,
+   0.286,
+   0.226
+  ],
+  "silences": [
+   9.1,
+   8.7,
+   10.2
+  ],
+  "j6": [
+   0.33,
+   0.85,
+   0.43
+  ]
+ },
+ "weak_endings_recounted": {
+  "session_as_parsed": [
+   664,
+   0.49,
+   0.73
+  ],
+  "session_with_ties": [
+   794,
+   0.42,
+   0.64
+  ]
+ },
+ "stressed_sixteenths_in_returns": {
+  "first": 0.109,
+  "later": 0.108,
+  "by_song": [
+   0,
+   0.034,
+   0.13,
+   0.33
+  ]
+ },
+ "way2_again_on_the_corrected_parse": {
+  "new_songs": 165,
+  "weeks": [
+   0.17,
+   0.0296
+  ],
+  "peak": [
+   0.178,
+   0.0232
+  ],
+  "rolling_stone_with_record": {
+   "weeks": [
+    0.224,
+    0.013
+   ],
+   "peak": [
+    0.177,
+    0.0506
+   ]
+  },
+  "rs_against_cb_auc": 0.503
+ },
+ "songs": {
+  "55": {
+   "before": {
+    "survivors": 721,
+    "key": "C",
+    "seconds": 240,
+    "on_bar": 0.146,
+    "on_beat": 0.51,
+    "notes_a_bar": 4.15,
+    "run_on": 0.33,
+    "silences": 9.5,
+    "half_st": 0.23,
+    "short_st": 0.33,
+    "rest_share": 0.171,
+    "rhythm_scaling": 0.5,
+    "pitch_scaling": 0.97,
+    "removed": {
+     "old_charge": 360,
+     "joint_gate": 0,
+     "words_gate": 1
+    },
+    "charge": 1.095,
+    "median_charge": 1.76,
+    "d7": 2.955,
+    "phrases": null,
+    "phrases8": 7,
+    "melisma": 3.9,
+    "guitar_under": 1.0,
+    "tables": null,
+    "fit": 0.358,
+    "by_length": 0.126,
+    "by_place": 0.424,
+    "gate": 0.092
+   },
+   "after": {
+    "survivors": 673,
+    "key": "C",
+    "seconds": 240,
+    "on_bar": 0.106,
+    "on_beat": 0.521,
+    "notes_a_bar": 3.84,
+    "run_on": 0.49,
+    "silences": 7.1,
+    "half_st": 0.21,
+    "short_st": 0.31,
+    "rest_share": 0.205,
+    "rhythm_scaling": 0.52,
+    "pitch_scaling": 0.91,
+    "removed": {
+     "old_charge": 336,
+     "joint_gate": 0,
+     "words_gate": 4
+    },
+    "charge": 0.996,
+    "median_charge": 1.6,
+    "d7": 2.567,
+    "phrases": [
+     0.082,
+     15.5
+    ],
+    "phrases8": null,
+    "melisma": 3.9,
+    "guitar_under": 0.995,
+    "tables": {
+     "metre_atlas/4-4_pop_sung.json": "e3849ca511",
+     "metre_atlas/kept_readings.json": "e10d62948a",
+     "register_plan.json": "40b6c3d72a",
+     "kept_word_weight.json": "4b454b1413",
+     "kept_line_ends.json": "0f2d32a37b"
+    },
+    "fit": 0.243,
+    "by_length": 0.288,
+    "by_place": 0.319,
+    "gate": 0.152
+   }
+  },
+  "54": {
+   "before": {
+    "survivors": 809,
+    "key": "G",
+    "seconds": 298,
+    "on_bar": 0.104,
+    "on_beat": 0.469,
+    "notes_a_bar": 4.37,
+    "run_on": 0.23,
+    "silences": 9.5,
+    "half_st": 0.18,
+    "short_st": 0.27,
+    "rest_share": 0.2,
+    "rhythm_scaling": 0.58,
+    "pitch_scaling": 0.98,
+    "removed": {
+     "old_charge": 404,
+     "joint_gate": 0,
+     "words_gate": 3
+    },
+    "charge": 0.986,
+    "median_charge": 1.59,
+    "d7": 2.535,
+    "phrases": null,
+    "phrases8": 7,
+    "melisma": 8.6,
+    "guitar_under": 1.0,
+    "tables": null,
+    "fit": 0.19,
+    "by_length": 0.049,
+    "by_place": 0.166,
+    "gate": 0.092
+   },
+   "after": {
+    "survivors": 793,
+    "key": "D",
+    "seconds": 298,
+    "on_bar": 0.112,
+    "on_beat": 0.454,
+    "notes_a_bar": 4.33,
+    "run_on": 0.26,
+    "silences": 9.1,
+    "half_st": 0.12,
+    "short_st": 0.27,
+    "rest_share": 0.206,
+    "rhythm_scaling": 0.57,
+    "pitch_scaling": 1.2,
+    "removed": {
+     "old_charge": 396,
+     "joint_gate": 0,
+     "words_gate": 5
+    },
+    "charge": 1.851,
+    "median_charge": 2.24,
+    "d7": 2.915,
+    "phrases": [
+     0.057,
+     13.2
+    ],
+    "phrases8": null,
+    "melisma": 8.6,
+    "guitar_under": 1.0,
+    "tables": {
+     "metre_atlas/4-4_pop_sung.json": "e3849ca511",
+     "metre_atlas/kept_readings.json": "e10d62948a",
+     "register_plan.json": "40b6c3d72a",
+     "kept_word_weight.json": "4b454b1413",
+     "kept_line_ends.json": "0f2d32a37b"
+    },
+    "fit": 0.187,
+    "by_length": 0.093,
+    "by_place": 0.233,
+    "gate": 0.152
+   }
+  },
+  "58": {
+   "before": {
+    "survivors": 681,
+    "key": "C",
+    "seconds": 326,
+    "on_bar": 0.121,
+    "on_beat": 0.52,
+    "notes_a_bar": 4.25,
+    "run_on": 0.2,
+    "silences": 10.4,
+    "half_st": 0.29,
+    "short_st": 0.18,
+    "rest_share": 0.301,
+    "rhythm_scaling": 0.55,
+    "pitch_scaling": 0.73,
+    "removed": {
+     "old_charge": 340,
+     "joint_gate": 0,
+     "words_gate": 0
+    },
+    "charge": 1.309,
+    "median_charge": 1.52,
+    "d7": 2.568,
+    "phrases": null,
+    "phrases8": 5,
+    "melisma": 16.1,
+    "guitar_under": 1.0,
+    "tables": null,
+    "fit": 0.265,
+    "by_length": 0.11,
+    "by_place": 0.528,
+    "gate": 0.092
+   },
+   "after": {
+    "survivors": 676,
+    "key": "A",
+    "seconds": 326,
+    "on_bar": 0.106,
+    "on_beat": 0.502,
+    "notes_a_bar": 3.96,
+    "run_on": 0.25,
+    "silences": 9.8,
+    "half_st": 0.29,
+    "short_st": 0.21,
+    "rest_share": 0.278,
+    "rhythm_scaling": 0.48,
+    "pitch_scaling": 1.16,
+    "removed": {
+     "old_charge": 338,
+     "joint_gate": 0,
+     "words_gate": 0
+    },
+    "charge": 2.029,
+    "median_charge": 2.19,
+    "d7": 3.308,
+    "phrases": [
+     0.077,
+     15.0
+    ],
+    "phrases8": null,
+    "melisma": 16.1,
+    "guitar_under": 1.0,
+    "tables": {
+     "metre_atlas/4-4_pop_sung.json": "e3849ca511",
+     "metre_atlas/kept_readings.json": "e10d62948a",
+     "register_plan.json": "40b6c3d72a",
+     "kept_word_weight.json": "4b454b1413",
+     "kept_line_ends.json": "0f2d32a37b"
+    },
+    "fit": 0.162,
+    "by_length": -0.017,
+    "by_place": 0.27,
+    "gate": 0.152
+   }
+  },
+  "52": {
+   "before": {
+    "survivors": 76,
+    "key": "C",
+    "seconds": 218,
+    "on_bar": 0.138,
+    "on_beat": 0.309,
+    "notes_a_bar": 5.13,
+    "run_on": 0.0,
+    "silences": 13.9,
+    "half_st": 0.16,
+    "short_st": 0.4,
+    "rest_share": 0.135,
+    "rhythm_scaling": 0,
+    "pitch_scaling": 0,
+    "removed": {
+     "old_charge": 38,
+     "joint_gate": 38,
+     "words_gate": null
+    },
+    "charge": 4.182,
+    "median_charge": 5.56,
+    "d7": 3.907,
+    "phrases": null,
+    "phrases8": 0,
+    "melisma": 8.6,
+    "guitar_under": 0.957,
+    "tables": null
+   },
+   "after": {
+    "survivors": 71,
+    "key": "C",
+    "seconds": 218,
+    "on_bar": 0.156,
+    "on_beat": 0.319,
+    "notes_a_bar": 5.35,
+    "run_on": 0.0,
+    "silences": 13.9,
+    "half_st": 0.16,
+    "short_st": 0.6,
+    "rest_share": 0.133,
+    "rhythm_scaling": 0,
+    "pitch_scaling": 0,
+    "removed": {
+     "old_charge": 35,
+     "joint_gate": 36,
+     "words_gate": null
+    },
+    "charge": 4.012,
+    "median_charge": 5.57,
+    "d7": 3.746,
+    "phrases": [
+     0.0,
+     4.3
+    ],
+    "phrases8": null,
+    "melisma": 8.6,
+    "guitar_under": 0.957,
+    "tables": {
+     "metre_atlas/6-8_sung.json": "5ee3cacd60",
+     "metre_atlas/kept_readings.json": "e10d62948a",
+     "register_plan.json": "40b6c3d72a"
+    }
+   }
+  }
+ },
+ "j6_builds_after": {
+  "55": 0.39,
+  "54": 0.85,
+  "58": 0.48
+ }
+}
