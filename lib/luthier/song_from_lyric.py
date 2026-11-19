@@ -25,7 +25,8 @@ WORD_SHORT = 4.0      # 891 (749.66): the charge on each stressed syllable a lin
 WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept median (0.13)
 WORD_PLACE = 1.5; WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
 #  879, 880: fitted so the builds' shares (a function word on the bar's first beat, the step up from a light word to a stressed one) and their fits meet the kept
-ONE_BAR = 0.1    # 876: a fresh two-bar line sung in one bar with the next bar silent, one time in ten (kept: a one-bar silence 0.2 times in eight bars)
+ONE_BAR = 0.09   # 911 (749.89): recounted on the mended parse (a silence of one bar to two, per eight bars: 0.386 old, 0.35 with ties read)
+_ONE_BAR_BEFORE_911 = 0.1    # 876: a fresh two-bar line sung in one bar with the next bar silent, one time in ten (kept: a one-bar silence 0.2 times in eight bars)
 EARLY = True     # 834: a line that opens on a stress comes in before the bar line at the kept share, one time in five
 SCALES = {"major": [0, 2, 4, 5, 7, 9, 11], "minor": [0, 2, 3, 5, 7, 8, 10]}
 def kind_of(name):
@@ -79,8 +80,9 @@ def plan(L):
         else: flags.append("888: no turn: with one the song would run past the kept 75th of lengths")
     secs_ = round(sum(b for _, _, b in form) * bar_s)                                          # 894 (749.69): one length, counted once, after the form is final
     if secs_ > BD.EDG["length"][2]: flags.append(f"the song runs {secs_} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo; at this tempo it would need about {int(round((secs_ - BD.EDG['length'][2]) / (2 * bar_s)))} fewer two-bar lines, or about {int(math.ceil(L['bpm'] * secs_ / BD.EDG['length'][2]))} beats a minute")
-    RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; lift = int(round(_r.Random(f"plan {L.get('seed', 1)} {L['title']}").choice(RP["lifts"])))
-    V = C.VOICES[L.get("voice", "tenor")]; lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
+    RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; V = C.VOICES[L.get("voice", "tenor")]
+    room_ = [x for x in RP["lifts"] if -3 <= x <= V[1] - V[0] - 12]; lift = int(round(_r.Random(f"plan {L.get('seed', 1)} {L['title']}").choice(room_ or RP["lifts"])))      # 907 (749.84): the lift drawn from the kept lifts the voice has room for, not drawn from all and clamped
+    lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
     vf, vc, vt = R_["verse"]["floor"][1], R_["verse"]["centre"][1], R_["verse"]["top"][1]                                               # the kept medians: floor on the tonic, centre a third above, top a sixth above
     reg = {"Verse": [T0 + vc, T0 + vf, T0 + vt], "Chorus": [T0 + vc + lift, T0 + max(-3, min(lift, max(0, lift - 1))), T0 + vt + lift], "Bridge": [T0 + R_["bridge"]["centre"][1], T0 + R_["bridge"]["floor"][1], T0 + R_["bridge"]["top"][1]]}
     vary = [name for name, lines in L["sections"] if lines and all(how.get(f"{name}:{i}", ["fresh"])[0] == "copy" for i in range(len(lines)))]      # 839: only a section that would return note for note
@@ -96,6 +98,8 @@ def plan(L):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
     if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
+        spec["stressed on the beat, at least"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json")))["stressed_syllables_on_a_beat_by_song_5_10_25_50_75"][1]      # 911: 731's floor is the kept 10th by song, tie starts read (0.35; it was 0.4 by hand)
+        spec["all_windows"] = True                                                            # 912: every kept two-bar rhythm may be drawn, not the sixty commonest
         spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
@@ -141,7 +145,7 @@ def write(L, N=1000, K=12):
     E = M.Engine(spec); run = E.run(N, L.get("seed", 1))
     if not run["survivors"]: return dict(error="no build survived", deaths=run["deaths"], flags=flags, spec=spec)
     notes = run["pick"]["notes"]; lo, hi = min(n["p"] for n in notes) - 60, max(n["p"] for n in notes) - 60
-    keys = C.choose_key(lo, hi, L.get("voice", "tenor"), L.get("lead", "guitar"), mode)
+    vn_ = sorted(n["p"] - 60 for n in notes if E.KIND.get(n["sec"]) == "Verse"); keys = C.choose_key(lo, hi, L.get("voice", "tenor"), L.get("lead", "guitar"), mode, centre=(vn_[len(vn_) // 2] if vn_ else None))
     if not keys: return dict(error="the melody does not fit the voice in any key", range=[lo, hi], flags=flags)
     key = keys[0]; shift = key["tonic_midi"] - 60; tonic = key["key"]; bt = 24 + key["tonic_midi"] % 12; bt = bt + 12 if bt < 28 else bt
     fb = []; b = 0

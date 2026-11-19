@@ -44,7 +44,9 @@ if __name__ == "__main__":
              readings_quartiles={k: [float(np.percentile([r[k] for r in R], q)) for q in (25, 50, 75)] for k in R[0]},
              bar_rhythms=[[list(k), c] for k, c in BARS.most_common(400)], two_bar_windows={str(k): [[list(w), c] for w, c in v.most_common(60)] for k, v in sorted(WIN.items()) if k <= 24},
              intervals={str(k): v for k, v in sorted(IV.items())}, interval_pairs={str(k): {str(j): c for j, c in sorted(v.items())} for k, v in sorted(IV2.items())}, onset_weights={str(k): round(v / tot, 4) for k, v in sorted(POS.items())}, durations={str(k): v for k, v in sorted(DUR.items())},
-             surprise_quartiles=[round(float(x), 3) for x in np.percentile(sur, (25, 50, 75))])
+             surprise_quartiles=[round(float(x), 3) for x in np.percentile(sur, (25, 50, 75))],
+             two_bar_windows_all={str(k): [[list(w), c] for w, c in sorted(v.items(), key=lambda x: (-x[1], x[0]))] for k, v in sorted(WIN.items()) if k <= 24},      # 912: every kept two-bar rhythm, not the sixty commonest: the commonest are the squarest
+             bar_rhythms_all=[[list(k), c] for k, c in sorted(BARS.items(), key=lambda x: (-x[1], x[0]))])
     names = sorted(rows[0])
     for nm in ("bars on a rhythm already sung", "bars on a figure already sung", "pitch scaling", "rhythm scaling"): T["readings_quartiles"][nm] = [float(x) for x in np.percentile([round(float(r[nm]), 5) for r in rows], (25, 50, 75))]
     json.dump(T, open(os.path.join(ROOT, "tables", "metre_atlas", "4-4_pop_sung.json"), "w"))

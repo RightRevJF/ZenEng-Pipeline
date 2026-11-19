@@ -185,7 +185,7 @@ def place(bar, barlen, beats):
 
 VOICES = {"bass": (40, 60), "baritone": (43, 64), "tenor": (48, 69), "alto": (55, 74), "mezzo": (57, 77), "soprano": (60, 81)}       # comfortable sung range, MIDI
 OPEN = {"major": ["G", "D", "A", "E", "C"], "minor": ["E", "A", "D", "B"]}                                                         # open-string guitar keys
-def choose_key(low, high, voice="tenor", lead="guitar", mode="major"):
+def choose_key(low, high, voice="tenor", lead="guitar", mode="major", centre=None):
     """804. low, high: the melody's lowest and highest note in semitones above the tonic it was written on. Returns the ranked keys: those that put the whole melody
     inside the voice, nearest its middle first, the lead instrument's kept keys before the others (guitar: open-string keys, 65% of kept guitar songs; piano, strings,
     synthesizer: flat keys twice as often as guitar songs). A key that needs a capo for an open shape says so."""
@@ -194,11 +194,11 @@ def choose_key(low, high, voice="tenor", lead="guitar", mode="major"):
         for octv in range(2, 7):
             t = 12 * octv + pc
             if t + low >= lo and t + high <= hi:
-                nm = (MAJOR_TONICS if mode == "major" else MINOR_TONICS)[pc]; mid = abs((t + low + t + high) / 2 - (lo + hi) / 2)
+                nm = (MAJOR_TONICS if mode == "major" else MINOR_TONICS)[pc]; mid = abs((t + centre) - (lo + hi) / 2) if centre is not None else abs((t + low + t + high) / 2 - (lo + hi) / 2)      # 907 (749.84): with a centre given (the verse's median note), it is the verse that sits near the voice's middle, not the span's midpoint
                 if lead == "guitar": fam = 0 if nm in OPEN[mode] else 1; capo = None if fam == 0 else min(((pc - NAMES_S.index(o)) % 12, o) for o in OPEN[mode])
                 else: fam = 0 if ((NAMES_F[(pc + 3) % 12] if mode == "minor" else nm) in FLAT_KEYS or (nm == "C" and mode == "major") or (nm == "A" and mode == "minor")) else 1; capo = None
                 out.append(dict(key=nm + ("m" if mode == "minor" else ""), tonic_midi=t, lowest=t + low, highest=t + high, from_middle=mid, instrument_key=fam == 0, capo=(f"capo {capo[0]}, {capo[1]} shapes" if capo and capo[0] <= 5 else None)))
-    out.sort(key=lambda d: (not d["instrument_key"], d["from_middle"], d["key"])); return out
+    out.sort(key=lambda d: ((d["from_middle"] > 3) if centre is not None else False, not d["instrument_key"], d["from_middle"], d["key"])); return out      # 907: the instrument's keys first among the keys that put the verse within three semitones of the voice's middle
 
 # ---- the held-out test
 def tv(a, b):

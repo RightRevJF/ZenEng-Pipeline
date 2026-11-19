@@ -49,9 +49,15 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
-        self.LE = None; self.gap_now = 12                                                     # 899 (749.76, 749.80): how kept lines end: the last syllable's length and the rest after it drawn together
+        self._rc = {}; self.ALLW = None
+        if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
+            B_ = collections.defaultdict(list)
+            for p_, c_ in T["bar_rhythms_all"]: B_[len(p_)].append((tuple(p_), c_))
+            self.ALLW = ({int(k): [(tuple(p_), c_) for p_, c_ in v] for k, v in T["two_bar_windows_all"].items()}, B_)
+        self.ENTRY = ENTRY; self.LE = None; self.gap_now = 12                                                     # 899 (749.76, 749.80): how kept lines end: the last syllable's length and the rest after it drawn together
         if spec.get("line_ends"):
             K_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json"))); C_ = np.array(K_["counts_by_tier_G_D"], float); self.LE = dict(GV=K_["G_values"], DV=K_["D_values"], C=C_, Gw=[float(x) for x in C_.sum((0, 2))])
+            if K_.get("entries_before_on_after_the_bar_line"): e_ = K_["entries_before_on_after_the_bar_line"]; self.ENTRY = {True: tuple(e_["stressed"]), False: tuple(e_["unstressed"])}      # 911 (749.89): 771's shares read from the kept table, tie starts read
         ww = spec.get("word_weight"); self.WW = None                                          # 879-881 (way 3): what the kept songs do with a word's weight
         if ww:
             K = WW_.table(); self.WW = dict(place=[[math.log(max(1e-4, K["place_share_by_tier"][a][j]) / K["place_share_all"][j]) for j in range(5)] for a in range(3)], pp=ww.get("place", 1.0), sp=ww.get("step", 1.0), gate=ww.get("gate"), cost=ww.get("again_cost", 1.0), fresh=ww.get("fresh", True), again=ww.get("again", True), lp=ww.get("length", 0.0), last=ww.get("last_note", False), short=ww.get("short_stress", 0.0),
@@ -110,18 +116,37 @@ class Engine:
             o1 = self.rhythm(rng, sy, tmin, self.BAR, cap=min(self.BAR - self.END, cap if cap is not None else 10 ** 6), hook=hook) if n <= 10 else None
             if o1 is not None and o1[-1] < self.BAR - self.END + 1 and self.stats is not None:
                 if o1[-1] <= self.BAR - self.END: self.stats["876: a line sung in one bar, the next bar silent"] += 1; return o1
+        if self.ALLW and bars in (1, 2):                                                      # 912: the scores of every kept rhythm for this line are worked once and kept; no cut to the twelve best
+            key_ = (id(sy), bars, hook)
+            if key_ not in self._rc:
+                M_ = []; E_ = []
+                for p in sorted({0, min(1, lead), min(2, lead)}):
+                    for w, c in (self.ALLW[0].get(n - p, []) if bars == 2 else self.ALLW[1].get(n - p, [])):
+                        if w[0] != 0 and p > 0: continue
+                        ons = [-6 * (p - j) for j in range(p)] + list(w); e = self.ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
+                        M_.append((ons[0], w[-1], ons, math.log(c) + (2.8 if hook else 1.4) * self.stress_score(ons, sy) + math.log(e)))
+                        if p == 0 and sy[0][1] and w[0] == 0 and self.S.get("early_entries"):
+                            for sh in (6, 12): E_.append((w[0] - sh, w[-1], [x - sh for x in w], math.log(c) + 1.4 * self.stress_score(list(w), sy)))
+                self._rc[key_] = (M_, E_)
+            M_, E_ = self._rc[key_]; out = [(o, s_) for f, l, o, s_ in M_ if l <= end and f >= tmin]; early = [(o, s_) for f, l, o, s_ in E_ if l <= end and f >= tmin]
+            if early and rng.random() < self.ENTRY[True][0]: out = early; self.stats["834: a stressed opening sung before the bar line"] += 1
+            if out:
+                top_ = max(s_ for _, s_ in out); self.stats["653: a line in a kept window"] += 1; return list(rng.choices([o for o, _ in out], [math.exp(s_ - top_) for _, s_ in out])[0])
+            o = self.weighted(rng, sy, tmin, end)
+            if o is not None: self.stats["760: a line set by the weighted rule"] += 1
+            return o
         for p in sorted({0, min(1, lead), min(2, lead)}):
             for w, c in self.kept_windows(n - p, bars):
                 if w[-1] > end or (w[0] != 0 and p > 0): continue
                 ons = [-6 * (p - j) for j in range(p)] + list(w)
                 if ons[0] < tmin: continue
-                e = ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
+                e = self.ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
                 out.append((ons, math.log(c + 1) + (2.8 if hook else 1.4) * self.stress_score(ons, sy) + math.log(e)))        # 840: the title line's stresses pulled twice as hard to the beat
                 if p == 0 and sy[0][1] and w[0] == 0 and self.S.get("early_entries"):               # 834: a line that opens on a stress may sing its kept window an eighth or a quarter early
                     for sh in (6, 12):
                         o2 = [x - sh for x in w]
                         if o2[0] >= tmin: early.append((o2, math.log(c + 1) + 1.4 * self.stress_score([x for x in w], sy)))
-        if early and rng.random() < ENTRY[True][0]: out = early; self.stats["834: a stressed opening sung before the bar line"] += 1      # the entry's class first, at the kept share (771)
+        if early and rng.random() < self.ENTRY[True][0]: out = early; self.stats["834: a stressed opening sung before the bar line"] += 1      # the entry's class first, at the kept share (771)
         if out:
             top = sorted(out, key=lambda x: -x[1])[:12]; ws = [math.exp(s - top[0][1]) for _, s in top]; self.stats["653: a line in a kept window"] += 1
             return rng.choices([o for o, _ in top], ws)[0]
@@ -146,7 +171,7 @@ class Engine:
                 B[k][j] = sum(gw(P[j2] - P[j]) * pw(P[j2], st[k + 1]) * B[k + 1][j2] for j2 in range(j + 1, m) if P[j2] - P[j] < cap)
         w0 = [pw(P[j], st[0]) * B[0][j] for j in range(m)]; cl = [0 if P[j] < 0 else 1 if P[j] == 0 else 2 for j in range(m)]
         if sum(w0) <= 0: return None
-        mass = [sum(w for w, c in zip(w0, cl) if c == q) for q in range(3)]; q = rng.choices(range(3), [ENTRY[entry_st][q] if mass[q] > 0 else 0 for q in range(3)])[0]   # 771: the entry's class at the kept share, then the place
+        mass = [sum(w for w, c in zip(w0, cl) if c == q) for q in range(3)]; q = rng.choices(range(3), [self.ENTRY[entry_st][q] if mass[q] > 0 else 0 for q in range(3)])[0]   # 771: the entry's class at the kept share, then the place
         w0 = [w if c == q else 0.0 for w, c in zip(w0, cl)]
         j = rng.choices(range(m), w0)[0]; out = [P[j]]
         for k in range(n - 1):
@@ -313,14 +338,16 @@ class Engine:
             how = self.HOW.get((n["sec"], n["line"]), ["fresh"]); dd = {t: d for t, p, d in how[1]} if how[0] == "design" else None
             n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(self.END, min(nx - n["on"] - self.REST, 24 if n["stress"] else max(self.END, min(24, n["on"] - flat[j - 1]["on"]) if j and flat[j - 1]["text"] == n["text"] and flat[j - 1]["stress"] else 24))) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
         if self.LE:                                                                           # 899 (749.76, 749.80; replaces 887 where the table stands): the last syllable's length drawn from the kept lengths for its weight
-            GV, DV, C_ = self.LE["GV"], self.LE["DV"], self.LE["C"]; i0 = 0                   # and for the time to the next line, so the note and the rest are drawn as a pair and a line may run on
+            GV, DV, C_ = self.LE["GV"], self.LE["DV"], self.LE["C"]; i0 = 0; ph0 = flat[0]["on"] if flat else 0                   # and for the time to the next line, so the note and the rest are drawn as a pair and a line may run on
             for j, n in enumerate(flat):
                 if j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"]):
                     if self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design":
                         ln = flat[i0:j + 1]; tr_ = WW_.tier([(x["text"], x["stress"]) for x in ln])[-1]; G_ = (flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR) - n["on"]; gi = min(range(len(GV)), key=lambda q: abs(GV[q] - G_))
                         w_ = C_[tr_][gi] if C_[tr_][gi].sum() >= 20 else C_[:, gi].sum(0); top = G_
+                        if n["on"] - ph0 > 8 * self.BEAT and G_ >= 12: top = G_ - self.BEAT // 2          # 909 (749.88): a phrase already past eight beats ends in half a beat of rest at the least, so run-ons do not chain
                         ok_ = [(v, x) for v, x in zip(DV, w_) if v <= top and x > 0]
                         n["dur"] = rng.choices([v for v, _ in ok_], [x for _, x in ok_])[0] if ok_ else max(3, min(top, 6))
+                    if j + 1 < len(flat) and flat[j + 1]["on"] - n["on"] - n["dur"] >= self.BEAT // 2: ph0 = flat[j + 1]["on"]      # a breath: the next phrase begins
                     i0 = j + 1
         elif self.WW and self.WW["last"]:                                                     # 887 (amends 832, 844): a line's last note takes a kept length for its syllable's weight, of those that leave the rest; it is no longer held as long as the rest allows
             V, SH = self.WW["fin"]; i0 = 0
@@ -418,8 +445,9 @@ class Engine:
                 half = float(np.median([c["charge"] for c in alive])); first = [c for c in alive if c["charge"] <= half]                           # 874 (749.62): the old charge gates first: the least half of the builds
                 ok = [c for c in first if c["d7"] <= J.gate]; band = ok; wgate = None; n_joint = len(ok)
                 if self.WW and self.WW.get("gate") is not None:                                                                                     # 881: the words' gate: a build whose words fit its notes less well than nine kept songs in ten is passed over
-                    for c in alive: c["fit"] = WW_.fit(c["notes"], self.BAR, self.BEAT)
-                    ok2 = [c for c in ok if c["fit"] >= self.WW["gate"]]; wgate = dict(at_least=self.WW["gate"], builds_fit_quartiles=[round(float(x), 3) for x in np.quantile([c["fit"] for c in alive], (0.25, 0.5, 0.75))], pass_among_all=int(sum(c["fit"] >= self.WW["gate"] for c in alive)), pass_after_the_other_gates=len(ok2))
+                    for c in alive: f_ = WW_.fit(c["notes"], self.BAR, self.BEAT, parts=True); c["fit"] = f_["all"]; c["fit_len"] = f_["length"]
+                    mf_ = float(np.median([c["fit"] for c in alive])); ml_ = float(np.median([c["fit_len"] for c in alive]))      # 908 (749.85): as the old charge gates at its better half (874), so does the words' fit, whole and by length; the kept 10th stays the floor
+                    ok2 = [c for c in ok if c["fit"] >= max(self.WW["gate"], mf_) and c["fit_len"] >= ml_]; wgate = dict(at_least=self.WW["gate"], the_builds_median_fit=round(mf_, 3), the_builds_median_fit_by_length=round(ml_, 3), builds_fit_quartiles=[round(float(x), 3) for x in np.quantile([c["fit"] for c in alive], (0.25, 0.5, 0.75))], pass_among_all=int(sum(c["fit"] >= self.WW["gate"] for c in alive)), pass_after_the_other_gates=len(ok2))
                     if ok2: ok = ok2
                     else: wgate["no build past the joint gate also passed: the gate is waived"] = True
                 pool = ok or first                                                         # 873 (749.61): the gate, and no band

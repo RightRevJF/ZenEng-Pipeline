@@ -33,8 +33,19 @@ def line_ends(min_notes=150):
             if S[i + 1][3]: out.append((tr[i], S[i + 1][0] - S[i][0], S[i][1] - S[i][0], S[i + 1][0] - S[i][1]))
         yield str(s), out, S
 if __name__ == "__main__":
-    C = np.zeros((3, len(GV), len(DV))); Gs = []; rests = []; runon = []; per = []
+    C = np.zeros((3, len(GV), len(DV))); Gs = []; rests = []; runon = []; per = []; EN = {True: [0, 0, 0], False: [0, 0, 0]}; SB = []
     for s, ends, S in line_ends():
+        words = []; cur = ""; n_ = 0                                                          # 911 (749.89): how a line enters (771) and how often a stressed syllable is on a beat (731), given makers
+        for on, end, w, new in S:
+            cont = w.endswith("-"); cur += re.sub(r"[^A-Za-z']", "", w); n_ += 1
+            if not cont: words.append((cur, n_)); cur = ""; n_ = 0
+        if n_: words.append((cur, n_))
+        tr_, _ = MW.tiers(words); sb = [0, 0]
+        for i, (on, end, w, new) in enumerate(S):
+            if tr_[i] is None: continue
+            if new: EN[tr_[i] == 2][0 if on % 48 >= 36 else 1 if on % 48 == 0 else 2] += 1
+            if tr_[i] == 2: sb[1] += 1; sb[0] += on % 12 == 0
+        if sb[1] >= 40: SB.append(sb[0] / sb[1])
         for tr, G, D, r in ends:
             Gs.append(G); rests.append(r)
             if tr is not None: C[tr, near(GV, G), near(DV, min(D, G))] += 1
@@ -50,4 +61,6 @@ if __name__ == "__main__":
             if on[i + 1] - end[i] >= 0.5: ph.append(end[i] - s0); s0 = on[i + 1]
         ph.append(end[-1] - s0); P_ += ph; L_.append(max(ph))
     T["phrases_split_at_half_a_beat"] = dict(share_over_12_beats=round(float(np.mean(np.array(P_) > 12)), 3), beats_50_90_99=[round(float(x), 1) for x in np.percentile(P_, (50, 90, 99))], each_songs_longest_quartiles=[round(float(x), 1) for x in np.percentile(L_, (25, 50, 75))])
+    T["entries_before_on_after_the_bar_line"] = dict(note="a line's first syllable: within a beat before a bar line, on it, or elsewhere", stressed=[round(x / sum(EN[True]), 3) for x in EN[True]], unstressed=[round(x / sum(EN[False]), 3) for x in EN[False]], lines=[int(sum(EN[True])), int(sum(EN[False]))])
+    T["stressed_syllables_on_a_beat_by_song_5_10_25_50_75"] = [round(float(x), 3) for x in np.percentile(SB, (5, 10, 25, 50, 75))]
     json.dump(T, open(os.path.join(KC.ROOT, "tables", "kept_line_ends.json"), "w"), indent=1); print({k: v for k, v in T.items() if k != "counts_by_tier_G_D"})

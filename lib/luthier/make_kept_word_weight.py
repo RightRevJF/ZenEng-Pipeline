@@ -24,7 +24,7 @@ def tiers(words):
         wid += [q] * n
     return out, wid
 if __name__ == "__main__":
-    rng = random.Random(1); C = np.zeros((3, 5)); D = np.zeros((3, 3, 3)); rows = []; FV = [3, 6, 9, 12, 18, 24, 36, 48]; FIN = np.zeros((3, len(FV))); FC = lambda d: min(range(len(FV)), key=lambda j: abs(FV[j] - d)); LEN = np.zeros((3, 6)); LC = lambda g: 0 if g <= 3 else 1 if g <= 6 else 2 if g <= 9 else 3 if g <= 12 else 4 if g <= 18 else 5
+    WPc = [0, 0, 0]; rng = random.Random(1); C = np.zeros((3, 5)); D = np.zeros((3, 3, 3)); rows = []; FV = [3, 6, 9, 12, 18, 24, 36, 48]; FIN = np.zeros((3, len(FV))); FC = lambda d: min(range(len(FV)), key=lambda j: abs(FV[j] - d)); LEN = np.zeros((3, 6)); LC = lambda g: 0 if g <= 3 else 1 if g <= 6 else 2 if g <= 9 else 3 if g <= 12 else 4 if g <= 18 else 5
     for k in KC.kept_songs():
         tr, wid = tiers(k["words"])
         if len(tr) != len(k["t"]): continue
@@ -33,6 +33,8 @@ if __name__ == "__main__":
             C[tr[i], W.place(int(t[i]))] += 1
             if i + 1 >= len(tr) or lines[i + 1] != lines[i]: FIN[tr[i], FC(int(k["dur"][i]))] += 1
             if i + 1 < len(tr) and lines[i + 1] == lines[i]: LEN[tr[i], LC(int(t[i + 1] - t[i]))] += 1
+            if i and tr[i - 1] is not None and wid[i] == wid[i - 1] and (tr[i] == 2) != (tr[i - 1] == 2):          # 911 (749.89): inside a word, the stressed syllable against the one beside it (847's figure, given a maker)
+                hi = (p[i] - p[i - 1]) if tr[i] == 2 else (p[i - 1] - p[i]); WPc[0 if hi > 0 else 1 if hi == 0 else 2] += 1
             if i and tr[i - 1] is not None and lines[i] == lines[i - 1] and wid[i] != wid[i - 1]: D[tr[i - 1], tr[i], int(np.sign(p[i] - p[i - 1])) + 1] += 1
         if len(idx) < 40: continue
         S = W.salience(t, k["dur"], p, lines); w = np.array([W.WEIGHT[tr[i]] for i in idx]); f = {c: W.spearman(w, S[c][idx]) for c in S}; lid = np.array([lines[i] for i in idx]); perms = []
@@ -51,5 +53,6 @@ if __name__ == "__main__":
          "place_share_by_tier": [[round(float(x), 4) for x in C[k] / C[k].sum()] for k in range(3)], "place_share_all": [round(float(x), 4) for x in C.sum(0) / C.sum()],
          "step_down_level_up_from_tier_to_tier": [[[round(float(x), 4) for x in D[a, b] / D[a, b].sum()] for b in range(3)] for a in range(3)], "step_down_level_up_all": [round(float(x), 4) for x in D.sum((0, 1)) / D.sum()], "step_counts": D.sum(2).tolist(),
          "lengths": ["a sixteenth", "an eighth", "a dotted eighth", "a quarter", "to a dotted quarter", "a half or more"], "length_share_by_tier": [[round(float(x), 4) for x in LEN[k] / LEN[k].sum()] for k in range(3)], "length_share_all": [round(float(x), 4) for x in LEN.sum(0) / LEN.sum()],
-         "last_note_lengths_twelfths": FV, "last_note_length_share_by_tier": [[round(float(x), 4) for x in FIN[k] / FIN[k].sum()] for k in range(3)], "last_note_counts": FIN.sum(1).tolist()}
+         "last_note_lengths_twelfths": FV, "last_note_length_share_by_tier": [[round(float(x), 4) for x in FIN[k] / FIN[k].sum()] for k in range(3)], "last_note_counts": FIN.sum(1).tolist(),
+         "within_a_word_the_stressed_syllable_higher_level_lower": [round(x / sum(WPc), 3) for x in WPc], "within_a_word_pairs": int(sum(WPc))}
     json.dump(T, open(os.path.join(KC.ROOT, "tables", "kept_word_weight.json"), "w"), indent=1); print("tables/kept_word_weight.json written:", len(rows), "songs; fit", T["fit_percentiles_10_25_50_75_90"])

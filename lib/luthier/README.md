@@ -293,7 +293,7 @@ The session's 749.82: `cocopops_parse.recip_dur` dropped every sung note that be
 squarer than they are. Mended (904), and every kept 4/4 table with a maker rebuilt (905):
 
     python3 lib/luthier/cocopops_parse.py corpora/CoCoPops/Billboard/Data    # corpora/cocopops_notes.csv.gz, tie starts read
-    python3 lib/luthier/make_kept_4_4_tables.py      # tables/metre_atlas/4-4_pop_sung.json and the 4/4 rows of kept_readings.json (reproduces the old tables from the old parse)
+    python3 lib/luthier/make_kept_4_4_tables.py      # tables/metre_atlas/4-4_pop_sung.json and the 4/4 rows of kept_readings.json (reproduces the old tables from the old parse in every field but `surprise_quartiles`, which differs in the third place: 749.87)
     python3 lib/luthier/make_kept_word_weight.py; python3 lib/luthier/make_kept_returns.py; python3 lib/luthier/make_kept_line_ends.py
     python3 lib/luthier/kept_plan.py                 # tables/register_plan.json (still on the maintainer's paths)
 
@@ -313,3 +313,23 @@ squarer than they are. Mended (904), and every kept 4/4 table with a maker rebui
   The session's studies that parse the corpus themselves (ornament 848, slots 869, degrees 846, breath, silences) were not checked for ties here.
 - Results: `stage13_results.json`. All four `lyricNN.song.json` records and six tables changed and are committed.
 - Way 2 again on the mended parse: pitch scaling against weeks 0.17, peak 0.18 on 165 new songs (`studies/way2_again/way2_again_results_tie_starts_read.json`).
+
+## Luthier v27 — the session's fix list for v27 answered; every kept rhythm (fixes 907–912)
+
+    python3 lib/luthier/kept_plan.py                 # 910: tables/register_plan.json, now from the kept corpus inside the repo
+    python3 lib/luthier/make_kept_4_4_tables.py      # 912: the table now also holds every kept two-bar rhythm and bar
+    python3 lib/luthier/make_kept_line_ends.py       # 911: also the entries (771) and stressed syllables on a beat by song (731)
+    python3 lib/luthier/make_kept_word_weight.py     # 911: also 847's figure, recounted
+
+| Finding | Fix | What was done |
+|---|---|---|
+| 749.84 | 907 | the lift drawn from the kept lifts the voice has room for; `choose_key(centre=...)` puts the verse's median within three semitones of the voice's middle, the instrument's keys first. Songs 55, 54: half a semitone off; song 58 (lift 9, the room) 3.5 |
+| 749.85 | 908 | the words' fit gates at the builds' median, whole and by length, the kept 10th the floor (as 874 does for the old charge). Picks' fit 0.243/0.187/0.162 -> 0.429/0.303/0.377; by length 0.288/0.093/-0.017 -> 0.336/0.218/0.191 |
+| 749.86 | 910 | `kept_plan.py` reads `kept_corpus`; `kept6a.json` removed. The table is rebuilt on the kept list (138 songs) |
+| 749.87 | none | the README names the field; the step that differs was not found |
+| 749.88 | 909 | a phrase past eight beats ends in half a beat of rest at the least. Over 12 beats: 0.082/0.057/0.077 -> 0.019/0.074/0.036 (kept 0.042); song 54 still over |
+| 749.89 | 911 | ENTRY (771) and the 731 floor read from `kept_line_ends.json`; 847 recounted (0.416/0.382/0.202) and stands; ONE_BAR 0.09; 877 kept |
+| (the paper's own) | 912 | `two_bar_windows_all`, `bar_rhythms_all`: every kept rhythm, drawn at its kept count times its score, no cut to twelve (spec `all_windows`). Builds' onsets on the beat 0.53/0.49/0.54 -> 0.50/0.47/0.51 (kept median 0.45) |
+| 749.61 | none | carried |
+
+Results: `stage14_results.json`. Not met: the picks' stressed syllables on a beat (0.72, 0.58, 0.82) over the kept middle half (908 leans that way); rest share low on songs 55 and 54.
