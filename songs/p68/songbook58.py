@@ -104,7 +104,7 @@ md = [f"# {REC['title']} ({REC['edition']}): songbook and production notes", "",
 md += ["## At a glance", "",
        "**What it is about.** An old preacher in his last days tells about the boy who comes to change his sheets, and the promise they make each other every evening: same time tomorrow. "
        "It is a small promise, kept daily, and by the last chorus it has come to hold up more than the pulpit ever did.", "",
-       f"**How to play it.** {KI.KEYSTR}, ♩ = 84, 4/4, a folk ballad. {len(REC['bars'])} bars, about {mm}:{ss:02d}. One baritone voice ({rng[0]} to {rng[1]}), a harmony voice in the choruses, acoustic guitar, bass and drums.", "",
+       f"**How to play it.** {KI.KEYSTR}, ♩ = 84, 4/4, a folk ballad. {len(REC['bars'])} bars, about {mm}:{ss:02d}. One baritone voice ({rng[0]} to {rng[1]}), a harmony voice in the choruses, acoustic guitar, bass and drums." + (f" The guitar plays {KI.CAPO}." if KI.CAPO else ""), "",
        "| Section | Bars | Bar numbers | Level |", "|---|---|---|---|"]
 for s, nb, st, _, _ in REC["plan"]: md.append(f"| {s} | {nb} | {st // BAR + 1}–{st // BAR + nb} | {LEVEL_WORD(REC['level'][s])} |")
 md += ["", "## Section by section", ""]
@@ -123,7 +123,7 @@ md += ["## For each player", "",
        f"**Voice.** A baritone, {rng[0]} to {rng[1]}. Tell it plainly in the verses; the choruses sit about {LIFT:g} semitones higher, so let them open a little without pushing. "
        f"Sing the title as written, {TD[0]}: " + " ".join(nm(n["midi"]) for n in title_line) + ". " + top_desc(REC, nm), "",
        f"**Harmony voice.** Under the lead in all three choruses, in his rhythm and on his words; {round(100 * third_to_fifth)} in 100 of its notes sit a third to a fifth below him. Range {hr[0]} to {hr[1]}: the lowest notes want a true bass, or take them up an octave. Keep it soft; he leads.", "",
-       f"**Acoustic guitar.** Steady eighth-note strums from bar 1 to the end, under his voice; where a chord tone would sit a step from the note he sings, leave it out. Range {gr[0]} to {gr[1]}.", "",
+       f"**Acoustic guitar.** Steady eighth-note strums from bar 1 to the end, under his voice; where a chord tone would sit a step from the note he sings, leave it out. Range {gr[0]} to {gr[1]}." + (" " + KI.capo_line([c for b_ in REC['bars'] for c in (b_['chord'], b_['chord2'])]) + "." if KI.CAPO else ""), "",
        f"**Bass.** Quarter notes on every beat: roots and fifths, with chromatic passing notes a half step from the next root. Range {br[0]} to {br[1]}. Lock with the kick on 1 and 3.", "",
        f"**Drums.** Kick on 1 and 3, snare on 2 and 4, hat eighths, from bar {drums_from} to the end. A tom fill in the bar before each chorus that follows a verse (bars {', '.join(map(str, fills))}).", "",
        "## For the singer", "",
@@ -156,7 +156,7 @@ md += ["", "**Non-negotiables.**", "",
        "**Non-negotiables.** As on the one-sheet.", "",
        "### Session notes", "",
        f"- Tempo and click: ♩ = 84 throughout, 4/4. The voice enters in bar {min(bar(n['on']) for n in LEAD)}.",
-       f"- Key: {KI.KEYSTR}. Chords bar by bar are on the number chart and above the lead sheet.",
+       f"- Key: {KI.KEYSTR}" + (f"; guitar {KI.CAPO}" if KI.CAPO else "") + ". Chords bar by bar are on the number chart and above the lead sheet.",
        f"- Range: voice {rng[0]} to {rng[1]}; harmony {hr[0]} to {hr[1]}.",
        "- Tracking: guitar and click first, then bass and drums, then the lead voice, then the harmony voice.",
        "- Blend and panning: voice centre; harmony slightly right; guitar left of centre; bass and kick centre.",

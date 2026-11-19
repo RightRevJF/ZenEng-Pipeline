@@ -20,7 +20,7 @@ def bar_of(t):
 SP = KI.SP             # the record's key
 def pname(p, nxt=None):
     o = p // 12 - 4
-    return KI.lily_dir(p, nxt) + ("'" * o if o > 0 else "," * (-o))
+    return KI.lily_dir(p, nxt) + KI.lily_octave(p, nxt)
 DUR = {3: "16", 6: "8", 9: "8.", 12: "4", 18: "4.", 24: "2", 36: "2.", 48: "1"}
 def split(pos, n, L):
     """a note of n twelfths at pos in a bar of L, written as tied values that keep the bar's beats (7/8: 2+2+3 eighths)."""

@@ -52,7 +52,7 @@ table.nums tr td:last-child {{ border-right: 1.5px solid #111; }}
 .drum {{ font-size: 7.8pt; line-height: 1.2; }} .foot {{ font-size: 8pt; border-top: 1px solid #555; margin-top: 6px; padding-top: 4px; line-height: 1.35; }}
 </style></head><body>
 <div class="hdr"><h1>{REC['title']}</h1>
-<div class="meta">♩ = 84 &nbsp;·&nbsp; KEY: {KI.KEYSTR} &nbsp;·&nbsp; 4/4 &nbsp;·&nbsp; FEEL: folk ballad &nbsp;·&nbsp; {int(secs // 60)}:{int(round(secs % 60)):02d}</div>
+<div class="meta">♩ = 84 &nbsp;·&nbsp; KEY: {KI.KEYSTR}{(' &nbsp;·&nbsp; GUITAR: ' + KI.CAPO) if KI.CAPO else ''} &nbsp;·&nbsp; 4/4 &nbsp;·&nbsp; FEEL: folk ballad &nbsp;·&nbsp; {int(secs // 60)}:{int(round(secs % 60)):02d}</div>
 <div class="cred">Words and music: Jason Bryant · 2026</div></div>
 {body}
 <div class="foot"><b>Numbers.</b> {KI.numbers_line()}. One cell is one bar; two numbers in a cell split it, two beats each; four numbers, a beat each.

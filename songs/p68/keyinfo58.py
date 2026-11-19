@@ -8,8 +8,8 @@ TPC = _R["key"]["tonic_midi"] % 12
 KEYSTR = f"{TONIC} major"
 LETTERS = "CDEFGAB"; NAT = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
 MAJOR = [0, 2, 4, 5, 7, 9, 11]
-# a chromatic note by its distance from the tonic: (scale degree, alteration): #1 (the third of VI, the song's one chromatic chord), b3, #4, b6, b7
-CHROM = {1: (0, +1), 3: (2, -1), 6: (3, +1), 8: (5, -1), 10: (6, -1)}
+# a chromatic note by its distance from the tonic: (scale degree, alteration): b2, b3, #4, b6, b7 (one going a semitone to the next note is spelled by _spell_dir)
+CHROM = {1: (1, -1), 3: (2, -1), 6: (3, +1), 8: (5, -1), 10: (6, -1)}
 def _deg_alt(rel):
     rel %= 12
     if rel in MAJOR: return MAJOR.index(rel), 0
@@ -46,14 +46,36 @@ DIATONIC = [(0, ""), (2, "m"), (4, "m"), (5, ""), (7, ""), (9, "m")]
 def numbers_line():
     """'A major: 1 = A, 2m = Bm, ...' for the chart's footnote."""
     return f"{KEYSTR}: " + ", ".join(f"{NUM[r]}{q} = {name((TPC + r) % 12)}{q}" for r, q in DIATONIC)
-def lily_dir(p, nxt=None):
-    """a chromatic note spelled by where it goes: a semitone up to the next note, as a sharp of the letter below; a semitone down, as a flat of
-    the letter above (A to B♭ to A, D♯ to E). Otherwise the key's spelling."""
+def _spell_dir(p, nxt=None):
+    """(letter, accidental) for a note: in the key; a chromatic note a semitone from the next note takes the letter next to that note's letter
+    (up into it: the letter below, as D♯ to E or E♯ to F♯; down into it: the letter above, as B♭ to A or C to B)."""
     pc = p % 12
-    if (pc - TPC) % 12 in MAJOR or nxt is None: return lily(pc)
-    for L, n in NAT.items():
-        if nxt - p == 1 and (n + 1) % 12 == pc: return L.lower() + "is"
-        if nxt - p == -1 and (n - 1) % 12 == pc: return L.lower() + "es"
-    return lily(pc)
+    if (pc - TPC) % 12 in MAJOR or nxt is None or abs(nxt - p) != 1: return letter_acc(pc)
+    Lt, _ = letter_acc(nxt % 12); L = LETTERS[(LETTERS.index(Lt) + (-1 if nxt > p else 1)) % 7]
+    acc = (pc - NAT[L]) % 12; acc = acc - 12 if acc > 6 else acc
+    return L, acc
+def lily_dir(p, nxt=None):
+    L, a = _spell_dir(p, nxt); return L.lower() + ("is" * a if a > 0 else "es" * (-a))
+def lily_octave(p, nxt=None):
+    """the LilyPond octave marks, from the written letter's own octave (B♯3 sounds as C4; C♭4 as B3)."""
+    L, a = _spell_dir(p, nxt); o = (p - a) // 12 - 4; return "'" * o if o > 0 else "," * (-o)
 def name_dir(p, nxt=None):
     s = lily_dir(p, nxt); return s[0].upper() + s[1:].replace("is", "♯").replace("es", "♭")
+CAPO = _R["key"].get("capo")                     # e.g. "capo 2, A shapes", or None
+def capo_fret(): return int(re.match(r"capo (\d+)", CAPO).group(1)) if CAPO else 0
+def shape(ch):
+    """the open shape a guitarist fingers for a chord with the capo on: B with capo 2 is an A shape. Spelled as in the shapes' key."""
+    if not CAPO: return ch
+    k = capo_fret(); SH = re.search(r", (\S+) shapes", CAPO).group(1); spc = (TPC - k) % 12
+    def one(c):
+        r, q = split_chord(c); rel = (root_pc(r) - TPC) % 12; pc = (spc + rel) % 12
+        d, a = _deg_alt(rel); L = LETTERS[(LETTERS.index(SH[0]) + d) % 7]; acc = (pc - NAT[L]) % 12; acc = acc - 12 if acc > 6 else acc
+        return L + ("#" * acc if acc > 0 else "b" * (-acc)) + q
+    return "/".join(one(x) for x in ch.split("/"))
+def capo_line(chords):
+    """'Capo 2, A shapes: B is played as A, C♯m as Bm, ...' for the chords the song uses."""
+    if not CAPO: return ""
+    seen = []
+    for c in chords:
+        if c not in seen: seen.append(c)
+    return f"{CAPO[0].upper() + CAPO[1:]}: " + ", ".join(f"{c} as {shape(c)}" for c in seen).replace("#", "♯")
