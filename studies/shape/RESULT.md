@@ -80,3 +80,13 @@ Artist fixed effects; artists split in two by name as the lock. Rule in same_art
 Tune measures: 1,985 songs, 320 artists with three or more; every pooled reading within +/-0.05 (largest M2 +0.045, p .06; halves -0.03 and +0.12).
 Chord measures: 669 songs, 120 artists; largest C7 -0.074 (p .08).
 With fame, voice, era and style cancelled, nothing measured so far on the written tune or its chords tells an artist's great songs from the same artist's other hits.
+
+# Newness and influence (19 Nov 2026). Study only; nothing built.
+4,108 songs across three sources, each compared within itself. Prediction in newness/PREDICTION.md.
+N newness: +0.060, -0.011, +0.026 (pooled p .51) FAIL. F ahead of its time: -0.001, -0.016, +0.068 (p .71) FAIL. No best amount of newness either (G flat across fifths of N).
+
+# Where the signal lives: the recording, not the written notes (after the fact)
+Spotify's readings of the recording against G, 18,024 Hot 100 songs of 2005 or earlier, year and chart peak held, halves by title:
+valence -0.085 / -0.096; danceability -0.073 / -0.079; duration +0.067 / +0.040; instrumentalness +0.031 / +0.054; energy -0.026 / -0.049; mode -0.004 / -0.008; the rest under 0.03.
+All eleven together, fitted on one half and judged on the other: +0.101 (love +0.081, covers +0.080).
+Small, but the first readings in these studies to repeat on unseen songs: the songs still loved and covered sound less cheerful and less made for dancing than other hits of their year. Major or minor key is not it.
