@@ -3,6 +3,7 @@
 import sys, json, numpy as np
 sys.path[:0] = ["/home/claude/rightrevjf/zeneng-pipeline/tables/metre_atlas", "/home/claude/zeneng/corpus/v20"]
 import atlas_build as AB
+sys.path.insert(0, "/home/claude/rightrevjf/zeneng-pipeline/lib/luthier"); import scaling as SC
 def structure(ns, barlen):
     """864: how much of a song comes back: bars whose rhythm, and bars whose rhythm and pitch moves, were already sung"""
     bars = {}
@@ -16,7 +17,7 @@ out = {}
 import bench as B
 K = B.kept(); rows = []
 for k in K:
-    ns = [[t, 6, p] for t, p, _ in k["notes"] if t % 3 == 0]; rows.append({**AB.readings(ns, 48, [0, 12, 24, 36], 12), **structure(ns, 48)})
+    ns = [[t, 6, p] for t, p, _ in k["notes"] if t % 3 == 0]; sc = SC.series([(x[0], x[2]) for x in ns]); a_ = SC.dfa(sc["pitch"]); b_ = SC.dfa(sc["onsets on the grid"]); rows.append({**AB.readings(ns, 48, [0, 12, 24, 36], 12), **structure(ns, 48), "pitch scaling": a_["alpha"], "rhythm scaling": b_["alpha"]})
 names = sorted(rows[0]); out["4-4_pop_sung"] = dict(names=names, rows=[[round(float(r[n]), 5) for n in names] for r in rows], songs=len(rows), source="the 159 kept CoCoPops Billboard songs")
 for m in ("6/8", "3/4"):
     barlen, beats, beat, kind = AB.METRES[m]; rows = []
@@ -28,6 +29,6 @@ for m in ("6/8", "3/4"):
 json.dump(out, open("/home/claude/rightrevjf/zeneng-pipeline/tables/metre_atlas/kept_readings.json", "w"))
 for t, v in out.items():                                                                 # the two new readings' quartiles into each kept table
     pth = f"/home/claude/rightrevjf/zeneng-pipeline/tables/metre_atlas/{t}.json"; T = json.load(open(pth))
-    for n in ("bars on a rhythm already sung", "bars on a figure already sung"):
+    for n in [x for x in ("bars on a rhythm already sung", "bars on a figure already sung", "pitch scaling", "rhythm scaling") if x in v["names"]]:
         j = v["names"].index(n); T["readings_quartiles"][n] = [float(x) for x in np.percentile([r[j] for r in v["rows"]], (25, 50, 75))]
     json.dump(T, open(pth, "w")); print({k: v["songs"] for k, v in out.items()})

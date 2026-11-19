@@ -186,3 +186,45 @@ Same command. Results: `stage6b_results.json`.
 - The research report: `reports/Vectors for judging great songs.md`; notes in `research_notes/Vectors for judging great songs/`.
 - Side effect: the two new readings are in every kept table's quartiles, so the old two-sided charge of songs 52 and 53 from their hand specs changes in size (song 52: 3.315; pick unchanged).
 - 866 not built: a chord judge beyond 809, a kept pop corpus outside 4/4, lyric rules, a second channel for musicians, a reading of form.
+
+## Way 2: the same order at every scale — fixes 867, 868 (to be written into Luthier v21)
+
+`scaling.py`: detrended fluctuation analysis of a song's pitch series and of its onsets on a sixteenth grid. Study: `way2_scaling_study.py`, predictions `way2_PREDICTION.md`,
+results `way2_results.json`, `way2_confounds.json`.
+
+- Kept pop songs: pitch alpha 0.79 / 0.90 / 1.00 (shuffled 0.53); onsets 0.61 / 0.66 / 0.72 (shuffled 0.51). The engine's builds: pitch 0.72 (song 55), 0.82 (song 54);
+  onsets 0.46 to 0.48, under a shuffled series.
+- Shuffling a kept song's bars lowers its pitch alpha in 87 songs in 100: the reading of form the stage-7 gate lacked.
+- Against the chart record: pitch alpha 0.17 with weeks (0.12 holding year and length), within chance on 131 songs.
+- 867 both exponents join the readings and the 4/4 pop gate. 868 both join the directed readings, counted up to the kept median.
+
+## Luthier v21: the same order at every scale; the fix list for v21 — fixes 867–878
+
+Same commands. Results: `stage8_results.json` (four songs, the scaling study, the descant). Slower now: each build's scaling is read (about four minutes a song at 1,000 builds).
+
+- 867, 868 scaling (see the section above). 876, 877 where the voice stays out (`one_bar_share`; turns in `plan()`; kept figures in `tables/kept_silences.json`,
+  `tables/kept_long_silences.json`): press a kept song's silences over a bar down to a bar and its rhythm exponent falls from 0.66 to 0.53.
+- 869 answers 749.63 (slots); 870 answers 749.58 (`kept_rests`); 871 answers 749.64 (weak endings); 872-874 answer 749.60-749.62 (the pick: the old charge's least half,
+  then the joint gate, then the first build in the order built; directed readings printed only); 875 answers 749.59 (melismas); 878 answers 749.57 (`sung_shifts`, `descant_shift`).
+- Every committed record is new (four lyric songs, spec52 run and written chords, spec53 spec and parts, stage4_results.json). Song 53's tune pick is unchanged.
+- Not met: rhythm exponent under the kept middle half on songs 54 and 58; the descant's summit at note 24 of 34, not in the last quarter; song 52 has no build past the joint gate.
+
+## Luthier v22 — way 3: the marriage of tune and words (fixes 879–884)
+
+The reading (`word_weight.py`, `tables/kept_word_weight.json`): a syllable's WEIGHT (0 function word, 0.4 weak syllable, 1 stressed) against its note's
+SALIENCE (length, place in the bar, height in its line). The FIT is their rank correlation over the song. Kept songs: 0.20 / 0.29 / 0.38 by quartile,
+10th percentile 0.09; 89 in 100 beat the same song with each line's words dealt again over its notes. Against the chart record: 0.03 (weeks), 0.00 (peak).
+So it gates and does not choose (858). Predictions written first: `way3_PREDICTION.md`; results: `stage9_results.json`.
+
+    python3 lib/luthier/song_from_lyric.py songs/p68/lyric58.json 1000 12    # 4/4 songs now read the words' weights; the record's checks print the fit
+
+- 879 a fresh line's places scored by where kept songs sing each weight (replaces the hand-set stress scores in 4/4). Alone: no gain.
+- 880 the step between two words leans as kept songs lean (function word to stressed syllable: up 45, level 32, down 23). Alone: small gain, in height.
+- 881 the words' gate: fit at least the kept 10th, after the old charge's gate and the joint gate. `judge7.words_gate` in the record.
+- 882 a line sung again (712/772/818) chooses which source notes are split, dropped or led into by 879's table; each change costs `again_cost` (8),
+  so a line of the same count keeps its tune. Nearly all the gain is here: builds' median fit 0.18 / 0.08 / 0.16 -> 0.28 / 0.24 / 0.35 (songs 55, 54, 58).
+  The cost is repetition: song 58's builds' median place under the old 4/4 judge 0.83 -> 0.62.
+- 883 the fit and its parts in the record's checks. 884 the reading itself.
+- spec: `"word_weight": {"place": 1.5, "step": 1.5, "again_cost": 8.0, "gate": 0.092}`; `"fresh": false` or `"again": false` switches a part off (used for the trials).
+- Not done: length is not married (the picks' fit by length is about nothing); no kept table outside 4/4 (song 52 and hymns unchanged, flagged);
+  the pick is still the first build past the gates.
