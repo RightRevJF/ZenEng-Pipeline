@@ -96,3 +96,12 @@ Prediction in mood/PREDICTION.md. Step 1: a reader of the written tune tracks Sp
 Step 2, against G: written cheerfulness -0.018, -0.032, +0.056 (pooled p .54) FAIL; written danceability -0.054, -0.014, +0.061 (p .78) FAIL.
 The mark, on the same songs: Spotify's own cheerfulness -0.139, -0.079, -0.023 (pooled z -5.1); danceability -0.143, -0.067, -0.061 (z -5.2). The recording finding holds on these subsets.
 So part of a song's mood is on the page, but the part that goes with lasting love and covers is not: it is in the recording.
+
+# The sound itself (19 Nov 2026). Study only; nothing built.
+553 McGill Billboard recordings (1958-1991) with AcousticBrainz measurements, 127 sound numbers. Prediction in sound/PREDICTION.md.
+A1 ridge reader over all sound numbers, fitted on one half of the artists, judged on the other: +0.113 (p .008; halves +0.117, +0.132; love +0.106, covers +0.081). PASS.
+A2 AcousticBrainz danceability: -0.014. FAIL (the Spotify danceability finding is not seen with this measurer).
+Leads (after the fact; same sign in both halves; chance would give about one at p < .01, there are fourteen at p < .0001):
+ energy in the low band +0.215; spectrum skewed to the low bands +0.230 and peaked +0.195; movement of energy over time +0.184; variation in beat loudness +0.171; share of near-silent frames -0.173.
+Checked against remastering: with replay gain, bit rate and the file's own release date held the leads keep 0.14-0.21; on the 171 files dated within two years of the song, 0.15-0.23. Present in love and in covers alike.
+Not yet checked: genre; a second store of recordings. Twice the size of anything else found in these studies, and the first pre-stated pass that also has nameable parts.
