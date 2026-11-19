@@ -38,7 +38,7 @@ want = [" ".join(num(c) for c in (x["beats4"] or [])) if x.get("beats4") else (n
 cells = re.findall(r"<td>([^<]*)</td>", nv); chk("number chart: one cell a bar, as the record", cells == want, f"{len(cells)} cells")
 # MusicXML: counted by the writer; re-read the lead sheet's pitches
 from music21 import converter, harmony
-for lab, n_want in (("lead sheet", 469),):
+for lab, n_want in (("lead sheet", len(REC["lead"])),):      # the record's count, not a number written in
     s = converter.parse(os.path.join(OUT, f"{FT} - {lab}.mxl"))
     ons = [x for x in s.parts[0].recurse().notes if not isinstance(x, harmony.ChordSymbol) and not (x.tie is not None and x.tie.type in ("stop", "continue"))]
     chk(f"MusicXML {lab}: onsets and pitches", len(ons) == n_want and [x.pitch.midi for x in ons] == [n["midi"] for n in REC["lead"]], f"{len(ons)}")
