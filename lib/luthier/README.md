@@ -268,3 +268,21 @@ So it gates and does not choose (858). Predictions written first: `way3_PREDICTI
 | 749.61 | none | carried: no kept pop corpus in 6/8 |
 
 Results: `stage11_results.json`. Regression line: `lyric52/54/55/58.song.json` changed by 890–893 and are committed.
+
+## Luthier v25 — how a line ends; the session's fix list for v25 answered (fixes 899–903)
+
+    python3 lib/luthier/make_kept_line_ends.py                               # tables/kept_line_ends.json (needs the kept corpus)
+    python3 lib/luthier/song_from_lyric.py songs/p68/lyric58.json 1000 12    # also p65/lyric55, p64/lyric54, p62/lyric52
+
+| Finding | Fix | What was done |
+|---|---|---|
+| 749.76, 749.80 | 899 | `tables/kept_line_ends.json`: by the last syllable's weight and the time to the next line, the counts of each held length (5,242 kept lyric lines, read by the transcribers' capitals). `metre_engine.build` draws the held length from it (spec `line_ends`); a line may begin a beat after the last line's last syllable began; a fresh line's distance from the line before is drawn from the kept. Replaces 887 in 4/4. Builds: silences per 100 beats 13.9/12.3/13.0 -> 9.7/9.1/10.2 (kept 7.0, 9.1, 11.1); lines that run on 0 -> 0.30/0.26/0.22 (kept 0.27); line-final lengths within ten points of the kept at both ends for every weight |
+| 749.78 | 901 | **answered against the finding.** In 619 kept line ends on a word's weak syllable, the weak syllable outlasts the stressed one in 47 of 100, and the stressed one is under a quarter in 72. 871 and 890 are retired where the kept table stands (`weak_end` returns nothing) |
+| 749.79 | 900 | `band.voicing`: two notes of the chord where no three clear the voice. Guitar under sung notes 1.0 / 1.0 / 1.0 (song 52 0.96). "Accompaniment above the sung note" is printed for a piano only |
+| 749.77 | none | not raised: read on syllables (the record's new check), song 54's pick 17/124 against a kept 0.12 inside lines; builds 0.06 to 0.08. The other lines' 0.05 is under the kept rate |
+| 749.81 | 902 | each flag once. Only the whole fit is gated, not its parts (said in the paper) |
+| 749.75 | 903 | the record prints Module 9.12 as kept songs meet it: the last chorus with its tag at least as long as the first. Songs 55, 54, 58: 20/16, 16/12, 16/14 bars. Nothing built |
+| 749.61 | none | carried |
+
+Results: `stage12_results.json`. The four `lyricNN.song.json` records changed and are committed. Not met: long distances between lines still short of the kept (a two-bar slot);
+rest share under the kept middle half in the picks of songs 55 and 54; a fifth of song 54's strums are two notes.

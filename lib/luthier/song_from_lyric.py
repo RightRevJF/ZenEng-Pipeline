@@ -96,9 +96,11 @@ def plan(L):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
     if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
+        spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
     spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7; spec["one_bar_share"] = ONE_BAR; spec["kept_rests"] = [[12, 15, 18, 24, 36, 48], [0.2, 0.15, 0.1, 0.25, 0.15, 0.15]]      # 870: the kept rests after a line (10th percentile a quarter, 25th 15 twelfths, median a half, 75th a whole)
+    flags[:] = list(dict.fromkeys(flags))                                                      # 902 (749.81): each flag once
     return spec, form, flags
 first_name = {}
 def bass(form_bars, tonic_midi, barlen, beats, mode):
@@ -234,6 +236,25 @@ def style_checks(rec, E):
     extra = {"syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": round(100 * len(mel) / max(1, len(syl)), 1), "of those, at a line's end (kept 20 in 100 where 8 syllables in 100 end a phrase; for this song's line ends, %s); on a word's end (kept 94)" % round(100 * rec["melody"].get("melisma_line_end_share_kept_for_this_song", 0.2)): [round(100 * le / max(1, len(mel))), round(100 * we / max(1, len(mel)))],
              "long notes on stressed syllables (kept quartiles 0.43, 0.55, 0.65)": round(sum(n["stress"] for n in longs) / max(1, len(longs)), 3),
              "flat third; flat seventh; leading tone, share of notes (kept, this family)": [round(deg.get(3, 0) / len(ns), 3), round(deg.get(10, 0) / len(ns), 3), round(deg.get(11, 0) / len(ns), 3)], "a song with blue notes": rec["spec"].get("degrees", {}).get("blue_song")}
+    if rec["metre"] == "4/4":                                                                 # 899, 903: how the lines end and how the last chorus stands, beside the kept
+        import word_weight as WW_; KL = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json"))); D_ = {0: [], 1: [], 2: []}; G_ = []; R_ = []; i0 = 0; st16 = {"again": [0, 0], "other": [0, 0]}
+        for j, a in enumerate(syl):
+            if j + 1 == len(syl) or (syl[j + 1]["sec"], syl[j + 1]["line"]) != (a["sec"], a["line"]):
+                ln = syl[i0:j + 1]; tr = WW_.tier([(x["text"], x["stress"]) for x in ln])[-1]; i0 = j + 1; k_ = ns.index(a); end = a["on"] + a["dur"] + (ns[k_ + 1]["dur"] if a.get("melisma") == "first" else 0); D_[tr].append(end - a["on"])
+                if j + 1 < len(syl): G_.append(syl[j + 1]["on"] - a["on"]); R_.append(syl[j + 1]["on"] - end)
+                g_ = "again" if rec["spec"]["how"].get(f"{a['sec']}:{a['line']}", ["fresh"])[0] == "again" else "other"
+                for x, y in zip(ln, ln[1:]):
+                    if x["stress"]: st16[g_][1] += 1; st16[g_][0] += (y["on"] - x["on"]) <= 3
+        sh = lambda v, f: round(sum(f(x) for x in v) / len(v), 2) if v else None; gaps = [(b["on"] - a["on"] - a["dur"]) / 12.0 for a, b in zip(ns, ns[1:])]; big = [g for g in gaps if g >= 1]
+        extra["line-final syllables an eighth or less: function word, weak syllable, stressed (kept %s)" % KL["an_eighth_or_less_by_tier"]] = [sh(D_[k], lambda x: x <= 6) for k in range(3)]
+        extra["line-final syllables a half note or more: function word, weak syllable, stressed (kept %s)" % KL["held_a_half_or_more_by_tier"]] = [sh(D_[k], lambda x: x >= 24) for k in range(3)]
+        extra["lines that run on with under a beat of rest (kept songs %s by quartile)" % KL["run_on_share_by_song_quartiles"]] = sh(R_, lambda x: x < 12)
+        extra["silences of a beat or more per 100 beats; their median in beats (kept 7.0, 9.1, 11.1; 1.5 to 3.0)"] = [round(100 * len(big) / ((ns[-1]["on"] - ns[0]["on"]) / 12.0), 1), round(st_.median(big), 2) if big else 0]
+        extra["stressed syllables a sixteenth long, of syllables: lines sung again; other lines (kept inside lines 0.12)"] = [f"{st16['again'][0]}/{st16['again'][1]}", f"{st16['other'][0]}/{st16['other'][1]}"]
+        ch_ = [n_ for n_, k_, b_ in rec["form"] if k_ == "chorus" and by.get(n_) and not n_.startswith("Tag")]
+        if len(ch_) >= 2:                                                                     # 903 (749.75): Module 9.12 read as kept songs would pass it: the last chorus at least as long as the first, and longer or higher at the top
+            fb_ = {n_: b_ for n_, k_, b_ in rec["form"]}; tag = sum(b_ for n_, k_, b_ in rec["form"][[n_ for n_, _, _ in rec["form"]].index(ch_[-1]) + 1:] if k_ == "chorus")
+            extra["9.12: the last chorus's bars (with a tag after it); the first's; its top note; the first's (kept: longer in 67 of 100, higher at the top in 26)"] = [fb_[ch_[-1]] + tag, fb_[ch_[0]], max(x["midi"] for n_ in [ch_[-1]] + [m_ for m_, k_, _ in rec["form"][[q_ for q_, _, _ in rec["form"]].index(ch_[-1]) + 1:] if k_ == "chorus" and by.get(m_)] for x in by[n_]), max(x["midi"] for x in by[ch_[0]])]
     if rec["metre"] == "4/4":                                                                 # 883: the words' fit of the song as sung, beside the kept
         import word_weight as WW_; K_ = WW_.table(); f_ = WW_.fit([n for n in ns if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True); kq = K_["fit_percentiles_10_25_50_75_90"]
         extra[f"the words' fit: weightier syllables on more salient notes (kept 10th {kq[0]}, quartiles {kq[1]}, {kq[2]}, {kq[3]})"] = round(f_["all"], 3)
