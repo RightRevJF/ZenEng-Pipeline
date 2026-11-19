@@ -63,3 +63,13 @@ Song by song, the three sit nearer the kept middle than kept songs do. Across th
 - **Melisma share** is drawn from the kept quartiles by construction.
 - **Harmony and band** have no per-song kept rows in the repo. Their checks stay in the band report.
 - **The title's stressed syllables on a beat** (kept 0.73) is pooled, not by song.
+
+## Proposed amendment (749.96): read the rule on the pools
+
+The rule as adopted judges one draw. The pick is the first build in order past the gates, so it is one draw from each song's gated pool, and a pass by a few thousandths can be luck. Under v29, rhythm scaling passed by 0.003, and a fresh draw of the same three songs would lean past the kept 10th 44 times in 100 (`margin.py`). The kept 10th itself is known only to about ±0.014 (bootstrap over the 160 kept songs).
+
+No fixed margin on the readings, then. Instead the same rule, read on the pools:
+
+**Sound** when a pick drawn at random from each song's gated pool passes the rule at least 90 times in 100. Three kept songs drawn at random pass it 93 times in 100.
+
+The single picks must still pass, as now. `margin.py` reads the pools for the two leaning checks; `neighbour.py` reads them on all 21 kept-read checks. Under v29 the pools pass well under 56 times in 100, held down by rhythm scaling alone. With four-bar turns (749.95) they pass 87 times in 100. The rest of the gap is repetition of bar figures (749.97).

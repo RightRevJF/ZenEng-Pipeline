@@ -20,15 +20,22 @@ _TD = title_desc(REC)
 _dr = min(e["on"] for e in REC["parts"]["drums"]) // 48 + 1; _fills = sorted({e["on"] // 48 + 1 for e in REC["parts"]["drums"] if e["p"][0] in (45, 48)})
 _b1 = {s: st // 48 + 1 for s, nb, st, mets, mv in REC["plan"]}; _sung = min(n_["on"] for n_ in REC["lead"]) // 48 + 1
 _rel = lambda s: [f - _b1[s] + 1 for f in _fills if _b1[s] <= f < _b1[s] + dict((x[0], x[1]) for x in REC["plan"])[s]]
+def _secbars(s_): return [x for x in BARS if x["sec"] == s_]                                  # the section's bars, read from the record
+def _cell(x): return " ".join(num(c) for c in (x["beats4"] or [])) if x.get("beats4") else (num(x["chord"]) if x["chord"] == x["chord2"] else num(x["chord"]) + " " + num(x["chord2"]))
+def _nw(n): return {2: "two", 4: "four", 6: "six", 8: "eight", 12: "twelve", 14: "fourteen", 16: "sixteen", 18: "eighteen", 20: "twenty"}.get(n, str(n))
 FEEL = {"Intro": f"Guitar strums eighths and bass plays quarters from bar 1; drums in at bar {_dr}. Voice picks up in bar {_sung}",
         "Verse 1": f"Guitar strums eighths under him all the way; bass quarters; kick 1 and 3, snare 2 and 4. TOM FILL in bar {_rel('Verse 1')[0] if _rel('Verse 1') else '-'}",
         "Chorus 1": _TD[1] + " Harmony voice under him all chorus. The chorus's top note in bar " + ", ".join(str(b_) for b_ in sorted({n_["on"] // 48 + 1 - _b1["Chorus 1"] + 1 for n_ in REC["lead"] if n_["sec"] == "Chorus 1" and n_["midi"] == max(x["midi"] for x in REC["lead"] if x["sec"] == "Chorus 1")})),
         "Verse 2": "As verse 1",
         "Chorus 2": "As chorus 1",
-        "Bridge": "Starts on 4. Same groove; he sings through",
+        "Bridge": f"Starts on {_cell(_secbars('Bridge')[0])}. Same groove; he sings through" if _secbars('Bridge') else "",
         "Verse 3": "As verse 1",
-        "Last Chorus": "Sixteen bars, two more than the others: the last two are 2m 6, 5 1",
-        "Outro": "Four bars: 1, \u266d7, 4 5, 1. Band to the end"}
+        "Last Chorus": (f"{_nw(len(_secbars('Last Chorus'))).capitalize()} bars, {_nw(len(_secbars('Last Chorus')) - len(_secbars('Chorus 1')))} more than the others: the last two are {_cell(_secbars('Last Chorus')[-2])}, {_cell(_secbars('Last Chorus')[-1])}" if len(_secbars('Last Chorus')) > len(_secbars('Chorus 1')) else f"As chorus 1; the last two bars {_cell(_secbars('Last Chorus')[-2])}, {_cell(_secbars('Last Chorus')[-1])}"),
+        "Outro": f"{_nw(len(_secbars('Outro'))).capitalize()} bars: " + ", ".join(_cell(x) for x in _secbars('Outro')) + ". Band to the end"}
+for _s in [x[0] for x in REC["plan"]]:
+    if _s.startswith("Turn"): FEEL[_s] = f"{_nw(len(_secbars(_s))).capitalize()} bars, the band alone: " + ", ".join(_cell(x) for x in _secbars(_s)) + ". He rests"
+_TURNS = [x[0] for x in REC["plan"] if x[0].startswith("Turn")]
+def _disp(s_): return ("Turn" if len(_TURNS) == 1 else f"Turn {_TURNS.index(s_) + 1}") if s_ in _TURNS else s_      # a musician reads "Turn", not the record's count from the end
 def rows(cells, w=8): return "".join("<tr>" + "".join(f"<td>{c}</td>" for c in cells[i:i + w]) + "</tr>" for i in range(0, len(cells), w))
 body = ""; b = 0
 for s, nb, st, mets, mv in REC["plan"]:
@@ -36,7 +43,7 @@ for s, nb, st, mets, mv in REC["plan"]:
     for bi in range(b, b + nb):
         x = BARS[bi]
         cells.append(" ".join(num(c_) for c_ in x["beats4"]) if x.get("beats4") else num(x["chord"]) if x["chord"] == x["chord2"] else num(x["chord"]) + " " + num(x["chord2"]))
-    lab = f"""<div class="lab"><span class="name">{s.upper()}</span> <span class="bars">{nb}</span><div class="bar">bars {b + 1}–{b + nb}</div></div>"""
+    lab = f"""<div class="lab"><span class="name">{_disp(s).upper()}</span> <span class="bars">{nb}</span><div class="bar">bars {b + 1}–{b + nb}</div></div>"""
     body += f"""<div class="sec">{lab}<table class="nums">{rows(cells)}</table><div class="drum">{FEEL[s]}</div></div>"""
     b += nb
 secs = REC["seconds"]

@@ -128,7 +128,8 @@ def readback(name, bybar, want):
     got = midi_readback(f"{OUT}/check/check_{name}.midi")[0]
     return sorted(got) == sorted(want) and len(got) == len(want), len(got), len(want)
 def nm_(p): return f"{_NM[p % 12]}{p // 12 - 1}"
-SHORT = {}
+_TURNS = [x[0] for x in REC["plan"] if x[0].startswith("Turn")]
+SHORT = {s_: ("Turn" if len(_TURNS) == 1 else f"Turn {i_ + 1}") for i_, s_ in enumerate(_TURNS)}      # a musician reads "Turn", not the record's count from the end
 def staff_notes(who):
     """a vocal staff's notes: the lead and the other voices sung by who ('him', 'her', 'harmony')."""
     out = [dict(n) for n in REC["lead"] if n["singer"] == who] + [dict(n) for n in REC["harm"] if n["singer"] == who]

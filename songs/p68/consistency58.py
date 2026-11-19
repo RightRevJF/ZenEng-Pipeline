@@ -30,7 +30,7 @@ for doc in ("lead sheet", "full score", "parts", "Nashville chart"):
     if doc != "Nashville chart": chk(f"{doc}: footer tempo and key", ("♩ = 84" in txt or "= 84" in txt) and KI.KEYSTR in txt, KI.KEYSTR)
     else: chk("Nashville chart: the record's key, 1 = its tonic", f"KEY: {KI.KEYSTR}" in txt.replace("\n", " ") or KI.KEYSTR in txt, KI.numbers_line())
     if doc != "Nashville chart":
-        ly = os.path.join(OUT, f"{FT} - {doc}.ly"); chk(f"{doc}: key signature is the record's", os.path.exists(ly) and KI.LILY_KEY in open(ly).read() and "\\key c \\major" not in open(ly).read(), KI.LILY_KEY)
+        ly = os.path.join(OUT, f"{FT} - {doc}.ly"); chk(f"{doc}: key signature is the record's", os.path.exists(ly) and set(re.findall(r"\\key [a-z]+ \\major", open(ly).read())) == {KI.LILY_KEY}, KI.LILY_KEY)
 # the number chart against the record
 nv = open(os.path.join(OUT, "nashville.html")).read()
 num = lambda c: KI.number(c[:2] if len(c) > 1 and c[1] in "#b" else c[0]) + ("m" if c.endswith("m") else "")

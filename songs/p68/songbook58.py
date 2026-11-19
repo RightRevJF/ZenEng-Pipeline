@@ -99,6 +99,15 @@ WHAT = {"Intro": f"Guitar strumming eighths and bass from bar 1; drums in from b
 SHORTW = {"Intro": f"guitar, bass; drums from bar {drums_from}", "Verse 1": "guitar strums under the voice", "Chorus 1": "harmony voice in",
           "Verse 2": "as verse 1", "Chorus 2": "as chorus 1", "Bridge": f"from {_bc}; groove holds", "Verse 3": "as verse 1", "Last Chorus": "two bars longer; the title again at the end",
           "Outro": _oc.replace(" | ", ", ")}
+_NW = {1: "one", 2: "two", 3: "three", 4: "four", 6: "six", 8: "eight", 9: "nine", 10: "ten", 12: "twelve", 14: "fourteen", 16: "sixteen", 18: "eighteen", 20: "twenty"}
+_dlc = NB["Last Chorus"] - NB["Chorus 1"]; _nlc = len([k for k in lines if k[0] == "Last Chorus"])
+WHAT["Last Chorus"] = (f"{_NW.get(NB['Last Chorus'], NB['Last Chorus']).capitalize()} bars, {_NW.get(_dlc, _dlc)} more than the others; {_NW.get(_nlc, _nlc)} lines, the title again at the end. The last bar: {_lb}." if _dlc > 0
+                       else f"As chorus 1; {_NW.get(_nlc, _nlc)} lines. The last bar: {_lb}.")
+SHORTW["Last Chorus"] = f"{_NW.get(_dlc, _dlc)} bars longer; the title again at the end" if _dlc > 0 else "as chorus 1"
+TURNS = [(s_, nb_) for s_, nb_, _, _, _ in REC["plan"] if s_.startswith("Turn")]                # the band alone between sections, where the record has a turn
+for s_, nb_ in TURNS: WHAT[s_] = f"{_NW.get(nb_, nb_).capitalize()} bars, the band alone; he rests."; SHORTW[s_] = "the band alone; he rests"
+_after = lambda s_: [x[0] for x in REC["plan"]][[x[0] for x in REC["plan"]].index(s_) - 1]
+TURN_LINE = (" " + " ".join(f"After {_after(s_).lower()} the band plays {_NW.get(nb_, nb_)} bars alone." for s_, nb_ in TURNS)) if TURNS else ""
 PB = '\n```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```\n'
 md = [f"# {REC['title']} ({REC['edition']}): songbook and production notes", "", "Words and music: Jason Bryant", ""]
 md += ["## At a glance", "",
@@ -132,7 +141,7 @@ md += ["## For each player", "",
        "Verse 3 is the hardest to sing plainly; do not lean on it. The last chorus is longer than the others and ends on the title: leave the last word open.", "",
        "## The arrangement", "",
        "The band stays in one groove the whole way: the guitar strums eighths under him from the first bar to the last, with the bass on every beat and the drums on 1 and 3, 2 and 4. "
-       "What changes is the harmony voice in the choruses, a tom fill leading into each chorus that follows a verse, and the last chorus, two bars longer than the others. Keep the verses intimate and let the choruses fill out only as much as the harmony voice brings.", ""]
+       "What changes is the harmony voice in the choruses, a tom fill leading into each chorus that follows a verse, and the last chorus" + (f", {_NW.get(_dlc, _dlc)} bars longer than the others." if _dlc > 0 else ".") + TURN_LINE + " Keep the verses intimate and let the choruses fill out only as much as the harmony voice brings.", ""]
 md += ["## Production notes", "", "### Lyric sheet", ""]
 cur = None
 for k in lines:
@@ -166,6 +175,8 @@ md += ["", "**Non-negotiables.**", "",
        "- Parts, one PDF: voice, harmony voice, acoustic guitar, bass, drums; each with a note on its role, rehearsal marks and chord symbols.",
        "- Number chart (Nashville), PDF.", "- Demo, MP3 and General MIDI."]
 text = "\n".join(md) + "\n"
+for i_, (s_, _) in enumerate(TURNS):                                                           # the record names a turn by its count from the end; a musician reads "Turn", or "Turn 1", "Turn 2" in order
+    text = text.replace(s_, "Turn" if len(TURNS) == 1 else f"Turn {i_ + 1}")
 open(os.path.join(HERE, "songbook.md"), "w").write(text)
 doc_md = re.sub(r"\n```\{=openxml\}\n.*?\n```\n", "\n", text, flags=re.S)
 open(os.path.join(HERE, "songbook_doc.md"), "w").write(doc_md)

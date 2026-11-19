@@ -1,0 +1,118 @@
+{
+ "first": {
+  "outside_middle_half": [
+   9,
+   5,
+   5
+  ],
+  "total": 19,
+  "sound": false,
+  "leans_10_90": [],
+  "leans_25_75": [
+   "distinct rhythms over bars",
+   "bars on a rhythm already sung",
+   "bars on a figure already sung"
+  ]
+ },
+ "neighbour": {
+  "total_outside_middle_half_5_25_50_75_95": [
+   9.0,
+   13.0,
+   16.0,
+   18.0,
+   21.0
+  ],
+  "rule_fails_share": 0.035,
+  "leans_past_10_90_by_check": {}
+ },
+ "pool_share_outside_middle_half_median": [
+  5.0,
+  5.0,
+  7.0
+ ],
+ "a_random_pick_from": {
+  "every build that lived": {
+   "total_outside_middle_half_5_50_95": [
+    15.0,
+    20.0,
+    25.0
+   ],
+   "rule_fails_share": 0.16,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.46,
+    "bars on a figure already sung": 0.263,
+    "pitch scaling": 0.202,
+    "distinct rhythms over bars": 0.119,
+    "bars on a rhythm already sung": 0.119,
+    "the words' fit, whole": 0.062,
+    "fit by height": 0.051,
+    "onsets on the bar's first beat": 0.022,
+    "moves by leap": 0.007,
+    "silences of a beat or more, per 100 beats": 0.003,
+    "stressed syllables on a beat": 0.003,
+    "moves by step": 0.001,
+    "fit by length": 0.001,
+    "fit by place": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "pitch scaling": 0.016,
+    "rhythm scaling": 0.002
+   }
+  },
+  "the engine's pool (old charge's better half, joint gate, words' better halves)": {
+   "total_outside_middle_half_5_50_95": [
+    12.0,
+    17.0,
+    22.0
+   ],
+   "rule_fails_share": 0.132,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.393,
+    "bars on a figure already sung": 0.269,
+    "pitch scaling": 0.154,
+    "distinct rhythms over bars": 0.141,
+    "bars on a rhythm already sung": 0.141,
+    "onsets on the bar's first beat": 0.004,
+    "stressed syllables on a beat": 0.004,
+    "fit by length": 0.004,
+    "fit by height": 0.002,
+    "moves by step": 0.002,
+    "silences of a beat or more, per 100 beats": 0.001,
+    "moves by leap": 0.001,
+    "fit by place": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.002
+   }
+  },
+  "the joint gate and the kept floor only": {
+   "total_outside_middle_half_5_50_95": [
+    14.950000000000017,
+    20.0,
+    25.0
+   ],
+   "rule_fails_share": 0.165,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.454,
+    "bars on a figure already sung": 0.269,
+    "pitch scaling": 0.203,
+    "distinct rhythms over bars": 0.122,
+    "bars on a rhythm already sung": 0.122,
+    "the words' fit, whole": 0.047,
+    "fit by height": 0.036,
+    "onsets on the bar's first beat": 0.015,
+    "moves by leap": 0.005,
+    "moves by step": 0.003,
+    "stressed syllables on a beat": 0.003,
+    "silences of a beat or more, per 100 beats": 0.002,
+    "fit by length": 0.001,
+    "fit by place": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "pitch scaling": 0.023,
+    "rhythm scaling": 0.003,
+    "moves by leap": 0.0
+   }
+  }
+ }
+}
