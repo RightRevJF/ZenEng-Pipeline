@@ -28,3 +28,8 @@ No measure passed. Two leads to carry to fresh songs: (a) great songs turn more 
 
 Neither lead from the first run held. Caveat on M7 only: in this set the words sit on the tune above their own shuffles in 21% of songs
 (87% in the kept corpus), so the material is a poorer test of word-and-tune than of the tune's shape. M3 and M4 need no such excuse: they did not repeat.
+
+# Word and tune on the Rolling Stone songs (19 Nov 2026). Study only; nothing built.
+Only 80 of the 200 Rolling Stone files carry words; 44 are on the yardstick and fresh. Predictions in rolling_stone/PREDICTION.md.
+M7 pooled -0.07 (halves -0.40, +0.31); M7r +0.15 (halves -0.21, +0.68); M7s -0.10. All fail; the halves contradict each other.
+The material is good (84% of songs fit their words above a shuffle) but 44 songs settle nothing either way.
