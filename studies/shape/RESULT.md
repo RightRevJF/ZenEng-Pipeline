@@ -33,3 +33,16 @@ Neither lead from the first run held. Caveat on M7 only: in this set the words s
 Only 80 of the 200 Rolling Stone files carry words; 44 are on the yardstick and fresh. Predictions in rolling_stone/PREDICTION.md.
 M7 pooled -0.07 (halves -0.40, +0.31); M7r +0.15 (halves -0.21, +0.68); M7s -0.10. All fail; the halves contradict each other.
 The material is good (84% of songs fit their words above a shuffle) but 44 songs settle nothing either way.
+
+# The learned space (19 Nov 2026). Study only; nothing built.
+Spaces learned without grades from songs in neither graded set; a ridge reader fitted on one set, judged on the other. Predictions in learned/PREDICTION.md.
+
+| test | fitted on -> judged on | partial rho with G | verdict |
+|---|---|---|---|
+| T1 L1 codebook (64 regions) | set 1 -> set 2 | +0.103 (p .0097); reverse +0.061 (p .041) | PASS |
+| T2 L2 autoencoder code | set 1 -> set 2 | +0.020; reverse +0.030 | fail |
+| T3 L3 words in | five-fold in set 2 | -0.025 (notes-only twin -0.007) | fail |
+
+Checks on T1 after the fact: 15 other codebooks (32, 64, 128 regions x 5 seeds) all positive both ways, median +0.09 forward and +0.055 reverse; holds with chart peak held.
+Against it: with set 1's grades shuffled the forward score's 95th percentile is 0.083 and 99th 0.116, so +0.10 is between them; five-fold inside set 1 reads -0.006;
+on the 335 set-2 songs matched with an artist it is weaker (+0.03 to +0.10). About one part in a hundred of what makes G. Not yet known what the reader reads.
