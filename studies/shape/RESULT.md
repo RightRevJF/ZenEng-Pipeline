@@ -46,3 +46,10 @@ Spaces learned without grades from songs in neither graded set; a ridge reader f
 Checks on T1 after the fact: 15 other codebooks (32, 64, 128 regions x 5 seeds) all positive both ways, median +0.09 forward and +0.055 reverse; holds with chart peak held.
 Against it: with set 1's grades shuffled the forward score's 95th percentile is 0.083 and 99th 0.116, so +0.10 is between them; five-fold inside set 1 reads -0.006;
 on the 335 set-2 songs matched with an artist it is weaker (+0.03 to +0.10). About one part in a hundred of what makes G. Not yet known what the reader reads.
+
+# Opening the regions map (19 Nov 2026). After the fact; nothing built.
+- Genre: with seven Spotify genre families and decade held, forward +0.092 (p .021), reverse +0.044 (p .15). Some of the reading is genre; not all.
+- The same regions lean great in both sets: region-by-region lean toward G, set 1 against set 2, r = +0.60 over 64 regions.
+- No plain trait carries it. Region lean against pace, longest note, unevenness, span, step size, rise, repeated notes, tonic-chord notes: all under 0.2 either way; off-scale notes +0.18 / +0.16.
+  Read straight off the songs, slower pace and long notes lean great in set 2 (+0.14) but not set 1 (+0.04).
+- So the reader reads a pattern over many kinds of phrase, not one nameable feature. Next: a third graded set, never seen, with the reader frozen.
