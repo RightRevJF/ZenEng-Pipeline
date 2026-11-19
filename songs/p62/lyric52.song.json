@@ -7,7 +7,7 @@
   "tonic_midi": 60,
   "lowest": 60,
   "highest": 71,
-  "from_middle": 1.0,
+  "from_middle": 0.5,
   "instrument_key": true,
   "capo": null
  },
@@ -17,7 +17,7 @@
    "tonic_midi": 57,
    "lowest": 57,
    "highest": 68,
-   "from_middle": 2.0,
+   "from_middle": 2.5,
    "instrument_key": true,
    "capo": null
   },
@@ -26,7 +26,7 @@
    "tonic_midi": 62,
    "lowest": 62,
    "highest": 73,
-   "from_middle": 3.0,
+   "from_middle": 2.5,
    "instrument_key": true,
    "capo": null
   }
@@ -409,83 +409,78 @@
    2.118,
    3.021
   ],
-  "builds": 71,
+  "builds": 88,
   "pass_the_gate": 0,
   "in_the_kept_middle_half": 0,
   "builds_distance_quartiles": [
-   4.482,
-   4.797,
-   5.09
+   4.566,
+   4.803,
+   5.153
   ],
-  "pick_distance": 3.746,
+  "pick_distance": 3.739,
   "pick_directed": {
-   "low surprise": -3.133987389383383,
-   "sure endings": 0.1811264616048489
+   "low surprise": -3.1147473437586903,
+   "sure endings": 0.20474776623138968
   },
   "words_gate": null,
   "pick_words_fit": null,
   "pool": "no build passed the joint gate: the least distance among the old charge's least half",
   "gates_passed": {
-   "old_charge_least_half": 36,
+   "old_charge_least_half": 44,
    "joint_gate": 0,
    "words_gate": null
   },
   "gates_removed": {
-   "old_charge": 35,
-   "joint_gate": 36,
+   "old_charge": 44,
+   "joint_gate": 44,
    "words_gate": null
   },
   "shortlist": [
    {
-    "fp": "effabdda224e",
-    "distance": 4.773,
-    "old_charge": 5.561,
-    "low surprise": -2.84,
-    "sure endings": 0.257
+    "fp": "f50525428f0b",
+    "distance": 4.386,
+    "old_charge": 5.414,
+    "low surprise": -2.958,
+    "sure endings": 0.628
    },
    {
-    "fp": "ea1389e96083",
-    "distance": 4.561,
-    "old_charge": 5.131,
-    "low surprise": -2.981,
-    "sure endings": 0.298
+    "fp": "ff207de5110c",
+    "distance": 4.664,
+    "old_charge": 5.569,
+    "low surprise": -3.002,
+    "sure endings": 0.681
    },
    {
-    "fp": "bb08d21aa244",
-    "distance": 4.449,
-    "old_charge": 5.186,
-    "low surprise": -2.829,
-    "sure endings": 0.052
+    "fp": "94089a7de29d",
+    "distance": 4.48,
+    "old_charge": 5.031,
+    "low surprise": -2.888,
+    "sure endings": 0.242
    },
    {
-    "fp": "c75706e551a0",
-    "distance": 4.346,
-    "old_charge": 4.717,
-    "low surprise": -2.962,
-    "sure endings": 0.098
+    "fp": "b87793f3fd3a",
+    "distance": 4.822,
+    "old_charge": 5.46,
+    "low surprise": -3.031,
+    "sure endings": 0.522
    },
    {
-    "fp": "cc25519127b3",
-    "distance": 4.641,
-    "old_charge": 5.547,
-    "low surprise": -2.857,
-    "sure endings": 0.016
+    "fp": "b30f8387fd15",
+    "distance": 4.929,
+    "old_charge": 5.621,
+    "low surprise": -3.033,
+    "sure endings": 0.424
    }
   ],
   "the_old_pick": {
-   "fp": "2820d655e78d",
-   "distance": 3.746,
+   "fp": "c98740fff8c1",
+   "distance": 3.929,
    "passes": false
   },
   "withheld_reading_old_charge_of_the_pick": 4.012,
   "the_old_pick_notes": [
    [
     216,
-    67,
-    "Verse 1"
-   ],
-   [
-    219,
     64,
     "Verse 1"
    ],
@@ -495,18 +490,18 @@
     "Verse 1"
    ],
    [
-    225,
+    228,
     62,
     "Verse 1"
    ],
    [
-    228,
-    67,
+    231,
+    64,
     "Verse 1"
    ],
    [
     234,
-    67,
+    65,
     "Verse 1"
    ],
    [
@@ -516,22 +511,27 @@
    ],
    [
     246,
-    65,
+    62,
     "Verse 1"
    ],
    [
     252,
-    67,
+    62,
     "Verse 1"
    ],
    [
     258,
-    67,
+    65,
     "Verse 1"
    ],
    [
     264,
-    62,
+    67,
+    "Verse 1"
+   ],
+   [
+    267,
+    67,
     "Verse 1"
    ],
    [
@@ -540,23 +540,13 @@
     "Verse 1"
    ],
    [
-    288,
-    67,
-    "Verse 1"
-   ],
-   [
     291,
-    64,
-    "Verse 1"
-   ],
-   [
-    294,
-    64,
+    62,
     "Verse 1"
    ],
    [
     297,
-    62,
+    69,
     "Verse 1"
    ],
    [
@@ -571,16 +561,26 @@
    ],
    [
     312,
-    65,
+    64,
     "Verse 1"
    ],
    [
     318,
-    65,
+    67,
+    "Verse 1"
+   ],
+   [
+    321,
+    67,
     "Verse 1"
    ],
    [
     324,
+    65,
+    "Verse 1"
+   ],
+   [
+    327,
     67,
     "Verse 1"
    ],
@@ -591,7 +591,7 @@
    ],
    [
     336,
-    62,
+    64,
     "Verse 1"
    ],
    [
@@ -610,32 +610,27 @@
     "Verse 1"
    ],
    [
-    369,
+    372,
     62,
     "Verse 1"
    ],
    [
-    372,
-    65,
+    375,
+    64,
     "Verse 1"
    ],
    [
     378,
-    67,
+    64,
     "Verse 1"
    ],
    [
     384,
-    64,
+    65,
     "Verse 1"
    ],
    [
     390,
-    64,
-    "Verse 1"
-   ],
-   [
-    393,
     62,
     "Verse 1"
    ],
@@ -645,43 +640,43 @@
     "Verse 1"
    ],
    [
-    405,
-    60,
+    402,
+    65,
     "Verse 1"
    ],
    [
     408,
-    62,
-    "Verse 1"
-   ],
-   [
-    411,
-    62,
-    "Verse 1"
-   ],
-   [
-    414,
-    64,
-    "Verse 1"
-   ],
-   [
-    438,
-    62,
-    "Verse 1"
-   ],
-   [
-    441,
-    62,
-    "Verse 1"
-   ],
-   [
-    444,
     67,
     "Verse 1"
    ],
    [
+    411,
+    67,
+    "Verse 1"
+   ],
+   [
+    414,
+    62,
+    "Verse 1"
+   ],
+   [
+    420,
+    65,
+    "Verse 1"
+   ],
+   [
+    441,
+    65,
+    "Verse 1"
+   ],
+   [
+    444,
+    65,
+    "Verse 1"
+   ],
+   [
     450,
-    69,
+    67,
     "Verse 1"
    ],
    [
@@ -691,6 +686,11 @@
    ],
    [
     456,
+    69,
+    "Verse 1"
+   ],
+   [
+    459,
     67,
     "Verse 1"
    ],
@@ -701,72 +701,72 @@
    ],
    [
     465,
-    64,
+    65,
     "Verse 1"
    ],
    [
     468,
-    67,
+    65,
     "Verse 1"
    ],
    [
     474,
-    65,
+    62,
     "Verse 1"
    ],
    [
     477,
-    65,
+    60,
     "Verse 1"
    ],
    [
     480,
-    62,
+    60,
     "Verse 1"
    ],
    [
     486,
-    62,
+    64,
     "Verse 1"
    ],
    [
-    510,
+    504,
     62,
     "Chorus 1"
    ],
    [
-    513,
-    62,
+    510,
+    64,
     "Chorus 1"
    ],
    [
     516,
-    67,
+    62,
     "Chorus 1"
    ],
    [
     522,
-    67,
+    62,
     "Chorus 1"
    ],
    [
     528,
-    69,
-    "Chorus 1"
-   ],
-   [
-    534,
-    69,
-    "Chorus 1"
-   ],
-   [
-    540,
     67,
     "Chorus 1"
    ],
    [
+    534,
+    67,
+    "Chorus 1"
+   ],
+   [
+    540,
+    69,
+    "Chorus 1"
+   ],
+   [
     546,
-    65,
+    67,
     "Chorus 1"
    ],
    [
@@ -776,47 +776,37 @@
    ],
    [
     552,
-    64,
+    67,
     "Chorus 1"
    ],
    [
     558,
-    67,
-    "Chorus 1"
-   ],
-   [
-    576,
     71,
     "Chorus 1"
    ],
    [
-    582,
-    69,
-    "Chorus 1"
-   ],
-   [
-    588,
+    576,
     67,
     "Chorus 1"
    ],
    [
-    591,
-    64,
-    "Chorus 1"
-   ],
-   [
-    597,
+    582,
     62,
     "Chorus 1"
    ],
    [
-    600,
-    64,
+    588,
+    62,
     "Chorus 1"
    ],
    [
-    603,
-    64,
+    594,
+    65,
+    "Chorus 1"
+   ],
+   [
+    600,
+    62,
     "Chorus 1"
    ],
    [
@@ -825,18 +815,18 @@
     "Chorus 1"
    ],
    [
-    609,
-    62,
-    "Chorus 1"
-   ],
-   [
     612,
-    65,
+    67,
     "Chorus 1"
    ],
    [
     618,
     67,
+    "Chorus 1"
+   ],
+   [
+    621,
+    69,
     "Chorus 1"
    ],
    [
@@ -846,27 +836,37 @@
    ],
    [
     630,
-    71,
+    67,
     "Chorus 1"
    ],
    [
-    648,
-    71,
+    636,
+    65,
+    "Chorus 1"
+   ],
+   [
+    639,
+    67,
     "Chorus 1"
    ],
    [
     660,
-    71,
+    67,
     "Chorus 1"
    ],
    [
     666,
+    67,
+    "Chorus 1"
+   ],
+   [
+    672,
     69,
     "Chorus 1"
    ],
    [
     678,
-    71,
+    67,
     "Chorus 1"
    ],
    [
@@ -876,51 +876,41 @@
    ],
    [
     696,
-    62,
-    "Chorus 1"
-   ],
-   [
-    702,
-    62,
-    "Chorus 1"
-   ],
-   [
-    720,
-    71,
-    "Chorus 1"
-   ],
-   [
-    726,
     69,
     "Chorus 1"
    ],
    [
-    735,
-    64,
+    702,
+    67,
     "Chorus 1"
    ],
    [
-    741,
+    720,
+    65,
+    "Chorus 1"
+   ],
+   [
+    726,
     62,
+    "Chorus 1"
+   ],
+   [
+    732,
+    62,
+    "Chorus 1"
+   ],
+   [
+    738,
+    65,
     "Chorus 1"
    ],
    [
     744,
-    64,
-    "Chorus 1"
-   ],
-   [
-    747,
-    64,
-    "Chorus 1"
-   ],
-   [
-    750,
     62,
     "Chorus 1"
    ],
    [
-    753,
+    750,
     62,
     "Chorus 1"
    ],
@@ -930,8 +920,8 @@
     "Chorus 1"
    ],
    [
-    762,
-    67,
+    765,
+    69,
     "Chorus 1"
    ],
    [
@@ -941,22 +931,17 @@
    ],
    [
     774,
-    69,
+    65,
     "Chorus 1"
    ],
    [
-    792,
-    71,
+    780,
+    65,
     "Chorus 1"
    ],
    [
-    810,
+    783,
     67,
-    "Chorus 1"
-   ],
-   [
-    822,
-    71,
     "Chorus 1"
    ],
    [
@@ -965,8 +950,23 @@
     "Chorus 1"
    ],
    [
+    831,
+    67,
+    "Chorus 1"
+   ],
+   [
+    834,
+    71,
+    "Chorus 1"
+   ],
+   [
+    837,
+    67,
+    "Chorus 1"
+   ],
+   [
     840,
-    62,
+    67,
     "Chorus 1"
    ],
    [
@@ -975,23 +975,23 @@
     "Chorus 1"
    ],
    [
-    1008,
-    67,
-    "Verse 2"
-   ],
-   [
-    1014,
-    64,
-    "Verse 2"
-   ],
-   [
-    1017,
+    996,
     62,
     "Verse 2"
    ],
    [
+    1002,
+    60,
+    "Verse 2"
+   ],
+   [
+    1008,
+    60,
+    "Verse 2"
+   ],
+   [
     1020,
-    67,
+    62,
     "Verse 2"
    ],
    [
@@ -1000,13 +1000,13 @@
     "Verse 2"
    ],
    [
-    1032,
-    65,
+    1035,
+    64,
     "Verse 2"
    ],
    [
     1038,
-    65,
+    64,
     "Verse 2"
    ],
    [
@@ -1021,7 +1021,7 @@
    ],
    [
     1056,
-    62,
+    65,
     "Verse 2"
    ],
    [
@@ -1031,17 +1031,12 @@
    ],
    [
     1080,
-    67,
-    "Verse 2"
-   ],
-   [
-    1083,
-    64,
+    60,
     "Verse 2"
    ],
    [
     1086,
-    64,
+    60,
     "Verse 2"
    ],
    [
@@ -1051,12 +1046,12 @@
    ],
    [
     1092,
-    67,
+    60,
     "Verse 2"
    ],
    [
     1098,
-    67,
+    60,
     "Verse 2"
    ],
    [
@@ -1065,13 +1060,18 @@
     "Verse 2"
    ],
    [
-    1110,
+    1107,
     65,
     "Verse 2"
    ],
    [
+    1110,
+    64,
+    "Verse 2"
+   ],
+   [
     1116,
-    67,
+    62,
     "Verse 2"
    ],
    [
@@ -1081,7 +1081,7 @@
    ],
    [
     1128,
-    62,
+    67,
     "Verse 2"
    ],
    [
@@ -1095,27 +1095,22 @@
     "Verse 2"
    ],
    [
-    1164,
-    65,
+    1158,
+    64,
     "Verse 2"
    ],
    [
     1170,
-    67,
+    64,
     "Verse 2"
    ],
    [
     1176,
-    64,
+    65,
     "Verse 2"
    ],
    [
     1182,
-    64,
-    "Verse 2"
-   ],
-   [
-    1185,
     62,
     "Verse 2"
    ],
@@ -1125,18 +1120,18 @@
     "Verse 2"
    ],
    [
-    1197,
-    60,
+    1194,
+    65,
     "Verse 2"
    ],
    [
     1200,
-    62,
+    67,
     "Verse 2"
    ],
    [
     1203,
-    62,
+    67,
     "Verse 2"
    ],
    [
@@ -1145,22 +1140,27 @@
     "Verse 2"
    ],
    [
-    1230,
-    62,
+    1212,
+    65,
+    "Verse 2"
+   ],
+   [
+    1233,
+    65,
     "Verse 2"
    ],
    [
     1236,
-    67,
-    "Verse 2"
-   ],
-   [
-    1245,
-    69,
+    65,
     "Verse 2"
    ],
    [
     1248,
+    69,
+    "Verse 2"
+   ],
+   [
+    1251,
     67,
     "Verse 2"
    ],
@@ -1171,7 +1171,7 @@
    ],
    [
     1257,
-    64,
+    65,
     "Verse 2"
    ],
    [
@@ -1181,62 +1181,62 @@
    ],
    [
     1266,
-    65,
+    62,
     "Verse 2"
    ],
    [
     1269,
-    65,
-    "Verse 2"
-   ],
-   [
-    1272,
-    62,
-    "Verse 2"
-   ],
-   [
-    1278,
     60,
     "Verse 2"
    ],
    [
-    1302,
+    1272,
+    60,
+    "Verse 2"
+   ],
+   [
+    1278,
+    64,
+    "Verse 2"
+   ],
+   [
+    1296,
     62,
     "Chorus 2"
    ],
    [
-    1305,
-    62,
+    1302,
+    64,
     "Chorus 2"
    ],
    [
     1308,
-    67,
+    62,
     "Chorus 2"
    ],
    [
     1314,
-    67,
+    62,
     "Chorus 2"
    ],
    [
     1320,
-    69,
-    "Chorus 2"
-   ],
-   [
-    1326,
-    69,
-    "Chorus 2"
-   ],
-   [
-    1332,
     67,
     "Chorus 2"
    ],
    [
+    1326,
+    67,
+    "Chorus 2"
+   ],
+   [
+    1332,
+    69,
+    "Chorus 2"
+   ],
+   [
     1338,
-    65,
+    67,
     "Chorus 2"
    ],
    [
@@ -1246,47 +1246,37 @@
    ],
    [
     1344,
-    64,
+    67,
     "Chorus 2"
    ],
    [
     1350,
-    67,
-    "Chorus 2"
-   ],
-   [
-    1368,
     71,
     "Chorus 2"
    ],
    [
-    1374,
-    69,
-    "Chorus 2"
-   ],
-   [
-    1380,
+    1368,
     67,
     "Chorus 2"
    ],
    [
-    1383,
-    64,
-    "Chorus 2"
-   ],
-   [
-    1389,
+    1374,
     62,
     "Chorus 2"
    ],
    [
-    1392,
-    64,
+    1380,
+    62,
     "Chorus 2"
    ],
    [
-    1395,
-    64,
+    1386,
+    65,
+    "Chorus 2"
+   ],
+   [
+    1392,
+    62,
     "Chorus 2"
    ],
    [
@@ -1295,18 +1285,18 @@
     "Chorus 2"
    ],
    [
-    1401,
-    62,
-    "Chorus 2"
-   ],
-   [
     1404,
-    65,
+    67,
     "Chorus 2"
    ],
    [
     1410,
     67,
+    "Chorus 2"
+   ],
+   [
+    1413,
+    69,
     "Chorus 2"
    ],
    [
@@ -1316,27 +1306,37 @@
    ],
    [
     1422,
-    71,
+    67,
     "Chorus 2"
    ],
    [
-    1440,
-    71,
+    1428,
+    65,
+    "Chorus 2"
+   ],
+   [
+    1431,
+    67,
     "Chorus 2"
    ],
    [
     1452,
-    71,
+    67,
     "Chorus 2"
    ],
    [
     1458,
+    67,
+    "Chorus 2"
+   ],
+   [
+    1464,
     69,
     "Chorus 2"
    ],
    [
     1470,
-    71,
+    67,
     "Chorus 2"
    ],
    [
@@ -1346,51 +1346,41 @@
    ],
    [
     1488,
-    62,
-    "Chorus 2"
-   ],
-   [
-    1494,
-    62,
-    "Chorus 2"
-   ],
-   [
-    1512,
-    71,
-    "Chorus 2"
-   ],
-   [
-    1518,
     69,
     "Chorus 2"
    ],
    [
-    1527,
-    64,
+    1494,
+    67,
     "Chorus 2"
    ],
    [
-    1533,
+    1512,
+    65,
+    "Chorus 2"
+   ],
+   [
+    1518,
     62,
+    "Chorus 2"
+   ],
+   [
+    1524,
+    62,
+    "Chorus 2"
+   ],
+   [
+    1530,
+    65,
     "Chorus 2"
    ],
    [
     1536,
-    64,
-    "Chorus 2"
-   ],
-   [
-    1539,
-    64,
-    "Chorus 2"
-   ],
-   [
-    1542,
     62,
     "Chorus 2"
    ],
    [
-    1545,
+    1542,
     62,
     "Chorus 2"
    ],
@@ -1400,8 +1390,8 @@
     "Chorus 2"
    ],
    [
-    1554,
-    67,
+    1557,
+    69,
     "Chorus 2"
    ],
    [
@@ -1411,22 +1401,17 @@
    ],
    [
     1566,
-    69,
+    65,
     "Chorus 2"
    ],
    [
-    1584,
-    71,
+    1572,
+    65,
     "Chorus 2"
    ],
    [
-    1602,
+    1575,
     67,
-    "Chorus 2"
-   ],
-   [
-    1614,
-    71,
     "Chorus 2"
    ],
    [
@@ -1435,8 +1420,23 @@
     "Chorus 2"
    ],
    [
+    1623,
+    67,
+    "Chorus 2"
+   ],
+   [
+    1626,
+    71,
+    "Chorus 2"
+   ],
+   [
+    1629,
+    67,
+    "Chorus 2"
+   ],
+   [
     1632,
-    62,
+    67,
     "Chorus 2"
    ],
    [
@@ -1446,11 +1446,6 @@
    ],
    [
     1944,
-    67,
-    "Verse 3"
-   ],
-   [
-    1947,
     64,
     "Verse 3"
    ],
@@ -1460,18 +1455,18 @@
     "Verse 3"
    ],
    [
-    1953,
+    1956,
     62,
     "Verse 3"
    ],
    [
-    1956,
-    67,
+    1959,
+    64,
     "Verse 3"
    ],
    [
     1962,
-    67,
+    64,
     "Verse 3"
    ],
    [
@@ -1481,22 +1476,27 @@
    ],
    [
     1974,
-    65,
+    62,
     "Verse 3"
    ],
    [
     1980,
-    67,
+    64,
     "Verse 3"
    ],
    [
     1986,
-    67,
+    65,
     "Verse 3"
    ],
    [
     1992,
-    62,
+    67,
+    "Verse 3"
+   ],
+   [
+    1995,
+    67,
     "Verse 3"
    ],
    [
@@ -1521,32 +1521,37 @@
    ],
    [
     2028,
-    67,
+    62,
     "Verse 3"
    ],
    [
     2034,
-    67,
+    65,
     "Verse 3"
    ],
    [
     2040,
-    65,
+    67,
     "Verse 3"
    ],
    [
     2046,
-    65,
+    67,
     "Verse 3"
    ],
    [
     2052,
-    67,
+    65,
     "Verse 3"
    ],
    [
     2058,
-    67,
+    60,
+    "Verse 3"
+   ],
+   [
+    2061,
+    62,
     "Verse 3"
    ],
    [
@@ -1556,11 +1561,11 @@
    ],
    [
     2070,
-    62,
+    67,
     "Verse 3"
    ],
    [
-    2076,
+    2088,
     64,
     "Verse 3"
    ],
@@ -1570,27 +1575,17 @@
     "Verse 3"
    ],
    [
-    2100,
-    65,
-    "Verse 3"
-   ],
-   [
     2106,
-    67,
+    64,
     "Verse 3"
    ],
    [
     2112,
-    64,
+    65,
     "Verse 3"
    ],
    [
     2118,
-    64,
-    "Verse 3"
-   ],
-   [
-    2121,
     62,
     "Verse 3"
    ],
@@ -1600,18 +1595,18 @@
     "Verse 3"
    ],
    [
-    2133,
-    60,
+    2130,
+    65,
     "Verse 3"
    ],
    [
     2136,
-    62,
+    67,
     "Verse 3"
    ],
    [
     2139,
-    62,
+    67,
     "Verse 3"
    ],
    [
@@ -1620,18 +1615,18 @@
     "Verse 3"
    ],
    [
-    2166,
-    62,
+    2148,
+    65,
+    "Verse 3"
+   ],
+   [
+    2169,
+    65,
     "Verse 3"
    ],
    [
     2172,
-    67,
-    "Verse 3"
-   ],
-   [
-    2178,
-    69,
+    65,
     "Verse 3"
    ],
    [
@@ -1641,6 +1636,11 @@
    ],
    [
     2184,
+    69,
+    "Verse 3"
+   ],
+   [
+    2187,
     67,
     "Verse 3"
    ],
@@ -1651,7 +1651,7 @@
    ],
    [
     2193,
-    64,
+    65,
     "Verse 3"
    ],
    [
@@ -1661,33 +1661,23 @@
    ],
    [
     2202,
-    65,
-    "Verse 3"
-   ],
-   [
-    2205,
-    65,
-    "Verse 3"
-   ],
-   [
-    2208,
     62,
     "Verse 3"
    ],
    [
-    2214,
+    2205,
     60,
     "Verse 3"
    ],
    [
-    2232,
+    2208,
     60,
-    "Bridge"
+    "Verse 3"
    ],
    [
-    2238,
-    65,
-    "Bridge"
+    2214,
+    64,
+    "Verse 3"
    ],
    [
     2244,
@@ -1696,22 +1686,32 @@
    ],
    [
     2250,
-    60,
+    64,
     "Bridge"
    ],
    [
     2256,
-    60,
+    65,
+    "Bridge"
+   ],
+   [
+    2259,
+    67,
     "Bridge"
    ],
    [
     2262,
-    62,
+    65,
+    "Bridge"
+   ],
+   [
+    2265,
+    64,
     "Bridge"
    ],
    [
     2268,
-    67,
+    69,
     "Bridge"
    ],
    [
@@ -1721,77 +1721,67 @@
    ],
    [
     2280,
-    64,
+    67,
     "Bridge"
    ],
    [
     2286,
-    67,
-    "Bridge"
-   ],
-   [
-    2310,
-    67,
+    65,
     "Bridge"
    ],
    [
     2316,
-    71,
+    64,
     "Bridge"
    ],
    [
     2322,
-    67,
+    64,
     "Bridge"
    ],
    [
     2328,
-    60,
+    65,
     "Bridge"
    ],
    [
     2331,
-    69,
+    67,
     "Bridge"
    ],
    [
     2334,
-    67,
+    65,
     "Bridge"
    ],
    [
     2337,
-    67,
+    64,
     "Bridge"
    ],
    [
     2340,
-    65,
-    "Bridge"
-   ],
-   [
-    2346,
-    64,
-    "Bridge"
-   ],
-   [
-    2352,
-    64,
-    "Bridge"
-   ],
-   [
-    2358,
     67,
     "Bridge"
    ],
    [
-    2376,
-    60,
+    2346,
+    67,
     "Bridge"
    ],
    [
-    2382,
-    65,
+    2352,
+    67,
+    "Bridge"
+   ],
+   [
+    2358,
+    64,
+    "Bridge"
+   ],
+   [
+    2364,
+    64,
     "Bridge"
    ],
    [
@@ -1801,22 +1791,32 @@
    ],
    [
     2394,
-    60,
+    65,
     "Bridge"
    ],
    [
     2400,
-    60,
+    65,
+    "Bridge"
+   ],
+   [
+    2403,
+    67,
     "Bridge"
    ],
    [
     2406,
-    62,
+    65,
+    "Bridge"
+   ],
+   [
+    2409,
+    64,
     "Bridge"
    ],
    [
     2412,
-    65,
+    69,
     "Bridge"
    ],
    [
@@ -1826,7 +1826,7 @@
    ],
    [
     2424,
-    64,
+    67,
     "Bridge"
    ],
    [
@@ -1835,53 +1835,48 @@
     "Bridge"
    ],
    [
+    2460,
+    64,
+    "Bridge"
+   ],
+   [
+    2466,
+    62,
+    "Bridge"
+   ],
+   [
     2472,
-    67,
+    65,
     "Bridge"
    ],
    [
     2475,
-    64,
+    67,
     "Bridge"
    ],
    [
     2478,
-    64,
+    65,
     "Bridge"
    ],
    [
     2481,
-    62,
+    64,
     "Bridge"
    ],
    [
     2484,
-    62,
-    "Bridge"
-   ],
-   [
-    2487,
-    60,
+    67,
     "Bridge"
    ],
    [
     2490,
-    60,
-    "Bridge"
-   ],
-   [
-    2493,
-    62,
+    67,
     "Bridge"
    ],
    [
     2496,
-    62,
-    "Bridge"
-   ],
-   [
-    2499,
-    64,
+    67,
     "Bridge"
    ],
    [
@@ -1890,9 +1885,9 @@
     "Bridge"
    ],
    [
-    2520,
-    67,
-    "Verse 4"
+    2508,
+    64,
+    "Bridge"
    ],
    [
     2526,
@@ -1900,18 +1895,18 @@
     "Verse 4"
    ],
    [
-    2529,
+    2532,
     62,
     "Verse 4"
    ],
    [
-    2532,
-    67,
+    2535,
+    64,
     "Verse 4"
    ],
    [
     2538,
-    67,
+    64,
     "Verse 4"
    ],
    [
@@ -1921,22 +1916,27 @@
    ],
    [
     2550,
-    65,
+    62,
     "Verse 4"
    ],
    [
     2556,
-    67,
+    64,
     "Verse 4"
    ],
    [
     2562,
-    67,
+    65,
     "Verse 4"
    ],
    [
     2568,
-    62,
+    67,
+    "Verse 4"
+   ],
+   [
+    2571,
+    67,
     "Verse 4"
    ],
    [
@@ -1946,37 +1946,37 @@
    ],
    [
     2592,
-    67,
-    "Verse 4"
-   ],
-   [
-    2601,
     62,
     "Verse 4"
    ],
    [
+    2598,
+    60,
+    "Verse 4"
+   ],
+   [
     2604,
-    67,
+    60,
     "Verse 4"
    ],
    [
     2610,
-    67,
+    64,
     "Verse 4"
    ],
    [
     2616,
-    65,
+    64,
     "Verse 4"
    ],
    [
     2622,
-    65,
+    62,
     "Verse 4"
    ],
    [
     2628,
-    67,
+    62,
     "Verse 4"
    ],
    [
@@ -1986,12 +1986,12 @@
    ],
    [
     2640,
-    62,
+    64,
     "Verse 4"
    ],
    [
     2646,
-    62,
+    67,
     "Verse 4"
    ],
    [
@@ -2005,32 +2005,27 @@
     "Verse 4"
    ],
    [
-    2673,
+    2676,
     62,
     "Verse 4"
    ],
    [
-    2676,
-    65,
+    2679,
+    64,
     "Verse 4"
    ],
    [
     2682,
-    67,
+    64,
     "Verse 4"
    ],
    [
     2688,
-    64,
+    65,
     "Verse 4"
    ],
    [
     2694,
-    64,
-    "Verse 4"
-   ],
-   [
-    2697,
     62,
     "Verse 4"
    ],
@@ -2040,18 +2035,18 @@
     "Verse 4"
    ],
    [
-    2709,
-    60,
+    2706,
+    65,
     "Verse 4"
    ],
    [
     2712,
-    62,
+    67,
     "Verse 4"
    ],
    [
     2715,
-    62,
+    67,
     "Verse 4"
    ],
    [
@@ -2060,22 +2055,27 @@
     "Verse 4"
    ],
    [
-    2742,
-    62,
+    2724,
+    65,
+    "Verse 4"
+   ],
+   [
+    2745,
+    65,
     "Verse 4"
    ],
    [
     2748,
-    67,
-    "Verse 4"
-   ],
-   [
-    2757,
-    69,
+    65,
     "Verse 4"
    ],
    [
     2760,
+    69,
+    "Verse 4"
+   ],
+   [
+    2763,
     67,
     "Verse 4"
    ],
@@ -2086,7 +2086,7 @@
    ],
    [
     2769,
-    64,
+    65,
     "Verse 4"
    ],
    [
@@ -2096,37 +2096,32 @@
    ],
    [
     2778,
-    65,
+    62,
     "Verse 4"
    ],
    [
     2781,
-    65,
-    "Verse 4"
-   ],
-   [
-    2784,
-    62,
-    "Verse 4"
-   ],
-   [
-    2790,
     60,
     "Verse 4"
    ],
    [
-    2814,
-    62,
-    "Last Chorus"
+    2784,
+    60,
+    "Verse 4"
    ],
    [
-    2817,
-    62,
+    2790,
+    64,
+    "Verse 4"
+   ],
+   [
+    2814,
+    69,
     "Last Chorus"
    ],
    [
     2820,
-    67,
+    69,
     "Last Chorus"
    ],
    [
@@ -2136,11 +2131,16 @@
    ],
    [
     2832,
-    69,
+    65,
     "Last Chorus"
    ],
    [
     2838,
+    67,
+    "Last Chorus"
+   ],
+   [
+    2841,
     69,
     "Last Chorus"
    ],
@@ -2151,7 +2151,7 @@
    ],
    [
     2850,
-    65,
+    64,
     "Last Chorus"
    ],
    [
@@ -2161,7 +2161,7 @@
    ],
    [
     2856,
-    64,
+    69,
     "Last Chorus"
    ],
    [
@@ -2171,37 +2171,27 @@
    ],
    [
     2880,
-    71,
-    "Last Chorus"
-   ],
-   [
-    2886,
-    69,
-    "Last Chorus"
-   ],
-   [
-    2892,
     67,
     "Last Chorus"
    ],
    [
-    2895,
-    64,
-    "Last Chorus"
-   ],
-   [
-    2901,
+    2886,
     62,
     "Last Chorus"
    ],
    [
-    2904,
-    64,
+    2892,
+    62,
     "Last Chorus"
    ],
    [
-    2907,
-    64,
+    2898,
+    65,
+    "Last Chorus"
+   ],
+   [
+    2904,
+    62,
     "Last Chorus"
    ],
    [
@@ -2210,18 +2200,18 @@
     "Last Chorus"
    ],
    [
-    2913,
-    62,
-    "Last Chorus"
-   ],
-   [
     2916,
-    65,
+    67,
     "Last Chorus"
    ],
    [
     2922,
     67,
+    "Last Chorus"
+   ],
+   [
+    2925,
+    69,
     "Last Chorus"
    ],
    [
@@ -2231,22 +2221,22 @@
    ],
    [
     2934,
-    71,
+    67,
     "Last Chorus"
    ],
    [
-    2952,
-    71,
+    2940,
+    65,
     "Last Chorus"
    ],
    [
-    2958,
-    71,
+    2943,
+    67,
     "Last Chorus"
    ],
    [
     2964,
-    71,
+    67,
     "Last Chorus"
    ],
    [
@@ -2261,7 +2251,7 @@
    ],
    [
     2982,
-    71,
+    67,
     "Last Chorus"
    ],
    [
@@ -2271,56 +2261,51 @@
    ],
    [
     2994,
-    65,
-    "Last Chorus"
-   ],
-   [
-    3000,
-    62,
-    "Last Chorus"
-   ],
-   [
-    3006,
-    62,
-    "Last Chorus"
-   ],
-   [
-    3012,
-    64,
-    "Last Chorus"
-   ],
-   [
-    3030,
     69,
     "Last Chorus"
    ],
    [
-    3039,
-    64,
+    3000,
+    69,
     "Last Chorus"
    ],
    [
-    3045,
+    3006,
+    67,
+    "Last Chorus"
+   ],
+   [
+    3009,
+    69,
+    "Last Chorus"
+   ],
+   [
+    3012,
+    69,
+    "Last Chorus"
+   ],
+   [
+    3015,
+    71,
+    "Last Chorus"
+   ],
+   [
+    3036,
     62,
+    "Last Chorus"
+   ],
+   [
+    3042,
+    65,
     "Last Chorus"
    ],
    [
     3048,
-    64,
-    "Last Chorus"
-   ],
-   [
-    3051,
-    64,
-    "Last Chorus"
-   ],
-   [
-    3054,
     62,
     "Last Chorus"
    ],
    [
-    3057,
+    3054,
     62,
     "Last Chorus"
    ],
@@ -2330,8 +2315,13 @@
     "Last Chorus"
    ],
    [
-    3066,
+    3063,
     67,
+    "Last Chorus"
+   ],
+   [
+    3069,
+    69,
     "Last Chorus"
    ],
    [
@@ -2341,22 +2331,17 @@
    ],
    [
     3078,
-    69,
+    65,
     "Last Chorus"
    ],
    [
-    3096,
-    71,
+    3084,
+    65,
     "Last Chorus"
    ],
    [
-    3114,
+    3087,
     67,
-    "Last Chorus"
-   ],
-   [
-    3126,
-    71,
     "Last Chorus"
    ],
    [
@@ -2365,8 +2350,23 @@
     "Last Chorus"
    ],
    [
+    3135,
+    67,
+    "Last Chorus"
+   ],
+   [
+    3138,
+    71,
+    "Last Chorus"
+   ],
+   [
+    3141,
+    67,
+    "Last Chorus"
+   ],
+   [
     3144,
-    62,
+    67,
     "Last Chorus"
    ],
    [
@@ -2375,28 +2375,28 @@
     "Last Chorus"
    ],
    [
-    3168,
-    71,
-    "Last Chorus"
-   ],
-   [
-    3186,
-    67,
-    "Last Chorus"
-   ],
-   [
-    3198,
-    71,
-    "Last Chorus"
-   ],
-   [
     3204,
     67,
     "Last Chorus"
    ],
    [
+    3207,
+    67,
+    "Last Chorus"
+   ],
+   [
+    3210,
+    71,
+    "Last Chorus"
+   ],
+   [
+    3213,
+    67,
+    "Last Chorus"
+   ],
+   [
     3216,
-    62,
+    67,
     "Last Chorus"
    ],
    [
@@ -2408,20 +2408,20 @@
  },
  "melody": {
   "made": 1000,
-  "survivors": 71,
+  "survivors": 88,
   "deaths": {
-   "840: the title's stresses off the beat": 634,
-   "731: stressed syllables on the beat too few": 151,
-   "838: the chorus's lift is not the plan's": 144
+   "840: the title's stresses off the beat": 651,
+   "731: stressed syllables on the beat too few": 133,
+   "838: the chorus's lift is not the plan's": 128
   },
-  "pick": "2820d655e78d",
+  "pick": "279c2eeb26ec",
   "charge": 4.012,
-  "median_charge": 5.573378940030569,
+  "median_charge": 5.629798048460499,
   "readings": {
    "repeated notes": 0.3229166666666667,
-   "moves by step": 0.3776041666666667,
+   "moves by step": 0.3854166666666667,
    "moves by leap": 0.11979166666666667,
-   "turns of direction": 0.3281853281853282,
+   "turns of direction": 0.33204633204633205,
    "range": 11,
    "distinct pitches": 7,
    "longest run of one pitch": 4,
@@ -2562,28 +2562,27 @@
   ],
   "entries": {
    "stressed openings before / on / after": [
-    0.007,
-    0.344,
-    0.65
+    0.006,
+    0.321,
+    0.673
    ],
    "unstressed openings before / on / after": [
-    0.007,
-    0.243,
-    0.751
+    0.005,
+    0.239,
+    0.756
    ]
   },
   "stressed_on_beat": 0.4375,
   "stats": {
-   "760: a line set by the weighted rule": 10688,
-   "870: a line waits a kept rest": 6936,
-   "818: a line sings an earlier line of its section again": 5690,
+   "760: a line set by the weighted rule": 10647,
+   "870: a line waits a kept rest": 6873,
+   "818: a line sings an earlier line of its section again": 5637,
    "780: a copied line keeps its source's join": 8000,
-   "712: a line sung again that could not be fitted, drawn fresh": 570,
-   "653: a line in a kept window": 361,
-   "818: a line takes an earlier line's rhythm": 354,
-   "876: a line sung in one bar, the next bar silent": 15,
-   "839: a returning line lifts one held note": 209,
-   "772: a line sung again, stressed opening: its source's pickup dropped": 1
+   "712: a line sung again that could not be fitted, drawn fresh": 591,
+   "653: a line in a kept window": 345,
+   "818: a line takes an earlier line's rhythm": 385,
+   "876: a line sung in one bar, the next bar silent": 18,
+   "839: a returning line lifts one held note": 233
   },
   "notes": [
    {
@@ -5079,7 +5078,7 @@
    {
     "on": 2316,
     "dur": 6,
-    "midi": 71,
+    "midi": 69,
     "sec": "Bridge",
     "line": 1,
     "text": "hand",
@@ -5106,7 +5105,7 @@
    {
     "on": 2331,
     "dur": 3,
-    "midi": 69,
+    "midi": 67,
     "sec": "Bridge",
     "line": 1,
     "text": "wall",
@@ -5124,7 +5123,7 @@
    {
     "on": 2337,
     "dur": 3,
-    "midi": 67,
+    "midi": 65,
     "sec": "Bridge",
     "line": 1,
     "text": "the",
@@ -5133,7 +5132,7 @@
    {
     "on": 2340,
     "dur": 6,
-    "midi": 65,
+    "midi": 67,
     "sec": "Bridge",
     "line": 1,
     "text": "kettle",
@@ -5142,7 +5141,7 @@
    {
     "on": 2346,
     "dur": 3,
-    "midi": 64,
+    "midi": 67,
     "sec": "Bridge",
     "line": 1,
     "text": "kettle",
@@ -5152,7 +5151,7 @@
    {
     "on": 2349,
     "dur": 3,
-    "midi": 62,
+    "midi": 65,
     "sec": "Bridge",
     "line": 1,
     "text": "",
@@ -5162,7 +5161,7 @@
    {
     "on": 2352,
     "dur": 6,
-    "midi": 64,
+    "midi": 65,
     "sec": "Bridge",
     "line": 1,
     "text": "not",
@@ -9265,7 +9264,7 @@
    "Bridge": [
     66,
     60,
-    72
+    71
    ]
   },
   "plan": {
@@ -9344,7 +9343,7 @@
    0.2
   ],
   "judge": 7,
-  "one_bar_share": 0.1,
+  "one_bar_share": 0.09,
   "kept_rests": [
    [
     12,
@@ -9618,7 +9617,7 @@
  "kept_tables": {
   "metre_atlas/6-8_sung.json": "5ee3cacd60",
   "metre_atlas/kept_readings.json": "e10d62948a",
-  "register_plan.json": "40b6c3d72a"
+  "register_plan.json": "9be0e2849e"
  },
  "checks": {
   "no two sung notes on one onset": true,
@@ -9627,7 +9626,7 @@
    59,
    71
   ],
-  "sung notes on a beat that are chord tones, share": 0.887,
+  "sung notes on a beat that are chord tones, share": 0.895,
   "sung notes a beat long or more a semitone from a chord tone": 1,
   "bass notes": 196,
   "the bass on the root where a chord begins": true,
@@ -9645,12 +9644,12 @@
   "flat third; flat seventh; leading tone, share of notes (kept, this family)": [
    0.0,
    0.0,
-   0.072
+   0.069
   ],
   "a song with blue notes": false,
   "the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": 2.5,
   "the plan's lift": 2,
-  "rest share inside sung sections, median (kept quartiles 0.14, 0.23, 0.33)": 0.133,
+  "rest share inside sung sections, median (kept quartiles 0.15, 0.22, 0.32)": 0.133,
   "the title's stressed syllables on a beat (kept 0.73)": 0.562,
   "title lines": 3,
   "length in seconds (kept quartiles 165, 206, 243)": 218,
@@ -11726,8 +11725,7 @@
     "dur": 15,
     "p": [
      55,
-     60,
-     64
+     60
     ],
     "vel": 79
    },
@@ -11735,8 +11733,8 @@
     "on": 2340,
     "dur": 15,
     "p": [
-     48,
-     55
+     55,
+     60
     ],
     "vel": 79
    },
@@ -22793,7 +22791,7 @@
  "band_checks": {
   "chord voicings inside the low-interval limits": true,
   "sung notes with the chordal part sounding under them, share (892)": 0.957,
-  "sung notes with the guitar above them, share (no kept figure; not a fault)": 0.019,
+  "sung notes with the guitar above them, share (no kept figure; not a fault)": 0.017,
   "sung notes with accompaniment a second away, share": 0.0,
   "harmony voice: interval classes, written / kept below the lead": {
    "3rd": [

@@ -1,11 +1,14 @@
-import sys, json, collections, numpy as np
-sys.path.insert(0, "/home/claude/zeneng/corpus/nine"); import common as C
-d = C.G.d; out = {}; lift = []; reg = collections.defaultdict(list); ret = []; rest = []; top = []; lens = []
+"""838-843, 910 (749.86): the kept songs' plan (lifts, registers, returns, rest share) -> tables/register_plan.json, read from the kept corpus inside the repo.
+    python3 lib/luthier/kept_plan.py      # needs the kept corpus (kept_corpus.py says where to fetch it)"""
+import os, sys, json, collections, numpy as np
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); import kept_corpus as KC
+KEPT = set(json.load(open(os.path.join(KC.ROOT, "tables", "kept_songs_4-4_pop.json"))))
+d = KC.table(); out = {}; lift = []; reg = collections.defaultdict(list); ret = []; rest = []; top = []; lens = []
 def kind(s):
     s = str(s).lower()
     return "chorus" if "chorus" in s or "refrain" in s else "verse" if "verse" in s else "bridge" if "bridge" in s else "pre" if "pre" in s else None
 for s, g in d.groupby("song", sort=False):
-    if str(s) not in C.PT.SONGS: continue
+    if str(s) not in KEPT: continue
     g = g.sort_values("abs_beat")
     if len(g) < 150: continue
     t = np.round((g.bar.values * 4.0 + g.beat.values) * 12).astype(int); p = g.pitch.values.astype(int); du = np.round(g.dur.values * 12).astype(int); k = [kind(x) for x in g.section.values]; key = int(g.key_pc.iloc[0])
@@ -54,5 +57,5 @@ out["register quartiles"] = {k: {nm: [round(float(x), 1) for x in np.percentile(
 out["later chorus against the first: share of bars the same (10, 25, 50, 75, 90)"] = q([r["same"] for r in ret]); out["the same in rhythm"] = q([r["rhythm"] for r in ret]); out["returns"] = len(ret); out["note for note"] = round(float(np.mean([r["exact"] for r in ret])), 3)
 out["rest share inside a sung section (10, 25, 50, 75, 90)"] = q(rest); out["notes a bar inside a sung section"] = q(lens)
 json.dump(dict(source="CoCoPops Billboard, the kept songs with a verse and a chorus", songs=len(lift), lifts=sorted(lift), tops=sorted(top), registers=out["register quartiles"], note="semitones; registers are above the tonic nearest the song's floor (5th percentile): floor = a section's 5th percentile, centre = its median, top = its 95th; quartiles over songs",
-     returns={"note for note": out["note for note"], "bars the same, median": out["later chorus against the first: share of bars the same (10, 25, 50, 75, 90)"][2]}, rest_share=out["rest share inside a sung section (10, 25, 50, 75, 90)"]), open("/home/claude/rightrevjf/zeneng-pipeline/tables/register_plan.json", "w"), indent=1)
-json.dump(out, open("kept6a.json", "w"), indent=1); print(json.dumps(out, indent=1))
+     returns={"note for note": out["note for note"], "bars the same, median": out["later chorus against the first: share of bars the same (10, 25, 50, 75, 90)"][2]}, rest_share=out["rest share inside a sung section (10, 25, 50, 75, 90)"]), open(os.path.join(KC.ROOT, "tables", "register_plan.json"), "w"), indent=1)
+print(json.dumps({k: v for k, v in out.items() if k in ("songs", "chorus median over verse median, semitones (10, 25, 50, 75, 90)", "rest share inside a sung section (10, 25, 50, 75, 90)")}))
