@@ -7,10 +7,10 @@ R = json.load(open(os.path.join(HERE, "lyric58.song.json"))); REC = pickle.load(
 CON = json.load(open(os.path.join(HERE, "consistency58.json"))); DR = pickle.load(open(os.path.join(OUT, "demo_report.pkl"), "rb"))
 M = R["melody"]; J = R["judge7"]; S = R["spec"]
 md = [f"# Same Time Tomorrow ({REC['edition']}): test report", "", "Words and music: Jason Bryant", "",
-      "Song 58 (songs/p68), written end to end from its lyric with `lib/luthier/song_from_lyric.py` under Luthier v27 (main at 82551f7). This report is the engine's record; the songbook is for musicians.", "",
+      "Song 58 (songs/p68), written end to end from its lyric with `lib/luthier/song_from_lyric.py` under Luthier v28 (main at 88f4091). This report is the engine's record; the songbook is for musicians.", "",
       "## What a person typed", "",
       "The title; the words by section, with section names marking returns (the second chorus typed out); seven settings: " +
-      ", ".join(f"{k} {S.get(k, json.load(open(os.path.join(HERE, 'lyric58.json'))).get(k))}" for k in ("metre", "bpm")) + ", voice baritone, lead guitar, mode major, genre folk, seed 1. Nothing else was typed or chosen by hand. The record reproduces byte for byte (REVIEW_stage14.md).", "",
+      ", ".join(f"{k} {S.get(k, json.load(open(os.path.join(HERE, 'lyric58.json'))).get(k))}" for k in ("metre", "bpm")) + ", voice baritone, lead guitar, mode major, genre folk, seed 1. Nothing else was typed or chosen by hand. The record reproduces byte for byte (REVIEW_stage15.md).", "",
       "## The run", "",
       f"- Key {R['key']['key']} ({R['key']['lowest']} to {R['key']['highest']}); other keys offered: " + ", ".join(k["key"] for k in R["other_keys"]) + ".",
       f"- Chords: draft {R['chord_pick']['draft']} of {R['chord_pick']['drafts']}, charge {R['chord_pick']['charge']}.",
@@ -29,9 +29,9 @@ md += ["", "## Research checks (the offline rules)", "",
        f"- Perception: sung phrases {R['band_checks']['sung phrases, seconds (median, longest)']} s, over 12 beats, share and longest in beats, {R['band_checks'][next(k for k in R['band_checks'] if k.startswith('sung phrases over 12 beats'))]} by the half-beat rule (906; kept 0.042); the chord voicings inside the low-interval limits; no accompaniment a second from a sung note. The guitar above a sung note {R['band_checks'].get('sung notes with the guitar above them, share (no kept figure; not a fault)')}, printed without a kept figure (900).",
        f"- Two channels and chromatic harmony: chords from outside the key, share {round(R['chord_pick']['readings']['share from outside the key'], 3)} (" + "; ".join(sorted({f"{c} in the {sec.lower()}" for sec, bars_ in R['chords'].items() for b_ in bars_ for c in b_.split() if KI.nashville(c) not in ('1', '2m', '3m', '4', '5', '6m')})) + "); the bass's chromatic notes are passing notes.",
        "", "## Readings the paper does not give", "",
-       "- 899: line ends drawn with their rest (`studies/kept_checks/line_ends_engine.py`). Stressed line-final syllables an eighth or less 0.24, a half or more 0.27 (kept, ties read, 0.18, 0.29); lines run on with under a beat of rest 0.21 (kept 0.295); rest median 18 twelfths.",
-       "- 901: on a word's weak last syllable, the weak one outlasts the stressed one in 8 of 14 line ends (kept 42 in 100, ties read).",
-       "- Breaths: 5.8 real breaths a minute by onsets (human median 7); silences of a beat or more 10.1 per 100 beats (CoCoPops, ties read, quartiles 6.7, 8.5, 10.4), median silence 2.5 beats (CoCoPops 2.0). Phrases split at half a beat: over 12 beats 0.036 (kept 0.042), longest 15.0 beats (kept songs' longest, quartiles 8, 12, 15.5); both remaining long phrases are two lines run together (749.92).",
+       "- 899: line ends drawn with their rest (`studies/kept_checks/line_ends_engine.py`). Stressed line-final syllables an eighth or less 0.16, a half or more 0.08 (kept, ties read, pooled 0.18, 0.29; by song a half or more runs 0.075 to 0.52 across the middle half); lines run on with under a beat of rest 0.25 (kept 0.295); rest median 24 twelfths.",
+       "- 901: on a word's weak last syllable, the weak one outlasts the stressed one in 5 of 14 line ends (kept 42 in 100, ties read).",
+       "- Breaths: 6.4 real breaths a minute by onsets (human median 7); silences of a beat or more 9.7 per 100 beats (kept 7.1, 8.6, 10.4), median silence 3.25 beats. Phrases split at half a beat: none over 12 beats (kept 0.042), longest 10.0 beats (kept songs' longest, quartiles 8, 12, 15.5).",
        f"- 900: the guitar under {R['band_checks'].get('sung notes with the chordal part sounding under them, share (892)')} of the sung notes.",
        f"- Length: {R['checks']['length in seconds (kept quartiles 165, 206, 243)']} s; 9.12 as kept songs meet it: the last chorus 16 bars, the first 14 (903).",
        "- 749.77 (closed): with ties read, kept stressed syllables a sixteenth long inside lines, first verse and chorus 0.109, later ones 0.108.", "",
@@ -40,11 +40,10 @@ md += ["", "## Research checks (the offline rules)", "",
        "| Check | Result |", "|---|---|"]
 for c in CON: md.append(f"| {c['check']} | {'pass' if c['ok'] else ('not met' if c['check'].startswith('READING') else 'FAIL')}{(' (' + c['detail'] + ')') if c['detail'] else ''} |")
 md += ["", "## Findings", "",
-       "Numbered from 749.90; each has Problem, Evidence, Fix and Check in the fix list for v28 (`songs/p68/fixlist_v28.md` and its Doc).", "",
-       "- 749.90 After 912 the place weight (879) makes the builds square, and 908's whole-fit gate adds to it: the pick's stressed syllables on a beat 0.82 (kept middle half 0.446 to 0.661). Halve the weight and gate on length and height.",
-       "- 749.91 908 gates on the builds' notes; the melismas drawn after the pick take the fit by length from 0.324 to 0.191, under the kept median.",
-       "- 749.92 909 reads a phrase at its last note's onset, so two lines still run together past 12 beats.",
-       "- Answered: 907 to 912 hold; 749.84 to 749.89 closed (749.87 noted in the README).", "- Carried open: 749.61 (6/8)."]
+       "Numbered from 749.93; each has Problem, Evidence, Fix and Check in the fix list for v29 (`songs/p68/fixlist_v29.md` and its Doc). The soundness checks are in `studies/soundness/SOUNDNESS.md`.", "",
+       "- 749.93 Rhythm scaling sits under the kept 10th in all three songs: the voice never leaves for two bars or more (kept 1, 2, 3 such silences a song), because the turns are dropped when a song runs long.",
+       "- 749.94 The songs sit nearer the kept middle than kept songs do (13 song-checks outside the middle half across the three songs, on the 21 checks read on kept songs; three kept songs drawn at random, about 30): an improvement to make, not a fault.",
+       "- Answered: 913 to 915 hold; 749.90 to 749.92 closed.", "- Carried open: 749.61 (6/8)."]
 text = "\n".join(md) + "\n"; open(os.path.join(HERE, "test_report58.md"), "w").write(text)
 if __name__ == "__main__":
     subprocess.run(["pandoc", os.path.join(HERE, "test_report58.md"), "-o", os.path.join(OUT, REC["file_title"] + " - test report.docx"), "--reference-doc=/home/claude/carol/songbook/ref.docx"], check=True)
