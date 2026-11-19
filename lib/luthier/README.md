@@ -376,3 +376,19 @@ v29's pass by 0.003 did not hold (the session's `margin.py`): the rule is now re
 Pools: pass 93 in 100; a random pick outside the kept middle half on 19 song-checks (16 before the aim; three kept songs about 30; the check asks 21, not met).
 Picks: sound; rhythm scaling 0.576 / 0.574 / 0.572, on the bound again, with the pools saying the engine does not lean past it (2 draws in 100).
 Results: `stage17_results.json`.
+
+## Luthier v31 — the page gate, a floor (fixes 922–923)
+
+    python3 lib/luthier/make_kept_page_gate.py        # tables/kept_page_gate.json from the kept 4/4 tunes (needs the kept corpus: see kept_corpus.py)
+
+Not an answer to a fix list. It comes from a day of studies on what makes a song last (`studies/`, each with its rule written first; summary in `studies/gates_strengthened/RESULT.md`).
+Among songs that are already hits nothing on the written tune ranks them. Where the forgotten are counted (23,205 session tunes, 10,360 hymn tunes, and inside one artist's charted and uncharted songs) plainer, more foreseeable tunes are the ones kept. So it enters as a floor, not an aim.
+
+| Fix | What was done |
+|---|---|
+| 922 | `page_gate.py`: surprise (bits per interval from the three before, under the kept tunes' counts), six- and five-note share, time on the tonic, different pitches and intervals, leaps, range, repeated notes, four-interval figures already sung; their mean, each against the kept mean and spread and turned the plain way, is a build's plainness. `Engine.run`: a build past the words' gate under the kept 10th percentile is passed over (waived if none is left). `judge7["page_gate"]`, `gates_passed["page_floor"]`, and the style checks carry the readings. 4/4 only. |
+| 923 | `FIGURE_MEMORY = 8.0`: when a fresh line's notes are drawn, a note that completes a four-interval figure the song has already sung is favoured eightfold (`Engine._figs`). Tried at 1, 4, 8, 16. |
+
+Picks: four-interval figures already sung 0.492 / 0.557 / 0.503 (0.385 / 0.465 / 0.465 before; kept quartiles 0.470, 0.560, 0.676). Sound on the picks and on the pools (99 draws in 100; `studies/soundness/neighbour_v31.json`).
+Not met: song 55 still under the kept lower quartile on its builds; the opening 120 notes of each song; and the songs moved a little toward the kept middle (a random pool pick outside the middle half on 15 song-checks, 17 before).
+Results: `stage18_results.json`. For review: is a floor the right use of a gate that grades nothing among hits (922)? Does the figure memory pull the songs toward the middle more than it is worth (923, against 749.94)?
