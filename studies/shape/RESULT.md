@@ -15,3 +15,16 @@ Partial Spearman with the yardstick, holding year, note count, source. Predictio
 M7 unshuffled (not the form predicted): +0.22, p .013; with love alone +0.24, p .006.
 No measure passed. Two leads to carry to fresh songs: (a) great songs turn more and persist less (M3, M4, opposite to prediction);
 (b) word-and-tune coupling leans the predicted way but 128 songs cannot settle it.
+
+# Second run, fresh songs (19 Nov 2026). Study only; nothing built.
+634 songs from the Yu et al. lyrics-melody set (Lakh + Reddit MIDI), none used in the first run, 2005 or earlier. Predictions in second/PREDICTION.md, written first.
+
+| measure | predicted | half A | half B | pooled | verdict |
+|---|---|---|---|---|---|
+| M7 word and tune over shuffled | + | +0.101 | -0.050 | +0.033 | fail |
+| M7r word and tune, unshuffled | + | +0.095 | -0.076 | +0.016 | fail |
+| M3 curvature | + | -0.022 | +0.017 | -0.003 | fail |
+| M4 persistence | - | -0.000 | -0.106 | -0.048 | fail |
+
+Neither lead from the first run held. Caveat on M7 only: in this set the words sit on the tune above their own shuffles in 21% of songs
+(87% in the kept corpus), so the material is a poorer test of word-and-tune than of the tune's shape. M3 and M4 need no such excuse: they did not repeat.
