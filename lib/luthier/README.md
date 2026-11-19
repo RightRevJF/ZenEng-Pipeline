@@ -333,3 +333,15 @@ squarer than they are. Mended (904), and every kept 4/4 table with a maker rebui
 | 749.61 | none | carried |
 
 Results: `stage14_results.json`. Not met: the picks' stressed syllables on a beat (0.72, 0.58, 0.82) over the kept middle half (908 leans that way); rest share low on songs 55 and 54.
+
+## Luthier v28 — the beat let go; the session's fix list for v28 answered (fixes 913–915)
+
+| Finding | Fix | What was done |
+|---|---|---|
+| 749.90 | 913 | `WORD_PLACE` 0.75 (it was fitted at 1.5 when twelve rhythms were on offer; 912 put hundreds on offer). The words' gate holds a build to its song's median by length and by height; the whole fit only to the kept 10th. Picks' stressed syllables on a beat 0.72/0.58/0.82 -> 0.55/0.50/0.60 (kept 0.45, 0.54, 0.66); onsets on the beat 0.54/0.48/0.54 -> 0.45/0.45/0.45 (kept median 0.45) |
+| 749.91 | 914 | `song_from_lyric.melisma_notes` is 848's draw as a function of the notes; `Engine.as_sung` gives it to the words' gate, which reads every build with its melismas placed (`words_gate.read`: "as sung") |
+| 749.92 | 915 | a line whose phrase, with the whole next line, would pass twelve beats ends in half a beat of rest. Over 12 beats 0.041 / 0 / 0; longest 17.0 / 10.5 / 10.0 (song 55 keeps one long line) |
+| 749.61 | none | carried |
+
+Results: `stage15_results.json`. The three 4/4 picks stand in the kept middle half on stressed syllables on a beat, onsets on the beat, the fit whole and by place and height, rest share, and the verse's place in the voice.
+Not met: the rhythm exponent (0.54, 0.53, 0.51 against 0.61 to 0.72); song 55's fit by length (0.387) and longest phrase; songs 54 and 58 long.
