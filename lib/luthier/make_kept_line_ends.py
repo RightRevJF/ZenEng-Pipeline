@@ -43,4 +43,11 @@ if __name__ == "__main__":
              G_percentiles_10_25_50_75_90=[float(x) for x in np.percentile(Gs, (10, 25, 50, 75, 90))], rest_percentiles_10_25_50_75_90=[float(x) for x in np.percentile(rests, (10, 25, 50, 75, 90))],
              lines_run_on_with_under_a_beat_of_rest_share=round(float(np.mean([r < 12 for r in rests])), 3), run_on_share_by_song_quartiles=[round(float(x), 3) for x in np.percentile(runon, (25, 50, 75))], syllables_a_line_quartiles=[round(float(x), 1) for x in np.percentile(per, (25, 50, 75))],
              held_a_half_or_more_by_tier=[round(float(C[k][:, 5:].sum() / C[k].sum()), 3) for k in range(3)], an_eighth_or_less_by_tier=[round(float(C[k][:, :2].sum() / C[k].sum()), 3) for k in range(3)])
+    P_ = []; L_ = []                                                                          # 906 (749.83): how long a kept singer goes without a breath, a breath read at half a beat of silence
+    for k in KC.kept_songs():
+        on = k["t"] / 12.0; end = np.minimum(on + k["dur"] / 12.0, np.r_[on[1:], 1e9]); ph = []; s0 = on[0]
+        for i in range(len(on) - 1):
+            if on[i + 1] - end[i] >= 0.5: ph.append(end[i] - s0); s0 = on[i + 1]
+        ph.append(end[-1] - s0); P_ += ph; L_.append(max(ph))
+    T["phrases_split_at_half_a_beat"] = dict(share_over_12_beats=round(float(np.mean(np.array(P_) > 12)), 3), beats_50_90_99=[round(float(x), 1) for x in np.percentile(P_, (50, 90, 99))], each_songs_longest_quartiles=[round(float(x), 1) for x in np.percentile(L_, (25, 50, 75))])
     json.dump(T, open(os.path.join(KC.ROOT, "tables", "kept_line_ends.json"), "w"), indent=1); print({k: v for k, v in T.items() if k != "counts_by_tier_G_D"})

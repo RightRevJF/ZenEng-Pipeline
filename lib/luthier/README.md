@@ -286,3 +286,30 @@ Results: `stage11_results.json`. Regression line: `lyric52/54/55/58.song.json` c
 
 Results: `stage12_results.json`. The four `lyricNN.song.json` records changed and are committed. Not met: long distances between lines still short of the kept (a two-bar slot);
 rest share under the kept middle half in the picks of songs 55 and 54; a fifth of song 54's strums are two notes.
+
+## Luthier v26 — the kept corpus read whole (fixes 904–906)
+
+The session's 749.82: `cocopops_parse.recip_dur` dropped every sung note that begins a tie (7,833 of them) and kept the tie's end in its place, so kept songs were read
+squarer than they are. Mended (904), and every kept 4/4 table with a maker rebuilt (905):
+
+    python3 lib/luthier/cocopops_parse.py corpora/CoCoPops/Billboard/Data    # corpora/cocopops_notes.csv.gz, tie starts read
+    python3 lib/luthier/make_kept_4_4_tables.py      # tables/metre_atlas/4-4_pop_sung.json and the 4/4 rows of kept_readings.json (reproduces the old tables from the old parse)
+    python3 lib/luthier/make_kept_word_weight.py; python3 lib/luthier/make_kept_returns.py; python3 lib/luthier/make_kept_line_ends.py
+    python3 lib/luthier/kept_plan.py                 # tables/register_plan.json (still on the maintainer's paths)
+
+| Kept figure | Before | Tie starts read |
+|---|---|---|
+| onsets on the bar's first beat, share of all | 0.177 | 0.128 |
+| onsets on the beat, by song (quartiles) | 0.43, 0.53, 0.59 | 0.38, 0.45, 0.53 |
+| notes slurred to a syllable | 0.204 | 0.124 |
+| the words' fit: 10th, quartiles | 0.092; 0.202, 0.291, 0.384 | 0.152; 0.248, 0.318, 0.402 |
+| line-final function word held a half note or more | 0.353 | 0.18 |
+| rest share inside sung sections (quartiles) | 0.21, 0.30, 0.39 | 0.14, 0.23, 0.33 |
+
+- A record now carries `kept_tables`: the fingerprints of the tables it read.
+- 906 (749.83): the phrase check splits at half a beat and prints the share over 12 beats beside the kept 0.042.
+- The fitted constants (place 1.5, step 1.5, length 2.0, again cost 8, short stress 4) were tried on the builds against the new figures and stand.
+- **Not rebuilt (no maker):** ENTRY (771), the 731 and 840 thresholds, WORD_PITCH (847), ONE_BAR (876), the counts of long silences (877); the old 4/4 judge's data.
+  The session's studies that parse the corpus themselves (ornament 848, slots 869, degrees 846, breath, silences) were not checked for ties here.
+- Results: `stage13_results.json`. All four `lyricNN.song.json` records and six tables changed and are committed.
+- Way 2 again on the mended parse: pitch scaling against weeks 0.17, peak 0.18 on 165 new songs (`studies/way2_again/way2_again_results_tie_starts_read.json`).
