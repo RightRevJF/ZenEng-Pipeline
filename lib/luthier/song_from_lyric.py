@@ -77,8 +77,10 @@ def plan(L):
     chs = [i for i, (n, k, b) in enumerate(form) if k == "chorus" and any(k2 in ("verse", "chorus", "bridge") for _, k2, _ in form[i + 1:]) and form[i + 1][0] != "Break"]
     for j, i in enumerate(sorted(rs_.sample(chs, min(max(0, want), len(chs))), reverse=True)):
         tb = rs_.choices([2, 4], [0.62, 0.38])[0]
-        if (sum(b for _, _, b in form) + tb) * bar_s <= BD.EDG["length"][2]: form.insert(i + 1, (f"Turn {len(chs) - j}", "solo", tb))            # 888 (amends 877): a turn only while the song stays inside the kept 75th of lengths, as the break does
-        else: flags.append("888: no turn: with one the song would run past the kept 75th of lengths")
+        if (sum(b for _, _, b in form) + tb) * bar_s > BD.EDG["length"][2]: tb = 2; flags.append("916: the song runs long: its turns are two bars")      # 916 (749.93; amends 888): the silences of 877 are kept whatever the length, at two bars; the bars in and out are shortened first (888)
+        form.insert(i + 1, (f"Turn {len(chs) - j}", "solo", tb))
+    if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2] and not any(f.startswith("888: the song runs long") for f in flags):      # 916: read again once the turns are in, so the bars in and out give way before a turn does
+        n_in2, n_out2 = BD.edges(L["bpm"], beats, q=0); form[0] = ("Intro", "intro", min(form[0][2], n_in2)); form[-1] = ("Outro", "outro", min(form[-1][2], n_out2)); flags.append(f"888: the song runs long: {form[0][2]} bars in and {form[-1][2]} out (the kept lower quartiles)")
     secs_ = round(sum(b for _, _, b in form) * bar_s)                                          # 894 (749.69): one length, counted once, after the form is final
     if secs_ > BD.EDG["length"][2]: flags.append(f"the song runs {secs_} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo; at this tempo it would need about {int(round((secs_ - BD.EDG['length'][2]) / (2 * bar_s)))} fewer two-bar lines, or about {int(math.ceil(L['bpm'] * secs_ / BD.EDG['length'][2]))} beats a minute")
     RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; V = C.VOICES[L.get("voice", "tenor")]
