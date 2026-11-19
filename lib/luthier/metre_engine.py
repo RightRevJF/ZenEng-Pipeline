@@ -51,7 +51,8 @@ class Engine:
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
         ww = spec.get("word_weight"); self.WW = None                                          # 879-881 (way 3): what the kept songs do with a word's weight
         if ww:
-            K = WW_.table(); self.WW = dict(place=[[math.log(max(1e-4, K["place_share_by_tier"][a][j]) / K["place_share_all"][j]) for j in range(5)] for a in range(3)], pp=ww.get("place", 1.0), sp=ww.get("step", 1.0), gate=ww.get("gate"), cost=ww.get("again_cost", 1.0), fresh=ww.get("fresh", True), again=ww.get("again", True),
+            K = WW_.table(); self.WW = dict(place=[[math.log(max(1e-4, K["place_share_by_tier"][a][j]) / K["place_share_all"][j]) for j in range(5)] for a in range(3)], pp=ww.get("place", 1.0), sp=ww.get("step", 1.0), gate=ww.get("gate"), cost=ww.get("again_cost", 1.0), fresh=ww.get("fresh", True), again=ww.get("again", True), lp=ww.get("length", 0.0), last=ww.get("last_note", False),
+                                            length=[[math.log(max(1e-4, K["length_share_by_tier"][a][j]) / K["length_share_all"][j]) for j in range(6)] for a in range(3)], fin=(K["last_note_lengths_twelfths"], K["last_note_length_share_by_tier"]),
                                             step=[[[K["step_down_level_up_from_tier_to_tier"][a][b][d] / K["step_down_level_up_all"][d] for d in range(3)] for b in range(3)] for a in range(3)])
     # ---- the frame
     def line_start(self, sec, i): return (self.BAR0[sec] + sum(self.SLOTS[sec][:i])) * self.BAR
@@ -73,7 +74,10 @@ class Engine:
     def stress_score(self, ons, sy, table=None):
         sc = 0.0
         if self.WW and (self.WW["fresh"] if table is None else table):                                                                           # 879: each syllable's place in the bar scored by where kept songs sing a syllable of its weight (function word, weak syllable, stressed), over where they sing any
-            for t, a in zip(ons, WW_.tier(sy)): sc += self.WW["pp"] * self.WW["place"][a][WW_.place(t, self.BAR, self.BEAT)]
+            tr_ = WW_.tier(sy)
+            for t, a in zip(ons, tr_): sc += self.WW["pp"] * self.WW["place"][a][WW_.place(t, self.BAR, self.BEAT)]
+            if self.WW["lp"]:                                                                 # 885: and the time each syllable is given before the next, by where kept songs give a syllable of its weight that long
+                for k_ in range(len(ons) - 1): g_ = ons[k_ + 1] - ons[k_]; sc += self.WW["lp"] * self.WW["length"][tr_[k_]][0 if g_ <= 3 else 1 if g_ <= 6 else 2 if g_ <= 9 else 3 if g_ <= 12 else 4 if g_ <= 18 else 5]
             if len(sy) > 1 and not sy[-1][1] and sy[-2][1] and sy[-1][0] == sy[-2][0]: sc += 1.5 if ons[-1] - ons[-2] >= 12 else -1.5
             return sc
         for t, (_, st) in zip(ons, sy):
@@ -296,6 +300,15 @@ class Engine:
             nx = flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR; last = j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"])
             how = self.HOW.get((n["sec"], n["line"]), ["fresh"]); dd = {t: d for t, p, d in how[1]} if how[0] == "design" else None
             n["dur"] = dd[n["on"] - self.line_start(n["sec"], n["line"])] if dd is not None else (max(self.END, min(nx - n["on"] - self.REST, 24 if n["stress"] else max(self.END, min(24, n["on"] - flat[j - 1]["on"]) if j and flat[j - 1]["text"] == n["text"] and flat[j - 1]["stress"] else 24))) if last else nx - n["on"])       # 832: a line's last note leaves the least breath
+        if self.WW and self.WW["last"]:                                                       # 887 (amends 832, 844): a line's last note takes a kept length for its syllable's weight, of those that leave the rest; it is no longer held as long as the rest allows
+            V, SH = self.WW["fin"]; i0 = 0
+            for j, n in enumerate(flat):
+                if j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"]):
+                    if self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design":
+                        tr_ = WW_.tier([(x["text"], x["stress"]) for x in flat[i0:j + 1]])[-1]; room = (flat[j + 1]["on"] if j + 1 < len(flat) else n["on"] + 2 * self.BAR) - n["on"] - self.REST
+                        ok_ = [(v, w) for v, w in zip(V, SH[tr_]) if self.END <= v <= (room if (n["stress"] or n["dur"] >= min(room, 24)) else n["dur"])]      # 871's cap on a weak last syllable stands
+                        if ok_: n["dur"] = rng.choices([v for v, _ in ok_], [w for _, w in ok_])[0]
+                    i0 = j + 1
         for j in range(len(flat) - 1):
             if flat[j]["on"] + flat[j]["dur"] > flat[j + 1]["on"]: flat[j]["dur"] = flat[j + 1]["on"] - flat[j]["on"]
         return dict(notes=flat, plans=plans), None

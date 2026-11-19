@@ -32,10 +32,10 @@ ICLASS = {0: "unison", 3: "3rd", 4: "3rd", 5: "4th", 7: "5th", 8: "6th", 9: "6th
 # 835: the draw is hemmed in by the chord and the scale, so each class carries a weight fitted until the written shares meet the kept ones (fitted on songs 54 and 55)
 HW = {"unison": 0.55, "3rd": 1.21, "4th": 1.13, "5th": 1.5, "6th": 1.05, "octave": 0.88}; HOLD, WITH, STAY = 8.0, 16.0, 8.0
 
-def edges(bpm, metre_beats, compound=False):
-    """825: bars in and out. bpm counts the metre's beat."""
+def edges(bpm, metre_beats, compound=False, q=1):
+    """825: bars in and out. bpm counts the metre's beat. 888: q=0 gives the kept lower quartiles, for a song that runs long."""
     bar_s = 60.0 / bpm * metre_beats; even = lambda x: max(2, int(round(x / 2.0)) * 2)
-    return even(EDG["intro_s"][1] / bar_s), min(8, even(EDG["outro_s_cold"][1] / bar_s))
+    return even(EDG["intro_s"][q] / bar_s), min(8, even(EDG["outro_s_cold"][q] / bar_s))
 def break_after(form):
     """830: index of the section a mid-song instrumental follows, or None"""
     ch = [i for i, (n, k, b) in enumerate(form) if k == "chorus"]
@@ -117,25 +117,35 @@ def arrange(rec, genre="pop", lead="guitar", seed=1):
         for x in kick: parts["drums"].append(dict(on=t0 + x, dur=3, p=[DR["kick"]], vel=vel))
         for x in snare: parts["drums"].append(dict(on=t0 + x, dur=3, p=[DR["snare"]], vel=vel))
         for x in hats: parts["drums"].append(dict(on=t0 + x, dur=3, p=[DR["hat"]], vel=vel - 26 + (6 if x in BEATS else 0)))
-    # 829 the harmony voice, in the choruses, below the lead
-    below = {k: v for k, v in VOX["below"].items()}; scale = {(x + tonic) % 12 for x in rec["spec"]["scale"]}; hv = []; last = None; lastiv = None; lastlead = None
-    for n in notes_:
-        if "horus" not in n["sec"]: last = None; lastiv = None; lastlead = None; continue
-        ct = tones(chord(n["on"])); onbeat = (n["on"] % BAR) in BEATS; cands = []
-        for iv, cls in ICLASS.items():
-            p = n["midi"] - iv
-            if p % 12 not in scale and p % 12 not in ct: continue
-            if onbeat and p % 12 not in ct and iv != 0: continue
-            if lastiv in (7, 12) and iv == lastiv and last is not None and p != last and rng.random() > 0.3: continue      # perfect fifths and octaves in a row kept rare (kept: 9 motions in 100)
-            w = HW[cls] * below.get(cls, 0.01) / (2 if cls in ("3rd", "6th") else 1)                                     # a class of two sizes shares its weight
-            if last is not None:
-                w *= math.exp(-abs(p - last) / 6.0)                                                            # the nearest move
-                if n["midi"] == lastlead and p == last: w *= HOLD                                               # the lead holds: the harmony holds (kept: static 23 in 100)
-                elif n["midi"] != lastlead and iv and ICLASS[iv] == ICLASS.get(lastiv): w *= WITH
-                elif n["midi"] != lastlead and p == last: w *= STAY                                           # the lead moves over a held harmony note (kept: oblique 30 in 100)                     # the lead moves: the harmony moves with it (kept: parallel 28 in 100)
-            cands.append((p, iv, w))
-        if not cands: last = None; lastiv = None; continue
-        p, iv, _ = rng.choices(cands, [c[2] for c in cands])[0]; hv.append(dict(on=n["on"], dur=n["dur"], p=[p], vel=70, text=n["text"], lead=n["midi"])); last = p; lastiv = iv; lastlead = n["midi"]
+    # 829 the harmony voice, in the choruses, below the lead. 889: its class weights are fitted to the song: the voice is written, its shares of thirds, fourths, fifths, sixths,
+    # octaves and unisons read against the kept shares, each weight moved by kept over written, and written again (ten rounds at most; the round nearest the kept is kept).
+    def harmony_voice(HW_, rng):
+        below = {k: v for k, v in VOX["below"].items()}; scale = {(x + tonic) % 12 for x in rec["spec"]["scale"]}; hv = []; last = None; lastiv = None; lastlead = None
+        for n in notes_:
+            if "horus" not in n["sec"]: last = None; lastiv = None; lastlead = None; continue
+            ct = tones(chord(n["on"])); onbeat = (n["on"] % BAR) in BEATS; cands = []
+            for iv, cls in ICLASS.items():
+                p = n["midi"] - iv
+                if p % 12 not in scale and p % 12 not in ct: continue
+                if onbeat and p % 12 not in ct and iv != 0: continue
+                if lastiv in (7, 12) and iv == lastiv and last is not None and p != last and rng.random() > 0.3: continue      # perfect fifths and octaves in a row kept rare (kept: 9 motions in 100)
+                w = HW_[cls] * below.get(cls, 0.01) / (2 if cls in ("3rd", "6th") else 1)                                     # a class of two sizes shares its weight
+                if last is not None:
+                    w *= math.exp(-abs(p - last) / 6.0)                                                            # the nearest move
+                    if n["midi"] == lastlead and p == last: w *= HOLD                                               # the lead holds: the harmony holds (kept: static 23 in 100)
+                    elif n["midi"] != lastlead and iv and ICLASS[iv] == ICLASS.get(lastiv): w *= WITH
+                    elif n["midi"] != lastlead and p == last: w *= STAY                                           # the lead moves over a held harmony note (kept: oblique 30 in 100)                     # the lead moves: the harmony moves with it (kept: parallel 28 in 100)
+                cands.append((p, iv, w))
+            if not cands: last = None; lastiv = None; continue
+            p, iv, _ = rng.choices(cands, [c[2] for c in cands])[0]; hv.append(dict(on=n["on"], dur=n["dur"], p=[p], vel=70, text=n["text"], lead=n["midi"])); last = p; lastiv = iv; lastlead = n["midi"]
+        return hv
+    keptsh = {k: VOX["below"].get(k) / sum(VOX["below"][c] for c in HW) for k in HW}; HWs = dict(HW); best = None
+    for round_ in range(10):
+        hv = harmony_voice(HWs, random.Random(f"harmony {seed}")); cnt = collections.Counter(ICLASS[x["lead"] - x["p"][0]] for x in hv); tot = max(1, sum(cnt.values())); miss = sum(abs(cnt[k] / tot - keptsh[k]) for k in HW)
+        if best is None or miss < best[0]: best = (miss, hv, dict(HWs), round_)
+        if miss < 0.06 or not hv: break
+        HWs = {k: HWs[k] * min(3.0, max(0.33, (keptsh[k] + 0.01) / (cnt[k] / tot + 0.01))) for k in HW}
+    hv = best[1]; rec["harmony_fit"] = dict(rounds=best[3] + 1, miss=round(best[0], 3), weights={k: round(v, 3) for k, v in best[2].items()})
     parts["harmony"] = hv
     parts["bass"] = [dict(on=x["on"], dur=x["dur"], p=[x["midi"]], vel=int(62 + 30 * LV[sec_of_bar[min(NB - 1, max(0, x["on"] // BAR))][0]])) for x in rec["bass"]]
     rec["parts"] = {k: v for k, v in parts.items()}; rec["levels"] = LV

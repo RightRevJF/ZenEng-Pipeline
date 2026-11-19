@@ -228,3 +228,19 @@ So it gates and does not choose (858). Predictions written first: `way3_PREDICTI
 - spec: `"word_weight": {"place": 1.5, "step": 1.5, "again_cost": 8.0, "gate": 0.092}`; `"fresh": false` or `"again": false` switches a part off (used for the trials).
 - Not done: length is not married (the picks' fit by length is about nothing); no kept table outside 4/4 (song 52 and hymns unchanged, flagged);
   the pick is still the first build past the gates.
+
+## Luthier v23 — repairs after way 3 (fixes 885–889)
+
+    python3 lib/luthier/song_from_lyric.py songs/p65/lyric55.json 1000 12    # also p64/lyric54, p68/lyric58, p62/lyric52
+
+- 885 `metre_engine.stress_score`: a term for the time each syllable has before the next, by the kept shares for its weight (`tables/kept_word_weight.json`,
+  `length_share_by_tier`); spec `word_weight.length` (2.0). Builds' fit by length 0.09 / 0.04 / 0.16 -> 0.16 / 0.12 / 0.12 (kept 0.13).
+- 886 `song_from_lyric.melismas`: the share at line ends drawn to the kept odds (2.9 to 1) applied to the song's line ends; an eighth-long note inside a line may take one.
+  At line ends: 64 / 38 / 65 -> 36 / 30 / 32 in a hundred.
+- 887 `metre_engine.build`: a line's last note takes a kept length for its syllable's weight (`last_note_length_share_by_tier`), among those leaving the quarter's rest;
+  spec `word_weight.last_note`. Rest after a line 12 / 12 / 15 -> 18 / 24 / 33 twelfths (kept 15, 24, 48). The short rests of 749.58 were long last notes.
+- 888 `song_from_lyric.plan`, `band.edges(q=0)`: a turn only while the song stays inside the kept 75th of lengths; a song past it takes the kept lower quartiles of
+  bars in and out. Seconds 253 / 317 / 343 -> 240 / 298 / 326. Cost: the picks' rhythm exponent fell on songs 55 and 54 (0.60, 0.56 -> 0.49, 0.50).
+- 889 `band.arrange`: the harmony voice's class weights fitted to the song (ten rounds at most); record `harmony_fit`. Fourths 0.35 / 0.23 / 0.16 / 0.26 -> 0.12 / 0.11 / 0.11 / 0.14.
+- Results: `stage10_results.json`. Studies beside this version, nothing built: `studies/way4/`, `studies/way2_again/`.
+- Not done: songs 54 and 58 still long (the lyrics); no kept tables of words outside 4/4; the pick is still the first build past the gates.

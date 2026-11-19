@@ -21,6 +21,7 @@ import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS, ban
 FAMILY = {"pop": "other", "rock": "other", "folk": "other", "soul / r&b": "soul", "gospel": "soul", "blues": "soul", "country": "country"}
 DEGREE_POWER = 0.5     # 846: fitted so the written degree shares meet the kept
 WORD_PITCH = [3.0, 2.0, 0.2]     # 847: weights for the stressed syllable of a word standing higher than, level with, lower than the other; fitted to the kept 44 / 36 / 20
+WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept median (0.13)
 WORD_PLACE = 1.5; WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
 #  879, 880: fitted so the builds' shares (a function word on the bar's first beat, the step up from a light word to a stressed one) and their fits meet the kept
 ONE_BAR = 0.1    # 876: a fresh two-bar line sung in one bar with the next bar silent, one time in ten (kept: a one-bar silence 0.2 times in eight bars)
@@ -65,12 +66,17 @@ def plan(L):
     form.append(("Outro", "outro", n_out)); br = BD.break_after(form); bar_s = 60.0 / L["bpm"] * beats
     if br is not None and (sum(b for _, _, b in form) + 8) * bar_s <= BD.EDG["length"][2]: form.insert(br + 1, ("Break", "solo", 8))        # 830; 842: only while the song stays inside the kept songs' middle half of lengths
     elif br is not None: flags.append("no break: with one the song would run past the kept 75th of lengths")
+    if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2]:                               # 888: a song past the kept 75th of lengths takes the kept lower quartiles of bars in and out
+        n_in2, n_out2 = BD.edges(L["bpm"], beats, q=0); form[0] = ("Intro", "intro", min(n_in, n_in2)); form[-1] = ("Outro", "outro", min(n_out, n_out2)); flags.append(f"888: the song runs long: {form[0][2]} bars in and {form[-1][2]} out (the kept lower quartiles)")
     if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2]: flags.append(f"the song runs {round(sum(b for _, _, b in form) * bar_s)} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo")
     # 877: where the voice stays out. Kept songs hold a median of two silences of two bars or more (quartiles 1, 2, 3), three in five of them between sections,
     # 2 bars 29 times in a hundred, 4 bars 18, 8 bars or more 36. The break is one; the others are turns of two or four bars after a chorus that is not the last.
     rs_ = _r_.Random(f"silences {L.get('seed', 1)} {L['title']}"); want = rs_.choices([1, 2, 3], [0.25, 0.5, 0.25])[0] - (1 if any(n == "Break" for n, _, _ in form) else 0)
     chs = [i for i, (n, k, b) in enumerate(form) if k == "chorus" and any(k2 in ("verse", "chorus", "bridge") for _, k2, _ in form[i + 1:]) and form[i + 1][0] != "Break"]
-    for j, i in enumerate(sorted(rs_.sample(chs, min(max(0, want), len(chs))), reverse=True)): form.insert(i + 1, (f"Turn {len(chs) - j}", "solo", rs_.choices([2, 4], [0.62, 0.38])[0]))
+    for j, i in enumerate(sorted(rs_.sample(chs, min(max(0, want), len(chs))), reverse=True)):
+        tb = rs_.choices([2, 4], [0.62, 0.38])[0]
+        if (sum(b for _, _, b in form) + tb) * bar_s <= BD.EDG["length"][2]: form.insert(i + 1, (f"Turn {len(chs) - j}", "solo", tb))            # 888 (amends 877): a turn only while the song stays inside the kept 75th of lengths, as the break does
+        else: flags.append("888: no turn: with one the song would run past the kept 75th of lengths")
     RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; lift = int(round(_r.Random(f"plan {L.get('seed', 1)} {L['title']}").choice(RP["lifts"])))
     V = C.VOICES[L.get("voice", "tenor")]; lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
     vf, vc, vt = R_["verse"]["floor"][1], R_["verse"]["centre"][1], R_["verse"]["top"][1]                                               # the kept medians: floor on the tonic, centre a third above, top a sixth above
@@ -88,7 +94,7 @@ def plan(L):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
     if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
-        import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
+        import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
     spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7; spec["one_bar_share"] = ONE_BAR; spec["kept_rests"] = [[12, 15, 18, 24, 36, 48], [0.2, 0.15, 0.1, 0.25, 0.15, 0.15]]      # 870: the kept rests after a line (10th percentile a quarter, 25th 15 twelfths, median a half, 75th a whole)
     return spec, form, flags
@@ -157,15 +163,21 @@ def melismas(rec, L, E, tonic_midi):
     second note is the scale step below (kept: the first move down 59 in 100; two notes 73 in 100). The readings were taken before; the record keeps both."""
     import random as _r2
     rng = _r2.Random(f"melisma {L.get('seed', 1)} {L['title']}"); ns = rec["melody"]["notes"]; share = rng.choices([ORN["song_q"][0], ORN["song_median"], ORN["song_q"][1]], [0.25, 0.5, 0.25])[0] / 100.0
-    scale = {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}; lo = min(n["midi"] for n in ns); cands = []; w = []
+    scale = {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}; lo = min(n["midi"] for n in ns); cands = []; w = []; ends = []
     for i, n in enumerate(ns):
         nxt = ns[i + 1] if i + 1 < len(ns) else None; line_end = nxt is None or (nxt["sec"], nxt["line"]) != (n["sec"], n["line"]); word_end = line_end or nxt["text"] != n["text"]
         prev = ns[i - 1] if i else None; mono = (prev is None or prev["text"] != n["text"] or (prev["sec"], prev["line"]) != (n["sec"], n["line"])) and word_end
-        if word_end and n["dur"] >= 12 and not (mono and not n["stress"]): cands.append(i); w.append(2.5 if line_end else 1.0)                  # 875 (749.59): not on a function word
-    want = min(len(cands), int(round(share * len(ns)))); chosen = set()
-    while len(chosen) < want:
-        j = rng.choices(range(len(cands)), w)[0]; chosen.add(cands[j]); w[j] = 0.0
-        if sum(w) <= 0: break
+        if word_end and n["dur"] >= 6 and not (mono and not n["stress"]): cands.append(i); w.append((1.0 if n["dur"] >= 12 else 0.25)); ends.append(line_end)      # 875 (749.59): not on a function word; 886: an eighth will do inside a line, a quarter is likelier
+    # 886: of kept melismas 20 in a hundred fall on a phrase's last syllable, where 8 syllables in a hundred are a phrase's last: odds 2.9 to 1 for a last syllable. A song here has
+    # more line ends (one syllable in seven), so its share of melismas at line ends is those odds applied to its own count of line ends; before, a quarter-long note was asked and line ends took most.
+    n_end = sum(1 for i, n in enumerate(ns) if i + 1 == len(ns) or (ns[i + 1]["sec"], ns[i + 1]["line"]) != (n["sec"], n["line"])); e_ = n_end / len(ns)
+    odds = (ORN["at_line_end"] / (100.0 - ORN["at_line_end"])) / (ORN["line_end_base"] / (100.0 - ORN["line_end_base"])); p_end = odds * e_ / (odds * e_ + 1 - e_)
+    want = min(len(cands), int(round(share * len(ns)))); want_end = min(int(round(p_end * want)), sum(ends)); chosen = set(); rec["melody"]["melisma_line_end_share_kept_for_this_song"] = round(p_end, 3)
+    for grp, k_ in ((True, want_end), (False, want - want_end)):
+        idx = [j for j in range(len(cands)) if ends[j] == grp]; ww = [w[j] for j in idx]
+        for _ in range(min(k_, len(idx))):
+            if sum(ww) <= 0: break
+            j = rng.choices(range(len(idx)), ww)[0]; chosen.add(cands[idx[j]]); ww[j] = 0.0
     out = []
     for i, n in enumerate(ns):
         if i not in chosen: out.append(n); continue
@@ -214,7 +226,7 @@ def style_checks(rec, E):
         i = idx[id(n)]; nxt = ns[i + 2] if i + 2 < len(ns) else None; lend = nxt is None or (nxt["sec"], nxt["line"]) != (n["sec"], n["line"]); le += lend; we += lend or nxt["text"] != n["text"]
     lens = sorted(n["dur"] for n in syl); cut = lens[int(len(lens) * 0.75)]; longs = [n for n in syl if n["dur"] >= cut]; deg = {}
     for n in ns: deg[(n["midi"] - rec["key"]["tonic_midi"]) % 12] = deg.get((n["midi"] - rec["key"]["tonic_midi"]) % 12, 0) + 1
-    extra = {"syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": round(100 * len(mel) / max(1, len(syl)), 1), "of those, at a line's end (kept 20 in 100); on a word's end (kept 94)": [round(100 * le / max(1, len(mel))), round(100 * we / max(1, len(mel)))],
+    extra = {"syllables on two notes, in a hundred (kept quartiles 3.8, 8.6, 16.2)": round(100 * len(mel) / max(1, len(syl)), 1), "of those, at a line's end (kept 20 in 100 where 8 syllables in 100 end a phrase; for this song's line ends, %s); on a word's end (kept 94)" % round(100 * rec["melody"].get("melisma_line_end_share_kept_for_this_song", 0.2)): [round(100 * le / max(1, len(mel))), round(100 * we / max(1, len(mel)))],
              "long notes on stressed syllables (kept quartiles 0.43, 0.55, 0.65)": round(sum(n["stress"] for n in longs) / max(1, len(longs)), 3),
              "flat third; flat seventh; leading tone, share of notes (kept, this family)": [round(deg.get(3, 0) / len(ns), 3), round(deg.get(10, 0) / len(ns), 3), round(deg.get(11, 0) / len(ns), 3)], "a song with blue notes": rec["spec"].get("degrees", {}).get("blue_song")}
     if rec["metre"] == "4/4":                                                                 # 883: the words' fit of the song as sung, beside the kept
