@@ -1,7 +1,7 @@
 """'Same Time Tomorrow' (song 58) -- the lead sheet and the parts, written bar by bar from song_record.pkl (build58.py, from lyric58.song.json).
 C major, q = 84, all 4/4; grid: twelfths of a beat. Chord symbols by the half-bar. The voices on treble_8 (sounding an octave lower).
 Adapted from songs/p65/engrave_p65.py. Every pitched staff is read back from LilyPond's MIDI; the drums counted."""
-import pickle, collections, os, sys, re
+import pickle, collections, os, sys, re, json
 sys.path[:0] = ["/home/claude/carol", "/home/claude/p68"]
 from lily import compile_ly, midi_readback
 REC = pickle.load(open("/home/claude/p68/song_record.pkl", "rb"))
@@ -171,7 +171,17 @@ def title_desc(REC_):
     beat = (ns[0]["on"] % 48) // 12 + 1; land = next((n for n in ns if n["on"] >= b0), None); w = land["text"].strip(",.") if land else ""
     return (f"“{ns[0]['text']}” on beat {beat} of the bar before the chorus and “{w}” on its downbeat",
             f"The title picks up on beat {beat} of the bar before; “{w}” lands on the downbeat.")
+def top_desc(REC_, nm_f):
+    """where the song's top note falls, read from the record"""
+    lead = REC_["lead"]; top = max(n["midi"] for n in lead); b1 = {s: st // 48 + 1 for s, nb, st, _, _ in REC_["plan"]}
+    hits = [n for n in lead if n["midi"] == top and n["first"]] or [n for n in lead if n["midi"] == top]
+    ch = [s for s in b1 if s.startswith(("Chorus", "Last Chorus"))]; rel = {s: sorted({n["on"] // 48 + 1 - b1[s] + 1 for n in hits if n["sec"] == s}) for s in ch}
+    if all(rel[s] and rel[s] == rel[ch[0]] for s in ch) and all(n["sec"] in ch for n in hits):
+        return f"The song’s top note, {nm_f(top)}, comes in bar{'s' if len(rel[ch[0]]) > 1 else ''} " + " and ".join(map(str, rel[ch[0]])) + " of each chorus."
+    where = "; ".join(f"on “{n['text']}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
+    return f"The song’s top note, {nm_f(top)}, comes {'once' if len(hits) == 1 else str(len(hits)) + ' times'}: {where}."
 _TD = title_desc(REC)
+_LIFT = next(v for k, v in json.load(open('/home/claude/p68/lyric58.song.json'))['checks'].items() if k.startswith("the chorus's median over the verse's"))
 _mm = int(REC["seconds"] // 60); _ss = int(round(REC["seconds"] % 60))
 _him = [n["midi"] for n in REC["lead"]]; _top = max(_him)
 B1 = {s: st // 48 + 1 for s, nb, st, mets, mv in REC["plan"]}
@@ -184,14 +194,14 @@ for s_ in ("Chorus 1", "Last Chorus"):
 NOTE0 = f"Voice: a baritone, {nm_(min(_him))}–{nm_(max(_him))}, written an octave above where he sings (treble clef with the 8 below)."
 _topbars = sorted({n["on"] // 48 + 1 - B1["Chorus 1"] + 1 for n in REC["lead"] if n["sec"] == "Chorus 1" and n["midi"] == _top})
 NOTE1 = (f"The title opens every chorus (bars {B1['Chorus 1']}, {B1['Chorus 2']} and {B1['Last Chorus']}): " + " ".join(nm_(n['midi']) for n in _tw) +
-         f". The song’s top note, {nm_(_top)}, comes in bar{'s' if len(_topbars) > 1 else ''} " + " and ".join(map(str, _topbars)) + " of each chorus.")
+         ". " + top_desc(REC, nm_))
 NOTE2 = "A harmony voice sings under him in all three choruses, in his rhythm and words, mostly a third to a fifth below."
 NOTE3 = "A folk ballad, ♩ = 84: the guitar strums eighths under him from bar 1 to the end; the bass on every beat; kick on 1 and 3, snare on 2 and 4, hat eighths."
 TITLE = REC["title"]; FT = REC["file_title"]
 FOOT = f"{TITLE} ({REC['edition']}) · Words and music: Jason Bryant · ♩ = 84, folk ballad · C major · {_mm}:{_ss:02d}"
 CHN = lambda rest: f'\\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(rest)} }}'
 _g = REC["parts"]["guitar"]; _b = REC["parts"]["bass"]
-ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses, which sit about three semitones higher. Sing the title as written: " + _TD[0] + ".",
+ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses, which sit about " + f"{_LIFT:g}" + " semitones higher. Sing the title as written: " + _TD[0] + ".",
         "harmony": f"Harmony voice: under him in the three choruses, in his rhythm and words, mostly a third to a fifth below (lowest {nm_(min(n['midi'] for n in REC['harm']))}). Keep it soft; he leads.",
         "guitar": f"Acoustic guitar: steady eighth-note strums from bar 1 to the end, under his voice. Where a chord tone would sit a step from the note he sings, it is left out. Range {nm_(min(min(e['p']) for e in _g))}–{nm_(max(max(e['p']) for e in _g))}.",
         "bass": f"Bass: quarter notes on every beat, roots and fifths, with chromatic passing notes a half step from the next root. {nm_(min(e['p'][0] for e in _b))}–{nm_(max(e['p'][0] for e in _b))}. Lock with the kick on 1 and 3.",

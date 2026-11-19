@@ -5,7 +5,7 @@ import json, pickle, re, os, collections
 import pyphen
 HERE = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(os.path.join(HERE, "lyric58.song.json"))); L = json.load(open(os.path.join(HERE, "lyric58.json")))
-EDITION = " (second edition)"          # the first edition was written from the v22 record (commit 9ef68b2); this one from the v24 record
+EDITION = " (third edition)"          # the first edition from the v22 record (commit 9ef68b2), the second from v24 (160e1ca); this one from the v25 record
 BAR = R["bar"]; QBPM = R["bpm"]; DIC = pyphen.Pyphen(lang="en_US")
 KIND = {"intro": "Intro", "verse": "Verse", "chorus": "Chorus", "solo": "Turn", "bridge": "Bridge", "outro": "Outro"}
 bars, plan, b = [], [], 0

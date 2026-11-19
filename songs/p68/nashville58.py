@@ -22,7 +22,7 @@ _b1 = {s: st // 48 + 1 for s, nb, st, mets, mv in REC["plan"]}; _sung = min(n_["
 _rel = lambda s: [f - _b1[s] + 1 for f in _fills if _b1[s] <= f < _b1[s] + dict((x[0], x[1]) for x in REC["plan"])[s]]
 FEEL = {"Intro": f"Guitar strums eighths and bass plays quarters from bar 1; drums in at bar {_dr}. Voice picks up in bar {_sung}",
         "Verse 1": f"Guitar strums eighths under him all the way; bass quarters; kick 1 and 3, snare 2 and 4. TOM FILL in bar {_rel('Verse 1')[0] if _rel('Verse 1') else '-'}",
-        "Chorus 1": _TD[1] + " Harmony voice under him all chorus. His top note (1, C) in bar " + ", ".join(str(b_) for b_ in sorted({n_["on"] // 48 + 1 - _b1["Chorus 1"] + 1 for n_ in REC["lead"] if n_["sec"] == "Chorus 1" and n_["midi"] == max(x["midi"] for x in REC["lead"])})),
+        "Chorus 1": _TD[1] + " Harmony voice under him all chorus. The chorus's top note in bar " + ", ".join(str(b_) for b_ in sorted({n_["on"] // 48 + 1 - _b1["Chorus 1"] + 1 for n_ in REC["lead"] if n_["sec"] == "Chorus 1" and n_["midi"] == max(x["midi"] for x in REC["lead"] if x["sec"] == "Chorus 1")})),
         "Verse 2": "As verse 1",
         "Chorus 2": "As chorus 1",
         "Bridge": "Starts on 4. Same groove; he sings through",

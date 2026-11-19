@@ -58,7 +58,17 @@ def title_desc(REC_):
     beat = (ns[0]["on"] % 48) // 12 + 1; land = next((n for n in ns if n["on"] >= b0), None); w = land["text"].strip(",.") if land else ""
     return (f"“{ns[0]['text']}” on beat {beat} of the bar before the chorus and “{w}” on its downbeat",
             f"The title picks up on beat {beat} of the bar before; “{w}” lands on the downbeat.")
+def top_desc(REC_, nm_f):
+    """where the song's top note falls, read from the record"""
+    lead = REC_["lead"]; top = max(n["midi"] for n in lead); b1 = {s: st // 48 + 1 for s, nb, st, _, _ in REC_["plan"]}
+    hits = [n for n in lead if n["midi"] == top and n["first"]] or [n for n in lead if n["midi"] == top]
+    ch = [s for s in b1 if s.startswith(("Chorus", "Last Chorus"))]; rel = {s: sorted({n["on"] // 48 + 1 - b1[s] + 1 for n in hits if n["sec"] == s}) for s in ch}
+    if all(rel[s] and rel[s] == rel[ch[0]] for s in ch) and all(n["sec"] in ch for n in hits):
+        return f"The song’s top note, {nm_f(top)}, comes in bar{'s' if len(rel[ch[0]]) > 1 else ''} " + " and ".join(map(str, rel[ch[0]])) + " of each chorus."
+    where = "; ".join(f"on “{n['text']}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
+    return f"The song’s top note, {nm_f(top)}, comes {'once' if len(hits) == 1 else str(len(hits)) + ' times'}: {where}."
 TD = title_desc(REC)
+CHK = json.load(open(os.path.join(HERE, 'lyric58.song.json')))['checks']; LIFT = next(v for k, v in CHK.items() if k.startswith("the chorus's median over the verse's"))
 PH = phrases()
 TOPB = sorted({bar(n["on"]) - B1["Chorus 1"] + 1 for n in LEAD if n["sec"] == "Chorus 1" and n["midi"] == top_m})
 def held_ends(k=4):
@@ -70,6 +80,7 @@ def held_ends(k=4):
         if sum(n["dur"] for n in tail) >= 18 and key[0] == "Verse 1": out.append(word.strip(",.;"))
     return out[:k]
 HELD = held_ends()
+_ks = list(lines); RUNON = [bar(lines[b_][0]["on"]) for a_, b_ in zip(_ks, _ks[1:]) if lines[b_][0]["on"] - (lines[a_][-1]["on"] + lines[a_][-1]["dur"]) < 12]
 LEVEL_WORD = lambda v: "full" if v >= 0.97 else "strong" if v >= 0.9 else "medium" if v >= 0.8 else "light" if v >= 0.7 else "soft"
 _lastbar = REC["bars"][B1["Last Chorus"] + NB["Last Chorus"] - 2]; _lb = " ".join(_lastbar["beats4"]) if _lastbar.get("beats4") else (_lastbar["chord"] + (" " + _lastbar["chord2"] if _lastbar["chord2"] != _lastbar["chord"] else ""))
 _oc = " | ".join(" ".join(chord_at_bar(b)) for b in range(B1["Outro"], B1["Outro"] + NB["Outro"]))
@@ -108,14 +119,14 @@ for s, nb, st, _, _ in REC["plan"]:
         md.append(f"| {li['slot']} | {txt} | {li['chords']} | {mel} |")
     md.append("")
 md += ["## For each player", "",
-       f"**Voice.** A baritone, {rng[0]} to {rng[1]}. Tell it plainly in the verses; the choruses sit about three semitones higher, so let them open a little without pushing. "
-       f"Sing the title as written, {TD[0]}: " + " ".join(nm(n["midi"]) for n in title_line) + f". The song’s top note, {nm(top_m)}, comes in bar{'s' if len(TOPB) > 1 else ''} " + " and ".join(map(str, TOPB)) + " of each chorus.", "",
+       f"**Voice.** A baritone, {rng[0]} to {rng[1]}. Tell it plainly in the verses; the choruses sit about {LIFT:g} semitones higher, so let them open a little without pushing. "
+       f"Sing the title as written, {TD[0]}: " + " ".join(nm(n["midi"]) for n in title_line) + ". " + top_desc(REC, nm), "",
        f"**Harmony voice.** Under the lead in all three choruses, in his rhythm and on his words; {round(100 * third_to_fifth)} in 100 of its notes sit a third to a fifth below him. Range {hr[0]} to {hr[1]}: the lowest notes want a true bass, or take them up an octave. Keep it soft; he leads.", "",
        f"**Acoustic guitar.** Steady eighth-note strums from bar 1 to the end, under his voice; where a chord tone would sit a step from the note he sings, leave it out. Range {gr[0]} to {gr[1]}.", "",
        f"**Bass.** Quarter notes on every beat: roots and fifths, with chromatic passing notes a half step from the next root. Range {br[0]} to {br[1]}. Lock with the kick on 1 and 3.", "",
        f"**Drums.** Kick on 1 and 3, snare on 2 and 4, hat eighths, from bar {drums_from} to the end. A tom fill in the bar before each chorus that follows a verse (bars {', '.join(map(str, fills))}).", "",
        "## For the singer", "",
-       f"Breathe between lines: his phrases run {PH[len(PH) // 2]:.1f} seconds at the median and {PH[-1]:.1f} at the longest, so there is room at every line end. "
+       f"Breathe between lines: his phrases run {PH[len(PH) // 2]:.1f} seconds at the median. " + (f"Some lines run straight into the next with less than a beat between them (into bars {', '.join(map(str, RUNON[:8]))}{' and others' if len(RUNON) > 8 else ''}); take a quick breath in the gap or sing through, as feels natural; the longest stretch without a full beat's rest is {PH[-1]:.1f} seconds. " if RUNON else "There is room at every line end. ") +
        f"Lines that end on a long note (in verse 1: {', '.join('“' + w + '”' for w in HELD)}) want to be held to their length and released, not clipped. "
        "Verse 3 is the hardest to sing plainly; do not lean on it. The last chorus is longer than the others and ends on the title: leave the last word open.", "",
        "## The arrangement", "",
