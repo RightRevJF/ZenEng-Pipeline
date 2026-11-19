@@ -2,13 +2,13 @@
 
 A sung syllable has a WEIGHT the engine can read without ears: 0 for a one-syllable function word (the, of, and, my), 1 for the weak syllable of a longer word,
 2 for a stressed syllable. A note has a SALIENCE: its length, its place in the bar, its height within its line. Kept songs give the weightier syllable the more
-salient note: the rank correlation of the two over a song (the FIT) stands at 0.18 / 0.28 / 0.37 by quartile over 159 kept songs, and beats the same song with each
-line's words dealt again over its notes in 87 songs in 100. The engine's builds stood at 0.09 to 0.16. tables/kept_word_weight.json holds what the kept songs do:
+salient note: the rank correlation of the two over a song (the FIT) stands at 0.20 / 0.29 / 0.38 by quartile over 159 kept songs (0.202, 0.291, 0.384; 10th percentile 0.092), and beats the same
+song with each line's words dealt again over its notes in 89 songs in 100 (the first measure, which also weighed a word's rarity, gave 0.18 / 0.28 / 0.37 and 87; 898, 749.72). The engine's builds stood at 0.09 to 0.16. tables/kept_word_weight.json holds what the kept songs do:
 where in the bar each weight is sung, which way the tune steps between two weights, and the kept songs' own fits.
     tier(sy)           the weights of a line's syllables, from the engine's own (text, stressed) pairs
     place(t, bar)      0 bar start, 1 half bar, 2 another beat, 3 an off-beat eighth, 4 finer
     fit(notes, bar)    the fit of a build or a song: notes carry on, dur, p (or midi), text, stress, sec, line
-Nothing here says a song is great: the fit does not rank kept songs by their chart record (-0.00 with weeks, -0.02 with peak). It is a gate, not a pick (858)."""
+Nothing here says a song is great: the fit does not rank kept songs by their chart record (0.03 with weeks, 0.00 with peak). It is a gate, not a pick (858)."""
 import json, os, math
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); TABLE = os.path.join(HERE, "..", "..", "tables", "kept_word_weight.json")

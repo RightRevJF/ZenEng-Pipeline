@@ -14,13 +14,14 @@ Everything else is the engine's:
   key (804)                   from the pick's range, the voice and the lead instrument
   bass (813)                  the root where a chord begins; one note a beat; the fifth on the mid-bar beat of a held chord; a step toward the next root before a change
 Writes <lyric>.song.json (the record: chords, melody, bass, key, every reading) and <lyric>.song.mid. The same lyric and seed give the same song."""
-import json, sys, os, re, copy, hashlib
+import json, math, sys, os, re, copy, hashlib
 import random as _r_
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path[:0] = [HERE, os.path.join(HERE, "..", "carol")]
 import chord_writer as C, metre_engine as M, slots as SL, lyricsearch as LS, band as BD
 FAMILY = {"pop": "other", "rock": "other", "folk": "other", "soul / r&b": "soul", "gospel": "soul", "blues": "soul", "country": "country"}
 DEGREE_POWER = 0.5     # 846: fitted so the written degree shares meet the kept
 WORD_PITCH = [3.0, 2.0, 0.2]     # 847: weights for the stressed syllable of a word standing higher than, level with, lower than the other; fitted to the kept 44 / 36 / 20
+WORD_SHORT = 4.0      # 891 (749.66): the charge on each stressed syllable a line sung again would leave a sixteenth long
 WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept median (0.13)
 WORD_PLACE = 1.5; WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
 #  879, 880: fitted so the builds' shares (a function word on the bar's first beat, the step up from a light word to a stressed one) and their fits meet the kept
@@ -68,7 +69,6 @@ def plan(L):
     elif br is not None: flags.append("no break: with one the song would run past the kept 75th of lengths")
     if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2]:                               # 888: a song past the kept 75th of lengths takes the kept lower quartiles of bars in and out
         n_in2, n_out2 = BD.edges(L["bpm"], beats, q=0); form[0] = ("Intro", "intro", min(n_in, n_in2)); form[-1] = ("Outro", "outro", min(n_out, n_out2)); flags.append(f"888: the song runs long: {form[0][2]} bars in and {form[-1][2]} out (the kept lower quartiles)")
-    if sum(b for _, _, b in form) * bar_s > BD.EDG["length"][2]: flags.append(f"the song runs {round(sum(b for _, _, b in form) * bar_s)} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo")
     # 877: where the voice stays out. Kept songs hold a median of two silences of two bars or more (quartiles 1, 2, 3), three in five of them between sections,
     # 2 bars 29 times in a hundred, 4 bars 18, 8 bars or more 36. The break is one; the others are turns of two or four bars after a chorus that is not the last.
     rs_ = _r_.Random(f"silences {L.get('seed', 1)} {L['title']}"); want = rs_.choices([1, 2, 3], [0.25, 0.5, 0.25])[0] - (1 if any(n == "Break" for n, _, _ in form) else 0)
@@ -77,6 +77,8 @@ def plan(L):
         tb = rs_.choices([2, 4], [0.62, 0.38])[0]
         if (sum(b for _, _, b in form) + tb) * bar_s <= BD.EDG["length"][2]: form.insert(i + 1, (f"Turn {len(chs) - j}", "solo", tb))            # 888 (amends 877): a turn only while the song stays inside the kept 75th of lengths, as the break does
         else: flags.append("888: no turn: with one the song would run past the kept 75th of lengths")
+    secs_ = round(sum(b for _, _, b in form) * bar_s)                                          # 894 (749.69): one length, counted once, after the form is final
+    if secs_ > BD.EDG["length"][2]: flags.append(f"the song runs {secs_} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo; at this tempo it would need about {int(round((secs_ - BD.EDG['length'][2]) / (2 * bar_s)))} fewer two-bar lines, or about {int(math.ceil(L['bpm'] * secs_ / BD.EDG['length'][2]))} beats a minute")
     RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; lift = int(round(_r.Random(f"plan {L.get('seed', 1)} {L['title']}").choice(RP["lifts"])))
     V = C.VOICES[L.get("voice", "tenor")]; lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
     vf, vc, vt = R_["verse"]["floor"][1], R_["verse"]["centre"][1], R_["verse"]["top"][1]                                               # the kept medians: floor on the tonic, centre a third above, top a sixth above
@@ -94,7 +96,7 @@ def plan(L):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
     if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
-        import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
+        import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
     spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7; spec["one_bar_share"] = ONE_BAR; spec["kept_rests"] = [[12, 15, 18, 24, 36, 48], [0.2, 0.15, 0.1, 0.25, 0.15, 0.15]]      # 870: the kept rests after a line (10th percentile a quarter, 25th 15 twelfths, median a half, 75th a whole)
     return spec, form, flags
@@ -151,7 +153,10 @@ def write(L, N=1000, K=12):
                            kept=run["kept_quartiles"], uncharged=run["uncharged"], entries=run["entries"], stressed_on_beat=run["pick"]["stressed_on_beat"], stats=run["stats"],
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
-    melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E); BD.arrange(rec, genre=L.get("genre", "pop"), lead=L.get("lead", "guitar"), seed=L.get("seed", 1))
+    melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
+    if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
+        import word_weight as WW_; rec["judge7"]["pick_words_fit"] = {k: round(v, 3) for k, v in WW_.fit([n for n in rec["melody"]["notes"] if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True).items()}
+    BD.arrange(rec, genre=L.get("genre", "pop"), lead=L.get("lead", "guitar"), seed=L.get("seed", 1))
     if any(n == "Break" for n, _, _ in form):                                                # 830: the lead instrument plays the first verse's tune over the break
         b0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index("Break")]) * E.BAR; vname = next(n for n, k, b in form if k == "verse"); v0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index(vname)]) * E.BAR
         rec["parts"]["break"] = [dict(on=n["on"] - v0 + b0, dur=n["dur"], p=[n["midi"] + (12 if L.get("lead", "guitar") == "guitar" else 0)], vel=88) for n in rec["melody"]["notes"] if n["sec"] == vname and n["on"] - v0 < 8 * E.BAR - 6]
@@ -260,6 +265,9 @@ def midi(rec, path):
     track("chords", 0, 2, pads); mid.save(path)
 if __name__ == "__main__":
     L = json.load(open(sys.argv[1])); N = int(sys.argv[2]) if len(sys.argv) > 2 else 1000; K = int(sys.argv[3]) if len(sys.argv) > 3 else 12
+    if N == 0:                                                                               # 894: at intake, how long the lyric will run:  python3 song_from_lyric.py lyric.json 0
+        spec, form, flags = plan(L); bs = 60.0 / L["bpm"] * len(json.load(open(os.path.join(M.ATLAS, L.get("metre", "4/4").replace("/", "-") + "_sung.json")))["beats"]); secs = round(sum(b for _, _, b in form) * bs)
+        print(f"{L['title']}: {sum(len(ls) for _, ls in L['sections'])} lines, {sum(b for _, _, b in form)} bars at {L['bpm']} beats a minute = {secs} seconds (kept songs 165, 206, 243 by quartile)"); [print(" ", f) for f in flags]; sys.exit(0)
     rec = write(L, N, K); out = sys.argv[1].replace(".json", "") + ".song.json"; json.dump(rec, open(out, "w"), indent=1, default=float)
     if "error" in rec: print(rec["error"], rec.get("deaths"), rec.get("flags")); sys.exit(1)
     BD.midi(rec, out.replace(".json", ".mid")); m = rec["melody"]

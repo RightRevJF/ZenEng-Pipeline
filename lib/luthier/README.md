@@ -244,3 +244,27 @@ So it gates and does not choose (858). Predictions written first: `way3_PREDICTI
 - 889 `band.arrange`: the harmony voice's class weights fitted to the song (ten rounds at most); record `harmony_fit`. Fourths 0.35 / 0.23 / 0.16 / 0.26 -> 0.12 / 0.11 / 0.11 / 0.14.
 - Results: `stage10_results.json`. Studies beside this version, nothing built: `studies/way4/`, `studies/way2_again/`.
 - Not done: songs 54 and 58 still long (the lyrics); no kept tables of words outside 4/4; the pick is still the first build past the gates.
+
+## Luthier v24 — the session's fix list for v23 answered (fixes 890–898)
+
+    python3 lib/luthier/song_from_lyric.py songs/p68/lyric58.json 0          # 894: at intake, how long the lyric will run; writes nothing
+    python3 lib/luthier/song_from_lyric.py songs/p68/lyric58.json 1000 12    # also p65/lyric55, p64/lyric54, p62/lyric52
+    python3 lib/luthier/make_kept_word_weight.py                             # 895: needs the kept corpus (kept_corpus.py says where to fetch it); rewrites the table byte for byte
+    python3 lib/luthier/make_kept_returns.py                                 # 896: tables/kept_returns.json
+
+| Finding | Fix | What was done |
+|---|---|---|
+| 749.66 | 891 | `again()`: each stressed syllable a return would leave a sixteenth is charged (`word_weight.short_stress`, 4). Builds: 14/11/10 -> 7/6/4 in 100 |
+| 749.67 | 896 | measured: kept returning lines of another count keep 0.57/0.68/0.81 of their source's rhythm, 0.63/0.79/0.89 of its pitches; engine 0.78/0.72/0.83. `again_cost` stays 8 |
+| 749.68 | 897 | `judge7.gates_removed` in the record. In 4/4 only the old charge takes builds away; the gates are not moved (858) |
+| 749.69 | 894 | one length, after the form is final; the flag says how many lines fewer or what tempo; `... lyric.json 0` at intake |
+| 749.70 | 895 | `kept_corpus.py`, `cocopops_parse.py`, `make_kept_word_weight.py`, `make_kept_returns.py`, `tables/kept_songs_4-4_pop.json`. The stageN_results.json files are still records of runs |
+| 749.71 | 890 | `weak_end()`: 871 for a word of any length |
+| 749.72 | 898 | `judge7.pick_words_fit` is the fit as sung; `word_weight.py`'s docstring matches the table |
+| 749.73 | 892 | `band.arrange`: a guitar voiced in its own kept register, off the seconds either side of the sung notes. Under sung notes 0/3/3 -> 97/66/92 in 100 |
+| 749.74 | 893 | harmony voice E2 to A5; above the lead only where below has no room |
+| 749.75 | none | not built: POP909's last chorus is no denser than the first (median 0, positive in 49 of 100). Module 9.12 against a kept figure: the writer's to settle |
+| 749.58 | 887 (v23) | 4/4: rest after a line 24 twelfths in all three songs; song 52 still 12 |
+| 749.61 | none | carried: no kept pop corpus in 6/8 |
+
+Results: `stage11_results.json`. Regression line: `lyric52/54/55/58.song.json` changed by 890–893 and are committed.
