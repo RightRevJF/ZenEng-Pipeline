@@ -61,3 +61,9 @@ the 712 best-scored voice tracks -0.006. Region leans of set 3 against set 1: -0
 Caveat stated beforehand: the voice track in this set is guessed. But the better-guessed half reads no higher, so that does not rescue it.
 Verdict on the whole study: across five runs and about 3,100 songs, no shape of the tune, hand-built or learned, tells good from great on songs it has not seen.
 Word-and-tune remains untested on enough well-aligned songs.
+
+# S = 1 + g/pi read on songs (19 Nov 2026). Study only; nothing built.
+S = DFA exponent of the tune's pitch series (Sp) and rhythm series (Sr), songs of 128+ notes. Prediction in s_formula/PREDICTION.md.
+Where songs sit: median Sp 0.91 (set 1), 0.88 (set 2) — close under 1, g about -0.3 to -0.4; set 3 0.59 (its guessed voice tracks). Sr about 0.4-0.5.
+Against G: P1 Sp rises +0.02, +0.03, +0.03 (pooled p .22) fail. P2 Sp near 1: -0.01, +0.04, +0.03 (p .28) fail. P3 Sr near 1: -0.01, -0.02, +0.09 (p .08) fail.
+So popular tunes do sit near the critical point, as the formula's form would have it, but nearness to it does not tell good from great. The old way-2 lead (pitch scaling against chart) does not carry to this yardstick.
