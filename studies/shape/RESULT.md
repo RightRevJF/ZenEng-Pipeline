@@ -74,3 +74,9 @@ C1 chord-tone share ran against the prediction, +0.098 (p .003; halves +0.089, +
 Re-predicted (+) and tested on 407 fresh Hooktheory songs of 2006-2012: C1 -0.060 (p .22). FAIL; did not repeat.
 Side reading: the artist accounts for about 0.15 of the differences in G between songs (0.25 of love, 0.14 of covers; 1,120 songs, 205 artists with three or more).
 Most of what the yardstick measures lies between songs of the same artist.
+
+# Same artist, great song against other hits (19 Nov 2026). Study only; nothing built.
+Artist fixed effects; artists split in two by name as the lock. Rule in same_artist/PREDICTION.md. 21 measures, none passed.
+Tune measures: 1,985 songs, 320 artists with three or more; every pooled reading within +/-0.05 (largest M2 +0.045, p .06; halves -0.03 and +0.12).
+Chord measures: 669 songs, 120 artists; largest C7 -0.074 (p .08).
+With fame, voice, era and style cancelled, nothing measured so far on the written tune or its chords tells an artist's great songs from the same artist's other hits.
