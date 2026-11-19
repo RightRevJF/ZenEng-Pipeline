@@ -103,7 +103,7 @@ ROOTN = {"C": "c", "D": "d", "E": "e", "F": "f", "G": "g", "A": "a", "B": "b", "
 QUALN = {"": "", "m": ":m", "m7": ":m7", "add9": ":9^7", "sus2": ":sus2", "sus4": ":sus4", "maj7": ":maj7", "dim7": ":dim7"}
 def cho(c, d):
     base, _, bs = c.partition("/")
-    rt_ = base[:2] if len(base) > 1 and base[1] == "#" else base[:1]; q_ = base[len(rt_):]
+    rt_ = base[:2] if len(base) > 1 and base[1] in "#b" else base[:1]; q_ = base[len(rt_):]
     return f"{ROOTN[rt_]}{d}{QUALN[q_]}" + (f"/{ROOTN[bs]}" if bs else "")
 def chords_for(rest_bars):
     out, i = [], 0
@@ -164,6 +164,14 @@ def words_of(ns):
         cur += n["text"]
         if not n["hyph"]: out.append(cur); cur = ""
     return out
+def title_desc(REC_):
+    """where the title falls against the chorus's first bar, read from the record"""
+    b0 = next(st for s, nb, st, _, _ in REC_["plan"] if s == "Chorus 1"); ns = [n for n in REC_["lead"] if n["sec"] == "Chorus 1" and n["line"] == 0 and n["first"]]
+    if ns[0]["on"] >= b0: return "on the chorus's downbeat", "Title on the downbeat."
+    beat = (ns[0]["on"] % 48) // 12 + 1; land = next((n for n in ns if n["on"] >= b0), None); w = land["text"].strip(",.") if land else ""
+    return (f"“{ns[0]['text']}” on beat {beat} of the bar before the chorus and “{w}” on its downbeat",
+            f"The title picks up on beat {beat} of the bar before; “{w}” lands on the downbeat.")
+_TD = title_desc(REC)
 _mm = int(REC["seconds"] // 60); _ss = int(round(REC["seconds"] % 60))
 _him = [n["midi"] for n in REC["lead"]]; _top = max(_him)
 B1 = {s: st // 48 + 1 for s, nb, st, mets, mv in REC["plan"]}
@@ -174,24 +182,25 @@ for s_ in ("Chorus 1", "Last Chorus"):
         ns = line_notes(s_, li)
         if any(n["midi"] == _top for n in ns): _tops.append((s_, li + 1, ns[0]["on"] // 48 + 1))
 NOTE0 = f"Voice: a baritone, {nm_(min(_him))}–{nm_(max(_him))}, written an octave above where he sings (treble clef with the 8 below)."
+_topbars = sorted({n["on"] // 48 + 1 - B1["Chorus 1"] + 1 for n in REC["lead"] if n["sec"] == "Chorus 1" and n["midi"] == _top})
 NOTE1 = (f"The title opens every chorus (bars {B1['Chorus 1']}, {B1['Chorus 2']} and {B1['Last Chorus']}): " + " ".join(nm_(n['midi']) for n in _tw) +
-         f", climbing to {nm_(_tw[-1]['midi'])} on “-morrow”. The song’s top note, {nm_(_top)}, comes in lines 3 and 8 of each chorus.")
+         f". The song’s top note, {nm_(_top)}, comes in bar{'s' if len(_topbars) > 1 else ''} " + " and ".join(map(str, _topbars)) + " of each chorus.")
 NOTE2 = "A harmony voice sings under him in all three choruses, in his rhythm and words, mostly a third to a fifth below."
-NOTE3 = "A folk ballad, ♩ = 84: the bass on every beat, kick on 1 and 3, snare on 2 and 4, hat eighths. The guitar plays the intro, the turn and the outro, and answers between his lines."
+NOTE3 = "A folk ballad, ♩ = 84: the guitar strums eighths under him from bar 1 to the end; the bass on every beat; kick on 1 and 3, snare on 2 and 4, hat eighths."
 TITLE = REC["title"]; FT = REC["file_title"]
-FOOT = f"{TITLE} · Words and music: Jason Bryant · ♩ = 84, folk ballad · C major · {_mm}:{_ss:02d}"
+FOOT = f"{TITLE} ({REC['edition']}) · Words and music: Jason Bryant · ♩ = 84, folk ballad · C major · {_mm}:{_ss:02d}"
 CHN = lambda rest: f'\\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(rest)} }}'
 _g = REC["parts"]["guitar"]; _b = REC["parts"]["bass"]
-ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses, which sit about three semitones higher. Let the title land on the downbeat each time.",
+ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses, which sit about three semitones higher. Sing the title as written: " + _TD[0] + ".",
         "harmony": f"Harmony voice: under him in the three choruses, in his rhythm and words, mostly a third to a fifth below (lowest {nm_(min(n['midi'] for n in REC['harm']))}). Keep it soft; he leads.",
-        "guitar": f"Acoustic guitar: steady eighth-note strums in the intro, the turn (bars {B1['Turn 2']}–{B1['Turn 2'] + 1}) and the outro; in the verses and choruses you answer in the spaces between his lines and lay out while he sings. Range {nm_(min(min(e['p']) for e in _g))}–{nm_(max(max(e['p']) for e in _g))}.",
-        "bass": f"Bass: quarter notes on every beat, roots and fifths, with a chromatic note a half step from the next chord's root (C♯ down to C, F♯ up to G). {nm_(min(e['p'][0] for e in _b))}–{nm_(max(e['p'][0] for e in _b))}. Lock with the kick on 1 and 3.",
-        "drums": "Drums: kick 1 and 3, snare 2 and 4, hat eighths, from bar 2 to the end. A tom fill in the bar before each chorus's first line (bars 20, 52 and 98)."}
-VMARKS_P = {"guitar": {"Intro": "strum", "Verse 1": "answers between lines", "Turn 2": "strum", "Outro": "strum"},
+        "guitar": f"Acoustic guitar: steady eighth-note strums from bar 1 to the end, under his voice. Where a chord tone would sit a step from the note he sings, it is left out. Range {nm_(min(min(e['p']) for e in _g))}–{nm_(max(max(e['p']) for e in _g))}.",
+        "bass": f"Bass: quarter notes on every beat, roots and fifths, with chromatic passing notes a half step from the next root. {nm_(min(e['p'][0] for e in _b))}–{nm_(max(e['p'][0] for e in _b))}. Lock with the kick on 1 and 3.",
+        "drums": f"Drums: kick 1 and 3, snare 2 and 4, hat eighths, from bar {min(x['on'] for x in REC['parts']['drums']) // 48 + 1} to the end. A tom fill in the bar before each chorus that follows a verse (bars {', '.join(str(b_) for b_ in sorted({x['on'] // 48 + 1 for x in REC['parts']['drums'] if x['p'][0] in (45, 48)}))})."}
+VMARKS_P = {"guitar": {"Intro": "strum eighths throughout"},
             "bass": {"Intro": "quarters, roots and fifths"}, "him": {}, "harmony": {"Chorus 1": "under the lead"}}
 DMARKS = {"Intro": "kick, snare, hats", "Chorus 1": "as before", "Bridge": "as before", "Outro": "to the end"}
 if __name__ == "__main__":
-    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "{TITLE}" subtitle = "Lead sheet" composer = "Words and music: Jason Bryant" tagline = ##f }}
+    lead_ly = HEAD % (17, FOOT, FOOT) + f'''\\header {{ title = "{TITLE}" subtitle = "Lead sheet ({REC['edition']})" composer = "Words and music: Jason Bryant" tagline = ##f }}
 \\score {{ <<
   {CHN(HIM_R)}
   \\new Staff \\with {{ instrumentName = "Voice" }} {{ \\clef "treble_8" \\new Voice = "him" {{ {HIM_B} }} }}
@@ -252,7 +261,7 @@ if __name__ == "__main__":
 \\markup \\small \\wordwrap {{ {esc(ROLE["drums"])} }}
 \\score {{ \\new DrumStaff \\with {{ drumStyleTable = #drums-style }} \\drummode {{ {" ".join(dt)} }} \\layout {{ }} }} }}''')
     nh = sum(len(v) for v in HITS.values()); nd = len({(e["on"], p) for e in P_.get("drums", []) for p in e["p"]})
-    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
+    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts ({REC['edition']})" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
     path, warns = compile_ly(parts, f"{FT} - parts", cwd=OUT)
     print("parts:", [w for w in warns][:6], len(warns))
     for k, v in checks.items(): print(f"  readback {k}:", "matches" if v[0] else "MISMATCH", v[1:])

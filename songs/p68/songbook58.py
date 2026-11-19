@@ -51,7 +51,16 @@ def phrases():
     for a, b in zip(t, t[1:]):
         if b["on"] - (a["on"] + a["dur"]) >= 12: out.append((a["on"] + a["dur"] - s0) / 12 * 60 / REC["qbpm"]); s0 = b["on"]
     out.append((t[-1]["on"] + t[-1]["dur"] - s0) / 12 * 60 / REC["qbpm"]); return sorted(out)
+def title_desc(REC_):
+    """where the title falls against the chorus's first bar, read from the record"""
+    b0 = next(st for s, nb, st, _, _ in REC_["plan"] if s == "Chorus 1"); ns = [n for n in REC_["lead"] if n["sec"] == "Chorus 1" and n["line"] == 0 and n["first"]]
+    if ns[0]["on"] >= b0: return "on the chorus's downbeat", "Title on the downbeat."
+    beat = (ns[0]["on"] % 48) // 12 + 1; land = next((n for n in ns if n["on"] >= b0), None); w = land["text"].strip(",.") if land else ""
+    return (f"“{ns[0]['text']}” on beat {beat} of the bar before the chorus and “{w}” on its downbeat",
+            f"The title picks up on beat {beat} of the bar before; “{w}” lands on the downbeat.")
+TD = title_desc(REC)
 PH = phrases()
+TOPB = sorted({bar(n["on"]) - B1["Chorus 1"] + 1 for n in LEAD if n["sec"] == "Chorus 1" and n["midi"] == top_m})
 def held_ends(k=4):
     out = []
     for key, ns in lines.items():
@@ -62,21 +71,24 @@ def held_ends(k=4):
     return out[:k]
 HELD = held_ends()
 LEVEL_WORD = lambda v: "full" if v >= 0.97 else "strong" if v >= 0.9 else "medium" if v >= 0.8 else "light" if v >= 0.7 else "soft"
-WHAT = {"Intro": f"Guitar strumming eighths and bass from bar 1; drums in from bar {drums_from}; the voice picks up in bar {B1['Verse 1'] - 1}.",
-        "Verse 1": f"Bass and drums under the voice; the guitar answers between lines. Tom fill in bar {B1['Chorus 1'] - 1}.",
-        "Chorus 1": "The harmony voice comes in under him. Title on the downbeat.",
-        "Turn 2": "Two bars of guitar strums between chorus and verse.",
-        "Verse 2": f"As verse 1. Tom fill in bar {B1['Chorus 2'] - 1}.",
+_lastbar = REC["bars"][B1["Last Chorus"] + NB["Last Chorus"] - 2]; _lb = " ".join(_lastbar["beats4"]) if _lastbar.get("beats4") else (_lastbar["chord"] + (" " + _lastbar["chord2"] if _lastbar["chord2"] != _lastbar["chord"] else ""))
+_oc = " | ".join(" ".join(chord_at_bar(b)) for b in range(B1["Outro"], B1["Outro"] + NB["Outro"]))
+_bc = REC["bars"][B1["Bridge"] - 1]["chord"]
+_fill_in = lambda s: next((f for f in fills if B1[s] <= f < B1[s] + NB[s]), None)
+WHAT = {"Intro": f"Guitar strumming eighths and bass from bar 1; drums in from bar {drums_from}; the voice picks up in bar {min(bar(n['on']) for n in LEAD)}.",
+        "Verse 1": "The guitar strums eighths under the voice; bass and drums with it." + (f" Tom fill in bar {_fill_in('Verse 1')}." if _fill_in('Verse 1') else ""),
+        "Chorus 1": "The harmony voice comes in under him. " + TD[1],
+        "Verse 2": "As verse 1." + (f" Tom fill in bar {_fill_in('Verse 2')}." if _fill_in('Verse 2') else ""),
         "Chorus 2": "As chorus 1.",
-        "Bridge": "Starts on Am. The groove holds; he sings straight through.",
-        "Verse 3": f"As verse 1. Tom fill in bar {B1['Last Chorus'] - 1}.",
-        "Last Chorus": "Sixteen bars, two more than the others; nine lines, the title again at the end. Last bar C F C F, a beat each.",
-        "Outro": "Six bars of C, guitar strumming, band with it to the end."}
-SHORTW = {"Intro": "guitar, bass; drums from bar 2", "Verse 1": "voice over bass and drums; guitar answers", "Chorus 1": "harmony voice in", "Turn 2": "guitar strums",
-          "Verse 2": "as verse 1", "Chorus 2": "as chorus 1", "Bridge": "from Am; groove holds", "Verse 3": "as verse 1", "Last Chorus": "two bars longer; ends C F C F",
-          "Outro": "guitar strums to the end"}
+        "Bridge": f"Starts on {_bc}. The groove holds; he sings straight through.",
+        "Verse 3": "As verse 1." + (f" Tom fill in bar {_fill_in('Verse 3')}." if _fill_in('Verse 3') else ""),
+        "Last Chorus": f"Sixteen bars, two more than the others; nine lines, the title again at the end. The last bar: {_lb}.",
+        "Outro": f"{NB['Outro']} bars: {_oc}. Band to the end."}
+SHORTW = {"Intro": f"guitar, bass; drums from bar {drums_from}", "Verse 1": "guitar strums under the voice", "Chorus 1": "harmony voice in",
+          "Verse 2": "as verse 1", "Chorus 2": "as chorus 1", "Bridge": f"from {_bc}; groove holds", "Verse 3": "as verse 1", "Last Chorus": "two bars longer; the title again at the end",
+          "Outro": _oc.replace(" | ", ", ")}
 PB = '\n```{=openxml}\n<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n```\n'
-md = [f"# {REC['title']}: songbook and production notes", "", "Words and music: Jason Bryant", ""]
+md = [f"# {REC['title']} ({REC['edition']}): songbook and production notes", "", "Words and music: Jason Bryant", ""]
 md += ["## At a glance", "",
        "**What it is about.** An old preacher in his last days tells about the boy who comes to change his sheets, and the promise they make each other every evening: same time tomorrow. "
        "It is a small promise, kept daily, and by the last chorus it has come to hold up more than the pulpit ever did.", "",
@@ -97,18 +109,18 @@ for s, nb, st, _, _ in REC["plan"]:
     md.append("")
 md += ["## For each player", "",
        f"**Voice.** A baritone, {rng[0]} to {rng[1]}. Tell it plainly in the verses; the choruses sit about three semitones higher, so let them open a little without pushing. "
-       f"The title lands on the downbeat each time: " + " ".join(nm(n["midi"]) for n in title_line) + f", climbing to {nm(title_line[-1]['midi'])} on “-morrow”. The song’s top note, {nm(top_m)}, comes in lines 3 and 8 of each chorus.", "",
+       f"Sing the title as written, {TD[0]}: " + " ".join(nm(n["midi"]) for n in title_line) + f". The song’s top note, {nm(top_m)}, comes in bar{'s' if len(TOPB) > 1 else ''} " + " and ".join(map(str, TOPB)) + " of each chorus.", "",
        f"**Harmony voice.** Under the lead in all three choruses, in his rhythm and on his words; {round(100 * third_to_fifth)} in 100 of its notes sit a third to a fifth below him. Range {hr[0]} to {hr[1]}: the lowest notes want a true bass, or take them up an octave. Keep it soft; he leads.", "",
-       f"**Acoustic guitar.** Steady eighth-note strums in the intro, the turn (bars {B1['Turn 2']}–{B1['Turn 2'] + 1}) and the outro. In the verses and choruses you answer in the spaces between his lines and lay out while he sings. Written range {gr[0]} to {gr[1]}.", "",
-       f"**Bass.** Quarter notes on every beat: roots and fifths, with a chromatic note a half step from the next root (C♯ down to C, F♯ up to G). Range {br[0]} to {br[1]}. Lock with the kick on 1 and 3.", "",
+       f"**Acoustic guitar.** Steady eighth-note strums from bar 1 to the end, under his voice; where a chord tone would sit a step from the note he sings, leave it out. Range {gr[0]} to {gr[1]}.", "",
+       f"**Bass.** Quarter notes on every beat: roots and fifths, with chromatic passing notes a half step from the next root. Range {br[0]} to {br[1]}. Lock with the kick on 1 and 3.", "",
        f"**Drums.** Kick on 1 and 3, snare on 2 and 4, hat eighths, from bar {drums_from} to the end. A tom fill in the bar before each chorus that follows a verse (bars {', '.join(map(str, fills))}).", "",
        "## For the singer", "",
        f"Breathe between lines: his phrases run {PH[len(PH) // 2]:.1f} seconds at the median and {PH[-1]:.1f} at the longest, so there is room at every line end. "
        f"Lines that end on a long note (in verse 1: {', '.join('“' + w + '”' for w in HELD)}) want to be held to their length and released, not clipped. "
        "Verse 3 is the hardest to sing plainly; do not lean on it. The last chorus is longer than the others and ends on the title: leave the last word open.", "",
        "## The arrangement", "",
-       "The band stays in one groove the whole way. What changes is who is singing and where the guitar plays: the harmony voice in the choruses, the guitar strumming in the intro, the turn and the outro, and a tom fill leading into each chorus that follows a verse. "
-       "Keep the verses intimate and let the choruses fill out only as much as the harmony voice brings.", ""]
+       "The band stays in one groove the whole way: the guitar strums eighths under him from the first bar to the last, with the bass on every beat and the drums on 1 and 3, 2 and 4. "
+       "What changes is the harmony voice in the choruses, a tom fill leading into each chorus that follows a verse, and the last chorus, two bars longer than the others. Keep the verses intimate and let the choruses fill out only as much as the harmony voice brings.", ""]
 md += ["## Production notes", "", "### Lyric sheet", ""]
 cur = None
 for k in lines:
@@ -123,15 +135,15 @@ md += ["", PB, "### Producer one-sheet", "",
        "**Dynamic arc.**", "", "| Section | Bars | Level | What changes |", "|---|---|---|---|"]
 for s, nb, st, _, _ in REC["plan"]: md.append(f"| {s} | {st // BAR + 1}–{st // BAR + nb} | {LEVEL_WORD(REC['level'][s])} | {SHORTW[s]} |")
 md += ["", "**Non-negotiables.**", "",
-       "- ♩ = 84, steady; no push into the choruses.", "- The title on the downbeat, every time.", "- The harmony voice below the lead, never above.",
-       "- The guitar out of the way while he sings; it answers in the spaces.", "- The last chorus’s last bar: C F C F, a beat each.", "",
-       "**Mix priorities.** The voice in front and centre, dry and close. The harmony voice tucked under it, slightly right. The guitar left of centre, up when he rests. Bass and kick locked together under everything. Nothing may cover the title line.", "",
+       "- ♩ = 84, steady; no push into the choruses.", f"- The title as written every time: {TD[0]}.", "- The harmony voice below the lead, never above.",
+       "- The guitar under him, never a step from the note he sings.", f"- The last chorus’s last bar: {_lb}.", "",
+       "**Mix priorities.** The voice in front and centre, dry and close. The harmony voice tucked under it, slightly right. The guitar left of centre, under the voice. Bass and kick locked together under everything. Nothing may cover the title line.", "",
        PB, "### Production brief", "",
        f"**The song.** “{REC['title']}”, words and music by Jason Bryant: a folk ballad in C major at ♩ = 84, {mm}:{ss:02d}, for a baritone with a harmony voice, acoustic guitar, bass and drums.", "",
        "**References** (checked): Jason Isbell, “Elephant” (2013); John Prine, “Hello in There” (1971); Johnny Cash, “Hurt” (2002). What to take from each is on the one-sheet.", "",
        "**Non-negotiables.** As on the one-sheet.", "",
        "### Session notes", "",
-       f"- Tempo and click: ♩ = 84 throughout, 4/4. The voice enters with a pickup in bar {B1['Verse 1'] - 1}.",
+       f"- Tempo and click: ♩ = 84 throughout, 4/4. The voice enters in bar {min(bar(n['on']) for n in LEAD)}.",
        "- Key: C major. Chords bar by bar are on the number chart and above the lead sheet.",
        f"- Range: voice {rng[0]} to {rng[1]}; harmony {hr[0]} to {hr[1]}.",
        "- Tracking: guitar and click first, then bass and drums, then the lead voice, then the harmony voice.",

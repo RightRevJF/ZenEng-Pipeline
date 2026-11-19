@@ -9,16 +9,26 @@ def num(c):
     base, _, bs = c.partition("/"); rt_ = base[:2] if len(base) > 1 and base[1] in "#b" else base[:1]
     return RN[rt_] + QN[base[len(rt_):]] + (f"/{RN[bs]}" if bs else "")
 B0 = {s: st // 48 for s, nb, st, mets, mv in REC["plan"]}
-FEEL = {"Intro": "Guitar strums eighths and bass plays quarters from bar 1; drums in at bar 2 (kick 1 and 3, snare 2 and 4, hats). Voice picks up in bar 4",
-        "Verse 1": "He tells it. Guitar answers between his lines and lays out while he sings; bass and drums carry it. TOM FILL in the last bar",
-        "Chorus 1": "Bar 1: the title, up to 5 on \u201c-morrow\u201d. Harmony voice under him all chorus. His top note (1, C) in bars 4 and 14",
-        "Turn 2": "Two bars: guitar strums",
-        "Verse 2": "As verse 1. TOM FILL in the last bar",
+def title_desc(REC_):
+    """where the title falls against the chorus's first bar, read from the record"""
+    b0 = next(st for s, nb, st, _, _ in REC_["plan"] if s == "Chorus 1"); ns = [n for n in REC_["lead"] if n["sec"] == "Chorus 1" and n["line"] == 0 and n["first"]]
+    if ns[0]["on"] >= b0: return "on the chorus's downbeat", "Title on the downbeat."
+    beat = (ns[0]["on"] % 48) // 12 + 1; land = next((n for n in ns if n["on"] >= b0), None); w = land["text"].strip(",.") if land else ""
+    return (f"“{ns[0]['text']}” on beat {beat} of the bar before the chorus and “{w}” on its downbeat",
+            f"The title picks up on beat {beat} of the bar before; “{w}” lands on the downbeat.")
+_TD = title_desc(REC)
+_dr = min(e["on"] for e in REC["parts"]["drums"]) // 48 + 1; _fills = sorted({e["on"] // 48 + 1 for e in REC["parts"]["drums"] if e["p"][0] in (45, 48)})
+_b1 = {s: st // 48 + 1 for s, nb, st, mets, mv in REC["plan"]}; _sung = min(n_["on"] for n_ in REC["lead"]) // 48 + 1
+_rel = lambda s: [f - _b1[s] + 1 for f in _fills if _b1[s] <= f < _b1[s] + dict((x[0], x[1]) for x in REC["plan"])[s]]
+FEEL = {"Intro": f"Guitar strums eighths and bass plays quarters from bar 1; drums in at bar {_dr}. Voice picks up in bar {_sung}",
+        "Verse 1": f"Guitar strums eighths under him all the way; bass quarters; kick 1 and 3, snare 2 and 4. TOM FILL in bar {_rel('Verse 1')[0] if _rel('Verse 1') else '-'}",
+        "Chorus 1": _TD[1] + " Harmony voice under him all chorus. His top note (1, C) in bar " + ", ".join(str(b_) for b_ in sorted({n_["on"] // 48 + 1 - _b1["Chorus 1"] + 1 for n_ in REC["lead"] if n_["sec"] == "Chorus 1" and n_["midi"] == max(x["midi"] for x in REC["lead"])})),
+        "Verse 2": "As verse 1",
         "Chorus 2": "As chorus 1",
-        "Bridge": "Starts on 6m. Same groove; he sings through",
-        "Verse 3": "As verse 1. TOM FILL in the last bar",
-        "Last Chorus": "Sixteen bars, two more than the others. Last bar: 1 4 1 4, a beat each",
-        "Outro": "Six bars of 1: guitar strums, band with it to the end"}
+        "Bridge": "Starts on 4. Same groove; he sings through",
+        "Verse 3": "As verse 1",
+        "Last Chorus": "Sixteen bars, two more than the others: the last two are 2m 6, 5 1",
+        "Outro": "Four bars: 1, \u266d7, 4 5, 1. Band to the end"}
 def rows(cells, w=8): return "".join("<tr>" + "".join(f"<td>{c}</td>" for c in cells[i:i + w]) + "</tr>" for i in range(0, len(cells), w))
 body = ""; b = 0
 for s, nb, st, mets, mv in REC["plan"]:

@@ -5,6 +5,7 @@ import json, pickle, re, os, collections
 import pyphen
 HERE = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(os.path.join(HERE, "lyric58.song.json"))); L = json.load(open(os.path.join(HERE, "lyric58.json")))
+EDITION = " (second edition)"          # the first edition was written from the v22 record (commit 9ef68b2); this one from the v24 record
 BAR = R["bar"]; QBPM = R["bpm"]; DIC = pyphen.Pyphen(lang="en_US")
 KIND = {"intro": "Intro", "verse": "Verse", "chorus": "Chorus", "solo": "Turn", "bridge": "Bridge", "outro": "Outro"}
 bars, plan, b = [], [], 0
@@ -67,7 +68,7 @@ for e in R["parts"]["harmony"]:
         harm.append(dict(on=e["on"], on_engine=e["on"], dur=e["dur"], midi=e["p"][0], engine_midi=e["p"][0], sec=ln["sec"], line=ln["line"], syl=ln["syl"], first=True, text=ln["text"], hyph=ln["hyph"], stress=ln["stress"], role="harmony", singer="harmony"))
 parts = {"guitar": [dict(e, art="") for e in R["parts"]["chords"]], "bass": [dict(e, art="") for e in R["parts"]["bass"]], "drums": [dict(e, art="") for e in R["parts"]["drums"]]}
 end = len(bars) * BAR; seconds = end / 12 * 60.0 / QBPM
-REC = dict(title=R["title"], file_title=R["title"], nbars=len(bars), bars=bars, chords2=chords2, plan=plan, lead=lead, harm=harm, parts=parts, slot="twelfth of a beat",
+REC = dict(title=R["title"], file_title=R["title"] + EDITION, edition=EDITION.strip(" ()"), nbars=len(bars), bars=bars, chords2=chords2, plan=plan, lead=lead, harm=harm, parts=parts, slot="twelfth of a beat",
            qbpm=QBPM, feel="a folk ballad, q = 84, 4/4", seconds=seconds, end=end, level=R["levels"], source="songs/p68/lyric58.song.json", pick=R["melody"]["pick"],
            text={s: lines for s, lines in L["sections"]})
 pickle.dump(REC, open(os.path.join(HERE, "song_record.pkl"), "wb"))

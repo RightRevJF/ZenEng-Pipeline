@@ -48,7 +48,7 @@ HEAD = r'''\version "2.24.3"
   \context { \DrumStaff \RemoveEmptyStaves \override VerticalAxisGroup.remove-first = ##t }
   \context { \Lyrics \override LyricText.font-size = #-0.5 } }
 '''
-src = HEAD % (E.FOOT, E.FOOT) + f'''\\header {{ title = "{E.TITLE}" subtitle = "Full score" composer = "Words and music: Jason Bryant" tagline = ##f }}
+src = HEAD % (E.FOOT, E.FOOT) + f'''\\header {{ title = "{E.TITLE}" subtitle = "Full score ({E.REC['edition']})" composer = "Words and music: Jason Bryant" tagline = ##f }}
 \\score {{ <<
   \\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {CH} }}
   \\new ChoirStaff <<
