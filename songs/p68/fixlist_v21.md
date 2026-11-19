@@ -4,7 +4,7 @@
 
 All seven stages of the v8 plan are written (Luthier v20, fixes to 866) and merged at 0f5d1b6; every stage's commands reproduce the committed records.
 Song 58, "Same Time Tomorrow" (p68), is the first song written end to end from its lyric with song_from_lyric.py (ac8309b). Earlier findings 740 to 749.56
-are closed; their record is the Doc "Luthier fix list since v8" and songs/p67/fixlist_v8_since.md. Next finding 749.65; next fix 867.
+are closed; their record is the Doc "Luthier fix list since v8" and songs/p67/fixlist_v8_since.md. Next finding 749.66; next fix 885.
 
 ## Open findings
 - 749.57 The descant's ceiling (A5) is read in the written key; song 53's final refrain is sung in F, so the summit sounds C6.
@@ -14,6 +14,7 @@ are closed; their record is the Doc "Luthier fix list since v8" and songs/p67/fi
 - 749.61 The kept band is the spread between songs: the gate takes the tail (54, 55), almost nothing (52, 6/8) or almost everything (58), by song.
 - 749.62 859's old judge "stays as a gate" but chooses nothing; it is the bench's best damage detector.
 - 749.63 slots.py rounds a ballad's lines down to one bar (song 58: 38 of 57 lines; 45% sixteenths against the kept 15%; 548 of 1000 builds die for want of a fit).
+- 749.65 Breath against the bars. HELD OUT ON 1,479 HOOKTHEORY SONGS: DOES NOT HOLD (odds 1.34, p 0.11; four-bar length AUC 0.47); nothing to build for greatness. Discovery was: breath locked to 1, 2 or 4 bars in hits 0.57-0.62 against 0.33 in songs below no. 20; v22 mends the count (song 58 1.8 to 6.1 real breaths a minute) but not the grid (58 every 8.8 beats, 55 every 13). Note on 749.19: the 0.55-0.65 return is not supported by the notes; loosen any gate on it.
 - 749.64 Line-final words stressed on the first syllable hold the weak one (song 58: 7 of 14; "morning" 3 then 15 twelfths, "reason" 6 then 24).
 
 ## Order of work
@@ -31,3 +32,4 @@ The title; the words by section, with section names marking returns (the second 
 ## Two proposed vectors, tested and not supported (studies/tda/)
 - TDA of harmonic space (tda_mcgill.py, 733 McGill songs): distinct-chord readings are chord counts (clusters 0.996 with distinct chords); no reading against chart peak past |rho| 0.065 (all p > 0.07); beyond plain readings |rho| <= 0.05.
 - Harmonic transition networks (network_mcgill.py, 721 songs): median 6 chords a graph; 416 of 680 small-world; no reading against peak, alone or beyond plain readings; hub share -0.078 (p 0.036, one of ten), against the claim; shortcuts 0.031 (p 0.41).
+- Breath (studies/breath/), held out and not supported: the four-bar line lasts 9.2 s in year-end hits, 7.1 s below no. 20 (AUC 0.71); breath on the grid (749.65); the 0.55-0.65 return not supported.

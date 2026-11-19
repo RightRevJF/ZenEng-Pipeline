@@ -41,3 +41,35 @@ Reading: every singer breathes about every 5 s (the body sets that). In hits the
 Luthier: song 58 breathes every bar (2.9 s, about 21 a minute); songs 52 and 54 are not locked; 55 is locked at two bars (4.1 s).
 
 Not yet held out. Scripts: breath_spectrum.py (breath_spectrum.json).
+
+## Test A: the breath and the return (prediction from 749.19, fixed before the run)
+
+breath_return.py. A real breath is an onset gap of 3 beats or more; the return is the song's re-entry with the rarest pitch class and widest leap (ranked within the song).
+
+| Set | n | real breaths (median) | return in 0.55 to 0.65 | return in last 40% |
+|---|---|---|---|---|
+| BiMMuDa year-end | 252 | 17 | 0.087 | 0.57 |
+| Rolling Stone | 189 | 22 | 0.085 | 0.57 |
+| Billboard top 10 | 122 | 23 | 0.139 | 0.58 |
+| Billboard below 20 | 59 | 20 | 0.085 | 0.53 |
+
+Chance for the window is 0.10. The prediction fails: no set concentrates its return at 0.55 to 0.65, and hits do not differ from lesser songs (Fisher p 0.34 to 1.0). Fresh re-entries are not over-represented in 0.5 to 0.7 (observed over expected 0.94 to 1.09). What is universal: the freshest return falls late, the last 40% of the song, in every set alike. That is a property of songs, not of great ones.
+
+Luthier: song 58 takes 6 real breaths in 3.3 minutes (hits 17 to 23 in about the same length); song 52 takes 1, song 54 18, song 55 24. Song 58's freshest return is at 0.29.
+
+## Held out (PREDICTION_holdout.md, written and committed first): Hooktheory songs on the Hot 100
+
+holdout.py. 1,479 Hooktheory songs joined to the Hot 100, none in CoCoPops or BiMMuDa; the longest clip of each.
+
+| | top 10 | below 20 | test | held? |
+|---|---|---|---|---|
+| H1 breath locked to 1, 2 or 4 bars (clips of 64 beats or more) | 0.645 (183) | 0.576 (165) | odds 1.34, p 0.11 (needed 1.5, p under 0.05) | no |
+| same, clips of 32 beats or more | 0.576 (618) | 0.553 (532) | odds 1.10, p 0.23 | no |
+| H2 four-bar unit (s) | 7.52 | 7.68 | AUC 0.47 | no |
+| H3 commonest breath in top-10 songs is every two bars | 8 beats | 8 beats too | | yes, but it is true of both |
+
+The lead does not hold. Breathing on the grid, usually every two bars, is what pop melodies do (about 0.55 to 0.65 of songs in every set but one), and the
+one set that fell short, the 61 CoCoPops songs that peaked below 20, was the outlier the discovery rested on. The four-bar line's length does not separate
+either. Limit: Hooktheory clips are sections, often choruses, not whole songs. Nothing to build for greatness. What stays true for Luthier is about
+being a normal song: real breaths about 7 a minute, mended in 4/4 by 870, 876 and 877; breath on the grid in more than half of human songs, where songs 58
+and 55 (v22) are not.
