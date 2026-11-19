@@ -67,3 +67,10 @@ S = DFA exponent of the tune's pitch series (Sp) and rhythm series (Sr), songs o
 Where songs sit: median Sp 0.91 (set 1), 0.88 (set 2) — close under 1, g about -0.3 to -0.4; set 3 0.59 (its guessed voice tracks). Sr about 0.4-0.5.
 Against G: P1 Sp rises +0.02, +0.03, +0.03 (pooled p .22) fail. P2 Sp near 1: -0.01, +0.04, +0.03 (p .28) fail. P3 Sr near 1: -0.01, -0.02, +0.09 (p .08) fail.
 So popular tunes do sit near the critical point, as the formula's form would have it, but nearness to it does not tell good from great. The old way-2 lead (pitch scaling against chart) does not carry to this yardstick.
+
+# The tune against its chords (19 Nov 2026). Study only; nothing built.
+944 Hooktheory songs of 2005 or earlier. Seven measures, predictions in chords/PREDICTION.md. All seven fail as predicted.
+C1 chord-tone share ran against the prediction, +0.098 (p .003; halves +0.089, +0.106), with C5 colour tones its mirror, -0.096.
+Re-predicted (+) and tested on 407 fresh Hooktheory songs of 2006-2012: C1 -0.060 (p .22). FAIL; did not repeat.
+Side reading: the artist accounts for about 0.15 of the differences in G between songs (0.25 of love, 0.14 of covers; 1,120 songs, 205 artists with three or more).
+Most of what the yardstick measures lies between songs of the same artist.
