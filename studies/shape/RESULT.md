@@ -105,3 +105,12 @@ Leads (after the fact; same sign in both halves; chance would give about one at 
  energy in the low band +0.215; spectrum skewed to the low bands +0.230 and peaked +0.195; movement of energy over time +0.184; variation in beat loudness +0.171; share of near-silent frames -0.173.
 Checked against remastering: with replay gain, bit rate and the file's own release date held the leads keep 0.14-0.21; on the 171 files dated within two years of the song, 0.15-0.23. Present in love and in covers alike.
 Not yet checked: genre; a second store of recordings. Twice the size of anything else found in these studies, and the first pre-stated pass that also has nameable parts.
+
+# The sound, second store (19 Nov 2026). Study only; nothing built.
+Genre check on McGill first: with seven genre families and decade held the six leads keep 0.18-0.25; they hold inside soul/R&B and outside it.
+Second store: Zangerle et al. (Zenodo 3258042), Essentia measurements of Million Song Dataset previews matched to the Hot 100. The download broke after 3,500 of about 5,800 tracks
+(track ids are arbitrary, so the part read is a fair draw). 2,919 songs of 2005 or earlier, no McGill song among them. Prediction in sound_second/PREDICTION.md.
+F1 the McGill reader, frozen: +0.080 (p .00001); genre and decade held +0.117; love +0.064, covers +0.066; songs to 1991 only +0.088. PASS.
+F2 leads: energy in the low band +0.074 PASS; spectrum skewed to the low bands +0.078 PASS; peaked +0.071 PASS;
+   movement of energy +0.028 fail; variation in beat loudness +0.031 fail; near-silent frames -0.018 fail (all three in the predicted direction; a 60-second preview shows little of a song's rise and fall).
+The first finding of these studies to pass a pre-stated test on a second, independent store with nothing refitted. Small: about 0.08 here against 0.2 on whole recordings.
