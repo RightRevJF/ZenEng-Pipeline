@@ -32,15 +32,15 @@ def capture(self, N, seed):
     pool = [c for c in ok if c["f_all"] >= self.WW["gate"] and c["f_len"] >= ml and c["f_ht"] >= mh] or ok
     for c in alive: c["row"] = row(c["sung"])
     loose = [c for c in alive if c["d7"] <= J.gate and c["f_all"] >= self.WW["gate"]]        # the joint gate and the kept floor only: no pull to the builds' better halves
-    CAP.update(pool=pool, alive=alive, loose=loose); raise Got()
+    CAP.update(pool=pool, alive=alive, loose=loose, target=(self.S.get("target") or {}).get("readings")); raise Got()
 M.Engine.run = capture
 K = S.kept_rows(); full = [r for r in K.values() if all(n in r for n in NAMES)]
 Q = {n: [float(x) for x in np.percentile([r[n] for r in full], (10, 25, 50, 75, 90))] for n in NAMES}; W_ = {n: max(1e-9, Q[n][3] - Q[n][1]) for n in NAMES}
-pools = {}; ALIVE = {}; LOOSE = {}
+pools = {}; ALIVE = {}; LOOSE = {}; TARGET = {}
 for f in sys.argv[1:]:
     try: SL.write(json.load(open(f)), 1000, 12)
     except Got: pass
-    pools[os.path.basename(f)] = CAP["pool"]; ALIVE[os.path.basename(f)] = CAP["alive"]; LOOSE[os.path.basename(f)] = CAP["loose"]; print(os.path.basename(f), "pool", len(CAP["pool"]), "loose", len(CAP["loose"]), flush=True)
+    TARGET[os.path.basename(f)] = CAP["target"]; pools[os.path.basename(f)] = CAP["pool"]; ALIVE[os.path.basename(f)] = CAP["alive"]; LOOSE[os.path.basename(f)] = CAP["loose"]; print(os.path.basename(f), "pool", len(CAP["pool"]), "loose", len(CAP["loose"]), flush=True)
 def outside(r): return sum(S.side(Q[n], r[n], "half") != 0 for n in NAMES)
 def judge(rows): w = S.same_side(Q, rows, NAMES, "wide"); h = S.same_side(Q, rows, NAMES, "half"); return (not w and len(h) <= 2), [x[0] for x in w], [x[0] for x in h]
 first = [min(p, key=lambda c: c["n"])["row"] for p in pools.values()]; ok_f, w_f, h_f = judge(first)
@@ -63,5 +63,14 @@ def random_picks(P, n=4000):
     return dict(total_outside_middle_half_5_50_95=[float(x) for x in np.percentile(t, (5, 50, 95))], rule_fails_share=round(fl / n, 3),
                 lean_past_25_75_share_by_check={k: round(v / n, 3) for k, v in sorted(hl.items(), key=lambda x: -x[1])}, lean_past_10_90_share_by_check={k: round(v / n, 3) for k, v in wl2.items()})
 out["a_random_pick_from"] = {"every build that lived": random_picks(ALIVE), "the engine's pool (old charge's better half, joint gate, words' better halves)": random_picks(pools), "the joint gate and the kept floor only": random_picks(LOOSE)}
+if all(TARGET.values()):                                                                        # 920's aim, carried into the choice: the pool builds nearest each song's own kept song on the aimed readings
+    def near_aim(p, t, k=None):
+        ks = [n for n in t if n in Q]; d = sorted(p, key=lambda c: sum(((c["row"][n] - t[n]) / W_[n]) ** 2 for n in ks))
+        return d if k is None else d[:k]
+    rows = [near_aim(pools[s_], TARGET[s_])[0]["row"] for s_ in pools]; ok_a, w_a, h_a = judge(rows)
+    out["nearest_the_songs_own_aim"] = dict(outside_middle_half=[outside(r) for r in rows], total=sum(outside(r) for r in rows), sound=ok_a, leans_10_90=w_a, leans_25_75=h_a,
+        random_pick_among_the_ten_nearest=random_picks({s_: near_aim(pools[s_], TARGET[s_], 10) for s_ in pools}))
+    out["aim_reached"] = {s_: {n: dict(target=round(TARGET[s_][n], 3), first=round(min(pools[s_], key=lambda c: c["n"])["row"][n], 3), nearest=round(near_aim(pools[s_], TARGET[s_])[0]["row"][n], 3), kept_median=round(Q[n][2], 3)) for n in TARGET[s_] if n in Q} for s_ in pools}
+out["pool_share_outside_middle_half_by_check"] = {n: dict(low=round(float(np.mean([S.side(Q[n], c["row"][n], "half") < 0 for p in pools.values() for c in p])), 3), high=round(float(np.mean([S.side(Q[n], c["row"][n], "half") > 0 for p in pools.values() for c in p])), 3)) for n in NAMES}      # a kept song: 0.25 and 0.25
 print(json.dumps(out, indent=1))
 json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "neighbour" + ("_" + os.environ.get("TRIAL_NAME", "trial") if os.environ.get("MARGIN_TURNS_OF_FOUR") else "") + ".json"), "w"), indent=1)

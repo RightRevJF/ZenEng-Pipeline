@@ -23,6 +23,7 @@ def chords_span(b0, b1):
 def line_info(k):
     ns = lines[k]; first = ns[0]; st = next((n for n in ns if n["stress"] and n["first"]), first)
     b0, bs, b1 = bar(first["on"]), bar(st["on"]), bar(ns[-1]["on"])
+    bs = max(bs, B1.get(k[0], bs))                                                            # a line sung before its section's first bar (a stressed opening come in early) is the section's, with a pickup
     slot = f"{bs} (pickup in {b0})" if b0 < bs else f"{b0}"
     top = max(ns, key=lambda n: (n["midi"], -n["on"]))
     fs = [n for n in ns if n["first"]]; tsyl = max((n for n in fs if n["on"] <= top["on"]), key=lambda n: n["on"])
@@ -66,7 +67,13 @@ def top_desc(REC_, nm_f):
     ch = [s for s in b1 if s.startswith(("Chorus", "Last Chorus"))]; rel = {s: sorted({n["on"] // 48 + 1 - b1[s] + 1 for n in hits if n["sec"] == s}) for s in ch}
     if all(rel[s] and rel[s] == rel[ch[0]] for s in ch) and all(n["sec"] in ch for n in hits):
         return f"The song’s top note, {nm_f(top)}, comes in bar{'s' if len(rel[ch[0]]) > 1 else ''} " + " and ".join(map(str, rel[ch[0]])) + " of each chorus."
-    where = "; ".join(f"on “{n['text']}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
+    def word_of(n):                                                                          # the whole word the note's syllable belongs to, as the line tables print it
+        fs = [x for x in lead if x["first"] and (x["sec"], x.get("line")) == (n["sec"], n.get("line"))]; tsyl = max((x for x in fs if x["on"] <= n["on"]), key=lambda x: x["on"]); j = fs.index(tsyl); a = j
+        while a > 0 and fs[a - 1]["hyph"]: a -= 1
+        z = j
+        while z < len(fs) - 1 and fs[z]["hyph"]: z += 1
+        return "".join(x["text"] for x in fs[a:z + 1]).strip(",.;")
+    where = "; ".join(f"on “{word_of(n)}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
     return f"The song’s top note, {nm_f(top)}, comes {'once' if len(hits) == 1 else str(len(hits)) + ' times'}: {where}."
 TD = title_desc(REC)
 CHK = json.load(open(os.path.join(HERE, 'lyric58.song.json')))['checks']; LIFT = next(v for k, v in CHK.items() if k.startswith("the chorus's median over the verse's"))
