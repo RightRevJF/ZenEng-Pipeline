@@ -76,5 +76,24 @@ out["pool_spread_over_kept_spread_by_check"] = {n: round(float(np.subtract(*np.p
 out["pool_spread_over_kept_spread_within_each_song_median"] = {s_: round(float(np.median([float(np.subtract(*np.percentile([c["row"][n] for c in p], (75, 25)))) / W_[n] for n in NAMES])), 3) for s_, p in pools.items()}
 out["variety_two_sided"] = dict(sum_of_twice_the_smaller_side=round(sum(2 * min(v["low"], v["high"]) for v in out["pool_share_outside_middle_half_by_check"].values()), 2), kept=0.5 * len(NAMES),
                                 median_spread_ratio_all_three_pooled=round(float(np.median(list(out["pool_spread_over_kept_spread_by_check"].values()))), 3))
+# 940 (749.120): each pool figure with its spread. The pools are small (some 50 to 90 builds), and which builds land in a pool moves a rate more than a fix does.
+# Each pool (and each song's living builds) is resampled with replacement at its own size, 200 times; the figure is read again on each resample; the 5th and 95th percentiles are its 90% range.
+def boot_rate(P, n, rngb):
+    fl = 0
+    for _ in range(n):
+        ok_, _, _ = judge([rngb.choice(p)["row"] for p in P.values()]); fl += not ok_
+    return fl / n
+def boot_neighbour(P, n, rngb):
+    mats = {k: (np.array([[c["row"][x] / W_[x] for x in NAMES] for c in p]), p) for k, p in P.items()}; fl = 0
+    for _ in range(n):
+        rows = []
+        for k, (mt, p) in mats.items():
+            tt = rngb.choice(full); rows.append(p[int(np.argmin(((mt - np.array([tt[x] / W_[x] for x in NAMES])) ** 2).sum(1)))]["row"])
+        ok_, _, _ = judge(rows); fl += not ok_
+    return fl / n
+rngb = random.Random(940); rs = lambda v: [round(float(x), 3) for x in np.percentile(v, (5, 95))]; res = lambda P: {k: [rngb.choice(v) for _ in v] for k, v in P.items()}
+out["ranges_90"] = {"neighbour choice": rs([boot_neighbour(res(pools), 200, rngb) for _ in range(200)]), "a random pick from the engine's pool": rs([boot_rate(res(pools), 1000, rngb) for _ in range(200)]),
+                    "a random pick from every build that lived": rs([boot_rate(res(ALIVE), 1000, rngb) for _ in range(200)]), "pool_sizes": {k: len(v) for k, v in pools.items()},
+                    "note": "940: each pool resampled with replacement at its own size, 200 times; the 5th and 95th percentiles of the figure read on the resamples"}
 print(json.dumps(out, indent=1))
 json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "neighbour" + ("_" + os.environ.get("TRIAL_NAME", "trial") if os.environ.get("MARGIN_TURNS_OF_FOUR") else os.environ.get("OUT_SUFFIX", "")) + ".json"), "w"), indent=1)

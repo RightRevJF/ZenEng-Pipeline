@@ -460,3 +460,16 @@ Answers the session's list 749.117 to 749.119. Paper: `reports/Luthier_v36.docx`
 - Carried: 749.116, 749.111 (third trial not run: needs a second practice song with a wide aim), 749.104's fix, 749.109, 749.103, 749.101, 749.61.
 
 Next: Luthier v37 (row v208), Window 194, Module 27.118 (anchor "27.117"), tables HD…, fixes from 940.
+
+## Luthier v37 (Window 194): the bar fit, tried and not built; the melismas carried
+
+Answers the session's list 749.120 to 749.122 and takes 749.104 head on. Paper: `reports/Luthier_v37.docx` (builder `reports/make_luthier_v37_from_v36.py`), row v208, Module 27.118, Table HD. Results: `lib/luthier/stage24_results.json`, `studies/soundness/neighbour_v37.json`, `studies/review19/aimpool.json` and `studies/holdout59/` (rerun), `studies/bar_fit/`.
+
+- 940 (749.120): `studies/soundness/neighbour.py` writes `ranges_90` (each pool resampled 200 times). The neighbour choice fails 1.5 in 100 (0.0 to 3.5); a random pick from the engine's pool 3.2 (1.2 to 6.1); from every living build 14.4 (11.3 to 16.1).
+- 941 (749.121): each weight tested against its own band and bisected on its own; `FIT_EDGE = 0.03`. Song 54 keeps round 5; its builds' repeated notes 0.191 (kept 25th 0.210).
+- 942 (749.104, second half): a line sung again takes its source's melismas (`melisma_notes`, `"copy"` or `"again"`). Song 52's record changes for this (28 melismas where it had 32; same pick, same notes before melismas).
+- Tried outside the engine, not built (749.104 first half, with 749.122): the bar fit, `studies/bar_fit/RESULT.md`. Bars return (rhythm up 0.04 to 0.08) and the words' fit falls under the kept 10th in every song. The bars and the words trade; the next question is on the lyric's side.
+- Picks sound, no lean. Hold-out song 59: 5 checks of 21 outside the kept middle half (3 before).
+- Carried: 749.104 first half (as a lyric question), 749.109, 749.111 (needs a second wide-aim practice song), 749.116, 749.103 (read as the outcome), 749.101, 749.61.
+
+Next: Luthier v38 (row v209), Window 195, Module 27.119 (anchor "27.118"), tables HE…, fixes from 943.
