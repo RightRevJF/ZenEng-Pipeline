@@ -1,4 +1,4 @@
-# Same Time Tomorrow (tenth edition): songbook and production notes
+# Same Time Tomorrow (eleventh edition): songbook and production notes
 
 Words and music: Jason Bryant
 
@@ -6,7 +6,7 @@ Words and music: Jason Bryant
 
 **What it is about.** An old preacher in his last days tells about the boy who comes to change his sheets, and the promise they make each other every evening: same time tomorrow. It is a small promise, kept daily, and by the last chorus it has come to hold up more than the pulpit ever did.
 
-**How to play it.** E major, ♩ = 84, 4/4, a folk ballad. 118 bars, about 5:37. One baritone voice (D♯3 to C♯4), a harmony voice in the choruses, acoustic guitar, bass and drums.
+**How to play it.** E major, ♩ = 84, 4/4, a folk ballad. 118 bars, about 5:37. One baritone voice (D♯3 to B3), a harmony voice in the choruses, acoustic guitar, bass and drums.
 
 | Section | Bars | Bar numbers | Level |
 |---|---|---|---|
@@ -35,14 +35,14 @@ The guitar strums eighths under the voice; bass and drums with it. Tom fill in b
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 3 (pickup in 2) | The boy who comes to change the sheets | E B E B | starts A3, ends G♯3 |
-| 5 (pickup in 4) | does it like he learned it young | E B E B | starts F♯3, ends B3 |
-| 7 | every corner folded under | B | starts B3, ends G♯3 |
-| 9 | nothing wasted, nothing wrong | B | starts F♯3, ends B3 |
-| 11 | I told him one old story | E B E B | starts B3, ends G♯3 |
-| 13 | just to keep him in the room | E B E B | starts F♯3, ends F♯3 |
-| 15 | and he came back the next morning | B | starts B3, ends G♯3 |
-| 17 | hours early, hours too soon | B | starts F♯3, ends F♯3 |
+| 3 (pickup in 2) | The boy who comes to change the sheets | E B | starts G♯3, ends F♯3 |
+| 5 (pickup in 4) | does it like he learned it young | E B | starts G♯3, ends F♯3 |
+| 7 | every corner folded under | B | starts G♯3, ends G♯3 |
+| 9 | nothing wasted, nothing wrong | B | starts F♯3, ends F♯3 |
+| 11 | I told him one old story | E B E B | starts G♯3, ends G♯3 |
+| 13 | just to keep him in the room | E B | starts E3, ends F♯3 |
+| 15 | and he came back the next morning | B | starts F♯3, ends G♯3 |
+| 17 | hours early, hours too soon | B | starts G♯3, ends F♯3 |
 
 ### Chorus 1 (bars 19–32)
 
@@ -50,14 +50,14 @@ The harmony voice comes in under him. Title on the downbeat.
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 19 | Same time tomorrow | E | starts B3, ends F♯3 |
-| 20 | it's the smallest thing we swear | E | starts G♯3, ends E3 |
-| 22 (pickup in 21) | not carved above a doorway | E | starts B3, ends G♯3 |
-| 24 | not lifted up in prayer | B A | starts F♯3, ends E3 |
-| 25 | but it's held up more of heaven | A | starts A3, ends G♯3 |
-| 28 | than my steeple ever bore | F#m E | starts F♯3, ends E3 |
-| 30 | same time tomorrow | F#m | starts B3, ends F♯3 |
-| 31 | and his hand upon the door | E B | starts F♯3, ends E3 |
+| 19 | Same time tomorrow | E | starts G♯3, ends F♯3 |
+| 20 | it's the smallest thing we swear | E | starts G♯3, ends F♯3 |
+| 22 (pickup in 21) | not carved above a doorway | E | starts G♯3, ends G♯3 |
+| 24 | not lifted up in prayer | B | starts F♯3, ends F♯3 |
+| 25 | but it's held up more of heaven | A | starts E3, ends A3 |
+| 28 | than my steeple ever bore | F#m | starts E3, ends E3 |
+| 30 | same time tomorrow | F#m | starts G♯3, ends F♯3 |
+| 31 | and his hand upon the door | E | starts E3, ends D♯3 |
 
 ### Turn (bars 33–36)
 
@@ -71,14 +71,14 @@ As verse 1. Tom fill in bar 52.
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 37 | Seven years I climbed that pulpit | E B E B | starts B3, ends A3 |
-| 39 | sure the crowd was on its way | E B E B | starts G♯3, ends B3 |
+| 37 | Seven years I climbed that pulpit | E B E B | starts G♯3, ends G♯3 |
+| 39 | sure the crowd was on its way | E B | starts G♯3, ends E3 |
 | 40 | five hundred seats of oak below me | E B | starts A3, ends G♯3 |
-| 43 | and twelve people, and they stayed | B | starts F♯3, ends A3 |
-| 45 | each one in the pew they'd chosen | E B E B | starts B3, ends F♯3 |
-| 47 | like a claim on quiet ground | E B E B | starts F♯3, ends F♯3 |
-| 49 | I gave them precious little reason | B | starts B3, ends F♯3 |
-| 51 | and they kept on coming round | B | starts F♯3, ends F♯3 |
+| 43 | and twelve people, and they stayed | B | starts F♯3, ends E3 |
+| 45 | each one in the pew they'd chosen | E B E B | starts G♯3, ends G♯3 |
+| 47 | like a claim on quiet ground | E B | starts E3, ends F♯3 |
+| 49 | I gave them precious little reason | B | starts F♯3, ends G♯3 |
+| 51 (pickup in 50) | and they kept on coming round | B | starts G♯3, ends E3 |
 
 ### Chorus 2 (bars 53–66)
 
@@ -86,14 +86,14 @@ As chorus 1.
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 53 | Same time tomorrow | E | starts B3, ends F♯3 |
-| 54 | it's the smallest thing we swear | E | starts G♯3, ends F♯3 |
-| 56 (pickup in 55) | not carved above a doorway | E | starts B3, ends B3 |
-| 58 | not lifted up in prayer | B A | starts F♯3, ends E3 |
-| 59 | but it's held up more of heaven | A | starts A3, ends G♯3 |
-| 62 | than my steeple ever bore | F#m E | starts F♯3, ends E3 |
-| 64 | same time tomorrow | F#m | starts B3, ends F♯3 |
-| 65 | and his hand upon the door | E B | starts F♯3, ends E3 |
+| 53 | Same time tomorrow | E | starts G♯3, ends F♯3 |
+| 54 | it's the smallest thing we swear | E | starts G♯3, ends A3; top B3 on “swear” (bar 54) |
+| 56 (pickup in 55) | not carved above a doorway | E | starts G♯3, ends B3; top B3 on “doorway” (bar 56) |
+| 58 | not lifted up in prayer | B | starts F♯3, ends F♯3 |
+| 59 | but it's held up more of heaven | A | starts E3, ends A3 |
+| 62 | than my steeple ever bore | F#m | starts E3, ends G♯3 |
+| 64 | same time tomorrow | F#m | starts G♯3, ends F♯3 |
+| 65 | and his hand upon the door | E B | starts E3, ends F♯3 |
 
 ### Bridge (bars 67–82)
 
@@ -101,14 +101,14 @@ Starts on A. The groove holds; he sings straight through.
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 67 | Every August there's a walkway | A | starts F♯3, ends A3 |
-| 69 | eight gray steps, and then the sea | E | starts E3, ends G♯3 |
-| 71 | it doesn't know that I am coming | A | starts E3, ends G♯3 |
-| 73 | and it takes me in completely | E | starts E3, ends G♯3 |
-| 75 | The year we buried my sister | B | starts E3, ends A3 |
-| 77 | it took me in the same | A B A B | starts E3, ends F♯3 |
-| 80 | It has never known me from the sand | B | starts F♯3, ends G♯3 |
-| 81 | but what comes next will know my name | A B A B | starts E3, ends F♯3 |
+| 67 (pickup in 66) | Every August there's a walkway | A | starts G♯3, ends B3; top B3 on “there's” (bar 67) |
+| 68 | eight gray steps, and then the sea | A E | starts G♯3, ends B3; top B3 on “and” (bar 69) |
+| 70 | it doesn't know that I am coming | E A | starts G♯3, ends B3; top B3 on “coming” (bar 71) |
+| 73 (pickup in 72) | and it takes me in completely | E | starts B3, ends G♯3; top B3 on “and” (bar 72) |
+| 74 | The year we buried my sister | E B | starts G♯3, ends B3; top B3 on “buried” (bar 75) |
+| 77 (pickup in 76) | it took me in the same | A B | starts B3, ends G♯3; top B3 on “it” (bar 76) |
+| 78 | It has never known me from the sand | A B | starts F♯3, ends B3; top B3 on “me” (bar 79) |
+| 80 | but what comes next will know my name | B A B | starts B3, ends G♯3; top B3 on “but” (bar 80) |
 
 ### Verse 3 (bars 83–98)
 
@@ -116,14 +116,14 @@ As verse 1. Tom fill in bar 98.
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 83 | He asked me if I was frightened | E B E B | starts F♯3, ends A3 |
-| 85 (pickup in 84) | I told him not of where I'm bound | E B E B | starts F♯3, ends B3 |
-| 87 | a little of the getting there | B | starts B3, ends G♯3 |
-| 89 | the long way going down | B | starts F♯3, ends A3 |
-| 91 | Friday he'll come early | E B E B | starts B3, ends F♯3 |
-| 93 | and find nobody there | E B E B | starts F♯3, ends F♯3 |
-| 95 | he'll put the chair back by the wall | B | starts B3, ends F♯3 |
-| 97 | and say something I won't hear | B | starts F♯3, ends F♯3 |
+| 83 (pickup in 82) | He asked me if I was frightened | E B | starts G♯3, ends F♯3 |
+| 85 (pickup in 84) | I told him not of where I'm bound | E B E B | starts G♯3, ends F♯3 |
+| 87 | a little of the getting there | B | starts F♯3, ends G♯3 |
+| 89 | the long way going down | B | starts F♯3, ends E3 |
+| 91 | Friday he'll come early | E B E B | starts G♯3, ends G♯3 |
+| 93 | and find nobody there | E B | starts F♯3, ends F♯3 |
+| 95 | he'll put the chair back by the wall | B | starts F♯3, ends F♯3 |
+| 97 (pickup in 96) | and say something I won't hear | B | starts G♯3, ends G♯3 |
 
 ### Last Chorus (bars 99–114)
 
@@ -131,15 +131,15 @@ Sixteen bars, two more than the others; nine lines, the title again at the end. 
 
 | Bar | Line | Chords | Melody |
 |---|---|---|---|
-| 99 | Same time tomorrow | E | starts B3, ends F♯3 |
+| 99 | Same time tomorrow | E | starts G♯3, ends F♯3 |
 | 100 | I told him at the door | E | starts G♯3, ends F♯3 |
-| 102 (pickup in 101) | and for once I'll be the early one | E | starts B3, ends G♯3 |
-| 104 | already there before | B A | starts F♯3, ends D♯3 |
-| 106 (pickup in 105) | he climbs up to the top | A E | starts B3, ends G♯3 |
-| 108 | some morning years from now | F#m E | starts G♯3, ends E3 |
-| 110 (pickup in 109) | and I'll be there like the water | F#m E | starts C♯4, ends G♯3; top C♯4 on “and” (bar 109) |
-| 112 | and I'll know his name somehow | E B G#m | starts F♯3, ends F♯3 |
-| 114 | same time tomorrow | B E | starts B3, ends F♯3 |
+| 102 (pickup in 101) | and for once I'll be the early one | E | starts G♯3, ends G♯3 |
+| 104 | already there before | B | starts F♯3, ends E3 |
+| 106 (pickup in 105) | he climbs up to the top | A | starts G♯3, ends A3 |
+| 108 | some morning years from now | F#m | starts E3, ends F♯3 |
+| 110 (pickup in 109) | and I'll be there like the water | F#m E | starts F♯3, ends G♯3 |
+| 112 | and I'll know his name somehow | E B G#m | starts E3, ends E3 |
+| 114 | same time tomorrow | B E A C#m | starts G♯3, ends F♯3 |
 
 ### Outro (bars 115–118)
 
@@ -149,9 +149,9 @@ Chords: A C#m | E | C#m | E
 
 ## For each player
 
-**Voice.** A baritone, D♯3 to C♯4. Tell it plainly in the verses; the choruses sit about 2 semitones higher, so let them open a little without pushing. Sing the title as written, on the chorus's downbeat: B3 G♯3 G♯3 G♯3 G♯3. The song’s top note, C♯4, comes once: on “and” in the last chorus (bar 109).
+**Voice.** A baritone, D♯3 to B3. Tell it plainly in the verses; the choruses sit about 2 semitones higher, so let them open a little without pushing. Sing the title as written, on the chorus's downbeat: G♯3 G♯3 G♯3 G♯3 G♯3. The song’s top note, B3, comes 29 times: on “swear” in chorus 2 (bar 54); on “doorway” in chorus 2 (bar 56); on “there's” in the bridge (bar 67).
 
-**Harmony voice.** Under the lead in all three choruses, in his rhythm and on his words; 63 in 100 of its notes sit a third to a fifth below him. Range E2 to B3: the lowest notes want a true bass, or take them up an octave. Keep it soft; he leads.
+**Harmony voice.** Under the lead in all three choruses, in his rhythm and on his words; 61 in 100 of its notes sit a third to a fifth below him. Range E2 to A3: the lowest notes want a true bass, or take them up an octave. Keep it soft; he leads.
 
 **Acoustic guitar.** Steady eighth-note strums from bar 1 to the end, under his voice; where a chord tone would sit a step from the note he sings, leave it out. Range A2 to G♯4.
 
@@ -161,7 +161,7 @@ Chords: A C#m | E | C#m | E
 
 ## For the singer
 
-Breathe between lines: his phrases run 4.5 seconds at the median. Some lines run straight into the next with less than a beat between them (into bars 4, 9, 21, 25, 59, 64, 65, 69 and others); take a quick breath in the gap or sing through, as feels natural; the longest stretch without half a beat's rest is 9.1 seconds. Lines that end on a long note (in verse 1: “sheets”, “story”) want to be held to their length and released, not clipped. Verse 3 is the hardest to sing plainly; do not lean on it. The last chorus is longer than the others and ends on the title: leave the last word open.
+Breathe between lines: his phrases run 3.9 seconds at the median. Some lines run straight into the next with less than a beat between them (into bars 19, 20, 31, 43, 54, 65, 66, 99); take a quick breath in the gap or sing through, as feels natural; the longest stretch without half a beat's rest is 8.9 seconds. Lines that end on a long note (in verse 1: “sheets”, “wrong”, “morning”) want to be held to their length and released, not clipped. Verse 3 is the hardest to sing plainly; do not lean on it. The last chorus is longer than the others and ends on the title: leave the last word open.
 
 ## The arrangement
 
@@ -203,7 +203,7 @@ The band stays in one groove the whole way: the guitar strums eighths under him 
 45: each one in the pew they'd chosen  
 47: like a claim on quiet ground  
 49: I gave them precious little reason  
-51: and they kept on coming round  
+51 (pickup in 50): and they kept on coming round  
 
 **Chorus 2**
 
@@ -218,25 +218,25 @@ The band stays in one groove the whole way: the guitar strums eighths under him 
 
 **Bridge**
 
-67: Every August there's a walkway  
-69: eight gray steps, and then the sea  
-71: it doesn't know that I am coming  
-73: and it takes me in completely  
-75: The year we buried my sister  
-77: it took me in the same  
-80: It has never known me from the sand  
-81: but what comes next will know my name  
+67 (pickup in 66): Every August there's a walkway  
+68: eight gray steps, and then the sea  
+70: it doesn't know that I am coming  
+73 (pickup in 72): and it takes me in completely  
+74: The year we buried my sister  
+77 (pickup in 76): it took me in the same  
+78: It has never known me from the sand  
+80: but what comes next will know my name  
 
 **Verse 3**
 
-83: He asked me if I was frightened  
+83 (pickup in 82): He asked me if I was frightened  
 85 (pickup in 84): I told him not of where I'm bound  
 87: a little of the getting there  
 89: the long way going down  
 91: Friday he'll come early  
 93: and find nobody there  
 95: he'll put the chair back by the wall  
-97: and say something I won't hear  
+97 (pickup in 96): and say something I won't hear  
 
 **Last Chorus**
 
@@ -301,7 +301,7 @@ The band stays in one groove the whole way: the guitar strums eighths under him 
 
 - Tempo and click: ♩ = 84 throughout, 4/4. The voice enters in bar 2.
 - Key: E major. Chords bar by bar are on the number chart and above the lead sheet.
-- Range: voice D♯3 to C♯4; harmony E2 to B3.
+- Range: voice D♯3 to B3; harmony E2 to A3.
 - Tracking: guitar and click first, then bass and drums, then the lead voice, then the harmony voice.
 - Blend and panning: voice centre; harmony slightly right; guitar left of centre; bass and kick centre.
 - Every part can be played by one player at once; no extra passes are needed.
