@@ -6,7 +6,7 @@ import json, pickle, re, os, collections
 import pyphen
 HERE = os.path.dirname(os.path.abspath(__file__))
 R = json.load(open(os.path.join(HERE, "lyric58.song.json"))); L = json.load(open(os.path.join(HERE, "lyric58.json")))
-EDITION = " (twelfth edition)"          # the first edition from the v22 record (commit 9ef68b2), the second from v24 (160e1ca), the third from v25 (686cd39), the fourth from v26 (e50969d, key A), the fifth from v27 (0328845, key B), the sixth from v28 (4dd66b3), the seventh from v29 (edda7b7), the eighth from v30 (1d7f174), the ninth from v31 (d334171, key D), the tenth from v32 (271e03a, key E), the eleventh from v33 (c104201, key E); none from v34 (the hold-out cycle); this one from the v35 record
+EDITION = " (thirteenth edition)"          # the first edition from the v22 record (commit 9ef68b2), the second from v24 (160e1ca), the third from v25 (686cd39), the fourth from v26 (e50969d, key A), the fifth from v27 (0328845, key B), the sixth from v28 (4dd66b3), the seventh from v29 (edda7b7), the eighth from v30 (1d7f174), the ninth from v31 (d334171, key D), the tenth from v32 (271e03a, key E), the eleventh from v33 (c104201, key E); none from v34 (the hold-out cycle), the twelfth from v35 (85a62b1, key A); this one from the v36 record
 BAR = R["bar"]; QBPM = R["bpm"]; DIC = pyphen.Pyphen(lang="en_US")
 KIND = {"intro": "Intro", "verse": "Verse", "chorus": "Chorus", "solo": "Turn", "bridge": "Bridge", "outro": "Outro"}
 bars, plan, b = [], [], 0
