@@ -419,3 +419,17 @@ Answers the session's list 749.105 to 749.109. Paper: `reports/Luthier_v33.docx`
 - Carried: 749.109, 749.104's fix (now the one thing 749.104, 749.109 and 749.101 wait on), 749.103, 749.61, and the small thing (one record, two readings of repeated figures).
 
 Next: Luthier v34 (row v205), Window 191, Module 27.115 (anchor "27.114"), tables HA…, fixes from 931.
+
+## Luthier v34 (Window 191): the melismas from the aimed song; the fit bounded by the fresh lines
+
+Answers the session's list 749.110 to 749.112. Paper: `reports/Luthier_v34.docx` (builder `reports/make_luthier_v34_from_v33.py`), row v205, Module 27.115, Table HA. Results: `lib/luthier/stage21_results.json`, `studies/soundness/neighbour_v34.json`, `studies/review19/aimpool.json` (rerun), `studies/plant_the_peak/`.
+
+- 931 (749.112): `E.stats` cleared after the fit; `target.moves_fit.trial_builds` counts the fit's builds.
+- 932 (749.110): `melismas` added to `tables/metre_atlas/kept_readings.json` (rows unchanged); `target.melisma_share` is the aimed song's, inside the kept 10th to 90th; `melisma_notes(..., share=)`. The fit reads the fresh lines' step and leap shares each round, holds a weight where they would leave the kept 10th to 90th, and keeps the best round inside (`target.moves_fit_kept_round`).
+- 933: every build's repeated figures read as sung (`page_gate.every_build_read_as`).
+- Tried outside the engine, not built (749.111): `studies/plant_the_peak/` (PREDICTION.md, trial.py, RESULT.md).
+- Picks sound: 7, 7, 5 of 23 outside the kept middle half; a random pool pick fails 0.5 in 100 (0.3 before); two-sided variety 1.82 (1.46 before).
+- Finding: with the aimed song's melismas, song 58's builds' bars on a figure already sung rose 0.29 to 0.47 and song 54's 0.40 to 0.46; song 55's (more melismas) fell 0.40 to 0.31. A returning line does not get its melismas in the same places.
+- Carried: 749.111 (place the peak note directly next time), 749.104's fix with the melismas carried, 749.109, 749.103, 749.101, 749.61.
+
+Next: Luthier v35 (row v206), Window 192, Module 27.116 (anchor "27.115"), tables HB…, fixes from 934.

@@ -16,7 +16,9 @@ def structure(ns, barlen):
         r += rh in seen_r; f += fig in seen_f; seen_r.add(rh); seen_f.add(fig)
     return {"bars on a rhythm already sung": r / len(keys), "bars on a figure already sung": f / len(keys)}
 if __name__ == "__main__":
-    R = []; BARS = collections.Counter(); WIN = collections.defaultdict(collections.Counter); IV = collections.Counter(); POS = collections.Counter(); DUR = collections.Counter(); n = 0; IV2 = collections.defaultdict(collections.Counter); rows = []; songs = []; NAMES_ = []; LIFTS_ = []
+    R = []; BARS = collections.Counter(); WIN = collections.defaultdict(collections.Counter); IV = collections.Counter(); POS = collections.Counter(); DUR = collections.Counter(); n = 0; IV2 = collections.defaultdict(collections.Counter); rows = []; songs = []; NAMES_ = []; LIFTS_ = []; MEL_ = []; MELS_ = {}
+    for s_, g_ in KC.table().groupby("song", sort=False):                                    # 932 (749.110): each kept song's melismas, syllables in a hundred sung on more than one note ("_" continues a syllable)
+        sy_ = [str(x) if x == x else "" for x in g_.sort_values("abs_beat").syl.values]; ns_ = sum(1 for x in sy_ if x.strip() != "_"); MELS_[str(s_)] = round(100.0 * sum(1 for i_, x in enumerate(sy_) if x.strip() != "_" and i_ + 1 < len(sy_) and sy_[i_ + 1].strip() == "_") / max(ns_, 1), 2)
     for k in KC.kept_songs():
         t, p, d = k["t"], k["p"], k["dur"]; keep = [i for i in range(len(t)) if t[i] % 3 == 0 and (i == 0 or t[i] > t[i - 1])]
         ns = [[int(t[i]), int(max(3, d[i])), int(p[i])] for i in keep]; n += 1; songs.append(ns)
@@ -31,7 +33,7 @@ if __name__ == "__main__":
         keep2 = [i for i in range(len(t)) if i == 0 or t[i] > t[i - 1]]; ns2 = [[int(t[i]), 6, int(p[i])] for i in keep2 if t[i] % 3 == 0]; sc = SC.series([(x[0], x[2]) for x in ns2]); a_ = SC.dfa(sc["pitch"]); b_ = SC.dfa(sc["onsets on the grid"])
         rows.append({**AB.readings(ns2, BAR, BEATS, BEAT), **structure(ns2, BAR), "pitch scaling": a_["alpha"] if a_ else 0.9, "rhythm scaling": b_["alpha"] if b_ else 0.66})
         kn_ = [("chorus" if ("chorus" in x.lower() or "refrain" in x.lower()) else "verse" if "verse" in x.lower() else None) for x in (str(z) for z in k["sec"])]; v_ = [int(q) for q, kk in zip(p, kn_) if kk == "verse"]; c_ = [int(q) for q, kk in zip(p, kn_) if kk == "chorus"]      # 925 (749.98): each kept song's own lift, beside its row
-        NAMES_.append(k["song"]); LIFTS_.append(float(np.median(c_) - np.median(v_)) if len(v_) > 20 and len(c_) > 20 else None)
+        MEL_.append(MELS_.get(str(k["song"]))); NAMES_.append(k["song"]); LIFTS_.append(float(np.median(c_) - np.median(v_)) if len(v_) > 20 and len(c_) > 20 else None)
     tot = sum(POS.values()); IVT = sum(IV.values())
     def ivp(dd, last):                                                                       # as metre_engine.Engine.ivp reads the table
         dd = max(-12, min(12, dd)); row = IV2.get(max(-12, min(12, last))) if last is not None else None
@@ -52,5 +54,5 @@ if __name__ == "__main__":
     names = sorted(rows[0])
     for nm in ("bars on a rhythm already sung", "bars on a figure already sung", "pitch scaling", "rhythm scaling"): T["readings_quartiles"][nm] = [float(x) for x in np.percentile([round(float(r[nm]), 5) for r in rows], (25, 50, 75))]
     json.dump(T, open(os.path.join(ROOT, "tables", "metre_atlas", "4-4_pop_sung.json"), "w"))
-    kr = os.path.join(ROOT, "tables", "metre_atlas", "kept_readings.json"); K = json.load(open(kr)); K["4-4_pop_sung"] = dict(names=names, rows=[[round(float(r[x]), 5) for x in names] for r in rows], songs=len(rows), source="the 159 kept CoCoPops Billboard songs; tie starts kept (904)", song_names=NAMES_, lifts=LIFTS_); json.dump(K, open(kr, "w"))
+    kr = os.path.join(ROOT, "tables", "metre_atlas", "kept_readings.json"); K = json.load(open(kr)); K["4-4_pop_sung"] = dict(names=names, rows=[[round(float(r[x]), 5) for x in names] for r in rows], songs=len(rows), source="the 159 kept CoCoPops Billboard songs; tie starts kept (904)", song_names=NAMES_, lifts=LIFTS_, melismas=MEL_); json.dump(K, open(kr, "w"))
     print(n, "songs;", {k: [round(x, 3) for x in v] for k, v in T["readings_quartiles"].items()}); print("surprise", T["surprise_quartiles"])
