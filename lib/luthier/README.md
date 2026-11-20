@@ -403,7 +403,7 @@ Answers the session's list 749.98 to 749.104. Paper: `reports/Luthier_v32.docx` 
 - 927 (749.100): tops set to the aimed song's range plus `RANGE_OVER` (1); centres follow at `CENTRE_FOLLOWS` (0.5); `MOVE_STEP` 1.2, `MOVE_LEAP` 1.6, `REG_SPREAD` 50 scaled by the aimed range.
 - Study, not built (749.104): `studies/repeated_figures/` (where.py, pool.py, RESULT.md). Songs 55 and 54 repeat figures from far back (whole sections); the near answer within a bar or two is missing.
 - Carried: 749.103 (two-sided variety 1.18 against kept 10.5; the rhythm checks do not yet follow the aimed song), 749.104's fix, 749.101, 749.61.
-- Picks sound: 4, 4, 8 checks of 23 outside the kept middle half; a random pool pick fails the rule 1.0 in 100 (1.3 before).
+- Picks sound: 4, 4, 8 checks of 23 outside the kept middle half; the neighbour choice fails the rule 1.0 in 100 (1.3 before); a random pick from the engine's pool, 4.6 in 100 (label corrected in v36, 749.117).
 
 Next: Luthier v33 (row v204), Window 190, Module 27.114 (anchor "27.113"), tables GZ…, fixes from 928.
 
@@ -414,8 +414,8 @@ Answers the session's list 749.105 to 749.109. Paper: `reports/Luthier_v33.docx`
 - 928 (749.105): the run cap is each engine's own (`self.RUN`, passed to `runs_ok(ps, cap)`; three by default). Song 53 builds again; `spec53.run.json` and `spec53.parts.json` byte for byte.
 - 929 (749.106): `Engine.carry`, `line_ok`, `join`: the run carried in plus the line, tested on every path (fresh, copy, again, 818 borrow). A returning line that fails moves its first note a scale step. `melisma_notes(..., cap=)`: the step above, or not placed. Whole-build gate kept as a backstop: 0 deaths in each song (342, 647, 278 before).
 - 930 (749.108): `MOVE_FIT = (80, 6)`: step and leap weights fitted per song on trial builds, read as sung; rounds in the record (`target.moves_fit`). Builds' steps 0.429, 0.552, 0.426 against aims 0.452, 0.595, 0.398; leaps on their aims.
-- Tried, not adopted (749.109): `AIM_REPEATS = True` moved repeated bars by 0.03 and a random pool pick failed the rule 7 in 100. See `studies/v33_trials/README.md`.
-- Picks sound: 4, 7, 9 of 23 outside the kept middle half; a random pool pick fails 0.3 in 100 (1.0 before).
+- Tried, not adopted (749.109): `AIM_REPEATS = True` moved repeated bars by 0.03 and the neighbour choice failed the rule 7 in 100. See `studies/v33_trials/README.md`.
+- Picks sound: 4, 7, 9 of 23 outside the kept middle half; the neighbour choice fails 0.3 in 100 (1.0 before); a random pick from the engine's pool, 2.6 in 100 (4.6 before) (label corrected in v36, 749.117).
 - Carried: 749.109, 749.104's fix (now the one thing 749.104, 749.109 and 749.101 wait on), 749.103, 749.61, and the small thing (one record, two readings of repeated figures).
 
 Next: Luthier v34 (row v205), Window 191, Module 27.115 (anchor "27.114"), tables HA…, fixes from 931.
@@ -428,7 +428,7 @@ Answers the session's list 749.110 to 749.112. Paper: `reports/Luthier_v34.docx`
 - 932 (749.110): `melismas` added to `tables/metre_atlas/kept_readings.json` (rows unchanged); `target.melisma_share` is the aimed song's, inside the kept 10th to 90th; `melisma_notes(..., share=)`. The fit reads the fresh lines' step and leap shares each round, holds a weight where they would leave the kept 10th to 90th, and keeps the best round inside (`target.moves_fit_kept_round`).
 - 933: every build's repeated figures read as sung (`page_gate.every_build_read_as`).
 - Tried outside the engine, not built (749.111): `studies/plant_the_peak/` (PREDICTION.md, trial.py, RESULT.md).
-- Picks sound: 7, 7, 5 of 23 outside the kept middle half; a random pool pick fails 0.5 in 100 (0.3 before); two-sided variety 1.82 (1.46 before).
+- Picks sound: 7, 7, 5 of 23 outside the kept middle half; the neighbour choice fails 0.5 in 100 (0.3 before); a random pick from the engine's pool, 2.5 in 100 (2.6 before) (label corrected in v36, 749.117); two-sided variety 1.82 (1.46 before).
 - Finding: with the aimed song's melismas, song 58's builds' bars on a figure already sung rose 0.29 to 0.47 and song 54's 0.40 to 0.46; song 55's (more melismas) fell 0.40 to 0.31. A returning line does not get its melismas in the same places.
 - Carried: 749.111 (place the peak note directly next time), 749.104's fix with the melismas carried, 749.109, 749.103, 749.101, 749.61.
 
@@ -442,7 +442,21 @@ Song 59 (`songs/p69`) is the hold-out: read after every fix, never fitted to. An
 - 935 (749.114): a line gives way to a short line (one bar or less) that stands before a copied or designed line coming in early. Song 59's rhythm deaths 500 to 52 in 1,000. The trace found one line at fault, not the long verse lines.
 - 936 (749.113): a repeat weight (`target.moves.repeat`, `Engine.MV[3]`) fitted with the step and leap weights; a round outside the kept band is followed by one halfway back. Builds' repeated notes 0.222, 0.215, 0.382, 0.225 against aims 0.158, 0.110, 0.373, 0.210.
 - Tried outside the engine again, not built (749.111): `studies/plant_the_peak/RESULT2.md`. Helps wide aims, harms narrow.
-- Picks sound; a random pool pick fails 2.5 in 100 (0.5 before). Song 59 stands outside the kept middle half on 2 checks of 21 (3 before): still too central.
+- Picks sound; the neighbour choice fails 2.5 in 100 (0.5 before); a random pick from the engine's pool, 2.6 in 100 (2.5 before) (label corrected in v36, 749.117). Song 59 stands outside the kept middle half on 2 checks of 21 (3 before): still too central.
 - Carried: 749.116 (band arrangement under the break), 749.111, 749.104's fix, 749.109, 749.103, 749.101, 749.61.
 
 Next: Luthier v36 (row v207), Window 193, Module 27.117 (anchor "27.116"), tables HC…, fixes from 937.
+
+## Luthier v36 (Window 193): two pool figures, rightly named
+
+Answers the session's list 749.117 to 749.119. Paper: `reports/Luthier_v36.docx` (builder `reports/make_luthier_v36_from_v35.py`), row v207, Module 27.117, Table HC. Results: `lib/luthier/stage23_results.json`, `studies/soundness/neighbour_v36.json`, `studies/review19/aimpool.json` and `studies/holdout59/` (rerun), `studies/v36_trials/`.
+
+- 937 (749.117): both pool figures under their own names (the neighbour choice; a random pick from the engine's pool). Windows 189 to 192 and their rows corrected in the paper; the v32 to v35 entries above corrected.
+- 938 (749.119): 935 no longer asks for an aim; its stat is renamed (a limit set). It changes no build of songs 55, 54, 58 (`studies/v36_trials/cmp935.py`).
+- 939 (749.118): `Engine.MOVE_ON` and the lead-in's level share scaled by the repeat weight in `again()`; the fit is a bisection between the last round inside the kept band and the nearest outside.
+- Picks sound, no lean. The neighbour choice fails 1.3 in 100 (2.5 before); a random pick from the engine's pool 5.1 (2.6 before).
+- Not met: 939's check (returning lines still repeat 0.10 and 0.05 over fresh lines in songs 55 and 54); 938's check on the random pool pick (5.1 against 2.5).
+- Hold-out song 59: 3 checks of 21 outside the kept middle half (2 before); range 19 against 24.
+- Carried: 749.116, 749.111 (third trial not run: needs a second practice song with a wide aim), 749.104's fix, 749.109, 749.103, 749.101, 749.61.
+
+Next: Luthier v37 (row v208), Window 194, Module 27.118 (anchor "27.117"), tables HD…, fixes from 940.

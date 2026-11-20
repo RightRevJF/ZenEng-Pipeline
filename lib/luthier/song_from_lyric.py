@@ -187,7 +187,7 @@ def write(L, N=1000, K=12):
         fresh3_ = {}; orig3_ = E.pitches
         def rec3_(rng, ons, U, sec, i, prev, avoid=None, end_off=None):                        # 932 (749.110): which lines were drawn fresh, where the weights act
             ps_ = orig3_(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off); fresh3_[(sec, i)] = ps_; return ps_
-        E.pitches = rec3_; total3_ = 0; trail3_ = []; inside3_ = lambda r_: all(K10_[c_][0] <= r_["fresh_lines"][w_] <= K10_[c_][1] for w_, c_, *_ in W3_)
+        E.pitches = rec3_; total3_ = 0; trail3_ = []; in_last3_ = out_last3_ = None; inside3_ = lambda r_: all(K10_[c_][0] <= r_["fresh_lines"][w_] <= K10_[c_][1] for w_, c_, *_ in W3_)
         for round3_ in range(MOVE_FIT[1]):
             rng3_ = _r3.Random(f"930 {L.get('seed', 1)} {L['title']}{MOVE_FIT_SEED}"); rows3_ = []; tries3_ = 0
             while len(rows3_) < MOVE_FIT[0] and tries3_ < MOVE_FIT[2]:                         # 934 (749.115): a round draws until enough builds pass the gates to fit on, with a cap on the tries
@@ -202,9 +202,10 @@ def write(L, N=1000, K=12):
             trail3_.append(dict(step=mv3_["step"], leap=mv3_["leap"], repeat=mv3_["repeat"], tries=tries3_, builds=len(rows3_), median_step=round(med3_["step"], 3), median_leap=round(med3_["leap"], 3), median_repeat=round(med3_["repeat"], 3), median_range=float(_np3.median([x["range"] for x in rows3_])), fresh_lines={w_: round(fr3_[w_], 3) for w_, *_ in W3_}))
             if all(abs(med3_[w_] - aim3_[w_]) <= tol3_[w_] / 2 for w_, *_ in W3_) and inside3_(trail3_[-1]): break
             if round3_ == MOVE_FIT[1] - 1: break
-            last_in3_ = next((r_ for r_ in reversed(trail3_[:-1]) if inside3_(r_)), None)
-            if not inside3_(trail3_[-1]) and last_in3_ is not None:                             # 936: a round whose fresh lines left the kept 10th to 90th is followed by one halfway back (in ratio) to the last round that stayed inside, so the fit closes on the bound and does not swing across it
-                for w_, *_ in W3_: mv3_[w_] = round((trail3_[-1][w_] * last_in3_[w_]) ** 0.5, 3)
+            if inside3_(trail3_[-1]): in_last3_ = trail3_[-1]                                  # 939 (749.118): a bisection. The last round inside the kept band and the nearest round outside it are both kept;
+            else: out_last3_ = trail3_[-1]                                                      # once there is one of each, every round is drawn halfway between them (in ratio), so the fit closes on the band's edge from both sides and does not walk back to its start
+            if in_last3_ is not None and out_last3_ is not None:
+                for w_, *_ in W3_: mv3_[w_] = round((in_last3_[w_] * out_last3_[w_]) ** 0.5, 3)
                 E.MV = (mv3_["step"], mv3_["leap"], E.MV[2], mv3_["repeat"]); continue
             for w_, c_, pw_, fl_, (lo_, hi_) in W3_:
                 new3_ = round(max(lo_, min(hi_, mv3_[w_] * ((aim3_[w_] + fl_) / (med3_[w_] + fl_)) ** pw_)), 3); klo_, khi_ = K10_[c_]      # 932 (749.110): a weight is scaled no further once the fresh lines' own share leaves the kept 10th to 90th; past it, the weight is drawn back
