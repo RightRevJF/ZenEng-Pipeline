@@ -30,6 +30,10 @@ CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre ri
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
+BORROW_FIT = None        # 943 (749.109): (40, 200) = builds past the gates a setting asks for, and tries at most, to fit the borrows to the aimed song. OFF: it passed its trial outside the engine and held on the hold-out, and in the engine the pools fell under the soundness standard (studies/verse_match/RESULT.md). None: FIGURE_BORROW for every song, as before
+BORROW_GRID = ((0.0, 0.0), (0.8, 0.0), (1.0, 0.0), (0.5, 0.5), (0.0, 1.0))   # (figure borrow, rhythm borrow)
+BORROW_WORDS = 0.03      # 943: how far under the old setting's words' fit a setting may stand and still be chosen
+FIT_EDGE = 0.03          # 941 (749.121): how far past the kept 10th to 90th a round's fresh lines may read and still count as at the band's edge
 MOVE_FIT_SEED = __import__("os").environ.get("LUTHIER_FIT_SEED", "")   # a different trial seed, for the stability check only (749.115)
 MOVE_STEP = 1.2; MOVE_LEAP = 1.6; REG_SPREAD = 50.0      # 927 (749.100)
 FIGURE_MEMORY = 8.0   # 923: how much a note that completes a four-interval figure already sung is favoured (1 = not at all; tried 1, 4, 8, 16: the builds' share of figures sung again rises to 8 and no further)
@@ -178,6 +182,23 @@ def write(L, N=1000, K=12):
             bars.append(bar[0] if len(bar) == 1 else list(bar))
         spec["form"].append([n, bars])
     E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"))[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
+    if spec.get("target") and BORROW_FIT and spec.get("borrow") and spec.get("word_weight"):    # 943 (749.109): the two borrows fitted to the aimed song. A song aimed at a kept song that sings its bars again much borrows more; one aimed low borrows less.
+        import random as _r5, numpy as _np5, collections as _c5, word_weight as _W5              # Tried outside the engine first, its rule written first, and it held on the hold-out (studies/verse_match).
+        tg5_ = spec["target"]; F5_, R5_ = "bars on a figure already sung", "bars on a rhythm already sung"; aim5_ = {c_: float(tg5_["readings"][c_]) for c_ in (F5_, R5_)}; wd5_ = {c_: max(1e-9, E.Q[c_][2] - E.Q[c_][0]) for c_ in (F5_, R5_)}; tr5_ = []
+        for f5_, r5_ in BORROW_GRID:
+            spec["borrow"] = dict(rhythm=r5_, figure=f5_); rng5_ = _r5.Random(f"943 {L.get('seed', 1)} {L['title']}"); rows5_ = []; tries5_ = 0
+            while len(rows5_) < BORROW_FIT[0] and tries5_ < BORROW_FIT[1]:
+                c5_, e5_ = E.build(rng5_); tries5_ += 1
+                if e5_ or E.gates(c5_): continue
+                s5_ = sorted(E.as_sung(c5_["notes"]), key=lambda n_: n_["on"]); x5_ = E.readings(s5_); rows5_.append((x5_[F5_], x5_[R5_], _W5.fit([n_ for n_ in s5_ if n_.get("melisma") != "second"], E.BAR, E.BEAT, parts=True)["all"]))
+            if len(rows5_) < 8: tr5_.append(dict(figure=f5_, rhythm=r5_, tries=tries5_, builds=len(rows5_))); continue
+            m5_ = [float(_np5.median([x[k_] for x in rows5_])) for k_ in range(3)]
+            tr5_.append(dict(figure=f5_, rhythm=r5_, tries=tries5_, builds=len(rows5_), bars_on_a_figure_already_sung=round(m5_[0], 3), bars_on_a_rhythm_already_sung=round(m5_[1], 3), words_fit=round(m5_[2], 3), gap=round(abs(m5_[0] - aim5_[F5_]) / wd5_[F5_] + abs(m5_[1] - aim5_[R5_]) / wd5_[R5_], 3)))
+        base5_ = next((x for x in tr5_ if (x["figure"], x["rhythm"]) == (FIGURE_BORROW, 0.0) and "gap" in x), None)
+        ok5_ = [x for x in tr5_ if "gap" in x and (base5_ is None or x["words_fit"] >= base5_["words_fit"] - BORROW_WORDS)]      # the fit may not buy bars with the words
+        pick5_ = min(ok5_, key=lambda x: x["gap"]) if ok5_ else dict(figure=FIGURE_BORROW, rhythm=0.0)
+        spec["borrow"] = dict(rhythm=pick5_["rhythm"], figure=pick5_["figure"]); E.stats = _c5.Counter()
+        tg5_["borrow_fit"] = dict(aim=aim5_, settings=tr5_, kept=dict(figure=pick5_["figure"], rhythm=pick5_["rhythm"]), note="943: five settings of the two borrows on short trial runs; kept, the one nearest the aimed song on bars on a figure already sung and on a rhythm already sung together (each gap in kept middle-half widths), among those whose words' fit is no more than 0.03 under the old setting's")
     if spec.get("target") and MOVE_FIT:                                                       # 930 (749.108): the step and leap weights fitted to this song, as 885 fitted the words' weights: short trial runs, each weight scaled until the builds' median meets the aimed song's
         import random as _r3, numpy as _np3, collections as _c3                              # 936 (749.113): and the weight on a repeated note with them
         tg3_ = spec["target"]; mv3_ = tg3_["moves"]; mv3_.setdefault("repeat", 1.0); KR3_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]
@@ -187,7 +208,7 @@ def write(L, N=1000, K=12):
         fresh3_ = {}; orig3_ = E.pitches
         def rec3_(rng, ons, U, sec, i, prev, avoid=None, end_off=None):                        # 932 (749.110): which lines were drawn fresh, where the weights act
             ps_ = orig3_(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off); fresh3_[(sec, i)] = ps_; return ps_
-        E.pitches = rec3_; total3_ = 0; trail3_ = []; in_last3_ = out_last3_ = None; inside3_ = lambda r_: all(K10_[c_][0] <= r_["fresh_lines"][w_] <= K10_[c_][1] for w_, c_, *_ in W3_)
+        E.pitches = rec3_; total3_ = 0; trail3_ = []; in3w_ = {}; out3w_ = {}; inside3_ = lambda r_: all(K10_[c_][0] - FIT_EDGE <= r_["fresh_lines"][w_] <= K10_[c_][1] + FIT_EDGE for w_, c_, *_ in W3_)      # 941: a round counts as inside when its fresh lines are within FIT_EDGE of the band (forty builds read a share to about that), so a weight that has closed on the edge is not thrown away for standing a hair past it
         for round3_ in range(MOVE_FIT[1]):
             rng3_ = _r3.Random(f"930 {L.get('seed', 1)} {L['title']}{MOVE_FIT_SEED}"); rows3_ = []; tries3_ = 0
             while len(rows3_) < MOVE_FIT[0] and tries3_ < MOVE_FIT[2]:                         # 934 (749.115): a round draws until enough builds pass the gates to fit on, with a cap on the tries
@@ -202,16 +223,13 @@ def write(L, N=1000, K=12):
             trail3_.append(dict(step=mv3_["step"], leap=mv3_["leap"], repeat=mv3_["repeat"], tries=tries3_, builds=len(rows3_), median_step=round(med3_["step"], 3), median_leap=round(med3_["leap"], 3), median_repeat=round(med3_["repeat"], 3), median_range=float(_np3.median([x["range"] for x in rows3_])), fresh_lines={w_: round(fr3_[w_], 3) for w_, *_ in W3_}))
             if all(abs(med3_[w_] - aim3_[w_]) <= tol3_[w_] / 2 for w_, *_ in W3_) and inside3_(trail3_[-1]): break
             if round3_ == MOVE_FIT[1] - 1: break
-            if inside3_(trail3_[-1]): in_last3_ = trail3_[-1]                                  # 939 (749.118): a bisection. The last round inside the kept band and the nearest round outside it are both kept;
-            else: out_last3_ = trail3_[-1]                                                      # once there is one of each, every round is drawn halfway between them (in ratio), so the fit closes on the band's edge from both sides and does not walk back to its start
-            if in_last3_ is not None and out_last3_ is not None:
-                for w_, *_ in W3_: mv3_[w_] = round((in_last3_[w_] * out_last3_[w_]) ** 0.5, 3)
-                E.MV = (mv3_["step"], mv3_["leap"], E.MV[2], mv3_["repeat"]); continue
-            for w_, c_, pw_, fl_, (lo_, hi_) in W3_:
-                new3_ = round(max(lo_, min(hi_, mv3_[w_] * ((aim3_[w_] + fl_) / (med3_[w_] + fl_)) ** pw_)), 3); klo_, khi_ = K10_[c_]      # 932 (749.110): a weight is scaled no further once the fresh lines' own share leaves the kept 10th to 90th; past it, the weight is drawn back
-                if fr3_[w_] > khi_: new3_ = min(new3_, round(mv3_[w_] * ((khi_ + 0.02) / (fr3_[w_] + 0.02)) ** 2.0, 3))
-                elif fr3_[w_] < klo_: new3_ = max(new3_, round(mv3_[w_] * ((klo_ + 0.02) / (fr3_[w_] + 0.02)) ** 2.0, 3))
-                mv3_[w_] = new3_
+            for w_, c_, pw_, fl_, (lo_, hi_) in W3_:                                             # 941 (749.121): each weight against its own band, and bisected on its own. A weight whose fresh lines leave the kept 10th to 90th
+                klo_, khi_ = K10_[c_]; ok_ = klo_ <= fr3_[w_] <= khi_                               # closes on the band's edge between its last value inside and its nearest value outside; the other weights go on toward their aims
+                if ok_: in3w_[w_] = mv3_[w_]
+                else: out3w_[w_] = mv3_[w_]
+                if w_ in in3w_ and w_ in out3w_ and (not ok_ or (aim3_[w_] - med3_[w_]) * (out3w_[w_] - in3w_[w_]) > 0): mv3_[w_] = round((in3w_[w_] * out3w_[w_]) ** 0.5, 3)      # outside: halfway back; inside and the aim still lies toward the outside value: halfway out
+                elif ok_: mv3_[w_] = round(max(lo_, min(hi_, mv3_[w_] * ((aim3_[w_] + fl_) / (med3_[w_] + fl_)) ** pw_)), 3)                                                  # inside: toward the aim (930)
+                else: mv3_[w_] = round(max(lo_, min(hi_, mv3_[w_] * (((khi_ if fr3_[w_] > khi_ else klo_) + 0.02) / (fr3_[w_] + 0.02)) ** 2.0)), 3)                              # outside, with no value inside yet: drawn back toward the band (932)
             E.MV = (mv3_["step"], mv3_["leap"], E.MV[2], mv3_["repeat"])                         # (the register spread was tried in the fit too and does not move the range: 62 to 400 in song 55, the builds span 15 to 17 throughout)
         in3_ = [r_ for r_ in trail3_ if inside3_(r_)] or trail3_[:1]
         if in3_:                                                                              # 932: the weights kept are those of the round nearest the aim among the rounds whose fresh lines stayed inside the kept 10th to 90th
@@ -275,7 +293,7 @@ def melisma_notes(ns, L, scale, key="midi", how=None, cap=None, share=None):
         for i, n in enumerate(ns): idx_.setdefault((n["sec"], n["line"]), []).append(i)
         for (sec_, li_), ii in idx_.items():
             h_ = how.get(f"{sec_}:{li_}")
-            if h_ and h_[0] == "copy" and (h_[1], int(h_[2])) in idx_ and len(idx_[(h_[1], int(h_[2]))]) == len(ii):
+            if h_ and h_[0] in ("copy", "again") and (h_[1], int(h_[2])) in idx_ and len(idx_[(h_[1], int(h_[2]))]) == len(ii):      # 942 (749.104, second half): a line sung again to new words takes its source's melismas too, where the two have the same number of syllables
                 src_ = idx_[(h_[1], int(h_[2]))]; chosen -= set(ii); chosen |= {ii[k_] for k_, q_ in enumerate(src_) if q_ in chosen and ns[ii[k_]]["dur"] >= 6}
     out = []
     for i, n in enumerate(ns):

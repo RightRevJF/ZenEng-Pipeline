@@ -17,51 +17,52 @@
  ],
  "songs": {
   "55": {
+   "outside_middle_half": 6,
+   "outside_10_90": 0,
+   "kept_songs_at_or_under_this_many_outside_middle_half": 0.116,
+   "which": [
+    "the words' fit, whole",
+    "fit by place",
+    "distinct rhythms over bars",
+    "bars on a rhythm already sung",
+    "repeated notes",
+    "bars on a figure already sung"
+   ]
+  },
+  "54": {
    "outside_middle_half": 5,
    "outside_10_90": 0,
    "kept_songs_at_or_under_this_many_outside_middle_half": 0.075,
    "which": [
-    "distinct rhythms over bars",
-    "bars on a rhythm already sung",
-    "moves by step",
-    "repeated notes",
-    "lines run on (under a beat of rest), share"
+    "rhythm scaling",
+    "moves by leap",
+    "silences of a beat or more, per 100 beats",
+    "lines run on (under a beat of rest), share",
+    "stressed line ends held a half note or more, share"
    ]
   },
-  "54": {
-   "outside_middle_half": 6,
-   "outside_10_90": 2,
-   "kept_songs_at_or_under_this_many_outside_middle_half": 0.116,
+  "58": {
+   "outside_middle_half": 5,
+   "outside_10_90": 1,
+   "kept_songs_at_or_under_this_many_outside_middle_half": 0.075,
    "which": [
+    "fit by length",
     "rhythm scaling",
-    "moves by step",
     "moves by leap",
-    "repeated notes",
     "range",
     "pitch scaling"
    ]
   },
-  "58": {
-   "outside_middle_half": 6,
-   "outside_10_90": 2,
-   "kept_songs_at_or_under_this_many_outside_middle_half": 0.116,
+  "59": {
+   "outside_middle_half": 5,
+   "outside_10_90": 0,
+   "kept_songs_at_or_under_this_many_outside_middle_half": 0.075,
    "which": [
     "stressed syllables on a beat",
     "the words' fit, whole",
-    "fit by length",
-    "fit by place",
-    "rhythm scaling",
-    "range"
-   ]
-  },
-  "59": {
-   "outside_middle_half": 3,
-   "outside_10_90": 0,
-   "kept_songs_at_or_under_this_many_outside_middle_half": 0.007,
-   "which": [
-    "stressed syllables on a beat",
-    "moves by leap",
-    "repeated notes"
+    "fit by height",
+    "pitch scaling",
+    "silences of a beat or more, per 100 beats"
    ]
   }
  },
@@ -74,12 +75,7 @@
   "55+54+59": {
    "sound": true,
    "leans_10_90": [],
-   "leans_25_75": [
-    [
-     "repeated notes",
-     "low"
-    ]
-   ]
+   "leans_25_75": []
   },
   "55+58+59": {
    "sound": true,
