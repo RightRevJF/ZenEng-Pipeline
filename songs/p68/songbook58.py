@@ -138,7 +138,7 @@ for s, nb, st, _, _ in REC["plan"]:
         md.append(f"| {li['slot']} | {txt} | {li['chords']} | {mel} |")
     md.append("")
 md += ["## For each player", "",
-       f"**Voice.** A baritone, {rng[0]} to {rng[1]}. Tell it plainly in the verses; the choruses sit about {LIFT:g} semitones higher, so let them open a little without pushing. "
+       f"**Voice.** A baritone, {rng[0]} to {rng[1]}. Tell it plainly in the verses; " + (f"the choruses sit about {LIFT:g} semitones higher, so let them open a little without pushing. " if LIFT > 0 else "the choruses sit where the verses do, so let the band and the harmony voice lift them, not the pitch. ") +
        f"Sing the title as written, {TD[0]}: " + " ".join(nm(n["midi"]) for n in title_line) + ". " + top_desc(REC, nm), "",
        f"**Harmony voice.** Under the lead in all three choruses, in his rhythm and on his words; {round(100 * third_to_fifth)} in 100 of its notes sit a third to a fifth below him. Range {hr[0]} to {hr[1]}: the lowest notes want a true bass, or take them up an octave. Keep it soft; he leads.", "",
        f"**Acoustic guitar.** Steady eighth-note strums from bar 1 to the end, under his voice; where a chord tone would sit a step from the note he sings, leave it out. Range {gr[0]} to {gr[1]}." + (" " + KI.capo_line([c for b_ in REC['bars'] for c in (b_['chord'], b_['chord2'])]) + "." if KI.CAPO else ""), "",

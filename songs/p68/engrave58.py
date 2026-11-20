@@ -204,7 +204,7 @@ TITLE = REC["title"]; FT = REC["file_title"]
 FOOT = f"{TITLE} ({REC['edition']}) · Words and music: Jason Bryant · ♩ = 84, folk ballad · {KI.KEYSTR} · {_mm}:{_ss:02d}"
 CHN = lambda rest: f'\\new ChordNames \\with {{ chordChanges = ##t }} \\chordmode {{ {chords_for(rest)} }}'
 _g = REC["parts"]["guitar"]; _b = REC["parts"]["bass"]
-ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses, which sit about " + f"{_LIFT:g}" + " semitones higher. Sing the title as written: " + _TD[0] + ".",
+ROLE = {"him": "Voice: he tells it. Plain in the verses, a little more open in the choruses" + (", which sit about " + f"{_LIFT:g}" + " semitones higher." if _LIFT > 0 else ", which sit where the verses do.") + " Sing the title as written: " + _TD[0] + ".",
         "harmony": f"Harmony voice: under him in the three choruses, in his rhythm and words, mostly a third to a fifth below (lowest {nm_(min(n['midi'] for n in REC['harm']))}). Keep it soft; he leads.",
         "guitar": f"Acoustic guitar: steady eighth-note strums from bar 1 to the end, under his voice. Where a chord tone would sit a step from the note he sings, it is left out. Range {nm_(min(min(e['p']) for e in _g))}–{nm_(max(max(e['p']) for e in _g))}.",
         "bass": f"Bass: quarter notes on every beat, roots and fifths, with chromatic passing notes a half step from the next root. {nm_(min(e['p'][0] for e in _b))}–{nm_(max(e['p'][0] for e in _b))}. Lock with the kick on 1 and 3.",
