@@ -65,6 +65,9 @@ class Engine:
         if spec.get("line_ends"):
             K_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json"))); C_ = np.array(K_["counts_by_tier_G_D"], float); self.LE = dict(GV=K_["G_values"], DV=K_["D_values"], C=C_, Gw=[float(x) for x in C_.sum((0, 2))])
             if K_.get("entries_before_on_after_the_bar_line"): e_ = K_["entries_before_on_after_the_bar_line"]; self.ENTRY = {True: tuple(e_["stressed"]), False: tuple(e_["unstressed"])}      # 911 (749.89): 771's shares read from the kept table, tie starts read
+        pg = spec.get("page_gate"); self.PG = None; self._figs = None                         # 922, 923 (Window 188): the page gate, a floor; and the tune's own short figures sung again
+        if pg:
+            import page_gate as PG_; self.PG = dict(T=PG_.table(), floor=pg.get("floor"), memory=float(pg.get("memory", 1.0)), mod=PG_)
         ww = spec.get("word_weight"); self.WW = None                                          # 879-881 (way 3): what the kept songs do with a word's weight
         if ww:
             K = WW_.table(); self.WW = dict(place=[[math.log(max(1e-4, K["place_share_by_tier"][a][j]) / K["place_share_all"][j]) for j in range(5)] for a in range(3)], pp=ww.get("place", 1.0), sp=ww.get("step", 1.0), gate=ww.get("gate"), cost=ww.get("again_cost", 1.0), fresh=ww.get("fresh", True), again=ww.get("again", True), lp=ww.get("length", 0.0), last=ww.get("last_note", False), short=ww.get("short_stress", 0.0),
@@ -202,6 +205,9 @@ class Engine:
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 w *= math.exp(-((p - mu) ** 2) / 50)
                 if len(ps) >= 2 and ps[-1] == ps[-2] == p: w = 0.0
+                if self._figs:                                                                    # 923: a note that completes a four-interval figure the song has already sung is favoured
+                    tl = (self._figs[1] + ps)[-4:]
+                    if len(tl) == 4 and tuple(max(-12, min(12, b_ - a_)) for a_, b_ in zip(tl, tl[1:] + [p])) in self._figs[0]: w *= self.PG["memory"]
                 if self.TILT and prev is not None: d_ = abs(p - prev); w *= self.TILT[0] if d_ == 0 else self.TILT[1] if d_ <= 2 else self.TILT[2] if d_ >= 5 else 1.0      # 920: repeats, steps and leaps leaned toward the kept song's shares
                 if DW: w *= DW.get(str((p - ton) % 12), 0.0)                                      # 846: the kept share of each degree of the scale, blue notes among them
                 if WP and k > 0 and k < len(sy) and sy[k][0] == sy[k - 1][0] and sy[k][1] != sy[k - 1][1] and prev is not None:      # 847: inside a word, the stressed syllable against the other
@@ -283,7 +289,7 @@ class Engine:
     @staticmethod
     def runs_ok(ps): return all(not (ps[k] == ps[k + 1] == ps[k + 2] == ps[k + 3]) for k in range(len(ps) - 3))
     def build(self, rng):
-        lines = {}; prev = None; plans = {}
+        lines = {}; prev = None; plans = {}; self._figs = None
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
@@ -328,6 +334,8 @@ class Engine:
                         if x < bw["figure"] and self.runs_ok([p for t, p in r]): lines[(sec, i)] = r; prev = r[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
             if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
+            if self.PG and self.PG["memory"] != 1.0:                                           # 923: the figures sung so far, in the order the song is sung
+                sq_ = [p_ for kk_ in self.KEYS[:k] for _, p_ in lines[kk_]]; iv_ = self.PG["mod"].ivs(sq_); self._figs = ({tuple(iv_[j_:j_ + 4]) for j_ in range(len(iv_) - 3)}, sq_[-4:]) if len(sq_) >= 5 else None
             if ons is None: return None, ("rhythm: the syllables cannot fit the window", sec, i)
             rule = self.S.get("line_rules", {}).get(f"{sec}:{i}", {}); ps = None
             for _ in range(20):
@@ -446,7 +454,7 @@ class Engine:
             r = self.readings(c["notes"]); ch, dist = self.charge(r); c.update(readings=r, charge=ch, distance=dist, n=k)
             c["fp"] = hashlib.sha1(json.dumps([(n["on"], n["p"]) for n in c["notes"]]).encode()).hexdigest()[:12]; alive.append(c)
         if not alive: return dict(made=N, survivors=0, deaths=dict(deaths), stats=dict(self.stats))
-        least = min(c["charge"] for c in alive); near = [c for c in alive if c["charge"] <= least + 0.05]; pick = min(near, key=lambda c: c["distance"]); old_pick = pick["fp"]; j7 = None
+        least = min(c["charge"] for c in alive); near = [c for c in alive if c["charge"] <= least + 0.05]; pick = min(near, key=lambda c: c["distance"]); old_pick = pick["fp"]; j7 = None; pgate = None
         if self.S.get("judge") == 7:                                                         # 860-863: the gate, the place a kept song usually stands, then readings whose direction is known
             try:
                 import luthier_judge7 as J7; J = J7.Judge7(self.S.get("table") or self.S["metre"].replace("/", "-") + "_sung")
@@ -463,6 +471,14 @@ class Engine:
                     wgate = dict(at_least=self.WW["gate"], the_builds_median_fit=round(mf_, 3), the_builds_median_fit_by_length=round(ml_, 3), the_builds_median_fit_by_height=round(mh_, 3), read="as sung" if sung_ else "before melismas", builds_fit_quartiles=[round(float(x), 3) for x in np.quantile([c["fit"] for c in alive], (0.25, 0.5, 0.75))], pass_among_all=int(sum(c["fit"] >= self.WW["gate"] for c in alive)), pass_after_the_other_gates=len(ok2))
                     if ok2: ok = ok2
                     else: wgate["no build past the joint gate also passed: the gate is waived"] = True
+                n_words_ = len(ok)
+                if self.PG and self.PG.get("floor") is not None and ok:                                                                           # 922: the page gate, a floor: a build less plain than nine kept tunes in ten is passed over
+                    PGm = self.PG["mod"]
+                    for c in ok:
+                        on_ = [n["on"] for n in c["notes"]]; c["page"] = PGm.read([n["p"] for n in c["notes"]], [(b_ - a_) / float(self.BEAT) for a_, b_ in zip(on_, on_[1:])] + [1.0], self.PG["T"])
+                    ok3 = [c for c in ok if c["page"]["plainness"] >= self.PG["floor"]]; pgate = dict(at_least=round(self.PG["floor"], 3), read=len(ok), passed=len(ok3), builds_plainness_quartiles=[round(float(x), 3) for x in np.quantile([c["page"]["plainness"] for c in ok], (0.25, 0.5, 0.75))], builds_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([c["page"]["repeated_figures"] for c in ok], (0.25, 0.5, 0.75))], every_build_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([PGm.figures_again([n["p"] for n in c["notes"]]) for c in alive], (0.25, 0.5, 0.75))], every_build_first_120_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([PGm.figures_again([n["p"] for n in c["notes"]][:120]) for c in alive], (0.25, 0.5, 0.75))], kept_figures_again_quartiles=self.PG["T"]["percentiles_10_25_50_75_90"]["repeated_figures"][1:4], kept_first_120_quartiles=self.PG["T"]["percentiles_10_25_50_75_90"]["first_120_figures_again"][1:4])
+                    if ok3: ok = ok3
+                    else: pgate["no build past the other gates also passed: the floor is waived"] = True
                 pool = ok or first                                                         # 873 (749.61): the gate, and no band
                 names = list(pool[0]["directed"]); rk = {}
                 for n_ in names:
@@ -473,8 +489,9 @@ class Engine:
                 pick = min(pool, key=lambda c: c["n"]) if ok else min(pool, key=lambda c: (c["d7"], c["fp"]))                                       # 872 (749.60): no reading has passed the bench, so the first build past both gates, in the order built
                 j7 = dict(kept_songs=J.n, readings_read_together=J.names, gate=round(J.gate, 3), a_kept_songs_usual_distance=round(J.usual, 3), kept_middle_half=[round(x, 3) for x in J.band], builds=len(alive), pass_the_gate=len(ok), in_the_kept_middle_half=len(band),
                           builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"], words_gate=wgate, pick_words_fit=WW_.fit(pick["notes"], self.BAR, self.BEAT, parts=True) if self.WW else None,
-                          pool="past both gates: the old charge's least half, then the joint gate; the pick is the first of them in the order built" if ok else "no build passed the joint gate: the least distance among the old charge's least half", gates_passed=dict(old_charge_least_half=len(first), joint_gate=n_joint, words_gate=len(ok) if wgate else None), gates_removed=dict(old_charge=len(alive) - len(first), joint_gate=len(first) - n_joint, words_gate=(n_joint - len(ok)) if wgate and not wgate.get("no build past the joint gate also passed: the gate is waived") else None), shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
+                          pool="past both gates: the old charge's least half, then the joint gate; the pick is the first of them in the order built" if ok else "no build passed the joint gate: the least distance among the old charge's least half", gates_passed=dict(old_charge_least_half=len(first), joint_gate=n_joint, words_gate=n_words_ if wgate else None), gates_removed=dict(old_charge=len(alive) - len(first), joint_gate=len(first) - n_joint, words_gate=(n_joint - n_words_) if wgate and not wgate.get("no build past the joint gate also passed: the gate is waived") else None), shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
                           the_old_pick=dict(fp=old_pick, distance=round(next(c["d7"] for c in alive if c["fp"] == old_pick), 3), passes=bool(next(c["d7"] for c in alive if c["fp"] == old_pick) <= J.gate)), withheld_reading_old_charge_of_the_pick=round(pick["charge"], 3), the_old_pick_notes=[[n["on"], n["p"], n["sec"]] for n in next(c["notes"] for c in alive if c["fp"] == old_pick)])
+        if isinstance(j7, dict) and pgate is not None: j7["page_gate"] = pgate; j7["pick_page_gate"] = {k_: round(v_, 3) for k_, v_ in pick.get("page", {}).items()}; j7["gates_passed"]["page_floor"] = pgate["passed"] if not pgate.get("no build past the other gates also passed: the floor is waived") else pgate["read"]; j7["gates_removed"]["page_floor"] = pgate["read"] - j7["gates_passed"]["page_floor"]
         st = [n for n in pick["notes"] if n["stress"]]; E = {True: [0, 0, 0], False: [0, 0, 0]}
         for c in alive:
             first = {}

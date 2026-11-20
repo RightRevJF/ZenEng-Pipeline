@@ -26,6 +26,7 @@ WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept 
 WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm on offer, so the builds' fit by place meets the kept median (it was 1.5 when twelve rhythms were on offer)
 AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
+FIGURE_MEMORY = 8.0   # 923: how much a note that completes a four-interval figure already sung is favoured (1 = not at all; tried 1, 4, 8, 16: the builds' share of figures sung again rises to 8 and no further)
 FIGURE_BORROW = 0.8   # 919 (749.97): raised from 0.6 so the builds' bars on a figure already sung meet the kept median (0.474)
 WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
 #  879, 880: fitted so the builds' shares (a function word on the bar's first beat, the step up from a light word to a stressed one) and their fits meet the kept
@@ -118,6 +119,7 @@ def plan(L):
     if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
         spec["stressed on the beat, at least"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json")))["stressed_syllables_on_a_beat_by_song_5_10_25_50_75"][1]      # 911: 731's floor is the kept 10th by song, tie starts read (0.35; it was 0.4 by hand)
         spec["all_windows"] = True                                                            # 912: every kept two-bar rhythm may be drawn, not the sixty commonest
+        import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
         spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
@@ -179,7 +181,7 @@ def write(L, N=1000, K=12):
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
     import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
-    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []))}
+    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []))}
     melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
     if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
         import word_weight as WW_; rec["judge7"]["pick_words_fit"] = {k: round(v, 3) for k, v in WW_.fit([n for n in rec["melody"]["notes"] if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True).items()}
@@ -294,6 +296,11 @@ def style_checks(rec, E):
         import word_weight as WW_; K_ = WW_.table(); f_ = WW_.fit([n for n in ns if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True); kq = K_["fit_percentiles_10_25_50_75_90"]
         extra[f"the words' fit: weightier syllables on more salient notes (kept 10th {kq[0]}, quartiles {kq[1]}, {kq[2]}, {kq[3]})"] = round(f_["all"], 3)
         extra["the fit by length, by place in the bar, by height (kept medians %s, %s, %s)" % (K_["fit_by_length"][2], K_["fit_by_place"][2], K_["fit_by_height"][2])] = [round(f_[k], 3) for k in ("length", "place", "height")]
+    if rec["spec"].get("page_gate"):                                                          # 922: the page gate read on the song as recorded, each part beside the share of kept tunes it is plainer than
+        import page_gate as PG_; T_ = PG_.table(); on_ = [x["on"] for x in ns]; pr_ = PG_.read([x["midi"] for x in ns], [(b_ - a_) / float(E.BEAT) for a_, b_ in zip(on_, on_[1:])] + [1.0], T_)
+        extra["the page gate: plainness (floor: the kept 10th percentile, %s; kept middle %s)" % (round(T_["floor"]["plainness"], 2), T_["percentiles_10_25_50_75_90"]["plainness"][2])] = round(pr_["plainness"], 3)
+        extra["the page gate: each part, and the share of kept tunes the song is plainer than"] = {c_: [round(pr_[c_], 3), round(PG_.place(pr_[c_], c_, T_))] for c_ in list(PG_.PLAIN) + ["plainness"]}
+        fa_ = PG_.figures_again([x["midi"] for x in ns][:120]) if len(ns) >= 120 else None; extra["four-note figures already sung, first 120 notes (kept quartiles %s)" % T_["percentiles_10_25_50_75_90"]["first_120_figures_again"][1:4]] = round(fa_, 3) if fa_ is not None else None
     return {**extra, "the chorus's median over the verse's, semitones (kept quartiles 0, 1, 4)": round(st_.median(c) - st_.median(v), 1) if v and c else None, "the plan's lift": rec["spec"].get("plan", {}).get("lift"),
             "rest share inside sung sections, median (kept quartiles %s)" % ", ".join(str(x) for x in json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json")))["rest_share"][1:4]): round(st_.median(rests), 3), "the title's stressed syllables on a beat (kept 0.73)": round(sum((n["on"] % E.BAR) in E.BEATS for n in hs) / len(hs), 3) if hs else None,
             "title lines": len(hk), "length in seconds (kept quartiles 165, 206, 243)": round(secs), "later choruses: bars the same as the first chorus's, median (kept 0.57; note for note 15 in 100)": round(st_.median(ret), 2) if ret else None}
