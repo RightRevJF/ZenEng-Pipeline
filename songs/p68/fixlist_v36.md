@@ -23,7 +23,7 @@
 
 ### 749.119 Measure 934 and 935 apart, and narrow 935 to its case
 **Problem.** 935 was made for one line in song 59. It acts in every build of songs 55 and 54 as well, and it is gated on the song having an aim, which a rhythm rule should not depend on. The pools' failure rates rose with 934 and 935 together, and which of them did it is not measured.
-**Evidence.** The records' stats: "935: a line gives way to a short line before a copy" 1,000 in 1,000 builds for songs 55, 54 and 59, none for 58. `studies/review21/`: with 936 taken out of v35, the neighbour choice fails 4.8 in 100 and a random pool pick 5.4 (v34: 0.5 and 2.5).
+**Evidence.** The records' stats: "935: a line gives way to a short line before a copy" 1,000 in 1,000 builds for songs 55, 54 and 59, none for 58. `studies/review21/`: with 936 taken out of v35, the neighbour choice fails 4.8 in 100 and a random pool pick 5.4 (v34: 0.5 and 2.5). At 400 draws, the neighbour choice's rise from 0.5 to 2.5 in 100 is 2 failures against 10: likely more than chance, but not by much.
 **Fix.** Two trials through `neighbour.py`: v35 with 935 off, and v35 with v34's fit sizes (934 off). Find which one moves the rates. If 935 costs elsewhere, narrow it to the case the trace found (a line of one bar or less, of few syllables, before a line that comes in early), and take the aim gate off.
 **Check.** With 935 kept, the random pool pick fails no more than in v34 (2.5 in 100), and song 59's rhythm deaths stay under 10 in 100.
 
@@ -36,7 +36,7 @@
 ## Carried
 - **749.116** The band under the break (song 59's break still reads above its last chorus).
 - **749.103** Variety. On the hold-out, song 59 is more central than every kept song (2 of 21 outside the middle half; a kept song's median is 10). The checks the aim does not set stay in the middle.
-- **749.111** with the next trial's rule as above. Song 58's v35 pick spans 9 semitones and sits on its top note 54 times (Bird Dog twice): the narrow aim's ceiling is worse, not better. **749.104's fix** (with 749.101 and 749.109). **749.61**.
+- **749.111** with the next trial's rule as above. Song 58's v35 pick spans 9 semitones and sits on its top note 54 times (Bird Dog twice): the narrow aim's ceiling is worse, not better. **749.104's fix** (with 749.101 and 749.109). For 749.109: song 58's rhythm scaling is 0.507, under the kept 10th (0.574); with its range, it is one of the two checks where song 58 stands past the kept 10th to 90th. **749.61**.
 
 ## Order of work
 1. 749.117 (the labels). 2. 749.119 (measure, then narrow 935). 3. 749.118. 4. 749.116. 5. 749.111's third trial. After each: `neighbour.py`, `studies/review20/`, `studies/holdout59/` (song 59 read, never fitted to).
