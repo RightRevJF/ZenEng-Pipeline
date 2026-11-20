@@ -49,9 +49,10 @@ for h in HARM:
     if l: iv[l[-1]["midi"] - h["midi"]] += 1
 third_to_fifth = sum(v for k, v in iv.items() if 3 <= k <= 7) / max(1, sum(iv.values()))
 def phrases():
+    """his phrases in seconds, a breath read at half a beat of silence, as kept singers take one (906)"""
     t = sorted(LEAD, key=lambda n: n["on"]); out = []; s0 = t[0]["on"]
     for a, b in zip(t, t[1:]):
-        if b["on"] - (a["on"] + a["dur"]) >= 12: out.append((a["on"] + a["dur"] - s0) / 12 * 60 / REC["qbpm"]); s0 = b["on"]
+        if b["on"] - (a["on"] + a["dur"]) >= 6: out.append((a["on"] + a["dur"] - s0) / 12 * 60 / REC["qbpm"]); s0 = b["on"]
     out.append((t[-1]["on"] + t[-1]["dur"] - s0) / 12 * 60 / REC["qbpm"]); return sorted(out)
 def title_desc(REC_):
     """where the title falls against the chorus's first bar, read from the record"""
@@ -73,6 +74,7 @@ def top_desc(REC_, nm_f):
         z = j
         while z < len(fs) - 1 and fs[z]["hyph"]: z += 1
         return "".join(x["text"] for x in fs[a:z + 1]).strip(",.;")
+    seen_ = set(); hits = [n for n in hits if not ((word_of(n), n["sec"], n.get("line")) in seen_ or seen_.add((word_of(n), n["sec"], n.get("line"))))]      # one mention a word, where its syllables share the top note
     where = "; ".join(f"on “{word_of(n)}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
     return f"The song’s top note, {nm_f(top)}, comes {'once' if len(hits) == 1 else str(len(hits)) + ' times'}: {where}."
 TD = title_desc(REC)
@@ -143,7 +145,7 @@ md += ["## For each player", "",
        f"**Bass.** Quarter notes on every beat: roots and fifths, with chromatic passing notes a half step from the next root. Range {br[0]} to {br[1]}. Lock with the kick on 1 and 3.", "",
        f"**Drums.** Kick on 1 and 3, snare on 2 and 4, hat eighths, from bar {drums_from} to the end. A tom fill in the bar before each chorus that follows a verse (bars {', '.join(map(str, fills))}).", "",
        "## For the singer", "",
-       f"Breathe between lines: his phrases run {PH[len(PH) // 2]:.1f} seconds at the median. " + (f"Some lines run straight into the next with less than a beat between them (into bars {', '.join(map(str, RUNON[:8]))}{' and others' if len(RUNON) > 8 else ''}); take a quick breath in the gap or sing through, as feels natural; the longest stretch without a full beat's rest is {PH[-1]:.1f} seconds. " if RUNON else "There is room at every line end. ") +
+       f"Breathe between lines: his phrases run {PH[len(PH) // 2]:.1f} seconds at the median. " + (f"Some lines run straight into the next with less than a beat between them (into bars {', '.join(map(str, RUNON[:8]))}{' and others' if len(RUNON) > 8 else ''}); take a quick breath in the gap or sing through, as feels natural; the longest stretch without half a beat's rest is {PH[-1]:.1f} seconds. " if RUNON else "There is room at every line end. ") +
        f"Lines that end on a long note (in verse 1: {', '.join('“' + w + '”' for w in HELD)}) want to be held to their length and released, not clipped. "
        "Verse 3 is the hardest to sing plainly; do not lean on it. The last chorus is longer than the others and ends on the title: leave the last word open.", "",
        "## The arrangement", "",

@@ -72,5 +72,9 @@ if all(TARGET.values()):                                                        
         random_pick_among_the_ten_nearest=random_picks({s_: near_aim(pools[s_], TARGET[s_], 10) for s_ in pools}))
     out["aim_reached"] = {s_: {n: dict(target=round(TARGET[s_][n], 3), first=round(min(pools[s_], key=lambda c: c["n"])["row"][n], 3), nearest=round(near_aim(pools[s_], TARGET[s_])[0]["row"][n], 3), kept_median=round(Q[n][2], 3)) for n in TARGET[s_] if n in Q} for s_ in pools}
 out["pool_share_outside_middle_half_by_check"] = {n: dict(low=round(float(np.mean([S.side(Q[n], c["row"][n], "half") < 0 for p in pools.values() for c in p])), 3), high=round(float(np.mean([S.side(Q[n], c["row"][n], "half") > 0 for p in pools.values() for c in p])), 3)) for n in NAMES}      # a kept song: 0.25 and 0.25
+out["pool_spread_over_kept_spread_by_check"] = {n: round(float(np.subtract(*np.percentile([c["row"][n] for p in pools.values() for c in p], (75, 25)))) / W_[n], 3) for n in NAMES}      # the pools' middle half, as wide as the kept songs' middle half = 1
+out["pool_spread_over_kept_spread_within_each_song_median"] = {s_: round(float(np.median([float(np.subtract(*np.percentile([c["row"][n] for c in p], (75, 25)))) / W_[n] for n in NAMES])), 3) for s_, p in pools.items()}
+out["variety_two_sided"] = dict(sum_of_twice_the_smaller_side=round(sum(2 * min(v["low"], v["high"]) for v in out["pool_share_outside_middle_half_by_check"].values()), 2), kept=0.5 * len(NAMES),
+                                median_spread_ratio_all_three_pooled=round(float(np.median(list(out["pool_spread_over_kept_spread_by_check"].values()))), 3))
 print(json.dumps(out, indent=1))
-json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "neighbour" + ("_" + os.environ.get("TRIAL_NAME", "trial") if os.environ.get("MARGIN_TURNS_OF_FOUR") else "") + ".json"), "w"), indent=1)
+json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "neighbour" + ("_" + os.environ.get("TRIAL_NAME", "trial") if os.environ.get("MARGIN_TURNS_OF_FOUR") else os.environ.get("OUT_SUFFIX", "")) + ".json"), "w"), indent=1)
