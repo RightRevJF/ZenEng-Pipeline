@@ -433,3 +433,16 @@ Answers the session's list 749.110 to 749.112. Paper: `reports/Luthier_v34.docx`
 - Carried: 749.111 (place the peak note directly next time), 749.104's fix with the melismas carried, 749.109, 749.103, 749.101, 749.61.
 
 Next: Luthier v35 (row v206), Window 192, Module 27.116 (anchor "27.115"), tables HB…, fixes from 934.
+
+## Luthier v35 (Window 192): the hold-out
+
+Song 59 (`songs/p69`) is the hold-out: read after every fix, never fitted to. Answers the session's list 749.113 to 749.116. Paper: `reports/Luthier_v35.docx` (builder `reports/make_luthier_v35_from_v34.py`), row v206, Module 27.116, Table HB. Results: `lib/luthier/stage22_results.json`, `studies/soundness/neighbour_v35.json`, `studies/review19/aimpool.json` and `studies/holdout59/` (rerun), `studies/v35_traces/`, `studies/plant_the_peak/` (second trial).
+
+- 934 (749.115): `MOVE_FIT = (40, 6, 400)`: a round draws until 40 builds pass the gates, 400 tries at most; tries recorded.
+- 935 (749.114): a line gives way to a short line (one bar or less) that stands before a copied or designed line coming in early. Song 59's rhythm deaths 500 to 52 in 1,000. The trace found one line at fault, not the long verse lines.
+- 936 (749.113): a repeat weight (`target.moves.repeat`, `Engine.MV[3]`) fitted with the step and leap weights; a round outside the kept band is followed by one halfway back. Builds' repeated notes 0.222, 0.215, 0.382, 0.225 against aims 0.158, 0.110, 0.373, 0.210.
+- Tried outside the engine again, not built (749.111): `studies/plant_the_peak/RESULT2.md`. Helps wide aims, harms narrow.
+- Picks sound; a random pool pick fails 2.5 in 100 (0.5 before). Song 59 stands outside the kept middle half on 2 checks of 21 (3 before): still too central.
+- Carried: 749.116 (band arrangement under the break), 749.111, 749.104's fix, 749.109, 749.103, 749.101, 749.61.
+
+Next: Luthier v36 (row v207), Window 193, Module 27.117 (anchor "27.116"), tables HC…, fixes from 937.

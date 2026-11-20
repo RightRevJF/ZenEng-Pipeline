@@ -49,13 +49,13 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
-        self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0)                                                # 926, 927
+        self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0, 1.0)                                                # 926, 927
         self.TILT = None; tg = spec.get("target")                                               # 920 (749.94): the song is aimed at one kept song, not at the kept middle
         if tg:
             Q2 = dict(self.Q); t_ = tg["readings"]
             for k_ in tg.get("charged", ("repeated notes", "moves by step", "moves by leap")):
                 if k_ in t_ and k_ in Q2: a_, m_, z_ = Q2[k_]; Q2[k_] = [t_[k_] - (m_ - a_), t_[k_], t_[k_] + (z_ - m_)]      # the charge's middle half, of the kept width, set about the kept song's own reading
-            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); self.AIM = True; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)))
+            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); self.AIM = True; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)), float(mv_.get("repeat", 1.0)))
             self.TILT = tuple(cl_(((t_[k_] + 0.02) / (self.T["readings_quartiles"][k_][1] + 0.02)) ** g_) for k_ in ("repeated notes", "moves by step", "moves by leap"))
         self._rc = {}; self.ALLW = None
         if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
@@ -205,7 +205,7 @@ class Engine:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 w *= math.exp(-((p - mu) ** 2) / self.MV[2])                                         # 927: how closely a line keeps to its register
-                if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else 1.0
+                if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0      # 936 (749.113): and a repeated note
                 rn_ = 0
                 for q_ in reversed(ps):
                     if q_ != p: break
@@ -329,6 +329,12 @@ class Engine:
                 if hn[0] == "design": f0 = hn[1][0][0]
                 elif hn[0] == "copy" and (hn[1], hn[2]) in lines: f0 = lines[(hn[1], hn[2])][0][0]
                 if f0 is not None: cap = self.line_start(ns_, ni_) + f0 - self.BREATH - U
+            if cap is None and self.AIM and k + 2 < len(self.KEYS):                             # 935 (749.114): a short line squeezed between this line and a copied or designed line that comes in early: this line gives way too, so the short line has room
+                (s1_, i1_), (s2_, i2_) = self.KEYS[k + 1], self.KEYS[k + 2]; h1_ = self.HOW.get((s1_, i1_), ["fresh"]); h2_ = self.HOW.get((s2_, i2_), ["fresh"]); f2_ = None
+                if h1_[0] not in ("design", "copy") and self.slot_len(s1_, i1_) <= self.BAR:
+                    if h2_[0] == "design": f2_ = h2_[1][0][0]
+                    elif h2_[0] == "copy" and (h2_[1], h2_[2]) in lines: f2_ = lines[(h2_[1], h2_[2])][0][0]
+                    if f2_ is not None: cap = self.line_start(s1_, i1_) + (self.line_start(s2_, i2_) + f2_ - self.BREATH - self.line_start(s1_, i1_)) - (len(self.LINES[s1_][i1_]) - 1) * 6 - 12 - U; self.stats["935: a line gives way to a short line before a copy"] += 1
             if how[0] == "plan":                                                              # a line that returns an earlier line of its section under a drawn plan
                 pl = plans[how[1]]; how = ["again", sec, pl.index(pl[i])] if pl.index(pl[i]) != i else ["fresh"]
             if how[0] == "design": lines[(sec, i)] = [(t, p) for t, p, d in how[1]]; prev = lines[(sec, i)][-1][1]; continue
