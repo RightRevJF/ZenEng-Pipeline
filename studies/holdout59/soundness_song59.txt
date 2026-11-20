@@ -1,0 +1,26 @@
+{"rule": "sound when no check has all three songs beyond the kept 10th or 90th on the same side, and no more than 2 checks have all three beyond the kept 25th or 75th on the same side", "per_kept_song_checks_outside_middle_half_quartiles": [8.0, 10.0, 13.0, 14.0], "per_kept_song_checks_outside_10th_90th_quartiles": [2.0, 3.0, 5.5, 7.0], "three_kept_songs_drawn_at_random_fail_share": {"a lean beyond the 10th or 90th": 0.025, "more than 2 leans beyond the 25th or 75th": 0.052, "the rule": 0.068}, "leans_beyond_25th_75th_in_three_random_kept_songs": {"0": 0.618, "1": 0.2473, "2": 0.0823, "3": 0.0314, "4": 0.0135, "5": 0.0046, "6": 0.0023, "7": 0.0003, "8": 0.0001, "9": 0.0001}}
+stressed syllables on a beat                         kept [0.35, 0.446, 0.542, 0.661, 0.76]  59 0.609 in
+the words' fit, whole                                kept [0.152, 0.248, 0.318, 0.402, 0.446]  59 0.349 in
+fit by length                                        kept [0.041, 0.118, 0.209, 0.297, 0.369]  59 0.222 in
+fit by place                                         kept [0.008, 0.115, 0.242, 0.333, 0.412]  59 0.369 near
+fit by height                                        kept [-0.042, 0.045, 0.106, 0.178, 0.243]  59 0.09 in
+onsets on the beat                                   kept [0.286, 0.382, 0.451, 0.525, 0.596]  59 0.419 in
+onsets on the bar's first beat                       kept [0.069, 0.093, 0.124, 0.161, 0.199]  59 0.13 in
+notes a bar                                          kept [3.146, 3.594, 4.297, 5.0, 6.006]  59 4.111 in
+distinct rhythms over bars                           kept [0.227, 0.313, 0.405, 0.546, 0.696]  59 0.422 in
+bars on a rhythm already sung                        kept [0.304, 0.454, 0.595, 0.687, 0.773]  59 0.578 in
+rhythm scaling                                       kept [0.574, 0.608, 0.656, 0.721, 0.77]  59 0.675 in
+moves by step                                        kept [0.265, 0.329, 0.396, 0.489, 0.558]  59 0.32 near
+moves by leap                                        kept [0.044, 0.073, 0.102, 0.14, 0.182]  59 0.136 in
+repeated notes                                       kept [0.157, 0.21, 0.312, 0.392, 0.469]  59 0.32 in
+range                                                kept [12.0, 14.0, 17.0, 21.0, 26.0]  59 20 in
+bars on a figure already sung                        kept [0.199, 0.344, 0.474, 0.579, 0.664]  59 0.433 in
+pitch scaling                                        kept [0.667, 0.792, 0.905, 1.023, 1.107]  59 0.903 in
+silences of a beat or more, per 100 beats            kept [5.26, 7.059, 8.627, 10.387, 13.168]  59 6.235 near
+longest phrase, beats (breath at half a beat)        kept [6.5, 8.0, 12.0, 15.5, 20.05]  59 14.0 in
+lines run on (under a beat of rest), share           kept [0.037, 0.095, 0.253, 0.426, 0.554]  59 0.366 in
+stressed line ends held a half note or more, share   kept [0.0, 0.075, 0.231, 0.523, 0.724]  59 0.133 in
+the chorus's median over the verse's, semitones      kept [-3.0, 0.0, 1.0, 4.0, 5.3]  59 3.0 in
+rest share inside sung sections                      kept [0.09, 0.15, 0.22, 0.32, 0.42]  59 0.202 in
+lyric59.song.json outside the middle half 3 outside 10th-90th 0
+engine: {"lean_beyond_10th_90th": [], "lean_beyond_25th_75th": [["fit by place", "high"], ["moves by step", "low"], ["silences of a beat or more, per 100 beats", "low"]], "sound": false, "checks_outside_the_middle_half_all_three_songs": 3}

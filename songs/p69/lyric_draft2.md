@@ -1,0 +1,50 @@
+Before the Bread Goes Cold (draft 2)
+Words and music: Jason Bryant
+
+Verse 1
+You've been leaning in the doorway since the first song started
+Got the whole room charted on the back of your hand
+Who came in with who and who's about to leave here
+Every way it might go right and every way it can't
+You keep a running tally of the laughing at the table
+Like you'll need the proof someday that you were there
+But a night won't hold still long enough to measure
+And somebody's hung your jacket on the only empty chair
+
+Chorus
+Put the pen down
+Pull the chair out
+It's coming round to you
+Take it with both hands
+Come in out of the doorway
+Before the bread goes cold
+
+Verse 2
+You're peeling the label off your bottle in strips
+Folding the napkin till it won't fold anymore
+Turning a coin across the backs of your knuckles
+With your shoulder still pressed to the frame of the door
+Out on the porch there's a hand held open
+Palm up in the yellow of the light
+It's been out there since the band struck up the slow one
+And it's starting to close, a little, against the night
+
+Chorus
+
+Bridge
+Some things only come in twos
+The thunder and the lullaby
+The same hand that could break you breaking bread
+Pull them apart, you're holding air
+You don't have to understand it
+To be fed
+
+Last Chorus
+Put the pen down
+Pull the chair out
+It's coming round to you
+Take it with both hands
+Come in out of the doorway
+Before the bread goes cold
+Come in out of the doorway
+Before the bread goes cold
