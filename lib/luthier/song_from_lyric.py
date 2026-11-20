@@ -24,11 +24,12 @@ WORD_PITCH = [3.0, 2.0, 0.2]     # 847: weights for the stressed syllable of a w
 WORD_SHORT = 4.0      # 891 (749.66): the charge on each stressed syllable a line sung again would leave a sixteenth long
 WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept median (0.13)
 WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm on offer, so the builds' fit by place meets the kept median (it was 1.5 when twelve rhythms were on offer)
-AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling)
+AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling; tried again in Window 190 with 929 in: the builds' bars sung again move by 0.03 and a random pool pick fails the rule 7 times in 100, see studies/v33_trials)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
+MOVE_FIT = (80, 6)     # 930 (749.108): trial builds a round, and rounds at most, to fit the step and leap weights to the aimed song (None: the fixed weights below)
 MOVE_STEP = 1.2; MOVE_LEAP = 1.6; REG_SPREAD = 50.0      # 927 (749.100)
 FIGURE_MEMORY = 8.0   # 923: how much a note that completes a four-interval figure already sung is favoured (1 = not at all; tried 1, 4, 8, 16: the builds' share of figures sung again rises to 8 and no further)
 FIGURE_BORROW = 0.8   # 919 (749.97): raised from 0.6 so the builds' bars on a figure already sung meet the kept median (0.474)
@@ -173,7 +174,24 @@ def write(L, N=1000, K=12):
             for x in bar: spec["chords"][x] = sorted((t + 0) % 12 for t in C.tones(x))
             bars.append(bar[0] if len(bar) == 1 else list(bar))
         spec["form"].append([n, bars])
-    E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"))[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
+    E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"))[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
+    if spec.get("target") and MOVE_FIT:                                                       # 930 (749.108): the step and leap weights fitted to this song, as 885 fitted the words' weights: short trial runs, each weight scaled until the builds' median meets the aimed song's
+        import random as _r3, numpy as _np3
+        tg3_ = spec["target"]; mv3_ = tg3_["moves"]; aim3_ = (tg3_["readings"]["moves by step"], tg3_["readings"]["moves by leap"]); AT3_ = E.Q
+        tol3_ = ((AT3_["moves by step"][2] - AT3_["moves by step"][0]) / 4.0, (AT3_["moves by leap"][2] - AT3_["moves by leap"][0]) / 4.0); trail3_ = []
+        for round3_ in range(MOVE_FIT[1]):
+            rng3_ = _r3.Random(f"930 {L.get('seed', 1)} {L['title']}"); rows3_ = []
+            for _ in range(MOVE_FIT[0]):
+                c3_, e3_ = E.build(rng3_)
+                if e3_ or E.gates(c3_): continue
+                r3_ = E.readings(sorted(E.as_sung(c3_["notes"]), key=lambda n_: n_["on"])); rows3_.append((r3_["moves by step"], r3_["moves by leap"], r3_["range"]))
+            if len(rows3_) < 8: break
+            med3_ = (float(_np3.median([x[0] for x in rows3_])), float(_np3.median([x[1] for x in rows3_]))); mr3_ = float(_np3.median([x[2] for x in rows3_])); ar3_ = min(float(tg3_["readings"]["range"]), 24.0); trail3_.append(dict(step=mv3_["step"], leap=mv3_["leap"], spread=mv3_["spread"], builds=len(rows3_), median_step=round(med3_[0], 3), median_leap=round(med3_[1], 3), median_range=mr3_))
+            if abs(med3_[0] - aim3_[0]) <= tol3_[0] / 2 and abs(med3_[1] - aim3_[1]) <= tol3_[1] / 2: break
+            if round3_ == MOVE_FIT[1] - 1: break
+            mv3_["step"] = round(max(0.3, min(6.0, mv3_["step"] * ((aim3_[0] + 0.02) / (med3_[0] + 0.02)) ** 3.0)), 3); mv3_["leap"] = round(max(0.3, min(5.0, mv3_["leap"] * ((aim3_[1] + 0.01) / (med3_[1] + 0.01)) ** 1.5)), 3)
+            E.MV = (mv3_["step"], mv3_["leap"], E.MV[2])                                               # (the register spread was tried in the fit too and does not move the range: 62 to 400 in song 55, the builds span 15 to 17 throughout)
+        tg3_["moves_fit"] = dict(aim=dict(step=aim3_[0], leap=aim3_[1], range=float(tg3_["readings"]["range"])), rounds=trail3_, note="930: each round, the builds' median step and leap shares on a short trial run; the weights scaled toward the aimed song's")
     run = E.run(N, L.get("seed", 1))
     if not run["survivors"]: return dict(error="no build survived", deaths=run["deaths"], flags=flags, spec=spec)
     notes = run["pick"]["notes"]; lo, hi = min(n["p"] for n in notes) - 60, max(n["p"] for n in notes) - 60
@@ -202,14 +220,14 @@ def write(L, N=1000, K=12):
         rec["parts"]["break"] = [dict(on=n["on"] - v0 + b0, dur=n["dur"], p=[n["midi"] + (12 if L.get("lead", "guitar") == "guitar" else 0)], vel=88) for n in rec["melody"]["notes"] if n["sec"] == vname and n["on"] - v0 < 8 * E.BAR - 6]
     return rec
 ORN = json.load(open(os.path.join(HERE, "..", "..", "studies", "ornament", "ornament_results.json")))["CoCoPops Billboard"]
-def melisma_notes(ns, L, scale, key="midi", how=None):
+def melisma_notes(ns, L, scale, key="midi", how=None, cap=None):
     """914 (749.91): 848's draw as a function of the notes alone, so the words' gate can read each build as sung. Returns the notes, the share drawn, the kept share at line ends."""
     """848: after the pick, some syllables take a second note. The song's share is drawn from the kept songs' (quartiles 3.8, 8.6, 16.2 syllables in a hundred); a melisma
     sits on a word's last syllable (kept 94 in 100), two and a half times as often at a line's end (kept 20 against 8), on a note a quarter long or more, and its
     second note is the scale step below (kept: the first move down 59 in 100; two notes 73 in 100). The readings were taken before; the record keeps both."""
     import random as _r2
     rng = _r2.Random(f"melisma {L.get('seed', 1)} {L['title']}"); share = rng.choices([ORN["song_q"][0], ORN["song_median"], ORN["song_q"][1]], [0.25, 0.5, 0.25])[0] / 100.0
-    lo = min(n[key] for n in ns); cands = []; w = []; ends = []
+    lo = min(n[key] for n in ns); hi_ = max(n[key] for n in ns); cands = []; w = []; ends = []
     for i, n in enumerate(ns):
         nxt = ns[i + 1] if i + 1 < len(ns) else None; line_end = nxt is None or (nxt["sec"], nxt["line"]) != (n["sec"], n["line"]); word_end = line_end or nxt["text"] != n["text"]
         prev = ns[i - 1] if i else None; mono = (prev is None or prev["text"] != n["text"] or (prev["sec"], prev["line"]) != (n["sec"], n["line"])) and word_end
@@ -236,11 +254,17 @@ def melisma_notes(ns, L, scale, key="midi", how=None):
         if i not in chosen: out.append(n); continue
         q = n[key] - 1
         while q % 12 not in scale: q -= 1
+        if cap:                                                                              # 929 (749.106): where the step below would make a run of one pitch past the song's cap, the melisma takes the step above, or is not placed
+            fol_ = lambda q_: next((j_ for j_, m_ in enumerate(ns[i + 1:]) if m_[key] != q_), len(ns) - i - 1)
+            if 1 + fol_(q) > cap:
+                q = n[key] + 1
+                while q % 12 not in scale: q += 1
+                if q > hi_ or 1 + fol_(q) > cap: out.append(n); continue
         if q < lo - 2: out.append(n); continue
         d1 = max(3, (n["dur"] // 2) // 3 * 3); out.append(dict(n, dur=d1, melisma="first")); out.append(dict(n, **{"on": n["on"] + d1, "dur": n["dur"] - d1, key: q, "text": "", "stress": False, "melisma": "second"}))
     return out, share, round(p_end, 3)
 def melismas(rec, L, E, tonic_midi):
-    out, share, p_end = melisma_notes(rec["melody"]["notes"], L, {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}, how=rec["spec"].get("how")); rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = share; rec["melody"]["melisma_line_end_share_kept_for_this_song"] = p_end
+    out, share, p_end = melisma_notes(rec["melody"]["notes"], L, {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}, how=rec["spec"].get("how"), cap=(rec["spec"].get("target") or {}).get("run")); rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = share; rec["melody"]["melisma_line_end_share_kept_for_this_song"] = p_end
 def checks(rec, fb, tonic_midi, E):
     """815: what can be checked without ears"""
     ns = rec["melody"]["notes"]; bs = rec["bass"]; on = [n["on"] for n in ns]

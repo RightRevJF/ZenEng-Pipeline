@@ -406,3 +406,16 @@ Answers the session's list 749.98 to 749.104. Paper: `reports/Luthier_v32.docx` 
 - Picks sound: 4, 4, 8 checks of 23 outside the kept middle half; a random pool pick fails the rule 1.0 in 100 (1.3 before).
 
 Next: Luthier v33 (row v204), Window 190, Module 27.114 (anchor "27.113"), tables GZ…, fixes from 928.
+
+## Luthier v33 (Window 190): a fault mended, and the run tested where it is made
+
+Answers the session's list 749.105 to 749.109. Paper: `reports/Luthier_v33.docx` (builder `reports/make_luthier_v33_from_v32.py`), row v204, Module 27.114, Table GZ. Results: `lib/luthier/stage20_results.json`, `studies/soundness/neighbour_v33.json`, `studies/review19/aimpool.json` and `runs_v33.json` (rerun), `studies/v33_trials/`.
+
+- 928 (749.105): the run cap is each engine's own (`self.RUN`, passed to `runs_ok(ps, cap)`; three by default). Song 53 builds again; `spec53.run.json` and `spec53.parts.json` byte for byte.
+- 929 (749.106): `Engine.carry`, `line_ok`, `join`: the run carried in plus the line, tested on every path (fresh, copy, again, 818 borrow). A returning line that fails moves its first note a scale step. `melisma_notes(..., cap=)`: the step above, or not placed. Whole-build gate kept as a backstop: 0 deaths in each song (342, 647, 278 before).
+- 930 (749.108): `MOVE_FIT = (80, 6)`: step and leap weights fitted per song on trial builds, read as sung; rounds in the record (`target.moves_fit`). Builds' steps 0.429, 0.552, 0.426 against aims 0.452, 0.595, 0.398; leaps on their aims.
+- Tried, not adopted (749.109): `AIM_REPEATS = True` moved repeated bars by 0.03 and a random pool pick failed the rule 7 in 100. See `studies/v33_trials/README.md`.
+- Picks sound: 4, 7, 9 of 23 outside the kept middle half; a random pool pick fails 0.3 in 100 (1.0 before).
+- Carried: 749.109, 749.104's fix (now the one thing 749.104, 749.109 and 749.101 wait on), 749.103, 749.61, and the small thing (one record, two readings of repeated figures).
+
+Next: Luthier v34 (row v205), Window 191, Module 27.115 (anchor "27.114"), tables HA…, fixes from 931.

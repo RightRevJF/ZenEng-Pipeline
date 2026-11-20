@@ -49,13 +49,13 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
-        self._runin = None; Engine.RUN_CAP = 3; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0)                                                # 926, 927
+        self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0)                                                # 926, 927
         self.TILT = None; tg = spec.get("target")                                               # 920 (749.94): the song is aimed at one kept song, not at the kept middle
         if tg:
             Q2 = dict(self.Q); t_ = tg["readings"]
             for k_ in tg.get("charged", ("repeated notes", "moves by step", "moves by leap")):
                 if k_ in t_ and k_ in Q2: a_, m_, z_ = Q2[k_]; Q2[k_] = [t_[k_] - (m_ - a_), t_[k_], t_[k_] + (z_ - m_)]      # the charge's middle half, of the kept width, set about the kept song's own reading
-            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); Engine.RUN_CAP = self.RUN; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)))
+            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); self.AIM = True; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)))
             self.TILT = tuple(cl_(((t_[k_] + 0.02) / (self.T["readings_quartiles"][k_][1] + 0.02)) ** g_) for k_ in ("repeated notes", "moves by step", "moves by leap"))
         self._rc = {}; self.ALLW = None
         if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
@@ -294,8 +294,30 @@ class Engine:
         ps, pj = self.KEYS[k - 1]; sec, i = self.KEYS[k]
         return max(-12, self.line_start(ps, pj) + lines[(ps, pj)][-1][0] + (self.gap_now if self.LE else self.END + self.rest_now) - self.line_start(sec, i))      # 899: with the kept line ends, a line may begin a beat after the last began its last note (the kept 10th)
     @staticmethod
-    def runs_ok(ps, cap=None):
-        c = (cap or Engine.RUN_CAP) + 1; return all(len(set(ps[k:k + c])) > 1 for k in range(len(ps) - c + 1))      # 926: no run longer than the cap (three by default, as before)
+    def runs_ok(ps, cap=3):
+        c = cap + 1; return all(len(set(ps[k:k + c])) > 1 for k in range(len(ps) - c + 1))      # 926: no run longer than the cap; 928 (749.105): the cap is the caller's own, three where none is given (the hymn engine, a song with no aim)
+    def carry(self, lines, k):
+        """929 (749.106): the run of one pitch the song is on when line k begins (an aimed song only)"""
+        if not self.AIM or not k: return []
+        sq = [p_ for kk_ in self.KEYS[max(0, k - 3):k] for _, p_ in lines[kk_]]; c = 0
+        for q_ in reversed(sq):
+            if q_ != sq[-1]: break
+            c += 1
+        return [sq[-1]] * min(c, self.RUN) if sq else []
+    def line_ok(self, ps, lines, k): return self.runs_ok(self.carry(lines, k) + list(ps), self.RUN)
+    def join(self, r, lines, k, sec, i):
+        """929 (749.106): one test on every path that writes a line's pitches: the run carried in plus the line. Where a line that returns fails it at the join,
+        its first note moves a scale step toward its next note (as 839 lifts a held note) rather than the line being drawn fresh. None if that does not mend it."""
+        ps = [p for _, p in r]
+        if self.line_ok(ps, lines, k): return r
+        if not self.AIM or not self.runs_ok(ps, self.RUN): return None
+        p0 = ps[0]; nxt = ps[1] if len(ps) > 1 else p0; mu, lo, hi = self.reg(sec, i); ch = self.chord_at(self.line_start(sec, i) + r[0][0])
+        for dn in ((1, -1) if nxt >= p0 else (-1, 1)):
+            q = p0 + dn
+            while q % 12 not in self.SCALE: q += dn
+            if lo <= q <= hi and (q % 12 in ch or not ((q + 1) % 12 in ch or (q - 1) % 12 in ch)) and self.line_ok([q] + ps[1:], lines, k):
+                self.stats["929: a returning line's first note moves a step, to end a run at the join"] += 1; return [(r[0][0], q)] + list(r[1:])
+        return None
     def build(self, rng):
         lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
@@ -321,12 +343,14 @@ class Engine:
                     for q in (range(p0 + 1, p0 + (5 if j == len(new) - 1 else 4)) if gaps[j] >= 12 else ()):                                 # only a note a quarter long or more is lifted
                         if q % 12 in ch and q % 12 in self.SCALE and q <= hi and (j == 0 or abs(q - new[j - 1][1]) <= 7) and (j == len(new) - 1 or abs(new[j + 1][1] - q) <= 7):
                             trial = new[:j] + [(t0, q)] + new[j + 1:]
-                            if self.runs_ok([p_ for _, p_ in trial]): new = trial; self.stats["839: a returning line lifts one held note"] += 1
+                            if self.runs_ok([p_ for _, p_ in trial], self.RUN): new = trial; self.stats["839: a returning line lifts one held note"] += 1
                             break
+                if self.AIM: new = self.join(new, lines, k, sec, i) or new                           # 929: a copy that would run past the cap at its join moves its first note (the whole-build gate stands behind it)
                 lines[(sec, i)] = new; prev = new[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; continue
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
-                if r is not None and self.runs_ok([p for t, p in r]) and r[0][0] >= tm and (cap is None or r[-1][0] <= cap): lines[(sec, i)] = r; prev = r[-1][1]; continue
+                r = self.join(r, lines, k, sec, i) if r is not None else None                         # 929
+                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap): lines[(sec, i)] = r; prev = r[-1][1]; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
             if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0:               # 870 (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
@@ -339,7 +363,8 @@ class Engine:
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
                     r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot)
                     if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
-                        if x < bw["figure"] and self.runs_ok([p for t, p in r]): lines[(sec, i)] = r; prev = r[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
+                        r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
+                        if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
             if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
             self._runin = None
@@ -355,7 +380,7 @@ class Engine:
             rule = self.S.get("line_rules", {}).get(f"{sec}:{i}", {}); ps = None
             for _ in range(20):
                 ps = self.pitches(rng, ons, U, sec, i, prev, avoid=set(rule.get("avoid", [])) or None, end_off=rule.get("end_off"))
-                if ps and self.runs_ok(ps): break
+                if ps and self.line_ok(ps, lines, k): break
                 ps = None
             if ps is None: return None, ("pitch", sec, i)
             lines[(sec, i)] = list(zip(ons, ps)); prev = ps[-1]
@@ -444,8 +469,8 @@ class Engine:
         ns = c["notes"]; by = collections.defaultdict(list)
         for n in ns: by[(n["sec"], n["line"])].append(n)
         if any(n["dur"] <= 0 for n in ns) or any(b["on"] <= a["on"] for a, b in zip(ns, ns[1:])): return "751: two notes on one onset, or a note of no length"
-        if any(not self.runs_ok([n["p"] for n in v]) for v in by.values()): return "a run of four of one pitch in a line (749.2)"
-        if self.S.get("target") and not self.runs_ok([n["p"] for n in (getattr(self, "as_sung", None) or (lambda x: x))(ns)]): return "926: a run of one pitch longer than the kept song's longest, across the lines"
+        if any(not self.runs_ok([n["p"] for n in v], self.RUN) for v in by.values()): return "a run of four of one pitch in a line (749.2)"
+        if self.S.get("target") and not self.runs_ok([n["p"] for n in (getattr(self, "as_sung", None) or (lambda x: x))(ns)], self.RUN): return "926: a run of one pitch longer than the kept song's longest, across the lines"
         med = lambda sec, lines=None: float(np.median([n["p"] for n in ns if n["sec"] == sec and (lines is None or n["line"] in lines)]))
         for gte in self.S.get("gates", []):
             if gte["type"] == "median above" and med(gte["a"], gte.get("a_lines")) < med(gte["b"]) + gte["by"]: return "design: " + gte["name"]
