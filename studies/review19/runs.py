@@ -14,7 +14,7 @@ def longest(ps):
 out = {}
 for tag, lp in (("54", "songs/p64/lyric54.json"), ("55", "songs/p65/lyric55.json"), ("58", "songs/p68/lyric58.json")):
     R = json.load(open(os.path.join(ROOT, {"54": "songs/p64", "55": "songs/p65", "58": "songs/p68"}[tag], f"lyric{tag}.song.json"))); L = json.load(open(os.path.join(ROOT, lp))); spec = R["spec"]
-    E = M.Engine(spec); E.as_sung = lambda ns_, L=L, spec=spec: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"))[0]
+    E = M.Engine(spec); E.as_sung = lambda ns_, L=L, spec=spec: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"))[0]   # 929: the cap passed, as song_from_lyric does
     rng = random.Random(7); C = collections.Counter(); runs = collections.Counter(); N = int(sys.argv[1]) if len(sys.argv) > 1 else 300
     for _ in range(N):
         c, err = E.build(rng)
