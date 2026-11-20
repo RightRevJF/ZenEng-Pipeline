@@ -392,3 +392,17 @@ Among songs that are already hits nothing on the written tune ranks them. Where 
 Picks: four-interval figures already sung 0.492 / 0.557 / 0.503 (0.385 / 0.465 / 0.465 before; kept quartiles 0.470, 0.560, 0.676). Sound on the picks and on the pools (99 draws in 100; `studies/soundness/neighbour_v31.json`).
 Not met: song 55 still under the kept lower quartile on its builds; the opening 120 notes of each song; and the songs moved a little toward the kept middle (a random pool pick outside the middle half on 15 song-checks, 17 before).
 Results: `stage18_results.json`. For review: is a floor the right use of a gate that grades nothing among hits (922)? Does the figure memory pull the songs toward the middle more than it is worth (923, against 749.94)?
+
+## Luthier v32 (Window 189): the aimed song's own shape
+
+Answers the session's list 749.98 to 749.104. Paper: `reports/Luthier_v32.docx` (builder `reports/make_luthier_v32_from_v31.py`), row v203, Module 27.113, Table GY. Results: `lib/luthier/stage19_results.json`, `studies/soundness/neighbour_v32.json`.
+
+- 924 (749.102): the page floor reads each build as sung (`read_as` in the record).
+- 925 (749.98): the plan's chorus lift is the aimed kept song's (`lifts` and `song_names` added to `tables/metre_atlas/kept_readings.json`; rows unchanged; 4-4_pop_sung.json byte for byte).
+- 926 (749.99): one pitch repeats as long as the aimed song's longest run (3 to 10; `RUN_TOP`), counted across lines; a new gate tests the whole build as sung. Songs with no aim keep the old cap.
+- 927 (749.100): tops set to the aimed song's range plus `RANGE_OVER` (1); centres follow at `CENTRE_FOLLOWS` (0.5); `MOVE_STEP` 1.2, `MOVE_LEAP` 1.6, `REG_SPREAD` 50 scaled by the aimed range.
+- Study, not built (749.104): `studies/repeated_figures/` (where.py, pool.py, RESULT.md). Songs 55 and 54 repeat figures from far back (whole sections); the near answer within a bar or two is missing.
+- Carried: 749.103 (two-sided variety 1.18 against kept 10.5; the rhythm checks do not yet follow the aimed song), 749.104's fix, 749.101, 749.61.
+- Picks sound: 4, 4, 8 checks of 23 outside the kept middle half; a random pool pick fails the rule 1.0 in 100 (1.3 before).
+
+Next: Luthier v33 (row v204), Window 190, Module 27.114 (anchor "27.113"), tables GZ…, fixes from 928.

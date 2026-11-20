@@ -1,0 +1,419 @@
+{
+ "first": {
+  "outside_middle_half": [
+   2,
+   3,
+   8
+  ],
+  "total": 13,
+  "sound": true,
+  "leans_10_90": [],
+  "leans_25_75": [
+   "rhythm scaling"
+  ]
+ },
+ "neighbour": {
+  "total_outside_middle_half_5_25_50_75_95": [
+   10.0,
+   13.0,
+   15.5,
+   18.0,
+   22.0
+  ],
+  "rule_fails_share": 0.01,
+  "leans_past_10_90_by_check": {
+   "rhythm scaling": 0.003
+  }
+ },
+ "pool_share_outside_middle_half_median": [
+  4.0,
+  5.0,
+  8.0
+ ],
+ "a_random_pick_from": {
+  "every build that lived": {
+   "total_outside_middle_half_5_50_95": [
+    15.0,
+    21.0,
+    27.0
+   ],
+   "rule_fails_share": 0.105,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.741,
+    "fit by height": 0.145,
+    "the words' fit, whole": 0.118,
+    "range": 0.092,
+    "pitch scaling": 0.032,
+    "onsets on the bar's first beat": 0.022,
+    "bars on a figure already sung": 0.008,
+    "moves by leap": 0.008,
+    "moves by step": 0.004,
+    "silences of a beat or more, per 100 beats": 0.004,
+    "stressed syllables on a beat": 0.004,
+    "onsets on the beat": 0.003,
+    "lines run on (under a beat of rest), share": 0.002,
+    "repeated notes": 0.002,
+    "distinct rhythms over bars": 0.001,
+    "bars on a rhythm already sung": 0.001,
+    "fit by length": 0.001,
+    "stressed line ends held a half note or more, share": 0.0,
+    "fit by place": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.035,
+    "onsets on the bar's first beat": 0.001,
+    "fit by height": 0.005,
+    "pitch scaling": 0.001,
+    "moves by leap": 0.001,
+    "range": 0.001,
+    "the words' fit, whole": 0.001
+   }
+  },
+  "the engine's pool (old charge's better half, joint gate, words' better halves)": {
+   "total_outside_middle_half_5_50_95": [
+    12.0,
+    17.0,
+    23.0
+   ],
+   "rule_fails_share": 0.046,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.8,
+    "range": 0.065,
+    "bars on a figure already sung": 0.03,
+    "moves by step": 0.024,
+    "distinct rhythms over bars": 0.011,
+    "bars on a rhythm already sung": 0.011,
+    "pitch scaling": 0.011,
+    "fit by length": 0.004,
+    "silences of a beat or more, per 100 beats": 0.003,
+    "stressed syllables on a beat": 0.003,
+    "moves by leap": 0.002,
+    "repeated notes": 0.001,
+    "the words' fit, whole": 0.001,
+    "lines run on (under a beat of rest), share": 0.001,
+    "onsets on the beat": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.029
+   }
+  },
+  "the joint gate and the kept floor only": {
+   "total_outside_middle_half_5_50_95": [
+    14.950000000000017,
+    20.0,
+    26.0
+   ],
+   "rule_fails_share": 0.079,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.733,
+    "fit by height": 0.111,
+    "range": 0.092,
+    "the words' fit, whole": 0.074,
+    "pitch scaling": 0.025,
+    "onsets on the bar's first beat": 0.011,
+    "moves by step": 0.007,
+    "moves by leap": 0.005,
+    "bars on a figure already sung": 0.005,
+    "silences of a beat or more, per 100 beats": 0.002,
+    "stressed syllables on a beat": 0.002,
+    "distinct rhythms over bars": 0.002,
+    "bars on a rhythm already sung": 0.002,
+    "lines run on (under a beat of rest), share": 0.001,
+    "onsets on the beat": 0.001,
+    "repeated notes": 0.001,
+    "fit by place": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.042,
+    "fit by height": 0.003,
+    "range": 0.001,
+    "pitch scaling": 0.001,
+    "moves by leap": 0.0
+   }
+  }
+ },
+ "nearest_the_songs_own_aim": {
+  "outside_middle_half": [
+   2,
+   3,
+   5
+  ],
+  "total": 10,
+  "sound": true,
+  "leans_10_90": [],
+  "leans_25_75": [
+   "rhythm scaling"
+  ],
+  "random_pick_among_the_ten_nearest": {
+   "total_outside_middle_half_5_50_95": [
+    10.0,
+    15.0,
+    20.0
+   ],
+   "rule_fails_share": 0.024,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.807,
+    "moves by step": 0.028,
+    "silences of a beat or more, per 100 beats": 0.014,
+    "the words' fit, whole": 0.003,
+    "fit by height": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.023
+   }
+  }
+ },
+ "aim_reached": {
+  "lyric55.json": {
+   "repeated notes": {
+    "target": 0.158,
+    "first": 0.291,
+    "nearest": 0.248,
+    "kept_median": 0.312
+   },
+   "moves by step": {
+    "target": 0.452,
+    "first": 0.367,
+    "nearest": 0.472,
+    "kept_median": 0.396
+   },
+   "moves by leap": {
+    "target": 0.111,
+    "first": 0.144,
+    "nearest": 0.127,
+    "kept_median": 0.106
+   },
+   "range": {
+    "target": 19.0,
+    "first": 14,
+    "nearest": 18,
+    "kept_median": 17.0
+   },
+   "bars on a figure already sung": {
+    "target": 0.453,
+    "first": 0.424,
+    "nearest": 0.408,
+    "kept_median": 0.473
+   },
+   "bars on a rhythm already sung": {
+    "target": 0.528,
+    "first": 0.522,
+    "nearest": 0.551,
+    "kept_median": 0.59
+   },
+   "distinct rhythms over bars": {
+    "target": 0.472,
+    "first": 0.478,
+    "nearest": 0.449,
+    "kept_median": 0.41
+   }
+  },
+  "lyric54.json": {
+   "repeated notes": {
+    "target": 0.11,
+    "first": 0.189,
+    "nearest": 0.116,
+    "kept_median": 0.312
+   },
+   "moves by step": {
+    "target": 0.595,
+    "first": 0.469,
+    "nearest": 0.47,
+    "kept_median": 0.396
+   },
+   "moves by leap": {
+    "target": 0.12,
+    "first": 0.085,
+    "nearest": 0.137,
+    "kept_median": 0.106
+   },
+   "range": {
+    "target": 14.0,
+    "first": 15,
+    "nearest": 14,
+    "kept_median": 17.0
+   },
+   "bars on a figure already sung": {
+    "target": 0.525,
+    "first": 0.421,
+    "nearest": 0.447,
+    "kept_median": 0.473
+   },
+   "bars on a rhythm already sung": {
+    "target": 0.775,
+    "first": 0.509,
+    "nearest": 0.553,
+    "kept_median": 0.59
+   },
+   "distinct rhythms over bars": {
+    "target": 0.225,
+    "first": 0.491,
+    "nearest": 0.447,
+    "kept_median": 0.41
+   }
+  },
+  "lyric58.json": {
+   "repeated notes": {
+    "target": 0.373,
+    "first": 0.363,
+    "nearest": 0.372,
+    "kept_median": 0.312
+   },
+   "moves by step": {
+    "target": 0.398,
+    "first": 0.451,
+    "nearest": 0.449,
+    "kept_median": 0.396
+   },
+   "moves by leap": {
+    "target": 0.057,
+    "first": 0.097,
+    "nearest": 0.051,
+    "kept_median": 0.106
+   },
+   "range": {
+    "target": 9.0,
+    "first": 10,
+    "nearest": 10,
+    "kept_median": 17.0
+   },
+   "bars on a figure already sung": {
+    "target": 0.698,
+    "first": 0.184,
+    "nearest": 0.321,
+    "kept_median": 0.473
+   },
+   "bars on a rhythm already sung": {
+    "target": 0.774,
+    "first": 0.282,
+    "nearest": 0.481,
+    "kept_median": 0.59
+   },
+   "distinct rhythms over bars": {
+    "target": 0.226,
+    "first": 0.718,
+    "nearest": 0.519,
+    "kept_median": 0.41
+   }
+  }
+ },
+ "pool_share_outside_middle_half_by_check": {
+  "stressed syllables on a beat": {
+   "low": 0.014,
+   "high": 0.296
+  },
+  "the words' fit, whole": {
+   "low": 0.092,
+   "high": 0.063
+  },
+  "fit by length": {
+   "low": 0.0,
+   "high": 0.31
+  },
+  "fit by place": {
+   "low": 0.07,
+   "high": 0.12
+  },
+  "fit by height": {
+   "low": 0.049,
+   "high": 0.049
+  },
+  "onsets on the beat": {
+   "low": 0.028,
+   "high": 0.056
+  },
+  "onsets on the bar's first beat": {
+   "low": 0.148,
+   "high": 0.014
+  },
+  "notes a bar": {
+   "low": 0.0,
+   "high": 0.014
+  },
+  "distinct rhythms over bars": {
+   "low": 0.0,
+   "high": 0.493
+  },
+  "bars on a rhythm already sung": {
+   "low": 0.493,
+   "high": 0.0
+  },
+  "rhythm scaling": {
+   "low": 0.937,
+   "high": 0.0
+  },
+  "moves by step": {
+   "low": 0.014,
+   "high": 0.394
+  },
+  "moves by leap": {
+   "low": 0.437,
+   "high": 0.134
+  },
+  "repeated notes": {
+   "low": 0.134,
+   "high": 0.056
+  },
+  "range": {
+   "low": 0.648,
+   "high": 0.0
+  },
+  "bars on a figure already sung": {
+   "low": 0.57,
+   "high": 0.0
+  },
+  "pitch scaling": {
+   "low": 0.31,
+   "high": 0.063
+  },
+  "silences of a beat or more, per 100 beats": {
+   "low": 0.077,
+   "high": 0.162
+  },
+  "longest phrase, beats (breath at half a beat)": {
+   "low": 0.0,
+   "high": 0.007
+  },
+  "lines run on (under a beat of rest), share": {
+   "low": 0.007,
+   "high": 0.07
+  },
+  "stressed line ends held a half note or more, share": {
+   "low": 0.035,
+   "high": 0.0
+  }
+ },
+ "pool_spread_over_kept_spread_by_check": {
+  "stressed syllables on a beat": 0.576,
+  "the words' fit, whole": 0.449,
+  "fit by length": 0.49,
+  "fit by place": 0.52,
+  "fit by height": 0.49,
+  "onsets on the beat": 0.314,
+  "onsets on the bar's first beat": 0.455,
+  "notes a bar": 0.174,
+  "distinct rhythms over bars": 0.47,
+  "bars on a rhythm already sung": 0.47,
+  "rhythm scaling": 0.219,
+  "moves by step": 0.432,
+  "moves by leap": 1.03,
+  "repeated notes": 0.54,
+  "range": 0.667,
+  "bars on a figure already sung": 0.454,
+  "pitch scaling": 0.624,
+  "silences of a beat or more, per 100 beats": 0.501,
+  "longest phrase, beats (breath at half a beat)": 0.267,
+  "lines run on (under a beat of rest), share": 0.425,
+  "stressed line ends held a half note or more, share": 0.266
+ },
+ "pool_spread_over_kept_spread_within_each_song_median": {
+  "lyric55.json": 0.382,
+  "lyric54.json": 0.353,
+  "lyric58.json": 0.328
+ },
+ "variety_two_sided": {
+  "sum_of_twice_the_smaller_side": 1.18,
+  "kept": 10.5,
+  "median_spread_ratio_all_three_pooled": 0.47
+ }
+}
