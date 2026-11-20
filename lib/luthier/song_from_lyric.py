@@ -30,6 +30,9 @@ CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre ri
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
+BORROW_FIT = None        # 943 (749.109): (40, 200) = builds past the gates a setting asks for, and tries at most, to fit the borrows to the aimed song. OFF: it passed its trial outside the engine and held on the hold-out, and in the engine the pools fell under the soundness standard (studies/verse_match/RESULT.md). None: FIGURE_BORROW for every song, as before
+BORROW_GRID = ((0.0, 0.0), (0.8, 0.0), (1.0, 0.0), (0.5, 0.5), (0.0, 1.0))   # (figure borrow, rhythm borrow)
+BORROW_WORDS = 0.03      # 943: how far under the old setting's words' fit a setting may stand and still be chosen
 FIT_EDGE = 0.03          # 941 (749.121): how far past the kept 10th to 90th a round's fresh lines may read and still count as at the band's edge
 MOVE_FIT_SEED = __import__("os").environ.get("LUTHIER_FIT_SEED", "")   # a different trial seed, for the stability check only (749.115)
 MOVE_STEP = 1.2; MOVE_LEAP = 1.6; REG_SPREAD = 50.0      # 927 (749.100)
@@ -179,6 +182,23 @@ def write(L, N=1000, K=12):
             bars.append(bar[0] if len(bar) == 1 else list(bar))
         spec["form"].append([n, bars])
     E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"))[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
+    if spec.get("target") and BORROW_FIT and spec.get("borrow") and spec.get("word_weight"):    # 943 (749.109): the two borrows fitted to the aimed song. A song aimed at a kept song that sings its bars again much borrows more; one aimed low borrows less.
+        import random as _r5, numpy as _np5, collections as _c5, word_weight as _W5              # Tried outside the engine first, its rule written first, and it held on the hold-out (studies/verse_match).
+        tg5_ = spec["target"]; F5_, R5_ = "bars on a figure already sung", "bars on a rhythm already sung"; aim5_ = {c_: float(tg5_["readings"][c_]) for c_ in (F5_, R5_)}; wd5_ = {c_: max(1e-9, E.Q[c_][2] - E.Q[c_][0]) for c_ in (F5_, R5_)}; tr5_ = []
+        for f5_, r5_ in BORROW_GRID:
+            spec["borrow"] = dict(rhythm=r5_, figure=f5_); rng5_ = _r5.Random(f"943 {L.get('seed', 1)} {L['title']}"); rows5_ = []; tries5_ = 0
+            while len(rows5_) < BORROW_FIT[0] and tries5_ < BORROW_FIT[1]:
+                c5_, e5_ = E.build(rng5_); tries5_ += 1
+                if e5_ or E.gates(c5_): continue
+                s5_ = sorted(E.as_sung(c5_["notes"]), key=lambda n_: n_["on"]); x5_ = E.readings(s5_); rows5_.append((x5_[F5_], x5_[R5_], _W5.fit([n_ for n_ in s5_ if n_.get("melisma") != "second"], E.BAR, E.BEAT, parts=True)["all"]))
+            if len(rows5_) < 8: tr5_.append(dict(figure=f5_, rhythm=r5_, tries=tries5_, builds=len(rows5_))); continue
+            m5_ = [float(_np5.median([x[k_] for x in rows5_])) for k_ in range(3)]
+            tr5_.append(dict(figure=f5_, rhythm=r5_, tries=tries5_, builds=len(rows5_), bars_on_a_figure_already_sung=round(m5_[0], 3), bars_on_a_rhythm_already_sung=round(m5_[1], 3), words_fit=round(m5_[2], 3), gap=round(abs(m5_[0] - aim5_[F5_]) / wd5_[F5_] + abs(m5_[1] - aim5_[R5_]) / wd5_[R5_], 3)))
+        base5_ = next((x for x in tr5_ if (x["figure"], x["rhythm"]) == (FIGURE_BORROW, 0.0) and "gap" in x), None)
+        ok5_ = [x for x in tr5_ if "gap" in x and (base5_ is None or x["words_fit"] >= base5_["words_fit"] - BORROW_WORDS)]      # the fit may not buy bars with the words
+        pick5_ = min(ok5_, key=lambda x: x["gap"]) if ok5_ else dict(figure=FIGURE_BORROW, rhythm=0.0)
+        spec["borrow"] = dict(rhythm=pick5_["rhythm"], figure=pick5_["figure"]); E.stats = _c5.Counter()
+        tg5_["borrow_fit"] = dict(aim=aim5_, settings=tr5_, kept=dict(figure=pick5_["figure"], rhythm=pick5_["rhythm"]), note="943: five settings of the two borrows on short trial runs; kept, the one nearest the aimed song on bars on a figure already sung and on a rhythm already sung together (each gap in kept middle-half widths), among those whose words' fit is no more than 0.03 under the old setting's")
     if spec.get("target") and MOVE_FIT:                                                       # 930 (749.108): the step and leap weights fitted to this song, as 885 fitted the words' weights: short trial runs, each weight scaled until the builds' median meets the aimed song's
         import random as _r3, numpy as _np3, collections as _c3                              # 936 (749.113): and the weight on a repeated note with them
         tg3_ = spec["target"]; mv3_ = tg3_["moves"]; mv3_.setdefault("repeat", 1.0); KR3_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]

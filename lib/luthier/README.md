@@ -473,3 +473,15 @@ Answers the session's list 749.120 to 749.122 and takes 749.104 head on. Paper: 
 - Carried: 749.104 first half (as a lyric question), 749.109, 749.111 (needs a second wide-aim practice song), 749.116, 749.103 (read as the outcome), 749.101, 749.61.
 
 Next: Luthier v38 (row v209), Window 195, Module 27.119 (anchor "27.118"), tables HE…, fixes from 943.
+
+## Luthier v38 (Window 195): there was no fault of repetition
+
+A window of measuring, done without a list. **No change to how songs are built; every record is v37's, byte for byte.** Paper: `reports/Luthier_v38.docx` (builder `reports/make_luthier_v38_from_v37.py`), row v209, Module 27.119, Table HE. Studies: `studies/verse_match/` (RESULT.md), `studies/bar_fit/` (PREDICTION3.md, trial3).
+
+- The bar fit where the words allow: third trial, not built. Strict, the bars do not rise; with leave, the words' fit falls to 0.05 to 0.10.
+- The lyric is not the fault (`match.py`): later verses match the first verse bar for bar as well as kept songs' do.
+- The songs do not repeat too little (`near.py`): bars on a rhythm sung before 0.42, 0.56, 0.63, 0.48 against kept quartiles 0.45, 0.59, 0.69. The shortfall since v32 was against each song's own aimed song.
+- 943 (749.109), the borrows fitted to the aimed song: passed its trial outside the engine on the second try and held on the hold-out; built in; **withdrawn**. In the engine the neighbour choice failed the rule 10.2 in 100 (4.0 to 18.5; v37 1.5, 0.0 to 3.5). More borrowing lowers rhythm scaling. `BORROW_FIT = None` (off); `BORROW_GRID`, `BORROW_WORDS` kept.
+- Next study: how kept songs that repeat much keep a high rhythm scaling.
+
+Next: Luthier v39 (row v210), Window 196, Module 27.120 (anchor "27.119"), tables HF…, fixes from 944.
