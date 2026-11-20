@@ -226,6 +226,10 @@ class Engine:
             if sum(ws) <= 0: return None
             p = rng.choices(cands, ws)[0]; last = (p - prev) if prev is not None else None; ps.append(p); prev = p
         return ps
+    @property
+    def MOVE_ON(self):
+        """939 (749.118): a split note in a line sung again moves on 6 times in 10 and takes the pitch before it 4; the repeat weight scales those odds, as it weighs a repeated note in a fresh line"""
+        return 0.6 if self.MV[3] == 1.0 else 0.6 / (0.6 + 0.4 * self.MV[3])
     def again(self, rng, src, src_st0, sy, U, sec, i, tmin, slot):
         """712: the source's onsets and pitches fitted to new syllables; 772: a stressed opening drops its source's pickup."""
         floor = max(tmin, 0) if (sy[0][1] and not src_st0 and src[0][0] < 0) else tmin
@@ -258,17 +262,17 @@ class Engine:
             if c_: self.stats["882: a line sung again, its notes fitted to the new words' weights"] += 1
             for j in range(len(ps)):
                 if ps[j] == "lead":
-                    f0 = next(q for q in ps[j + 1:] if q not in (None, "lead")); x = rng.random(); ps[j] = f0 if x < 0.32 else step_from(f0, f0 - 12 if x < 0.77 else f0 + 12)     # led into from below, level, or above at the kept shares for a light word before a stressed one
+                    f0 = next(q for q in ps[j + 1:] if q not in (None, "lead")); x = rng.random(); lv_ = 0.32 if self.MV[3] == 1.0 else 0.32 * self.MV[3] / (0.32 * self.MV[3] + 0.68); ps[j] = f0 if x < lv_ else step_from(f0, f0 - 12 if (x - lv_) / (1 - lv_) < 0.45 / 0.68 else f0 + 12)     # led into from below, level, or above at the kept shares for a light word before a stressed one
             for j in range(len(ps)):
                 if ps[j] is None:
-                    nx = next((q for q in ps[j + 1:] if q is not None), ps[j - 1]); ps[j] = step_from(ps[j - 1], nx) if (rng.random() < 0.6 or (j > 1 and ps[j - 2] == ps[j - 1])) else ps[j - 1]
+                    nx = next((q for q in ps[j + 1:] if q is not None), ps[j - 1]); ps[j] = step_from(ps[j - 1], nx) if (rng.random() < self.MOVE_ON or (j > 1 and ps[j - 2] == ps[j - 1])) else ps[j - 1]
         while len(on) < n:
             gaps = [((on[j + 1] if j + 1 < len(on) else slot - 6) - on[j], j) for j in range(len(on))]; g, j = max(gaps)
             if g < 6: return None
             h = on[j] + (g // 2 // 3) * 3
             if h <= on[j]: return None
             nxt = ps[j + 1] if j + 1 < len(ps) else ps[j]; step = [q for q in (ps[j] + 1, ps[j] - 1, ps[j] + 2, ps[j] - 2) if q % 12 in self.SCALE]
-            q = min(step, key=lambda q_: abs(q_ - nxt)) if (rng.random() < 0.6 or (j > 0 and ps[j - 1] == ps[j])) else ps[j]
+            q = min(step, key=lambda q_: abs(q_ - nxt)) if (rng.random() < self.MOVE_ON or (j > 0 and ps[j - 1] == ps[j])) else ps[j]
             on.insert(j + 1, h); ps.insert(j + 1, q)
         while len(on) > n:
             gaps = [(on[j + 1] - on[j], j) for j in range(1, len(on) - 1)]
@@ -329,12 +333,14 @@ class Engine:
                 if hn[0] == "design": f0 = hn[1][0][0]
                 elif hn[0] == "copy" and (hn[1], hn[2]) in lines: f0 = lines[(hn[1], hn[2])][0][0]
                 if f0 is not None: cap = self.line_start(ns_, ni_) + f0 - self.BREATH - U
-            if cap is None and self.AIM and k + 2 < len(self.KEYS):                             # 935 (749.114): a short line squeezed between this line and a copied or designed line that comes in early: this line gives way too, so the short line has room
+            if cap is None and k + 2 < len(self.KEYS):                             # 935 (749.114): a short line squeezed between this line and a copied or designed line that comes in early: this line gives way too, so the short line has room
                 (s1_, i1_), (s2_, i2_) = self.KEYS[k + 1], self.KEYS[k + 2]; h1_ = self.HOW.get((s1_, i1_), ["fresh"]); h2_ = self.HOW.get((s2_, i2_), ["fresh"]); f2_ = None
                 if h1_[0] not in ("design", "copy") and self.slot_len(s1_, i1_) <= self.BAR:
                     if h2_[0] == "design": f2_ = h2_[1][0][0]
                     elif h2_[0] == "copy" and (h2_[1], h2_[2]) in lines: f2_ = lines[(h2_[1], h2_[2])][0][0]
-                    if f2_ is not None: cap = self.line_start(s1_, i1_) + (self.line_start(s2_, i2_) + f2_ - self.BREATH - self.line_start(s1_, i1_)) - (len(self.LINES[s1_][i1_]) - 1) * 6 - 12 - U; self.stats["935: a line gives way to a short line before a copy"] += 1
+                    if f2_ is not None:
+                        cap2_ = self.line_start(s1_, i1_) + (self.line_start(s2_, i2_) + f2_ - self.BREATH - self.line_start(s1_, i1_)) - (len(self.LINES[s1_][i1_]) - 1) * 6 - 12 - U
+                        cap = cap2_; self.stats["935: a limit set on a line before a short line before a copy (it binds only where the line would run late)"] += 1      # 938 (749.119): no longer asks that the song have an aim; where the line ends in time the limit changes nothing (songs 55, 54 and 58 build note for note the same with and without it)
             if how[0] == "plan":                                                              # a line that returns an earlier line of its section under a drawn plan
                 pl = plans[how[1]]; how = ["again", sec, pl.index(pl[i])] if pl.index(pl[i]) != i else ["fresh"]
             if how[0] == "design": lines[(sec, i)] = [(t, p) for t, p, d in how[1]]; prev = lines[(sec, i)][-1][1]; continue
