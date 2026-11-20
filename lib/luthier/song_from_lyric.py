@@ -26,6 +26,10 @@ WORD_LENGTH = 2.0     # 885: fitted so the builds' fit by length meets the kept 
 WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm on offer, so the builds' fit by place meets the kept median (it was 1.5 when twelve rhythms were on offer)
 AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
+CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
+RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
+RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
+MOVE_STEP = 1.2; MOVE_LEAP = 1.6; REG_SPREAD = 50.0      # 927 (749.100)
 FIGURE_MEMORY = 8.0   # 923: how much a note that completes a four-interval figure already sung is favoured (1 = not at all; tried 1, 4, 8, 16: the builds' share of figures sung again rises to 8 and no further)
 FIGURE_BORROW = 0.8   # 919 (749.97): raised from 0.6 so the builds' bars on a figure already sung meet the kept median (0.474)
 WORD_STEP = 1.5; WORD_AGAIN = 8.0     # 882: each note split or dropped when a line is sung again costs this much of the fit's score, so a line of the same count keeps its tune.
@@ -92,6 +96,10 @@ def plan(L):
     if secs_ > BD.EDG["length"][2]: flags.append(f"the song runs {secs_} seconds, past the kept 75th ({BD.EDG['length'][2]}): the lyric is long for its tempo; at this tempo it would need about {int(round((secs_ - BD.EDG['length'][2]) / (2 * bar_s)))} fewer two-bar lines, or about {int(math.ceil(L['bpm'] * secs_ / BD.EDG['length'][2]))} beats a minute")
     RP = json.load(open(os.path.join(HERE, "..", "..", "tables", "register_plan.json"))); R_ = RP["registers"]; import random as _r; V = C.VOICES[L.get("voice", "tenor")]
     room_ = [x for x in RP["lifts"] if -3 <= x <= V[1] - V[0] - 12]; lift = int(round(_r.Random(f"plan {L.get('seed', 1)} {L['title']}").choice(room_ or RP["lifts"])))      # 907 (749.84): the lift drawn from the kept lifts the voice has room for, not drawn from all and clamped
+    AIM_ = None
+    if metre == "4/4" and L.get("aim", True):                                                  # 925 (749.98): the kept song the aim is drawn from (920) is drawn first, and the lift is that song's own where it has a verse and a chorus
+        KR0_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AIM_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR0_["rows"]))
+        if KR0_.get("lifts") and KR0_["lifts"][AIM_] is not None: lift = int(round(KR0_["lifts"][AIM_]))
     lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
     vf, vc, vt = R_["verse"]["floor"][1], R_["verse"]["centre"][1], R_["verse"]["top"][1]                                               # the kept medians: floor on the tonic, centre a third above, top a sixth above
     reg = {"Verse": [T0 + vc, T0 + vf, T0 + vt], "Chorus": [T0 + vc + lift, T0 + max(-3, min(lift, max(0, lift - 1))), T0 + vt + lift], "Bridge": [T0 + R_["bridge"]["centre"][1], T0 + R_["bridge"]["floor"][1], T0 + R_["bridge"]["top"][1]]}
@@ -99,17 +107,20 @@ def plan(L):
     reg = {k: [int(round(x)) for x in v] for k, v in reg.items()}; tw = [w for w, _, _, _ in LS.syllables(L["title"])] if L.get("title") else []
     hooks = [f"{name}:{i}" for name, lines in L["sections"] for i, ln in enumerate(lines) if tw and " ".join(tw) in " ".join(w for w, _, _, _ in LS.syllables(ln))]     # 840: the lines that sing the title
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
-                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=FIGURE_BORROW), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
+                registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts; 925: the lift of the kept song the aim is drawn from, where it has one"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=FIGURE_BORROW), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
     if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
         KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
         ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_]))
-        tg_ = {k_: tr_[k_] for k_ in ("repeated notes", "moves by step", "moves by leap", "range", "bars on a figure already sung", "bars on a rhythm already sung", "distinct rhythms over bars")}
-        spec["target"] = dict(kept_song_row=ri_, readings=tg_, power=AIM_POWER)
+        tg_ = {k_: tr_[k_] for k_ in ("repeated notes", "moves by step", "moves by leap", "range", "bars on a figure already sung", "bars on a rhythm already sung", "distinct rhythms over bars", "longest run of one pitch")}
+        spec["target"] = dict(kept_song_row=ri_, kept_song=(KR_.get("song_names") or [None] * (ri_ + 1))[ri_], readings=tg_, power=AIM_POWER, run=int(max(3, min(RUN_TOP, round(tg_["longest run of one pitch"])))), moves=dict(step=MOVE_STEP, leap=MOVE_LEAP, spread=REG_SPREAD))      # 926 (749.99): a pitch may repeat as long as the kept song's longest run; 927 (749.100): the moves' own lean taken out
         if AIM_REPEATS: spec["borrow"]["figure"] = round(max(0.3, min(1.0, FIGURE_BORROW * (tg_["bars on a figure already sung"] + 0.05) / (AT_["bars on a figure already sung"][1] + 0.05))), 3)      # more or less of its lines sung again, as the kept song repeats more or less
         if AIM_REPEATS: spec["borrow"]["rhythm"] = round(max(0.0, min(0.3, 1.0 - spec["borrow"]["figure"], tg_["bars on a rhythm already sung"] - AT_["bars on a rhythm already sung"][1])), 3)      # and, where the kept song repeats its rhythms more than most, some lines take an earlier line's rhythm with new notes
-        dr_ = max(-3, min(4, int(round((tg_["range"] - AT_["range"][1]) / 2.0))))             # and its tops set higher or lower by half the kept song's range over the kept median's, inside the voice
-        for k_ in ("Verse", "Chorus", "Bridge"): spec["registers"][k_][2] = min(spec["registers"][k_][2] + dr_, spec["registers"]["Verse"][1] + (V[1] - V[0])) if spec["registers"][k_][2] + dr_ > spec["registers"][k_][0] else spec["registers"][k_][2]
+        rg_ = spec["registers"]; span_ = max(rg_[k_][2] for k_ in ("Verse", "Chorus")) - min(rg_[k_][1] for k_ in ("Verse", "Chorus")); want_ = min(float(tg_["range"]), V[1] - V[0]) + RANGE_OVER      # 927 (749.100; amends 920): the tops set so the song's span, floor to top, is the kept song's range (and a little over, since a line seldom reaches its top), inside the voice
+        dr_ = int(round(max(-5, min(9, want_ - span_))))
+        for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][2] = min(rg_[k_][2] + dr_, rg_["Verse"][1] + (V[1] - V[0])) if rg_[k_][2] + dr_ > rg_[k_][0] + 1 else rg_[k_][0] + 2
+        for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][0] = max(rg_[k_][1] + 2, min(rg_[k_][2] - 2, rg_[k_][0] + int(round(dr_ * CENTRE_FOLLOWS))))      # and each part's centre follows its top, so the line can reach it
+        spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
         rs = _r.Random(f"blue {L.get('seed', 1)} {L['title']}"); bluesong = rs.random() < GR["families"][fam if fam in GR["families"] else "all"]["b3_songs"]

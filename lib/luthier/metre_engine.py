@@ -49,12 +49,13 @@ class Engine:
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
+        self._runin = None; Engine.RUN_CAP = 3; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0)                                                # 926, 927
         self.TILT = None; tg = spec.get("target")                                               # 920 (749.94): the song is aimed at one kept song, not at the kept middle
         if tg:
             Q2 = dict(self.Q); t_ = tg["readings"]
             for k_ in tg.get("charged", ("repeated notes", "moves by step", "moves by leap")):
                 if k_ in t_ and k_ in Q2: a_, m_, z_ = Q2[k_]; Q2[k_] = [t_[k_] - (m_ - a_), t_[k_], t_[k_] + (z_ - m_)]      # the charge's middle half, of the kept width, set about the kept song's own reading
-            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2
+            g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); Engine.RUN_CAP = self.RUN; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)))
             self.TILT = tuple(cl_(((t_[k_] + 0.02) / (self.T["readings_quartiles"][k_][1] + 0.02)) ** g_) for k_ in ("repeated notes", "moves by step", "moves by leap"))
         self._rc = {}; self.ALLW = None
         if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
@@ -203,8 +204,14 @@ class Engine:
             for p in cands:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
-                w *= math.exp(-((p - mu) ** 2) / 50)
-                if len(ps) >= 2 and ps[-1] == ps[-2] == p: w = 0.0
+                w *= math.exp(-((p - mu) ** 2) / self.MV[2])                                         # 927: how closely a line keeps to its register
+                if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else 1.0
+                rn_ = 0
+                for q_ in reversed(ps):
+                    if q_ != p: break
+                    rn_ += 1
+                if rn_ == len(ps) and self._runin and self._runin[0] == p: rn_ += self._runin[1]              # the run carried in from the line before
+                if rn_ >= self.RUNP: w = 0.0                # 926 (749.99): a pitch repeats no longer than the kept song's longest run (as before, where the song has no aim)
                 if self._figs:                                                                    # 923: a note that completes a four-interval figure the song has already sung is favoured
                     tl = (self._figs[1] + ps)[-4:]
                     if len(tl) == 4 and tuple(max(-12, min(12, b_ - a_)) for a_, b_ in zip(tl, tl[1:] + [p])) in self._figs[0]: w *= self.PG["memory"]
@@ -287,9 +294,10 @@ class Engine:
         ps, pj = self.KEYS[k - 1]; sec, i = self.KEYS[k]
         return max(-12, self.line_start(ps, pj) + lines[(ps, pj)][-1][0] + (self.gap_now if self.LE else self.END + self.rest_now) - self.line_start(sec, i))      # 899: with the kept line ends, a line may begin a beat after the last began its last note (the kept 10th)
     @staticmethod
-    def runs_ok(ps): return all(not (ps[k] == ps[k + 1] == ps[k + 2] == ps[k + 3]) for k in range(len(ps) - 3))
+    def runs_ok(ps, cap=None):
+        c = (cap or Engine.RUN_CAP) + 1; return all(len(set(ps[k:k + c])) > 1 for k in range(len(ps) - c + 1))      # 926: no run longer than the cap (three by default, as before)
     def build(self, rng):
-        lines = {}; prev = None; plans = {}; self._figs = None
+        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
@@ -334,6 +342,13 @@ class Engine:
                         if x < bw["figure"] and self.runs_ok([p for t, p in r]): lines[(sec, i)] = r; prev = r[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
             if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
+            self._runin = None
+            if k and self.RUNP > 2:                                                             # 926: the run of one pitch the song is already on, counted across the lines
+                sq0_ = [p_ for kk_ in self.KEYS[max(0, k - 3):k] for _, p_ in lines[kk_]]; c0_ = 0
+                for q_ in reversed(sq0_):
+                    if q_ != sq0_[-1]: break
+                    c0_ += 1
+                self._runin = (sq0_[-1], c0_) if sq0_ else None
             if self.PG and self.PG["memory"] != 1.0:                                           # 923: the figures sung so far, in the order the song is sung
                 sq_ = [p_ for kk_ in self.KEYS[:k] for _, p_ in lines[kk_]]; iv_ = self.PG["mod"].ivs(sq_); self._figs = ({tuple(iv_[j_:j_ + 4]) for j_ in range(len(iv_) - 3)}, sq_[-4:]) if len(sq_) >= 5 else None
             if ons is None: return None, ("rhythm: the syllables cannot fit the window", sec, i)
@@ -430,6 +445,7 @@ class Engine:
         for n in ns: by[(n["sec"], n["line"])].append(n)
         if any(n["dur"] <= 0 for n in ns) or any(b["on"] <= a["on"] for a, b in zip(ns, ns[1:])): return "751: two notes on one onset, or a note of no length"
         if any(not self.runs_ok([n["p"] for n in v]) for v in by.values()): return "a run of four of one pitch in a line (749.2)"
+        if self.S.get("target") and not self.runs_ok([n["p"] for n in (getattr(self, "as_sung", None) or (lambda x: x))(ns)]): return "926: a run of one pitch longer than the kept song's longest, across the lines"
         med = lambda sec, lines=None: float(np.median([n["p"] for n in ns if n["sec"] == sec and (lines is None or n["line"] in lines)]))
         for gte in self.S.get("gates", []):
             if gte["type"] == "median above" and med(gte["a"], gte.get("a_lines")) < med(gte["b"]) + gte["by"]: return "design: " + gte["name"]
@@ -474,9 +490,10 @@ class Engine:
                 n_words_ = len(ok)
                 if self.PG and self.PG.get("floor") is not None and ok:                                                                           # 922: the page gate, a floor: a build less plain than nine kept tunes in ten is passed over
                     PGm = self.PG["mod"]
+                    sung2_ = getattr(self, "as_sung", None)                                                                                        # 924 (749.102): read as sung, melismas placed, as the kept tunes in the table were
                     for c in ok:
-                        on_ = [n["on"] for n in c["notes"]]; c["page"] = PGm.read([n["p"] for n in c["notes"]], [(b_ - a_) / float(self.BEAT) for a_, b_ in zip(on_, on_[1:])] + [1.0], self.PG["T"])
-                    ok3 = [c for c in ok if c["page"]["plainness"] >= self.PG["floor"]]; pgate = dict(at_least=round(self.PG["floor"], 3), read=len(ok), passed=len(ok3), builds_plainness_quartiles=[round(float(x), 3) for x in np.quantile([c["page"]["plainness"] for c in ok], (0.25, 0.5, 0.75))], builds_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([c["page"]["repeated_figures"] for c in ok], (0.25, 0.5, 0.75))], every_build_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([PGm.figures_again([n["p"] for n in c["notes"]]) for c in alive], (0.25, 0.5, 0.75))], every_build_first_120_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([PGm.figures_again([n["p"] for n in c["notes"]][:120]) for c in alive], (0.25, 0.5, 0.75))], kept_figures_again_quartiles=self.PG["T"]["percentiles_10_25_50_75_90"]["repeated_figures"][1:4], kept_first_120_quartiles=self.PG["T"]["percentiles_10_25_50_75_90"]["first_120_figures_again"][1:4])
+                        ns_ = sorted((sung2_(c["notes"]) if sung2_ else c["notes"]), key=lambda n: n["on"]); on_ = [n["on"] for n in ns_]; c["page"] = PGm.read([n["p"] for n in ns_], [(b_ - a_) / float(self.BEAT) for a_, b_ in zip(on_, on_[1:])] + [1.0], self.PG["T"])
+                    ok3 = [c for c in ok if c["page"]["plainness"] >= self.PG["floor"]]; pgate = dict(at_least=round(self.PG["floor"], 3), read_as="as sung" if sung2_ else "before melismas", read=len(ok), passed=len(ok3), builds_plainness_quartiles=[round(float(x), 3) for x in np.quantile([c["page"]["plainness"] for c in ok], (0.25, 0.5, 0.75))], builds_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([c["page"]["repeated_figures"] for c in ok], (0.25, 0.5, 0.75))], every_build_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([PGm.figures_again([n["p"] for n in c["notes"]]) for c in alive], (0.25, 0.5, 0.75))], every_build_first_120_figures_again_quartiles=[round(float(x), 3) for x in np.quantile([PGm.figures_again([n["p"] for n in c["notes"]][:120]) for c in alive], (0.25, 0.5, 0.75))], kept_figures_again_quartiles=self.PG["T"]["percentiles_10_25_50_75_90"]["repeated_figures"][1:4], kept_first_120_quartiles=self.PG["T"]["percentiles_10_25_50_75_90"]["first_120_figures_again"][1:4])
                     if ok3: ok = ok3
                     else: pgate["no build past the other gates also passed: the floor is waived"] = True
                 pool = ok or first                                                         # 873 (749.61): the gate, and no band
