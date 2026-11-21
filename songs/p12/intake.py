@@ -30,3 +30,14 @@ LOG.append({"step": "mouth tests on the locked lyric", "file": "mouth_p12.py -> 
                       "close vowels on held 7th syllables: 'lin-en' (2.1, 2.3), 'Ju-dah' (4.1), 'sleep-ing' (5.3), all singable at a hymn's pace; "
                       "4-consonant joins (reported, none 5): 'and cloth', 'against the', 'friends would'; rare word: myrrh (kept, biblical); density about 1.1 syllables a second",
             "room_check": "not run: lyric_room.py lays a song out on the 4/4 engine; a strophic 3/4 hymn goes by the sketch path. The hymn's room is the hold at every line end and stanza 4 for choir alone"})
+LOG.append({"q": "key", "options": {"A": "D major, D4-E5, 'cloth' on E5", "B": "C major as before, D5 on 'cloth'", "C": "E-flat major, F5 on 'cloth'"}, "recommended": "A", "answer": "A"})
+LOG.append({"q": "tune shape (line 3 answers line 1 in the words)", "options": {"A": "line 3 repeats line 1 exactly (A B A C)", "B": "line 3 a step higher", "C": "line 3 turned toward the minor"},
+            "recommended": "A", "answer": "A",
+            "writer_adds": "Without violating our musical theory and departure units, please make the song's score as rich as possible, adding perhaps a chromatic chord or some other way of differentiating a long song on the score. Does that make sense?"})
+LOG.append({"q": "how rich", "options": {"A": "all: applied dominants every stanza (E7 before line 2's half cadence, F#7 under line 3), stanza 4 its own darker choir-alone setting with the one borrowed chord (G minor) under 'thorn', stanza 5 the organ's own harmonization, a descant and a held bass under the last line, organ introduction and link",
+            "B": "applied dominants only, every stanza alike", "C": "A plus a key change for stanza 5 (F#5 on 'cloth')"}, "recommended": "A", "answer": "A"})
+LOG.append({"step": "the tune", "run": "python3 gen12.py 3000 (seed 20261113+412)", "result": "2630 of 3000 survive (87.7%: the designs fix most of the shape; well over the band, reported); "
+            "the judge's pick 2c26d99ebe1c (charge 0.406) chosen against by ear: its line 1 never leaves D4-F#4 and line 3 repeats it, so half the hymn sits in a third (concern 8 again), and line 4 leaps G4-D5. "
+            "Also against 48c3dfdba499 (same charge): line 2 circles A4-B4 and ends on A4. Chosen: build 1060 (charge 0.406, distance 5.52, the second-nearest of the least-charge set): "
+            "line 1 climbs D4 to D5 (so line 3, the Easter half, climbs the same way), line 2 falls through G# (the E7) to the half cadence on E4, line 4 steps D5 E5 on 'and cloth' and closes C#5 D5. "
+            "Noted: line 2's G#4 falls to F#4 (the tendency tone resolved in an inner voice, not the tune)", "file": "melody_choice.json"})
