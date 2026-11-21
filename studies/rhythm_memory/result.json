@@ -1,0 +1,115 @@
+{
+ "kept_songs": 160,
+ "carries": {
+  "slow change in how busy the singing is": {
+   "rank_correlation": 0.677,
+   "beats_share_of_shuffles": 1.0,
+   "carries": true,
+   "kept_quartiles": [
+    0.343,
+    0.416,
+    0.558
+   ]
+  },
+  "silence": {
+   "rank_correlation": 0.584,
+   "beats_share_of_shuffles": 1.0,
+   "carries": true,
+   "kept_quartiles": [
+    0.121,
+    0.191,
+    0.282
+   ]
+  },
+  "near answers": {
+   "rank_correlation": -0.156,
+   "beats_share_of_shuffles": 0.961,
+   "carries": false,
+   "kept_quartiles": [
+    0.171,
+    0.274,
+    0.384
+   ]
+  },
+  "far returns": {
+   "rank_correlation": 0.056,
+   "beats_share_of_shuffles": 0.513,
+   "carries": false,
+   "kept_quartiles": [
+    0.133,
+    0.203,
+    0.265
+   ]
+  }
+ },
+ "luthier": {
+  "55": {
+   "builds": 33,
+   "medians": {
+    "rhythm_scaling": 0.589,
+    "slow change in how busy the singing is": 0.271,
+    "silence": 0.152,
+    "near answers": 0.194,
+    "far returns": 0.284
+   },
+   "place": {
+    "slow change in how busy the singing is": "under the kept 25th",
+    "silence": "kept middle half",
+    "near answers": "kept middle half",
+    "far returns": "over the kept 75th"
+   }
+  },
+  "54": {
+   "builds": 26,
+   "medians": {
+    "rhythm_scaling": 0.565,
+    "slow change in how busy the singing is": 0.248,
+    "silence": 0.058,
+    "near answers": 0.191,
+    "far returns": 0.369
+   },
+   "place": {
+    "slow change in how busy the singing is": "under the kept 25th",
+    "silence": "under the kept 25th",
+    "near answers": "kept middle half",
+    "far returns": "over the kept 75th"
+   }
+  },
+  "58": {
+   "builds": 45,
+   "medians": {
+    "rhythm_scaling": 0.562,
+    "slow change in how busy the singing is": 0.199,
+    "silence": 0.106,
+    "near answers": 0.248,
+    "far returns": 0.25
+   },
+   "place": {
+    "slow change in how busy the singing is": "under the kept 25th",
+    "silence": "under the kept 25th",
+    "near answers": "kept middle half",
+    "far returns": "kept middle half"
+   }
+  },
+  "59": {
+   "builds": 30,
+   "medians": {
+    "rhythm_scaling": 0.676,
+    "slow change in how busy the singing is": 0.399,
+    "silence": 0.187,
+    "near answers": 0.202,
+    "far returns": 0.288
+   },
+   "place": {
+    "slow change in how busy the singing is": "kept middle half",
+    "silence": "kept middle half",
+    "near answers": "kept middle half",
+    "far returns": "over the kept 75th"
+   }
+  }
+ },
+ "cause": [
+  "slow change in how busy the singing is",
+  "silence"
+ ]
+}
