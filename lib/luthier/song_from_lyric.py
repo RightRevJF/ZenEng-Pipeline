@@ -32,7 +32,7 @@ RUN_TOP = 10          # 926: the longest run of one pitch a song may take from i
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
 BORROW_FIT = None        # 943 (749.109): (40, 200) = builds past the gates a setting asks for, and tries at most, to fit the borrows to the aimed song. OFF: it passed its trial outside the engine and held on the hold-out, and in the engine the pools fell under the soundness standard (studies/verse_match/RESULT.md). None: FIGURE_BORROW for every song, as before
 SHAPE_FROM = "the song"   # 944 (Window 196): "the song" = its shape from its own words and the engine's theory; "a kept song" = one kept song drawn and its numbers taken (920 to 943), kept for the record
-BORROW_FIT_SONG = __import__("os").environ.get("LUTHIER_BORROW") and (40, 200)   # TRIAL SWITCH
+BORROW_FIT_SONG = None   # 944: (40, 200) fits the two borrows to what the song's own words ask for bars sung again. OFF: tried in Window 196, the pools fell under the standard, as in Window 195 (studies/shape_from_the_song)
 BORROW_GRID = ((0.0, 0.0), (0.8, 0.0), (1.0, 0.0), (0.5, 0.5), (0.0, 1.0))   # (figure borrow, rhythm borrow)
 BORROW_WORDS = 0.03      # 943: how far under the old setting's words' fit a setting may stand and still be chosen
 FIT_EDGE = 0.03          # 941 (749.121): how far past the kept 10th to 90th a round's fresh lines may read and still count as at the band's edge
