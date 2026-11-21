@@ -1,0 +1,109 @@
+{
+ "source": "160 kept 4/4 songs (CoCoPops Billboard); made by lib/luthier/make_kept_words_to_shape.py; tested in studies/words_to_shape",
+ "what": "what a song's words and form say of its tune's shape: a ridge regression on twelve predictors, each standardised; a prediction is held inside the kept 10th to 90th",
+ "predictors": [
+  "syllables in the song (log)",
+  "syllables a line",
+  "unevenness of the lines",
+  "syllables a word",
+  "different words over all words",
+  "lines said again word for word",
+  "words in a three-word run already sung",
+  "kinds of section",
+  "share of syllables in a chorus",
+  "has a bridge",
+  "minor",
+  "year"
+ ],
+ "mean": [
+  5.709035,
+  12.163294,
+  0.657429,
+  1.342005,
+  0.389638,
+  0.062328,
+  0.343057,
+  3.10625,
+  0.376342,
+  0.34375,
+  0.21875,
+  1975.1875
+ ],
+ "sd": [
+  0.29386,
+  18.423974,
+  0.253836,
+  0.151969,
+  0.106915,
+  0.084732,
+  0.153049,
+  1.132458,
+  0.207394,
+  0.474959,
+  0.413399,
+  8.888326
+ ],
+ "year_held_at": 1975.0,
+ "readings": {
+  "range": {
+   "intercept": 17.95,
+   "coef": [
+    1.248811,
+    0.06198,
+    0.285443,
+    0.657989,
+    0.319686,
+    -0.779043,
+    -0.495421,
+    0.695593,
+    -0.586266,
+    0.053469,
+    -0.10955,
+    0.95589
+   ],
+   "alpha": 46.41588833612777,
+   "kept_10th": 12.0,
+   "kept_90th": 26.0
+  },
+  "bars on a figure already sung": {
+   "intercept": 0.456389,
+   "coef": [
+    -0.00906,
+    -0.020816,
+    -0.027951,
+    -0.008289,
+    0.033585,
+    0.042851,
+    0.103523,
+    -0.000956,
+    0.011866,
+    -0.001916,
+    0.023965,
+    -0.008697
+   ],
+   "alpha": 4.6415888336127775,
+   "kept_10th": 0.1988,
+   "kept_90th": 0.6637
+  },
+  "bars on a rhythm already sung": {
+   "intercept": 0.564284,
+   "coef": [
+    -0.005246,
+    -0.005586,
+    -0.025469,
+    -0.009932,
+    -0.007892,
+    0.036935,
+    0.046704,
+    0.004927,
+    0.007025,
+    -0.005344,
+    0.013672,
+    -0.012763
+   ],
+   "alpha": 46.41588833612777,
+   "kept_10th": 0.3039,
+   "kept_90th": 0.7728
+  }
+ }
+}

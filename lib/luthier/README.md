@@ -485,3 +485,18 @@ A window of measuring, done without a list. **No change to how songs are built; 
 - Next study: how kept songs that repeat much keep a high rhythm scaling.
 
 Next: Luthier v39 (row v210), Window 196, Module 27.120 (anchor "27.119"), tables HF…, fixes from 944.
+
+## Luthier v39 (Window 196): the shape from the song
+
+**No kept song is drawn any more.** Jason's ruling: other songs are a style guide, not a model; the engine decides from its theory; the writer may override. Paper: `reports/Luthier_v39.docx` (builder `reports/make_luthier_v39_from_v38.py`), row v210, Module 27.120, Table HF. Studies: `studies/words_to_shape/` (do the words decide the shape?), `studies/shape_from_the_song/` (the theory tested; the rule for adopting; RESULT.md).
+
+- 944: `SHAPE_FROM = "the song"` in `song_from_lyric.py`. Range from the song's words (`lib/luthier/words_to_shape.py`, `tables/kept_words_to_shape.json`, made by `make_kept_words_to_shape.py`); movement at the kept middle; `"movement": "smooth" | "leaping" | "chant"` in the lyric file overrides; lift at the kept middle. `target.kept_song` is None; `target.from_its_words`, `target.words`, `target.movement` are new.
+- Study: words predict bars sung again (+0.53, +0.46) and range (+0.44) on held-out songs; not movement.
+- The paper's "verses step, choruses leap" does not hold in kept songs (44 in 100 each); struck.
+- Picks sound. Neighbour choice 1.5 in 100 (0.5 to 5.5). Random pool pick 7.8 (4.1 to 11.4): worse than v37's 3.2 (1.2 to 6.1), inside the standard's bar. Cause: rhythm scaling low in every song.
+- Repetition from the words (`BORROW_FIT_SONG`): tried, breaks the pools, off.
+- The session's `aimpool.py` and `aimpool59.py` read a drawn kept song and no longer apply; `studies/shape_from_the_song/own.py` reads each song against its own asking.
+- Song 60 under v39: `songs/p70/lyric60.v39.song.json` (the delivered record is untouched).
+- Not answered here: the session's list for v39 (749.123 to 749.127).
+
+Next: Luthier v40 (row v211), Window 197, Module 27.121 (anchor "27.120"), tables HG…, fixes from 945.

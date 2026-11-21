@@ -31,6 +31,8 @@ RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
 BORROW_FIT = None        # 943 (749.109): (40, 200) = builds past the gates a setting asks for, and tries at most, to fit the borrows to the aimed song. OFF: it passed its trial outside the engine and held on the hold-out, and in the engine the pools fell under the soundness standard (studies/verse_match/RESULT.md). None: FIGURE_BORROW for every song, as before
+SHAPE_FROM = "the song"   # 944 (Window 196): "the song" = its shape from its own words and the engine's theory; "a kept song" = one kept song drawn and its numbers taken (920 to 943), kept for the record
+BORROW_FIT_SONG = None   # 944: (40, 200) fits the two borrows to what the song's own words ask for bars sung again. OFF: tried in Window 196, the pools fell under the standard, as in Window 195 (studies/shape_from_the_song)
 BORROW_GRID = ((0.0, 0.0), (0.8, 0.0), (1.0, 0.0), (0.5, 0.5), (0.0, 1.0))   # (figure borrow, rhythm borrow)
 BORROW_WORDS = 0.03      # 943: how far under the old setting's words' fit a setting may stand and still be chosen
 FIT_EDGE = 0.03          # 941 (749.121): how far past the kept 10th to 90th a round's fresh lines may read and still count as at the band's edge
@@ -105,7 +107,9 @@ def plan(L):
     AIM_ = None
     if metre == "4/4" and L.get("aim", True):                                                  # 925 (749.98): the kept song the aim is drawn from (920) is drawn first, and the lift is that song's own where it has a verse and a chorus
         KR0_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AIM_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR0_["rows"]))
-        if KR0_.get("lifts") and KR0_["lifts"][AIM_] is not None: lift = int(round(KR0_["lifts"][AIM_]))
+        if SHAPE_FROM == "the song":                                                           # 944: no kept song is drawn. The chorus's lift over the verse is the kept songs' middle lift: the theory's "the top is the chorus's", which holds in three kept songs in four (studies/shape_from_the_song)
+            import statistics as _st0; AIM_ = None; lift = int(round(_st0.median([x for x in KR0_["lifts"] if x is not None])))
+        elif KR0_.get("lifts") and KR0_["lifts"][AIM_] is not None: lift = int(round(KR0_["lifts"][AIM_]))
     lift = max(-3, min(lift, V[1] - V[0] - 12)); T0 = 60                                           # 838: the registers on the tonic, from the kept quartiles; the lift clamped to the voice
     vf, vc, vt = R_["verse"]["floor"][1], R_["verse"]["centre"][1], R_["verse"]["top"][1]                                               # the kept medians: floor on the tonic, centre a third above, top a sixth above
     reg = {"Verse": [T0 + vc, T0 + vf, T0 + vt], "Chorus": [T0 + vc + lift, T0 + max(-3, min(lift, max(0, lift - 1))), T0 + vt + lift], "Bridge": [T0 + R_["bridge"]["centre"][1], T0 + R_["bridge"]["floor"][1], T0 + R_["bridge"]["top"][1]]}
@@ -117,10 +121,21 @@ def plan(L):
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
     if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
         KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
-        ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_]))
+        ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_])); shape_ = None
+        if SHAPE_FROM == "the song":                                                           # 944 (Window 196): the song's shape from the song itself. No one kept song is its model.
+            import numpy as _np6, words_to_shape as _WS                                         # How much it repeats and how wide it ranges: from its own words, by the link found in the kept songs as a body (studies/words_to_shape).
+            col_ = lambda c_: [r_[KR_["names"].index(c_)] for r_ in KR_["rows"]]; q_ = lambda c_, p_: float(_np6.percentile(col_(c_), p_))      # How it moves: the middle of what every kept melody does (the paper's invariants, Module 0.4), unless the writer asks otherwise.
+            tr_ = {c_: q_(c_, 50) for c_ in KR_["names"]}; own_, feat_ = _WS.from_sung(sung, minor=L.get("mode", "major") == "minor"); tr_.update(own_); mv_ = L.get("movement")
+            if mv_ == "smooth": tr_["moves by step"] = q_("moves by step", 75); tr_["moves by leap"] = q_("moves by leap", 25)
+            elif mv_ == "leaping": tr_["moves by leap"] = q_("moves by leap", 75); tr_["moves by step"] = q_("moves by step", 25)
+            elif mv_ == "chant": tr_["repeated notes"] = q_("repeated notes", 75); tr_["longest run of one pitch"] = q_("longest run of one pitch", 75)
+            elif mv_ not in (None, "the engine's"): raise SystemExit(f"movement: {mv_!r} is not one of smooth, leaping, chant")
+            ri_ = None; shape_ = dict(shape_from="the song", from_its_words={c_: round(v_, 3) for c_, v_ in own_.items()}, words=feat_, movement=mv_ or "the engine's: the kept middle", note="944: repetition and range from the song's own words; movement at the kept middle unless the writer chooses smooth, leaping or chant")
         tg_ = {k_: tr_[k_] for k_ in ("repeated notes", "moves by step", "moves by leap", "range", "bars on a figure already sung", "bars on a rhythm already sung", "distinct rhythms over bars", "longest run of one pitch")}
-        spec["target"] = dict(kept_song_row=ri_, kept_song=(KR_.get("song_names") or [None] * (ri_ + 1))[ri_], readings=tg_, power=AIM_POWER, run=int(max(3, min(RUN_TOP, round(tg_["longest run of one pitch"])))), moves=dict(step=MOVE_STEP, leap=MOVE_LEAP, spread=REG_SPREAD))      # 926 (749.99): a pitch may repeat as long as the kept song's longest run; 927 (749.100): the moves' own lean taken out
-        if KR_.get("melismas") and KR_["melismas"][ri_] is not None:                           # 932 (749.110): the song's melismas, syllables in a hundred, are the aimed song's own, inside the kept 10th to 90th
+        spec["target"] = dict(kept_song_row=ri_, kept_song=(KR_.get("song_names") or [None] * (ri_ + 1))[ri_] if ri_ is not None else None, readings=tg_, power=AIM_POWER, run=int(max(3, min(RUN_TOP, round(tg_["longest run of one pitch"])))), moves=dict(step=MOVE_STEP, leap=MOVE_LEAP, spread=REG_SPREAD))      # 926 (749.99): a pitch may repeat as long as the kept song's longest run; 927 (749.100): the moves' own lean taken out
+        if shape_:
+            import statistics as _st1; spec["target"].update(shape_); spec["target"]["melisma_share"] = round(_st1.median([x for x in KR_["melismas"] if x is not None]), 2)      # the kept middle share of syllables on two notes
+        elif KR_.get("melismas") and KR_["melismas"][ri_] is not None:                           # 932 (749.110): the song's melismas, syllables in a hundred, are the aimed song's own, inside the kept 10th to 90th
             import numpy as _np4; m10_, m90_ = (float(x) for x in _np4.percentile([x for x in KR_["melismas"] if x is not None], (10, 90))); spec["target"]["melisma_share"] = round(max(m10_, min(m90_, float(KR_["melismas"][ri_]))), 2); spec["target"]["kept_song_melisma_share"] = KR_["melismas"][ri_]
         if AIM_REPEATS: spec["borrow"]["figure"] = round(max(0.3, min(1.0, FIGURE_BORROW * (tg_["bars on a figure already sung"] + 0.05) / (AT_["bars on a figure already sung"][1] + 0.05))), 3)      # more or less of its lines sung again, as the kept song repeats more or less
         if AIM_REPEATS: spec["borrow"]["rhythm"] = round(max(0.0, min(0.3, 1.0 - spec["borrow"]["figure"], tg_["bars on a rhythm already sung"] - AT_["bars on a rhythm already sung"][1])), 3)      # and, where the kept song repeats its rhythms more than most, some lines take an earlier line's rhythm with new notes
@@ -182,12 +197,13 @@ def write(L, N=1000, K=12):
             bars.append(bar[0] if len(bar) == 1 else list(bar))
         spec["form"].append([n, bars])
     E = M.Engine(spec); E.as_sung = lambda ns_: melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"))[0]      # 914 (749.91): the words' gate reads each build with its melismas placed
-    if spec.get("target") and BORROW_FIT and spec.get("borrow") and spec.get("word_weight"):    # 943 (749.109): the two borrows fitted to the aimed song. A song aimed at a kept song that sings its bars again much borrows more; one aimed low borrows less.
+    BORROW_FIT_ = BORROW_FIT or (BORROW_FIT_SONG if (spec.get("target") or {}).get("shape_from") == "the song" else None)
+    if spec.get("target") and BORROW_FIT_ and spec.get("borrow") and spec.get("word_weight"):    # 943 (749.109): the two borrows fitted to the aimed song. A song aimed at a kept song that sings its bars again much borrows more; one aimed low borrows less.
         import random as _r5, numpy as _np5, collections as _c5, word_weight as _W5              # Tried outside the engine first, its rule written first, and it held on the hold-out (studies/verse_match).
         tg5_ = spec["target"]; F5_, R5_ = "bars on a figure already sung", "bars on a rhythm already sung"; aim5_ = {c_: float(tg5_["readings"][c_]) for c_ in (F5_, R5_)}; wd5_ = {c_: max(1e-9, E.Q[c_][2] - E.Q[c_][0]) for c_ in (F5_, R5_)}; tr5_ = []
         for f5_, r5_ in BORROW_GRID:
             spec["borrow"] = dict(rhythm=r5_, figure=f5_); rng5_ = _r5.Random(f"943 {L.get('seed', 1)} {L['title']}"); rows5_ = []; tries5_ = 0
-            while len(rows5_) < BORROW_FIT[0] and tries5_ < BORROW_FIT[1]:
+            while len(rows5_) < BORROW_FIT_[0] and tries5_ < BORROW_FIT_[1]:
                 c5_, e5_ = E.build(rng5_); tries5_ += 1
                 if e5_ or E.gates(c5_): continue
                 s5_ = sorted(E.as_sung(c5_["notes"]), key=lambda n_: n_["on"]); x5_ = E.readings(s5_); rows5_.append((x5_[F5_], x5_[R5_], _W5.fit([n_ for n_ in s5_ if n_.get("melisma") != "second"], E.BAR, E.BEAT, parts=True)["all"]))
@@ -256,7 +272,7 @@ def write(L, N=1000, K=12):
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
     import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
-    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []))}
+    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
     melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
     if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
         import word_weight as WW_; rec["judge7"]["pick_words_fit"] = {k: round(v, 3) for k, v in WW_.fit([n for n in rec["melody"]["notes"] if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True).items()}
