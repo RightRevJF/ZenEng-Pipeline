@@ -1,6 +1,6 @@
 # Luthier list for v45 (since v44)
 
-21 November 2026. Luthier v44 (957 and the verse-closer trial) is reviewed (`lib/luthier/REVIEW_stage29.md`) and merged into main at 3aa9cd2. Every kept table, every record, song 60's v44 record, `soundness.json` and the two new studies reproduce byte for byte, and so do the neighbour figures up to one block that reads an old ceiling (749.145). Both checks pass. Song 58's notes are unchanged, so it has no new edition. Next finding 749.146; next fix 958.
+21 November 2026. Luthier v44 (957 and the verse-closer trial) is reviewed (`lib/luthier/REVIEW_stage29.md`) and merged into main at 3aa9cd2. Every kept table, every record, song 60's v44 record, `soundness.json` and the two new studies reproduce byte for byte, and so do the neighbour figures up to one block that reads an old ceiling (749.145). Both checks pass. Song 58's notes are unchanged, so it has no new edition. Next finding 749.148; next fix 958. (749.146 and 749.147 were added on 21 November from song 61, a running tab while the maintainer is offline.)
 
 ## In short
 
@@ -45,6 +45,22 @@ Two things follow: a hold-out the lever acts on (song 49, by a rule written now)
 **Evidence.** Rerun, `neighbour_v44.json` matches byte for byte up to that block, where the committed file reads a chorus ceiling of 0.474 and the rerun 0.479. The headline figures are above it and match.
 **Fix.** Read the ceiling from the kept table, as the engine does, and rerun `neighbour.py`.
 **Check.** A rerun of `neighbour.py` matches the committed file byte for byte.
+
+## Added from song 61 (running tab)
+
+Song 61, "This Side of the Door" (`songs/p71`), was written under v44 as merged (main 3b83673), as built and with the verse sung closer; the two records are the same byte for byte. Its test report holds the readings.
+
+### 749.146 The verse lever's range misses most verse lines
+**Problem.** The verse sung closer (749.142) acts only on verse lines of 6 to 8 syllables. Song 61's verse lines run 8 to 11 syllables (8.6 at the middle), so no line is a candidate; song 59's run under 6. In two songs of the last three the lever does nothing.
+**Evidence.** `songs/p71/lyric61.song.json` is the same under `LUTHIER_VERSE_CLOSER=apart` as without it. The engine gives a 9-syllable line two bars, as it does a 6-syllable one; song 61 runs 264 seconds, past the kept 75th, with bars unsung 0.06 (kept 0.12 to 0.28).
+**Fix.** Rule first: read the kept share of verse lines in one bar by syllable count up to 11, and let the lever take any verse line whose length kept songs put in one bar at least as often as they do 8-syllable lines; keep the guard on verse over chorus and the words' check on the chosen tune.
+**Check.** The lever acts on songs 61 and 54; the checks of 749.142 hold; songs 49 and 59 read only.
+
+### 749.147 A short line in a long slot puts its length on its weak words
+**Problem.** A line of four syllables given two bars spends the bars on its unstressed words. The words' fit does not see it.
+**Evidence.** Song 61, "Three, and then two" (verse 3 and the last chorus): "three" a quarter of a beat, "and" two and a quarter beats, "then" three and a quarter. The chosen tune's words' fit was 0.363 and passed. Fixed by hand in the second edition ("three" a beat and a half on the downbeat, "and then" quick, "two" on the next downbeat; `songs/p71/hand61.py`), the fit rises to 0.404.
+**Fix.** Rule first: read, in kept songs, where the length of a short line (five syllables or fewer) in a slot of two bars or more falls, stressed or not. If Luthier's builds put it on weak syllables more than kept songs do, either give such lines one bar or make the fit count held length by stress within a line.
+**Check.** No chosen tune holds a weak syllable of a short line longer than its stressed ones, unless kept songs do so as often; the words' fit does not fall.
 
 ## Closed
 
