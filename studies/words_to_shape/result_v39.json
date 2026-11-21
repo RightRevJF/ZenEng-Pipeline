@@ -1,0 +1,186 @@
+{
+ "songs": 160,
+ "artists": 125,
+ "predictors": [
+  "syllables in the song (log)",
+  "syllables a line",
+  "unevenness of the lines",
+  "syllables a word",
+  "different words over all words",
+  "lines said again word for word",
+  "words in a three-word run already sung",
+  "kinds of section",
+  "share of syllables in a chorus",
+  "has a bridge",
+  "minor",
+  "year"
+ ],
+ "readings": {
+  "range": {
+   "held_out_rank_correlation": 0.435,
+   "shuffles_95th": 0.086,
+   "beats_share_of_shuffles": 1.0,
+   "predicted": true,
+   "strongest_single_predictors": [
+    [
+     "syllables in the song (log)",
+     0.35
+    ],
+    [
+     "year",
+     0.33
+    ],
+    [
+     "syllables a word",
+     0.23
+    ]
+   ]
+  },
+  "moves by step": {
+   "held_out_rank_correlation": 0.203,
+   "shuffles_95th": 0.11,
+   "beats_share_of_shuffles": 0.994,
+   "predicted": false,
+   "strongest_single_predictors": [
+    [
+     "syllables a word",
+     0.22
+    ],
+    [
+     "has a bridge",
+     0.2
+    ],
+    [
+     "kinds of section",
+     0.12
+    ]
+   ]
+  },
+  "moves by leap": {
+   "held_out_rank_correlation": -0.104,
+   "shuffles_95th": 0.118,
+   "beats_share_of_shuffles": 0.534,
+   "predicted": false,
+   "strongest_single_predictors": [
+    [
+     "syllables a line",
+     -0.1
+    ],
+    [
+     "minor",
+     0.09
+    ],
+    [
+     "year",
+     0.09
+    ]
+   ]
+  },
+  "repeated notes": {
+   "held_out_rank_correlation": 0.142,
+   "shuffles_95th": 0.095,
+   "beats_share_of_shuffles": 0.976,
+   "predicted": false,
+   "strongest_single_predictors": [
+    [
+     "syllables a word",
+     -0.23
+    ],
+    [
+     "has a bridge",
+     -0.12
+    ],
+    [
+     "syllables a line",
+     0.09
+    ]
+   ]
+  },
+  "bars on a figure already sung": {
+   "held_out_rank_correlation": 0.531,
+   "shuffles_95th": 0.097,
+   "beats_share_of_shuffles": 1.0,
+   "predicted": true,
+   "strongest_single_predictors": [
+    [
+     "words in a three-word run already sung",
+     0.49
+    ],
+    [
+     "different words over all words",
+     -0.39
+    ],
+    [
+     "lines said again word for word",
+     0.37
+    ]
+   ]
+  },
+  "bars on a rhythm already sung": {
+   "held_out_rank_correlation": 0.461,
+   "shuffles_95th": 0.112,
+   "beats_share_of_shuffles": 1.0,
+   "predicted": true,
+   "strongest_single_predictors": [
+    [
+     "words in a three-word run already sung",
+     0.44
+    ],
+    [
+     "different words over all words",
+     -0.35
+    ],
+    [
+     "lines said again word for word",
+     0.35
+    ]
+   ]
+  },
+  "rhythm scaling": {
+   "held_out_rank_correlation": 0.186,
+   "shuffles_95th": 0.105,
+   "beats_share_of_shuffles": 0.996,
+   "predicted": false,
+   "strongest_single_predictors": [
+    [
+     "syllables a line",
+     0.42
+    ],
+    [
+     "year",
+     0.27
+    ],
+    [
+     "lines said again word for word",
+     -0.14
+    ]
+   ]
+  },
+  "notes a bar": {
+   "held_out_rank_correlation": 0.612,
+   "shuffles_95th": 0.094,
+   "beats_share_of_shuffles": 1.0,
+   "predicted": true,
+   "strongest_single_predictors": [
+    [
+     "syllables a line",
+     0.86
+    ],
+    [
+     "lines said again word for word",
+     -0.48
+    ],
+    [
+     "syllables in the song (log)",
+     0.45
+    ]
+   ]
+  }
+ },
+ "verdict": {
+  "shape_readings_predicted": 3,
+  "of": 7,
+  "finding": "the words decide the shape",
+  "method_check_notes_a_bar": true
+ }
+}

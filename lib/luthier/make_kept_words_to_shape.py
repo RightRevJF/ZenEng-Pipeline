@@ -9,12 +9,8 @@ MODE = {str(s): str(g["mode"].iloc[0]) for s, g in KC.table().groupby("song", so
 for k in KC.kept_songs():
     s = str(k["song"])
     if s not in ROW: continue
-    w = [a for a, _ in k["words"]]; cnt = collections.OrderedDict()
-    for ln in k["lines"]: cnt[ln] = cnt.get(ln, 0) + 1
-    L = np.array(list(cnt.values()), float); cuts = np.cumsum(L) / L.sum() * len(w); lines = [(w[int(a):int(b)], n) for a, b, n in zip(np.r_[0, cuts[:-1]], cuts, L)]      # the words by line, in proportion to the lines' notes
-    sec = [str(x).lower() for x in k["sec"]]; syl = sum(n for _, n in k["words"])
+    lines = WS.kept_lines(k); sec = [str(x).lower() for x in k["sec"]]                                       # 946 (749.128): the kept song's lines read as a Luthier lyric's are
     x = WS.features(lines, len({re.sub(r"[^a-z]", "", z) for z in sec}), float(np.mean([("chorus" in z or "refrain" in z) for z in sec])), any("bridge" in z for z in sec), "min" in MODE.get(s, "").lower(), k["year"])
-    x[0] = float(np.log(max(syl, 1))); x[3] = syl / max(len([a for a in w if re.sub(r"[^a-z']", "", a.lower())]), 1)                                    # syllables as sung, as the study counted them
     X.append(x); r = dict(zip(NM, ROW[s])); Y.append([r[c] for c in T3])
 X = np.array(X); Y = np.array(Y); mu = X.mean(0); sd = X.std(0); Z = (X - mu) / sd; out = dict(source=f"{len(X)} kept 4/4 songs (CoCoPops Billboard); made by lib/luthier/make_kept_words_to_shape.py; tested in studies/words_to_shape",
     what="what a song's words and form say of its tune's shape: a ridge regression on twelve predictors, each standardised; a prediction is held inside the kept 10th to 90th", predictors=WS.PRED, mean=[round(float(v), 6) for v in mu], sd=[round(float(v), 6) for v in sd], year_held_at=float(np.median(X[:, 11])), readings={})

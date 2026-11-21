@@ -500,3 +500,30 @@ Next: Luthier v39 (row v210), Window 196, Module 27.120 (anchor "27.119"), table
 - Not answered here: the session's list for v39 (749.123 to 749.127).
 
 Next: Luthier v40 (row v211), Window 197, Module 27.121 (anchor "27.120"), tables HG…, fixes from 945.
+
+## Luthier v40 (Window 197): the lyric's room
+
+No song and no record changes. Paper: `reports/Luthier_v40.docx` (builder `reports/make_luthier_v40_from_v39.py`), row v211, Module 27.121, Table HG. Studies: `studies/rhythm_memory/` (what carries rhythm scaling), `studies/lyric_room/` (the check's rule and result).
+
+- Study: rhythm scaling is carried by slow change in how busy the singing is (+0.68) and by bars with nothing sung (+0.58); not by near or far repeats. Songs 55, 54, 58 sing at one busyness and rest little; songs 59 and 60 do not, and their rhythm scaling is in the kept middle.
+- 945: **run when a lyric is locked, with the mouth tests, before any music:**
+
+      python3 lib/luthier/lyric_room.py songs/pNN/lyricNN.json
+
+  About two minutes. Writes `lyricNN.room.json`; prints room, contrast, rhythm scaling against the kept songs, and in plain words what in the lyric is behind a low reading. It advises; it does not refuse a lyric. Table: `tables/kept_rhythm_room.json` (`make_kept_rhythm_room.py`).
+- Next trial (the engine's side): sections that differ in how busy they are; bars of rest between sections.
+
+Next: Luthier v41 (row v212), Window 198, Module 27.122 (anchor "27.121"), tables HH…, fixes from 946.
+
+## Luthier v41 (Window 198): the words measured one way
+
+Answers the session's review of v39 (749.128, 749.129, 749.126, 749.124; 749.130 was answered in v40). Paper: `reports/Luthier_v41.docx` (builder `reports/make_luthier_v41_from_v40.py`), row v212, Module 27.122, Table HH. Results: `studies/shape_from_the_song/own.json` (v39's is `own_v39.json`), `studies/soundness/neighbour_v41.json`.
+
+- 946 (749.128): `words_to_shape.kept_lines` ties each kept word to its notes; `tables/kept_words_to_shape.json` refitted; study rerun (`studies/words_to_shape/result.json`; first run `result_v39.json`). Asks now: range 18.0, 18.8, 19.9, 18.8; bars on a figure already sung 0.42, 0.39, 0.41, 0.45. The builds already sing their bars again about as often as their words ask.
+- 947 (749.129): repeated notes at the genre family's middle (`repeated_notes_by_family` in the table; `studies/movement_by_family`). Steps and leaps do not differ by family.
+- 948 (749.126): a line its own copy follows leaves the copy room. Song 60: join deaths 791 to 0; survivors 84 to 367 (`songs/p70/lyric60.v41.song.json`; the delivered record is untouched).
+- 949 (749.124): `neighbour.py` ranges on 1,000 inner draws.
+- Picks sound, no lean. Neighbour choice 3.0 in 100 (1.3 to 5.6); random pool pick 8.2 (3.7 to 11.4).
+- Unmet: range. The words ask 18 to 20 semitones; the builds span 14 or 15. Next: plant the peak (749.111), rule first.
+
+Next: Luthier v42 (row v213), Window 199, Module 27.123 (anchor "27.122"), tables HI…, fixes from 950.

@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GroupKFold
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..")); sys.path.insert(0, os.path.join(ROOT, "lib", "luthier"))
-import kept_corpus as KC
+import kept_corpus as KC, words_to_shape as WS
 KR = json.load(open(os.path.join(ROOT, "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; NM = KR["names"]; ROW = dict(zip(KR["song_names"], KR["rows"]))
 MODE = {str(s): str(g["mode"].iloc[0]) for s, g in KC.table().groupby("song", sort=False)}
 SHAPE = ["range", "moves by step", "moves by leap", "repeated notes", "bars on a figure already sung", "bars on a rhythm already sung", "rhythm scaling"]; CHECK = "notes a bar"
@@ -15,20 +15,8 @@ X, Y, G, names = [], [], [], []
 for k in KC.kept_songs():
     s = str(k["song"])
     if s not in ROW: continue
-    w = [re.sub(r"[^a-z']", "", a.lower()) for a, _ in k["words"]]; w = [a for a in w if a]; syl = sum(n for _, n in k["words"]); lines = collections.defaultdict(int)
-    for ln in k["lines"]: lines[ln] += 1
-    L = np.array(list(lines.values()), float)                                                     # notes a line stand in for syllables a line (a melisma's notes are few)
-    # words by line, for lines said again: split the words in proportion to the lines' notes
-    cuts = np.cumsum(L) / L.sum() * len(w); lw = [" ".join(w[int(a):int(b)]) for a, b in zip(np.r_[0, cuts[:-1]], cuts)]; seen = set(); rep = 0
-    for x in lw:
-        if x and x in seen: rep += 1
-        seen.add(x)
-    tri = [tuple(w[i:i + 3]) for i in range(len(w) - 2)]; st = set(); t3 = 0
-    for x in tri:
-        if x in st: t3 += 1
-        st.add(x)
-    sec = [str(x).lower() for x in k["sec"]]; kinds = len({re.sub(r"[^a-z]", "", x) for x in sec}); cho = float(np.mean([("chorus" in x or "refrain" in x) for x in sec])); br = float(any("bridge" in x for x in sec))
-    X.append([np.log(max(syl, 1)), L.mean(), L.std() / L.mean(), syl / max(len(w), 1), len(set(w)) / max(len(w), 1), rep / max(len(lw), 1), t3 / max(len(tri), 1), kinds, cho, br, float("min" in MODE.get(s, "").lower()), k["year"]])
+    lines = WS.kept_lines(k); sec = [str(x).lower() for x in k["sec"]]                                       # 749.128: lines read as a Luthier lyric's are (the first run split the words by the lines' notes; result_v39.json)
+    X.append(WS.features(lines, len({re.sub(r"[^a-z]", "", x) for x in sec}), float(np.mean([("chorus" in x or "refrain" in x) for x in sec])), any("bridge" in x for x in sec), "min" in MODE.get(s, "").lower(), k["year"]))
     r = dict(zip(NM, ROW[s])); Y.append([r[c] for c in SHAPE + [CHECK]]); G.append(s.split("_")[0]); names.append(s)
 X = np.array(X, float); Y = np.array(Y, float); G = np.array(G); n = len(X); print("songs", n, "artists", len(set(G)))
 def oof(y):

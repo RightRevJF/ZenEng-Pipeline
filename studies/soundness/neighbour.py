@@ -92,8 +92,8 @@ def boot_neighbour(P, n, rngb):
         ok_, _, _ = judge(rows); fl += not ok_
     return fl / n
 rngb = random.Random(940); rs = lambda v: [round(float(x), 3) for x in np.percentile(v, (5, 95))]; res = lambda P: {k: [rngb.choice(v) for _ in v] for k, v in P.items()}
-out["ranges_90"] = {"neighbour choice": rs([boot_neighbour(res(pools), 200, rngb) for _ in range(200)]), "a random pick from the engine's pool": rs([boot_rate(res(pools), 1000, rngb) for _ in range(200)]),
+out["ranges_90"] = {"neighbour choice": rs([boot_neighbour(res(pools), 1000, rngb) for _ in range(200)]), "a random pick from the engine's pool": rs([boot_rate(res(pools), 1000, rngb) for _ in range(200)]),
                     "a random pick from every build that lived": rs([boot_rate(res(ALIVE), 1000, rngb) for _ in range(200)]), "pool_sizes": {k: len(v) for k, v in pools.items()},
-                    "note": "940: each pool resampled with replacement at its own size, 200 times; the 5th and 95th percentiles of the figure read on the resamples"}
+                    "note": "940: each pool resampled with replacement at its own size, 200 times; the 5th and 95th percentiles of the figure read on the resamples. 949 (749.124): 1,000 inner draws a resample for every figure, so a range is the pools' and not the inner draws'"}
 print(json.dumps(out, indent=1))
 json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "neighbour" + ("_" + os.environ.get("TRIAL_NAME", "trial") if os.environ.get("MARGIN_TURNS_OF_FOUR") else os.environ.get("OUT_SUFFIX", "")) + ".json"), "w"), indent=1)
