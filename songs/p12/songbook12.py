@@ -20,8 +20,8 @@ b_gm6 = C["stanza4"].index("Gm6") + 1
 gm6_bass = [p for (c, A, T, B) in P["stanza4"] for p in () ]
 D = R["descant"]; d_top = max(D); d_top_bars = sorted({bar_of(k) for k, p in enumerate(D) if p == d_top})
 ped_hold = [e for e in R["voices"]["org_ped"] if e["on"] >= ST[5] + 12 * BAR][0]
-secs = 161
-even_bars = sorted({bar_of(k) for k, x in enumerate(N) if x["dur"] == 18 and x["on"] % BAR in (0, 18) and not x["slur"] and not x["melisma"]})
+secs = 163
+even_bars = sorted({b + 1 for b in range(16) if [x['dur'] for x in N if x['on'] // BAR == b] == [18, 6, 12]})
 def and_(xs):
     xs = [str(x) for x in xs]; return xs[0] if len(xs) == 1 else ", ".join(xs[:-1]) + " and " + xs[-1]
 def line_notes(li): return " ".join(n(x["p"]) for x in N if x["line"] == li)
@@ -30,11 +30,11 @@ def chord_row(b): return C["hymnal"][b - 1]
 S = {}
 S["glance"] = f"""## At a glance
 
-A five-stanza Christmas hymn for congregation, choir and organ, in D major, 3/4, flowing one to the bar at ♩ = 100. The full performance runs 88 bars, about {secs // 60}:{secs % 60:02d}.
+A five-stanza Christmas hymn for congregation, choir and organ, in D major, written in 3/4 and felt in one: a dotted half about 33 a minute (♩ = 100). The full performance runs 88 bars, about {secs // 60}:{secs % 60:02d}.
 
 | Item | Detail |
 | --- | --- |
-| Key and metre | D major, 3/4, ♩ = 100, felt in one |
+| Key and metre | D major, written in 3/4, felt in one (dotted half = c. 33; ♩ = 100) |
 | Metre of the words | 87 87, five stanzas, no refrain |
 | Tune | ARIMATHEA, {n(low)} to {n(top)} (women at pitch, men an octave lower) |
 | Form of each stanza | 16 bars: line 1, line 2, line 1 again, line 4 |
@@ -70,7 +70,7 @@ S["tune"] = f"""## The tune and harmony, bar by bar
 | --- | --- | --- |
 """ + "\n".join(f"| {li + 1} | {4 * li + 1}–{4 * li + 4} | {line_notes(li)} |" for li in range(4)) + f"""
 
-**The recurring figure.** Bars {and_(even_bars)} have two even dotted quarters instead of the hymn's usual long-short. That figure carries the heavy word pairs ("one stone," "stone rolled," "star laid") without swallowing either word, and it is the bar most people will remember.
+**The recurring figure.** Bars {and_(even_bars)} put a dotted quarter on the strong syllable, a quick passing eighth slurred to it, then a quarter on the weak syllable. The weak syllable stays short in all five stanzas ("a-gainst," "be-neath," "the," "to," "and"), and the passing note is the turn the hymn keeps coming back to.
 
 **Two borrowed chords in every stanza.**
 
@@ -89,16 +89,16 @@ S["players"] = f"""## For the organist, the choir, the congregation and the dire
 | 1–4 | Introduction | Gt. Diapasons 8′ 4′, Sw. to Gt.; Ped. Bourdon 16′, Principal 8′ | Plays line 4 in the hymnal harmony |
 | {obar(1, 1)}–{obar(1, 16)} | Stanza 1 | as the introduction | Doubles the choir: soprano and alto in the right hand, tenor in the left, bass in the pedal |
 | {obar(2, 1)}–{obar(2, 16)} | Stanza 2 | add Gt. Fifteenth 2′ | As stanza 1 |
-| {obar(3, 1)}–{obar(3, 16)} | Stanza 3 | Sw. Flutes 8′ 4′, manuals only | Softer: tenor and bass together in the left hand, no pedal |
+| {obar(3, 1)}–{obar(3, 16)} | Stanza 3 | Sw. Flutes 8′ 4′, manuals only | Softer: tenor and bass together in the left hand, no pedal; hold the last chord and release as the choir breathes |
 | {obar(4, 1)}–{obar(4, 16)} | Stanza 4 | silent | The choir sings alone |
-| {R['link'] // BAR + 1}–{R['link'] // BAR + 4} | Link | Gt. 8′ 4′ 2′, Mixture, Sw. Reeds to Gt.; Ped. 16′ 8′ 4′ | The even figure rising over B, E, A in the pedal, crescendo |
+| {R['link'] // BAR + 1}–{R['link'] // BAR + 4} | Link | Gt. 8′ 4′ 2′, Mixture, Sw. Reeds to Gt.; Ped. 16′ 8′ 4′ | Starts on D, the chord the choir ends on; the hymn's figure rising over D, E, A in the pedal, crescendo |
 | {obar(5, 1)}–{obar(5, 16)} | Stanza 5 | Full organ | Its own harmony under the unison tune; a held low D in the pedal from bar {ped_hold['on'] // BAR + 1}; broaden over bars 87–88 |
 
-**Choir.** Sing the hymnal setting in stanzas 1–3. Stanza 4 is yours alone and has its own parts, so learn it separately; give the G minor 6 chord in organ score bar {obar(4, b_gm6)} time to sound. In stanza 5 everyone sings the tune (men an octave lower) and the sopranos take the descant.
+**Choir.** Sing the hymnal setting in stanzas 1–3. Stanza 4 is yours alone and has its own parts, so learn it separately; give the G minor 6 chord in organ score bar {obar(4, b_gm6)} time to sound. Rehearse the way in and out: take the pitch from the organ's held D chord at the end of stanza 3 (your first chord, B minor, keeps its D and F-sharp), and end stanza 4 on D, where the organ comes back in. In stanza 5 everyone sings the tune (men an octave lower) and the sopranos take the descant.
 
 **Congregation.** Stanzas 1, 2, 3 and 5 from the hymnal page. Stanza 4 is the choir's; the bulletin can say "choir alone."
 
-**Singers, all parts.** Lines 1 and 3 end on a quarter note that runs straight into the next line: breathe by shortening it a little. Lines 2 and 4 end on a dotted half: breathe from the end of the hold, not from the next bar. Bars {and_(even_bars)}: give both dotted quarters the same length and weight. Keep "Ju-dah," "lin-en" and "sleep-ing" open on their held first syllables.
+**Singers, all parts.** Lines 1 and 3 end on a quarter note that runs straight into the next line: breathe by shortening it a little. Lines 2 and 4 end on a dotted half: breathe from the end of the hold, not from the next bar. Bars {and_(even_bars)}: the eighth is a passing note on the same syllable; keep it light and keep the weak syllable after it short. Keep "Ju-dah," "lin-en" and "sleep-ing" open on their held first syllables.
 
 **Director.** Take the hymn in one, not three. Let stanza 3 come down, hold stanza 4 still, and let the link build into stanza 5. The final chord holds; the last two bars broaden."""
 S["production"] = f"""## Production notes
@@ -127,9 +127,9 @@ PAGEBREAK
 | --- | --- | --- | --- |
 | Introduction | 1–4 | mf | Organ alone, line 4 |
 | Stanzas 1–2 | 5–36 | mf | Choir and organ together |
-| Stanza 3 | 37–52 | p | Manuals only, no pedal |
+| Stanza 3 | 37–52 | p | Manuals only, no pedal; the last chord held |
 | Stanza 4 | 53–68 | mp | Choir alone, its own darker setting; G minor 6 at bar """ + str(obar(4, b_gm6)) + """ |
-| Link | 69–72 | mf, crescendo | Organ alone, building |
+| Link | 69–72 | mf, crescendo | Organ alone, from the choir's D, building |
 | Stanza 5 | 73–88 | f | Unison tune, descant, full organ; held low D from bar """ + str(ped_hold['on'] // BAR + 1) + """; broaden at 87; hold the last chord |
 
 **Non-negotiables.**
@@ -137,7 +137,7 @@ PAGEBREAK
 - Stanza 4 is unaccompanied.
 - Line 3 is sung exactly as line 1.
 - Bar 14's E5 ("cloth" in stanzas 1 and 5) is the only E5 in the tune.
-- The two even dotted quarters stay even.
+- The hold at the end of stanza 3: the choir takes its pitch from the organ's D chord.
 - The last chord is held.
 
 **Mix priorities.** The words first: congregation and choir sit over the organ in every stanza. In stanza 5 the descant sits above everything but never covers the tune. The pedal's held D is felt more than heard.
@@ -148,7 +148,7 @@ PAGEBREAK
 
 **Session notes.**
 
-- Tempo ♩ = 100, felt in one; a click only for the organ link if needed, none for stanza 4.
+- Tempo: felt in one, dotted half = c. 33 (♩ = 100); a click only for the organ link if needed, none for stanza 4.
 - Key D major throughout; range """ + f"{n(low)}–{n(top)}" + """ in the tune, descant """ + f"{n(min(D))}–{n(d_top)}" + """.
 - Chords per bar: the table under "The hymn"; stanza 4 and stanza 5 as the organ score prints them.
 - Track the choir in parts; stanza 5's unison and descant as a separate pass if the descant singers are few.

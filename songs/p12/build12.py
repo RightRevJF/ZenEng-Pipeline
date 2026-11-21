@@ -10,8 +10,8 @@ Harmonizations (the writer's 'as rich as possible within the rules', logged):
 Timeline (twelfths of a quarter; bar n spans (n-1)*36 to n*36):
   bars 1-4    organ introduction: the last line in the hymnal harmony
   bars 5-52   stanzas 1-3, choir in four parts, the organ doubling them (stanzas 1-2 full; stanza 3 softer, manuals only)
-  bars 53-68  stanza 4, choir alone, its own setting; the organ silent
-  bars 69-72  organ link back to full organ, the even dotted-quarter figure rising over B, E, A in the pedal
+  bars 53-68  stanza 4, choir alone, its own setting; the organ silent (stanza 3's last chord held, released as the choir breathes)
+  bars 69-72  organ link back to full organ: starting on D (the choir's last chord), the hymn's figure rising over D, E, A in the pedal
   bars 73-88  stanza 5, everyone on the tune (men an octave lower), the sopranos' descant; the organ's own harmony; a held D in the
               pedal under the last line; broadening over the last two bars to a held chord"""
 import json, collections, sys
@@ -168,13 +168,17 @@ for s in (1, 2, 3):
     choir(ST[s], PATH_H, SEG_H, s)
     organ_double(ST[s], PATH_H, SEG_H, pedal=(s != 3))
 choir(ST[4], PATH_4, SEG_4, 4)
-# link, bars 69-72: the even figure rising; pedal B, E, A, A
-LINKP = [(["Bm7", 47], [62, 66], [66, 69]), (["Em7", 40], [64, 67], [67, 71]), (["A7", 45], [64, 69], [69, 73]), (["A7", 45], [67, 73], [69, 76])]
-for i, ((ch, ped), a, b) in enumerate(LINKP):
-    t = LINK + i * BAR
-    put("org_rh", t, 18, a); put("org_rh", t + 18, 18, b)
-    lh = {"Bm7": [54, 57], "Em7": [55, 59], "A7": [55, 61]}[ch] if i < 3 else [57, 61]
-    put("org_lh", t, 36, lh); put("org_ped", t, 36, ped)
+# link, bars 69-72 (third edition): it starts on D, the chord the choir ends stanza 4 on, so the organ meets the choir where it is;
+# the right hand rises in the hymn's figure (dotted quarter, slurred eighth, quarter) over a held lower note; pedal D, E, A, A
+LINK_TOP = [(66, 67, 69), (67, 69, 71), (69, 71, 73), (73, 74, 76)]
+LINK_LOW = [62, 64, 64, 67]
+LINK_LH = [[54, 57], [55, 59], [55, 61], [57, 61]]
+LINK_PED = [50, 40, 45, 45]
+LINK_CH = ["D", "Em7", "A7", "A7"]
+for i in range(4):
+    t = LINK + i * BAR; a, b_, c = LINK_TOP[i]
+    put("org_rh", t, 18, sorted({LINK_LOW[i], a})); put("org_rh", t + 18, 6, sorted({LINK_LOW[i], b_})); put("org_rh", t + 24, 12, sorted({LINK_LOW[i], c}))
+    put("org_lh", t, 36, LINK_LH[i]); put("org_ped", t, 36, LINK_PED[i])
 # stanza 5: all on the tune; descant; the organ's own harmony
 for k, n in enumerate(NOTES):
     on = n["on"] + ST[5]

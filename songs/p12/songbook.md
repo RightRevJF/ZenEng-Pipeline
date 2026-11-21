@@ -1,12 +1,12 @@
-# Wood and Cloth (second edition) — Songbook
+# Wood and Cloth (third edition) — Songbook
 
 ## At a glance
 
-A five-stanza Christmas hymn for congregation, choir and organ, in D major, 3/4, flowing one to the bar at ♩ = 100. The full performance runs 88 bars, about 2:41.
+A five-stanza Christmas hymn for congregation, choir and organ, in D major, written in 3/4 and felt in one: a dotted half about 33 a minute (♩ = 100). The full performance runs 88 bars, about 2:43.
 
 | Item | Detail |
 | --- | --- |
-| Key and metre | D major, 3/4, ♩ = 100, felt in one |
+| Key and metre | D major, written in 3/4, felt in one (dotted half = c. 33; ♩ = 100) |
 | Metre of the words | 87 87, five stanzas, no refrain |
 | Tune | ARIMATHEA, D4 to E5 (women at pitch, men an octave lower) |
 | Form of each stanza | 16 bars: line 1, line 2, line 1 again, line 4 |
@@ -65,11 +65,11 @@ A note for the bulletin, if wanted: *Stanza 2's second Joseph is Joseph of Arima
 | Line | Bars | Melody |
 | --- | --- | --- |
 | 1 | 1–4 | D4 E4 D4 F#4 E4 F#4 B4 B4 C#5 D5 |
-| 2 | 5–8 | D5 B4 B4 A4 G#4 F#4 E4 |
+| 2 | 5–8 | D5 C#5 B4 B4 A4 G#4 A4 F#4 E4 |
 | 3 | 9–12 | D4 E4 D4 F#4 E4 F#4 B4 B4 C#5 D5 |
-| 4 | 13–16 | D5 D5 E5 D5 A4 C#5 D5 |
+| 4 | 13–16 | D5 C#5 D5 E5 D5 A4 C#5 D5 |
 
-**The recurring figure.** Bars 5, 7 and 13 have two even dotted quarters instead of the hymn's usual long-short. That figure carries the heavy word pairs ("one stone," "stone rolled," "star laid") without swallowing either word, and it is the bar most people will remember.
+**The recurring figure.** Bars 1, 5, 7, 9 and 13 put a dotted quarter on the strong syllable, a quick passing eighth slurred to it, then a quarter on the weak syllable. The weak syllable stays short in all five stanzas ("a-gainst," "be-neath," "the," "to," "and"), and the passing note is the turn the hymn keeps coming back to.
 
 **Two borrowed chords in every stanza.**
 
@@ -89,16 +89,16 @@ A note for the bulletin, if wanted: *Stanza 2's second Joseph is Joseph of Arima
 | 1–4 | Introduction | Gt. Diapasons 8′ 4′, Sw. to Gt.; Ped. Bourdon 16′, Principal 8′ | Plays line 4 in the hymnal harmony |
 | 5–20 | Stanza 1 | as the introduction | Doubles the choir: soprano and alto in the right hand, tenor in the left, bass in the pedal |
 | 21–36 | Stanza 2 | add Gt. Fifteenth 2′ | As stanza 1 |
-| 37–52 | Stanza 3 | Sw. Flutes 8′ 4′, manuals only | Softer: tenor and bass together in the left hand, no pedal |
+| 37–52 | Stanza 3 | Sw. Flutes 8′ 4′, manuals only | Softer: tenor and bass together in the left hand, no pedal; hold the last chord and release as the choir breathes |
 | 53–68 | Stanza 4 | silent | The choir sings alone |
-| 69–72 | Link | Gt. 8′ 4′ 2′, Mixture, Sw. Reeds to Gt.; Ped. 16′ 8′ 4′ | The even figure rising over B, E, A in the pedal, crescendo |
+| 69–72 | Link | Gt. 8′ 4′ 2′, Mixture, Sw. Reeds to Gt.; Ped. 16′ 8′ 4′ | Starts on D, the chord the choir ends on; the hymn's figure rising over D, E, A in the pedal, crescendo |
 | 73–88 | Stanza 5 | Full organ | Its own harmony under the unison tune; a held low D in the pedal from bar 85; broaden over bars 87–88 |
 
-**Choir.** Sing the hymnal setting in stanzas 1–3. Stanza 4 is yours alone and has its own parts, so learn it separately; give the G minor 6 chord in organ score bar 66 time to sound. In stanza 5 everyone sings the tune (men an octave lower) and the sopranos take the descant.
+**Choir.** Sing the hymnal setting in stanzas 1–3. Stanza 4 is yours alone and has its own parts, so learn it separately; give the G minor 6 chord in organ score bar 66 time to sound. Rehearse the way in and out: take the pitch from the organ's held D chord at the end of stanza 3 (your first chord, B minor, keeps its D and F-sharp), and end stanza 4 on D, where the organ comes back in. In stanza 5 everyone sings the tune (men an octave lower) and the sopranos take the descant.
 
 **Congregation.** Stanzas 1, 2, 3 and 5 from the hymnal page. Stanza 4 is the choir's; the bulletin can say "choir alone."
 
-**Singers, all parts.** Lines 1 and 3 end on a quarter note that runs straight into the next line: breathe by shortening it a little. Lines 2 and 4 end on a dotted half: breathe from the end of the hold, not from the next bar. Bars 5, 7 and 13: give both dotted quarters the same length and weight. Keep "Ju-dah," "lin-en" and "sleep-ing" open on their held first syllables.
+**Singers, all parts.** Lines 1 and 3 end on a quarter note that runs straight into the next line: breathe by shortening it a little. Lines 2 and 4 end on a dotted half: breathe from the end of the hold, not from the next bar. Bars 1, 5, 7, 9 and 13: the eighth is a passing note on the same syllable; keep it light and keep the weak syllable after it short. Keep "Ju-dah," "lin-en" and "sleep-ing" open on their held first syllables.
 
 **Director.** Take the hymn in one, not three. Let stanza 3 come down, hold stanza 4 still, and let the link build into stanza 5. The final chord holds; the last two bars broaden.
 
@@ -131,9 +131,9 @@ PAGEBREAK
 | --- | --- | --- | --- |
 | Introduction | 1–4 | mf | Organ alone, line 4 |
 | Stanzas 1–2 | 5–36 | mf | Choir and organ together |
-| Stanza 3 | 37–52 | p | Manuals only, no pedal |
+| Stanza 3 | 37–52 | p | Manuals only, no pedal; the last chord held |
 | Stanza 4 | 53–68 | mp | Choir alone, its own darker setting; G minor 6 at bar 66 |
-| Link | 69–72 | mf, crescendo | Organ alone, building |
+| Link | 69–72 | mf, crescendo | Organ alone, from the choir's D, building |
 | Stanza 5 | 73–88 | f | Unison tune, descant, full organ; held low D from bar 85; broaden at 87; hold the last chord |
 
 **Non-negotiables.**
@@ -141,7 +141,7 @@ PAGEBREAK
 - Stanza 4 is unaccompanied.
 - Line 3 is sung exactly as line 1.
 - Bar 14's E5 ("cloth" in stanzas 1 and 5) is the only E5 in the tune.
-- The two even dotted quarters stay even.
+- The hold at the end of stanza 3: the choir takes its pitch from the organ's D chord.
 - The last chord is held.
 
 **Mix priorities.** The words first: congregation and choir sit over the organ in every stanza. In stanza 5 the descant sits above everything but never covers the tune. The pedal's held D is felt more than heard.
@@ -152,7 +152,7 @@ PAGEBREAK
 
 **Session notes.**
 
-- Tempo ♩ = 100, felt in one; a click only for the organ link if needed, none for stanza 4.
+- Tempo: felt in one, dotted half = c. 33 (♩ = 100); a click only for the organ link if needed, none for stanza 4.
 - Key D major throughout; range D4–E5 in the tune, descant B4–G5.
 - Chords per bar: the table under "The hymn"; stanza 4 and stanza 5 as the organ score prints them.
 - Track the choir in parts; stanza 5's unison and descant as a separate pass if the descant singers are few.

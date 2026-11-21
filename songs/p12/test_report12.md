@@ -1,11 +1,20 @@
-# Wood and Cloth (second edition): test report
+# Wood and Cloth (third edition): test report
 
 21 November 2026. Song 12, rewritten on the sketch path (a 3/4 hymn; Luthier does not yet write 3/4 or hymn mode). Words and music: Jason Bryant. Every choice is logged in `songs/p12/intake.py`.
+
+## What changed from the second edition (21 November, same day)
+
+After an outside review the writer chose all four changes:
+
+- **Rhythm, bars 5, 7 and 13.** The two even dotted quarters became a dotted quarter on the strong syllable, a slurred passing eighth (C#5, A4, C#5) and a quarter on the weak syllable. The even figure helped 3 of 15 word pairs across the stanzas and held a weak syllable as long as the strong one in the other 12 ("a-gainst," "be-neath," "the," "a," "to," "and"). Now no weak syllable in any stanza is as long as the strong one before it. Pitches otherwise unchanged; the four-part settings rerun.
+- **Tempo marking.** Every file: "Flowing, felt in one (dotted half = c. 33; quarter = 100)," written in 3/4.
+- **Into and out of stanza 4.** A hold on stanza 3's last chord, the organ releasing as the choir breathes; the link now starts on D, the chord the choir ends on (was B minor 7).
+- **Joseph.** The note naming Joseph of Arimathea added to the organ score (it was already on the hymnal page, lead sheet and songbook).
 
 ## What changed from the first edition (4 November)
 
 - **Words.** Five lines rewritten after the writer's review and an outside review: 1.2 "Maker small enough to tend," 1.3 "wood would hold him, raised for dying," stanza 4 new (the king and the crown of thorns), 5.2 "stone rolled back and none to find." 2.4 and 3.3 kept at the writer's choice. Joseph kept, with scripture notes on the hymnal page.
-- **Tune.** New, in D major (was C), A B A C (line 3 repeats line 1), E5 once on "cloth," a recurring figure of two even dotted quarters (bars 5, 7, 13), final cadence C#5 to D5 (was B4 A4 C5).
+- **Tune.** New, in D major (was C), A B A C (line 3 repeats line 1), E5 once on "cloth," a recurring figure in bars 5, 7 and 13 (third edition: dotted quarter, slurred eighth, quarter), final cadence C#5 to D5 (was B4 A4 C5).
 - **Harmony.** Two applied dominants a stanza (E7 bar 7, F#7 bar 10); stanza 4 its own setting with G minor 6 (bar 14) as the one borrowed chord; stanza 5 the organ's own harmony with a descant.
 - **Documents.** New organ score with choir (88 bars, registrations); hymnal page, lead sheet, MusicXML, demo; no engine terms on any page.
 
@@ -15,7 +24,7 @@ No unstressed syllable on a strong position in any stanza; 87 87 exact. Heavy mo
 
 ## The tune
 
-`gen12.py 3000`, seed 20261113 + 412: 2630 of 3000 built survive (87.7%). Judge's pick 2c26d99ebe1c (charge 0.406); chosen by ear instead build 1060 (charge 0.406, the same least charge): the pick's line 1 stays in D4 to F#4 and line 3 repeats it (749.149). Readings of the chosen tune against the 3/4 hymn quartiles:
+`gen12.py 3000`, seed 20261113 + 412: 2630 of 3000 built survive (87.7%). Judge's pick 2c26d99ebe1c (charge 0.406); chosen by ear instead build 1060 (charge 0.406, the same least charge): the pick's line 1 stays in D4 to F#4 and line 3 repeats it (749.149). Readings of the chosen tune as drawn (before the third edition's change to bars 5, 7 and 13) against the 3/4 hymn quartiles:
 
 | Reading | Value | Kept quartiles | Inside |
 | --- | --- | --- | --- |
@@ -43,7 +52,7 @@ The one reading outside, onsets on the first beat, follows from the design: the 
 
 ## The four-part settings
 
-Song 53's beam search (`harmonize12.py`), downbeats locked to the plans, with two costs added for the low-interval limits (749.150). Costs: hymnal 34.2, stanza 4 32.0, stanza 5 36.4. Parallels after the search: {'hymnal': [], 'stanza4': [], 'stanza5': []}; hand edits: ['stanza 4 bars 14-15 voiced by hand: bass G2 G2 A2 A2 (was G2 B-flat2 C-sharp3, an augmented second), tenor B-flat3 to A3'].
+Song 53's beam search (`harmonize12.py`), downbeats locked to the plans, with two costs added for the low-interval limits (749.150). Costs (third edition rerun): hymnal 42.8, stanza 4 39.8, stanza 5 45.7. Parallels after the search: {'hymnal': [], 'stanza4': [], 'stanza5': []}; hand edits: ['stanza 4 bars 14-15 voiced by hand: bass G2 G2 A2 A2 (was G2 B-flat2 C-sharp3, an augmented second), tenor B-flat3 to A3'].
 
 ## Research checks (749.4 to 749.23)
 
@@ -52,13 +61,13 @@ Song 53's beam search (`harmonize12.py`), downbeats locked to the plans, with tw
 - **Accompaniment by section:** full (stanzas 1–2), manuals only (3), silent (4), link, full organ (5).
 - **Song-wide intensity:** peak at 0.97 of the song (descant G5 over "cloth," bars 85–86), late against 0.65–0.85 by design (749.148); release in stanza 4 (0.60–0.77); fresh re-entry at bar 69 (0.78).
 - **Chromatic harmony:** two applied dominants in 16 bars a stanza; one borrowed chord in 88 bars (about 1%).
-- **Perception:** no third below F3 or second below C4 in the choir; 23 samples where the men's unison tune meets the organ bass in stanza 5; organ above the tune 0%; no choir crossings. Phrases 7.2 seconds (a line of four bars at ♩ = 100), above 6 and under 8.
+- **Perception:** no third below F3 or second below C4 in the choir; 32 samples of 6 ticks where the men's unison tune meets the organ in stanza 5 and the link; organ above the tune 0%; no choir crossings. Phrases 7.2 seconds (a line of four bars at ♩ = 100), above 6 and under 8.
 - **Surprise against expectation:** not measured on this path.
 
 ## Consistency
 
-53 of 53 checks pass (`consistency12.py`).
+61 of 61 checks pass (`consistency12.py`).
 
 ## Findings (running tab, fix list for v45)
 
-749.148 the peak band and hymns with a last-stanza descant; 749.149 the hymn judge reads no line shape or tessitura; 749.150 the four-part search: augmented seconds, low intervals, parallels across a melisma; 749.151 the room check cannot read a hymn.
+749.148 the peak band and hymns with a last-stanza descant; 749.149 the hymn judge reads no line shape or tessitura; 749.150 the four-part search: augmented seconds, low intervals, parallels across a melisma; 749.151 the room check cannot read a hymn; 749.152 a rhythm shared by every stanza must be checked for how long each weak syllable is held, in every stanza.

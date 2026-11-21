@@ -2,7 +2,7 @@
 import re, sys
 sys.path[:0] = ["/home/claude/carol"]
 from lyricsearch import syllables as _syl
-TITLE = "Wood and Cloth"; EDITION = " (second edition)"
+TITLE = "Wood and Cloth"; EDITION = " (third edition)"
 SHAPE = [8, 7, 8, 7]
 STANZAS = []
 for raw in open("/home/claude/zeneng-pipeline/songs/p12/lyric_locked.md"):

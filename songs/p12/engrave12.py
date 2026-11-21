@@ -39,7 +39,7 @@ def gap(t, d, hide):
         nxt = min([b for a, b in hide if a <= t < b] + [a for a, b in hide if a > t] + [t + d])
         out += rest_toks(t, nxt - t, spacer=bool(h)); d -= nxt - t; t = nxt
     return out
-def voice_ly(ev, end, dyn=None, fermata_last=True, slurs=False, t0=0, marks=None, hide=()):
+def voice_ly(ev, end, dyn=None, fermata_last=True, slurs=False, t0=0, marks=None, hide=(), holds=()):
     toks = []; t = t0; dyn = dyn or {}; marks = marks or {}
     for i, e in enumerate(ev):
         if e["on"] > t: toks += gap(t, e["on"] - t, hide)
@@ -48,7 +48,7 @@ def voice_ly(ev, end, dyn=None, fermata_last=True, slurs=False, t0=0, marks=None
             tk = pname(e["p"], a) + DUR[s]
             if j == 0 and e["on"] in dyn: tk += dyn[e["on"]]
             if j == 0 and e["on"] in marks: tk += marks[e["on"]]
-            if j == len(ss) - 1 and i == len(ev) - 1 and fermata_last and e["on"] + e["dur"] == end: tk += "\\fermata"
+            if j == len(ss) - 1 and fermata_last and ((i == len(ev) - 1 and e["on"] + e["dur"] == end) or e["on"] + e["dur"] in holds): tk += "\\fermata"
             if j < len(ss) - 1: tk += "~"
             if slurs and j == 0 and e.get("slur"): tk += "("
             if slurs and j == len(ss) - 1 and e.get("melisma"): tk += ")"
@@ -65,7 +65,8 @@ HEAD = r'''\version "2.24.3"
   system-system-spacing.basic-distance = #%s
   oddFooterMarkup = \markup \fill-line { \tiny "%s" } evenFooterMarkup = \markup \fill-line { \tiny "%s" } }
 '''
-FOOT = f"{TITLE}{ED} · Words and music: Jason Bryant · D major · 3/4 · ♩ = 100"
+FOOT = f"{TITLE}{ED} · Words and music: Jason Bryant · D major · 3/4, felt in one (dotted half = c. 33; quarter = 100)"
+TEMPO = '\\tempo \\markup { "Flowing, felt in one" \\normal-text { "(" \\note {2.} #UP "= c. 33;" \\note {4} #UP "= 100)" } }'
 def compile_ly(src, base):
     p = f"{OUT}/{base}.ly"; open(p, "w").write(src)
     r = subprocess.run(["lilypond", "-dno-point-and-click", "-o", f"{OUT}/{base}", p], capture_output=True, text=True)
@@ -77,7 +78,7 @@ def stanza_events(v, s):
     a, b = ST[s], ST[s] + 16 * BAR
     return [dict(e, on=e["on"] - a) for e in V[v] if a <= e["on"] < b]
 def hymnal():
-    g = "\\time 3/4 \\key d \\major " + " ".join(("s2. \\break" if b in (4, 8, 12) else "s2.") for b in range(1, 17)) + ' \\bar "|."'
+    g = "\\time 3/4 \\key d \\major " + TEMPO + " " + " ".join(("s2. \\break" if b in (4, 8, 12) else "s2.") for b in range(1, 17)) + ' \\bar "|."'
     sop = voice_ly(stanza_events("S", 1), 16 * BAR, slurs=True); alt = voice_ly(stanza_events("A", 1), 16 * BAR)
     ten = voice_ly(stanza_events("T", 1), 16 * BAR); bas = voice_ly(stanza_events("B", 1), 16 * BAR)
     lys = "\n".join(f'    \\new Lyrics \\lyricsto "sop" {{ \\set stanza = "{i + 1}." {stanza_text(i)} }}' for i in range(5))
@@ -101,12 +102,12 @@ def hymnal():
     return src
 # ---------------- the organ score (full score): 88 bars ----------------
 MARKS = {1: "Organ: introduction (the last line)", 5: "Stanza 1", 21: "Stanza 2", 37: "Stanza 3", 53: "Stanza 4: choir alone, unaccompanied",
-         69: "Organ: link", 73: "Stanza 5: all on the tune (men an octave lower), sopranos' descant"}
+         69: "Organ: link (from the choir's D)", 73: "Stanza 5: all on the tune (men an octave lower), sopranos' descant"}
 REG = {1: ["Gt. Diapasons 8′ 4′, Sw. to Gt.", "Ped. Bourdon 16′, Principal 8′"], 21: ["add Gt. Fifteenth 2′"],
-       37: ["Sw. Flutes 8′ 4′ (manuals only)"], 53: ["Organ silent"], 69: ["Gt. Diapasons 8′ 4′ 2′, Mixture, Sw. Reeds to Gt.", "Ped. 16′ 8′ 4′, Gt. to Ped."],
+       37: ["Sw. Flutes 8′ 4′ (manuals only)"], 52: ["Hold; release as the choir breathes"], 53: ["Organ silent"], 69: ["Gt. Diapasons 8′ 4′ 2′, Mixture, Sw. Reeds to Gt.", "Ped. 16′ 8′ 4′, Gt. to Ped."],
        73: ["Full organ"]}
 def organ_global():
-    g = ['\\time 3/4', '\\key d \\major', '\\tempo "Flowing, one to the bar" 4 = 100']
+    g = ['\\time 3/4', '\\key d \\major', TEMPO]
     for b in range(1, 89):
         if b in MARKS: g.append(f'\\mark \\markup \\small \\bold "{MARKS[b]}"')
         g.append('s2.')
@@ -123,9 +124,10 @@ DYN_S = {ST[1]: "\\mf", ST[3]: "\\p", ST[4]: "\\mp", ST[5]: "\\f"}
 DYN_O = {0: "\\mf", ST[3]: "\\p", R["link"]: "\\mf\\<", ST[5]: "\\f"}
 def organ_score():
     G = organ_global()
-    sop = voice_ly(V["S"], END, DYN_S, slurs=True); alt = voice_ly(V["A"], END, hide=[(ST[5], END)]); ten = voice_ly(V["T"], END, marks={ST[5]: "^\\markup \\tiny \\italic \"men, on the tune\""}); bas = voice_ly(V["B"], END, hide=[(ST[5], END)])
+    HOLD = (ST[4],)
+    sop = voice_ly(V["S"], END, DYN_S, slurs=True, holds=HOLD); alt = voice_ly(V["A"], END, hide=[(ST[5], END)], holds=HOLD); ten = voice_ly(V["T"], END, holds=HOLD, marks={ST[5]: "^\\markup \\tiny \\italic \"men, on the tune\""}); bas = voice_ly(V["B"], END, hide=[(ST[5], END)], holds=HOLD)
     des = voice_ly(V["Desc"], END, {ST[5]: "\\f"}, slurs=True, marks={ST[5] + 14 * BAR: "^\\markup \\italic \"broaden\""})
-    orh = voice_ly(V["org_rh"], END, DYN_O); olh = voice_ly(V["org_lh"], END); oped = voice_ly(V["org_ped"], END)
+    orh = voice_ly(V["org_rh"], END, DYN_O, holds=HOLD); olh = voice_ly(V["org_lh"], END, holds=HOLD); oped = voice_ly(V["org_ped"], END, holds=HOLD)
     ly_all = " ".join(f'\\set stanza = "{i + 1}." {stanza_text(i)}' for i in range(5))
     KEEP = "\\with { \\override VerticalAxisGroup.remove-empty = ##f }"
     src = HEAD % (14, 13, FOOT, FOOT) + f'''\\layout {{ \\context {{ \\Score \\override RehearsalMark.self-alignment-X = #LEFT \\override RehearsalMark.font-size = #-1 }}
@@ -146,6 +148,9 @@ global = {{ {G} }}
   >>
   \\new Staff = "ped" \\with {{ instrumentName = "Pedal" shortInstrumentName = "Ped." \\override VerticalAxisGroup.remove-empty = ##f }} << \\clef bass \\new Voice {{ \\global }} \\new Voice {{ {oped} }} >>
 >> \\layout {{ }} }}
+\\markup \\vspace #1
+\\markup \\small \\italic \\wordwrap {{ Stanza 2: the second Joseph is Joseph of Arimathea, who wrapped Jesus' body in linen for burial (Luke 2:7; Matthew 27:57–60). }}
+\\markup \\small \\italic \\wordwrap {{ Into stanza 4: the organ holds stanza 3's last chord (D major) and releases as the choir breathes; the choir's first chord, B minor, shares its D and F-sharp. Out of stanza 4: the link begins on D, the chord the choir ends on. }}
 '''
     return src
 # ---------------- the lead sheet: the tune, the chords as the hymnal sings them, five stanzas ----------------
@@ -166,7 +171,7 @@ def chord_line():
     return " ".join(toks), marks
 def lead_sheet():
     chs, _ = chord_line()
-    g = "\\time 3/4 \\key d \\major \\tempo \"Flowing, one to the bar\" 4 = 100 " + " ".join(("s2. \\break" if b in (4, 8, 12) else "s2.") for b in range(1, 17)) + ' \\bar "|."'
+    g = "\\time 3/4 \\key d \\major " + TEMPO + " " + " ".join(("s2. \\break" if b in (4, 8, 12) else "s2.") for b in range(1, 17)) + ' \\bar "|."'
     sop = voice_ly(stanza_events("S", 1), 16 * BAR, slurs=True)
     lys = "\n".join(f'  \\new Lyrics \\lyricsto "mel" {{ \\set stanza = "{i + 1}." {stanza_text(i)} }}' for i in range(5))
     src = HEAD % (19, 12, FOOT, FOOT) + f'''\\layout {{ \\context {{ \\Score \\override BarNumber.break-visibility = ##(#f #f #t) }} \\context {{ \\Lyrics \\override LyricText.font-size = #-0.4 }} }}

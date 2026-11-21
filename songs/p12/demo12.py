@@ -1,7 +1,7 @@
 """Wood and Cloth (second edition): the demo, from song_record.json. General MIDI: church organ (19) on the organ's three staves,
 choir aahs (52) for the four parts, voice oohs (53) for the descant. The plan as the organ score prints it: introduction and stanzas
 1-2 full, stanza 3 softer (manuals only), stanza 4 the choir alone, the link swelling, stanza 5 full with the descant; the tempo
-broadens over the last two bars and the last chord is held. Track names ASCII; tempo in quarters."""
+broadens over the last two bars and the last chord is held; stanza 3's last chord is held before the choir goes on alone. Track names ASCII; tempo in quarters."""
 import json, subprocess, mido
 H = "/home/claude/zeneng-pipeline/songs/p12"; OUT = f"{H}/out"
 R = json.load(open(f"{H}/song_record.json")); V = R["voices"]; BAR = 36; ST = {int(k): v for k, v in R["stanza_offsets"].items()}; END = R["end"]
@@ -20,7 +20,7 @@ CH = {"S": (0, 52), "A": (1, 52), "T": (2, 52), "B": (3, 52), "Desc": (4, 53), "
 mf = mido.MidiFile(ticks_per_beat=TPQ)
 tempo = mido.MidiTrack(); mf.tracks.append(tempo); tempo.append(mido.MetaMessage("track_name", name="Wood and Cloth", time=0))
 tempo.append(mido.MetaMessage("time_signature", numerator=3, denominator=4, time=0))
-marks = [(0, 100)] + [(END - 2 * BAR + 12 * i, 100 - 6 * (i + 1)) for i in range(6)]
+marks = [(0, 100), (ST[4] - BAR, 50), (ST[4], 100)] + [(END - 2 * BAR + 12 * i, 100 - 6 * (i + 1)) for i in range(6)]   # the hold at the end of stanza 3
 last = 0
 for t, q in marks:
     tempo.append(mido.MetaMessage("set_tempo", tempo=mido.bpm2tempo(q), time=T(t) - last)); last = T(t)

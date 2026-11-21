@@ -1,6 +1,6 @@
 # Luthier list for v45 (since v44)
 
-21 November 2026. Luthier v44 (957 and the verse-closer trial) is reviewed (`lib/luthier/REVIEW_stage29.md`) and merged into main at 3aa9cd2. Every kept table, every record, song 60's v44 record, `soundness.json` and the two new studies reproduce byte for byte, and so do the neighbour figures up to one block that reads an old ceiling (749.145). Both checks pass. Song 58's notes are unchanged, so it has no new edition. Next finding 749.152; next fix 958. (749.146 and 749.147 were added on 21 November from song 61, and 749.148 to 749.151 from song 12's second edition: a running tab while the maintainer is offline.)
+21 November 2026. Luthier v44 (957 and the verse-closer trial) is reviewed (`lib/luthier/REVIEW_stage29.md`) and merged into main at 3aa9cd2. Every kept table, every record, song 60's v44 record, `soundness.json` and the two new studies reproduce byte for byte, and so do the neighbour figures up to one block that reads an old ceiling (749.145). Both checks pass. Song 58's notes are unchanged, so it has no new edition. Next finding 749.153; next fix 958. (749.146 and 749.147 were added on 21 November from song 61, and 749.148 to 749.152 from song 12's second and third editions: a running tab while the maintainer is offline.)
 
 ## In short
 
@@ -89,6 +89,12 @@ Song 12, "Wood and Cloth" (`songs/p12`), a five-stanza 87 87 Christmas hymn in 3
 **Evidence.** Song 12's locked lyric: not run. Its room is in the holds at every line end and a stanza for choir alone, which the check does not count.
 **Fix.** With hymn mode: lay a hymn out on its metre's line template, count line-end holds and unaccompanied stanzas as room, and read against kept hymns.
 **Check.** Song 12's and song 53's lyrics read; songs 58 and 61 unchanged.
+
+### 749.152 A rhythm shared by every stanza must be read for how long each weak syllable is held
+**Problem.** In a strophic hymn one rhythm carries every stanza. The mouth test and the column test read where stresses fall, not how long each syllable is held, so a rhythm chosen for one stanza's words can hold weak syllables long in the others.
+**Evidence.** Song 12's second edition gave bars 5, 7 and 13 two even dotted quarters, for "one stone," "stone rolled" and "star laid." Across the five stanzas the figure helped 3 of 15 word pairs and held the weak syllable as long as the strong one in 12 ("a-gainst," "be-neath," "the," "a," "to," "and"); an outside reviewer caught it. The third edition makes those bars a dotted quarter, a slurred passing eighth and a quarter; no weak syllable in any stanza is now as long as the strong one before it (`songs/p12/consistency12.py`).
+**Fix.** With hymn mode: for every bar of a strophic tune, read each stanza's syllables against the note lengths; a weak syllable held as long as or longer than the stressed one before it dies unless kept hymns do so as often at that place; a pair of heavy words in one stanza does not license an even bar for all.
+**Check.** Song 12's second-edition rhythm dies at bars 5, 7 and 13; its third edition and song 53's tune live.
 
 ## Closed
 
