@@ -41,3 +41,6 @@ LOG.append({"step": "the tune", "run": "python3 gen12.py 3000 (seed 20261113+412
             "Also against 48c3dfdba499 (same charge): line 2 circles A4-B4 and ends on A4. Chosen: build 1060 (charge 0.406, distance 5.52, the second-nearest of the least-charge set): "
             "line 1 climbs D4 to D5 (so line 3, the Easter half, climbs the same way), line 2 falls through G# (the E7) to the half cadence on E4, line 4 steps D5 E5 on 'and cloth' and closes C#5 D5. "
             "Noted: line 2's G#4 falls to F#4 (the tendency tone resolved in an inner voice, not the tune)", "file": "melody_choice.json"})
+LOG.append({"step": "second edition built", "files": ["hymnal page", "organ score with choir", "lead sheet", "MusicXML (hymnal setting, organ score)", "demo (MP3, MIDI)", "songbook (Doc https://claude.ai/artifact/CyPxwx4kJLDw4EfKtpTpFU, Word)", "test report (Word)"],
+            "hand": "stanza 4 bars 14-15 voiced by hand (bass G2 G2 A2 A2, tenor B-flat3 to A3)", "consistency": "53 of 53",
+            "findings": "749.148-749.151 added to songs/p68/fixlist_v45.md and its Doc (running tab); next finding 749.152"})

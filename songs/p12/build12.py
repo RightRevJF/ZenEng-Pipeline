@@ -67,6 +67,13 @@ def fix_parallels(path):
 PATH_H, COST_H = harmonize(HYMNAL)
 PATH_4, COST_4 = harmonize(STANZA4, lock_bars=(13, 14))          # G minor 6 held through its bar, then A7
 PATH_5, COST_5 = harmonize(STANZA5)
+# stanza 4, bars 14-15 (the writer's G minor 6, then A7): the search's bass went B-flat to C-sharp, an augmented second. Set by hand: the bass
+# holds G under G minor 6 and steps to A; the tenor's B-flat falls to A; the third of A7 arrives in the tune on beat 3 ("his").
+def _set(path, bar, vs):
+    ks = [k for k, x in enumerate(NOTES) if x["on"] // BAR == bar - 1]
+    for k, v in zip(ks, vs): path[k] = list(v)
+_set(PATH_4, 14, [("Gm6", 67, 58, 43), ("Gm6", 67, 58, 43)]); _set(PATH_4, 15, [("A7", 67, 57, 45), ("A7", 64, 57, 45)])
+HAND = ["stanza 4 bars 14-15 voiced by hand: bass G2 G2 A2 A2 (was G2 B-flat2 C-sharp3, an augmented second), tenor B-flat3 to A3"]
 FIXES = {n: fix_parallels(p) for n, p in (("hymnal", PATH_H), ("stanza4", PATH_4), ("stanza5", PATH_5))}
 SCALE_D = {2, 4, 6, 7, 9, 11, 1}
 def passing(notes, path, rate=0.10):
@@ -198,7 +205,7 @@ for voice in ("org_rh", "org_lh", "org_ped"): V[voice] = merge_holds(V[voice], T
 REC = dict(title=L.TITLE, edition=L.EDITION, voices=dict(V), stanza_offsets=ST, intro=INTRO, link=LINK, end=END, bars=88, qpm=100,
            key="D major", meter="3/4", chords=dict(hymnal=HYMNAL, stanza4=STANZA4, stanza5=STANZA5),
            paths=dict(hymnal=PATH_H, stanza4=PATH_4, stanza5=PATH_5), costs=dict(hymnal=COST_H, stanza4=COST_4, stanza5=COST_5),
-           segments=dict(hymnal=SEG_H, stanza4=SEG_4), parallel_fixes=FIXES, descant=DESC, tune=NOTES, build=json.load(open(f"{H}/melody_choice.json"))["n"])
+           segments=dict(hymnal=SEG_H, stanza4=SEG_4), parallel_fixes=FIXES, hand=HAND, descant=DESC, tune=NOTES, build=json.load(open(f"{H}/melody_choice.json"))["n"])
 json.dump(REC, open(f"{H}/song_record.json", "w"), default=list)
 if __name__ == "__main__":
     N = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']; nm = lambda p: N[p % 12] + str(p // 12 - 1)

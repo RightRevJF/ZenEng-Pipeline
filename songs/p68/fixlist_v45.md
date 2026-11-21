@@ -1,6 +1,6 @@
 # Luthier list for v45 (since v44)
 
-21 November 2026. Luthier v44 (957 and the verse-closer trial) is reviewed (`lib/luthier/REVIEW_stage29.md`) and merged into main at 3aa9cd2. Every kept table, every record, song 60's v44 record, `soundness.json` and the two new studies reproduce byte for byte, and so do the neighbour figures up to one block that reads an old ceiling (749.145). Both checks pass. Song 58's notes are unchanged, so it has no new edition. Next finding 749.148; next fix 958. (749.146 and 749.147 were added on 21 November from song 61, a running tab while the maintainer is offline.)
+21 November 2026. Luthier v44 (957 and the verse-closer trial) is reviewed (`lib/luthier/REVIEW_stage29.md`) and merged into main at 3aa9cd2. Every kept table, every record, song 60's v44 record, `soundness.json` and the two new studies reproduce byte for byte, and so do the neighbour figures up to one block that reads an old ceiling (749.145). Both checks pass. Song 58's notes are unchanged, so it has no new edition. Next finding 749.152; next fix 958. (749.146 and 749.147 were added on 21 November from song 61, and 749.148 to 749.151 from song 12's second edition: a running tab while the maintainer is offline.)
 
 ## In short
 
@@ -61,6 +61,34 @@ Song 61, "This Side of the Door" (`songs/p71`), was written under v44 as merged 
 **Evidence.** Song 61, "Three, and then two" (verse 3 and the last chorus): "three" a quarter of a beat, "and" two and a quarter beats, "then" three and a quarter. The chosen tune's words' fit was 0.363 and passed. Fixed by hand in the second edition ("three" a beat and a half on the downbeat, "and then" quick, "two" on the next downbeat; `songs/p71/hand61.py`), the fit rises to 0.404.
 **Fix.** Rule first: read, in kept songs, where the length of a short line (five syllables or fewer) in a slot of two bars or more falls, stressed or not. If Luthier's builds put it on weak syllables more than kept songs do, either give such lines one bar or make the fit count held length by stress within a line.
 **Check.** No chosen tune holds a weak syllable of a short line longer than its stressed ones, unless kept songs do so as often; the words' fit does not fall.
+
+## Added from song 12, second edition (running tab)
+
+Song 12, "Wood and Cloth" (`songs/p12`), a five-stanza 87 87 Christmas hymn in 3/4 for congregation, choir and organ, rewritten on 21 November by the sketch path (song 53's hymn-mode tools, adapted to a trochaic metre), since Luthier does not yet write 3/4 or hymns. These are for when hymn mode is ported. Its test report holds the readings.
+
+### 749.148 The song-wide peak band does not fit a hymn whose last stanza carries the descant
+**Problem.** 749.17 puts the song's high point at 0.65 to 0.85 of the song as performed. A strophic hymn with a last-stanza descant and full organ peaks in its last stanza by design.
+**Evidence.** Song 12 peaks at bars 85 and 86 of 88 (the descant's G5 over "cloth," full organ), 0.97 of the song. Its release before the peak is stanza 4, choir alone (bars 53 to 68, 0.60 to 0.77), and the organ's return at bar 69 (0.78) is the fresh re-entry 749.19 asks for, late. The shape is the standard one for a hymn with a final-verse descant (Willcocks, "O Come, All Ye Faithful," Carols for Choirs 1, 1961).
+**Fix.** Rule first: read the high point's place in hymns with a last-verse descant or reharmonization; give hymn mode its own band, or exempt a final stanza that is marked as the climax.
+**Check.** Song 12 reads inside the hymn band; songs 52 and 53 still read inside theirs.
+
+### 749.149 The hymn judge does not read a line's shape or where the tune sits
+**Problem.** The charge against the 3/4 hymn quartiles reads intervals, steps, range and rhythms, but not where in the range each line sits or whether it rises and falls.
+**Evidence.** Song 12's least-charge pick (2c26d99ebe1c, charge 0.406) kept line 1 inside D4 to F#4. In an A B A C form, line 3 repeats it, so half the hymn sat in a third; the tie at the same charge (build 1060) climbs D4 to D5 and was chosen by ear. 2,630 of 3,000 builds survived (87.7%): the gates decide too little.
+**Fix.** Rule first: read, in the kept hymns, each line's median pitch and its highest note's place in the line, and charge against their quartiles; in a form with a repeated line, read the repeated line twice.
+**Check.** Song 12's judge picks a tune whose line 1 reaches the octave or within a step of it; songs 52 and 53's picks unchanged or better on the new reading.
+
+### 749.150 The four-part search lets an augmented second and low thirds through
+**Problem.** Song 53's beam search (the four-part setting) has no cost for an augmented second in a voice and none for close intervals low down (Module 9.14: no third below F3, no second below C4). A slurred melisma copies the chord under it, which can leave parallel octaves.
+**Evidence.** Song 12's stanza 4 bass went G2, B-flat2, C-sharp3 (fixed by hand). Its first harmonization put a third below F3 in 90 samples of 6 ticks and a second below C4 in 20; with two costs added (`songs/p12/harmonize12.py`) the choir has none and only the men's unison tune against the organ bass remains (23). The melisma hold left one parallel octave, soprano and tenor, E to F-sharp in bar 10, removed by a pass after the search.
+**Fix.** In the setting module: cost an augmented second in any voice; cost the two low intervals; check parallels across a melisma inside the search, not after.
+**Check.** Song 12's three settings and song 53's rerun with no augmented second, no low interval in the choir and no parallels, with no hand edits.
+
+### 749.151 The room check cannot read a strophic hymn
+**Problem.** `lyric_room.py` lays a lyric out on the 4/4 engine, so it cannot run on a 3/4 hymn.
+**Evidence.** Song 12's locked lyric: not run. Its room is in the holds at every line end and a stanza for choir alone, which the check does not count.
+**Fix.** With hymn mode: lay a hymn out on its metre's line template, count line-end holds and unaccompanied stanzas as room, and read against kept hymns.
+**Check.** Song 12's and song 53's lyrics read; songs 58 and 61 unchanged.
 
 ## Closed
 
