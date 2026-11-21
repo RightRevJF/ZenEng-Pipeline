@@ -7,7 +7,7 @@ R = json.load(open(os.path.join(HERE, "lyric58.song.json"))); REC = pickle.load(
 CON = json.load(open(os.path.join(HERE, "consistency58.json"))); DR = pickle.load(open(os.path.join(OUT, "demo_report.pkl"), "rb"))
 M = R["melody"]; J = R["judge7"]; S = R["spec"]
 md = [f"# Same Time Tomorrow ({REC['edition']}): test report", "", "Words and music: Jason Bryant", "",
-      "Song 58 (songs/p68), written end to end from its lyric with `lib/luthier/song_from_lyric.py` under Luthier v39 (main at aaa2470; 944, its shape from its own words, no kept song drawn). This report is the engine's record; the songbook is for musicians.", "",
+      "Song 58 (songs/p68), written end to end from its lyric with `lib/luthier/song_from_lyric.py` under Luthier v41 (main at d498055; its shape from its own words, read one way, 946). This report is the engine's record; the songbook is for musicians.", "",
       "## What a person typed", "",
       "The title; the words by section, with section names marking returns (the second chorus typed out); seven settings: " +
       ", ".join(f"{k} {S.get(k, json.load(open(os.path.join(HERE, 'lyric58.json'))).get(k))}" for k in ("metre", "bpm")) + ", voice baritone, lead guitar, mode major, genre folk, seed 1. Nothing else was typed or chosen by hand. The record reproduces byte for byte (REVIEW_stage22.md).", "",
@@ -41,8 +41,8 @@ md += ["", "## Research checks (the offline rules)", "",
        "| Check | Result |", "|---|---|"]
 for c in CON: md.append(f"| {c['check']} | {'pass' if c['ok'] else ('not met' if c['check'].startswith('READING') else 'FAIL')}{(' (' + c['detail'] + ')') if c['detail'] else ''} |")
 md += ["", "## Findings", "",
-       "Numbered from 749.128; each has Problem, Evidence, Fix and Check in the list for v40 (`songs/p68/fixlist_v40.md` and its Doc). 749.123 to 749.127 are carried.", "",
-       "- See the list for v40: the words-to-shape features measured two ways, and the carried items.",
+       "Numbered from 749.131; each has Problem, Evidence, Fix and Check in the list for v42 (`songs/p68/fixlist_v42.md` and its Doc).", "",
+       "- See the list for v42.",
        "- Carried open: 749.61 (6/8)."]
 text = "\n".join(md) + "\n"; open(os.path.join(HERE, "test_report58.md"), "w").write(text)
 if __name__ == "__main__":
