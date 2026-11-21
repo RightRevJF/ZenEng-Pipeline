@@ -17,4 +17,16 @@ X = np.array(X); Y = np.array(Y); mu = X.mean(0); sd = X.std(0); Z = (X - mu) / 
 for j, c in enumerate(T3):
     m = RidgeCV(alphas=np.logspace(-1, 3, 13)).fit(Z, Y[:, j]); out["readings"][c] = dict(intercept=round(float(m.intercept_), 6), coef=[round(float(v), 6) for v in m.coef_], alpha=float(m.alpha_), kept_10th=round(float(np.percentile(Y[:, j], 10)), 4), kept_90th=round(float(np.percentile(Y[:, j], 90)), 4))
     print(c, "alpha", m.alpha_, "fit rank correlation", round(float(np.corrcoef(np.argsort(np.argsort(m.predict(Z))), np.argsort(np.argsort(Y[:, j])))[0, 1]), 3))
+# 952 (749.131, 749.133): the family middles of repeated notes are made here (before, no script wrote them). Each family's middle is given with its bootstrap range and
+# is pulled toward the kept middle by its size: weight n / (n + k), k = the variance of a family's median from sampling (1.57 x the variance within families) over the variance between the families' middles (less that sampling variance).
+_src = open(os.path.join(ROOT, "studies", "genre", "genre_test.py")).read(); _ns = {}; exec(_src[_src.index("SOUL = "):_src.index("MAJ = {")], _ns)
+_F = np.array([_ns["family"](s) for s in KR["song_names"]]); _y = np.array([r[NM.index("repeated notes")] for r in KR["rows"]]); _rng = np.random.default_rng(0); _km = float(np.median(_y)); _fs = sorted(set(_F))
+_within = float(np.mean([np.var(_y[_F == f], ddof=1) for f in _fs])); _samp = float(np.mean([1.57 * _within / (_F == f).sum() for f in _fs])); _between = max(1e-9, float(np.var([np.median(_y[_F == f]) for f in _fs], ddof=1)) - _samp); _k = 1.57 * _within / _between
+fam_out = dict(note="947 (749.129), 952 (749.131, 749.133): the share of repeated notes by genre family (studies/movement_by_family: of steps, leaps and repeated notes only repeated notes differ by family, at 2.2 shuffles in 100, uncorrected for the three tests; corrected the bar is 1.7). The engine takes the shrunk middle. Families as studies/genre",
+               kept_middle=round(_km, 3), k=round(_k, 2), families={})
+for f in _fs:
+    v = _y[_F == f]; b = [float(np.median(_rng.choice(v, len(v)))) for _ in range(2000)]; w = len(v) / (len(v) + _k); m = float(np.median(v))
+    fam_out["families"][f] = dict(songs=int(len(v)), middle=round(m, 3), range_90=[round(float(x), 3) for x in np.percentile(b, (5, 95))], weight=round(w, 3), shrunk=round(w * m + (1 - w) * _km, 3)); fam_out[f] = fam_out["families"][f]["shrunk"]
+    print(f, fam_out["families"][f])
+out["repeated_notes_by_family"] = fam_out
 json.dump(out, open(os.path.join(ROOT, "tables", "kept_words_to_shape.json"), "w"), indent=1); print("songs", len(X), "| year held at", out["year_held_at"])

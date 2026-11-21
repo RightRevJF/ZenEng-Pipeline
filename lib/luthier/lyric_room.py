@@ -40,8 +40,20 @@ def check(L, tunes=40):
     if not words: words.append("The words leave room and the sections differ in how busy they are, as kept songs do.")
     return dict(title=L["title"], tunes_read=len(cap["rows"]), tries=cap["tries"], readings=med, kept_25th_middle_75th={k: [T[k][1], T[k][2], T[k][3]] for k in med}, place=place, seconds=secs, bars=bars, bars_in_sung_sections=sung_bars,
                 syllables_a_line=dict(verse=round(float(np.mean(v)), 1) if v else None, chorus=round(float(np.mean(c)), 1) if c else None), in_plain_words=[w for w in words if w])
+def stamp():
+    """953 (749.132): the engine and the tables that made a room file, so a file that no longer matches its engine can be seen. Hashes of the files' contents, not a commit
+    (a commit is not known until the file is in it): every .py in lib/luthier, every .json under tables. A rerun on the same engine gives the same file byte for byte."""
+    import hashlib, glob
+    def h(paths):
+        s = hashlib.sha1()
+        for q in sorted(paths): s.update(os.path.basename(q).encode()); s.update(open(q, "rb").read())
+        return s.hexdigest()[:12]
+    root = os.path.join(HERE, "..", ".."); return dict(engine=h(glob.glob(os.path.join(HERE, "*.py"))), tables=h(glob.glob(os.path.join(root, "tables", "**", "*.json"), recursive=True)), note="953: sha1 of every .py in lib/luthier and of every .json under tables; lib/luthier/lyric_room.py --check lists room files that no longer match")
 if __name__ == "__main__":
-    L = json.load(open(sys.argv[1])); R = check(L, int(sys.argv[2]) if len(sys.argv) > 2 else 40); json.dump(R, open(sys.argv[1].replace(".json", ".room.json"), "w"), indent=1)
+    if sys.argv[1] == "--check":
+        import glob; now = stamp(); bad = [q for q in sorted(glob.glob(os.path.join(HERE, "..", "..", "songs", "*", "*.room.json"))) if {k: v for k, v in (json.load(open(q)).get("made_by") or {}).items() if k != "note"} != {k: v for k, v in now.items() if k != "note"}]
+        print("every room file is this engine's" if not bad else "room files not made by this engine (rerun them):\n  " + "\n  ".join(os.path.relpath(q) for q in bad)); sys.exit(1 if bad else 0)
+    L = json.load(open(sys.argv[1])); R = check(L, int(sys.argv[2]) if len(sys.argv) > 2 else 40); R["made_by"] = stamp(); json.dump(R, open(sys.argv[1].replace(".json", ".room.json"), "w"), indent=1)
     if "error" in R: print(R["error"]); sys.exit(1)
     print(f"{R['title']}: the lyric's room ({R['tunes_read']} quick tunes)")
     for k, nm in (("room", "bars with nothing sung"), ("contrast", "change in how busy the singing is"), ("rhythm_scaling", "rhythm scaling")): print(f"  {nm:36} {R['readings'][k]:<6} kept {R['kept_25th_middle_75th'][k]}   {R['place'][k]}")

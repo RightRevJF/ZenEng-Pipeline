@@ -527,3 +527,17 @@ Answers the session's review of v39 (749.128, 749.129, 749.126, 749.124; 749.130
 - Unmet: range. The words ask 18 to 20 semitones; the builds span 14 or 15. Next: plant the peak (749.111), rule first.
 
 Next: Luthier v42 (row v213), Window 199, Module 27.123 (anchor "27.122"), tables HI…, fixes from 950.
+
+## Luthier v42 (Window 199): the range the words ask
+
+Mends the range (749.111) and answers Review 26 (749.131 to 749.134). Paper: `reports/Luthier_v42.docx` (builder `reports/make_luthier_v42_from_v41.py`), row v213, Module 27.123, Table HI. Results: `studies/plant_the_peak` (RESULT3 to RESULT6), `studies/choose_the_range`, `studies/commonest_pitch`, `studies/soundness/neighbour_v42.json`, `studies/shape_from_the_song/own.json`.
+
+- 950 (749.111): the peak planted as a note. Each fresh chorus line in turn keeps its centre, has its top set to the peak (floor plus the asked range), and is redrawn (60 tries) until its highest stressed note is the peak; the first to reach it carries it (`Engine.pitches` wraps `pitches1`; `target.peak`; `PLANT_PEAK`). Three earlier forms failed: a line drawn in a raised register lifts the chorus's median and dies at 838. Builds' middle range 14, 15, 15, 15 to 17, 15, 17, 17 (songs 55, 54, 58, 59).
+- 951: among the builds past every gate, the pick is the first whose range is within 2 semitones of the asking; else the nearest (`target.choose_range`; `CHOOSE_RANGE`; the record's `judge7.range_choice`). Chosen tunes: 17, 17, 19, 19, 19 (songs 55, 54, 58, 60, 59); 872 alone gave 17, 14, 11, 19, 19. Cost: song 54's words' fit 0.282 to 0.163 (kept floor 0.152).
+- 952 (749.131, 749.133): `make_kept_words_to_shape.py` writes the family middles of repeated notes with bootstrap ranges and a shrunk middle (soul 0.207 to 0.232, country 0.335 to 0.329, others 0.319); the engine stops where a family is missing. Only song 60's asking moves.
+- 953 (749.132): `lyric_room.py` stamps each room file with hashes of the engine's code and the kept tables; `python3 lib/luthier/lyric_room.py --check` lists stale files. All five room files reread.
+- 749.134 studied, not mended: the commonest pitch's share is over the kept 90th (verse 0.44, chorus 0.474) in two chosen tunes of four, in verses (54: 0.53; 58: 0.50) and in choruses (55: 0.476; 58: 0.50). A floor is proposed, to be tried against the pool standard first.
+- Picks sound; one lean past the quartiles (rhythm scaling, low). Neighbour choice 1.5 in 100 (0.1 to 2.9); random pool pick 2.7 (0.6 to 5.0). Songs 52 and 53 byte for byte as they were. Song 60 under this window: `songs/p70/lyric60.v42.song.json`.
+- Unmet: song 54's builds no wider in the middle; fewer builds live (342, 309, 419, 376); why the pools grew sounder is untraced; rhythm scaling's engine side untried.
+
+Next: Luthier v43 (row v214), Window 200, Module 27.124 (anchor "27.123"), tables HJ…, fixes from 954.

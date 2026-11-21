@@ -27,6 +27,8 @@ WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm 
 AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling; tried again in Window 190 with 929 in: the builds' bars sung again move by 0.03 and a random pool pick fails the rule 7 times in 100, see studies/v33_trials)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
+PLANT_PEAK = True      # 950
+CHOOSE_RANGE = True    # 951: the choice among the builds past every gate reads the range the words ask
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
@@ -126,8 +128,9 @@ def plan(L):
             import numpy as _np6, words_to_shape as _WS                                         # How much it repeats and how wide it ranges: from its own words, by the link found in the kept songs as a body (studies/words_to_shape).
             col_ = lambda c_: [r_[KR_["names"].index(c_)] for r_ in KR_["rows"]]; q_ = lambda c_, p_: float(_np6.percentile(col_(c_), p_))      # How it moves: the middle of what every kept melody does (the paper's invariants, Module 0.4), unless the writer asks otherwise.
             tr_ = {c_: q_(c_, 50) for c_ in KR_["names"]}; own_, feat_ = _WS.from_sung(sung, minor=L.get("mode", "major") == "minor"); tr_.update(own_); mv_ = L.get("movement")
-            fam_ = FAMILY.get(L.get("genre", "pop"), "other"); rf_ = json.load(open(_WS.TABLE)).get("repeated_notes_by_family") or {}      # 947 (749.129): of the three movements only repeated notes differ by genre family in kept songs; that one is the family's middle
-            if fam_ in rf_: tr_["repeated notes"] = float(rf_[fam_])
+            fam_ = FAMILY.get(L.get("genre", "pop"), "other"); rf_ = json.load(open(_WS.TABLE)).get("repeated_notes_by_family") or {}
+            if fam_ not in rf_: raise SystemExit(f"952 (749.131): tables/kept_words_to_shape.json has no middle of repeated notes for the genre family {fam_!r}; run lib/luthier/make_kept_words_to_shape.py")      # 947 (749.129): of the three movements only repeated notes differ by genre family in kept songs; that one is the family's middle
+            tr_["repeated notes"] = float(rf_[fam_])
             if mv_ == "smooth": tr_["moves by step"] = q_("moves by step", 75); tr_["moves by leap"] = q_("moves by leap", 25)
             elif mv_ == "leaping": tr_["moves by leap"] = q_("moves by leap", 75); tr_["moves by step"] = q_("moves by step", 25)
             elif mv_ == "chant": tr_["repeated notes"] = q_("repeated notes", 75); tr_["longest run of one pitch"] = q_("longest run of one pitch", 75)
@@ -145,6 +148,7 @@ def plan(L):
         dr_ = int(round(max(-5, min(9, want_ - span_))))
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][2] = min(rg_[k_][2] + dr_, rg_["Verse"][1] + (V[1] - V[0])) if rg_[k_][2] + dr_ > rg_[k_][0] + 1 else rg_[k_][0] + 2
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][0] = max(rg_[k_][1] + 2, min(rg_[k_][2] - 2, rg_[k_][0] + int(round(dr_ * CENTRE_FOLLOWS))))      # and each part's centre follows its top, so the line can reach it
+        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60); spec["target"]["choose_range"] = CHOOSE_RANGE      # 950: the peak planted as a note in the first fresh chorus line that reaches it
         spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]

@@ -192,6 +192,23 @@ class Engine:
         return out
     # ---- pitches
     def pitches(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
+        # 950 (749.111): the song's peak planted as a note. The range the song's words ask is a top the draw seldom climbs to, so the builds spanned 14 or 15 semitones where 18 to 20 were asked.
+        # Each fresh chorus line in turn keeps its own centre, has its top set to the peak (the floor plus the asked range, inside the parts' tops, on the scale) and is redrawn, 60 times at most,
+        # until its highest stressed note is the peak; the first line that reaches it carries it. (studies/plant_the_peak, sixth trial.)
+        pk = (self.S.get("target") or {}).get("peak")
+        if not pk or getattr(self, "_peaked", True) or self.KIND.get(sec) != "Chorus": return self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
+        R = self.S["registers"]; P = int(min(min(R[x][1] for x in ("Verse", "Chorus")) + round(pk["range"]), max(R[x][2] for x in ("Verse", "Chorus", "Bridge") if x in R)))
+        while P % 12 not in self.SCALE: P -= 1
+        key = f"{sec}:{i}"; had = R.get(key); base = self.reg(sec, i); R[key] = [base[0], base[1], P]; ps = None
+        try:
+            for _ in range(pk.get("tries", 60)):
+                ps = self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
+                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+        finally:
+            if had is None: R.pop(key, None)
+            else: R[key] = had
+        return ps
+    def pitches1(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
         mu, lo, hi = self.reg(sec, i); ps = []; last = None; sy = self.LINES[sec][i]
         DG = self.S.get("degrees"); DW = (DG["weights"].get(self.KIND[sec]) or DG["weights"]["all"]) if DG else None; ton = DG["tonic"] if DG else 0; blue = set(DG.get("blue", ())) if DG else set()
         WP = self.S.get("word_pitch"); TR = WW_.tier(sy) if (self.WW and self.WW["sp"]) else None
@@ -323,7 +340,7 @@ class Engine:
                 self.stats["929: a returning line's first note moves a step, to end a run at the join"] += 1; return [(r[0][0], q)] + list(r[1:])
         return None
     def build(self, rng):
-        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None
+        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
@@ -550,11 +567,17 @@ class Engine:
                     for r_, c in enumerate(v): rk[(c["fp"], n_)] = r_
                 score = lambda c: sum(rk[(c["fp"], n_)] for n_ in names) / len(names)
                 short = sorted(pool, key=lambda c: (score(c), c["fp"]))[:5]                                                                         # printed beside the pick, and chooses nothing (872)
-                pick = min(pool, key=lambda c: c["n"]) if ok else min(pool, key=lambda c: (c["d7"], c["fp"]))                                       # 872 (749.60): no reading has passed the bench, so the first build past both gates, in the order built
+                pick = min(pool, key=lambda c: c["n"]) if ok else min(pool, key=lambda c: (c["d7"], c["fp"]))
+                ask_ = ((self.S.get("target") or {}).get("peak") or {}).get("range") if (self.S.get("target") or {}).get("choose_range") else None; chose_ = None
+                if ok and ask_ is not None:                                                                                                         # 951: among the builds past every gate, the first in the order built whose range is within 2 semitones of what the song's words ask; where none is, the nearest. The asking is the song's own, not a judgement between tunes: 872 still decides among builds that meet it
+                    nr_ = [c for c in pool if abs(c["readings"]["range"] - ask_) <= 2]; first_ = pick
+                    pick = min(nr_, key=lambda c: c["n"]) if nr_ else min(pool, key=lambda c: (abs(c["readings"]["range"] - ask_), c["n"]))
+                    chose_ = dict(asked=round(ask_, 1), builds_in_the_pool=len(pool), within_2_of_the_asking=len(nr_), the_first_build_past_the_gates_range=int(first_["readings"]["range"]), the_pick_range=int(pick["readings"]["range"]), the_pick_is_the_first_build_past_the_gates=bool(pick is first_))                                       # 872 (749.60): no reading has passed the bench, so the first build past both gates, in the order built
                 j7 = dict(kept_songs=J.n, readings_read_together=J.names, gate=round(J.gate, 3), a_kept_songs_usual_distance=round(J.usual, 3), kept_middle_half=[round(x, 3) for x in J.band], builds=len(alive), pass_the_gate=len(ok), in_the_kept_middle_half=len(band),
                           builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"], words_gate=wgate, pick_words_fit=WW_.fit(pick["notes"], self.BAR, self.BEAT, parts=True) if self.WW else None,
                           pool="past both gates: the old charge's least half, then the joint gate; the pick is the first of them in the order built" if ok else "no build passed the joint gate: the least distance among the old charge's least half", gates_passed=dict(old_charge_least_half=len(first), joint_gate=n_joint, words_gate=n_words_ if wgate else None), gates_removed=dict(old_charge=len(alive) - len(first), joint_gate=len(first) - n_joint, words_gate=(n_joint - n_words_) if wgate and not wgate.get("no build past the joint gate also passed: the gate is waived") else None), shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
                           the_old_pick=dict(fp=old_pick, distance=round(next(c["d7"] for c in alive if c["fp"] == old_pick), 3), passes=bool(next(c["d7"] for c in alive if c["fp"] == old_pick) <= J.gate)), withheld_reading_old_charge_of_the_pick=round(pick["charge"], 3), the_old_pick_notes=[[n["on"], n["p"], n["sec"]] for n in next(c["notes"] for c in alive if c["fp"] == old_pick)])
+        if isinstance(j7, dict) and j7.get("builds") and chose_ is not None: j7["range_choice"] = chose_
         if isinstance(j7, dict) and pgate is not None: j7["page_gate"] = pgate; j7["pick_page_gate"] = {k_: round(v_, 3) for k_, v_ in pick.get("page", {}).items()}; j7["gates_passed"]["page_floor"] = pgate["passed"] if not pgate.get("no build past the other gates also passed: the floor is waived") else pgate["read"]; j7["gates_removed"]["page_floor"] = pgate["read"] - j7["gates_passed"]["page_floor"]
         st = [n for n in pick["notes"] if n["stress"]]; E = {True: [0, 0, 0], False: [0, 0, 0]}
         for c in alive:
