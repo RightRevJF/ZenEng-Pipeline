@@ -12,6 +12,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 if os.environ.get("MARGIN_TURNS_OF_FOUR"): sys.path.insert(0, os.environ["MARGIN_TURNS_OF_FOUR"])
 import song_from_lyric as SL; import metre_engine as M, word_weight as WW
 import soundness as S
+import make_kept_commonest_pitch as CPK
 class Got(Exception): pass
 CAP = {}; NAMES = [n for n, _ in S.CHECKS]
 def row(sung):
@@ -31,15 +32,21 @@ def capture(self, N, seed):
     ml = float(np.median([c["f_len"] for c in alive])); mh = float(np.median([c["f_ht"] for c in alive]))
     pool = [c for c in ok if c["f_all"] >= self.WW["gate"] and c["f_len"] >= ml and c["f_ht"] >= mh] or ok
     for c in alive: c["row"] = row(c["sung"])
+    def cp_(c, part):                                                                             # 749.134: the share of a part's sung notes on its commonest pitch
+        import collections; ps = [n["p"] for n in c["sung"] if CPK.kind(n["sec"]) == part]; return max(collections.Counter(ps).values()) / len(ps) if len(ps) >= 20 else 0.0
+    for c in alive: c["cp"] = (cp_(c, "Verse"), cp_(c, "Chorus"))
+    ce_ = self.S.get("pitch_ceiling")                                                              # 956: the engine's pool is under the ceiling
+    if ce_: pool = [c for c in pool if c["cp"][0] <= ce_["Verse"] and c["cp"][1] <= ce_["Chorus"]] or pool
     loose = [c for c in alive if c["d7"] <= J.gate and c["f_all"] >= self.WW["gate"]]        # the joint gate and the kept floor only: no pull to the builds' better halves
-    CAP.update(pool=pool, alive=alive, loose=loose, target=(self.S.get("target") or {}).get("readings")); raise Got()
+    CAP.update(floor=((self.S.get("target") or {}).get("choose_range") or {}).get("floor"), pool=pool, alive=alive, loose=loose, target=(self.S.get("target") or {}).get("readings")); raise Got()
 M.Engine.run = capture
 K = S.kept_rows(); full = [r for r in K.values() if all(n in r for n in NAMES)]
 Q = {n: [float(x) for x in np.percentile([r[n] for r in full], (10, 25, 50, 75, 90))] for n in NAMES}; W_ = {n: max(1e-9, Q[n][3] - Q[n][1]) for n in NAMES}
-pools = {}; ALIVE = {}; LOOSE = {}; TARGET = {}
+pools = {}; ALIVE = {}; LOOSE = {}; TARGET = {}; FLOOR = {}
 for f in sys.argv[1:]:
     try: SL.write(json.load(open(f)), 1000, 12)
     except Got: pass
+    FLOOR[os.path.basename(f)] = CAP["floor"]
     TARGET[os.path.basename(f)] = CAP["target"]; pools[os.path.basename(f)] = CAP["pool"]; ALIVE[os.path.basename(f)] = CAP["alive"]; LOOSE[os.path.basename(f)] = CAP["loose"]; print(os.path.basename(f), "pool", len(CAP["pool"]), "loose", len(CAP["loose"]), flush=True)
 def outside(r): return sum(S.side(Q[n], r[n], "half") != 0 for n in NAMES)
 def judge(rows): w = S.same_side(Q, rows, NAMES, "wide"); h = S.same_side(Q, rows, NAMES, "half"); return (not w and len(h) <= 2), [x[0] for x in w], [x[0] for x in h]
@@ -95,5 +102,33 @@ rngb = random.Random(940); rs = lambda v: [round(float(x), 3) for x in np.percen
 out["ranges_90"] = {"neighbour choice": rs([boot_neighbour(res(pools), 1000, rngb) for _ in range(200)]), "a random pick from the engine's pool": rs([boot_rate(res(pools), 1000, rngb) for _ in range(200)]),
                     "a random pick from every build that lived": rs([boot_rate(res(ALIVE), 1000, rngb) for _ in range(200)]), "pool_sizes": {k: len(v) for k, v in pools.items()},
                     "note": "940: each pool resampled with replacement at its own size, 200 times; the 5th and 95th percentiles of the figure read on the resamples. 949 (749.124): 1,000 inner draws a resample for every figure, so a range is the pools' and not the inner draws'"}
+# Window 200. 749.137: the pool figures with range left out of the rule. 749.134: the pools under a ceiling on the commonest pitch's share. Each with its own seeded draws, so the figures above are untouched.
+def judge_on(rows, names): w = S.same_side(Q, rows, names, "wide"); h = S.same_side(Q, rows, names, "half"); return (not w and len(h) <= 2), [x[0] for x in w], [x[0] for x in h]
+def rates(P, names, seed):
+    r_ = random.Random(seed); fl = 0; hl = {}
+    for _ in range(4000):
+        ok_, _, h_ = judge_on([r_.choice(p)["row"] for p in P.values()], names); fl += not ok_
+        for x in h_: hl[x] = hl.get(x, 0) + 1
+    nf = 0
+    for _ in range(1000):
+        rows = []
+        for p in P.values(): t_ = r_.choice(full); rows.append(min(p, key=lambda c: sum(((c["row"][n] - t_[n]) / W_[n]) ** 2 for n in names))["row"])
+        nf += not judge_on(rows, names)[0]
+    return dict(a_random_pick_from_the_pool_fails=round(fl / 4000, 3), neighbour_choice_fails=round(nf / 1000, 3), lean_past_25_75_share_by_check={k: round(v / 4000, 3) for k, v in sorted(hl.items(), key=lambda x: -x[1])[:5]})
+NR = [n for n in NAMES if n != "range"]
+out["749.137"] = dict(with_range=rates(pools, NAMES, 137), range_left_out=rates(pools, NR, 137), pool_range_quartiles={k: [float(x) for x in np.percentile([c["row"]["range"] for c in p], (25, 50, 75))] for k, p in pools.items()})
+CE = json.load(open(os.path.join(ROOT, "studies", "commonest_pitch", "result.json")))["kept"]; cv, cc = CE["Verse"]["p10_25_50_75_90"][4], CE["Chorus"]["p10_25_50_75_90"][4]
+under = {k: [c for c in p if c["cp"][0] <= cv and c["cp"][1] <= cc] for k, p in pools.items()}
+def chosen(p, fl):
+    if not p: return None
+    nr = [c for c in p if fl is None or c["readings"]["range"] >= fl]; c = min(nr, key=lambda c: c["n"]) if nr else min(p, key=lambda c: (-c["readings"]["range"], c["n"]))
+    return c
+def tell(c): return None if c is None else dict(n=c["n"], range=int(c["readings"]["range"]), words_fit=round(c["f_all"], 3), commonest_pitch_verse=round(c["cp"][0], 3), commonest_pitch_chorus=round(c["cp"][1], 3), outside_middle_half=outside(c["row"]))
+pk0 = {k: chosen(p, FLOOR[k]) for k, p in pools.items()}; pk1 = {k: chosen(p, FLOOR[k]) for k, p in under.items()}
+out["749.134"] = dict(ceiling=dict(verse=cv, chorus=cc), pool_sizes={k: len(p) for k, p in pools.items()}, pool_sizes_under_the_ceiling={k: len(p) for k, p in under.items()},
+                      living_builds_under_the_ceiling={k: round(float(np.mean([c["cp"][0] <= cv and c["cp"][1] <= cc for c in a])), 3) for k, a in ALIVE.items()},
+                      chosen_without_the_ceiling={k: tell(c) for k, c in pk0.items()}, chosen_under_the_ceiling={k: tell(c) for k, c in pk1.items()},
+                      chosen_without_sound=judge([c["row"] for c in pk0.values()])[0], chosen_under_sound=(judge([c["row"] for c in pk1.values()])[0] if all(pk1.values()) else None),
+                      rates_under_the_ceiling=(rates(under, NAMES, 134) if all(under.values()) else None), rates_without=rates(pools, NAMES, 134))
 print(json.dumps(out, indent=1))
 json.dump(out, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "neighbour" + ("_" + os.environ.get("TRIAL_NAME", "trial") if os.environ.get("MARGIN_TURNS_OF_FOUR") else os.environ.get("OUT_SUFFIX", "")) + ".json"), "w"), indent=1)

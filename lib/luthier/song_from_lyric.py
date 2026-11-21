@@ -27,8 +27,9 @@ WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm 
 AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling; tried again in Window 190 with 929 in: the builds' bars sung again move by 0.03 and a random pool pick fails the rule 7 times in 100, see studies/v33_trials)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
-PLANT_PEAK = True      # 950
-CHOOSE_RANGE = True    # 951: the choice among the builds past every gate reads the range the words ask
+PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
+PITCH_CEILING = True   # 956
+CHOOSE_RANGE = True    # 951, 954: the choice among the builds past every gate takes no tune narrower than a floor under the range the words ask
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
@@ -148,7 +149,7 @@ def plan(L):
         dr_ = int(round(max(-5, min(9, want_ - span_))))
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][2] = min(rg_[k_][2] + dr_, rg_["Verse"][1] + (V[1] - V[0])) if rg_[k_][2] + dr_ > rg_[k_][0] + 1 else rg_[k_][0] + 2
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][0] = max(rg_[k_][1] + 2, min(rg_[k_][2] - 2, rg_[k_][0] + int(round(dr_ * CENTRE_FOLLOWS))))      # and each part's centre follows its top, so the line can reach it
-        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60); spec["target"]["choose_range"] = CHOOSE_RANGE      # 950: the peak planted as a note in the first fresh chorus line that reaches it
+        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60); spec["target"]["choose_range"] = (lambda a_, q_: dict(asked=a_, floor=round(a_ + q_, 2), note="954: no chosen tune narrower than the asking plus the kept 25th of range less the asking (held out by artist)"))(float(spec["target"]["from_its_words"]["range"]), float(json.load(open(_WS.TABLE))["range_less_the_asking_held_out"]["p10_25_50_75_90"][1])) if CHOOSE_RANGE else None      # 950: the peak planted as a note in the first fresh chorus line that reaches it
         spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
@@ -159,7 +160,8 @@ def plan(L):
     if L["metre"] == "4/4":                                                                   # 879-882 (way 3): the kept songs' use of a word's weight, where a kept table of it stands (4/4)
         spec["stressed on the beat, at least"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_ends.json")))["stressed_syllables_on_a_beat_by_song_5_10_25_50_75"][1]      # 911: 731's floor is the kept 10th by song, tie starts read (0.35; it was 0.4 by hand)
         spec["all_windows"] = True                                                            # 912: every kept two-bar rhythm may be drawn, not the sixty commonest
-        import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
+        import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)
+        if PITCH_CEILING: spec["pitch_ceiling"] = {k_: v_["ceiling"] for k_, v_ in json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_commonest_pitch.json")))["parts"].items()}      # 956 (749.134): a build whose verses or choruses put more of their notes on one pitch than nine kept songs in ten is passed over      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
         spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
@@ -278,7 +280,7 @@ def write(L, N=1000, K=12):
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
     import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
-    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
+    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_commonest_pitch.json"] if spec.get("pitch_ceiling") else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
     melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
     if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
         import word_weight as WW_; rec["judge7"]["pick_words_fit"] = {k: round(v, 3) for k, v in WW_.fit([n for n in rec["melody"]["notes"] if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True).items()}
@@ -430,6 +432,15 @@ def midi(rec, path):
             b += 1
     track("chords", 0, 2, pads); mid.save(path)
 if __name__ == "__main__":
+    if sys.argv[1] == "--check":                                                             # 955 (749.136): every song record's kept-table stamps against the tables at hand:  python3 lib/luthier/song_from_lyric.py --check
+        import glob, re, hashlib as _h2; bad = []; n_ = 0; old_ = 0
+        for q in sorted(glob.glob(os.path.join(HERE, "..", "..", "songs", "*", "*.song.json"))):
+            if re.search(r"\.v\d+\.song\.json$", q): old_ += 1; continue                           # a record kept under an earlier version's name stands as that version made it
+            kt = json.load(open(q)).get("kept_tables") or {}; n_ += 1
+            for t_, h_ in kt.items():
+                f_ = os.path.join(HERE, "..", "..", "tables", t_); now_ = _h2.sha1(open(f_, "rb").read()).hexdigest()[:10] if os.path.exists(f_) else "missing"
+                if now_ != h_: bad.append(f"{os.path.relpath(q)}: {t_} was {h_}, is {now_}")
+        print(f"{n_} records: every stamped table is the table at hand ({old_} records under an earlier version's name not read)" if not bad else "records made with other tables (rerun them, or say why they stand):\n  " + "\n  ".join(bad)); sys.exit(1 if bad else 0)
     L = json.load(open(sys.argv[1])); N = int(sys.argv[2]) if len(sys.argv) > 2 else 1000; K = int(sys.argv[3]) if len(sys.argv) > 3 else 12
     if N == 0:                                                                               # 894: at intake, how long the lyric will run:  python3 song_from_lyric.py lyric.json 0
         spec, form, flags = plan(L); bs = 60.0 / L["bpm"] * len(json.load(open(os.path.join(M.ATLAS, L.get("metre", "4/4").replace("/", "-") + "_sung.json")))["beats"]); secs = round(sum(b for _, _, b in form) * bs)
