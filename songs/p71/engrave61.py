@@ -1,4 +1,4 @@
-"""'This Side of the Door' (song 61) -- the lead sheet and the parts, written bar by bar from song_record.pkl (build61.py, from lyric61.song.json).
+"""'This Side of the Door' (song 61) -- the lead sheet and the parts, written bar by bar from song_record.pkl (build61.py, from lyric61.hand.song.json).
 In the record's key (keyinfo61), q = 80, all 4/4; grid: twelfths of a beat. Chord symbols by the half-bar. The voices at pitch on the treble clef (an alto).
 Adapted from songs/p68/engrave58.py. Every pitched staff is read back from LilyPond's MIDI."""
 import pickle, collections, os, sys, re, json
@@ -184,7 +184,7 @@ def top_desc(REC_, nm_f):
     where = "; ".join(f"on “{n['text']}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
     return f"The song’s top note, {nm_f(top)}, comes {'once' if len(hits) == 1 else str(len(hits)) + ' times'}: {where}."
 _TD = title_desc(REC)
-_LIFT = next(v for k, v in json.load(open('/home/claude/p71/lyric61.song.json'))['checks'].items() if k.startswith("the chorus's median over the verse's"))
+_LIFT = next(v for k, v in json.load(open('/home/claude/p71/lyric61.hand.song.json'))['checks'].items() if k.startswith("the chorus's median over the verse's"))
 _mm = int(REC["seconds"] // 60); _ss = int(round(REC["seconds"] % 60))
 _him = [n["midi"] for n in REC["lead"]]; _top = max(_him)
 B1 = {s: st // 48 + 1 for s, nb, st, mets, mv in REC["plan"]}

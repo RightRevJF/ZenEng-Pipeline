@@ -1,5 +1,5 @@
 """'This Side of the Door' (song 61): the songbook and production notes, for musicians only. Every bar number, pitch and chord named here is read
-from song_record.pkl (build61.py, from lyric61.song.json); the prose around them is written for this song. Writes songbook.md (for the Doc)
+from song_record.pkl (build61.py, from lyric61.hand.song.json); the prose around them is written for this song. Writes songbook.md (for the Doc)
 and out/This Side of the Door (first edition) - songbook.docx (pandoc, the songbook reference document), with the producer one-sheet on its own page."""
 import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo61 as KI
 import pickle, os, re, subprocess, collections, json
@@ -80,7 +80,7 @@ def top_desc(REC_, nm_f):
     where = "; ".join(f"on “{word_of(n)}” in {n['sec'].lower() if n['sec'][-1].isdigit() else 'the ' + n['sec'].lower()} (bar {n['on'] // 48 + 1})" for n in hits[:3])
     return f"The song’s top note, {nm_f(top)}, comes {'once' if len(hits) == 1 else str(len(hits)) + ' times'}: {where}."
 TD = title_desc(REC)
-CHK = json.load(open(os.path.join(HERE, 'lyric61.song.json')))['checks']; LIFT = next(v for k, v in CHK.items() if k.startswith("the chorus's median over the verse's"))
+CHK = json.load(open(os.path.join(HERE, 'lyric61.hand.song.json')))['checks']; LIFT = next(v for k, v in CHK.items() if k.startswith("the chorus's median over the verse's"))
 PH = phrases()
 TOPB = sorted({bar(n["on"]) - B1["Chorus 1"] + 1 for n in LEAD if n["sec"] == "Chorus 1" and n["midi"] == top_m})
 def held_ends(k=4):

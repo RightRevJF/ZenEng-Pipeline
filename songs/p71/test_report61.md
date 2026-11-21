@@ -1,4 +1,4 @@
-# This Side of the Door (first edition): test report
+# This Side of the Door (second edition): test report
 
 Words and music: Jason Bryant
 
@@ -16,6 +16,16 @@ The title; the words by section, with section names marking returns (the second 
 - The pick: 2573b5e71acf; the first build past the gates spans 15, under the floor (15.52, the words ask 18.9), so the pick is the first at or over it, spanning 16 (954). Commonest pitch {'Verse': 0.387, 'Chorus': 0.388} (956 ceiling {'Verse': 0.44, 'Chorus': 0.479}). Gates: old charge's least half 163, joint gate 163, words' gate 44 (at least 0.152; builds' fit quartiles [0.196, 0.238, 0.29]).
 - Distance 2.567 (gate 3.918); directed readings, printed only: low surprise -2.778, sure endings -0.144, order across scales, pitch 0.905, order across scales, rhythm 0.591.
 - Flags: 888: the song runs long: 2 bars in and 4 out (the kept lower quartiles); the song runs 264 seconds, past the kept 75th (243.2): the lyric is long for its tempo; at this tempo it would need about 3 fewer two-bar lines, or about 87 beats a minute.
+
+## Hand edits (second edition)
+
+The writer's edits to the engine's pick, in `hand61.py`, logged in `intake.py`; the engine's own record is `lyric61.song.json`, untouched. Syllables and the key kept.
+
+- Verse 3, line 5: three 0.25 to 1 beats; (melisma) 0.5 to 0.5 beats; and 2.25 to 0.5 beats; then 3.25 to 0.5 beats; two 1.5 to 3.75 beats.
+- Last Chorus, line 7: three 0.25 to 1 beats; (melisma) 0.5 to 0.5 beats; and 2.25 to 0.5 beats; then 3.25 to 0.5 beats; two 0.5 to 2.75 beats.
+- Verse 3, line 4: were 1.25 to 0.5 beats; kids 0.5 to 2 beats, pitch 64 to 68.
+
+- Words' fit: the engine's pick 0.363, after the edits 0.404 (by length 0.266 to 0.326). The record's checks below are the engine's, read on its pick.
 
 ## The record's checks
 
@@ -144,7 +154,7 @@ Lead sheet, full score, parts, number chart, MusicXML (lead sheet and full score
 | demo: string notes | pass |
 | demo: no drum track | pass |
 | demo: track names ASCII | pass |
-| demo: voice at least 3 dB over the band | pass (+9.7 dB) |
+| demo: voice at least 3 dB over the band | pass (+9.8 dB) |
 | demo: MP3 written | pass |
 | energy arc: each chorus above its verse | pass |
 | energy arc: the bridge or the last chorus the top, the music opening up | pass (bridge 0.97, last chorus 0.93) |
@@ -161,6 +171,6 @@ Lead sheet, full score, parts, number chart, MusicXML (lead sheet and full score
 For the next list (after 749.145):
 
 - 749.146: the verse lever (749.142's form) reaches no line here. Song 61's verse lines run 8 to 11 syllables, so none is a candidate; song 59's run under 6. Two songs of the last three are outside the lever's 6 to 8. The engine gives a 9-syllable line two bars as it gives a 6-syllable one.
-- 749.147: a four-syllable line in a two-bar slot puts its length on its weak words. “Three, and then two” (verse 3 and the last chorus) sings “three” for a quarter of a beat and holds “and” two and a quarter beats and “then” three and a quarter. The words' fit passes the tune (0.363), so the fit does not read where a short line's length falls.
+- 749.147: a four-syllable line in a two-bar slot puts its length on its weak words. “Three, and then two” (verse 3 and the last chorus) sang “three” for a quarter of a beat and held “and” two and a quarter beats and “then” three and a quarter. The words' fit passed the tune (0.363), so the fit does not read where a short line's length falls. Mended by hand in this edition; the fit rises to 0.404.
 - 749.144 again: the lyric's room reads 0.06 bars unsung (kept 0.12 to 0.28) even after the cut; the four-bar turn after the first chorus is the song's only rest.
 - Carried open: 749.61 (6/8).

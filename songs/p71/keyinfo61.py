@@ -1,8 +1,8 @@
-"""The song's key, read from the record (lyric61.song.json), for every document script: the key's name, note spellings by scale degree,
+"""The song's key, read from the record (lyric61.hand.song.json), for every document script: the key's name, note spellings by scale degree,
 LilyPond and MusicXML names, and Nashville numbers. Nothing here assumes C. Major keys only (the song's mode)."""
 import json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
-_R = json.load(open(os.path.join(HERE, "lyric61.song.json")))
+_R = json.load(open(os.path.join(HERE, "lyric61.hand.song.json")))
 TONIC = _R["key"]["key"]                       # e.g. "A"
 TPC = _R["key"]["tonic_midi"] % 12
 KEYSTR = f"{TONIC} major"

@@ -1,10 +1,10 @@
-"""'This Side of the Door' (song 61): every document against the record (lyric61.song.json, through song_record.pkl). Run after build61, engrave61,
+"""'This Side of the Door' (song 61): every document against the record (lyric61.hand.song.json, through song_record.pkl). Run after build61, engrave61,
 score61, musicxml61, nashville61, demo61 and songbook61. Prints each check and exits 1 if any fails."""
 import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import keyinfo61 as KI
 import pickle, json, os, re, subprocess, sys, collections
 import mido
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out"); FT = None
-SRC = json.load(open(os.path.join(HERE, "lyric61.song.json"))); REC = pickle.load(open(os.path.join(HERE, "song_record.pkl"), "rb")); FT = REC["file_title"]
+SRC = json.load(open(os.path.join(HERE, "lyric61.hand.song.json"))); REC = pickle.load(open(os.path.join(HERE, "song_record.pkl"), "rb")); FT = REC["file_title"]
 C = []
 def chk(name, ok, detail=""): C.append((name, bool(ok), detail))
 # the record itself

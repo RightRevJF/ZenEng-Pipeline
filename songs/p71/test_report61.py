@@ -1,9 +1,9 @@
-"""'This Side of the Door' (song 61): the test report, the engine's record (kept apart from the songbook). Read from lyric61.song.json and the
+"""'This Side of the Door' (song 61): the test report, the engine's record (kept apart from the songbook). Read from lyric61.hand.song.json and the
 document checks (consistency61.json, out/demo_report.pkl). Writes test_report61.md and out/This Side of the Door (first edition) - test report.docx."""
 import json, os, pickle, subprocess, collections, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import keyinfo61 as KI
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, "out")
-R = json.load(open(os.path.join(HERE, "lyric61.song.json"))); REC = pickle.load(open(os.path.join(HERE, "song_record.pkl"), "rb"))
+R = json.load(open(os.path.join(HERE, "lyric61.hand.song.json"))); REC = pickle.load(open(os.path.join(HERE, "song_record.pkl"), "rb"))
 CON = json.load(open(os.path.join(HERE, "consistency61.json"))); DR = pickle.load(open(os.path.join(OUT, "demo_report.pkl"), "rb"))
 M = R["melody"]; J = R["judge7"]; S = R["spec"]
 md = [f"# This Side of the Door ({REC['edition']}): test report", "", "Words and music: Jason Bryant", "",
@@ -18,6 +18,9 @@ md = [f"# This Side of the Door ({REC['edition']}): test report", "", "Words and
       f"- The pick: {M['pick']}; the first build past the gates spans {J['range_choice']['the_first_build_past_the_gates_range']}, under the floor ({J['range_choice']['floor']}, the words ask {J['range_choice']['asked']}), so the pick is the first at or over it, spanning {J['range_choice']['the_pick_range']} (954). Commonest pitch {J.get('pick_commonest_pitch')} (956 ceiling {J.get('pitch_ceiling', {}).get('at_most')}). Gates: old charge's least half {J['gates_passed']['old_charge_least_half']}, joint gate {J['gates_passed']['joint_gate']}, words' gate {J['words_gate']['pass_after_the_other_gates']} (at least {J['words_gate']['at_least']}; builds' fit quartiles {J['words_gate']['builds_fit_quartiles']}).",
       f"- Distance {J['pick_distance']} (gate {J['gate']}); directed readings, printed only: " + ", ".join(f"{k} {round(v, 3)}" for k, v in J["pick_directed"].items()) + ".",
       f"- Flags: " + "; ".join(R["flags"]) + ".", "",
+      "## Hand edits (second edition)", "",
+      "The writer's edits to the engine's pick, in `hand61.py`, logged in `intake.py`; the engine's own record is `lyric61.song.json`, untouched. Syllables and the key kept.", ""] + [f"- {e['where']}: " + "; ".join(f"{b[0] or '(melisma)'} {b[2] / 12:g} to {a[2] / 12:g} beats" + (f", pitch {b[3]} to {a[3]}" if a[3] != b[3] else "") for b, a in zip(e['before'], e['after']) if b != a) + "." for e in R["hand_edits"]["edits"]] + [
+      "", f"- Words' fit: the engine's pick {R['hand_edits']['words_fit_engine']['all']}, after the edits {R['hand_edits']['words_fit_after']['all']} (by length {R['hand_edits']['words_fit_engine']['length']} to {R['hand_edits']['words_fit_after']['length']}). The record's checks below are the engine's, read on its pick.", "",
       "## The record's checks", "", "| Check | Reading |", "|---|---|"]
 for k, v in R["checks"].items(): md.append(f"| {k} | {v} |")
 md += ["", "## The band's checks", "", "| Check | Reading |", "|---|---|"]
@@ -43,7 +46,7 @@ for c in CON: md.append(f"| {c['check']} | {'pass' if c['ok'] else ('not met' if
 md += ["", "## Findings", "",
        "For the next list (after 749.145):", "",
        "- 749.146: the verse lever (749.142's form) reaches no line here. Song 61's verse lines run 8 to 11 syllables, so none is a candidate; song 59's run under 6. Two songs of the last three are outside the lever's 6 to 8. The engine gives a 9-syllable line two bars as it gives a 6-syllable one.",
-       "- 749.147: a four-syllable line in a two-bar slot puts its length on its weak words. “Three, and then two” (verse 3 and the last chorus) sings “three” for a quarter of a beat and holds “and” two and a quarter beats and “then” three and a quarter. The words' fit passes the tune (0.363), so the fit does not read where a short line's length falls.",
+       "- 749.147: a four-syllable line in a two-bar slot puts its length on its weak words. “Three, and then two” (verse 3 and the last chorus) sang “three” for a quarter of a beat and held “and” two and a quarter beats and “then” three and a quarter. The words' fit passed the tune (0.363), so the fit does not read where a short line's length falls. Mended by hand in this edition; the fit rises to " + str(R["hand_edits"]["words_fit_after"]["all"]) + ".",
        "- 749.144 again: the lyric's room reads 0.06 bars unsung (kept 0.12 to 0.28) even after the cut; the four-bar turn after the first chorus is the song's only rest.",
        "- Carried open: 749.61 (6/8)."]
 text = "\n".join(md) + "\n"; open(os.path.join(HERE, "test_report61.md"), "w").write(text)

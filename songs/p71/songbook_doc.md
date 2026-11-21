@@ -1,4 +1,4 @@
-# This Side of the Door (first edition): songbook and production notes
+# This Side of the Door (second edition): songbook and production notes
 
 Words and music: Jason Bryant
 
@@ -97,7 +97,7 @@ The strings and bass drop out: guitar and cello, quieter than verse 2.
 | 59 | My knees have gone stiff on the doormat | E B E B | starts E4, ends E4 |
 | 61 (pickup in 60) | And my coffee went cold in the car | E B | starts C♯4, ends C♯4 |
 | 63 | I'll leave the soup on the step | C#m G#m | starts E4, ends D♯4 |
-| 65 (pickup in 64) | And I'll knock the way we knocked when we were kids | E B E B | starts E4, ends E4 |
+| 65 (pickup in 64) | And I'll knock the way we knocked when we were kids | E B E B | starts E4, ends G♯4 |
 | 67 | Three, and then two | E G#m C#m G#m | starts E4, ends D♯4 |
 
 ### Last Chorus (bars 69–84)
@@ -137,7 +137,7 @@ Chords: E | E | E | E
 
 ## For the singer
 
-Breathe between lines: her phrases run 4.7 seconds at the median, the longest stretch without half a beat's rest 9.4 seconds. Lines that end on a long note (in verse 1: “Tuesday”, “door”, “frost”, “like”) want to be held to their length and released, not clipped. Do not act the grief: the words carry it. The verses are reported, the choruses are the plea. In the last chorus the band falls away at “Three, and then two”: sing those words like a knock, and leave the last line almost spoken.
+Breathe between lines: her phrases run 3.8 seconds at the median, the longest stretch without half a beat's rest 9.4 seconds. Lines that end on a long note (in verse 1: “Tuesday”, “door”, “frost”, “like”) want to be held to their length and released, not clipped. Do not act the grief: the words carry it. The verses are reported, the choruses are the plea. In the last chorus the band falls away at “Three, and then two”: sing those words like a knock, and leave the last line almost spoken.
 
 ## The arrangement
 

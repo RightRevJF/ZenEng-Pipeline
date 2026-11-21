@@ -1,4 +1,4 @@
-"""'This Side of the Door' (song 61): the song record for the documents, read from songs/p71/lyric61.song.json (Luthier v44, song_from_lyric.py) and
+"""'This Side of the Door' (song 61): the song record for the documents, read from songs/p71/lyric61.hand.song.json (Luthier v44, song_from_lyric.py) and
 nothing else. Writes song_record.pkl in the form the document scripts read: bars, half-bar chords, plan, the sung notes with their syllables,
 the harmony voice, and the band. No sung note is changed; syllables are spelled from the locked lyric (pyphen, fitted to the engine's count).
 The band is the writer's arrangement (intake: fingerpicked acoustic guitar that opens up; the door stays shut), written here from the engine's
@@ -8,8 +8,8 @@ import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__
 import json, pickle, re, os, collections
 import pyphen
 HERE = os.path.dirname(os.path.abspath(__file__))
-R = json.load(open(os.path.join(HERE, "lyric61.song.json"))); L = json.load(open(os.path.join(HERE, "lyric61.json")))
-EDITION = " (first edition)"          # the first edition, from the v44 record (main at 3b83673)
+R = json.load(open(os.path.join(HERE, "lyric61.hand.song.json"))); L = json.load(open(os.path.join(HERE, "lyric61.json")))
+EDITION = " (second edition)"          # the first edition from the v44 record (main at 3b83673, 7ef0367); this one with the writer's hand edits (hand61.py)
 BAR = R["bar"]; QBPM = R["bpm"]; DIC = pyphen.Pyphen(lang="en_US")
 KIND = {"intro": "Intro", "verse": "Verse", "chorus": "Chorus", "solo": "Turn", "bridge": "Bridge", "outro": "Outro"}
 bars, plan, b = [], [], 0
@@ -69,6 +69,7 @@ for e in R["parts"]["harmony"]:
     ln = by_on.get(e["on"])
     if ln is None:                                               # a held or melisma note of the harmony: the lead's note sounding there
         cand = [n for n in lead if n["on"] <= e["on"] < n["on"] + n["dur"]]; ln = cand[-1] if cand else None
+        if ln is None: continue                                       # a harmony note where the hand edits left the lead resting (the knock line, which the harmony does not sing)
         harm.append(dict(on=e["on"], on_engine=e["on"], dur=e["dur"], midi=e["p"][0], engine_midi=e["p"][0], sec=ln["sec"], line=ln["line"], syl=ln["syl"], first=False, text=ln["text"], hyph=ln["hyph"], stress=False, role="harmony", singer="harmony"))
     else:
         harm.append(dict(on=e["on"], on_engine=e["on"], dur=e["dur"], midi=e["p"][0], engine_midi=e["p"][0], sec=ln["sec"], line=ln["line"], syl=ln["syl"], first=True, text=ln["text"], hyph=ln["hyph"], stress=ln["stress"], role="harmony", singer="harmony"))
@@ -128,7 +129,7 @@ harm = [n for n in harm if n["sec"] == "Last Chorus" and n["line"] < 6]
 parts = {"guitar": gtr, "cello": cello, "strings": strings, "bass": bass}
 end = len(bars) * BAR; seconds = end / 12 * 60.0 / QBPM
 REC = dict(title=R["title"], file_title=R["title"] + EDITION, edition=EDITION.strip(" ()"), nbars=len(bars), bars=bars, chords2=chords2, plan=plan, lead=lead, harm=harm, parts=parts, slot="twelfth of a beat",
-           qbpm=QBPM, feel="a ballad, q = 80, 4/4, fingerpicked acoustic guitar", seconds=seconds, end=end, level=R["levels"], source="songs/p71/lyric61.song.json", pick=R["melody"]["pick"],
+           qbpm=QBPM, feel="a ballad, q = 80, 4/4, fingerpicked acoustic guitar", seconds=seconds, end=end, level=R["levels"], source="songs/p71/lyric61.hand.song.json", pick=R["melody"]["pick"],
            text={s: lines for s, lines in L["sections"]})
 pickle.dump(REC, open(os.path.join(HERE, "song_record.pkl"), "wb"))
 if __name__ == "__main__":
