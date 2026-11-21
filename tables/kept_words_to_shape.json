@@ -107,9 +107,43 @@
   }
  },
  "repeated_notes_by_family": {
-  "country": 0.335,
+  "note": "947 (749.129), 952 (749.131, 749.133): the share of repeated notes by genre family (studies/movement_by_family: of steps, leaps and repeated notes only repeated notes differ by family, at 2.2 shuffles in 100, uncorrected for the three tests; corrected the bar is 1.7). The engine takes the shrunk middle. Families as studies/genre",
+  "kept_middle": 0.312,
+  "k": 5.61,
+  "families": {
+   "country": {
+    "songs": 18,
+    "middle": 0.335,
+    "range_90": [
+     0.266,
+     0.373
+    ],
+    "weight": 0.762,
+    "shrunk": 0.329
+   },
+   "other": {
+    "songs": 124,
+    "middle": 0.319,
+    "range_90": [
+     0.287,
+     0.342
+    ],
+    "weight": 0.957,
+    "shrunk": 0.319
+   },
+   "soul": {
+    "songs": 18,
+    "middle": 0.207,
+    "range_90": [
+     0.178,
+     0.301
+    ],
+    "weight": 0.762,
+    "shrunk": 0.232
+   }
+  },
+  "country": 0.329,
   "other": 0.319,
-  "soul": 0.207,
-  "note": "947 (749.129): the kept middle share of repeated notes in each genre family (studies/movement_by_family: of steps, leaps and repeated notes, only repeated notes differ by family); families as studies/genre"
+  "soul": 0.232
  }
 }
