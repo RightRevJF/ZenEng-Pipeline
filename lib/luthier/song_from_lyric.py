@@ -29,6 +29,7 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PITCH_CEILING = True   # 956
+VERSE_CLOSER = os.environ.get("LUTHIER_VERSE_CLOSER") or None      # trial only (749.138): "kept" or "all"
 CHOOSE_RANGE = True    # 951, 954: the choice among the builds past every gate takes no tune narrower than a floor under the range the words ask
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
@@ -75,6 +76,17 @@ def plan(L):
     for name, lines in L["sections"]:
         sy = [[(w, bool(st)) for w, v, st, fn in syllables(ln, flags)] for ln in lines]; k = kind_of(name)
         pr = SL.propose([len(x) for x in sy], L["bpm"], beats); sl = [max(1, min(4, r["whole bars proposed"] if not (r["whole bars proposed"] == 1 and r["kept share in one bar or less"] < 0.5) else 2)) for r in pr]      # 869 (749.63): one bar only where half of kept lines that long fit in one
+        if VERSE_CLOSER and k == "verse":                                                          # trial (749.138; studies/busy_sections): verse lines of 6 to 8 syllables in one bar as often as kept lines that long are, the shortest first, an even count
+            cand_ = sorted([i for i, r in enumerate(pr) if 6 <= r["syllables"] <= 8 and sl[i] == 2], key=lambda i: (pr[i]["syllables"], i)); n1_ = len(cand_) if VERSE_CLOSER == "all" else len(cand_) // 2 if VERSE_CLOSER == "half" else int(round(pr[cand_[0]]["kept share in one bar or less"] * len(cand_))) if cand_ else 0
+            if VERSE_CLOSER == "aim": n1_ = min(range(0, len(cand_) + 1, 2), key=lambda m_: abs(sum(len(x) for x in sy) / max(1, sum(sl) - m_) - 4.59))
+            if VERSE_CLOSER == "apart":
+                def take_(m_):
+                    got_ = []
+                    for i in cand_:
+                        if len(got_) < m_ and not any(abs(i - j) == 1 for j in got_) and not (i > 0 and sl[i - 1] == 1) and not (i + 1 < len(sl) and sl[i + 1] == 1): got_.append(i)
+                    return got_[:len(got_) - len(got_) % 2]
+                best_ = min((take_(m_) for m_ in range(0, len(cand_) + 1, 2)), key=lambda g_: abs(sum(len(x) for x in sy) / max(1, sum(sl) - len(g_)) - 4.59)); cand_ = best_; n1_ = len(best_)
+            for i in cand_[:n1_ - n1_ % 2]: sl[i] = 1
         for i, r in enumerate(pr):
             if r["whole bars proposed"] > 2: flags.append(f"{name} line {i + 1}: a slot of {min(4, r['whole bars proposed'])} bars, past the kept two-bar windows: set by weighted placement (760)")
         sung.append([name, "Chorus" if k == "chorus" else "Bridge" if k == "bridge" else "Verse", sy]); slots[name] = sl; n = sum(sl); form.append((name, k, n + n % 2))

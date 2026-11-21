@@ -554,3 +554,15 @@ Answers Review 27 (749.135, 749.136, 749.137) and tries and builds the ceiling o
 - Unmet: 749.138; song 54's builds no wider in the middle; smaller pools (38, 24, 39).
 
 Next: Luthier v44 (row v215), Window 201, Module 27.125 (anchor "27.124"), tables HK…, fixes from 957.
+
+## Luthier v44 (Window 201): the verse sung closer, tried
+
+Answers Review 28 (749.139, 749.140, 749.141) and makes the first engine trial on rhythm scaling (749.138), which is one check short and not built. Paper: `reports/Luthier_v44.docx` (builder `reports/make_luthier_v44_from_v43.py`), row v215, Module 27.125, Table HK. Results: `studies/busy_sections`, `studies/sounder_pools` (RESULT2, `per_build.json`), `studies/weak_top_notes`, `studies/soundness/neighbour_v44.json` (and `_v44_without_the_peak`, `_v44_trial_verse_closer`, `_v44_trial_verse_closer_apart`).
+
+- 957 (749.139): `make_kept_commonest_pitch.kind` tells a part by its exact name (a pre-chorus is neither verse nor chorus). Chorus ceiling 0.474 to 0.479; each ceiling printed with its range (verse 0.405 to 0.498; chorus 0.457 to 0.509). Song 55 takes back its tune of before the ceiling (range 17, words' fit 0.341); the others keep theirs.
+- 749.140: read per build, the pools with and without the peak do not differ (46.6 and 51.5 in 100 under the kept 10th of rhythm scaling; as large in 49 shuffles in 100). The sounder pool figure of Windows 199 and 200 was song 55's small pool. `neighbour.py` now prints block `749.140` (per-build rhythm scaling, living builds, words' fit).
+- 749.141: kept songs put 29 in 100 of top-note occurrences on weak syllables at the middle, 100 at the 90th; Luthier's 0 to 0.46. Not a fault by the rule; nothing built.
+- 749.138, not built: `LUTHIER_VERSE_CLOSER=apart` (trial switch, off). Verse lines of 6 to 8 syllables given one bar, shortest first, none side by side, an even count, to the kept middle of notes a bar (4.59). Builds' rhythm scaling 0.592, 0.576, 0.555 to 0.678, 0.620, 0.592; builds 342, 309, 419 to 281, 304, 405; pools fail the rule 0.0 in 100; pool builds under the kept 25th 88 to 42 in 100. Misses one check written first: song 54's words' fit 0.221 to 0.193 (0.02 allowed).
+- Chosen tunes: range 17, 16, 19, 19, 19; words' fit 0.341, 0.275, 0.307, 0.359, 0.32 (songs 55, 54, 58, 60, 59). Sound, one lean (rhythm scaling, low). Neighbour choice 2.0 in 100; random pool pick 2.2. Songs 52 and 53 byte for byte as they were. Song 60 under this window: `songs/p70/lyric60.v44.song.json`.
+
+Next: Luthier v45 (row v216), Window 202, Module 27.126 (anchor "27.125"), tables HL…, fixes from 958.

@@ -102,6 +102,12 @@ rngb = random.Random(940); rs = lambda v: [round(float(x), 3) for x in np.percen
 out["ranges_90"] = {"neighbour choice": rs([boot_neighbour(res(pools), 1000, rngb) for _ in range(200)]), "a random pick from the engine's pool": rs([boot_rate(res(pools), 1000, rngb) for _ in range(200)]),
                     "a random pick from every build that lived": rs([boot_rate(res(ALIVE), 1000, rngb) for _ in range(200)]), "pool_sizes": {k: len(v) for k, v in pools.items()},
                     "note": "940: each pool resampled with replacement at its own size, 200 times; the 5th and 95th percentiles of the figure read on the resamples. 949 (749.124): 1,000 inner draws a resample for every figure, so a range is the pools' and not the inner draws'"}
+# Window 201 (749.140): rhythm scaling read per build, in each pool and among every living build; and what a trial must not lose (builds, the words' fit).
+RS = "rhythm scaling"
+out["749.140"] = dict(kept_10th_25th_75th=[Q[RS][0], Q[RS][1], Q[RS][3]], pools={k: [round(c["row"][RS], 4) for c in p] for k, p in pools.items()}, living={k: [round(c["row"][RS], 4) for c in a] for k, a in ALIVE.items()},
+                      living_builds={k: len(a) for k, a in ALIVE.items()}, living_median_rhythm_scaling={k: round(float(np.median([c["row"][RS] for c in a])), 3) for k, a in ALIVE.items()},
+                      living_median_words_fit={k: round(float(np.median([c["f_all"] for c in a])), 3) for k, a in ALIVE.items()}, pool_median_words_fit={k: round(float(np.median([c["f_all"] for c in p])), 3) for k, p in pools.items()},
+                      pool_spread_over_kept_spread=out["pool_spread_over_kept_spread_by_check"][RS])
 # Window 200. 749.137: the pool figures with range left out of the rule. 749.134: the pools under a ceiling on the commonest pitch's share. Each with its own seeded draws, so the figures above are untouched.
 def judge_on(rows, names): w = S.same_side(Q, rows, names, "wide"); h = S.same_side(Q, rows, names, "half"); return (not w and len(h) <= 2), [x[0] for x in w], [x[0] for x in h]
 def rates(P, names, seed):

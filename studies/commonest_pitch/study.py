@@ -2,7 +2,7 @@
 import sys, os, json, collections, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.normpath(os.path.join(HERE, "..", "..")); sys.path.insert(0, os.path.join(ROOT, "lib", "luthier"))
 import kept_corpus as KC
-def kind(x): x = str(x).lower(); return "Chorus" if ("chorus" in x or "refrain" in x) else "Verse" if "verse" in x else None
+import make_kept_commonest_pitch as _CP; kind = _CP.kind      # 957: one reading of a part, the table's
 def share(ps): return max(collections.Counter(ps).values()) / len(ps) if len(ps) >= 20 else None
 kept = {"Verse": [], "Chorus": []}
 for k in KC.kept_songs():
