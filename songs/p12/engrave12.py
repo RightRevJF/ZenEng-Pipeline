@@ -82,7 +82,7 @@ def hymnal():
     sop = voice_ly(stanza_events("S", 1), 16 * BAR, slurs=True); alt = voice_ly(stanza_events("A", 1), 16 * BAR)
     ten = voice_ly(stanza_events("T", 1), 16 * BAR); bas = voice_ly(stanza_events("B", 1), 16 * BAR)
     lys = "\n".join(f'    \\new Lyrics \\lyricsto "sop" {{ \\set stanza = "{i + 1}." {stanza_text(i)} }}' for i in range(5))
-    src = HEAD % (16, 9, FOOT, FOOT) + "\\paper { page-count = 1 print-page-number = ##f }\n" + f'''\\layout {{ \\context {{ \\Score \\remove "Bar_number_engraver" }} \\context {{ \\Lyrics \\override LyricText.font-size = #-0.5 \\override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #0.6 }} }}
+    src = HEAD % (16, 9, FOOT, FOOT) + "\\paper { page-count = 1 print-page-number = ##f }\n" + f'''\\layout {{ \\context {{ \\Score \\remove "Bar_number_engraver" \\override MetronomeMark.padding = #2.5 }} \\context {{ \\Lyrics \\override LyricText.font-size = #-0.5 \\override VerticalAxisGroup.nonstaff-relatedstaff-spacing.padding = #0.6 }} }}
 \\header {{ title = "{TITLE}" subtitle = \\markup \\italic \\small "She wrapped him in swaddling clothes, and laid him in a manger. Luke 2:7" tagline = ##f }}
 \\markup \\fill-line {{ \\bold \\large "1" \\smallCaps "Christmas" }}
 \\score {{
@@ -96,7 +96,7 @@ def hymnal():
 \\markup \\vspace #1
 \\markup \\fill-line {{ \\column {{ \\small "WORDS AND MUSIC: Jason Bryant, 2026" }} \\column {{ \\right-align \\small \\smallCaps "Arimathea" \\right-align \\small "87 87" }} }}
 \\markup \\vspace #0.6
-\\markup \\small \\italic \\wordwrap {{ Stanza 2: Luke 2:7; Matthew 27:57–60. The second Joseph is Joseph of Arimathea, who wrapped Jesus' body in linen for burial. }}
+\\markup \\small \\italic \\wordwrap {{ Stanza 2: Luke 2:7; Matthew 27:57–60. The Joseph in line 3 is Joseph of Arimathea, who wrapped Jesus' body in linen for burial. }}
 \\markup \\small \\italic \\wordwrap {{ Stanza 4 is sung by the choir alone, unaccompanied, in its own setting (printed in the organ score); the congregation rejoins at stanza 5. }}
 '''
     return src
@@ -125,7 +125,7 @@ DYN_O = {0: "\\mf", ST[3]: "\\p", R["link"]: "\\mf\\<", ST[5]: "\\f"}
 def organ_score():
     G = organ_global()
     HOLD = (ST[4],)
-    sop = voice_ly(V["S"], END, DYN_S, slurs=True, holds=HOLD); alt = voice_ly(V["A"], END, hide=[(ST[5], END)], holds=HOLD); ten = voice_ly(V["T"], END, holds=HOLD, marks={ST[5]: "^\\markup \\tiny \\italic \"men, on the tune\""}); bas = voice_ly(V["B"], END, hide=[(ST[5], END)], holds=HOLD)
+    sop = voice_ly(V["S"], END, DYN_S, slurs=True, holds=HOLD); alt = voice_ly(V["A"], END, hide=[(ST[5], END)], holds=HOLD); ten = voice_ly(V["T"], END, slurs=True, holds=HOLD, marks={ST[5]: "^\\markup \\tiny \\italic \"men, on the tune\""}); bas = voice_ly(V["B"], END, hide=[(ST[5], END)], holds=HOLD)
     des = voice_ly(V["Desc"], END, {ST[5]: "\\f"}, slurs=True, marks={ST[5] + 14 * BAR: "^\\markup \\italic \"broaden\""})
     orh = voice_ly(V["org_rh"], END, DYN_O, holds=HOLD); olh = voice_ly(V["org_lh"], END, holds=HOLD); oped = voice_ly(V["org_ped"], END, holds=HOLD)
     ly_all = " ".join(f'\\set stanza = "{i + 1}." {stanza_text(i)}' for i in range(5))
@@ -149,7 +149,7 @@ global = {{ {G} }}
   \\new Staff = "ped" \\with {{ instrumentName = "Pedal" shortInstrumentName = "Ped." \\override VerticalAxisGroup.remove-empty = ##f }} << \\clef bass \\new Voice {{ \\global }} \\new Voice {{ {oped} }} >>
 >> \\layout {{ }} }}
 \\markup \\vspace #1
-\\markup \\small \\italic \\wordwrap {{ Stanza 2: the second Joseph is Joseph of Arimathea, who wrapped Jesus' body in linen for burial (Luke 2:7; Matthew 27:57–60). }}
+\\markup \\small \\italic \\wordwrap {{ Stanza 2: the Joseph in line 3 is Joseph of Arimathea, who wrapped Jesus' body in linen for burial (Luke 2:7; Matthew 27:57–60). }}
 \\markup \\small \\italic \\wordwrap {{ Into stanza 4: the organ holds stanza 3's last chord (D major) and releases as the choir breathes; the choir's first chord, B minor, shares its D and F-sharp. Out of stanza 4: the link begins on D, the chord the choir ends on. }}
 '''
     return src
@@ -183,7 +183,7 @@ def lead_sheet():
 >> \\layout {{ }} }}
 \\markup \\vspace #1
 \\markup \\small \\wordwrap {{ Range D4 to E5; women at pitch, men an octave lower. "Cloth" (stanzas 1 and 5) is the hymn's one high note, E5. Chords as the four-part setting sings them. Stanza 4 has its own setting (choir alone) and stanza 5 the organ's own harmony with a descant: see the organ score. }}
-\\markup \\small \\italic \\wordwrap {{ Stanza 2: Luke 2:7; Matthew 27:57–60. The second Joseph is Joseph of Arimathea. }}
+\\markup \\small \\italic \\wordwrap {{ Stanza 2: Luke 2:7; Matthew 27:57–60. The Joseph in line 3 is Joseph of Arimathea. }}
 '''
     return src
 def readback():

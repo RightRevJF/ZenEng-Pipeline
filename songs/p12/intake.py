@@ -51,3 +51,6 @@ LOG.append({"q": "notes on the second edition (outside review)", "writer": "What
 LOG.append({"step": "third edition built", "doc": "https://claude.ai/artifact/Fnt8TXZWK7md4Q4KorqFKF", "consistency": "61 of 61",
             "changes": "bars 5, 7, 13 dotted quarter + slurred passing eighth (C#5, A4, C#5) + quarter; tempo 'Flowing, felt in one (dotted half = c. 33; quarter = 100)' on every file; hold on stanza 3's last chord; link from D; Joseph note on the organ score",
             "findings": "749.152 added (fix list v45, md and Doc); next 749.153"})
+LOG.append({"q": "typography notes on the third edition", "writer": "Worth doing? 1 tempo header spacing; 2 'the second Joseph' wording; 3 bar 73 tenor/bass", "reply": "1 yes; 2 yes (only one Joseph is named); 3 no collision (one line on the T B staff, 3/4 not 6/8), but the men's unison line lacked the women's slurs",
+            "options": {"A": "all three: spacing, wording, slur", "B": "spacing and wording", "C": "leave it"}, "recommended": "A", "answer": "A",
+            "done": "third-edition files corrected in place (no note changed): MetronomeMark padding on the hymnal page; 'The Joseph in line 3 is Joseph of Arimathea' on the hymnal page, lead sheet, organ score, songbook and its Doc; stanza 5 men's line slurred; 63 of 63 checks"})

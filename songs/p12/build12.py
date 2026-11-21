@@ -183,7 +183,7 @@ for i in range(4):
 for k, n in enumerate(NOTES):
     on = n["on"] + ST[5]
     put("S", on, n["dur"], n["p"], slur=n["slur"], melisma=n["melisma"], stanza=5, unison=True)
-    put("T", on, n["dur"], n["p"] - 12, stanza=5, unison=True)
+    put("T", on, n["dur"], n["p"] - 12, stanza=5, unison=True, slur=n["slur"], melisma=n["melisma"])
     put("Desc", on, n["dur"], DESC[k], slur=n["slur"], melisma=n["melisma"], stanza=5)
     ch, A, T, B = PATH_5[k]
     # the left hand stays above the men's unison line: the tenor an octave up where it fits under the alto, else left out

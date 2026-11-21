@@ -51,12 +51,12 @@ wood and cloth are left behind
 **The pairs, stanza by stanza.**
 
 - **Wood.** The feeding trough at Bethlehem, and the wood that held him on the cross. "Raised for dying" also looks ahead to Easter.
-- **Cloth.** "Mary wrapped him close in linen… Joseph wrapped him close in linen." The second Joseph is Joseph of Arimathea, who wrapped the body for burial (Luke 23:53; Matthew 27:57–60). The stone rolled against the light here is rolled back in stanza 5.
+- **Cloth.** "Mary wrapped him close in linen… Joseph wrapped him close in linen." The Joseph in line 3 is Joseph of Arimathea, who wrapped the body for burial (Luke 23:53; Matthew 27:57–60). The stone rolled against the light here is rolled back in stanza 5.
 - **Myrrh.** The wise men's gift was a burial spice; his friends carried pounds of it to a borrowed tomb (John 19:39).
 - **King.** The wise men asked for the newborn king of the Jews (Matthew 2:2); Pilate wrote the same title over the cross (Matthew 27:37). Their gold comes back as a crown of thorns.
 - **The empty tomb.** "Linen lies where God was lying" (John 20:6–7); they came and did not find him (Luke 24:3). The title returns: "wood and cloth are left behind."
 
-A note for the bulletin, if wanted: *Stanza 2's second Joseph is Joseph of Arimathea, who buried Jesus in linen (Matthew 27:57–60).*
+A note for the bulletin, if wanted: *In stanza 2, the Joseph in line 3 is Joseph of Arimathea, who buried Jesus in linen (Matthew 27:57–60).*
 
 ## The tune and harmony, bar by bar
 

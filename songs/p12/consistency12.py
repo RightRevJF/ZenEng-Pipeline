@@ -18,6 +18,8 @@ for s in range(5):
     first = L.syls(L.STANZAS[s][0])[0][0]
     chk(f"hymnal page carries stanza {s + 1}", first in hp and f"{s + 1}." in hp)
 chk("hymnal page: scripture under stanza 2", "Matthew 27:57" in hp and "Arimathea" in hp)
+chk("no page says 'second Joseph'", all("second Joseph" not in t for t in (hp, os_, ls, sb)))
+chk("men's unison line slurred like the women's in stanza 5", [e.get("slur") for e in V["T"] if e.get("stanza") == 5] == [e.get("slur") for e in V["S"] if e.get("stanza") == 5])
 chk("hymnal page: stanza 4 marked choir alone", "choir alone" in hp)
 chk("organ score: stanza 4 marked choir alone", "choir alone" in os_)
 chk("organ score: registrations printed", "Diapasons" in os_ and "Full organ" in os_)
