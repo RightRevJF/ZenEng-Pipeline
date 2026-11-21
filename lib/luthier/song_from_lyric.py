@@ -27,8 +27,8 @@ WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm 
 AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling; tried again in Window 190 with 929 in: the builds' bars sung again move by 0.03 and a random pool pick fails the rule 7 times in 100, see studies/v33_trials)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
-PLANT_PEAK = True      # 950
-CHOOSE_RANGE = True    # 951: the choice among the builds past every gate reads the range the words ask
+PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
+CHOOSE_RANGE = True    # 951, 954: the choice among the builds past every gate takes no tune narrower than a floor under the range the words ask
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
@@ -148,7 +148,7 @@ def plan(L):
         dr_ = int(round(max(-5, min(9, want_ - span_))))
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][2] = min(rg_[k_][2] + dr_, rg_["Verse"][1] + (V[1] - V[0])) if rg_[k_][2] + dr_ > rg_[k_][0] + 1 else rg_[k_][0] + 2
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][0] = max(rg_[k_][1] + 2, min(rg_[k_][2] - 2, rg_[k_][0] + int(round(dr_ * CENTRE_FOLLOWS))))      # and each part's centre follows its top, so the line can reach it
-        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60); spec["target"]["choose_range"] = CHOOSE_RANGE      # 950: the peak planted as a note in the first fresh chorus line that reaches it
+        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60); spec["target"]["choose_range"] = (lambda a_, q_: dict(asked=a_, floor=round(a_ + q_, 2), note="954: no chosen tune narrower than the asking plus the kept 25th of range less the asking (held out by artist)"))(float(spec["target"]["from_its_words"]["range"]), float(json.load(open(_WS.TABLE))["range_less_the_asking_held_out"]["p10_25_50_75_90"][1])) if CHOOSE_RANGE else None      # 950: the peak planted as a note in the first fresh chorus line that reaches it
         spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
@@ -430,6 +430,15 @@ def midi(rec, path):
             b += 1
     track("chords", 0, 2, pads); mid.save(path)
 if __name__ == "__main__":
+    if sys.argv[1] == "--check":                                                             # 955 (749.136): every song record's kept-table stamps against the tables at hand:  python3 lib/luthier/song_from_lyric.py --check
+        import glob, re, hashlib as _h2; bad = []; n_ = 0; old_ = 0
+        for q in sorted(glob.glob(os.path.join(HERE, "..", "..", "songs", "*", "*.song.json"))):
+            if re.search(r"\.v\d+\.song\.json$", q): old_ += 1; continue                           # a record kept under an earlier version's name stands as that version made it
+            kt = json.load(open(q)).get("kept_tables") or {}; n_ += 1
+            for t_, h_ in kt.items():
+                f_ = os.path.join(HERE, "..", "..", "tables", t_); now_ = _h2.sha1(open(f_, "rb").read()).hexdigest()[:10] if os.path.exists(f_) else "missing"
+                if now_ != h_: bad.append(f"{os.path.relpath(q)}: {t_} was {h_}, is {now_}")
+        print(f"{n_} records: every stamped table is the table at hand ({old_} records under an earlier version's name not read)" if not bad else "records made with other tables (rerun them, or say why they stand):\n  " + "\n  ".join(bad)); sys.exit(1 if bad else 0)
     L = json.load(open(sys.argv[1])); N = int(sys.argv[2]) if len(sys.argv) > 2 else 1000; K = int(sys.argv[3]) if len(sys.argv) > 3 else 12
     if N == 0:                                                                               # 894: at intake, how long the lyric will run:  python3 song_from_lyric.py lyric.json 0
         spec, form, flags = plan(L); bs = 60.0 / L["bpm"] * len(json.load(open(os.path.join(M.ATLAS, L.get("metre", "4/4").replace("/", "-") + "_sung.json")))["beats"]); secs = round(sum(b for _, _, b in form) * bs)

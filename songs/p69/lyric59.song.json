@@ -2283,8 +2283,9 @@
   ],
   "range_choice": {
    "asked": 18.8,
+   "floor": 15.46,
    "builds_in_the_pool": 44,
-   "within_2_of_the_asking": 24,
+   "at_or_over_the_floor": 29,
    "the_first_build_past_the_gates_range": 19,
    "the_pick_range": 19,
    "the_pick_is_the_first_build_past_the_gates": true
@@ -10113,7 +10114,11 @@
     "range": 18.817,
     "tries": 60
    },
-   "choose_range": true,
+   "choose_range": {
+    "asked": 18.817,
+    "floor": 15.46,
+    "note": "954: no chosen tune narrower than the asking plus the kept 25th of range less the asking (held out by artist)"
+   },
    "moves_fit_kept_round": 2,
    "moves_fit": {
     "trial_builds": 654,
@@ -10652,7 +10657,7 @@
   "kept_word_weight.json": "8388191a91",
   "kept_line_ends.json": "903fd98dc9",
   "kept_page_gate.json": "0d9102cda8",
-  "kept_words_to_shape.json": "b243b89e5d"
+  "kept_words_to_shape.json": "791da44a66"
  },
  "checks": {
   "no two sung notes on one onset": true,
