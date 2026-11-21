@@ -12,6 +12,7 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 if os.environ.get("MARGIN_TURNS_OF_FOUR"): sys.path.insert(0, os.environ["MARGIN_TURNS_OF_FOUR"])
 import song_from_lyric as SL; import metre_engine as M, word_weight as WW
 import soundness as S
+import make_kept_commonest_pitch as CPK
 class Got(Exception): pass
 CAP = {}; NAMES = [n for n, _ in S.CHECKS]
 def row(sung):
@@ -32,8 +33,10 @@ def capture(self, N, seed):
     pool = [c for c in ok if c["f_all"] >= self.WW["gate"] and c["f_len"] >= ml and c["f_ht"] >= mh] or ok
     for c in alive: c["row"] = row(c["sung"])
     def cp_(c, part):                                                                             # 749.134: the share of a part's sung notes on its commonest pitch
-        import collections; ps = [n["p"] for n in c["sung"] if self.KIND.get(n["sec"]) == part]; return max(collections.Counter(ps).values()) / len(ps) if len(ps) >= 20 else 0.0
+        import collections; ps = [n["p"] for n in c["sung"] if CPK.kind(n["sec"]) == part]; return max(collections.Counter(ps).values()) / len(ps) if len(ps) >= 20 else 0.0
     for c in alive: c["cp"] = (cp_(c, "Verse"), cp_(c, "Chorus"))
+    ce_ = self.S.get("pitch_ceiling")                                                              # 956: the engine's pool is under the ceiling
+    if ce_: pool = [c for c in pool if c["cp"][0] <= ce_["Verse"] and c["cp"][1] <= ce_["Chorus"]] or pool
     loose = [c for c in alive if c["d7"] <= J.gate and c["f_all"] >= self.WW["gate"]]        # the joint gate and the kept floor only: no pull to the builds' better halves
     CAP.update(floor=((self.S.get("target") or {}).get("choose_range") or {}).get("floor"), pool=pool, alive=alive, loose=loose, target=(self.S.get("target") or {}).get("readings")); raise Got()
 M.Engine.run = capture

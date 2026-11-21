@@ -406,7 +406,7 @@
    3.392
   ],
   "builds": 260,
-  "pass_the_gate": 33,
+  "pass_the_gate": 27,
   "in_the_kept_middle_half": 130,
   "builds_distance_quartiles": [
    1.919,
@@ -473,15 +473,6 @@
     "order across scales, rhythm": 0.656
    },
    {
-    "fp": "66fad4c39c76",
-    "distance": 1.622,
-    "old_charge": 0.637,
-    "low surprise": -2.727,
-    "sure endings": 0.167,
-    "order across scales, pitch": 0.905,
-    "order across scales, rhythm": 0.656
-   },
-   {
     "fp": "37fdf07ba34a",
     "distance": 2.131,
     "old_charge": 0.665,
@@ -496,6 +487,15 @@
     "old_charge": 0.696,
     "low surprise": -3.145,
     "sure endings": 0.197,
+    "order across scales, pitch": 0.905,
+    "order across scales, rhythm": 0.656
+   },
+   {
+    "fp": "a4dd1b0b219a",
+    "distance": 1.842,
+    "old_charge": 0.484,
+    "low surprise": -2.969,
+    "sure endings": -0.155,
     "order across scales, pitch": 0.905,
     "order across scales, rhythm": 0.656
    }
@@ -2346,11 +2346,23 @@
   "range_choice": {
    "asked": 19.0,
    "floor": 15.61,
-   "builds_in_the_pool": 33,
-   "at_or_over_the_floor": 28,
+   "builds_in_the_pool": 27,
+   "at_or_over_the_floor": 24,
    "the_first_build_past_the_gates_range": 19,
    "the_pick_range": 19,
    "the_pick_is_the_first_build_past_the_gates": true
+  },
+  "pitch_ceiling": {
+   "at_most": {
+    "Verse": 0.44,
+    "Chorus": 0.474
+   },
+   "read": 33,
+   "passed": 27
+  },
+  "pick_commonest_pitch": {
+   "Verse": 0.284,
+   "Chorus": 0.367
   },
   "page_gate": {
    "at_least": -0.635,
@@ -10356,6 +10368,10 @@
    "floor": -0.6351,
    "memory": 8.0
   },
+  "pitch_ceiling": {
+   "Verse": 0.44,
+   "Chorus": 0.474
+  },
   "line_ends": true,
   "word_weight": {
    "place": 0.75,
@@ -10675,6 +10691,7 @@
   "kept_word_weight.json": "8388191a91",
   "kept_line_ends.json": "903fd98dc9",
   "kept_page_gate.json": "0d9102cda8",
+  "kept_commonest_pitch.json": "ea5878fa67",
   "kept_words_to_shape.json": "791da44a66"
  },
  "checks": {

@@ -541,3 +541,16 @@ Mends the range (749.111) and answers Review 26 (749.131 to 749.134). Paper: `re
 - Unmet: song 54's builds no wider in the middle; fewer builds live (342, 309, 419, 376); why the pools grew sounder is untraced; rhythm scaling's engine side untried.
 
 Next: Luthier v43 (row v214), Window 200, Module 27.124 (anchor "27.123"), tables HJ…, fixes from 954.
+
+## Luthier v43 (Window 200): a floor and a ceiling
+
+Answers Review 27 (749.135, 749.136, 749.137) and tries and builds the ceiling of 749.134. 749.138 (rhythm scaling in the engine) is not begun. Paper: `reports/Luthier_v43.docx` (builder `reports/make_luthier_v43_from_v42.py`), row v214, Module 27.124, Table HJ. Results: `studies/pitch_ceiling`, `studies/sounder_pools`, `studies/commonest_pitch/result.json`, `studies/soundness/neighbour_v43.json` (and `neighbour_v43_without_the_peak.json`).
+
+- 954 (749.135; amends 951): the range a floor, not a band. The pick is the first build no narrower than the asking plus the kept 25th of range less the asking (-3.36; `range_less_the_asking_held_out` in `tables/kept_words_to_shape.json`, written by the maker from residuals held out by artist); 872 above it; the widest where none clears it. Record: `judge7.range_choice`.
+- 955 (749.136): `python3 lib/luthier/song_from_lyric.py --check` reads every record's table stamps against the tables at hand (records named `.vNN.song.json` are not read). Run it and `lyric_room.py --check` in every window.
+- 956 (749.134): a ceiling on the commonest pitch's share (`tables/kept_commonest_pitch.json`, maker `make_kept_commonest_pitch.py`; verse 0.44, chorus 0.474; a part told by its name). After the page gate a build over either is passed over; waived where none passes. `PITCH_CEILING`; record: `judge7.pitch_ceiling`, `judge7.pick_commonest_pitch`. Tried first (`studies/pitch_ceiling`): pools 47, 33, 72 to 39, 26, 39; pool standard held.
+- 749.137: range does not explain the sounder pools (random pool pick 6.8 without the peak, 2.5 with; range left out 6.5, 2.3). Every failure is rhythm scaling under the kept 10th in all three songs. Gates or chance not separated (`studies/sounder_pools/RESULT.md`). `LUTHIER_PLANT_PEAK=0` is for that study only.
+- Chosen tunes: range 17, 16, 19, 19, 19 and words' fit 0.278, 0.275, 0.307, 0.359, 0.32 (songs 55, 54, 58, 60, 59). Songs 55 and 58 changed tunes under the ceiling. Picks sound, one lean past the quartiles (rhythm scaling, low), 11 checks outside the middle half. Neighbour choice 2.5 in 100 (0.0 to 4.5); random pool pick 2.1 (0.1 to 5.5). Songs 52 and 53 byte for byte as they were. Song 60 under this window: `songs/p70/lyric60.v43.song.json`.
+- Unmet: 749.138; song 54's builds no wider in the middle; smaller pools (38, 24, 39).
+
+Next: Luthier v44 (row v215), Window 201, Module 27.125 (anchor "27.124"), tables HK…, fixes from 957.
