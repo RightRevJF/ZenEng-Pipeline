@@ -192,6 +192,23 @@ class Engine:
         return out
     # ---- pitches
     def pitches(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
+        # 950 (749.111): the song's peak planted as a note. The range the song's words ask is a top the draw seldom climbs to, so the builds spanned 14 or 15 semitones where 18 to 20 were asked.
+        # Each fresh chorus line in turn keeps its own centre, has its top set to the peak (the floor plus the asked range, inside the parts' tops, on the scale) and is redrawn, 60 times at most,
+        # until its highest stressed note is the peak; the first line that reaches it carries it. (studies/plant_the_peak, sixth trial.)
+        pk = (self.S.get("target") or {}).get("peak")
+        if not pk or getattr(self, "_peaked", True) or self.KIND.get(sec) != "Chorus": return self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
+        R = self.S["registers"]; P = int(min(min(R[x][1] for x in ("Verse", "Chorus")) + round(pk["range"]), max(R[x][2] for x in ("Verse", "Chorus", "Bridge") if x in R)))
+        while P % 12 not in self.SCALE: P -= 1
+        key = f"{sec}:{i}"; had = R.get(key); base = self.reg(sec, i); R[key] = [base[0], base[1], P]; ps = None
+        try:
+            for _ in range(pk.get("tries", 60)):
+                ps = self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
+                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+        finally:
+            if had is None: R.pop(key, None)
+            else: R[key] = had
+        return ps
+    def pitches1(self, rng, ons, U, sec, i, prev, avoid=None, end_off=None):
         mu, lo, hi = self.reg(sec, i); ps = []; last = None; sy = self.LINES[sec][i]
         DG = self.S.get("degrees"); DW = (DG["weights"].get(self.KIND[sec]) or DG["weights"]["all"]) if DG else None; ton = DG["tonic"] if DG else 0; blue = set(DG.get("blue", ())) if DG else set()
         WP = self.S.get("word_pitch"); TR = WW_.tier(sy) if (self.WW and self.WW["sp"]) else None
@@ -323,7 +340,7 @@ class Engine:
                 self.stats["929: a returning line's first note moves a step, to end a run at the join"] += 1; return [(r[0][0], q)] + list(r[1:])
         return None
     def build(self, rng):
-        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None
+        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)

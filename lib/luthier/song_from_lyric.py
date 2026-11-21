@@ -27,6 +27,7 @@ WORD_PLACE = 0.75    # 913 (749.90): refitted after 912, with every kept rhythm 
 AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung again (tried: it lowers rhythm scaling; tried again in Window 190 with 929 in: the builds' bars sung again move by 0.03 and a random pool pick fails the rule 7 times in 100, see studies/v33_trials)
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
+PLANT_PEAK = True      # 950
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
 MOVE_FIT = (40, 6, 400)   # 930, 934 (749.108, 749.115): builds past the gates a round asks for, rounds at most, and tries a round at most, to fit the step, leap and repeat weights to the aimed song (None: the fixed weights below)
@@ -145,6 +146,7 @@ def plan(L):
         dr_ = int(round(max(-5, min(9, want_ - span_))))
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][2] = min(rg_[k_][2] + dr_, rg_["Verse"][1] + (V[1] - V[0])) if rg_[k_][2] + dr_ > rg_[k_][0] + 1 else rg_[k_][0] + 2
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][0] = max(rg_[k_][1] + 2, min(rg_[k_][2] - 2, rg_[k_][0] + int(round(dr_ * CENTRE_FOLLOWS))))      # and each part's centre follows its top, so the line can reach it
+        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60)      # 950: the peak planted as a note in the first fresh chorus line that reaches it
         spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
