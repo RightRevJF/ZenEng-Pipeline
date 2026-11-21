@@ -126,11 +126,13 @@ def plan(L):
             import numpy as _np6, words_to_shape as _WS                                         # How much it repeats and how wide it ranges: from its own words, by the link found in the kept songs as a body (studies/words_to_shape).
             col_ = lambda c_: [r_[KR_["names"].index(c_)] for r_ in KR_["rows"]]; q_ = lambda c_, p_: float(_np6.percentile(col_(c_), p_))      # How it moves: the middle of what every kept melody does (the paper's invariants, Module 0.4), unless the writer asks otherwise.
             tr_ = {c_: q_(c_, 50) for c_ in KR_["names"]}; own_, feat_ = _WS.from_sung(sung, minor=L.get("mode", "major") == "minor"); tr_.update(own_); mv_ = L.get("movement")
+            fam_ = FAMILY.get(L.get("genre", "pop"), "other"); rf_ = json.load(open(_WS.TABLE)).get("repeated_notes_by_family") or {}      # 947 (749.129): of the three movements only repeated notes differ by genre family in kept songs; that one is the family's middle
+            if fam_ in rf_: tr_["repeated notes"] = float(rf_[fam_])
             if mv_ == "smooth": tr_["moves by step"] = q_("moves by step", 75); tr_["moves by leap"] = q_("moves by leap", 25)
             elif mv_ == "leaping": tr_["moves by leap"] = q_("moves by leap", 75); tr_["moves by step"] = q_("moves by step", 25)
             elif mv_ == "chant": tr_["repeated notes"] = q_("repeated notes", 75); tr_["longest run of one pitch"] = q_("longest run of one pitch", 75)
             elif mv_ not in (None, "the engine's"): raise SystemExit(f"movement: {mv_!r} is not one of smooth, leaping, chant")
-            ri_ = None; shape_ = dict(shape_from="the song", from_its_words={c_: round(v_, 3) for c_, v_ in own_.items()}, words=feat_, movement=mv_ or "the engine's: the kept middle", note="944: repetition and range from the song's own words; movement at the kept middle unless the writer chooses smooth, leaping or chant")
+            ri_ = None; shape_ = dict(shape_from="the song", from_its_words={c_: round(v_, 3) for c_, v_ in own_.items()}, words=feat_, movement=mv_ or "the engine's: the kept middle; repeated notes at the genre family's middle", family=fam_, note="944: repetition and range from the song's own words; movement at the kept middle unless the writer chooses smooth, leaping or chant")
         tg_ = {k_: tr_[k_] for k_ in ("repeated notes", "moves by step", "moves by leap", "range", "bars on a figure already sung", "bars on a rhythm already sung", "distinct rhythms over bars", "longest run of one pitch")}
         spec["target"] = dict(kept_song_row=ri_, kept_song=(KR_.get("song_names") or [None] * (ri_ + 1))[ri_] if ri_ is not None else None, readings=tg_, power=AIM_POWER, run=int(max(3, min(RUN_TOP, round(tg_["longest run of one pitch"])))), moves=dict(step=MOVE_STEP, leap=MOVE_LEAP, spread=REG_SPREAD))      # 926 (749.99): a pitch may repeat as long as the kept song's longest run; 927 (749.100): the moves' own lean taken out
         if shape_:

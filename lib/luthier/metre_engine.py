@@ -341,6 +341,10 @@ class Engine:
                     if f2_ is not None:
                         cap2_ = self.line_start(s1_, i1_) + (self.line_start(s2_, i2_) + f2_ - self.BREATH - self.line_start(s1_, i1_)) - (len(self.LINES[s1_][i1_]) - 1) * 6 - 12 - U
                         cap = cap2_; self.stats["935: a limit set on a line before a short line before a copy (it binds only where the line would run late)"] += 1      # 938 (749.119): no longer asks that the song have an aim; where the line ends in time the limit changes nothing (songs 55, 54 and 58 build note for note the same with and without it)
+            lim_ = None                                                                        # 948: where the very next line copies this one, the furthest this line's last syllable may stand from its first
+            if k + 1 < len(self.KEYS):
+                hn2_ = self.HOW.get(self.KEYS[k + 1], ["fresh"])
+                if hn2_[0] == "copy" and (hn2_[1], hn2_[2]) == (sec, i): lim_ = self.line_start(*self.KEYS[k + 1]) - U - (12 if self.LE else self.END + self.REST) + (self.BREATH - 12)
             if how[0] == "plan":                                                              # a line that returns an earlier line of its section under a drawn plan
                 pl = plans[how[1]]; how = ["again", sec, pl.index(pl[i])] if pl.index(pl[i]) != i else ["fresh"]
             if how[0] == "design": lines[(sec, i)] = [(t, p) for t, p, d in how[1]]; prev = lines[(sec, i)][-1][1]; continue
@@ -362,7 +366,7 @@ class Engine:
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
                 r = self.join(r, lines, k, sec, i) if r is not None else None                         # 929
-                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap): lines[(sec, i)] = r; prev = r[-1][1]; continue
+                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_): lines[(sec, i)] = r; prev = r[-1][1]; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
             if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0:               # 870 (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
@@ -374,7 +378,7 @@ class Engine:
                 j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
                     r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot)
-                    if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
+                    if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
                         r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
                         if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
@@ -388,6 +392,12 @@ class Engine:
                 self._runin = (sq0_[-1], c0_) if sq0_ else None
             if self.PG and self.PG["memory"] != 1.0:                                           # 923: the figures sung so far, in the order the song is sung
                 sq_ = [p_ for kk_ in self.KEYS[:k] for _, p_ in lines[kk_]]; iv_ = self.PG["mod"].ivs(sq_); self._figs = ({tuple(iv_[j_:j_ + 4]) for j_ in range(len(iv_) - 3)}, sq_[-4:]) if len(sq_) >= 5 else None
+            if ons is not None and lim_ is not None:                                               # 948 (749.126): a line the very next line copies must leave that copy room: the copy begins where this line began, one slot on
+                for _ in range(12):
+                    if ons[-1] - ons[0] <= lim_: break
+                    o3_ = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
+                    if o3_ is None: break
+                    ons = o3_; self.stats["948: a line its own copy follows is drawn again to leave the copy room"] += 1
             if ons is None: return None, ("rhythm: the syllables cannot fit the window", sec, i)
             rule = self.S.get("line_rules", {}).get(f"{sec}:{i}", {}); ps = None
             for _ in range(20):

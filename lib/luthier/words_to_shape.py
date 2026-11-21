@@ -17,6 +17,16 @@ def features(lines, kinds, chorus_share, bridge, minor, year):
         if x in st: t3 += 1
         st.add(x)
     return [math.log(max(tot, 1)), mean, sd / mean, tot / max(len(w), 1), len(set(w)) / max(len(w), 1), rep / max(len(lines), 1), t3 / max(len(tri), 1), float(kinds), float(chorus_share), float(bridge), float(minor), float(year)]
+def kept_lines(k):
+    """946 (749.128): a kept song's words tied to its notes, so its lines are read as a Luthier lyric's are. k: a song from kept_corpus.kept_songs().
+    Each word takes as many notes as it has syllables sung; a melisma's further notes carry no word (kept_corpus writes them as a word of no letters);
+    a line's words are the words that begin in it; a line's syllables are its notes that carry a syllable. -> [(words, syllables)] in the order sung"""
+    out = {}; i = 0
+    for w, n in k["words"]:
+        ln = k["lines"][i]; o = out.setdefault(ln, [[], 0]); x = re.sub(r"[^a-z']", "", w.lower())
+        if x: o[0].append(x); o[1] += n
+        i += n
+    return [(ws, n) for ln, (ws, n) in sorted(out.items()) if n]
 def from_sung(sung, minor=False, year=None):
     """sung: the spec's sections as sung, [name, kind, [[(word, stressed) for each syllable] for each line]]"""
     T = json.load(open(TABLE)); lines = []; kinds = set(); cho = 0; tot = 0; br = False
