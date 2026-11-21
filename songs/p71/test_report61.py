@@ -20,6 +20,7 @@ md = [f"# This Side of the Door ({REC['edition']}): test report", "", "Words and
       f"- Flags: " + "; ".join(R["flags"]) + ".", "",
       "## Hand edits (second edition)", "",
       "The writer's edits to the engine's pick, in `hand61.py`, logged in `intake.py`; the engine's own record is `lyric61.song.json`, untouched. Syllables and the key kept.", ""] + [f"- {e['where']}: " + "; ".join(f"{b[0] or '(melisma)'} {b[2] / 12:g} to {a[2] / 12:g} beats" + (f", pitch {b[3]} to {a[3]}" if a[3] != b[3] else "") for b, a in zip(e['before'], e['after']) if b != a) + "." for e in R["hand_edits"]["edits"]] + [
+      f"- The harmony voice (the arrangement): {sum(1 for n in REC['harm'] if n.get('recast'))} of the engine's notes in the last chorus doubled her an octave below, under G3; each is now the highest tone of its chord a minor third or more under her, and one, with no such tone, rests. Its range is now {min(n['midi'] for n in REC['harm'])} to {max(n['midi'] for n in REC['harm'])} (MIDI).",
       "", f"- Words' fit: the engine's pick {R['hand_edits']['words_fit_engine']['all']}, after the edits {R['hand_edits']['words_fit_after']['all']} (by length {R['hand_edits']['words_fit_engine']['length']} to {R['hand_edits']['words_fit_after']['length']}). The record's checks below are the engine's, read on its pick.", "",
       "## The record's checks", "", "| Check | Reading |", "|---|---|"]
 for k, v in R["checks"].items(): md.append(f"| {k} | {v} |")

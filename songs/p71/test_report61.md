@@ -24,6 +24,7 @@ The writer's edits to the engine's pick, in `hand61.py`, logged in `intake.py`; 
 - Verse 3, line 5: three 0.25 to 1 beats; (melisma) 0.5 to 0.5 beats; and 2.25 to 0.5 beats; then 3.25 to 0.5 beats; two 1.5 to 3.75 beats.
 - Last Chorus, line 7: three 0.25 to 1 beats; (melisma) 0.5 to 0.5 beats; and 2.25 to 0.5 beats; then 3.25 to 0.5 beats; two 0.5 to 2.75 beats.
 - Verse 3, line 4: were 1.25 to 0.5 beats; kids 0.5 to 2 beats, pitch 64 to 68.
+- The harmony voice (the arrangement): 12 of the engine's notes in the last chorus doubled her an octave below, under G3; each is now the highest tone of its chord a minor third or more under her, and one, with no such tone, rests. Its range is now 56 to 69 (MIDI).
 
 - Words' fit: the engine's pick 0.363, after the edits 0.404 (by length 0.266 to 0.326). The record's checks below are the engine's, read on its pick.
 
@@ -109,7 +110,8 @@ Lead sheet, full score, parts, number chart, MusicXML (lead sheet and full score
 | Check | Result |
 |---|---|
 | the document record is the song record: sung notes | pass |
-| harmony notes are the engine's, in the last chorus only, until its seventh line | pass (48 of the engine's 121) |
+| harmony notes are the engine's (or, where it doubled her under G3, a tone of the chord under her), in the last chorus only, until its seventh line | pass (47 of the engine's 121, 12 recast) |
+| harmony: never above the lead, nothing under G3 | pass |
 | bass notes are the engine's | pass (96 of 352) |
 | guitar: every picked note a tone of its half-bar's chord | pass |
 | cello: every note its chord's root | pass |
@@ -122,13 +124,13 @@ Lead sheet, full score, parts, number chart, MusicXML (lead sheet and full score
 | every sung line spells its locked line | pass (39 lines) |
 | readback: him read back | pass (330 of 330) |
 | readback: him read back | pass (330 of 330) |
-| readback: harmony read back | pass (48 of 48) |
+| readback: harmony read back | pass (47 of 47) |
 | readback: guitar read back | pass (699 of 699) |
 | readback: cello read back | pass (73 of 73) |
 | readback: strings read back | pass (65 of 65) |
 | readback: bass read back | pass (96 of 96) |
 | readback_score: him read back | pass (330 of 330) |
-| readback_score: harmony read back | pass (48 of 48) |
+| readback_score: harmony read back | pass (47 of 47) |
 | readback_score: guitar read back | pass (699 of 699) |
 | readback_score: strings read back | pass (65 of 65) |
 | readback_score: cello read back | pass (73 of 73) |

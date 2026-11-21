@@ -126,6 +126,15 @@ for e in R["parts"]["bass"]:
     bi = e["on"] // BAR; sec = sec_of(bi)[0]
     if sec == "Bridge" or (sec == "Last Chorus" and bi < BARE_FROM): bass.append(dict(e, art=""))
 harm = [n for n in harm if n["sec"] == "Last Chorus" and n["line"] < 6]
+RECAST = []
+for n in harm:                                                    # the engine's notes under G3 doubled her an octave below: each becomes the highest tone of its chord at least a minor third under her, or rests
+    if n["midi"] >= 55: continue
+    ln = [x for x in lead if x["on"] <= n["on"] < x["on"] + x["dur"]]; bb = bars[n["on"] // BAR]; ch, rn = bb["beatchords"][(n["on"] % BAR) // 12]
+    q = max((p for p in range(55, ln[-1]["midi"] - 2) if p % 12 in TONES[rn]), default=None) if ln else None
+    RECAST.append((n["on"], n["midi"], q))
+    if q is not None: n["midi"] = q; n["recast"] = "the highest tone of its chord a third or more under the lead (the engine's note doubled her an octave below, under G3)"
+    else: n["drop"] = True
+harm = [n for n in harm if not n.get("drop")]
 parts = {"guitar": gtr, "cello": cello, "strings": strings, "bass": bass}
 end = len(bars) * BAR; seconds = end / 12 * 60.0 / QBPM
 REC = dict(title=R["title"], file_title=R["title"] + EDITION, edition=EDITION.strip(" ()"), nbars=len(bars), bars=bars, chords2=chords2, plan=plan, lead=lead, harm=harm, parts=parts, slot="twelfth of a beat",

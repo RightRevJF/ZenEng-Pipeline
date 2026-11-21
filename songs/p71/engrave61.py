@@ -247,7 +247,9 @@ if __name__ == "__main__":
 \\score {{ << {CHN(rest)}
   \\new Staff {{ {clef} {vo} }} {ly} >> \\layout {{ }} }} }}''')
     nh = nd = 0
-    parts = HEAD % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts ({REC['edition']})" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
+    HEAD_P = HEAD.replace(r'\RemoveEmptyStaves \override VerticalAxisGroup.remove-first = ##t ', '')      # a part is one staff: never hide it (a part that waits forty bars kept its marks stacked on an empty first system)
+    assert HEAD_P != HEAD
+    parts = HEAD_P % (16, FOOT, FOOT) + f'\\header {{ title = "{TITLE}" subtitle = "Parts ({REC['edition']})" composer = "Words and music: Jason Bryant" tagline = ##f }}\n' + "\n".join(books)
     path, warns = compile_ly(parts, f"{FT} - parts", cwd=OUT)
     print("parts:", [w for w in warns][:6], len(warns))
     for k, v in checks.items(): print(f"  readback {k}:", "matches" if v[0] else "MISMATCH", v[1:])

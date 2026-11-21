@@ -126,11 +126,12 @@ for s, nb, st, _, _ in REC["plan"]:
     ks = [k for k in lines if k[0] == s]
     if not ks:
         md += ["Chords: " + " | ".join(" ".join(chord_at_bar(b)) for b in range(b0, b0 + nb)), ""]; continue
-    md += ["| Bar | Line | Chords | Melody |", "|---|---|---|---|"]
+    md += ["| Bars | Line | Chords | Melody |", "|---|---|---|---|"]
     for k in ks:
         li = line_info(k); txt = TEXT.get(k, "")
         mel = f"starts {li['first']}, ends {li['last']}" + (f"; top {li['top']} on “{li['top_word']}” (bar {li['top_bar']})" if li["top"] == nm(top_m) else "")
-        md.append(f"| {li['slot']} | {txt} | {li['chords']} | {mel} |")
+        _bs = int(li['slot'].split()[0]); _span = f"{_bs}–{li['b1']}" if li['b1'] > _bs else f"{_bs}"
+        md.append(f"| {_span + li['slot'][len(str(_bs)):]} | {txt} | {li['chords']} | {mel} |")
     md.append("")
 md += ["## For each player", "",
        f"**Voice.** An alto, {rng[0]} to {rng[1]}. She is talking through a door: plain, close, never performed. " + (f"The choruses sit about {LIFT:g} semitone{'' if LIFT == 1 else 's'} higher; let them open a little without pushing. " if LIFT > 0 else "The choruses sit where the verses do; let the band lift them, not the voice. ") +

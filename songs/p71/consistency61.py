@@ -10,7 +10,9 @@ def chk(name, ok, detail=""): C.append((name, bool(ok), detail))
 # the record itself
 chk("the document record is the song record: sung notes", [(n["on"], n["midi"]) for n in REC["lead"]] == [(n["on"], n["midi"]) for n in sorted(SRC["melody"]["notes"], key=lambda n: n["on"])])
 _eh = {(e["on"], e["p"][0]) for e in SRC["parts"]["harmony"]}
-chk("harmony notes are the engine's, in the last chorus only, until its seventh line", all((n["on"], n["midi"]) in _eh and n["sec"] == "Last Chorus" and n["line"] < 6 for n in REC["harm"]) and len(REC["harm"]) > 0, f"{len(REC['harm'])} of the engine's {len(_eh)}")
+_eon = {o for o, _ in _eh}
+chk("harmony notes are the engine's (or, where it doubled her under G3, a tone of the chord under her), in the last chorus only, until its seventh line", all(((n["on"], n["midi"]) in _eh or (n.get("recast") and n["on"] in _eon and n["midi"] >= 55)) and n["sec"] == "Last Chorus" and n["line"] < 6 for n in REC["harm"]) and len(REC["harm"]) > 0, f"{len(REC['harm'])} of the engine's {len(_eh)}, {sum(1 for n in REC['harm'] if n.get('recast'))} recast")
+chk("harmony: never above the lead, nothing under G3", all(n["midi"] >= 55 for n in REC["harm"]) and all(n["midi"] <= max([x["midi"] for x in REC["lead"] if x["on"] <= n["on"] < x["on"] + x["dur"]] or [127]) for n in REC["harm"]))
 _eb = [dict(e, art="") for e in SRC["parts"]["bass"]]
 chk("bass notes are the engine's", all(e in _eb for e in REC["parts"]["bass"]), f"{len(REC['parts']['bass'])} of {len(_eb)}")
 _hc = lambda t: tuple(REC["bars"][t // 48]["beatchords"][(t % 48) // 12])
