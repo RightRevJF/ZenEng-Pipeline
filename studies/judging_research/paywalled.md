@@ -11,3 +11,7 @@
 ## Week 01 (21 November 2026)
 - The Drive folder "Judging research inbox" was created in My Drive this week. It was empty, so nothing was received.
 - No new paywalled papers: all four of this week's papers were read in full. Not reached (fetches blocked, not paywalled): the supplements of Cheung et al. 2019 and Janssen et al. 2017. A later run may retry them.
+
+## Run 02 (22 November 2026)
+- The inbox folder was empty, so nothing was received.
+- No new paywalled papers: all four papers were read in full. Not reached (fetches blocked or not published, not paywalled): Ortega 2021's supporting files; McBride & Leroi 2026's supplementary material (cited but not posted); Madison & Schiölde 2017's figures and track list; Di Marco et al. 2026's published Supplementary Information.
