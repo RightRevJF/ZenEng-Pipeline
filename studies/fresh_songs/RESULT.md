@@ -20,4 +20,4 @@ The rule was committed first (PREDICTION.md, revised at 59182c6 before any measu
 - The weeks line points the other way, as the two-channels finding (749.22) would have it: the audience rewards the loop, other musicians reward the movement. Not significant, and not the test.
 - For the writer this changes little: the chord finding stands where it stood, one dataset and one artist-held check strong, one fresh check pointing the same way but too small to count.
 
-**What would settle it.** About 2,500 fresh songs for 80% power at −0.06. No other chord corpus of that size outside Hooktheory is on this machine.
+**What would settle it.** About 2,200 fresh songs for 80% power at −0.06. No other chord corpus of that size outside Hooktheory is on this machine.
