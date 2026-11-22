@@ -2,7 +2,8 @@
   python3 build62.py <song.json> <label> [--design]
 --design (the designed copy) applies, logged in intake.py:
   the verse bass walks down by step under the designed chords (C B A G F E D, then G or A, in the key of the song);
-  hand fixes: 're-MEM-bered' in the title line, the long note moved onto 'MEM'; 'today' on the tonic; 'for NOW' in the bridge, the long note moved from 'for' to 'now'.
+  hand fixes: each refrain line that opened on a high unstressed note falling a sixth or more now opens a scale step under its second note;
+  're-MEM-bered' in the title line, the long note moved onto 'MEM'; 'today' on the tonic; 'for NOW' in the bridge, the long note moved from 'for' to 'now'.
 Arrangement (the writer's settings, chamber pop): the engine's piano part and bass (piano left hand) throughout, its drums and harmony voice left out;
 the cello enters in the bridge and stays; the full quartet in the last refrain, the violins only where the voice rests (749.21: nothing above the
 sung note while it sounds); in the outro the piano and first violin play the title line's tune once, unsung.
@@ -31,6 +32,15 @@ if DESIGN:
     f = [n for n in line("Bridge", 3) if n["text"] in ("for", "now")]
     if len(f) == 2 and f[0]["dur"] > f[1]["dur"]:
         a, b_ = f; tot = b_["on"] + b_["dur"] - a["on"]; a["dur"] = BT; b_["on"] = a["on"] + BT; b_["dur"] = tot - BT; fixes.append("bridge: 'for' one beat, 'now' held")
+if DESIGN:                                                                                   # the writer's answer: refrain lines start low, so the reach lands on the strong word
+    SC = [(R["key"]["tonic_midi"] + d) % 12 for d in (0, 2, 4, 5, 7, 9, 11)]
+    for sec in [n for n, k, b in R["form"] if k == "chorus"]:
+        for i in sorted({n["line"] for n in mel if n["sec"] == sec}):
+            ln = line(sec, i)
+            if len(ln) >= 2 and not ln[0]["stress"] and ln[0]["midi"] - ln[1]["midi"] >= 6:
+                q = ln[1]["midi"] - 1
+                while q % 12 not in SC: q -= 1
+                fixes.append(f"{sec} line {i + 1}: the opening '{ln[0]['text']}' from {ln[0]['midi']} to {q}, a step under '{ln[1]['text']}'"); ln[0]["midi"] = q
 bass = [dict(on=e["on"], dur=e["dur"], p=e["midi"]) for e in R["bass"]]
 if DESIGN:
     walk1 = [0, -1, -3, -5, -7, -8, -10, -5]; walk2 = [0, -1, -3, -5, -7, -8, -10, -3]; top = 36 + ((T0 - 36) % 12) if (36 + ((T0 - 36) % 12)) >= 36 else 48
