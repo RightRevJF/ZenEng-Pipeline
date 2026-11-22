@@ -1,0 +1,199 @@
+{
+ "rows": 2360,
+ "between_artists_committed": -0.0715,
+ "songs": 1681,
+ "artists": 365,
+ "power_for_minus_0_04": 0.69,
+ "within_artist": {
+  "beta": -0.0422,
+  "se": 0.0163,
+  "p": 0.0094
+ },
+ "halves": [
+  {
+   "songs": 810,
+   "artists": 173,
+   "beta": -0.0511,
+   "p": 0.0207
+  },
+  {
+   "songs": 871,
+   "artists": 192,
+   "beta": -0.0343,
+   "p": 0.1551
+  }
+ ],
+ "verdict": "holds",
+ "deciding_nothing": {
+  "covers_within_five_years": {
+   "beta": -0.0281,
+   "p": 0.1458
+  },
+  "covers_after_ten_years": {
+   "beta": -0.0301,
+   "p": 0.0373
+  },
+  "all_other_artists_versions": {
+   "beta": -0.0413,
+   "p": 0.0101
+  },
+  "median_early_late_undated": [
+   1.0,
+   3.0,
+   0.0
+  ],
+  "full_controls_with_the_artist_held": {
+   "beta": -0.0431,
+   "p": 0.0074
+  },
+  "every_measure_one_at_a_time": {
+   "mel_ic_mean": {
+    "beta": -0.0122,
+    "p": 0.5471
+   },
+   "mel_h_mean": {
+    "beta": -0.0106,
+    "p": 0.5587
+   },
+   "mel_cheung": {
+    "beta": -0.0094,
+    "p": 0.605
+   },
+   "ch_ic_mean": {
+    "beta": -0.0422,
+    "p": 0.0264
+   },
+   "ch_h_mean": {
+    "beta": 0.0054,
+    "p": 0.7434
+   },
+   "ch_cheung": {
+    "beta": 0.005,
+    "p": 0.7352
+   },
+   "mel_rep": {
+    "beta": -0.02,
+    "p": 0.3241
+   },
+   "ch_rep": {
+    "beta": -0.0422,
+    "p": 0.0094
+   },
+   "rhy_ic_mean": {
+    "beta": 0.0269,
+    "p": 0.0737
+   },
+   "rhy_h_mean": {
+    "beta": 0.0246,
+    "p": 0.1539
+   },
+   "rhy_cheung": {
+    "beta": -0.0054,
+    "p": 0.7052
+   },
+   "sync_per_note": {
+    "beta": 0.0373,
+    "p": 0.023
+   },
+   "rest_share": {
+    "beta": 0.0397,
+    "p": 0.0772
+   },
+   "phrase_mean": {
+    "beta": -0.0311,
+    "p": 0.0877
+   },
+   "phrase_on_downbeat": {
+    "beta": -0.0198,
+    "p": 0.2897
+   },
+   "density": {
+    "beta": -0.0181,
+    "p": 0.2472
+   },
+   "length_variety": {
+    "beta": 0.033,
+    "p": 0.0467
+   }
+  },
+  "every_measure_together_full_controls": {
+   "mel_ic_mean": {
+    "beta": 0.0014,
+    "p": 0.9524
+   },
+   "mel_h_mean": {
+    "beta": -0.0154,
+    "p": 0.4393
+   },
+   "mel_cheung": {
+    "beta": 0.001,
+    "p": 0.953
+   },
+   "ch_ic_mean": {
+    "beta": -0.0654,
+    "p": 0.0017
+   },
+   "ch_h_mean": {
+    "beta": 0.0058,
+    "p": 0.7781
+   },
+   "ch_cheung": {
+    "beta": 0.0175,
+    "p": 0.2843
+   },
+   "mel_rep": {
+    "beta": 0.0168,
+    "p": 0.4791
+   },
+   "ch_rep": {
+    "beta": -0.0614,
+    "p": 0.0054
+   },
+   "rhy_ic_mean": {
+    "beta": -0.0127,
+    "p": 0.6247
+   },
+   "rhy_h_mean": {
+    "beta": 0.0151,
+    "p": 0.5906
+   },
+   "rhy_cheung": {
+    "beta": 0.0063,
+    "p": 0.7066
+   },
+   "sync_per_note": {
+    "beta": 0.0229,
+    "p": 0.2177
+   },
+   "rest_share": {
+    "beta": 0.048,
+    "p": 0.0957
+   },
+   "phrase_mean": {
+    "beta": -0.0108,
+    "p": 0.6055
+   },
+   "phrase_on_downbeat": {
+    "beta": -0.0026,
+    "p": 0.8893
+   },
+   "density": {
+    "beta": 0.0121,
+    "p": 0.644
+   },
+   "length_variety": {
+    "beta": 0.0377,
+    "p": 0.1025
+   }
+  },
+  "songs_per_artist_quartiles": [
+   2.0,
+   3.0,
+   4.0
+  ],
+  "artists_with_five_or_more": {
+   "beta": -0.0508,
+   "p": 0.0104
+  }
+ }
+}
