@@ -1,6 +1,6 @@
 # Luthier list for v46 (since v45)
 
-22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.158; next fix 959.
+22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.160; next fix 959 (960 proposed in 749.159).
 
 ## In short
 
@@ -62,6 +62,25 @@ One chosen tune cannot separate the draw from the form.
 **Evidence.** `studies/judging_checks/within_artist/RESULT.md`. Not rerun here: its views and cover counts are not committed.
 **Fix.** Before the trial of sections that loop less in the chord writer, write its rule and its fresh-songs leg (McGill, J6b) first, and commit a script that rebuilds the views and counts from public sources, so the review can rerun it. Chord surprise gets its own rule-first test before it is used anywhere.
 **Check.** The trial's rule and the fresh-songs leg are committed before any outcome is read; the review reruns the test from the repository.
+
+### 749.158 The fresh-songs leg (J6b): the chord finding points the same way on songs it was not chosen on, but too weakly to count
+**Problem.** The chord finding was chosen on Hooktheory songs. 749.157 asked for a test on songs it never saw, rule first.
+**Evidence.** `studies/fresh_songs` (rule 59182c6, measures 4ae7515, test d0cd57b, then the data; result c42b36b). 439 McGill songs in no part of Hooktheory, matched to Discogs-VI version groups. Chord repetition within a section against covers, year and chords read held: −0.060, p .21 (95% −0.154 to +0.034). Power to see −0.04 was 0.13. With weeks and peak: −0.085, p .058. Artist held: −0.039, p .63. Weeks on the Hot 100 against repetition: +0.073, p .086, the other sign.
+**Fix.** No engine change. Record the verdict by its own rule: unsettled. The test reruns from public sources (Zenodo 13983028 and the committed McGill charts), as 749.157 asked.
+**Check.** `python3 -I studies/fresh_songs/join_and_test.py main.zip` gives `result.json` byte for byte.
+
+### 749.159 The trial of sections that loop less (proposed as 960), with its rule written before any build
+**Problem.** The chord writer takes a section's structure, which bars repeat which, from one kept section, drawn at random (800). Its sections loop at the kept rate. Songs that loop less within a verse or bridge get more covers: across artists on two sources, within artist narrowly (749.157), and the same way but unsettled on fresh songs (749.158). Weeks on the chart lean the other way, so the chorus is left alone.
+**Evidence.** 749.157, 749.158; night one's J1 and night two's R02-1.
+**Fix.**
+- Step one, a reading, no change: within-section chord repetition (the research check's frozen rules) of the writer's verses, choruses and bridges, 1,000 drafts a kind per mode, against the kept median of that kind. If the writer's verse and bridge sit below the kept median already, stop: there is nothing to trial.
+- Step two, the trial, behind its flag and off by default: verse and bridge structures drawn only from kept sections of that kind below the kept median. Chorus and every other kind unchanged.
+**Check.** Written now, before any build:
+- Verse and bridge repetition of the chosen builds below the kept median on at least three of the four songs run; chorus repetition within 0.02 of the flag off.
+- The stage 4 held-out readings (first, last, chords, bigrams, bars) stay within their floors.
+- On the songs run, the words' fit and the judge's pick fall no more than the guarded amount of 749.155.
+- A fresh hold-out the maintainer names, not song 50 (959's) and not song 59 (read only). It must pass the same guard.
+- On by default only if every check passes and the maintainer rules that the evidence (across artists strong, within artist narrow, fresh unsettled) is enough. Otherwise it stays a setting a lyric can ask for.
 
 ## Closed
 
