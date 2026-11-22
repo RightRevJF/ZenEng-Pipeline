@@ -2,7 +2,7 @@
   python3 build62.py <song.json> <label> [--design]
 --design (the designed copy) applies, logged in intake.py:
   the verse bass walks down by step under the designed chords (C B A G F E D, then G or A, in the key of the song);
-  hand fixes: 're-MEM-bered' in the title line, the long note moved from 're' to 'MEM'; 'for NOW' in the bridge, the long note moved from 'for' to 'now'.
+  hand fixes: 're-MEM-bered' in the title line, the long note moved onto 'MEM'; 'today' on the tonic; 'for NOW' in the bridge, the long note moved from 'for' to 'now'.
 Arrangement (the writer's settings, chamber pop): the engine's piano part and bass (piano left hand) throughout, its drums and harmony voice left out;
 the cello enters in the bridge and stays; the full quartet in the last refrain, the violins only where the voice rests (749.21: nothing above the
 sung note while it sounds); in the outro the piano and first violin play the title line's tune once, unsung.
@@ -19,9 +19,15 @@ mel = sorted(copy.deepcopy(R["melody"]["notes"]), key=lambda n: n["on"]); fixes 
 def line(sec, i): return [n for n in mel if n["sec"] == sec and n["line"] == i]
 if DESIGN:
     t = [n for n in line("Chorus 3", 3) if n["text"] == "remembered"]
-    if len(t) == 3 and t[0]["dur"] > t[1]["dur"]:
+    if len(t) == 3 and t[0]["dur"] > t[1]["dur"] and t[0]["dur"] > t[2]["dur"]:
         a, b_, c = t; s0 = a["on"]; tot = b_["on"] + b_["dur"] - s0
         a["dur"] = BT; b_["on"] = s0 + BT; b_["dur"] = tot - BT; fixes.append("title line: 're' one beat, 'MEM' held to where 'bered' begins")
+    elif len(t) == 3 and t[2]["dur"] > t[1]["dur"]:
+        a, b_, c = t; d1, d2 = b_["dur"], c["dur"]; b_["dur"] = d2; c["on"] = b_["on"] + d2; c["dur"] = d1; fixes.append("title line: the long note moved from 'bered' to 'MEM'")
+    td = [n for n in line("Chorus 3", 3) if n["text"] == "today"]
+    if td and (td[-1]["midi"] - R["key"]["tonic_midi"]) % 12 != 0:
+        tn = R["key"]["tonic_midi"]; cand = [p for p in range(td[-1]["midi"] - 6, td[-1]["midi"] + 7) if (p - tn) % 12 == 0][0]
+        fixes.append(f"title line: 'today' lands on the tonic ({td[-1]['midi']} to {cand}), the first full close of the song"); td[-1]["midi"] = cand
     f = [n for n in line("Bridge", 3) if n["text"] in ("for", "now")]
     if len(f) == 2 and f[0]["dur"] > f[1]["dur"]:
         a, b_ = f; tot = b_["on"] + b_["dur"] - a["on"]; a["dur"] = BT; b_["on"] = a["on"] + BT; b_["dur"] = tot - BT; fixes.append("bridge: 'for' one beat, 'now' held")
