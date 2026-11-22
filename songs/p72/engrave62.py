@@ -38,10 +38,12 @@ def pieces(s, e):
             res.append(v); s += v; break
     return res
 DUR = {16: "1", 12: "2.", 8: "2", 6: "4.", 4: "4", 3: "8.", 2: "8", 1: "16"}
+SHOWN = {"Chorus 1": "Refrain", "Chorus 2": "Refrain", "Chorus 3": "Last refrain", "Turn 1": "Turn", "Turn 2": "Turn"}
 MARKS = {}; o = 0
 for n, k, b in R["form"]:
-    MARKS[o // B * 1] = n; o += b * B
+    MARKS[o // B * 1] = SHOWN.get(n, n); o += b * B
 def bar_starts(): return {o_: n for o_, n in MARKS.items()}
+SUFFIX = {}
 def music(part, mono=True, marks=True, rest="r"):
     """LilyPond notes for a part, bar by bar, with ties across beats and bars; returns (text, notes in order for lyrics)"""
     ev = events(part, mono); out = []; seq = []; i = 0; cur = 0
@@ -56,7 +58,7 @@ def music(part, mono=True, marks=True, rest="r"):
             name = pn(ps[0]) if len(ps) == 1 else "<" + " ".join(pn(p) for p in ps) + ">"
             for j, v in enumerate(pp):
                 tie = "~" if (j < len(pp) - 1 or t > b1) else ""
-                toks.append(name + DUR[v] + tie)
+                toks.append(name + DUR[v] + tie + (SUFFIX.get(s, "") if (j == len(pp) - 1 and t <= b1) else ""))
             if first: seq.append((s, ps))
             pos = z
         if pos < b1: toks += [rest + DUR[v] for v in pieces(pos - b0, 16)]
@@ -74,12 +76,13 @@ lyr = []; i = 0
 while i < len(mel):
     w = mel[i]["text"]
     if not w: lyr.append("_"); i += 1; continue
-    j = i
-    while j < len(mel) and mel[j]["text"] == w and (j == i or mel[j]["line"] == mel[i]["line"]): j += 1
-    k = j - i; ss = syll(w, k)
-    for x, s_ in enumerate(ss):
-        s_ = s_.replace("'", "’")
-        lyr.append(('"' + s_ + '"') + (" --" if x < k - 1 else ""))
+    j = i; idx = []
+    while j < len(mel) and (mel[j]["text"] == w or (mel[j]["text"] == "" and any(m_["text"] == w and m_["line"] == mel[i]["line"] for m_ in mel[j + 1:j + 3]))) and mel[j]["line"] == mel[i]["line"]:
+        idx.append(j); j += 1
+    k = sum(1 for x_ in idx if mel[x_]["text"]); ss = iter(syll(w, k)); c_ = 0
+    for x_ in idx:
+        if not mel[x_]["text"]: lyr.append("_"); continue
+        s_ = next(ss).replace("'", "’"); c_ += 1; lyr.append(('"' + s_ + '"') + (" --" if c_ < k else ""))
     i = j
 LYR = " ".join(lyr)
 def chordname(c):
@@ -103,7 +106,10 @@ def chords():
                 out.append(f"{r}{d_}{qq}{sl}")
             bar_ += 1
     return " ".join(out)
+dad = [n for n in mel if n["sec"] == "Verse 1" and n["line"] == 6][-1]
+SUFFIX = {q(dad["on"]): ' ^\\markup { \\italic "let it sit" } \\breathe'}
 voice, vseq = music([dict(on=n["on"], dur=n["dur"], p=n["midi"]) for n in mel])
+SUFFIX = {}
 parts = {k: music(R["parts"][k], mono=(k != "piano"), marks=False) for k in ("violin1", "violin2", "viola", "cello", "piano", "bass")}
 KEY = "\\key ees \\major"; TIME = "\\time 4/4"; TEMPO = '\\tempo "Gently, with space" 4 = 72'
 HEAD = f'''\\version "2.24.0"

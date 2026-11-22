@@ -1,4 +1,4 @@
-# He Remembered Today (first edition)
+# He Remembered Today (first edition, corrected)
 
 Words and music: Jason Bryant
 
@@ -8,7 +8,7 @@ Words and music: Jason Bryant
 - **Voice:** tenor, G3 to A♭4. The verses sit low and close; the refrain lifts; the bridge is the most open singing, up to G4.
 - **Form:** Intro (1–2), Verse 1 (3–18), Refrain (19–26), Turn (27–30), Verse 2 (31–46), Refrain (47–54), Turn (55–58), Bridge (59–66), Verse 3 (67–82), Last refrain (83–90), Outro (91–94).
 - **What it is about:** a narrator watches a preacher who has words for every grieving family and almost none for his own son. A friend's unanswered text, a mother who keeps her boy's shoes by the door. Then the father begins to forget, and one cold Saturday he asks his son which game he would like to see. The last line is the first time the song comes all the way home.
-- **How to play it:** bare and patient. In the verses the voice has only the piano's left hand under it, a bass line that walks down one step a bar, so the harmony keeps moving without ever looping. The refrains open into the piano's chords. The cello comes in at the bridge (bar 59); the whole quartet only in the last refrain (bar 84), and even then the violins answer the voice in its rests rather than play over it.
+- **How to play it:** bare and patient. In the verses the voice has only the piano's left hand under it, a bass line that walks down one step a bar, so the harmony keeps moving without ever looping. The refrains open into the piano's chords. The cello comes in at the bridge (bar 59); the whole quartet only in the last refrain (bar 84), and even then the first violin answers the voice in its rests rather than play over it.
 
 ## Section by section
 
@@ -132,7 +132,7 @@ The piano and first violin play the tune of the last line once more, unsung, fro
 - **Singer:** tell it, don't sell it. The verses run G3 to F4 and sit mostly around B♭3; keep them conversational. The refrain's notes are longer than the verses' (sing through them). After “good sermon, Dad” (bar 16) let the silence sit before “And his father nodded”. The highest note, A♭4, falls on “got” in “got a nod across the nave” (bars 25, 53). The bridge is the most open singing; “for now” is held and left hanging. The last line is the only one that comes all the way home: land “today” softly.
 - **Piano:** the left hand is the song's spine. In the verses it walks down a step a bar; play it legato, the second note of each bar (beat 4) a little lighter. The right hand stays out of the verses and comes in with the refrains; keep it under the voice. In the outro the right hand plays the last line's tune.
 - **Cello:** from the bridge (bar 59), one long note a bar on the bass line; through verse 3 and the last refrain. Warm, never pushed.
-- **Violins and viola:** the last refrain only (from bar 84). The viola holds a low fifth under the voice; the violins answer each sung line in its rest with the line's last notes an octave up, then play the last line's tune with the piano in the outro.
+- **Violins and viola:** the last refrain only (from bar 84). The viola holds a low fifth under the voice. The first violin answers the first three sung lines in their rests, an octave above the line's last notes (bars 84, 85, 87, 89); the last line gets no answer, so it lands alone. Then it plays the last line's tune with the piano in the outro.
 
 ## The arrangement
 
@@ -147,7 +147,7 @@ The piano and first violin play the tune of the last line once more, unsung, fro
 | Turn | 55–58 | p | piano |
 | Bridge | 59–66 | mf | the cello enters; the voice at its most open; the held A♭ minor |
 | Verse 3 | 67–82 | p | pulled back again; the cello stays |
-| Last refrain | 83–90 | mf | the quartet: viola under, violins answering in the rests |
+| Last refrain | 83–90 | mf | the quartet: viola under, the first violin answering the first three lines in their rests |
 | Outro | 91–94 | p to pp | piano and first violin play the last line's tune; hold E♭ |
 
 ## Production notes
@@ -243,7 +243,7 @@ The piano and first violin play the tune of the last line once more, unsung, fro
 | Turn | 55–58 | p | piano |
 | Bridge | 59–66 | mf | the cello enters; the voice at its most open; the held A♭ minor |
 | Verse 3 | 67–82 | p | pulled back again; the cello stays |
-| Last refrain | 83–90 | mf | the quartet: viola under, violins answering in the rests |
+| Last refrain | 83–90 | mf | the quartet: viola under, the first violin answering the first three lines in their rests |
 | Outro | 91–94 | p to pp | piano and first violin play the last line's tune; hold E♭ |
 
 Silences: a full beat after “good sermon, Dad” (bar 16). Anchor: “today” on E♭ (bar 90).
@@ -277,7 +277,7 @@ A chamber-pop ballad for tenor, piano and string quartet in E♭ major at ♩ = 
 
 ### Score and parts
 
-- Full score (voice, string quartet, piano), lead sheet (voice, chords, words), parts (piano with the voice cued, violin I, violin II, viola, cello): He Remembered Today (first edition).
+- Full score (voice, string quartet, piano), lead sheet (voice, chords, words), parts (piano with the voice cued, violin I, violin II, viola, cello): He Remembered Today (first edition, corrected).
 - Demo (MP3, General MIDI): a sketch for the notes, not the sound.
 
-*He Remembered Today (first edition) · Words and music: Jason Bryant*
+*He Remembered Today (first edition, corrected) · Words and music: Jason Bryant*

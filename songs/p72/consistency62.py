@@ -45,5 +45,13 @@ ok["songbook (Word): page breaks around the one-sheet"] = xml.count('w:type="pag
 lines = [l.strip() for l in open("lyric_locked.md") if l.strip() and not l.startswith("#") and not l.startswith("Words")]
 ok["songbook: every locked line in the lyric sheet"] = all(l in sb for l in lines)
 ok["songbook: credit line"] = "Words and music: Jason Bryant" in sb
+ly = open(f"{D}/ly/lead sheet.ly").read(); fs = open(f"{D}/ly/full score.ly").read()
+ok["engraving: section names match the songbook (Refrain, Last refrain, Turn)"] = all(f'box \\bold "{x}"' in ly for x in ("Refrain", "Last refrain", "Turn")) and "Chorus" not in ly and "Chorus" not in fs
+lyr = re.search(r"\\lyricsto \"v\" \{(.*?)\}", ly, re.S).group(1); toks = [t for t in re.findall(r'"([^"]*)"', lyr)]
+words = re.sub(r'"\s*--\s*(?:_\s*)*"', "", lyr); words = re.findall(r'"([^"]+)"', words)
+ok["engraving: no word printed twice in a row where the lyric has it once"] = not any(a.lower() == b.lower() and a.lower() not in ("let", "in", "every") for a, b in zip(words, words[1:]))
+ok["engraving: the breath and 'let it sit' after 'Good sermon, Dad'"] = "let it sit" in ly and "\\breathe" in ly
+vb = sorted({e["on"] // B + 1 for e in R["parts"]["violin1"] if start["Chorus 3"][0] <= e["on"] // B + 1 < start["Outro"][0]})
+ok["songbook: the violin's answers at the bars engraved"] = f"(bars {', '.join(str(b_) for b_ in vb)})" in sb
 json.dump(ok, open("consistency62.json", "w"), indent=1); bad = [k for k, v in ok.items() if not v]
 print(f"{sum(ok.values())} of {len(ok)} pass" + ("; failing: " + "; ".join(bad) if bad else ""))
