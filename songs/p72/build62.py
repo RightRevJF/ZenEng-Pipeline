@@ -71,11 +71,11 @@ for n in ("Bridge", "Verse 3", "Chorus 3", "Outro"):
         if not bs: continue
         p = bs[0]
         while p < 36: p += 12
-        cello.append(dict(on=t, dur=B - 2, p=p))
+        cello.append(dict(on=t, dur=B, p=p))
         if n in ("Chorus 3", "Outro"):
             lo = sung_low(t, t + B) or 99; v = p + 7
             while v + 12 < lo - 2 and v + 12 <= 57: v += 12
-            if v < lo - 1 and v >= 48: viola.append(dict(on=t, dur=B - 2, p=v))
+            if v < lo - 1 and v >= 48: viola.append(dict(on=t, dur=B, p=v))
 # violins answer in the last refrain's rests: the line's last three sung pitches an octave up, a beat each, where a rest of two beats or more follows
 c3 = [n for n in mel if n["sec"] == "Chorus 3"]
 by = collections.defaultdict(list)
