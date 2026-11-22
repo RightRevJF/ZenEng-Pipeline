@@ -5,6 +5,9 @@
       verse 3 ends on V instead of vi, into the last refrain
     bridge: IV | iii | ii | V | vi | iii | iv | iv   (iv, the borrowed minor, the one departure, under 'for now')
     last refrain: the refrain's chords, its last two bars turned so the title line lands on I for the first time
+  Gate 5 (the writer's scorer: the first edition's sung pitches read DFA-1 0.774, DFA-2 0.796, three pitches 82.5% of the attacks): gate 3 off by default
+  (SURPRISE_GATE=1 restores it); on the sung syllables' pitches, DFA order 1 at least 0.95 and order 2 at least 1.0 (the engine's own draw read 0.96 and 1.05),
+  and the three commonest pitches at most 65% of them (the engine's draw 60%). PINK_GATE=0 turns it off.
   Gate 4 (with gate 3 alone the judge's pick chanted, refrain lines on one note, lift 0): the refrain's median at least two semitones over the verse's. LIFT_GATE=0 turns it off.
   Gate 3 (the scorecard: the design's first tune was less plain than 85 of 100 kept tunes): the tune's surprise, bits an interval, at or under the kept median
   (749.18: the sung line on the audience's side). SURPRISE_GATE=0 turns it off, for the record of the earlier pick.
@@ -17,7 +20,9 @@ import song_from_lyric as SL, chord_writer as C, metre_engine as M
 RATIO = float(os.environ.get("REFRAIN_RATIO", "1.3"))
 import page_gate as PG; PGT = PG.table()
 LIFT_MIN = None if os.environ.get("LIFT_GATE", "1") == "0" else 2
-SURPRISE_MAX = None if os.environ.get("SURPRISE_GATE", "1") == "0" else PGT["percentiles_10_25_50_75_90"]["surprise"][2]   # the kept median, bits an interval
+import scaling as SC
+PINK = None if os.environ.get("PINK_GATE", "1") == "0" else dict(dfa1=0.95, dfa2=1.0, top3=0.65)
+SURPRISE_MAX = None if os.environ.get("SURPRISE_GATE", "0") == "0" else PGT["percentiles_10_25_50_75_90"]["surprise"][2]   # the kept median, bits an interval
 V12 = [("I",), ("I",), ("vi",), ("vi",), ("IV",), ("I",), ("ii",), ("V",), ("I",), ("I",), ("vi",), ("vi",), ("IV",), ("iii",), ("ii",), ("vi",)]
 V3 = V12[:15] + [("V",)]
 BRIDGE = [("IV",), ("iii",), ("ii",), ("V",), ("vi",), ("iii",), ("iv",), ("iv",)]
@@ -50,6 +55,13 @@ def gates(self, c):
     if SURPRISE_MAX is not None:
         p_ = [n["p"] for n in sung if n.get("melisma") != "second"]
         if PG.surprise(PG.ivs([int(x) for x in p_]), PGT["_C"]) > SURPRISE_MAX: return "design: melody surprise above the kept median (749.18)"
+    if PINK is not None:
+        import collections as _co
+        p_ = [n["p"] for n in sung if n.get("melisma") != "second"]
+        top3 = sum(v for _, v in _co.Counter(p_).most_common(3)) / len(p_)
+        if top3 > PINK["top3"]: return "design: three pitches carry too much of the tune"
+        a1 = SC.dfa(p_, order=1); a2 = SC.dfa(p_, order=2)
+        if not a1 or not a2 or a1["alpha"] < PINK["dfa1"] or a2["alpha"] < PINK["dfa2"]: return "design: the sung pitches' long-range order under 1/f"
     return None
 M.Engine.gates = gates
 if __name__ == "__main__":

@@ -41,6 +41,19 @@ if DESIGN:                                                                      
                 q = ln[1]["midi"] - 1
                 while q % 12 not in SC: q -= 1
                 fixes.append(f"{sec} line {i + 1}: the opening '{ln[0]['text']}' from {ln[0]['midi']} to {q}, a step under '{ln[1]['text']}'"); ln[0]["midi"] = q
+if DESIGN and "--vary-refrain" in sys.argv:                                                   # the second refrain varies a little: lines 2 to 4 each lift their longest held note a scale step onto a chord tone (as 839 would)
+    SC2 = [(R["key"]["tonic_midi"] + d) % 12 for d in (0, 2, 4, 5, 7, 9, 11)]
+    s2, nb2 = start["Chorus 2"]
+    def tones_at(t):
+        bar_ = (t - s2) // B; ch = R["roman"]["Chorus 2"][bar_].split(); c_ = ch[0] if len(ch) == 1 or (t - s2) % B < B // 2 else ch[1]
+        return set(R["chord_tones"][c_]) if c_ in R.get("chord_tones", {}) else set()
+    for i in range(1, 4):
+        ln = line("Chorus 2", i); held = [n for n in ln if n["dur"] >= BT]
+        if not held: continue
+        n = max(held, key=lambda n: (n["stress"], n["dur"])); k_ = ln.index(n)
+        for q in range(n["midi"] + 1, n["midi"] + 5):
+            if q % 12 in SC2 and q % 12 in tones_at(n["on"]) and (k_ == 0 or abs(q - ln[k_ - 1]["midi"]) <= 7) and (k_ == len(ln) - 1 or abs(ln[k_ + 1]["midi"] - q) <= 7):
+                fixes.append(f"second refrain line {i + 1}: '{n['text']}' lifted from {n['midi']} to {q}"); n["midi"] = q; break
 bass = [dict(on=e["on"], dur=e["dur"], p=e["midi"]) for e in R["bass"]]
 if DESIGN:
     walk1 = [0, -1, -3, -5, -7, -8, -10, -5]; walk2 = [0, -1, -3, -5, -7, -8, -10, -3]; top = 36 + ((T0 - 36) % 12) if (36 + ((T0 - 36) % 12)) >= 36 else 48
