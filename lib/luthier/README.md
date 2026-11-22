@@ -566,3 +566,16 @@ Answers Review 28 (749.139, 749.140, 749.141) and makes the first engine trial o
 - Chosen tunes: range 17, 16, 19, 19, 19; words' fit 0.341, 0.275, 0.307, 0.359, 0.32 (songs 55, 54, 58, 60, 59). Sound, one lean (rhythm scaling, low). Neighbour choice 2.0 in 100; random pool pick 2.2. Songs 52 and 53 byte for byte as they were. Song 60 under this window: `songs/p70/lyric60.v44.song.json`.
 
 Next: Luthier v45 (row v216), Window 202, Module 27.126 (anchor "27.125"), tables HL…, fixes from 958.
+
+## Luthier v45 (Window 202): the verse sung closer, built
+
+Answers Review 29: builds 749.142, makes the hold-out of 749.143, fixes 749.145, studies 749.146. Not begun: 749.144, 749.147, the hymn items 749.148 to 749.152. Paper: `reports/Luthier_v45.docx` (builder `reports/make_luthier_v45_from_v44.py`), row v216, Module 27.126, Table HL. Results: `studies/busy_sections/RESULT_build.md`, `studies/lever_range`, `studies/soundness/neighbour_v45.json`, `studies/judging_checks`.
+
+- 958 (749.142): `VERSE_CLOSER = "apart"` by default, 4/4 only; a lyric may set `"verse_closer": false`; `LUTHIER_VERSE_CLOSER=off` for studies. The record names the lines (`spec.verse_closer`). Songs 55, 54, 58: builds' rhythm scaling 0.678, 0.620, 0.592; chosen tunes' words' fit 0.347, 0.272, 0.357; sound with no lean; pools fail the rule 0.0 in 100.
+- 749.143: song 49 (`songs/p59/lyric49.json`, from the locked lyric word for word) is a second hold-out, never fitted to. Records with the form (`lyric49.song.json`) and without (`lyric49.without_958.song.json`). With the form: rhythm scaling 0.612 to 0.668, bars unsung 0.083 to 0.207, **chosen tune's words' fit 0.326 to 0.210**, builds' middle 0.264 to 0.224. The hold-out disagrees on the words; put to the session.
+- 749.146 (`studies/lever_range`; needs `studies/metre/lines_cocopops.py`'s lines from a clone of CoCoPops in `corpora/`): kept verse lines in one bar, in 100, at 6, 7, 8, 9 syllables: 28, 18, 9, 4. The range does not widen. The form takes 8-syllable lines as readily as 6-syllable ones; kept songs do not.
+- 749.145: `neighbour.py` reads the ceiling from the kept table.
+- Judging research (`studies/judging_checks`): sources of nights one and two checked; the chair's spectral gap reproduced and its split-half read (0.58); chord repetition against covers **within artists −0.042 (p .009)**, rule first, against −0.071 across artists. The raw data are in `/home/claude/dl/shape` and `/home/claude/shape` on the maintainer's machine, rebuilt by the scripts; a YouTube key is needed for views.
+- **Not to be forgotten (the writer, 22 November): a trial of sections that loop less in the chord writer** (the judging research's J1), now that the within-artist test holds. Rule first; the reading in `studies/judging_checks/nights_1_2/loops.json` shows songs 58 and 60's verses over the kept 90th of repetition.
+
+Next: Luthier v46 (row v217), Window 203, Module 27.127 (anchor "27.126"), tables HM…, fixes from 959.

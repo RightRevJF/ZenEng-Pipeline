@@ -123,7 +123,7 @@ def rates(P, names, seed):
     return dict(a_random_pick_from_the_pool_fails=round(fl / 4000, 3), neighbour_choice_fails=round(nf / 1000, 3), lean_past_25_75_share_by_check={k: round(v / 4000, 3) for k, v in sorted(hl.items(), key=lambda x: -x[1])[:5]})
 NR = [n for n in NAMES if n != "range"]
 out["749.137"] = dict(with_range=rates(pools, NAMES, 137), range_left_out=rates(pools, NR, 137), pool_range_quartiles={k: [float(x) for x in np.percentile([c["row"]["range"] for c in p], (25, 50, 75))] for k, p in pools.items()})
-CE = json.load(open(os.path.join(ROOT, "studies", "commonest_pitch", "result.json")))["kept"]; cv, cc = CE["Verse"]["p10_25_50_75_90"][4], CE["Chorus"]["p10_25_50_75_90"][4]
+CE = json.load(open(os.path.join(ROOT, "tables", "kept_commonest_pitch.json")))["parts"]; cv, cc = CE["Verse"]["ceiling"], CE["Chorus"]["ceiling"]      # 749.145: the ceiling from the kept table, as the engine reads it
 under = {k: [c for c in p if c["cp"][0] <= cv and c["cp"][1] <= cc] for k, p in pools.items()}
 def chosen(p, fl):
     if not p: return None
