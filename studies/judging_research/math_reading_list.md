@@ -1,0 +1,34 @@
+# Mathematics reading list (gathered 22 November 2026, at Jason's request)
+
+For the nightly runs while the mathematics focus stands. Found with Consensus (four searches) and arXiv web searches on 22 November 2026. Nothing here has been read in full yet; each entry says why it might help and how its construction could be computed on a song's notes or chords from studies/judging_data. Tiers are a suggested reading order, not a verdict. Every measure drawn from these papers still has to pass a written test against covers before it counts.
+
+## Tier 1: read first (closest to results already in the repo)
+
+1. **Salez (2024), Spectral gap and curvature of monotone Markov chains.** Annals of Probability. https://consensus.app/papers/details/w:bfff06bb-87c1-4aa0-bc35-6306b43404a3/
+   Proves that for monotone chains the spectral gap equals the best possible Ollivier-Ricci curvature. Why: the spectral gap of the chord map is the one geometric measure that has passed its renaming and stability checks; this paper is the bridge from that number to curvature, Jason's non-Euclidean idea taken literally. Caution: chord maps are not monotone chains, so the identity is a guide, not a guarantee.
+2. **Ollivier (2009; Consensus lists it as 2008), Ricci curvature of Markov chains on metric spaces**, Journal of Functional Analysis; and **Lin, Lu & Yau (2011), Ricci curvature of graphs**, Tohoku Mathematical Journal. https://consensus.app/papers/details/w:0de9d942-a067-4750-b3f4-cca3c09eb612/ and https://consensus.app/papers/details/w:f0e0f7f5-6a23-4787-be41-a6d8ba23702d/
+   Curvature of a graph edge: how much closer the neighbourhoods of two chords are than the chords themselves (an optimal-transport measure). On songs: build the chord map, compute curvature on every chord move, read the song's mean and spread. Positive curvature means a move with many shared alternatives; negative means a bridge between separate regions.
+3. **Devriendt & Lambiotte (2024), Graph curvature via resistance distance.** Discrete Applied Mathematics. https://consensus.app/papers/details/w:7dc7ed06-c6a6-47c0-99c8-e2c0ffb9ed85/
+   A node curvature from the inverse of the resistance-distance matrix, with a proved spectral-gap bound. On songs: plain linear algebra on the chord map, no fitted settings, quick to compute for 3,000 songs.
+4. **Tralie (2017), Geometric multimedia time series** (Duke thesis). https://consensus.app/papers/details/w:e7fcf518-7b38-410b-83b2-2dc529215786/
+   Shows that different cover versions of a song trace approximately the same shape (their normalised self-similarity matrices are nearly isometric), even when the sound differs completely. Why: it is the closest mathematical statement yet of "what survives a cover is a shape". On songs: a self-similarity matrix of each song's chords or melody, and shape measures of it.
+5. **Perea & Harer (2014), Sliding windows and persistence: topological methods for signal analysis**, Foundations of Computational Mathematics; with **Gakhar & Perea (2023), Sliding window persistence of quasiperiodic functions**, Journal of Applied and Computational Topology (has a music application). https://consensus.app/papers/details/w:158c67ee-d619-4bbb-b62f-37ff7553ec6d/ and https://consensus.app/papers/details/w:caa749d7-e965-43b8-924e-ddc0e9434cbe/
+   Turns a sequence into a point cloud; a loop means periodicity, a torus means two incommensurate cycles. On songs: a topological score of how loop-like versus torus-like a melody or chord sequence is. A loop is "chords that loop"; a torus might be "two cycles that never quite line up", a candidate for structure that keeps giving.
+
+## Tier 2: strong candidates
+
+6. **Chevyrev & Kormilitzin (2025), A primer on the signature method in machine learning.** https://consensus.app/papers/details/w:e8732ce2-544b-46f8-b608-35287246fa73/
+   A melody (or melody against bass) as a path; its signature is a faithful summary that ignores tempo. The second-level "Lévy area" measures how two lines turn around each other. On songs: signed area between melody and chord root over time, a parameter-free measure of counterpoint.
+7. **Tymoczko (2006), The geometry of musical chords** (Science; on the paywalled list), **Callender, Quinn & Tymoczko (2008), Generalized voice-leading spaces** (Science), and **Tymoczko (2020), Why topology?** (Journal of Mathematics and Music). https://consensus.app/papers/details/w:91575454-72a2-45a7-91dd-fd620353c735/ , https://consensus.app/papers/details/w:4eca9abd-de0d-4c90-92d6-ac6d2cf01daf/ , https://consensus.app/papers/details/w:e216f32d-bacb-4179-b10d-a66cfbf8b72e/
+   Chords as points in orbifolds; voice leading as distance. On songs: total and per-move voice-leading size, and how near-symmetric each chord is.
+8. **Yust (2015), Schubert's harmonic language and Fourier phase space** (Journal of Music Theory), **Amiot (2013), The torii of phases**, and **Tymoczko & Yust (2019), Fourier phase and pitch-class sum.** https://consensus.app/papers/details/w:6caa76db-7764-4b93-ba1f-cf3eff0d2d77/ , https://consensus.app/papers/details/w:4921bbcf-2fce-4c95-9af4-bb12fbf91397/ , https://consensus.app/papers/details/w:1883d6d8-4186-452f-8cfc-e1b2253266a9/
+   Each chord becomes a point on a torus given by the phases of its third and fifth Fourier coefficients. On songs: the song's harmonic path on that torus; its length, winding number and enclosed area.
+9. **De Sa, Gu, Ré & Sala (2018), Representation tradeoffs for hyperbolic embeddings**, and **Yim & Gilbert (2023), Fitting trees to l1-hyperbolic distances.** https://consensus.app/papers/details/w:350fda13-f2e9-4c5f-8cfb-3482c6b29ade/ and https://consensus.app/papers/details/w:3a37ea6a-c5fd-46fe-b76d-cb1e7bb89387/
+   Gromov hyperbolicity: how tree-like a set of distances is. On songs: how hierarchical a song's form is (sections within sections), measured from distances between its bars or phrases.
+
+## Tier 3: background and wider ideas
+
+10. **Boguñá et al. (2021), Network geometry**, Nature Reviews Physics. https://consensus.app/papers/details/w:54b07be8-78d0-408d-8fd6-368d719b5813/ A review of hidden geometries of networks; context for curvature and hyperbolic ideas.
+11. **McDonough & Herczyński (2022), Fractal patterns in music**, arXiv 2212.12497. https://arxiv.org/abs/2212.12497 Self-similarity in melodies; relevant to S = 1 + g/π.
+12. **Himpel (2022), Geometry of music perception**, Mathematics. https://consensus.app/papers/details/w:9c7b6f45-8be1-47ee-a40c-9903354c6bfe/ Chord space as a stratified Riemannian space with roughness as a height function.
+13. **Mijangos et al. (2023), Musical stylistic analysis: intervallic transition graphs via persistent homology**, Journal of Mathematics and Music. https://consensus.app/papers/details/w:95a39cb6-902c-4e22-9e48-cf0aa77291f3/ Topology of melodic interval networks.
