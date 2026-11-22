@@ -1,6 +1,6 @@
 # Luthier list for v46 (since v45)
 
-22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.160; next fix 959 (960 proposed in 749.159).
+22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.165; next fix 959 (960 proposed in 749.159).
 
 ## In short
 
@@ -83,6 +83,36 @@ One chosen tune cannot separate the draw from the form.
 - On by default only if every check passes and the maintainer rules that the evidence (across artists strong, within artist narrow, fresh unsettled) is enough. Otherwise it stays a setting a lyric can ask for.
 
 **Step one's reading (22 November, `studies/loop_less_reading/RESULT.md`).** The writer loops more than kept songs in every kind and both modes (verse medians 0.385 against 0.333 major, 0.412 against 0.333 minor; chorus and bridge higher too, minor bridge not significantly). The trial goes ahead. One change to its rule before any build: half the major-key kept bridges never repeat a three-chord run (median 0.0), so for the bridge both the draw and the check read at or below the kept median, not below it.
+
+### 749.160 The planted peak can land a note an octave or more from its neighbours inside a word
+**Problem.** Song 62's first design pick (904b4764e66f) sang Eb3 Ab4 Db3 Eb4 across "a nod across" and "remembered".
+**Evidence.** `songs/p72/intake.py` LOG; `songs/p72/design62.py`.
+**Fix.** A gate: no leap past an octave inside a line.
+**Check.** Song 62's design runs; the gate's deaths reported per song.
+
+### 749.161 Melody surprise has no ceiling
+**Problem.** A song 62 design tune passed every gate while less plain than 85 of 100 kept tunes, against 749.18.
+**Evidence.** `songs/p72/test_report62.md`, the scorecard.
+**Fix.** A ceiling at the kept median (3.18 bits an interval) for popular styles, behind a flag. It costs survivors (9000 builds, 24 survive).
+**Check.** Songs 59 and 61 with it on: survivors and words' fit reported.
+
+### 749.162 The title line's long note can fall on an unstressed syllable
+**Problem.** In two song 62 picks the title's long note fell on "re-" and on "-bered" of "remembered"; the words' fit did not catch it on the line that matters most.
+**Evidence.** `songs/p72/build62.py` (the hand fixes).
+**Fix.** Read the words' fit on the title line alone, and gate its longest note onto a stressed syllable.
+**Check.** Songs 61 and 62.
+
+### 749.163 The masking rule leaves strings almost no room above a tenor
+**Problem.** With 749.21 kept, song 62's violins can play only in the voice's rests: 41 string notes in 94 bars, and the last refrain cannot bloom.
+**Evidence.** `songs/p72/out` record readings; `songs/p72/build62.py`.
+**Fix.** A ruling: does the rule, measured on piano song, apply to sustained strings and to a voice sounding an octave below its written line?
+**Check.** The ruling written into the arrangement rules, with a reading on song 62.
+
+### 749.164 A pilot of 749.159 by hand
+**Problem.** None; a case for the trial.
+**Evidence.** Song 62: verses that walk (repetition 0.10) with an engine tune gated to plainness gave the nearest pick to the kept songs of any run (judge 7 distance 1.66; the engine's own draw 2.33, its verse repetition 0.857).
+**Fix.** None now. One song decides nothing.
+**Check.** 749.159's trial as written.
 
 ## Closed
 
