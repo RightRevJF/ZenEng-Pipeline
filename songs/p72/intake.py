@@ -1,0 +1,9 @@
+"""Song 62 (songs/p72): a song from the writer's play He Remembered Today (draft 4; read from src/ with MarkItDown, never stored in the repo).
+Banked: the lyric is written this week and not run through the engine until the maintainer's next port, so it can serve as a hold-out."""
+LOG = []
+LOG.append({"when": "2026-11-22", "q": "(the writer, after attaching HeRememberedToday_CompletePlay_Draft4.docx) Hold on to A for when we finish with B. I want to turn the lessons of this play into a song - overlooking the people we love in favor of other things until it's too late. Does that match the play well?",
+            "answer_given": "Mostly: attention pointed at the wrong people; the too-late belongs to Matt; the play ends on a window still open ('He remembered today'). Asked whose voice: A the son (Recommended), B the father, C an outside voice."})
+LOG.append({"when": "2026-11-22", "q": "Whose voice?", "answer": "Can this one just be told by a narrator?", "note": "narrator; then asked the style: A folk or country story ballad (Recommended), B 3/4 hymn for organ and choir, C quiet indie folk"})
+LOG.append({"when": "2026-11-22", "q": "Style?", "answer": "I'm tired of doing country and Americana. The music must be GREAT. The lyrics should be touching with a strong glimmer of hope at the end. What genre do you think would work other than what you've suggested. I get that it's not an anthem, hymn. What can it be?",
+            "options": "A chamber pop: piano and a small string group, the strings holding back until the last line (Recommended); B a narrator's song from musical theatre; C a late-night jazz ballad", "answer2": "A"})
+LOG.append({"when": "2026-11-22", "note": "Draft 1 of the lyric shown in full (lyric_draft1.txt); title He Remembered Today; narrator; chamber pop. Awaiting notes."})
