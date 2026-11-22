@@ -66,14 +66,14 @@ One chosen tune cannot separate the draw from the form.
 ### 749.158 The fresh-songs leg (J6b): the chord finding points the same way on songs it was not chosen on, but too weakly to count
 **Problem.** The chord finding was chosen on Hooktheory songs. 749.157 asked for a test on songs it never saw, rule first.
 **Evidence.** `studies/fresh_songs` (rule 59182c6, measures 4ae7515, test d0cd57b, then the data; result c42b36b). 439 McGill songs in no part of Hooktheory, matched to Discogs-VI version groups. Chord repetition within a section against covers, year and chords read held: −0.060, p .21 (95% −0.154 to +0.034). Power to see −0.04 was 0.13. With weeks and peak: −0.085, p .058. Artist held: −0.039, p .63. Weeks on the Hot 100 against repetition: +0.073, p .086, the other sign.
-**Fix.** No engine change. Record the verdict by its own rule: unsettled. The test reruns from public sources (Zenodo 13983028 and the committed McGill charts), as 749.157 asked.
+**Fix.** No engine change. Record the verdict by its own rule: unsettled. The maintainer's side ran the same test at the same time, rule first (f25209f, `studies/judging_checks/fresh_songs`): −0.028, range −0.11 to +0.05, 438 songs, same direction, not settled. That run is the test of record; this one is a second reading of the hold-out, and counts as one. The 0.03 between them comes from model choices alone. The test reruns from public sources (Zenodo 13983028 and the committed McGill charts), as 749.157 asked.
 **Check.** `python3 -I studies/fresh_songs/join_and_test.py main.zip` gives `result.json` byte for byte.
 
 ### 749.159 The trial of sections that loop less (proposed as 960), with its rule written before any build
 **Problem.** The chord writer takes a section's structure, which bars repeat which, from one kept section, drawn at random (800). Its sections loop at the kept rate. Songs that loop less within a verse or bridge get more covers: across artists on two sources, within artist narrowly (749.157), and the same way but unsettled on fresh songs (749.158). Weeks on the chart lean the other way, so the chorus is left alone.
 **Evidence.** 749.157, 749.158; night one's J1 and night two's R02-1.
 **Fix.**
-- Step one, a reading, no change: within-section chord repetition (the research check's frozen rules) of the writer's verses, choruses and bridges, 1,000 drafts a kind per mode, against the kept median of that kind. If the writer's verse and bridge sit below the kept median already, stop: there is nothing to trial.
+- Step one, a reading, no change (done: `studies/loop_less_reading`, see below): within-section chord repetition (the research check's frozen rules) of the writer's verses, choruses and bridges, 1,000 drafts a kind per mode, against the kept median of that kind. If the writer's verse and bridge sit below the kept median already, stop: there is nothing to trial.
 - Step two, the trial, behind its flag and off by default: verse and bridge structures drawn only from kept sections of that kind below the kept median. Chorus and every other kind unchanged.
 **Check.** Written now, before any build:
 - Verse and bridge repetition of the chosen builds below the kept median on at least three of the four songs run; chorus repetition within 0.02 of the flag off.
@@ -81,6 +81,8 @@ One chosen tune cannot separate the draw from the form.
 - On the songs run, the words' fit and the judge's pick fall no more than the guarded amount of 749.155.
 - A fresh hold-out the maintainer names, not song 50 (959's) and not song 59 (read only). It must pass the same guard.
 - On by default only if every check passes and the maintainer rules that the evidence (across artists strong, within artist narrow, fresh unsettled) is enough. Otherwise it stays a setting a lyric can ask for.
+
+**Step one's reading (22 November, `studies/loop_less_reading/RESULT.md`).** The writer loops more than kept songs in every kind and both modes (verse medians 0.385 against 0.333 major, 0.412 against 0.333 minor; chorus and bridge higher too, minor bridge not significantly). The trial goes ahead. One change to its rule before any build: half the major-key kept bridges never repeat a three-chord run (median 0.0), so for the bridge both the draw and the check read at or below the kept median, not below it.
 
 ## Closed
 
