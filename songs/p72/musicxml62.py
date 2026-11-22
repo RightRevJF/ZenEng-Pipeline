@@ -1,5 +1,5 @@
 """Song 62: MusicXML of the full score (voice with words, string quartet, piano), from out/<label>/record.json, on the same sixteenth grid as the engraving.
-  python3 musicxml62.py "first edition" -> out/<label>/<title> (<label>) - full score.musicxml"""
+  python3 musicxml62.py "first edition" [--instruments] -> out/<label>/<title> (<label>) - full score.musicxml (or, without the voice, - instruments for MuseScore.musicxml)"""
 import json, sys, re
 from music21 import stream, note, chord, meter, key as mkey, tempo, instrument, metadata, clef
 LABEL = sys.argv[1]; D = f"out/{LABEL}"; R = json.load(open(f"{D}/record.json")); B = R["bar"]; U = 3
@@ -29,8 +29,9 @@ def build(name, inst, part, cl, lyr=False):
     if pos < NB * 16: p.append(note.Rest(quarterLength=(NB * 16 - pos) / 4))
     return p.makeMeasures().makeTies()
 sc = stream.Score(); sc.metadata = metadata.Metadata(title=f"{R['title']} ({LABEL})", composer="Words and music: Jason Bryant")
-sc.append(build("Voice", instrument.Tenor(), [dict(on=n["on"], dur=n["dur"], p=n["midi"], lyric=l) for n, l in zip(mel, sy)], clef.Treble8vbClef(), True))
+INSTR = "--instruments" in sys.argv
+if not INSTR: sc.append(build("Voice", instrument.Tenor(), [dict(on=n["on"], dur=n["dur"], p=n["midi"], lyric=l) for n, l in zip(mel, sy)], clef.Treble8vbClef(), True))
 for nm_, ins, k, cl in (("Violin I", instrument.Violin(), "violin1", clef.TrebleClef()), ("Violin II", instrument.Violin(), "violin2", clef.TrebleClef()), ("Viola", instrument.Viola(), "viola", clef.AltoClef()), ("Cello", instrument.Violoncello(), "cello", clef.BassClef()),
                         ("Piano (right hand)", instrument.Piano(), "piano", clef.TrebleClef()), ("Piano (left hand)", instrument.Piano(), "bass", clef.BassClef())):
     sc.append(build(nm_, ins, R["parts"][k], cl))
-out = f"{D}/{R['title']} ({LABEL}) - full score.musicxml"; sc.write("musicxml", fp=out); print(out)
+out = f"{D}/{R['title']} ({LABEL}) - " + ("instruments for MuseScore.musicxml" if INSTR else "full score.musicxml"); sc.write("musicxml", fp=out); print(out)
