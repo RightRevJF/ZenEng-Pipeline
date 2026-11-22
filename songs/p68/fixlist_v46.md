@@ -1,6 +1,6 @@
 # Luthier list for v46 (since v45)
 
-22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.165; next fix 959 (960 proposed in 749.159).
+22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.170; next fix 959 (960 proposed in 749.159).
 
 ## In short
 
@@ -9,6 +9,8 @@
 A line-by-line reading of song 49 adds one thing: the larger fall is in the verse lines the form did not touch, so the trial must read those lines too.
 
 749.145 and 749.146 are closed. The within-artist result holds, narrowly, and is read correctly.
+
+Added since (running tab, 22 November): the fresh-songs test came out same direction, not settled, and the maintainer's own run is the test of record (749.158); the chord writer loops more than kept songs in every kind, so the loop-less trial goes ahead, its rule written first (749.159). Song 62 (He Remembered Today) was written with the verses' chords walking by hand: it gave the nearest pick to the kept songs of any run (749.164), and it showed two things the engine cannot yet see: holding the tune plain whitened its pitches (749.165), and a pink tune and a plain one pulled apart (749.166).
 
 ## Items
 
@@ -93,8 +95,8 @@ One chosen tune cannot separate the draw from the form.
 ### 749.161 Melody surprise has no ceiling
 **Problem.** A song 62 design tune passed every gate while less plain than 85 of 100 kept tunes, against 749.18.
 **Evidence.** `songs/p72/test_report62.md`, the scorecard.
-**Fix.** A ceiling at the kept median (3.18 bits an interval) for popular styles, behind a flag. It costs survivors (9000 builds, 24 survive).
-**Check.** Songs 59 and 61 with it on: survivors and words' fit reported.
+**Fix.** Not a ceiling on its own: 749.165 shows that on song 62 it whitened the sung pitches. If taken up, only together with 749.165's floor on the pitches' long-range order, behind a flag.
+**Check.** Songs 59 and 61 with both on: survivors, words' fit and the pitch DFA reported.
 
 ### 749.162 The title line's long note can fall on an unstressed syllable
 **Problem.** In two song 62 picks the title's long note fell on "re-" and on "-bered" of "remembered"; the words' fit did not catch it on the line that matters most.
@@ -113,6 +115,36 @@ One chosen tune cannot separate the draw from the form.
 **Evidence.** Song 62: verses that walk (repetition 0.10) with an engine tune gated to plainness gave the nearest pick to the kept songs of any run (judge 7 distance 1.66; the engine's own draw 2.33, its verse repetition 0.857).
 **Fix.** None now. One song decides nothing.
 **Check.** 749.159's trial as written.
+
+### 749.165 Holding melody surprise down whitened the sung pitches
+**Problem.** With the surprise ceiling (749.161), song 62's pick put 79% of its sung syllables on three pitches, and the writer's own scorer read its pitches as the whitest in the corpus: N 325, DFA-1 0.774, DFA-2 0.796, below the band on both orders; three pitches 82.5% of the attacks; the score held at 9.0.
+**Evidence.** Reproduced on the 326 sung syllables with `lib/luthier/scaling.py` (it reads higher): the pick 0.846 / 0.920, three pitches 79%; the engine's own draw 0.959 / 1.050, 60%; the first design tune, before the ceiling, 0.900 / 0.926, 52%. Two independent implementations on the writer's side agree with each other exactly. `songs/p72/intake.py` LOG.
+**Fix.** A floor on the sung pitches' long-range order (DFA, orders 1 and 2, on the syllables' pitches, melisma notes left out) and a ceiling on the share of the three commonest pitches, read as gates; the band to come from the writer's scorer, so the engine reads what he reads.
+**Check.** The kept songs' readings on the same series give the band's quartiles; songs 59, 61 and 62 rerun with the gate on, survivors reported.
+
+### 749.166 On song 62, a pink tune and a plain tune pulled in opposite directions
+**Problem.** With 749.165's gate (DFA at least 0.95 and 1.0, three pitches at most 65%) in place of the surprise ceiling, 1 build in 9000 survived. It was pink (0.967 / 1.069, three pitches 59%) and restless: less plain than 77 of 100 kept tunes, words' fit 0.334 (from 0.401), judge 7 distance 1.86 (from 1.66).
+**Evidence.** `songs/p72/run_d/design_g5.log`; `songs/p72/design62.py` (gate 5).
+**Fix.** No engine change yet. A question for the research: across the kept songs, how do melody surprise and the pitches' DFA go together? If kept songs manage both, the writer has a target region; if they trade, the gates must choose a point on the trade, not both ends.
+**Check.** The kept songs' scatter of the two, and where songs 52 to 62 fall in it.
+
+### 749.167 The second refrain comes back note for note
+**Problem.** Song 62's second refrain repeats the first exactly; the writer's scorer counts that against the song, and it flattens the pitches' long-range order. 839 lifts one held note in a returning line, but fired on about one copied line in four across the builds (9,066 of 36,000) and not at all in the pick.
+**Evidence.** `songs/p72/run_d/lyric62_d_g4.song.json` stats; the pick's later-chorus readings (0.56 to 0.75 of bars the same, kept 0.57).
+**Fix.** When a whole section returns note for note, require at least one line of it to vary (839's lift, or a second form of it), rather than leaving it to chance. `songs/p72/build62.py --vary-refrain` does it by hand: lines 2 to 4 each lift their longest held note a scale step onto a chord tone.
+**Check.** Song 62's second refrain; the share of songs whose returning sections vary, against the kept share.
+
+### 749.168 A blue-note song is drawn whatever the style
+**Problem.** Song 62's only pink tune (749.166) carried nine lowered thirds, two of them held, in a chamber-pop ballad. The engine draws a blue-note song from the genre family's share, and chamber pop falls in the family "other" with pop and folk.
+**Evidence.** `songs/p72/run_d/lyric62_d.song.json` checks: 'a song with blue notes' True; flat thirds 0.026 of notes.
+**Fix.** Let the lyric's settings name a style the blue-note draw respects (chamber pop, hymn, art song: none), or let the writer turn it off.
+**Check.** Song 62 rerun with it off; no lowered thirds.
+
+### 749.169 One hold-out, two readings
+**Problem.** The fresh-songs test (J6b) was run twice on the same McGill hold-out on 22 November, by the maintainer's side and by the writer's, neither knowing of the other. Under `studies/judging_data/README.md` both count, and the hold-out is spent faster than it should be.
+**Evidence.** `studies/judging_checks/fresh_songs` (test of record, -0.028) and `studies/fresh_songs` (-0.060); 749.158.
+**Fix.** A one-line ledger in `studies/judging_data/README.md`: who is running which test on a hold-out, written before the run.
+**Check.** The ledger exists and each test against a hold-out names its line in it.
 
 ## Closed
 
