@@ -1,0 +1,220 @@
+{
+ "audit_unit_tests": {
+  "directed 3-cycle": {
+   "want": 0.5,
+   "got": [
+    0.5
+   ],
+   "ok": true
+  },
+  "directed 4-cycle": {
+   "want": 0.0,
+   "got": [
+    0.0
+   ],
+   "ok": true
+  },
+  "hub with 4 spokes": {
+   "want": 0.25,
+   "got": [
+    0.25
+   ],
+   "ok": true
+  },
+  "K4": {
+   "want": 0.667,
+   "got": [
+    0.667
+   ],
+   "ok": true
+  }
+ },
+ "audit_prop29": {
+  "pieces_checked": 2784,
+  "violations": 0,
+  "chair": 0
+ },
+ "audit_bridge_code": {
+  "B_resistance_equals_networkx": 2672,
+  "foster_holds": 2672,
+  "songs": 2672,
+  "share_with_bridge": 0.3046
+ },
+ "audit_kappa_highs_vs_pot_max_diff": 8.881784197001252e-16,
+ "audit_shape": {
+  "songs": 2672,
+  "kbar_p10_p50_p90": [
+   0.0,
+   0.2027,
+   0.5
+  ],
+  "chair_p10_p50_p90": [
+   0.0,
+   0.2,
+   0.5
+  ],
+  "share_kmin_positive": 0.2208,
+  "chair_share": 0.22,
+  "r2_size_block": 0.4556,
+  "chair_r2": 0.46,
+  "disconnected": 110,
+  "chair_disconnected": 110
+ },
+ "audit_correlations_kbar_res": {
+  "distinct_chords": 0.0038,
+  "links": 0.0622,
+  "clips": 0.0193,
+  "merged_moves": 0.1615,
+  "g_lazy_largest_piece": 0.3494,
+  "kmin": 0.0938,
+  "B": 0.2224,
+  "mel_ic_mean": -0.0345,
+  "mel_h_mean": -0.0502,
+  "mel_cheung": 0.0005,
+  "ch_ic_mean": -0.1723,
+  "ch_h_mean": -0.2387,
+  "ch_cheung": -0.0732,
+  "mel_rep": -0.0611,
+  "ch_rep": 0.0233,
+  "rhy_ic_mean": 0.0656,
+  "rhy_h_mean": 0.0247,
+  "rhy_cheung": -0.0103,
+  "sync_per_note": 0.0264,
+  "rest_share": 0.0986,
+  "phrase_mean": -0.0574,
+  "phrase_on_downbeat": -0.0545,
+  "density": -0.0933,
+  "length_variety": 0.1062
+ },
+ "audit_g_gate": {
+  "songs_with_g": 2658,
+  "rho_with_distinct_chords": 0.2502,
+  "chair_rho_distinct": 0.26,
+  "rho_clip1_clip2": 0.1675,
+  "pairs": 1267,
+  "chair_rho_clips": 0.17,
+  "share_g_under_0_01": 0.3706,
+  "chair_share_under_0_01": 0.37
+ },
+ "stop_rule": {
+  "r2": 0.4556,
+  "max_abs_rho": 0.3494,
+  "stopped": false
+ },
+ "rows_with_first_year": 2672,
+ "songs": 1924,
+ "artists": 420,
+ "se": 0.0294,
+ "power": 0.061,
+ "prediction": 0.02,
+ "primary": {
+  "beta": -0.0002,
+  "se": 0.0294,
+  "p": 0.99521,
+  "ci95": [
+   -0.0578,
+   0.0574
+  ],
+  "ch_rep": {
+   "beta": -0.0614,
+   "se": 0.0169,
+   "p": 0.0003
+  },
+  "ch_ic_mean": {
+   "beta": -0.0891,
+   "se": 0.0226,
+   "p": 0.0001
+  }
+ },
+ "beta0": {
+  "beta": 0.0198,
+  "se": 0.0283,
+  "p": 0.48373
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 932,
+   "artists": 205,
+   "beta": 0.001,
+   "p": 0.9832
+  },
+  {
+   "half": 1,
+   "songs": 992,
+   "artists": 215,
+   "beta": -0.0013,
+   "p": 0.9722
+  }
+ ],
+ "verdict": "kill",
+ "deciding_nothing": {
+  "covers_within_5_years": {
+   "beta": 0.0076,
+   "se": 0.0386,
+   "p": 0.8441,
+   "songs": 1924
+  },
+  "covers_after_10_years": {
+   "beta": -0.0118,
+   "se": 0.0252,
+   "p": 0.64,
+   "songs": 1924
+  },
+  "beta0_within_5_years": {
+   "beta": 0.0228,
+   "se": 0.0366,
+   "p": 0.5332,
+   "songs": 1924
+  },
+  "beta0_after_10_years": {
+   "beta": 0.0056,
+   "se": 0.0245,
+   "p": 0.8202,
+   "songs": 1924
+  },
+  "disconnected_songs_dropped": {
+   "beta": 0.0019,
+   "se": 0.0315,
+   "p": 0.9528,
+   "songs": 1843
+  },
+  "unweighted_mean_link_kappa": {
+   "rho_with_kbar_all_songs": 0.9125,
+   "rho_with_kbar_model_rows": 0.9009,
+   "chair_rho": 0.91,
+   "model_in_place_of_kbar": {
+    "beta": 0.0131,
+    "se": 0.0268,
+    "p": 0.6253,
+    "songs": 1924
+   }
+  },
+  "shuffle_relative_kbar": {
+   "shuffles": 40,
+   "rho_with_ch_rep_all_songs": -0.5234,
+   "rho_with_ch_rep_model_rows": -0.5161,
+   "geometer_rho": -0.62,
+   "model_in_place_of_kbar": {
+    "beta": -0.011,
+    "se": 0.023,
+    "p": 0.6335,
+    "songs": 1924
+   }
+  },
+  "shape_on_model_rows": {
+   "kbar_p10_p50_p90": [
+    0.0,
+    0.1944,
+    0.5
+   ],
+   "r2_size_block": 0.4422
+  },
+  "median_covers_early_late": [
+   7.0,
+   1.0,
+   3.0
+  ]
+ },
+ "runtime_s": 162
+}

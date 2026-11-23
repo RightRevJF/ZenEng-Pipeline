@@ -1,0 +1,157 @@
+{
+ "rule": "PREDICTION.md, commit ad201ad",
+ "checks": {
+  "songs": 2672,
+  "B_matches_networkx": 2672,
+  "bridge_link_sets_match": 2672,
+  "foster_worst": 2.1316282072803006e-14,
+  "dead_ends": 0,
+  "disconnected": 110
+ },
+ "audit_before_first_year": {
+  "songs": 2672,
+  "share_with_bridge": 0.3046,
+  "share_by_clips_1_2_3plus": {
+   "1": 0.2509,
+   "2": 0.3404,
+   "3": 0.4004
+  },
+  "spearman_with_B": {
+   "distinct chords": 0.1769,
+   "distinct links": 0.0827,
+   "clips per song": 0.1292,
+   "merged moves": 0.13,
+   "kbar": 0.1247,
+   "mel_ic_mean": 0.0565,
+   "mel_h_mean": 0.0321,
+   "mel_cheung": -0.018,
+   "ch_ic_mean": 0.0779,
+   "ch_h_mean": 0.0073,
+   "ch_cheung": 0.0521,
+   "mel_rep": -0.0602,
+   "ch_rep": -0.0692,
+   "rhy_ic_mean": 0.0624,
+   "rhy_h_mean": 0.0356,
+   "rhy_cheung": 0.011,
+   "sync_per_note": 0.0253,
+   "rest_share": 0.0725,
+   "phrase_mean": -0.0282,
+   "phrase_on_downbeat": -0.0311,
+   "density": -0.0728,
+   "length_variety": 0.0337
+  },
+  "largest_abs_rho": [
+   "distinct chords",
+   0.1769
+  ],
+  "stop": false
+ },
+ "audit_final_rows": {
+  "songs": 1924,
+  "share_with_bridge": 0.3119,
+  "share_by_clips_1_2_3plus": {
+   "1": 0.2569,
+   "2": 0.3466,
+   "3": 0.4011
+  },
+  "spearman_with_B": {
+   "distinct chords": 0.2012,
+   "distinct links": 0.102,
+   "clips per song": 0.1241,
+   "merged moves": 0.1337,
+   "kbar": 0.121,
+   "mel_ic_mean": 0.069,
+   "mel_h_mean": 0.0199,
+   "mel_cheung": -0.0268,
+   "ch_ic_mean": 0.0755,
+   "ch_h_mean": 0.0054,
+   "ch_cheung": 0.0332,
+   "mel_rep": -0.0731,
+   "ch_rep": -0.0837,
+   "rhy_ic_mean": 0.0613,
+   "rhy_h_mean": 0.0304,
+   "rhy_cheung": -0.0044,
+   "sync_per_note": 0.0212,
+   "rest_share": 0.0831,
+   "phrase_mean": -0.0281,
+   "phrase_on_downbeat": -0.0191,
+   "density": -0.084,
+   "length_variety": 0.0192
+  },
+  "largest_abs_rho": [
+   "distinct chords",
+   0.2012
+  ],
+  "stop": false
+ },
+ "songs": 1924,
+ "artists": 420,
+ "prediction_beta": -0.025,
+ "se": 0.0164,
+ "power_for_minus_0_025_at_p_025": 0.24,
+ "primary": {
+  "beta": 0.0208,
+  "se": 0.0164,
+  "p": 0.2052,
+  "range95": [
+   -0.0114,
+   0.0531
+  ]
+ },
+ "halves": [
+  {
+   "songs": 932,
+   "artists": 205,
+   "share_with_bridge": 0.3197,
+   "beta": 0.0335,
+   "se": 0.0237,
+   "p": 0.158
+  },
+  {
+   "songs": 992,
+   "artists": 215,
+   "share_with_bridge": 0.3044,
+   "beta": 0.0076,
+   "se": 0.0245,
+   "p": 0.7574
+  }
+ ],
+ "deciding_nothing": {
+  "covers_within_five_years": {
+   "beta": 0.0165,
+   "se": 0.0196,
+   "p": 0.4009,
+   "songs": 1924,
+   "artists": 420
+  },
+  "covers_after_ten_years": {
+   "beta": 0.0144,
+   "se": 0.0149,
+   "p": 0.3354,
+   "songs": 1924,
+   "artists": 420
+  },
+  "median_covers_early_late_undated": [
+   7.0,
+   1.0,
+   3.0,
+   0.0
+  ],
+  "without_disconnected_songs": {
+   "beta": 0.0216,
+   "se": 0.0171,
+   "p": 0.2063,
+   "songs": 1843,
+   "artists": 420
+  },
+  "share_of_traffic_on_bridges_in_place_of_B": {
+   "beta": 0.0294,
+   "se": 0.0223,
+   "p": 0.1866,
+   "songs": 1924,
+   "artists": 420
+  },
+  "sd_of_B": 0.4632
+ },
+ "verdict": "kill"
+}
