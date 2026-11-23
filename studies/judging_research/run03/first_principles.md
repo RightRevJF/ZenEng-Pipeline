@@ -12,7 +12,7 @@
 
 **Assumptions still carrying weight.** That a few user-chosen clips stand for the song; that one-step chord succession holds what coverers hear; that a low-power null means "small".
 
-**Unplanned, not a test.** In the curvature model, chord repetition came out −0.061 and chord surprise −0.089, against the maintainer's −0.042. My notes-only check: repetition and surprise correlate −0.29 across songs, and surprise +0.54 with chord count. Songs that loop less surprise more, and the two pull covers opposite ways, so each may mask the other. Same songs, a model built for another question: a forking path, a lead, not evidence.
+**Unplanned, not a test.** In the curvature model, chord repetition came out −0.061 and chord surprise −0.089, against the maintainer's −0.042. My notes-only check: repetition and surprise correlate −0.29 across songs, and surprise +0.52 with chord count (2,769 matched songs; rechecked by the run). Songs that loop less surprise more, and the two pull covers opposite ways, so each may mask the other. Same songs, a model built for another question: a forking path, a lead, not evidence.
 
 ## 2. Question every requirement
 - **Yardstick (love + covers).** Every test since run 02 uses covers alone. Flag: say so, or bring love back.
