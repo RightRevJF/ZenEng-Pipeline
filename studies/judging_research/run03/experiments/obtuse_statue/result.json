@@ -1,0 +1,98 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 09ce7bd",
+ "unit_tests": {
+  "4-cycle": {
+   "want": 0.25,
+   "got": 0.25,
+   "ok": true
+  },
+  "path of 4": {
+   "want": 0.0,
+   "got": 0.0,
+   "ok": true
+  },
+  "star with 3 leaves": {
+   "want": -0.5,
+   "got": -0.5,
+   "ok": true
+  },
+  "K4": {
+   "want": 0.25,
+   "got": 0.25,
+   "ok": true
+  },
+  "star via tokens": {
+   "want": -0.5,
+   "got": -0.5,
+   "ok": true
+  }
+ },
+ "counts": {
+  "songs_3plus_chords": 2672,
+  "dropped_largest_piece_under_3": 2,
+  "chair_dropped": 2,
+  "pmin_defined": 2670,
+  "disconnected": 108
+ },
+ "pmin_shape": {
+  "p10_p50_p90": [
+   -0.8101,
+   -0.1667,
+   0.25
+  ],
+  "share_below_0": 0.5888
+ },
+ "gate": {
+  "clip_to_clip": {
+   "rho_residualised": 0.1542,
+   "pairs": 1166,
+   "threshold": 0.2,
+   "passed": false,
+   "raw_rho": 0.3062,
+   "chair": 0.154,
+   "chair_pairs": 1166
+  },
+  "overlap": {
+   "spearman_p_res": {
+    "mel_ic_mean": 0.0112,
+    "mel_h_mean": -0.0216,
+    "mel_cheung": 0.0064,
+    "ch_ic_mean": 0.0417,
+    "ch_h_mean": 0.0283,
+    "ch_cheung": -0.0245,
+    "mel_rep": 0.0203,
+    "ch_rep": -0.0034,
+    "rhy_ic_mean": -0.0042,
+    "rhy_h_mean": 0.0005,
+    "rhy_cheung": -0.0322,
+    "sync_per_note": -0.0214,
+    "rest_share": -0.0417,
+    "phrase_mean": 0.0427,
+    "phrase_on_downbeat": 0.0329,
+    "density": 0.034,
+    "length_variety": -0.0046,
+    "distinct_chords": 0.0551,
+    "links": 0.0746,
+    "clips": 0.0444
+   },
+   "largest_abs": [
+    "links",
+    0.0746
+   ],
+   "r2_size_block": 0.6539,
+   "passed": true,
+   "chair_largest": 0.075,
+   "chair_r2": 0.65
+  },
+  "passed": false
+ },
+ "deciding_nothing_before_outcome": {
+  "raw_rho_pmin_distinct_chords": -0.8277,
+  "rho_pmin_H": 0.5141,
+  "songs_both": 2592,
+  "chair_rho_pmin_H": 0.51,
+  "rho_pmin_B": -0.4499
+ },
+ "verdict": "stopped (gate failed: clip-to-clip; no outcome joined)",
+ "runtime_s": 4
+}

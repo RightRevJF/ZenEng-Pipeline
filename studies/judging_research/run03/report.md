@@ -101,3 +101,16 @@ See the separate Doc "Proposed fix list: judging research, run 03" (https://clau
 3. Consensus research thread (scout only): https://consensus.app/search/methodological-question-for-a-planned-test-we-will/lX9tKl28QACoAkRrn67bUg/
 4. The maintainer's within-artist test: `studies/judging_checks/within_artist/RESULT.md` on main (−0.042, p .009).
 5. Data: Hooktheory TheoryTab annotations via Sheet Sage (Donahue, Thickstun & Liang 2022), CC BY-NC-SA 3.0; Discogs-VI (Araz, Serra & Bogdanov 2024), CC BY-SA 4.0.
+
+## Addendum: four more tests the same night (Jason's new rule, 23 November)
+
+Jason set a standing rule after the run: if an idea can be tested, test it. The four ideas that had been parked were frozen (commit 09ce7bd) after the first two results were seen, so they count as "after seeing results": six tests in all tonight, each needing p < .0083, and any pass would be a lead needing fresh songs.
+
+| Test | Prediction written first | Result | Verdict | Power |
+|---|---|---|---|---|
+| Tonic resistance: is home the electrical hub? | Home more central, more covers (−0.03) | −0.019 (SE 0.014, p .19); halves −0.010, −0.027 | Unsettled (right direction, not strong enough) | 0.31 |
+| Fifths path: average step around the circle of fifths per chord change | Smaller steps, more covers (−0.02) | −0.017 (SE 0.018, p .36); halves −0.011, −0.021 | Unsettled | 0.06 |
+| The obtuse statue | More obtuse, more covers | No outcome joined | Stopped: too unstable between clips (0.154, needed 0.20) | n/a |
+| Melody transport | Tune moves less than the chords, more covers | No outcome joined | Stopped: too unstable between clips (0.195, needed 0.20) | n/a |
+
+Both measures that reached the outcome leaned the predicted way in both artist halves, and both grew when chord surprise was left out (−0.026 and −0.028), so part of each is plain harmony under another name. Neither is evidence yet. They are the first two geometric measures in this research that were not killed, and both are cheap to test again on fresh songs (fix list item R03-1).

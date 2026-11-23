@@ -1,0 +1,203 @@
+{
+ "rule": "PREDICTION.md, commit 09ce7bd",
+ "alpha": 0.00833,
+ "unit_values": {
+  "I->V": {
+   "want": 0.5236,
+   "got": 0.5236
+  },
+  "I->IV": {
+   "want": 0.5236,
+   "got": 0.5236
+  },
+  "I->vi": {
+   "want": 0.5236,
+   "got": 0.5236
+  },
+  "ii->V": {
+   "want": 0.5236,
+   "got": 0.5236
+  },
+  "I->iii": {
+   "want": 1.0472,
+   "got": 1.0472
+  },
+  "I->bVII": {
+   "want": 1.0472,
+   "got": 1.0472
+  },
+  "I->i": {
+   "want": 1.0472,
+   "got": 1.0472
+  },
+  "IV->V": {
+   "want": 1.0472,
+   "got": 1.0472
+  },
+  "I->bVI": {
+   "want": 2.0944,
+   "got": 2.0944
+  },
+  "I->bII": {
+   "want": 2.618,
+   "got": 2.618
+  },
+  "V->vi": {
+   "want": 0.0,
+   "got": 0.0
+  },
+  "I->ii": {
+   "want": 0.0,
+   "got": 0.0
+  },
+  "V7_phase_equals_I": true,
+  "aug_and_dim7_no_phase": true
+ },
+ "worked_example": {
+  "I-V-vi-IV": {
+   "steps": {
+    "I->V": 0.5236,
+    "V->vi": 0.0,
+    "vi->IV": 1.0472,
+    "IV->I": 0.5236
+   },
+   "FP": 0.5236
+  },
+  "I-IV-V": {
+   "steps": {
+    "I->IV": 0.5236,
+    "IV->V": 1.0472,
+    "V->I": 0.5236
+   },
+   "FP": 0.6981
+  }
+ },
+ "shape": {
+  "songs": 2672,
+  "undefined": 0,
+  "moves": 60579,
+  "moves_kept": 60173,
+  "moves_skipped_no_phase": 406,
+  "share_zero_steps": 0.1132,
+  "FP_p10_p50_p90": [
+   0.4284,
+   0.6632,
+   1.0472
+  ],
+  "r2_size_block": 0.0224
+ },
+ "gate": {
+  "clip_to_clip": {
+   "spearman": 0.3558867654916839,
+   "pairs": 1281,
+   "threshold": 0.2,
+   "passed": true,
+   "chair": 0.356,
+   "chair_pairs": 1281
+  },
+  "overlap": {
+   "spearman": {
+    "mel_ic_mean": 0.144,
+    "mel_h_mean": 0.0581,
+    "mel_cheung": 0.0509,
+    "ch_ic_mean": 0.2198,
+    "ch_h_mean": 0.0745,
+    "ch_cheung": 0.0205,
+    "mel_rep": -0.0527,
+    "ch_rep": -0.1052,
+    "rhy_ic_mean": 0.0267,
+    "rhy_h_mean": 0.022,
+    "rhy_cheung": -0.0297,
+    "sync_per_note": -0.0036,
+    "rest_share": 0.0124,
+    "phrase_mean": 0.0221,
+    "phrase_on_downbeat": 0.0197,
+    "density": -0.068,
+    "length_variety": 0.0231,
+    "distinct chords": 0.1853,
+    "links": 0.1763,
+    "clips": 0.0649
+   },
+   "largest": [
+    "ch_ic_mean",
+    0.2198
+   ],
+   "threshold": 0.7,
+   "passed": true
+  },
+  "passed": true
+ },
+ "outcome_joined": true,
+ "rows_with_first_year": 2672,
+ "songs": 1924,
+ "artists": 420,
+ "se": 0.0182,
+ "power": 0.0622,
+ "prediction": -0.02,
+ "primary": {
+  "beta": -0.0167,
+  "se": 0.0182,
+  "p": 0.3584,
+  "ci95": [
+   -0.0523,
+   0.0189
+  ],
+  "ch_rep": {
+   "beta": -0.0617,
+   "se": 0.0166,
+   "p": 0.0002
+  },
+  "ch_ic_mean": {
+   "beta": -0.0857,
+   "se": 0.0217,
+   "p": 0.0001
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 932,
+   "artists": 205,
+   "beta": -0.0111,
+   "se": 0.0237,
+   "p": 0.641
+  },
+  {
+   "half": 1,
+   "songs": 992,
+   "artists": 215,
+   "beta": -0.0213,
+   "se": 0.0292,
+   "p": 0.4664
+  }
+ ],
+ "deciding_nothing": {
+  "covers_within_5_years": {
+   "beta": -0.0037,
+   "se": 0.0273,
+   "p": 0.8932,
+   "songs": 1924
+  },
+  "covers_after_10_years": {
+   "beta": -0.0208,
+   "se": 0.0154,
+   "p": 0.1771,
+   "songs": 1924
+  },
+  "without_ch_ic_mean": {
+   "beta": -0.0284,
+   "se": 0.0186,
+   "p": 0.1261,
+   "songs": 1924
+  },
+  "share_zero_steps_all_kept_moves": 0.1132,
+  "share_zero_steps_mean_over_model_songs": 0.1126,
+  "median_covers_early_late": [
+   7.0,
+   1.0,
+   3.0
+  ]
+ },
+ "verdict": "unsettled",
+ "runtime_s": 2
+}

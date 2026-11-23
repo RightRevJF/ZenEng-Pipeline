@@ -1,0 +1,69 @@
+{
+ "rule": "PREDICTION.md, commit 09ce7bd",
+ "alpha": 0.00833,
+ "unit_checks": {
+  "C_to_Fsharp": 6.0,
+  "Cmaj_to_Gmaj": 1.0,
+  "formula_vs_lp_max_diff": 1.7763568394002505e-15
+ },
+ "shape": {
+  "songs_3plus_chords": 2672,
+  "dropped_no_usable_change": 3,
+  "songs": 2669,
+  "changes": 60579,
+  "changes_kept": 53660,
+  "share_changes_kept": 0.8858,
+  "share_changes_skipped": 0.1142,
+  "melody_on_chord_tones": 0.7085,
+  "MT_p10_p50_p90": [
+   0.1778,
+   0.8805,
+   1.5493
+  ],
+  "r2_size_block": 0.0187
+ },
+ "gate": {
+  "clip_to_clip": {
+   "spearman": 0.19471507200398502,
+   "pairs": 1277,
+   "threshold": 0.2,
+   "passed": false,
+   "chair": 0.195,
+   "chair_pairs": 1277
+  },
+  "overlap": {
+   "spearman": {
+    "mel_ic_mean": 0.1721,
+    "mel_h_mean": 0.1332,
+    "mel_cheung": 0.0576,
+    "ch_ic_mean": 0.0644,
+    "ch_h_mean": -0.0122,
+    "ch_cheung": 0.0091,
+    "mel_rep": -0.1715,
+    "ch_rep": -0.0139,
+    "rhy_ic_mean": 0.1621,
+    "rhy_h_mean": 0.1484,
+    "rhy_cheung": -0.0966,
+    "sync_per_note": 0.0442,
+    "rest_share": 0.064,
+    "phrase_mean": -0.0767,
+    "phrase_on_downbeat": 0.0092,
+    "density": -0.1612,
+    "length_variety": 0.1751,
+    "distinct chords": 0.106,
+    "links": 0.1038,
+    "clips": -0.0218
+   },
+   "largest": [
+    "length_variety",
+    0.1751
+   ],
+   "threshold": 0.7,
+   "passed": true
+  },
+  "passed": false
+ },
+ "outcome_joined": false,
+ "verdict": "stopped (gate failed before any outcome was read: clip-to-clip); no outcome joined",
+ "runtime_s": 6
+}
