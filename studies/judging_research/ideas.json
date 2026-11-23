@@ -1,0 +1,194 @@
+{
+ "note": "Ideas backlog for the judging research. status: untested, testing, passed, failed, parked. 'failed' includes withdrawn ideas.",
+ "ideas": [
+  {
+   "id": "W01-J1",
+   "idea": "Chords that move: within-section chord repetition predicts fewer covers",
+   "stance": "week01 chair",
+   "proposed": "week01",
+   "status": "passed",
+   "status_set_by": "maintainer within_artist (22 Nov)",
+   "note": "−0.071 across artists; −0.042 within artist (p .009); fresh McGill −0.028, unsettled"
+  },
+  {
+   "id": "W01-J2",
+   "idea": "Plain chords, varied path (interaction)",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "failed",
+   "status_set_by": "run02",
+   "note": "base term p .06; folded out"
+  },
+  {
+   "id": "W01-J3",
+   "idea": "Earn the surprise (Cheung term)",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "failed",
+   "status_set_by": "run02",
+   "note": "+0.009, p .54 on Discogs-VI"
+  },
+  {
+   "id": "W01-J4",
+   "idea": "Smooth approach to the surprise",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "parked",
+   "status_set_by": "run02",
+   "note": "never tested; retired"
+  },
+  {
+   "id": "W01-J5",
+   "idea": "Hook readings (short, early, stepwise hook)",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "failed",
+   "status_set_by": "run02",
+   "note": "tune measures failed five runs"
+  },
+  {
+   "id": "W01-J6a",
+   "idea": "Early covers as the target",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "parked",
+   "status_set_by": "maintainer within_artist",
+   "note": "early −0.028 and late −0.030 alike; report both"
+  },
+  {
+   "id": "W01-J6b",
+   "idea": "Fresh songs (McGill hold-out)",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "testing",
+   "status_set_by": "maintainer fresh_songs",
+   "note": "−0.028, range −0.11 to +0.05, power 0.22; unsettled; hold-out read twice"
+  },
+  {
+   "id": "W01-J6c",
+   "idea": "Measure the ceiling with MusicLab",
+   "stance": "week01",
+   "proposed": "week01",
+   "status": "untested",
+   "status_set_by": "run02",
+   "note": "carried"
+  },
+  {
+   "id": "R02-breadth",
+   "idea": "Cross-genre cover breadth as the outcome",
+   "stance": "run02 chair",
+   "proposed": "run02",
+   "status": "parked",
+   "status_set_by": "run02",
+   "note": "needs genres from Discogs dump; changes yardstick, Jason's call"
+  },
+  {
+   "id": "R02-gap",
+   "idea": "Spectral gap g of the chord map",
+   "stance": "Geometer",
+   "proposed": "run02",
+   "status": "parked",
+   "status_set_by": "run03 chair",
+   "note": "McGill: renaming check passed, split-half 0.58; Hooktheory: clip-to-clip 0.17 (0.21 after size) — fails stability gate, kept out of Hooktheory models; untested on any outcome"
+  },
+  {
+   "id": "R02-pcentropy",
+   "idea": "Melodic pitch-class entropy",
+   "stance": "Listener",
+   "proposed": "run02",
+   "status": "failed",
+   "status_set_by": "run02",
+   "note": "deleted as a sixth try at the tune"
+  },
+  {
+   "id": "R02-chordsurprise",
+   "idea": "Chord surprise (plainer chords, more covers) as its own test",
+   "stance": "maintainer",
+   "proposed": "run02",
+   "status": "untested",
+   "status_set_by": "maintainer within_artist",
+   "note": "−0.042 p .03 within artist, not pre-stated; worth its own rule-first test"
+  },
+  {
+   "id": "R03-G1",
+   "idea": "Contraction beyond the vocabulary: shuffle-relative Ollivier curvature",
+   "stance": "Geometer",
+   "proposed": "run03",
+   "status": "parked",
+   "status_set_by": "run03",
+   "note": "merged into R03-L1; shuffle version tracks ch_rep −0.62 (repetition renamed); reported only"
+  },
+  {
+   "id": "R03-G2",
+   "idea": "Out-and-back links: bridge indicator from resistance curvature (merged with L2)",
+   "stance": "Geometer + Listener",
+   "proposed": "run03",
+   "status": "testing",
+   "status_set_by": "run03 chair",
+   "note": "experiments/bridge"
+  },
+  {
+   "id": "R03-G3",
+   "idea": "The obtuse statue: min resistance curvature vs shuffle (circumcentre outside the simplex)",
+   "stance": "Geometer",
+   "proposed": "run03",
+   "status": "untested",
+   "status_set_by": "run03 chair",
+   "note": "ranked later (2); split-half 0.37"
+  },
+  {
+   "id": "R03-L1",
+   "idea": "Substitutable chords: move-weighted lazy Ollivier curvature, size, repetition and surprise held (merged with G1)",
+   "stance": "Listener + Geometer",
+   "proposed": "run03",
+   "status": "testing",
+   "status_set_by": "run03 chair",
+   "note": "experiments/curvature"
+  },
+  {
+   "id": "R03-L2",
+   "idea": "No detour: share of traffic on bridges",
+   "stance": "Listener",
+   "proposed": "run03",
+   "status": "testing",
+   "status_set_by": "run03 chair",
+   "note": "merged into the bridge test (indicator form)"
+  },
+  {
+   "id": "R03-L3",
+   "idea": "Curvature x repetition interaction",
+   "stance": "Listener",
+   "proposed": "run03",
+   "status": "failed",
+   "status_set_by": "run03 brainstorm",
+   "note": "withdrawn: no power, nothing could kill it"
+  },
+  {
+   "id": "R03-I1",
+   "idea": "Melody as a contraction of the harmony (melody transport vs chord-tone transport)",
+   "stance": "Inventor",
+   "proposed": "run03",
+   "status": "untested",
+   "status_set_by": "run03 chair",
+   "note": "ranked later (3) in difference form; clip-to-clip 0.19"
+  },
+  {
+   "id": "R03-I2",
+   "idea": "Tonic resistance: is home the electrical hub?",
+   "stance": "Inventor",
+   "proposed": "run03",
+   "status": "untested",
+   "status_set_by": "run03 chair",
+   "note": "ranked later (2); surprise gate passed (−0.14); tracks size −0.43"
+  },
+  {
+   "id": "R03-I3",
+   "idea": "The cover done on the computer: perturbation robustness of the stationary distribution",
+   "stance": "Inventor",
+   "proposed": "run03",
+   "status": "failed",
+   "status_set_by": "run03 brainstorm",
+   "note": "withdrawn: never computed, leaned on g"
+  }
+ ]
+}
