@@ -92,7 +92,7 @@ None new tonight: both papers were open. Not reached (fetch blocked, not paywall
 
 ## The proposed fix list
 
-See the separate Doc "Proposed fix list: judging research, run 03" (the same text is in `run03/proposed_fixlist.md`).
+See the separate Doc "Proposed fix list: judging research, run 03" (https://claude.ai/artifact/UbBeN34uMjwi5yeboC5zbN); the same text is in `run03/proposed_fixlist.md`. This report is published as the Doc "Judging research, run 03" (https://claude.ai/artifact/3EY6MrGcAE4BVp8fJY7QQm).
 
 ## References
 
