@@ -76,3 +76,21 @@ The curvature test reproduces these numbers as a check that decides nothing.
 Both tests are underpowered: about 0.29 for the bridge and 0.10 for curvature. These figures scale the within-artist standard error by each measure's leftover variance. Each script prints its real power before the estimate. A null clears nothing. A kill is the likeliest informative result. A pass would be worth checking on the hold-out.
 
 My check scripts are scratch files and are not in the repo.
+
+## Four more tests, frozen after the first two results (Jason's new rule)
+Jason's new standing rule: if an idea is imagined and can be tested on the data at hand, test it tonight. So four ideas the brainstorm had put off are frozen now, each in its own folder with the bridge test's rows, token, wrap rule and `within()` model, holding `ch_rep`, chord surprise (`ch_ic_mean`), the size block, log clips and first year. **All four were written after the bridge and curvature outcomes were seen, so each is labelled "after seeing results": a pass is a lead needing confirmation on unused songs, never a finding.**
+
+**Tonight now counts six tests, so each needs p < .05/6 = .0083 (two-sided), plus the same sign in both artist halves.** The threshold does not move if a test is stopped.
+
+Each test first runs a gate on the notes alone: two clips of one song must agree at Spearman ≥ 0.20, and no |ρ| with a data-pack measure or the size block may exceed 0.7. A test that fails the gate is recorded "stopped" with no outcome joined. My own notes-only check (2,672 songs):
+
+| Folder | Idea | Predicted β per SD | Clip-to-clip | Largest \|ρ\| | Gate (chair) | Power (chair) |
+|---|---|---|---|---|---|---|
+| `tonic_resistance/` | I2: is home the electrical hub? | −0.03 (lower H, more covers) | 0.247 | 0.08 | passes | 0.21 |
+| `obtuse_statue/` | G3: min resistance curvature | −0.02 (more obtuse, more covers) | 0.154 | 0.08 | **fails** | 0.03 |
+| `melody_transport/` | I1 revised: tune moves less than the chords | −0.03 (more negative, more covers) | 0.195 | 0.18 | **fails, narrowly** | 0.24 |
+| `fifths_path/` | new: mean step on the fifths circle | −0.02 (smaller steps, more covers) | 0.356 | 0.22 | passes | 0.08 |
+
+**Why these four.** I2 and G3 were the two resistance ideas ranked "later"; the Inventor had offered to run only the more stable one, and Jason's rule now says test both, with the gate deciding. I1 was ranked third, pending a stability recheck; the recheck is its gate. The fifths path answers `first_principles.md` §6: put the geometry in a fixed space that the song does not build, so a short song is a noisier reading rather than a different shape. Its direction (smaller steps, more covers) was chosen from chord surprise, since step size is about distance, not recurrence.
+
+**What to expect.** Two of the four will probably stop at the gate. The two that run have power of 0.21 and 0.08. A kill (wrong sign, or weaker than 0.01 in the predicted direction) is the likeliest informative result. H and p_min overlap (ρ +0.51), which is printed. The gate's form for H and p_min (read on the residual after the size block) was fixed before I computed it, and no definition was changed after seeing the gate numbers.
