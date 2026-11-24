@@ -6,3 +6,6 @@ LOG.append({"q": "Which subject? A joy, fast, soul: a homecoming, welcomed witho
 LOG.append({"q": "2. Whose song is it? A the one coming home, first person, welcomed small ('we saved you a plate') (Recommended); B the one at home; C the whole house, call and response", "recommended": "A", "answer": "A"})
 LOG.append({"q": "3. How much of why he left? A never name it; only what he sees and expects (the rehearsed speech, the porch light, his name on a stocking); stock Christmas words banned (Recommended); B name it once, lightly; C no list", "recommended": "A", "answer": "A"})
 NEVER_SAY = ["snow", "snowflake", "sleigh", "mistletoe", "jingle", "bells", "santa", "reindeer", "chimney", "holly", "merry", "miracle", "prodigal", "lost", "angel", "silent night", "home for the holidays", "reason for the season", "white christmas", "chestnuts", "yuletide", "ho ho"]
+LOG.append({"q": "4. The title: A We Saved You a Plate (Recommended); B Porch Light; C Nobody Asked", "recommended": "A", "answer": "A"})
+TITLE = "We Saved You a Plate"
+LOG.append({"note": "Draft 1 shown in full (lyric_draft1.txt): verses wordy, the chorus few held words (the room check's lesson from song 62); the speech never given; 'every single year' held back for the last chorus."})
