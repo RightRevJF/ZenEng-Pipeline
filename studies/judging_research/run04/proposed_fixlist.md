@@ -13,6 +13,8 @@ Nothing here is in the engine. Labels R04-1 to R04-4 are proposal labels; the ma
 - `hooktheory_clips.json.gz` holds the notes of the 3,080 matched songs only.
 - No item on main proposes Fourier-phase measures, foreign versions or the extensive margin, so nothing below repeats a closed item.
 
+Published as the Doc "Proposed fix list: judging research, run 04" (https://claude.ai/artifact/1RSeD2h3z5J2kRNLhYsBkP).
+
 ## At a glance
 
 | Item | What | Kind | Engine touched? |

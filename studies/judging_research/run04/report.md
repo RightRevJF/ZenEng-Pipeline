@@ -137,7 +137,7 @@ None tonight: both papers were open.
 
 ## The proposed fix list
 
-See the separate Doc "Proposed fix list: judging research, run 04". The same text is in `run04/proposed_fixlist.md`.
+See the separate Doc "Proposed fix list: judging research, run 04" (https://claude.ai/artifact/1RSeD2h3z5J2kRNLhYsBkP); the same text is in `run04/proposed_fixlist.md`. This report is published as the Doc "Judging research, run 04" (https://claude.ai/artifact/96PaLbYWSVGvRdPADic738).
 
 ## References
 
