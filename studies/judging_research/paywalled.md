@@ -20,3 +20,9 @@
 - The inbox folder was empty, so nothing was received.
 - No new paywalled papers: both papers (Ollivier 2009; Devriendt & Lambiotte 2022) were read in full from arXiv. Caveat: the fetch tool passed both PDFs through a summarising reader, not a verbatim scan.
 - Not reached (fetch blocked, not paywalled): Devriendt, Ottolini & Steinerberger (2024), Graph curvature via resistance distance, Discrete Applied Mathematics, arXiv 2302.06021. A later run may retry it.
+
+## Run 04 (24 November 2026)
+- The inbox folder was empty, so nothing was received.
+- No new paywalled papers: both papers (Amiot 2013; Araz, Serra & Bogdanov 2024) were read in full from arXiv.
+- Not reached (permission prompts unanswered, not paywalled): the Discogs-VI Zenodo record 13983028, its project page and GitHub README. A later run may read them for later dataset versions.
+- Not downloaded (gated, needs a login): the Hugging Face dataset m-a-p/HookTheory, which holds the notes of every Hooktheory song (see run04/DATA.md and fix list R04-1).

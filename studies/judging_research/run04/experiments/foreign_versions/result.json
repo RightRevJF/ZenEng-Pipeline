@@ -1,0 +1,613 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 4410a0e (reuses ../move_extensive/test.py, rule 00ab557, outcome changed)",
+ "label": "after seeing results",
+ "data": "origin/main studies/judging_data (git show)",
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "rows": {
+  "songs_all": 13198,
+  "artists_all": 5351,
+  "songs": 9588,
+  "artists": 1741,
+  "nch_bins": [
+   341,
+   672,
+   1553,
+   1160,
+   1174,
+   1429,
+   1597,
+   811,
+   464,
+   387
+  ],
+  "clips_classes": [
+   5317,
+   2533,
+   1123,
+   615
+  ],
+  "word_counts": [
+   1931,
+   2454,
+   1907,
+   1396,
+   1900
+  ],
+  "parentheses": 109,
+  "repeated_title": 960,
+  "artists_per_half": [
+   886,
+   855
+  ]
+ },
+ "gate": {
+  "clip_to_clip": {
+   "pairs": 4271,
+   "rho": {
+    "ch_rep": 0.3243,
+    "ch_ic_mean": 0.496
+   },
+   "threshold": 0.2,
+   "passed": true
+  },
+  "overlap": {
+   "ch_rep": {
+    "rho": {
+     "mel_ic_mean": [
+      -0.1539,
+      9588
+     ],
+     "mel_h_mean": [
+      -0.1851,
+      9588
+     ],
+     "mel_cheung": [
+      0.0392,
+      9588
+     ],
+     "ch_ic_mean": [
+      -0.3273,
+      9588
+     ],
+     "ch_h_mean": [
+      -0.4396,
+      9588
+     ],
+     "ch_cheung": [
+      -0.1955,
+      9588
+     ],
+     "mel_rep": [
+      0.4089,
+      9588
+     ],
+     "rhy_ic_mean": [
+      -0.0394,
+      9574
+     ],
+     "rhy_h_mean": [
+      -0.1164,
+      9574
+     ],
+     "rhy_cheung": [
+      0.1094,
+      9574
+     ],
+     "sync_per_note": [
+      0.0719,
+      9574
+     ],
+     "rest_share": [
+      0.0936,
+      9574
+     ],
+     "phrase_mean": [
+      -0.0419,
+      9574
+     ],
+     "phrase_on_downbeat": [
+      -0.1031,
+      9574
+     ],
+     "density": [
+      0.1029,
+      9574
+     ],
+     "length_variety": [
+      -0.0649,
+      9574
+     ],
+     "n_ch": [
+      0.4061,
+      9588
+     ],
+     "beats": [
+      0.1644,
+      9588
+     ],
+     "clips_per_song": [
+      0.0224,
+      9588
+     ]
+    },
+    "threshold": 0.7
+   },
+   "ch_ic_mean": {
+    "rho": {
+     "mel_ic_mean": [
+      0.2761,
+      9588
+     ],
+     "mel_h_mean": [
+      0.1518,
+      9588
+     ],
+     "mel_cheung": [
+      0.0722,
+      9588
+     ],
+     "ch_h_mean": [
+      0.4825,
+      9588
+     ],
+     "ch_cheung": [
+      0.3384,
+      9588
+     ],
+     "mel_rep": [
+      -0.1558,
+      9588
+     ],
+     "ch_rep": [
+      -0.3273,
+      9588
+     ],
+     "rhy_ic_mean": [
+      0.113,
+      9574
+     ],
+     "rhy_h_mean": [
+      0.0727,
+      9574
+     ],
+     "rhy_cheung": [
+      -0.0993,
+      9574
+     ],
+     "sync_per_note": [
+      -0.0268,
+      9574
+     ],
+     "rest_share": [
+      -0.0376,
+      9574
+     ],
+     "phrase_mean": [
+      0.0732,
+      9574
+     ],
+     "phrase_on_downbeat": [
+      0.046,
+      9574
+     ],
+     "density": [
+      -0.1051,
+      9574
+     ],
+     "length_variety": [
+      0.0967,
+      9574
+     ],
+     "n_ch": [
+      0.1286,
+      9588
+     ],
+     "beats": [
+      0.0959,
+      9588
+     ],
+     "clips_per_song": [
+      0.0386,
+      9588
+     ]
+    },
+    "threshold": 0.7
+   }
+  },
+  "overlap_passed": true,
+  "songs_without_rhythm": 14,
+  "deciding_nothing": {
+   "other_model_columns_largest": {
+    "ch_rep": [
+     "nch_bin1",
+     -0.2254
+    ],
+    "ch_ic_mean": [
+     "ln_beats",
+     0.0959
+    ]
+   },
+   "ch_ic_mean_vs_ch_ic_sd": 0.7758
+  },
+  "passed": true
+ },
+ "notes_side_power": {
+  "ch_rep": {
+   "residual_share": 0.4124,
+   "se_bound_pp": 0.6478
+  },
+  "ch_ic_mean": {
+   "residual_share": 0.5298,
+   "se_bound_pp": 0.5715
+  }
+ },
+ "drops": {
+  "count": 2,
+  "limit": 25,
+  "songs": [
+   {
+    "vid": "H-P988tAYnM",
+    "artist": "kings-of-convenience",
+    "slug": "id-rather-dance-with-you",
+    "clique": "C-0015130",
+    "why": "no own set",
+    "sets": [
+     [
+      "maryjblige"
+     ],
+     [
+      "harrymillersisipingo"
+     ],
+     [
+      "bootselectric",
+      "eaglesofdeathmetal"
+     ]
+    ]
+   },
+   {
+    "vid": "QQ2OKoLpNBM",
+    "artist": "beach-boys",
+    "slug": "surfs-up",
+    "clique": "C-0064934",
+    "why": "no own set",
+    "sets": [
+     [
+      "brianwilson"
+     ],
+     [
+      "davidthomasandtwopaleboys"
+     ],
+     [
+      "thebeachboys"
+     ],
+     [
+      "davidthomas",
+      "thepaleorchestra"
+     ],
+     [
+      "billysyndrome"
+     ],
+     [
+      "delaytanten"
+     ],
+     [
+      "barryphillips"
+     ]
+    ]
+   }
+  ]
+ },
+ "outcome": {
+  "N": 9586,
+  "artists": 1741,
+  "y1": 2224,
+  "y_foreign1": 2130,
+  "y_self1": 94,
+  "dropped": 2,
+  "share_y_foreign": 0.2222,
+  "share_y_self": 0.0098,
+  "keys": 3080,
+  "keys_not_in_surprise": 311,
+  "names_normalising_to_empty": 175,
+  "outcome_md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ]
+ },
+ "statsmodels_crosscheck_lpm": {
+  "max_abs_beta_diff": 4.707345624410664e-14,
+  "max_abs_se_diff": 2.7533531010703882e-14
+ },
+ "power": {
+  "se": 0.4943,
+  "power_at_pred": 0.2068,
+  "power_at_pred_p05": 0.4447,
+  "kill_fires_if_true_is_pred": 0.1124,
+  "kill_fires_if_true_is_zero": 0.728,
+  "se_ch_ic_mean": 0.4146
+ },
+ "primary_y_foreign": {
+  "ch_rep": {
+   "beta": 0.9971,
+   "se": 0.4943,
+   "p": 0.04369,
+   "ci95": [
+    0.0282,
+    1.966
+   ]
+  },
+  "ch_ic_mean": {
+   "beta": -0.4257,
+   "se": 0.4146,
+   "p": 0.3045,
+   "ci95": [
+    -1.2384,
+    0.387
+   ]
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 4616,
+   "artists": 886,
+   "y_foreign1": 1046,
+   "ch_rep": {
+    "beta": 0.4462,
+    "se": 0.6331,
+    "p": 0.4809,
+    "ci95": [
+     -0.7946,
+     1.687
+    ]
+   }
+  },
+  {
+   "half": 1,
+   "songs": 4970,
+   "artists": 855,
+   "y_foreign1": 1084,
+   "ch_rep": {
+    "beta": 1.4309,
+    "se": 0.7532,
+    "p": 0.05746,
+    "ci95": [
+     -0.0453,
+     2.9072
+    ]
+   }
+  }
+ ],
+ "conditional_logit_y_foreign": {
+  "dropped_artists": 1277,
+  "dropped_songs": 5946,
+  "kept_artists": 464,
+  "kept_songs": 3640,
+  "columns_without_within_variation": [],
+  "converged": true,
+  "optimiser": "bfgs",
+  "max_abs_score": 0.03278084680557303,
+  "convergence_test": "max|score|/nobs < 1e-5",
+  "llf": -1343.2573769042287,
+  "ch_rep": {
+   "coef": 0.1319,
+   "se": 0.0588,
+   "p": 0.02485
+  },
+  "ch_ic_mean": {
+   "coef": -0.0613,
+   "se": 0.0515,
+   "p": 0.2338
+  },
+  "own_recursion_crosscheck": {
+   "ch_rep": 0.132,
+   "ch_ic_mean": -0.0613,
+   "se": [
+    0.0588,
+    0.0515
+   ],
+   "max_abs_score": 5.351274978693255e-13,
+   "newton_iters": 50,
+   "max_abs_diff_vs_statsmodels": 30.865131910665365,
+   "all_coefs": {
+    "z_ch_rep": [
+     0.1319,
+     0.132
+    ],
+    "z_ch_ic_mean": [
+     -0.0613,
+     -0.0613
+    ],
+    "nch_bin1": [
+     -0.5908,
+     -0.5911
+    ],
+    "nch_bin2": [
+     -0.4087,
+     -0.4091
+    ],
+    "nch_bin3": [
+     -0.5724,
+     -0.5723
+    ],
+    "nch_bin4": [
+     -0.599,
+     -0.5995
+    ],
+    "nch_bin5": [
+     -0.4875,
+     -0.488
+    ],
+    "nch_bin6": [
+     -0.3151,
+     -0.3158
+    ],
+    "nch_bin7": [
+     -0.3593,
+     -0.3595
+    ],
+    "nch_bin8": [
+     -1.0866,
+     -1.0871
+    ],
+    "nch_bin9": [
+     -0.6674,
+     -0.6677
+    ],
+    "clips2": [
+     0.2417,
+     0.2417
+    ],
+    "clips3": [
+     0.4792,
+     0.4793
+    ],
+    "clips4p": [
+     0.341,
+     0.341
+    ],
+    "ln_beats": [
+     -0.0657,
+     -0.0659
+    ],
+    "words1": [
+     1.0778,
+     1.0778
+    ],
+    "words2": [
+     0.6814,
+     0.6814
+    ],
+    "words3": [
+     0.5838,
+     0.5838
+    ],
+    "words4": [
+     0.6176,
+     0.6175
+    ],
+    "parens": [
+     -21.4297,
+     -52.2949
+    ],
+    "rep_title": [
+     0.6654,
+     0.6653
+    ]
+   },
+   "all_coefs_note": "[statsmodels BFGS, own recursion Newton] per column"
+  }
+ },
+ "prediction_pp_per_sd": 0.9,
+ "kill_below_pp": 0.3,
+ "threshold_p": 0.008333333333333333,
+ "threshold_z": 2.63825727347675,
+ "reported_deciding_nothing": {
+  "y_self": {
+   "count1": 94,
+   "ch_rep": {
+    "beta": 0.194,
+    "se": 0.1482,
+    "p": 0.1903,
+    "ci95": [
+     -0.0964,
+     0.4844
+    ]
+   },
+   "ch_ic_mean": {
+    "beta": 0.3308,
+    "se": 0.1471,
+    "p": 0.02459,
+    "ci95": [
+     0.0424,
+     0.6192
+    ]
+   }
+  },
+  "y_on_the_same_rows": {
+   "count1": 2224,
+   "ch_rep": {
+    "beta": 1.1911,
+    "se": 0.502,
+    "p": 0.01766,
+    "ci95": [
+     0.2072,
+     2.1751
+    ]
+   },
+   "ch_ic_mean": {
+    "beta": -0.095,
+    "se": 0.4094,
+    "p": 0.8166,
+    "ci95": [
+     -0.8975,
+     0.7075
+    ]
+   }
+  },
+  "additivity_check": {
+   "max_abs_diff_all_columns": 2.6645352591003757e-15,
+   "tolerance": 1e-09,
+   "holds": true,
+   "ch_rep": [
+    0.9971,
+    0.194,
+    1.1911
+   ],
+   "note": "[beta_foreign, beta_self, beta_y]"
+  },
+  "foreign_looser_a_not_in_set": {
+   "count1": 2134,
+   "ch_rep": {
+    "beta": 1.0039,
+    "se": 0.4946,
+    "p": 0.0424,
+    "ci95": [
+     0.0344,
+     1.9733
+    ]
+   },
+   "ch_ic_mean": {
+    "beta": -0.4559,
+    "se": 0.4146,
+    "p": 0.2714,
+    "ci95": [
+     -1.2684,
+     0.3566
+    ]
+   }
+  },
+  "foreign_without_karaoke_tribute_sets": {
+   "count1": 2130,
+   "ch_rep": {
+    "beta": 0.9971,
+    "se": 0.4943,
+    "p": 0.04369,
+    "ci95": [
+     0.0282,
+     1.966
+    ]
+   },
+   "ch_ic_mean": {
+    "beta": -0.4257,
+    "se": 0.4146,
+    "p": 0.3045,
+    "ci95": [
+     -1.2384,
+     0.387
+    ]
+   }
+  },
+  "ch_ic_mean_on_y_foreign": {
+   "beta": -0.4257,
+   "se": 0.4146,
+   "p": 0.3045,
+   "ci95": [
+    -1.2384,
+    0.387
+   ]
+  }
+ },
+ "verdict": "unsettled (p >= .0083)",
+ "runtime_s": 31
+}

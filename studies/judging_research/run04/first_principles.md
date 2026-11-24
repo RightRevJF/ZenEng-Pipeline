@@ -47,6 +47,8 @@ Chord repetition, within artist, on one versions file read two ways: did anyone 
 
 **Reported, deciding nothing.** β on y_self, with β_foreign + β_self = β(y) checked to 1e−9; foreign as "a not in the set"; sets naming "karaoke" or "tribute" removed; `ch_ic_mean` on y_foreign.
 
+**Postscript (added after the sixth test ran; the rule above is unchanged).** It came out *unsettled*. Of 2,224 matched songs, only 94 have nothing but the original artist's own credit variants. β(`ch_rep`) on y_foreign was +1.00 points per SD (SE 0.49, p .044; halves +0.45 and +1.43; conditional logit +0.132, p .025). That is above the kill line, so the artefact story did not explain the sign, but it is short of p < .0083. It is a weak lead on seen songs, designed after seeing them.
+
 ## 6. The obstacle and the way through
 **Obstacle.** Every outcome is a by-product of a credit database, and its noise is as large as the notes signal (about 0.04 SD). Every song on disk is seen.
 
