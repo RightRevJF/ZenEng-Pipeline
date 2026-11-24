@@ -105,8 +105,8 @@
    "idea": "Chord surprise (plainer chords, more covers) as its own test",
    "stance": "maintainer",
    "proposed": "run02",
-   "status": "untested",
-   "status_set_by": "maintainer within_artist",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
    "note": "−0.042 p .03 within artist, not pre-stated; worth its own rule-first test"
   },
   {
@@ -198,6 +198,105 @@
    "status": "testing",
    "status_set_by": "run03 experiments/fifths_path (after seeing results)",
    "note": "unsettled: β −0.017 (SE 0.018, p .36); halves −0.011, −0.021; without surprise −0.028; gate passed (clip-to-clip 0.356); power 0.06"
+  },
+  {
+   "id": "R04-G1",
+   "idea": "Diatonicity |a5|/a0 of the duration-weighted chord profile (Amiot, Theorem 1 + Lemma 2)",
+   "stance": "Geometer",
+   "proposed": "run04",
+   "status": "parked",
+   "status_set_by": "run04 brainstorm",
+   "note": "withdrawn by author in round 2 (sign set after the fifths path leaned; rho -0.65 with it); kept for fresh songs"
+  },
+  {
+   "id": "R04-G2",
+   "idea": "Share of P/L/R moves on the (phi3, phi5) torus (distance < 1.25)",
+   "stance": "Geometer",
+   "proposed": "run04",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
+   "note": "merged with L2; to the chair"
+  },
+  {
+   "id": "R04-G3",
+   "idea": "Thirds axis |a3|/a0 of the chord profile, high = shared tones, more covers",
+   "stance": "Geometer",
+   "proposed": "run04",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
+   "note": "merged with I1 as one two-sided test"
+  },
+  {
+   "id": "R04-L1",
+   "idea": "Chords that move on the extensive margin: ch_rep (decides) and ch_ic_mean, P(in Discogs-VI) within artist",
+   "stance": "Listener",
+   "proposed": "run04",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
+   "note": "revised in round 2 to run 03's two-term form"
+  },
+  {
+   "id": "R04-L2",
+   "idea": "Pitch proximity: mean flat-torus step between chords",
+   "stance": "Listener",
+   "proposed": "run04",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
+   "note": "merged into G2 (PLR share primary; TS reported only)"
+  },
+  {
+   "id": "R04-L3",
+   "idea": "The one chord you remember: CV of chord surprise",
+   "stance": "Listener",
+   "proposed": "run04",
+   "status": "failed",
+   "status_set_by": "run04 brainstorm",
+   "note": "withdrawn in round 2 (power ~0.2, tracks n_ch)"
+  },
+  {
+   "id": "R04-I1",
+   "idea": "Balance on the thirds circle: low |a3|/a0, more covers",
+   "stance": "Inventor",
+   "proposed": "run04",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
+   "note": "withdrawn as a reading, kept as the other side of the G3 two-sided test"
+  },
+  {
+   "id": "R04-I2",
+   "idea": "Harmonic ratchet: skew of phi5 steps",
+   "stance": "Inventor",
+   "proposed": "run04",
+   "status": "failed",
+   "status_set_by": "run04 brainstorm",
+   "note": "withdrawn in round 2 (skew of ~4 steps, mode-tied, power ~0.1)"
+  },
+  {
+   "id": "R04-I3",
+   "idea": "Information rate deviation |ln r - ln 4.32| (r = surprise bits per beat), extensive margin",
+   "stance": "Inventor",
+   "proposed": "run04",
+   "status": "testing",
+   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
+   "note": "revised in round 2 (density, bpb, beats held)"
+  },
+  {
+   "id": "R04-W",
+   "idea": "Winding numbers and signed area of the chord path on the torus",
+   "stance": "all three",
+   "proposed": "run04",
+   "status": "failed",
+   "status_set_by": "run04 brainstorm",
+   "note": "stopped at measure side: whole-step same-quality moves are exact half-turns in phi3, sign arbitrary"
+  },
+  {
+   "id": "R04-R5",
+   "idea": "Phase concentration R5 of chord phi5",
+   "stance": "Geometer, Inventor, Listener",
+   "proposed": "run04",
+   "status": "failed",
+   "status_set_by": "run04 brainstorm",
+   "note": "stopped: fifths path renamed (rho about -0.8)"
   }
  ]
 }
