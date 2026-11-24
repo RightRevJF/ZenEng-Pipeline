@@ -105,9 +105,9 @@
    "idea": "Chord surprise (plainer chords, more covers) as its own test",
    "stance": "maintainer",
    "proposed": "run02",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "−0.042 p .03 within artist, not pre-stated; worth its own rule-first test"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "killed on the extensive margin (run04 move_extensive H2): -0.10 pp (SE 0.41, p .81); halves -0.51, +0.25; power 0.45. Kills \"plainly\" on this outcome, not J1"
   },
   {
    "id": "R03-G1",
@@ -213,36 +213,36 @@
    "idea": "Share of P/L/R moves on the (phi3, phi5) torus (distance < 1.25)",
    "stance": "Geometer",
    "proposed": "run04",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "merged with L2; to the chair"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "killed: PLR share +0.0065 (SE 0.018, p .72); halves +0.015, -0.004; power 0.07"
   },
   {
    "id": "R04-G3",
    "idea": "Thirds axis |a3|/a0 of the chord profile, high = shared tones, more covers",
    "stance": "Geometer",
    "proposed": "run04",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "merged with I1 as one two-sided test"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "killed by the three-way rule: D3 +0.006 (SE 0.017, p .73), inside the +/-0.01 band; halves +0.010, +0.002; power 0.08"
   },
   {
    "id": "R04-L1",
    "idea": "Chords that move on the extensive margin: ch_rep (decides) and ch_ic_mean, P(in Discogs-VI) within artist",
    "stance": "Listener",
    "proposed": "run04",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "revised in round 2 to run 03's two-term form"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "killed: ch_rep +1.19 pp per SD (SE 0.50, p .018), wrong sign; halves +0.93, +1.36; conditional logit +0.151 (p .009); power 0.28. Looping songs MORE often in Discogs-VI at all (not a finding: opposite-sign rule needed p < .01)"
   },
   {
    "id": "R04-L2",
    "idea": "Pitch proximity: mean flat-torus step between chords",
    "stance": "Listener",
    "proposed": "run04",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "merged into G2 (PLR share primary; TS reported only)"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "merged into plr_share (killed); TS reported only: -0.002"
   },
   {
    "id": "R04-L3",
@@ -258,9 +258,9 @@
    "idea": "Balance on the thirds circle: low |a3|/a0, more covers",
    "stance": "Inventor",
    "proposed": "run04",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "withdrawn as a reading, kept as the other side of the G3 two-sided test"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "killed with G3 (same test, beta inside +/-0.01)"
   },
   {
    "id": "R04-I2",
@@ -276,9 +276,9 @@
    "idea": "Information rate deviation |ln r - ln 4.32| (r = surprise bits per beat), extensive margin",
    "stance": "Inventor",
    "proposed": "run04",
-   "status": "testing",
-   "status_set_by": "run04 chair (PREDICTION.md frozen before the join)",
-   "note": "revised in round 2 (density, bpb, beats held)"
+   "status": "failed",
+   "status_set_by": "run04 experiments",
+   "note": "killed: -0.16 pp per SD (SE 0.34, p .64); halves +0.44, -0.74; cond. logit -0.026; power 0.40"
   },
   {
    "id": "R04-W",

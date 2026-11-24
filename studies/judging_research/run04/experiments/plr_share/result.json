@@ -1,0 +1,240 @@
+{
+ "rule": "PREDICTION.md, commit 00ab557",
+ "alpha": 0.01,
+ "z_crit": 2.5758,
+ "prediction": 0.02,
+ "plr_cut": 1.25,
+ "unit_values": {
+  "d(C,Am)": {
+   "want": 1.065,
+   "got": 1.0649
+  },
+  "d(C,Cm)": {
+   "want": 1.229,
+   "got": 1.2291
+  },
+  "d(C,Em)": {
+   "want": 1.229,
+   "got": 1.2291
+  },
+  "d(C,F)": {
+   "want": 1.656,
+   "got": 1.6558
+  },
+  "d(C,G)": {
+   "want": 1.656,
+   "got": 1.6558
+  },
+  "d(C,Fm)": {
+   "want": 1.824,
+   "got": 1.8241
+  },
+  "d(Cm,D)": {
+   "want": 3.26,
+   "got": 3.2599
+  },
+  "pairs_below_cut": 36,
+  "same_pairs_with_phi5_stretched_0_7365": true,
+  "pairs_are_exactly_PLR": true,
+  "smallest_distances": [
+   1.0649,
+   1.2291,
+   1.6558,
+   1.8241
+  ]
+ },
+ "loops": {
+  "I-V-vi-IV": {
+   "steps": {
+    "I->V": 1.6558,
+    "V->vi": 2.4981,
+    "vi->IV": 1.2291,
+    "IV->I": 1.6558
+   },
+   "PLR": 0.25,
+   "TS": 1.7597
+  },
+  "I-IV-V": {
+   "steps": {
+    "I->IV": 1.6558,
+    "IV->V": 3.3115,
+    "V->I": 1.6558
+   },
+   "PLR": 0.0,
+   "TS": 2.2077
+  },
+  "I-vi": {
+   "steps": {
+    "I->vi": 1.0649,
+    "vi->I": 1.0649
+   },
+   "PLR": 1.0,
+   "TS": 1.0649
+  },
+  "IV-V": {
+   "steps": {
+    "IV->V": 3.3115,
+    "V->IV": 3.3115
+   },
+   "PLR": 0.0,
+   "TS": 3.3115
+  },
+  "I-iii-vi-IV": {
+   "steps": {
+    "I->iii": 1.2291,
+    "iii->vi": 1.6558,
+    "vi->IV": 1.2291,
+    "IV->I": 1.6558
+   },
+   "PLR": 0.5,
+   "TS": 1.4424
+  }
+ },
+ "shape": {
+  "songs": 2672,
+  "plr_undefined": 0,
+  "moves": 60579,
+  "moves_skipped_undefined_phase": 1801,
+  "moves_skipped_zero_step": 37,
+  "moves_kept": 58741,
+  "PLR_p10_p50_p90": [
+   0.0,
+   0.2222,
+   0.5
+  ],
+  "share_zero_PLR_songs_all": 0.1823
+ },
+ "gate": {
+  "clip_to_clip": {
+   "spearman": 0.3485,
+   "pairs": 1279,
+   "threshold": 0.2,
+   "passed": true,
+   "chair": 0.349,
+   "chair_pairs": 1279
+  },
+  "overlap": {
+   "spearman": {
+    "mel_ic_mean": -0.0627,
+    "mel_h_mean": -0.0211,
+    "mel_cheung": -0.0052,
+    "ch_ic_mean": 0.12,
+    "ch_h_mean": 0.0042,
+    "ch_cheung": 0.0305,
+    "mel_rep": 0.0924,
+    "ch_rep": 0.0104,
+    "rhy_ic_mean": -0.0231,
+    "rhy_h_mean": 0.017,
+    "rhy_cheung": -0.0027,
+    "sync_per_note": 0.0329,
+    "rest_share": -0.0415,
+    "phrase_mean": 0.0585,
+    "phrase_on_downbeat": -0.0078,
+    "density": 0.0268,
+    "length_variety": 0.003,
+    "distinct chords": 0.1281,
+    "links": 0.1376,
+    "clips": 0.0643
+   },
+   "largest": [
+    "links",
+    0.1376
+   ],
+   "threshold": 0.7,
+   "passed": true
+  },
+  "printed_deciding_nothing": {
+   "TS": -0.6957,
+   "FP": -0.1888,
+   "D3": 0.2588
+  },
+  "passed": true
+ },
+ "outcome_joined": true,
+ "rows_with_first_year": 2672,
+ "songs": 1924,
+ "artists": 420,
+ "se": 0.018,
+ "power": 0.0716,
+ "primary": {
+  "beta": 0.0065,
+  "se": 0.018,
+  "p": 0.71608,
+  "ci95": [
+   -0.0287,
+   0.0418
+  ],
+  "ch_rep": {
+   "beta": -0.0618,
+   "se": 0.0165,
+   "p": 0.0002
+  },
+  "ch_ic_mean": {
+   "beta": -0.0897,
+   "se": 0.0216,
+   "p": 0.0
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 932,
+   "artists": 205,
+   "beta": 0.0146,
+   "se": 0.0246,
+   "p": 0.5543
+  },
+  {
+   "half": 1,
+   "songs": 992,
+   "artists": 215,
+   "beta": -0.0042,
+   "se": 0.024,
+   "p": 0.8617
+  }
+ ],
+ "deciding_nothing": {
+  "TS_in_place_of_PLR": {
+   "beta": -0.0018,
+   "se": 0.0182,
+   "p": 0.92,
+   "songs": 1924
+  },
+  "covers_within_5_years": {
+   "beta": 0.0051,
+   "se": 0.0259,
+   "p": 0.8441,
+   "songs": 1924
+  },
+  "covers_after_10_years": {
+   "beta": 0.0083,
+   "se": 0.0161,
+   "p": 0.6056,
+   "songs": 1924
+  },
+  "without_ch_ic_mean": {
+   "beta": 0.001,
+   "se": 0.0186,
+   "p": 0.9563,
+   "songs": 1924
+  },
+  "skipped_moves": {
+   "undefined_phase": 1801,
+   "zero_step": 37,
+   "of_moves": 60579
+  },
+  "share_zero_PLR_songs": {
+   "all_songs": 0.1823,
+   "model_songs": 0.1741
+  },
+  "median_covers_all_early_late": [
+   7.0,
+   1.0,
+   3.0
+  ],
+  "spearman_PLR_TS_model_songs": -0.6884
+ },
+ "cr1_vs_statsmodels_max_rel_gap": 1.0526692863982352e-14,
+ "verdict": "kill",
+ "runtime_s": 4
+}

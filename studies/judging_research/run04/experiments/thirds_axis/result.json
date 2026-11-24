@@ -1,0 +1,244 @@
+{
+ "rule": "PREDICTION.md, commit 00ab557",
+ "alpha": 0.01,
+ "prediction_G3": 0.02,
+ "prediction_I1": -0.025,
+ "unit_values": {
+  "I": {
+   "want": 0.745,
+   "got": 0.7454
+  },
+  "I-vi": {
+   "want": 0.667,
+   "got": 0.6667
+  },
+  "I-V-vi-IV": {
+   "want": 0.333,
+   "got": 0.3333
+  },
+  "I-IV-V": {
+   "want": 0.248,
+   "got": 0.2485
+  },
+  "ii-V-I": {
+   "want": 0.111,
+   "got": 0.1111
+  },
+  "IV-V": {
+   "want": 0.0,
+   "got": 0.0
+  }
+ },
+ "worked_example": {
+  "chord_a3": {
+   "I": "+2+1i",
+   "IV": "+1-2i",
+   "V": "-1+2i",
+   "vi": "+2-1i",
+   "III": "+2+1i",
+   "bVII": "-2-1i"
+  },
+  "I-IV-V-I": {
+   "sum_a3": "+4+2i",
+   "abs_a3": 4.4721,
+   "a0": 12,
+   "D3": 0.3727
+  },
+  "I-vi-IV-V": {
+   "sum_a3": "+4+0i",
+   "abs_a3": 4.0,
+   "a0": 12,
+   "D3": 0.3333
+  },
+  "I-III": {
+   "sum_a3": "+4+2i",
+   "abs_a3": 4.4721,
+   "a0": 6,
+   "D3": 0.7454
+  },
+  "IV-V": {
+   "sum_a3": "+0+0i",
+   "abs_a3": 0.0,
+   "a0": 6,
+   "D3": 0.0
+  },
+  "bVII-I": {
+   "sum_a3": "+0-0i",
+   "abs_a3": 0.0,
+   "a0": 6,
+   "D3": 0.0
+  }
+ },
+ "invariance_check": [
+  {
+   "clip": "LAgQEzEJgyO",
+   "D3": 0.0456,
+   "D3_transformed": 0.0456,
+   "diff": 6.314393452555578e-16
+  },
+  {
+   "clip": "yvmrdevVxOW",
+   "D3": 0.3333,
+   "D3_transformed": 0.3333,
+   "diff": 1.6653345369377348e-16
+  },
+  {
+   "clip": "JNgqeDNegrz",
+   "D3": 0.2556,
+   "D3_transformed": 0.2556,
+   "diff": 1.6653345369377348e-16
+  }
+ ],
+ "shape": {
+  "songs": 2672,
+  "undefined": 0,
+  "D3_p10_p50_p90": [
+   0.153,
+   0.3018,
+   0.4694
+  ],
+  "share_D3_below_0_05_all_songs": 0.0116
+ },
+ "gate": {
+  "clip_to_clip": {
+   "spearman": 0.31759466363303646,
+   "pairs": 1281,
+   "threshold": 0.2,
+   "passed": true,
+   "chair": 0.318,
+   "chair_pairs": 1281
+  },
+  "overlap": {
+   "spearman": {
+    "mel_ic_mean": -0.1078,
+    "mel_h_mean": -0.0246,
+    "mel_cheung": -0.0431,
+    "ch_ic_mean": -0.2498,
+    "ch_h_mean": -0.026,
+    "ch_cheung": -0.0241,
+    "mel_rep": 0.1465,
+    "ch_rep": 0.0721,
+    "rhy_ic_mean": -0.032,
+    "rhy_h_mean": 0.0158,
+    "rhy_cheung": 0.0035,
+    "sync_per_note": -0.026,
+    "rest_share": -0.0426,
+    "phrase_mean": 0.0728,
+    "phrase_on_downbeat": 0.0475,
+    "density": 0.0013,
+    "length_variety": -0.0148,
+    "distinct chords": -0.2265,
+    "links": -0.2072,
+    "clips": 0.0285
+   },
+   "largest": [
+    "ch_ic_mean",
+    -0.2498
+   ],
+   "threshold": 0.7,
+   "passed": true
+  },
+  "deciding_nothing_spearman": {
+   "TS": -0.338,
+   "PLR": 0.2588,
+   "FP": 0.0347
+  },
+  "passed": true
+ },
+ "renamed_check": {
+  "largest_single_overlap": [
+   "ch_ic_mean",
+   -0.2498
+  ],
+  "r2_on_data_pack_and_size": 0.1346,
+  "r2_adding_FP_PLR_TS": 0.3852
+ },
+ "notes_side_power": {
+  "songs": 1924,
+  "artists": 420,
+  "residual_share_D3": 0.6432,
+  "residual_share_FP": 0.6786,
+  "se": 0.0185,
+  "power_p01": 0.0677,
+  "power_p05": 0.1911
+ },
+ "outcome_joined": true,
+ "rows_with_first_year": 2672,
+ "songs": 1924,
+ "artists": 420,
+ "se": 0.0172,
+ "power": 0.0788,
+ "power_I1": 0.1306,
+ "primary": {
+  "beta": 0.006,
+  "se": 0.0172,
+  "p": 0.72726,
+  "ci95": [
+   -0.0277,
+   0.0397
+  ],
+  "ch_rep": {
+   "beta": -0.0612,
+   "se": 0.0166,
+   "p": 0.0002
+  },
+  "ch_ic_mean": {
+   "beta": -0.0881,
+   "se": 0.0215,
+   "p": 0.0
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 932,
+   "artists": 205,
+   "beta": 0.0097,
+   "se": 0.0213,
+   "p": 0.6486
+  },
+  {
+   "half": 1,
+   "songs": 992,
+   "artists": 215,
+   "beta": 0.0016,
+   "se": 0.0259,
+   "p": 0.9492
+  }
+ ],
+ "deciding_nothing": {
+  "covers_within_5_years": {
+   "beta": -0.0011,
+   "se": 0.0176,
+   "p": 0.95,
+   "songs": 1924
+  },
+  "covers_after_10_years": {
+   "beta": 0.0045,
+   "se": 0.0157,
+   "p": 0.7771,
+   "songs": 1924
+  },
+  "without_ch_ic_mean": {
+   "beta": 0.0157,
+   "se": 0.0176,
+   "p": 0.3713,
+   "songs": 1924
+  },
+  "with_PLR_added": {
+   "beta": 0.004,
+   "se": 0.0185,
+   "p": 0.8282,
+   "songs": 1924
+  },
+  "share_D3_below_0_05_model_songs": 0.0114,
+  "share_D3_below_0_05_all_songs": 0.0116,
+  "median_covers_early_late": [
+   7.0,
+   1.0,
+   3.0
+  ]
+ },
+ "verdict": "both killed",
+ "runtime_s": 6
+}
