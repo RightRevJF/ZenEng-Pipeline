@@ -10,7 +10,7 @@ A line-by-line reading of song 49 adds one thing: the larger fall is in the vers
 
 749.145 and 749.146 are closed. The within-artist result holds, narrowly, and is read correctly.
 
-Added since (running tab, 22 November): the fresh-songs test came out same direction, not settled, and the maintainer's own run is the test of record (749.158); the chord writer loops more than kept songs in every kind, so the loop-less trial goes ahead, its rule written first (749.159). Song 62 (He Remembered Today) was written with the verses' chords walking by hand: it gave the nearest pick to the kept songs of any run (749.164), and it showed two things the engine cannot yet see: holding the tune plain whitened its pitches (749.165), and a pink tune and a plain one pulled apart (749.166). The kept songs say both can hold (749.170).
+Added since (running tab, 22 November): the fresh-songs test came out same direction, not settled, and the maintainer's own run is the test of record (749.158); the chord writer loops more than kept songs in every kind, so the loop-less trial goes ahead, its rule written first (749.159). Song 62 (He Remembered Today) was written with the verses' chords walking by hand: it gave the nearest pick to the kept songs of any run (749.164), and it showed two things the engine cannot yet see: holding the tune plain whitened its pitches (749.165), and a pink tune and a plain one pulled apart (749.166). The kept songs say both can hold (749.170). The fixes the writer's side could write are ready to test as flagged code (see 'Proposed code to test (v47)').
 
 A fresh hold-out is banked: song 63, We Saved You a Plate (`songs/p73/lyric63.json`; soul, 4/4, 120, tenor, piano). Its lyric is locked and mouth-tested; nothing of the engine has been run on it, not even the room check.
 
@@ -98,7 +98,7 @@ One chosen tune cannot separate the draw from the form.
 **Problem.** A song 62 design tune passed every gate while less plain than 85 of 100 kept tunes, against 749.18.
 **Evidence.** `songs/p72/test_report62.md`, the scorecard.
 **Fix.** Not a ceiling on its own: 749.165 shows that on song 62 it whitened the sung pitches. If taken up, only together with 749.165's floor on the pitches' long-range order, behind a flag.
-**Check.** Songs 59 and 61 with both on: survivors, words' fit and the pitch DFA reported.
+**Check.** Songs 58, 60, 61 and 62 with both on (never 59, the sealed hold-out): survivors, words' fit and the pitch DFA reported.
 
 ### 749.162 The title line's long note can fall on an unstressed syllable
 **Problem.** In two song 62 picks the title's long note fell on "re-" and on "-bered" of "remembered"; the words' fit did not catch it on the line that matters most.
@@ -122,7 +122,7 @@ One chosen tune cannot separate the draw from the form.
 **Problem.** With the surprise ceiling (749.161), song 62's pick put 79% of its sung syllables on three pitches, and the writer's own scorer read its pitches as the whitest in the corpus: N 325, DFA-1 0.774, DFA-2 0.796, below the band on both orders; three pitches 82.5% of the attacks; the score held at 9.0.
 **Evidence.** Reproduced on the 326 sung syllables with `lib/luthier/scaling.py` (it reads higher): the pick 0.846 / 0.920, three pitches 79%; the engine's own draw 0.959 / 1.050, 60%; the first design tune, before the ceiling, 0.900 / 0.926, 52%. Two independent implementations on the writer's side agree with each other exactly. `songs/p72/intake.py` LOG.
 **Fix.** A floor on the sung pitches' long-range order (DFA, orders 1 and 2, on the syllables' pitches, melisma notes left out) and a ceiling on the share of the three commonest pitches, read as gates; the band to come from the writer's scorer, so the engine reads what he reads.
-**Check.** The kept songs' readings on the same series give the band's quartiles; songs 59, 61 and 62 rerun with the gate on, survivors reported.
+**Check.** The kept songs' readings on the same series give the band's quartiles; songs 58, 60, 61 and 62 rerun with the gate on (never 59), survivors reported.
 
 ### 749.166 On song 62, a pink tune and a plain tune pulled in opposite directions
 **Problem.** With 749.165's gate (DFA at least 0.95 and 1.0, three pitches at most 65%) in place of the surprise ceiling, 1 build in 9000 survived. It was pink (0.967 / 1.069, three pitches 59%) and restless: less plain than 77 of 100 kept tunes, words' fit 0.334 (from 0.401), judge 7 distance 1.86 (from 1.66).
@@ -152,7 +152,30 @@ One chosen tune cannot separate the draw from the form.
 **Problem.** 749.166 asked whether a tune can be both plain and pink.
 **Evidence.** `studies/plain_and_pink` (rule c6301aa, then the reading). On the 167 kept songs, surprise and pitch DFA-1 are unrelated (rho -0.05, p .51). 47 (28%) sit at or under the median of surprise and at or over the median of DFA-1. The share of notes on three pitches goes with both: plainer (rho -0.45) and whiter (-0.45). Song 62: the engine's own draw is in the region (surprise 28th percentile, DFA-1 64th); the first edition is not (three pitches at the 85th percentile, DFA-1 43rd).
 **Fix.** The melody gates read together, as the region: surprise at or under the kept median (3.18 bits), DFA-1 at least 0.95 and DFA-2 at least 1.05, three-pitch share at most 0.69. Behind a flag; read with the writer's scorer's band when it comes.
-**Check.** Songs 59, 61 and 62 rerun with it on: survivors, and the share of picks in the region. Song 62's second edition drawn under it.
+**Check.** Songs 58, 60, 61 and 62 rerun with it on (never 59): survivors, and the share of picks in the region. Song 62's second edition drawn under it.
+
+## Proposed code to test (v47)
+
+The writer's side has written the fixes it could as flagged patches, so you can test each one and keep it or drop it: `lib/luthier/proposed_v47.py` (the patches) and `lib/luthier/proposed_v47_trial.py` (a run with them, and the readings each is judged by). Nothing changes the engine unless `apply()` is called. The trial script refuses songs 59, 50 and 63.
+
+| Flag | Finding | What it does | First reading (writer's side, 24 November) |
+|---|---|---|---|
+| `octave` | 749.160 | gate: no leap past an octave inside a line | kills 12% to 15% of builds on songs 61 and 62 (464 and 374 of 3000): the zigzag is common, not rare |
+| `region` | 749.165, 749.170 | gate: surprise at most the kept median, pitch DFA at least 0.95 (order 1) and 1.05 (order 2), three pitches at most 69%, on the sung syllables | both picks inside the region: song 62 surprise 2.81, DFA 1.11 / 1.10, three pitches 57%; song 61 2.68, 1.05 / 1.22, 67% |
+| `title_stress` | 749.162 | gate: the title line's longest note on a stressed syllable | kills 3% (84 and 95 of 3000) |
+| `no_blue` | 749.168 | the blue-note draw off for the song | no lowered thirds in either pick |
+| `loop_less` | 749.159 (960) | verse and bridge structures only from kept sections at or below the kept median of chord repetition | over 1,000 drafts a kind: verse median 0.20 major, 0.18 minor (kept 0.333); bridge 0.00 major (kept 0.00), 0.14 minor (kept 0.25); chorus unchanged (`studies/loop_less_reading/reading_v47.json`). Song 62's verse 0.00; song 61's verse 0.64 (see below) |
+| `vary_returns()` | 749.167 | on a finished record: a section returning note for note lifts one held note in each line after its first | song 62: one note lifted (the second refrain's 'nave'); song 61 has no section returning whole |
+
+**All flags together, 3000 builds each, 958 off, PYTHONHASHSEED 0** (`studies/proposed_v47/`):
+- Song 62: 10 survive; pick af510cb41599, key Db; in the region; verse repetition 0.00; words' fit 0.352; judge 7 distance 2.37.
+- Song 61: 7 survive; pick 94f67bf242f2, key G; in the region; words' fit 0.208 (under the kept 25th, 0.248: a cost to watch); judge 7 distance 2.13.
+
+**Two things the first readings show.**
+- The flags cost survivors: 7 to 10 of 3000 with all on. Runs of 9000 or more will be needed for a real choice.
+- `loop_less` filters the kept templates by their chords, but the writer draws new chords into them, so a song can still loop (song 61's 12-bar verse, 0.64). Two ways to try: filter by the template's own repeat structure (share of bars that return), or gate the written section's chord repetition directly.
+
+**How to test.** `python3 lib/luthier/proposed_v47_trial.py songs/pNN/lyricNN.json 9000 --all --vary-returns` on songs 58, 60, 61 and 62, each flag also alone. Keep a flag if: its own reading moves as stated; the stage 4 held-out readings stay within their floors (`loop_less`); words' fit stays at or over the kept 25th on the songs run; and survivors stay at 20 or more in 9000.
 
 ## Closed
 
