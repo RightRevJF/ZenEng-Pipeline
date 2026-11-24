@@ -12,6 +12,8 @@ A line-by-line reading of song 49 adds one thing: the larger fall is in the vers
 
 Added since (running tab, 22 November): the fresh-songs test came out same direction, not settled, and the maintainer's own run is the test of record (749.158); the chord writer loops more than kept songs in every kind, so the loop-less trial goes ahead, its rule written first (749.159). Song 62 (He Remembered Today) was written with the verses' chords walking by hand: it gave the nearest pick to the kept songs of any run (749.164), and it showed two things the engine cannot yet see: holding the tune plain whitened its pitches (749.165), and a pink tune and a plain one pulled apart (749.166). The kept songs say both can hold (749.170).
 
+A fresh hold-out is banked: song 63, We Saved You a Plate (`songs/p73/lyric63.json`; soul, 4/4, 120, tenor, piano). Its lyric is locked and mouth-tested; nothing of the engine has been run on it, not even the room check.
+
 ## Items
 
 ### 749.153 958 off by default; the form returns only as a trial weighted by kept shares at the song's tempo
