@@ -1,6 +1,6 @@
 # Luthier list for v46 (since v45)
 
-22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.170; next fix 959 (960 proposed in 749.159).
+22 November 2026. Luthier v45 (958, song 49 as a second hold-out, 749.145, 749.146) is reviewed (`lib/luthier/REVIEW_stage30.md`) and merged into main at 06829b1. Every kept table, every record (song 49 with and without the form, song 60's v45 record), `soundness.json`, `neighbour_v45.json` and the lever-range study reproduce byte for byte. Both checks pass. Song 58 has no new edition (see 749.153). Next finding 749.171; next fix 959 (960 proposed in 749.159).
 
 ## In short
 
@@ -10,7 +10,7 @@ A line-by-line reading of song 49 adds one thing: the larger fall is in the vers
 
 749.145 and 749.146 are closed. The within-artist result holds, narrowly, and is read correctly.
 
-Added since (running tab, 22 November): the fresh-songs test came out same direction, not settled, and the maintainer's own run is the test of record (749.158); the chord writer loops more than kept songs in every kind, so the loop-less trial goes ahead, its rule written first (749.159). Song 62 (He Remembered Today) was written with the verses' chords walking by hand: it gave the nearest pick to the kept songs of any run (749.164), and it showed two things the engine cannot yet see: holding the tune plain whitened its pitches (749.165), and a pink tune and a plain one pulled apart (749.166).
+Added since (running tab, 22 November): the fresh-songs test came out same direction, not settled, and the maintainer's own run is the test of record (749.158); the chord writer loops more than kept songs in every kind, so the loop-less trial goes ahead, its rule written first (749.159). Song 62 (He Remembered Today) was written with the verses' chords walking by hand: it gave the nearest pick to the kept songs of any run (749.164), and it showed two things the engine cannot yet see: holding the tune plain whitened its pitches (749.165), and a pink tune and a plain one pulled apart (749.166). The kept songs say both can hold (749.170).
 
 ## Items
 
@@ -125,8 +125,8 @@ One chosen tune cannot separate the draw from the form.
 ### 749.166 On song 62, a pink tune and a plain tune pulled in opposite directions
 **Problem.** With 749.165's gate (DFA at least 0.95 and 1.0, three pitches at most 65%) in place of the surprise ceiling, 1 build in 9000 survived. It was pink (0.967 / 1.069, three pitches 59%) and restless: less plain than 77 of 100 kept tunes, words' fit 0.334 (from 0.401), judge 7 distance 1.86 (from 1.66).
 **Evidence.** `songs/p72/run_d/design_g5.log`; `songs/p72/design62.py` (gate 5).
-**Fix.** No engine change yet. A question for the research: across the kept songs, how do melody surprise and the pitches' DFA go together? If kept songs manage both, the writer has a target region; if they trade, the gates must choose a point on the trade, not both ends.
-**Check.** The kept songs' scatter of the two, and where songs 52 to 62 fall in it.
+**Fix.** Answered by 749.170: kept songs do not trade the two, and 28% manage both. The gates read together, with the region's band.
+**Check.** As 749.170.
 
 ### 749.167 The second refrain comes back note for note
 **Problem.** Song 62's second refrain repeats the first exactly; the writer's scorer counts that against the song, and it flattens the pitches' long-range order. 839 lifts one held note in a returning line, but fired on about one copied line in four across the builds (9,066 of 36,000) and not at all in the pick.
@@ -145,6 +145,12 @@ One chosen tune cannot separate the draw from the form.
 **Evidence.** `studies/judging_checks/fresh_songs` (test of record, -0.028) and `studies/fresh_songs` (-0.060); 749.158.
 **Fix.** A one-line ledger in `studies/judging_data/README.md`: who is running which test on a hold-out, written before the run.
 **Check.** The ledger exists and each test against a hold-out names its line in it.
+
+### 749.170 Kept songs do not trade plainness for pink; three-pitch concentration is the cheap road that whitens
+**Problem.** 749.166 asked whether a tune can be both plain and pink.
+**Evidence.** `studies/plain_and_pink` (rule c6301aa, then the reading). On the 167 kept songs, surprise and pitch DFA-1 are unrelated (rho -0.05, p .51). 47 (28%) sit at or under the median of surprise and at or over the median of DFA-1. The share of notes on three pitches goes with both: plainer (rho -0.45) and whiter (-0.45). Song 62: the engine's own draw is in the region (surprise 28th percentile, DFA-1 64th); the first edition is not (three pitches at the 85th percentile, DFA-1 43rd).
+**Fix.** The melody gates read together, as the region: surprise at or under the kept median (3.18 bits), DFA-1 at least 0.95 and DFA-2 at least 1.05, three-pitch share at most 0.69. Behind a flag; read with the writer's scorer's band when it comes.
+**Check.** Songs 59, 61 and 62 rerun with it on: survivors, and the share of picks in the region. Song 62's second edition drawn under it.
 
 ## Closed
 
