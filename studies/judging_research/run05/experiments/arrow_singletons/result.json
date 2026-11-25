@@ -1,0 +1,829 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 2bfd4ca (written after seeing tonight's seven results)",
+ "test": "arrow_singletons (A on songs by single-song artists, cross-song OLS, HC1)",
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "prediction_pp_per_sd": 0.6,
+ "kill_below": 0.2,
+ "threshold_p": 0.00625,
+ "threshold_z": 2.7344,
+ "fake_outcome": false,
+ "status_note": "After-seeing-results test: a pass is a lead needing confirmation on songs not yet used, never a finding.",
+ "unit_values": [
+  {
+   "progression": "I-V-vi-IV x4",
+   "changes": 15,
+   "A": 1.0,
+   "G2": 0.0,
+   "reproduced": true
+  },
+  {
+   "progression": "I-IV x8",
+   "changes": 15,
+   "A": 0.0667,
+   "G2": 0.9333,
+   "reproduced": true
+  },
+  {
+   "progression": "I-V-I-IV x4",
+   "changes": 15,
+   "A": 0.0667,
+   "G2": 0.4667,
+   "reproduced": true
+  }
+ ],
+ "notes": {
+  "singleton_songs": 3610,
+  "singleton_artists": 3610,
+  "half_songs": [
+   1852,
+   1758
+  ],
+  "raw_clips_missing": 0,
+  "songs_with_A": 3229,
+  "pct_10_50_90": [
+   0.3333,
+   0.8644,
+   1.0
+  ],
+  "share_A_eq_1": 0.4131,
+  "rho_A_ch_rep": 0.0408,
+  "rho_A_G2": -0.957
+ },
+ "gate": {
+  "measure": "A",
+  "songs_with_value": 3229,
+  "clip_pairs": 896,
+  "clip_to_clip": 0.3386,
+  "stab_threshold": 0.2,
+  "overlap_largest": [
+   "ln_chg",
+   -0.1867
+  ],
+  "overlap_threshold": 0.7,
+  "overlap_all": {
+   "mel_ic_mean": 0.0222,
+   "mel_h_mean": 0.0288,
+   "mel_cheung": -0.0164,
+   "ch_ic_mean": 0.1435,
+   "ch_h_mean": 0.1698,
+   "ch_cheung": -0.0225,
+   "mel_rep": 0.0481,
+   "ch_rep": 0.0408,
+   "rhy_ic_mean": -0.0199,
+   "rhy_h_mean": -0.0209,
+   "rhy_cheung": 0.0106,
+   "sync_per_note": 0.0162,
+   "rest_share": -0.0367,
+   "phrase_mean": 0.0023,
+   "phrase_on_downbeat": 0.0015,
+   "density": 0.0519,
+   "length_variety": -0.0466,
+   "n_ch": -0.1643,
+   "beats": -0.0904,
+   "clips_per_song": -0.0861,
+   "ln_chg": -0.1867
+  },
+  "passed": true
+ },
+ "columns": {
+  "all": [
+   "z_A",
+   "z_mel_ic_mean",
+   "z_mel_h_mean",
+   "z_mel_cheung",
+   "z_ch_ic_mean",
+   "z_ch_h_mean",
+   "z_ch_cheung",
+   "z_mel_rep",
+   "z_ch_rep",
+   "z_rhy_ic_mean",
+   "z_rhy_h_mean",
+   "z_rhy_cheung",
+   "z_sync_per_note",
+   "z_rest_share",
+   "z_phrase_mean",
+   "z_phrase_on_downbeat",
+   "z_density",
+   "z_length_variety",
+   "ln_chg",
+   "nch_bin1",
+   "nch_bin2",
+   "nch_bin3",
+   "nch_bin4",
+   "nch_bin5",
+   "nch_bin6",
+   "nch_bin7",
+   "nch_bin8",
+   "nch_bin9",
+   "clips2",
+   "clips3",
+   "clips4p",
+   "ln_beats",
+   "words1",
+   "words2",
+   "words3",
+   "words4",
+   "parens",
+   "rep_title",
+   "intercept"
+  ],
+  "dropped_no_variation": [],
+  "dropped_as_reference_for_collinearity": "nch_bin1",
+  "used": [
+   "z_A",
+   "z_mel_ic_mean",
+   "z_mel_h_mean",
+   "z_mel_cheung",
+   "z_ch_ic_mean",
+   "z_ch_h_mean",
+   "z_ch_cheung",
+   "z_mel_rep",
+   "z_ch_rep",
+   "z_rhy_ic_mean",
+   "z_rhy_h_mean",
+   "z_rhy_cheung",
+   "z_sync_per_note",
+   "z_rest_share",
+   "z_phrase_mean",
+   "z_phrase_on_downbeat",
+   "z_density",
+   "z_length_variety",
+   "ln_chg",
+   "nch_bin2",
+   "nch_bin3",
+   "nch_bin4",
+   "nch_bin5",
+   "nch_bin6",
+   "nch_bin7",
+   "nch_bin8",
+   "nch_bin9",
+   "clips2",
+   "clips3",
+   "clips4p",
+   "ln_beats",
+   "words1",
+   "words2",
+   "words3",
+   "words4",
+   "parens",
+   "rep_title",
+   "intercept"
+  ],
+  "rank": 38
+ },
+ "notes_side_power": {
+  "residual_share": 0.9208,
+  "songs": 3223,
+  "se_bound_pp": 0.7604,
+  "power_p00625": 0.0261,
+  "power_p05": 0.1238,
+  "kill_fires_if_pred_true": 0.2994,
+  "kill_fires_if_zero": 0.6037
+ },
+ "counts": {
+  "N": 3212,
+  "y_foreign_100": 464,
+  "share_y_foreign": 0.1445,
+  "y_100_in_model_rows": 489,
+  "singleton_songs": 3610,
+  "dropped_no_A": 381,
+  "dropped_measure_missing": 6,
+  "dropped_y_foreign_nan": 11,
+  "drop_reasons": {
+   "no own set": 11
+  },
+  "half_N": [
+   1631,
+   1581
+  ]
+ },
+ "power": {
+  "se": 0.6696,
+  "power_p00625": 0.0332,
+  "power_p05": 0.1458,
+  "kill_fires_if_pred_true": 0.2751,
+  "kill_fires_if_zero": 0.6174
+ },
+ "primary": {
+  "beta": -1.7458,
+  "se": 0.6696,
+  "p": 0.009123,
+  "ci95": [
+   -3.0582,
+   -0.4335
+  ],
+  "N": 3212,
+  "K": 38,
+  "rank": 38,
+  "all_columns": {
+   "z_A": {
+    "beta": -1.7458,
+    "se": 0.6696,
+    "p": 0.009123,
+    "ci95": [
+     -3.0582,
+     -0.4335
+    ]
+   },
+   "z_mel_ic_mean": {
+    "beta": -0.2691,
+    "se": 0.7386,
+    "p": 0.7156,
+    "ci95": [
+     -1.7168,
+     1.1785
+    ]
+   },
+   "z_mel_h_mean": {
+    "beta": -1.1795,
+    "se": 0.6985,
+    "p": 0.09132,
+    "ci95": [
+     -2.5486,
+     0.1897
+    ]
+   },
+   "z_mel_cheung": {
+    "beta": 0.4892,
+    "se": 0.6765,
+    "p": 0.4696,
+    "ci95": [
+     -0.8367,
+     1.8151
+    ]
+   },
+   "z_ch_ic_mean": {
+    "beta": -1.311,
+    "se": 0.9371,
+    "p": 0.1618,
+    "ci95": [
+     -3.1478,
+     0.5258
+    ]
+   },
+   "z_ch_h_mean": {
+    "beta": 1.1092,
+    "se": 0.9329,
+    "p": 0.2345,
+    "ci95": [
+     -0.7193,
+     2.9376
+    ]
+   },
+   "z_ch_cheung": {
+    "beta": 0.2679,
+    "se": 0.648,
+    "p": 0.6793,
+    "ci95": [
+     -1.0022,
+     1.538
+    ]
+   },
+   "z_mel_rep": {
+    "beta": -0.1858,
+    "se": 0.8095,
+    "p": 0.8184,
+    "ci95": [
+     -1.7724,
+     1.4008
+    ]
+   },
+   "z_ch_rep": {
+    "beta": 0.0913,
+    "se": 0.8127,
+    "p": 0.9106,
+    "ci95": [
+     -1.5016,
+     1.6842
+    ]
+   },
+   "z_rhy_ic_mean": {
+    "beta": -1.8958,
+    "se": 0.8197,
+    "p": 0.02073,
+    "ci95": [
+     -3.5023,
+     -0.2892
+    ]
+   },
+   "z_rhy_h_mean": {
+    "beta": 1.2086,
+    "se": 1.0189,
+    "p": 0.2356,
+    "ci95": [
+     -0.7884,
+     3.2056
+    ]
+   },
+   "z_rhy_cheung": {
+    "beta": -0.9229,
+    "se": 0.6151,
+    "p": 0.1335,
+    "ci95": [
+     -2.1285,
+     0.2826
+    ]
+   },
+   "z_sync_per_note": {
+    "beta": -0.0992,
+    "se": 0.5979,
+    "p": 0.8682,
+    "ci95": [
+     -1.2712,
+     1.0727
+    ]
+   },
+   "z_rest_share": {
+    "beta": 3.9592,
+    "se": 0.9252,
+    "p": 1.875e-05,
+    "ci95": [
+     2.1458,
+     5.7726
+    ]
+   },
+   "z_phrase_mean": {
+    "beta": -1.7774,
+    "se": 0.7312,
+    "p": 0.01506,
+    "ci95": [
+     -3.2105,
+     -0.3443
+    ]
+   },
+   "z_phrase_on_downbeat": {
+    "beta": -0.9259,
+    "se": 0.7292,
+    "p": 0.2042,
+    "ci95": [
+     -2.3552,
+     0.5033
+    ]
+   },
+   "z_density": {
+    "beta": -0.3406,
+    "se": 1.0077,
+    "p": 0.7354,
+    "ci95": [
+     -2.3156,
+     1.6345
+    ]
+   },
+   "z_length_variety": {
+    "beta": 1.5142,
+    "se": 0.8672,
+    "p": 0.08078,
+    "ci95": [
+     -0.1854,
+     3.2139
+    ]
+   },
+   "ln_chg": {
+    "beta": -2.2773,
+    "se": 5.1491,
+    "p": 0.6583,
+    "ci95": [
+     -12.3695,
+     7.8149
+    ]
+   },
+   "nch_bin2": {
+    "beta": 2.7818,
+    "se": 5.1909,
+    "p": 0.592,
+    "ci95": [
+     -7.3924,
+     12.9559
+    ]
+   },
+   "nch_bin3": {
+    "beta": 4.7726,
+    "se": 5.7757,
+    "p": 0.4086,
+    "ci95": [
+     -6.5479,
+     16.093
+    ]
+   },
+   "nch_bin4": {
+    "beta": 5.5045,
+    "se": 6.3643,
+    "p": 0.3871,
+    "ci95": [
+     -6.9695,
+     17.9784
+    ]
+   },
+   "nch_bin5": {
+    "beta": 5.2859,
+    "se": 6.8488,
+    "p": 0.4402,
+    "ci95": [
+     -8.1377,
+     18.7096
+    ]
+   },
+   "nch_bin6": {
+    "beta": 8.4895,
+    "se": 7.6494,
+    "p": 0.2671,
+    "ci95": [
+     -6.5034,
+     23.4824
+    ]
+   },
+   "nch_bin7": {
+    "beta": 7.1059,
+    "se": 8.8309,
+    "p": 0.421,
+    "ci95": [
+     -10.2026,
+     24.4143
+    ]
+   },
+   "nch_bin8": {
+    "beta": 5.5778,
+    "se": 9.7038,
+    "p": 0.5654,
+    "ci95": [
+     -13.4417,
+     24.5972
+    ]
+   },
+   "nch_bin9": {
+    "beta": 8.9503,
+    "se": 11.6163,
+    "p": 0.441,
+    "ci95": [
+     -13.8176,
+     31.7183
+    ]
+   },
+   "clips2": {
+    "beta": 10.2148,
+    "se": 3.9072,
+    "p": 0.008939,
+    "ci95": [
+     2.5568,
+     17.8728
+    ]
+   },
+   "clips3": {
+    "beta": 6.7064,
+    "se": 5.9376,
+    "p": 0.2587,
+    "ci95": [
+     -4.9313,
+     18.3441
+    ]
+   },
+   "clips4p": {
+    "beta": 1.6968,
+    "se": 8.0478,
+    "p": 0.833,
+    "ci95": [
+     -14.077,
+     17.4705
+    ]
+   },
+   "ln_beats": {
+    "beta": -5.0738,
+    "se": 2.0131,
+    "p": 0.01172,
+    "ci95": [
+     -9.0195,
+     -1.128
+    ]
+   },
+   "words1": {
+    "beta": -0.8289,
+    "se": 1.9218,
+    "p": 0.6662,
+    "ci95": [
+     -4.5956,
+     2.9378
+    ]
+   },
+   "words2": {
+    "beta": 4.4824,
+    "se": 1.8641,
+    "p": 0.01619,
+    "ci95": [
+     0.8287,
+     8.136
+    ]
+   },
+   "words3": {
+    "beta": 4.7269,
+    "se": 1.9548,
+    "p": 0.0156,
+    "ci95": [
+     0.8955,
+     8.5583
+    ]
+   },
+   "words4": {
+    "beta": 4.6596,
+    "se": 2.155,
+    "p": 0.0306,
+    "ci95": [
+     0.4358,
+     8.8834
+    ]
+   },
+   "parens": {
+    "beta": -11.8524,
+    "se": 1.5115,
+    "p": 4.446e-15,
+    "ci95": [
+     -14.8149,
+     -8.89
+    ]
+   },
+   "rep_title": {
+    "beta": 4.6764,
+    "se": 2.3117,
+    "p": 0.04308,
+    "ci95": [
+     0.1455,
+     9.2073
+    ]
+   },
+   "intercept": {
+    "beta": 28.6914,
+    "se": 11.6324,
+    "p": 0.01364,
+    "ci95": [
+     5.8919,
+     51.4908
+    ]
+   }
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 1631,
+   "y_foreign_100": 235,
+   "K": 38,
+   "beta": -0.2426,
+   "se": 0.8741,
+   "p": 0.7814,
+   "ci95": [
+    -1.9559,
+    1.4707
+   ]
+  },
+  {
+   "half": 1,
+   "songs": 1581,
+   "y_foreign_100": 229,
+   "K": 38,
+   "beta": -3.2915,
+   "se": 1.0105,
+   "p": 0.001125,
+   "ci95": [
+    -5.2721,
+    -1.3109
+   ]
+  }
+ ],
+ "logit": {
+  "coef": -0.1279,
+  "se": 0.0516,
+  "p": 0.01314,
+  "convergence_test": "max|score|/nobs < 1e-5",
+  "columns_abs_coef_over_5": [
+   [
+    "parens",
+    -7.1808
+   ]
+  ],
+  "all_columns": {
+   "z_A": [
+    -0.1279,
+    0.0516
+   ],
+   "z_mel_ic_mean": [
+    -0.0325,
+    0.0722
+   ],
+   "z_mel_h_mean": [
+    -0.1143,
+    0.0667
+   ],
+   "z_mel_cheung": [
+    0.066,
+    0.0613
+   ],
+   "z_ch_ic_mean": [
+    -0.1294,
+    0.0852
+   ],
+   "z_ch_h_mean": [
+    0.1134,
+    0.0794
+   ],
+   "z_ch_cheung": [
+    0.0179,
+    0.0592
+   ],
+   "z_mel_rep": [
+    -0.0012,
+    0.0726
+   ],
+   "z_ch_rep": [
+    -0.0009,
+    0.0696
+   ],
+   "z_rhy_ic_mean": [
+    -0.1617,
+    0.0773
+   ],
+   "z_rhy_h_mean": [
+    0.1378,
+    0.1037
+   ],
+   "z_rhy_cheung": [
+    -0.0527,
+    0.059
+   ],
+   "z_sync_per_note": [
+    -0.0252,
+    0.0606
+   ],
+   "z_rest_share": [
+    0.2571,
+    0.0747
+   ],
+   "z_phrase_mean": [
+    -0.383,
+    0.1066
+   ],
+   "z_phrase_on_downbeat": [
+    -0.0604,
+    0.0655
+   ],
+   "z_density": [
+    -0.0479,
+    0.1109
+   ],
+   "z_length_variety": [
+    0.1462,
+    0.0832
+   ],
+   "ln_chg": [
+    -0.2685,
+    0.5314
+   ],
+   "nch_bin2": [
+    0.2773,
+    0.3657
+   ],
+   "nch_bin3": [
+    0.4966,
+    0.4378
+   ],
+   "nch_bin4": [
+    0.563,
+    0.5102
+   ],
+   "nch_bin5": [
+    0.584,
+    0.5771
+   ],
+   "nch_bin6": [
+    0.8751,
+    0.6732
+   ],
+   "nch_bin7": [
+    0.8185,
+    0.7984
+   ],
+   "nch_bin8": [
+    0.6703,
+    0.9368
+   ],
+   "nch_bin9": [
+    0.8767,
+    1.123
+   ],
+   "clips2": [
+    0.8747,
+    0.3832
+   ],
+   "clips3": [
+    0.6973,
+    0.5989
+   ],
+   "clips4p": [
+    0.2512,
+    0.816
+   ],
+   "ln_beats": [
+    -0.4682,
+    0.1808
+   ],
+   "words1": [
+    -0.1033,
+    0.196
+   ],
+   "words2": [
+    0.3922,
+    0.1689
+   ],
+   "words3": [
+    0.4185,
+    0.1745
+   ],
+   "words4": [
+    0.3822,
+    0.1855
+   ],
+   "parens": [
+    -7.1808,
+    14.4716
+   ],
+   "rep_title": [
+    0.3921,
+    0.1688
+   ],
+   "intercept": [
+    -0.5518,
+    1.1314
+   ]
+  },
+  "columns_used": 38,
+  "newton_used": false,
+  "max_abs_score": 0.028632536489434868,
+  "nobs": 3212,
+  "converged": true,
+  "llf": -1224.7073988257698
+ },
+ "reported_deciding_nothing": {
+  "ch_rep_in_primary_model": {
+   "beta": 0.0913,
+   "se": 0.8127,
+   "p": 0.9106,
+   "ci95": [
+    -1.5016,
+    1.6842
+   ]
+  },
+  "without_the_15_other_measures": {
+   "beta": -1.8369,
+   "se": 0.673,
+   "p": 0.00634,
+   "ci95": [
+    -3.1559,
+    -0.518
+   ],
+   "ch_rep": {
+    "beta": 0.1328,
+    "se": 0.7088,
+    "p": 0.8514,
+    "ci95": [
+     -1.2565,
+     1.5221
+    ]
+   },
+   "K": 23
+  },
+  "A_on_y_in_DiscogsVI_at_all": {
+   "beta": -1.5762,
+   "se": 0.6787,
+   "p": 0.02021,
+   "ci95": [
+    -2.9065,
+    -0.246
+   ],
+   "N": 3223,
+   "y_100": 489,
+   "note": "all model rows (y is defined for every row)"
+  },
+  "G2_in_place_of_A": {
+   "beta": 1.9391,
+   "se": 0.6963,
+   "p": 0.005357,
+   "ci95": [
+    0.5743,
+    3.3039
+   ],
+   "rho_A_G2": -0.957
+  },
+  "y_foreign_without_karaoke_tribute_sets": {
+   "beta": -1.7458,
+   "se": 0.6696,
+   "p": 0.009123,
+   "ci95": [
+    -3.0582,
+    -0.4335
+   ],
+   "songs_switched_to_0": 0,
+   "songs_with_any_karaoke_or_tribute_set": 1,
+   "y_foreign_100": 464
+  }
+ },
+ "verdict": "kill (beta < +0.2 pp per SD)",
+ "runtime_s": 6
+}
