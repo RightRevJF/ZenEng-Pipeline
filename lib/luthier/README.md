@@ -636,3 +636,7 @@ Answers Review 33's 749.182 to 749.184. **Nothing is built: the engine writes v4
 - `studies/the_draw/read_builds.py`, `read_kept.py`, `climb_held.py`: readings on a record's fitted spec (749.179's clean reading).
 
 Next: Luthier v50 (row v221), Window 207, Module 27.131 (anchor "27.130"), tables HQ…, fixes from 964, findings from 749.189.
+
+### After v49's paper (25 November): the third form of the mend, not built
+
+`studies/the_draw/RESULT_line.md` (`LUTHIER_PEAK_CLIMB=3`: the way back in the carrying line itself). Fails checks 1, 2 and 5: the peak is planted as often as v47 (clean reading 96 to 104 in 100) but builds holding a leap stay at 15 to 30 in 100 (kept 17.5), and three songs have fewer living builds. **749.189: a straight trade.** About one planted build in six can reach the peak only by leaping. No choice among the draws gives both; the carrying line's centre is too far under its top. Next, a reading first: where the highest line's centre sits against its top in kept songs; then the plant's register (the centre rising toward the peak), not its draws. Findings from 749.190.
