@@ -203,7 +203,7 @@ class Engine:
         try:
             for _ in range(pk.get("tries", 60)):
                 ps = self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
-                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)) and (not pk.get("climb") or all(abs(b_ - a_) <= 12 for a_, b_ in zip(ps, ps[1:]))): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
         finally:
             if had is None: R.pop(key, None)
             else: R[key] = had
