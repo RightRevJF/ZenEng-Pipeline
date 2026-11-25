@@ -37,3 +37,13 @@ So the fault is one step further in than I had it. Fix 950 raises the carrying l
 ## Against what I expected
 
 Check 6: right. Check 1: I said it would hold by less; it failed in three songs. Check 5: I named it the doubt and put it at 12 to 16; it is 15 to 30. I undercounted how many of the living builds are the ones that cannot climb.
+
+## Read against the session's marks (the list for v50, which crossed with this result)
+
+Review 34's list approved this same form and set its own marks. I had run it before the list reached me, by `PREDICTION_line.md`. By the list's marks it fails as well:
+- living builds above v47's in every song: no (songs 55, 49, 61);
+- the clean reading at or under 17.5 in 100: no (five songs of the six read; songs 61 and 62 were not read that way);
+- words' fit, the chosen tune's floor: hold;
+- the code check (the peak planted within 3 in 100 of v47's on the same spec): holds in five songs of six (song 55: 96; song 58: 104, one over).
+
+Song 50 was to be run only if every seen-song check held. It is **not run** and is still sealed; the ledger says so.
