@@ -13,7 +13,7 @@ Sources found with Consensus (Elicit's API is not on this plan) and the web. Eac
 - Caution from all of these: success here is charts and sales, the audience's channel; none measures lasting acclaim or covers.
 
 ## B. Poetry quality, craft and imagery
-- Kao & Jurafsky (2012, NAACL; 2015, LiLT): award-winning poets against amateurs: the strongest single marker of the professional poems was frequent reference to concrete objects; professionals use fewer emotion words and richer sound devices; amateurs resemble 19th-century professionals (abstraction, stated feeling). For us: concreteness up, stated emotion down.
+- Kao & Jurafsky (2012, NAACL; 2015, LiLT): award-winning poets against amateurs: the strongest single marker of the professional poems was frequent reference to concrete objects; professionals use fewer emotion words and LESS perfect end rhyme (OR 0.12) and less alliteration (OR 0.53) [corrected 25 Nov by round 2's checker; page poetry, free verse]; amateurs resemble 19th-century professionals (abstraction, stated feeling). For us: concreteness up, stated emotion down.
 - Dalvean (2013, Digital Scholarship in the Humanities): 98 linguistic variables tell professional from amateur poems at 84.5%.
 - Jacobs & Kinder (2018, Metaphor and Symbol): literary metaphors differ from non-literary ones in surprisal, sonority and length; familiarity and ease of interpretation separate them.
 - Chaudhuri et al. (2025, Psychology of Aesthetics, Creativity and the Arts): readers' creativity judgments of poems follow aesthetic appeal, then surprise; the surprising lines were confirmed by semantic distance.
