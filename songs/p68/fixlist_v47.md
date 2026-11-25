@@ -1,6 +1,6 @@
 # Luthier list for v47 (since v46)
 
-25 November 2026. Luthier v46 (958 off by default; the trial by kept shares, failed and not built; 749.154 read in the builds; song 50 sealed; the hold-out ledger) is reviewed (`lib/luthier/REVIEW_stage31.md`) and merged into main. Songs 55, 54, 58 and 49 and the trial's song-49 figures reproduce byte for byte; both checks pass. Next finding 749.174; next fix 959.
+25 November 2026. Luthier v46 (958 off by default; the trial by kept shares, failed and not built; 749.154 read in the builds; song 50 sealed; the hold-out ledger) is reviewed (`lib/luthier/REVIEW_stage31.md`) and merged into main. Songs 55, 54, 58 and 49, the trial's song-49 figures and the pools reproduce byte for byte; both checks pass. Next finding 749.174; next fix 959.
 
 ## In short
 

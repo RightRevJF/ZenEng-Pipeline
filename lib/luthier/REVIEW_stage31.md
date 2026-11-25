@@ -8,7 +8,7 @@
 - Songs 55, 54, 58 rerun from their lyric files (1000 builds, 12 drafts, PYTHONHASHSEED 0): their records byte for byte, the picks of Window 201 (42785ec6990c, b5e09eec154f, ff0af26e2610).
 - Song 49 rerun: the record without the form, byte for byte.
 - The trial by kept shares on song 49 (`trial_shares.py`, LUTHIER_VERSE_CLOSER=shares): `cap_shares_lyric49.json` byte for byte (350 live; rhythm scaling 0.634; words' fit 0.215; verse over chorus 1.53).
-- The pools (`studies/soundness/neighbour.py` on songs 55, 54, 58): see the last line of this review.
+- The pools (`studies/soundness/neighbour.py` on songs 55, 54, 58, PYTHONHASHSEED 0): `neighbour.json` byte for byte, the same as `neighbour_v46.json`.
 - Song 59's record changes only by losing the empty verse-closer block (no line was given one bar); its notes are unchanged.
 
 ## Rulings
