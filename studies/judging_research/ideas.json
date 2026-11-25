@@ -116,7 +116,7 @@
    "proposed": "run03",
    "status": "parked",
    "status_set_by": "run03",
-   "note": "merged into R03-L1; shuffle version tracks ch_rep −0.62 (repetition renamed); reported only; in run03 curvature test the shuffle-relative kbar gave β −0.011 (deciding nothing), ρ −0.52 with ch_rep"
+   "note": "merged into R03-L1; shuffle version tracks ch_rep −0.62 (repetition renamed); reported only; in run03 curvature test the shuffle-relative kbar gave β −0.011 (deciding nothing), ρ −0.52 with ch_rep; run05 chair: left out (repetition renamed, family flagged for deletion)"
   },
   {
    "id": "R03-G2",
@@ -178,8 +178,8 @@
    "stance": "Inventor",
    "proposed": "run03",
    "status": "testing",
-   "status_set_by": "run03 experiments/tonic_resistance (after seeing results)",
-   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31"
+   "status_set_by": "run05 chair",
+   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance)"
   },
   {
    "id": "R03-I3",
@@ -196,8 +196,8 @@
    "stance": "first principles (run03)",
    "proposed": "run03",
    "status": "testing",
-   "status_set_by": "run03 experiments/fifths_path (after seeing results)",
-   "note": "unsettled: β −0.017 (SE 0.018, p .36); halves −0.011, −0.021; without surprise −0.028; gate passed (clip-to-clip 0.356); power 0.06"
+   "status_set_by": "run05 chair",
+   "note": "unsettled: β −0.017 (SE 0.018, p .36); halves −0.011, −0.021; without surprise −0.028; gate passed (clip-to-clip 0.356); power 0.06; run05: retested on y_foreign with fresh notes (experiments/fifths_path)"
   },
   {
    "id": "R04-G1",
@@ -206,7 +206,7 @@
    "proposed": "run04",
    "status": "parked",
    "status_set_by": "run04 brainstorm",
-   "note": "withdrawn by author in round 2 (sign set after the fifths path leaned; rho -0.65 with it); kept for fresh songs"
+   "note": "withdrawn by author in round 2 (sign set after the fifths path leaned; rho -0.65 with it); kept for fresh songs; run05: merged into fifths_path as a reported item (rho -0.73 with FP)"
   },
   {
    "id": "R04-G2",
@@ -306,6 +306,69 @@
    "status": "testing",
    "status_set_by": "run04 experiments/foreign_versions (after seeing results)",
    "note": "unsettled: ch_rep +1.00 pp per SD (SE 0.49, p .044; needed .0083); halves +0.45, +1.43; cond. logit +0.132 (p .025); y_self only 94 of 2,224, so the credit-variant artefact does not explain it; power 0.21; needs fresh songs"
+  },
+  {
+   "id": "R05-M",
+   "idea": "Certified loop margin M: TopPT H1 margin of the chord-chroma sliding-window cloud (card 1); a robust closed harmonic cycle invites re-recording",
+   "stance": "Geometer + Listener + Inventor (G1 = L1 = I1, merged)",
+   "proposed": "run05",
+   "status": "testing",
+   "status_set_by": "run05 chair",
+   "note": "experiments/loop_margin; +0.8 pp/SD on y_foreign predicted; kill < +0.3"
+  },
+  {
+   "id": "R05-A",
+   "idea": "Arrow of time: detailed-balance asymmetry of chord changes, A = 1 - sum min(n_ij, n_ji) / sum n_ij (absorbs G2 back-and-forth share, rho -0.96)",
+   "stance": "Inventor (I3) + Geometer (G2)",
+   "proposed": "run05",
+   "status": "testing",
+   "status_set_by": "run05 chair",
+   "note": "experiments/arrow_of_time; +0.6 predicted; kill < +0.2"
+  },
+  {
+   "id": "R05-I2",
+   "idea": "Harmonic freedom (neutral neighbours): bits of diatonic triads that fit the melody as well as the written chord",
+   "stance": "Inventor",
+   "proposed": "run05",
+   "status": "testing",
+   "status_set_by": "run05 chair",
+   "note": "experiments/harmonic_freedom; +0.6 predicted; kill < +0.2"
+  },
+  {
+   "id": "R05-L2",
+   "idea": "Any voice can sing it: folded melody range (5th-95th percentile, semitones)",
+   "stance": "Listener",
+   "proposed": "run05",
+   "status": "testing",
+   "status_set_by": "run05 chair",
+   "note": "experiments/melody_range; -0.7 predicted; kill > -0.2"
+  },
+  {
+   "id": "R05-L3",
+   "idea": "Familiar contour, fresh steps: contour-trigram surprise",
+   "stance": "Listener",
+   "proposed": "run05",
+   "status": "parked",
+   "status_set_by": "run05 brainstorm",
+   "note": "withdrawn by author: measures how repeated notes were transcribed"
+  },
+  {
+   "id": "R05-S1",
+   "idea": "Fame versus notes: cross-validated AUC of artist fame proxies vs the note measures on y_foreign (card 2 counter-evidence)",
+   "stance": "Skeptic",
+   "proposed": "run05",
+   "status": "testing",
+   "status_set_by": "run05 chair",
+   "note": "experiments/fame_vs_notes"
+  },
+  {
+   "id": "R05-stopped",
+   "idea": "Loop thickness b1/p1; melody sliding-window margin; melody+chord joint margin; second H1 bar; tune changes when chords return; phrase-end tonic closure",
+   "stance": "Geometer, Listener",
+   "proposed": "run05",
+   "status": "failed",
+   "status_set_by": "run05 brainstorm (measure gates)",
+   "note": "stopped on the notes: residual clip-to-clip 0.05; 0.11; 0.19; 0.16; 0.155-0.18; 0.14. No outcome joined"
   }
  ]
 }
