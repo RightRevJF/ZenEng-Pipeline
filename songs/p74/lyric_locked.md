@@ -17,7 +17,7 @@ Go on ahead, I'll get there in time
 ## Verse 2
 Your phone won't stop, it's all your friends
 Marcus says you owe him for the game
-I wrote back that you're good for it
+I wrote him back, you'll make it right
 And told the others all the same
 
 ## Chorus
