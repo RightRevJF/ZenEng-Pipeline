@@ -579,3 +579,17 @@ Answers Review 29: builds 749.142, makes the hold-out of 749.143, fixes 749.145,
 - **Not to be forgotten (the writer, 22 November): a trial of sections that loop less in the chord writer** (the judging research's J1), now that the within-artist test holds. Rule first; the reading in `studies/judging_checks/nights_1_2/loops.json` shows songs 58 and 60's verses over the kept 90th of repetition.
 
 Next: Luthier v46 (row v217), Window 203, Module 27.127 (anchor "27.126"), tables HM…, fixes from 959.
+
+## Luthier v46 (Window 203): the verse sung closer, turned off
+
+Answers Review 30's 749.153 to 749.155 and 749.169. Paper: `reports/Luthier_v46.docx` (builder `reports/make_luthier_v46_from_v45.py`), row v217, Module 27.127, Table HM. Results: `studies/busy_sections/RESULT_shares.md`, `studies/busy_sections/shares_trial/`, `studies/soundness/neighbour_v46.json`.
+
+- 749.153: 958 is **off by default**. A lyric asks with `"verse_closer": true` (the form of v45) or a form's name; `LUTHIER_VERSE_CLOSER` is for studies. Songs 55, 54, 58 are back to their v44 notes; 59, 60, 52, 53 unchanged; song 49's record is the one without the form (`lyric49.v45_with_958.song.json` keeps the other).
+- The trial form `"shares"` (kept share of one-bar lines by syllables and tempo, from `studies/lever_range/result.json`) **failed** its frozen checks and is not built: builds' words' fit 0.221 to 0.198 (song 54) and 0.264 to 0.215 (song 49); chosen tunes of 55 and 54 down 0.040 and 0.076; song 49's verse 1.53 times its chorus. Rhythm scaling rose in all four songs (0.592, 0.576, 0.555, 0.594 to 0.622, 0.601, 0.583, 0.634). No other variant tried.
+- 749.154: in the builds, song 49's untouched verse lines do not fall (0.137 to 0.140) and its one-bar lines fit better within the line (0.247 to 0.334) while the whole fit falls 0.049. Reading, untested: the whole fit ranks note lengths across lines. To be put to the kept songs, rule first.
+- 749.155: `songs/p60/lyric50.json` made (folk, baritone, 88). **Song 50 has not been run in any way** (the trial failed before its turn) and is still a sealed hold-out. So is song 63.
+- 749.169: the hold-out ledger is in `studies/judging_data/README.md`.
+- `studies/busy_sections/trial_shares.py`: every living build of a song under one form (rhythm scaling, words' fit, range, verse over chorus, each line's mean fit).
+- Not begun: 749.159 (sections that loop less), the flagged patches of 749.160 to 749.170 (`lib/luthier/proposed_v47.py`), 749.144, 749.147, 749.148 to 749.152, 749.163 (a ruling).
+
+Next: Luthier v47 (row v218), Window 204, Module 27.128 (anchor "27.127"), tables HN…, fixes from 959.

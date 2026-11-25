@@ -30,3 +30,14 @@ A song is a YouTube video id. `hooktheory_covers_discogs.json` is keyed by it; e
 ## The hold-out rule
 
 The McGill cover counts were joined once, for one test whose rule was committed first. They stay useful only while they are not explored. Before any new measure is tried against them: write its rule and its pass mark, commit it, then run it once; and count every such test in the report, since each one spends the hold-out a little.
+
+## The hold-out ledger (749.169)
+
+Write a line here **before** running anything against a hold-out, so no test is run twice by two hands.
+
+| Date | Who | Hold-out | Test (its rule, committed first) | Result |
+|---|---|---|---|---|
+| 22 Nov 2026 | the maintainer | McGill cover counts | chord repetition against covers, fresh songs (`studies/judging_checks/fresh_songs`, rule f25209f): the test of record | −0.028, range −0.11 to +0.05; not settled |
+| 22 Nov 2026 | the songwriting session | McGill cover counts | the same question, its own model (`studies/fresh_songs`, rule 59182c6) | −0.060, range −0.154 to +0.034; not settled |
+
+Two readings spent on one question, by accident. Hold-out songs for the engine (59 for everything; 50 and 63 banked, not yet run by anything) are listed in `lib/luthier/README.md`.
