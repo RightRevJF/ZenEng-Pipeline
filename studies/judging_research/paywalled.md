@@ -26,3 +26,10 @@
 - No new paywalled papers: both papers (Amiot 2013; Araz, Serra & Bogdanov 2024) were read in full from arXiv.
 - Not reached (permission prompts unanswered, not paywalled): the Discogs-VI Zenodo record 13983028, its project page and GitHub README. A later run may read them for later dataset versions.
 - Not downloaded (gated, needs a login): the Hugging Face dataset m-a-p/HookTheory, which holds the notes of every Hooktheory song (see run04/DATA.md and fix list R04-1).
+
+## Run 05 (25 November 2026)
+- The inbox folder was empty, so nothing was received.
+- No new paywalled papers. Two papers were read in full: Park, An, Kim & Kim (2025), arXiv 2512.06324, from the arXiv HTML; Interiano et al. (2018), doi:10.1098/rsos.171274, from the UC eScholarship copy (PMC and the publisher page were blocked by unanswered permission prompts, not paywalled).
+- Not readable tonight (free, but arXiv serves them only as PDFs, whose bodies did not come through the fetch tool in this unattended run). Jason could drop either in the inbox:
+  - Perea, J. A. & Harer, J. (2015). Sliding Windows and Persistence: An Application of Topological Methods to Signal Analysis. Foundations of Computational Mathematics 15, 799–838. doi:10.1007/s10208-014-9206-z; arXiv 1307.6188.
+  - Gakhar, H. & Perea, J. A. (2023/2024). Sliding window persistence of quasiperiodic functions. Journal of Applied and Computational Topology. arXiv 2103.04540.
