@@ -531,7 +531,7 @@ class Engine:
                     sec_, i_ = h_.rsplit(":", 1); ln_ = [n for n in sung_ if n["sec"] == sec_ and n["line"] == int(i_) and n.get("melisma") != "second"]
                     if not ln_: continue
                     top_ = max(ln_, key=lambda n: n["dur"])
-                    if self.S["title_stress"] == "inside":                                      # 749.177: the narrower form, a trial, not built (it passed over 10 and 27 builds in 100 in songs 54 and 49). A weak last syllable may be held; a weak syllable before the line's last word may not be the longest
+                    if self.S["title_stress"] == "inside":                                      # 749.177: the narrower form, a trial, not built (it passed over 10 and 27 builds in 100 in songs 54 and 49). A build is passed over if the title line's longest note is a weak syllable with another word after it in the line; a weak syllable of the last word may be held (749.184: the comment made to say what the code does)
                         if not top_.get("stress") and any(n["text"] != ln_[-1]["text"] for n in ln_[ln_.index(top_):]): return "trial 749.177: the title line's longest note on a weak syllable before its last word"
                     elif not top_.get("stress"): return "961: the title line's longest note on an unstressed syllable"
         st = [n for n in ns if n["stress"] and self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design"]

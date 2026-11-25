@@ -221,7 +221,7 @@ def bass(form_bars, tonic_midi, barlen, beats, mode):
 def root_pc(rn):
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)", rn); return (C.DEG[m.group(2).upper()] + (-1 if m.group(1) == "b" else 1 if m.group(1) == "#" else 0)) % 12
 def write(L, N=1000, K=12):
-    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = (os.environ.get("LUTHIER_LOOP") or True) if (L.get("chords") == "loop_less" or os.environ.get("LUTHIER_LOOP")) else False; drafts = []      # 960 (749.159): a setting, off unless the lyric asks
+    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = {"gentle": "gentle", "median": True}.get(os.environ.get("LUTHIER_LOOP", "off"), L.get("chords") == "loop_less")      # 749.184: the switch is off unless it names a form; drafts = []      # 960 (749.159): a setting, off unless the lyric asks
     names = [(base(n) + " 9" if n != base(n) and not re.search(r"\d+$", n) else n, k, b) for n, k, b in form]; wn = {f[0]: w[0] for f, w in zip(form, names)}      # a last chorus returns the chorus (801)
     for seed in range(1, K + 1):
         pl = W.song(names, seed=seed * 1000 + L.get("seed", 1), require=L.get("require")); pl = {n: pl[wn[n]] for n, _, _ in form}; c, d, r = W.charge(list(pl.values())); drafts.append((c, d, seed, pl, r))
