@@ -1,0 +1,167 @@
+{
+ "primary": {
+  "writers": 972,
+  "songs": 24284,
+  "median_artists": 4.0
+ },
+ "secondary": {
+  "writers": 972,
+  "songs": 138709,
+  "matched_share": 0.175
+ },
+ "measures": {
+  "rhyme_rate": {
+   "coef": 0.0124,
+   "p": 0.08635,
+   "n": 24197,
+   "halves": [
+    0.011,
+    0.0141
+   ],
+   "with_zeros": 0.0032,
+   "with_zeros_p": 0.22334,
+   "p_holm": 0.3454,
+   "predicted": 1,
+   "verdict": "unsettled"
+  },
+  "iyou_rate": {
+   "coef": 0.0214,
+   "p": 0.00243,
+   "n": 24283,
+   "halves": [
+    0.0277,
+    0.0157
+   ],
+   "with_zeros": 0.0216,
+   "with_zeros_p": 0.0,
+   "p_holm": 0.01458,
+   "predicted": 1,
+   "verdict": "passes"
+  },
+  "you_lines": {
+   "coef": -0.0089,
+   "p": 0.19965,
+   "n": 24283,
+   "halves": [
+    -0.0119,
+    -0.0048
+   ],
+   "with_zeros": 0.0045,
+   "with_zeros_p": 0.0883,
+   "p_holm": 0.3993,
+   "predicted": 1,
+   "verdict": "unsettled"
+  },
+  "end_weight": {
+   "coef": 0.011,
+   "p": 0.11339,
+   "n": 23169,
+   "halves": [
+    0.0083,
+    0.0132
+   ],
+   "with_zeros": -0.0003,
+   "with_zeros_p": 0.90866,
+   "p_holm": 0.3454,
+   "predicted": 1,
+   "verdict": "unsettled"
+  },
+  "feel_late": {
+   "coef": 0.0051,
+   "p": 0.42779,
+   "n": 24283,
+   "halves": [
+    -0.005,
+    0.0138
+   ],
+   "with_zeros": -0.0004,
+   "with_zeros_p": 0.8623,
+   "p_holm": 0.42779,
+   "predicted": 1,
+   "verdict": "unsettled"
+  },
+  "syl_line": {
+   "coef": -0.0285,
+   "p": 0.00104,
+   "n": 24283,
+   "halves": [
+    -0.0413,
+    -0.0152
+   ],
+   "with_zeros": -0.0134,
+   "with_zeros_p": 0.0,
+   "p_holm": 0.00728,
+   "predicted": -1,
+   "verdict": "passes"
+  },
+  "line_cv": {
+   "coef": -0.0142,
+   "p": 0.04691,
+   "n": 24283,
+   "halves": [
+    -0.0128,
+    -0.0161
+   ],
+   "with_zeros": 0.0002,
+   "with_zeros_p": 0.94579,
+   "p_holm": 0.23455,
+   "predicted": -1,
+   "verdict": "unsettled"
+  },
+  "perfect_share": {
+   "coef": 0.0139,
+   "p": 0.12123,
+   "n": 23649,
+   "halves": [
+    0.0068,
+    0.0202
+   ],
+   "with_zeros": 0.0025,
+   "with_zeros_p": 0.41791
+  },
+  "repeat_share": {
+   "coef": 0.0768,
+   "p": 0.0,
+   "n": 24283,
+   "halves": [
+    0.0838,
+    0.0708
+   ],
+   "with_zeros": 0.0272,
+   "with_zeros_p": 0.0
+  },
+  "stanzas": {
+   "coef": 0.0131,
+   "p": 0.15747,
+   "n": 24283,
+   "halves": [
+    0.0248,
+    0.0038
+   ],
+   "with_zeros": 0.0054,
+   "with_zeros_p": 0.11783
+  },
+  "emo_rate": {
+   "coef": 0.0232,
+   "p": 0.00325,
+   "n": 24283,
+   "halves": [
+    0.0345,
+    0.0104
+   ],
+   "with_zeros": 0.0103,
+   "with_zeros_p": 0.00019
+  },
+  "i_rate": {
+   "coef": 0.0304,
+   "p": 3e-05,
+   "n": 24283,
+   "halves": [
+    0.0386,
+    0.022
+   ],
+   "with_zeros": 0.0219,
+   "with_zeros_p": 0.0
+  }
+ }
+}
