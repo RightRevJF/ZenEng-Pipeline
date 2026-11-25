@@ -53,3 +53,13 @@ I expected little; two passed. I guessed `you_lines` upward: wrong (unsettled, a
 - Nothing becomes a gate. The effects are small, and syllables a line is not separable from repetition.
 - `lyric_people.py`'s advice to put a speaker and an addressee in the song now has a passed test behind it, **for musicians and listeners, not critics**. The note it prints can say so.
 - Next, if wanted: test shorter lines against sung transcriptions (CoCoPops, BiMMuDa), where no one types a chorus out or leaves it, to tell the line from the habit.
+
+## After the maintainer's check: the two joins compared, song by song (`compare_joins.py`, `compare.json`)
+The maintainer ran the same rule on an independent join (1,045 writers, 25,953 songs) and `iyou_rate` fell to +0.008 (p .30). I rebuilt that join here from its own scripts (`studies/covers/discogs_cliques.py`, `check_repro.py`) on the same Discogs-VI and WASABI files, and it reproduces the maintainer's figures exactly (1,045; 25,953; +0.0075, p .302).
+
+- **The joins share 23,359 songs** (954 writers), with the same WASABI row and the same features for every one. Recording-artist counts agree for 96% of them (r = 0.97 in logs); years for 71%.
+- On those shared songs: the session's counts give +0.018 (p .009), the maintainer's +0.013 (p .08). Swapping only the artist counts gives +0.013; swapping only the years changes nothing. So **about a third of the gap is how recording artists are counted** (the maintainer's table counts every named artist on every track, so duet and featured partners count separately; the session's counts each version's first credited artist line once).
+- The rest is **which songs join.** The maintainer's join holds 2,594 songs the session's does not, and they lean the other way (−0.018). Most are songs where the performer is a co-writer but not among the clique's four most-credited writers, which the data scout's table keeps (1,517 songs), or writers who fall under ten matched songs for the same reason (1,059). The session's 925 songs the maintainer's lacks push the other way.
+- **Underneath, both joins agree:** "I" goes with covers (+0.030, p < .0001; +0.019, p .006); "you" lines do not (−0.009, p .20; −0.017, p .012). Shorter lines pass in both (−0.029; −0.031).
+
+**So `iyou_rate` is not robust.** It passes or fails on two defensible choices (how to count recording artists; whether a co-writer far down the credits counts as the writer). I withdraw it as a pass: read it, as the maintainer does, as "I", small. `syl_line` stands in both joins, tied to repetition.

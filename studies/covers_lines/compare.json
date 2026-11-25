@@ -1,0 +1,108 @@
+{
+ "session": {
+  "songs": 24284,
+  "writers": 972
+ },
+ "maintainer": {
+  "songs": 25953,
+  "writers": 1045
+ },
+ "overlap": {
+  "songs": 23359,
+  "writers": 954,
+  "same_wasabi_row": 1.0,
+  "r_log_artists": 0.973,
+  "artists_equal": 0.964,
+  "median_ratio_artists": 1.0,
+  "year_equal": 0.709,
+  "iyou_equal": 1.0
+ },
+ "only_session": 925,
+ "only_maintainer": 2594,
+ "fits": {
+  "session, all": {
+   "coef": 0.0214,
+   "p": 0.0024,
+   "n": 24283,
+   "writers": 972
+  },
+  "maintainer, all": {
+   "coef": 0.0075,
+   "p": 0.302,
+   "n": 25953,
+   "writers": 1045
+  },
+  "overlap, session's everything": {
+   "coef": 0.0182,
+   "p": 0.0089,
+   "n": 23358,
+   "writers": 954
+  },
+  "overlap, maintainer's everything": {
+   "coef": 0.0126,
+   "p": 0.0824,
+   "n": 23359,
+   "writers": 954
+  },
+  "overlap, session's features and year, maintainer's artists": {
+   "coef": 0.0127,
+   "p": 0.0739,
+   "n": 23358,
+   "writers": 954
+  },
+  "overlap, session's, maintainer's year": {
+   "coef": 0.0183,
+   "p": 0.0099,
+   "n": 23359,
+   "writers": 954
+  },
+  "session only": {
+   "coef": -0.1077,
+   "p": 0.0264,
+   "n": 760,
+   "writers": 169
+  },
+  "maintainer only": {
+   "coef": -0.0176,
+   "p": 0.4435,
+   "n": 2382,
+   "writers": 427
+  },
+  "i_rate: session, all": {
+   "coef": 0.0304,
+   "p": 0.0,
+   "n": 24283,
+   "writers": 972
+  },
+  "i_rate: maintainer, all": {
+   "coef": 0.0194,
+   "p": 0.0056,
+   "n": 25953,
+   "writers": 1045
+  },
+  "you_lines: session, all": {
+   "coef": -0.0089,
+   "p": 0.1996,
+   "n": 24283,
+   "writers": 972
+  },
+  "you_lines: maintainer, all": {
+   "coef": -0.0171,
+   "p": 0.0124,
+   "n": 25953,
+   "writers": 1045
+  },
+  "syl_line: session, all": {
+   "coef": -0.0285,
+   "p": 0.001,
+   "n": 24283,
+   "writers": 972
+  },
+  "syl_line: maintainer, all": {
+   "coef": -0.0312,
+   "p": 0.0004,
+   "n": 25953,
+   "writers": 1045
+  }
+ }
+}
