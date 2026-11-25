@@ -29,7 +29,8 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PITCH_CEILING = True   # 956
-VERSE_CLOSER = {"off": None, "0": None}.get(os.environ.get("LUTHIER_VERSE_CLOSER", "apart"), os.environ.get("LUTHIER_VERSE_CLOSER", "apart"))      # 958 (749.142): the verse sung closer, "apart"; the environment switch (off, or a trial form) is for studies only
+VERSE_CLOSER = {"off": None, "0": None}.get(os.environ.get("LUTHIER_VERSE_CLOSER", "off"), os.environ.get("LUTHIER_VERSE_CLOSER", "off"))      # 958 (749.142), off by default from v46 (749.153): song 49, the hold-out, lost words' fit under it. A lyric may ask for it ("verse_closer": true, or a form's name); the environment switch is for studies
+VERSE_SHARES = os.path.join(HERE, "..", "..", "studies", "lever_range", "result.json")      # the trial form "shares" (749.153) reads the kept shares from the study; a kept table is made only if the form is built
 CHOOSE_RANGE = True    # 951, 954: the choice among the builds past every gate takes no tune narrower than a floor under the range the words ask
 RANGE_OVER = 1.0   # 927: semitones the tops are set over the kept song's range
 RUN_TOP = 10          # 926: the longest run of one pitch a song may take from its kept song (the kept 90th percentile)
@@ -72,23 +73,35 @@ def base(name): return re.sub(r"^(Last|Final)\s+", "", re.sub(r"\s*\d+$", "", na
 def plan(L):
     """lyric -> the melody spec without chords, and the form"""
     metre = L.get("metre", "4/4"); T = json.load(open(os.path.join(M.ATLAS, metre.replace("/", "-") + "_sung.json"))); beats = len(T["beats"])
-    closer_ = {}
+    closer_ = {}; closer_form_ = None
     sung = []; slots = {}; how = {}; first = {}; texts = {}; n_in, n_out = BD.edges(L["bpm"], beats); form = [("Intro", "intro", n_in)]; flags = []      # 825
     for name, lines in L["sections"]:
         sy = [[(w, bool(st)) for w, v, st, fn in syllables(ln, flags)] for ln in lines]; k = kind_of(name)
         pr = SL.propose([len(x) for x in sy], L["bpm"], beats); sl = [max(1, min(4, r["whole bars proposed"] if not (r["whole bars proposed"] == 1 and r["kept share in one bar or less"] < 0.5) else 2)) for r in pr]      # 869 (749.63): one bar only where half of kept lines that long fit in one
-        if VERSE_CLOSER and k == "verse" and metre == "4/4" and L.get("verse_closer", True):      # 4/4 only: the kept figures are 4/4's                                                          # 958 (749.142; studies/busy_sections): the verse sung closer. Verse lines of 6 to 8 syllables that would take two bars take one: the shortest first, none side by side, an even count, as many as bring the verse nearest the kept middle of notes a bar (4.59). Kept verses run 4.6 notes a bar and 1.15 times their choruses; Luthier gave every such line two bars
-            cand_ = sorted([i for i, r in enumerate(pr) if 6 <= r["syllables"] <= 8 and sl[i] == 2], key=lambda i: (pr[i]["syllables"], i)); n1_ = len(cand_) if VERSE_CLOSER == "all" else len(cand_) // 2 if VERSE_CLOSER == "half" else int(round(pr[cand_[0]]["kept share in one bar or less"] * len(cand_))) if cand_ else 0
-            if VERSE_CLOSER == "aim": n1_ = min(range(0, len(cand_) + 1, 2), key=lambda m_: abs(sum(len(x) for x in sy) / max(1, sum(sl) - m_) - 4.59))
-            if VERSE_CLOSER == "apart":
+        vc_ = VERSE_CLOSER or ("apart" if L.get("verse_closer") is True else L.get("verse_closer") or None)
+        if vc_ and k == "verse" and metre == "4/4" and L.get("verse_closer", True) is not False:      # 4/4 only: the kept figures are 4/4's                                                          # 958 (749.142; studies/busy_sections): the verse sung closer. Verse lines of 6 to 8 syllables that would take two bars take one: the shortest first, none side by side, an even count, as many as bring the verse nearest the kept middle of notes a bar (4.59). Kept verses run 4.6 notes a bar and 1.15 times their choruses; Luthier gave every such line two bars
+            cand_ = sorted([i for i, r in enumerate(pr) if 6 <= r["syllables"] <= 8 and sl[i] == 2], key=lambda i: (pr[i]["syllables"], i)); n1_ = len(cand_) if vc_ == "all" else len(cand_) // 2 if vc_ == "half" else int(round(pr[cand_[0]]["kept share in one bar or less"] * len(cand_))) if cand_ else 0
+            if vc_ == "aim": n1_ = min(range(0, len(cand_) + 1, 2), key=lambda m_: abs(sum(len(x) for x in sy) / max(1, sum(sl) - m_) - 4.59))
+            if vc_ == "apart":
                 def take_(m_):
                     got_ = []
                     for i in cand_:
                         if len(got_) < m_ and not any(abs(i - j) == 1 for j in got_) and not (i > 0 and sl[i - 1] == 1) and not (i + 1 < len(sl) and sl[i + 1] == 1): got_.append(i)
                     return got_[:len(got_) - len(got_) % 2]
                 best_ = min((take_(m_) for m_ in range(0, len(cand_) + 1, 2)), key=lambda g_: abs(sum(len(x) for x in sy) / max(1, sum(sl) - len(g_)) - 4.59)); cand_ = best_; n1_ = len(best_)
-            for i in cand_[:n1_ - n1_ % 2]: sl[i] = 1
-            closer_[name] = sorted(i + 1 for i in cand_[:n1_ - n1_ % 2])
+            if vc_ == "shares":                                                              # the trial of 749.153: each candidate line carries s, the kept share of verse lines that long taking one bar at the song's tempo; a verse takes round(sum of s) lines, the highest s first (shorter, then earlier, on a tie), none beside one already taken
+                bs_ = 240.0 / L["bpm"]; band_ = "fast (bar under 1.8 s)" if bs_ < 1.8 else "slow (bar 2.6 s or more)" if bs_ >= 2.6 else "middle"; KS_ = json.load(open(VERSE_SHARES))["verse"]
+                s_ = {i: KS_[str(pr[i]["syllables"])]["by_tempo"][band_]["one_bar_or_less"] for i in cand_}; want_ = int(round(sum(s_.values()))); got_ = []
+                for i in sorted(cand_, key=lambda i: (-s_[i], pr[i]["syllables"], i)):
+                    if len(got_) < want_ and not any(abs(i - j) == 1 for j in got_) and not (i > 0 and sl[i - 1] == 1) and not (i + 1 < len(sl) and sl[i + 1] == 1): got_.append(i)
+                cand_ = got_; n1_ = 2 * len(got_)                                              # no even count asked: a verse of an odd count of bars rests a bar at its end, as every section does
+                for i in cand_: sl[i] = 1
+                closer_[name] = sorted(i + 1 for i in cand_); closer_form_ = vc_
+                continue_ = True
+            else: continue_ = False
+            if not continue_:
+                for i in cand_[:n1_ - n1_ % 2]: sl[i] = 1
+                closer_[name] = sorted(i + 1 for i in cand_[:n1_ - n1_ % 2]); closer_form_ = vc_
         for i, r in enumerate(pr):
             if r["whole bars proposed"] > 2: flags.append(f"{name} line {i + 1}: a slot of {min(4, r['whole bars proposed'])} bars, past the kept two-bar windows: set by weighted placement (760)")
         sung.append([name, "Chorus" if k == "chorus" else "Bridge" if k == "bridge" else "Verse", sy]); slots[name] = sl; n = sum(sl); form.append((name, k, n + n % 2))
@@ -135,7 +148,7 @@ def plan(L):
     hooks = [f"{name}:{i}" for name, lines in L["sections"] for i, ln in enumerate(lines) if tw and " ".join(tw) in " ".join(w for w, _, _, _ in LS.syllables(ln))]     # 840: the lines that sing the title
     spec = dict(title=L["title"], metre=metre, seed=L.get("seed", 1), scale=[(x + 0) % 12 for x in SCALES[L.get("mode", "major")]], sung=sung, slots=slots, how=how,
                 registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts; 925: the lift of the kept song the aim is drawn from, where it has one"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=FIGURE_BORROW), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
-    if closer_: spec["verse_closer"] = dict(form=VERSE_CLOSER, lines_given_one_bar=closer_, note="958: verse lines of 6 to 8 syllables given one bar, none side by side, to the kept middle of notes a bar")
+    if closer_: spec["verse_closer"] = dict(form=closer_form_, lines_given_one_bar=closer_, note="958: verse lines of 6 to 8 syllables given one bar; off unless the lyric asks (749.153)")
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
     if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
         KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
