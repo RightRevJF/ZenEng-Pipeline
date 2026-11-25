@@ -178,8 +178,8 @@
    "stance": "Inventor",
    "proposed": "run03",
    "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance)"
+   "status_set_by": "run05 experiments",
+   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06"
   },
   {
    "id": "R03-I3",
@@ -195,9 +195,9 @@
    "idea": "Fifths path: mean step per chord change on the circle of fifths (phase of the 5th Fourier coefficient), a fixed-space geometry",
    "stance": "first principles (run03)",
    "proposed": "run03",
-   "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "unsettled: β −0.017 (SE 0.018, p .36); halves −0.011, −0.021; without surprise −0.028; gate passed (clip-to-clip 0.356); power 0.06; run05: retested on y_foreign with fresh notes (experiments/fifths_path)"
+   "status": "failed",
+   "status_set_by": "run05 experiments",
+   "note": "unsettled: β −0.017 (SE 0.018, p .36); halves −0.011, −0.021; without surprise −0.028; gate passed (clip-to-clip 0.356); power 0.06; run05: retested on y_foreign with fresh notes (experiments/fifths_path); run05 fifths_path on y_foreign: kill, beta +0.015 (SE 0.32, p .96; kill > -0.2); halves +0.37/-0.33"
   },
   {
    "id": "R04-G1",
@@ -312,9 +312,9 @@
    "idea": "Certified loop margin M: TopPT H1 margin of the chord-chroma sliding-window cloud (card 1); a robust closed harmonic cycle invites re-recording",
    "stance": "Geometer + Listener + Inventor (G1 = L1 = I1, merged)",
    "proposed": "run05",
-   "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "experiments/loop_margin; +0.8 pp/SD on y_foreign predicted; kill < +0.3"
+   "status": "failed",
+   "status_set_by": "run05 experiments",
+   "note": "kill: beta -0.20 pp/SD (SE 0.44, p .64; predicted +0.8, kill < +0.3); halves +1.39 / -1.62 (split, z 3.4); cond. logit -0.055; power 0.19"
   },
   {
    "id": "R05-A",
@@ -322,17 +322,17 @@
    "stance": "Inventor (I3) + Geometer (G2)",
    "proposed": "run05",
    "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "experiments/arrow_of_time; +0.6 predicted; kill < +0.2"
+   "status_set_by": "run05 experiments",
+   "note": "unsettled: beta +0.84 pp/SD (SE 0.40, p .035; needed .00714); halves +0.78, +0.84; exact cond. logit +0.077 (p .097); power 0.12. Best lead of run05; seen songs"
   },
   {
    "id": "R05-I2",
    "idea": "Harmonic freedom (neutral neighbours): bits of diatonic triads that fit the melody as well as the written chord",
    "stance": "Inventor",
    "proposed": "run05",
-   "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "experiments/harmonic_freedom; +0.6 predicted; kill < +0.2"
+   "status": "failed",
+   "status_set_by": "run05 experiments",
+   "note": "kill: beta -0.23 pp/SD (SE 0.41, p .58; kill < +0.2); halves -0.06, -0.33"
   },
   {
    "id": "R05-L2",
@@ -340,8 +340,8 @@
    "stance": "Listener",
    "proposed": "run05",
    "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "experiments/melody_range; -0.7 predicted; kill > -0.2"
+   "status_set_by": "run05 experiments",
+   "note": "unsettled: beta -0.42 pp/SD (SE 0.26, p .11); halves -0.33, -0.52; cond. logit -0.095; power 0.49; intensive margin +0.063 (p .042), opposite sign"
   },
   {
    "id": "R05-L3",
@@ -357,9 +357,9 @@
    "idea": "Fame versus notes: cross-validated AUC of artist fame proxies vs the note measures on y_foreign (card 2 counter-evidence)",
    "stance": "Skeptic",
    "proposed": "run05",
-   "status": "testing",
-   "status_set_by": "run05 chair",
-   "note": "experiments/fame_vs_notes"
+   "status": "failed",
+   "status_set_by": "run05 experiments",
+   "note": "kill of the Skeptic prediction: AUC fame 0.481, notes 0.693, both 0.678; but the fame proxy (artist song count on Hooktheory) is broken (game/library sources top it) and 97% of the notes gain is artist-level style (within-artist shuffle placebo)"
   },
   {
    "id": "R05-stopped",

@@ -1,0 +1,284 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 1f6c36d (branch judging-research)",
+ "fake_outcome": false,
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "prediction_pp_per_sd": 0.6,
+ "kill_below": 0.2,
+ "threshold_p": 0.0071428571428571435,
+ "unit_values": {
+  "c_over_C": 1.585,
+  "ceg_over_C": 0.0,
+  "ceg_pcs_span": 3.0
+ },
+ "measure": {
+  "songs_with_value": 9049,
+  "pct_10_50_90": [
+   0.8051,
+   1.4914,
+   2.0187
+  ],
+  "clips_missing": 0,
+  "span_accounting": {
+   "spans": 278880,
+   "kept": 160381,
+   "skip_not_diatonic_triad": 94967,
+   "skip_W_below_half_beat": 23532
+  },
+  "span_accounting_per_half": {
+   "0": {
+    "spans": 134225,
+    "kept": 77351,
+    "skip_not_diatonic_triad": 45372,
+    "skip_W_below_half_beat": 11502
+   },
+   "1": {
+    "spans": 144655,
+    "skip_W_below_half_beat": 12030,
+    "kept": 83030,
+    "skip_not_diatonic_triad": 49595
+   }
+  }
+ },
+ "gate": {
+  "measure": "I2",
+  "songs_with_value": 9049,
+  "clip_pairs": 3796,
+  "clip_to_clip": 0.2668,
+  "stab_threshold": 0.2,
+  "overlap_largest": [
+   "pcs_span",
+   -0.3428
+  ],
+  "overlap_threshold": 0.7,
+  "overlap_all": {
+   "mel_ic_mean": -0.2552,
+   "mel_h_mean": -0.1935,
+   "mel_cheung": -0.128,
+   "ch_ic_mean": -0.0551,
+   "ch_h_mean": -0.1402,
+   "ch_cheung": -0.0393,
+   "mel_rep": 0.0649,
+   "ch_rep": 0.2029,
+   "rhy_ic_mean": 0.0863,
+   "rhy_h_mean": 0.0478,
+   "rhy_cheung": 0.0083,
+   "sync_per_note": 0.1299,
+   "rest_share": 0.1567,
+   "phrase_mean": -0.1721,
+   "phrase_on_downbeat": -0.1647,
+   "density": -0.0945,
+   "length_variety": 0.0119,
+   "n_ch": 0.1253,
+   "beats": -0.0279,
+   "clips_per_song": -0.0379,
+   "pcs_span": -0.3428
+  },
+  "passed": true
+ },
+ "notes_side_power": {
+  "residual_share": 0.6009,
+  "se_bound_pp": 0.5618,
+  "power_p00714": 0.0525,
+  "power_p05": 0.1875
+ },
+ "outcome_files": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2226,
+  "y_foreign1": 2130
+ },
+ "counts": {
+  "rows": 9588,
+  "with_value": 9049,
+  "y_foreign_nan_among_with_value": 2,
+  "N": 9047,
+  "artists": 1718,
+  "y_foreign1": 2039,
+  "share_y_foreign1": 0.2254
+ },
+ "power": {
+  "se": 0.4124,
+  "power_p00714": 0.1084,
+  "power_p05": 0.3071
+ },
+ "statsmodels_crosscheck_lpm": {
+  "beta_diff": 1.887379141862766e-15,
+  "se_diff": 1.6653345369377348e-16
+ },
+ "primary": {
+  "beta": -0.2282,
+  "se": 0.4124,
+  "p": 0.58,
+  "ci95": [
+   -1.0364,
+   0.5801
+  ],
+  "N": 9047,
+  "artists": 1718,
+  "K": 23,
+  "other_columns": {
+   "z_I2": {
+    "beta": -0.2282,
+    "se": 0.4124,
+    "p": 0.58,
+    "ci95": [
+     -1.0364,
+     0.5801
+    ]
+   },
+   "z_pcs_span": {
+    "beta": -0.3942,
+    "se": 0.3957,
+    "p": 0.3191,
+    "ci95": [
+     -1.1697,
+     0.3812
+    ]
+   },
+   "z_ch_rep": {
+    "beta": 1.1175,
+    "se": 0.524,
+    "p": 0.03297,
+    "ci95": [
+     0.0904,
+     2.1446
+    ]
+   },
+   "z_ch_ic_mean": {
+    "beta": -0.3902,
+    "se": 0.4478,
+    "p": 0.3836,
+    "ci95": [
+     -1.2678,
+     0.4875
+    ]
+   }
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 4355,
+   "artists": 877,
+   "y_foreign1": 997,
+   "beta": -0.0624,
+   "se": 0.5903,
+   "p": 0.9159,
+   "ci95": [
+    -1.2193,
+    1.0946
+   ]
+  },
+  {
+   "half": 1,
+   "songs": 4692,
+   "artists": 841,
+   "y_foreign1": 1042,
+   "beta": -0.3266,
+   "se": 0.5705,
+   "p": 0.5669,
+   "ci95": [
+    -1.4448,
+    0.7915
+   ]
+  }
+ ],
+ "conditional_logit": {
+  "coef": -0.0368,
+  "se": 0.0502,
+  "p": 0.463,
+  "converged": true,
+  "kept_songs": 3443,
+  "kept_artists": 443,
+  "dropped_songs": 5604,
+  "dropped_artists": 1275,
+  "convergence_test": "max|score|/nobs < 1e-5 (BFGS, then Newton)",
+  "columns_nonfinite_or_large": [
+   "parens"
+  ]
+ },
+ "reported_deciding_nothing": {
+  "spans_with_3plus_pcs_only": {
+   "songs_with_value": 7895,
+   "clip_to_clip": 0.2316,
+   "clip_pairs": 2728,
+   "N": 7894,
+   "artists": 1677,
+   "beta": -0.3911,
+   "se": 0.3755,
+   "p": 0.2977,
+   "ci95": [
+    -1.1271,
+    0.345
+   ]
+  },
+  "without_pcs_span": {
+   "N": 9047,
+   "beta": -0.1068,
+   "se": 0.3704,
+   "p": 0.773,
+   "ci95": [
+    -0.8328,
+    0.6192
+   ]
+  },
+  "on_y_in_discogs_vi": {
+   "N": 9049,
+   "artists": 1718,
+   "y1": 2126,
+   "beta": -0.1514,
+   "se": 0.4044,
+   "p": 0.7082,
+   "ci95": [
+    -0.944,
+    0.6413
+   ]
+  },
+  "intensive_margin_sd_per_sd": {
+   "N": 2126,
+   "artists": 638,
+   "beta": 0.0119,
+   "se": 0.0174,
+   "p": 0.4942,
+   "ci95": [
+    -0.0222,
+    0.0459
+   ]
+  },
+  "y_foreign_without_karaoke_tribute": {
+   "N": 9047,
+   "artists": 1718,
+   "y1": 2039,
+   "changed_from_1_to_0": 0,
+   "newly_nan": 0,
+   "beta": -0.2282,
+   "se": 0.4124,
+   "p": 0.58,
+   "ci95": [
+    -1.0364,
+    0.5801
+   ]
+  },
+  "share_of_spans_kept_per_half": {
+   "0": 0.5763,
+   "1": 0.574
+  },
+  "songs_artists_per_half": [
+   {
+    "half": 0,
+    "songs": 4355,
+    "artists": 877
+   },
+   {
+    "half": 1,
+    "songs": 4692,
+    "artists": 841
+   }
+  ]
+ },
+ "verdict": "kill (beta < +0.2 pp)",
+ "runtime_s": 64
+}

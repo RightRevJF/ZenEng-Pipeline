@@ -1,0 +1,366 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 1f6c36d (branch judging-research)",
+ "test": "melody_range (L2, folded melody range)",
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "fake_outcome": false,
+ "prediction_pp_per_sd": -0.7,
+ "kill_line": -0.2,
+ "threshold_p": 0.0071428571428571435,
+ "tests_tonight": 7,
+ "unit_values": [
+  {
+   "pitches": [
+    0,
+    4,
+    7,
+    12
+   ],
+   "want": 12,
+   "got": 12.0,
+   "ok": true
+  },
+  {
+   "pitches": [
+    0,
+    4,
+    19,
+    12
+   ],
+   "want": 7,
+   "got": 7.0,
+   "ok": true
+  },
+  {
+   "pitches": [
+    0,
+    2,
+    4,
+    5,
+    7,
+    9,
+    11,
+    12,
+    14,
+    16
+   ],
+   "want": 16,
+   "got": 16.0,
+   "ok": true
+  },
+  {
+   "pitches": [
+    0,
+    4,
+    7
+   ],
+   "want": "nan (fewer than 4 notes)",
+   "got": "nan"
+  }
+ ],
+ "measure": {
+  "songs": 9588,
+  "songs_with_value": 9588,
+  "clips_missing_raw": 0,
+  "pct_10_50_90": [
+   7.0,
+   11.0,
+   21.0
+  ],
+  "mean": 13.8604,
+  "sd": 17.475,
+  "folded_vs_unfolded_spearman": 0.9423,
+  "unfolded_pct_10_50_90": [
+   7.0,
+   11.0,
+   19.0
+  ]
+ },
+ "gate": {
+  "measure": "L2",
+  "songs_with_value": 9588,
+  "clip_pairs": 4271,
+  "clip_to_clip": 0.2896,
+  "stab_threshold": 0.2,
+  "overlap_largest": [
+   "mel_ic_mean",
+   0.5551
+  ],
+  "overlap_threshold": 0.7,
+  "overlap_all": {
+   "mel_ic_mean": 0.5551,
+   "mel_h_mean": 0.3148,
+   "mel_cheung": 0.2322,
+   "ch_ic_mean": 0.1524,
+   "ch_h_mean": 0.0152,
+   "ch_cheung": 0.0181,
+   "mel_rep": -0.1413,
+   "ch_rep": -0.0929,
+   "rhy_ic_mean": -0.0939,
+   "rhy_h_mean": -0.1168,
+   "rhy_cheung": -0.0092,
+   "sync_per_note": -0.1794,
+   "rest_share": -0.1952,
+   "phrase_mean": 0.2608,
+   "phrase_on_downbeat": 0.1505,
+   "density": 0.1125,
+   "length_variety": 0.024,
+   "n_ch": 0.1978,
+   "beats": 0.2273,
+   "clips_per_song": 0.1031
+  },
+  "passed": true
+ },
+ "columns": [
+  "z_L2",
+  "z_mel_ic_mean",
+  "z_ch_rep",
+  "z_ch_ic_mean",
+  "nch_bin1",
+  "nch_bin2",
+  "nch_bin3",
+  "nch_bin4",
+  "nch_bin5",
+  "nch_bin6",
+  "nch_bin7",
+  "nch_bin8",
+  "nch_bin9",
+  "clips2",
+  "clips3",
+  "clips4p",
+  "ln_beats",
+  "words1",
+  "words2",
+  "words3",
+  "words4",
+  "parens",
+  "rep_title"
+ ],
+ "notes_side_power": {
+  "residual_share": 0.7479,
+  "se_bound_pp": 0.4892,
+  "power_at_pred_p00714": 0.104,
+  "power_at_pred_p05": 0.2987
+ },
+ "outcome_files": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2226,
+  "y_foreign1": 2130
+ },
+ "counts": {
+  "dropped_y_foreign_nan": 2,
+  "N": 9586,
+  "artists": 1741,
+  "y_foreign1": 2130,
+  "share_y_foreign1": 0.2222,
+  "y1": 2224,
+  "y_foreign_karaoke_tribute_removed1": 2130
+ },
+ "power": {
+  "clustered_se": 0.2635,
+  "power_at_pred_p00714": 0.4867,
+  "power_at_pred_p05": 0.7571
+ },
+ "statsmodels_crosscheck_lpm": {
+  "beta_diff": 2.9976021664879227e-15,
+  "se_diff": 1.6653345369377348e-16
+ },
+ "primary": {
+  "beta": -0.4206,
+  "se": 0.2635,
+  "p": 0.1104,
+  "ci95": [
+   -0.937,
+   0.0958
+  ],
+  "N": 9586,
+  "artists": 1741,
+  "K": 23,
+  "others": {
+   "z_mel_ic_mean": {
+    "beta": -0.7606,
+    "se": 0.3124,
+    "p": 0.0149,
+    "ci95": [
+     -1.3729,
+     -0.1483
+    ]
+   },
+   "z_ch_rep": {
+    "beta": 1.0092,
+    "se": 0.4937,
+    "p": 0.04094,
+    "ci95": [
+     0.0416,
+     1.9769
+    ]
+   },
+   "z_ch_ic_mean": {
+    "beta": -0.2976,
+    "se": 0.425,
+    "p": 0.4837,
+    "ci95": [
+     -1.1305,
+     0.5353
+    ]
+   }
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 4616,
+   "artists": 886,
+   "y_foreign1": 1046,
+   "beta": -0.3314,
+   "se": 0.2612,
+   "p": 0.2045,
+   "ci95": [
+    -0.8433,
+    0.1805
+   ]
+  },
+  {
+   "half": 1,
+   "songs": 4970,
+   "artists": 855,
+   "y_foreign1": 1084,
+   "beta": -0.5179,
+   "se": 0.3817,
+   "p": 0.1748,
+   "ci95": [
+    -1.266,
+    0.2301
+   ]
+  }
+ ],
+ "conditional_logit": {
+  "coef": -0.0953,
+  "se": 0.0656,
+  "p": 0.1464,
+  "converged": true,
+  "kept_songs": 3640,
+  "kept_artists": 464,
+  "dropped_songs": 5946,
+  "dropped_artists": 1277,
+  "convergence_test": "max|score|/nobs < 1e-5 (BFGS, then Newton)",
+  "others": {
+   "z_mel_ic_mean": [
+    -0.1093,
+    0.0578
+   ],
+   "z_ch_rep": [
+    0.1295,
+    0.0589
+   ],
+   "z_ch_ic_mean": [
+    -0.0518,
+    0.0518
+   ]
+  }
+ },
+ "reported_deciding_nothing": {
+  "unfolded_range_in_place_of_L2": {
+   "beta": -0.5539,
+   "se": 0.3653,
+   "p": 0.1294,
+   "ci95": [
+    -1.2698,
+    0.162
+   ]
+  },
+  "without_mel_ic_mean": {
+   "beta": -0.6135,
+   "se": 0.2751,
+   "p": 0.02572,
+   "ci95": [
+    -1.1526,
+    -0.0744
+   ]
+  },
+  "L2_on_y": {
+   "y1": 2224,
+   "beta": -0.0143,
+   "se": 0.4185,
+   "p": 0.9727,
+   "ci95": [
+    -0.8346,
+    0.806
+   ]
+  },
+  "intensive_margin": {
+   "songs": 2224,
+   "artists": 649,
+   "outcome": "z(log(1+covers)) over these songs (population SD)",
+   "listener_prediction_sd_per_sd": -0.02,
+   "beta": 0.0634,
+   "se": 0.0312,
+   "p": 0.04236,
+   "ci95": [
+    0.0022,
+    0.1247
+   ]
+  },
+  "y_foreign_karaoke_tribute_removed": {
+   "count1": 2130,
+   "beta": -0.4206,
+   "se": 0.2635,
+   "p": 0.1104,
+   "ci95": [
+    -0.937,
+    0.0958
+   ]
+  }
+ },
+ "diagnostic_added_after_result": {
+  "L2_on_y_self": {
+   "y_self1": 94,
+   "beta": 0.4063,
+   "se": 0.354,
+   "p": 0.2511,
+   "ci95": [
+    -0.2876,
+    1.1001
+   ]
+  },
+  "clustered_variance_share_top3_artists_y_foreign": [
+   [
+    "portishead",
+    4,
+    0.3009
+   ],
+   [
+    "eric-prydz",
+    5,
+    0.1203
+   ],
+   [
+    "grandaddy",
+    2,
+    0.0793
+   ]
+  ],
+  "clustered_variance_share_top3_artists_y": [
+   [
+    "madeon",
+    22,
+    0.3973
+   ],
+   [
+    "armin-van-buuren",
+    12,
+    0.205
+   ],
+   [
+    "portishead",
+    4,
+    0.1399
+   ]
+  ]
+ },
+ "verdict": "unsettled (p >= .00714)",
+ "runtime_s": 29
+}
