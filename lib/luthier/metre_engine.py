@@ -200,10 +200,16 @@ class Engine:
         R = self.S["registers"]; P = int(min(min(R[x][1] for x in ("Verse", "Chorus")) + round(pk["range"]), max(R[x][2] for x in ("Verse", "Chorus", "Bridge") if x in R)))
         while P % 12 not in self.SCALE: P -= 1
         key = f"{sec}:{i}"; had = R.get(key); base = self.reg(sec, i); R[key] = [base[0], base[1], P]; ps = None
+        old_ = None                                                                           # 749.182, trial forms (studies/the_draw). climb: the carrying line holds no leap past an octave. "fallback": and where the song's last fresh chorus line cannot climb, the peak is planted the old way
         try:
             for _ in range(pk.get("tries", 60)):
                 ps = self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
-                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)):
+                    if not pk.get("climb") or all(abs(b_ - a_) <= 12 for a_, b_ in zip(ps, ps[1:])): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+                    if old_ is None: old_ = ps
+            else:
+                if pk.get("climb") == "fallback" and old_ is not None and (sec, i) == next((k_ for k_ in reversed(self.KEYS) if self.KIND.get(k_[0]) == "Chorus" and self.HOW.get(k_, ["fresh"])[0] == "fresh"), None):
+                    ps = old_; self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; self.stats["950: planted the old way, the last chorus line could not climb"] += 1
         finally:
             if had is None: R.pop(key, None)
             else: R[key] = had
@@ -531,7 +537,7 @@ class Engine:
                     sec_, i_ = h_.rsplit(":", 1); ln_ = [n for n in sung_ if n["sec"] == sec_ and n["line"] == int(i_) and n.get("melisma") != "second"]
                     if not ln_: continue
                     top_ = max(ln_, key=lambda n: n["dur"])
-                    if self.S["title_stress"] == "inside":                                      # 749.177: the narrower form, a trial, not built (it passed over 10 and 27 builds in 100 in songs 54 and 49). A weak last syllable may be held; a weak syllable before the line's last word may not be the longest
+                    if self.S["title_stress"] == "inside":                                      # 749.177: the narrower form, a trial, not built (it passed over 10 and 27 builds in 100 in songs 54 and 49). A build is passed over if the title line's longest note is a weak syllable with another word after it in the line; a weak syllable of the last word may be held (749.184: the comment made to say what the code does)
                         if not top_.get("stress") and any(n["text"] != ln_[-1]["text"] for n in ln_[ln_.index(top_):]): return "trial 749.177: the title line's longest note on a weak syllable before its last word"
                     elif not top_.get("stress"): return "961: the title line's longest note on an unstressed syllable"
         st = [n for n in ns if n["stress"] and self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design"]

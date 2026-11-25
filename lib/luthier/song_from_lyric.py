@@ -28,6 +28,7 @@ AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung a
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
+PEAK_CLIMB = {"1": True, "2": "fallback"}.get(os.environ.get("LUTHIER_PEAK_CLIMB", "0"), False)      # 749.182: a trial (studies/the_draw): the line that carries the planted peak holds no leap past an octave
 PITCH_CEILING = True   # 956
 OCTAVE_GATE = {"ban": True, "one": "one", "off": False}[os.environ.get("LUTHIER_OCTAVE", "ban")]     # 959 (749.160); "one" is the trial form of 749.176, not built (the environment switches here and below are for studies/v48_trials)
 TITLE_STRESS = {"off": False, "inside": "inside"}[os.environ.get("LUTHIER_TITLE", "off")]   # 961 (749.162): a setting, not a default: it passed over 7 in 10 of the living builds of songs 54 and 49, whose title lines end on a weak syllable
@@ -180,7 +181,7 @@ def plan(L):
         dr_ = int(round(max(-5, min(9, want_ - span_))))
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][2] = min(rg_[k_][2] + dr_, rg_["Verse"][1] + (V[1] - V[0])) if rg_[k_][2] + dr_ > rg_[k_][0] + 1 else rg_[k_][0] + 2
         for k_ in ("Verse", "Chorus", "Bridge"): rg_[k_][0] = max(rg_[k_][1] + 2, min(rg_[k_][2] - 2, rg_[k_][0] + int(round(dr_ * CENTRE_FOLLOWS))))      # and each part's centre follows its top, so the line can reach it
-        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60); spec["target"]["choose_range"] = (lambda a_, q_: dict(asked=a_, floor=round(a_ + q_, 2), note="954: no chosen tune narrower than the asking plus the kept 25th of range less the asking (held out by artist)"))(float(spec["target"]["from_its_words"]["range"]), float(json.load(open(_WS.TABLE))["range_less_the_asking_held_out"]["p10_25_50_75_90"][1])) if CHOOSE_RANGE else None      # 950: the peak planted as a note in the first fresh chorus line that reaches it
+        if PLANT_PEAK and spec["target"].get("from_its_words"): spec["target"]["peak"] = dict(range=float(spec["target"]["from_its_words"]["range"]), tries=60, **({"climb": PEAK_CLIMB} if PEAK_CLIMB else {})); spec["target"]["choose_range"] = (lambda a_, q_: dict(asked=a_, floor=round(a_ + q_, 2), note="954: no chosen tune narrower than the asking plus the kept 25th of range less the asking (held out by artist)"))(float(spec["target"]["from_its_words"]["range"]), float(json.load(open(_WS.TABLE))["range_less_the_asking_held_out"]["p10_25_50_75_90"][1])) if CHOOSE_RANGE else None      # 950: the peak planted as a note in the first fresh chorus line that reaches it
         spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
@@ -221,7 +222,7 @@ def bass(form_bars, tonic_midi, barlen, beats, mode):
 def root_pc(rn):
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)", rn); return (C.DEG[m.group(2).upper()] + (-1 if m.group(1) == "b" else 1 if m.group(1) == "#" else 0)) % 12
 def write(L, N=1000, K=12):
-    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = (os.environ.get("LUTHIER_LOOP") or True) if (L.get("chords") == "loop_less" or os.environ.get("LUTHIER_LOOP")) else False; drafts = []      # 960 (749.159): a setting, off unless the lyric asks
+    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = {"gentle": "gentle", "median": True}.get(os.environ.get("LUTHIER_LOOP", "off"), L.get("chords") == "loop_less"); drafts = []      # 749.184: the switch is off unless it names a form.      # 960 (749.159): a setting, off unless the lyric asks
     names = [(base(n) + " 9" if n != base(n) and not re.search(r"\d+$", n) else n, k, b) for n, k, b in form]; wn = {f[0]: w[0] for f, w in zip(form, names)}      # a last chorus returns the chorus (801)
     for seed in range(1, K + 1):
         pl = W.song(names, seed=seed * 1000 + L.get("seed", 1), require=L.get("require")); pl = {n: pl[wn[n]] for n, _, _ in form}; c, d, r = W.charge(list(pl.values())); drafts.append((c, d, seed, pl, r))

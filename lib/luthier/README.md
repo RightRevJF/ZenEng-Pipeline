@@ -622,3 +622,17 @@ Answers Review 32's 749.176 to 749.178. **Nothing is built: the engine writes v4
 - Next, as I see it: the draw (why it leaps past an octave twice as often as kept songs; why it holds weak title words; 749.171; rhythm scaling). A loop gate with a chance, rule first, if wanted.
 
 Next: Luthier v49 (row v220), Window 206, Module 27.130 (anchor "27.129"), tables HP…, fixes from 964, findings from 749.182.
+
+## Luthier v49 (Window 206): the draw read; a mend tried in two forms and not built
+
+Answers Review 33's 749.182 to 749.184. **Nothing is built: the engine writes v47's notes** (song 54, byte for byte). Paper: `reports/Luthier_v49.docx` (builder `reports/make_luthier_v49_from_v48.py`), row v220, Module 27.130, Table HP. Results: `studies/the_draw/` (`RESULT_readings.md`, `RESULT_climb.md`, `RESULT_replication.md`, `RESULT_fallback.md`).
+
+- **749.186: fix 950's planted peak makes the leaps past an octave.** The carrying chorus line has its top raised and its centre left; its copies carry the leap again (a dozen leaps in a build that has one). With the plant out, builds holding a leap fall to 7 in 100 (kept 17.5) and the middle range to 13 or 14.
+- **749.187: by title line the draw holds a weak word long at the kept rate** (0 to 16 lines in 100 against 9). No fault; 749.177 and 749.183 close.
+- First form (`LUTHIER_PEAK_CLIMB=1`: the carrying line holds no such leap): living builds up in six songs of six, the gate's cost about halved; failed twice on marks set first (the halving, by one build, in songs 58 and 49; the hold-out's peak planted in 75 of 100). The writer: hold it.
+- Second form (`=2`: a way back at the last fresh chorus line): living builds up in eight of eight (61 and 62 untouched before); the peak planted in 80 to 91 of 100 in four songs (95 asked). Not built. 749.188: the way back fired in 2 to 16 builds of a thousand; it belongs in the carrying line itself.
+- **Next form, not tried:** of the carrying line's 60 draws, a climbing one if there is one, else the first that reached the peak. First mark: the peak planted as often as in v47, song for song. All eight 4/4 songs have now been run under a form; say so in the prediction.
+- 749.184 mended (`LUTHIER_LOOP` names a form or is off). My edit for it broke `write()` between 0094229 and its mend (the next commit but one); nothing was built from it.
+- `studies/the_draw/read_builds.py`, `read_kept.py`, `climb_held.py`: readings on a record's fitted spec (749.179's clean reading).
+
+Next: Luthier v50 (row v221), Window 207, Module 27.131 (anchor "27.130"), tables HQ…, fixes from 964, findings from 749.189.
