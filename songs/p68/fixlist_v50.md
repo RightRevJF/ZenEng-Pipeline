@@ -8,7 +8,7 @@ You found the cause: the planted peak makes the octave leaps, a dozen at a time,
 
 Neither mend passed, and you were right not to build against your own marks. The third form, with the way back inside the line, is approved, with its marks set so the test can fail on what matters (749.189).
 
-One question goes to the writer: whether song 50 is spent as the third form's hold-out (749.190).
+The writer has ruled that song 50 is the third form's hold-out, run once and only if the seen-song checks hold (749.190).
 
 ## Items
 
@@ -28,7 +28,7 @@ Then, if the writer agrees (749.190), song 50 once, by the same marks, its ledge
 ### 749.190 A hold-out for 749.182 (for the writer)
 **Problem.** Every 4/4 song we have has now been run under a form of 749.182, song 59 included. The third form can only meet a song it has never touched by spending a sealed one.
 **Options.** Song 50 (folk, 4/4, 88), run once if the seen-song checks pass; or no hold-out, the third form judged on seen songs only. Song 63 stays reserved for the loop gate (749.185).
-**Check.** The writer's ruling, recorded in the ledger before any run.
+**Ruled (the writer, 25 November): spend song 50.** Run once, only if every seen-song check of 749.189 holds, by the same marks. The ruling is in the ledger (`studies/judging_data/README.md`); the run writes its own line there first.
 
 ## Carried, open
 
