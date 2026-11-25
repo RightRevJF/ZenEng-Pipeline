@@ -593,3 +593,18 @@ Answers Review 30's 749.153 to 749.155 and 749.169. Paper: `reports/Luthier_v46.
 - Not begun: 749.159 (sections that loop less), the flagged patches of 749.160 to 749.170 (`lib/luthier/proposed_v47.py`), 749.144, 749.147, 749.148 to 749.152, 749.163 (a ruling).
 
 Next: Luthier v47 (row v218), Window 204, Module 27.128 (anchor "27.127"), tables HN…, fixes from 959.
+
+## Luthier v47 (Window 204): the flagged patches, tested and built
+
+Answers Review 30's 749.159 to 749.170 and reads Review 31. Paper: `reports/Luthier_v47.docx` (builder `reports/make_luthier_v47_from_v46.py`), row v218, Module 27.128, Table HN. Results: `studies/proposed_v47/RESULT.md` (one at a time), `RESULT_build.md` (the build), `build_readings.json`, `studies/soundness/neighbour_v47.json`.
+
+- **On by default:** 959 `OCTAVE_GATE` (4/4: no leap past an octave inside a line; passes over about 3 living builds in 10); 962 `VARY_RETURNS` (a section returning whole has its longest held notes lifted to a chord tone; `melody.varied_returns` in the record).
+- **Settings a lyric asks for:** 960 `"chords": "loop_less"` (a verse or bridge redrawn until its repetition is at or under the kept median; overdoes it, 99 verses in 100; not a default until fresh songs settle the covers finding, with song 63 as hold-out); 961 `"title_stress": true`; 963 `"blue_notes": false`.
+- **Not built:** the region gate (6 to 22 builds of 3,000 left).
+- 961 was on in the first build and **failed check 3** (song 54's pool 7): it passes over about 200 builds in a thousand where a title line ends on a weak held syllable (songs 54, 49). 749.174. To be a default it needs the kept songs read for where a title line's longest note falls.
+- 749.175: a chosen tune's words' fit is one draw (moves up to 0.10 with any change). **Check the builds' middle, not the chosen tune, to 0.02.**
+- Second build: living builds 223, 256, 294 (v46: 342, 309, 419); builds' fit 0.263, 0.218, 0.296; sound, one lean (rhythm scaling, low); pools 24, 23, 22; neighbour choice 1.3 in 100, **random pool pick 6.5** (v46: 2.2). If builds are needed back: at most one such leap a song (the kept 90th) in place of the ban.
+- Song 52 changes by one note (962); song 53 byte for byte. Song 60: `songs/p70/lyric60.v47.song.json`. Songs 50 and 63 not run.
+- Review 31: 749.172, my 749.154 reading (the whole fit marks down pace) does not hold on kept songs; withdrawn. Open: 749.171 (inside a one-bar line), 749.144, 749.147, 749.148 to 749.152, 749.163; a gentler loop gate (verses over the kept 75th only).
+
+Next: Luthier v48 (row v219), Window 205, Module 27.129 (anchor "27.128"), tables HO…, fixes from 964, findings from 749.176.
