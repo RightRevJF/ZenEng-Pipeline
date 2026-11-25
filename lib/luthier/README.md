@@ -608,3 +608,17 @@ Answers Review 30's 749.159 to 749.170 and reads Review 31. Paper: `reports/Luth
 - Review 31: 749.172, my 749.154 reading (the whole fit marks down pace) does not hold on kept songs; withdrawn. Open: 749.171 (inside a one-bar line), 749.144, 749.147, 749.148 to 749.152, 749.163; a gentler loop gate (verses over the kept 75th only).
 
 Next: Luthier v48 (row v219), Window 205, Module 27.129 (anchor "27.128"), tables HO…, fixes from 964, findings from 749.176.
+
+## Luthier v48 (Window 205): three trials that failed; the words within a writer
+
+Answers Review 32's 749.176 to 749.178. **Nothing is built: the engine writes v47's notes** (song 54 run again, byte for byte). Paper: `reports/Luthier_v48.docx` (builder `reports/make_luthier_v48_from_v47.py`), row v219, Module 27.129, Table HO. Results: `studies/v48_trials/RESULT.md`.
+
+- 749.176, one leap past an octave allowed: living builds fell (216, 239, 292 against 223, 256, 294). The ban stands.
+- **749.179: the fits run through the gates** (fix 930's trial runs), so a changed gate is a changed engine. Read every trial of a gate two ways: the whole engine, and the record's fitted spec with only the gate changed (`studies/v48_trials/held_fit.py`). That reading here: ban 223, 256, 294; one leap 226, 262, 300; no gate 292, 320, 405 (749.180: a build that leaps past an octave leaps back).
+- 749.177: kept title lines' longest note: stressed 73 in 100, a weak last syllable 18, a weak syllable before the last word 9 (`title_lines.py`). The narrower gate passes over 9.7 and 26.7 builds in 100 in songs 54 and 49 (5 allowed). Not built; 961 unchanged.
+- 749.178: the gentle loop gate puts 65 verses in 100 at or under the kept median (45 to 60 asked) and fails all three checks (749.181: a redraw to a line empties the far side of it). **Song 63 not run**, still sealed; ledger updated. 960 unchanged.
+- Trial forms left in the code behind switches that are off, marked failed: `LUTHIER_OCTAVE=one`, `LUTHIER_TITLE=inside`, `LUTHIER_LOOP=gentle`.
+- Words: `studies/lyric_lines` (within artist, Rolling Stone 500: nothing passes; `you_lines` reversed); `studies/covers_lines/CHECK_maintainer.md` (shorter lines hold, tied to repeats; "I" plus "you" does not); `lib/luthier/lyric_people.py` (advice only).
+- Next, as I see it: the draw (why it leaps past an octave twice as often as kept songs; why it holds weak title words; 749.171; rhythm scaling). A loop gate with a chance, rule first, if wanted.
+
+Next: Luthier v49 (row v220), Window 206, Module 27.130 (anchor "27.129"), tables HP…, fixes from 964, findings from 749.182.

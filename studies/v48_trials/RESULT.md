@@ -24,7 +24,7 @@ Living builds were to rise in each song. They fell in each. Check 4 holds; the c
 | One leap allowed | 226 | 262 | 300 |
 | No gate | 292 | 320 | 405 |
 
-One leap allowed gives back 3, 6 and 6 builds of the 69, 64 and 111 the ban takes. A build that leaps past an octave nearly always does it twice or more: up, and back. So the kept-shaped form is the ban by another name, and there is nothing in it to build. If the builds are wanted back, the question is why the draw leaps past an octave twice as often as kept songs do, which is a question about the draw (the move weights, the register between lines), not the gate.
+One leap allowed gives back 3, 6 and 6 builds of the 69, 66 and 111 the ban takes. A build that leaps past an octave nearly always does it twice or more: up, and back. So the kept-shaped form is the ban by another name, and there is nothing in it to build. If the builds are wanted back, the question is why the draw leaps past an octave twice as often as kept songs do, which is a question about the draw (the move weights, the register between lines), not the gate.
 
 **Against what I expected.** I expected check 1 to hold and doubted check 2. Wrong about 1, and for a reason I had not seen: I thought of the form as a superset of the ban's builds.
 
@@ -51,7 +51,7 @@ Under 10 in 100, so the gate was tried. Two things the table also says: kept son
 
 Check 1 holds (song 62). Check 2 fails: 9.7 and 26.7 against 5. **Not built.** 961 stays the setting it was. The figure is an upper reading (a build passed over here might have died at a later gate), but 27 is not near 5.
 
-What it shows about the engine: in song 49 a quarter of otherwise living builds put a title line's longest note on a weak word inside the line, where kept songs do it in 9 title lines of 100. The chosen tunes do not (the pick avoids it: none of 19 title lines here). So this is a fault of the draw that the judging already mostly screens. Song 49's v47 record has one such line of five; that is the size of the problem in what the writer hears.
+What it shows about the engine: in song 49 a quarter of otherwise living builds put a title line's longest note on a weak word inside the line, where kept songs do it in 9 title lines of 100. The chosen tunes of v47, with no such gate, mostly do not: one title line of 21 in songs 55, 54, 58 and 49 (song 49's, one of its five). So it is a fault of the draw that the judging already mostly screens, and one line in twenty is the size of it in what the writer hears.
 
 **Against what I expected.** The kept share: right (5 to 10). The cost: wrong again, the second time for this gate.
 
