@@ -15,3 +15,5 @@ NEVER_SAY = ["god", "lord", "heaven", "angel", "angels", "jesus", "pray", "praye
 NOTES = "Never name the accident; no overt Christian words; hope unnamed; one plain feeling allowed late; a speaker with a stake and the son addressed throughout (the premise)."
 LOG.append({"when": "2026-11-25", "q": "What do you think of draft 1? A I have notes; B lock it and run the mouth tests; C try a different angle", "answer": "B",
             "done": "lyric_locked.md and lyric64.json (banked, unrun: no room check, no build); mouth_p74.py -> mouth_readings.txt: 25 lines, median 9 syllables, 10 flagged (close vowels at line ends: do, you, street, nurse; weak ending 'good for it'; three 4-consonant clusters); hook 4 syllables; never-say none; lyric_people: I 7.0, you 9.5, named feelings 0.5."})
+LOG.append({"when": "2026-11-25", "q": "Should I change verse 2's weak ending? A yes, to 'I wrote him back, you'll make it right' (Recommended); B keep as locked; C a different fix", "answer": "A",
+            "done": "lyric_locked.md and lyric64.json changed; mouth tests rerun (mouth_readings.txt)."})

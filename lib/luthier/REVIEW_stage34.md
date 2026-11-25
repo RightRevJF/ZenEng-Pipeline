@@ -21,3 +21,12 @@
 6. **Hold-outs.** Every 4/4 song we have has now been run under a form of 749.182, song 59 included, so the third form has no song it has never touched unless a sealed one is spent. Song 63 stays reserved for the loop gate (749.185). Whether to spend song 50 on the third form is put to the writer (749.190).
 
 ## Next fix 964. Next finding 749.191.
+
+## Addendum: the third form (luthier-v8-stage1 at 27f257d), merged
+
+- **Reproduced.** Song 54 with every switch off: byte for byte. The clean reading of the third form on song 55 (`FORMS=line climb_held.py`): `line_held.json`'s figures exactly (planted 727 of v47's 756; the old way 117; gate off, 21.2 builds in 100 holding a leap). Its rule (`PREDICTION_line.md`, b57946c, 16:46) was committed before its result (6d7cd49, 17:20).
+- **It fails by its own marks and by the list's** (living builds under v47's in songs 55, 49, 61; the clean reading over 17.5 in five songs of six). Not built; song 50 not run and still sealed, as the ledger says. Agreed.
+- **The finding (the maintainer's 749.189, the trade): accepted.** Across the three forms the plant and the leaps trade one for one: about one planted build in six reaches the peak only by leaping. No choice among draws gives both, because 950 raises the carrying line's top and leaves its centre. The mend is to the line's register.
+- **Next, approved: the reading first** (where kept songs' highest lines sit their centre against their top), then a form that lets the carrying line's centre rise toward the peak. Its marks, written before any run: living builds above v47's in every song; the clean reading, gate off, at or under the kept 17.5; the peak planted within 5 in 100 of v47's; the chorus's height over the verse within the kept middle half; 956's ceiling and 954's floor held; words' fit within 0.02; read both ways (749.179).
+- **A fresh hold-out exists now:** song 64, "Go On Ahead" (songs/p74/lyric64.json; piano ballad, 4/4, 68, mezzo), locked and banked tonight, never run. The writer has ruled: song 64 is reserved as the centre form's hold-out (run once, only if the seen-song checks hold, its ledger line first); song 50 stays sealed for later.
+- **Numbering.** 749.190 is the writer's hold-out ruling in the list for v50. The maintainer's "next finding 749.190" is 749.191; the centre reading takes 749.191 below.

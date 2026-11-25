@@ -30,6 +30,18 @@ Then, if the writer agrees (749.190), song 50 once, by the same marks, its ledge
 **Options.** Song 50 (folk, 4/4, 88), run once if the seen-song checks pass; or no hold-out, the third form judged on seen songs only. Song 63 stays reserved for the loop gate (749.185).
 **Ruled (the writer, 25 November): spend song 50.** Run once, only if every seen-song check of 749.189 holds, by the same marks. The ruling is in the ledger (`studies/judging_data/README.md`); the run writes its own line there first.
 
+## Addendum: the third form, run and failed (luthier-v8-stage1 at 27f257d)
+
+The third form ran before this list reached the maintainer, by its own marks, and fails by both its marks and this list's (living builds under v47's in songs 55, 49, 61; the clean reading over 17.5 in five songs of six). Not built. Song 50 not run; still sealed. The maintainer's finding stands: the plant and the leaps trade one for one, because 950 raises the carrying line's top and leaves its centre.
+
+### 749.191 The carrying line's centre (reading first)
+**Problem.** About one planted build in six reaches the peak only by leaping; no choice among draws avoids it (the three forms of 749.182).
+**Fix.** A reading first, rule committed before it: where kept songs' highest lines sit their centre against their top. Then a form that lets the carrying line's centre rise toward the peak, as 927 lets a part's centre follow its top.
+**Check (for the form, written before any run).** In every 4/4 song: living builds above v47's; the clean reading, gate off, builds holding a leap past an octave at or under the kept 17.5 in 100; the peak planted within 5 in 100 of v47's; the chorus's height over the verse within the kept middle half; 956's ceiling and 954's floor held; builds' middle words' fit within 0.02. Read both ways (749.179).
+**Hold-out (the writer's ruling, 25 November).** Song 64, "Go On Ahead" (`songs/p74/lyric64.json`; piano ballad, 4/4, 68, mezzo), locked tonight and never run: run once, only if every seen-song check holds, the ledger line first. Song 50 stays sealed for later.
+
+**Numbering.** 749.190 is the writer's hold-out ruling above. Next finding 749.192; next fix 964.
+
 ## Carried, open
 
 - 749.185 the loop gate with a chance (waits; song 63 reserved).
