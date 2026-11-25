@@ -33,8 +33,8 @@ def read(path):
 
 def notes(r):
     out = []
-    if r["I + you"] < 7.8: out.append(f"\"I\" plus \"you\" is {r['I + you']} in 100 words; acclaimed hits' median is 12.9 and about one in five is this low. Who is speaking, and to whom?")
-    if r["you"] == 0: out.append("Nobody is addressed. A person, God, the dead or a place can be \"you\" somewhere in the song. (Listeners warm to \"you\"; critics do not: within an artist, the Rolling Stone 500 song has \"you\" in fewer lines, studies/lyric_lines.)")
+    if r["I + you"] < 7.8: out.append(f"\"I\" plus \"you\" is {r['I + you']} in 100 words; acclaimed hits' median is 12.9 and about one in five is this low. Who is speaking? (Within a writer, songs with more \"I\" are covered a little more; studies/covers_lines.)")
+    if r["you"] == 0: out.append("Nobody is addressed. A \"you\" can warm a song for listeners, but it is no route to acclaim or covers: within an artist, critics' listed songs and the more covered songs both have a little less of it (studies/lyric_lines, studies/covers_lines).")
     if r["named feelings"] == 0: out.append("No feeling is named. One plain feeling, stated late against the images, is allowed (acclaimed hits name about one in 100 words).")
     elif r["named feelings"] > 1.5: out.append(f"Feelings are named {r['named feelings']} times in 100 words, over the hits' median of 1.5. Showing is still the rule.")
     early = [x for x in r["named feelings at"] if x["place"] < 0.5]
