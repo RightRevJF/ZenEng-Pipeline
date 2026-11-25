@@ -28,7 +28,7 @@ AIM_REPEATS = False   # 920: whether the aim also sets how many lines are sung a
 AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean toward its kept song's shares
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
-PEAK_CLIMB = {"1": True, "2": "fallback"}.get(os.environ.get("LUTHIER_PEAK_CLIMB", "0"), False)      # 749.182: a trial (studies/the_draw): the line that carries the planted peak holds no leap past an octave
+PEAK_CLIMB = {"1": True, "2": "fallback", "3": "line"}.get(os.environ.get("LUTHIER_PEAK_CLIMB", "0"), False)      # 749.182: a trial (studies/the_draw): the line that carries the planted peak holds no leap past an octave
 PITCH_CEILING = True   # 956
 OCTAVE_GATE = {"ban": True, "one": "one", "off": False}[os.environ.get("LUTHIER_OCTAVE", "ban")]     # 959 (749.160); "one" is the trial form of 749.176, not built (the environment switches here and below are for studies/v48_trials)
 TITLE_STRESS = {"off": False, "inside": "inside"}[os.environ.get("LUTHIER_TITLE", "off")]   # 961 (749.162): a setting, not a default: it passed over 7 in 10 of the living builds of songs 54 and 49, whose title lines end on a weak syllable

@@ -208,7 +208,9 @@ class Engine:
                     if not pk.get("climb") or all(abs(b_ - a_) <= 12 for a_, b_ in zip(ps, ps[1:])): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
                     if old_ is None: old_ = ps
             else:
-                if pk.get("climb") == "fallback" and old_ is not None and (sec, i) == next((k_ for k_ in reversed(self.KEYS) if self.KIND.get(k_[0]) == "Chorus" and self.HOW.get(k_, ["fresh"])[0] == "fresh"), None):
+                if pk.get("climb") == "line" and old_ is not None:                              # third form: the way back in the carrying line itself. A climbing draw if any of the 60 climbs, else the first that reached the peak
+                    ps = old_; self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; self.stats["950: planted the old way, this line could not climb"] += 1
+                elif pk.get("climb") == "fallback" and old_ is not None and (sec, i) == next((k_ for k_ in reversed(self.KEYS) if self.KIND.get(k_[0]) == "Chorus" and self.HOW.get(k_, ["fresh"])[0] == "fresh"), None):
                     ps = old_; self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; self.stats["950: planted the old way, the last chorus line could not climb"] += 1
         finally:
             if had is None: R.pop(key, None)
