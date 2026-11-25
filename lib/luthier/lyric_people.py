@@ -34,7 +34,7 @@ def read(path):
 def notes(r):
     out = []
     if r["I + you"] < 7.8: out.append(f"\"I\" plus \"you\" is {r['I + you']} in 100 words; acclaimed hits' median is 12.9 and about one in five is this low. Who is speaking, and to whom?")
-    if r["you"] == 0: out.append("Nobody is addressed. A person, God, the dead or a place can be \"you\" somewhere in the song.")
+    if r["you"] == 0: out.append("Nobody is addressed. A person, God, the dead or a place can be \"you\" somewhere in the song. (Listeners warm to \"you\"; critics do not: within an artist, the Rolling Stone 500 song has \"you\" in fewer lines, studies/lyric_lines.)")
     if r["named feelings"] == 0: out.append("No feeling is named. One plain feeling, stated late against the images, is allowed (acclaimed hits name about one in 100 words).")
     elif r["named feelings"] > 1.5: out.append(f"Feelings are named {r['named feelings']} times in 100 words, over the hits' median of 1.5. Showing is still the rule.")
     early = [x for x in r["named feelings at"] if x["place"] < 0.5]
@@ -48,4 +48,4 @@ if __name__ == "__main__":
     print(f"  we: {r['we']}")
     if r["sections with no I, you or we"]: print("  sections with no I, you or we: " + ", ".join(r["sections with no I, you or we"]))
     for x in notes(r) or ["Nothing to note."]: print("- " + x)
-    print("Advice only. None of these readings has passed a test of lasting value.")
+    print("Advice only. None of these readings has passed a test of lasting value (studies/lyric_research, studies/lyric_lines).")
