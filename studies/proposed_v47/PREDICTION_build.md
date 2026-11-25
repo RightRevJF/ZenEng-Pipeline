@@ -26,3 +26,13 @@
 **Song 63 is not run for 960.** Review 31 names it the hold-out for the loop-less trial. The gate form did not pass my third check, and it is built only as a setting no song gets unless its writer asks. A hold-out is spent when a default is at stake; this one is kept for that.
 
 **What I expect.** Checks 1, 2, 5 and 6 hold. Builds that live fall by about 3 in 10 (the octave gate), so the pools shrink to about 15 to 28; check 3's floor of 10 is the one at risk, in song 54 (its pool is 25 now).
+
+## The first build fails check 3; one amendment, written before the second run
+
+**Seen:** the first build (959, 961, 962 on), a thousand builds a song. Checks 1, 2, 4, 5 hold (the three chosen tunes are sound, with 6 checks outside the kept middle half where v46 had 12). **Check 3 fails:** song 54's pool is 7 builds (the floor was 10), and a random pool pick fails the soundness rule 6.1 times in 100 where v46's failed 2.2.
+
+**Why.** Builds that live: 216, 55, 276 in songs 55, 54, 58 (v46: 342, 309, 419), and 83 in song 49 (344). The title gate (961) passes over 194 of song 54's tries and 213 of song 49's, where on the four songs it was tested on it passed over 2 to 53. Song 49's title line is "The world is asking": its last syllable is weak, a line's last note is its longest, so most builds die. Song 49's own intake asked for that syllable to be held. A gate that forbids a held weak ending forbids a feminine ending, and no kept song has been read for it.
+
+**The amendment.** 961 becomes a setting a lyric may ask for (`"title_stress": true`), not a default. It was right for song 62, whose title word is "remembered" and whose long note fell inside the word; it is wrong as a rule for every title. Before it could be a default it needs the kept songs read, rule first: where the longest note of a kept title line falls.
+
+**The second run:** 959 and 962 on; 960, 961 and 963 settings. The same seven checks, unchanged. If check 3 fails again, 959 becomes a setting too and v47 ships 962 and the settings only.

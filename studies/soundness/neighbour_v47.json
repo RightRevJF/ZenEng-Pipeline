@@ -1,0 +1,1198 @@
+{
+ "first": {
+  "outside_middle_half": [
+   3,
+   7,
+   2
+  ],
+  "total": 12,
+  "sound": true,
+  "leans_10_90": [],
+  "leans_25_75": [
+   "rhythm scaling"
+  ]
+ },
+ "neighbour": {
+  "total_outside_middle_half_5_25_50_75_95": [
+   8.0,
+   9.0,
+   11.0,
+   13.0,
+   16.0
+  ],
+  "rule_fails_share": 0.07,
+  "leans_past_10_90_by_check": {
+   "rhythm scaling": 0.07
+  }
+ },
+ "pool_share_outside_middle_half_median": [
+  4.0,
+  3.0,
+  5.0
+ ],
+ "a_random_pick_from": {
+  "every build that lived": {
+   "total_outside_middle_half_5_50_95": [
+    11.0,
+    17.0,
+    24.0
+   ],
+   "rule_fails_share": 0.128,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.773,
+    "fit by height": 0.157,
+    "the words' fit, whole": 0.08,
+    "moves by leap": 0.039,
+    "pitch scaling": 0.034,
+    "range": 0.026,
+    "onsets on the bar's first beat": 0.018,
+    "stressed syllables on a beat": 0.004,
+    "silences of a beat or more, per 100 beats": 0.004,
+    "repeated notes": 0.003,
+    "fit by length": 0.003,
+    "fit by place": 0.003,
+    "onsets on the beat": 0.002,
+    "lines run on (under a beat of rest), share": 0.001,
+    "moves by step": 0.001
+   },
+   "lean_past_10_90_share_by_check": {
+    "moves by leap": 0.001,
+    "rhythm scaling": 0.073,
+    "pitch scaling": 0.003,
+    "fit by height": 0.003,
+    "onsets on the bar's first beat": 0.001
+   }
+  },
+  "the engine's pool (old charge's better half, joint gate, words' better halves)": {
+   "total_outside_middle_half_5_50_95": [
+    7.0,
+    12.0,
+    18.0
+   ],
+   "rule_fails_share": 0.061,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.948,
+    "onsets on the bar's first beat": 0.015,
+    "range": 0.004,
+    "moves by leap": 0.004,
+    "silences of a beat or more, per 100 beats": 0.002
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.061
+   }
+  },
+  "the joint gate and the kept floor only": {
+   "total_outside_middle_half_5_50_95": [
+    10.0,
+    16.0,
+    22.0
+   ],
+   "rule_fails_share": 0.104,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.774,
+    "fit by height": 0.127,
+    "the words' fit, whole": 0.053,
+    "moves by leap": 0.029,
+    "pitch scaling": 0.028,
+    "onsets on the bar's first beat": 0.021,
+    "range": 0.019,
+    "fit by length": 0.003,
+    "repeated notes": 0.003,
+    "onsets on the beat": 0.001,
+    "stressed syllables on a beat": 0.001,
+    "silences of a beat or more, per 100 beats": 0.001,
+    "fit by place": 0.001,
+    "lines run on (under a beat of rest), share": 0.001,
+    "moves by step": 0.0
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.07,
+    "fit by height": 0.003,
+    "pitch scaling": 0.002,
+    "moves by leap": 0.001,
+    "onsets on the bar's first beat": 0.001,
+    "range": 0.0
+   }
+  }
+ },
+ "nearest_the_songs_own_aim": {
+  "outside_middle_half": [
+   4,
+   1,
+   7
+  ],
+  "total": 12,
+  "sound": true,
+  "leans_10_90": [],
+  "leans_25_75": [
+   "rhythm scaling"
+  ],
+  "random_pick_among_the_ten_nearest": {
+   "total_outside_middle_half_5_50_95": [
+    7.0,
+    12.0,
+    18.0
+   ],
+   "rule_fails_share": 0.084,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.898,
+    "onsets on the bar's first beat": 0.019,
+    "silences of a beat or more, per 100 beats": 0.009
+   },
+   "lean_past_10_90_share_by_check": {
+    "rhythm scaling": 0.084
+   }
+  }
+ },
+ "aim_reached": {
+  "lyric55.json": {
+   "repeated notes": {
+    "target": 0.319,
+    "first": 0.216,
+    "nearest": 0.333,
+    "kept_median": 0.312
+   },
+   "moves by step": {
+    "target": 0.396,
+    "first": 0.466,
+    "nearest": 0.401,
+    "kept_median": 0.396
+   },
+   "moves by leap": {
+    "target": 0.102,
+    "first": 0.093,
+    "nearest": 0.13,
+    "kept_median": 0.106
+   },
+   "range": {
+    "target": 18.002,
+    "first": 15,
+    "nearest": 17,
+    "kept_median": 17.0
+   },
+   "bars on a figure already sung": {
+    "target": 0.421,
+    "first": 0.409,
+    "nearest": 0.395,
+    "kept_median": 0.473
+   },
+   "bars on a rhythm already sung": {
+    "target": 0.543,
+    "first": 0.5,
+    "nearest": 0.5,
+    "kept_median": 0.59
+   },
+   "distinct rhythms over bars": {
+    "target": 0.405,
+    "first": 0.5,
+    "nearest": 0.5,
+    "kept_median": 0.41
+   }
+  },
+  "lyric54.json": {
+   "repeated notes": {
+    "target": 0.319,
+    "first": 0.313,
+    "nearest": 0.343,
+    "kept_median": 0.312
+   },
+   "moves by step": {
+    "target": 0.396,
+    "first": 0.389,
+    "nearest": 0.377,
+    "kept_median": 0.396
+   },
+   "moves by leap": {
+    "target": 0.102,
+    "first": 0.07,
+    "nearest": 0.112,
+    "kept_median": 0.106
+   },
+   "range": {
+    "target": 18.772,
+    "first": 12,
+    "nearest": 20,
+    "kept_median": 17.0
+   },
+   "bars on a figure already sung": {
+    "target": 0.392,
+    "first": 0.491,
+    "nearest": 0.404,
+    "kept_median": 0.473
+   },
+   "bars on a rhythm already sung": {
+    "target": 0.525,
+    "first": 0.598,
+    "nearest": 0.518,
+    "kept_median": 0.59
+   },
+   "distinct rhythms over bars": {
+    "target": 0.405,
+    "first": 0.402,
+    "nearest": 0.482,
+    "kept_median": 0.41
+   }
+  },
+  "lyric58.json": {
+   "repeated notes": {
+    "target": 0.319,
+    "first": 0.357,
+    "nearest": 0.316,
+    "kept_median": 0.312
+   },
+   "moves by step": {
+    "target": 0.396,
+    "first": 0.367,
+    "nearest": 0.457,
+    "kept_median": 0.396
+   },
+   "moves by leap": {
+    "target": 0.102,
+    "first": 0.117,
+    "nearest": 0.124,
+    "kept_median": 0.106
+   },
+   "range": {
+    "target": 19.92,
+    "first": 17,
+    "nearest": 19,
+    "kept_median": 17.0
+   },
+   "bars on a figure already sung": {
+    "target": 0.412,
+    "first": 0.406,
+    "nearest": 0.421,
+    "kept_median": 0.473
+   },
+   "bars on a rhythm already sung": {
+    "target": 0.545,
+    "first": 0.594,
+    "nearest": 0.542,
+    "kept_median": 0.59
+   },
+   "distinct rhythms over bars": {
+    "target": 0.405,
+    "first": 0.406,
+    "nearest": 0.458,
+    "kept_median": 0.41
+   }
+  }
+ },
+ "pool_share_outside_middle_half_by_check": {
+  "stressed syllables on a beat": {
+   "low": 0.04,
+   "high": 0.32
+  },
+  "the words' fit, whole": {
+   "low": 0.08,
+   "high": 0.06
+  },
+  "fit by length": {
+   "low": 0.0,
+   "high": 0.6
+  },
+  "fit by place": {
+   "low": 0.16,
+   "high": 0.14
+  },
+  "fit by height": {
+   "low": 0.12,
+   "high": 0.04
+  },
+  "onsets on the beat": {
+   "low": 0.06,
+   "high": 0.06
+  },
+  "onsets on the bar's first beat": {
+   "low": 0.32,
+   "high": 0.12
+  },
+  "notes a bar": {
+   "low": 0.0,
+   "high": 0.0
+  },
+  "distinct rhythms over bars": {
+   "low": 0.0,
+   "high": 0.06
+  },
+  "bars on a rhythm already sung": {
+   "low": 0.06,
+   "high": 0.0
+  },
+  "rhythm scaling": {
+   "low": 0.98,
+   "high": 0.0
+  },
+  "moves by step": {
+   "low": 0.0,
+   "high": 0.02
+  },
+  "moves by leap": {
+   "low": 0.08,
+   "high": 0.28
+  },
+  "repeated notes": {
+   "low": 0.02,
+   "high": 0.02
+  },
+  "range": {
+   "low": 0.16,
+   "high": 0.0
+  },
+  "bars on a figure already sung": {
+   "low": 0.18,
+   "high": 0.0
+  },
+  "pitch scaling": {
+   "low": 0.1,
+   "high": 0.12
+  },
+  "silences of a beat or more, per 100 beats": {
+   "low": 0.0,
+   "high": 0.14
+  },
+  "longest phrase, beats (breath at half a beat)": {
+   "low": 0.0,
+   "high": 0.0
+  },
+  "lines run on (under a beat of rest), share": {
+   "low": 0.0,
+   "high": 0.02
+  },
+  "stressed line ends held a half note or more, share": {
+   "low": 0.0,
+   "high": 0.0
+  }
+ },
+ "pool_spread_over_kept_spread_by_check": {
+  "stressed syllables on a beat": 0.538,
+  "the words' fit, whole": 0.555,
+  "fit by length": 0.485,
+  "fit by place": 0.492,
+  "fit by height": 0.431,
+  "onsets on the beat": 0.402,
+  "onsets on the bar's first beat": 0.632,
+  "notes a bar": 0.259,
+  "distinct rhythms over bars": 0.279,
+  "bars on a rhythm already sung": 0.279,
+  "rhythm scaling": 0.351,
+  "moves by step": 0.368,
+  "moves by leap": 0.668,
+  "repeated notes": 0.431,
+  "range": 0.4,
+  "bars on a figure already sung": 0.258,
+  "pitch scaling": 0.552,
+  "silences of a beat or more, per 100 beats": 0.463,
+  "longest phrase, beats (breath at half a beat)": 0.2,
+  "lines run on (under a beat of rest), share": 0.382,
+  "stressed line ends held a half note or more, share": 0.248
+ },
+ "pool_spread_over_kept_spread_within_each_song_median": {
+  "lyric55.json": 0.283,
+  "lyric54.json": 0.24,
+  "lyric58.json": 0.292
+ },
+ "variety_two_sided": {
+  "sum_of_twice_the_smaller_side": 1.32,
+  "kept": 10.5,
+  "median_spread_ratio_all_three_pooled": 0.402
+ },
+ "ranges_90": {
+  "neighbour choice": [
+   0.0,
+   0.14
+  ],
+  "a random pick from the engine's pool": [
+   0.0,
+   0.133
+  ],
+  "a random pick from every build that lived": [
+   0.093,
+   0.157
+  ],
+  "pool_sizes": {
+   "lyric55.json": 20,
+   "lyric54.json": 7,
+   "lyric58.json": 23
+  },
+  "note": "940: each pool resampled with replacement at its own size, 200 times; the 5th and 95th percentiles of the figure read on the resamples. 949 (749.124): 1,000 inner draws a resample for every figure, so a range is the pools' and not the inner draws'"
+ },
+ "749.140": {
+  "kept_10th_25th_75th": [
+   0.5738521401440327,
+   0.6094092046559212,
+   0.7218474995142027
+  ],
+  "pools": {
+   "lyric55.json": [
+    0.573,
+    0.5909,
+    0.6064,
+    0.5682,
+    0.6097,
+    0.587,
+    0.5934,
+    0.5961,
+    0.6006,
+    0.6073,
+    0.5958,
+    0.5833,
+    0.5979,
+    0.5924,
+    0.5967,
+    0.5716,
+    0.5819,
+    0.5808,
+    0.5847,
+    0.5931
+   ],
+   "lyric54.json": [
+    0.5877,
+    0.5845,
+    0.5712,
+    0.5517,
+    0.5827,
+    0.5933,
+    0.5679
+   ],
+   "lyric58.json": [
+    0.5307,
+    0.5237,
+    0.6053,
+    0.5576,
+    0.5632,
+    0.5563,
+    0.5476,
+    0.5729,
+    0.544,
+    0.5524,
+    0.5502,
+    0.5566,
+    0.5468,
+    0.5365,
+    0.5635,
+    0.5581,
+    0.56,
+    0.5323,
+    0.5194,
+    0.5474,
+    0.5417,
+    0.5771,
+    0.5929
+   ]
+  },
+  "living": {
+   "lyric55.json": [
+    0.5773,
+    0.5971,
+    0.5632,
+    0.597,
+    0.573,
+    0.593,
+    0.595,
+    0.5978,
+    0.5755,
+    0.5727,
+    0.5909,
+    0.5796,
+    0.6205,
+    0.5866,
+    0.602,
+    0.6025,
+    0.6036,
+    0.6022,
+    0.5898,
+    0.5653,
+    0.5816,
+    0.5978,
+    0.6122,
+    0.6004,
+    0.5463,
+    0.6064,
+    0.6259,
+    0.5842,
+    0.5994,
+    0.5935,
+    0.5694,
+    0.5714,
+    0.5804,
+    0.5757,
+    0.5991,
+    0.5619,
+    0.6293,
+    0.5715,
+    0.609,
+    0.576,
+    0.5757,
+    0.5682,
+    0.5722,
+    0.5876,
+    0.6112,
+    0.6097,
+    0.587,
+    0.5823,
+    0.5732,
+    0.5794,
+    0.6,
+    0.6037,
+    0.5934,
+    0.5833,
+    0.5826,
+    0.5998,
+    0.5961,
+    0.6106,
+    0.5858,
+    0.5827,
+    0.5917,
+    0.5847,
+    0.6086,
+    0.5649,
+    0.5844,
+    0.6383,
+    0.5938,
+    0.6145,
+    0.5968,
+    0.6095,
+    0.5664,
+    0.6039,
+    0.6083,
+    0.5878,
+    0.636,
+    0.621,
+    0.5803,
+    0.5773,
+    0.6129,
+    0.5904,
+    0.5989,
+    0.5638,
+    0.6182,
+    0.5899,
+    0.5771,
+    0.6118,
+    0.6006,
+    0.5807,
+    0.6273,
+    0.5972,
+    0.5555,
+    0.5913,
+    0.5845,
+    0.5755,
+    0.6235,
+    0.6118,
+    0.5779,
+    0.5749,
+    0.6073,
+    0.6143,
+    0.6106,
+    0.5958,
+    0.5836,
+    0.609,
+    0.5835,
+    0.5602,
+    0.5589,
+    0.5682,
+    0.5574,
+    0.5916,
+    0.618,
+    0.5514,
+    0.5694,
+    0.5883,
+    0.5892,
+    0.5936,
+    0.5963,
+    0.5821,
+    0.6368,
+    0.5929,
+    0.5789,
+    0.6238,
+    0.5864,
+    0.5833,
+    0.5719,
+    0.5952,
+    0.5979,
+    0.605,
+    0.6202,
+    0.5924,
+    0.5967,
+    0.6009,
+    0.5884,
+    0.5674,
+    0.6286,
+    0.5677,
+    0.577,
+    0.569,
+    0.5933,
+    0.5755,
+    0.5786,
+    0.5804,
+    0.6035,
+    0.5851,
+    0.5611,
+    0.6026,
+    0.5903,
+    0.5747,
+    0.5716,
+    0.5902,
+    0.6203,
+    0.5801,
+    0.6106,
+    0.5841,
+    0.6002,
+    0.5819,
+    0.6042,
+    0.5958,
+    0.6091,
+    0.572,
+    0.6031,
+    0.5595,
+    0.601,
+    0.6018,
+    0.6105,
+    0.587,
+    0.5699,
+    0.6081,
+    0.6014,
+    0.5953,
+    0.5533,
+    0.6201,
+    0.5467,
+    0.584,
+    0.5952,
+    0.5808,
+    0.6104,
+    0.5779,
+    0.6137,
+    0.6248,
+    0.6159,
+    0.5541,
+    0.5847,
+    0.575,
+    0.5858,
+    0.5896,
+    0.5716,
+    0.592,
+    0.6501,
+    0.5786,
+    0.5494,
+    0.5765,
+    0.5792,
+    0.5931,
+    0.6192,
+    0.603,
+    0.5913,
+    0.5796,
+    0.5817,
+    0.5706,
+    0.5703,
+    0.5942,
+    0.6145,
+    0.6184,
+    0.5804,
+    0.5758,
+    0.6144,
+    0.5954,
+    0.5734,
+    0.5825,
+    0.6055,
+    0.6087,
+    0.6071,
+    0.585,
+    0.5782,
+    0.6283
+   ],
+   "lyric54.json": [
+    0.5715,
+    0.5686,
+    0.5561,
+    0.5877,
+    0.582,
+    0.5688,
+    0.5965,
+    0.5845,
+    0.5421,
+    0.5653,
+    0.6011,
+    0.5848,
+    0.5822,
+    0.5912,
+    0.5845,
+    0.5404,
+    0.5934,
+    0.5712,
+    0.6276,
+    0.5676,
+    0.5821,
+    0.539,
+    0.6045,
+    0.5519,
+    0.5517,
+    0.5636,
+    0.5617,
+    0.5509,
+    0.5761,
+    0.5831,
+    0.5591,
+    0.5721,
+    0.5599,
+    0.5566,
+    0.5853,
+    0.5633,
+    0.5974,
+    0.5685,
+    0.5557,
+    0.6364,
+    0.5827,
+    0.5908,
+    0.5237,
+    0.5891,
+    0.5838,
+    0.5582,
+    0.5947,
+    0.5558,
+    0.5933,
+    0.5784,
+    0.61,
+    0.5807,
+    0.5731,
+    0.5679,
+    0.5688
+   ],
+   "lyric58.json": [
+    0.5446,
+    0.545,
+    0.5715,
+    0.5302,
+    0.5557,
+    0.5336,
+    0.5455,
+    0.5698,
+    0.5307,
+    0.5537,
+    0.4993,
+    0.5395,
+    0.5177,
+    0.553,
+    0.5543,
+    0.5682,
+    0.5237,
+    0.5535,
+    0.5505,
+    0.5384,
+    0.5559,
+    0.5444,
+    0.5418,
+    0.5637,
+    0.5154,
+    0.4902,
+    0.5779,
+    0.5528,
+    0.6053,
+    0.5619,
+    0.543,
+    0.5524,
+    0.5418,
+    0.553,
+    0.557,
+    0.5781,
+    0.5562,
+    0.5256,
+    0.5727,
+    0.5518,
+    0.5767,
+    0.5576,
+    0.5523,
+    0.5632,
+    0.6138,
+    0.5565,
+    0.5614,
+    0.5563,
+    0.5451,
+    0.5741,
+    0.5922,
+    0.5505,
+    0.5117,
+    0.5899,
+    0.5476,
+    0.5608,
+    0.5303,
+    0.5729,
+    0.5321,
+    0.5622,
+    0.5775,
+    0.5669,
+    0.5638,
+    0.5484,
+    0.5439,
+    0.5728,
+    0.544,
+    0.5162,
+    0.5665,
+    0.5096,
+    0.5524,
+    0.5234,
+    0.511,
+    0.5683,
+    0.5322,
+    0.5802,
+    0.5246,
+    0.592,
+    0.559,
+    0.5317,
+    0.5502,
+    0.5172,
+    0.5259,
+    0.541,
+    0.6169,
+    0.5467,
+    0.5557,
+    0.583,
+    0.554,
+    0.5475,
+    0.5396,
+    0.5367,
+    0.5663,
+    0.5798,
+    0.5955,
+    0.5623,
+    0.5498,
+    0.5599,
+    0.5424,
+    0.5549,
+    0.5339,
+    0.5339,
+    0.5811,
+    0.5139,
+    0.5324,
+    0.5209,
+    0.5582,
+    0.552,
+    0.5405,
+    0.525,
+    0.5337,
+    0.5393,
+    0.6059,
+    0.5551,
+    0.5551,
+    0.5496,
+    0.5448,
+    0.5491,
+    0.5714,
+    0.5576,
+    0.5147,
+    0.5984,
+    0.5593,
+    0.585,
+    0.5714,
+    0.5429,
+    0.5444,
+    0.5321,
+    0.5417,
+    0.5882,
+    0.5704,
+    0.5476,
+    0.5617,
+    0.5543,
+    0.5316,
+    0.5805,
+    0.5405,
+    0.5595,
+    0.5741,
+    0.5725,
+    0.5383,
+    0.5566,
+    0.5541,
+    0.5468,
+    0.5392,
+    0.5545,
+    0.5841,
+    0.5473,
+    0.5887,
+    0.5181,
+    0.5137,
+    0.5429,
+    0.537,
+    0.5581,
+    0.5702,
+    0.5395,
+    0.5127,
+    0.5612,
+    0.5575,
+    0.5142,
+    0.5869,
+    0.5502,
+    0.5665,
+    0.5389,
+    0.539,
+    0.5646,
+    0.5798,
+    0.5365,
+    0.5148,
+    0.5326,
+    0.5321,
+    0.5611,
+    0.5601,
+    0.5424,
+    0.5635,
+    0.5926,
+    0.5638,
+    0.5391,
+    0.5431,
+    0.5731,
+    0.5159,
+    0.4953,
+    0.5634,
+    0.5721,
+    0.5534,
+    0.5439,
+    0.5676,
+    0.5785,
+    0.5529,
+    0.5693,
+    0.5451,
+    0.5586,
+    0.5076,
+    0.5581,
+    0.5814,
+    0.5212,
+    0.5558,
+    0.597,
+    0.5702,
+    0.5427,
+    0.5621,
+    0.56,
+    0.556,
+    0.5816,
+    0.5765,
+    0.5061,
+    0.5387,
+    0.5092,
+    0.5708,
+    0.5526,
+    0.5533,
+    0.5291,
+    0.5323,
+    0.5083,
+    0.5607,
+    0.5571,
+    0.4997,
+    0.5628,
+    0.5851,
+    0.5821,
+    0.5308,
+    0.5683,
+    0.5269,
+    0.5194,
+    0.5649,
+    0.5833,
+    0.52,
+    0.5729,
+    0.5263,
+    0.492,
+    0.5363,
+    0.548,
+    0.5424,
+    0.5542,
+    0.5488,
+    0.5794,
+    0.5309,
+    0.5369,
+    0.5619,
+    0.5324,
+    0.5474,
+    0.5694,
+    0.5507,
+    0.5673,
+    0.5417,
+    0.5771,
+    0.5951,
+    0.5372,
+    0.5318,
+    0.5542,
+    0.5756,
+    0.5576,
+    0.5929,
+    0.5464,
+    0.5962,
+    0.5554,
+    0.5426,
+    0.5841,
+    0.5174,
+    0.5632,
+    0.5379,
+    0.5358,
+    0.548,
+    0.5684,
+    0.57,
+    0.5651,
+    0.5137,
+    0.5617,
+    0.5015,
+    0.5791,
+    0.5495,
+    0.5416,
+    0.562,
+    0.5275,
+    0.5739,
+    0.5672
+   ]
+  },
+  "living_builds": {
+   "lyric55.json": 216,
+   "lyric54.json": 55,
+   "lyric58.json": 276
+  },
+  "living_median_rhythm_scaling": {
+   "lyric55.json": 0.59,
+   "lyric54.json": 0.573,
+   "lyric58.json": 0.553
+  },
+  "living_median_words_fit": {
+   "lyric55.json": 0.255,
+   "lyric54.json": 0.231,
+   "lyric58.json": 0.313
+  },
+  "pool_median_words_fit": {
+   "lyric55.json": 0.312,
+   "lyric54.json": 0.274,
+   "lyric58.json": 0.367
+  },
+  "pool_spread_over_kept_spread": 0.351
+ },
+ "749.137": {
+  "with_range": {
+   "a_random_pick_from_the_pool_fails": 0.056,
+   "neighbour_choice_fails": 0.059,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.953,
+    "onsets on the bar's first beat": 0.016,
+    "range": 0.004,
+    "moves by leap": 0.003,
+    "silences of a beat or more, per 100 beats": 0.002
+   }
+  },
+  "range_left_out": {
+   "a_random_pick_from_the_pool_fails": 0.056,
+   "neighbour_choice_fails": 0.068,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.953,
+    "onsets on the bar's first beat": 0.016,
+    "moves by leap": 0.003,
+    "silences of a beat or more, per 100 beats": 0.002
+   }
+  },
+  "pool_range_quartiles": {
+   "lyric55.json": [
+    13.75,
+    15.0,
+    17.0
+   ],
+   "lyric54.json": [
+    14.0,
+    14.0,
+    17.0
+   ],
+   "lyric58.json": [
+    14.5,
+    17.0,
+    19.0
+   ]
+  }
+ },
+ "749.134": {
+  "ceiling": {
+   "verse": 0.44,
+   "chorus": 0.479
+  },
+  "pool_sizes": {
+   "lyric55.json": 20,
+   "lyric54.json": 7,
+   "lyric58.json": 23
+  },
+  "pool_sizes_under_the_ceiling": {
+   "lyric55.json": 20,
+   "lyric54.json": 7,
+   "lyric58.json": 23
+  },
+  "living_builds_under_the_ceiling": {
+   "lyric55.json": 0.727,
+   "lyric54.json": 0.8,
+   "lyric58.json": 0.301
+  },
+  "chosen_without_the_ceiling": {
+   "lyric55.json": {
+    "n": 22,
+    "range": 15,
+    "words_fit": 0.369,
+    "commonest_pitch_verse": 0.223,
+    "commonest_pitch_chorus": 0.392,
+    "outside_middle_half": 3
+   },
+   "lyric54.json": {
+    "n": 220,
+    "range": 19,
+    "words_fit": 0.274,
+    "commonest_pitch_verse": 0.226,
+    "commonest_pitch_chorus": 0.218,
+    "outside_middle_half": 1
+   },
+   "lyric58.json": {
+    "n": 35,
+    "range": 17,
+    "words_fit": 0.301,
+    "commonest_pitch_verse": 0.246,
+    "commonest_pitch_chorus": 0.351,
+    "outside_middle_half": 2
+   }
+  },
+  "chosen_under_the_ceiling": {
+   "lyric55.json": {
+    "n": 22,
+    "range": 15,
+    "words_fit": 0.369,
+    "commonest_pitch_verse": 0.223,
+    "commonest_pitch_chorus": 0.392,
+    "outside_middle_half": 3
+   },
+   "lyric54.json": {
+    "n": 220,
+    "range": 19,
+    "words_fit": 0.274,
+    "commonest_pitch_verse": 0.226,
+    "commonest_pitch_chorus": 0.218,
+    "outside_middle_half": 1
+   },
+   "lyric58.json": {
+    "n": 35,
+    "range": 17,
+    "words_fit": 0.301,
+    "commonest_pitch_verse": 0.246,
+    "commonest_pitch_chorus": 0.351,
+    "outside_middle_half": 2
+   }
+  },
+  "chosen_without_sound": true,
+  "chosen_under_sound": true,
+  "rates_under_the_ceiling": {
+   "a_random_pick_from_the_pool_fails": 0.056,
+   "neighbour_choice_fails": 0.068,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.953,
+    "onsets on the bar's first beat": 0.017,
+    "moves by leap": 0.003,
+    "range": 0.003,
+    "silences of a beat or more, per 100 beats": 0.003
+   }
+  },
+  "rates_without": {
+   "a_random_pick_from_the_pool_fails": 0.056,
+   "neighbour_choice_fails": 0.068,
+   "lean_past_25_75_share_by_check": {
+    "rhythm scaling": 0.953,
+    "onsets on the bar's first beat": 0.017,
+    "moves by leap": 0.003,
+    "range": 0.003,
+    "silences of a beat or more, per 100 beats": 0.003
+   }
+  }
+ }
+}
