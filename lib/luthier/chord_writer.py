@@ -95,10 +95,10 @@ class Writer:
         self.tmpl = {}
         for k in self.kinds:
             own = [pattern(b) for kk, b, _, _ in S if kk == k]; self.tmpl[k] = own if len(own) >= 30 else [pattern(b) for kk, b, _, _ in allS if kk == k]   # few sections in this mode: structures from both
-        self.loop_less = False; self.rep_median = {}                                           # 960 (749.159): a setting. Each kind's kept median of chord repetition within a section, for the gate in section()
+        self.loop_less = False; self.rep_median = {}; self.rep_q75 = {}                                           # 960 (749.159): a setting. Each kind's kept median of chord repetition within a section, for the gate in section()
         for k in ("verse", "bridge"):
             src_ = [b for kk, b, _, _ in S if kk == k]; src_ = src_ if len(src_) >= 30 else [b for kk, b, _, _ in allS if kk == k]; v_ = [r for r in (chord_repetition(b) for b in src_) if r is not None]
-            if v_: self.rep_median[k] = st.median(v_)
+            if v_: self.rep_median[k] = st.median(v_); self.rep_q75[k] = float(sorted(v_)[int(0.75 * (len(v_) - 1))])
         self.setting = chromatic; self.kept_out = []
         for si in sorted({x[2] for x in S}):
             bars = [t for k, b, i, _ in S if i == si and k in ("verse", "chorus", "bridge", "pre") for t in b]
@@ -137,10 +137,10 @@ class Writer:
         chord 3-grams already heard in it) is at or under the kept median for its kind; the least-looping draw where none is. Not a default: it did not pass its third
         check and has met no hold-out (studies/proposed_v47)."""
         if not self.loop_less or k not in self.rep_median or given: return self.section1(rng, k, n, prev, require, given, final, home)
-        best = None
+        best = None; bar_ = self.rep_q75[k] if self.loop_less == "gentle" else self.rep_median[k]      # "gentle" (749.178): only a section over the kept 75th is drawn again; the others stand as drawn
         for _ in range(30):
             b = self.section1(rng, k, n, prev, require, given, final, home); r = chord_repetition(b); r = 0.0 if r is None else r
-            if r <= self.rep_median[k]: return b
+            if r <= bar_: return b
             if best is None or r < best[0]: best = (r, b)
         return best[1]
     def section1(self, rng, k, n, prev=None, require=None, given=None, final=False, home=None):

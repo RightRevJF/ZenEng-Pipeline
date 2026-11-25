@@ -29,8 +29,8 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PITCH_CEILING = True   # 956
-OCTAVE_GATE = True     # 959 (749.160)
-TITLE_STRESS = False   # 961 (749.162): a setting, not a default: it passed over 7 in 10 of the living builds of songs 54 and 49, whose title lines end on a weak syllable
+OCTAVE_GATE = {"ban": True, "one": "one", "off": False}[os.environ.get("LUTHIER_OCTAVE", "ban")]     # 959 (749.160); "one" is the trial form of 749.176, not built (the environment switches here and below are for studies/v48_trials)
+TITLE_STRESS = {"off": False, "inside": "inside"}[os.environ.get("LUTHIER_TITLE", "off")]   # 961 (749.162): a setting, not a default: it passed over 7 in 10 of the living builds of songs 54 and 49, whose title lines end on a weak syllable
 VARY_RETURNS = True    # 962 (749.167)
 VERSE_CLOSER = {"off": None, "0": None}.get(os.environ.get("LUTHIER_VERSE_CLOSER", "off"), os.environ.get("LUTHIER_VERSE_CLOSER", "off"))      # 958 (749.142), off by default from v46 (749.153): song 49, the hold-out, lost words' fit under it. A lyric may ask for it ("verse_closer": true, or a form's name); the environment switch is for studies
 VERSE_SHARES = os.path.join(HERE, "..", "..", "studies", "lever_range", "result.json")      # the trial form "shares" (749.153) reads the kept shares from the study; a kept table is made only if the form is built
@@ -193,7 +193,7 @@ def plan(L):
         spec["all_windows"] = True                                                            # 912: every kept two-bar rhythm may be drawn, not the sixty commonest
         import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)
         if PITCH_CEILING: spec["pitch_ceiling"] = {k_: v_["ceiling"] for k_, v_ in json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_commonest_pitch.json")))["parts"].items()}      # 956 (749.134): a build whose verses or choruses put more of their notes on one pitch than nine kept songs in ten is passed over      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
-        spec["no_leap_past_an_octave"] = OCTAVE_GATE; spec["title_stress"] = bool(L.get("title_stress", TITLE_STRESS))      # 959 on in 4/4; 961 where the lyric asks ("title_stress": true)
+        spec["no_leap_past_an_octave"] = OCTAVE_GATE; spec["title_stress"] = L.get("title_stress", TITLE_STRESS) if L.get("title_stress", TITLE_STRESS) == "inside" else bool(L.get("title_stress", TITLE_STRESS))      # 959 on in 4/4; 961 where the lyric asks ("title_stress": true)
         spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
@@ -221,7 +221,7 @@ def bass(form_bars, tonic_midi, barlen, beats, mode):
 def root_pc(rn):
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)", rn); return (C.DEG[m.group(2).upper()] + (-1 if m.group(1) == "b" else 1 if m.group(1) == "#" else 0)) % 12
 def write(L, N=1000, K=12):
-    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = L.get("chords") == "loop_less"; drafts = []      # 960 (749.159): a setting, off unless the lyric asks
+    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = (os.environ.get("LUTHIER_LOOP") or True) if (L.get("chords") == "loop_less" or os.environ.get("LUTHIER_LOOP")) else False; drafts = []      # 960 (749.159): a setting, off unless the lyric asks
     names = [(base(n) + " 9" if n != base(n) and not re.search(r"\d+$", n) else n, k, b) for n, k, b in form]; wn = {f[0]: w[0] for f, w in zip(form, names)}      # a last chorus returns the chorus (801)
     for seed in range(1, K + 1):
         pl = W.song(names, seed=seed * 1000 + L.get("seed", 1), require=L.get("require")); pl = {n: pl[wn[n]] for n, _, _ in form}; c, d, r = W.charge(list(pl.values())); drafts.append((c, d, seed, pl, r))

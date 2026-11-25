@@ -39,5 +39,6 @@ Write a line here **before** running anything against a hold-out, so no test is 
 |---|---|---|---|---|
 | 22 Nov 2026 | the maintainer | McGill cover counts | chord repetition against covers, fresh songs (`studies/judging_checks/fresh_songs`, rule f25209f): the test of record | −0.028, range −0.11 to +0.05; not settled |
 | 22 Nov 2026 | the songwriting session | McGill cover counts | the same question, its own model (`studies/fresh_songs`, rule 59182c6) | −0.060, range −0.154 to +0.034; not settled |
+| 25 Nov 2026 | maintainer | Song 63 (the engine's banked lyric) | The gentler loop gate, 749.178: `studies/v48_trials/PREDICTION.md` section 3; run once, and only if the seen-song checks hold | **Not run.** The seen-song checks failed (`studies/v48_trials/RESULT.md`). Song 63 is still sealed. |
 
 Two readings spent on one question, by accident. Hold-out songs for the engine (59 for everything; 50 and 63 banked, not yet run by anything) are listed in `lib/luthier/README.md`.
