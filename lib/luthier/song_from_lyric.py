@@ -29,7 +29,7 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PITCH_CEILING = True   # 956
-OCTAVE_GATE = {"ban": True, "one": "one", "off": False}[os.environ.get("LUTHIER_OCTAVE", "ban")]     # 959 (749.160); "one" is the trial form of 749.176 (the environment switch is for studies/v48_trials)
+OCTAVE_GATE = {"ban": True, "one": "one", "off": False}[os.environ.get("LUTHIER_OCTAVE", "ban")]     # 959 (749.160); "one" is the trial form of 749.176, not built (the environment switches here and below are for studies/v48_trials)
 TITLE_STRESS = {"off": False, "inside": "inside"}[os.environ.get("LUTHIER_TITLE", "off")]   # 961 (749.162): a setting, not a default: it passed over 7 in 10 of the living builds of songs 54 and 49, whose title lines end on a weak syllable
 VARY_RETURNS = True    # 962 (749.167)
 VERSE_CLOSER = {"off": None, "0": None}.get(os.environ.get("LUTHIER_VERSE_CLOSER", "off"), os.environ.get("LUTHIER_VERSE_CLOSER", "off"))      # 958 (749.142), off by default from v46 (749.153): song 49, the hold-out, lost words' fit under it. A lyric may ask for it ("verse_closer": true, or a form's name); the environment switch is for studies
