@@ -521,6 +521,14 @@ class Engine:
                 hk = set(self.S.get("hooks", ())); h_ = [n for n in ns if n["stress"] and f"{n['sec']}:{n['line']}" in hk]
                 if h_ and float(np.mean([self.on_beat(n["on"]) for n in h_])) < gte.get("at_least", 0.5): return "840: the title's stresses off the beat"
             if gte["type"] == "cap" and any(n["p"] > gte["pitch"] for n in ns if n["sec"] == gte["section"] and n["line"] in gte["lines"]): return "design: " + gte["name"]
+        if self.S.get("no_leap_past_an_octave") or self.S.get("title_stress"):                 # 959 (749.160), 961 (749.162): two gates from song 62, read on the notes as sung. Written by the songwriting session (lib/luthier/proposed_v47.py), tested in studies/proposed_v47
+            sung_ = sorted((getattr(self, "as_sung", None) or (lambda x: x))(ns), key=lambda n: n["on"])
+            if self.S.get("no_leap_past_an_octave") and any(a_["sec"] == b_["sec"] and a_["line"] == b_["line"] and abs(b_["p"] - a_["p"]) > 12 for a_, b_ in zip(sung_, sung_[1:])):
+                return "959: a leap past an octave inside a line"                              # kept songs: 28 of 160 hold one anywhere; Luthier's builds held one about twice as often
+            if self.S.get("title_stress"):
+                for h_ in self.S.get("hooks", ()):
+                    sec_, i_ = h_.rsplit(":", 1); ln_ = [n for n in sung_ if n["sec"] == sec_ and n["line"] == int(i_) and n.get("melisma") != "second"]
+                    if ln_ and not max(ln_, key=lambda n: n["dur"]).get("stress"): return "961: the title line's longest note on an unstressed syllable"
         st = [n for n in ns if n["stress"] and self.HOW.get((n["sec"], n["line"]), ["fresh"])[0] != "design"]
         if st and np.mean([self.on_beat(n["on"]) for n in st]) < self.S.get("stressed on the beat, at least", 0.4): return "731: stressed syllables on the beat too few"
         return None

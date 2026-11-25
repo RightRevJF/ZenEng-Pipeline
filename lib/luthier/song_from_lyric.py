@@ -29,6 +29,9 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PITCH_CEILING = True   # 956
+OCTAVE_GATE = True     # 959 (749.160)
+TITLE_STRESS = True    # 961 (749.162)
+VARY_RETURNS = True    # 962 (749.167)
 VERSE_CLOSER = {"off": None, "0": None}.get(os.environ.get("LUTHIER_VERSE_CLOSER", "off"), os.environ.get("LUTHIER_VERSE_CLOSER", "off"))      # 958 (749.142), off by default from v46 (749.153): song 49, the hold-out, lost words' fit under it. A lyric may ask for it ("verse_closer": true, or a form's name); the environment switch is for studies
 VERSE_SHARES = os.path.join(HERE, "..", "..", "studies", "lever_range", "result.json")      # the trial form "shares" (749.153) reads the kept shares from the study; a kept table is made only if the form is built
 CHOOSE_RANGE = True    # 951, 954: the choice among the builds past every gate takes no tune narrower than a floor under the range the words ask
@@ -181,7 +184,7 @@ def plan(L):
         spec["target"]["moves"]["spread"] = round(REG_SPREAD * max(0.6, min(2.5, (float(tg_["range"]) / AT_["range"][1]) ** 2)), 1)      # and a line keeps to its register as closely as a song of that range would
     if L.get("mode", "major") == "major":                                                    # 846: degrees by genre family and section, from the kept major songs (studies/genre)
         GR = json.load(open(os.path.join(HERE, "..", "..", "studies", "genre", "genre_results.json"))); fam = FAMILY.get(L.get("genre", "pop"), "other"); DS = GR["degree_share"]
-        rs = _r.Random(f"blue {L.get('seed', 1)} {L['title']}"); bluesong = rs.random() < GR["families"][fam if fam in GR["families"] else "all"]["b3_songs"]
+        rs = _r.Random(f"blue {L.get('seed', 1)} {L['title']}"); bluesong = rs.random() < GR["families"][fam if fam in GR["families"] else "all"]["b3_songs"] and L.get("blue_notes", True) is not False      # 963 (749.168): a lyric may turn the blue-note draw off ("blue_notes": false)
         def prof(key):
             d_ = DS.get(key) or DS[f"all/{fam}"]; out = {k: (v if k not in ("3", "10") else (v / GR["families"][fam]["b3_songs"] if bluesong else 0.0)) for k, v in d_.items() if k not in ("1", "6", "8")}; m_ = max(out.values()); return {k: round((v / m_) ** DEGREE_POWER, 4) for k, v in out.items()}
         spec["degrees"] = dict(tonic=0, blue=[3, 10] if bluesong else [], family=fam, blue_song=bluesong, weights={"Verse": prof(f"secfam/verse|{fam}"), "Chorus": prof(f"secfam/chorus|{fam}"), "all": prof(f"all/{fam}")})
@@ -190,6 +193,7 @@ def plan(L):
         spec["all_windows"] = True                                                            # 912: every kept two-bar rhythm may be drawn, not the sixty commonest
         import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)
         if PITCH_CEILING: spec["pitch_ceiling"] = {k_: v_["ceiling"] for k_, v_ in json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_commonest_pitch.json")))["parts"].items()}      # 956 (749.134): a build whose verses or choruses put more of their notes on one pitch than nine kept songs in ten is passed over      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
+        spec["no_leap_past_an_octave"] = OCTAVE_GATE; spec["title_stress"] = TITLE_STRESS      # 959, 961 (4/4, where they were read)
         spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
@@ -217,7 +221,7 @@ def bass(form_bars, tonic_midi, barlen, beats, mode):
 def root_pc(rn):
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)", rn); return (C.DEG[m.group(2).upper()] + (-1 if m.group(1) == "b" else 1 if m.group(1) == "#" else 0)) % 12
 def write(L, N=1000, K=12):
-    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); drafts = []
+    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = L.get("chords") == "loop_less"; drafts = []      # 960 (749.159): a setting, off unless the lyric asks
     names = [(base(n) + " 9" if n != base(n) and not re.search(r"\d+$", n) else n, k, b) for n, k, b in form]; wn = {f[0]: w[0] for f, w in zip(form, names)}      # a last chorus returns the chorus (801)
     for seed in range(1, K + 1):
         pl = W.song(names, seed=seed * 1000 + L.get("seed", 1), require=L.get("require")); pl = {n: pl[wn[n]] for n, _, _ in form}; c, d, r = W.charge(list(pl.values())); drafts.append((c, d, seed, pl, r))
@@ -309,6 +313,7 @@ def write(L, N=1000, K=12):
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
     import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
     rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_commonest_pitch.json"] if spec.get("pitch_ceiling") else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
+    if VARY_RETURNS: rec["melody"]["varied_returns"] = vary_returns(rec)                      # 962 (749.167), before the melismas and the checks, so everything after reads the tune as it will be sung
     melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
     if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
         import word_weight as WW_; rec["judge7"]["pick_words_fit"] = {k: round(v, 3) for k, v in WW_.fit([n for n in rec["melody"]["notes"] if n.get("melisma") != "second"], E.BAR, E.BEAT, parts=True).items()}
@@ -317,6 +322,28 @@ def write(L, N=1000, K=12):
         b0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index("Break")]) * E.BAR; vname = next(n for n, k, b in form if k == "verse"); v0 = sum(nb for n, k, nb in form[:[n for n, _, _ in form].index(vname)]) * E.BAR
         rec["parts"]["break"] = [dict(on=n["on"] - v0 + b0, dur=n["dur"], p=[n["midi"] + (12 if L.get("lead", "guitar") == "guitar" else 0)], vel=88) for n in rec["melody"]["notes"] if n["sec"] == vname and n["on"] - v0 < 8 * E.BAR - 6]
     return rec
+def vary_returns(rec):
+    """962 (749.167): a section that returns note for note varies. In each section of the chosen tune whose every line was copied from an earlier one, each line after
+    the first lifts its longest held note (a beat or more; a stressed one before an unstressed) a scale step onto a chord tone, with the leaps on either side kept within
+    a fifth and never over the tune's highest note (so the planted peak, 950, stays the peak). 839 lifted such a note by chance, about one copied line in four. Written by
+    the songwriting session (proposed_v47.vary_returns); the guard on the highest note is added here. Returns the changes."""
+    B = rec["bar"]; BT = B // len(rec["beats"]) if rec.get("beats") else B // 4; tonic = rec["key"]["tonic_midi"]; minor = "m" in str(rec["key"]["key"])[1:]
+    scale = {(tonic + d) % 12 for d in ((0, 2, 3, 5, 7, 8, 10) if minor else (0, 2, 4, 5, 7, 9, 11))}; how = rec.get("spec", {}).get("how", {}); start = {}; o = 0
+    for n, k, b in rec["form"]: start[n] = o; o += b * B
+    notes = rec["melody"]["notes"]; top = max(n["midi"] for n in notes); by = {}; out = []
+    for n in notes: by.setdefault((n["sec"], n["line"]), []).append(n)
+    for sec, _, _ in rec["form"]:
+        lines = sorted(i for s_, i in by if s_ == sec)
+        if not lines or not all(how.get(f"{sec}:{i}", ["fresh"])[0] == "copy" for i in lines): continue
+        for i in lines[1:]:
+            ln = sorted(by[(sec, i)], key=lambda n: n["on"]); held = [n for n in ln if n["dur"] >= BT]
+            if not held: continue
+            n = max(held, key=lambda n: (n.get("stress", False), n["dur"])); j = ln.index(n); bar = (n["on"] - start[sec]) // B; rn = rec["roman"][sec][min(bar, len(rec["roman"][sec]) - 1)].split()
+            c_ = rn[0] if len(rn) == 1 or (n["on"] - start[sec]) % B < B // 2 else rn[1]; tones = {(t_ + tonic) % 12 for t_ in C.tones(c_)}
+            for q in range(n["midi"] + 1, n["midi"] + 5):
+                if q <= top and q % 12 in scale and q % 12 in tones and (j == 0 or abs(q - ln[j - 1]["midi"]) <= 7) and (j == len(ln) - 1 or abs(ln[j + 1]["midi"] - q) <= 7):
+                    out.append(dict(section=sec, line=i + 1, word=n["text"], was=n["midi"], now=q)); n["midi"] = q; break
+    return out
 ORN = json.load(open(os.path.join(HERE, "..", "..", "studies", "ornament", "ornament_results.json")))["CoCoPops Billboard"]
 def melisma_notes(ns, L, scale, key="midi", how=None, cap=None, share=None):
     """914 (749.91): 848's draw as a function of the notes alone, so the words' gate can read each build as sung. Returns the notes, the share drawn, the kept share at line ends."""
