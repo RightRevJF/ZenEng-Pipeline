@@ -226,7 +226,7 @@ class Engine:
             if self.S.get("clash_rule") and (long_ or not ch <= self.SCALE):                     # 808: over a chord from outside the key; 833: and under any chord on a note a beat long or more:
                 c2 = [p for p in cands if p % 12 in ch or (p - ton) % 12 in blue or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone (846: or a blue note, which kept songs sing over the major third)
                 cands = c2 or cands
-            OT_ = self.S.get("octave_tail") if prev is not None else None                       # 749.191, a trial form (studies/the_peak_line): the table's +12 and -12 bins hold every interval of an octave or more, and ivp() gave the whole bin to each such pitch.
+            OT_ = self.S.get("octave_tail") if prev is not None else None                       # 964 (749.191; studies/the_peak_line): the table's +12 and -12 bins hold every interval of an octave or more, and ivp() gave the whole bin to each such pitch.
             nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest
             for p in cands:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
