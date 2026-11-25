@@ -200,10 +200,16 @@ class Engine:
         R = self.S["registers"]; P = int(min(min(R[x][1] for x in ("Verse", "Chorus")) + round(pk["range"]), max(R[x][2] for x in ("Verse", "Chorus", "Bridge") if x in R)))
         while P % 12 not in self.SCALE: P -= 1
         key = f"{sec}:{i}"; had = R.get(key); base = self.reg(sec, i); R[key] = [base[0], base[1], P]; ps = None
+        old_ = None                                                                           # 749.182, trial forms (studies/the_draw). climb: the carrying line holds no leap past an octave. "fallback": and where the song's last fresh chorus line cannot climb, the peak is planted the old way
         try:
             for _ in range(pk.get("tries", 60)):
                 ps = self.pitches1(rng, ons, U, sec, i, prev, avoid=avoid, end_off=end_off)
-                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)) and (not pk.get("climb") or all(abs(b_ - a_) <= 12 for a_, b_ in zip(ps, ps[1:]))): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+                if ps and max(ps) == P and any(q == P and self.LINES[sec][i][j][1] for j, q in enumerate(ps)):
+                    if not pk.get("climb") or all(abs(b_ - a_) <= 12 for a_, b_ in zip(ps, ps[1:])): self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; break
+                    if old_ is None: old_ = ps
+            else:
+                if pk.get("climb") == "fallback" and old_ is not None and (sec, i) == next((k_ for k_ in reversed(self.KEYS) if self.KIND.get(k_[0]) == "Chorus" and self.HOW.get(k_, ["fresh"])[0] == "fresh"), None):
+                    ps = old_; self._peaked = True; self.stats["950: the peak planted in a chorus line"] += 1; self.stats["950: planted the old way, the last chorus line could not climb"] += 1
         finally:
             if had is None: R.pop(key, None)
             else: R[key] = had
