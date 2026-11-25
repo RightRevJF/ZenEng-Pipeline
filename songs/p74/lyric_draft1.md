@@ -1,0 +1,44 @@
+# Go On Ahead (draft 1)
+
+Words and music: Jason Bryant
+
+## Verse 1
+They've got you in a gown you'd never wear
+Your hair's come down across your eyes again
+I brought your hoodie, hung it on the chair
+I brush it back like I did when you were ten
+
+## Chorus
+Go on ahead the way you'd do
+Run to the corner by the stop sign
+I was always slower than you
+Go on ahead, I'll get there in time
+
+## Verse 2
+Your phone won't stop, it's all your friends
+Marcus says you owe him for the game
+I wrote back that you're good for it
+And told the others all the same
+
+## Chorus
+
+## Bridge
+The doctor says there isn't any rush
+He stands like there's a boy of his at home
+I held your hand to get across the street
+I'm holding it, you won't cross on your own
+
+## Verse 3
+I signed the paper, then I nodded to the nurse
+She turned the sound down, said to take my time
+You always knew it when I was afraid
+You'd go in first and call back it was fine
+
+## Final chorus
+Go on ahead the way you'd do
+Somebody's waiting by the stop sign
+I was always slower than you
+Go on ahead, I'll get there in time
+
+## Tag
+Go on ahead

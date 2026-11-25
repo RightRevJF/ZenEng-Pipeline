@@ -16,4 +16,4 @@ for raw in open("lyric_locked.md"):
 import statistics as S
 print("lines", len(rows), "| syllables median", S.median(r[1] for r in rows), "| range", min(r[1] for r in rows), "-", max(r[1] for r in rows), "| flagged", sum(1 for r in rows if r[2]))
 from lyricsearch import syllables
-print("hook row: 'We saved you a plate'", len(syllables("He remembered today")), "syllables (4-9 wanted)")
+print("hook row: 'We saved you a plate'", len(syllables("We saved you a plate")), "syllables (4-9 wanted)")   # was measuring song 62's title by mistake (fixed 25 Nov)
