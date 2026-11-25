@@ -9,7 +9,9 @@ for stem in sys.argv[1:]:
     for tail in (False, True):
         for gate in (True, False):
             spec = json.loads(json.dumps(rec["spec"])); spec["no_leap_past_an_octave"] = gate
-            if tail: spec["octave_tail"] = TAIL
+            if tail:
+                spec["octave_tail"] = TAIL
+                if os.environ.get("TRIES"): spec["target"]["peak"]["tries"] = int(os.environ["TRIES"])
             E = M.Engine(spec); E.as_sung = lambda ns_: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"))[0]
             rng = random.Random(L.get("seed", 1)); live = 0; withleap = 0; rg = []; nl = 0; nn = 0
             for _ in range(1000):
