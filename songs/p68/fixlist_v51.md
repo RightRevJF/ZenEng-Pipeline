@@ -168,10 +168,26 @@ The rule (20b921d, 10:26) before the run (4bf735a, 10:48). With the switch off, 
 
 Next finding 749.210; next fix 965.
 
+## Addendum 12: settled on the thread, and v51 merged (main at bebec43, branch at eb6e867)
+
+From 11:30 on 26 November, the two sessions talk in `coord/` (rules in `coord/THREAD.md`), at the writer's request. Each item below was checked there, rule before run and figures against the json. The v51 paper (`reports/Luthier_v51.docx`, Window 208, Module 27.132, Tables HR to HT) records them, with nothing built. The branch is merged: switches off, songs 54 and 55 are byte for byte their committed records (1,000 builds each), and `--check` passes.
+
+- **749.209, form 2 through the whole engine (seen songs, within ruling C).** Pools, living picks and song 50's pool all improved. Marks 8 (words' fit, two-sided) and 10 (surprise on one chosen tune) are missed as written. Pitch scaling became a mark of its own.
+- **749.210, the chord tie on top of form 2.** Far nearer than either part alone. The ceiling in songs 58 and 49 came under 30; song 50 was at 35.3. Four marks of eight were missed narrowly.
+- **749.211, where the pair's clashes arise.** The rule named the fresh line. As description: the rise is blue notes (846), and clashes on other notes fall. The clash mark for later runs excludes the blue notes 846 allows, with a blue-note mark of its own.
+- **749.212 (standing, v50).** Song 55's returning lines clash 1.15 times per 100 notes: a line sung again meets another chord, and `again()`'s clash rule finds no chord tone in reach.
+- **749.213, the pair through the whole engine.** Five marks of seven. Surprise (now read on the builds) and pitch scaling (songs 54 and 59 over 1.02) are missed. On the refitted specs the ceiling is under 30 in all three hard songs.
+- **749.214 to 749.216, looking for the cost.** By bands, the slope over 8 to 16 notes is high and the joins are small. A join form fixed the joins but not the slope, and failed its own marks. It stays a switch, off.
+- **749.217, sealed song 66.** Six marks of seven held. Pitch scaling failed (1.062 against v50's 0.912, margin 0.03). The pair is not built, and song 66 is spent.
+- **749.218, direction inside a line.** Nothing named, so the line closed by the stopping rule. Standing finding: the engine's lines change direction more than kept lines, under v50 and the pair alike.
+- **749.185, the loop gate with a chance.** All four draft marks met (verses at or under the kept median 52.9 in 100; over the kept 75th 26.7; plain loops 31.6; stage 4 within 0.02). It sits behind `LUTHIER_LOOP=chance`, off. Song 63's run awaits the songwriting session's word on the thread.
+
+Switches added this version, all off: `LUTHIER_BORROW_KEPT`, `LUTHIER_CHORD_TIE`, `LUTHIER_JOIN_MOVES`, `LUTHIER_LOOP=chance`. Fixes still end at 964. For v52: fixes from 965, findings from 749.219.
+
 ## Carried, open
 
-- 749.209: form 2 through the whole engine on seen songs, and the chord tie on top in the clean reading, the 30 mark kept (song 66 reserved).
-- 749.185 the loop gate with a chance (song 63 reserved).
+- 749.212 (song 55's returning lines clash), the short runs one way inside a line, the pair's slope over 8 to 16 notes (lines' heights further apart than kept: not yet read in a form).
+- 749.185: song 63, once, with the loop gate with a chance.
 - 749.171 inside a one-bar line; rhythm scaling leans low.
 - 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163. (749.165 and 749.170, the region, are now part of 749.200.)
 

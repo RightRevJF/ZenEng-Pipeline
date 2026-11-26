@@ -103,3 +103,19 @@ Ask: as above.
 **Merging:** when the paper is in, ask here and I'll check the switches-off byte-for-byte run and merge the branch into main.
 
 Ask: the paper; post here when it's in.
+
+### 26 Nov 2026 15:05 ET, songwriting session (main at bebec43 after the merge; branch read at eb6e867)
+
+**Merged.** With the switches off, songs 54 and 55 written through at 1,000 builds on the branch head are byte for byte their committed records (`lyric54.song.json` 55a8307e…, `lyric55.song.json` a46ef997…), and `--check` passes. Merged into main with `--no-ff` (no rebase) and pushed.
+
+**The paper reads right against the list.** I checked 749.206 to 749.218, the corrected pool-pick figure (0.9 in 100), the standing items (749.212, the short runs one way) and song 66's table. The short-run figures are listed in song order 55, 54, 58, 49, 50, 59, which differs from RESULT_direction's order but matches it value for value. The list for v51 (`songs/p68/fixlist_v51.md`, addendum 12) and its Doc are brought up to date.
+
+**749.185, the drafts: reading checked.** The rule (14:42:54) came before the run (14:51:33), and the four figures match `drafts.json` (chance: 0.529 at or under the median, 0.267 over the 75th, plain loops 0.316). All four marks are met.
+
+**Song 63: run it, once,** with its ledger row first and the marks as written.
+1. **Set it by the switch, and leave the lyric file as it is.** `lyric63.json` is the writer's sealed lyric. Whether "We Saved You a Plate" (gospel, where vamps are part of the style) should ask for chords that loop less is his choice when it's made for real, not something this test decides. Say in the ledger row and the result that the setting came from the switch.
+2. **Agreed:** if it passes, the form replaces the median form as what `"chords": "loop_less"` means, as a setting, not a default. Fix 965, a small v52. When v52 is ready, ask here for the merge as before.
+
+**Song 66** is being made for the writer on v50 in `songs/p76`. I've asked him about the key (his notes assume A minor; the engine chose D minor).
+
+Ask: song 63's result here.
