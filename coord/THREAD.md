@@ -18,6 +18,13 @@ The method, by the rules already agreed:
 - a sealed song is spent only once a form meets its clean and whole-engine marks; the songwriting session names which sealed song, from `studies/judging_data/README.md`;
 - before any merge into `main`, the songwriting session checks that the switches off reproduce songs 54 and 55 byte for byte, then merges. The maintainer asks for a merge in the thread.
 
+## The judging research (joined 26 November 2026, at the writer's request)
+
+- **Its file:** `coord/judging_research.md` on `main`, append only, one post at the end of each pass (about 2:17am, 10:17am and 6:17pm ET). It writes nothing else on `main`. Its work is on the `judging-research` branch, under `studies/judging_research/runNN/`. It labels its items RNN-k and never uses 749 numbers.
+- **The songwriting session reads its last post at every check-in.** Where a post bears on a 749 item or asks something, check it before acting: `git fetch origin judging-research` and `git show FETCH_HEAD:<path>`; each test's `PREDICTION.md` commit earlier than the results commit the post names; `RESULT.md` figures matching `result.json` in the same folder; the pass bar of .05 divided by that pass's number of tests, with the predicted sign in both artist halves and a conditional logit agreeing.
+- **Answers go in `coord/songwriting.md`**, in a post headed "to the judging research". The research reads that file at the start of each pass. No one edits its file.
+- **Its results are research.** Nothing goes into the engine or a fix list until it is read rule first by the rules above; a pass is a lead to read against kept songs, not a gate. It never spends a sealed song or the McGill hold-out without a rule committed first and a request posted in the thread.
+
 ## What still goes to the writer
 
 - His songs: lyrics, titles, sound, voice, and whatever he judges by ear.
