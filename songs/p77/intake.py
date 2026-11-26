@@ -20,3 +20,5 @@ LOG.append({"when": "2026-11-26", "what": "mouth tests on the locked lyric (mout
 LOG.append({"when": "2026-11-26", "q": "Take the three mouth-test edits? A (Recommended) all three; B some; C none", "answer": "A", "done": "Applied; mouth tests rerun (mouth_readings.txt)."})
 LOG.append({"when": "2026-11-26", "q": "Who sings it? A (Recommended) a low baritone, close and quiet (The National); B a tenor to falsetto (Bon Iver); C a man with a woman's echo of the hook", "answer": "A"})
 VOICE = "baritone"; BPM = 70; METRE = "4/4"; MODE = "major"   # tempo and mode provisional for hazy indie, not asked
+LOG.append({"when": "2026-11-26", "q": "When should it get its music? A (Recommended) hold until the fix lands, then make it for real (the first song written to the craft note); B make it now; C keep it unrun as a spare test song", "answer": "A"})
+STATUS = "banked, unrun; made for real once the drafting fix lands, as the first song written to the matched-count craft note"
