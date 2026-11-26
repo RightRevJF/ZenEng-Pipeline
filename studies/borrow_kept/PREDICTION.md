@@ -10,7 +10,7 @@
 
 Verses, the middle over builds, form on:
 1. **Height two lines back:** the share of non-repeating verse lines within a step of the line two before, inside the kept middle half by song (0.167 to 0.51) in at least five songs of six. (v50: one of six.)
-2. **Between-line spread** inside the kept middle half (1.08 to 2.11 as `studies/ladder/kept.json` gives it; I use that file's figures, whatever they are) in at least four songs of six, and **the first notes' spread** nearer the kept middle than v50 in at least five.
+2. **Between-line spread** inside the kept middle half (0.863 to 2.377, `studies/ladder/kept.json`; the text first said 1.08 to 2.11 from memory, corrected 26 November on the list for v51, addendum 11: the file governs, as written) in at least four songs of six, and **the first notes' spread** nearer the kept middle than v50 in at least five.
 3. **The share on the commonest pitch** lower than v50 in at least four songs of six, and verses over the 0.44 ceiling no more often than v50 in any song (a margin of 1 in 100), and **30 in 100 or fewer in songs 50, 58 and 49**.
 4. **Bars on a figure already sung** (818's own purpose): the builds' middle no lower than the kept 25th in at least four songs of six. If it falls under in three or more, the form fails here whatever else it gains, and the result says the two kept counts pull against each other.
 5. **Clashes** (a note a beat long or more, off the chord and a semitone from a chord tone), per 100 notes, no more than v50's plus 0.2 in every song. **On-beat chord tones** no further from kept 0.64 than v50's in at least five songs.
