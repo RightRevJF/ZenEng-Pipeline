@@ -17,3 +17,16 @@ So the reading is made as trials on the fitted specs, one thing changed at a tim
 **Rule.** A switch is named a cause if it brings verses over the ceiling to 30 builds in 100 or under (about halfway to songs 55 and 54) in at least two of the three songs. More than one may be named. If none is, the reading is reported with the chord figures, and no change is tried on it.
 
 **What I expect.** The chord's pull (4) to be named, and the blue notes (1) to do something but not enough: a verse over one or two chords, with chord tones favoured eight to one on the beat and a line pulled to its centre, has one chord tone nearest its centre, and takes it. I expect the repeat weight (2) to make it worse, not better, and copies (3) to matter little. If 4 is named, the kept verses will say whether still harmony makes kept songs do the same, which decides whether the engine's pull is too strong or the ceiling is being asked of verses that kept songs excuse.
+
+## A second pass, written after the first four switches were read and before these are run
+
+The first four: none reaches 30 (verses over the ceiling: song 50, 65 to 53 at best; song 58, 56 to 34; song 49, 56 to 38; the best in each is "verse lines drawn fresh"). The chord's pull halved did almost nothing, and taken away altogether (a description after the result) it leaves 44 to 55. I was wrong about the pull.
+
+What the descriptions show: in the three folk songs the pitch piled on is the fifth of the key, one semitone under the verse's centre, in seven builds of ten, and the verses use six different pitches where songs 55 and 54 use eight. Their verses have two chords (half the bars on one) where songs 55 and 54 have six. The pull to chord tones is not what does it. But the harmony reaches the draw a second way: fix 833's clash rule, which under any chord forbids, on a note a beat long or more, every pitch a semitone from a chord tone. Under two chords that is the same few pitches forbidden for the whole verse.
+
+**Three more switches, same figure, same rule (30 builds in 100 or under, in two songs of three):**
+5. **The clash rule off** (for the reading only).
+6. **The verse's chords replaced by song 55's verse chords** (sixteen bars, six chords), everything else the song's own.
+7. **5 and the pull off together.**
+
+**What I expect now.** 6 to be named: it changes the harmony itself, by whichever road it acts. 5 to do part of it. If 6 is named and 5 and 7 are not, the harmony acts by a road I have not found, and that is the next thing to read. If none is named I stop guessing and say so.

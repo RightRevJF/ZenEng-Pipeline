@@ -235,6 +235,7 @@ class Engine:
                 if OT_ and abs(p - prev) >= 12:
                     sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
+                if "chord_pull" in self.S: w = w / ((2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)) * ((2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)) ** self.S["chord_pull"]      # for studies/one_pitch_verses only: the chord's pull at another strength
                 w *= math.exp(-((p - mu) ** 2) / self.MV[2])                                         # 927: how closely a line keeps to its register
                 if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0      # 936 (749.113): and a repeated note
                 rn_ = 0
