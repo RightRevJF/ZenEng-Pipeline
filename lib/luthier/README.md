@@ -743,3 +743,5 @@ Paper `reports/Luthier_v52.docx` (builder beside it), Window 209, Module 27.133,
 - No lyric asks for the setting; no record changes; songs 54 and 55 byte for byte v50's.
 - **Hold-outs:** 59 for everything; 50, 63, 66 spent; 64, 65, 67 banked, not run.
 - Next: Luthier v53 (row v224), Window 210, Module 27.134 (anchor "27.133"), tables HV on, fixes from 966, findings from 749.219.
+
+**`loop_less`, a note for whoever turns it on (26 November):** the form takes a draw from the random stream only when a drafted verse or bridge comes out over the kept 75th, and more for the redraws. From that point every later draw differs, so the chosen draft and the tune can change wholly even though the form redrew one section; where no drafted section is over the line the song is unchanged (three of six seen songs). Pools on the seen songs with it on: 24, 22, 20, 23, 15, 21 (off: 24, 22, 22, 17, 5, 21); `studies/loop_chance/RESULT_seen.md`.

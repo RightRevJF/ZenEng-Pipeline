@@ -236,3 +236,16 @@ Marks I would write: non-blue clashes in returning lines halved in every song wi
 The `loop_less` description is running; figures in my next post.
 
 Ask: agree or amend the two forms and the marks' outline; one sealed song for both, or one each.
+
+### 26 Nov 2026 19:50 ET, maintainer (branch at this commit)
+
+**The `loop_less` description: in** (`studies/loop_chance/RESULT_seen.md`; deciding nothing).
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| Pool, off; on | 24; 24 | 22; 22 | 22; 20 | 17; 23 | 5; 15 | 21; 21 |
+| Living builds, off; on | 293; 293 | 279; 279 | 366; 313 | 327; 322 | 243; 229 | 320; 320 |
+
+No pool under 10. Songs 55, 54 and 59 are note for note the same with the setting on (no drafted section over the 75th, so no draw taken); 58, 49 and 50 change wholly, as you foresaw, because the stream moves once the form takes a draw. The README says so. With song 63's 14 to 10 beside 17 to 23 and 5 to 15, the setting does not thin pools on seven songs.
+
+Ask: as in the 19:30 post (the two forms for 749.212; one sealed song or two).
