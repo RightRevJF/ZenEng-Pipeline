@@ -43,3 +43,28 @@ Mark 5 of 749.210 stays missed as written.
 **List item: 749.212.** Song 55's lines sung again or copied by the plan carry 1.15 clashes per 100 notes in v50 (0.83 long in the draw's sense): a returning line meets another chord, and `again()`'s clash rule finds no chord tone in reach. It stands apart from the pair. I'll put it on the list for v51.
 
 Ask: whole-engine reading of the pair with the marks above; then the ladder.
+
+### 26 Nov 2026 12:55 ET, songwriting session (branch read at 3b01980)
+
+**749.213, the pair through the whole engine: reading checked.** The marks (12:15) came before the run (12:34). Pools, fits, planted peaks, surprise and living builds match `pair_whole.json`, and the ceiling figures match `pair_whole_builds.json`. Five marks of seven are met; marks 10 and 11 are missed as written and stay that way. Agreed: the short ladder for song 50 has lost its reason, so don't run it. One caution on the ceiling: the figures under 30 come from about 100 living builds each, so song 50's 27.7 has a standard error near 4.5. Under 30, but not by a clear margin.
+
+**The surprise mark, for runs not yet made: agreed, read on the builds.** One chosen tune a song is a sample of one, and that is why the mark swung from one to three to none. The mark: **the builds' middle surprise (the page gate's, over the living builds) no further over the kept middle than v50's builds in at least five songs of six.** Keep reporting the chosen tune's figure beside it as a description. This mark guards against getting worse and sets no target. Say so in the result, so nobody reads it as a claim that surprise is mended.
+
+**749.214: reading checked** (rule 12:35, result 12:42). Agreed that nothing was named, and that the split put the line in the wrong place. **The banded reading: agreed, with one addition.** Beside the bands by note count (4 to 8, 8 to 16, 16 to 32, over 32), add a split by whether the notes cross a line boundary: pairs of notes inside one line, against pairs across the join between lines. That separates a line's own contour from the step between lines, which the note bands only approximate. The rule otherwise as you wrote it: a band over the kept 75th in four songs of six is named; a form only for what is named.
+
+**The method question, and the road to song 66.** This is written now, before the banded result, so neither of us can tune it to the answer.
+- **If the banded reading names something mendable:** write its form and marks first, and read the form clean and whole, as usual.
+- **If it names nothing mendable, or the form for what it names fails its own marks:** the pair goes to sealed song 66 with no more seen-song rounds. The seen songs have done their job: every mark that matters for the fault is met or near (on the whole engine, the ceiling under 30 in all three hard songs, as ruling C asked), and what is left is small and two-sided. A mark that a symmetric cost can't pass shouldn't hold a fix back forever.
+- **Song 66's marks, posted here before anything runs on it:** v50 against the pair on song 66, the whole engine, 1,000 builds:
+  - pools no smaller than 0.8 of v50's, and at least 10;
+  - words' fit no lower than v50's by more than 0.02;
+  - verses over the ceiling at or under 30 in 100, and no more than v50;
+  - true verse repeats inside 0 to 0.195;
+  - clashes other than blue notes no more than v50 plus 0.2 per 100 notes; blue notes no rise over v50 (song 66 is not drawn as blue);
+  - builds' surprise no further over the kept middle than v50's builds;
+  - **pitch scaling inside the kept 10th to 90th, and no further from the kept middle (0.91) than v50's builds by more than 0.03.**
+
+  That last mark is the answer to your note. Since a single song can't give "five of six", it measures distance from the middle, so the pair is not failed for sitting as far above it as v50 sat below.
+- Song 66 is then **made for real** for the writer, with his design notes (`songs/p76/intake.py`), and the demos go to him. His ear is the last check.
+
+Ask: the banded reading with the boundary split; then the branch above, whichever it turns out to be.
