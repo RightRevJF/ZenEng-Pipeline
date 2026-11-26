@@ -85,7 +85,20 @@ class Engine:
         return self.CH[c[max(i for i, x in enumerate(at) if x <= max(0, t) % self.BAR)]]
     def on_beat(self, t): return (t % self.BAR) in self.BEATS
     def reg(self, sec, i):
-        R = self.S["registers"]; return tuple(R.get(f"{sec}:{i}") or R.get(sec) or R[self.KIND[sec]])
+        R = self.S["registers"]; r = tuple(R.get(f"{sec}:{i}") or R.get(sec) or R[self.KIND[sec]])
+        lh = getattr(self, "_lh", None)                                                      # 749.201, a trial form (studies/line_heights): a line drawn about its own centre, the part's centre moved by the line's height in a kept contour
+        if lh and f"{sec}:{i}" not in R and (sec, i) in lh: r = (max(r[1] + 2, min(r[2] - 2, r[0] + lh[(sec, i)])),) + r[1:]
+        return r
+    def draw_heights(self, rng):
+        """749.201: for each sung part, one kept part's line heights (tables/kept_line_heights.json), of the same kind and the same number of lines where ten or more kept parts have it, else any of the kind read by place"""
+        if not hasattr(self, "_LH"): self._LH = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "tables", "kept_line_heights.json")))["contours"]
+        out = {}
+        for sec in self.SUNG:
+            C = self._LH.get(self.KIND.get(sec)); n = len(self.LINES[sec])
+            if not C or n < 2: continue
+            same = [c for c in C if len(c) == n]; c = rng.choice(same if len(same) >= 10 else C)
+            for i in range(n): out[(sec, i)] = c[i] if len(c) == n else c[int(round(i * (len(c) - 1) / (n - 1)))]
+        return out
     def ivp(self, d, last=None):
         d = max(-12, min(12, d)); row = self.IV2.get(max(-12, min(12, last))) if last is not None else None
         if row and sum(row.values()) >= 50: return (row.get(d, 0) + 12.5 * (self.IV.get(d, 0) + 0.5) / self.IVT) / (sum(row.values()) + 12.5)
@@ -358,6 +371,7 @@ class Engine:
     def build(self, rng):
         lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
+        self._lh = self.draw_heights(rng) if self.S.get("line_heights") else None
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
             cap = None                                                                        # 816 (780, 773 carried): the line before a copied or designed line that comes in early gives way
