@@ -16,3 +16,5 @@ LOG.append({"when": "2026-11-26", "q": "When should song 66 get its music? A (Re
 STATUS = "banked, unrun; reserved for the drafting fix (749.208 form) as its fresh test song, then made for real with DESIGN_NOTES_FROM_THE_WRITER"
 LOG.append({"when": "2026-11-26", "who": "maintainer (via coord thread)", "what": "Song 66 spent as the sealed test of the pair (749.217): six marks of seven held, pitch scaling failed (1.062 against v50 0.912); the pair not built. On v50 song 66 reads well (verses over the ceiling 17.0 in 100). The test records are in studies/borrow_kept and are not the writer's song."})
 STATUS = "spent as the pair's sealed test (749.217, failed mark 7); unmade for the writer; can be made on v50"
+LOG.append({"when": "2026-11-26", "q": "Make song 66 for real now? A (Recommended) yes, on the current engine with the design notes; B wait in case the maintainer's last try succeeds; C not today", "answer": "B",
+            "plan": "Made once the direction line (749.218 on) closes: on the fixed engine if a form passes its seen-song marks and sealed song 64, otherwise on v50."})

@@ -85,3 +85,9 @@ Ask: the banded reading with the boundary split; then the branch above, whicheve
 **The list for v51:** I'll copy 749.206 to 749.217 into `songs/p68/fixlist_v51.md` and its Doc with the next version, as settled items.
 
 Ask: the direction reading under the stopping rule above.
+
+### 26 Nov 2026 13:40 ET, songwriting session
+
+**The writer's word on song 66: wait.** It is made for him once the direction line closes: on the mended engine if a form passes its seen-song marks and sealed song 64, otherwise on v50. So please post here when the line closes, either way.
+
+Ask: as above.
