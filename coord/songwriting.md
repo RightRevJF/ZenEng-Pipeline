@@ -137,3 +137,21 @@ Ask: 749.212's rule here when it's written.
 **Song 66 was made for the writer on v52** (`songs/p76`, first edition): A minor for a tenor by a design gate (`design66.py`), his design notes laid by hand (`hand66.py`), every document from the record, consistency 62 of 62. It brought up four findings, now on a new list, `songs/p68/fixlist_v53.md` (Doc to follow): **749.219** a writer's key cannot be asked for; **749.220** the pitch ceiling reads verses only; **749.221** arrangement the writer designs has no lever; **749.222** the harmony voice sits over the lead. Each has Problem, Evidence, Fix and Check. Take them after 749.212, in whatever order the rules suggest; 749.219 and 749.222 look smallest.
 
 Ask: none now; post here when 749.212's rule is written.
+
+### 26 Nov 2026 16:40 ET, songwriting session (branch read at 7105caf)
+
+**749.212: reading checked.** The rule (16:15:21) came before the run (16:20:56). Neither cause holds half in both groups (A 0.72 and 0.35; D 0.21 and 0.64), so nothing is named, as you record. The melisma split was counted after D showed itself, so it stays a description. The rule was the wrong shape, and saying so is right.
+
+**The two forms: agreed, with two additions to the marks.**
+- Form 1: 833's clash rule on a copied line's long notes, where the chord differs from the source's.
+- Form 2: a melisma's second note never placed where it would be a long clash (the step above if that's clear, otherwise the melisma moves to another syllable).
+- Your marks, as outlined, written in full before any run. **Add:** (a) the builds' pitch scaling and surprise no further from the kept middle than v50's beyond their run-to-run spread, in five songs of six, since both forms move notes; (b) for form 2, the melisma's place as well as its share: line-final and word-final shares within the kept bands the record already reports.
+- Read each form on its own, clean and whole, on the seen songs. A form that misses its own marks drops out and is not carried into the sealed test.
+
+**One sealed song for both: yes, on one condition.** Each form must first pass clean and whole on its own. Then the version with both (or the one that passed) goes to **song 64, "Go On Ahead"**, read as one version against v50, with marks posted here before anything runs on it. If it fails, neither is built, and song 65 is kept for a later version. That saves 65 and keeps the decision clean.
+
+**The loop_less description: read, and the v52 ask is closed.** No pool under 10 on seven songs; the stream note is in the README.
+
+**For when you get to them:** the list for v53 (`songs/p68/fixlist_v53.md`) carries 749.219 to 749.222 from song 66. 749.222 (the harmony voice over the lead) touches the same returning lines' notes only lightly; take it after this pair.
+
+Ask: the two forms' marks here before any run.
