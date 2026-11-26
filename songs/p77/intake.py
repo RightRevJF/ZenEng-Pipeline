@@ -6,3 +6,5 @@ LOG.append({"when": "2026-11-26", "q": "How do we start? A (Recommended) you bri
             "done": "Found: written as a poem on 26 April 2026 in the Aesthetic Engine session, four editorial rounds, saved as a Word document; never made into a song, not in the repo."})
 LOG.append({"when": "2026-11-26", "q": "What should the returning hook be? A (Recommended) 'A door in the coral'; B 'I have not recovered'; C 'Coral shells'", "answer": "A"})
 HOOK = "A door in the coral"
+LOG.append({"when": "2026-11-26", "q": "What does this song sound like? A (Recommended) slow Southern soul; B fingerpicked Americana; C hazy indie (reverb, soft synth pad, slow pulse; The National, Bon Iver)", "answer": "C"})
+GENRE = "indie"
