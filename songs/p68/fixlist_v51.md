@@ -133,7 +133,19 @@ The rule (fd8ddc7, 09:42) before the result (b7e2fed, 09:45). No notes change. *
   3. **The window** is a part's own lines within one section; a verse line repeating the first verse's is not counted. That fits 818, which borrows within the part; say so where the figure is quoted.
 - **The next reading, agreed:** a line's height against the line two before it, repeats and non-repeats apart, kept against built. Add the first note's height beside the middle's (the ladder's sharpest gap was in first notes, 1.54 against 2.76), and read lines that 818 tried to repeat and then altered (songs 55, 54, 59) as their own group: if they keep their source's height, that is where the heights are pinned.
 
-Next finding 749.207; next fix 965.
+## Addendum 9: the line repeats counted apart, and the borrow at the kept rate (luthier-v8-stage1 at 0e6b213)
+
+Every rule before its run (eef45c1 and 8594fb6 before ab65405; 8410677, 09:56, before 0e6b213, 10:15). No notes change with the switch off (song 54 byte for byte, checked here).
+
+- **749.206, counted apart: accepted.** Kept borrowed figures are 81 in 100 at the same pitch, so 749.205's step 2 is withdrawn. Named instead: a fresh verse line sits within a step of the line two before it in 0.51 to 0.76 of the builds' lines, against kept 0.36, and turning the borrow off brings it to 0.19 to 0.38. The borrow holds the height two lines back. Addendum 8's three edges are answered and tabled (kept repeats 0.169 in verses and 0.208 in choruses with the best of three alignments, 0.116 and 0.161 strict).
+- **749.207, the borrow at the kept rate: the marks are read rightly, and it is held.** Four of six clean marks met (heights, spreads, the commonest pitch lower in six, the figure share over the kept 25th, living builds). Missed: verses over the ceiling in songs 50, 58, 49 at 46, 43, 35 against 30; and clashes +0.23 and +0.21 a hundred notes in songs 55 and 49 against a margin of 0.2. The second miss is narrow and the first is not, and both are misses. Taking the whole engine and a sealed song now on rewritten marks would be writing the marks after the result.
+
+### 749.208 What "sing it again" alters (the session's advice: (a))
+**Why (a).** At the kept chance the heights come right, but true verse repeats fall to 1 to 8 in 100 (kept 11.5): `again()` alters a borrowed line until it is no longer a repeat, and part of what it does is snap its on-beat notes to chord tones (712), one of the three pulls the ladder found under the one-pitch verses (749.204). So the same step may give the kept rate of true repeats, lower the ceiling count, and cut clashes, where a borrowed line now meets other chords freely. It is also the reading your own prediction named as next.
+**Fix.** A reading first, rule committed before it: for borrowed lines, which notes `again()` changes and why (fitting to new syllables, the pickup rule 772, the chord snap), how many leave the line no longer a repeat, and the same counted on kept repeats (how kept songs vary a repeated line). Then a form: a borrowed line sung as a true repeat at the kept rate, its notes changed only where the syllables or a clash demand. Use the kept share with the best of three alignments (0.169 verse, 0.208 chorus) as the chance, since it counts kept repeats that gain or lose a pickup.
+**Marks.** 749.207's six, unchanged and written before the run, plus: true verse repeats inside the kept middle half by song. Then the whole engine and a sealed song (64 or 65), the writer naming which.
+
+Next finding 749.209; next fix 965.
 
 ## Carried, open
 
