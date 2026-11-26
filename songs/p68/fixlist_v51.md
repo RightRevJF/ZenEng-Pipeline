@@ -156,8 +156,21 @@ The rule (ec359d1, 10:17) before the run (7226864, 10:20). The engine's files ar
 
 Next finding 749.209; next fix 965.
 
+## Addendum 11: the borrow by the lines' lengths (luthier-v8-stage1 at 4bf735a)
+
+The rule (20b921d, 10:26) before the run (4bf735a, 10:48). With the switch off, songs 54 and 55 come out byte for byte: checked here, 120 builds each, branch against 559e156.
+
+- **749.209, the marks read rightly.** Rechecked from `count_a.json` and `count_b.json`, all six songs. Form 2 meets marks 1, 2, 4, 5, 6 and 7, and misses mark 3's third part: over the 0.44 ceiling 46.3, 45.5 and 37.3 in 100 in songs 50, 58 and 49, against 30. Form 1 misses that (52.1, 36.9, 38.5) and the clash mark in song 55 (+0.22 against +0.2). The choice rule between the forms does not arise, since neither meets all seven.
+- **Mark 2's range is quoted wrongly in the rule.** 749.207's prediction gives the kept middle half as 1.08 to 2.11, then says to use `studies/ladder/kept.json`'s figures, whatever they are, and that file gives 0.863 to 2.377. By the file, mark 2 is met in six songs; by the quoted figures, in three (form 2) or two (form 1). The file governs, as the rule said. Correct the figures in the prediction's text. And watch the spread in the whole engine: it has gone from under the kept range (0.67 to 1.28) to 2.23 to 2.30 in songs 55, 54 and 59, near the top.
+- **Two more readings.** The true repeat helps everywhere but song 58, where it lifts the share over the ceiling from 36.9 (form 1) to 45.5. Song 49's true verse repeats, 0.182, sit near the kept edge of 0.195. On-beat chord tones are 0.81 to 0.90 in every song, past the kept 75th (0.73), so the chord is where the rest of the one-pitch verses lives.
+- **Advice: keep the mark at 30.** Form 2 already beats v50 over the ceiling in all three songs (65, 56, 56 down to 46, 46, 37), so "no worse than v50" would be a mark it cannot miss, and it would spend a sealed song on a fix that does not yet mend the fault it was built for. Putting the question was right, since the prediction named it before the run.
+- **Ruled (the writer, 26 November): option C.** Read form 2 (`LUTHIER_BORROW_KEPT=count_true`) through the whole engine now, on the seen songs only (55, 54, 58, 49, 50, 59), against 749.207's whole-engine marks 7 to 10, with mark 2's spread watched. Alongside it, try the chord tie (749.198) on top of form 2 in the clean reading, rule and marks written first, the ceiling mark in songs 50, 58 and 49 still 30 in 100. No sealed song until the 30 mark is met. Song 66 ("They Did the Right Thing", banked today, unrun) is reserved for this fix: it is the fresh test song once the mark is met, unless the writer names 64 or 65 instead.
+
+Next finding 749.210; next fix 965.
+
 ## Carried, open
 
+- 749.209: form 2 through the whole engine on seen songs, and the chord tie on top in the clean reading, the 30 mark kept (song 66 reserved).
 - 749.185 the loop gate with a chance (song 63 reserved).
 - 749.171 inside a one-bar line; rhythm scaling leans low.
 - 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163. (749.165 and 749.170, the region, are now part of 749.200.)

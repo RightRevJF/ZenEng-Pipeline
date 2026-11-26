@@ -7,3 +7,10 @@ LOG.append({"when": "2026-11-26", "q": "What do you think of the revision? A I h
 TITLE = "They Did the Right Thing"
 NEVER_SAY = []
 LOG.append({"when": "2026-11-26", "done": "lyric_locked.md; mouth_p76.py -> mouth_readings.txt (q = 76 provisional, six beats a line): 57 lines, median 8 syllables, nothing dense (max 2.53/s); weak endings 'been' (pre-chorus 1), 'should' (chorus), 'over' (verse 2), 'it' (bridge 'meant it'); close and reduced vowels at line ends; mild 4-consonant clusters; hook 5 syllables."})
+LOG.append({"when": "2026-11-26", "q": "Keep the four weak endings? A keep all four as natural speech (Recommended); B rework only the chorus line; C rework all four", "answer": "A", "kept_knowingly": ["been", "should", "over", "meant it"]})
+LOG.append({"when": "2026-11-26", "q": "What should song 66 sound like? A dark indie folk-rock, about 72 bpm, guitar-led, the falling bass, brushed drums, full band in the last chorus (Recommended); B slow minor-key soul, about 68; C slow-burning alt-rock, about 80", "answer": "A"})
+GENRE, BPM, METRE, MODE = "rock", 72, "4/4", "minor"
+LOG.append({"when": "2026-11-26", "q": "Who sings it? A a baritone (Recommended); B an alto; C a tenor", "answer": "C. We use baritones all the time. Let's use a renot [tenor]"})
+VOICE = "tenor"
+LOG.append({"when": "2026-11-26", "q": "When should song 66 get its music? A (Recommended) keep it unrun until the drafting fix is built, then make it for real with the design notes; it could also be that fix's fresh test song. B make it now on the current engine and redo it after the fix. C keep it unrun purely as a hold-out", "answer": "A"})
+STATUS = "banked, unrun; reserved for the drafting fix (749.208 form) as its fresh test song, then made for real with DESIGN_NOTES_FROM_THE_WRITER"
