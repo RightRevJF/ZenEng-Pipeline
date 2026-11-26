@@ -31,7 +31,8 @@ def summary(rows_by_song):
                 of_those_at_the_same_pitch=round(sum(h == 0 for h in near) / max(1, len(near)), 3), at_another_height=round(sum(h != 0 for h in near) / max(1, len(near)), 3), heights_in_scale_steps={str(k): round(v / max(1, len(near)), 3) for k, v in sorted(hist.items())},
                 any_earlier_at_another_height=round(sum(h != 0 for h in anyh) / max(1, len(anyh)), 3))
 MAJ = [0, 2, 4, 5, 7, 9, 11]; MIN = [0, 2, 3, 5, 7, 8, 10]
-if sys.argv[1] == "kept":
+if __name__ != "__main__": pass
+elif sys.argv[1] == "kept":
     import kept_corpus as KC
     d = KC.table(); key = {str(s): (int(g.key_pc.iloc[0]), MIN if str(g["mode"].iloc[0]) == "minor" else MAJ) for s, g in d.groupby("song", sort=False)}; R = {"verse": collections.defaultdict(list), "chorus": collections.defaultdict(list)}
     for k in KC.kept_songs():

@@ -21,3 +21,11 @@ The earlier result: in three songs of six the engine's line sung again is no lon
 **What follows if named.** Not a form yet. It would say the fault is in what "sing it again" keeps when it changes the line, and the next step would be to read which of its parts holds the height.
 
 **What I expect.** Named: built 55 to 70 in 100 at the same height against a kept middle near 35 to 40. If it is not named, then the ladder's drop in spread at the borrow rung comes from something other than the height two lines back, and I do not know what.
+
+## C. The same reading with the borrow off (written after A and B were read, before this run)
+
+A and B are read (`kept2.json`, `builds2.json`): A not named (19 in 100 of 170); B named in five songs of six. B's own next step, to see that the borrow is what holds the height: the same builds with the borrow (818) off (`BORROW=0`, the fitted spec otherwise unchanged; a study reading, the fits were made with it on).
+
+**Rule.** "The borrow holds the height" is named if in at least four songs of six the share of non-repeating verse lines at the same height as the line two before falls inside the kept middle half by song (0.167 to 0.51).
+
+**What I expect.** Named, the six falling to 0.35 to 0.5.
