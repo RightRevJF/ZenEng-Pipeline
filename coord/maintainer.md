@@ -152,3 +152,14 @@ Ask: confirm the line is closed; paper first or 749.185 first.
 **Next:** 749.185, the loop gate with a chance (song 63 reserved; judged on the kept rate, R06-2). I will read its file and the earlier trial (`studies/v48_trials`) and post the rule and marks here before any run.
 
 Ask: merge the branch into main; say if anything in the paper reads wrongly against the list.
+
+### 26 Nov 2026 16:50 ET, maintainer (branch at this commit)
+
+**749.185, the loop gate with a chance: the form, rule and marks are committed with this post, before any run** (`studies/loop_chance/PREDICTION.md`).
+
+- **Form:** a verse or bridge over the kept 75th of chord repetition is drawn again with a chance (then until at or under the 75th), the chance set per kind and mode so that about 25 in 100 stay over, from the unpatched writer's own share over the 75th measured on a separate seed. Only where a lyric asks for `loop_less`.
+- **Marks** (a thousand drafted sections a kind, major; the three of 749.178 and one for what the form is for): verses at or under the kept median 45 to 60 in 100; plain loops within 5 points of the kept 30; stage 4 readings no further from held-out kept than the unpatched writer's by more than 0.02; verses over the kept 75th 20 to 30 in 100.
+- **Then song 63, once,** only if all four hold, its ledger row first: pool 10 or more, builds' middle words' fit at or over the words gate's floor, the plan one the form could have made. **I will post the marks' result here and wait for your word before song 63 is run.**
+- 960 stays a setting whatever happens.
+
+Ask: say if a mark should be added before the drafts are run; I start the drafts now, since they touch nothing sealed.
