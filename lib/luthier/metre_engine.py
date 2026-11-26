@@ -247,6 +247,7 @@ class Engine:
             for p in cands:
                 if LO_ is not None: ws.append(self.ladder_weight(LO_, p, prev, last, mu, ch, U + t, ps, k, sy, DW, ton, WP, TR, OT_, nb_, end_off, len(ons))); continue
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
+                if k == 0 and prev is not None and self.S.get("join_moves"): jm_ = self.S["join_moves"]; jm_ = jm_.get(self.KIND.get(sec)) or jm_["all"]; w = (jm_.get(str(max(-12, min(12, p - prev))), 0) + 0.5) / (sum(jm_.values()) + 12.5)      # 749.216, a trial (studies/borrow_kept), off: a fresh line's first note by the kept moves across a join. Absent from every record
                 if OT_ and abs(p - prev) >= 12:
                     sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
                 if "chord_tie" in self.S: w *= (self.S["chord_tie"]["on" if self.on_beat(U + t) else "off"] if p % 12 in ch else 1.0)      # 749.198, a trial form (studies/chord_tie): a chord tone favoured by the kept odds, on the beat and off it
