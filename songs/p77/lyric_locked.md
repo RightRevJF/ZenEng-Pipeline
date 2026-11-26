@@ -25,9 +25,9 @@ a door in the coral
 The bedspread had coral shells
 printed there before my time
 cigarettes and beer gone warm
-asphalt and gardenia
+asphalt, exhaust, gardenia
 Her hair across the pillow
-and my hands still learning how
+and my hands were learning how
 the shells beneath us open
 small pink mouths that wouldn't close
 
@@ -59,7 +59,7 @@ A door in the coral
 it opened that summer
 and never has closed
 and I know it now
-I'm still standing in it
+I'm standing in the door
 a door in the coral
 
 ## Tag

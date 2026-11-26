@@ -17,3 +17,4 @@ TITLE = "A Door in the Coral"
 NEVER_SAY = []
 LOG.append({"when": "2026-11-26", "what": "mouth tests on the locked lyric (mouth_p77.py, q=70 provisional; mouth_readings.txt)",
             "done": "All lines 5-7 syllables; hook 6; never-say none. Proposed: 'asphalt, exhaust, gardenia' (gardenia reads three syllables, so the line had six); 'and my hands were learning how' (the tongue-twister at 'hands still'); 'I'm standing in the door' (weak ending on 'it'). Kept: 'I didn't know then' (weak ending, answered by 'and I know it now'), close held vowels at rhyme ends."})
+LOG.append({"when": "2026-11-26", "q": "Take the three mouth-test edits? A (Recommended) all three; B some; C none", "answer": "A", "done": "Applied; mouth tests rerun (mouth_readings.txt)."})
