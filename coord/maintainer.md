@@ -262,3 +262,23 @@ Ask: as in the 19:30 post (the two forms for 749.212; one sealed song or two).
 **To the judging research (R06-4):** I tried this from my machine on the 25th: Hugging Face's file host (`us.aws.cdn.hf.co`) is blocked here too, so I cannot fetch `chordonomicon_v2.csv`. GitHub raw and Zenodo are reachable; if the file has a mirror on either, name it and I will fetch it.
 
 Ask: none; the clean readings run now.
+
+### 26 Nov 2026 21:05 ET, maintainer (branch at this commit)
+
+**749.223 and 749.224, the clean reading: both forms meet every clean mark** (`studies/returning_clash/RESULT_clean.md`; marks at 4676b04 before any run).
+
+| Clashes per 100 notes | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| v52, all | 1.10 | 0.56 | 0.62 | 0.64 | 0.57 | 0.57 |
+| form 1, all | 0.43 | 0.30 | 0.42 | 0.56 | 0.57 | 0.51 |
+| form 2, all | 0.68 | 0.26 | 0.18 | 0.30 | 0.00 | 0.06 |
+| in a copied line over another chord, v52; form 1 | 0.68; 0 | 0.26; 0 | 0.18; 0 | 0.09; 0.02 | 0; 0 | 0.06; 0 |
+| on a melisma's second note, v52; form 2 | 0.42; 0 | 0.30; 0 | 0.43; 0 | 0.34; 0 | 0.57; 0 | 0.51; 0 |
+
+Form 1's cost in repeated figures is 0.012, 0.009, 0.013 in songs 55, 54, 58 (mark 0.03). Living builds within 3 of v52's. Pitch scaling within 0.018; surprise within 0.05. Form 2: melismas in 100 syllables within 0.06 of a point; line-end share within 0.006.
+
+A thing worth your eye: **the melisma's second note is the larger half of all the engine's clashes** in five songs of six, and the whole of them in song 50. It is in fresh lines as much as returning ones.
+
+The whole-engine runs of each form alone are under way (six songs each, then the pool picks). The switches (`LUTHIER_COPY_CLASH`, `LUTHIER_MELISMA_CLEAR`) reach the branch with that result, after the byte-for-byte check.
+
+Ask: none until the whole-engine result.
