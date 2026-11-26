@@ -677,3 +677,10 @@ Findings from 749.197.
 - **749.198: the engine puts a chord tone on the beat 88 to 95 times in 100; kept songs 64 (by song: 0.44, 0.53, 0.64, 0.73, 0.83 at the 10th to 90th).** Three rules make sure of it: 712's fit moves every on-beat note of a line sung again to a chord tone (`again()`), the draw favours chord tones 2.6 to 0.3 on the beat, and 833's clash rule. Off the beat the engine is under kept (0.45 to 0.51 against 0.56).
 - The one-pitch verses (749.195, 749.197) are a symptom: fresh verse lines, the pull off and the clash rule off together bring verses over the ceiling from 56 to 65 builds in 100 to 13 to 19. The kept pull does not loosen as a chord holds (0.64 throughout), so nothing is named for that.
 - Proposed, not tried: a kept soundness check on on-beat chord tones; in lines sung again, snap only where the clash rule would; the pull from a kept table. 833 left. Put to the writer and the session first.
+
+### After v50 (25 November): the tie to the chord, tried and not built
+
+`studies/chord_tie/RESULT.md`, form and marks first (`LUTHIER_CHORD_TIE=1`; `tables/kept_chord_tie.json`: weights 2.057 on the beat, 1.691 off, by the kept odds). The form brings on-beat chord tones to the kept figure (0.53 to 0.62; kept 0.64) and **fails mark 1**: verses over the ceiling 54, 50, 51 in songs 50, 58, 49 (30 asked), and in songs 55, 54, 59 they rise from 16, 15, 24 to 33, 42, 38.
+- **749.199: the tie was moving the tune, not holding it.** Left to itself the draw sits on one pitch near its register's centre (a middle verse 0.38 to 0.46 on its commonest pitch; kept 0.31). This is 749.165 / 749.170 (too many notes on three pitches) from the other side.
+- 749.198 cannot be built alone. Next reading: how kept verses spread their notes over pitches, and which of the draw's weights sets it (927's register pull, 846's degrees, 923's memory). Then the draw; then the tie with it.
+- Trial switches in the code, off: `LUTHIER_CHORD_TIE`. Song 54 byte for byte with it off.
