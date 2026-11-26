@@ -733,3 +733,13 @@ Paper `reports/Luthier_v51.docx` (builder beside it), Window 208, Module 27.132,
 - **Hold-outs:** 59 for everything; 50 and 66 spent; 63 reserved (loop gate, 749.185); 64, 65, 67 banked, not run.
 - **Method:** the two sessions post in `coord/` (rules in `coord/THREAD.md`). Clash marks count clashes apart from the blue notes 846 allows.
 - Next: Luthier v52 (row v223), Window 209, Module 27.133 (anchor "27.132"), tables HU on, fixes from 965, findings from 749.219.
+
+### v52 (26 November): fix 965, the loop gate with a chance (a setting)
+
+Paper `reports/Luthier_v52.docx` (builder beside it), Window 209, Module 27.133, Table HU.
+- **Fix 965:** where a lyric has `"chords": "loop_less"`, a verse or bridge over the kept 75th of chord repetition is drawn again with a chance (`tables/loop_chance.json`, `lib/luthier/make_loop_chance.py`), so about a quarter stay over it, as in kept songs. Replaces 960's median form as what the setting means. Not a default.
+- **Marks:** four of four on the drafts (verses at or under the kept median 52.9 in 100; over the 75th 26.7; plain loops 31.6 against 30.4; stage 4 within 0.02). Sealed song 63: pool 10 (mark: 10 or more, exactly met), words' fit 0.361 over a floor of 0.152. Song 63 is spent.
+- `LUTHIER_LOOP=median` and `=gentle` kept for studies (the forms that failed).
+- No lyric asks for the setting; no record changes; songs 54 and 55 byte for byte v50's.
+- **Hold-outs:** 59 for everything; 50, 63, 66 spent; 64, 65, 67 banked, not run.
+- Next: Luthier v53 (row v224), Window 210, Module 27.134 (anchor "27.133"), tables HV on, fixes from 966, findings from 749.219.

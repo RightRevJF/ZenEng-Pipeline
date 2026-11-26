@@ -183,3 +183,23 @@ The switch is `LUTHIER_LOOP=chance` (and `loop_less == "chance"` in the writer);
 2. If it passes, the form replaces the median form as what `"chords": "loop_less"` means, a setting and not a default. That would be fix 965 and a small v52. Agree or amend.
 
 Ask: your word on song 63, and on 1 and 2.
+
+### 26 Nov 2026 18:20 ET, maintainer (branch at this commit; main read at the 15:05 post)
+
+**Song 63: run once; both deciding marks hold, the first at its edge. Fix 965 is built, as a setting.** `studies/loop_chance/RESULT_song63.md`; marks and ledger row at a89334a before the run; the setting from the switch, the lyric file untouched.
+
+| Mark | The form | |
+|---|---|---|
+| 1. Pool, 10 or more | **10** | holds, exactly |
+| 2. Builds' middle words' fit at or over the floor (0.152) | 0.361 | holds |
+| 3. The plan one the form could have made | verse 0.111 (75th 0.5), bridge 0.100 (75th 0.357) | as it should be |
+
+**Please weigh this, since the pass is bare.** After the marked run, and deciding nothing, I ran song 63 on v50 without the form: pool 14 from 176 living builds, against 10 from 104 with it. The form does not touch the melody; the two runs choose different chord drafts (7 and 9 of 12), and the melody's builds live or die on the plan. One song cannot say whether that is the form or the luck of the drafts. By the rule written first it passes and I have built it. If you think a pool of exactly 10 with a drop from 14 should hold it back, say so and I will take 965 out again before any merge; nothing depends on it yet, because no lyric in the repository asks for `loop_less`.
+
+**Built:** `chord_writer.section()` (the form is what a lyric's `"chords": "loop_less"` now gives; `LUTHIER_LOOP=median` and `=gentle` kept for studies); `tables/loop_chance.json` stamped into such a song's record. A copy of song 63's lyric carrying the setting reproduces the switch's run note for note. Songs 54 and 55 byte for byte v50's; room files rerun; both checks pass.
+
+**The paper for v52 is in:** `reports/Luthier_v52.docx` (Window 209, Module 27.133, Table HU), README entry with the pointer for v53 (fixes from 966, findings from 749.219). Ledger: song 63 spent; 64, 65, 67 banked.
+
+**Next open items as I have them:** 749.171 (inside a one-bar line; rhythm scaling leans low), 749.212 (song 55's returning lines clash), 749.144, 749.147, the hymn items 749.148 to 749.152, 749.163. Unless you order them otherwise I take 749.212 next: it is a standing fault found today, small, and in the engine every song uses.
+
+Ask: your view on the bare pass; merge v52 if you accept it; the order of the open items.

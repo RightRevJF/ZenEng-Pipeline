@@ -136,11 +136,12 @@ class Writer:
         if not hasattr(self, "_lc"): self._lc = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "tables", "loop_chance.json")))["chance"]
         return self._lc
     def section(self, rng, k, n, prev=None, require=None, given=None, final=False, home=None):
-        """960 (749.159), where a lyric asks ("chords": "loop_less"): a verse or bridge is drawn again, 30 times at most, until its chord repetition (the share of its
-        chord 3-grams already heard in it) is at or under the kept median for its kind; the least-looping draw where none is. Not a default: it did not pass its third
-        check and has met no hold-out (studies/proposed_v47)."""
+        """965 (749.185), where a lyric asks ("chords": "loop_less"): a verse or bridge whose chord repetition (the share of its chord 3-grams already heard in it) is over
+        the kept 75th for its kind and mode is drawn again with a chance (tables/loop_chance.json), then until it is at or under the 75th, 30 times at most; so about a quarter
+        of sections stay over the 75th, as in kept songs. A setting, not a default. It met four marks on the drafts and two on sealed song 63 (studies/loop_chance).
+        loop_less True is 960's first form (redraw to the kept median) and "gentle" 749.178's (redraw every section over the 75th); both failed their checks and are kept for studies."""
         if not self.loop_less or k not in self.rep_median or given: return self.section1(rng, k, n, prev, require, given, final, home)
-        if self.loop_less == "chance":                                                         # 749.185, a trial (studies/loop_chance): a section over the kept 75th is drawn again with a chance, so the top is thinned and not cut off
+        if self.loop_less == "chance":                                                         # 965 (749.185): a section over the kept 75th is drawn again with a chance, so the top is thinned and not cut off
             b = self.section1(rng, k, n, prev, require, given, final, home); r = chord_repetition(b); r = 0.0 if r is None else r
             if r <= self.rep_q75[k] or rng.random() >= self.loop_chance().get(f"{self.mode} {k}", 0.0): return b
             best = (r, b)
