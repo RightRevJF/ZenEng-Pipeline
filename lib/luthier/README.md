@@ -711,3 +711,12 @@ Findings from 749.197.
 - `studies/line_joins/RESULT.md`: the join between lines is **not** the cause (builds 2.9 to 3.2 semitones; kept 3.5, 25th by song 2.67). Inside lines the engine matches kept to the second decimal (1.8).
 - A description: the engine's verse lines start and end in nearly the same place (first notes spread 1.4 to 2.0 semitones across a verse's lines; kept 2.8), and are a different shape (a kept line starts under its middle and ends lower; the engine's starts above and ends at it).
 - **Six causes guessed since 749.195, each wrong or a part. Proposed in place of a seventh: a ladder** (the barest draw, then the engine's parts added one at a time, the same kept figures read at each rung), for the session's view.
+
+### 26 November: the ladder (749.203)
+
+`studies/ladder/` (`RESULT.md`, `TABLES.md`), rule first; study switches `spec["ladder_off"]` and `Engine.ladder_weight()` (absent from every record; songs 54 and 55 byte for byte with them absent). The draw's parts added one at a time from the barest draw, and each left out alone from the full engine; six songs, 300 builds a rung.
+- **Borrow (fix 818: a line sings an earlier line of its part again) sets the lines' heights.** Spread between a verse's lines 2.4 before its rung, 0.97 after; the full engine without it, 2.45 (kept 1.54). Spread of the lines' first notes 2.9 → 1.5; without it 3.0 (kept 2.76). Not named by the letter of the rule (it carries the figure across the whole kept range); five times any other part's step.
+- **Memory (923) narrows the line:** within-line spread 2.17 → 1.90, a line's range 6.0 → 4.75. Named by the rule.
+- **The chord's pull:** on-beat chord tones 0.46 → 0.86; borrow takes it to 0.92.
+- The share on the commonest pitch is a sum (register, chord, again: +0.06 each).
+- Next: read how kept lines repeat an earlier line (same pitch or another height); then borrow at a kept height, by scale steps. Marks first; a sealed song decides.
