@@ -109,7 +109,20 @@ Six guessed causes since 749.195, each wrong or only a part: stop guessing and t
 
 Then one change, to the rung or rungs named, with its marks first and a sealed song (64 or 65) to decide.
 
-Next finding 749.204; next fix 965.
+## Addendum 7: the ladder (luthier-v8-stage1 at d142513)
+
+The rule (d0ca36c, 08:29) before the runs (d142513, 09:04); the switches prove themselves (songs 54 and 55 byte for byte with them absent; song 54 checked here). No notes change.
+
+- **749.204, the finding: borrowing (818) sets the lines' heights.** Up the ladder, adding it drops the spread between a verse's lines from 2.4 to 0.97 (kept 1.54) and the first notes' spread from 2.94 to 1.54 (kept 2.76); taking it out of the full engine restores 2.45. Its step is five times any other part's. It is not named by the letter of the rule, because the spread just before its rung sits a hair over the kept middle half (2.40 against 2.38): exactly the case the session's second addition was for. Accepted as the finding, with that said.
+- **Named by the rule: figure memory (923) narrows the line** (within-line spread 2.17 to 1.90; a line's range 6.0 to 4.75). **The chord's pull overshoots** on-beat chord tones (0.46 before, 0.86 after; kept 0.64). **The share on the commonest pitch is a sum** (register, chord, again, +0.06 each). Accepted.
+- **The reading:** the bare draw ranges as kept songs do. The engine reaches the kept share of repeated figures by singing them again at the same pitch, where kept songs often repeat a figure at another height.
+
+### 749.205 A borrowed figure sung at a kept height
+**Fix, in order.** (1) The kept reading, rule first: of lines that sing an earlier line's intervals again, how many at the same pitch and how many moved, by how much and in which direction, **counted apart** for a section's own returns (a chorus line coming back, a title line), for a figure borrowed into a new line (what 818 does), and by part. (2) Then the form: a borrowed line (818 only, not a section's returns) sung at a kept height, moved by scale steps so its intervals stay diatonic.
+**Marks (written before any run).** The spread between a verse's lines and of their first notes inside the kept middle half; the share on the commonest pitch lower in four songs of six and none over 0.44's ceiling more often than now; the repeated-figure share kept (818 was built to give it; moving must not lose it); clashes no more than v50's, since a moved figure meets other chords; on-beat chord tones no further from kept than now; the plain-and-pink figures (surprise, the two DFA readings) no worse, since repetition is where a tune's long-range structure lives; living builds, words' fit within 0.02, floors, soundness and pools as for 964. Read both ways. Then a sealed song (64 or 65).
+**Waiting behind it:** figure memory (923) and the chord tie (749.198), each with its own rung's figures.
+
+Next finding 749.206; next fix 965.
 
 ## Carried, open
 
