@@ -640,3 +640,17 @@ Next: Luthier v50 (row v221), Window 207, Module 27.131 (anchor "27.130"), table
 ### After v49's paper (25 November): the third form of the mend, not built
 
 `studies/the_draw/RESULT_line.md` (`LUTHIER_PEAK_CLIMB=3`: the way back in the carrying line itself). Fails checks 1, 2 and 5: the peak is planted as often as v47 (clean reading 96 to 104 in 100) but builds holding a leap stay at 15 to 30 in 100 (kept 17.5), and three songs have fewer living builds. **749.189: a straight trade.** About one planted build in six can reach the peak only by leaping. No choice among the draws gives both; the carrying line's centre is too far under its top. Next, a reading first: where the highest line's centre sits against its top in kept songs; then the plant's register (the centre rising toward the peak), not its draws. Findings from 749.190.
+
+## Luthier v50 (Window 207): fix 964, the octave bin shared as kept songs share it
+
+The first change to the engine's notes since v47. Paper: `reports/Luthier_v50.docx` (builder `reports/make_luthier_v50_from_v49.py`), row v221, Module 27.131, Table HQ. Results: `studies/the_peak_line/` (`RESULT.md`, `RESULT_tail.md`, `RESULT_tail_tries.md`, `RESULT_song50.md`) and `studies/the_draw/RESULT_line.md`.
+
+- **964 (749.192), on by default, 4/4:** the kept interval table's +12 and −12 bins hold every interval of an octave or more, and `pitches1()` gave each pitch past an octave the whole bin. Now the octave takes its kept share (`tables/kept_octave_tail.json`, made by `lib/luthier/make_kept_octave_tail.py`: 0.611 up, 0.684 down) and the pitches past it share the rest. `LUTHIER_OCTAVE_TAIL=0` for studies. The plant (950) and the octave gate (959) are unchanged.
+- How it got there: 749.189 (three forms of choosing among the carrying line's draws: the peak and the leaps trade one for one); the session's 749.191 (the carrying line's centre is **not** the fault: `RESULT.md`; song 64 not run, still sealed); 749.192 (the bin); on the seen songs five marks of six (the peak planted 74 to 92 of v47's 100, 95 asked: not built); 749.193 (240 draws: drawing until the peak arrives selects for the leap; v47's count was made by the fault); then **song 50, sealed, run once by a rule written first: all four marks hold** (living 154 → 243; fit 0.248, 0.248; range 17 over a floor of 14.55; builds holding a leap 15.4 in 100).
+- **Song 50 is spent** (a seen song now; records `lyric50.v47.song.json` and `lyric50.song.json`). Its pool is 4 and 5 builds and its chosen tune's words' fit 0.209 under the form (0.399 before; one draw): worth its own look.
+- The build: living builds 293, 279, 366 (v47: 223, 256, 294); builds' fit 0.257, 0.216, 0.297; sound, one lean (rhythm scaling, low); pools 25, 22, 24; neighbour choice 2.8 in 100, random pool pick 3.2 (v47: 6.5). Songs 55, 54, 58, 59, 49, 61 rerun; song 60 as `songs/p70/lyric60.v50.song.json`; songs 52 and 53 byte for byte. Hold-out 59: living 207 → 320, range 17 (floor 15.46).
+- **749.194, for the session and the writer:** with 964 and no gate, 6 to 15 builds in 100 hold a leap past an octave (kept 17.5). Is 959 still wanted?
+- Numbering: the session's 749.191 is the centre reading; the bin is 749.192. Trial switches left off: `LUTHIER_PEAK_CLIMB` (1, 2, 3), `LUTHIER_PEAK_TRIES`.
+- Next, as I see it: how a line gets to its top (kept songs begin there or step to it; 950 redraws until it is touched), with 749.171 and rhythm scaling.
+
+Next: Luthier v51 (row v222), Window 208, Module 27.132 (anchor "27.131"), tables HR…, fixes from 965, findings from 749.195.

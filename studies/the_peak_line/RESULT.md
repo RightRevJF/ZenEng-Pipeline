@@ -1,4 +1,4 @@
-# The line that carries the top: the reading, and what it led to
+# The line that carries the top: the reading (the session's 749.191), and what it led to (749.192)
 
 25 November 2026. Rule in `PREDICTION.md` (committed before the run). Numbers: `reading.json`.
 
@@ -18,7 +18,7 @@ The rule named the centre only if the builds' middle reach was over the kept 75t
 
 The difference is in the last row, and in the first. Kept songs begin the line on its top a third of the time, or step to it; the engine comes to it from past an octave below four to seven times as often.
 
-## Why the engine draws an interval past an octave at all (749.191)
+## Why the engine draws an interval past an octave at all (749.192)
 
 Reading the draw's code for how such an interval gets its weight:
 

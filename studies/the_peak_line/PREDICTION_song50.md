@@ -1,10 +1,10 @@
-# The octave bin shared, on a sealed song: the rule, written before song 50 is run (749.191)
+# The octave bin shared, on a sealed song: the rule, written before song 50 is run (749.192)
 
 25 November 2026. The writer's ruling on `RESULT_tail_tries.md`: yes, spend song 50 on it.
 
 **Form, frozen.** The octave bin shared as kept songs share it (`tables/kept_octave_tail.json`), fix 950's plant at its own 60 draws, the octave gate on. Exactly what `RESULT_tail.md` tested on the eight seen songs. Nothing is changed for song 50 and nothing will be changed after it.
 
-**Why a sealed song.** On the seen songs the form held five marks of six. The sixth asked that the peak be planted as often as in v47, and I have since found that v47's count was made by the fault the form corrects (749.192). I cannot strike a mark after the fact. So the marks below are written now, and they are read on a song that neither I nor any form has run.
+**Why a sealed song.** On the seen songs the form held five marks of six. The sixth asked that the peak be planted as often as in v47, and I have since found that v47's count was made by the fault the form corrects (749.193). I cannot strike a mark after the fact. So the marks below are written now, and they are read on a song that neither I nor any form has run.
 
 **Song 50** (`songs/p60/lyric50.json`; folk, baritone, 88). Run once by the engine as it is (v47's notes), once with the form, a thousand builds each; and its v47 fitted spec run again with only the form changed.
 

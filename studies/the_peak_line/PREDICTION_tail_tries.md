@@ -1,4 +1,4 @@
-# The octave bin shared, and the plant given more draws: checks written before any run (749.191)
+# The octave bin shared, and the plant given more draws: checks written before any run (749.192)
 
 25 November 2026. The writer's ruling on `RESULT_tail.md`: hold it; one more test. Nothing has been run under this form.
 

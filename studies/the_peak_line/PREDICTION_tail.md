@@ -1,4 +1,4 @@
-# The octave bin shared as kept songs share it: checks written before any run (749.191)
+# The octave bin shared as kept songs share it: checks written before any run (749.192)
 
 25 November 2026. After `RESULT.md`. Nothing has been run under the form; it is in the code behind a switch that is off (`LUTHIER_OCTAVE_TAIL`).
 
