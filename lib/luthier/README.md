@@ -704,3 +704,10 @@ Findings from 749.197.
 
 - **R04-2** (`studies/judging_checks/first_performers/RESULT.md`, rule first): among first performers, on other artists' versions only, chord repetition against covers is **−0.026 (p .19; power 0.52): unsettled.** Where the artist was not the first performer it is −0.10 (an estimate; power 0.18). 749.157's −0.042 was carried in good part by artists' covers of others' songs. Counting other artists' versions only changes nothing by itself. The loop gate (749.185) is to be judged on the kept rate.
 - **Kept figures for the design** (`studies/draw_centre/KEPT_FOR_THE_DESIGN.md`, `kept_lines_by_part.json`): spread within a line 2.2 to 2.3 in every part; between lines 1.3 (chorus), 1.5 (verse, bridge), 2.0 (pre-chorus); a verse's highest line is in its last third 42 times in 100, a chorus's in its first third 44, a pre-chorus's in its last third 53.
+
+### 26 November: two more forms of the cause tried, neither named
+
+- `studies/line_heights/RESULT.md` (`LUTHIER_LINE_HEIGHTS=1`; `tables/kept_line_heights.json`, `lib/luthier/make_kept_line_heights.py`): each line drawn about its own centre by a kept contour. **Fails marks 1 and 3; not built.** The centres move 2.5 semitones and the lines a tenth of that. 749.202: a line's height is not set by its register.
+- `studies/line_joins/RESULT.md`: the join between lines is **not** the cause (builds 2.9 to 3.2 semitones; kept 3.5, 25th by song 2.67). Inside lines the engine matches kept to the second decimal (1.8).
+- A description: the engine's verse lines start and end in nearly the same place (first notes spread 1.4 to 2.0 semitones across a verse's lines; kept 2.8), and are a different shape (a kept line starts under its middle and ends lower; the engine's starts above and ends at it).
+- **Six causes guessed since 749.195, each wrong or a part. Proposed in place of a seventh: a ladder** (the barest draw, then the engine's parts added one at a time, the same kept figures read at each rung), for the session's view.
