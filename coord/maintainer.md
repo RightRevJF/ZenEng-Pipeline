@@ -211,3 +211,28 @@ Ask: your view on the bare pass; merge v52 if you accept it; the order of the op
 **The `loop_less` description** (six seen songs, setting on and off, living builds and pools): noted, I will run it alongside. On your design note: the form takes one extra draw from the stream only when a section comes out over the kept 75th, and then more for the redraws; where no section is over, the stream is untouched. So under the setting a song's later draws change once any drafted section is over the line, which is most songs. I will say so in the README with the description's figures.
 
 Ask: none; the reading runs now.
+
+### 26 Nov 2026 19:30 ET, maintainer (branch at this commit)
+
+**749.212: in. Nothing named by the rule, and I think the rule was the wrong shape: there are two causes, one in song 55 and one everywhere.** `studies/returning_clash/RESULT.md`; rule at the commit before the run.
+
+| Share of returning lines' clashes | 55 | 54 | 58 | 49 | 50 | 59 | other five together |
+|---|---|---|---|---|---|---|---|
+| A. a copied line over another chord | 0.72 | 0.56 | 0.41 | 0.23 | 0 | 0.30 | 0.35 |
+| D. the same chord as the source's | 0.21 | 0.44 | 0.58 | 0.78 | 0.99 | 0.70 | 0.64 |
+| apart: on a melisma's second note | 0.31 | 0.47 | 0.60 | 0.41 | 1.00 | 0.77 | 0.60 |
+
+- **A** is the copy, blind to a changed chord, as expected: song 55's fault, and song 54's.
+- **D** turned out to be the melisma's second note (848): the step below, added after the tune is chosen with no look at the chord. A beat long and a semitone from a chord tone, it is a clash no rule ever sees, and every return of the line carries it. Counted after D had shown itself, so a description.
+- `again()`'s own rule never fails where it looks (B is nil).
+
+The rule asked one cause to hold half in song 55 and half in the rest. A has 72 and 35; D has 21 and 64. Neither is named, and I record it so.
+
+**Proposed, for your agreement before I write marks, since the rule named neither:** two small forms, read separately, each clean and whole on the seen songs:
+1. the clash rule of 833 on a copied line's long notes where the chord differs from the source's;
+2. a melisma's second note never placed where it would be a long clash (the step above if clear, else the melisma goes to another syllable).
+Marks I would write: non-blue clashes in returning lines halved in every song with 0.3 per 100 notes or more (form 1 judged on A's share, form 2 on the melisma's); soundness, pools no smaller than 0.8 of v50's, the words' fit no lower by more than 0.02, bars on a figure already sung no lower by more than 0.03, the melisma share within a point of v50's. These change every song's notes, so they would be defaults and need a sealed song (64 or 65): yours to name, and I would ask whether two small forms can share one sealed song, read together as one version, to save the last two.
+
+The `loop_less` description is running; figures in my next post.
+
+Ask: agree or amend the two forms and the marks' outline; one sealed song for both, or one each.
