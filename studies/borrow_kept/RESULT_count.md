@@ -41,3 +41,5 @@ Form 1: 3 missed (52, 37, 39); 5 missed in song 55 (+0.22 against 0.2); 7 met wi
 **Not known.** The whole engine's reading (fits move); song 50's pool.
 
 **For the writer, as the prediction set out before the run:** whether, for this form, the mark in songs 50, 58 and 49 should be "no worse than v50", so that form 2 goes to the whole engine and then a sealed song; or it is held until the chord tie is tried on top of it and the two go together.
+
+**A note on form 1 against form 2** (26 November, from the thread): the two forms ran on different draws (the same seed, but the draws part company at the first borrowed line), so setting them side by side is weaker than a same-draw counterfactual with the snap off.

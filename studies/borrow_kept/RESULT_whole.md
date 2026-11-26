@@ -1,6 +1,6 @@
 # The borrow by the count, a true repeat: the whole engine (749.209)
 
-26 November 2026. **The writer's ruling, before this run** (10:54): for this form the ceiling mark in songs 50, 58 and 49 is "no worse than v50", and it goes to the whole engine. Marks 7 to 10 as written in `PREDICTION.md` before any run. `LUTHIER_BORROW_KEPT=count_true`, the six songs written through (records kept outside the repository; nothing in `songs/` changed). `whole_engine.json`, `scaling.json`, `studies/soundness/neighbour_trial_borrow_count_true.json`.
+26 November 2026. **Run within the writer's ruling C** (11:04, list for v51 addendum 11): form 2 read through the whole engine on the seen songs only. His 10:54 word to me ("no worse than v50" for the ceiling mark in songs 50, 58 and 49) was overtaken at 11:04 and is withdrawn; the mark stays 30 in 100, and no sealed song was spent. Marks 7 to 10 as written in `PREDICTION.md` before any run. `LUTHIER_BORROW_KEPT=count_true`, the six songs written through (records kept outside the repository; nothing in `songs/` changed). `whole_engine.json`, `scaling.json`, `studies/soundness/neighbour_trial_borrow_count_true.json`.
 
 | | 55 | 54 | 58 | 49 | 50 | 59 |
 |---|---|---|---|---|---|---|
