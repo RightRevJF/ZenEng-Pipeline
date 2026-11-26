@@ -17,6 +17,29 @@ Read-only inputs for the nightly judging research: what the covers study uses, s
 
 The raw downloads (Sheet Sage's `Hooktheory.json.gz`, 20 MB; Discogs-VI's `main.zip`, 1.4 GB) are not here; the scripts above rebuild everything from them.
 
+## The fresh songs (judging research, run 06; R06-1)
+
+`hooktheory_fresh_covers_discogs.json`: the 1,946 Hooktheory songs in Sheet Sage's file that the rest of this pack never measured (mostly chords without melody), matched to Discogs-VI by the pack's own rule on the research's machine; 312 matched, 294 taken up by another artist. **Seen, not a hold-out:** run 06 joined them to six measures. Copied unchanged from `studies/judging_research/data/fresh_songs_discogs_run06.json` on the judging-research branch. Checked here against the maintainer's own clique table: all 312 matched cliques agree on artist and title, and none of the 1,634 unmatched would match by exact title and artist. Credit: Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0).
+
+Note: `hooktheory_covers_discogs.json` was built over every raw video, so it already holds outcomes for 222 of the fresh songs' videos. It is an outcome for them too.
+
+## Where the raw files are
+
+- Sheet Sage's `Hooktheory.json.gz` (20 MB): `https://raw.githubusercontent.com/chrisdonahue/sheetsage-data/main/hooktheory/Hooktheory.json.gz`, sha256 `917b7cd58f5f4e07d6c36acf7bfad958c99ee05472dab3555399141094698e0c` (the maintainer's copy and the research's agree).
+- Discogs-VI 20240701 `main.zip` (1.4 GB): `https://zenodo.org/records/13983028`.
+
+## The seen ledger (R05-1, R06-1)
+
+What has been joined to an outcome and by whom, so nobody takes a spent set for a fresh one.
+
+| Set | Songs | Joined to measures in | Outcome |
+|---|---|---|---|
+| Within-artist rows (artists with two songs or more) | 9,588 | judging research runs 04 and 05; `studies/judging_checks/within_artist` | covers; taken up by another artist |
+| Single-song-artist songs | 3,212 | judging research run 05 (`arrow_singletons`) | taken up by another artist |
+| Fresh battery songs (of the 1,946 above, those with another song by the same artist) | 1,295 | judging research run 06 (commits 08b5167, 3f39f56) | taken up by another artist |
+
+Every within-artist Hooktheory song with chords is now spent. A powered check of chord repetition needs about 5,400 unseen within-artist songs (run 06); none are on hand.
+
 ## How to join
 
 A song is a YouTube video id. `hooktheory_covers_discogs.json` is keyed by it; each clip in the two measure files carries it as `vid`, and each clip in `hooktheory_clips.json.gz` as `video`. A song's measure is the mean over its clips, weighted by `n_mel` (as `studies/covers/study_covers_discogs.py` does). The artist is the clip's `artist` slug. The covers study's rows are the songs with a group, measures in both files, and a first year (2,360 when views are also required).
@@ -26,6 +49,12 @@ A song is a YouTube video id. `hooktheory_covers_discogs.json` is keyed by it; e
 - The covers study (`studies/covers/covers_study_report.md`): chord repetition against covers −0.071 across artists.
 - The within-artist test (`studies/judging_checks/within_artist`): −0.042, p .009, rule committed first.
 - The fresh-songs test on the hold-out (`studies/judging_checks/fresh_songs`): −0.028, range −0.11 to +0.05, 438 songs; same direction, not settled.
+
+## A floor on power for counted tests (R06-5; ruled 26 November 2026)
+
+The writer left the ruling to the maintainer, who rules yes. **A test counts toward the shared bar (.05 over the number of tests) only if its power is 0.2 or more**, reckoned from fake outcomes or from the test's own standard error against its written prediction, before the real outcome is joined. Tests under the floor are still frozen and committed with their predictions, and are reported as estimates: they pass nothing and kill nothing. The same floor holds for the maintainer's readings with several marks.
+
+Why: in run 06 five tests with power of 0.014 to 0.047 cut the one test that could have seen something from a bar of .05 to .0083, and at that power a "kill" fires about half the time on nothing.
 
 ## The hold-out rule
 
@@ -48,5 +77,6 @@ Write a line here **before** running anything against a hold-out, so no test is 
 | 25 Nov 2026 | the songwriting session | Song 65 ("Hold It All Together", `songs/p75/lyric65.json`; disco-funk, 4/4, 116, alto; banked tonight, never run) | None yet | **Banked, sealed, unreserved.** |
 | 26 Nov 2026 | the writer (via the songwriting session) | Song 66 ("They Did the Right Thing", `songs/p76/lyric66.json`; dark indie folk-rock, 4/4, 72, minor, tenor; banked today, never run) | The maintainer's drafting fix (the borrow and again() form of 749.208), when it is built: offered as that fix's fresh test song, then made for real with the writer's design notes (`songs/p76/intake.py`) | **Banked, sealed, reserved for the drafting fix.** |
 | 26 Nov 2026 | the writer (via the songwriting session) | Song 67 ("A Door in the Coral", `songs/p77/lyric67.json`; hazy indie, 4/4, 70, baritone; banked today, never run; every verse line 7 syllables) | Made for real once the drafting fix lands (after song 66's test), as the first song written to the matched-count craft note | **Banked, sealed, reserved to be made after the fix.** |
+| 26 Nov 2026 | maintainer, on the road agreed with the songwriting session (`coord/songwriting.md`, 12:55) within the writer's ruling C | Song 66 ("They Did the Right Thing") | The pair (the borrow by the count as a true repeat, with the chord tie), frozen: `studies/borrow_kept/PREDICTION_song66.md`, seven marks. Run once: v50 and the pair. | **Run, once. Six marks of seven hold; mark 7 fails:** the builds' middle pitch scaling 1.062 against v50's 0.912 (kept middle 0.905; the margin 0.03). Pool 33 and 46; words' fit 0.260 and 0.293; verses over the ceiling 17.0 and 2.7 in 100; true repeats 0.052 and 0.053; clashes 0.26 and 0.24; surprise 3.43 and 3.12. **The pair is not built. Song 66 is spent** (`studies/borrow_kept/RESULT_song66.md`). |
 
-Two readings spent on one question, by accident. Hold-out songs for the engine (59 for everything; 63, 64, 65, 66 and 67 banked, not yet run by anything; 66 reserved for the drafting fix; 67 to be made after it; 50 spent on fix 964) are listed in `lib/luthier/README.md`.
+Two readings spent on one question, by accident. Hold-out songs for the engine (59 for everything; 63, 64, 65 and 67 banked, not yet run by anything; 66 spent on the pair, 26 November, which failed its pitch-scaling mark; 50 spent on fix 964) are listed in `lib/luthier/README.md`.

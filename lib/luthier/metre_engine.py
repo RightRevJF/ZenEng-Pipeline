@@ -85,7 +85,20 @@ class Engine:
         return self.CH[c[max(i for i, x in enumerate(at) if x <= max(0, t) % self.BAR)]]
     def on_beat(self, t): return (t % self.BAR) in self.BEATS
     def reg(self, sec, i):
-        R = self.S["registers"]; return tuple(R.get(f"{sec}:{i}") or R.get(sec) or R[self.KIND[sec]])
+        R = self.S["registers"]; r = tuple(R.get(f"{sec}:{i}") or R.get(sec) or R[self.KIND[sec]])
+        lh = getattr(self, "_lh", None)                                                      # 749.201, a trial form (studies/line_heights): a line drawn about its own centre, the part's centre moved by the line's height in a kept contour
+        if lh and f"{sec}:{i}" not in R and (sec, i) in lh: r = (max(r[1] + 2, min(r[2] - 2, r[0] + lh[(sec, i)])),) + r[1:]
+        return r
+    def draw_heights(self, rng):
+        """749.201: for each sung part, one kept part's line heights (tables/kept_line_heights.json), of the same kind and the same number of lines where ten or more kept parts have it, else any of the kind read by place"""
+        if not hasattr(self, "_LH"): self._LH = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "tables", "kept_line_heights.json")))["contours"]
+        out = {}
+        for sec in self.SUNG:
+            C = self._LH.get(self.KIND.get(sec)); n = len(self.LINES[sec])
+            if not C or n < 2: continue
+            same = [c for c in C if len(c) == n]; c = rng.choice(same if len(same) >= 10 else C)
+            for i in range(n): out[(sec, i)] = c[i] if len(c) == n else c[int(round(i * (len(c) - 1) / (n - 1)))]
+        return out
     def ivp(self, d, last=None):
         d = max(-12, min(12, d)); row = self.IV2.get(max(-12, min(12, last))) if last is not None else None
         if row and sum(row.values()) >= 50: return (row.get(d, 0) + 12.5 * (self.IV.get(d, 0) + 0.5) / self.IVT) / (sum(row.values()) + 12.5)
@@ -227,12 +240,19 @@ class Engine:
                 c2 = [p for p in cands if p % 12 in ch or (p - ton) % 12 in blue or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone (846: or a blue note, which kept songs sing over the major third)
                 cands = c2 or cands
             OT_ = self.S.get("octave_tail") if prev is not None else None                       # 964 (749.192; studies/the_peak_line): the table's +12 and -12 bins hold every interval of an octave or more, and ivp() gave the whole bin to each such pitch.
-            nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest
+            nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest. Where a rule has removed the octave itself, its share is not passed on (749.196: counted at 10 to 19 notes in a thousand, and left so on purpose: the pitches past it keep their own kept odds)
+            if OT_ and self.S.get("count_the_tail"):                                            # 749.196, for studies/song50_pool only: how often a side has pitches past the octave and no octave
+                self._tail_n = getattr(self, "_tail_n", 0) + 1; self._tail_no_octave = getattr(self, "_tail_no_octave", 0) + sum(1 for sd_ in (1, -1) if nb_[sd_] and (prev + 12 * sd_) not in cands)
+            LO_ = self.S.get("ladder_off")                                                      # 749.203, for studies/ladder only: the draw with named parts left out. Absent from every record; with it absent nothing here is reached
             for p in cands:
+                if LO_ is not None: ws.append(self.ladder_weight(LO_, p, prev, last, mu, ch, U + t, ps, k, sy, DW, ton, WP, TR, OT_, nb_, end_off, len(ons))); continue
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
+                if k == 0 and prev is not None and self.S.get("join_moves"): jm_ = self.S["join_moves"]; jm_ = jm_.get(self.KIND.get(sec)) or jm_["all"]; w = (jm_.get(str(max(-12, min(12, p - prev))), 0) + 0.5) / (sum(jm_.values()) + 12.5)      # 749.216, a trial (studies/borrow_kept), off: a fresh line's first note by the kept moves across a join. Absent from every record
                 if OT_ and abs(p - prev) >= 12:
                     sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
-                w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
+                if "chord_tie" in self.S: w *= (self.S["chord_tie"]["on" if self.on_beat(U + t) else "off"] if p % 12 in ch else 1.0)      # 749.198, a trial form (studies/chord_tie): a chord tone favoured by the kept odds, on the beat and off it
+                else: w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
+                if "chord_pull" in self.S: w = w / ((2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)) * ((2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)) ** self.S["chord_pull"]      # for studies/one_pitch_verses only: the chord's pull at another strength
                 w *= math.exp(-((p - mu) ** 2) / self.MV[2])                                         # 927: how closely a line keeps to its register
                 if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0      # 936 (749.113): and a repeated note
                 rn_ = 0
@@ -255,6 +275,33 @@ class Engine:
             if sum(ws) <= 0: return None
             p = rng.choices(cands, ws)[0]; last = (p - prev) if prev is not None else None; ps.append(p); prev = p
         return ps
+    def ladder_weight(self, OFF, p, prev, last, mu, ch, at, ps, k, sy, DW, ton, WP, TR, OT_, nb_, end_off, n):
+        """749.203 (studies/ladder): pitches1's weight for one candidate with the parts named in OFF left out: register, chord, moves, runs, memory, degrees, words, end_off. The kept intervals and fix 964 always stand."""
+        w = self.ivp(p - prev, last) if prev is not None else (math.exp(-abs(p - mu) / 3) if "register" not in OFF else 1.0)
+        if OT_ and abs(p - prev) >= 12:
+            sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
+        if "chord" not in OFF: w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(at) else (1.3 if p % 12 in ch else 0.8)
+        if "register" not in OFF: w *= math.exp(-((p - mu) ** 2) / self.MV[2])
+        if "moves" not in OFF and prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0
+        if "runs" not in OFF:
+            rn_ = 0
+            for q_ in reversed(ps):
+                if q_ != p: break
+                rn_ += 1
+            if rn_ == len(ps) and self._runin and self._runin[0] == p: rn_ += self._runin[1]
+            if rn_ >= self.RUNP: w = 0.0
+        if "memory" not in OFF and self._figs:
+            tl = (self._figs[1] + ps)[-4:]
+            if len(tl) == 4 and tuple(max(-12, min(12, b_ - a_)) for a_, b_ in zip(tl, tl[1:] + [p])) in self._figs[0]: w *= self.PG["memory"]
+        if "moves" not in OFF and self.TILT and prev is not None: d_ = abs(p - prev); w *= self.TILT[0] if d_ == 0 else self.TILT[1] if d_ <= 2 else self.TILT[2] if d_ >= 5 else 1.0
+        if "degrees" not in OFF and DW: w *= DW.get(str((p - ton) % 12), 0.0)
+        if "words" not in OFF:
+            if WP and k > 0 and k < len(sy) and sy[k][0] == sy[k - 1][0] and sy[k][1] != sy[k - 1][1] and prev is not None:
+                up = (p > prev) if sy[k][1] else (p < prev); w *= WP[1] if p == prev else WP[0] if up else WP[2]
+            elif TR and k > 0 and k < len(sy) and sy[k][0] != sy[k - 1][0] and prev is not None:
+                w *= self.WW["step"][TR[k - 1]][TR[k]][0 if p < prev else 1 if p == prev else 2] ** self.WW["sp"]
+        if "end_off" not in OFF and k == n - 1 and end_off is not None and p % 12 == end_off: w *= 0.05
+        return w
     @property
     def MOVE_ON(self):
         """939 (749.118): a split note in a line sung again moves on 6 times in 10 and takes the pitch before it 4; the repeat weight scales those odds, as it weighs a repeated note in a fresh line"""
@@ -313,7 +360,7 @@ class Engine:
             j_ = on.index(t); long_ = j_ == len(on) - 1 or on[j_ + 1] - t >= self.BEAT
             if self.S.get("clash_rule") and long_ and p % 12 not in ch and ((p + 1) % 12 in ch or (p - 1) % 12 in ch):                 # 833, in a line sung again
                 p = min((p + d for d in (-1, 1, -2, 2, -3, 3, -4, 4) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch and lo <= p + d <= hi), key=lambda q_: abs(q_ - p), default=p)
-            if self.on_beat(U + t) and p % 12 not in ch: p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
+            if "chord_tie" not in self.S and not (getattr(self, "_818", False) and getattr(self, "_true", False)) and self.on_beat(U + t) and p % 12 not in ch: p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
             while p > hi: p -= 12 if p - 12 >= lo else 1
             while p < lo: p += 1
             while p % 12 not in self.SCALE: p -= 1
@@ -354,6 +401,7 @@ class Engine:
     def build(self, rng):
         lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
+        self._lh = self.draw_heights(rng) if self.S.get("line_heights") else None
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
             cap = None                                                                        # 816 (780, 773 carried): the line before a copied or designed line that comes in early gives way
@@ -405,8 +453,9 @@ class Engine:
                 if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
             if bw and how[0] == "fresh":
                 j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
+                if self.S.get("borrow_kept"): bk_ = self.S["borrow_kept"]; w_ = sec.lower().split(); pt_ = "other" if any(z.startswith("pre") for z in w_) else "Chorus" if ("chorus" in w_ or "refrain" in w_) else "Verse" if "verse" in w_ else "other"; bw = dict(rhythm=bw["rhythm"], figure=bk_["by_count"][pt_][min(3, abs(len(sy) - len(lines[(sec, j)])))] if (bk_.get("by_count") and j is not None) else bk_[pt_]); self._true = bool(bk_.get("true"))      # 749.207, a trial (studies/borrow_kept), off: the chance is the kept share of the part's lines that repeat a nearby line. Absent from every record
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
-                    r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot)
+                    self._818 = True; r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot); self._818 = False
                     if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
                         r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
                         if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue

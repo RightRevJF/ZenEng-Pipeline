@@ -16,6 +16,17 @@ for c in S:
     if c["k"] in RH: by[c["vid"]].append(dict(c, **{f: RH[c["k"]][f] for f in RF}))
 def dur_s(iso):
     m = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", iso or ""); return sum(int(x or 0) * k for x, k in zip(m.groups(), (3600, 60, 1))) if m else np.nan
+# R02-3 (judging research): "original" was 1 for every song. Now: the Hooktheory artist is among the performers of the clique's earliest set of versions (ties in year: any of the earliest).
+# Needs the versions file (studies/judging_checks/within_artist/cliques_versions.py makes it); without it the flag is left out and --originals refuses.
+try:
+    _SL = lambda x: re.sub(r"[^a-z0-9]", "", x.lower()); FIRST = {}
+    for _l in open("/home/claude/shape/discogs_versions.jsonl"):
+        _c = json.loads(_l); _ys = [st_[1] for st_ in _c["sets"] if st_[1]]
+        if _ys: FIRST[_c["id"]] = {a_ for st_ in _c["sets"] if st_[1] == min(_ys) for a_ in st_[0]}
+except FileNotFoundError: FIRST = None
+def original(artist, clique):
+    if FIRST is None or clique not in FIRST: return None
+    a_ = _SL(artist); return 1.0 if any(a_ == x or (len(a_) > 5 and (a_ in x or x in a_)) for x in FIRST[clique]) else 0.0
 rows = []
 for vid, cv in COV.items():
     cs = by.get(vid); v = V.get(vid)
@@ -23,12 +34,14 @@ for vid, cv in COV.items():
     sub = (C.get(v["channel"]) or {}).get("subscribers") or 1
     w = np.array([c["n_mel"] for c in cs], float); r = {f: float(np.average([c[f] for c in cs], weights=w)) for f in FE}
     pub = datetime.datetime.fromisoformat(v["published"].replace("Z", "+00:00"))
-    r.update(vid=vid, artist=cs[0]["artist"], covers=cv["covers"], original=1.0, first_year=cv["first_year"], releases=cv["releases"], views=v["views"], subs=sub,
+    r.update(vid=vid, artist=cs[0]["artist"], covers=cv["covers"], original=original(cs[0]["artist"], cv.get("clique")), first_year=cv["first_year"], releases=cv["releases"], views=v["views"], subs=sub,
              age=max(31, (datetime.datetime(2026, 11, 15, tzinfo=datetime.timezone.utc) - pub).days), dur=dur_s(v["duration"]), music=1.0 if v["category"] == "10" else 0.0, nclips=len(cs))
     rows.append(r)
 rows = [r for r in rows if np.isfinite(r["dur"]) and r["dur"] > 0 and r["first_year"]]
 import sys
-if "--originals" in sys.argv: rows = [r for r in rows if r["original"]]
+if "--originals" in sys.argv:
+    if FIRST is None: raise SystemExit("--originals needs /home/claude/shape/discogs_versions.jsonl")
+    rows = [r for r in rows if r["original"]]
 print(len(rows), "songs with Discogs covers, notes, views and a first year")
 def zc(M): M = np.asarray(M, float); s = M.std(0); s[s == 0] = 1; return (M - M.mean(0)) / s
 X = zc(np.column_stack([[r[f] for r in rows] for f in FE]))

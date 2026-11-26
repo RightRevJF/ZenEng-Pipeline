@@ -654,3 +654,82 @@ The first change to the engine's notes since v47. Paper: `reports/Luthier_v50.do
 - Next, as I see it: how a line gets to its top (kept songs begin there or step to it; 950 redraws until it is touched), with 749.171 and rhythm scaling.
 
 Next: Luthier v51 (row v222), Window 208, Module 27.132 (anchor "27.131"), tables HR…, fixes from 965, findings from 749.195.
+
+### After v50 (25 November): the list for v51's two readings
+
+`studies/song50_pool/RESULT.md`, rules first. No change to the notes (song 54 byte for byte).
+- **749.195:** the pitch ceiling (956) takes song 50's pool: 5 of 29 builds pass it (the eight other songs: 0.44 to 0.74). On the builds, the verses of the folk songs read (50, 58, 49) are over the ceiling in 56 to 65 builds of 100 (songs 55, 54: 15, 16); the middle verse has half its notes on one pitch. Likely 952's family share of repeated notes landing on one pitch; wants its own reading (kept folk verses' repeated notes by pitch) before song 50 is made for real. The chosen tunes' words' fit (0.399, 0.209) is a draw.
+- **749.196:** a side with pitches past the octave and no octave: 10 to 19 notes in a thousand, not rare. Left as it is on purpose (the pitches past the octave keep their own kept odds); put to the session.
+- 749.194: the writer ruled the octave gate stays.
+Findings from 749.197.
+
+### After v50 (25 November): verses that pile on one pitch
+
+`studies/one_pitch_verses/RESULT.md`, rule first, switches on the fitted specs. No change to the notes.
+- **The verse's harmony is the cause** (749.197): songs 50, 58, 49 have two-chord verses; given song 55's six-chord verse, verses over the ceiling fall from 56 to 65 builds in 100 to 17 to 23. Blue notes, the repeat weight, lines sung again, the chord's pull (halved or gone) and the clash rule do not do it singly; the pull and the clash rule off together reach 30 to 41. The pitch piled on is the chords' common tone (the fifth). Genre was a decoy.
+- Kept still verses pile only a little (middle 0.34 against 0.29; 22 in 100 over 0.44). The engine answers still harmony about three times too strongly.
+- Next reading: the kept share of on-beat chord tones by how long the chord has held; and the figure memory (923) under one chord. Before song 50 is made for real.
+- `spec["chord_pull"]` and `spec["count_the_tail"]` are study switches in `metre_engine.py`; absent from every record.
+
+### After v50 (25 November): the melody and the chord on the beat
+
+`studies/held_chord/RESULT.md`, rule first. No change to the notes.
+- **749.198: the engine puts a chord tone on the beat 88 to 95 times in 100; kept songs 64 (by song: 0.44, 0.53, 0.64, 0.73, 0.83 at the 10th to 90th).** Three rules make sure of it: 712's fit moves every on-beat note of a line sung again to a chord tone (`again()`), the draw favours chord tones 2.6 to 0.3 on the beat, and 833's clash rule. Off the beat the engine is under kept (0.45 to 0.51 against 0.56).
+- The one-pitch verses (749.195, 749.197) are a symptom: fresh verse lines, the pull off and the clash rule off together bring verses over the ceiling from 56 to 65 builds in 100 to 13 to 19. The kept pull does not loosen as a chord holds (0.64 throughout), so nothing is named for that.
+- Proposed, not tried: a kept soundness check on on-beat chord tones; in lines sung again, snap only where the clash rule would; the pull from a kept table. 833 left. Put to the writer and the session first.
+
+### After v50 (25 November): the tie to the chord, tried and not built
+
+`studies/chord_tie/RESULT.md`, form and marks first (`LUTHIER_CHORD_TIE=1`; `tables/kept_chord_tie.json`: weights 2.057 on the beat, 1.691 off, by the kept odds). The form brings on-beat chord tones to the kept figure (0.53 to 0.62; kept 0.64) and **fails mark 1**: verses over the ceiling 54, 50, 51 in songs 50, 58, 49 (30 asked), and in songs 55, 54, 59 they rise from 16, 15, 24 to 33, 42, 38.
+- **749.199: the tie was moving the tune, not holding it.** Left to itself the draw sits on one pitch near its register's centre (a middle verse 0.38 to 0.46 on its commonest pitch; kept 0.31). This is 749.165 / 749.170 (too many notes on three pitches) from the other side.
+- 749.198 cannot be built alone. Next reading: how kept verses spread their notes over pitches, and which of the draw's weights sets it (927's register pull, 846's degrees, 923's memory). Then the draw; then the tie with it.
+- Trial switches in the code, off: `LUTHIER_CHORD_TIE`. Song 54 byte for byte with it off.
+
+### 26 November: judging research run 06, checked
+
+`studies/judging_checks/run06/CHECK.md`. Sources real; the fresh table agrees with my clique table; R06-1 done in `studies/judging_data/` (the fresh table, the seen ledger, the raw files' addresses); R02-3 mended (`original` in `studies/covers/study_covers_discogs.py`: 703 of 2,769 Hooktheory "originals" are not the first performers).
+- **749.185 (the loop gate with a chance) is to be judged on the kept songs' rate alone** (R06-2): the cover evidence leans opposite ways on its two margins and cannot be settled with the songs on hand.
+- R06-4 (Chordonomicon) is blocked here too (the storage host, and Spotify ids with no names). R06-5 (a power floor of 0.2 for counted tests) is for the writer; I would say yes. R04-2 open.
+
+### 26 November: the draw sits on its centre, read
+
+`studies/draw_centre/RESULT.md`, rules first. No change to the notes.
+- Kept verses: 0.31 of the notes on the commonest pitch, a spread of 3.2 semitones about the mean (between lines 1.5, within lines 2.3). The builds: 0.34 to 0.50, a spread of 2.1 to 2.8 (between lines 0.7 to 1.2; within 1.9 to 2.3).
+- **No single weight is named** (the register's pull halved, the degrees levelled, the figure memory off, the first two together: each helps 0.02 to 0.06; none reaches the kept figure). The lines' heights are not named by their rule (two songs of six under the kept 25th) but lean the same way in all six.
+- 749.200: many pulls toward the likely note, each matched to its own kept figure, together give verses with about half the kept variance. Not one cause.
+- Proposed, as a design for the session and the writer before any run: each line given its own centre at the kept spread between lines; the register's width fitted to the kept spread within lines, as 930 fits the moves; then the tie to the chord (749.198) with it.
+- R06-5 ruled: a power floor of 0.2 for counted tests (`studies/judging_data/README.md`).
+
+### 26 November: two things done while the design waits
+
+- **R04-2** (`studies/judging_checks/first_performers/RESULT.md`, rule first): among first performers, on other artists' versions only, chord repetition against covers is **−0.026 (p .19; power 0.52): unsettled.** Where the artist was not the first performer it is −0.10 (an estimate; power 0.18). 749.157's −0.042 was carried in good part by artists' covers of others' songs. Counting other artists' versions only changes nothing by itself. The loop gate (749.185) is to be judged on the kept rate.
+- **Kept figures for the design** (`studies/draw_centre/KEPT_FOR_THE_DESIGN.md`, `kept_lines_by_part.json`): spread within a line 2.2 to 2.3 in every part; between lines 1.3 (chorus), 1.5 (verse, bridge), 2.0 (pre-chorus); a verse's highest line is in its last third 42 times in 100, a chorus's in its first third 44, a pre-chorus's in its last third 53.
+
+### 26 November: two more forms of the cause tried, neither named
+
+- `studies/line_heights/RESULT.md` (`LUTHIER_LINE_HEIGHTS=1`; `tables/kept_line_heights.json`, `lib/luthier/make_kept_line_heights.py`): each line drawn about its own centre by a kept contour. **Fails marks 1 and 3; not built.** The centres move 2.5 semitones and the lines a tenth of that. 749.202: a line's height is not set by its register.
+- `studies/line_joins/RESULT.md`: the join between lines is **not** the cause (builds 2.9 to 3.2 semitones; kept 3.5, 25th by song 2.67). Inside lines the engine matches kept to the second decimal (1.8).
+- A description: the engine's verse lines start and end in nearly the same place (first notes spread 1.4 to 2.0 semitones across a verse's lines; kept 2.8), and are a different shape (a kept line starts under its middle and ends lower; the engine's starts above and ends at it).
+- **Six causes guessed since 749.195, each wrong or a part. Proposed in place of a seventh: a ladder** (the barest draw, then the engine's parts added one at a time, the same kept figures read at each rung), for the session's view.
+
+### 26 November: the ladder (749.203)
+
+`studies/ladder/` (`RESULT.md`, `TABLES.md`), rule first; study switches `spec["ladder_off"]` and `Engine.ladder_weight()` (absent from every record; songs 54 and 55 byte for byte with them absent). The draw's parts added one at a time from the barest draw, and each left out alone from the full engine; six songs, 300 builds a rung.
+- **Borrow (fix 818: a line sings an earlier line of its part again) sets the lines' heights.** Spread between a verse's lines 2.4 before its rung, 0.97 after; the full engine without it, 2.45 (kept 1.54). Spread of the lines' first notes 2.9 → 1.5; without it 3.0 (kept 2.76). Not named by the letter of the rule (it carries the figure across the whole kept range); five times any other part's step.
+- **Memory (923) narrows the line:** within-line spread 2.17 → 1.90, a line's range 6.0 → 4.75. Named by the rule.
+- **The chord's pull:** on-beat chord tones 0.46 → 0.86; borrow takes it to 0.92.
+- The share on the commonest pitch is a sum (register, chord, again: +0.06 each).
+- Next: read how kept lines repeat an earlier line (same pitch or another height); then borrow at a kept height, by scale steps. Marks first; a sealed song decides.
+
+### v51 (26 November): nothing built; the borrow traced, a mend one mark short on a sealed song
+
+Paper `reports/Luthier_v51.docx` (builder beside it), Window 208, Module 27.132, Tables HR to HT. No song record changes; fixes still end at 964.
+- **The fault:** verses on one pitch come from the borrow (818): it fires 8 times in 10, mostly onto lines of another length, where the line stops being a repeat but keeps its source's height (749.206, 749.208). Kept verse lines repeat a nearby line about 1 time in 9, at the same pitch, and mostly where the two lines have the same syllable count.
+- **The pair** (`LUTHIER_BORROW_KEPT=count_true` with `LUTHIER_CHORD_TIE=1`, both off): met six marks of seven on sealed song 66 and failed pitch scaling, 1.062 against v50's 0.912, kept middle 0.905 (749.217). Not built. Song 66 is spent.
+- **Other switches, off:** `LUTHIER_BORROW_KEPT=1` and `=count`; `LUTHIER_JOIN_MOVES=1` (a fresh line's first note by the kept joins; mends the joins, not the scaling).
+- **Tables:** `tables/kept_line_repeat.json`, `tables/kept_line_join.json` (makers in `lib/luthier/`).
+- **Studies:** `studies/line_repeats`, `studies/ladder`, `studies/borrow_kept` (every PREDICTION before its RESULT).
+- **Standing in v50:** returning lines that clash in song 55 (749.212); lines change direction more than kept lines; blue-note songs sing about a fourteenth of the kept blue notes; rhythm scaling low.
+- **Hold-outs:** 59 for everything; 50 and 66 spent; 63 reserved (loop gate, 749.185); 64, 65, 67 banked, not run.
+- **Method:** the two sessions post in `coord/` (rules in `coord/THREAD.md`). Clash marks count clashes apart from the blue notes 846 allows.
+- Next: Luthier v52 (row v223), Window 209, Module 27.133 (anchor "27.132"), tables HU on, fixes from 965, findings from 749.219.

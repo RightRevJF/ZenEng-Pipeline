@@ -29,6 +29,10 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PEAK_CLIMB = {"1": True, "2": "fallback", "3": "line"}.get(os.environ.get("LUTHIER_PEAK_CLIMB", "0"), False)      # 749.182: a trial (studies/the_draw): the line that carries the planted peak holds no leap past an octave
+BORROW_KEPT = {"1": "rate", "count": "count", "count_true": "count_true"}.get(os.environ.get("LUTHIER_BORROW_KEPT", "0"))      # 749.207, 749.209: trials (studies/borrow_kept), off
+JOIN_MOVES = os.environ.get("LUTHIER_JOIN_MOVES", "0") == "1"      # 749.216: a trial (studies/borrow_kept), off
+LINE_HEIGHTS = os.environ.get("LUTHIER_LINE_HEIGHTS", "0") == "1"      # 749.201: a trial (studies/line_heights)
+CHORD_TIE = os.environ.get("LUTHIER_CHORD_TIE", "0") == "1"      # 749.198: a trial (studies/chord_tie)
 PEAK_TRIES = int(os.environ.get("LUTHIER_PEAK_TRIES", "60"))      # 950's draws for the carrying line; 240 in the trial of 749.192 (studies/the_peak_line)
 OCTAVE_TAIL = os.environ.get("LUTHIER_OCTAVE_TAIL", "1") != "0"      # 964 (749.192): the octave bin shared as kept songs share it (the environment switch is for studies)
 PITCH_CEILING = True   # 956
@@ -197,6 +201,10 @@ def plan(L):
         import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)
         if PITCH_CEILING: spec["pitch_ceiling"] = {k_: v_["ceiling"] for k_, v_ in json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_commonest_pitch.json")))["parts"].items()}      # 956 (749.134): a build whose verses or choruses put more of their notes on one pitch than nine kept songs in ten is passed over      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
         spec["no_leap_past_an_octave"] = OCTAVE_GATE; spec["title_stress"] = L.get("title_stress", TITLE_STRESS) if L.get("title_stress", TITLE_STRESS) == "inside" else bool(L.get("title_stress", TITLE_STRESS))      # 959 on in 4/4; 961 where the lyric asks ("title_stress": true)
+        if BORROW_KEPT: T7_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_repeat.json"))); spec["borrow_kept"] = dict(T7_["share"], **({"by_count": T7_["by_count"], "true": BORROW_KEPT == "count_true"} if BORROW_KEPT != "rate" else {}))      # 749.207: a trial form, off
+        if JOIN_MOVES: spec["join_moves"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_join.json")))["moves"]      # 749.216: a trial form, off
+        if LINE_HEIGHTS: spec["line_heights"] = True      # 749.201: a trial form, off
+        if CHORD_TIE: spec["chord_tie"] = {k_: json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_chord_tie.json")))["weights"][k_] for k_ in ("on", "off")}      # 749.198: a trial form, off
         if OCTAVE_TAIL: spec["octave_tail"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_octave_tail.json")))      # 964 (749.192): the table's +12 and -12 bins hold every interval of an octave or more; each pitch past an octave was given the whole bin. Shared now: the octave its kept share, the pitches past it the rest between them. It met a sealed song (song 50) by a rule written first (studies/the_peak_line)
         spec["line_ends"] = True                                                              # 899: the kept line ends (tables/kept_line_ends.json), 4/4
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
@@ -225,7 +233,7 @@ def bass(form_bars, tonic_midi, barlen, beats, mode):
 def root_pc(rn):
     m = re.match(r"(b|#)?(VII|III|IV|VI|II|V|I|vii|iii|iv|vi|ii|v|i)", rn); return (C.DEG[m.group(2).upper()] + (-1 if m.group(1) == "b" else 1 if m.group(1) == "#" else 0)) % 12
 def write(L, N=1000, K=12):
-    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = {"gentle": "gentle", "median": True}.get(os.environ.get("LUTHIER_LOOP", "off"), L.get("chords") == "loop_less"); drafts = []      # 749.184: the switch is off unless it names a form.      # 960 (749.159): a setting, off unless the lyric asks
+    spec, form, flags = plan(L); mode = L.get("mode", "major"); W = C.Writer(mode, chromatic=L.get("chromatic", 1.0)); W.loop_less = {"gentle": "gentle", "median": True, "chance": "chance"}.get(os.environ.get("LUTHIER_LOOP", "off"), L.get("chords") == "loop_less"); drafts = []      # 749.184: the switch is off unless it names a form.      # 960 (749.159): a setting, off unless the lyric asks
     names = [(base(n) + " 9" if n != base(n) and not re.search(r"\d+$", n) else n, k, b) for n, k, b in form]; wn = {f[0]: w[0] for f, w in zip(form, names)}      # a last chorus returns the chorus (801)
     for seed in range(1, K + 1):
         pl = W.song(names, seed=seed * 1000 + L.get("seed", 1), require=L.get("require")); pl = {n: pl[wn[n]] for n, _, _ in form}; c, d, r = W.charge(list(pl.values())); drafts.append((c, d, seed, pl, r))
@@ -316,7 +324,7 @@ def write(L, N=1000, K=12):
                            notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
     import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
-    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_octave_tail.json"] if spec.get("octave_tail") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_commonest_pitch.json"] if spec.get("pitch_ceiling") else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
+    rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_octave_tail.json"] if spec.get("octave_tail") else []) + (["kept_line_repeat.json"] if spec.get("borrow_kept") else []) + (["kept_line_join.json"] if spec.get("join_moves") else []) + (["kept_line_heights.json"] if spec.get("line_heights") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_commonest_pitch.json"] if spec.get("pitch_ceiling") else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
     if VARY_RETURNS: rec["melody"]["varied_returns"] = vary_returns(rec)                      # 962 (749.167), before the melismas and the checks, so everything after reads the tune as it will be sung
     melismas(rec, L, E, key["tonic_midi"]); rec["checks"] = checks(rec, fb, key["tonic_midi"], E)
     if rec.get("judge7") and rec["judge7"].get("pick_words_fit") is not None:                  # 898 (749.72): one fit, on the notes as sung (a melisma's second note is not a syllable)
