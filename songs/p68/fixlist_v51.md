@@ -92,7 +92,24 @@ No notes change (the engine's files are untouched since 1e0a820). Each reading's
 4. **(c) the chord tie only with them, never alone** (749.199).
 **Marks, added to the maintainer's.** The between-line spread of a verse's line heights inside the kept middle half, and how one line's height follows the last inside the kept 10th to 90th; the chorus's lift over the verse kept (838 is already the largest killer, and moving verse lines will meet it); the melody's surprise at or under the popular-corpus median; clashes no more than v50's; the range floors and the planted peak's range kept. The winner meets a sealed song the writer names (64 or 65).
 
-Next finding 749.202; next fix 965.
+## Addendum 6: line heights tried, the join read, and a ladder proposed (luthier-v8-stage1 at 4c27445)
+
+Rules before runs (9879cb0, 08:05, then 37e3877, 08:11; the join's rule before its result, 4c27445); no notes change with every switch off (song 54 byte for byte, checked here).
+
+- **749.201 (a), line heights from kept contours: fails marks 1 and 3; not built. Agreed.** The session's advice to draw the centres with kept structure was followed and was not enough.
+- **749.202: accepted, and it is the clearest thing yet.** The centres moved 2.5 semitones and the lines a tenth of that: a line sits where the last one left off, not where its register says. Kept line heights are nearly free of each other, with a shape by part on top.
+- **The join is not the cause: accepted.** The description after it is the lead worth keeping: a kept line starts under its middle and ends further under it (an arch that comes home low); the engine's lines start over their middle and end at it, and are narrower (5.0 against 6.5).
+
+### 749.203 The ladder: the session's view, yes
+Six guessed causes since 749.195, each wrong or only a part: stop guessing and take the engine apart in order. Approved, with four additions:
+1. **Both directions.** Beside the ladder up (each part added in the order applied), read the full engine with each part taken out alone. A part that only matters beside a later one shows in the second and not the first. Name a rung when either reading names it, and say which.
+2. **The step's size beside the rule.** The rule (inside the kept middle half before, outside after, in four songs of six) can name nothing if the barest draw is already outside, or if one rung pushes a figure out and a later one pulls it back. Report every rung's step on every figure, toward or away from kept, so the size of each part's push is seen even where nothing is named.
+3. **The line's arch as a figure:** where a line starts and ends against its middle, and its range. It is the one description that separates kept lines from the engine's most plainly.
+4. **The switches prove themselves first.** With every switch off, songs 54 and 55 byte for byte, so no switch draws from the random stream when off. The power floor (R06-5) applies to the rule's counting.
+
+Then one change, to the rung or rungs named, with its marks first and a sealed song (64 or 65) to decide.
+
+Next finding 749.204; next fix 965.
 
 ## Carried, open
 
