@@ -18,3 +18,4 @@ LOG.append({"when": "2026-11-26", "who": "maintainer (via coord thread)", "what"
 STATUS = "spent as the pair's sealed test (749.217, failed mark 7); unmade for the writer; can be made on v50"
 LOG.append({"when": "2026-11-26", "q": "Make song 66 for real now? A (Recommended) yes, on the current engine with the design notes; B wait in case the maintainer's last try succeeds; C not today", "answer": "B",
             "plan": "Made once the direction line (749.218 on) closes: on the fixed engine if a form passes its seen-song marks and sealed song 64, otherwise on v50."})
+LOG.append({"when": "2026-11-26", "who": "maintainer (via coord thread)", "what": "749.218: the direction line closed for the version, nothing built. By the writer's B, song 66 is now made on v50 with his design notes."})
