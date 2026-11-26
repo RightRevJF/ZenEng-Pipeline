@@ -662,3 +662,11 @@ Next: Luthier v51 (row v222), Window 208, Module 27.132 (anchor "27.131"), table
 - **749.196:** a side with pitches past the octave and no octave: 10 to 19 notes in a thousand, not rare. Left as it is on purpose (the pitches past the octave keep their own kept odds); put to the session.
 - 749.194: the writer ruled the octave gate stays.
 Findings from 749.197.
+
+### After v50 (25 November): verses that pile on one pitch
+
+`studies/one_pitch_verses/RESULT.md`, rule first, switches on the fitted specs. No change to the notes.
+- **The verse's harmony is the cause** (749.197): songs 50, 58, 49 have two-chord verses; given song 55's six-chord verse, verses over the ceiling fall from 56 to 65 builds in 100 to 17 to 23. Blue notes, the repeat weight, lines sung again, the chord's pull (halved or gone) and the clash rule do not do it singly; the pull and the clash rule off together reach 30 to 41. The pitch piled on is the chords' common tone (the fifth). Genre was a decoy.
+- Kept still verses pile only a little (middle 0.34 against 0.29; 22 in 100 over 0.44). The engine answers still harmony about three times too strongly.
+- Next reading: the kept share of on-beat chord tones by how long the chord has held; and the figure memory (923) under one chord. Before song 50 is made for real.
+- `spec["chord_pull"]` and `spec["count_the_tail"]` are study switches in `metre_engine.py`; absent from every record.
