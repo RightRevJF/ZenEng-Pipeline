@@ -1,0 +1,825 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 08b5167",
+ "test": "chirality (CH, signed area of the chord-root walk on the circle of fifths)",
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "prediction_pp_per_sd": -0.6,
+ "kill_above": -0.2,
+ "threshold_p": 0.008333,
+ "deviations": [
+  "statsmodels ConditionalLogit (run05 common.cond_logit) raised ValueError('need covariance of parameters for computing (unnormalized) covariances') while forming the covariance (nuisance columns with no finite estimate, as in run 05 on the same 3,186-song sample); the coefficient was taken from the exact conditional likelihood (subset recursion, copied unchanged from run05 arrow_of_time/test.py), with a statsmodels cross-check dropping the non-finite columns. Code fix only; no rule changed."
+ ],
+ "unit_values": [
+  {
+   "progression": "I-V-vi-IV x4",
+   "K": 15,
+   "CH": 0.1167,
+   "CH_wrap": 0.1333,
+   "A": 1.0,
+   "reproduced": true
+  },
+  {
+   "progression": "I-IV-vi-V x4",
+   "K": 15,
+   "CH": -0.1167,
+   "CH_wrap": -0.1333,
+   "A": 1.0,
+   "reproduced": true
+  },
+  {
+   "progression": "I-vi-ii-V x4",
+   "K": 15,
+   "CH": -0.05,
+   "CH_wrap": -0.0667,
+   "A": 1.0,
+   "reproduced": true
+  },
+  {
+   "progression": "ii-V-I x5",
+   "K": 14,
+   "CH": -0.0549,
+   "CH_wrap": -0.0239,
+   "A": 1.0,
+   "reproduced": true
+  },
+  {
+   "progression": "I-IV x8",
+   "K": 15,
+   "CH": -0.0167,
+   "CH_wrap": 0.0,
+   "A": 0.0667,
+   "reproduced": true
+  },
+  {
+   "progression": "I-V x8",
+   "K": 15,
+   "CH": 0.0167,
+   "CH_wrap": 0.0,
+   "A": 0.0667,
+   "reproduced": true
+  },
+  {
+   "progression": "I-V x2",
+   "K": 3,
+   "CH": null,
+   "CH_wrap": null,
+   "A": null,
+   "reproduced": true
+  }
+ ],
+ "notes": {
+  "rows": 9588,
+  "songs_with_CH": 8774,
+  "artists": 1727,
+  "artists_per_half": [
+   878,
+   849
+  ],
+  "pct_10_50_90": [
+   -0.0833,
+   0.0051,
+   0.1045
+  ],
+  "mean": 0.0078,
+  "sd": 0.0771,
+  "share_above_0": 0.5328,
+  "share_eq_0": 0.0197,
+  "rho_open_wrapped": 0.9182,
+  "within_artist_R2_by_size_A_rep": 0.0086,
+  "reproduced": true
+ },
+ "gate": {
+  "measure": "CH",
+  "songs_with_value": 8774,
+  "clip_pairs": 3294,
+  "clip_to_clip": 0.252,
+  "stab_threshold": 0.2,
+  "overlap_largest": [
+   "ch_ic_mean",
+   -0.1413
+  ],
+  "overlap_threshold": 0.7,
+  "overlap_all": {
+   "mel_ic_mean": -0.0701,
+   "mel_h_mean": -0.0353,
+   "mel_cheung": -0.031,
+   "ch_ic_mean": -0.1413,
+   "ch_h_mean": -0.1332,
+   "ch_cheung": -0.0645,
+   "mel_rep": 0.0596,
+   "ch_rep": 0.0735,
+   "rhy_ic_mean": -0.0297,
+   "rhy_h_mean": 0.0093,
+   "rhy_cheung": 0.0028,
+   "sync_per_note": 0.0216,
+   "rest_share": -0.0232,
+   "phrase_mean": 0.0228,
+   "phrase_on_downbeat": -0.0138,
+   "density": 0.0042,
+   "length_variety": -0.0101,
+   "n_ch": -0.0585,
+   "beats": -0.0093,
+   "clips_per_song": 0.0178,
+   "ln_chg": -0.0289,
+   "V": -0.1239,
+   "A": 0.0651
+  },
+  "passed": true
+ },
+ "notes_side_power": {
+  "se_bound_pp": 0.5136,
+  "power_p00833": 0.0708,
+  "power_p05": 0.2151,
+  "fake_outcome_power": {
+   "rows": 8774,
+   "fresh_rows": 0,
+   "artists": 1727,
+   "prediction": -0.6,
+   "notes_bound_se": 0.514,
+   "homogeneous": {
+    "true": {
+     "pass_rate": 0.074,
+     "kill_rate": 0.214,
+     "opposite_sign_significant": 0.0,
+     "se_median": 0.51
+    },
+    "zero": {
+     "pass_rate": 0.004,
+     "kill_rate": 0.629,
+     "opposite_sign_significant": 0.006,
+     "se_median": 0.51
+    }
+   },
+   "calibrated": {
+    "true": {
+     "pass_rate": 0.135,
+     "kill_rate": 0.153,
+     "opposite_sign_significant": 0.001,
+     "se_median": 0.38
+    },
+    "zero": {
+     "pass_rate": 0.007,
+     "kill_rate": 0.707,
+     "opposite_sign_significant": 0.004,
+     "se_median": 0.379
+    }
+   },
+   "power_at_threshold_calibrated": 0.146,
+   "power_at_05_calibrated": 0.353
+  }
+ },
+ "counts": {
+  "N": 8772,
+  "artists": 1726,
+  "y_foreign_100": 1940,
+  "share_y_foreign": 0.2212,
+  "y_100_among_songs_with_CH": 2025,
+  "dropped_no_CH": 814,
+  "dropped_y_foreign_nan_among_songs_with_CH": 2,
+  "y_foreign_nan_all_rows": 2,
+  "singleton_artists_after_drops": 123
+ },
+ "power": {
+  "se": 0.3795,
+  "power_p00833": 0.1452,
+  "power_p05": 0.3525
+ },
+ "primary": {
+  "beta": -0.3033,
+  "se": 0.3795,
+  "p": 0.4241,
+  "ci95": [
+   -1.0472,
+   0.4405
+  ],
+  "N": 8772,
+  "artists": 1726,
+  "K": 25,
+  "all_columns": {
+   "z_CH": {
+    "beta": -0.3033,
+    "se": 0.3795,
+    "p": 0.4241,
+    "ci95": [
+     -1.0472,
+     0.4405
+    ]
+   },
+   "z_A": {
+    "beta": 0.9488,
+    "se": 0.4136,
+    "p": 0.0218,
+    "ci95": [
+     0.1381,
+     1.7595
+    ]
+   },
+   "z_ch_rep": {
+    "beta": 0.8756,
+    "se": 0.5522,
+    "p": 0.1128,
+    "ci95": [
+     -0.2068,
+     1.958
+    ]
+   },
+   "z_ch_ic_mean": {
+    "beta": -0.2199,
+    "se": 0.4641,
+    "p": 0.6357,
+    "ci95": [
+     -1.1296,
+     0.6899
+    ]
+   },
+   "V": {
+    "beta": -0.196,
+    "se": 0.1641,
+    "p": 0.2323,
+    "ci95": [
+     -0.5177,
+     0.1257
+    ]
+   },
+   "ln_chg": {
+    "beta": 1.5933,
+    "se": 2.5977,
+    "p": 0.5396,
+    "ci95": [
+     -3.4982,
+     6.6848
+    ]
+   },
+   "nch_bin1": {
+    "beta": -23.0784,
+    "se": 14.5973,
+    "p": 0.1139,
+    "ci95": [
+     -51.689,
+     5.5322
+    ]
+   },
+   "nch_bin2": {
+    "beta": -22.3962,
+    "se": 15.4698,
+    "p": 0.1477,
+    "ci95": [
+     -52.717,
+     7.9245
+    ]
+   },
+   "nch_bin3": {
+    "beta": -23.942,
+    "se": 15.3298,
+    "p": 0.1183,
+    "ci95": [
+     -53.9883,
+     6.1044
+    ]
+   },
+   "nch_bin4": {
+    "beta": -24.6518,
+    "se": 15.6011,
+    "p": 0.1141,
+    "ci95": [
+     -55.2299,
+     5.9263
+    ]
+   },
+   "nch_bin5": {
+    "beta": -23.7201,
+    "se": 15.5019,
+    "p": 0.126,
+    "ci95": [
+     -54.1037,
+     6.6636
+    ]
+   },
+   "nch_bin6": {
+    "beta": -21.8063,
+    "se": 15.6899,
+    "p": 0.1646,
+    "ci95": [
+     -52.5585,
+     8.946
+    ]
+   },
+   "nch_bin7": {
+    "beta": -22.5044,
+    "se": 15.8985,
+    "p": 0.1569,
+    "ci95": [
+     -53.6654,
+     8.6566
+    ]
+   },
+   "nch_bin8": {
+    "beta": -26.426,
+    "se": 15.8059,
+    "p": 0.09454,
+    "ci95": [
+     -57.4055,
+     4.5535
+    ]
+   },
+   "nch_bin9": {
+    "beta": -23.9677,
+    "se": 16.3037,
+    "p": 0.1415,
+    "ci95": [
+     -55.9229,
+     7.9876
+    ]
+   },
+   "clips2": {
+    "beta": 0.7993,
+    "se": 1.909,
+    "p": 0.6754,
+    "ci95": [
+     -2.9424,
+     4.541
+    ]
+   },
+   "clips3": {
+    "beta": 1.8071,
+    "se": 2.9752,
+    "p": 0.5436,
+    "ci95": [
+     -4.0242,
+     7.6385
+    ]
+   },
+   "clips4p": {
+    "beta": -0.2666,
+    "se": 4.0051,
+    "p": 0.9469,
+    "ci95": [
+     -8.1166,
+     7.5834
+    ]
+   },
+   "ln_beats": {
+    "beta": -1.547,
+    "se": 0.9206,
+    "p": 0.09289,
+    "ci95": [
+     -3.3514,
+     0.2575
+    ]
+   },
+   "words1": {
+    "beta": 8.7828,
+    "se": 1.3812,
+    "p": 2.034e-10,
+    "ci95": [
+     6.0756,
+     11.49
+    ]
+   },
+   "words2": {
+    "beta": 5.047,
+    "se": 1.1874,
+    "p": 2.133e-05,
+    "ci95": [
+     2.7197,
+     7.3744
+    ]
+   },
+   "words3": {
+    "beta": 3.105,
+    "se": 1.2832,
+    "p": 0.01553,
+    "ci95": [
+     0.5899,
+     5.6202
+    ]
+   },
+   "words4": {
+    "beta": 3.9788,
+    "se": 1.2935,
+    "p": 0.002098,
+    "ci95": [
+     1.4436,
+     6.514
+    ]
+   },
+   "parens": {
+    "beta": -15.5853,
+    "se": 3.3209,
+    "p": 2.691e-06,
+    "ci95": [
+     -22.0942,
+     -9.0763
+    ]
+   },
+   "rep_title": {
+    "beta": 8.4764,
+    "se": 1.5771,
+    "p": 7.666e-08,
+    "ci95": [
+     5.3854,
+     11.5674
+    ]
+   }
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 4242,
+   "artists": 878,
+   "y_foreign_100": 947,
+   "beta": -0.619,
+   "se": 0.5754,
+   "p": 0.2821,
+   "ci95": [
+    -1.7467,
+    0.5088
+   ]
+  },
+  {
+   "half": 1,
+   "songs": 4530,
+   "artists": 848,
+   "y_foreign_100": 993,
+   "beta": 0.0267,
+   "se": 0.4877,
+   "p": 0.9564,
+   "ci95": [
+    -0.9293,
+    0.9826
+   ]
+  }
+ ],
+ "conditional_logit": {
+  "columns_without_within_variation": [],
+  "statsmodels_error": "ValueError('need covariance of parameters for computing (unnormalized) covariances')",
+  "max_abs_score": 1.2077006061872453e-11,
+  "bfgs_success": true,
+  "bfgs_message": "Optimization terminated successfully.",
+  "newton_steps": 13,
+  "llf": -1159.973223655118,
+  "nobs": 3186,
+  "coef": -0.0334,
+  "se": 0.0445,
+  "p": 0.4526,
+  "converged": true,
+  "optimiser": "exact conditional likelihood (subset recursion), scipy BFGS then Newton",
+  "convergence_test": "max|score|/nobs < 1e-5",
+  "kept_songs": 3186,
+  "kept_artists": 425,
+  "dropped_songs": 5586,
+  "dropped_artists": 1301,
+  "seconds": 54,
+  "all_columns": {
+   "z_CH": [
+    -0.0334,
+    0.0445
+   ],
+   "z_A": [
+    0.1094,
+    0.0495
+   ],
+   "z_ch_rep": [
+    0.026,
+    0.0902
+   ],
+   "z_ch_ic_mean": [
+    -0.0109,
+    0.058
+   ],
+   "V": [
+    -0.0791,
+    0.044
+   ],
+   "ln_chg": [
+    0.3525,
+    0.4363
+   ],
+   "nch_bin1": [
+    -25.8949,
+    0.4662
+   ],
+   "nch_bin2": [
+    -25.7693,
+    0.3039
+   ],
+   "nch_bin3": [
+    -25.9653,
+    0.2203
+   ],
+   "nch_bin4": [
+    -26.0422,
+    0.1552
+   ],
+   "nch_bin5": [
+    -25.8866,
+    0.1142
+   ],
+   "nch_bin6": [
+    -25.7035,
+    0.1295
+   ],
+   "nch_bin7": [
+    -25.7913,
+    0.2306
+   ],
+   "nch_bin8": [
+    -26.484,
+    0.3501
+   ],
+   "nch_bin9": [
+    -26.0148,
+    0.4832
+   ],
+   "clips2": [
+    0.0234,
+    0.3158
+   ],
+   "clips3": [
+    0.1106,
+    0.4868
+   ],
+   "clips4p": [
+    -0.1407,
+    0.6415
+   ],
+   "ln_beats": [
+    -0.2154,
+    0.1301
+   ],
+   "words1": [
+    1.1181,
+    0.1703
+   ],
+   "words2": [
+    0.6905,
+    0.1598
+   ],
+   "words3": [
+    0.5131,
+    0.1584
+   ],
+   "words4": [
+    0.6277,
+    0.171
+   ],
+   "parens": [
+    -1346.9158,
+    0.0
+   ],
+   "rep_title": [
+    0.7175,
+    0.1394
+   ]
+  },
+  "columns_abs_coef_over_5": [
+   [
+    "nch_bin1",
+    -25.8949
+   ],
+   [
+    "nch_bin2",
+    -25.7693
+   ],
+   [
+    "nch_bin3",
+    -25.9653
+   ],
+   [
+    "nch_bin4",
+    -26.0422
+   ],
+   [
+    "nch_bin5",
+    -25.8866
+   ],
+   [
+    "nch_bin6",
+    -25.7035
+   ],
+   [
+    "nch_bin7",
+    -25.7913
+   ],
+   [
+    "nch_bin8",
+    -26.484
+   ],
+   [
+    "nch_bin9",
+    -26.0148
+   ],
+   [
+    "parens",
+    -1346.9158
+   ]
+  ],
+  "crosscheck_without_nonfinite_columns": {
+   "dropped": [
+    "nch_bin1",
+    "nch_bin2",
+    "nch_bin3",
+    "nch_bin4",
+    "nch_bin5",
+    "nch_bin6",
+    "nch_bin7",
+    "nch_bin8",
+    "nch_bin9",
+    "parens"
+   ],
+   "coef": -0.035,
+   "se": 0.0441,
+   "p": 0.4273,
+   "converged": true
+  }
+ },
+ "verdict_rule_inputs": {
+  "beta": -0.3033,
+  "p": 0.4241,
+  "halves": [
+   -0.619,
+   0.0267
+  ],
+  "logit": -0.0334,
+  "logit_converged": true
+ },
+ "reported_deciding_nothing": {
+  "wrapped_CH_in_place_of_CH": {
+   "beta": -0.1473,
+   "se": 0.3781,
+   "p": 0.6969,
+   "ci95": [
+    -0.8883,
+    0.5938
+   ]
+  },
+  "abs_CH_in_place_of_CH": {
+   "beta": -0.3139,
+   "se": 0.3751,
+   "p": 0.4027,
+   "ci95": [
+    -1.049,
+    0.4213
+   ]
+  },
+  "without_zA_and_V": {
+   "beta": -0.2363,
+   "se": 0.3784,
+   "p": 0.5323,
+   "ci95": [
+    -0.9778,
+    0.5053
+   ]
+  },
+  "without_z_ch_ic_mean": {
+   "beta": -0.2926,
+   "se": 0.3777,
+   "p": 0.4385,
+   "ci95": [
+    -1.0328,
+    0.4477
+   ]
+  },
+  "CH_on_y_in_DiscogsVI_at_all": {
+   "beta": -0.2224,
+   "se": 0.3829,
+   "p": 0.5613,
+   "ci95": [
+    -0.9729,
+    0.5281
+   ],
+   "N": 8774,
+   "note": "all songs with CH (y is defined for every row)"
+  },
+  "intensive_margin_zlog1p_covers": {
+   "beta": -0.0115,
+   "se": 0.0153,
+   "p": 0.4525,
+   "ci95": [
+    -0.0415,
+    0.0185
+   ],
+   "N": 2025,
+   "artists": 630,
+   "note": "SD of log(1+covers) per SD of CH; outcome standardised over this sample; first_year linear added"
+  },
+  "y_foreign_without_karaoke_tribute_sets": {
+   "beta": -0.3033,
+   "se": 0.3795,
+   "p": 0.4241,
+   "ci95": [
+    -1.0472,
+    0.4405
+   ],
+   "songs_switched_to_0": 0,
+   "songs_with_any_karaoke_or_tribute_set": 45,
+   "y_foreign_100": 1940
+  },
+  "CH_on_fresh_songs": {
+   "rows": 4920,
+   "fresh_rows": 888,
+   "artists": 590,
+   "z_scale": [
+    0.0078,
+    0.0771
+   ],
+   "fresh_y_foreign_100": 158,
+   "seen_y_foreign_100": 951,
+   "fresh_nan_dropped": 0,
+   "z_fresh": {
+    "beta": -0.9049,
+    "se": 0.9668,
+    "p": 0.3493,
+    "ci95": [
+     -2.7998,
+     0.99
+    ]
+   },
+   "z_seen": {
+    "beta": 0.1819,
+    "se": 0.4959,
+    "p": 0.7137,
+    "ci95": [
+     -0.7901,
+     1.154
+    ]
+   },
+   "power_at_minus06_p00833": 0.0224,
+   "columns": [
+    "z_fresh",
+    "z_seen",
+    "z_A",
+    "z_ch_rep",
+    "nch_bin1",
+    "nch_bin2",
+    "nch_bin3",
+    "nch_bin4",
+    "nch_bin5",
+    "nch_bin6",
+    "nch_bin7",
+    "nch_bin8",
+    "nch_bin9",
+    "clips2",
+    "clips3",
+    "clips4p",
+    "ln_beats",
+    "words1",
+    "words2",
+    "words3",
+    "words4",
+    "parens",
+    "rep_title",
+    "ln_chg",
+    "V",
+    "has_mel",
+    "fresh"
+   ],
+   "outcome_summary": {
+    "validation_passed": true,
+    "fresh_rows": 888,
+    "fresh_y1": 166,
+    "fresh_with_vid": 825,
+    "fresh_vid_in_pack_covers_file": 152,
+    "fresh_slug_vs_vid_agree": 0.9988,
+    "fresh_y_foreign1": 158,
+    "fresh_nan": 0,
+    "fresh_clique_seen": 153
+   },
+   "halves": [
+    {
+     "half": 0,
+     "songs": 2316,
+     "beta": -0.7731,
+     "se": 1.4658,
+     "p": 0.5979,
+     "ci95": [
+      -3.646,
+      2.0998
+     ]
+    },
+    {
+     "half": 1,
+     "songs": 2604,
+     "beta": -0.7233,
+     "se": 1.277,
+     "p": 0.5711,
+     "ci95": [
+      -3.2262,
+      1.7796
+     ]
+    }
+   ],
+   "conditional_logit": {
+    "coef": -0.0912,
+    "se": 0.1348,
+    "p": 0.499,
+    "converged": true,
+    "kept_songs": 2182,
+    "kept_artists": 201,
+    "dropped_columns": []
+   }
+  }
+ },
+ "verdict": "unsettled (p >= .00833; halves split)",
+ "runtime_s": 113
+}

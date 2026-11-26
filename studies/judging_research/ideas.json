@@ -178,8 +178,8 @@
    "stance": "Inventor",
    "proposed": "run03",
    "status": "testing",
-   "status_set_by": "run05 experiments",
-   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06; run05 first principles: recommended retiring (gate 0.203, power 0.09)"
+   "status_set_by": "run06 experiments",
+   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06; run05 first principles: recommended retiring (gate 0.203, power 0.09) | run06 fresh_tonic: -0.25 (SE 0.75, p .74), halves split; unsettled (power 0.03). Retirement still recommended; Jason decides."
   },
   {
    "id": "R03-I3",
@@ -204,9 +204,9 @@
    "idea": "Diatonicity |a5|/a0 of the duration-weighted chord profile (Amiot, Theorem 1 + Lemma 2)",
    "stance": "Geometer",
    "proposed": "run04",
-   "status": "parked",
-   "status_set_by": "run04 brainstorm",
-   "note": "withdrawn by author in round 2 (sign set after the fifths path leaned; rho -0.65 with it); kept for fresh songs; run05: merged into fifths_path as a reported item (rho -0.73 with FP)"
+   "status": "failed",
+   "status_set_by": "run06 experiments",
+   "note": "withdrawn by author in round 2 (sign set after the fifths path leaned; rho -0.65 with it); kept for fresh songs; run05: merged into fifths_path as a reported item (rho -0.73 with FP) | run06 fresh_diatonic: -0.29 (SE 1.19, p .80) against +0.5; killed by beta<=0 (power 0.014; weak kill)."
   },
   {
    "id": "R04-G2",
@@ -304,8 +304,8 @@
    "stance": "first principles (run04)",
    "proposed": "run04",
    "status": "testing",
-   "status_set_by": "run04 experiments/foreign_versions (after seeing results)",
-   "note": "unsettled: ch_rep +1.00 pp per SD (SE 0.49, p .044; needed .0083); halves +0.45, +1.43; cond. logit +0.132 (p .025); y_self only 94 of 2,224, so the credit-variant artefact does not explain it; power 0.21; needs fresh songs"
+   "status_set_by": "run06 experiments",
+   "note": "unsettled: ch_rep +1.00 pp per SD (SE 0.49, p .044; needed .0083); halves +0.45, +1.43; cond. logit +0.132 (p .025); y_self only 94 of 2,224, so the credit-variant artefact does not explain it; power 0.21; needs fresh songs | run06 fresh_repetition: +1.32 pp/SD on 1,295 fresh songs (SE 1.04, p .20), halves +0.46/+1.97, logit +0.197; unsettled (power 0.05). Third lean the same way; first on unseen outcomes."
   },
   {
    "id": "R05-M",
@@ -322,8 +322,8 @@
    "stance": "Inventor (I3) + Geometer (G2)",
    "proposed": "run05",
    "status": "testing",
-   "status_set_by": "run05 experiments",
-   "note": "unsettled: beta +0.84 pp/SD (SE 0.40, p .035; needed .00714); halves +0.78, +0.84; exact cond. logit +0.077 (p .097); power 0.12. Best lead of run05; seen songs; arrow_singletons (after seeing results, 3,212 single-song-artist songs, across songs): KILLED, beta -1.75 (SE 0.67, p .009), opposite sign, halves -0.24/-3.29; so the within-artist lean did not carry to new songs"
+   "status_set_by": "run06 experiments",
+   "note": "unsettled: beta +0.84 pp/SD (SE 0.40, p .035; needed .00714); halves +0.78, +0.84; exact cond. logit +0.077 (p .097); power 0.12. Best lead of run05; seen songs; arrow_singletons (after seeing results, 3,212 single-song-artist songs, across songs): KILLED, beta -1.75 (SE 0.67, p .009), opposite sign, halves -0.24/-3.29; so the within-artist lean did not carry to new songs | run06 fresh_arrow: +0.09 (SE 1.17, p .94), halves split, logit -0.004; unsettled (power 0.02). Neither the within-artist +0.84 nor the singles -1.75 is reproduced."
   },
   {
    "id": "R05-I2",
@@ -339,9 +339,9 @@
    "idea": "Any voice can sing it: folded melody range (5th-95th percentile, semitones)",
    "stance": "Listener",
    "proposed": "run05",
-   "status": "testing",
-   "status_set_by": "run05 experiments",
-   "note": "unsettled: beta -0.42 pp/SD (SE 0.26, p .11); halves -0.33, -0.52; cond. logit -0.095; power 0.49; intensive margin +0.063 (p .042), opposite sign"
+   "status": "failed",
+   "status_set_by": "run06 experiments",
+   "note": "unsettled: beta -0.42 pp/SD (SE 0.26, p .11); halves -0.33, -0.52; cond. logit -0.095; power 0.49; intensive margin +0.063 (p .042), opposite sign | run06 fresh_range (capped at 36 semitones): +0.69 (SE 1.58, p .66) against -0.7; killed by beta>=0 (power 0.015; weak kill)."
   },
   {
    "id": "R05-L3",
@@ -421,8 +421,8 @@
    "stance": "Listener (with the Skeptic)",
    "proposed": "run06",
    "status": "testing",
-   "status_set_by": "run06 chair",
-   "note": "Frozen as fresh_repetition (primary) with fresh_arrow, fresh_range, fresh_tonic, fresh_diatonic; N=6 tonight."
+   "status_set_by": "run06 experiments",
+   "note": "Frozen as fresh_repetition (primary) with fresh_arrow, fresh_range, fresh_tonic, fresh_diatonic; N=6 tonight. | run06 battery on 1,295 fresh songs (N=6, p<.00833): ch_rep +1.32 (SE 1.04, p .20, both halves +, logit +) unsettled; A +0.09 unsettled; tonic resistance -0.25 unsettled; melody range +0.69 killed; diatonicity -0.29 killed. All near blind (power 0.01-0.05)."
   },
   {
    "id": "R06-I1",
@@ -430,8 +430,8 @@
    "stance": "Inventor",
    "proposed": "run06",
    "status": "testing",
-   "status_set_by": "run06 chair",
-   "note": "Passes gates: stability 0.252 seen, 0.238 fresh; largest overlap ch_ic_mean -0.14; rho A +0.07."
+   "status_set_by": "run06 experiments",
+   "note": "Passes gates: stability 0.252 seen, 0.238 fresh; largest overlap ch_ic_mean -0.14; rho A +0.07. | run06 chirality: unsettled. beta -0.30 pp/SD (SE 0.38, p .42) against -0.6; halves -0.62 / +0.03; logit -0.033. Power 0.15. Fresh reading (reported) -0.90 (SE 0.97)."
   },
   {
    "id": "R06-I2",

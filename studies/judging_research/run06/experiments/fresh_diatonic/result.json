@@ -1,0 +1,492 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 08b5167 (shared rules ../fresh_repetition/PREDICTION.md, ../common.py)",
+ "test": "fresh_diatonic (R04-G1 diatonicity D5 on fresh songs, holding FP and NT)",
+ "alpha": 0.00833,
+ "z_crit": 2.638,
+ "prediction_pp_per_sd": 0.5,
+ "kill_line": "beta <= 0",
+ "fake_outcome": false,
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "unit_values": {
+  "C triad alone": {
+   "want": 0.644,
+   "got": 0.644
+  },
+  "C, F, G triads": {
+   "want": 0.5864,
+   "got": 0.5864
+  },
+  "C and Ab triads": {
+   "want": 0.322,
+   "got": 0.322
+  },
+  "NT of I, V7, vi, IV": {
+   "want": 0.25,
+   "got": 0.25
+  }
+ },
+ "seen_reproduction": {
+  "seen_rows": 9588,
+  "D5_finite": 9588,
+  "D5_mean": 0.5253,
+  "D5_sd": 0.0948,
+  "FP_finite": 9588,
+  "FP_p10_p50_p90": [
+   0.4488,
+   0.714,
+   1.1968
+  ],
+  "FP_mean": 0.7822,
+  "FP_sd": 0.3329,
+  "NT_finite": 9588,
+  "NT_mean": 0.281,
+  "NT_sd": 0.3074,
+  "ch_rep_mean": 0.2933,
+  "ch_rep_sd": 0.2295,
+  "rho_D5_FP": -0.731,
+  "rho_D5_NT": -0.2146,
+  "NT_largest_pack_overlap": [
+   "ch_ic_mean",
+   0.6905
+  ]
+ },
+ "shared_counts": {
+  "fresh_rows_built": 1825,
+  "battery_rows": 5768,
+  "battery_seen": 4473,
+  "battery_fresh": 1295,
+  "battery_artists": 601,
+  "fresh_drops": {
+   "no clip with harmony": 120,
+   "same normalised artist and title as a seen song": 1
+  }
+ },
+ "rows": {
+  "rows": 5707,
+  "seen": 4472,
+  "fresh": 1235,
+  "artists": 601,
+  "fresh_artists": 585,
+  "fresh_rows_without_FP": 60,
+  "battery_rows_dropped": 61,
+  "fresh_clip12_raw_D5": {
+   "all_fresh_rows": [
+    0.3952,
+    432
+   ],
+   "battery_fresh": [
+    0.325,
+    346
+   ],
+   "model_fresh": [
+    0.2876,
+    339
+   ]
+  }
+ },
+ "gate": {
+  "residual_clip_to_clip": 0.3422,
+  "pairs": 4268,
+  "raw_clip_to_clip": 0.5021,
+  "r2_FP_NT": 0.5475,
+  "ols_coefs_const_FP_NT": [
+   0.7012,
+   -0.2074,
+   -0.0535
+  ],
+  "overlap_largest": [
+   "ch_ic_mean",
+   -0.4234
+  ],
+  "overlap_all": {
+   "mel_ic_mean": -0.2985,
+   "mel_h_mean": -0.1149,
+   "mel_cheung": -0.0914,
+   "ch_ic_mean": -0.4234,
+   "ch_h_mean": -0.1591,
+   "ch_cheung": -0.0395,
+   "mel_rep": 0.1978,
+   "ch_rep": 0.2293,
+   "rhy_ic_mean": -0.0574,
+   "rhy_h_mean": -0.0534,
+   "rhy_cheung": 0.0718,
+   "sync_per_note": 0.0832,
+   "rest_share": 0.0691,
+   "phrase_mean": -0.1155,
+   "phrase_on_downbeat": -0.0654,
+   "density": 0.0926,
+   "length_variety": -0.1064,
+   "n_ch": -0.178,
+   "beats": -0.1631,
+   "clips_per_song": -0.0819
+  },
+  "stab_threshold": 0.2,
+  "overlap_threshold": 0.7,
+  "passed": true
+ },
+ "columns": [
+  "z_fresh",
+  "z_seen",
+  "z_ch_rep",
+  "z_FP",
+  "z_NT",
+  "nch_bin1",
+  "nch_bin2",
+  "nch_bin3",
+  "nch_bin4",
+  "nch_bin5",
+  "nch_bin6",
+  "nch_bin7",
+  "nch_bin8",
+  "nch_bin9",
+  "clips2",
+  "clips3",
+  "clips4p",
+  "ln_beats",
+  "words1",
+  "words2",
+  "words3",
+  "words4",
+  "parens",
+  "rep_title",
+  "ln_chg",
+  "V",
+  "has_mel",
+  "fresh"
+ ],
+ "z_scale": {
+  "D5": [
+   0.5253,
+   0.0948
+  ],
+  "FP": [
+   0.7822,
+   0.3329
+  ],
+  "NT": [
+   0.281,
+   0.3074
+  ],
+  "ch_rep": [
+   0.2933,
+   0.2295
+  ]
+ },
+ "notes_side_power": {
+  "se_bound_pp": 1.5364,
+  "power_p00833": 0.0119,
+  "power_p05": 0.0622,
+  "fake_outcome_power_file": {
+   "calibrated": {
+    "true": {
+     "pass_rate": 0.019,
+     "kill_rate": 0.334,
+     "opposite_sign_significant": 0.0,
+     "se_median": 1.106
+    },
+    "zero": {
+     "pass_rate": 0.008,
+     "kill_rate": 0.487,
+     "opposite_sign_significant": 0.003,
+     "se_median": 1.116
+    }
+   },
+   "homogeneous": {
+    "true": {
+     "pass_rate": 0.015,
+     "kill_rate": 0.365,
+     "opposite_sign_significant": 0.003,
+     "se_median": 1.48
+    },
+    "zero": {
+     "pass_rate": 0.005,
+     "kill_rate": 0.512,
+     "opposite_sign_significant": 0.003,
+     "se_median": 1.499
+    }
+   }
+  }
+ },
+ "validation": {
+  "cliques_sha256": "73366e29164c8eea23d9be9c273c0a94eb8f8feb42d083daaf0078ce23d0442f",
+  "versions_sha256": "de06f644814f8167414d9e5443acf4a6e00e36a0cd4f59f38aff56efc84afe57",
+  "n_cliques": 348796,
+  "pack_keys": 3080,
+  "rebuilt_keys": 3080,
+  "common_keys": 3080,
+  "key_jaccard": 1.0,
+  "clique_agree": 1.0,
+  "covers_agree": 1.0,
+  "version_sets_agree": 1.0,
+  "seen_y_foreign_agree": 1.0,
+  "seen_songs": 13198,
+  "passed": true
+ },
+ "load_battery_outcomes": {
+  "seen": {
+   "md5": [
+    "047085c74ba8b106a8b2a3f7441d6618",
+    "b7048f5553a42a791ea09edf8a4d8ae5"
+   ],
+   "drops": 0,
+   "y1": 1108,
+   "y_foreign1": 1064
+  },
+  "validation_passed": true,
+  "fresh_rows": 1295,
+  "fresh_y1": 238,
+  "fresh_with_vid": 1210,
+  "fresh_vid_in_pack_covers_file": 222,
+  "fresh_slug_vs_vid_agree": 0.9983,
+  "fresh_y_foreign1": 222,
+  "fresh_nan": 0,
+  "fresh_clique_seen": 223
+ },
+ "counts": {
+  "N": 5707,
+  "artists": 601,
+  "y_foreign_dropped_nan": 0,
+  "dropped_fresh": 0,
+  "dropped_seen": 0,
+  "fresh_N": 1235,
+  "seen_N": 4472,
+  "fresh_y1": 221,
+  "seen_y1": 1108,
+  "fresh_y_foreign1": 208,
+  "seen_y_foreign1": 1064,
+  "fresh_share_y_foreign1": 0.1684,
+  "seen_share_y_foreign1": 0.2379
+ },
+ "power": {
+  "se": 1.1904,
+  "power_p00833": 0.0144,
+  "power_p05": 0.0704
+ },
+ "primary": {
+  "z_fresh": {
+   "beta": -0.2943,
+   "se": 1.1904,
+   "p": 0.8047,
+   "ci95": [
+    -2.6276,
+    2.0389
+   ]
+  },
+  "z_seen": {
+   "beta": 0.5085,
+   "se": 0.6777,
+   "p": 0.4531,
+   "ci95": [
+    -0.8199,
+    1.8368
+   ]
+  },
+  "z_ch_rep": {
+   "beta": 1.6089,
+   "se": 0.6914,
+   "p": 0.01996,
+   "ci95": [
+    0.2538,
+    2.9641
+   ]
+  },
+  "z_FP": {
+   "beta": -0.3818,
+   "se": 0.6197,
+   "p": 0.5378,
+   "ci95": [
+    -1.5964,
+    0.8328
+   ]
+  },
+  "z_NT": {
+   "beta": 0.6371,
+   "se": 0.5442,
+   "p": 0.2418,
+   "ci95": [
+    -0.4297,
+    1.7038
+   ]
+  },
+  "fresh_main": {
+   "beta": -4.1141,
+   "se": 2.0212,
+   "p": 0.0418,
+   "ci95": [
+    -8.0755,
+    -0.1526
+   ]
+  },
+  "N": 5707,
+  "artists": 601,
+  "K": 28
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 2658,
+   "artists": 306,
+   "fresh_songs": 623,
+   "fresh_y_foreign1": 111,
+   "z_fresh": {
+    "beta": -2.8028,
+    "se": 1.7632,
+    "p": 0.1119,
+    "ci95": [
+     -6.2587,
+     0.6532
+    ]
+   }
+  },
+  {
+   "half": 1,
+   "songs": 3049,
+   "artists": 295,
+   "fresh_songs": 612,
+   "fresh_y_foreign1": 97,
+   "z_fresh": {
+    "beta": 1.2434,
+    "se": 1.6789,
+    "p": 0.4589,
+    "ci95": [
+     -2.0473,
+     4.534
+    ]
+   }
+  }
+ ],
+ "conditional_logit": {
+  "coef": 0.06,
+  "se": 0.1467,
+  "p": 0.6825,
+  "converged": true,
+  "kept_songs": 2654,
+  "kept_artists": 225,
+  "dropped_songs": 3053,
+  "dropped_artists": 376,
+  "convergence_test": "max|score|/nobs < 1e-5 (BFGS, then Newton)",
+  "z_seen": 0.0845,
+  "z_ch_rep": 0.1392,
+  "z_FP": -0.0616,
+  "z_NT": 0.113,
+  "large_nuisance_coefs": {
+   "parens": -19.1282
+  }
+ },
+ "reported_deciding_nothing": {
+  "D5_without_FP_and_NT": {
+   "songs": 5707,
+   "beta": 0.0312,
+   "se": 0.9789,
+   "p": 0.9746,
+   "ci95": [
+    -1.8875,
+    1.9498
+   ]
+  },
+  "z_seen": {
+   "beta": 0.5085,
+   "se": 0.6777,
+   "p": 0.4531,
+   "ci95": [
+    -0.8199,
+    1.8368
+   ],
+   "note": "seen-song reading, already spent"
+  },
+  "beta_on_y": {
+   "songs": 5707,
+   "beta": -0.0517,
+   "se": 1.1677,
+   "p": 0.9647,
+   "ci95": [
+    -2.3405,
+    2.2371
+   ]
+  },
+  "y_early": {
+   "songs": 5707,
+   "count1": 1016,
+   "fresh_count1": 155,
+   "beta": 0.735,
+   "se": 0.9507,
+   "p": 0.4394,
+   "ci95": [
+    -1.1283,
+    2.5983
+   ]
+  },
+  "y_late": {
+   "songs": 5707,
+   "count1": 922,
+   "fresh_count1": 157,
+   "beta": -0.0951,
+   "se": 0.9395,
+   "p": 0.9193,
+   "ci95": [
+    -1.9365,
+    1.7462
+   ]
+  },
+  "y_foreign_without_karaoke_tribute": {
+   "songs": 5707,
+   "count1": 1272,
+   "changed_vs_primary": 0,
+   "fresh_changed": 0,
+   "beta": -0.2943,
+   "se": 1.1904,
+   "p": 0.8047,
+   "ci95": [
+    -2.6276,
+    2.0389
+   ]
+  },
+  "clique_collision_dropped": {
+   "fresh_rows_dropped": 206,
+   "songs": 5501,
+   "beta": -0.7501,
+   "se": 0.9487,
+   "p": 0.4291,
+   "ci95": [
+    -2.6096,
+    1.1093
+   ]
+  },
+  "fresh_with_video_id_only": {
+   "fresh_rows_dropped": 85,
+   "songs": 5622,
+   "beta": -0.3564,
+   "se": 1.1955,
+   "p": 0.7656,
+   "ci95": [
+    -2.6996,
+    1.9868
+   ]
+  },
+  "without_has_mel": {
+   "beta": -0.2716,
+   "se": 1.1921,
+   "p": 0.8198,
+   "ci95": [
+    -2.6081,
+    2.0648
+   ]
+  },
+  "fresh_only_within_artist": {
+   "songs": 879,
+   "artists": 229,
+   "artists_with_2plus_fresh_rows_in_model_rows": 229,
+   "y_foreign1": 133,
+   "beta": -0.1993,
+   "se": 2.13,
+   "p": 0.9255,
+   "ci95": [
+    -4.3741,
+    3.9755
+   ]
+  }
+ },
+ "outcome_joined": true,
+ "verdict": "kill (beta <= 0); R04-G1 closed",
+ "runtime_s": 49
+}

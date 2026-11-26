@@ -1,0 +1,529 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 08b5167 (branch judging-research); shared rules ../fresh_repetition/PREDICTION.md, ../common.py",
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "threshold_p": 0.008333333333333333,
+ "threshold_z": 2.638,
+ "prediction_pp_per_sd": -0.6,
+ "kill": "beta >= 0",
+ "unit_tests": {
+  "5-cycle": {
+   "want": 1.0,
+   "got": 1.0,
+   "ok": true
+  },
+  "star, T at the hub": {
+   "want": 0.6,
+   "got": 0.6,
+   "ok": true
+  },
+  "star, T on a leaf": {
+   "want": 1.4,
+   "got": 1.4,
+   "ok": true
+  },
+  "5-cycle via one token clip [0,18,27,36,45]": {
+   "want": 1.0,
+   "got": 1.0,
+   "ok": true
+  },
+  "star via tokens [[0,18],[0,27],[0,45]]": {
+   "want": 0.6,
+   "got": 0.6,
+   "ok": true
+  },
+  "star via tokens [[18,0],[18,27],[18,45]]": {
+   "want": 1.4,
+   "got": 1.4,
+   "ok": true
+  }
+ },
+ "reproduction": {
+  "fresh_rows": 1825,
+  "battery_rows": 5768,
+  "battery_fresh": 1295,
+  "battery_artists": 601,
+  "seen9": 9588,
+  "seen_with_H": 9009,
+  "seen_pct_10_50_90": [
+   0.6236,
+   0.8184,
+   1.1429
+  ],
+  "seen_mean": 0.87,
+  "seen_sd": 0.2583,
+  "rows_with_H": 5144,
+  "seen_rows_with_H": 4147,
+  "fresh_rows_with_H": 997,
+  "fresh_artists_with_H": 527,
+  "fresh_battery_without_H": 298,
+  "fresh_z_min": -1.4848,
+  "fresh_z_max": 11.1482,
+  "all_reproduced": true
+ },
+ "gate": {
+  "seen": {
+   "clip_to_clip_residualised": 0.203,
+   "rho_unrounded": 0.20298537124480978,
+   "pairs": 3512,
+   "raw": 0.2587,
+   "threshold": 0.2,
+   "passed": true,
+   "overlap_spearman_H_res": {
+    "mel_ic_mean": -0.0286,
+    "mel_h_mean": -0.0234,
+    "mel_cheung": -0.0211,
+    "ch_ic_mean": 0.0748,
+    "ch_h_mean": 0.0288,
+    "ch_cheung": 0.005,
+    "mel_rep": 0.0211,
+    "ch_rep": 0.0021,
+    "rhy_ic_mean": -0.0272,
+    "rhy_h_mean": 0.0065,
+    "rhy_cheung": -0.0257,
+    "sync_per_note": 0.048,
+    "rest_share": -0.0257,
+    "phrase_mean": -0.015,
+    "phrase_on_downbeat": -0.0225,
+    "density": 0.0112,
+    "length_variety": -0.0349,
+    "n_ch": -0.0699,
+    "beats": -0.0805,
+    "clips_per_song": 0.0042,
+    "distinct_chords": -0.005,
+    "links": -0.0235
+   },
+   "largest_abs": [
+    "beats",
+    -0.0805
+   ],
+   "r2_size_block": 0.1561,
+   "overlap_passed": true,
+   "chair": {
+    "rho": 0.203,
+    "pairs": 3512,
+    "raw": 0.259,
+    "largest": [
+     "beats",
+     0.081
+    ],
+    "r2": 0.156
+   }
+  },
+  "fresh_reported": {
+   "all_fresh_rows": {
+    "rho": 0.1815,
+    "raw": 0.2126,
+    "pairs": 243
+   },
+   "battery_fresh_rows": {
+    "rho": 0.119,
+    "raw": 0.2237,
+    "pairs": 183
+   },
+   "chair": {
+    "rho": 0.182,
+    "raw": 0.213,
+    "pairs": 243
+   }
+  },
+  "passed": true
+ },
+ "notes_side_power": {
+  "se_bound_pp": 1.1957,
+  "power_at_alpha": 0.0172,
+  "power_at_05": 0.0793,
+  "columns": [
+   "z_fresh",
+   "z_seen",
+   "z_ch_rep",
+   "ntok4",
+   "ntok5",
+   "ntok6",
+   "ntok7",
+   "ntok8",
+   "ntok9",
+   "ntok10",
+   "ntok11",
+   "ntok12p",
+   "links",
+   "nch_bin1",
+   "nch_bin2",
+   "nch_bin3",
+   "nch_bin4",
+   "nch_bin5",
+   "nch_bin6",
+   "nch_bin7",
+   "nch_bin8",
+   "nch_bin9",
+   "clips2",
+   "clips3",
+   "clips4p",
+   "ln_beats",
+   "words1",
+   "words2",
+   "words3",
+   "words4",
+   "parens",
+   "rep_title",
+   "ln_chg",
+   "V",
+   "has_mel",
+   "fresh"
+  ],
+  "fake_outcome_power": {
+   "rows": 5144,
+   "fresh_rows": 997,
+   "artists": 598,
+   "prediction": -0.6,
+   "notes_bound_se": 1.196,
+   "homogeneous": {
+    "true": {
+     "pass_rate": 0.05,
+     "kill_rate": 0.302,
+     "opposite_sign_significant": 0.0,
+     "se_median": 1.115
+    },
+    "zero": {
+     "pass_rate": 0.011,
+     "kill_rate": 0.504,
+     "opposite_sign_significant": 0.003,
+     "se_median": 1.168
+    }
+   },
+   "calibrated": {
+    "true": {
+     "pass_rate": 0.042,
+     "kill_rate": 0.256,
+     "opposite_sign_significant": 0.0,
+     "se_median": 0.85
+    },
+    "zero": {
+     "pass_rate": 0.005,
+     "kill_rate": 0.478,
+     "opposite_sign_significant": 0.003,
+     "se_median": 0.849
+    }
+   },
+   "power_at_threshold_calibrated": 0.027,
+   "power_at_05_calibrated": 0.109
+  }
+ },
+ "validation": {
+  "cliques_sha256": "73366e29164c8eea23d9be9c273c0a94eb8f8feb42d083daaf0078ce23d0442f",
+  "versions_sha256": "de06f644814f8167414d9e5443acf4a6e00e36a0cd4f59f38aff56efc84afe57",
+  "n_cliques": 348796,
+  "pack_keys": 3080,
+  "rebuilt_keys": 3080,
+  "common_keys": 3080,
+  "key_jaccard": 1.0,
+  "clique_agree": 1.0,
+  "covers_agree": 1.0,
+  "version_sets_agree": 1.0,
+  "seen_y_foreign_agree": 1.0,
+  "seen_songs": 13198,
+  "passed": true
+ },
+ "outcome_summary": {
+  "seen": {
+   "md5": [
+    "047085c74ba8b106a8b2a3f7441d6618",
+    "b7048f5553a42a791ea09edf8a4d8ae5"
+   ],
+   "drops": 0,
+   "y1": 1108,
+   "y_foreign1": 1064
+  },
+  "validation_passed": true,
+  "fresh_rows": 1295,
+  "fresh_y1": 238,
+  "fresh_with_vid": 1210,
+  "fresh_vid_in_pack_covers_file": 222,
+  "fresh_slug_vs_vid_agree": 0.9983,
+  "fresh_y_foreign1": 222,
+  "fresh_nan": 0,
+  "fresh_clique_seen": 223
+ },
+ "counts": {
+  "N": 5144,
+  "artists": 598,
+  "fresh": 997,
+  "seen": 4147,
+  "fresh_artists": 527,
+  "fresh_y1": 181,
+  "fresh_y_foreign1": 171,
+  "seen_y_foreign1": 992,
+  "fresh_y_foreign_rate_pct": 17.1515,
+  "seen_y_foreign_rate_pct": 23.9209,
+  "dropped_nan_fresh": 0,
+  "dropped_nan_seen": 0
+ },
+ "primary": {
+  "N": 5144,
+  "artists": 598,
+  "K": 36,
+  "beta": -0.2507,
+  "se": 0.7451,
+  "p": 0.7365,
+  "ci95": [
+   -1.7111,
+   1.2096
+  ],
+  "power_at_alpha": 0.0337,
+  "power_at_05": 0.127,
+  "kill_fires_if_prediction_true": 0.2103,
+  "z_seen": {
+   "beta": -0.3682,
+   "se": 0.6119,
+   "p": 0.5473,
+   "ci95": [
+    -1.5675,
+    0.831
+   ]
+  },
+  "z_ch_rep": {
+   "beta": 2.284,
+   "se": 0.9359,
+   "p": 0.01467,
+   "ci95": [
+    0.4496,
+    4.1185
+   ]
+  },
+  "columns": [
+   "z_fresh",
+   "z_seen",
+   "z_ch_rep",
+   "ntok4",
+   "ntok5",
+   "ntok6",
+   "ntok7",
+   "ntok8",
+   "ntok9",
+   "ntok10",
+   "ntok11",
+   "ntok12p",
+   "links",
+   "nch_bin1",
+   "nch_bin2",
+   "nch_bin3",
+   "nch_bin4",
+   "nch_bin5",
+   "nch_bin6",
+   "nch_bin7",
+   "nch_bin8",
+   "nch_bin9",
+   "clips2",
+   "clips3",
+   "clips4p",
+   "ln_beats",
+   "words1",
+   "words2",
+   "words3",
+   "words4",
+   "parens",
+   "rep_title",
+   "ln_chg",
+   "V",
+   "has_mel",
+   "fresh"
+  ]
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 2433,
+   "fresh": 513,
+   "artists": 304,
+   "beta": 0.2535,
+   "se": 0.9599,
+   "p": 0.7917,
+   "ci95": [
+    -1.628,
+    2.135
+   ]
+  },
+  {
+   "half": 1,
+   "songs": 2711,
+   "fresh": 484,
+   "artists": 294,
+   "beta": -0.7754,
+   "se": 1.0594,
+   "p": 0.4642,
+   "ci95": [
+    -2.8518,
+    1.3009
+   ]
+  }
+ ],
+ "conditional_logit": {
+  "beta": -0.0646,
+  "se": 0.1199,
+  "p": 0.5901,
+  "converged": true,
+  "songs_kept": 2381,
+  "artists_kept": 210,
+  "songs_dropped": 2763,
+  "artists_dropped": 388,
+  "nuisance_columns_unstable": [
+   "parens"
+  ]
+ },
+ "reported_deciding_nothing": {
+  "z_seen": {
+   "beta": -0.3682,
+   "se": 0.6119,
+   "p": 0.5473,
+   "ci95": [
+    -1.5675,
+    0.831
+   ]
+  },
+  "on_y": {
+   "N": 5144,
+   "artists": 598,
+   "fresh": 997,
+   "y_1_fresh": 181,
+   "beta": 0.4498,
+   "se": 1.0424,
+   "p": 0.6661,
+   "ci95": [
+    -1.5932,
+    2.4929
+   ]
+  },
+  "early_uptake_y_early": {
+   "N": 5144,
+   "artists": 598,
+   "fresh": 997,
+   "y_1_fresh": 128,
+   "beta": -0.6588,
+   "se": 0.7072,
+   "p": 0.3516,
+   "ci95": [
+    -2.0449,
+    0.7274
+   ]
+  },
+  "late_uptake_y_late": {
+   "N": 5144,
+   "artists": 598,
+   "fresh": 997,
+   "y_1_fresh": 133,
+   "beta": 0.2952,
+   "se": 0.6291,
+   "p": 0.6389,
+   "ci95": [
+    -0.9379,
+    1.5283
+   ]
+  },
+  "y_foreign_without_karaoke_tribute": {
+   "N": 5144,
+   "artists": 598,
+   "fresh": 997,
+   "y_1_fresh": 171,
+   "beta": -0.2507,
+   "se": 0.7451,
+   "p": 0.7365,
+   "ci95": [
+    -1.7111,
+    1.2096
+   ],
+   "rows_flipped": 0,
+   "fresh_rows_flipped": 0,
+   "rows_with_a_karaoke_or_tribute_set": 36
+  },
+  "clique_collision_dropped": {
+   "N": 4977,
+   "artists": 588,
+   "fresh": 830,
+   "y_1_fresh": 14,
+   "beta": -0.0264,
+   "se": 0.6518,
+   "p": 0.9677,
+   "ci95": [
+    -1.3039,
+    1.2511
+   ]
+  },
+  "fresh_rows_with_video_id_only": {
+   "N": 5070,
+   "artists": 594,
+   "fresh": 923,
+   "y_1_fresh": 157,
+   "beta": 0.147,
+   "se": 0.8288,
+   "p": 0.8592,
+   "ci95": [
+    -1.4775,
+    1.7715
+   ]
+  },
+  "without_has_mel": {
+   "N": 5144,
+   "artists": 598,
+   "fresh": 997,
+   "y_1_fresh": 171,
+   "beta": -0.2414,
+   "se": 0.7492,
+   "p": 0.7473,
+   "ci95": [
+    -1.7097,
+    1.227
+   ]
+  },
+  "fresh_home_piece_not_whole_graph_dropped": {
+   "N": 5116,
+   "artists": 598,
+   "fresh": 969,
+   "y_1_fresh": 167,
+   "beta": -0.3419,
+   "se": 0.7685,
+   "p": 0.6564,
+   "ci95": [
+    -1.8481,
+    1.1644
+   ]
+  },
+  "fresh_home_piece_not_whole_graph_rows": 28,
+  "fresh_only_within_artist": {
+   "N": 702,
+   "artists": 232,
+   "artists_with_2plus_fresh_in_battery": 238,
+   "y_foreign_1": 111,
+   "beta": 0.4121,
+   "se": 0.7132,
+   "p": 0.5634,
+   "ci95": [
+    -0.9858,
+    1.8101
+   ]
+  },
+  "rho_H_A_fresh": {
+   "rho": 0.1475,
+   "rows": 779
+  },
+  "fresh_counts": {
+   "y_1": 181,
+   "y_foreign_1": 171,
+   "rows": 997
+  },
+  "per_half_counts": [
+   {
+    "half": 0,
+    "songs": 2433,
+    "fresh": 513,
+    "artists": 304
+   },
+   {
+    "half": 1,
+    "songs": 2711,
+    "fresh": 484,
+    "artists": 294
+   }
+  ]
+ },
+ "verdict": "unsettled (p >= .00833; halves split)",
+ "runtime_s": 70
+}

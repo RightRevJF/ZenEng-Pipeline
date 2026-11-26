@@ -1,0 +1,732 @@
+{
+ "rule": "PREDICTION.md in this folder, commit 08b5167",
+ "test": "fresh_repetition (ch_rep on fresh songs, battery primary)",
+ "credit": "Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0)",
+ "prediction_pp_per_sd": 1.0,
+ "kill": "beta <= 0",
+ "threshold_p": 0.008333,
+ "reproduction": {
+  "values": {
+   "pack_clips": 21998,
+   "ch_rep_max_abs_diff": 0.0,
+   "mismatches": {
+    "n_ch": 0,
+    "n_mel": 0,
+    "beats": 0
+   },
+   "fresh_songs": 1946,
+   "fresh_clips": 2570,
+   "fresh_songs_with_vid": 1765,
+   "fresh_rows": 1825,
+   "fresh_drops": {
+    "no clip with harmony": 120,
+    "same normalised artist and title as a seen song": 1
+   },
+   "fresh_rows_mixing_melody_and_no_melody_clips": 32,
+   "battery_rows": 5768,
+   "battery_seen": 4473,
+   "battery_fresh": 1295,
+   "battery_artists": 601,
+   "battery_fresh_with_vid": 1210,
+   "battery_fresh_without_vid": 85,
+   "fresh_rows_by_artists_with_seen": 1160,
+   "artists_with_fresh_and_seen": 550,
+   "fresh_rows_by_artists_2p_fresh": 932,
+   "artists_2p_fresh": 238,
+   "seen9": 9588,
+   "ch_rep_seen_mean": 0.2933,
+   "ch_rep_seen_sd": 0.2295,
+   "ch_rep_fresh_mean_battery": 0.2474,
+   "ch_rep_fresh_mean_all": 0.2371
+  },
+  "checks": {
+   "fresh_songs": true,
+   "fresh_clips": true,
+   "fresh_songs_with_vid": true,
+   "fresh_rows": true,
+   "battery_rows": true,
+   "battery_seen": true,
+   "battery_fresh": true,
+   "battery_artists": true,
+   "battery_fresh_with_vid": true,
+   "battery_fresh_without_vid": true,
+   "fresh_rows_by_artists_with_seen": true,
+   "artists_with_fresh_and_seen": true,
+   "fresh_rows_by_artists_2p_fresh": true,
+   "artists_2p_fresh": true,
+   "fresh_rows_mixing_melody_and_no_melody_clips": true,
+   "drops": true,
+   "seen9": true,
+   "mean_sd": true,
+   "fresh_mean": true,
+   "pack_exact": true
+  },
+  "all_reproduced": true
+ },
+ "gate_reported": {
+  "note": "PREDICTION.md: ch_rep is the pack's own measure and needs no gate; stability reported",
+  "fresh_clip12_all": [
+   0.3948,
+   432
+  ],
+  "fresh_clip12_battery": [
+   0.3751,
+   346
+  ],
+  "seen_clip12": [
+   0.3243,
+   4271
+  ],
+  "overlap_seen9": {
+   "mel_ic_mean": -0.1539,
+   "mel_h_mean": -0.1851,
+   "mel_cheung": 0.0392,
+   "ch_ic_mean": -0.3273,
+   "ch_h_mean": -0.4396,
+   "ch_cheung": -0.1955,
+   "mel_rep": 0.4089,
+   "rhy_ic_mean": -0.0394,
+   "rhy_h_mean": -0.1164,
+   "rhy_cheung": 0.1094,
+   "sync_per_note": 0.0719,
+   "rest_share": 0.0936,
+   "phrase_mean": -0.0419,
+   "phrase_on_downbeat": -0.1031,
+   "density": 0.1029,
+   "length_variety": -0.0649,
+   "n_ch": 0.4061,
+   "beats": 0.1644,
+   "clips_per_song": 0.0224
+  },
+  "overlap_largest": [
+   "ch_h_mean",
+   -0.4396
+  ],
+  "overlap_battery_rows": {
+   "V": -0.2117,
+   "ln_chg": 0.4356,
+   "has_mel": -0.0629,
+   "fresh": -0.0942
+  }
+ },
+ "notes_side_power": {
+  "se_bound_pp": 1.6563,
+  "power_p00833": 0.0215,
+  "power_p05": 0.0927,
+  "fake_outcome": {
+   "rows": 5768,
+   "fresh_rows": 1295,
+   "artists": 601,
+   "prediction": 1.0,
+   "notes_bound_se": 1.656,
+   "homogeneous": {
+    "true": {
+     "pass_rate": 0.023,
+     "kill_rate": 0.28,
+     "opposite_sign_significant": 0.001,
+     "se_median": 1.635
+    },
+    "zero": {
+     "pass_rate": 0.006,
+     "kill_rate": 0.508,
+     "opposite_sign_significant": 0.004,
+     "se_median": 1.634
+    }
+   },
+   "calibrated": {
+    "true": {
+     "pass_rate": 0.034,
+     "kill_rate": 0.222,
+     "opposite_sign_significant": 0.0,
+     "se_median": 1.211
+    },
+    "zero": {
+     "pass_rate": 0.002,
+     "kill_rate": 0.478,
+     "opposite_sign_significant": 0.007,
+     "se_median": 1.215
+    }
+   },
+   "power_at_threshold_calibrated": 0.035,
+   "power_at_05_calibrated": 0.13
+  }
+ },
+ "validation": {
+  "cliques_sha256": "73366e29164c8eea23d9be9c273c0a94eb8f8feb42d083daaf0078ce23d0442f",
+  "versions_sha256": "de06f644814f8167414d9e5443acf4a6e00e36a0cd4f59f38aff56efc84afe57",
+  "n_cliques": 348796,
+  "pack_keys": 3080,
+  "rebuilt_keys": 3080,
+  "common_keys": 3080,
+  "key_jaccard": 1.0,
+  "clique_agree": 1.0,
+  "covers_agree": 1.0,
+  "version_sets_agree": 1.0,
+  "seen_y_foreign_agree": 1.0,
+  "seen_songs": 13198,
+  "passed": true
+ },
+ "outcome_join": {
+  "seen": {
+   "md5": [
+    "047085c74ba8b106a8b2a3f7441d6618",
+    "b7048f5553a42a791ea09edf8a4d8ae5"
+   ],
+   "drops": 0,
+   "y1": 1108,
+   "y_foreign1": 1064
+  },
+  "validation_passed": true,
+  "fresh_rows": 1295,
+  "fresh_y1": 238,
+  "fresh_with_vid": 1210,
+  "fresh_vid_in_pack_covers_file": 222,
+  "fresh_slug_vs_vid_agree": 0.9983,
+  "fresh_y_foreign1": 222,
+  "fresh_nan": 0,
+  "fresh_clique_seen": 223
+ },
+ "counts": {
+  "N": 5768,
+  "artists": 601,
+  "fresh_N": 1295,
+  "seen_N": 4473,
+  "y_foreign_100_fresh": 222,
+  "y_foreign_100_seen": 1064,
+  "y_100_fresh": 238,
+  "y_100_seen": 1108,
+  "dropped_nan_fresh": 0,
+  "dropped_nan_seen": 0,
+  "drop_reasons": {},
+  "share_y_foreign_fresh": 0.1714,
+  "share_y_foreign_seen": 0.2379
+ },
+ "power": {
+  "se": 1.0403,
+  "power_p00833": 0.0469,
+  "power_p05": 0.1607
+ },
+ "primary": {
+  "beta": 1.32,
+  "se": 1.0403,
+  "p": 0.2045,
+  "ci95": [
+   -0.7189,
+   3.359
+  ],
+  "N": 5768,
+  "artists": 601,
+  "K": 25,
+  "all_columns": {
+   "z_fresh": {
+    "beta": 1.32,
+    "se": 1.0403,
+    "p": 0.2045,
+    "ci95": [
+     -0.7189,
+     3.359
+    ]
+   },
+   "z_seen": {
+    "beta": 1.7393,
+    "se": 0.7331,
+    "p": 0.01767,
+    "ci95": [
+     0.3024,
+     3.1762
+    ]
+   },
+   "nch_bin1": {
+    "beta": -3.4155,
+    "se": 2.4379,
+    "p": 0.1612,
+    "ci95": [
+     -8.1938,
+     1.3628
+    ]
+   },
+   "nch_bin2": {
+    "beta": -3.5409,
+    "se": 3.3558,
+    "p": 0.2913,
+    "ci95": [
+     -10.1182,
+     3.0364
+    ]
+   },
+   "nch_bin3": {
+    "beta": -3.3726,
+    "se": 3.8227,
+    "p": 0.3776,
+    "ci95": [
+     -10.8651,
+     4.1199
+    ]
+   },
+   "nch_bin4": {
+    "beta": -5.057,
+    "se": 4.2219,
+    "p": 0.231,
+    "ci95": [
+     -13.332,
+     3.2179
+    ]
+   },
+   "nch_bin5": {
+    "beta": -2.978,
+    "se": 4.2976,
+    "p": 0.4883,
+    "ci95": [
+     -11.4012,
+     5.4452
+    ]
+   },
+   "nch_bin6": {
+    "beta": -2.7007,
+    "se": 4.9186,
+    "p": 0.5829,
+    "ci95": [
+     -12.3412,
+     6.9397
+    ]
+   },
+   "nch_bin7": {
+    "beta": -3.3845,
+    "se": 5.6186,
+    "p": 0.5469,
+    "ci95": [
+     -14.3969,
+     7.6278
+    ]
+   },
+   "nch_bin8": {
+    "beta": -3.7552,
+    "se": 6.1247,
+    "p": 0.5398,
+    "ci95": [
+     -15.7595,
+     8.2491
+    ]
+   },
+   "nch_bin9": {
+    "beta": -4.0239,
+    "se": 6.7784,
+    "p": 0.5528,
+    "ci95": [
+     -17.3095,
+     9.2617
+    ]
+   },
+   "clips2": {
+    "beta": 1.8763,
+    "se": 1.7145,
+    "p": 0.2738,
+    "ci95": [
+     -1.4841,
+     5.2366
+    ]
+   },
+   "clips3": {
+    "beta": 4.7462,
+    "se": 2.8598,
+    "p": 0.09699,
+    "ci95": [
+     -0.859,
+     10.3513
+    ]
+   },
+   "clips4p": {
+    "beta": 4.155,
+    "se": 3.7861,
+    "p": 0.2725,
+    "ci95": [
+     -3.2658,
+     11.5758
+    ]
+   },
+   "ln_beats": {
+    "beta": 0.4989,
+    "se": 1.0658,
+    "p": 0.6397,
+    "ci95": [
+     -1.59,
+     2.5878
+    ]
+   },
+   "words1": {
+    "beta": 6.9085,
+    "se": 1.5515,
+    "p": 8.473e-06,
+    "ci95": [
+     3.8676,
+     9.9494
+    ]
+   },
+   "words2": {
+    "beta": 4.6415,
+    "se": 1.3057,
+    "p": 0.0003782,
+    "ci95": [
+     2.0824,
+     7.2006
+    ]
+   },
+   "words3": {
+    "beta": 3.1783,
+    "se": 1.5273,
+    "p": 0.03744,
+    "ci95": [
+     0.1848,
+     6.1718
+    ]
+   },
+   "words4": {
+    "beta": 3.4811,
+    "se": 1.5349,
+    "p": 0.02333,
+    "ci95": [
+     0.4728,
+     6.4895
+    ]
+   },
+   "parens": {
+    "beta": -16.9197,
+    "se": 4.5337,
+    "p": 0.00019,
+    "ci95": [
+     -25.8057,
+     -8.0336
+    ]
+   },
+   "rep_title": {
+    "beta": 8.6246,
+    "se": 1.7606,
+    "p": 9.647e-07,
+    "ci95": [
+     5.1738,
+     12.0753
+    ]
+   },
+   "ln_chg": {
+    "beta": -0.485,
+    "se": 2.3405,
+    "p": 0.8358,
+    "ci95": [
+     -5.0724,
+     4.1023
+    ]
+   },
+   "V": {
+    "beta": -0.0531,
+    "se": 0.1785,
+    "p": 0.7661,
+    "ci95": [
+     -0.403,
+     0.2968
+    ]
+   },
+   "has_mel": {
+    "beta": 0.9134,
+    "se": 2.3783,
+    "p": 0.7009,
+    "ci95": [
+     -3.748,
+     5.5748
+    ]
+   },
+   "fresh": {
+    "beta": -4.6308,
+    "se": 2.0578,
+    "p": 0.02443,
+    "ci95": [
+     -8.6641,
+     -0.5975
+    ]
+   }
+  }
+ },
+ "halves": [
+  {
+   "half": 0,
+   "songs": 2683,
+   "fresh_songs": 648,
+   "artists": 306,
+   "y_foreign_100_fresh": 118,
+   "beta": 0.4556,
+   "se": 1.4437,
+   "p": 0.7523,
+   "ci95": [
+    -2.374,
+    3.2852
+   ]
+  },
+  {
+   "half": 1,
+   "songs": 3085,
+   "fresh_songs": 647,
+   "artists": 295,
+   "y_foreign_100_fresh": 104,
+   "beta": 1.9716,
+   "se": 1.5641,
+   "p": 0.2075,
+   "ci95": [
+    -1.094,
+    5.0372
+   ]
+  }
+ ],
+ "conditional_logit": {
+  "columns_without_within_variation_in_kept_sample": [],
+  "kept_fresh_songs": 555,
+  "kept_fresh_nonzero_z": 555,
+  "columns": "all columns as written",
+  "coef": 0.1972,
+  "se": 0.1521,
+  "p": 0.1946,
+  "converged": true,
+  "convergence_test": "max|score|/nobs < 1e-5 (common.cond_logit)",
+  "kept_songs": 2687,
+  "kept_artists": 226,
+  "dropped_songs": 3081,
+  "dropped_artists": 375,
+  "seconds": 9,
+  "all_columns": {
+   "z_fresh": [
+    0.1972,
+    0.1521
+   ],
+   "z_seen": [
+    0.1507,
+    0.103
+   ],
+   "nch_bin1": [
+    -0.4513,
+    0.3213
+   ],
+   "nch_bin2": [
+    -0.4638,
+    0.3921
+   ],
+   "nch_bin3": [
+    -0.4029,
+    0.4591
+   ],
+   "nch_bin4": [
+    -0.6464,
+    0.5199
+   ],
+   "nch_bin5": [
+    -0.3581,
+    0.5752
+   ],
+   "nch_bin6": [
+    -0.3345,
+    0.6433
+   ],
+   "nch_bin7": [
+    -0.364,
+    0.7309
+   ],
+   "nch_bin8": [
+    -0.4135,
+    0.8382
+   ],
+   "nch_bin9": [
+    -0.5476,
+    0.9631
+   ],
+   "clips2": [
+    0.1843,
+    0.2663
+   ],
+   "clips3": [
+    0.5525,
+    0.4074
+   ],
+   "clips4p": [
+    0.616,
+    0.5433
+   ],
+   "ln_beats": [
+    0.0741,
+    0.1371
+   ],
+   "words1": [
+    0.8052,
+    0.1944
+   ],
+   "words2": [
+    0.6452,
+    0.1864
+   ],
+   "words3": [
+    0.4908,
+    0.1871
+   ],
+   "words4": [
+    0.5657,
+    0.2047
+   ],
+   "parens": [
+    -15.4166,
+    310.8019
+   ],
+   "rep_title": [
+    0.8115,
+    0.1586
+   ],
+   "ln_chg": [
+    -0.0192,
+    0.3386
+   ],
+   "V": [
+    -0.024,
+    0.0447
+   ],
+   "has_mel": [
+    0.0699,
+    0.3007
+   ],
+   "fresh": [
+    -0.4837,
+    0.2611
+   ]
+  }
+ },
+ "reported_deciding_nothing": {
+  "z_seen_coefficient": {
+   "beta": 1.7393,
+   "se": 0.7331,
+   "p": 0.01767,
+   "ci95": [
+    0.3024,
+    3.1762
+   ]
+  },
+  "beta_on_y_in_DiscogsVI_at_all": {
+   "beta": 1.4951,
+   "se": 1.0909,
+   "p": 0.1705,
+   "ci95": [
+    -0.6431,
+    3.6334
+   ],
+   "N": 5768,
+   "z_seen": {
+    "beta": 2.0002,
+    "se": 0.7832,
+    "p": 0.01065,
+    "ci95": [
+     0.4651,
+     3.5354
+    ]
+   }
+  },
+  "y_early_within_5y": {
+   "beta": 0.7344,
+   "se": 1.013,
+   "p": 0.4685,
+   "ci95": [
+    -1.2511,
+    2.72
+   ],
+   "N": 5768,
+   "fresh_100": 167,
+   "seen_100": 861
+  },
+  "y_late_after_10y": {
+   "beta": 0.349,
+   "se": 0.7451,
+   "p": 0.6395,
+   "ci95": [
+    -1.1115,
+    1.8094
+   ],
+   "N": 5768,
+   "fresh_100": 169,
+   "seen_100": 765
+  },
+  "without_fresh_rows_whose_clique_is_seen__common_flag": {
+   "beta": 0.9064,
+   "se": 0.8133,
+   "p": 0.265,
+   "ci95": [
+    -0.6876,
+    2.5005
+   ],
+   "N": 5545,
+   "fresh_dropped": 223,
+   "note": "common.load_battery_outcomes builds its 'seen cliques' from every key of the pack's covers file, which also holds fresh videos (fresh_vid_in_pack_covers_file), so this flag marks a fresh song whose own video is in that file; see the corrected form below"
+  },
+  "without_fresh_rows_whose_clique_is_seen": {
+   "beta": 1.1786,
+   "se": 1.0436,
+   "p": 0.2587,
+   "ci95": [
+    -0.8668,
+    3.2241
+   ],
+   "N": 5764,
+   "fresh_dropped": 4,
+   "fresh_y_foreign_100_dropped": 4,
+   "seen_cliques": 2638
+  },
+  "fresh_rows_with_video_id_only": {
+   "beta": 1.4341,
+   "se": 1.0837,
+   "p": 0.1857,
+   "ci95": [
+    -0.6899,
+    3.5581
+   ],
+   "N": 5683,
+   "fresh_dropped": 85
+  },
+  "y_foreign_without_karaoke_tribute_sets": {
+   "beta": 1.32,
+   "se": 1.0403,
+   "p": 0.2045,
+   "ci95": [
+    -0.7189,
+    3.359
+   ],
+   "songs_changed": 0,
+   "songs_with_any_karaoke_or_tribute_set": 38,
+   "fresh_100": 222
+  },
+  "fresh_only_within_artist": {
+   "beta": -0.8502,
+   "se": 2.6203,
+   "p": 0.7456,
+   "ci95": [
+    -5.9861,
+    4.2857
+   ],
+   "N": 932,
+   "artists": 238,
+   "y_foreign_100": 145
+  },
+  "without_has_mel": {
+   "beta": 1.2567,
+   "se": 1.0478,
+   "p": 0.2304,
+   "ci95": [
+    -0.797,
+    3.3105
+   ],
+   "N": 5768
+  },
+  "fresh_counts": {
+   "y_100": 238,
+   "y_foreign_100": 222,
+   "y_foreign_nan": 0
+  },
+  "printed_match_checks": {
+   "fresh_with_vid": 1210,
+   "fresh_vid_in_pack_covers_file": 222,
+   "fresh_slug_vs_vid_agree": 0.9983
+  }
+ },
+ "verdict": "unsettled (p >= .00833)",
+ "runtime_s": 27
+}
