@@ -4,12 +4,13 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.normpath(os.pa
 import numpy as np, song_from_lyric as SL, metre_engine as M, make_kept_commonest_pitch as CP
 from read import deg, repeat
 from ladder import verse_figs
-T7 = json.load(open(os.path.join(ROOT, "tables", "kept_line_repeat.json"))); T = T7["share"]; FORMS = {"the form": lambda: dict(T), "by the count": lambda: dict(T, by_count=T7["by_count"], true=False), "by the count, a true repeat": lambda: dict(T, by_count=T7["by_count"], true=True)}; RUN = [False] + os.environ.get("FORMS", "the form").split("|"); N = int(os.environ.get("N", "1000")); out = {}
+T7 = json.load(open(os.path.join(ROOT, "tables", "kept_line_repeat.json"))); T = T7["share"]; FORMS = {"the form": lambda: dict(T), "by the count": lambda: dict(T, by_count=T7["by_count"], true=False), "by the count, a true repeat": lambda: dict(T, by_count=T7["by_count"], true=True), "by the count, a true repeat, the chord tie": lambda: dict(T, by_count=T7["by_count"], true=True)}; TIE = json.load(open(os.path.join(ROOT, "tables", "kept_chord_tie.json")))["weights"]; RUN = [False] + os.environ.get("FORMS", "the form").split("|"); N = int(os.environ.get("N", "1000")); out = {}
 for stem in sys.argv[1:]:
     L = json.load(open(stem + ".json")); rec = json.load(open(stem + ".song.json")); o = {}
     for form in RUN:
         spec = json.loads(json.dumps(rec["spec"])); scale = sorted(spec["scale"])
         if form: spec["borrow_kept"] = FORMS[form]()
+        if form and "chord tie" in form: spec["chord_tie"] = TIE
         E = M.Engine(spec); E.as_sung = lambda ns_: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"))[0]
         rng = random.Random(L.get("seed", 1)); sh = []; F = collections.defaultdict(list); fig = []; a = b = cl = nn = 0; same = tot = rep = lin = 0
         for _ in range(N):
