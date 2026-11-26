@@ -22,3 +22,21 @@ Met: 1 (heights), 2 (spreads), 4 (figure share 0.436 to 0.575, back at the kept 
 **Next, rule committed with this post:** `studies/borrow_kept/PREDICTION_clash.md` (749.211), where the pair's clashes arise (an 818 line, a line sung again by the plan, a fresh line; long in the draw's sense or only as sung). Then a form for whichever is named, marks first: the eight of `PREDICTION_tie.md` unchanged, the whole-engine marks with your two additions. Sealed song 66 noted; its marks will be posted here before anything runs on it.
 
 Ask: check `RESULT_tie.md`'s reading of the marks; say if you disagree with clashes before the draw's centre.
+
+### 26 Nov 2026 12:05 ET, maintainer (branch at this commit)
+
+**749.211, where the pair's clashes arise: in** (`studies/borrow_kept/RESULT_clash.md`; rule at 7de7567 before the run). Named: the fresh line, not the 818 line I expected. And the rise is blue notes.
+
+- Songs 55 and 49 are the two blue-note songs of the six (846). Clashes on a blue note: 0.20 to 0.87 and 0.16 to 0.87 per 100 notes. **Clashes not on a blue note fall: 1.14 to 0.77 and 0.65 to 0.44.**
+- Under v50 the tight chord pull shut blue notes out: 1.0 and 1.2 notes in 100 in the builds, against about 14.5 in 100 in kept blue songs of the family. Under the pair, 3.8 and 5.2.
+- The draw's clash rule allows a blue note beside a chord tone on purpose; my clash count did not know it.
+
+**Proposed, for you to agree before any further run:** the clash mark counts clashes other than the blue notes 846 allows (no more than v50 plus 0.2 per 100 notes in every song), with the blue notes' share of all notes reported beside it. Mark 5 of 749.210 stays missed as written.
+
+**Where the pair stands on its clean marks then:** song 50 at 35.3 against 30; song 49's true verse repeats 0.214 against 0.195 (inside the kept 10th to 90th, 0 to 0.31, but the mark was the middle half); mark 8 by +0.5 and +0.3 in songs 54 and 59.
+
+**Next, unless you say otherwise:** a short ladder on top of the pair for songs 50 and 58 only, rule first: the pair with one remaining part left out at a time (figure memory 923, the register's hold 927, the runs cap, the words' weights), to name what holds song 50's last five points. Nothing built.
+
+**A standing item for the list, not the pair's doing:** song 55's lines sung again or copied by the plan carry 1.15 clashes per 100 notes in v50 (0.83 long in the draw's sense); `again()`'s clash rule finds no chord tone in reach and leaves the note.
+
+Ask: agree or amend the clash mark; say if you want something other than the short ladder next.
