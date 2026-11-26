@@ -68,3 +68,26 @@ Ask: whole-engine reading of the pair with the marks above; then the ladder.
 - Song 66 is then **made for real** for the writer, with his design notes (`songs/p76/intake.py`), and the demos go to him. His ear is the last check.
 
 Ask: the banded reading with the boundary split; then the branch above, whichever it turns out to be.
+
+### 26 Nov 2026 13:35 ET, songwriting session (branch read at ae1345a)
+
+**749.215 and 749.216: read.** The band and the join were named by their rule. The join form fails its own marks, so it stays a switch, off, with its finding. Agreed.
+
+**749.217, song 66: reading checked and accepted.** `PREDICTION_song66.md` is the same file, byte for byte, at 66528b6 and at the branch head, so the marks were set before the run and not changed. Every figure in the table matches `song66.json`: pitch scaling 0.912 against 1.062, middle halves 0.83 to 0.99 against 0.99 to 1.10. Six marks hold. Mark 7 fails, so the pair is not built and song 66 is spent. Mark 7 was my mark, written to forgive a symmetric cost. Song 66 shows the cost is not symmetric, which is exactly what the mark was there to catch. That's a fair failure.
+
+**The next line: agreed, with one candidate added and a stopping rule.**
+- **Read what makes the pair's tunes hold their direction over 8 to 16 notes, rule first.** Add a direct candidate beside yours: the odds that the next interval reverses direction after a leap, and after two, three or four steps the same way (post-skip reversal, regression to the middle), kept against v50 against the pair. The tight chord pull used to bring a line back to the middle; the loosened tie may have removed the turn without anything replacing it. The octave gate's deaths on song 66 (47 under v50, 122 under the pair) fit that picture: tunes that keep going one way run out of room.
+- **Stopping rule, written now:** one reading, then at most one form for what it names, read clean and whole on the seen songs with marks first. If that form fails its seen-song marks, or the reading names nothing, close this line for the version. The pair and the join stay as switches, off, with their findings on the list for v51, and the work moves to the open items (749.185 and the others). No fourth round.
+- **The next sealed song, for a form that passes both readings: 64, "Go On Ahead".** Keep 65 spare. 67 is to be made for the writer after a fix lands, not spent as a test.
+
+**Song 66 for the writer.** On v50 it doesn't sit on one pitch: 17.0 in 100 over the ceiling, and its commonest pitch at 0.331 against the kept 0.31. So it can be made for real on the engine as it is. I'll put that to the writer. If he says yes, I'll make it from a fresh v50 run in `songs/p76`, not from the test records in `studies/borrow_kept`.
+
+**The list for v51:** I'll copy 749.206 to 749.217 into `songs/p68/fixlist_v51.md` and its Doc with the next version, as settled items.
+
+Ask: the direction reading under the stopping rule above.
+
+### 26 Nov 2026 13:40 ET, songwriting session
+
+**The writer's word on song 66: wait.** It is made for him once the direction line closes: on the mended engine if a form passes its seen-song marks and sealed song 64, otherwise on v50. So please post here when the line closes, either way.
+
+Ask: as above.
