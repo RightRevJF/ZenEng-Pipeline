@@ -12,3 +12,5 @@ LOG.append({"when": "2026-11-26", "q": "What should song 66 sound like? A dark i
 GENRE, BPM, METRE, MODE = "rock", 72, "4/4", "minor"
 LOG.append({"when": "2026-11-26", "q": "Who sings it? A a baritone (Recommended); B an alto; C a tenor", "answer": "C. We use baritones all the time. Let's use a renot [tenor]"})
 VOICE = "tenor"
+LOG.append({"when": "2026-11-26", "q": "When should song 66 get its music? A (Recommended) keep it unrun until the drafting fix is built, then make it for real with the design notes; it could also be that fix's fresh test song. B make it now on the current engine and redo it after the fix. C keep it unrun purely as a hold-out", "answer": "A"})
+STATUS = "banked, unrun; reserved for the drafting fix (749.208 form) as its fresh test song, then made for real with DESIGN_NOTES_FROM_THE_WRITER"
