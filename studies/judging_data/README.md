@@ -17,6 +17,29 @@ Read-only inputs for the nightly judging research: what the covers study uses, s
 
 The raw downloads (Sheet Sage's `Hooktheory.json.gz`, 20 MB; Discogs-VI's `main.zip`, 1.4 GB) are not here; the scripts above rebuild everything from them.
 
+## The fresh songs (judging research, run 06; R06-1)
+
+`hooktheory_fresh_covers_discogs.json`: the 1,946 Hooktheory songs in Sheet Sage's file that the rest of this pack never measured (mostly chords without melody), matched to Discogs-VI by the pack's own rule on the research's machine; 312 matched, 294 taken up by another artist. **Seen, not a hold-out:** run 06 joined them to six measures. Copied unchanged from `studies/judging_research/data/fresh_songs_discogs_run06.json` on the judging-research branch. Checked here against the maintainer's own clique table: all 312 matched cliques agree on artist and title, and none of the 1,634 unmatched would match by exact title and artist. Credit: Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0).
+
+Note: `hooktheory_covers_discogs.json` was built over every raw video, so it already holds outcomes for 222 of the fresh songs' videos. It is an outcome for them too.
+
+## Where the raw files are
+
+- Sheet Sage's `Hooktheory.json.gz` (20 MB): `https://raw.githubusercontent.com/chrisdonahue/sheetsage-data/main/hooktheory/Hooktheory.json.gz`, sha256 `917b7cd58f5f4e07d6c36acf7bfad958c99ee05472dab3555399141094698e0c` (the maintainer's copy and the research's agree).
+- Discogs-VI 20240701 `main.zip` (1.4 GB): `https://zenodo.org/records/13983028`.
+
+## The seen ledger (R05-1, R06-1)
+
+What has been joined to an outcome and by whom, so nobody takes a spent set for a fresh one.
+
+| Set | Songs | Joined to measures in | Outcome |
+|---|---|---|---|
+| Within-artist rows (artists with two songs or more) | 9,588 | judging research runs 04 and 05; `studies/judging_checks/within_artist` | covers; taken up by another artist |
+| Single-song-artist songs | 3,212 | judging research run 05 (`arrow_singletons`) | taken up by another artist |
+| Fresh battery songs (of the 1,946 above, those with another song by the same artist) | 1,295 | judging research run 06 (commits 08b5167, 3f39f56) | taken up by another artist |
+
+Every within-artist Hooktheory song with chords is now spent. A powered check of chord repetition needs about 5,400 unseen within-artist songs (run 06); none are on hand.
+
 ## How to join
 
 A song is a YouTube video id. `hooktheory_covers_discogs.json` is keyed by it; each clip in the two measure files carries it as `vid`, and each clip in `hooktheory_clips.json.gz` as `video`. A song's measure is the mean over its clips, weighted by `n_mel` (as `studies/covers/study_covers_discogs.py` does). The artist is the clip's `artist` slug. The covers study's rows are the songs with a group, measures in both files, and a first year (2,360 when views are also required).

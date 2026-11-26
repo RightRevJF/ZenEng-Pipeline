@@ -684,3 +684,9 @@ Findings from 749.197.
 - **749.199: the tie was moving the tune, not holding it.** Left to itself the draw sits on one pitch near its register's centre (a middle verse 0.38 to 0.46 on its commonest pitch; kept 0.31). This is 749.165 / 749.170 (too many notes on three pitches) from the other side.
 - 749.198 cannot be built alone. Next reading: how kept verses spread their notes over pitches, and which of the draw's weights sets it (927's register pull, 846's degrees, 923's memory). Then the draw; then the tie with it.
 - Trial switches in the code, off: `LUTHIER_CHORD_TIE`. Song 54 byte for byte with it off.
+
+### 26 November: judging research run 06, checked
+
+`studies/judging_checks/run06/CHECK.md`. Sources real; the fresh table agrees with my clique table; R06-1 done in `studies/judging_data/` (the fresh table, the seen ledger, the raw files' addresses); R02-3 mended (`original` in `studies/covers/study_covers_discogs.py`: 703 of 2,769 Hooktheory "originals" are not the first performers).
+- **749.185 (the loop gate with a chance) is to be judged on the kept songs' rate alone** (R06-2): the cover evidence leans opposite ways on its two margins and cannot be settled with the songs on hand.
+- R06-4 (Chordonomicon) is blocked here too (the storage host, and Spotify ids with no names). R06-5 (a power floor of 0.2 for counted tests) is for the writer; I would say yes. R04-2 open.

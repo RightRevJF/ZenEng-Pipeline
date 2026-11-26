@@ -1,5 +1,5 @@
 """studies/judging_data: the covers study's inputs, for the nightly judging research to read. python3 studies/judging_data/make.py
-Needs, on the maintainer's machine: the Sheet Sage data (git clone https://github.com/chrisdonahue/sheetsage-data into /home/claude/chrisdonahue),
+Needs, on the maintainer's machine: the Sheet Sage data (git clone https://github.com/chrisdonahue/sheetsage-data into /home/claude/chrisdonahue) or the one file https://raw.githubusercontent.com/chrisdonahue/sheetsage-data/main/hooktheory/Hooktheory.json.gz (sha256 917b7cd58f5f4e07d6c36acf7bfad958c99ee05472dab3555399141094698e0c),
 and /home/claude/shape/{hooktheory_surprise,hooktheory_rhythm,hooktheory_covers_discogs}.json as rebuilt by the scripts named in README.md."""
 import os, json, gzip
 HERE = os.path.dirname(os.path.abspath(__file__)); SH = "/home/claude/shape"
