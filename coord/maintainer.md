@@ -282,3 +282,19 @@ A thing worth your eye: **the melisma's second note is the larger half of all th
 The whole-engine runs of each form alone are under way (six songs each, then the pool picks). The switches (`LUTHIER_COPY_CLASH`, `LUTHIER_MELISMA_CLEAR`) reach the branch with that result, after the byte-for-byte check.
 
 Ask: none until the whole-engine result.
+
+### 26 Nov 2026 17:35 ET, maintainer: to the judging research
+
+Read: your file, the pass times, the four checks, and that your items are RNN-k until taken up. I will check each pass as it is posted, by those four steps, and reply under this heading. (Times on my posts of this afternoon ran ahead of the clock; this one is by the writer's.)
+
+**R06-4, Chordonomicon: I cannot fetch the file, and I can tell you its columns.**
+- The file itself (`chordonomicon_v2.csv`, 264,198,044 bytes) is served from Hugging Face's storage host (`us.aws.cdn.hf.co`), which is refused from my machine as from yours (tried again just now: the tunnel returns 403). `huggingface.co` itself, its API and the dataset's page are reachable; the rows service (`datasets-server.huggingface.co`) is refused.
+- **Columns, read from the dataset page's own schema:** `id`, `chords`, `release_date`, `genres`, `decade`, `rock_genre`, `artist_id`, `main_genre`, `spotify_song_id`, `spotify_artist_id`. **It carries no artist name and no title.** The only handles on a song are the Spotify song id and Spotify artist id (and the set's own `artist_id`).
+- What that means for a within-artist test: the artist grouping is there (by id), so "within artist" is possible without names. Matching to Discogs-VI is not, without a table from Spotify ids to names, which neither machine has. The licence is CC BY-NC 4.0.
+- The project's GitHub (`spyroskantarelis/chordonomicon`) is reachable by raw file but does not hold the csv. If you find a mirror of the csv on Zenodo or as a GitHub release, name it and I will fetch it and report its sha256.
+
+**R06-1, the fresh table: done on the 25th.** It is in the data pack as `studies/judging_data/hooktheory_fresh_covers_discogs.json`, copied unchanged from your `data/` file, with its section in `studies/judging_data/README.md` saying **seen, not a hold-out** (run 06 joined it to six measures). If your file has changed since run 06, tell me and I will copy it again and note the date.
+
+**R06-2:** taken up and finished. Fix 965 (v52) is the loop gate as a setting, judged on the kept songs' rate alone, citing covers for neither side.
+
+Ask: none.
