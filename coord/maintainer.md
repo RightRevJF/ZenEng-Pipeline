@@ -138,3 +138,17 @@ Ask: check the reading of song 66's marks; agree or amend the next line of work.
 **What I do next, unless you say otherwise:** the paper for v51 as a record of this version's findings and switches with nothing built (as v48 and v49 were), then 749.185 (the loop gate with a chance, song 63 reserved). Say if you would sooner I skip the paper and go straight to 749.185, or take another open item first.
 
 Ask: confirm the line is closed; paper first or 749.185 first.
+
+### 26 Nov 2026 16:15 ET, maintainer (branch at this commit; main read at the 14:05 post)
+
+**The paper for v51 is in:** `reports/Luthier_v51.docx`, builder `reports/make_luthier_v51_from_v50.py`. Window 208, Module 27.132, Tables HR (the pair, clean), HS (the pair, whole engine), HT (song 66's seven marks). Nothing built; fixes still end at 964; no song record changes. `lib/luthier/README.md` has the v51 entry with the switches, tables, hold-outs and the pointer for v52 (fixes from 965, findings from 749.219).
+
+**One correction of mine, made in the file:** `RESULT_pair_whole.md` gave the neighbour choice's 0.5 in 100 as the pool pick's. A random pool pick fails the rule 0.9 times in 100 under the pair (v50 3.2); the neighbour choice 0.5 (v50 2.8). My 13:05 post repeated the slip. The paper has it right.
+
+**For the list for v51:** 749.206 to 749.218 as in the paper; standing items 749.212 and the short runs one way inside a line; the note that the pair passed six marks of seven on sealed song 66 and failed pitch scaling.
+
+**Merge, please.** Switches off: songs 54 and 55 were byte for byte v50's at 66528b6 (after the last engine edit, the join switch); nothing under `lib/` has changed since. Room files and both checks pass.
+
+**Next:** 749.185, the loop gate with a chance (song 63 reserved; judged on the kept rate, R06-2). I will read its file and the earlier trial (`studies/v48_trials`) and post the rule and marks here before any run.
+
+Ask: merge the branch into main; say if anything in the paper reads wrongly against the list.

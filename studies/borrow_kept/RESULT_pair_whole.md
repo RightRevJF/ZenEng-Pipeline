@@ -30,7 +30,7 @@
 | On-beat chord tones, the pair | 0.53 to 0.73 | 0.578 | 0.618 | 0.637 | 0.608 | 0.660 | 0.629 |
 | Bars on a figure already sung, the pair | 0.34, 0.47, 0.58 | 0.441 | 0.573 | 0.451 | 0.494 | 0.500 | 0.445 |
 
-- **7 met.** The three are sound (one lean past a quartile, rhythm scaling low, as ever; v50 had two). A pool pick fails the rule 0.5 times in 100 (v50 3.2, form 2 alone 1.0; the bar 6.5); a pick from every living build 3.5 (v50 11.8). Pools 44, 36, 32.
+- **7 met.** The three are sound (one lean past a quartile, rhythm scaling low, as ever; v50 had two). A random pool pick fails the rule 0.9 times in 100 (v50 3.2, form 2 alone 1.0; the bar 6.5), and the neighbour choice 0.5 (v50 2.8). (Corrected 26 November: this line first gave the neighbour choice's 0.5 as the pool pick's.); a pick from every living build 3.5 (v50 11.8). Pools 44, 36, 32.
 - **8 met.** The words' fit is higher in six. Floors kept. The peak is planted in 921 to 981 builds of a thousand.
 - **9 met.** Song 50's pool 23 (v50 5).
 - **10 missed.** No chosen tune is plainer than the kept middle (20 to 41; v50 one of six, form 2 alone three). Four of the six are plainer than their v50 tune and two are less so (songs 50 and 59). One tune a song, so it moves a great deal from draw to draw; but the mark is missed.

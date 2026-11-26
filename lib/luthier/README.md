@@ -720,3 +720,16 @@ Findings from 749.197.
 - **The chord's pull:** on-beat chord tones 0.46 → 0.86; borrow takes it to 0.92.
 - The share on the commonest pitch is a sum (register, chord, again: +0.06 each).
 - Next: read how kept lines repeat an earlier line (same pitch or another height); then borrow at a kept height, by scale steps. Marks first; a sealed song decides.
+
+### v51 (26 November): nothing built; the borrow traced, a mend one mark short on a sealed song
+
+Paper `reports/Luthier_v51.docx` (builder beside it), Window 208, Module 27.132, Tables HR to HT. No song record changes; fixes still end at 964.
+- **The fault:** verses on one pitch come from the borrow (818): it fires 8 times in 10, mostly onto lines of another length, where the line stops being a repeat but keeps its source's height (749.206, 749.208). Kept verse lines repeat a nearby line about 1 time in 9, at the same pitch, and mostly where the two lines have the same syllable count.
+- **The pair** (`LUTHIER_BORROW_KEPT=count_true` with `LUTHIER_CHORD_TIE=1`, both off): met six marks of seven on sealed song 66 and failed pitch scaling, 1.062 against v50's 0.912, kept middle 0.905 (749.217). Not built. Song 66 is spent.
+- **Other switches, off:** `LUTHIER_BORROW_KEPT=1` and `=count`; `LUTHIER_JOIN_MOVES=1` (a fresh line's first note by the kept joins; mends the joins, not the scaling).
+- **Tables:** `tables/kept_line_repeat.json`, `tables/kept_line_join.json` (makers in `lib/luthier/`).
+- **Studies:** `studies/line_repeats`, `studies/ladder`, `studies/borrow_kept` (every PREDICTION before its RESULT).
+- **Standing in v50:** returning lines that clash in song 55 (749.212); lines change direction more than kept lines; blue-note songs sing about a fourteenth of the kept blue notes; rhythm scaling low.
+- **Hold-outs:** 59 for everything; 50 and 66 spent; 63 reserved (loop gate, 749.185); 64, 65, 67 banked, not run.
+- **Method:** the two sessions post in `coord/` (rules in `coord/THREAD.md`). Clash marks count clashes apart from the blue notes 846 allows.
+- Next: Luthier v52 (row v223), Window 209, Module 27.133 (anchor "27.132"), tables HU on, fixes from 965, findings from 749.219.
