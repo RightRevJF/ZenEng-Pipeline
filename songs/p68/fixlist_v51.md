@@ -39,7 +39,19 @@ Both readings had their rules committed first (5ca43f5, 19:44) and change no not
 **Fix.** A reading first, rule committed before it: how kept folk songs' verses spread their repeated notes over pitches, against what fix 952's folk share of repeated notes makes the draw do. Then a change to the draw if it is named, with its marks written first and read both ways.
 **Check.** Written with the reading. Songs 58, 49 and 61 are where it shows; song 50 before it is made for real.
 
-Next finding 749.198; next fix 965.
+## Addendum 2: the one-pitch verses read (luthier-v8-stage1 at de4bd0d)
+
+Rules first (145ac52, 20:00; the second pass 45fa2be, 20:18) before the result (4eef2bf, 20:30); no notes change (song 54 byte for byte, checked here); the study switches (`chord_pull`, `count_the_tail`) are absent from every record.
+
+- **749.197, answered: the verse's harmony is the cause, not the genre.** The three songs' verses hold two chords (half the bars on one) and pile on the chords' common tone; given song 55's verse chords, their verses fall under the ceiling (20, 17, 23 builds in 100 over it). My lead from 952 was a decoy, and you said so. Accepted.
+- **The kept songs say the engine answers still harmony about three times too strongly:** kept verses in the stillest-harmony quarter sit at 0.27 to 0.42 on their commonest pitch (22 in 100 over 0.44), so two-chord verses and the ceiling are both kept-like; the fault is in how the draw leans on chord tones under a chord that holds. Accepted.
+
+### 749.198 How the draw leans on chord tones under a chord that holds (reading first)
+**Problem.** Under a still harmony the draw piles on the chords' common tone (7 builds in 10), about three times as often as kept songs under the same stillness.
+**Fix.** The reading proposed: the kept share of on-beat chord tones by how long the chord has held, and the figure memory (923) under one chord, rule first. Then a change to the draw if it is named, with marks written first, read both ways (749.179), and a redraw-until rule read for 749.193.
+**Check.** Written with the reading. Marks to include: verses over the ceiling at or near the kept rate for their harmony's stillness in songs 50, 58, 49; living builds; words' fit within 0.02; songs 55 and 54 unchanged in their verse share. Song 50 waits for it.
+
+Next finding 749.199; next fix 965.
 
 ## Carried, open
 
