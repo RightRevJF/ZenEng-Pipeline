@@ -23,3 +23,9 @@ What is still missing is size. The raw file has 1,946 fresh songs, and 1,295 of 
 Not data gaps, for the record:
 - **The McGill whole-song charts** (`studies/harmony/billboard_sections.json`) are on hand. Their only covers outcome is the hold-out, reserved for a measure that has passed first. Nothing has passed.
 - **Card 2's assigned paper** (arXiv 2603.03634, cycle matrices for non-equilibrium Markov chains) could not be read (permission timeout; the PDF fetch gave only the abstract). A reading gap, not a data gap.
+
+## Added after the experiments (the orchestrator, 26 November 2026)
+
+**The "fresh songs are now seen" note.** After tonight, the 1,295 fresh battery songs (and all 1,946 fresh songs' matches) have been joined to y and y_foreign. They are seen songs from here on. Every within-artist Hooktheory song with chords has now been spent on chord repetition.
+
+**Chordonomicon checked as a larger corpus (first principles' way through): not usable from here as it stands.** The Hugging Face dataset `ailsntua/Chordonomicon` (Kantarelis et al. 2024, arXiv 2410.22046; CC BY-NC 4.0; one file, `chordonomicon_v2.csv`, about 264 MB) is listed and not gated, but its download redirects to a storage host this cloud machine's proxy refuses (HTTP 403). Its card describes chords, genre, release date and Spotify IDs; it does not mention artist or title names, so matching it to Discogs-VI by the maintainer's title-and-artist rule would need Spotify lookups (no key here, and none should be stored). The exact need: a copy of `chordonomicon_v2.csv` reachable from zenodo.org or huggingface.co without the redirect, plus a table from Spotify track id to artist name and title (or a corpus that carries names). Both unverified until the file can be opened.

@@ -33,3 +33,10 @@
 - Not readable tonight (free, but arXiv serves them only as PDFs, whose bodies did not come through the fetch tool in this unattended run). Jason could drop either in the inbox:
   - Perea, J. A. & Harer, J. (2015). Sliding Windows and Persistence: An Application of Topological Methods to Signal Analysis. Foundations of Computational Mathematics 15, 799–838. doi:10.1007/s10208-014-9206-z; arXiv 1307.6188.
   - Gakhar, H. & Perea, J. A. (2023/2024). Sliding window persistence of quasiperiodic functions. Journal of Applied and Computational Topology. arXiv 2103.04540.
+
+## Run 06 (26 November 2026)
+- The inbox folder was empty, so nothing was received.
+- No new paywalled papers. Two papers were read in full from the arXiv HTML: March (2024), arXiv 2412.09434; Homs-Dones, MacKay, Sansom & Zhou (2025), arXiv 2506.12546 (abs pages blocked by unanswered permission prompts, so categories are unconfirmed).
+- Not readable tonight (free, PDF only; the PDF fetch returned only the abstract). Jason could drop it in the inbox:
+  - Cruz-de-la-Rosa & Guerrero-Poblete (2026). An approach to non-equilibrium Markov chains through cycle matrices. arXiv 2603.03634 (math.PR).
+- Still waiting from run 05: Perea & Harer (2015), arXiv 1307.6188; Gakhar & Perea (2023), arXiv 2103.04540.
