@@ -1,4 +1,4 @@
-# How a line repeats an earlier line: the result (749.204)
+# How a line repeats an earlier line: the result (749.206; the list for v51 gave 749.204 to the ladder)
 
 26 November 2026. Rule in `PREDICTION.md`, written first. `read.py`, `kept.json`, `builds.json`.
 
