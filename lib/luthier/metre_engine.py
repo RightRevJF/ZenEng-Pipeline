@@ -227,7 +227,9 @@ class Engine:
                 c2 = [p for p in cands if p % 12 in ch or (p - ton) % 12 in blue or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone (846: or a blue note, which kept songs sing over the major third)
                 cands = c2 or cands
             OT_ = self.S.get("octave_tail") if prev is not None else None                       # 964 (749.192; studies/the_peak_line): the table's +12 and -12 bins hold every interval of an octave or more, and ivp() gave the whole bin to each such pitch.
-            nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest
+            nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest. Where a rule has removed the octave itself, its share is not passed on (749.196: counted at 10 to 19 notes in a thousand, and left so on purpose: the pitches past it keep their own kept odds)
+            if OT_ and self.S.get("count_the_tail"):                                            # 749.196, for studies/song50_pool only: how often a side has pitches past the octave and no octave
+                self._tail_n = getattr(self, "_tail_n", 0) + 1; self._tail_no_octave = getattr(self, "_tail_no_octave", 0) + sum(1 for sd_ in (1, -1) if nb_[sd_] and (prev + 12 * sd_) not in cands)
             for p in cands:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 if OT_ and abs(p - prev) >= 12:

@@ -654,3 +654,11 @@ The first change to the engine's notes since v47. Paper: `reports/Luthier_v50.do
 - Next, as I see it: how a line gets to its top (kept songs begin there or step to it; 950 redraws until it is touched), with 749.171 and rhythm scaling.
 
 Next: Luthier v51 (row v222), Window 208, Module 27.132 (anchor "27.131"), tables HR…, fixes from 965, findings from 749.195.
+
+### After v50 (25 November): the list for v51's two readings
+
+`studies/song50_pool/RESULT.md`, rules first. No change to the notes (song 54 byte for byte).
+- **749.195:** the pitch ceiling (956) takes song 50's pool: 5 of 29 builds pass it (the eight other songs: 0.44 to 0.74). On the builds, the verses of the folk songs read (50, 58, 49) are over the ceiling in 56 to 65 builds of 100 (songs 55, 54: 15, 16); the middle verse has half its notes on one pitch. Likely 952's family share of repeated notes landing on one pitch; wants its own reading (kept folk verses' repeated notes by pitch) before song 50 is made for real. The chosen tunes' words' fit (0.399, 0.209) is a draw.
+- **749.196:** a side with pitches past the octave and no octave: 10 to 19 notes in a thousand, not rare. Left as it is on purpose (the pitches past the octave keep their own kept odds); put to the session.
+- 749.194: the writer ruled the octave gate stays.
+Findings from 749.197.
