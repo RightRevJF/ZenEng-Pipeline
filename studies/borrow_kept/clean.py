@@ -4,12 +4,12 @@ HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.normpath(os.pa
 import numpy as np, song_from_lyric as SL, metre_engine as M, make_kept_commonest_pitch as CP
 from read import deg, repeat
 from ladder import verse_figs
-T = json.load(open(os.path.join(ROOT, "tables", "kept_line_repeat.json")))["share"]; N = int(os.environ.get("N", "1000")); out = {}
+T7 = json.load(open(os.path.join(ROOT, "tables", "kept_line_repeat.json"))); T = T7["share"]; FORMS = {"the form": lambda: dict(T), "by the count": lambda: dict(T, by_count=T7["by_count"], true=False), "by the count, a true repeat": lambda: dict(T, by_count=T7["by_count"], true=True)}; RUN = [False] + os.environ.get("FORMS", "the form").split("|"); N = int(os.environ.get("N", "1000")); out = {}
 for stem in sys.argv[1:]:
     L = json.load(open(stem + ".json")); rec = json.load(open(stem + ".song.json")); o = {}
-    for form in (False, True):
+    for form in RUN:
         spec = json.loads(json.dumps(rec["spec"])); scale = sorted(spec["scale"])
-        if form: spec["borrow_kept"] = T
+        if form: spec["borrow_kept"] = FORMS[form]()
         E = M.Engine(spec); E.as_sung = lambda ns_: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"))[0]
         rng = random.Random(L.get("seed", 1)); sh = []; F = collections.defaultdict(list); fig = []; a = b = cl = nn = 0; same = tot = rep = lin = 0
         for _ in range(N):
@@ -31,8 +31,8 @@ for stem in sys.argv[1:]:
                     if len(dg[i]) < 4: continue
                     r = any(repeat(dg[j], dg[i]) is not None for j in (i - 2, i - 1) if j >= 0); lin += 1; rep += r
                     if not r and i >= 2 and len(dg[i - 2]) >= 4: tot += 1; same += abs(float(np.median(dg[i]) - np.median(dg[i - 2]))) < 1
-        o["the form" if form else "v50"] = dict(living=len(sh), height_two_back=round(same / max(1, tot), 3), verse_lines_that_repeat=round(rep / max(1, lin), 3), between_lines=round(float(np.median(F["between lines"])), 2), first_notes_spread=round(float(np.median(F["spread of the lines' first notes"])), 2), within_lines=round(float(np.median(F["within lines"])), 2),
+        o[form or "v50"] = dict(living=len(sh), height_two_back=round(same / max(1, tot), 3), verse_lines_that_repeat=round(rep / max(1, lin), 3), between_lines=round(float(np.median(F["between lines"])), 2), first_notes_spread=round(float(np.median(F["spread of the lines' first notes"])), 2), within_lines=round(float(np.median(F["within lines"])), 2),
             commonest_pitch=round(st.median(sh), 3), over_the_ceiling_in_100=round(100 * sum(x > 0.44 for x in sh) / max(1, len(sh)), 1), bars_on_a_figure_already_sung=round(st.median(fig), 3), clashes_per_100_notes=round(100 * cl / max(1, nn), 2), on_beat_chord_tones=round(a / max(1, b), 3))
-        print(os.path.basename(stem), "form" if form else "v50", json.dumps(o["the form" if form else "v50"]), flush=True)
+        print(os.path.basename(stem), form or "v50", json.dumps(o[form or "v50"]), flush=True)
     out[os.path.basename(stem)] = o
 json.dump(out, open(os.path.join(HERE, os.environ.get("OUT", "clean.json")), "w"), indent=1)

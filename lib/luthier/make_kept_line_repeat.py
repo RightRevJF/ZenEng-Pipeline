@@ -19,6 +19,7 @@ def repeat3(a, b): return next((h for x, y in ((a, b), (a, b[1:]), (a[1:], b)) f
 def kind(s): s = str(s).lstrip(">"); return "Chorus" if s in ("chorus", "refrain") else "Verse" if s == "verse" else "other"
 if __name__ == "__main__":
     d = KC.table(); key = {str(s): (int(g.key_pc.iloc[0]), MIN if str(g["mode"].iloc[0]) == "minor" else MAJ) for s, g in d.groupby("song", sort=False)}
+    BC = collections.Counter()
     N = collections.Counter(); R = collections.Counter(); R3 = collections.Counter(); short = collections.Counter(); songs = 0
     for k in KC.kept_songs():
         if k["song"] not in key: continue
@@ -29,6 +30,8 @@ if __name__ == "__main__":
                 if len(ls[i]) < 4: continue
                 for part in (kd, "all"):
                     N[part] += 1; short[part] += len(ls[i]) < 6
+                    for j in (i - 2, i - 1):
+                        if j >= 0 and len(ls[j]) >= 4: dd = min(3, abs(len(ls[i]) - len(ls[j]))); BC[(part, dd, "n")] += 1; BC[(part, dd, "r")] += repeat(ls[j], ls[i]) is not None; BC[(part, dd, "r3")] += repeat3(ls[j], ls[i]) is not None
                     R[part] += any(repeat(ls[j], ls[i]) is not None for j in (i - 2, i - 1) if j >= 0); R3[part] += any(repeat3(ls[j], ls[i]) is not None for j in (i - 2, i - 1) if j >= 0)
         for i, (l, s) in enumerate(zip(k["lines"], k["sec"])):
             if str(s) != cur:
@@ -39,4 +42,6 @@ if __name__ == "__main__":
     T = dict(note="749.207, a trial: the kept share of a part's lines (from its second, four notes or more) that repeat the line before or the line two before, within one section. 'other' is every part that is neither a verse nor a chorus; a part with no table of its own takes 'all'.",
              songs=songs, share={p: round(R[p] / N[p], 3) for p in ("Verse", "Chorus", "other", "all")}, lines={p: N[p] for p in N},
              described=dict(best_of_three_alignments={p: round(R3[p] / N[p], 3) for p in ("Verse", "Chorus", "other", "all")}, lines_of_four_or_five_notes_where_every_interval_must_agree={p: round(short[p] / N[p], 3) for p in ("Verse", "Chorus", "all")}))
+    T["by_count"] = {p: [round(BC[(p, dd, "r3")] / BC[(p, dd, "n")], 3) for dd in range(4)] for p in ("Verse", "Chorus", "other", "all")}; T["by_count_strict"] = {p: [round(BC[(p, dd, "r")] / BC[(p, dd, "n")], 3) for dd in range(4)] for p in ("Verse", "Chorus", "other", "all")}; T["by_count_pairs"] = {p: [BC[(p, dd, "n")] for dd in range(4)] for p in ("Verse", "Chorus", "other", "all")}
+    T["by_count_note"] = "749.209, a trial: of a part's nearby line pairs (a line and the line before or two before, both four notes or more) whose syllable counts differ by 0, 1, 2, 3 or more, the share that are repeats; by_count by the best of three alignments, by_count_strict aligned from the first note."
     json.dump(T, open(os.path.join(HERE, "..", "..", "tables", "kept_line_repeat.json"), "w"), indent=1); print(json.dumps(T, indent=1))

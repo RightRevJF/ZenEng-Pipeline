@@ -29,7 +29,7 @@ AIM_POWER = 1.0       # 920: how hard a song's repeats, steps and leaps lean tow
 CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre rises half as far as its top
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PEAK_CLIMB = {"1": True, "2": "fallback", "3": "line"}.get(os.environ.get("LUTHIER_PEAK_CLIMB", "0"), False)      # 749.182: a trial (studies/the_draw): the line that carries the planted peak holds no leap past an octave
-BORROW_KEPT = os.environ.get("LUTHIER_BORROW_KEPT", "0") == "1"      # 749.207: a trial (studies/borrow_kept), off
+BORROW_KEPT = {"1": "rate", "count": "count", "count_true": "count_true"}.get(os.environ.get("LUTHIER_BORROW_KEPT", "0"))      # 749.207, 749.209: trials (studies/borrow_kept), off
 LINE_HEIGHTS = os.environ.get("LUTHIER_LINE_HEIGHTS", "0") == "1"      # 749.201: a trial (studies/line_heights)
 CHORD_TIE = os.environ.get("LUTHIER_CHORD_TIE", "0") == "1"      # 749.198: a trial (studies/chord_tie)
 PEAK_TRIES = int(os.environ.get("LUTHIER_PEAK_TRIES", "60"))      # 950's draws for the carrying line; 240 in the trial of 749.192 (studies/the_peak_line)
@@ -200,7 +200,7 @@ def plan(L):
         import page_gate as PG_; spec["page_gate"] = dict(floor=PG_.table()["floor"]["plainness"], memory=FIGURE_MEMORY)
         if PITCH_CEILING: spec["pitch_ceiling"] = {k_: v_["ceiling"] for k_, v_ in json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_commonest_pitch.json")))["parts"].items()}      # 956 (749.134): a build whose verses or choruses put more of their notes on one pitch than nine kept songs in ten is passed over      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
         spec["no_leap_past_an_octave"] = OCTAVE_GATE; spec["title_stress"] = L.get("title_stress", TITLE_STRESS) if L.get("title_stress", TITLE_STRESS) == "inside" else bool(L.get("title_stress", TITLE_STRESS))      # 959 on in 4/4; 961 where the lyric asks ("title_stress": true)
-        if BORROW_KEPT: spec["borrow_kept"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_repeat.json")))["share"]      # 749.207: a trial form, off
+        if BORROW_KEPT: T7_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_repeat.json"))); spec["borrow_kept"] = dict(T7_["share"], **({"by_count": T7_["by_count"], "true": BORROW_KEPT == "count_true"} if BORROW_KEPT != "rate" else {}))      # 749.207: a trial form, off
         if LINE_HEIGHTS: spec["line_heights"] = True      # 749.201: a trial form, off
         if CHORD_TIE: spec["chord_tie"] = {k_: json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_chord_tie.json")))["weights"][k_] for k_ in ("on", "off")}      # 749.198: a trial form, off
         if OCTAVE_TAIL: spec["octave_tail"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_octave_tail.json")))      # 964 (749.192): the table's +12 and -12 bins hold every interval of an octave or more; each pitch past an octave was given the whole bin. Shared now: the octave its kept share, the pitches past it the rest between them. It met a sealed song (song 50) by a rule written first (studies/the_peak_line)
