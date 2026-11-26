@@ -226,8 +226,12 @@ class Engine:
             if self.S.get("clash_rule") and (long_ or not ch <= self.SCALE):                     # 808: over a chord from outside the key; 833: and under any chord on a note a beat long or more:
                 c2 = [p for p in cands if p % 12 in ch or (p - ton) % 12 in blue or not ((p + 1) % 12 in ch or (p - 1) % 12 in ch)]       # no tone a semitone from a chord tone, unless a chord tone (846: or a blue note, which kept songs sing over the major third)
                 cands = c2 or cands
+            OT_ = self.S.get("octave_tail") if prev is not None else None                       # 964 (749.192; studies/the_peak_line): the table's +12 and -12 bins hold every interval of an octave or more, and ivp() gave the whole bin to each such pitch.
+            nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest
             for p in cands:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
+                if OT_ and abs(p - prev) >= 12:
+                    sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
                 w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 w *= math.exp(-((p - mu) ** 2) / self.MV[2])                                         # 927: how closely a line keeps to its register
                 if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0      # 936 (749.113): and a repeated note
