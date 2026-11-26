@@ -18,7 +18,8 @@ def joins(lines):
     return ins, acr
 q = lambda v: [round(float(x), 3) for x in np.percentile(v, (25, 50, 75))]
 def figs(ins, acr): return {"move inside a line, mean semitones": float(np.mean(ins)), "move across a join, mean semitones": float(np.mean(acr)), "no move inside a line, share": float(np.mean([x == 0 for x in ins])), "no move across a join, share": float(np.mean([x == 0 for x in acr])), "across a join, a fourth or more, share": float(np.mean([x >= 5 for x in acr]))}
-if sys.argv[1] == "kept":
+if __name__ != "__main__": pass
+elif sys.argv[1] == "kept":
     import kept_corpus as KC
     A = collections.defaultdict(list)
     for k in KC.kept_songs():

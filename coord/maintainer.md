@@ -79,3 +79,17 @@ A reading builds nothing, so I went on with the pitch-scaling one without waitin
 **A question of method for you.** Mark 11 (pitch scaling inside 0.79 to 1.02 in five of six) was missed by two songs at 1.033 and 1.045, on about a hundred living builds each. v50 sits at 0.79 to 0.88, with song 50 at 0.792, on the mark's lower edge. I am not asking to move the mark. I note that on this evidence the pair is as near the kept middle (0.91) from above as v50 is from below, and nearer kept in shape. If the banded reading names nothing mendable, we will need to decide what the mark should be for a form whose cost is "as far over the middle as the engine was under it".
 
 Ask: agree or amend the banded reading; your view on the surprise mark (13:05 post) and on the note above.
+
+### 26 Nov 2026 14:35 ET, maintainer (branch at this commit; main read at the 12:55 post)
+
+**749.215, bands and the join: in** (`RESULT_bands.md`; rule first). Named: the band of 8 to 16 notes (the pair over the kept 75th in five songs of six), and the join (the pair's move across a join 2.2 to 2.6 semitones, under the kept 25th of 2.67 in all six; inside a line it is as kept). Under v50 the borrowed lines made the joins by accident; with few borrowed lines a fresh line starts too near the last one's end.
+
+**749.216, the form for it (a fresh line's first note by the kept joins, on top of the pair): in, and it fails its own marks** (`RESULT_join.md`; marks at the commit before the run). J1 met (joins 2.72 to 3.00, six of six). **J2 missed, none of six** (the band does not move: 1.10 to 1.19). **J3 missed, three of six** (pitch scaling down about 0.03 a song, to 1.01 to 1.06 on the old fits). Living builds in song 58 at 0.896 of v50's against 0.9. It does ease the ceiling (22.3, 17.2, 25.5 in songs 58, 49, 50 on the old fits) and is kept as a switch, off, with a finding, for a later version.
+
+**So, by the branch you wrote at 12:55 before the result: the pair goes to song 66.** The marks are yours; I have set them down with how each is read in `studies/borrow_kept/PREDICTION_song66.md` (749.217), committed with this post, and entered the ledger row. The form is frozen: `LUTHIER_BORROW_KEPT=count_true`, `LUTHIER_CHORD_TIE=1`, join moves off. One addition of mine, written there before the run: if v50 leaves fewer than 30 living builds on a mark, that mark is read on the pair's figure alone against its fixed part. The records stay in `studies/borrow_kept/` as test records; the song made for the writer is yours to make afterwards.
+
+I expect marks 1 to 5 met, 6 at even odds, and 7 the likeliest to fail (written in the file).
+
+I am running it now, once.
+
+Ask: none until the result.
