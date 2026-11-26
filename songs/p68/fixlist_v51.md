@@ -65,13 +65,26 @@ Rule first (0b6b04d, 20:34) before the result (c4251af, 20:46); no notes change.
 3. **A sealed song once,** for the form that passes the seen songs, its ledger line first. The writer names which (songs 64 and 65 are sealed and unreserved).
 **Check (for each form).** On-beat chord tones inside the kept 10th to 90th in every song; verses over the 0.44 ceiling at or under 30 builds in 100 in songs 50, 58, 49; living builds above v50's; builds' words' fit within 0.02; the chosen tunes at or over their floors; soundness and pools as for 964; song 50's pool at 10 or more. Added by the session: the melody's surprise at or under the popular-corpus median (749.18, 749.20), so loosened notes do not turn into wandering ones; and clashes against the chord no more than v50's, since fewer chord tones on the beat must not mean more notes a semitone off one.
 
-Next finding 749.200; next fix 965.
+## Addendum 4: the tie to the chord, tried and not built (luthier-v8-stage1 at 1e0a820)
+
+The form and nine marks (ce971b2, 20:49) and the two weights, fitted once as the rule allowed (a745e7a, 20:51), before the result (129ffa4, 21:05). No notes change with the switch off (song 54 byte for byte, checked here).
+
+- **Mark 2 holds, mark 1 fails; not built. Agreed.** On-beat chord tones fall to the kept rate (0.53 to 0.62; kept 0.64), but verses over the 0.44 ceiling stay at 50 to 54 in songs 50, 58, 49 and rise in songs 55, 54, 59 (to 33, 42, 38).
+- **749.199, the finding: the tie was moving the tune, not holding it.** Left to itself the draw sits on one pitch near its register's centre (the middle verse 0.38 to 0.46 on its commonest pitch; kept 0.31). Accepted. The reading of the switches in `held_chord` that took the three songs' fall for the cure was a fair reading that this test corrected.
+- **This joins 749.165 and 749.170.** The plain-and-pink study found kept songs that pile notes on three pitches are plainer and whiter (rho −0.45 each), and the region was left as a change to the draw. 749.198 (the chord tie), 749.170 (three-pitch concentration) and this are one item now.
+
+### 749.200 How the draw spreads a verse over pitches (reading first)
+**Problem.** The draw concentrates a verse on one pitch near its register's centre (0.38 to 0.46 against kept 0.31), and the chord tie had been hiding it; with the tie loosened to the kept rate, the one-pitch verses spread to every song.
+**Fix.** The reading proposed, rule first: how kept verses spread their notes over pitches (the share on the commonest one, two and three; where in the span they sit) against the draw, and which weight sets it (927's register pull, 846's degrees, 923's memory). Then a form for the draw; then the chord tie (749.198's form) with it, never alone.
+**Check (for the form, written before any run).** The verse's commonest-pitch and three-pitch shares inside the kept 10th to 90th in every song; verses over the 0.44 ceiling at or under the kept rate for their harmony's stillness; on-beat chord tones inside the kept 10th to 90th once the tie is added; the melody's surprise at or under the popular-corpus median; clashes no more than v50's; living builds, words' fit within 0.02, floors, soundness and pools as for 964; song 50's pool at 10 or more. Read both ways. The winner meets a sealed song the writer names (64 or 65).
+
+Next finding 749.201; next fix 965.
 
 ## Carried, open
 
 - 749.185 the loop gate with a chance (song 63 reserved).
 - 749.171 inside a one-bar line; rhythm scaling leans low.
-- 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163, 749.165 and 749.170 (the region).
+- 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163. (749.165 and 749.170, the region, are now part of 749.200.)
 
 ## Closed
 
