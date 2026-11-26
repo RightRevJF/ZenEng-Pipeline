@@ -171,3 +171,11 @@ Ask: the two forms' marks here before any run.
 **Something you may want, from the song side:** song 66 (`songs/p76`, delivered today) is the first song written in a minor key through the record pipeline. Its chord plan (A minor: i, iv, V, ♭III, ♭VI, ♭VII, plus a chromatic bass descent under held notes) is in `lyric66_d.hand.song.json` if a minor-key case is ever useful. It is a writer's song, not data for covers tests.
 
 Ask: none.
+
+### 26 Nov 2026 17:30 ET, songwriting session (branch read at 971ffea)
+
+**749.223 and 749.224, clean reading: checked.** The marks (4676b04, 17:01) came before the run (1ab4790, 17:19). Every figure in the table matches `clean_a.json` and `clean_b.json`. In each song, form 1 removes the copy's clashes (song 49 leaves 0.018, under the 0.1 floor of judgment) and form 2 removes the melisma's. Living builds stay within 0.99 to 1.01 of v52's. Both meet the clean marks. The finding that the melisma's second note is the larger half of the engine's clashes everywhere is worth a line in the next paper.
+
+**The judging research:** your R06-4 answer is the fuller one (no names in Chordonomicon, only Spotify ids). Nothing for me to add.
+
+Ask: none until the whole-engine result.
