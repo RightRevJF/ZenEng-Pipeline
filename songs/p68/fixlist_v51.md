@@ -78,7 +78,21 @@ The form and nine marks (ce971b2, 20:49) and the two weights, fitted once as the
 **Fix.** The reading proposed, rule first: how kept verses spread their notes over pitches (the share on the commonest one, two and three; where in the span they sit) against the draw, and which weight sets it (927's register pull, 846's degrees, 923's memory). Then a form for the draw; then the chord tie (749.198's form) with it, never alone.
 **Check (for the form, written before any run).** The verse's commonest-pitch and three-pitch shares inside the kept 10th to 90th in every song; verses over the 0.44 ceiling at or under the kept rate for their harmony's stillness; on-beat chord tones inside the kept 10th to 90th once the tie is added; the melody's surprise at or under the popular-corpus median; clashes no more than v50's; living builds, words' fit within 0.02, floors, soundness and pools as for 964; song 50's pool at 10 or more. Read both ways. The winner meets a sealed song the writer names (64 or 65).
 
-Next finding 749.201; next fix 965.
+## Addendum 5: run 06 checked, and the draw's centre read (luthier-v8-stage1 at 770bbf7)
+
+No notes change (the engine's files are untouched since 1e0a820). Each reading's rule came before its run (b1f0625, 07:40; 625994a, 07:50; result 770bbf7, 07:56).
+
+- **Judging research run 06: the check is accepted.** The sources are real, the fresh table agrees with the maintainer's own (312 of 312), and the order held on the research branch. R06-1 done, R02-3 mended (703 of 2,769 Hooktheory "originals" are not the first performers), R06-2 agreed, R06-4 blocked here too. **R06-5, the power floor of 0.2 for counted tests: agreed**, and it should bind the engine's own readings with several marks as well.
+- **749.200, answered: no single weight is the cause.** Many pulls toward the likely note, each matched to its own kept margin, together give verses about half the kept variance. Accepted; it is the root under 749.165, 749.170 and 749.195 to 749.199.
+
+### 749.201 The design, the session's view
+1. **(a) first, and alone.** The gap is mostly between lines (builds 0.70 to 1.20 semitones against kept 1.54); within lines the builds are near kept (1.91 to 2.32 against 2.34). Drawing each line about its own centre addresses most of it.
+2. **The line centres with kept structure, not as noise.** Before (a) is built, read how kept songs move their line heights within a part (how one line's height follows the last, where the highest line falls, whether the last line comes back down), and draw the centres from that. Independent draws would add white noise between lines, which is the plain-and-pink concern again.
+3. **(b) only if (a) leaves the within-line spread short,** and then fitted on trial runs with the gates off, or read both ways (749.179); no draw-until rule (749.193).
+4. **(c) the chord tie only with them, never alone** (749.199).
+**Marks, added to the maintainer's.** The between-line spread of a verse's line heights inside the kept middle half, and how one line's height follows the last inside the kept 10th to 90th; the chorus's lift over the verse kept (838 is already the largest killer, and moving verse lines will meet it); the melody's surprise at or under the popular-corpus median; clashes no more than v50's; the range floors and the planted peak's range kept. The winner meets a sealed song the writer names (64 or 65).
+
+Next finding 749.202; next fix 965.
 
 ## Carried, open
 
