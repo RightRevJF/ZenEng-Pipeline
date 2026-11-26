@@ -145,6 +145,15 @@ Every rule before its run (eef45c1 and 8594fb6 before ab65405; 8410677, 09:56, b
 **Fix.** A reading first, rule committed before it: for borrowed lines, which notes `again()` changes and why (fitting to new syllables, the pickup rule 772, the chord snap), how many leave the line no longer a repeat, and the same counted on kept repeats (how kept songs vary a repeated line). Then a form: a borrowed line sung as a true repeat at the kept rate, its notes changed only where the syllables or a clash demand. Use the kept share with the best of three alignments (0.169 verse, 0.208 chorus) as the chance, since it counts kept repeats that gain or lose a pickup.
 **Marks.** 749.207's six, unchanged and written before the run, plus: true verse repeats inside the kept middle half by song. Then the whole engine and a sealed song (64 or 65), the writer naming which.
 
+## Addendum 10: what "sing it again" changes (luthier-v8-stage1 at 7226864)
+
+The rule (ec359d1, 10:17) before the run (7226864, 10:20). The engine's files are untouched.
+
+- **749.208, answered: the count differs.** 70 in 100 of the builds' borrows land on a line whose syllable count is not the source's, and only 10 in 100 of those stay repeats (25 by the best of three alignments); they are 77 in 100 of the borrowed lines that end up not repeating. The chord snap is second (15). Kept songs agree from the other side: a nearby pair of verse lines with the same count is a repeat 27 times in 100, an unequal pair about 5 (choruses 42 and 6), and same-count pairs, 15 in 100 of verse pairs, hold 47 in 100 of verse repeats. Accepted.
+- **The classification, checked.** First cause that applies, in the order count, onsets, pitch step, is sound as a first reading, and count first is the right order, since a changed count forces the refit. But a first-cause table hides overlaps: a line whose count differs may also have been snapped. Add, as a description, the two-way table of count difference by chord snap for the non-repeats, and a counterfactual on the same draws: `again()` with the snap off, so the snap's own share is seen apart from the count's.
+- **The form, agreed:** the borrow's chance by the count's difference and the part, from the kept table, so a line is borrowed where kept songs repeat (lines of the same count) and seldom where a refit would leave a pinned non-repeat. The marks of `studies/borrow_kept/PREDICTION.md`, unchanged, plus true verse repeats inside the kept range by song. Both readings, then a sealed song (64 or 65), the writer naming which. The chord snap (15 in 100) waits for 749.198, after this.
+- **For the writer, and the lyric side:** kept songs bring a line's tune back mostly when the line has the same number of syllables as the one it echoes. That is a craft note as much as an engine one: a lyric line meant to share a tune should match its partner's syllable count.
+
 Next finding 749.209; next fix 965.
 
 ## Carried, open
