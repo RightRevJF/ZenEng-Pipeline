@@ -243,7 +243,9 @@ class Engine:
             nb_ = {1: sum(1 for q in cands if q - prev > 12), -1: sum(1 for q in cands if prev - q > 12)} if OT_ else None      # With the form on the bin is shared: the octave takes its kept share of it and the pitches past it share the rest. Where a rule has removed the octave itself, its share is not passed on (749.196: counted at 10 to 19 notes in a thousand, and left so on purpose: the pitches past it keep their own kept odds)
             if OT_ and self.S.get("count_the_tail"):                                            # 749.196, for studies/song50_pool only: how often a side has pitches past the octave and no octave
                 self._tail_n = getattr(self, "_tail_n", 0) + 1; self._tail_no_octave = getattr(self, "_tail_no_octave", 0) + sum(1 for sd_ in (1, -1) if nb_[sd_] and (prev + 12 * sd_) not in cands)
+            LO_ = self.S.get("ladder_off")                                                      # 749.203, for studies/ladder only: the draw with named parts left out. Absent from every record; with it absent nothing here is reached
             for p in cands:
+                if LO_ is not None: ws.append(self.ladder_weight(LO_, p, prev, last, mu, ch, U + t, ps, k, sy, DW, ton, WP, TR, OT_, nb_, end_off, len(ons))); continue
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 if OT_ and abs(p - prev) >= 12:
                     sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
@@ -272,6 +274,33 @@ class Engine:
             if sum(ws) <= 0: return None
             p = rng.choices(cands, ws)[0]; last = (p - prev) if prev is not None else None; ps.append(p); prev = p
         return ps
+    def ladder_weight(self, OFF, p, prev, last, mu, ch, at, ps, k, sy, DW, ton, WP, TR, OT_, nb_, end_off, n):
+        """749.203 (studies/ladder): pitches1's weight for one candidate with the parts named in OFF left out: register, chord, moves, runs, memory, degrees, words, end_off. The kept intervals and fix 964 always stand."""
+        w = self.ivp(p - prev, last) if prev is not None else (math.exp(-abs(p - mu) / 3) if "register" not in OFF else 1.0)
+        if OT_ and abs(p - prev) >= 12:
+            sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
+        if "chord" not in OFF: w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(at) else (1.3 if p % 12 in ch else 0.8)
+        if "register" not in OFF: w *= math.exp(-((p - mu) ** 2) / self.MV[2])
+        if "moves" not in OFF and prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0
+        if "runs" not in OFF:
+            rn_ = 0
+            for q_ in reversed(ps):
+                if q_ != p: break
+                rn_ += 1
+            if rn_ == len(ps) and self._runin and self._runin[0] == p: rn_ += self._runin[1]
+            if rn_ >= self.RUNP: w = 0.0
+        if "memory" not in OFF and self._figs:
+            tl = (self._figs[1] + ps)[-4:]
+            if len(tl) == 4 and tuple(max(-12, min(12, b_ - a_)) for a_, b_ in zip(tl, tl[1:] + [p])) in self._figs[0]: w *= self.PG["memory"]
+        if "moves" not in OFF and self.TILT and prev is not None: d_ = abs(p - prev); w *= self.TILT[0] if d_ == 0 else self.TILT[1] if d_ <= 2 else self.TILT[2] if d_ >= 5 else 1.0
+        if "degrees" not in OFF and DW: w *= DW.get(str((p - ton) % 12), 0.0)
+        if "words" not in OFF:
+            if WP and k > 0 and k < len(sy) and sy[k][0] == sy[k - 1][0] and sy[k][1] != sy[k - 1][1] and prev is not None:
+                up = (p > prev) if sy[k][1] else (p < prev); w *= WP[1] if p == prev else WP[0] if up else WP[2]
+            elif TR and k > 0 and k < len(sy) and sy[k][0] != sy[k - 1][0] and prev is not None:
+                w *= self.WW["step"][TR[k - 1]][TR[k]][0 if p < prev else 1 if p == prev else 2] ** self.WW["sp"]
+        if "end_off" not in OFF and k == n - 1 and end_off is not None and p % 12 == end_off: w *= 0.05
+        return w
     @property
     def MOVE_ON(self):
         """939 (749.118): a split note in a line sung again moves on 6 times in 10 and takes the pitch before it 4; the repeat weight scales those odds, as it weighs a repeated note in a fresh line"""
