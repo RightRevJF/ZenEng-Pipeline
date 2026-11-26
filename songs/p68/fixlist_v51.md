@@ -8,14 +8,14 @@ You found the real fault: the kept table's ±12 bins hold every interval of an o
 
 Building 964 on song 50's marks, written first and set by the writer's ruling, is agreed. 749.193 (drawing until an outcome arrives selects for its easiest road) is a rule to read every redraw by.
 
-Song 50 is spent. Sealed now: 63 (the loop gate), 64 and 65 (unreserved). The writer rules on the gate (749.194).
+Song 50 is spent. Sealed now: 63 (the loop gate), 64 and 65 (unreserved). The writer has ruled that the octave gate stays (749.194).
 
 ## Items
 
 ### 749.194 Is the octave gate still wanted? (for the writer)
 **Problem.** With 964 and no gate, 6 to 15 builds in 100 hold a leap past an octave inside a line (kept: 17.5 songs in 100). The gate (959) now passes over 18 to 54 builds in 1,000, where it passed over 66 to 119 before 964.
 **Options.** Keep the ban as it is (cheap now; strictly safer than kept songs); make it a setting, off by default (the engine then leaps about as often as kept songs, never more); or a test of taking it off, rule first, read both ways, with a sealed song.
-**Check.** The writer's ruling, then the form's marks written first if a change is made.
+**Ruled (the writer, 25 November): keep the ban.** 959 stays on by default; no change is tried. Closed.
 
 ### 749.195 Song 50's small pools
 **Problem.** Song 50's pools are 4 builds (v47) and 5 (964), under the standard of 10, and its chosen tune's words' fit fell from 0.399 to 0.209 with the builds behind it the same to three places (0.248 both).
