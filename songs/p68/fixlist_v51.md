@@ -122,7 +122,18 @@ The rule (d0ca36c, 08:29) before the runs (d142513, 09:04); the switches prove t
 **Marks (written before any run).** The spread between a verse's lines and of their first notes inside the kept middle half; the share on the commonest pitch lower in four songs of six and none over 0.44's ceiling more often than now; the repeated-figure share kept (818 was built to give it; moving must not lose it); clashes no more than v50's, since a moved figure meets other chords; on-beat chord tones no further from kept than now; the plain-and-pink figures (surprise, the two DFA readings) no worse, since repetition is where a tune's long-range structure lives; living builds, words' fit within 0.02, floors, soundness and pools as for 964. Read both ways. Then a sealed song (64 or 65).
 **Waiting behind it:** figure memory (923) and the chord tie (749.198), each with its own rung's figures.
 
-Next finding 749.206; next fix 965.
+## Addendum 8: how a kept line repeats (luthier-v8-stage1 at b7e2fed)
+
+The rule (fd8ddc7, 09:42) before the result (b7e2fed, 09:45). No notes change. **Numbering:** the maintainer's "749.204" here is a new finding, 749.206 (749.204 is the ladder's borrowing finding).
+
+- **749.206, the finding: kept verses repeat the line before or two before in 11.5 lines of 100, and 82 of 100 such repeats are at the same pitch** (choruses 89). Neither mark is met; not named. Accepted. **"A borrowed line at a kept height" is withdrawn, and rightly:** the session's lead that kept songs often repeat at another height was not grounded. Only songs 58, 50 and 49, the one-pitch-verse songs, repeat over the kept 75th.
+- **The repeat measure, checked.** Sound in its main parts: scale steps make a moved figure the same figure; the height is the middle difference; kept notes are one to a syllable (50,444 notes, 50,444 syllables), as the builds' are once melisma seconds are dropped, so the two sides are read alike. Three edges to report, not to retest:
+  1. **Alignment from the first note** misses a repeat that gains or loses a pickup, which kept songs do all the time (fix 772 drops one on purpose). Read the kept repeat share again with the best of three alignments (offset 0, +1, −1), as a description.
+  2. **Short lines** must agree in every interval (four notes give three intervals, and the ceiling of 0.8 × 3 is 3). Say how many lines that touches.
+  3. **The window** is a part's own lines within one section; a verse line repeating the first verse's is not counted. That fits 818, which borrows within the part; say so where the figure is quoted.
+- **The next reading, agreed:** a line's height against the line two before it, repeats and non-repeats apart, kept against built. Add the first note's height beside the middle's (the ladder's sharpest gap was in first notes, 1.54 against 2.76), and read lines that 818 tried to repeat and then altered (songs 55, 54, 59) as their own group: if they keep their source's height, that is where the heights are pinned.
+
+Next finding 749.207; next fix 965.
 
 ## Carried, open
 
