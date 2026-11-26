@@ -369,6 +369,114 @@
    "status": "failed",
    "status_set_by": "run05 brainstorm (measure gates)",
    "note": "stopped on the notes: residual clip-to-clip 0.05; 0.11; 0.19; 0.16; 0.155-0.18; 0.14. No outcome joined"
+  },
+  {
+   "id": "R06-G1",
+   "idea": "Holes in the chord complex: first Betti number of the flag (clique) complex of the chord graph, beta1_h = |E|-|V|+1-rank B2 (Hodge harmonic dimension)",
+   "stance": "Geometer",
+   "proposed": "run06",
+   "status": "withdrawn",
+   "status_set_by": "run06 brainstorm",
+   "note": "Withdrawn in round 2: residual after beta1, V, ln K unstable (0.18 seen, 0.15 fresh)."
+  },
+  {
+   "id": "R06-G2",
+   "idea": "Cycle rank beta1 = |E|-|V|+1 of the chord graph (one loop or many)",
+   "stance": "Geometer",
+   "proposed": "run06",
+   "status": "withdrawn",
+   "status_set_by": "run06 brainstorm",
+   "note": "Merged into lambda (R06-L1) and withdrawn; beta1 is mostly the number of distinct chords V (rho +0.76)."
+  },
+  {
+   "id": "R06-G3",
+   "idea": "A*: arrow of time beyond chance (exact binomial expectation subtracted)",
+   "stance": "Geometer",
+   "proposed": "run06",
+   "status": "withdrawn",
+   "status_set_by": "run06 brainstorm",
+   "note": "A renamed (rho +0.78) and fails fresh stability (0.18)."
+  },
+  {
+   "id": "R06-L1",
+   "idea": "One-loop share lambda: max over directed simple cycles of the projection of the Hodge cycle part C",
+   "stance": "Listener",
+   "proposed": "run06",
+   "status": "withdrawn",
+   "status_set_by": "run06 brainstorm",
+   "note": "Absorbs Inventor's orbit purity P and Geometer's dominant-cycle share D. Withdrawn as a gated test: residual after V, ln K, ch_rep, A unstable (0.146)."
+  },
+  {
+   "id": "R06-L2",
+   "idea": "Tonic downhill H: Dirichlet harmonic function from first to last chord evaluated at the tonic",
+   "stance": "Listener",
+   "proposed": "run06",
+   "status": "withdrawn",
+   "status_set_by": "run06 brainstorm",
+   "note": "It is the clip boundary: start/end on tonic explains 67%; residual stability 0.16."
+  },
+  {
+   "id": "R06-L3",
+   "idea": "Fresh-song confirmation battery: ch_rep primary, A secondary, on the 1,946 fresh songs",
+   "stance": "Listener (with the Skeptic)",
+   "proposed": "run06",
+   "status": "testing",
+   "status_set_by": "run06 chair",
+   "note": "Frozen as fresh_repetition (primary) with fresh_arrow, fresh_range, fresh_tonic, fresh_diatonic; N=6 tonight."
+  },
+  {
+   "id": "R06-I1",
+   "idea": "Harmonic chirality CH: signed area swept on the circle of fifths by the open chord-root walk (Green's theorem on the Hodge cycle part); clockwise = falling fifths",
+   "stance": "Inventor",
+   "proposed": "run06",
+   "status": "testing",
+   "status_set_by": "run06 chair",
+   "note": "Passes gates: stability 0.252 seen, 0.238 fresh; largest overlap ch_ic_mean -0.14; rho A +0.07."
+  },
+  {
+   "id": "R06-I2",
+   "idea": "Orbit purity P: the largest single cycle's share of the net current",
+   "stance": "Inventor",
+   "proposed": "run06",
+   "status": "withdrawn",
+   "status_set_by": "run06 brainstorm",
+   "note": "Merged into lambda (rho beta1 -0.90)."
+  },
+  {
+   "id": "R06-gH",
+   "idea": "Hodge gradient share g of the net chord flow (card 1's recipe)",
+   "stance": "Geometer, Listener, Inventor (independently)",
+   "proposed": "run06",
+   "status": "stopped",
+   "status_set_by": "run06 brainstorm",
+   "note": "Theorem (found by all three): for one walk the gradient part is the unit current from first to last chord, ||G||^2 = R_eff(first,last); reads only clip boundaries; stability 0.19 seen, 0.10 fresh."
+  },
+  {
+   "id": "R06-sigma",
+   "idea": "Entropy production of the chord chain (pseudocount 1/2; debiased; two-way edges only)",
+   "stance": "Inventor",
+   "proposed": "run06",
+   "status": "stopped",
+   "status_set_by": "run06 brainstorm",
+   "note": "Raw sigma is A renamed (rho +0.89); debiased is A plus ch_rep; two-way-edge version unstable (0.17)."
+  },
+  {
+   "id": "R06-engine",
+   "idea": "Song as heat engine: Levy area between melody height and harmonic home-ness",
+   "stance": "Inventor",
+   "proposed": "run06",
+   "status": "stopped",
+   "status_set_by": "run06 brainstorm",
+   "note": "Stability 0.06."
+  },
+  {
+   "id": "R06-hol",
+   "idea": "Melodic holonomy eta",
+   "stance": "Geometer",
+   "proposed": "run06",
+   "status": "stopped",
+   "status_set_by": "run06 brainstorm",
+   "note": "Stability 0.152."
   }
  ]
 }
