@@ -14,3 +14,5 @@ LOG.append({"when": "2026-11-26", "q": "Who sings it? A a baritone (Recommended)
 VOICE = "tenor"
 LOG.append({"when": "2026-11-26", "q": "When should song 66 get its music? A (Recommended) keep it unrun until the drafting fix is built, then make it for real with the design notes; it could also be that fix's fresh test song. B make it now on the current engine and redo it after the fix. C keep it unrun purely as a hold-out", "answer": "A"})
 STATUS = "banked, unrun; reserved for the drafting fix (749.208 form) as its fresh test song, then made for real with DESIGN_NOTES_FROM_THE_WRITER"
+LOG.append({"when": "2026-11-26", "who": "maintainer (via coord thread)", "what": "Song 66 spent as the sealed test of the pair (749.217): six marks of seven held, pitch scaling failed (1.062 against v50 0.912); the pair not built. On v50 song 66 reads well (verses over the ceiling 17.0 in 100). The test records are in studies/borrow_kept and are not the writer's song."})
+STATUS = "spent as the pair's sealed test (749.217, failed mark 7); unmade for the writer; can be made on v50"
