@@ -429,6 +429,15 @@ class Engine:
                 src = lines[(how[1], how[2])]
                 if src[0][0] < tm and src[0][0] < tm - (self.BREATH - 12): return None, ("join before a copy (780)", sec, i)     # 780: two fixed lines a beat apart or more
                 new = list(src)
+                if self.S.get("copy_clash"):                                                      # 749.223, a trial (studies/returning_clash), off: a copied line's long note that clashes under a chord other than its source's is moved to a chord tone, as again() does (833). Absent from every record
+                    Us_ = self.line_start(how[1], how[2]); DG_ = self.S.get("degrees") or {}; bl_ = set(DG_.get("blue", ())); tn_ = DG_.get("tonic", 0); mu_, lo_, hi_ = self.reg(sec, i); nw_ = []
+                    for j_, (t_, p_) in enumerate(new):
+                        ch_ = self.chord_at(U + t_)
+                        if (j_ == len(new) - 1 or new[j_ + 1][0] - t_ >= self.BEAT) and set(ch_) != set(self.chord_at(Us_ + t_)) and p_ % 12 not in ch_ and ((p_ + 1) % 12 in ch_ or (p_ - 1) % 12 in ch_) and (p_ - tn_) % 12 not in bl_:
+                            q_ = min((p_ + d_ for d_ in (-1, 1, -2, 2, -3, 3, -4, 4) if (p_ + d_) % 12 in self.SCALE and (p_ + d_) % 12 in ch_ and lo_ <= p_ + d_ <= hi_), key=lambda x_: abs(x_ - p_), default=p_)
+                            if q_ != p_: self.stats["749.223: a copied line's long note moved off a clash under another chord"] += 1; p_ = q_
+                        nw_.append((t_, p_))
+                    new = nw_
                 if sec in (self.S.get("vary_returns") or ()) and how[1] != sec and i != 0 and f"{sec}:{i}" not in self.S.get("hooks", ()) and len(new) > 2:      # 839 (749.8): a returning line, not the section's first nor the title's, lifts one held note
                     gaps = [(new[j + 1][0] - new[j][0]) if j + 1 < len(new) else min(24, slot - new[j][0] - self.REST) for j in range(len(new))]; st_ = [x[1] for x in sy]      # 856 (749.56): a note's sung length, the last note's as 844 leaves it
                     held = [j_ for j_ in range(len(new)) if gaps[j_] >= 12] or list(range(len(new)))
