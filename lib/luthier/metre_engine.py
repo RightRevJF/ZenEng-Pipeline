@@ -234,7 +234,8 @@ class Engine:
                 w = self.ivp(p - prev, last) if prev is not None else math.exp(-abs(p - mu) / 3)
                 if OT_ and abs(p - prev) >= 12:
                     sd_ = 1 if p > prev else -1; sh_ = OT_["up" if sd_ > 0 else "down"]["octave_share"]; w *= sh_ if abs(p - prev) == 12 else (1 - sh_) / nb_[sd_]
-                w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
+                if "chord_tie" in self.S: w *= (self.S["chord_tie"]["on" if self.on_beat(U + t) else "off"] if p % 12 in ch else 1.0)      # 749.198, a trial form (studies/chord_tie): a chord tone favoured by the kept odds, on the beat and off it
+                else: w *= (2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)
                 if "chord_pull" in self.S: w = w / ((2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)) * ((2.6 if p % 12 in ch else 0.3) if self.on_beat(U + t) else (1.3 if p % 12 in ch else 0.8)) ** self.S["chord_pull"]      # for studies/one_pitch_verses only: the chord's pull at another strength
                 w *= math.exp(-((p - mu) ** 2) / self.MV[2])                                         # 927: how closely a line keeps to its register
                 if prev is not None and (self.MV[0] != 1.0 or self.MV[1] != 1.0 or self.MV[3] != 1.0): d0_ = abs(p - prev); w *= self.MV[0] if 1 <= d0_ <= 2 else self.MV[1] if d0_ >= 5 else self.MV[3] if d0_ == 0 else 1.0      # 936 (749.113): and a repeated note
@@ -316,7 +317,7 @@ class Engine:
             j_ = on.index(t); long_ = j_ == len(on) - 1 or on[j_ + 1] - t >= self.BEAT
             if self.S.get("clash_rule") and long_ and p % 12 not in ch and ((p + 1) % 12 in ch or (p - 1) % 12 in ch):                 # 833, in a line sung again
                 p = min((p + d for d in (-1, 1, -2, 2, -3, 3, -4, 4) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch and lo <= p + d <= hi), key=lambda q_: abs(q_ - p), default=p)
-            if self.on_beat(U + t) and p % 12 not in ch: p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
+            if "chord_tie" not in self.S and self.on_beat(U + t) and p % 12 not in ch: p = min((p + d for d in (-1, 1, -2, 2) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch), key=lambda q_: abs(q_ - p), default=p)
             while p > hi: p -= 12 if p - 12 >= lo else 1
             while p < lo: p += 1
             while p % 12 not in self.SCALE: p -= 1
