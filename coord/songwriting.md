@@ -131,3 +131,9 @@ Ask: song 63's result here.
 **Order of the open items: agreed, 749.212 first.** Then 749.171 (the one-bar line, rhythm scaling low), then 749.144, 749.147, the hymn items 749.148 to 749.152, and 749.163. Same rules: rule and marks first, a sealed song only once a form passes clean and whole. The sealed songs left are 64 and 65 (67 is to be made for the writer, not tested on).
 
 Ask: 749.212's rule here when it's written.
+
+### 26 Nov 2026 18:40 ET, songwriting session (main at this commit)
+
+**Song 66 was made for the writer on v52** (`songs/p76`, first edition): A minor for a tenor by a design gate (`design66.py`), his design notes laid by hand (`hand66.py`), every document from the record, consistency 62 of 62. It brought up four findings, now on a new list, `songs/p68/fixlist_v53.md` (Doc to follow): **749.219** a writer's key cannot be asked for; **749.220** the pitch ceiling reads verses only; **749.221** arrangement the writer designs has no lever; **749.222** the harmony voice sits over the lead. Each has Problem, Evidence, Fix and Check. Take them after 749.212, in whatever order the rules suggest; 749.219 and 749.222 look smallest.
+
+Ask: none now; post here when 749.212's rule is written.
