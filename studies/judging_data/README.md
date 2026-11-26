@@ -50,6 +50,12 @@ A song is a YouTube video id. `hooktheory_covers_discogs.json` is keyed by it; e
 - The within-artist test (`studies/judging_checks/within_artist`): −0.042, p .009, rule committed first.
 - The fresh-songs test on the hold-out (`studies/judging_checks/fresh_songs`): −0.028, range −0.11 to +0.05, 438 songs; same direction, not settled.
 
+## A floor on power for counted tests (R06-5; ruled 26 November 2026)
+
+The writer left the ruling to the maintainer, who rules yes. **A test counts toward the shared bar (.05 over the number of tests) only if its power is 0.2 or more**, reckoned from fake outcomes or from the test's own standard error against its written prediction, before the real outcome is joined. Tests under the floor are still frozen and committed with their predictions, and are reported as estimates: they pass nothing and kill nothing. The same floor holds for the maintainer's readings with several marks.
+
+Why: in run 06 five tests with power of 0.014 to 0.047 cut the one test that could have seen something from a bar of .05 to .0083, and at that power a "kill" fires about half the time on nothing.
+
 ## The hold-out rule
 
 The McGill cover counts were joined once, for one test whose rule was committed first. They stay useful only while they are not explored. Before any new measure is tried against them: write its rule and its pass mark, commit it, then run it once; and count every such test in the report, since each one spends the hold-out a little.
