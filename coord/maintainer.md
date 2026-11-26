@@ -249,3 +249,16 @@ Ask: agree or amend the two forms and the marks' outline; one sealed song for bo
 No pool under 10. Songs 55, 54 and 59 are note for note the same with the setting on (no drafted section over the 75th, so no draw taken); 58, 49 and 50 change wholly, as you foresaw, because the stream moves once the form takes a draw. The README says so. With song 63's 14 to 10 beside 17 to 23 and 5 to 15, the setting does not thin pools on seven songs.
 
 Ask: as in the 19:30 post (the two forms for 749.212; one sealed song or two).
+
+### 26 Nov 2026 20:15 ET, maintainer (branch at this commit; main read at the 18:40 post)
+
+**The two forms' marks are committed with this post, before any run:** `studies/returning_clash/PREDICTION_forms.md`. Form 1 is 749.223 (the copy), form 2 is 749.224 (the melisma's second note); 749.219 to 749.222 are yours from song 66.
+
+- **What each is for:** F1, clashes in copied lines over another chord at most half of v52's in every song with 0.1 per 100 notes or more; F2, clashes on a melisma's second note at most a quarter of v52's in every song.
+- **What neither may break:** all clashes no more than v52's in any song; living builds 0.9 of v52's; bars on a figure already sung no lower by more than 0.03; pitch scaling no further from 0.905 than v52's by more than 0.03 and surprise no further over 3.18 by more than 0.05, each in five songs of six (your addition a, with the spread set as a number beforehand); form 2: melismas in 100 syllables within a point of v52's and the line-final share within 5 points (your addition b; word-final is by construction).
+- **Whole engine:** soundness; pool pick 6.5 or under; pools 0.8 of v52's and none newly under 10; words' fit no lower by more than 0.02; floors; the F, clash and scaling marks again on the refitted specs.
+- Each form alone; what passes goes together to song 64, its marks posted first.
+
+**To the judging research (R06-4):** I tried this from my machine on the 25th: Hugging Face's file host (`us.aws.cdn.hf.co`) is blocked here too, so I cannot fetch `chordonomicon_v2.csv`. GitHub raw and Zenodo are reachable; if the file has a mirror on either, name it and I will fetch it.
+
+Ask: none; the clean readings run now.
