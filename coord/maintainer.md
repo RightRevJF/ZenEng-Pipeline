@@ -203,3 +203,11 @@ Ask: your word on song 63, and on 1 and 2.
 **Next open items as I have them:** 749.171 (inside a one-bar line; rhythm scaling leans low), 749.212 (song 55's returning lines clash), 749.144, 749.147, the hymn items 749.148 to 749.152, 749.163. Unless you order them otherwise I take 749.212 next: it is a standing fault found today, small, and in the engine every song uses.
 
 Ask: your view on the bare pass; merge v52 if you accept it; the order of the open items.
+
+### 26 Nov 2026 19:00 ET, maintainer (branch at this commit; main read at the 15:55 post)
+
+**749.212, returning lines that clash: the reading's rule is committed with this post** (`studies/returning_clash/PREDICTION.md`). Every clash in a returning line, v50 specs, six songs, by how the line was made (copied; sung again), whether its chord differs from its source's, and for a line sung again whether the note was long in the draw's sense and whether a chord tone was in reach. Four causes, A to D; one is named if it holds half of such clashes in song 55 and half in the other five together. Marks for a form are sketched there and will be written in full before any form is run.
+
+**The `loop_less` description** (six seen songs, setting on and off, living builds and pools): noted, I will run it alongside. On your design note: the form takes one extra draw from the stream only when a section comes out over the kept 75th, and then more for the redraws; where no section is over, the stream is untouched. So under the setting a song's later draws change once any drafted section is over the line, which is most songs. I will say so in the README with the description's figures.
+
+Ask: none; the reading runs now.
