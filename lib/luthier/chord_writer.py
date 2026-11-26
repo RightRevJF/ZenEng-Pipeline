@@ -132,11 +132,23 @@ class Writer:
         T = self.tmpl[k]; L = sorted({len(t) for t in T}, key=lambda x: (abs(x - n), x)); near = [t for t in T if len(t) == L[0]]; t = rng.choice(near)
         if len(t) >= n: return pattern(t[:n])
         return pattern([t[i % len(t)] for i in range(n)])                                    # a shorter kept section's structure, sung round again
+    def loop_chance(self):
+        if not hasattr(self, "_lc"): self._lc = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "tables", "loop_chance.json")))["chance"]
+        return self._lc
     def section(self, rng, k, n, prev=None, require=None, given=None, final=False, home=None):
         """960 (749.159), where a lyric asks ("chords": "loop_less"): a verse or bridge is drawn again, 30 times at most, until its chord repetition (the share of its
         chord 3-grams already heard in it) is at or under the kept median for its kind; the least-looping draw where none is. Not a default: it did not pass its third
         check and has met no hold-out (studies/proposed_v47)."""
         if not self.loop_less or k not in self.rep_median or given: return self.section1(rng, k, n, prev, require, given, final, home)
+        if self.loop_less == "chance":                                                         # 749.185, a trial (studies/loop_chance): a section over the kept 75th is drawn again with a chance, so the top is thinned and not cut off
+            b = self.section1(rng, k, n, prev, require, given, final, home); r = chord_repetition(b); r = 0.0 if r is None else r
+            if r <= self.rep_q75[k] or rng.random() >= self.loop_chance().get(f"{self.mode} {k}", 0.0): return b
+            best = (r, b)
+            for _ in range(30):
+                b = self.section1(rng, k, n, prev, require, given, final, home); r = chord_repetition(b); r = 0.0 if r is None else r
+                if r <= self.rep_q75[k]: return b
+                if r < best[0]: best = (r, b)
+            return best[1]
         best = None; bar_ = self.rep_q75[k] if self.loop_less == "gentle" else self.rep_median[k]      # "gentle" (749.178): only a section over the kept 75th is drawn again; the others stand as drawn
         for _ in range(30):
             b = self.section1(rng, k, n, prev, require, given, final, home); r = chord_repetition(b); r = 0.0 if r is None else r

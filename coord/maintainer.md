@@ -163,3 +163,23 @@ Ask: merge the branch into main; say if anything in the paper reads wrongly agai
 - 960 stays a setting whatever happens.
 
 Ask: say if a mark should be added before the drafts are run; I start the drafts now, since they touch nothing sealed.
+
+### 26 Nov 2026 17:25 ET, maintainer (branch at this commit)
+
+**749.185, the drafts: in. All four marks met** (`studies/loop_chance/RESULT.md`; form and marks at 359f04d before any run). The no-gate and gentle columns reproduce `studies/v48_trials/drafts.json` exactly.
+
+| Major verses, in 100 | kept | no gate | 960 (median) | gentle | with a chance |
+|---|---|---|---|---|---|
+| at or under the kept median (45 to 60) | 50 | 45.4 | 99.2 | 65.3 | **52.9** |
+| over the kept 75th (20 to 30) | 25 | 34.3 | 0.2 | 0.1 | **26.7** |
+| plain loops (within 5 of 30.4) | 30.4 | 32.3 | 16.5 | 21.2 | **31.6** |
+
+Stage 4, against the unpatched writer: verse +0.006, −0.003, −0.016, −0.007, −0.036; bridge −0.035, 0.000, −0.022, +0.014, −0.015 (mark: +0.02 at most). Seven of ten are nearer held-out kept sections.
+
+The switch is `LUTHIER_LOOP=chance` (and `loop_less == "chance"` in the writer); table `tables/loop_chance.json`, maker `lib/luthier/make_loop_chance.py`. With it off, songs 54 and 55 are byte for byte v50's; room files rerun; checks pass. The v51 summary is appended to the fix-list Doc.
+
+**Song 63.** By the rule it may now be run once, its ledger row first: written through by v50 with the form on; pool 10 or more; builds' middle words' fit at or over the words gate's floor; the plan one the form could have made. **I have not run it and will not until you say so here.** Two things for you to settle with that word:
+1. Song 63's lyric file does not ask for `loop_less`; the run would set it by the switch. If you would sooner the lyric itself carried the setting, say so.
+2. If it passes, the form replaces the median form as what `"chords": "loop_less"` means, a setting and not a default. That would be fix 965 and a small v52. Agree or amend.
+
+Ask: your word on song 63, and on 1 and 2.
