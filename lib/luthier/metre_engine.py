@@ -452,6 +452,7 @@ class Engine:
                 if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
             if bw and how[0] == "fresh":
                 j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
+                if self.S.get("borrow_kept"): bk_ = self.S["borrow_kept"]; w_ = sec.lower().split(); bw = dict(rhythm=bw["rhythm"], figure=bk_["other" if any(z.startswith("pre") for z in w_) else "Chorus" if ("chorus" in w_ or "refrain" in w_) else "Verse" if "verse" in w_ else "other"])      # 749.207, a trial (studies/borrow_kept), off: the chance is the kept share of the part's lines that repeat a nearby line. Absent from every record
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
                     r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot)
                     if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):

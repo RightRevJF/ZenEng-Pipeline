@@ -13,7 +13,8 @@ def verse_figs(lines):
     return {"between lines": float(np.sqrt(np.sum(w * (mids - m) ** 2) / w.sum())), "within lines": float(np.sqrt(sum(np.sum((np.array(l, float) - np.mean(l)) ** 2) for l in lines) / w.sum())),
             "a line's first note less its middle": float(np.mean([l[0] - np.mean(l) for l in lines])), "a line's last note less its middle": float(np.mean([l[-1] - np.mean(l) for l in lines])), "a line's range": float(np.median([max(l) - min(l) for l in lines])), "spread of the lines' first notes": float(np.std([l[0] for l in lines]))}
 q = lambda v: [round(float(x), 3) for x in np.percentile(v, (25, 50, 75))]
-if sys.argv[1] == "kept":
+if __name__ != "__main__": pass
+elif sys.argv[1] == "kept":
     import kept_corpus as KC
     R = collections.defaultdict(list); d = KC.table(); K = set(json.load(open(os.path.join(ROOT, "tables", "kept_songs_4-4_pop.json"))))
     for k in KC.kept_songs():
