@@ -699,3 +699,8 @@ Findings from 749.197.
 - 749.200: many pulls toward the likely note, each matched to its own kept figure, together give verses with about half the kept variance. Not one cause.
 - Proposed, as a design for the session and the writer before any run: each line given its own centre at the kept spread between lines; the register's width fitted to the kept spread within lines, as 930 fits the moves; then the tie to the chord (749.198) with it.
 - R06-5 ruled: a power floor of 0.2 for counted tests (`studies/judging_data/README.md`).
+
+### 26 November: two things done while the design waits
+
+- **R04-2** (`studies/judging_checks/first_performers/RESULT.md`, rule first): among first performers, on other artists' versions only, chord repetition against covers is **−0.026 (p .19; power 0.52): unsettled.** Where the artist was not the first performer it is −0.10 (an estimate; power 0.18). 749.157's −0.042 was carried in good part by artists' covers of others' songs. Counting other artists' versions only changes nothing by itself. The loop gate (749.185) is to be judged on the kept rate.
+- **Kept figures for the design** (`studies/draw_centre/KEPT_FOR_THE_DESIGN.md`, `kept_lines_by_part.json`): spread within a line 2.2 to 2.3 in every part; between lines 1.3 (chorus), 1.5 (verse, bridge), 2.0 (pre-chorus); a verse's highest line is in its last third 42 times in 100, a chorus's in its first third 44, a pre-chorus's in its last third 53.
