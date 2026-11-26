@@ -4,6 +4,8 @@
 
 Nothing here is in the engine. Labels R06-1 to R06-5 are proposal labels; the maintainer assigns 749 numbers to whatever is taken up. Every item is rule first: read, then decide.
 
+Published as the Doc "Proposed fix list: judging research, run 06" (https://claude.ai/artifact/4L32N9LQH9qbhFJ1We9Anm); the night's report is the Doc "Judging research, run 06" (https://claude.ai/artifact/USh14irAzZfEncPjQWAYQK).
+
 **Checked on origin/main (073efd6) before proposing, read only.**
 - `songs/p68/fixlist_v51.md` is the latest list (next finding 749.197 at its head, addenda to 749.199). It carries no item from this research. `lib/luthier/REVIEW_stage35.md` is the latest review.
 - 749.169 is done: `studies/judging_data/README.md` now has a hold-out ledger. Song 50 is spent on fix 964; 63 (reserved for 749.185, the loop gate with a chance), 64 and 65 are sealed.
@@ -19,8 +21,8 @@ Nothing here is in the engine. Labels R06-1 to R06-5 are proposal labels; the ma
 | R06-2 | 749.185 / 749.178: the fresh songs cannot settle "which way covers lean"; judge the loop gate on the kept rate alone | Reading caveat on a waiting trial (replaces R05-3) | Reading only, no gate |
 | R06-3 | Recorded: chirality unsettled; melody range and diatonicity killed; the Hodge "downhill" share is the excerpt's ends | Record (continues R05-4) | No |
 | R06-4 | A larger chords corpus with names, for a powered confirmation | Data request | No |
-| R06-5 | Count only tests with power of 0.2 or more | Method (updates R03-4) | No |
-| Carried | R05-1 (updated), R05-5, R04-2, R03-2, R02-3, R02-4, J6c | | |
+| R06-5 | Count only tests with power of 0.2 or more | Method (replaces R03-4) | No |
+| Carried | R05-1 (folded into R06-1), R05-5, R04-2, R03-2, R02-3, R02-4, J6c | | |
 
 ## In short
 
@@ -83,7 +85,7 @@ For the engine nothing changes. The useful results are the re-match (R06-1), the
 **Check.** The file names its source, licence, match rule and counts, and a hold-out-ledger line is written before any test touches it.
 
 ### R06-5 Count only tests with power of 0.2 or more
-**Status.** Method. Updates R03-4 (a power floor). Jason decides.
+**Status.** Method. Replaces R03-4 (a power floor). Jason decides.
 
 **Problem.** Tonight five fresh tests had power of 0.014 to 0.047, and counting them cut the one well-powered test's bar from .05 to .0083 (chirality's power from 0.35 to 0.15). Their kill lines fire about half the time when there is no effect.
 
@@ -116,6 +118,6 @@ For the engine nothing changes. The useful results are the re-match (R06-1), the
 - March, P. (2024), Helmholtz-Hodge Decomposition on Graphs, arXiv 2412.09434. https://arxiv.org/abs/2412.09434
 - Homs-Dones, MacKay, Sansom & Zhou (2025), Circular Directional Flow Decomposition of Networks, arXiv 2506.12546. https://arxiv.org/abs/2506.12546
 - Kantarelis et al. (2024), Chordonomicon, arXiv 2410.22046. https://arxiv.org/abs/2410.22046
-- Run 06 on judging-research: commits 08b5167 (predictions), 3f39f56 (results).
+- Run 06 on judging-research: commits 08b5167 (predictions), 3f39f56 (results), 5972b42 (report).
 - On main: `songs/p68/fixlist_v51.md`; `lib/luthier/REVIEW_stage35.md`; `studies/judging_data/README.md` and `make.py`; `studies/judging_checks/within_artist/`; `studies/covers/covers_match_discogs.py`; `studies/covers/study_covers_discogs.py`.
 - Data: Hooktheory via Sheet Sage (CC BY-NC-SA 3.0); Discogs-VI 20240701 (CC BY-SA 4.0).

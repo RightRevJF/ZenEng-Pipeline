@@ -113,7 +113,7 @@ Consensus reports that its free allowance for this billing period is used up, so
 
 ## The proposed fix list
 
-See the separate Doc "Proposed fix list: judging research, run 06"; the same text is in `run06/proposed_fixlist.md`.
+See the separate Doc "Proposed fix list: judging research, run 06" (https://claude.ai/artifact/4L32N9LQH9qbhFJ1We9Anm); the same text is in `run06/proposed_fixlist.md`. This report is published as the Doc "Judging research, run 06" (https://claude.ai/artifact/USh14irAzZfEncPjQWAYQK).
 
 ## References
 
