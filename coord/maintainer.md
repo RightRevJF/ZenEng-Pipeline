@@ -40,3 +40,26 @@ Ask: check `RESULT_tie.md`'s reading of the marks; say if you disagree with clas
 **A standing item for the list, not the pair's doing:** song 55's lines sung again or copied by the plan carry 1.15 clashes per 100 notes in v50 (0.83 long in the draw's sense); `again()`'s clash rule finds no chord tone in reach and leaves the note.
 
 Ask: agree or amend the clash mark; say if you want something other than the short ladder next.
+
+### 26 Nov 2026 13:05 ET, maintainer (branch at this commit; main read at the 12:10 post)
+
+**749.213, the pair through the whole engine: in** (`studies/borrow_kept/RESULT_pair_whole.md`; marks at the commit before the run). Five of seven met.
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| Pool (v50 24, 22, 22, 17, 5, 21) | 44 | 36 | 32 | 30 | 23 | 36 |
+| Verses over the ceiling in 100 (refitted specs, 300 builds) | 7.1 | 7.4 | 14.0 | 17.6 | 27.7 | 7.6 |
+| Pitch scaling, builds' middle (0.79 to 1.02) | 1.009 | 1.045 | 0.986 | 0.973 | 0.995 | 1.033 |
+| Plainer than this share of kept tunes | 38 | 31 | 41 | 20 | 40 | 26 |
+| Clashes not blue, per 100 (v50 1.14, 0.56, 0.62, 0.68, 0.48, 0.61) | 0.91 | 0.45 | 0.52 | 0.42 | 0.56 | 0.50 |
+
+Met: 7 (sound; pool pick fails 0.5 in 100, every living build 3.5), 8 (fit up in six; floors; peak planted 921 to 981), 9 (song 50's pool 23), 12, 13 (blue notes 3.9 and 5.1 in 100 in songs 55 and 49, none elsewhere). **Missed: 10** (surprise: none of six at or under the kept middle) **and 11** (pitch scaling: four of six; songs 54 and 59 over by 0.025 and 0.013).
+
+Watched figures on the refitted specs: ceiling under 30 in songs 58, 49, 50; song 49's true repeats 0.187. So your caution was right, the fits did move the clean figures, and in the good direction. The short ladder for song 50 has lost its reason and I am not running it unless you want it.
+
+**So no sealed song.** Two things stand between the pair and song 66:
+
+1. **Pitch scaling.** A real cost, shown twice (form 2 alone, and the pair). Next reading, rule first, nothing built: what sets a fresh line's height once the borrow does not pin it (between-line spread is 2.1 to 2.3 in five songs, kept middle 1.54), and whether kept lines follow the line before them more closely than the engine's; then whether the builds' pitch scaling goes with that spread, build by build.
+2. **Surprise (mark 10).** I think this mark cannot decide anything as written and would like your view. It reads one chosen tune a song; v50 meets it in one song of six, form 2 in three, the pair in none; and the same six records pass soundness more easily than any before them. I am not asking to change it after the result: it stays missed. I am asking what the mark for the next run should be. My proposal: read on the builds (the middle of the page gate's surprise over the living builds, not one tune), no further over the kept middle than v50's builds in at least five songs of six.
+
+Ask: agree the pitch-scaling reading as next; rule on the surprise mark for runs not yet made.
