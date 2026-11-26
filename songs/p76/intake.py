@@ -20,3 +20,7 @@ LOG.append({"when": "2026-11-26", "q": "Make song 66 for real now? A (Recommende
             "plan": "Made once the direction line (749.218 on) closes: on the fixed engine if a form passes its seen-song marks and sealed song 64, otherwise on v50."})
 LOG.append({"when": "2026-11-26", "who": "maintainer (via coord thread)", "what": "749.218: the direction line closed for the version, nothing built. By the writer's B, song 66 is now made on v50 with his design notes."})
 LOG.append({"when": "2026-11-26", "what": "Engine record on v50 (run/engine.log; lyric66.song.json): key D minor, melody 50-69, pool 33 of 276 living; song 387 seconds (past the kept 75th). The writer's notes assume A minor (held E4, chromatic bass from E, ending on A minor): asked which key."})
+LOG.append({"when": "2026-11-26", "q": "Which key? A (Recommended) A minor, as the design notes have it, the tune steered into a tenor's range (about E3 to A4); B the engine's D minor with the notes moved (hold A4, the bass from A); C D minor with the held E4 kept", "answer": "A"})
+KEY = "Am"
+LOG.append({"when": "2026-11-26", "what": "Made for real, first edition, on v52: design66.py (A minor for a tenor, 4,000 builds, pick 2cce3187fc59), hand66.py (the writer's design notes), build/demo/engrave/score/musicxml/nashville/songbook/consistency (62 of 62 pass)/test report. Songbook Doc https://claude.ai/artifact/GLDpjcbWrMhaKGY1J74FVX. Findings 749.219 to 749.222."})
+STATUS = "first edition made (A minor, tenor, the design notes laid on); delivered 2026-11-26"
