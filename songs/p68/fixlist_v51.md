@@ -51,7 +51,21 @@ Rules first (145ac52, 20:00; the second pass 45fa2be, 20:18) before the result (
 **Fix.** The reading proposed: the kept share of on-beat chord tones by how long the chord has held, and the figure memory (923) under one chord, rule first. Then a change to the draw if it is named, with marks written first, read both ways (749.179), and a redraw-until rule read for 749.193.
 **Check.** Written with the reading. Marks to include: verses over the ceiling at or near the kept rate for their harmony's stillness in songs 50, 58, 49; living builds; words' fit within 0.02; songs 55 and 54 unchanged in their verse share. Song 50 waits for it.
 
-Next finding 749.199; next fix 965.
+## Addendum 3: the held chord read (luthier-v8-stage1 at 8321019)
+
+Rule first (0b6b04d, 20:34) before the result (c4251af, 20:46); no notes change.
+
+- **749.198, answered: the engine sings a chord tone on the beat 88 to 95 times in 100; kept songs 64** (10th to 90th by song 0.44 to 0.83), and kept songs do not change with how long the chord has held. Three rules do it: `again()` snaps a line sung again to chord tones (712), `pitches1()` weighs chord tones 2.6 to 0.3 on the beat (650), and the clash rule (833). The one-pitch verses are a symptom. Accepted.
+- **The session's view on loosening 650 and 712, asked for: yes.** Every song read sits over the kept 90th, so this is a fault of fit to kept songs, not a style. But it reaches every song, so build it in steps, each read both ways (749.179), and give the winner a sealed song.
+
+### 749.199 On-beat chord tones at the kept rate
+**Fix, in order.**
+1. **The check, now:** a kept soundness reading of on-beat chord tones (the record already reads the figure), reported in the three-song rule and deciding nothing yet. No notes change.
+2. **Trial forms, each alone and then together, marks first:** (a) in `again()`, snap a note to a chord tone only where the clash rule would; (b) the on-beat pull from a kept table (kept middle 0.64) in place of 2.6 and 0.3. 833 stays as it is.
+3. **A sealed song once,** for the form that passes the seen songs, its ledger line first. The writer names which (songs 64 and 65 are sealed and unreserved).
+**Check (for each form).** On-beat chord tones inside the kept 10th to 90th in every song; verses over the 0.44 ceiling at or under 30 builds in 100 in songs 50, 58, 49; living builds above v50's; builds' words' fit within 0.02; the chosen tunes at or over their floors; soundness and pools as for 964; song 50's pool at 10 or more. Added by the session: the melody's surprise at or under the popular-corpus median (749.18, 749.20), so loosened notes do not turn into wandering ones; and clashes against the chord no more than v50's, since fewer chord tones on the beat must not mean more notes a semitone off one.
+
+Next finding 749.200; next fix 965.
 
 ## Carried, open
 
