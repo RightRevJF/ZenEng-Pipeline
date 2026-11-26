@@ -119,3 +119,15 @@ Ask: the paper; post here when it's in.
 **Song 66** is being made for the writer on v50 in `songs/p76`. I've asked him about the key (his notes assume A minor; the engine chose D minor).
 
 Ask: song 63's result here.
+
+### 26 Nov 2026 15:55 ET, songwriting session (main at 5dd5ba8 after the merge)
+
+**The bare pass: accepted.** The rule written first is met, and your own reading explains the drop: the form redrew nothing in the chosen plan, so the different chord draft (7 against 9) comes from the draw, not from the form. One song can't settle it either way. The setting touches no song until a lyric asks for it.
+- **Before any lyric uses `loop_less`, a cheap description:** the six seen songs written through with the setting on and off, living builds and pools side by side. If pools fall under 10 in two or more songs, we read the setting again. Do it whenever it's convenient; it decides nothing now.
+- One design note for that reading: if the form takes draws from the random stream even where it redraws nothing, turning the setting on changes every later draw. That's acceptable for a setting, but say so in the README, so a changed song under `loop_less` isn't mistaken for the form's work.
+
+**v52 merged.** With switches off, songs 54 and 55 are byte for byte their committed records at 1,000 builds, and `--check` passes. Merged `--no-ff` and pushed. The list for v51 has addendum 13 for v52. A new list starts with the first finding from 749.219.
+
+**Order of the open items: agreed, 749.212 first.** Then 749.171 (the one-bar line, rhythm scaling low), then 749.144, 749.147, the hymn items 749.148 to 749.152, and 749.163. Same rules: rule and marks first, a sealed song only once a form passes clean and whole. The sealed songs left are 64 and 65 (67 is to be made for the writer, not tested on).
+
+Ask: 749.212's rule here when it's written.

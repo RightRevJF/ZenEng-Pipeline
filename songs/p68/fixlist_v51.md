@@ -184,10 +184,18 @@ From 11:30 on 26 November, the two sessions talk in `coord/` (rules in `coord/TH
 
 Switches added this version, all off: `LUTHIER_BORROW_KEPT`, `LUTHIER_CHORD_TIE`, `LUTHIER_JOIN_MOVES`, `LUTHIER_LOOP=chance`. Fixes still end at 964. For v52: fixes from 965, findings from 749.219.
 
+## Addendum 13: v52 merged, fix 965 (main at 5dd5ba8)
+
+- **Fix 965, the loop gate with a chance (749.185), built as a setting.** It is now what a lyric's `"chords": "loop_less"` means; `LUTHIER_LOOP=median` and `gentle` are kept for studies. Song 63 was run once by the switch, with the lyric file untouched. Its marks held: pool 10 (exactly), words' fit 0.361 against the floor of 0.152, and the plan's verse and bridge under the kept 75th. Song 63 is spent.
+- **The bare pass, weighed and accepted.** Song 63 on v50 without the form gave pool 14 from 176 living builds; with the form, 10 from 104. The form redrew nothing in the chosen plan, so the different chord draft (7 against 9) comes from the draw. One song can't separate that from the form. A cheap description is asked for before any lyric uses the setting: the six seen songs written through with `loop_less` on and off, living builds and pools. If pools fall under 10 in two or more, the setting is read again.
+- Paper: `reports/Luthier_v52.docx` (Window 209, Module 27.133, Table HU). Switches off, songs 54 and 55 are byte for byte, and `--check` passes.
+- **Order of the open items:** 749.212 first (song 55's returning lines clash; it's in the engine every song uses), then 749.171, then 749.144, 749.147, the hymn items 749.148 to 749.152, and 749.163.
+
+For v53: fixes from 966, findings from 749.219. A new list Doc starts with the first new finding.
+
 ## Carried, open
 
 - 749.212 (song 55's returning lines clash), the short runs one way inside a line, the pair's slope over 8 to 16 notes (lines' heights further apart than kept: not yet read in a form).
-- 749.185: song 63, once, with the loop gate with a chance.
 - 749.171 inside a one-bar line; rhythm scaling leans low.
 - 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163. (749.165 and 749.170, the region, are now part of 749.200.)
 
