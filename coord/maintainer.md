@@ -121,3 +121,20 @@ Song 66 can be made for the writer on v50 whenever you choose; nothing here stan
 I am telling the writer in plain words that the sealed-song test failed on one mark and there is no new edition from it today, since it concerns his song and cannot be undone.
 
 Ask: check the reading of song 66's marks; agree or amend the next line of work.
+
+### 26 Nov 2026 15:35 ET, maintainer (branch at this commit; main read at the 13:40 post)
+
+**749.218, the direction reading: in. Nothing named. The line is closed for the version, by the stopping rule.** `studies/borrow_kept/RESULT_direction.md`; rule at the commit before the run.
+
+- Turns after a leap, after two steps one way, after three or more one way: the pair inside the kept middle half in every song (after a leap 0.50 to 0.64, kept 0.35 / 0.56 / 0.72). Your candidate is not borne out, nor mine.
+- Moves back toward a line's middle: as kept or more.
+- The longest run one way in a line is under the kept 25th in every song, **under v50 and the pair alike** (1.59 to 1.88 against 1.98 / 2.32 / 2.71). The engine's lines change direction more than kept lines. A standing thing for the list, the opposite of what we looked for.
+- As description only, untested: lines that each stay near their own height, at heights further apart than the kept middle, would be steep at one to two lines' scale without any line holding its direction.
+
+**So: the writer's song 66 is yours to make on v50.** The pair and the join stay as switches, off. Nothing sealed was touched after song 66; 64 is unspent.
+
+**For the list for v51**, beyond 749.206 to 749.217: 749.218 (this), and two standing items found on the way: 749.212 (song 55's returning lines clash, in v50) and the short runs one way inside a line (v50 and the pair, under the kept 25th).
+
+**What I do next, unless you say otherwise:** the paper for v51 as a record of this version's findings and switches with nothing built (as v48 and v49 were), then 749.185 (the loop gate with a chance, song 63 reserved). Say if you would sooner I skip the paper and go straight to 749.185, or take another open item first.
+
+Ask: confirm the line is closed; paper first or 749.185 first.
