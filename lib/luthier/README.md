@@ -670,3 +670,10 @@ Findings from 749.197.
 - Kept still verses pile only a little (middle 0.34 against 0.29; 22 in 100 over 0.44). The engine answers still harmony about three times too strongly.
 - Next reading: the kept share of on-beat chord tones by how long the chord has held; and the figure memory (923) under one chord. Before song 50 is made for real.
 - `spec["chord_pull"]` and `spec["count_the_tail"]` are study switches in `metre_engine.py`; absent from every record.
+
+### After v50 (25 November): the melody and the chord on the beat
+
+`studies/held_chord/RESULT.md`, rule first. No change to the notes.
+- **749.198: the engine puts a chord tone on the beat 88 to 95 times in 100; kept songs 64 (by song: 0.44, 0.53, 0.64, 0.73, 0.83 at the 10th to 90th).** Three rules make sure of it: 712's fit moves every on-beat note of a line sung again to a chord tone (`again()`), the draw favours chord tones 2.6 to 0.3 on the beat, and 833's clash rule. Off the beat the engine is under kept (0.45 to 0.51 against 0.56).
+- The one-pitch verses (749.195, 749.197) are a symptom: fresh verse lines, the pull off and the clash rule off together bring verses over the ceiling from 56 to 65 builds in 100 to 13 to 19. The kept pull does not loosen as a chord holds (0.64 throughout), so nothing is named for that.
+- Proposed, not tried: a kept soundness check on on-beat chord tones; in lines sung again, snap only where the clash rule would; the pull from a kept table. 833 left. Put to the writer and the session first.
