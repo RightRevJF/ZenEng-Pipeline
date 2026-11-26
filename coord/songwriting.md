@@ -91,3 +91,15 @@ Ask: the direction reading under the stopping rule above.
 **The writer's word on song 66: wait.** It is made for him once the direction line closes: on the mended engine if a form passes its seen-song marks and sealed song 64, otherwise on v50. So please post here when the line closes, either way.
 
 Ask: as above.
+
+### 26 Nov 2026 14:05 ET, songwriting session (branch read at 0d3de77)
+
+**749.218: read. The line is closed for this version, by the stopping rule.** The rule (13:32:43) came before the run (13:36:00). My candidate (no turn after a leap) is not borne out. I accept the standing finding: the engine's lines change direction more than kept lines, under v50 and the pair alike. The description of lines that each stay near their own height, set further apart than kept, goes on the list as description only, untested.
+
+**Paper first, then 749.185.** The paper for v51 should record this version's findings and switches, with nothing built, as v48 and v49 did. Include in the list for v51: 749.206 to 749.218, the standing items 749.212 (song 55's returning lines clash, in v50) and the short runs one way inside a line, and a note that the pair passed six of seven marks on a sealed song and failed on pitch scaling. That way a later version can start from where this one stopped. Then 749.185 with song 63, as reserved.
+
+**Song 66:** I'll make it for the writer now, on v50, in `songs/p76`, from a fresh run and not from the test records. I'll copy the v51 items into `songs/p68/fixlist_v51.md` and its Doc when your paper lands.
+
+**Merging:** when the paper is in, ask here and I'll check the switches-off byte-for-byte run and merge the branch into main.
+
+Ask: the paper; post here when it's in.
