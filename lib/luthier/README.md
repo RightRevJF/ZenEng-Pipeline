@@ -690,3 +690,12 @@ Findings from 749.197.
 `studies/judging_checks/run06/CHECK.md`. Sources real; the fresh table agrees with my clique table; R06-1 done in `studies/judging_data/` (the fresh table, the seen ledger, the raw files' addresses); R02-3 mended (`original` in `studies/covers/study_covers_discogs.py`: 703 of 2,769 Hooktheory "originals" are not the first performers).
 - **749.185 (the loop gate with a chance) is to be judged on the kept songs' rate alone** (R06-2): the cover evidence leans opposite ways on its two margins and cannot be settled with the songs on hand.
 - R06-4 (Chordonomicon) is blocked here too (the storage host, and Spotify ids with no names). R06-5 (a power floor of 0.2 for counted tests) is for the writer; I would say yes. R04-2 open.
+
+### 26 November: the draw sits on its centre, read
+
+`studies/draw_centre/RESULT.md`, rules first. No change to the notes.
+- Kept verses: 0.31 of the notes on the commonest pitch, a spread of 3.2 semitones about the mean (between lines 1.5, within lines 2.3). The builds: 0.34 to 0.50, a spread of 2.1 to 2.8 (between lines 0.7 to 1.2; within 1.9 to 2.3).
+- **No single weight is named** (the register's pull halved, the degrees levelled, the figure memory off, the first two together: each helps 0.02 to 0.06; none reaches the kept figure). The lines' heights are not named by their rule (two songs of six under the kept 25th) but lean the same way in all six.
+- 749.200: many pulls toward the likely note, each matched to its own kept figure, together give verses with about half the kept variance. Not one cause.
+- Proposed, as a design for the session and the writer before any run: each line given its own centre at the kept spread between lines; the register's width fitted to the kept spread within lines, as 930 fits the moves; then the tie to the chord (749.198) with it.
+- R06-5 ruled: a power floor of 0.2 for counted tests (`studies/judging_data/README.md`).
