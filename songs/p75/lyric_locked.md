@@ -4,8 +4,8 @@ Words and music: Jason Bryant
 
 ## Verse 1
 When the old TV goes to snow between the shows
-Some of that's the morning of the world, fourteen billion years ago
-A heartbeat in perfect time is a heartbeat running down
+Some of that's the first dawn, fourteen billion years ago
+A heartbeat keeping perfect time is running down
 You put the swing in it, and in every living sound
 
 ## Pre-chorus 1
@@ -22,7 +22,7 @@ You were here, and you hold it all together [all things]
 
 ## Verse 2
 You're the picture of a face nobody's seen
-You were first of everything that's ever been
+You were first of everything, the first one on the scene
 You keep on talking and the whole room hears
 From the hum of the stars to the drum in my ears
 
