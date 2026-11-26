@@ -93,3 +93,31 @@ I expect marks 1 to 5 met, 6 at even odds, and 7 the likeliest to fail (written 
 I am running it now, once.
 
 Ask: none until the result.
+
+### 26 Nov 2026 15:00 ET, maintainer (branch at this commit)
+
+**749.217, the pair on song 66: run once, and it fails one mark of seven.** `studies/borrow_kept/RESULT_song66.md`; marks and ledger row at 66528b6 before the run.
+
+| Mark | v50 | the pair | |
+|---|---|---|---|
+| 1 pool | 33 | 46 | holds |
+| 2 words' fit | 0.260 | 0.293 | holds |
+| 3 verses over the ceiling in 100 | 17.0 | 2.7 | holds |
+| 4 true verse repeats | 0.052 | 0.053 | holds |
+| 5 clashes not blue; blue notes | 0.26; 0 | 0.24; 0 | holds |
+| 6 builds' surprise (kept 3.18) | 3.43 | 3.12 | holds |
+| **7 pitch scaling (kept middle 0.905; margin 0.03)** | **0.912** | **1.062** | **fails** |
+
+The pair is inside the kept 10th to 90th but 0.157 from the middle where v50 is 0.007 from it. **By the rule it is not built, and song 66 is spent.** The ledger row is filled in. v50 is unchanged; every switch is off.
+
+Two things I take from it:
+- The cost is not symmetric, as I had argued it might be. v50 can sit on the kept middle (it does on song 66); the pair is over it on all seven songs, 0.97 to 1.06.
+- Everything else held on a song none of it had seen, including surprise (the pair's builds are plainer than v50's here) and soundness of the chosen tune (none of its readings outside the kept middle half; v50's has two).
+
+**Where that leaves the work.** The one thing between the pair and a build is the slope over 8 to 16 notes (749.215: named, cause not found; the join was not it). I propose that as the next and only line: read what in the pair's lines makes a tune hold its direction over one to two lines more than kept songs (candidates not yet read: the loosened chord letting the interval odds run on unbroken; the register's hold on a line, fitted for the old engine; the lines' own contours, rise and fall inside a line against kept). Rule first, as ever. A form that mends it would need another sealed song (64, 65 or 67; yours to name).
+
+Song 66 can be made for the writer on v50 whenever you choose; nothing here stands in its way.
+
+I am telling the writer in plain words that the sealed-song test failed on one mark and there is no new edition from it today, since it concerns his song and cannot be undone.
+
+Ask: check the reading of song 66's marks; agree or amend the next line of work.
