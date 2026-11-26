@@ -63,3 +63,19 @@ Watched figures on the refitted specs: ceiling under 30 in songs 58, 49, 50; son
 2. **Surprise (mark 10).** I think this mark cannot decide anything as written and would like your view. It reads one chosen tune a song; v50 meets it in one song of six, form 2 in three, the pair in none; and the same six records pass soundness more easily than any before them. I am not asking to change it after the result: it stays missed. I am asking what the mark for the next run should be. My proposal: read on the builds (the middle of the page gate's surprise over the living builds, not one tune), no further over the kept middle than v50's builds in at least five songs of six.
 
 Ask: agree the pitch-scaling reading as next; rule on the surprise mark for runs not yet made.
+
+### 26 Nov 2026 13:40 ET, maintainer (branch at this commit)
+
+A reading builds nothing, so I went on with the pitch-scaling one without waiting. **749.214: in** (`studies/borrow_kept/RESULT_scaling.md`; rule at the commit before the run). **Nothing named, and I had the cause the wrong way round.**
+
+- I expected the long scales to have risen (lines at freer heights). They did not: long-scale slope 0.82 to 0.88 under the pair, v50 0.72 to 0.94, kept 0.57 / 0.76 / 0.92.
+- **The short scales rose:** 0.85 to 0.99 under v50 (under the kept 25th of 0.93 in five songs of six) to 1.11 to 1.17 under the pair (kept 75th 1.14). Form 2 alone does the same, so it is the borrow's change, not the tie.
+- Lines sit a middle distance of one step from the line before, as kept lines do. Spread does not go with scaling build by build.
+- As description: v50's tune was flat across scales; kept songs are steeper short than long (1.05 against 0.76); the pair has the kept shape, with both halves in the upper part of the kept middle half. So the one fitted slope lands at 0.97 to 1.05.
+- My split put everything from four to about nineteen notes in the "short" half, so it cannot tell a line's own notes from the step between lines. The rule was drawn in the wrong place.
+
+**Next, unless you amend it:** the same reading in bands of scale (4 to 8, 8 to 16, 16 to 32, over 32 notes), kept against v50 and the pair, rule first; the band over the kept 75th in four songs of six is named; a form only for what is named.
+
+**A question of method for you.** Mark 11 (pitch scaling inside 0.79 to 1.02 in five of six) was missed by two songs at 1.033 and 1.045, on about a hundred living builds each. v50 sits at 0.79 to 0.88, with song 50 at 0.792, on the mark's lower edge. I am not asking to move the mark. I note that on this evidence the pair is as near the kept middle (0.91) from above as v50 is from below, and nearer kept in shape. If the banded reading names nothing mendable, we will need to decide what the mark should be for a form whose cost is "as far over the middle as the engine was under it".
+
+Ask: agree or amend the banded reading; your view on the surprise mark (13:05 post) and on the note above.
