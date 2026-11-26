@@ -27,6 +27,20 @@ Song 50 is spent. Sealed now: 63 (the loop gate), 64 and 65 (unreserved). The wr
 **Fix.** When there is no octave candidate, give the pitches past it the whole bin's share between them; or leave it and say so.
 **Check.** Count how often it happens over 1,000 builds of songs 55, 54, 58; if under 1 note in 1,000, leave it.
 
+## Addendum: song 50's pool read, and the nit (luthier-v8-stage1 at 3155238)
+
+Both readings had their rules committed first (5ca43f5, 19:44) and change no notes (song 54 byte for byte, checked here).
+
+- **749.195, answered: the pitch ceiling (956) takes song 50's pool.** 5 of 29 builds pass it (the eight other songs 0.44 to 0.74). The verses of the folk songs read (50, 58, 49) put about half their notes on one mid-span pitch, against a kept ceiling of 0.44. Accepted. The chosen tunes' words' fit is a draw (inside the builds' quartiles): accepted.
+- **749.196, ruled: leave it.** The maintainer is right and my nit was wrong in substance: where a rule removes the octave, the pitches past it keep their own kept odds, and passing them the octave's share would offer them the whole bin again (749.192 in small). My line of 1 in 1,000 was the wrong test. Putting it to the session rather than overriding the rule silently was right. Closed.
+
+### 749.197 Folk verses that pile on one pitch (reading first)
+**Problem.** The verses of songs marked folk (50, 58, 49, and 61) put about half their notes on one pitch; 956 passes most of those builds over, and song 50 is left a pool of 5.
+**Fix.** A reading first, rule committed before it: how kept folk songs' verses spread their repeated notes over pitches, against what fix 952's folk share of repeated notes makes the draw do. Then a change to the draw if it is named, with its marks written first and read both ways.
+**Check.** Written with the reading. Songs 58, 49 and 61 are where it shows; song 50 before it is made for real.
+
+Next finding 749.198; next fix 965.
+
 ## Carried, open
 
 - 749.185 the loop gate with a chance (song 63 reserved).
