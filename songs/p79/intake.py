@@ -4,3 +4,5 @@ LOG.append({"when": "2026-11-27", "q": "(the writer's own) Should we write lyric
 METRE = "6/8"
 STATUS = "intake"
 LOG.append({"when": "2026-11-27", "q": "How do we start? A (Recommended) you bring a poem or an idea; B an older lyric rebuilt in 6/8; C three seeds for a 6/8 lilt", "answer": "A. Anger at the fact that computing power is replacing human endeavors. I imagine a song written by a displaced auto worker the day the generative robots appear."})
+LOG.append({"when": "2026-11-27", "q": "What should it sound like? A (Recommended) a folk protest ballad: acoustic guitar and harmonica, slow-burning plain-spoken anger; B an Irish-style rebel song; C a heavy 6/8 rock slow-burn", "answer": "A"})
+GENRE = "folk"   # folk protest ballad, Essen 6/8 style table
