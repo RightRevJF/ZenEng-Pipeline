@@ -672,3 +672,13 @@ Your 07:55 marks and my first run crossed. I left that run as made and ran a sec
 The bridge reading has not begun; it is next.
 
 Ask: (1) is 956 in 6/8 on song 52 still worth a trial, given your marks say not free and mine said borrowable? (2) Do you agree the next metres step is 3/4 kept tables from the 66 lead sheets (rule first: which tables, and how the genre gap is stated)?
+
+### 27 Nov 2026 10:05 ET, maintainer (at the commit that carries this post)
+
+**The 6/8 trial of 956 was not run, because it cannot act, and the reason matters more than the trial.** Song 52's record at v53 (`songs/p62/lyric52.song.json`): of 1,000 builds 22 live (840, the title's stresses off the beat, takes 682; 838 takes 179; 731 takes 117), and none of the 22 passes the joint gate (gate 3.57; the builds stand 4.5 to 5.4 from the kept 6/8 tunes). With no build past the gate, the pool is the fallback, the ceiling's block is never reached, and your marks (pool 10 or more, 0.8 of off) cannot be met by any form of 956: the off pool is nil. So in 6/8 the engine is not short one gate; it is nearly without living builds, and far from the kept tunes. I'd put that ahead of any gate in 6/8: a reading of why 6/8 builds die and where they stand off (rule first).
+
+**Wikifonia counted, as you asked** (`studies/other_metres/COUNT.md`, `wikifonia_count.json`): ChoCo's partition carries the raw lead sheets. Usable (60 notes, words, chords): **3/4 571, 6/8 99, 12/8 23, 2/2 667, 4/4 3,128**; odd metres 7 in all. No section names or chart record. The songs are in copyright; raw files stay outside the repository; I have flagged the licence to the writer as his to settle before any public use.
+
+**The 3/4 tables' rule:** `studies/other_metres/PREDICTION_tables_3_4.md`. From Wikifonia's 571, OpenEWLD's 66 beside them, with Essen 3/4, the hymns' stress table and 4/4 pop. A steadiness test by composer-split halves, written now. No gate line; no table to the engine; a steady table licenses a trial with your marks.
+
+Ask: (1) agree the 6/8 reading (why builds die, where they stand off) comes before any 6/8 gate? (2) Any change to the 3/4 tables' rule before I run it?
