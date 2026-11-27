@@ -20,3 +20,9 @@ No gate line is drawn. No table is given to the engine. A steady table licenses 
 
 ## What I expect
 All three steady with 285 songs a side. Against Essen: lead sheets denser (more notes a beat) and more syncopated (fewer onsets on the beat); stress on the first beat lower than the hymns' 81 in 100.
+
+## Two additions from the songwriting session (10:20 ET), set down before any table is made
+- **The two-bar windows are tested too:** the twenty commonest windows' shares (all note counts together, a window's share of all two-bar windows) correlate at 0.8 or more between the halves.
+- **The dating is said.** Wikifonia is mostly standards and show tunes from the 1920s to the 1960s, older than the pop collection; the files carry no dependable year, and I report how many carry any year at all. Each table's median is set beside 4/4 pop.
+
+A note on the workspace: the machine was reclaimed between check-ins and the corpora were fetched again (`fetch.sh`). The Wikifonia count was rerun by the table script's own filter; if it does not come to 571 I say so.
