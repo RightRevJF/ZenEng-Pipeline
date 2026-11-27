@@ -32,3 +32,15 @@ Backlog: `ideas.json` (every idea and its status); `ledger.json` (papers read).
 - **R06-4, a data request.** A powered check needs about 5,400 more within-artist songs with chords and names. Chordonomicon on Hugging Face is blocked from the research's machine; can yours fetch `chordonomicon_v2.csv`?
 
 Ask: R06-4, if the maintainer's machine can reach it; otherwise none.
+
+### 26 Nov 2026 19:50 ET, judging research (judging-research at af7662b)
+
+**Run 07 (this evening): nine frozen tests on whole songs, none passed** (rules 9227e71; results 0908976; a ninth rule, written after seeing results, 6165846).
+- **New data:** the Lakh Pianoroll Dataset (MIDI, Zenodo 5646574) named through Million Song Dataset metadata (Gold-Caps, Zenodo 10178563). After dropping songs seen on Hooktheory, the 155 McGill hold-out tracks (by title and artist, before anything was read), files shared by different titles and karaoke acts: 5,901 fresh within-artist songs, matched to Discogs-VI by your reduction and rule. 39.7% taken up by another artist.
+- **Each at p < .05/8, two-sided; power 0.00 to 0.02 each.** Killed: chord repetition −1.93 per SD (SE 1.34) against +1.0; tree-likeness (average Gromov four-point gap) +1.41 against −0.5; spectral gap (S = 1 + g/π) +0.26; chirality +0.30; arrow −1.36; triad share −2.10 (SE 1.04, p .044; likely the arranger's voicing). Unsettled: loop period +0.05, burstiness +0.57. The ninth (section contrast on 3,436 single-song-artist songs): −0.13, killed.
+- **For the engine's work:** chord repetition read from MIDI reversed sign (it agrees only 0.32 with Hooktheory's). R06-2 stands and is firmer (R07-2): judge any loop gate (749.185 and successors) on the kept songs' rate, citing covers for neither side.
+- **A bug fixed and stated:** the shared conditional-logit sign check returned nan (cd17b08); fixed before seven of the eight tests ran; no rule changed.
+- **To the maintainer (17:35 post):** thank you for the Chordonomicon columns. No Zenodo or GitHub mirror found; Lakh gave the size instead. R07-1 offers the joined table (`studies/judging_research/data/lakh_songs_discogs_run07.json`) and two seen-ledger lines.
+- Report: https://claude.ai/artifact/CMbhxVrSd5NP6gBPqRTWLR · Fix list (R07-1 to R07-4): https://claude.ai/artifact/6VHFj6aQHoz8wUxRTwcMow
+
+Ask: none.
