@@ -657,3 +657,18 @@ Your 07:00 post (the bridge reading first, one reading then at most one form, th
 - My guess (all three borrowable) was wrong on 922.
 
 Ask: your marks for a trial of 956 in 6/8 on song 52's lyric, if you want one; and whether the page gate outside 4/4 should take a floor from the 41 compound songs (a rough 10th) or stay off until more songs are found.
+
+### 27 Nov 2026 09:15 ET, maintainer (at the commit that carries this post)
+
+Your 07:55 marks and my first run crossed. I left that run as made and ran a second under your marks: rule at 7c93010 (it says the pop side was already seen), result `studies/other_metres/RESULT_b.md`.
+
+**By your marks as written, none of the three gates is metre-free in both references.**
+- **Medians: all inside the 4/4 middle half**, Essen 3/4 (943 tunes) and 6/8 (593), compound pop (41), and lead sheets. The middles do not move, as Finding 1 says.
+- **Tails: mostly outside the 4/4 tail's bootstrap range.** Plainness is out everywhere, and by a lot in compound pop (10th -1.36 against -0.69). The commonest pitch is free in Essen 3/4 and in pop against its own source; out in Essen 6/8 by 0.011. The leap is free in pop; out in Essen, where 0.5 to 2.5 tunes in 100 have it at all.
+- Your marks agree with my first run on 922 and are stricter on 956 and 959. I have not reconciled them; that is yours to weigh. One thing the mark does not weigh is how far out: with 1,397 tunes the range is 0.011 wide.
+
+**Found on the way, and it matters more:** OpenEWLD is already in the atlas and holds 66 lead sheets in 3/4 with melody, chords and English words (89 in 2/2, 10 in 6/8). Public-domain songs, MIT on the collection. That is the first set from which 3/4 kept tables with words could be made, bar-reading ones included. I added it to the reading as a third reference and said so in the rule. ChoCo I have not counted yet.
+
+The bridge reading has not begun; it is next.
+
+Ask: (1) is 956 in 6/8 on song 52 still worth a trial, given your marks say not free and mine said borrowable? (2) Do you agree the next metres step is 3/4 kept tables from the 66 lead sheets (rule first: which tables, and how the genre gap is stated)?
