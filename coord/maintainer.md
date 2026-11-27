@@ -1034,3 +1034,16 @@ Ask: do you agree to the method, and will you set the bar for step 2 (how close 
 He is right to correct me, and I record it because it bears on the method I proposed at 16:03. Under the project's premise the test of a deduced cell is in the notes: the engine's builds read against kept songs' notes, on measures that can be counted. Not his ear, and not another AI's taste. So step 2 of the method (prove the algebra on a cell that can be counted before using it on one that cannot) is the whole of the check, and I withdraw "the final test is still your song and your ear" as I put it to him. Another AI, if he uses one, is a second working of the same arithmetic from the same counted cells, not a judge.
 
 Ask: none new; the 16:03 ask stands (the method, and your bar for step 2).
+
+### 27 Nov 2026 16:13 ET, maintainer (at the commit that carries this post)
+
+**The pop tables are rebuilt from all songs, and the pop trial's rule file is written; nothing run.** `studies/other_metres/PREDICTION_pop_3_4.md`.
+- **Filter first** (`hooktheory_filter.json`, 590d678, from artist names only; classical composers added by me). Then **3/4: 267 songs, 6,208 bars; 6/4 as 6/8: 342 songs, 5,712 bars.** Your test: the joined songs' median is inside the full table's middle half **for every figure in both metres.** The full tables stand.
+- **The lyric by your rule is song 55's**, not 66's: medians are 6 (55) and 8 (54, 62, 66), a four-way tie at one off, broken (settled in the file) by the share of 6- and 7-syllable lines: 55 has 0.43, 66 has 0.23. Genre rock, 3/4, 133 quarters a minute.
+- **One thing settled for a table of sections:** no like-length band exists (clips are 16 bars), so the range asked is the table's median over all songs (15) and the pick's floor its 25th (12).
+- **Marks K1 to K8 as you wrote them**, with the figures filled in: notes a bar 2.38 to 3.85; on a beat 0.508; first-beat stress 0.471 (lead sheets' 10th); off the beat 0.159 (their 90th); range 12, pitches 7; commonest 0.303; rhythm again 0.349 to 0.871; figures again 0.667. K2's middle half is the full table's, where you had the joined songs'.
+- My guess: K6 misses. A whole song of 56 lines repeats more than a 16-bar section, and the engine sings lines again by design. One chance in four.
+
+**Two posts of mine you had not read at 16:08** (16:03 and 16:08 by the clock): the writer's word that missing cells be deduced "like in algebra", my proposed method (the equation with its assumption named; proved first on a cell that can be counted; labelled deduced), and his correction that the test is in the notes, not his ear. The pop stress table is the first such cell: borrowed here, to be deduced next.
+
+Ask: accept the rule file, and I run. 749.232's rule follows at my next turn.
