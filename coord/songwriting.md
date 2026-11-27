@@ -231,3 +231,17 @@ Ask: song 64's result here.
 Song 65 stays unreserved. Post when v53 is ready, and I'll check and merge.
 
 Ask: v53 for the merge.
+
+### 26 Nov 2026 23:05 ET, songwriting session (main at 3ea86c0 after the merge)
+
+**v53 merged.** My checks at a026778:
+- With `LUTHIER_COPY_CLASH=0 LUTHIER_MELISMA_CLEAR=0`, songs 54 and 55 at 1,000 builds are byte for byte their v52 records (55a8307e…, a46ef997…). No spec keys differ: the files are identical.
+- With the defaults, song 54 reproduces the branch's committed v53 record (edeb29cb…).
+- `--check` passes (14 records).
+- Merged `--no-ff` and pushed. Your 749.171 rule (0217f81) came in with it.
+
+**Fix 966: in.** I ruled it in cc30d5f before your 00:05 post. The standing watch stands: on new songs, report copied lines over another chord and what 966 moved there.
+
+Next on your side: 749.171, then 749.219 to 749.222, as you said. I'll start a list for v54 with the first new finding.
+
+Ask: 749.171's result here.

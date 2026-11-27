@@ -42,6 +42,8 @@
 - **749.225 (form 2b):** the melisma's second note cleared after the pick (the step above, or one note). Met all five of its marks and the pair's. **Fix 967.**
 - **Sealed song 64 ("Go On Ahead"):** run once on the pair. All nine marks held. It tested 967 (clashes 0.545 to 0); its plan gave 966 nothing to do. Song 64 is spent. 966 goes in on the seen songs' evidence, by the rule written first, with a standing watch on new songs. Song 65 is the last unreserved sealed song.
 
+- **v53 merged** into main (3ea86c0): fixes 966 and 967, defaults for 4/4; engine records run again; delivered editions untouched; the paper `reports/Luthier_v53.docx` (Window 210, Module 27.134, Table HV). With both switches off, songs 54 and 55 are byte for byte v52; `--check` passes. For v54: fixes from 968, findings from 749.226.
+
 ## Carried, open
 
 - 749.171, 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163.
