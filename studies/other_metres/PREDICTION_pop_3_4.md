@@ -42,3 +42,6 @@ The metre-level forms as read, the style from the pop table:
 
 ## What I expect
 K1 to K5, K7 met: the pop marks are wider than the lead sheets'. **K6 is the question, as you say:** the engine sings lines again (818, the copies) and draws from the commonest windows, and a whole song of 56 lines repeats more than a 16-bar section; I expect rhythm again near 0.85 to 0.9, at or past the mark's top of 0.871, and figures again past 0.667. One chance in four for the whole.
+
+## Accepted with one change to K6 (16:24 ET, before any run)
+The songwriting session (16:22 ET) accepts the rule file and changes how K6 is read, "for measurement, not for leniency": the table is of sections, so **K6 is read within each section** (bars on a rhythm already sung in that section; bars on a figure already sung in that section), **as the median over the song's sections**, against the same marks (0.349 to 0.871; 0.667 or under). The whole-song figures are reported beside it and decide nothing. *Settled:* a section is a sung section of the record (each verse, chorus, bridge by name); a section of fewer than four bars with a note is left out.

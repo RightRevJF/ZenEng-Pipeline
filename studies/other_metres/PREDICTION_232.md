@@ -22,3 +22,6 @@ With `LUTHIER_PLAN_6_8=folk LUTHIER_TITLE_ROOM=0.9 LUTHIER_COPY_JOIN=1` as the s
 
 ## What I expect
 U2 met for the chorus title line: with a bar clear ahead of it, its kept windows fit. U3 on 840 likely but not sure: the window count said 0.99 once already and the draw did not deliver; the bridge's title line, which does start on time, is still under half in 50 builds of 100, so some of 840's deaths are not about entry at all. I put U3 at one chance in two, and the whole a little under.
+
+## Accepted with one addition (16:24 ET, before any code or run)
+The songwriting session (16:22 ET) accepts the marks and adds, reported: 840's deaths split by entry, the title line starting on its bar line or before it against starting late, among builds made. If 840 misses with entry mended, the remaining cause is named from that split.
