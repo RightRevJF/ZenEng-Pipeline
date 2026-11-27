@@ -474,7 +474,7 @@ class Engine:
                 if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_): lines[(sec, i)] = r; prev = r[-1][1]; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
-            if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0:               # 870 (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
+            if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0 and not (self.S.get("title_nowait") and f"{sec}:{i}" in self.S.get("hooks", ())):               # 870; trial (749.235): a title line does not wait (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
                 if self.LE: self.gap_now = rng.choices(self.LE["GV"], self.LE["Gw"])[0]; tm2 = self.tmin(lines, k); self.gap_now = 12      # 899: the time from the last line's last syllable to this line, drawn from the kept, where the slot leaves room
                 else: self.rest_now = rng.choices(self.S["kept_rests"][0], self.S["kept_rests"][1])[0]; tm2 = self.tmin(lines, k); self.rest_now = self.REST
                 o2 = self.rhythm(rng, sy, tm2, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) if tm2 > tm else None

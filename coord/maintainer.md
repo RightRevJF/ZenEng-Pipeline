@@ -1099,3 +1099,25 @@ Median error 0.24 of a middle half (your bar: under 0.5). The equation overshoot
 Still waiting on your word for the two forms posted at 16:35: 749.233 (lines that share a tune share their bars) and the title line exempt from 870's wait.
 
 Ask: those two forms; and K3's stress marks for the pop trial, now that the stress table is deduced and not the lead sheets' (your K3 read first-beat stress against the lead sheets' 10th).
+
+### 27 Nov 2026 17:15 ET, maintainer (at the commit that carries this post)
+
+Both run. Forms, your K3 and the shrunk table at 861d380 before any code or run; the pop trial's first counts are in `pop_3_4.json` as you asked.
+
+**749.234 and the pop-style 3/4 trial: every mark but K3 met.** `studies/other_metres/RESULT_234.md`.
+- **K1 met: 316 living, pool 158** (10 and 5 before). The three verses now share `[3,2,3,2,3,2,2,3]`.
+- **K2, K4, K5, K6, K7, K8 met on the living median and the pick:** 2.61 and 2.62 notes a bar; on a beat 0.565 and 0.553; range 17 and 16, pitches 13 and 11; **commonest pitch 0.197 and 0.257** (the mark the waltz style never met); rhythm again within sections 0.40 and 0.36 (the median inside by 0.011); figures again 0.25 and 0.19; in the voice; 840 at 0.95 in ten.
+- **K3 missed, widely, and the same under both tables:** stressed syllables on the first beat **0.246 and 0.241** (0.45 asked); off the beat **0.348 and 0.385** (0.26 asked). The deduced and the shrunk tables give the same pick and the same medians: **the stress rule is not deciding where syllables go.** The draw takes a kept window by its count first, the pop table's windows are syncopated, and they come from songs without words.
+- 42 builds in 100 are still never made (the syllables cannot fit the window).
+- Two things to read before a form: how strongly kept songs trade a commoner rhythm for a better-placed stress (the weight, from data: your maxent point), and whether song 55's 4/4-born lines can meet K3 in three at all.
+
+**749.235: 840 hardly moves (1.2 in ten; 1.3 before). It was not 870.** `studies/other_metres/RESULT_235.md`.
+- The chorus title line on its bar line in 32.3 builds of 100 (28.7). 121 of 122 deaths on 840 still have a late title line.
+- **The pickup, as you asked:** the bridge's title line, which opens unstressed, begins before its bar line in **87 builds of 100**; the draw does use the stable start. The chorus line opens on a stress and is late in 68.
+- S4's first-beat onsets: 0.204 on the pick (missed by 0.007), 0.218 on the median (met).
+- **My third wrong cause.** What the builds show: the chorus title line's commonest rhythm is 3 notes then 4 across its two windows, where its own split is 4 then 3. In most builds it is not drawn in its own windows: **818 makes it sing an earlier line of its section again** (0.8 in this song; about 5,500 times in 1,000 builds), a thirteen-syllable line's rhythm refitted to seven. I name 818 with less confidence than I'd like, having been wrong three times; the evidence is the rhythm's shape, not a split by cause.
+- **Proposed, with a count before any switch:** among builds made, the title line's on-time share where 818 made it against where it was drawn fresh. If that separates them, the form is: a title line is drawn fresh, 818 does not apply to it.
+
+Byte for byte with every switch unset, both runs: 54, 55, 52, song 53's Essen arm.
+
+Ask: (1) agree the count on 818 first, then the form if it separates; (2) for pop K3, which reading first: the weight from data, or whether this lyric can meet 0.45 in three.

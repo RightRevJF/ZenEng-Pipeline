@@ -39,6 +39,8 @@ PEAK_TRIES = int(os.environ.get("LUTHIER_PEAK_TRIES", "60"))      # 950's draws 
 OCTAVE_TAIL = os.environ.get("LUTHIER_OCTAVE_TAIL", "1") != "0"      # 964 (749.192): the octave bin shared as kept songs share it (the environment switch is for studies)
 PITCH_CEILING = True   # 956
 RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") in ("1", "centres"); RANGE_CENTRES = os.environ.get("LUTHIER_RANGE_3_4") == "centres"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
+SHARED_BARS = os.environ.get("LUTHIER_SHARED_BARS", "0") == "1"      # trial (749.234), off: under the plan form, lines that sing one tune take one bar count, from the median syllables of the group
+TITLE_NOWAIT = os.environ.get("LUTHIER_TITLE_NOWAIT", "0") == "1"      # trial (749.235), off: a title line does not take 870's wait
 TITLE_ENTRY = os.environ.get("LUTHIER_TITLE_ENTRY", "0") == "1"      # trial (749.232), off: under the plan form the line ahead of a title line takes a bar more (to four) and ends on or before the first beat of its last bar
 TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") not in ("0", ""); TITLE_ROOM_SHARE = 0.5 if os.environ.get("LUTHIER_TITLE_ROOM", "0") in ("0", "", "1") else float(os.environ["LUTHIER_TITLE_ROOM"])      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
 STRESS_PLACE = os.environ.get("LUTHIER_STRESS_3_4", "0") == "1" or os.environ.get("LUTHIER_STRESS_6_8", "0") == "1"      # trial (749.231), off: outside 4/4 a syllable's place is scored by where kept songs sing a syllable of its weight (879's rule), from the table's stress file
@@ -162,6 +164,25 @@ def plan(L):
             elif src is not None and i < len(src): how[f"{name}:{i}"] = ["again", first_name[base(name)], i]
             texts.setdefault(key, (name, i, sy[i]))
         if src is None: first[base(name)] = lines; first_name[base(name)] = name
+    if SHARED_BARS and sungb_:
+        # trial (749.234): a line and every line sung again or copied from it take one bar count: the density rule's choice for the group's median syllables, or the larger count a title rule gave any of them
+        import statistics as _st4; root_ = {}
+        def find_(k_):
+            while root_.get(k_, k_) != k_: k_ = root_[k_]
+            return k_
+        for k_, v_ in how.items():
+            if v_[0] in ("again", "copy"): root_[find_(k_)] = find_(f"{v_[1]}:{v_[2]}")
+        grp_ = {}; syl_ = {f"{nm_}:{i_}": len(ln_) for nm_, _, sy_ in sung for i_, ln_ in enumerate(sy_)}
+        for k_ in syl_: grp_.setdefault(find_(k_), []).append(k_)
+        med4_ = T["readings_quartiles"]["notes a bar"][1]; pad4_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_ and not PLAN_6_8_FOLK); raised_ = set(title_room_) | set(title_entry_); shared_ = {}
+        for r_, ks_ in grp_.items():
+            if len(ks_) < 2: continue
+            n4_ = _st4.median(syl_[k_] for k_ in ks_); b4_ = min((2, 3, 4), key=lambda b_: (round(abs(n4_ / b_ - med4_), 6), b_)); b4_ = max([b4_] + [sungb_[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])] for k_ in ks_ if k_ in raised_])
+            for k_ in ks_:
+                nm_, i_ = k_.rsplit(":", 1); i_ = int(i_)
+                if sungb_[nm_][i_] != b4_: shared_[k_] = [sungb_[nm_][i_], b4_]
+                sungb_[nm_][i_] = b4_; slots[nm_][i_] = 2 if b4_ == 2 else 4 if (b4_ == 4 or pad4_) else 3
+        form = [(nm_, k_, (sum(slots[nm_]) + sum(slots[nm_]) % 2) if nm_ in slots else n_) for nm_, k_, n_ in form]
     form.append(("Outro", "outro", n_out)); br = BD.break_after(form); bar_s = 60.0 / L["bpm"] * beats
     if br is not None and (sum(b for _, _, b in form) + 8) * bar_s <= BD.EDG["length"][2]: form.insert(br + 1, ("Break", "solo", 8))        # 830; 842: only while the song stays inside the kept songs' middle half of lengths
     elif br is not None: flags.append("no break: with one the song would run past the kept 75th of lengths")
@@ -205,7 +226,9 @@ def plan(L):
         spec["sung_bars"] = sungb_; spec["held_bar_share"] = round(next((c for p_, c in T["bar_rhythms"] if list(p_) == [0]), 0) / T["bars_total"], 4)      # trial (749.226)
         if title_room_: spec["title_room"] = title_room_
         if title_entry_: spec["title_entry"] = title_entry_
+        if SHARED_BARS and shared_: spec["shared_bars"] = shared_
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
+    if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)
     stress_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".stress.json")
     if STRESS_PLACE and os.environ.get("LUTHIER_STRESS_" + metre.replace("/", "_"), "0") == "1" and os.path.exists(stress_p_): spec["stress_place"] = dict(weight=0.75, place=json.load(open(stress_p_))["place"])      # trial (749.231): 879's own weight
     if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):
