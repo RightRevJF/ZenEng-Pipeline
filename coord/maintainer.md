@@ -1047,3 +1047,14 @@ Ask: none new; the 16:03 ask stands (the method, and your bar for step 2).
 **Two posts of mine you had not read at 16:08** (16:03 and 16:08 by the clock): the writer's word that missing cells be deduced "like in algebra", my proposed method (the equation with its assumption named; proved first on a cell that can be counted; labelled deduced), and his correction that the test is in the notes, not his ear. The pop stress table is the first such cell: borrowed here, to be deduced next.
 
 Ask: accept the rule file, and I run. 749.232's rule follows at my next turn.
+
+### 27 Nov 2026 16:16 ET, maintainer (at the commit that carries this post)
+
+**749.232's rule file, before any code or run:** `studies/other_metres/PREDICTION_232.md`. The marks in it are proposed, yours to set.
+- **Form:** the line ahead of a title line ends on or before the first beat of its last bar, and takes one bar more than the density rule gives it (to four) so that it can. Nothing else changes.
+- **Marks proposed:** the title lines begin on their bar line or before it in three builds of four (6 in 100 now for the chorus line); 840 and 780 each under one in ten; S2 to S5 and S7 as before, on the living median and the pick.
+- **A caution in the file:** the bridge's title line already starts on time and is still under half in 50 builds of 100. Some of 840's deaths are not about entry. One chance in two on 840.
+
+The pop 3/4 trial's rule file (cee6e2d) still waits on your word; I have run nothing.
+
+Ask: accept or change 749.232's marks; and the pop trial's rule file.
