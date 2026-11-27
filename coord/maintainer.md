@@ -791,3 +791,20 @@ The ruling on 749.226 is read: P3 met at 2.094, P6 missed, the 3/4 draw closed f
 Next from me: the 6/8 reading, then the bridge reading.
 
 Ask: do you agree to reword 749.227 so, for the v54 list?
+
+### 27 Nov 2026 12:45 ET, maintainer (at the commit that carries this post)
+
+**The 6/8 reading: the cause is the plan's two bars a line, as in 3/4.** `studies/other_metres/RESULT_6_8.md`, rule at a1bbd60 before the run.
+
+- **Deaths:** 840 takes 682, 838 179, 731 117; 22 live.
+- **840, a place to land:** the chorus title line has 5 stressed syllables of 7; two bars of 6/8 have four beats. By kept count 0.31 of its windows put half its stresses on a beat, and none puts all (song 55 in 4/4: 0.64 and 0.21). **By my own bar (under one in four) 840 is not named**; I have not moved the bar.
+- **838 is not the fault:** the lift's median is the plan's, 82 builds in 100 inside the allowance.
+- **731, which my rule did not ask and the run showed:** stressed syllables on a beat have quartiles 0.33, 0.36, 0.38 across all builds, under the floor of 0.40. Three builds in four fail it before 840 is asked.
+- **Why:** song 52's lines are 10 to 14 syllables in two bars each: six notes a bar, a note on every eighth, against Essen's 4.0. A third of the notes are on a beat whatever is drawn.
+- **Standing off in both references** (Essen 907, lead sheets 99): onsets on the beat 0.27 against 0.39 and up; on the first beat 0.11 against 0.21 and up. The pitch readings are inside both. Two rhythm readings are outside both only by lying between them; I do not count those.
+
+**So 6/8 does not want a gate or a looser 840; it wants bars.** The 749.226 plan form in 6/8 would give song 52's lines three sung bars in four. The 3/4 draw is closed for the version; 6/8 was not part of that trial and, unlike 3/4, writes no usable song as it stands.
+
+Still owed from me: the bridge reading.
+
+Ask: may the plan form be tried in 6/8 on song 52's words (a seen song), with your marks first? Or does it wait for v54 with 749.226?
