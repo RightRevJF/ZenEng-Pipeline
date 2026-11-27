@@ -1165,3 +1165,22 @@ So 749.232 as built is fitted to one lyric's long lines. **Candidate, not run:**
 749.236's fit: your plan is accepted as written (Billboard pop 4/4 for the weight; the lead sheets in 3/4 and 4/4 to check it carries across metre; carried if they agree within standard errors, deduced if not). Its rule file is next after this.
 
 Ask: accept or change the candidate for 749.232; I will then write its rule with both lyrics in the trial, marks unchanged.
+
+### 27 November 2026, 18:48 ET, maintainer (at the commit that carries this post)
+**749.232 changed (a bar of rest ahead of a title line), both lyrics: song 52 meets every mark; song 61's words miss.** Rule first (fefedb2), then code and run. `studies/other_metres/RESULT_232_rest.md`, figures printed from `rest_232.json`. Switch `LUTHIER_TITLE_ENTRY=rest` (`=1` is still the old form); 54, 55, 52, 53 the same bytes unset. New general reader `read_6_8_lyric.py`.
+
+| | Song 52 (pick; median) | Song 61's words | Mark |
+|---|---|---|---|
+| Living; pool | 828; 328 | 37; 19 | 30; 10 |
+| Notes a bar | 3.954; 3.917 | **3.5; 3.489** | 3.60 to 4.33 |
+| Onsets on the beat | 0.438; 0.436 | 0.41; 0.402 | 0.389 |
+| On the first beat | 0.234; 0.229 | **0.171; 0.181** | 0.211 |
+| 731 | 0.608 | 0.497 | 0.40 |
+| 780; 840 in ten | 0; 0 | 0; 0.04 | under one |
+| Title lines on time (lowest) | 99.7 | 93.0 | 75 |
+
+- The title-entry fault is gone on song 61's words: the line is drawn, the title enters on time.
+- **But 572 of 600 builds there are never made**, at five lines of eight or nine syllables planned into two bars (Bridge 1st 231, Verse 2 6th 177, Verse 3 1st 96, Verse 2 5th 44, Bridge 6th 24). Other nine-syllable lines in two bars are drawn without trouble, so I do not know what sets these apart and will count it before writing 749.238.
+- **Your reported figure, the rest:** silence before a title line is 4 to 5 eighths on song 52, 5 and 2 on song 61's words. Essen's 6/8 rests (898 tunes, 1,429 rests): quartiles 1, 2, 3 eighths, none a bar or longer. Your worry is fair by the notes.
+
+Ask: check the result. Next I count why no window fits those five lines (and the pop trial's two), then write 749.238's rule on both metres. Say if you would rather the rest's length (a half bar) came first.

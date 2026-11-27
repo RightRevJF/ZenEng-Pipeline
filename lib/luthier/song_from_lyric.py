@@ -42,7 +42,8 @@ RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") in ("1", "centres"); RANGE_
 SHARED_BARS = os.environ.get("LUTHIER_SHARED_BARS", "0") == "1"      # trial (749.234), off: under the plan form, lines that sing one tune take one bar count, from the median syllables of the group
 TITLE_NOWAIT = os.environ.get("LUTHIER_TITLE_NOWAIT", "0") == "1"      # trial (749.235), off: a title line does not take 870's wait
 TITLE_FRESH = os.environ.get("LUTHIER_TITLE_FRESH", "0") == "1"      # trial, off: a title line is drawn fresh; 818 does not apply to it
-TITLE_ENTRY = os.environ.get("LUTHIER_TITLE_ENTRY", "0") == "1"      # trial (749.232), off: under the plan form the line ahead of a title line takes a bar more (to four) and ends on or before the first beat of its last bar
+TITLE_REST = os.environ.get("LUTHIER_TITLE_ENTRY", "0") == "rest"      # trial (749.232 changed), off: the line ahead of a title line keeps its sung bars and its slot takes a bar of rest
+TITLE_ENTRY = os.environ.get("LUTHIER_TITLE_ENTRY", "0") in ("1", "rest")      # trial (749.232), off: under the plan form the line ahead of a title line takes a bar more (to four) and ends on or before the first beat of its last bar
 TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") not in ("0", ""); TITLE_ROOM_SHARE = 0.5 if os.environ.get("LUTHIER_TITLE_ROOM", "0") in ("0", "", "1") else float(os.environ["LUTHIER_TITLE_ROOM"])      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
 STRESS_PLACE = os.environ.get("LUTHIER_STRESS_3_4", "0") == "1" or os.environ.get("LUTHIER_STRESS_6_8", "0") == "1"      # trial (749.231), off: outside 4/4 a syllable's place is scored by where kept songs sing a syllable of its weight (879's rule), from the table's stress file
 COPY_JOIN = os.environ.get("LUTHIER_COPY_JOIN", "0") == "1"      # trial (749.228), off: a copy that would begin before the line ahead of it has ended is sung again, and the build lives
@@ -129,8 +130,9 @@ def plan(L):
             if TITLE_ENTRY and L.get("title"):
                 tw2_ = " ".join(w for w, _, _, _ in LS.syllables(L["title"]))
                 for i_ in range(len(lines) - 1):
-                    if tw2_ and tw2_ in " ".join(w for w, _, _, _ in LS.syllables(lines[i_ + 1])) and tw2_ not in " ".join(w for w, _, _, _ in LS.syllables(lines[i_])): sb_[i_] = min(4, sb_[i_] + 1); title_entry_.append(f"{name}:{i_}")
+                    if tw2_ and tw2_ in " ".join(w for w, _, _, _ in LS.syllables(lines[i_ + 1])) and tw2_ not in " ".join(w for w, _, _, _ in LS.syllables(lines[i_])): sb_[i_] = sb_[i_] if TITLE_REST else min(4, sb_[i_] + 1); title_entry_.append(f"{name}:{i_}")
             sl = [2 if b_ == 2 else 4 if (b_ == 4 or pad_) else 3 for b_ in sb_]; sungb_[name] = sb_
+            if TITLE_REST: sl = [max(x_, sb_[i_] + 1) if f"{name}:{i_}" in title_entry_ else x_ for i_, x_ in enumerate(sl)]
         vc_ = VERSE_CLOSER or ("apart" if L.get("verse_closer") is True else L.get("verse_closer") or None)
         if vc_ and k == "verse" and metre == "4/4" and L.get("verse_closer", True) is not False:      # 4/4 only: the kept figures are 4/4's                                                          # 958 (749.142; studies/busy_sections): the verse sung closer. Verse lines of 6 to 8 syllables that would take two bars take one: the shortest first, none side by side, an even count, as many as bring the verse nearest the kept middle of notes a bar (4.59). Kept verses run 4.6 notes a bar and 1.15 times their choruses; Luthier gave every such line two bars
             cand_ = sorted([i for i, r in enumerate(pr) if 6 <= r["syllables"] <= 8 and sl[i] == 2], key=lambda i: (pr[i]["syllables"], i)); n1_ = len(cand_) if vc_ == "all" else len(cand_) // 2 if vc_ == "half" else int(round(pr[cand_[0]]["kept share in one bar or less"] * len(cand_))) if cand_ else 0
@@ -183,6 +185,8 @@ def plan(L):
                 nm_, i_ = k_.rsplit(":", 1); i_ = int(i_)
                 if sungb_[nm_][i_] != b4_: shared_[k_] = [sungb_[nm_][i_], b4_]
                 sungb_[nm_][i_] = b4_; slots[nm_][i_] = 2 if b4_ == 2 else 4 if (b4_ == 4 or pad4_) else 3
+        if TITLE_REST:
+            for k_ in title_entry_: nm_, i_ = k_.rsplit(":", 1); slots[nm_][int(i_)] = max(slots[nm_][int(i_)], sungb_[nm_][int(i_)] + 1)
         form = [(nm_, k_, (sum(slots[nm_]) + sum(slots[nm_]) % 2) if nm_ in slots else n_) for nm_, k_, n_ in form]
     form.append(("Outro", "outro", n_out)); br = BD.break_after(form); bar_s = 60.0 / L["bpm"] * beats
     if br is not None and (sum(b for _, _, b in form) + 8) * bar_s <= BD.EDG["length"][2]: form.insert(br + 1, ("Break", "solo", 8))        # 830; 842: only while the song stays inside the kept songs' middle half of lengths
@@ -227,6 +231,7 @@ def plan(L):
         spec["sung_bars"] = sungb_; spec["held_bar_share"] = round(next((c for p_, c in T["bar_rhythms"] if list(p_) == [0]), 0) / T["bars_total"], 4)      # trial (749.226)
         if title_room_: spec["title_room"] = title_room_
         if title_entry_: spec["title_entry"] = title_entry_
+        if title_entry_ and TITLE_REST: spec["title_entry_rest"] = {k_: [sungb_[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])], slots[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])]] for k_ in title_entry_}
         if SHARED_BARS and shared_: spec["shared_bars"] = shared_
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
     if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)

@@ -48,7 +48,7 @@ class Engine:
         self.NBARS = b; self.SUNG = [s for s, _, _ in spec["sung"]]; self.KIND = {s: k for s, k, _ in spec["sung"]}; self.LINES = {s: [[(t, bool(st)) for t, st in ln] for ln in ls] for s, _, ls in spec["sung"]}
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.SUNGB = {id(self.LINES[s_][i_]): b_ for s_, v_ in (spec.get("sung_bars") or {}).items() for i_, b_ in enumerate(v_)}; self._part = False      # trial (749.226)
-        self.TENTRY = set(spec.get("title_entry") or ()); self._made = {}
+        self.TENTRY = set(spec.get("title_entry") or ()); self._made = {}; self.RESTB = {id(self.LINES[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])]): v_ for k_, v_ in (spec.get("title_entry_rest") or {}).items()}      # trial (749.232 changed)
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
         self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0, 1.0)                                                # 926, 927
@@ -138,6 +138,7 @@ class Engine:
         if bars == 1: return self.BARS.get(n, [])
         return []
     def rhythm(self, rng, sy, tmin, slot, cap=None, hook=False, room=None):
+        if self.RESTB and id(sy) in self.RESTB and not self._part and slot == self.RESTB[id(sy)][1] * self.BAR: slot = max(2, self.RESTB[id(sy)][0]) * self.BAR      # trial (749.232 changed): the line ahead of a title line is drawn in its sung bars; the bar more is rest
         if slot in (3 * self.BAR, 4 * self.BAR) and self.SUNGB.get(id(sy)) in (3, 4) and len(sy) >= 4:
             # trial (749.226): a four-bar phrase read as two windows; three sung bars are a two-bar window and a one-bar rhythm, the fourth bar left to the hold or the rest
             sb_ = self.SUNGB[id(sy)]; n1_ = (len(sy) + 1) // 2 if sb_ == 4 else int(round(2 * len(sy) / 3.0)); self._part = True
