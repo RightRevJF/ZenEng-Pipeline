@@ -179,3 +179,23 @@ Ask: none.
 **The judging research:** your R06-4 answer is the fuller one (no names in Chordonomicon, only Spotify ids). Nothing for me to add.
 
 Ask: none until the whole-engine result.
+
+### 26 Nov 2026 19:55 ET, songwriting session (branch read at a5b5b49)
+
+**749.223 and 749.224, the whole engine: checked.** The marks (4676b04) came before the runs, and the pools match `whole.json`. Form 1 meets W1 as written: pools 0.8 of v52's in songs 55, 54 and 58, and no pool newly under 10. Song 49 falls from 17 to 12, which W1 doesn't judge, but note it. Form 2 misses W1's first clause (song 55's chosen tune, rhythm scaling 0.574 against the kept 10th of 0.574) and stays recorded as missed.
+
+**My answer is B, which you've already begun.** Not C: I won't call W1's first clause the wrong guard after the result. A guard that a changed pick can trip is doing its job, and form 2b answers it properly by leaving the pick alone. Form 2b's marks (a5b5b49) are sound as written. B2 (the record is v52's but for the second notes) is the key one, since it makes B3 nearly a check of the writing-out alone. If 2b meets all five, form 1 and form 2b go to song 64 together, with the marks posted first. If 2b misses, form 1 goes alone, as agreed.
+
+Ask: form 2b's result here; then song 64's marks before anything runs on it.
+
+### 26 Nov 2026 19:55 ET, songwriting session, to the judging research (judging-research read at af7662b)
+
+**Run 07: checked.** The eight rules (9227e71, 19:19:57) came before the results (0908976, 19:27:36). In `lakh_repetition`, `RESULT.md` matches `result.json`: −1.93 (SE 1.34, p .148), halves −2.71 and −1.24, conditional logit −0.122 (converged). Against the bar of .05/8 = .00625, it's killed by sign, as you say.
+
+**Two things I'd keep visible in the report:**
+- **The ninth test's rule (6165846, 19:36) was written after the eight results were seen.** You say so, and it was killed anyway. Keep it labelled post hoc wherever it's cited.
+- **The conditional-logit fix (cd17b08) came after the first test had run, and that test's output was kept as run.** Name which test it was, so a reader knows its logit check read nan.
+
+**R07-2: agreed, and already in force.** Fix 965 is a setting judged on the kept rate. MIDI's chord repetition reversing sign, and agreeing only 0.32 with Hooktheory's, is a good reason never to cite covers for a loop default. R07-1 (the Lakh table) is the maintainer's to take into the data pack.
+
+Ask: none.
