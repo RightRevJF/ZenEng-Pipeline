@@ -1,0 +1,257 @@
+{
+ "note": "C.fake_power on the 5,901 within-artist Lakh songs: artist baselines Beta(0.25, 1.0) (base 0.20, precision 1.25, run 06's calibration), y ~ Bernoulli(baseline + beta/100 * z); pass = two-sided p < alpha, predicted sign, same sign in both artist halves (no logit). 300 draws under the prediction, 150 under zero, seed 7. Kill-fire rates are normal approximations from the mean SE.",
+ "n_counted": 8,
+ "alpha": 0.00625,
+ "tests": {
+  "lakh_repetition": {
+   "measure": "ch_rep",
+   "extra": [],
+   "prediction": 1.0,
+   "sign": 1,
+   "rows": 5901,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.006666666666666667,
+    "false_pass": 0.0,
+    "se": 1.0336975804510375
+   },
+   "at_05": {
+    "power": 0.07666666666666666,
+    "false_pass": 0.013333333333333334,
+    "se": 1.0336975804510375
+   },
+   "se": 1.034,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.167,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "ch_rep",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ],
+   "at_alpha_if_0.4": {
+    "power": 0.0,
+    "false_pass": 0.0,
+    "se": 1.0349689517937877
+   },
+   "at_05_if_0.4": {
+    "power": 0.03333333333333333,
+    "false_pass": 0.013333333333333334,
+    "se": 1.0349689517937877
+   }
+  },
+  "tree_h4m": {
+   "measure": "H4m",
+   "extra": [
+    "cv_w",
+    "ch_rep"
+   ],
+   "prediction": -0.5,
+   "sign": -1,
+   "rows": 5901,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.0033333333333333335,
+    "false_pass": 0.0,
+    "se": 0.7180229196745621
+   },
+   "at_05": {
+    "power": 0.043333333333333335,
+    "false_pass": 0.006666666666666667,
+    "se": 0.7180229196745621
+   },
+   "se": 0.718,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.243,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "H4m",
+    "cv_w",
+    "ch_rep",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  },
+  "spectral_gap": {
+   "measure": "g",
+   "extra": [
+    "ch_rep"
+   ],
+   "prediction": -0.3,
+   "sign": -1,
+   "rows": 5901,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.006666666666666667,
+    "false_pass": 0.0,
+    "se": 0.665510031351022
+   },
+   "at_05": {
+    "power": 0.03333333333333333,
+    "false_pass": 0.02666666666666667,
+    "se": 0.665510031351022
+   },
+   "se": 0.666,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.326,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "g",
+    "ch_rep",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  },
+  "lakh_chirality": {
+   "measure": "CH",
+   "extra": [
+    "A",
+    "ch_rep"
+   ],
+   "prediction": -0.6,
+   "sign": -1,
+   "rows": 5900,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.0,
+    "false_pass": 0.0,
+    "se": 0.5667791265772113
+   },
+   "at_05": {
+    "power": 0.08333333333333333,
+    "false_pass": 0.0,
+    "se": 0.5667791265772113
+   },
+   "se": 0.567,
+   "kill_line": -0.2,
+   "kill_fires_if_true": 0.24,
+   "kill_fires_if_zero": 0.638,
+   "columns": [
+    "CH",
+    "A",
+    "ch_rep",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  },
+  "lakh_arrow": {
+   "measure": "A",
+   "extra": [],
+   "prediction": 0.6,
+   "sign": 1,
+   "rows": 5900,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.013333333333333334,
+    "false_pass": 0.0,
+    "se": 0.5766269388305697
+   },
+   "at_05": {
+    "power": 0.10666666666666667,
+    "false_pass": 0.006666666666666667,
+    "se": 0.5766269388305697
+   },
+   "se": 0.577,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.149,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "A",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  },
+  "loop_period": {
+   "measure": "lnP",
+   "extra": [
+    "ln_tempo"
+   ],
+   "prediction": 0.6,
+   "sign": 1,
+   "rows": 5759,
+   "artists": 1676,
+   "at_alpha": {
+    "power": 0.023333333333333334,
+    "false_pass": 0.0,
+    "se": 0.6018635735383242
+   },
+   "at_05": {
+    "power": 0.12333333333333334,
+    "false_pass": 0.02,
+    "se": 0.6018635735383242
+   },
+   "se": 0.602,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.159,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "lnP",
+    "ln_tempo",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  },
+  "burstiness": {
+   "measure": "B",
+   "extra": [],
+   "prediction": 0.3,
+   "sign": 1,
+   "rows": 5891,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.0,
+    "false_pass": 0.0,
+    "se": 0.742969253689501
+   },
+   "at_05": {
+    "power": 0.043333333333333335,
+    "false_pass": 0.013333333333333334,
+    "se": 0.742969253689501
+   },
+   "se": 0.743,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.343,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "B",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  },
+  "triad_fidelity": {
+   "measure": "F",
+   "extra": [],
+   "prediction": 0.5,
+   "sign": 1,
+   "rows": 5901,
+   "artists": 1678,
+   "at_alpha": {
+    "power": 0.0033333333333333335,
+    "false_pass": 0.0,
+    "se": 0.7962915112483929
+   },
+   "at_05": {
+    "power": 0.043333333333333335,
+    "false_pass": 0.0,
+    "se": 0.7962915112483929
+   },
+   "se": 0.796,
+   "kill_line": 0.0,
+   "kill_fires_if_true": 0.265,
+   "kill_fires_if_zero": 0.5,
+   "columns": [
+    "F",
+    "ln_chg",
+    "V",
+    "ln_bars"
+   ]
+  }
+ }
+}
