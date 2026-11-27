@@ -993,3 +993,24 @@ Ask: accept or change the form and marks for 749.231; I run on your word. And sa
 **My proposal for the next 3/4 form, yours to set:** the two things left are the pick and the commonest pitch. (1) The pick reads the like-length figures (your candidate A): after 749.231 it chooses among one build in two on stress and one in ten on all, where before it hunted one in fifteen. (2) For the commonest pitch, a form at the draw is wanted; I have none ready that is not a gate, and 956's ceiling in 3/4 at the like-length 75th is the nearest thing. Which, and with what marks?
 
 Ask: the next 3/4 form and its marks. And shall I write 749.232's rule (the line before a title line ends by the first beat of its last bar) for 6/8 while you answer?
+
+### 27 Nov 2026 15:59 ET, maintainer (at the commit that carries this post)
+
+Your 16:00 post (the writer's "I'm not sold on the waltz approach", and metre kept apart from style) crossed my 749.231 result, which was run against the lead-sheet marks as accepted at 15:45. That result stands as made, and it now reads as a result **for the standard-or-waltz style**. I agree with the change and with him: I had let one style's figures stand for the metre.
+
+**The Hooktheory tables are made, by song** (`studies/other_metres/hooktheory_tables.py`, `hooktheory_by_song.json`, `trial_tables/3-4_pop_sung.json` and `6-8_pop_sung.json` with their rows; the raw file fetched outside the repo, sha256 as the pack names). Three things to know before any mark is drawn from them:
+- **Setting film and game tunes apart by the Discogs join leaves few songs.** 3/4: 468 songs with melody on the grid, **54 in the Discogs join**, 414 not. 6/4: 468, **72** in the join, 396 not. Not being in the join does not make a tune a film or game tune; most unmatched ones are ordinary songs. The two tables are built from the joined songs only, as you asked, and are thin (1,230 and 1,213 bars). I can rebuild from all songs on your word; the by-song figures for both groups are in the file.
+- **A clip is a section, not a song** (median 16 bars in 3/4, 15 in 6/4, a song's clips pooled). Range, pitch count and repetition from clips are not like for like with whole lead sheets, and no "like length" band of 128 bars exists here.
+- **6/4 read as 6/8** is my reading (a Hooktheory beat taken as an eighth); 351 of its clips fall off that grid and are left out. Its median bar lasts 1.87 seconds.
+
+**What the 3/4 pop table shows against the lead-sheet waltz** (by song, joined songs; lead sheets in brackets):
+- notes a bar 2.75, middle half 2.34 to 3.30 (2.33; 2.06 to 2.70);
+- onsets on a beat 0.68 (0.84); on the first beat 0.30 (0.38);
+- **bars on a rhythm already sung 0.55 (0.85)**; on a figure already sung 0.33 (0.60);
+- commonest pitch 0.27; range 15.5 and 10 pitches over a song's clips;
+- a bar lasts 1.35 seconds at the median (about 133 quarters a minute).
+A pop song in three is busier, far less repetitive and less on the beat than a standard waltz. The writer's instinct holds in the figures.
+
+**Can the four style tables be selected by a lyric's genre? Yes.** The plan already takes a table by name and reads a style file and a stress file beside it; a map from `genre` to a table (folk to Essen, hymn to the hymns, standard to the lead sheets, pop, rock and indie to the Hooktheory table) is a few lines, and each table carries its own padding and stress style. Two gaps: Hooktheory has no words, so a pop lyric's stress table must be borrowed (the lead sheets', or a blend) and said so; and the hymns' table is 3/4 tunes without a rows file yet.
+
+Ask: (1) rebuild the pop tables from all Hooktheory songs, or keep the 54 and 72? (2) Your marks for a pop-style 3/4 trial, and on which seen lyric: song 53 is a carol and tests folk or hymn style, not pop; there is no seen pop lyric in 3/4, and song 68 is banked.
