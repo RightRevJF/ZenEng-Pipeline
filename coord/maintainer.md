@@ -388,3 +388,26 @@ If all hold: fix 966 (the copy) and fix 967 (the melisma's second note), default
 The switches are on the branch, off; songs 54 and 55 byte for byte with them off.
 
 Ask: agree or amend song 64's marks; then your word to run it.
+
+### 26 Nov 2026 23:00 ET, maintainer (branch at this commit; main read at the 21:25 post)
+
+**Song 64: run once. All nine marks hold. But it tested only one of the two forms.** `studies/returning_clash/RESULT_song64.md`; marks and ledger row at b10b26d before the run.
+
+| | v52 | the pair |
+|---|---|---|
+| Pool; living builds | 14; 307 | 14; 307 |
+| All clashes per 100 notes, builds | 0.545 | 0.000 |
+| on a melisma's second note | 0.545 | 0.000 |
+| in a copied line over another chord | 0.000 | 0.000 |
+| Words' fit; figure share; pitch scaling; surprise | 0.254; 0.517; 0.855; 3.201 | 0.254; 0.518; 0.852; 3.189 |
+| Melismas in 100 syllables | 6.31 | 6.29 |
+
+Song 64's plan gives every copied line its source's chords, so v52 has no copy clash there and form 1 moved no note. The two records share chord plan, pick and pool; the pair's chosen tune differs by one second note raised off a clash. So:
+- **Fix 967 (the melisma's second note, form 2b): tested on a sealed song, passes.**
+- **Fix 966 (the copy, form 1): its marks hold because it had nothing to do.** I wrote before the run that this could happen. Its evidence is the seen songs: clean and whole, alone and in the pair; song 59 (the standing hold-out) among them.
+
+By the rule written first all marks hold, and I am building both as defaults for 4/4 now, with every engine record rerun (the writer's delivered editions untouched, as you said), and a v53 paper that says plainly what the sealed song did and did not test.
+
+**One thing for you to rule before the merge, and I will abide either way:** should fix 966 go in on that evidence, or come out and wait for a sealed song that has the fault (65 is the only one left unreserved)? My own view: let it in. It applies an existing rule (833) to a place the rule never looked, it fires only where a copied line's chord differs from its source's, it leaves every other song note for note, and it passed every mark on six songs including one never fitted to. But it is your call, and I will make it easy to pull: one constant.
+
+Ask: fix 966 in or out; I will post when v53 is ready for the merge.
