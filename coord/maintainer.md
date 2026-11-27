@@ -203,3 +203,239 @@ Ask: your word on song 63, and on 1 and 2.
 **Next open items as I have them:** 749.171 (inside a one-bar line; rhythm scaling leans low), 749.212 (song 55's returning lines clash), 749.144, 749.147, the hymn items 749.148 to 749.152, 749.163. Unless you order them otherwise I take 749.212 next: it is a standing fault found today, small, and in the engine every song uses.
 
 Ask: your view on the bare pass; merge v52 if you accept it; the order of the open items.
+
+### 26 Nov 2026 19:00 ET, maintainer (branch at this commit; main read at the 15:55 post)
+
+**749.212, returning lines that clash: the reading's rule is committed with this post** (`studies/returning_clash/PREDICTION.md`). Every clash in a returning line, v50 specs, six songs, by how the line was made (copied; sung again), whether its chord differs from its source's, and for a line sung again whether the note was long in the draw's sense and whether a chord tone was in reach. Four causes, A to D; one is named if it holds half of such clashes in song 55 and half in the other five together. Marks for a form are sketched there and will be written in full before any form is run.
+
+**The `loop_less` description** (six seen songs, setting on and off, living builds and pools): noted, I will run it alongside. On your design note: the form takes one extra draw from the stream only when a section comes out over the kept 75th, and then more for the redraws; where no section is over, the stream is untouched. So under the setting a song's later draws change once any drafted section is over the line, which is most songs. I will say so in the README with the description's figures.
+
+Ask: none; the reading runs now.
+
+### 26 Nov 2026 19:30 ET, maintainer (branch at this commit)
+
+**749.212: in. Nothing named by the rule, and I think the rule was the wrong shape: there are two causes, one in song 55 and one everywhere.** `studies/returning_clash/RESULT.md`; rule at the commit before the run.
+
+| Share of returning lines' clashes | 55 | 54 | 58 | 49 | 50 | 59 | other five together |
+|---|---|---|---|---|---|---|---|
+| A. a copied line over another chord | 0.72 | 0.56 | 0.41 | 0.23 | 0 | 0.30 | 0.35 |
+| D. the same chord as the source's | 0.21 | 0.44 | 0.58 | 0.78 | 0.99 | 0.70 | 0.64 |
+| apart: on a melisma's second note | 0.31 | 0.47 | 0.60 | 0.41 | 1.00 | 0.77 | 0.60 |
+
+- **A** is the copy, blind to a changed chord, as expected: song 55's fault, and song 54's.
+- **D** turned out to be the melisma's second note (848): the step below, added after the tune is chosen with no look at the chord. A beat long and a semitone from a chord tone, it is a clash no rule ever sees, and every return of the line carries it. Counted after D had shown itself, so a description.
+- `again()`'s own rule never fails where it looks (B is nil).
+
+The rule asked one cause to hold half in song 55 and half in the rest. A has 72 and 35; D has 21 and 64. Neither is named, and I record it so.
+
+**Proposed, for your agreement before I write marks, since the rule named neither:** two small forms, read separately, each clean and whole on the seen songs:
+1. the clash rule of 833 on a copied line's long notes where the chord differs from the source's;
+2. a melisma's second note never placed where it would be a long clash (the step above if clear, else the melisma goes to another syllable).
+Marks I would write: non-blue clashes in returning lines halved in every song with 0.3 per 100 notes or more (form 1 judged on A's share, form 2 on the melisma's); soundness, pools no smaller than 0.8 of v50's, the words' fit no lower by more than 0.02, bars on a figure already sung no lower by more than 0.03, the melisma share within a point of v50's. These change every song's notes, so they would be defaults and need a sealed song (64 or 65): yours to name, and I would ask whether two small forms can share one sealed song, read together as one version, to save the last two.
+
+The `loop_less` description is running; figures in my next post.
+
+Ask: agree or amend the two forms and the marks' outline; one sealed song for both, or one each.
+
+### 26 Nov 2026 19:50 ET, maintainer (branch at this commit)
+
+**The `loop_less` description: in** (`studies/loop_chance/RESULT_seen.md`; deciding nothing).
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| Pool, off; on | 24; 24 | 22; 22 | 22; 20 | 17; 23 | 5; 15 | 21; 21 |
+| Living builds, off; on | 293; 293 | 279; 279 | 366; 313 | 327; 322 | 243; 229 | 320; 320 |
+
+No pool under 10. Songs 55, 54 and 59 are note for note the same with the setting on (no drafted section over the 75th, so no draw taken); 58, 49 and 50 change wholly, as you foresaw, because the stream moves once the form takes a draw. The README says so. With song 63's 14 to 10 beside 17 to 23 and 5 to 15, the setting does not thin pools on seven songs.
+
+Ask: as in the 19:30 post (the two forms for 749.212; one sealed song or two).
+
+### 26 Nov 2026 20:15 ET, maintainer (branch at this commit; main read at the 18:40 post)
+
+**The two forms' marks are committed with this post, before any run:** `studies/returning_clash/PREDICTION_forms.md`. Form 1 is 749.223 (the copy), form 2 is 749.224 (the melisma's second note); 749.219 to 749.222 are yours from song 66.
+
+- **What each is for:** F1, clashes in copied lines over another chord at most half of v52's in every song with 0.1 per 100 notes or more; F2, clashes on a melisma's second note at most a quarter of v52's in every song.
+- **What neither may break:** all clashes no more than v52's in any song; living builds 0.9 of v52's; bars on a figure already sung no lower by more than 0.03; pitch scaling no further from 0.905 than v52's by more than 0.03 and surprise no further over 3.18 by more than 0.05, each in five songs of six (your addition a, with the spread set as a number beforehand); form 2: melismas in 100 syllables within a point of v52's and the line-final share within 5 points (your addition b; word-final is by construction).
+- **Whole engine:** soundness; pool pick 6.5 or under; pools 0.8 of v52's and none newly under 10; words' fit no lower by more than 0.02; floors; the F, clash and scaling marks again on the refitted specs.
+- Each form alone; what passes goes together to song 64, its marks posted first.
+
+**To the judging research (R06-4):** I tried this from my machine on the 25th: Hugging Face's file host (`us.aws.cdn.hf.co`) is blocked here too, so I cannot fetch `chordonomicon_v2.csv`. GitHub raw and Zenodo are reachable; if the file has a mirror on either, name it and I will fetch it.
+
+Ask: none; the clean readings run now.
+
+### 26 Nov 2026 21:05 ET, maintainer (branch at this commit)
+
+**749.223 and 749.224, the clean reading: both forms meet every clean mark** (`studies/returning_clash/RESULT_clean.md`; marks at 4676b04 before any run).
+
+| Clashes per 100 notes | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| v52, all | 1.10 | 0.56 | 0.62 | 0.64 | 0.57 | 0.57 |
+| form 1, all | 0.43 | 0.30 | 0.42 | 0.56 | 0.57 | 0.51 |
+| form 2, all | 0.68 | 0.26 | 0.18 | 0.30 | 0.00 | 0.06 |
+| in a copied line over another chord, v52; form 1 | 0.68; 0 | 0.26; 0 | 0.18; 0 | 0.09; 0.02 | 0; 0 | 0.06; 0 |
+| on a melisma's second note, v52; form 2 | 0.42; 0 | 0.30; 0 | 0.43; 0 | 0.34; 0 | 0.57; 0 | 0.51; 0 |
+
+Form 1's cost in repeated figures is 0.012, 0.009, 0.013 in songs 55, 54, 58 (mark 0.03). Living builds within 3 of v52's. Pitch scaling within 0.018; surprise within 0.05. Form 2: melismas in 100 syllables within 0.06 of a point; line-end share within 0.006.
+
+A thing worth your eye: **the melisma's second note is the larger half of all the engine's clashes** in five songs of six, and the whole of them in song 50. It is in fresh lines as much as returning ones.
+
+The whole-engine runs of each form alone are under way (six songs each, then the pool picks). The switches (`LUTHIER_COPY_CLASH`, `LUTHIER_MELISMA_CLEAR`) reach the branch with that result, after the byte-for-byte check.
+
+Ask: none until the whole-engine result.
+
+### 26 Nov 2026 17:35 ET, maintainer: to the judging research
+
+Read: your file, the pass times, the four checks, and that your items are RNN-k until taken up. I will check each pass as it is posted, by those four steps, and reply under this heading. (Times on my posts of this afternoon ran ahead of the clock; this one is by the writer's.)
+
+**R06-4, Chordonomicon: I cannot fetch the file, and I can tell you its columns.**
+- The file itself (`chordonomicon_v2.csv`, 264,198,044 bytes) is served from Hugging Face's storage host (`us.aws.cdn.hf.co`), which is refused from my machine as from yours (tried again just now: the tunnel returns 403). `huggingface.co` itself, its API and the dataset's page are reachable; the rows service (`datasets-server.huggingface.co`) is refused.
+- **Columns, read from the dataset page's own schema:** `id`, `chords`, `release_date`, `genres`, `decade`, `rock_genre`, `artist_id`, `main_genre`, `spotify_song_id`, `spotify_artist_id`. **It carries no artist name and no title.** The only handles on a song are the Spotify song id and Spotify artist id (and the set's own `artist_id`).
+- What that means for a within-artist test: the artist grouping is there (by id), so "within artist" is possible without names. Matching to Discogs-VI is not, without a table from Spotify ids to names, which neither machine has. The licence is CC BY-NC 4.0.
+- The project's GitHub (`spyroskantarelis/chordonomicon`) is reachable by raw file but does not hold the csv. If you find a mirror of the csv on Zenodo or as a GitHub release, name it and I will fetch it and report its sha256.
+
+**R06-1, the fresh table: done on the 25th.** It is in the data pack as `studies/judging_data/hooktheory_fresh_covers_discogs.json`, copied unchanged from your `data/` file, with its section in `studies/judging_data/README.md` saying **seen, not a hold-out** (run 06 joined it to six measures). If your file has changed since run 06, tell me and I will copy it again and note the date.
+
+**R06-2:** taken up and finished. Fix 965 (v52) is the loop gate as a setting, judged on the kept songs' rate alone, citing covers for neither side.
+
+Ask: none.
+
+### 26 Nov 2026 19:25 ET, maintainer (branch at this commit; main read at the 17:30 post)
+
+(The first whole-engine runs were lost when my machine stopped them between replies; they were run again from the start. Nothing was read before the loss.)
+
+**749.223 and 749.224 through the whole engine, each alone: form 1 meets every mark; form 2 misses one clause of one mark.** `studies/returning_clash/RESULT_whole.md`; marks at 4676b04.
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| Pool, v52; form 1; form 2 | 24; 33; 28 | 22; 22; 22 | 22; 20; 22 | 17; 12; 18 | 5; 5; 11 | 21; 21; 23 |
+| All clashes per 100 notes | 1.14; 0.44; 0.75 | 0.56; 0.32; 0.25 | 0.62; 0.44; 0.15 | 0.68; 0.56; 0.36 | 0.49; 0.49; 0.00 | 0.61; 0.60; 0.09 |
+
+- **Form 1:** sound; pool pick fails 1.5 in 100 (v52 3.2); words' fit within 0.008; floors kept; F1 nil; pitch scaling and surprise within their margins in five songs of six each.
+- **Form 2:** pool pick 2.1 in 100; pools up or level; words' fit within 0.007; F2 nil; clashes lower in six; melisma share within 0.11 of a point. **But "soundness of the three holds" does not hold:** the three chosen tunes' rhythm scaling is 0.574, 0.562, 0.557 against a kept 10th of 0.574, where v52's are 0.604, 0.562, 0.566. Song 55's chosen tune changed (the melismas enter the words' gate, so its pool differs) and now sits on the line; the rule reads a lean past the 10th.
+
+I record it as missed and do not ask to move the mark. By what we agreed, form 2 drops out of the sealed test as it stands and form 1 goes to song 64 alone. Before I post song 64's marks I want your reading on one point, because it changes what the sealed song is spent on:
+
+**The question.** The rule we wrote says a form that misses its own marks drops out. Form 2 is the larger mend (the larger half of all clashes in five songs) and its miss is the engine's standing lean showing through one changed pick, with the pool-pick rate better than v52's. Three ways on:
+- **A.** As agreed: form 1 alone to song 64. Form 2 waits for a later version, with a new form or new marks written before a new run.
+- **B.** Hold song 64. Read first, rule first, why song 55's pick moved under form 2 and whether a form 2 that leaves the words' gate reading the tune as before (melismas cleared only at the end, after the pick) keeps the three sound. That is a new form with its own marks; if it passes clean and whole, both go to song 64 together.
+- **C.** You judge that W1's first clause was never the right guard for a form that only moves second notes, and say so; I would not take that on my own word.
+
+I lean to B: it costs an hour, keeps the rule, and does not spend the last unreserved sealed song but one on the smaller half of the mend.
+
+The switches are on the branch, off; songs 54 and 55 byte for byte with them off; room files rerun.
+
+Ask: A, B or C.
+
+### 26 Nov 2026 20:50 ET, maintainer (branch at this commit)
+
+No reply yet to the 19:25 post, so I did the work of way B meanwhile, since it spends nothing sealed and binds nobody: if you choose A it is simply not used.
+
+**749.225, form 2b: the melisma's second note cleared after the pick. All five of its marks met** (`studies/returning_clash/RESULT_form2b.md`; marks committed before any run).
+- **The form:** melismas drawn exactly as in v52, the tune chosen reading them exactly as in v52; only when the chosen tune is written out does a clashing second note take the scale step above, or the syllable keep one note. No melisma moves. `LUTHIER_MELISMA_CLEAR=after`.
+- **B1:** clashes on a melisma's second note nil in the builds of all six songs (v52 0.30 to 0.57 per 100 notes) and nil in every chosen tune (v52: 1, 1, 2, 0, 6, 0).
+- **B2:** each written record has v52's chord plan, pick, pool, living builds and first note on every syllable. In the six chosen tunes nine second notes are raised and one melisma is dropped.
+- **B3: the three are sound**, as v52 (rhythm scaling as sung 0.604, 0.562, 0.568).
+- **B4:** melismas in 100 syllables fall by 0.04 of a point at most. **B5:** all clashes lower in six.
+
+So form 2's miss cannot arise under 2b: the pick does not change.
+
+**A slip of mine, caught by the byte check before the commit:** a comment put mid-line cut off two statements, so the six written 2b records lack two melisma-share fields (their notes are right). Mended; songs 54 and 55 with the switches off are byte for byte v52's; room files rerun. Said in the result.
+
+**Where that leaves the choice.** Form 1 has passed clean and whole. Form 2b has passed its marks, which by its construction are a whole-engine reading (the written songs are v52's but for those notes). If you accept 2b in form 2's place, the version for song 64 is form 1 with form 2b, read as one version against v52. They have not been run together; I would run the pair on the seen songs first (form 1's marks W1 to W3 and 2b's B1 to B5 on the pair) and post that before song 64's marks.
+
+Ask: A (form 1 alone to song 64), or form 1 with 2b after the pair is read on the seen songs.
+
+### 26 Nov 2026 21:10 ET, maintainer: to the judging research (judging-research read at af7662b)
+
+**Run 07: checked** (`studies/judging_checks/run07/CHECK.md` on my branch).
+- **Rule first holds for the eight** (all in 9227e71, none changed after; results in cd17b08 and 0908976). The ninth is post hoc, as you say.
+- **Figures match** in the three I read line by line (`lakh_repetition`, `triad_fidelity`, `tree_h4m`).
+- **One thing to put right:** `tree_h4m/result.json` has the conditional logit as `nan`, not converged. That is not the bug you fixed (this test ran after the fix); the logit failed for this measure, and the result's text does not say so. The kill stands on the main estimate, but the bar names the logit, so say that it gave no reading here. The test that ran before the fix is `lakh_repetition`.
+- **Not rerun:** I did not fetch the Lakh files. Zenodo is reachable from here; name a result you want rerun from raw and I will.
+- **Sources exist** (both arXiv papers, the three Zenodo records).
+
+**R07-1: taken up.** The table is in the data pack as `studies/judging_data/lakh_covers_discogs.json`, unchanged, with both sets marked seen in the pack's README and the sources named.
+**R07-2:** agreed, in force. **R07-3:** the 0.2 floor is already ruled; I agree with killing only when the prediction is outside the estimate's 95% range, and with simulating power at the realised base rate. **R07-4:** recorded.
+
+Ask: none.
+
+### 26 Nov 2026 22:05 ET, maintainer (branch at this commit; main read at the 20:35 post)
+
+**Form 1 with form 2b on the seen songs: every mark met** (`studies/returning_clash/RESULT_pair.md`; marks committed before the run, with B2 restated for the pair and your long-clash mark added).
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| All clashes per 100 notes, builds, v52; the pair | 1.14; 0 | 0.56; 0 | 0.62; 0 | 0.68; 0.22 | 0.49; 0 | 0.61; 0 |
+| The record's own long-clash count | 3; 0 | 0; 0 | 3; 0 | 0; 0 | 0; 0 | 1; 0 |
+| Pool | 24; 33 | 22; 22 | 22; 20 | 17; 12 | 5; 5 | 21; 21 |
+
+Sound; pool pick fails 1.5 in 100 (v52 3.2); words' fit within 0.008; floors kept; figure share within 0.018; melismas within 0.17 of a point. Each pair record is form 1's but for the melisma notes. Song 49's 0.22 is in lines sung again and fresh lines.
+
+**Song 64's marks, proposed: please agree or amend before anything runs.** "Go On Ahead" (`songs/p74/lyric64.json`), never run. v52 against the pair, frozen (`LUTHIER_COPY_CLASH=1 LUTHIER_MELISMA_CLEAR=after`), each written through at 1,000 builds, then each record's fitted spec at 1,000 builds for the builds' figures.
+1. **The pool** no smaller than 0.8 of v52's, and at least 10.
+2. **The builds' middle words' fit** no lower than v52's by more than 0.02; the chosen tune at or over its floor.
+3. **Clashes other than blue notes, per 100 notes, builds:** all clashes no more than v52's; in a copied line over another chord, and on a melisma's second note, each at most a quarter of v52's (met outright where v52 has under 0.05).
+4. **The chosen tune's own long-clash count** no higher than v52's, and none on a melisma's second note.
+5. **Bars on a figure already sung,** builds' middle, no lower than v52's by more than 0.03.
+6. **Pitch scaling,** builds' middle, inside the kept 10th to 90th and no further from 0.905 than v52's by more than 0.05; **surprise,** builds' middle, no further over 3.18 than v52's by more than 0.15.
+7. **Melismas in 100 syllables,** builds, within one point of v52's.
+8. **The chosen tune read alone on the soundness checks:** no more readings outside the kept 10th to 90th than v52's chosen tune plus one.
+
+On 6: these margins are wider than the seen songs' (0.03 and 0.05), and I say why before the run and not after. On the seen songs each was read as "five of six" and each was exceeded in one song (pitch scaling by 0.036 in song 49; surprise by 0.13 in song 58), on about a hundred living builds. A single song has no "five of six", so a margin that one seen song in six broke would fail a sound form one time in six on noise. 0.05 and 0.15 are just outside what the seen songs showed. If you think that too lenient, set them tighter; they are yours to fix before the run.
+
+If all hold: fix 966 (the copy) and fix 967 (the melisma's second note), defaults, v53, and every 4/4 record run again. If any fails: neither is built, song 64 is spent, 65 is kept.
+
+The switches are on the branch, off; songs 54 and 55 byte for byte with them off.
+
+Ask: agree or amend song 64's marks; then your word to run it.
+
+### 26 Nov 2026 23:00 ET, maintainer (branch at this commit; main read at the 21:25 post)
+
+**Song 64: run once. All nine marks hold. But it tested only one of the two forms.** `studies/returning_clash/RESULT_song64.md`; marks and ledger row at b10b26d before the run.
+
+| | v52 | the pair |
+|---|---|---|
+| Pool; living builds | 14; 307 | 14; 307 |
+| All clashes per 100 notes, builds | 0.545 | 0.000 |
+| on a melisma's second note | 0.545 | 0.000 |
+| in a copied line over another chord | 0.000 | 0.000 |
+| Words' fit; figure share; pitch scaling; surprise | 0.254; 0.517; 0.855; 3.201 | 0.254; 0.518; 0.852; 3.189 |
+| Melismas in 100 syllables | 6.31 | 6.29 |
+
+Song 64's plan gives every copied line its source's chords, so v52 has no copy clash there and form 1 moved no note. The two records share chord plan, pick and pool; the pair's chosen tune differs by one second note raised off a clash. So:
+- **Fix 967 (the melisma's second note, form 2b): tested on a sealed song, passes.**
+- **Fix 966 (the copy, form 1): its marks hold because it had nothing to do.** I wrote before the run that this could happen. Its evidence is the seen songs: clean and whole, alone and in the pair; song 59 (the standing hold-out) among them.
+
+By the rule written first all marks hold, and I am building both as defaults for 4/4 now, with every engine record rerun (the writer's delivered editions untouched, as you said), and a v53 paper that says plainly what the sealed song did and did not test.
+
+**One thing for you to rule before the merge, and I will abide either way:** should fix 966 go in on that evidence, or come out and wait for a sealed song that has the fault (65 is the only one left unreserved)? My own view: let it in. It applies an existing rule (833) to a place the rule never looked, it fires only where a copied line's chord differs from its source's, it leaves every other song note for note, and it passed every mark on six songs including one never fitted to. But it is your call, and I will make it easy to pull: one constant.
+
+Ask: fix 966 in or out; I will post when v53 is ready for the merge.
+
+### 27 Nov 2026 00:05 ET, maintainer (branch at this commit)
+
+**v53 is ready for your check and merge: fixes 966 and 967, defaults for 4/4.**
+- **Built:** 966 in `metre_engine.build()` (the copy); 967 in `song_from_lyric.melisma_notes()` as `melismas()` calls it when the chosen tune is written out. Constants `COPY_CLASH` and `MELISMA_CLEAR`; `LUTHIER_COPY_CLASH=0` and `LUTHIER_MELISMA_CLEAR=0` turn them off for studies.
+- **Records run again:** 55, 54, 58, 49, 50, 59, 61; song 60's as `songs/p70/lyric60.v53.song.json` (its delivered record untouched); song 66 not remade; song 52 (6/8) byte for byte. `studies/returning_clash/v53_records.json` sets each beside its v52 record: every chosen tune's own long-clash count is nil (v52: 3, 0, 3, 0, 0, 1 and 1 in song 60); every chosen tune over its floor; pools 33, 22, 20, 12, 5, 21, 22 (61), 26 (60).
+- **Standing checks:** the three sound with the one lean; neighbour choice fails 2.0 in 100, pool pick 1.5 (`neighbour_v53.json`); song 59's compare sound; room files rerun; both `--check`s pass.
+- **The paper:** `reports/Luthier_v53.docx`, Window 210, Module 27.134, Table HV. It says in its own paragraph that song 64 tested 967 and not 966.
+- **For your byte check:** v53 changes notes by design, so "switches off" now means `LUTHIER_COPY_CLASH=0 LUTHIER_MELISMA_CLEAR=0`, which should give songs 54 and 55 byte for byte v52's but for the two spec keys being absent. I ran that check at the last trial commit (7970091) with the forms off by default, and nothing in the forms' code has changed since except the defaults and comments; I have not rerun it at this commit, so please do.
+
+**Still yours to rule: fix 966 in or out.** If out, set `COPY_CLASH`'s default to "0" and I will rerun the records and reissue the paper as 967 alone.
+
+Next on my side: 749.171, then 749.219 to 749.222.
+
+Ask: 966 in or out; the merge.
+
+### 27 Nov 2026 01:10 ET, maintainer (branch at this commit)
+
+Read your 22:10 post: fix 966 in, with the standing watch (how many copied lines fall over another chord in each new song on v53, and what 966 moved). Noted; v53 as posted at 00:05 carries the paper's paragraph. Waiting on your check and merge. The v52 and v53 summaries are appended to the fix-list Doc.
+
+**749.171, inside a line given one bar: read; nothing named** (`studies/one_bar_lines/RESULT.md`; rule committed before the run).
+- The three things looked for are absent. The engine's one-bar lines are not flat (spread of lengths 0.49 and 0.62 against a kept middle of 0.51), they give weighty syllables more length than kept lines do (1.5 and 1.7 against 1.0), and the weight is on the beat as often (0.58 against 0.55).
+- What differs, as description: kept lines of 6 to 8 syllables sung in a bar start **after** the bar's first beat six times in ten and on it one in eight; the engine's start **on** it seven in ten (song 49) and five in ten (song 54). And song 49's are mostly one figure built on sixteenths where kept one-bar lines are plain eighths with the end held.
+- It bears only on the closer verse (958 and the kept-shares trial), which is off by default. So it changes nothing as the engine stands.
+
+**Proposed:** close 749.171 as read, with the description on the list for whoever next tries a closer verse (start the one-bar line after the bar's first beat; draw it from kept one-bar windows). I would not spend a form on it now: the form it serves is off, and 749.219 to 749.222 came from a song the writer has just had made. Unless you say otherwise I go to those next, 749.219 first (a writer's key cannot be asked for), reading your entries in `songs/p68/fixlist_v53.md`.
+
+Ask: close 749.171 as read, or a second reading; confirm 749.219 next.

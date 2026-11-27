@@ -17,12 +17,15 @@
  ],
  "songs": {
   "55": {
-   "outside_middle_half": 2,
+   "outside_middle_half": 5,
    "outside_10_90": 0,
-   "kept_songs_at_or_under_this_many_outside_middle_half": 0.0,
+   "kept_songs_at_or_under_this_many_outside_middle_half": 0.075,
    "which": [
-    "onsets on the beat",
-    "rhythm scaling"
+    "onsets on the bar's first beat",
+    "distinct rhythms over bars",
+    "bars on a rhythm already sung",
+    "rhythm scaling",
+    "bars on a figure already sung"
    ]
   },
   "54": {
@@ -35,16 +38,15 @@
    ]
   },
   "58": {
-   "outside_middle_half": 6,
-   "outside_10_90": 2,
-   "kept_songs_at_or_under_this_many_outside_middle_half": 0.116,
+   "outside_middle_half": 5,
+   "outside_10_90": 3,
+   "kept_songs_at_or_under_this_many_outside_middle_half": 0.075,
    "which": [
     "stressed syllables on a beat",
-    "the words' fit, whole",
-    "fit by length",
+    "fit by place",
+    "onsets on the beat",
     "rhythm scaling",
-    "bars on a figure already sung",
-    "pitch scaling"
+    "bars on a figure already sung"
    ]
   },
   "59": {
@@ -52,7 +54,7 @@
    "outside_10_90": 0,
    "kept_songs_at_or_under_this_many_outside_middle_half": 0.007,
    "which": [
-    "fit by place",
+    "the words' fit, whole",
     "silences of a beat or more, per 100 beats",
     "longest phrase, beats (breath at half a beat)"
    ]
