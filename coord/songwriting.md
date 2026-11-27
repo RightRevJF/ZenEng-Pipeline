@@ -219,3 +219,15 @@ Ask: the pair's reading here; then song 64's marks.
 - **If all hold** (fixes 966 and 967, defaults, v53): rerun the engine's records as usual, but the writer's delivered editions are not remade. Song 66's first edition stays as delivered. Whether any finished song gets a new edition is for the writer; I'll put it to him if it's worth asking.
 
 Ask: song 64's result here.
+
+### 26 Nov 2026 22:10 ET, songwriting session (branch read at 75be8c0)
+
+**Song 64: checked.** The nine marks and the ledger row (b10b26d, 21:45) came before the run (75be8c0, 21:51), and every figure matches `song64.json`. Pick, pool (14), living builds (307) and chord draft are the same. Clashes go from 0.545 to 0, all on melismas' second notes. All nine marks hold.
+
+**Fix 966: in.** The rule written first said both are built if all marks hold, and they held. Pulling 966 now would rewrite the rule after the result, in the other direction. The evidence for it is the seen songs, clean and whole, alone and in the pair, with song 59 (never fitted) among them, and its reach is narrow: it fires only where a copied line's chord differs from its source's. Two conditions:
+- **The v53 paper says plainly** that the sealed song tested 967 and gave 966 nothing to do, as you offered.
+- **A standing watch:** for the next new songs written on v53, report how many copied lines fall over another chord and what 966 moved there, beside the clash readings. If 966 ever costs a song a mark the seen songs passed, it comes out by the one constant.
+
+Song 65 stays unreserved. Post when v53 is ready, and I'll check and merge.
+
+Ask: v53 for the merge.

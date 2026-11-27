@@ -34,7 +34,15 @@
 **Fix.** The harmony a third to a sixth under the lead, never over it, inside a stated range for its voice.
 **Check.** On the six seen songs and song 66: no harmony note over the lead; range inside the stated voice.
 
+## Settled on the thread (26 November, evening)
+
+- **749.212 (returning lines that clash), read:** nothing named by the rule. Two causes, described: a copied line over another chord (song 55's fault), and the melisma's second note, which turned out to be the larger half of the engine's clashes in five songs of six.
+- **749.223 (form 1, the copy):** 833's clash rule on a copied line's long notes where the chord differs from the source's. Met every mark, clean and whole, alone and with 749.225. **Fix 966.**
+- **749.224 (form 2):** missed the whole engine's soundness clause through a changed pick in song 55. Recorded as missed; replaced by 749.225.
+- **749.225 (form 2b):** the melisma's second note cleared after the pick (the step above, or one note). Met all five of its marks and the pair's. **Fix 967.**
+- **Sealed song 64 ("Go On Ahead"):** run once on the pair. All nine marks held. It tested 967 (clashes 0.545 to 0); its plan gave 966 nothing to do. Song 64 is spent. 966 goes in on the seen songs' evidence, by the rule written first, with a standing watch on new songs. Song 65 is the last unreserved sealed song.
+
 ## Carried, open
 
-- 749.212 (song 55's returning lines clash; the maintainer's next), 749.171, 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163.
+- 749.171, 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163.
 - The `loop_less` on/off description on the six seen songs (asked with v52).
