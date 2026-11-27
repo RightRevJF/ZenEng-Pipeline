@@ -8,7 +8,10 @@
    "proposed": "week01",
    "status": "passed",
    "status_set_by": "maintainer within_artist (22 Nov)",
-   "note": "−0.071 across artists; −0.042 within artist (p .009); fresh McGill −0.028, unsettled"
+   "note": "−0.071 across artists; −0.042 within artist (p .009); fresh McGill −0.028, unsettled",
+   "history": [
+    "run08: fresh ChoCo confirmation chrep_confirm frozen (counted)"
+   ]
   },
   {
    "id": "W01-J2",
@@ -179,7 +182,10 @@
    "proposed": "run03",
    "status": "testing",
    "status_set_by": "run06 experiments",
-   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06; run05 first principles: recommended retiring (gate 0.203, power 0.09) | run06 fresh_tonic: -0.25 (SE 0.75, p .74), halves split; unsettled (power 0.03). Retirement still recommended; Jason decides."
+   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06; run05 first principles: recommended retiring (gate 0.203, power 0.09) | run06 fresh_tonic: -0.25 (SE 0.75, p .74), halves split; unsettled (power 0.03). Retirement still recommended; Jason decides.",
+   "history": [
+    "run08: tonic_resistance frozen on ChoCo written keys (estimate)"
+   ]
   },
   {
    "id": "R03-I3",
@@ -567,6 +573,87 @@
    "status": "failed",
    "status_set_by": "run07 experiments",
    "note": "run07 cv_w_singletons: KILLED beta -0.13 (SE 0.81, p .87), halves -0.02/+0.005, logit -0.014; N 3,348; power 0.06; lead from an uncounted +3.11 within-artist reading"
+  },
+  {
+   "id": "R08-G1",
+   "idea": "Transport economy econ = 1 - (mean circular W1 step)/(mean W1 over all pairs of the song's chords) (card 1)",
+   "stance": "Geometer",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "run08 chair: estimate (power 0.22, counted set full)"
+  },
+  {
+   "id": "R08-G2",
+   "idea": "Transposed repetition T = share of 3-gram transposition classes heard earlier at another pitch level",
+   "stance": "Geometer",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "run08 chair: estimate (author withdrew it from the count)"
+  },
+  {
+   "id": "R08-G3",
+   "idea": "Fitness beyond the urn: notes measure predicting late covers holding early covers",
+   "stance": "Geometer",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "merged into R08-L2 (cover_timeline) as its second reading"
+  },
+  {
+   "id": "R08-L1",
+   "idea": "Key travel TRAV5: mean circular W1 on the fifths circle between consecutive 4-bar windows, holding TRAVL1 (card 1)",
+   "stance": "Listener",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "run08 key_travel, counted"
+  },
+  {
+   "id": "R08-L2",
+   "idea": "Momentum or fitness: Poisson slope of late artist sets on log(K10+1) (card 2, neutral copying)",
+   "stance": "Listener",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "run08 cover_timeline, counted"
+  },
+  {
+   "id": "R08-L3",
+   "idea": "The ii-V chunk: share of changes from a minor seventh to a dominant seventh a fourth up",
+   "stance": "Listener",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "run08 iiv_chunk, counted"
+  },
+  {
+   "id": "R08-I1",
+   "idea": "Key excursion E: mean circular W1 (fifths) of 4-bar windows from the whole chart",
+   "stance": "Inventor",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "merged into key_travel as its second reading"
+  },
+  {
+   "id": "R08-I2",
+   "idea": "Harmonic heritability: chord-space neighbours' cover residuals alike beyond a within-cell permutation null (card 2)",
+   "stance": "Inventor",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 chair",
+   "note": "run08 heritability, counted"
+  },
+  {
+   "id": "R08-I3",
+   "idea": "Inherited template F: log(1+other-composer charts sharing interval trigrams)",
+   "stance": "Inventor",
+   "proposed": "run08",
+   "status": "withdrawn",
+   "status_set_by": "run08 chair",
+   "note": "withdrawn by its author (stability 0.45, 94% zeros)"
   }
  ]
 }
