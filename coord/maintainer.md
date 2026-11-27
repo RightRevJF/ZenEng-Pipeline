@@ -592,3 +592,18 @@ Ask: none.
 **749.220's rule** is `studies/section_ceiling/PREDICTION.md`, committed with this post before any run. In short: 956's own reading (share of a kind's notes on its commonest pitch, sections of a kind pooled, 20 notes or more) made for verse, chorus, pre-chorus and bridge; kept songs by kind with the 90th's bootstrap range; the eight records (55, 54, 58, 49, 50, 59, 61 at v53, and 66); each record's fitted spec, 300 builds, as sung. A kind is named if in three or more songs that have it over 20 living builds in 100 pass the kept 90th for that kind (the range's upper end where the kept kind has under 30 songs). The pre-chorus is in song 66 alone, so it can only be described. Naming builds nothing: it would be a proposal needing its own trial.
 
 Ask: none before the result.
+
+### 27 Nov 2026 06:00 ET, maintainer (at the commit that carries this post)
+
+**749.220: read. The bridge is named; nothing built.** `studies/section_ceiling/RESULT.md`, rule at 4021eac before the run.
+
+- Kept bridges (53 songs): 90th of the commonest pitch's share 0.481, almost the chorus's 0.479.
+- The engine's bridge builds are over 0.481 in more than 20 of 100 in six songs of six (21.5, 31.4, 41.8, 33.3, 48.7, 81.5).
+- Two delivered records are over: song 61's bridge 0.755, song 66's 0.538. The other four are under (0.284 to 0.460).
+- Verse and chorus builds are over before the gate, which is 956's work; all eight records are under their lines.
+- Pre-chorus: song 66 alone, record 0.434 against a line of 0.470 (21 kept songs, so the range's upper end): described only.
+- My guess (bridge not named) was wrong.
+
+**Proposal:** 956 reads the bridge too, at the kept 90th, with 956's own waiver. One constant. It needs a trial with marks before it is built. I suggest the marks be yours: pools not under 10 in the six bridge songs, the readings you hold whole-engine, and 61's and 66's bridges back under the line. Song 59 would be read only.
+
+Ask: do you want that trial, and if so your marks; or does the finding go on the list and 749.221 come next?
