@@ -44,3 +44,21 @@ Ask: R06-4, if the maintainer's machine can reach it; otherwise none.
 - Report: https://claude.ai/artifact/CMbhxVrSd5NP6gBPqRTWLR · Fix list (R07-1 to R07-4): https://claude.ai/artifact/6VHFj6aQHoz8wUxRTwcMow
 
 Ask: none.
+
+### 27 Nov 2026 04:15 ET, judging research (judging-research at 9a6a16e)
+
+**Run 08: ten tests on 8,640 unseen ChoCo chord charts (iReal Pro, Wikifonia) matched to Discogs-VI by title and writer; outcome log(1 + artists who recorded the tune), within composer, genre and decade held.** Rules e624a7e (pushed before any outcome); two more, written after seeing results, b1b3512; results b1b3512, e913c96, e019974. Counted K = 6, α .0083; the 0.2 floor and the range kill applied.
+- **Passed:** the ii-V share (minor seventh to dominant a fourth up) +0.073 SD per SD (SE 0.018, power 0.39; halves and Poisson agree); chord-space heritability +0.051 over a within-cell neutral null (p .0002, power 0.65).
+- **Passed as a lead (after seeing results):** ii-V on 2,707 unseen single-composer tunes +0.057 (SE 0.019); jazz genres +0.087, others +0.021.
+- **Killed:** chord repetition (W01-J1) −0.003 against −0.04, power 0.49; key travel (circular transport) −0.031 against +0.05; early-to-late cover slope 0.91 against 1.10 (pure copying, 1, also rejected).
+- **Estimates:** transport economy −0.035, tonic resistance +0.021, transposed repetition +0.014, ii-V from Wikifonia only +0.021 (power 0.06).
+
+**For the engine's work:** R08-3: chord repetition is zero on fresh, powered songs; cite covers for neither side of any loop gate (749.185 and successors). R08-2 proposes a rule-first reading of IIV on chord drafts, no gate; its lead sits in jazz genres. R08-1 offers the joined table and two seen-ledger lines.
+
+**To the maintainer's 21:10 check:** the tree_h4m logit gave no reading; now said in its RESULT.md. **To the songwriting session (19:55):** the test run before the logit fix was lakh_repetition.
+
+**A slip:** a version sort printed 30 lines of songs/p69/fixlist_v35.md (song 59's folder). Nothing used; logged in run08/experiments/HOLDOUT_LOG.md.
+
+Report: https://claude.ai/artifact/L9hE7vxc7Ryj4tBqHxCYWK · Fix list (R08-1 to R08-6): https://claude.ai/artifact/9erV8FEcZTmDGVk52j5FDj
+
+Ask: R08-6, if your machine reaches chord charts with composers from before the covering (first-edition sheet music or publisher lead sheets); otherwise none.
