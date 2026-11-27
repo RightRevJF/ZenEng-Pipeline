@@ -14,9 +14,28 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Fix (proposed, to be tried rule first):** in 3/4 a line's sung bars are whichever of 2, 3 or 4 puts its syllables a bar nearest the table's median. A line of three sung bars is padded to a four-bar phrase with a held last note or a rest, and the draw reads a four-bar line as two windows. The maintainer's first version rounded to 2 or 4 only. That would leave 6- and 7-syllable lines, every line of song 68, in two bars.
 - **Check:** marks P1 to P7 in `coord/songwriting.md` (27 Nov, 10:58 ET); byte for byte on 54, 55 and 52 with the switch unset. One form only.
 - **Read (27 Nov):** marks 740bb4e, result 02e75c3 (`RESULT_plan_3_4.md`, `plan_3_4.json`). P1 to P5 met: every line three sung bars in a four-bar phrase; 731 living, pool 268; 2.09 notes a bar over the sung phrases; onsets on a beat 0.893; first-beat stress 0.622. P6 missed: the commonest pitch 0.424 and 0.390, against 0.287 and 0.280 for the Essen arm. By the stopping rule the 3/4 draw closes for this version; the form stays a switch (`LUTHIER_PLAN_3_4`), unset. The density part of the fix works; 749.227 is what's left.
+- **Read in 6/8 (27 Nov):** marks 2f76d96, result c5cc225 (`plan_6_8.json`), on song 52's words. Q1, Q2, Q4 and Q5 met: 248 living and a pool of 37, where v53 had 22 and none; onsets on the beat 0.467 and on the first beat 0.242; 731's median 0.551. Q3 missed: 3.20 notes a bar against Essen 6/8's middle half of 3.60 to 4.33, because the padded fourth bar overshoots folk density (the lead sheets' 6/8 run 2.86 to 3.95). 6/8 closes for this version beside 3/4. For v54: bars from the table's density in both metres, with the padded bar chosen by style.
 
 ## 749.227. In 3/4 the tune's range and pitch count are under the kept waltzes' 10th
 - **Problem:** in 3/4 the engine writes a narrow tune, whatever table it reads: a range of 9 semitones and 6 pitches, against the lead-sheet waltzes' 10th of 12 and 8. The commonest pitch (0.32 whole tune, against a 90th of 0.31) and the repeated figures (0.86, against a 90th of 0.78) follow from that. The 4/4 engine has a range floor and a register plan read from kept songs; 3/4 has neither.
 - **Evidence:** the plan-form result (`plan_3_4.json`, 02e75c3) against the lead sheets' own by-song figures (`leadsheet_waltz_figures.json`, 4f0ff4c; 538 songs: range 12 / 14 / 19, distinct pitches 8 / 11 / 14.3, commonest pitch 0.167 / 0.225 / 0.313, bars on a rhythm already sung 0.706 / 0.846 / 0.918). Both arms read range 9 and 6 pitches. The rhythm's repetition (0.90) sits between the kept 75th and 90th, so it is a waltz's.
 - **Fix (to be specified rule first):** a range floor and register plan for 3/4, read from kept waltzes of about the same length (by bars sung), since song 53 is a short carol and most lead-sheet waltzes are full songs with a bridge.
 - **Check:** marks read against kept waltzes of similar length, on song 53's words. Song 68 is the real test after it.
+
+## 749.228. Four-bar phrases break the join before a copy
+- **Problem:** under the plan form, the join before a copied line (780) turns builds away.
+- **Evidence:** `plan_6_8.json` (c5cc225): 780 took 455 of 1,000 builds in 6/8.
+- **Fix (to be specified rule first):** the join reads a copied four-bar phrase as the line it copies, padded bar included.
+- **Check:** 780 deaths under the plan form no higher than v53's 4/4 share on songs 54 and 55.
+
+## 749.229. A title line keeps its two bars under the plan form
+- **Problem:** a chorus title line short enough to round to two bars keeps them. In 6/8, five stressed syllables in two bars have four beats to land on.
+- **Evidence:** `plan_6_8.json`: 840 still took 228 of 1,000 builds. The title line ("you're just in the room next door", 7 syllables, 5 stressed) put half or more of its stresses on a beat in 0.314 of its windows, and all of them in none.
+- **Fix (to be specified rule first):** a title line's bars are chosen so that its stressed syllables can land on beats, not by syllables a bar alone.
+- **Check:** 840 deaths in 6/8 under a tenth of builds; the title line's stresses on a beat inside the kept range.
+
+## 749.230. The chord writer can give a bridge too few chords
+- **Problem:** a bridge on one chord, or with one change in twelve bars, is under the kept bridges' 10th of distinct chords (2.2).
+- **Evidence:** the bridge reading (`studies/section_ceiling/RESULT_bridge.md`, `bridge_read.json`, rule 048f679 before the run). The two worst bridges are the two thinnest: song 66's one chord in eight bars (over in 82 builds of 100) and song 61's two chords in twelve (49). Bridges with four to eight chords are still over in 21 to 42 of 100, against the kept 10, so a thin plan worsens the ceiling but does not cause it. Nothing was named by the rule.
+- **Fix:** a fact about the chord writer, for v54: a bridge's distinct chords no fewer than the kept 10th.
+- **Check:** distinct chords per bridge against kept bridges, on every engine song in v54.
