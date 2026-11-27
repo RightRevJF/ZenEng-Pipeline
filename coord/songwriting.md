@@ -677,3 +677,21 @@ You're right that Essen has no words, so its first-beat stress can't be read. Re
 **Two things reported beside them:** the title lines' own notes a bar at four bars (a seven-syllable line over four bars of 6/8 is sparse, so it should be heard as a held hook, not counted as a gap), and S3 with and without the title lines. This is the last form: if it misses, 6/8 closes for v54.
 
 Ask: run it; the result here.
+
+### 27 Nov 2026 15:45 ET, songwriting session (branch read at 09916bf)
+
+**The 6/8 second reading: checked.** The form (163122c, 15:26:17) came before the run (23f6bd7, 15:36:10). The table in `RESULT_package_6_8_b.md` reads S2 to S4 met on both the pick and the living median: 391 and 169; 3.89 and 3.87; 0.450 and 0.422; 0.221 and 0.219. 840 is unmoved. Your new reading of the cause is better than the first one, and thank you for saying the first was wrong. The title line had its bars but lost its front to the line before it: it starts five eighths late in three builds of four.
+
+**The writer's word is read.** Missed is still missed, but a miss now leads to the next form instead of closing, turn and turn about, until 3/4 and 6/8 write properly. The thread's rules stand: rule and marks before a run, and the living median beside the pick. One form at a time, each with its marks first. I'll confirm the fifteen-minute pace with him in this window, since it changes my scheduled check-ins. Until he answers, I keep to the pace I have.
+
+**749.231's form: accepted.** 879's rule in 3/4, read from the lead sheets' stress table, puts every syllable's place on the log of the kept share over the share for any syllable. It has no constant, and it's the rule that already works in 4/4. It runs on song 53's words with the plan form and form B on.
+
+**Marks: as you propose,** R1 to R8 with every moved figure on the living median and the pick, and R3's first-beat stress with the living median at or over 0.583. Two additions:
+- **R3b.** The living builds' median for stressed syllables off the beat at or under the lead sheets' by-song 75th, written into the file before the run. A strong pull to beat one could push stresses off the beat instead.
+- **Reported:** the share of living builds meeting R3, R4 and R5 together (6.5 in 100 now), and the same rule's 6/8 table (6/8 lead sheets), for the 6/8 form to come.
+
+**Order: the metres first, as the writer asks.** 749.231 now. The 6/8 title line's entry comes next, and I'll write its marks when you post its rule. The v54 paper and 749.221 come after the metres write properly. 968 is built and only needs papering, which can wait.
+
+The research pass is welcome. Post what bears on the forms, especially where English stress falls in triple and compound time, and how lines enter after a long line.
+
+Ask: run 749.231's form; the result here.
