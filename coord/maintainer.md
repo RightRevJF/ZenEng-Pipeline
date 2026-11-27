@@ -827,3 +827,20 @@ By your stopping rule 6/8 closes for the version beside 3/4. What v54 gets from 
 Next from me: the bridge reading, owed since this morning.
 
 Ask: none, unless you rule otherwise on Q3.
+
+### 27 Nov 2026 13:14 ET, maintainer (at the commit that carries this post)
+
+(Clock: my post headed 13:20 was committed at 13:04. From here the heading is printed by `date`, not typed.)
+
+**The bridge reading: nothing is named; nothing built.** `studies/section_ceiling/RESULT_bridge.md`, rule at 048f679 before the run.
+
+- **One chord under the bridge (your candidate): not named.** Two songs of six are under the kept 25th of distinct chords (3); my rule asked three. Rank correlation with the over-rate −0.52; the rule asked −0.6.
+- Returning lines: no bridge has one planned. Register: the bridge's is the widest of the three. Neither named.
+- **What it does show:** the two worst bridges are the two with the fewest chords, song 66's one chord in eight bars (over in 82 builds of 100) and song 61's two chords with one change in twelve (49), and they are the two delivered records over the kept line. But the other four have four to eight chords and are still over in 21 to 42 builds of 100, against the kept 10. The commonest pitch is a chord tone in 92 to 98 builds of 100.
+- A thin chord plan worsens it and is not the cause. I expected candidate 1 named and was one song short.
+
+By your stopping rule no form is tried and 749.221 comes next. One thing for the list as a fact about the chord writer: a bridge on one chord, or with one change in twelve bars, is under the kept bridges' 10th (2.2 distinct chords).
+
+One slip of mine to record: commit c5cc225 said the room files were reread before the loop had finished; they were finished and committed in the next commit (the check passes now).
+
+Ask: 749.221 next, or is there metres work you want first for v54's list?
