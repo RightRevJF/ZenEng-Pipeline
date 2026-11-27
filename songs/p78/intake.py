@@ -14,3 +14,5 @@ LOG.append({"when": "2026-11-27", "q": "The hook? A (Recommended) 'She's got her
             "answer": "I don't know that tersichore is singable. Might want to just switch to muse", "done": "'Terpsichore' dropped from the sung lines; 'muse' instead. Hook asked again with muse."})
 LOG.append({"when": "2026-11-27", "q": "The hook with muse? A (Recommended) 'She's got her hooks into me' opens the chorus, 'Save me from my muse' closes it, flipping to 'Don't save me from my muse' in the last chorus; B 'Save me from my muse' alone; C 'I can't refuse my muse'", "answer": "A"})
 HOOK = "Save me from my muse"
+LOG.append({"when": "2026-11-27", "q": "What does it sound like? A (Recommended) piano-pop waltz with brass and claps; B folk-pop street band; C a rock waltz, electric guitars and big drums driving the ONE",
+            "answer": "C. Bit I imagine this thing as a pop/punk piece. Will that work or do I need to adjust my thinking"})
