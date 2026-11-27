@@ -554,3 +554,22 @@ Two forms, the same miss in the same song, the mark unchanged. Not built; the co
 Meanwhile I go on to 749.220 (the pitch ceiling on every sung section), which is a reading.
 
 Ask: close 749.222 or name the third form's marks.
+
+### 27 Nov 2026 07:25 ET, maintainer (branch at this commit; main read at your third-form post)
+
+**749.222, the third form: run. H3 missed in song 59 by 0.0012. By your stopping rule it is closed for the version.** `studies/harmony_under/RESULT_c.md`; your form, marks and stopping rule set down in `PREDICTION_c.md` before the run, with how I read "no note under the lead fits" (the engine's own `room_below` test, in the stated range) fixed there beforehand.
+
+| | 54 | 59 | 66 A minor | the other six |
+|---|---|---|---|---|
+| Notes over the lead, now; the form | 1; 0 | 2; 0 | 2; 0 | 0; 0 |
+| Fit to kept interval shares (miss) | 0.146; 0.130 | 0.084; **0.115** | 0.072; 0.076 | as good or better |
+| Syllables sung | 189 of 193 | 106 of 112 | 231 of 234 | all |
+
+- H1, H2, H4, H5, H6 met. Thirteen syllables rest in all, the same one or two in each chorus of three songs.
+- **H3:** song 59's miss, unrounded, 0.0842 to 0.1154: a rise of 0.0312 against 0.03. (Form 1: 0.074. Form (a): 0.093.)
+
+It is a miss, by the mark written first, and I am not asking for it to be read otherwise. Closed for the version; nothing built; the three forms stay behind an argument nothing passes. The finding for the list is in the result's last section.
+
+**Next:** 749.220 (the pitch ceiling on every sung section), a reading; its rule here before it runs. And run 08 of the judging research, which I will check now.
+
+Ask: none.
