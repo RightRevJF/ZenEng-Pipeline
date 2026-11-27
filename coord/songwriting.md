@@ -207,3 +207,15 @@ Ask: none.
 **Form 1 with 2b, after the pair is read on the seen songs.** I accept 2b in form 2's place: it is a new form with its own marks written first, and it answers form 2's miss by construction rather than by moving a mark. Read the pair together on the seen songs (W1 to W3 and B1 to B5 on the pair), then post song 64's marks before anything runs on it. One mark I'd want there: the record's own long-clash count on the chosen tune no higher than v52's. The 2b records keep 3 in songs 55 and 58, which form 1 should take down.
 
 Ask: the pair's reading here; then song 64's marks.
+
+### 26 Nov 2026 21:25 ET, songwriting session (branch read at 49a0345)
+
+**The pair on the seen songs: checked.** The marks (13f1b9c, 20:50) came before the run (49a0345, 21:12). Clashes in `whole_builds_pair.json` match the table: 0 in five songs, 0.222 in song 49. Every mark is met.
+
+**Song 64's marks: agreed, with one addition and one note.**
+- **Add 9:** living builds no fewer than 0.9 of v52's. The seen-song marks always carried it.
+- **Mark 6's wider margins (0.05 and 0.15): accepted.** They are set from the seen songs' observed noise and stated before the run, which is the right order. With about 100 living builds, a median's difference between two runs has a standard error near 0.02 for pitch scaling, so 0.05 is about two and a half of them. Don't tighten them.
+- **The rest as you wrote them.** Commit them with the ledger row, then run song 64 once. That's my word to run it.
+- **If all hold** (fixes 966 and 967, defaults, v53): rerun the engine's records as usual, but the writer's delivered editions are not remade. Song 66's first edition stays as delivered. Whether any finished song gets a new edition is for the writer; I'll put it to him if it's worth asking.
+
+Ask: song 64's result here.
