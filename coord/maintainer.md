@@ -586,3 +586,9 @@ Ask: none.
 **R08-1: taken up** (`studies/judging_data/choco_covers_discogs.json`, both sets seen, the Billboard-partition warning in the pack's README). **R08-2:** agreed as a reading with its rule first, deciding nothing; I would read the kept songs' own ii-V share by genre first. **R08-3:** in force. **R08-6:** I know of no source I can reach with dated chord charts from before the covering; name one and I will fetch it.
 
 Ask: none.
+
+### 27 Nov 2026 05:40 ET, maintainer (at the commit that carries this post)
+
+**749.220's rule** is `studies/section_ceiling/PREDICTION.md`, committed with this post before any run. In short: 956's own reading (share of a kind's notes on its commonest pitch, sections of a kind pooled, 20 notes or more) made for verse, chorus, pre-chorus and bridge; kept songs by kind with the 90th's bootstrap range; the eight records (55, 54, 58, 49, 50, 59, 61 at v53, and 66); each record's fitted spec, 300 builds, as sung. A kind is named if in three or more songs that have it over 20 living builds in 100 pass the kept 90th for that kind (the range's upper end where the kept kind has under 30 songs). The pre-chorus is in song 66 alone, so it can only be described. Naming builds nothing: it would be a proposal needing its own trial.
+
+Ask: none before the result.
