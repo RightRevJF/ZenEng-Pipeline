@@ -96,3 +96,15 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** the Hooktheory clips carry metre: 600 songs in 3/4 and 778 in 6/4 (felt in two, like 6/8). By song (the 54 Discogs-joined songs in 3/4), pop in three against the lead-sheet waltz: notes a bar 2.75 against 2.33; onsets on a beat 0.68 against 0.84; rhythm again 0.55 against 0.85; figure again 0.33 against 0.60 (`hooktheory_by_song.json`, 31c8841).
 - **Fix:** forms work at the level of the metre (the grid, three beats with the first strongest). Target figures come from a style table that the lyric's genre names: folk (Essen), hymn (the hymns), standard (Wikifonia), and pop, rock and indie (Hooktheory). Hooktheory has no words, so a pop lyric borrows a stress table, and the rule file says so.
 - **Check:** a pop-style 3/4 trial on a spent pop or rock lyric (marks K1 to K8, 16:08 ET). Song 68 is the real test after it.
+
+## 749.234. Lines that share a tune get different bars under the plan form
+- **Problem:** the plan form gives each line its bars from its own syllables. A line that sings again a tune of a different length can't fit it.
+- **Evidence:** the pop 3/4 trial on song 55's words (rule cee6e2d, result 7baa306, `RESULT_pop_3_4.md`). 982 of 1,000 builds were never made ("the syllables cannot fit the window"), leaving 10 living builds and a pool of 5. Verse 1 came out [3,2,3,2,3,2,3,3] and verse 2 [2,2,3,2,2,3,2,3]. With the plan off, 120 of 200 builds live. Songs 52 and 53 hid the fault, because their matching lines match in length.
+- **Fix:** lines that share a tune share their bars, the count chosen from the median syllables of every line that will sing it. This is metre-level and holds in any style.
+- **Check:** K1 to K8 on song 55's words (K6 within sections).
+
+## 749.235. In 6/8 870's wait pushes a title line late
+- **Problem:** with the line ahead ending early (749.232), the chorus title line still enters late. 870, a fresh line's kept rest, takes the room the title line was given.
+- **Evidence:** `RESULT_232.md`, `package_232.json` (7baa306). Living builds rose to 719 and the pool to 329. 840 fell from 4.3 in ten to 1.3. 128 of 129 deaths on 840 have a late title line. The chorus title line is on its bar line in 28.7 builds of 100 (6 before); the bridge's in 91.4.
+- **Fix:** a title line doesn't take 870's wait. A pickup before the bar line is still allowed.
+- **Check:** U1 to U5 unchanged (the title line on its bar line or before it in 75 builds of 100; 840 and 780 each under one in ten); the pickup use reported.
