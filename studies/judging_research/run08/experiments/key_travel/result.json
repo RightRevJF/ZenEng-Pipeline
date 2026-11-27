@@ -1,0 +1,125 @@
+{
+ "folder": "key_travel",
+ "measure": "TRAV5",
+ "extra": [
+  "TRAVL1",
+  "ch_rep",
+  "V",
+  "ln_chg",
+  "ln_bars"
+ ],
+ "prediction": 0.05,
+ "alpha": 0.01,
+ "counted": true,
+ "frozen_power": 0.213,
+ "power_rerun": {
+  "0.3": {
+   "power": 0.21333333333333335,
+   "kill_rate_if_true": 0.03666666666666667,
+   "se_fake": 0.027798083536671563,
+   "N": 5829,
+   "G": 1198,
+   "comp_share": 0.3,
+   "draws": 300
+  },
+  "0.5": {
+   "power": 0.3233333333333333,
+   "kill_rate_if_true": 0.03666666666666667,
+   "se_fake": 0.023476821194183553,
+   "N": 5829,
+   "G": 1198,
+   "comp_share": 0.5,
+   "draws": 300
+  }
+ },
+ "main": {
+  "b": -0.031028202283955166,
+  "se": 0.025908620158452307,
+  "p": 0.23130928808348192,
+  "N": 5829,
+  "G": 1198
+ },
+ "halves": [
+  {
+   "b": -0.030679316949545052,
+   "se": 0.037020448576535685,
+   "p": 0.40757448655027995,
+   "N": 2964,
+   "G": 644
+  },
+  {
+   "b": -0.034604425361729044,
+   "se": 0.03601321696311709,
+   "p": 0.3370318146466296,
+   "N": 2865,
+   "G": 554
+  }
+ ],
+ "second": {
+  "model": "Poisson QMLE on n_sets, composer FE, same columns",
+  "b": 0.05687768690043934,
+  "se": 0.04897174746392969,
+  "p": 0.24546350373183556,
+  "N": 5829,
+  "G": 1198,
+  "iterations": 8
+ },
+ "verdict": {
+  "counted": true,
+  "passed": false,
+  "prediction_inside_95": false,
+  "verdict": "KILLED (the prediction lies outside the 95% range)"
+ },
+ "range95": [
+  -0.08180909779452168,
+  0.019752693226611353
+ ],
+ "n_sets_median": 15.0,
+ "readings": {
+  "E_second_reading": {
+   "measure": "E",
+   "extra": [
+    "spread",
+    "TRAVL1",
+    "ch_rep",
+    "V",
+    "ln_chg",
+    "ln_bars"
+   ],
+   "b": -0.026271652102223573,
+   "se": 0.017639470368662265,
+   "p": 0.13665406880115818,
+   "N": 5829,
+   "G": 1198
+  },
+  "TRAV5_without_TRAVL1": {
+   "measure": "TRAV5",
+   "extra": [
+    "ch_rep",
+    "V",
+    "ln_chg",
+    "ln_bars"
+   ],
+   "b": -0.010556840908699048,
+   "se": 0.015214944494341383,
+   "p": 0.48791289819500255,
+   "N": 5829,
+   "G": 1198
+  },
+  "writer_match_only": {
+   "measure": "TRAV5",
+   "extra": [
+    "TRAVL1",
+    "ch_rep",
+    "V",
+    "ln_chg",
+    "ln_bars"
+   ],
+   "b": -0.02477916885452047,
+   "se": 0.02619237625818831,
+   "p": 0.3443238046482691,
+   "N": 5516,
+   "G": 1154
+  }
+ }
+}

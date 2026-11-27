@@ -1,0 +1,59 @@
+[tonic_resistance] measure H; extra ['ch_rep', 'V', 'ln_chg', 'ln_bars', 'H_links']; prediction -0.030 SD per SD; alpha 0.01000; status frozen as ESTIMATE; songs 5700
+POWER (fake outcomes, before the outcome is joined): {"0.3": {"power": 0.27666666666666667, "kill_rate_if_true": 0.02, "se_fake": 0.014816516794548281, "N": 5700, "G": 1197, "comp_share": 0.3, "draws": 300}, "0.5": {"power": 0.4533333333333333, "kill_rate_if_true": 0.02, "se_fake": 0.012519017643518975, "N": 5700, "G": 1197, "comp_share": 0.5, "draws": 300}} | frozen in PREDICTION.md: 0.277
+{
+ "main": {
+  "b": 0.02072321386263728,
+  "se": 0.011894337533479035,
+  "p": 0.08171728190733961,
+  "N": 5700,
+  "G": 1197
+ },
+ "halves": [
+  {
+   "b": 0.03433767958165899,
+   "se": 0.01745069052127255,
+   "p": 0.04953356672514043,
+   "N": 2894,
+   "G": 642
+  },
+  {
+   "b": 0.008644088109595143,
+   "se": 0.016284459754838807,
+   "p": 0.5957574692052118,
+   "N": 2806,
+   "G": 555
+  }
+ ],
+ "second": {
+  "model": "Poisson QMLE on n_sets, composer FE, same columns",
+  "b": 0.05046392048740871,
+  "se": 0.0193612790208463,
+  "p": 0.009149011520956252,
+  "N": 5700,
+  "G": 1197,
+  "iterations": 8
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": false,
+  "verdict": "estimate (not counted: power 0.28 clears the floor, but the counted set is full at K = 5 (chair.md, the K rule)): passes nothing, kills nothing"
+ }
+}
+readings: {
+ "without_links": {
+  "measure": "H",
+  "extra": [
+   "ch_rep",
+   "V",
+   "ln_chg",
+   "ln_bars"
+  ],
+  "b": 0.02088546324841778,
+  "se": 0.01190063389496404,
+  "p": 0.07951747758249939,
+  "N": 5700,
+  "G": 1197
+ }
+}
+done 92 s

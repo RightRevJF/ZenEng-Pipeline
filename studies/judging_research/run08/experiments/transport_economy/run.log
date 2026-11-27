@@ -1,0 +1,59 @@
+[transport_economy] measure econ; extra ['w_chr', 'ch_rep', 'V', 'ln_chg', 'ln_bars']; prediction +0.030 SD per SD; alpha 0.01000; status frozen as ESTIMATE; songs 5858
+POWER (fake outcomes, before the outcome is joined): {"0.3": {"power": 0.22333333333333333, "kill_rate_if_true": 0.043333333333333335, "se_fake": 0.017049001216024404, "N": 5858, "G": 1199, "comp_share": 0.3, "draws": 300}, "0.5": {"power": 0.3233333333333333, "kill_rate_if_true": 0.043333333333333335, "se_fake": 0.014405325488263187, "N": 5858, "G": 1199, "comp_share": 0.5, "draws": 300}} | frozen in PREDICTION.md: 0.223
+{
+ "main": {
+  "b": -0.03531399330865448,
+  "se": 0.015457757597910104,
+  "p": 0.02251356213148529,
+  "N": 5858,
+  "G": 1199
+ },
+ "halves": [
+  {
+   "b": -0.035071915275225456,
+   "se": 0.023296417902979687,
+   "p": 0.13269591798186242,
+   "N": 2973,
+   "G": 644
+  },
+  {
+   "b": -0.04409158486038259,
+   "se": 0.02072825039879404,
+   "p": 0.03385083288793232,
+   "N": 2885,
+   "G": 555
+  }
+ ],
+ "second": {
+  "model": "Poisson QMLE on n_sets, composer FE, same columns",
+  "b": -0.08314788517656643,
+  "se": 0.029427734520224142,
+  "p": 0.004720778285280087,
+  "N": 5858,
+  "G": 1199,
+  "iterations": 8
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": false,
+  "verdict": "estimate (not counted: power 0.22 clears the floor, but the counted set is full at K = 5 (chair.md, the K rule)): passes nothing, kills nothing"
+ }
+}
+readings: {
+ "without_w_chr_authors_second_model": {
+  "measure": "econ",
+  "extra": [
+   "ch_rep",
+   "V",
+   "ln_chg",
+   "ln_bars"
+  ],
+  "b": -0.013656321502303496,
+  "se": 0.012752359090885637,
+  "p": 0.2844364324870783,
+  "N": 5858,
+  "G": 1199
+ }
+}
+done 93 s

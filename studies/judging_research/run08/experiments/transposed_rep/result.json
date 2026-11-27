@@ -1,0 +1,78 @@
+{
+ "folder": "transposed_rep",
+ "measure": "T_rep",
+ "extra": [
+  "ch_rep",
+  "V",
+  "ln_chg",
+  "ln_bars"
+ ],
+ "prediction": 0.05,
+ "alpha": 0.01,
+ "counted": false,
+ "frozen_power": 0.79,
+ "power_rerun": {
+  "0.3": {
+   "power": 0.79,
+   "kill_rate_if_true": 0.02666666666666667,
+   "se_fake": 0.014828286532080275,
+   "N": 5858,
+   "G": 1199,
+   "comp_share": 0.3,
+   "draws": 300
+  },
+  "0.5": {
+   "power": 0.94,
+   "kill_rate_if_true": 0.02666666666666667,
+   "se_fake": 0.012523202582311946,
+   "N": 5858,
+   "G": 1199,
+   "comp_share": 0.5,
+   "draws": 300
+  }
+ },
+ "main": {
+  "b": 0.014215791638710873,
+  "se": 0.014496657698416935,
+  "p": 0.32697546179183923,
+  "N": 5858,
+  "G": 1199
+ },
+ "halves": [
+  {
+   "b": -0.0001568039456055093,
+   "se": 0.022770681062591804,
+   "p": 0.994507769758116,
+   "N": 2973,
+   "G": 644
+  },
+  {
+   "b": 0.025949512648334474,
+   "se": 0.016884772034890895,
+   "p": 0.1248987675080506,
+   "N": 2885,
+   "G": 555
+  }
+ ],
+ "second": {
+  "model": "Poisson QMLE on n_sets, composer FE, same columns",
+  "b": 0.04687314393838929,
+  "se": 0.02210047934701642,
+  "p": 0.03392931494213251,
+  "N": 5858,
+  "G": 1199,
+  "iterations": 8
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": false,
+  "verdict": "estimate (withdrawn from the count by its author (brainstorm round 3)): passes nothing, kills nothing"
+ },
+ "range95": [
+  -0.01419765745018632,
+  0.04262924072760806
+ ],
+ "n_sets_median": 14.0,
+ "readings": {}
+}
