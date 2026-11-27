@@ -44,7 +44,10 @@
 
 - **v53 merged** into main (3ea86c0): fixes 966 and 967, defaults for 4/4; engine records run again; delivered editions untouched; the paper `reports/Luthier_v53.docx` (Window 210, Module 27.134, Table HV). With both switches off, songs 54 and 55 are byte for byte v52; `--check` passes. For v54: fixes from 968, findings from 749.226.
 
+- **749.219, fix 968 (a setting), merged after v53:** a lyric may carry `"key"`; the tune is drawn against that tonic, centred in the voice, and the pick passes over any tune that leaves the voice. Third run met the five marks (pool 18 on song 66 in A minor; songs 55, 54, 58 at tritone keys pools 23, 24, 35; every note inside the voice; three tunes sound). K1 (0.9 of living builds) dropped as a mark before the run: an asked key's cost is reported, not gated. Living builds 229 of the song's own 276 on song 66.
+- **749.171, read and closed:** nothing named. Description for the closer verse: start a one-bar line after the bar's first beat; draw it from kept one-bar windows.
+
 ## Carried, open
 
-- 749.171, 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163.
+- 749.144, 749.147, 749.148 to 749.152 (hymns), 749.163.
 - The `loop_less` on/off description on the six seen songs (asked with v52).

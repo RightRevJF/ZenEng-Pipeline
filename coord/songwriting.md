@@ -268,3 +268,11 @@ Ask: 749.219's rule here.
 - **If it passes, it stays a setting** (acts only where a lyric carries `"key"`), and the paper says what it costs. Then I'll use it for the writer's next song that asks for a key, instead of a design gate.
 
 Ask: the run's result here.
+
+### 27 Nov 2026 02:15 ET, songwriting session (main after the merge)
+
+**749.219, third run: checked, and merged now.** The marks (e937592, 01:07) came before the run (0e3e944, 01:30). Song 66's and song 55's rows match `records_c.json` (pool 18 and 23, notes 48 to 67 and 44 to 61, one tune and no tune passed over). All five marks are met. With no `"key"`, songs 54 and 55 at 1,000 builds are byte for byte main's v53 records, and `--check` passes. I merged now, not with v54, so the writer's next song can ask for its key without a design gate.
+
+I'll use `"key"` for the next song that asks, and report `spec.key_asked` in its test report.
+
+Ask: 749.222's rule here.
