@@ -358,3 +358,33 @@ Ask: A (form 1 alone to song 64), or form 1 with 2b after the pair is read on th
 **R07-2:** agreed, in force. **R07-3:** the 0.2 floor is already ruled; I agree with killing only when the prediction is outside the estimate's 95% range, and with simulating power at the realised base rate. **R07-4:** recorded.
 
 Ask: none.
+
+### 26 Nov 2026 22:05 ET, maintainer (branch at this commit; main read at the 20:35 post)
+
+**Form 1 with form 2b on the seen songs: every mark met** (`studies/returning_clash/RESULT_pair.md`; marks committed before the run, with B2 restated for the pair and your long-clash mark added).
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| All clashes per 100 notes, builds, v52; the pair | 1.14; 0 | 0.56; 0 | 0.62; 0 | 0.68; 0.22 | 0.49; 0 | 0.61; 0 |
+| The record's own long-clash count | 3; 0 | 0; 0 | 3; 0 | 0; 0 | 0; 0 | 1; 0 |
+| Pool | 24; 33 | 22; 22 | 22; 20 | 17; 12 | 5; 5 | 21; 21 |
+
+Sound; pool pick fails 1.5 in 100 (v52 3.2); words' fit within 0.008; floors kept; figure share within 0.018; melismas within 0.17 of a point. Each pair record is form 1's but for the melisma notes. Song 49's 0.22 is in lines sung again and fresh lines.
+
+**Song 64's marks, proposed: please agree or amend before anything runs.** "Go On Ahead" (`songs/p74/lyric64.json`), never run. v52 against the pair, frozen (`LUTHIER_COPY_CLASH=1 LUTHIER_MELISMA_CLEAR=after`), each written through at 1,000 builds, then each record's fitted spec at 1,000 builds for the builds' figures.
+1. **The pool** no smaller than 0.8 of v52's, and at least 10.
+2. **The builds' middle words' fit** no lower than v52's by more than 0.02; the chosen tune at or over its floor.
+3. **Clashes other than blue notes, per 100 notes, builds:** all clashes no more than v52's; in a copied line over another chord, and on a melisma's second note, each at most a quarter of v52's (met outright where v52 has under 0.05).
+4. **The chosen tune's own long-clash count** no higher than v52's, and none on a melisma's second note.
+5. **Bars on a figure already sung,** builds' middle, no lower than v52's by more than 0.03.
+6. **Pitch scaling,** builds' middle, inside the kept 10th to 90th and no further from 0.905 than v52's by more than 0.05; **surprise,** builds' middle, no further over 3.18 than v52's by more than 0.15.
+7. **Melismas in 100 syllables,** builds, within one point of v52's.
+8. **The chosen tune read alone on the soundness checks:** no more readings outside the kept 10th to 90th than v52's chosen tune plus one.
+
+On 6: these margins are wider than the seen songs' (0.03 and 0.05), and I say why before the run and not after. On the seen songs each was read as "five of six" and each was exceeded in one song (pitch scaling by 0.036 in song 49; surprise by 0.13 in song 58), on about a hundred living builds. A single song has no "five of six", so a margin that one seen song in six broke would fail a sound form one time in six on noise. 0.05 and 0.15 are just outside what the seen songs showed. If you think that too lenient, set them tighter; they are yours to fix before the run.
+
+If all hold: fix 966 (the copy) and fix 967 (the melisma's second note), defaults, v53, and every 4/4 record run again. If any fails: neither is built, song 64 is spent, 65 is kept.
+
+The switches are on the branch, off; songs 54 and 55 byte for byte with them off.
+
+Ask: agree or amend song 64's marks; then your word to run it.
