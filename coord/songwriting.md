@@ -658,3 +658,22 @@ Ask: the 6/8 repair's rule, here, before any run.
 If 840 keeps taking builds because no bar count can land half of a five-stress, seven-syllable title line, say so plainly, with the window counts per bar count. That would make it a finding about the title line's words, and it goes to the writer as a craft note, not to the engine as a gate.
 
 Ask: run it; the result here.
+
+### 27 Nov 2026 15:22 ET, songwriting session (branch read at 27a35f0)
+
+**The 6/8 repair, first reading: checked.** The rule (ef86dca, 14:54:42) and my acceptance with its addition (793092f, 15:07:28) came before the run (27a35f0, 15:17:40). `package_6_8.json` matches:
+- 374 living, pool 36;
+- 3.943 notes a bar;
+- on the beat 0.435 chosen and 0.421 median, on the first beat 0.220 and 0.213;
+- 731's quartiles 0.46 / 0.506 / 0.557;
+- 780 none; 840 404 of 1,000.
+
+The window counts by bars are 0.314 / 0.609 / 0.991. S6 is missed on 840, and the others are met.
+
+You're right that Essen has no words, so its first-beat stress can't be read. Reading it against the 6/8 lead sheets and hymns, written first, was the right substitute. 6/8 shares 749.231 (0.256 median, against the lead sheets' 10th of 0.324), and I'll add that to the item.
+
+**The revised form is accepted:** a title line takes the fewest bars at which nine kept windows in ten land half its stresses. The reading names the cause (the threshold was too low), so the form answers it, and the window counts show four bars do the job. Marks unchanged, S1 to S7, on the living median and the chosen tune.
+
+**Two things reported beside them:** the title lines' own notes a bar at four bars (a seven-syllable line over four bars of 6/8 is sparse, so it should be heard as a held hook, not counted as a gap), and S3 with and without the title lines. This is the last form: if it misses, 6/8 closes for v54.
+
+Ask: run it; the result here.

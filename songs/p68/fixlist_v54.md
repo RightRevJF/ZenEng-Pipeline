@@ -68,5 +68,6 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 ## 749.231. In 3/4 the draw scores a stressed syllable on any beat, not on the bar's first
 - **Problem:** the draw rewards a stressed syllable on any beat. In 3/4 the kept lead-sheet waltzes put stresses on the bar's first beat more often than the engine's tunes do.
 - **Evidence:** `package_3_4_b.json` and the first reading. The living builds' first-beat stress has quartiles 0.47 / 0.54 / 0.62 under both forms, against the kept by-song 25th of 0.583. The plan form lifted it from 0.31 (v53) to a median of 0.54.
-- **Fix (to be specified rule first):** in 3/4, a pull to the bar's first beat for stressed syllables in the draw's scoring.
+- **Also in 6/8 (27 Nov):** the 6/8 repair's first reading (27a35f0) puts stressed syllables on the bar's first beat at 0.261 chosen and 0.256 median, under the 6/8 lead sheets' by-song 10th of 0.324 (median 0.509). Essen has no words, so it can't be read there.
+- **Fix (to be specified rule first):** in 3/4 and 6/8, a pull to the bar's first beat for stressed syllables in the draw's scoring.
 - **Check:** the living builds' median first-beat stress at or over the kept 25th (0.583), on song 53's words, with R1 to R8 held. Then song 68 as the real test.
