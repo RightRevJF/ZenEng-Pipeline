@@ -205,7 +205,8 @@ def plan(L):
     if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):
         # trial (749.227): kept waltzes of like length (bars within a quarter of the song's bars of sung phrases; within a third where under 60 fall): the verse and chorus tops set so their span is those waltzes' median range and a little over, inside the voice (as 927); the pick's floor their 25th (as 954)
         import numpy as _np7; bars7_ = sum(sum(v_) for v_ in slots.values()); bs7_ = style_["by_song"]; sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= 0.25 * bars7_]; band7_ = "a quarter"
-        if len(sel7_) < 60: sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= bars7_ / 3.0]; band7_ = "a third"
+        if style_.get("sections"): sel7_ = list(bs7_["range"]); band7_ = "every song (the table's songs are sections)"
+        elif len(sel7_) < 60: sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= bars7_ / 3.0]; band7_ = "a third"
         if sel7_:
             med7_ = float(_np7.median(sel7_)); q7_ = float(_np7.percentile(sel7_, 25)); rg7_ = spec["registers"]; span7_ = max(rg7_[k_][2] for k_ in ("Verse", "Chorus")) - min(rg7_[k_][1] for k_ in ("Verse", "Chorus")); dr7_ = int(round(max(-5, min(9, min(med7_, V[1] - V[0]) + RANGE_OVER - span7_))))
             for k_ in ("Verse", "Chorus", "Bridge"): rg7_[k_][2] = min(rg7_[k_][2] + dr7_, rg7_["Verse"][1] + (V[1] - V[0])) if rg7_[k_][2] + dr7_ > rg7_[k_][0] + 1 else rg7_[k_][0] + 2
