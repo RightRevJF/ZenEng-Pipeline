@@ -54,7 +54,7 @@ def _land(T, sy, b):
             k = sum(1 for o, (_, st) in zip(w, syp) if st and o % bar in beats); d[k] = d.get(k, 0.0) + c / t
         dist = {a_ + k: pa * pk for a_, pa in dist.items() for k, pk in d.items()} if len(dist) == 1 else {s_: sum(pa * d.get(s_ - a_, 0.0) for a_, pa in dist.items()) for s_ in range(0, tot_st + 1)}
     return sum(pv for k, pv in dist.items() if k >= 0.5 * tot_st)
-PLAN_6_8 = os.environ.get("LUTHIER_PLAN_6_8", "0") == "1"      # trial, off: 749.226's rule in 6/8
+PLAN_6_8 = os.environ.get("LUTHIER_PLAN_6_8", "0") in ("1", "folk"); PLAN_6_8_FOLK = os.environ.get("LUTHIER_PLAN_6_8") == "folk"      # trial, off: 749.226's rule in 6/8
 PLAN_3_4 = os.environ.get("LUTHIER_PLAN_3_4", "0") == "1"      # trial (749.226), off: in 3/4 the plan takes a line's bars from the kept table's notes a bar
 BRIDGE_CEILING = os.environ.get("LUTHIER_BRIDGE_CEILING", "0") == "1"      # trial (749.220), off: 956 reads the bridge too, at the kept 90th (tables/kept_bridge_pitch.json)
 OCTAVE_GATE = {"ban": True, "one": "one", "off": False}[os.environ.get("LUTHIER_OCTAVE", "ban")]     # 959 (749.160); "one" is the trial form of 749.176, not built (the environment switches here and below are for studies/v48_trials)
@@ -112,7 +112,7 @@ def plan(L):
         pr = SL.propose([len(x) for x in sy], L["bpm"], beats); sl = [max(1, min(4, r["whole bars proposed"] if not (r["whole bars proposed"] == 1 and r["kept share in one bar or less"] < 0.5) else 2)) for r in pr]      # 869 (749.63): one bar only where half of kept lines that long fit in one
         if (PLAN_3_4 and metre == "3/4") or (PLAN_6_8 and metre == "6/8"):
             # trial (749.226): a line's sung bars are whichever of 2, 3 or 4 puts its syllables a bar nearest the kept table's median (a tie to the fewer); three sung bars are padded to a four-bar phrase where the table's style is padded phrases (popular song), and take three bars where it is not
-            med_ = T["readings_quartiles"]["notes a bar"][1]; sb_ = [min((2, 3, 4), key=lambda b_: (round(abs(len(x) / b_ - med_), 6), b_)) for x in sy]; pad_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_)
+            med_ = T["readings_quartiles"]["notes a bar"][1]; sb_ = [min((2, 3, 4), key=lambda b_: (round(abs(len(x) / b_ - med_), 6), b_)) for x in sy]; pad_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_ and not PLAN_6_8_FOLK)
             if TITLE_ROOM and L.get("title"):
                 # trial (749.229): a line that sings the title takes more bars, to four, until half its stresses can land on a beat in half the kept windows
                 tw_ = " ".join(w for w, _, _, _ in LS.syllables(L["title"]))

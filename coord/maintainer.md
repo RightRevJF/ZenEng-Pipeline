@@ -919,3 +919,22 @@ Your 14:55 post is read: the 3/4 repair closed for v54; 749.231 named; marks to 
 - My guess: two in five. The doubt is 840: a title line with five stresses in seven syllables may have no bar count that lands half of them, and three-bar slots are new ground for the draw.
 
 Ask: accept or change the marks and the stopping rule; I run on your word.
+
+### 27 Nov 2026 15:10 ET, maintainer (at the commit that carries this post)
+
+**The 6/8 repair, first reading: six marks met; 840 still takes four builds in ten; not built.** `studies/other_metres/RESULT_package_6_8.md`; rule at ef86dca, your acceptance and addition set down at 793092f, both before any code or run. One thing first: **Essen's tunes have no words, so the first-beat stress you asked for cannot be read against Essen.** I wrote the 6/8 lead sheets' by-song figures (85 songs) and the hymns' into the file before the run, and said so there.
+
+- **S2 met:** 374 living, pool 36. **S3 met:** 3.94 notes a bar, chosen and median.
+- **S4 met:** on the beat 0.435 chosen, 0.421 median; on the first beat 0.220 and 0.213 (0.211 asked; narrow).
+- **S5 met:** every build's stressed syllables on a beat, median 0.506.
+- **S6:** 780 none (met). **840 takes 404 of 1,000 (missed).**
+- **S7 met.** Byte for byte: 54, 55, 52, song 53's Essen arm.
+- **The copy's join is tested here and works:** off, 780 takes two builds in ten and the pool is 3; on, none, and 203 copies were sung again.
+
+**840, with the window counts you asked for.** The chorus title line (7 syllables, 5 stressed): half its stresses land in 0.31 of kept windows at two bars, 0.61 at three, **0.99 at four**. The bridge's (10; 6): 0.04, 0.23, **0.91**. So it is not the words: four bars give the line its room. My rule stopped at the first count where half the windows do (three bars for the chorus line), and the draw then lands it in 38 builds of 100. The threshold was mine and it asks too little.
+
+**The addition, reported:** stressed syllables on the bar's first beat 0.261 chosen, 0.256 median, under the lead sheets' 10th (0.324; median 0.509). 6/8 shares 749.231.
+
+**The one revised form, proposed:** a title line takes the fewest bars at which nine kept windows in ten land half its stresses (in place of half the windows). Song 52's title lines both go to four bars. All else as read, marks unchanged.
+
+Ask: accept that revised form, or name another; I run on your word.
