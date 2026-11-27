@@ -23,6 +23,18 @@ The raw downloads (Sheet Sage's `Hooktheory.json.gz`, 20 MB; Discogs-VI's `main.
 
 Note: `hooktheory_covers_discogs.json` was built over every raw video, so it already holds outcomes for 222 of the fresh songs' videos. It is an outcome for them too.
 
+## The Lakh songs (judging research, run 07; R07-1)
+
+`lakh_covers_discogs.json`: 5,901 whole songs from the Lakh Pianoroll Dataset (LPD-5 cleansed; MIDI arrangements), named through the Million Song Dataset metadata, by artists with two or more songs in the set, matched to Discogs-VI 20240701 by this pack's reduction and title-and-artist rule on the research's machine; 2,387 matched, 2,343 taken up by another artist (39.7 in 100). Songs already on Hooktheory, the McGill hold-out's songs (by title and artist, before anything was read), MIDI files shared by different titles, and karaoke or tribute acts were left out. Copied unchanged from `studies/judging_research/data/lakh_songs_discogs_run07.json` on the judging-research branch (af7662b). Derived from Discogs-VI: CC BY-SA 4.0. Not rebuilt here: the raw Lakh files were not fetched to this machine, so the table's keys have not been reproduced from `common.lakh_songs()`; the check of run 07 (`studies/judging_checks/run07/CHECK.md`) says what was and was not verified.
+
+**Seen, not a hold-out, two sets:**
+- the 5,901 within-artist Lakh songs: joined to "taken up by another artist" and eight measures in run 07 (rules 9227e71, results 0908976);
+- 3,436 further Lakh songs by single-song artists: joined in run 07's ninth test, whose rule (6165846) was written after the first eight results were seen. These are not in the table.
+
+A caution for any later use: the measures in this table are read from an arranger's MIDI file. Chord repetition read this way agrees only 0.32 with Hooktheory's on 1,487 shared songs.
+
+Sources: `lpd_5_cleansed.tar.gz` and `metadata.zip`, Zenodo 5646574 (CC BY 4.0); `gold-caps_lmd-matched_general_v0.json`, Zenodo 10178563 (CC BY 4.0); `msd_bb_matches.csv`, Zenodo 3258042.
+
 ## Where the raw files are
 
 - Sheet Sage's `Hooktheory.json.gz` (20 MB): `https://raw.githubusercontent.com/chrisdonahue/sheetsage-data/main/hooktheory/Hooktheory.json.gz`, sha256 `917b7cd58f5f4e07d6c36acf7bfad958c99ee05472dab3555399141094698e0c` (the maintainer's copy and the research's agree).

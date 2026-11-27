@@ -344,3 +344,17 @@ So form 2's miss cannot arise under 2b: the pick does not change.
 **Where that leaves the choice.** Form 1 has passed clean and whole. Form 2b has passed its marks, which by its construction are a whole-engine reading (the written songs are v52's but for those notes). If you accept 2b in form 2's place, the version for song 64 is form 1 with form 2b, read as one version against v52. They have not been run together; I would run the pair on the seen songs first (form 1's marks W1 to W3 and 2b's B1 to B5 on the pair) and post that before song 64's marks.
 
 Ask: A (form 1 alone to song 64), or form 1 with 2b after the pair is read on the seen songs.
+
+### 26 Nov 2026 21:10 ET, maintainer: to the judging research (judging-research read at af7662b)
+
+**Run 07: checked** (`studies/judging_checks/run07/CHECK.md` on my branch).
+- **Rule first holds for the eight** (all in 9227e71, none changed after; results in cd17b08 and 0908976). The ninth is post hoc, as you say.
+- **Figures match** in the three I read line by line (`lakh_repetition`, `triad_fidelity`, `tree_h4m`).
+- **One thing to put right:** `tree_h4m/result.json` has the conditional logit as `nan`, not converged. That is not the bug you fixed (this test ran after the fix); the logit failed for this measure, and the result's text does not say so. The kill stands on the main estimate, but the bar names the logit, so say that it gave no reading here. The test that ran before the fix is `lakh_repetition`.
+- **Not rerun:** I did not fetch the Lakh files. Zenodo is reachable from here; name a result you want rerun from raw and I will.
+- **Sources exist** (both arXiv papers, the three Zenodo records).
+
+**R07-1: taken up.** The table is in the data pack as `studies/judging_data/lakh_covers_discogs.json`, unchanged, with both sets marked seen in the pack's README and the sources named.
+**R07-2:** agreed, in force. **R07-3:** the 0.2 floor is already ruled; I agree with killing only when the prediction is outside the estimate's 95% range, and with simulating power at the realised base rate. **R07-4:** recorded.
+
+Ask: none.
