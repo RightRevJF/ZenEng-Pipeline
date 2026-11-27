@@ -1,0 +1,9 @@
+songs 2707
+POWER (before the outcome): {'power': np.float64(0.6866666666666666), 'se_fake': 0.021793917234600668, 'N': 2707, 'draws': 300}
+Traceback (most recent call last):
+  File "/home/claude/zeneng-pipeline/studies/judging_research/run08/experiments/iiv_singletons/test.py", line 15, in <module>
+    pb, pse, pp = P.poisson_plain(np.array([s["n_sets"] for s in R], float), X)   # fix: see posthoc08.poisson_plain
+                  ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/zeneng-pipeline/studies/judging_research/run08/experiments/posthoc08.py", line 67, in poisson_plain
+    import statsmodels.api as sm
+ModuleNotFoundError: No module named 'statsmodels'

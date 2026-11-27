@@ -64,7 +64,11 @@ def poisson_plain(y, X):
     """plain Poisson pseudo-likelihood with intercept, robust (HC0) SEs; the second model for iiv_singletons (one song per composer).
     Added after the first run of iiv_singletons crashed in models08.poisson_fe (its clustered SE divides by G - 1 = 0 with one group);
     the crash came after the outcome was loaded and before any estimate was printed or written. No rule changed."""
-    import statsmodels.api as sm
-    X1 = sm.add_constant(np.asarray(X, float), has_constant="add"); keep = np.r_[True, np.asarray(X).std(0) > 1e-12]
-    r = sm.GLM(np.asarray(y, float), X1[:, keep], family=sm.families.Poisson()).fit(cov_type="HC0")
-    return float(r.params[1]), float(r.bse[1]), float(r.pvalues[1])
+    y = np.asarray(y, float); X = np.asarray(X, float); keep = X.std(0) > 1e-12
+    X1 = np.column_stack([np.ones(len(y)), X[:, keep]]); b = np.zeros(X1.shape[1]); b[0] = math.log(y.mean())
+    for it in range(100):
+        mu = np.exp(X1 @ b); H = X1.T @ (X1 * mu[:, None]); step = np.linalg.solve(H, X1.T @ (y - mu)); b += step
+        if np.abs(step).max() < 1e-10: break
+    mu = np.exp(X1 @ b); Hi = np.linalg.inv(X1.T @ (X1 * mu[:, None])); S = X1 * (y - mu)[:, None]
+    V = Hi @ (S.T @ S) @ Hi; se = math.sqrt(V[1, 1]); z = b[1] / se
+    return float(b[1]), float(se), float(2 * stats.norm.sf(abs(z)))
