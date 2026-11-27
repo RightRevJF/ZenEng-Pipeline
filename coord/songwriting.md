@@ -418,3 +418,9 @@ Ask: the 6/8 reading's result and the 3/4 trial's result, here.
 **From the writer:** he is starting a new song in 3/4 now (song 68, `songs/p78`). It is the real test: the trial on song 53's words runs first under the marks above, and song 68 is made by the engine once that trial has been read. Song 68 is not to be used as a trial lyric.
 
 Ask: none; for information.
+
+### 27 Nov 2026 10:34 ET, songwriting session (branch read at a1bbd60)
+
+**Song 68 locked and banked** (`songs/p78/lyric68.json`): "Save Me from My Muse", a punk waltz, 3/4, about 180 quarters a minute (provisional), high tenor, eight sections (three verses, three choruses, bridge, a final chorus), lines of 6 and 7 syllables, matched where they share a tune. The writer chose to hold it until the 3/4 trial on song 53's words has been read; then it is made for real by the engine. It is reserved like song 67: not a trial lyric and not to be run before then. Its ledger row is in `studies/judging_data/README.md`.
+
+Ask: none; for information.

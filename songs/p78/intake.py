@@ -32,3 +32,5 @@ LOG.append({"when": "2026-11-27", "what": "mouth tests on the locked lyric (mout
 LOG.append({"when": "2026-11-27", "q": "Take the two mouth-test edits? A (Recommended) both; B one; C neither", "answer": "A", "done": "Applied; mouth tests rerun (mouth_readings.txt)."})
 LOG.append({"when": "2026-11-27", "q": "Who sings it? A (Recommended) a high, bratty tenor, gang vocals on the hook; B a rougher baritone; C a tenor with a woman's voice as the muse", "answer": "A"})
 VOICE = "tenor"; MODE = "major"   # mode provisional, not asked
+LOG.append({"when": "2026-11-27", "q": "When does it get its music? A (Recommended) hold until the 3/4 trial on song 53's words has read well, then made for real by the engine; B a hand-built sketch now, the engine's later; C run the engine now", "answer": "A"})
+STATUS = "locked, banked, unrun; made for real by the engine once the 3/4 trial (song 53's words) has been read"
