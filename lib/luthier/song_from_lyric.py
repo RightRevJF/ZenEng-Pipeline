@@ -40,6 +40,7 @@ OCTAVE_TAIL = os.environ.get("LUTHIER_OCTAVE_TAIL", "1") != "0"      # 964 (749.
 PITCH_CEILING = True   # 956
 RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") in ("1", "centres"); RANGE_CENTRES = os.environ.get("LUTHIER_RANGE_3_4") == "centres"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
 TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") not in ("0", ""); TITLE_ROOM_SHARE = 0.5 if os.environ.get("LUTHIER_TITLE_ROOM", "0") in ("0", "", "1") else float(os.environ["LUTHIER_TITLE_ROOM"])      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
+STRESS_PLACE = os.environ.get("LUTHIER_STRESS_3_4", "0") == "1" or os.environ.get("LUTHIER_STRESS_6_8", "0") == "1"      # trial (749.231), off: outside 4/4 a syllable's place is scored by where kept songs sing a syllable of its weight (879's rule), from the table's stress file
 COPY_JOIN = os.environ.get("LUTHIER_COPY_JOIN", "0") == "1"      # trial (749.228), off: a copy that would begin before the line ahead of it has ended is sung again, and the build lives
 def _land(T, sy, b):
     """trial (749.229): by kept count, the share of the kept windows for b sung bars in which half or more of the line's stressed syllables fall on a beat; the line split as the plan form splits it"""
@@ -199,6 +200,8 @@ def plan(L):
         spec["sung_bars"] = sungb_; spec["held_bar_share"] = round(next((c for p_, c in T["bar_rhythms"] if list(p_) == [0]), 0) / T["bars_total"], 4)      # trial (749.226)
         if title_room_: spec["title_room"] = title_room_
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
+    stress_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".stress.json")
+    if STRESS_PLACE and os.environ.get("LUTHIER_STRESS_" + metre.replace("/", "_"), "0") == "1" and os.path.exists(stress_p_): spec["stress_place"] = dict(weight=0.75, place=json.load(open(stress_p_))["place"])      # trial (749.231): 879's own weight
     if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):
         # trial (749.227): kept waltzes of like length (bars within a quarter of the song's bars of sung phrases; within a third where under 60 fall): the verse and chorus tops set so their span is those waltzes' median range and a little over, inside the voice (as 927); the pick's floor their 25th (as 954)
         import numpy as _np7; bars7_ = sum(sum(v_) for v_ in slots.values()); bs7_ = style_["by_song"]; sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= 0.25 * bars7_]; band7_ = "a quarter"

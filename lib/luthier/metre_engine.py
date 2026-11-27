@@ -114,6 +114,11 @@ class Engine:
                 for k_ in range(len(ons) - 1): g_ = ons[k_ + 1] - ons[k_]; sc += self.WW["lp"] * self.WW["length"][tr_[k_]][0 if g_ <= 3 else 1 if g_ <= 6 else 2 if g_ <= 9 else 3 if g_ <= 12 else 4 if g_ <= 18 else 5]
             sc += self.weak_end(ons, sy)
             return sc
+        sp_ = self.S.get("stress_place")
+        if sp_:
+            # trial (749.231): each syllable's place scored by where kept songs of this metre sing a syllable of its weight, over where they sing any (879's rule; the bar's first beat, another beat, off the beat)
+            for t, (_, st) in zip(ons, sy): sc += sp_["weight"] * sp_["place"]["primary" if st else "unstressed"]["downbeat" if t % self.BAR == 0 else "beat" if self.on_beat(t) else "off the beat"]
+            return sc + self.weak_end(ons, sy)
         for t, (_, st) in zip(ons, sy):
             b = t >= 0 and self.on_beat(t)
             sc += (1.5 if b else -0.6) if st else (-0.8 if (b and t % self.BAR == 0) else 0.0)

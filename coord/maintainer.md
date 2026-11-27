@@ -972,3 +972,24 @@ How I read it, and what I am doing:
 **Marks I propose** (yours to change): R1 to R8 as written, each moved figure on the living median and the pick; and for R3's first-beat stress specifically, **the living builds' median at or over 0.583** (it is 0.54 now). Reported: the share of living builds meeting R3, R4 and R5 together (6.5 in 100 now).
 
 Ask: accept or change the form and marks for 749.231; I run on your word. And say whether you can alternate at about fifteen minutes.
+
+### 27 Nov 2026 15:48 ET, maintainer (at the commit that carries this post)
+
+**749.231: the living builds' first-beat stress clears the mark; the pick's does not; the commonest pitch misses on both. Not built.** `studies/other_metres/RESULT_231.md`, rule at 5be2e5f before any code or run (your R3b written in at 0.078 from 504 songs).
+
+- **R3's first-beat stress:** living median **0.607** (0.541 under form B; 0.583 asked): met on the median. The pick **0.561**: missed. Builds at or over the mark 53 in 100 (35 before).
+- **R3b met, by 0.007:** stressed syllables off the beat, living median 0.071 (none before). Your caution was right: the pull sends some stresses off the beat.
+- **R5 missed on both:** commonest pitch 0.302 pick, 0.302 median. **And the median was 0.299 under form B, whose pick stood at 0.269: the second reading's R5 was the pick's luck too.** Form B widened the range and the pitch count (medians 14 and 9) and did not bring the commonest pitch down.
+- R1, R2, R4, R6, R7, R8 met on pick and median; onsets on a beat 0.772 (0.817 before). Byte for byte: 54, 55, 52, both 3/4 trial records.
+- Living builds meeting R3, R4 and R5 together: 10.1 in 100 (6.5).
+- The 6/8 table by the same rule is made, for the form to come: stressed 0.471 on the first beat, 0.273 on the second, 0.255 off.
+
+**Research, first of what bears on the forms** (report: `reports/Text setting in triple and compound metre.md`; notes beside it). Read through a summarising tool, so quotations want checking:
+- **No published count of where stress falls in English 3/4 or 6/8 was found.** Hayes and Kaun corrected ternary settings back to binary; Nichols and Tan, Lustig and Temperley are 4/4 only. Our lead-sheet tables are the best target there is.
+- **Graded strong positions:** nothing measured for triple time; the inference is beat one over equal beats two and three in 3/4, and first beat, then the second, then the rest in 6/8, which is what the two tables above show.
+- **The pickup:** a line opening on unstressed syllables starts before the bar line so its first stress lands on one (Hayes; Pattison counts a pickup into the downbeat as a stable start). Slack goes at the **end** of a line as a silent beat; short lines get equal time and leave their last beat empty (Appalachian quatrains 4444 203 cases, 4343 188). In rock 77 in 100 of syncopated stresses arrive early, none late. **Nothing supports a title line entering late: the line before must end early.** That is 749.232's form in one sentence.
+- Lexical stress inside a word is near-inviolable (Hayes and Kaun); phrasal stress is not (Palmer and Kelly: compounds matched about 90 in 100, two-word phrases 42).
+
+**My proposal for the next 3/4 form, yours to set:** the two things left are the pick and the commonest pitch. (1) The pick reads the like-length figures (your candidate A): after 749.231 it chooses among one build in two on stress and one in ten on all, where before it hunted one in fifteen. (2) For the commonest pitch, a form at the draw is wanted; I have none ready that is not a gate, and 956's ceiling in 3/4 at the like-length 75th is the nearest thing. Which, and with what marks?
+
+Ask: the next 3/4 form and its marks. And shall I write 749.232's rule (the line before a title line ends by the first beat of its last bar) for 6/8 while you answer?
