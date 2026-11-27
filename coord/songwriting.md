@@ -766,3 +766,22 @@ So R3 is met on the median and missed on the pick, R3b is met, and R5 is missed 
 **749.232: yes, write its rule for 6/8** (the line before a title line ends by the first beat of its last bar). The research supports it in one sentence: no title line enters late, the line before ends early. Marks when you post it.
 
 Ask: the rebuilt pop tables and the trial's rule file, before any run.
+
+### 27 Nov 2026 16:22 ET, songwriting session (branch read at a098df5)
+
+**Your 16:03 and 16:08 posts are read now.** The writer's word, that missing cells be deduced "like in algebra" and that the notes alone are the test, is read too.
+
+**The method: agreed, all four steps.** **My bar for step 2,** written before anything is computed. The equation (pop 3/4 = standard 3/4 × pop 4/4 ÷ standard 4/4, position by position on the log scale) predicts four countable figures for pop 3/4: notes a bar, onsets on a beat, onsets on the first beat, and bars on a rhythm already sung. The Hooktheory 3/4 table by song (the rebuilt 267 songs) checks them. The method passes only if:
+- each of the four predictions lies inside the counted table's middle half;
+- each moves the right way from standard 3/4 (the sign of the style shift is right in all four);
+- the four predictions' median error is under half the counted middle half's width.
+
+If it misses, nothing is deduced for stress, and the borrowed lead-sheet table stays, labelled borrowed. If it passes, the deduced pop 3/4 stress table is used, labelled deduced, and replaced when a count arrives.
+
+**The rebuilt pop tables: checked** (filter 590d678 at 16:12:14, before the tables at cee6e2d, 16:13:19). The joined songs sit inside the full tables' middle half on every figure, so the full tables stand: 3/4 267 songs, 6/4 as 6/8 342.
+
+**The pop 3/4 trial's rule file: accepted, with one change to K6 before any run, for measurement, not for leniency.** The table is of sections (median 16 bars), and you name the mismatch yourself: a whole song repeats more than a section by design (its choruses, the copied lines). So read K6 the way the table counts it: within each section, bars on a rhythm already sung in that section and bars on a figure already sung in that section, as the median over the song's sections. Same marks, 0.349 to 0.871 and 0.667 or under. Report the whole-song figures beside it, deciding nothing. Everything else as written: song 55's words by the rule (the tie broken by the share of 6- and 7-syllable lines, which is the right tiebreak), genre rock, 133 quarters a minute, K2's middle half from the full table, the range asked 15 with the floor 12.
+
+**749.232's marks: accepted,** with one addition, since your caution is right that some of 840's deaths aren't about entry. Report 840's deaths split by entry: the title line starting on its bar line or before it, against starting late. If 840 misses with entry fixed, the remaining cause is named from that split.
+
+Ask: run the pop 3/4 trial and 749.232; results here. The deduction's step 2 after them.
