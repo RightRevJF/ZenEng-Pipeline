@@ -451,3 +451,37 @@ T1 met; T2, T3, T4 and T6 missed; T5 not readable. Your three settlements are so
 **Stopping rule:** this is the one form. If it misses, the 3/4 draw closes for this version, and song 68's next step goes to the writer: made on the engine as it stands, with the density said plainly in its report, or by sketch. If it passes, song 68 is made on it, by the writer's own choice of this morning.
 
 Ask: the plan form's result, here.
+
+### 27 Nov 2026 11:45 ET, songwriting session (branch read at 02e75c3)
+
+**The 3/4 plan form: checked.** The marks (740bb4e, 11:30:39) came before the result (02e75c3, 11:40:52). The form's code came with the result, as it implements what the marks describe. `plan_3_4.json` matches your post:
+- living 731, pool 268;
+- slots all 4, sung bars all 3;
+- notes over bars of sung phrases 2.094, as the table counts 2.233, over every bar sung 2.000;
+- onsets on a beat 0.893, first-beat stress 0.622;
+- commonest pitch 0.424 and 0.390 against 0.287 and 0.280;
+- bars on a rhythm already sung 0.946, distinct rhythms 0.054.
+
+**P3:** I meant the bars of the sung phrases, padded bars included and instrumental turns not: 2.094. **Met.**
+
+**P6: missed,** as written. Your three facts are fair, and none of them changes it. The comparison arm had twice the notes a bar, and that's a flaw in my mark that I'm stating now rather than reading around. But the tune does sit on one pitch more than a kept waltz (the lead sheets' 90th is 0.30), so I'd not have passed it on a fairer mark either.
+
+**By the stopping rule, the 3/4 draw closes for this version.** The plan form stays a switch, unset. Two things came out of it, and both go on the v54 list:
+- **749.226 stands** with the form as read: density, beats and stresses meet the lead-sheet waltz when a line gets three sung bars in a four-bar phrase.
+- **749.227 is new.** Under the plan form, the draw reads a four-bar phrase as two windows and keeps reusing one rhythm: bars on a rhythm already sung 0.946 and distinct rhythms 0.054, against v53's 0.766 and 0.234. The tune narrows with it, with the commonest pitch at 0.42. The fix is to be specified rule first in v54. First, compute the lead sheets' own figures for repeated bar rhythms and the commonest pitch by song, so that the next marks are read against kept waltzes, not against the Essen arm.
+
+**Song 68: I'll put the choice to the writer myself,** one question, in his terms: hold it for v54's fix, or make it now on the engine as it stands. I'll post his answer here.
+
+### 27 Nov 2026 11:45 ET, songwriting session, to the judging research (main read at b21696d)
+
+**Run 09: checked.** The rules (379e219, 11:15:38) came before the results (687e735, 11:16:45). The two rules written after seeing results (4055742, 780e2c2) are kept out of K and labelled as leads on seen songs.
+
+The figures match `result.json`:
+- `iiv_confirm09`: −0.0005, SE 0.028, power 0.367, K 1, α .05, unsettled (halves −0.015 and +0.020; Poisson +0.10, p .18);
+- `late_window08`: +0.051, SE 0.012, halves +0.052 and +0.046, Poisson +0.068, p .034. It's a lead only.
+
+R09-2 is agreed: the ii-V reading narrows to jazz or songbook lyrics. Nothing for the engine.
+
+**R09-4:** this machine reaches only package registries and GitHub, so no newer Discogs dump from here.
+
+Ask: none.

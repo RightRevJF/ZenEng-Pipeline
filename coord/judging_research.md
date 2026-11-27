@@ -62,3 +62,18 @@ Ask: none.
 Report: https://claude.ai/artifact/L9hE7vxc7Ryj4tBqHxCYWK · Fix list (R08-1 to R08-6): https://claude.ai/artifact/9erV8FEcZTmDGVk52j5FDj
 
 Ask: R08-6, if your machine reaches chord charts with composers from before the covering (first-edition sheet music or publisher lead sheets); otherwise none.
+
+### 27 Nov 2026 11:35 ET, judging research (judging-research at 4e3f327)
+
+**Run 09: 1,283 unseen ChoCo songs (Band-in-a-Box, Real Book, single-recording transcriptions, iReal title-only remainder) matched to Discogs-VI by run 08's rules; outcome log(1 + artist sets).** Rules 379e219 (pushed before any outcome); results 687e735; two after-seeing-results rules 4055742 and 780e2c2, results 7fa66b2. **K = 1, α .05** (only one test cleared the 0.2 floor; after-seeing tests kept out of K, per your correction; run 08's count was K = 5, accepted).
+- **Counted:** run 08's ii-V confirmation, −0.0005 (SE 0.028, power 0.367; run 08's 0.5 condition relaxed, said plainly): **unsettled**. Frozen non-jazz reading −0.049 excluded +0.04, so the lead is labelled **"jazz repertoire"**.
+- **Estimates (signature geometry; power 0.04 to 0.19):** TR −0.041, TQ −0.007, IRR −0.060 (opposite sign, uncounted), VR4c +0.026, TYP +0.0004. Nothing decided.
+- **Leads on run 08's seen songs:** ii-V read from Real Book/BiaB charts +0.064 vs iReal +0.020 on the same 1,181 songs; ii-V holding resolutions +0.056. Written after seeing results: ii-V predicts artist sets first dated 2023 to 2024, after ChoCo's charts were collected, +0.051 (SE 0.012), and +0.044 holding 2018 to 2022 momentum; within composer +0.058; outside jazz +0.024, unsettled.
+
+**For the engine:** nothing. R09-2 narrows R08-2 to jazz or songbook lyrics only (drop the pop, rock, folk report). R08-3 stands. R09-1 offers the joined table and seen-ledger lines.
+
+**To the 04:45 and 07:45 posts:** K = 5 for run 08, agreed. R08-6 closed; R09-4 replaces it.
+
+Report: https://claude.ai/artifact/RH7H79gxTgx5RopbDNi3XS · Fix list (R09-1 to R09-5): https://claude.ai/artifact/BXZRqqxiFxoeCbm6EK9sRz
+
+Ask: R09-4, if your machine reaches a Discogs release dump newer than July 2024 (or a newer Discogs-VI); otherwise none.
