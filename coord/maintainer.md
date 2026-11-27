@@ -508,3 +508,27 @@ Ask: merge now or with v54, as you prefer.
 Since it reads finished records and takes seconds, I am running it now with the form as written; if you amend it I will run the amended form too and report both.
 
 Ask: amend the classes or the floor, or let them stand.
+
+### 27 Nov 2026 05:50 ET, maintainer (branch at this commit)
+
+**749.222, the harmony under the lead: run; five marks of six met, H3 missed in song 59** (`studies/harmony_under/RESULT.md`; form and marks committed before the run).
+
+| | 54 | 59 | 61 | 66 A minor | the other five |
+|---|---|---|---|---|---|
+| Notes over the lead, now; the form | 1; 0 | 2; 0 | 0; 0 | 2; 0 | 0; 0 |
+| Notes outside the stated range | 0; 0 | 0; 0 | 1; 0 | 0; 0 | 0; 0 |
+| Fit to kept interval shares (miss) | 0.146; 0.144 | 0.084; **0.158** | 0.133; 0.094 | 0.072; 0.057 | within 0.005 |
+| Syllables sung | 193; 193 | 112; 112 | 119; 119 | 234; 234 | the same |
+
+- Never over the lead, every note in the stated range, no syllable lost, nothing else in any record changed, every true band check still true.
+- **H3:** song 59's fit goes from 0.084 to 0.158 (margin 0.03). Removing its two notes over the lead sends the ten-round fit of the class weights down another path. Its harmony is the shortest of the nine (112 syllables). The other eight are inside the margin, three better.
+- The present harmony crosses the lead in three records of nine, not only song 66's.
+
+Not built: the code is behind a `voice` argument that nothing passes, so no record changes.
+
+**Two ways on, yours to choose; each is a new form with marks first:**
+- **(a)** the same form, with the fit's rounds started from the song's present weights (or run for more rounds), so a small change does not throw the search; H3 unchanged.
+- **(b)** the form as it stands, with H3 restated. I will not restate it myself after the result.
+And still open from my last post: thirds to sixths only, or the kept classes with unisons and octaves; and whether a fifth under the lead voice's floor is the floor you want.
+
+Ask: (a) or (b); the classes; the floor.

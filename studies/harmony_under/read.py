@@ -1,0 +1,16 @@
+"""PREDICTION.md: each record re-arranged with the lead's voice given (the form), against the record as it stands.  python3 read.py"""
+import os, sys, json, copy
+HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.normpath(os.path.join(HERE, "..", "..")); sys.path[:0] = [os.path.join(ROOT, "lib", "luthier"), os.path.join(ROOT, "tables", "metre_atlas")]
+import band as BD
+J = lambda x: json.loads(json.dumps(x, default=float)); out = {}
+for name, rec_, lyr in (("55", "songs/p65/lyric55.song.json", "songs/p65/lyric55.json"), ("54", "songs/p64/lyric54.song.json", "songs/p64/lyric54.json"), ("58", "songs/p68/lyric58.song.json", "songs/p68/lyric58.json"), ("49", "songs/p59/lyric49.song.json", "songs/p59/lyric49.json"), ("50", "songs/p60/lyric50.song.json", "songs/p60/lyric50.json"), ("59", "songs/p69/lyric59.song.json", "songs/p69/lyric59.json"), ("61", "songs/p71/lyric61.song.json", "songs/p71/lyric61.json"), ("66 own run", "songs/p76/lyric66.song.json", "songs/p76/lyric66.json"), ("66 A minor (design gate)", "songs/p76/run_d/lyric66_d.song.json", "songs/p76/lyric66.json")):
+    old = json.load(open(os.path.join(ROOT, rec_))); L = json.load(open(os.path.join(ROOT, lyr))); new = copy.deepcopy(old)
+    BD.arrange(new, genre=L.get("genre", "pop"), lead=L.get("lead", "guitar"), seed=L.get("seed", 1), voice=L.get("voice", "tenor")); new = J(new)
+    ho, hn = old["parts"]["harmony"], new["parts"]["harmony"]; rng_ = new.get("harmony_range") or {}
+    same = {k: old[k] == new[k] for k in old if k not in ("parts", "harmony_fit", "band_checks")}; parts_same = {k: old["parts"][k] == new["parts"][k] for k in old["parts"] if k != "harmony" and k in new["parts"]}; not_rearranged = [k for k in old["parts"] if k not in new["parts"]]
+    bc_o, bc_n = old["band_checks"], new["band_checks"]; lost_true = [k for k, v in bc_o.items() if v is True and bc_n.get(k) is not True]
+    out[name] = dict(voice=L.get("voice", "tenor"), stated_range=[rng_.get("lowest"), rng_.get("highest")], over_the_lead=[sum(x["p"][0] > x["lead"] for x in ho), sum(x["p"][0] > x["lead"] for x in hn)], lowest_highest=[[min(x["p"][0] for x in ho), max(x["p"][0] for x in ho)], [min(x["p"][0] for x in hn), max(x["p"][0] for x in hn)]],
+                     outside_the_stated_range=[sum(not rng_["lowest"] <= x["p"][0] <= rng_["highest"] for x in ho), sum(not rng_["lowest"] <= x["p"][0] <= rng_["highest"] for x in hn)], syllables_sung=[len(ho), len(hn)], fit_miss=[old["harmony_fit"]["miss"], new["harmony_fit"]["miss"]],
+                     a_second_from_the_lead=[bc_o.get("harmony voice a second from the lead"), bc_n.get("harmony voice a second from the lead")], everything_else_unchanged=all(same.values()) and all(parts_same.values()), changed_elsewhere=[k for k, v in {**same, **parts_same}.items() if not v], true_checks_lost=lost_true, parts_made_after_the_arranging_and_not_read=not_rearranged, classes=bc_n.get("harmony voice: interval classes, written / kept below the lead"))
+    print(name, {k: v for k, v in out[name].items() if k != "classes"})
+json.dump(out, open(os.path.join(HERE, "records.json"), "w"), indent=1)

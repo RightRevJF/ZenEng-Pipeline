@@ -29,6 +29,8 @@ LOW_LIMIT = {1: 60, 2: 60, 3: 53, 4: 53, 5: 46, 6: 47, 7: 34, 8: 41, 9: 41, 10: 
 ROLE = {"intro": "intro", "verse": "A", "chorus": "B", "bridge": "other sung", "pre": "other sung", "solo": "instrumental", "outro": "outro"}
 DR = dict(kick=36, snare=38, hat=42, tom_hi=48, tom_mid=45, tom_lo=41)
 ICLASS = {0: "unison", 3: "3rd", 4: "3rd", 5: "4th", 7: "5th", 8: "6th", 9: "6th", 12: "octave"}
+_V = {"bass": (40, 60), "baritone": (43, 64), "tenor": (48, 69), "alto": (55, 74), "mezzo": (57, 77), "soprano": (60, 81)}; _NB = {"soprano": "mezzo", "mezzo": "alto", "alto": "tenor", "tenor": "baritone", "baritone": "bass", "bass": "bass"}
+HARMONY_UNDER = {v: (_V[_NB[v]][0], _V[v][1]) for v in _V}                                        # 749.222: the harmony's stated range by the lead's voice (chord_writer.VOICES)
 # 835: the draw is hemmed in by the chord and the scale, so each class carries a weight fitted until the written shares meet the kept ones (fitted on songs 54 and 55)
 HW = {"unison": 0.55, "3rd": 1.21, "4th": 1.13, "5th": 1.5, "6th": 1.05, "octave": 0.88}; HOLD, WITH, STAY = 8.0, 16.0, 8.0
 
@@ -57,7 +59,7 @@ def drum_bar(metre, genre, barlen, beats):
         return _pat16(kick, barlen), _pat16(snare, barlen), list(range(0, barlen, 6)), "the genre's commonest kept kick and snare bars, eighth-note hats (LPD)"
     return [0], [b for b in beats if b], list(range(0, barlen, 6)), "no kept drum table for this metre: kick on the first beat, snare on the others, hats on the eighths (a rule)"
 
-def arrange(rec, genre="pop", lead="guitar", seed=1):
+def arrange(rec, genre="pop", lead="guitar", seed=1, voice=None):
     rng = random.Random(f"band {seed}"); BAR, BEATS = rec["bar"], rec["beats"]; metre = rec["metre"]; inst = "piano" if lead in ("piano", "keys", "organ", "synthesizer", "strings") else "guitar"
     G = LPD[genre][inst]; tonic = rec["key"]["tonic_midi"] % 12; form = [tuple(f) for f in rec["form"]]; LV = levels(form); parts = collections.defaultdict(list); notes_ = rec["melody"]["notes"]
     import chord_writer as C
@@ -130,6 +132,8 @@ def arrange(rec, genre="pop", lead="guitar", seed=1):
     # 829 the harmony voice, in the choruses, below the lead. 889: its class weights are fitted to the song: the voice is written, its shares of thirds, fourths, fifths, sixths,
     # octaves and unisons read against the kept shares, each weight moved by kept over written, and written again (ten rounds at most; the round nearest the kept is kept).
     HFLOOR, HTOP = 40, 81                                                                           # the lowest and highest notes of the kept voice ranges (bass E2, soprano A5)
+    UNDER = voice in HARMONY_UNDER                                                                  # 749.222, a trial (studies/harmony_under): with the lead's voice given, the harmony is never over the lead and sings in the voice next below the lead's, up to the lead voice's top
+    if UNDER: HFLOOR, HTOP = HARMONY_UNDER[voice]; rec["harmony_range"] = dict(lowest=HFLOOR, highest=HTOP, note="749.222: the voice next below the lead's, from its floor to the lead voice's top; never over the lead")
     def room_below(n):
         ct_ = tones(chord(n["on"])); return any((n["midi"] - iv) >= HFLOOR and ((n["midi"] - iv) % 12 in ct_) for iv in ICLASS if iv)
     def harmony_voice(HW_, rng):
@@ -137,7 +141,7 @@ def arrange(rec, genre="pop", lead="guitar", seed=1):
         for n in notes_:
             if "horus" not in n["sec"]: last = None; lastiv = None; lastlead = None; continue
             ct = tones(chord(n["on"])); onbeat = (n["on"] % BAR) in BEATS; cands = []
-            for iv, cls, side in [(iv, cls, -1) for iv, cls in ICLASS.items()] + [(iv, cls, 1) for iv, cls in ICLASS.items() if iv]:
+            for iv, cls, side in [(iv, cls, -1) for iv, cls in ICLASS.items()] + ([] if UNDER else [(iv, cls, 1) for iv, cls in ICLASS.items() if iv]):
                 p = n["midi"] + side * iv
                 if p < HFLOOR or p > HTOP or (side == 1 and room_below(n)): continue                                    # 893 (749.74): the harmony voice has a singer's range; above the lead only where below has no room
                 if p % 12 not in scale and p % 12 not in ct: continue
