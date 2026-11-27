@@ -647,7 +647,7 @@ class Engine:
                 if self.S.get("pitch_ceiling") and ok:                                                                                             # 956 (749.134): a ceiling on the commonest pitch's share. A part can sit on one pitch for half its notes with no long run; a build whose verses, pooled, or choruses, pooled, do so more than nine kept songs in ten is passed over. Read as sung
                     ce_ = self.S["pitch_ceiling"]; sung4_ = getattr(self, "as_sung", None); import make_kept_commonest_pitch as CPK_      # a part is told by its name, as the kept table tells it (a tag is not a chorus there)
                     def cp_(c, part):
-                        ps_ = [n["p"] for n in (sung4_(c["notes"]) if sung4_ else c["notes"]) if CPK_.kind(n["sec"]) == part]; return max(collections.Counter(ps_).values()) / len(ps_) if len(ps_) >= 20 else 0.0
+                        ps_ = [n["p"] for n in (sung4_(c["notes"]) if sung4_ else c["notes"]) if (CPK_.kind_b(n["sec"]) if part == "Bridge" else CPK_.kind(n["sec"])) == part]; return max(collections.Counter(ps_).values()) / len(ps_) if len(ps_) >= 20 else 0.0
                     for c in ok: c["cp"] = {part: round(cp_(c, part), 3) for part in ce_}
                     ok5 = [c for c in ok if all(c["cp"][part] <= ce_[part] for part in ce_)]; cgate = dict(at_most=ce_, read=len(ok), passed=len(ok5))
                     if ok5: ok = ok5

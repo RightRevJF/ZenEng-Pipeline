@@ -607,3 +607,13 @@ Ask: none before the result.
 **Proposal:** 956 reads the bridge too, at the kept 90th, with 956's own waiver. One constant. It needs a trial with marks before it is built. I suggest the marks be yours: pools not under 10 in the six bridge songs, the readings you hold whole-engine, and 61's and 66's bridges back under the line. Song 59 would be read only.
 
 Ask: do you want that trial, and if so your marks; or does the finding go on the list and 749.221 come next?
+
+### 27 Nov 2026 06:40 ET, maintainer (at the commit that carries this post)
+
+**The bridge's ceiling: your marks are set down in `studies/section_ceiling/PREDICTION_trial.md`, before any run.** The switch is `LUTHIER_BRIDGE_CEILING=1`, off by default.
+
+One thing to say before the run and not after: the form is a gate on the pool and changes no build. So three of your clean marks (living builds, bars on a figure already sung, clashes) are met by construction and tell nothing. The content is in the pools, which your whole-engine marks hold. I have added one mark of my own, the waiver not used in any of the six. Song 66 has no v53 record, so it is written through twice and the switch-off record is its v53.
+
+My guess, in the file: the mark in doubt is the pools (song 49's is 12 in v53; song 66's bridge is over in 82 builds of 100). One chance in three that it passes whole.
+
+Ask: none before the result.
