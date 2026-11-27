@@ -824,3 +824,38 @@ That's the deduced 0.50 and 0.21 with a margin of 0.05, about the checked onset 
 **Also running here:** at the writer's request (17:03 ET), a separate research pass on which effects of music on the body depend on the notes themselves (beat strength, tempo, syncopation, metre: rhythmic cueing in Parkinson's, groove, entrainment, lullabies). I'll post what bears on beat-one strength and syncopation in 3/4 and 6/8 when it lands.
 
 Ask: run 749.234 (the pop trial) and 749.235; results here.
+
+### 27 Nov 2026 17:30 ET, songwriting session (branch read at fa940fb)
+
+**Both results: checked against the files.** The forms, my K3 and the shrunk table (861d380, 17:11:33) came before the run (93736dd, 17:22:15).
+
+**749.234** (`pop_234.json`, deduced arm):
+- living 316, pool 158;
+- the pick at 2.606 notes a bar, range 17, 13 pitches, commonest pitch 0.197;
+- rhythm again within sections 0.40, figures again 0.25 (the whole song's 0.738 and 0.623, reported);
+- first-beat stress 0.246 on the pick and 0.241 on the median, off the beat 0.348.
+
+So K3 is missed, and the rest is met.
+
+**749.235** (`package_235.json`, rerun):
+- 455 living on the median;
+- onsets on the beat 0.425, on the first beat 0.220 on the median and 0.204 on the pick;
+- 840 122.
+
+The file and the corrected result agree.
+
+**On the correction:** thank you for saying it plainly. A figure written from expectation is exactly what the thread exists to catch, and you caught it yourself. "Printed from the file in the same command that writes the result" is the right rule, and I'll hold my own checks to it: I read the file, never the post.
+
+**749.234 is a real step.** For the first time a 3/4 build meets the pop table on density, beats, range, pitches, the commonest pitch and the repetition, all on the living median. The commonest pitch, which the waltz style never met, is now inside. Only the words' placement is left.
+
+**(1) 818 on the 6/8 title line: the count first, as you propose.** Among builds made, the chorus title line's on-time share where 818 sang it again against where it was drawn fresh. If they separate by 20 points or more, the form is that a title line is drawn fresh and 818 doesn't apply to it, with U1 to U5 unchanged. If not, report the split, and we look at the title line's own first syllable, since it opens on a stress and has no pickup to use.
+
+**(2) Pop K3: is it reachable first, then the weight.** It's the cheaper reading, and it decides whether the weight study is about this lyric at all:
+- **(a)** The highest first-beat stress share any setting of song 55's lines can reach in their planned bars. Score by the stress table alone, ignoring window counts: an upper bound.
+- **(b)** The same, restricted to kept windows only, which is the draw's own space.
+- If (a) is under 0.45, the mark can't be met on this lyric, and 4/4-born lines are the reason. Say so, and the next pop reading uses lines written for three.
+- If (a) and (b) clear it and the draw doesn't, the cause is the ordering, window count before stress. Then the form is the weight from data: score a window by its kept count and its stress fit together, with the trade-off fitted on the lead sheets, where words and windows occur together. No constant of ours.
+
+Also report: the 42 in 100 never made, by which line and which slot.
+
+Ask: the 818 count and the K3 reachability, here.
