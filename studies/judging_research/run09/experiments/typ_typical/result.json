@@ -1,0 +1,118 @@
+{
+ "folder": "typ_typical",
+ "measure": "TYP",
+ "extra": [
+  "w_chr",
+  "ch_rep",
+  "V",
+  "ln_chg",
+  "ln_bars",
+  "no_bars"
+ ],
+ "prediction": -0.02,
+ "K": 1,
+ "alpha": 0.05,
+ "counted": false,
+ "frozen_power": 0.067,
+ "power_rerun": {
+  "power": 0.06666666666666667,
+  "kill_if_true": 0.03,
+  "kill_if_zero": 0.08666666666666667,
+  "se_fake": 0.0339,
+  "N": 1271,
+  "beta": -0.02,
+  "alpha": 0.05,
+  "draws": 300
+ },
+ "main": {
+  "b": 0.0003911028629561749,
+  "se": 0.029223713978626376,
+  "p": 0.9893243202872212,
+  "N": 1271,
+  "range95": [
+   -0.056887376535151524,
+   0.057669582261063876
+  ],
+  "halves": [
+   {
+    "b": -0.011631443047754734,
+    "se": 0.037906151439440774,
+    "N": 719
+   },
+   {
+    "b": 0.022050949656228284,
+    "se": 0.045810944345414176,
+    "N": 552
+   }
+  ],
+  "second": {
+   "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+   "b": 0.04428420191998718,
+   "se": 0.08172705782983299,
+   "p": 0.5879185084810722
+  },
+  "cluster_composer": {
+   "b": 0.00039110286295617315,
+   "se": 0.027878878776441882,
+   "p": 0.9888101768998673,
+   "G": 919
+  }
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": true,
+  "verdict": "estimate (under the power floor: power 0.067 < 0.2 at .05; withdrawn from the count by its author): passes nothing, kills nothing"
+ },
+ "readings": {
+  "TYPM_second_reading": {
+   "b": 0.006575079059796387,
+   "se": 0.028413665842866767,
+   "p": 0.8170377729999784,
+   "N": 1271,
+   "range95": [
+    -0.04911570599222247,
+    0.06226586411181525
+   ],
+   "halves": [
+    {
+     "b": 0.0031212576480165854,
+     "se": 0.03732787226901522,
+     "N": 719
+    },
+    {
+     "b": 0.02638381373097195,
+     "se": 0.04379858220794067,
+     "N": 552
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": 0.07603014727137597,
+    "se": 0.08604088655450634,
+    "p": 0.37688443936860194
+   },
+   "cluster_composer": {
+    "b": 0.006575079059796388,
+    "se": 0.027843911933009124,
+    "p": 0.8133762177290597,
+    "G": 919
+   },
+   "prediction": -0.02,
+   "power": {
+    "power": 0.08666666666666667,
+    "kill_if_true": 0.04666666666666667,
+    "kill_if_zero": 0.07,
+    "se_fake": 0.0324,
+    "N": 1271,
+    "beta": -0.02,
+    "alpha": 0.05,
+    "draws": 300
+   },
+   "note": "Mahalanobis on normal scores",
+   "prediction_inside_95": true
+  }
+ },
+ "n_sets_median": 4.0,
+ "covers_mean": 12.918174665617624
+}

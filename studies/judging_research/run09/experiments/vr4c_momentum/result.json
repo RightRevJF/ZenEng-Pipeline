@@ -1,0 +1,109 @@
+{
+ "folder": "vr4c_momentum",
+ "measure": "VR4c",
+ "extra": [
+  "IIV",
+  "w_chr",
+  "ch_rep",
+  "V",
+  "ln_chg",
+  "ln_bars",
+  "no_bars"
+ ],
+ "prediction": 0.02,
+ "K": 1,
+ "alpha": 0.05,
+ "counted": false,
+ "frozen_power": 0.12,
+ "power_rerun": {
+  "power": 0.12,
+  "kill_if_true": 0.06333333333333334,
+  "kill_if_zero": 0.09333333333333334,
+  "se_fake": 0.0319,
+  "N": 1245,
+  "beta": 0.02,
+  "alpha": 0.05,
+  "draws": 300
+ },
+ "main": {
+  "b": 0.02643389338020701,
+  "se": 0.027010227409823125,
+  "p": 0.3279410078587476,
+  "N": 1245,
+  "range95": [
+   -0.02650615234304631,
+   0.07937393910346033
+  ],
+  "halves": [
+   {
+    "b": 0.021520718182542028,
+    "se": 0.03524890086698105,
+    "N": 705
+   },
+   {
+    "b": 0.034061777122176014,
+    "se": 0.041654530566149955,
+    "N": 540
+   }
+  ],
+  "second": {
+   "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+   "b": 0.06229347312096159,
+   "se": 0.08571397572778713,
+   "p": 0.4673731041995939
+  },
+  "cluster_composer": {
+   "b": 0.02643389338020701,
+   "se": 0.02726833251604098,
+   "p": 0.3326066049209422,
+   "G": 901
+  }
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": true,
+  "verdict": "estimate (under the power floor: power 0.12 < 0.2 at .05; withdrawn from the count by its author): passes nothing, kills nothing"
+ },
+ "readings": {
+  "VR4_uncollapsed": {
+   "b": 0.011406404855828431,
+   "se": 0.026053103684422596,
+   "p": 0.6615988616571378,
+   "N": 1246,
+   "range95": [
+    -0.039657678365639853,
+    0.062470488077296715
+   ],
+   "halves": [
+    {
+     "b": 0.016276946135881595,
+     "se": 0.03561717653596773,
+     "N": 706
+    },
+    {
+     "b": 0.007336362975779484,
+     "se": 0.03844493356111716,
+     "N": 540
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": 0.06130028623311003,
+    "se": 0.08331030494076508,
+    "p": 0.4618483017184368
+   },
+   "cluster_composer": {
+    "b": 0.011406404855828431,
+    "se": 0.026459601202724146,
+    "p": 0.666507822239042,
+    "G": 902
+   },
+   "prediction": null,
+   "power": null,
+   "note": "round 1's VR4, before the ii was dropped"
+  }
+ },
+ "n_sets_median": 5.0,
+ "covers_mean": 13.093172690763053
+}

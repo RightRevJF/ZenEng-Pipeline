@@ -1,0 +1,239 @@
+{
+ "folder": "tr_resolve",
+ "measure": "TR",
+ "extra": [
+  "w_chr",
+  "ch_rep",
+  "V",
+  "ln_chg",
+  "ln_bars",
+  "no_bars"
+ ],
+ "prediction": 0.035,
+ "K": 1,
+ "alpha": 0.05,
+ "counted": false,
+ "frozen_power": 0.193,
+ "power_rerun": {
+  "power": 0.19333333333333333,
+  "kill_if_true": 0.05333333333333334,
+  "kill_if_zero": 0.16333333333333333,
+  "se_fake": 0.0332,
+  "N": 1270,
+  "beta": 0.035,
+  "alpha": 0.05,
+  "draws": 300
+ },
+ "main": {
+  "b": -0.041195178936041375,
+  "se": 0.027160092307643068,
+  "p": 0.12958265886640766,
+  "N": 1270,
+  "range95": [
+   -0.09442895985902178,
+   0.012038601986939033
+  ],
+  "halves": [
+   {
+    "b": -0.024367231028114337,
+    "se": 0.03719244259339728,
+    "N": 718
+   },
+   {
+    "b": -0.08129319107576516,
+    "se": 0.04140246381407988,
+    "N": 552
+   }
+  ],
+  "second": {
+   "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+   "b": -0.05191011030836426,
+   "se": 0.06779819048016385,
+   "p": 0.44388084756952817
+  },
+  "cluster_composer": {
+   "b": -0.041195178936041375,
+   "se": 0.029077702988477765,
+   "p": 0.15690226115486133,
+   "G": 918
+  }
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": false,
+  "verdict": "estimate (under the power floor: power 0.193 < 0.2 at .05/K, K = 1): passes nothing, kills nothing"
+ },
+ "readings": {
+  "DRES_per_bar_second_reading": {
+   "b": -0.029559147302936534,
+   "se": 0.028005304388278453,
+   "p": 0.2914416695894171,
+   "N": 1097,
+   "range95": [
+    -0.0844495439039623,
+    0.02533124929808923
+   ],
+   "halves": [
+    {
+     "b": 0.014116390879183899,
+     "se": 0.03938200308265805,
+     "N": 608
+    },
+    {
+     "b": -0.11095107282675697,
+     "se": 0.04335471263727288,
+     "N": 489
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": -0.10039833369695833,
+    "se": 0.05071979538912716,
+    "p": 0.047763069009140346
+   },
+   "cluster_composer": {
+    "b": -0.029559147302936534,
+    "se": 0.028817382635227484,
+    "p": 0.3053055400833132,
+    "G": 852
+   },
+   "prediction": 0.035,
+   "power": {
+    "power": 0.16,
+    "kill_if_true": 0.04,
+    "kill_if_zero": 0.15333333333333332,
+    "se_fake": 0.0356,
+    "N": 1097,
+    "beta": 0.035,
+    "alpha": 0.05,
+    "draws": 300
+   },
+   "note": "R09-L2's DRES, bar-timed charts only",
+   "prediction_inside_95": false
+  },
+  "TR_holding_IIV": {
+   "b": -0.0457834428553846,
+   "se": 0.028110516246914116,
+   "p": 0.1036309047102589,
+   "N": 1270,
+   "range95": [
+    -0.10088005469933627,
+    0.009313168988567072
+   ],
+   "halves": [
+    {
+     "b": -0.024658689524733223,
+     "se": 0.03820883212598954,
+     "N": 718
+    },
+    {
+     "b": -0.09200071311440253,
+     "se": 0.042722116573360794,
+     "N": 552
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": -0.08316657350025908,
+    "se": 0.06832362429539271,
+    "p": 0.2235111056414344
+   },
+   "cluster_composer": {
+    "b": -0.0457834428553846,
+    "se": 0.029877643989111764,
+    "p": 0.1257774015993014,
+    "G": 918
+   },
+   "prediction": null,
+   "power": null,
+   "note": "the Geometer's contrast (a lead): TR near 0 while IIV stays positive would read the ii-V as chart-writer decoration"
+  },
+  "TR_non_jazz": {
+   "b": -0.022601733427996023,
+   "se": 0.037387247853838936,
+   "p": 0.5456608890531509,
+   "N": 831,
+   "range95": [
+    -0.09588073922152034,
+    0.050677272365528284
+   ],
+   "halves": [
+    {
+     "b": 0.03672757250099913,
+     "se": 0.049150326982851475,
+     "N": 489
+    },
+    {
+     "b": -0.10223569935268814,
+     "se": 0.05805079413842909,
+     "N": 342
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": -0.06106930174331603,
+    "se": 0.07051640167708756,
+    "p": 0.3864738471910667
+   },
+   "cluster_composer": {
+    "b": -0.022601733427996023,
+    "se": 0.03778541495479342,
+    "p": 0.5499510942103977,
+    "G": 622
+   },
+   "prediction": 0.02,
+   "power": {
+    "power": 0.056666666666666664,
+    "kill_if_true": 0.043333333333333335,
+    "kill_if_zero": 0.05333333333333334,
+    "se_fake": 0.043,
+    "N": 831,
+    "beta": 0.02,
+    "alpha": 0.05,
+    "draws": 300
+   },
+   "note": "G09-2's non-jazz reading",
+   "prediction_inside_95": true
+  },
+  "TR_chart_provenance_only": {
+   "b": -0.030155256994726588,
+   "se": 0.028823097491577413,
+   "p": 0.29570095577349675,
+   "N": 1074,
+   "range95": [
+    -0.08664852807821832,
+    0.026338014088765144
+   ],
+   "halves": [
+    {
+     "b": 0.01891563451653125,
+     "se": 0.04108401532835163,
+     "N": 598
+    },
+    {
+     "b": -0.10653982723865343,
+     "se": 0.04257780365711677,
+     "N": 476
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": -0.09207975874924547,
+    "se": 0.05246428753400082,
+    "p": 0.07924322235904524
+   },
+   "cluster_composer": {
+    "b": -0.030155256994726588,
+    "se": 0.028697510197590134,
+    "p": 0.29365658631741876,
+    "G": 834
+   },
+   "prediction": null,
+   "power": null,
+   "note": ""
+  }
+ },
+ "n_sets_median": 4.0,
+ "covers_mean": 12.92755905511811
+}

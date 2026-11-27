@@ -1,0 +1,108 @@
+{
+ "folder": "irr_skeleton",
+ "measure": "IRR",
+ "extra": [
+  "w_chr",
+  "ch_rep",
+  "V",
+  "ln_chg",
+  "ln_bars",
+  "no_bars"
+ ],
+ "prediction": 0.02,
+ "K": 1,
+ "alpha": 0.05,
+ "counted": false,
+ "frozen_power": 0.067,
+ "power_rerun": {
+  "power": 0.06666666666666667,
+  "kill_if_true": 0.04666666666666667,
+  "kill_if_zero": 0.1,
+  "se_fake": 0.034,
+  "N": 1271,
+  "beta": 0.02,
+  "alpha": 0.05,
+  "draws": 300
+ },
+ "main": {
+  "b": -0.05972368373141107,
+  "se": 0.029465843737555394,
+  "p": 0.04288744145954682,
+  "N": 1271,
+  "range95": [
+   -0.11747673745701964,
+   -0.0019706300058024984
+  ],
+  "halves": [
+   {
+    "b": -0.06152437304929285,
+    "se": 0.03919072622884122,
+    "N": 719
+   },
+   {
+    "b": -0.043335937398696664,
+    "se": 0.0435800125088082,
+    "N": 552
+   }
+  ],
+  "second": {
+   "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+   "b": -0.15193249626969227,
+   "se": 0.06705577241245664,
+   "p": 0.023465890416644774
+  },
+  "cluster_composer": {
+   "b": -0.05972368373141107,
+   "se": 0.03225748085329046,
+   "p": 0.06442327215477706,
+   "G": 919
+  }
+ },
+ "verdict": {
+  "counted": false,
+  "passed": false,
+  "prediction_inside_95": false,
+  "verdict": "estimate (under the power floor: power 0.067 < 0.2 at .05; withdrawn from the count by its author): passes nothing, kills nothing"
+ },
+ "readings": {
+  "IRR_chart_provenance_only": {
+   "b": -0.05466021943127359,
+   "se": 0.033015043266429574,
+   "p": 0.09809822302647492,
+   "N": 1075,
+   "range95": [
+    -0.11936970423347557,
+    0.01004926537092838
+   ],
+   "halves": [
+    {
+     "b": -0.06716670521898656,
+     "se": 0.0446432172022005,
+     "N": 599
+    },
+    {
+     "b": -0.021008095933512848,
+     "se": 0.04710179008256641,
+     "N": 476
+    }
+   ],
+   "second": {
+    "model": "Poisson QMLE on n_sets, intercept, same columns, HC0 (posthoc08.poisson_plain)",
+    "b": -0.14538128720615529,
+    "se": 0.06850496216454445,
+    "p": 0.03382087732944475
+   },
+   "cluster_composer": {
+    "b": -0.05466021943127359,
+    "se": 0.03546677000102531,
+    "p": 0.12365543866296101,
+    "G": 835
+   },
+   "prediction": null,
+   "power": null,
+   "note": ""
+  }
+ },
+ "n_sets_median": 4.0,
+ "covers_mean": 12.918174665617624
+}
