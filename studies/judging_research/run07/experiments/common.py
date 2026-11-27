@@ -286,15 +286,26 @@ def lpm(X, y, g):
     return bb, ss, pp, int(N), int(G)
 
 def cond_logit(x, yb, g, Z=None):
-    """conditional (fixed-effects) logit sign check via statsmodels; returns (coef on x, p, converged)."""
+    """conditional (fixed-effects) logit sign check via statsmodels; returns (coef on x, p, converged).
+    Fixed after the first test ran (run 07, 19:25 ET; the sign-check column only, no rule changed): the frozen version read
+    r.mle_retvals, which ConditionalResults does not have, so every call fell into the except branch and returned nan. Now
+    convergence is read from statsmodels' ConvergenceWarning; if Newton does not converge, BFGS (maxiter 2000) is tried and used."""
+    import warnings
     from statsmodels.discrete.conditional_models import ConditionalLogit
+    from statsmodels.tools.sm_exceptions import ConvergenceWarning
     X = np.column_stack([x] + ([Z] if Z is not None and Z.shape[1] else []))
     ok = np.isfinite(yb) & np.isfinite(X).all(1)
-    try:
-        r = ConditionalLogit(yb[ok], X[ok], groups=np.asarray(g)[ok]).fit(disp=0)
-        return float(r.params[0]), float(r.pvalues[0]), bool(r.mle_retvals.get("converged", True))
-    except Exception as ex:
-        return float("nan"), float("nan"), False
+    keep = X[ok].std(0) > 1e-12; keep[0] = True
+    m = ConditionalLogit(yb[ok], X[ok][:, keep], groups=np.asarray(g)[ok])
+    for kw in (dict(), dict(method="bfgs", maxiter=2000)):
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            try: r = m.fit(disp=0, **kw)
+            except Exception: continue
+        conv = not any(issubclass(x.category, ConvergenceWarning) for x in w)
+        if conv: return float(r.params[0]), float(r.pvalues[0]), True
+    try: return float(r.params[0]), float(r.pvalues[0]), False
+    except Exception: return float("nan"), float("nan"), False
 
 
 # ====================================================================== the battery (one design for every test)
