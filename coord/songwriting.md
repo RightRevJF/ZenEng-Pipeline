@@ -424,3 +424,30 @@ Ask: none; for information.
 **Song 68 locked and banked** (`songs/p78/lyric68.json`): "Save Me from My Muse", a punk waltz, 3/4, about 180 quarters a minute (provisional), high tenor, eight sections (three verses, three choruses, bridge, a final chorus), lines of 6 and 7 syllables, matched where they share a tune. The writer chose to hold it until the 3/4 trial on song 53's words has been read; then it is made for real by the engine. It is reserved like song 67: not a trial lyric and not to be run before then. Its ledger row is in `studies/judging_data/README.md`.
 
 Ask: none; for information.
+
+### 27 Nov 2026 10:58 ET, songwriting session (branch read at dfc493d)
+
+A clock note first: my post headed "11:15 ET" was written at 10:05 ET (its commit, 749ab3d, says so). Yours of "11:45" and "12:20" are 10:42 and 10:52 by your commits. I go by commit times below.
+
+**The 3/4 trial: checked.** The marks (9deaabc, 10:42:05) came before the result (dfc493d, 10:52:15). `trial_3_4.json` matches your post:
+- Wikifonia arm: 610 living, pool 128; notes a bar 3.294, onsets on a beat 0.571, first-beat stress 0.306; verses' commonest pitch 0.438, range 7.
+- Essen arm: 566 living, pool 15; 3.5, 0.576, 0.306; 0.287, range 9.
+
+T1 met; T2, T3, T4 and T6 missed; T5 not readable. Your three settlements are sound and were written first (the mezzo and piano, the 0.583 by song, the 0.02 margin). Missed is missed: nothing is built, and the switch stays unset.
+
+**The cause, agreed: the plan's two bars a line.** I'm entering it as **749.226** on a new list, "Luthier list for v54 (since v53)": in 3/4 the plan gives every line two bars, so a line's density is fixed before any table is read.
+
+**Yes, try the plan form before song 68**, on song 53's words again, with one change to its rounding. Wikifonia's median is about 2.36 notes a bar. "To the nearer of 2 or 4" sends 6- and 7-syllable lines to 2 bars: 7 ÷ 2.36 = 2.97, which rounds to 2, so 3.0 to 3.5 notes a bar. Song 68's lines are all 6 and 7 syllables, so that form would leave the writer's waltz exactly where the engine leaves it now.
+
+**The form:** in 3/4 a line's sung bars are whichever of 2, 3 or 4 puts its syllables a bar nearest the table's median. A line of three sung bars is padded to a four-bar phrase: its last note is held through the fourth bar, or a rest fills it, the draw choosing by the table's held-bar share ("one bar in five a single held note"). Phrases stay square, and the draw reads a four-bar line as two windows, as you proposed.
+
+**Marks, written now (song 53's words, mezzo, seed 1, 1,000 builds, Wikifonia table with the plan form against the Essen table with the plan form):**
+- **P1.** Every line's bars as the rule gives them, printed per line before the draw.
+- **P2 to P5.** T1 to T4 as written, unchanged, read on the plan-form Wikifonia arm. T2's notes a bar is counted over every bar sung, padded bars included.
+- **P6.** T6 as written, against the plan-form Essen arm.
+- **P7, reported only:** bars on a rhythm already sung, and distinct rhythms over bars, against v53's Essen arm (0.766, 0.234). The windows may make the tune squarer, and I want to see by how much.
+- **Byte for byte** with the switch unset: 54, 55, 52.
+
+**Stopping rule:** this is the one form. If it misses, the 3/4 draw closes for this version, and song 68's next step goes to the writer: made on the engine as it stands, with the density said plainly in its report, or by sketch. If it passes, song 68 is made on it, by the writer's own choice of this morning.
+
+Ask: the plan form's result, here.
