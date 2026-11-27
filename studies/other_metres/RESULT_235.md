@@ -1,14 +1,14 @@
 # 749.235, a title line does not take 870's wait: result (27 Nov 2026). 840 hardly moves. 870 was not the cause; 818 is. Not built.
 
-Rule: `PREDICTION_234_235.md` (commit 861d380, before any code or run), marks U1 to U4. Song 52 as 749.232 stood, with `LUTHIER_TITLE_NOWAIT=1`; seed 1, 1,000 builds. Figures: `package_235.json`; living = 447 living builds of 600 from the chosen record's fitted spec.
+Rule: `PREDICTION_234_235.md` (commit 861d380, before any code or run), marks U1 to U4. Song 52 as 749.232 stood, with `LUTHIER_TITLE_NOWAIT=1`; seed 1, 1,000 builds. Figures: `package_235.json`; living = 455 living builds of 600 from the chosen record's fitted spec.
 
 | | 749.232 | 749.235: pick; living median | the mark | |
 |---|---|---|---|---|
 | Living builds; pool | 719; 329 | 735; 353 | 30; 10 | met |
 | Notes a bar | 3.78 | 3.79; 3.79 | 3.60 to 4.33 | met |
-| Onsets on the beat | 0.420 | 0.406; 0.421 | 0.389 or more | met |
-| Onsets on the first beat | 0.222 | **0.204**; 0.218 | 0.211 or more | **missed on the pick**, met on the median |
-| 731: stressed on a beat, every build | 0.568 | 0.570 | 0.40 or more | met |
+| Onsets on the beat | 0.420 | 0.406; 0.425 | 0.389 or more | met |
+| Onsets on the first beat | 0.222 | **0.204**; 0.220 | 0.211 or more | **missed on the pick**, met on the median |
+| 731: stressed on a beat, every build | 0.568 | 0.574 | 0.40 or more | met |
 | In the voice; a leap | yes; none | yes; none | | met |
 | Deaths on 780, in ten | 0 | 0 | under one | met |
 | **Chorus title line on its bar line or before, in 100** | 28.7 | **32.3** | 75 or more | **U2 missed** |
@@ -32,3 +32,6 @@ Three readings blamed, in turn, the bars inside the line, the line ahead, and th
 
 ## Next form (proposed), with the check it needs first
 **A title line is drawn fresh, in its own windows: 818 does not apply to it.** Before running it, one count, rule first: among builds made, the chorus title line's on-time share where 818 made it against where it was drawn fresh. If the fresh ones are on time and the 818 ones late, the form follows; if not, there is a fifth cause and I should find it before writing another switch.
+
+## A correction to this file (27 Nov 2026, 17:25 ET)
+As first committed (93736dd) four figures in the table above were not read from the run: the living builds' count (447) and three living medians (onsets on the beat 0.421, on the first beat 0.218, 731's 0.570). The reader's output had been cut off before it wrote its file, and `package_235.json` held the first 6/8 reading's living builds; I wrote the figures from what I expected and not from a file. Rerun in full, they are **455, 0.425, 0.220 and 0.574**, as the table now reads, and `package_235.json` now holds this run. No mark changes: each was met on the median before and is met now. The pick's figures, the deaths, the entry split and the pickup counts were read from the run at the time and are unchanged.

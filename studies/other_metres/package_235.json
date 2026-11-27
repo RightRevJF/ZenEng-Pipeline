@@ -1,27 +1,28 @@
 {
  "all": {
   "made": 1000,
-  "living": 374,
-  "pool": 36,
+  "living": 735,
+  "pool": 353,
   "deaths": {
-   "840: the title's stresses off the beat": 404,
-   "838: the chorus's lift is not the plan's": 208,
-   "731: stressed syllables on the beat too few": 14
+   "838: the chorus's lift is not the plan's": 134,
+   "840: the title's stresses off the beat": 122,
+   "rhythm: the syllables cannot fit the window": 7,
+   "731: stressed syllables on the beat too few": 2
   },
   "deaths_780_in_10": 0.0,
-  "deaths_840_in_10": 4.04,
-  "bars_of_sung_phrases": 106,
-  "notes": 418,
-  "notes_a_bar_over_sung_phrases": 3.943,
-  "onsets_on_the_beat": 0.435,
-  "onsets_on_the_first_beat": 0.22,
-  "stressed_on_a_beat": 0.568,
-  "stressed_on_the_first_beat": 0.261,
+  "deaths_840_in_10": 1.22,
+  "bars_of_sung_phrases": 111,
+  "notes": 421,
+  "notes_a_bar_over_sung_phrases": 3.793,
+  "onsets_on_the_beat": 0.406,
+  "onsets_on_the_first_beat": 0.204,
+  "stressed_on_a_beat": 0.58,
+  "stressed_on_the_first_beat": 0.295,
   "range": 12,
   "distinct_pitches": 8,
   "lowest_highest": [
-   59,
-   71
+   61,
+   73
   ],
   "voice": [
    55,
@@ -29,7 +30,7 @@
   ],
   "inside_the_voice": true,
   "leap_past_an_octave_in_a_line": false,
-  "pick_distance": 3.508,
+  "pick_distance": 3.358,
   "joint_gate": 3.574,
   "sung_bars": {
    "Verse 1": [
@@ -40,8 +41,8 @@
    ],
    "Chorus 1": [
     3,
-    3,
-    3,
+    4,
+    4,
     3,
     2
    ],
@@ -53,8 +54,8 @@
    ],
    "Chorus 2": [
     3,
-    3,
-    3,
+    4,
+    4,
     3,
     2
    ],
@@ -66,7 +67,7 @@
    ],
    "Bridge": [
     3,
-    3,
+    4,
     4,
     3
    ],
@@ -94,8 +95,8 @@
    ],
    "Chorus 1": [
     3,
-    3,
-    3,
+    4,
+    4,
     3,
     2
    ],
@@ -107,8 +108,8 @@
    ],
    "Chorus 2": [
     3,
-    3,
-    3,
+    4,
+    4,
     3,
     2
    ],
@@ -120,7 +121,7 @@
    ],
    "Bridge": [
     3,
-    3,
+    4,
     4,
     3
    ],
@@ -142,42 +143,47 @@
   "title_room": {
    "Chorus 1:2": [
     2,
-    3
+    4,
+    0.991
    ],
    "Chorus 2:2": [
     2,
-    3
+    4,
+    0.991
    ],
    "Bridge:2": [
     3,
-    4
+    4,
+    0.91
    ]
   },
   "stats": {
-   "749.226: a four-bar phrase in two windows": 10749,
-   "749.228: a copy that would begin too soon is sung again": 203
+   "749.226: a four-bar phrase in two windows": 9519,
+   "749.228: a copy that would begin too soon is sung again": 268
   },
   "seconds": [
-   "the song runs 271 seconds, past the kept 75th (243.2): the lyric is long for its tempo; at this tempo it would need about 6 fewer two-bar lines, or about 61 beats a minute"
+   "the song runs 280 seconds, past the kept 75th (243.2): the lyric is long for its tempo; at this tempo it would need about 8 fewer two-bar lines, or about 63 beats a minute"
   ]
  },
  "living builds": {
   "builds": 600,
-  "made": 600,
-  "not_made": {},
-  "living": 223,
+  "made": 597,
+  "not_made": {
+   "rhythm: the syllables cannot fit the window": 3
+  },
+  "living": 455,
   "medians": {
-   "notes_a_bar": 3.943,
-   "onsets_on_the_beat": 0.421,
-   "onsets_on_the_first_beat": 0.213,
-   "stressed_on_the_first_beat": 0.256,
-   "range": 10.0,
+   "notes_a_bar": 3.793,
+   "onsets_on_the_beat": 0.425,
+   "onsets_on_the_first_beat": 0.22,
+   "stressed_on_the_first_beat": 0.284,
+   "range": 11.0,
    "distinct_pitches": 7.0
   },
   "stressed_on_a_beat_every_build_made_quartiles": [
-   0.46,
-   0.506,
-   0.557
+   0.534,
+   0.574,
+   0.602
   ],
   "title_lines": {
    "Chorus 1:2": {
@@ -188,8 +194,8 @@
      "3": 0.609,
      "4": 0.991
     },
-    "bars_given": 3,
-    "under_half_in_builds": 0.615,
+    "bars_given": 4,
+    "under_half_in_builds": 0.529,
     "stressed_on_a_beat_quartiles": [
      0.4,
      0.4,
@@ -204,8 +210,8 @@
      "3": 0.609,
      "4": 0.991
     },
-    "bars_given": 3,
-    "under_half_in_builds": 0.615,
+    "bars_given": 4,
+    "under_half_in_builds": 0.529,
     "stressed_on_a_beat_quartiles": [
      0.4,
      0.4,
@@ -221,416 +227,14 @@
      "4": 0.91
     },
     "bars_given": 4,
-    "under_half_in_builds": 0.498,
+    "under_half_in_builds": 0.0,
     "stressed_on_a_beat_quartiles": [
-     0.333,
-     0.5,
-     0.5
+     0.667,
+     0.667,
+     0.667
     ]
    }
   }
- },
- "no_plan": {
-  "made": 200,
-  "living": 7,
-  "pool": 0,
-  "deaths": {
-   "840: the title's stresses off the beat": 131,
-   "838: the chorus's lift is not the plan's": 40,
-   "731: stressed syllables on the beat too few": 22
-  },
-  "deaths_780_in_10": 0.0,
-  "deaths_840_in_10": 6.55,
-  "bars_of_sung_phrases": 72,
-  "notes": 415,
-  "notes_a_bar_over_sung_phrases": 5.764,
-  "onsets_on_the_beat": 0.304,
-  "onsets_on_the_first_beat": 0.13,
-  "stressed_on_a_beat": 0.42,
-  "stressed_on_the_first_beat": 0.176,
-  "range": 12,
-  "distinct_pitches": 8,
-  "lowest_highest": [
-   59,
-   71
-  ],
-  "voice": [
-   55,
-   74
-  ],
-  "inside_the_voice": true,
-  "leap_past_an_octave_in_a_line": false,
-  "pick_distance": 4.287,
-  "joint_gate": 3.574,
-  "sung_bars": null,
-  "slots": {
-   "Verse 1": [
-    2,
-    2,
-    2,
-    2
-   ],
-   "Chorus 1": [
-    2,
-    2,
-    2,
-    2,
-    2
-   ],
-   "Verse 2": [
-    2,
-    2,
-    2,
-    2
-   ],
-   "Chorus 2": [
-    2,
-    2,
-    2,
-    2,
-    2
-   ],
-   "Verse 3": [
-    2,
-    2,
-    2,
-    2
-   ],
-   "Bridge": [
-    2,
-    2,
-    2,
-    2
-   ],
-   "Verse 4": [
-    2,
-    2,
-    2,
-    2
-   ],
-   "Last Chorus": [
-    2,
-    2,
-    2,
-    2,
-    2,
-    2
-   ]
-  },
-  "title_room": null,
-  "stats": {},
-  "seconds": []
- },
- "no_title": {
-  "made": 200,
-  "living": 60,
-  "pool": 27,
-  "deaths": {
-   "840: the title's stresses off the beat": 111,
-   "838: the chorus's lift is not the plan's": 28,
-   "731: stressed syllables on the beat too few": 1
-  },
-  "deaths_780_in_10": 0.0,
-  "deaths_840_in_10": 5.55,
-  "bars_of_sung_phrases": 103,
-  "notes": 414,
-  "notes_a_bar_over_sung_phrases": 4.019,
-  "onsets_on_the_beat": 0.401,
-  "onsets_on_the_first_beat": 0.2,
-  "stressed_on_a_beat": 0.568,
-  "stressed_on_the_first_beat": 0.278,
-  "range": 9,
-  "distinct_pitches": 6,
-  "lowest_highest": [
-   60,
-   69
-  ],
-  "voice": [
-   55,
-   74
-  ],
-  "inside_the_voice": true,
-  "leap_past_an_octave_in_a_line": false,
-  "pick_distance": 3.478,
-  "joint_gate": 3.574,
-  "sung_bars": {
-   "Verse 1": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 1": [
-    3,
-    3,
-    2,
-    3,
-    2
-   ],
-   "Verse 2": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 2": [
-    3,
-    3,
-    2,
-    3,
-    2
-   ],
-   "Verse 3": [
-    4,
-    3,
-    3,
-    3
-   ],
-   "Bridge": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Verse 4": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Last Chorus": [
-    3,
-    3,
-    3,
-    3,
-    2,
-    2
-   ]
-  },
-  "slots": {
-   "Verse 1": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 1": [
-    3,
-    3,
-    2,
-    3,
-    2
-   ],
-   "Verse 2": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 2": [
-    3,
-    3,
-    2,
-    3,
-    2
-   ],
-   "Verse 3": [
-    4,
-    3,
-    3,
-    3
-   ],
-   "Bridge": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Verse 4": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Last Chorus": [
-    3,
-    3,
-    3,
-    3,
-    2,
-    2
-   ]
-  },
-  "title_room": null,
-  "stats": {
-   "749.226: a four-bar phrase in two windows": 2022,
-   "749.228: a copy that would begin too soon is sung again": 11
-  },
-  "seconds": [
-   "the song runs 267 seconds, past the kept 75th (243.2): the lyric is long for its tempo; at this tempo it would need about 5 fewer two-bar lines, or about 60 beats a minute"
-  ]
- },
- "no_copy": {
-  "made": 200,
-  "living": 64,
-  "pool": 3,
-  "deaths": {
-   "840: the title's stresses off the beat": 70,
-   "join before a copy (780)": 39,
-   "838: the chorus's lift is not the plan's": 24,
-   "731: stressed syllables on the beat too few": 3
-  },
-  "deaths_780_in_10": 1.95,
-  "deaths_840_in_10": 4.35,
-  "bars_of_sung_phrases": 106,
-  "notes": 414,
-  "notes_a_bar_over_sung_phrases": 3.906,
-  "onsets_on_the_beat": 0.408,
-  "onsets_on_the_first_beat": 0.208,
-  "stressed_on_a_beat": 0.466,
-  "stressed_on_the_first_beat": 0.188,
-  "range": 12,
-  "distinct_pitches": 8,
-  "lowest_highest": [
-   59,
-   71
-  ],
-  "voice": [
-   55,
-   74
-  ],
-  "inside_the_voice": true,
-  "leap_past_an_octave_in_a_line": false,
-  "pick_distance": 3.379,
-  "joint_gate": 3.574,
-  "sung_bars": {
-   "Verse 1": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 1": [
-    3,
-    3,
-    3,
-    3,
-    2
-   ],
-   "Verse 2": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 2": [
-    3,
-    3,
-    3,
-    3,
-    2
-   ],
-   "Verse 3": [
-    4,
-    3,
-    3,
-    3
-   ],
-   "Bridge": [
-    3,
-    3,
-    4,
-    3
-   ],
-   "Verse 4": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Last Chorus": [
-    3,
-    3,
-    3,
-    3,
-    2,
-    2
-   ]
-  },
-  "slots": {
-   "Verse 1": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 1": [
-    3,
-    3,
-    3,
-    3,
-    2
-   ],
-   "Verse 2": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Chorus 2": [
-    3,
-    3,
-    3,
-    3,
-    2
-   ],
-   "Verse 3": [
-    4,
-    3,
-    3,
-    3
-   ],
-   "Bridge": [
-    3,
-    3,
-    4,
-    3
-   ],
-   "Verse 4": [
-    3,
-    3,
-    3,
-    3
-   ],
-   "Last Chorus": [
-    3,
-    3,
-    3,
-    3,
-    2,
-    2
-   ]
-  },
-  "title_room": {
-   "Chorus 1:2": [
-    2,
-    3
-   ],
-   "Chorus 2:2": [
-    2,
-    3
-   ],
-   "Bridge:2": [
-    3,
-    4
-   ]
-  },
-  "stats": {
-   "749.226: a four-bar phrase in two windows": 2138
-  },
-  "seconds": [
-   "the song runs 271 seconds, past the kept 75th (243.2): the lyric is long for its tempo; at this tempo it would need about 6 fewer two-bar lines, or about 61 beats a minute"
-  ]
  },
  "entry": {
   "builds_made": 993,

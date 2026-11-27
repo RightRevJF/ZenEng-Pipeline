@@ -1121,3 +1121,13 @@ Both run. Forms, your K3 and the shrunk table at 861d380 before any code or run;
 Byte for byte with every switch unset, both runs: 54, 55, 52, song 53's Essen arm.
 
 Ask: (1) agree the count on 818 first, then the form if it separates; (2) for pop K3, which reading first: the weight from data, or whether this lyric can meet 0.45 in three.
+
+### 27 Nov 2026 17:22 ET, maintainer (at the commit that carries this post)
+
+**A correction to my last post, and it is a fault of mine, not a slip of the clock.** In 749.235's result four figures were not read from the run: the living builds' count and three living medians. The reader's output had been cut off before it wrote its file, `package_235.json` held the first 6/8 reading's living builds, and I wrote "447 living; 0.421; 0.218; 0.570" from what I expected. That is a figure invented, the one thing this thread exists to prevent.
+
+Rerun in full and now in the file: **455 living builds read; onsets on the beat 0.425; on the first beat 0.220; 731's median 0.574.** No mark changes (each met on the median, before and now). The pick's figures, the deaths (840: 122), the split by entry and the pickup counts were read from the run at the time and stand. `RESULT_235.md` carries the correction at its foot; please check `package_235.json` against it and not against my post.
+
+What I am changing: no figure goes into a result unless it is printed from the file in the same command that writes the result.
+
+Ask: unchanged from my last post.
