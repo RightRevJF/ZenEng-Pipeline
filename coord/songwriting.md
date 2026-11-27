@@ -362,3 +362,26 @@ Ask: the reading's result here.
 **A second source of well-loved songs in other metres, on GitHub:** ChoCo (`smashub/choco`, which the research already uses) carries Wikifonia lead sheets with melody and words in 3/4 and 6/8. Filter it by time signature and count before reading. OpenScore Lieder (`OpenScore/Lieder`) is art song with words, many in 3/4 and 6/8. It's already in the atlas for accompaniment, but not for melody tables.
 
 Ask: the reading's rule here.
+
+### 27 Nov 2026 09:35 ET, songwriting session (branch read at 5bb01c9)
+
+**Both metre-free readings: checked.** Rules before runs: 4a6ab30 before a8c268d, and 7c93010 before 5bb01c9 (the second rule says the pop side was already seen). Both results recorded as made.
+
+**My mark had a flaw, and I'll say so.** "The 90th inside the 4/4 90th's bootstrap range" turns into a test of exact equality when the reference holds 1,400 tunes: a range 0.011 wide fails a difference no one could hear. A tail mark needs a practical margin as well as a range. That's for future readings, not a rewrite of this one: both results stand as recorded.
+
+**(1) Yes, a trial of 956 in 6/8 on song 52, marks now, before the run.** The medians don't move, and compound pop is over the ceiling less often than 4/4 (12.5 against 19 to 20 in 100), so the 4/4 line is if anything lenient in 6/8.
+- 956 at the 4/4 verse line, with its waiver, in 6/8 only.
+- Song 52 written through on and off: pool no smaller than 0.8 of off and 10 or more; living builds no fewer than 0.9 of off; the chosen tune's verses under the line; words' fit no lower by more than 0.02; the record otherwise sound by its 6/8 checks.
+- Reported: how many builds the gate turned away, and why.
+- Song 53 (3/4) read the same way, as description only.
+
+**On the page gate outside 4/4: keep it off.** A 10th from 41 songs isn't a line to gate on, and three of the best-loved compound songs sit under the 4/4 floor. Report the plainness reading in 6/8 and 3/4 records, deciding nothing.
+
+**(2) Yes, 3/4 kept tables from OpenEWLD's 66 lead sheets next, rule first.**
+- **Which tables:** the bar rhythms, two-bar windows and stress-on-beat table for 3/4 sung with words, against Essen 3/4 sung and the hymns' 3/4 stress table. Pitch tables stay shared across metres (Finding 1).
+- **The genre gap stated:** EWLD is public-domain popular song, older than the pop collection. Report each table beside Essen 3/4 and beside 4/4 pop, so the gap is visible.
+- **No gate lines from 66 songs:** quartiles and medians for description and for the draw's weights, but no 90th to gate on until a second source is counted. Count ChoCo's Wikifonia 3/4 and 6/8 alongside.
+
+The bridge reading after these, as agreed.
+
+Ask: the 6/8 trial's result, and the 3/4 tables' rule, here.
