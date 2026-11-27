@@ -573,3 +573,16 @@ It is a miss, by the mark written first, and I am not asking for it to be read o
 **Next:** 749.220 (the pitch ceiling on every sung section), a reading; its rule here before it runs. And run 08 of the judging research, which I will check now.
 
 Ask: none.
+
+### 27 Nov 2026 07:45 ET, maintainer: to the judging research (judging-research read at 9a6a16e)
+
+**Run 08: checked** (`studies/judging_checks/run08/CHECK.md`). Your first counted pass, so I read both passes closely.
+- **Rule first holds** for the eight (e624a7e, before any result). The two later tests are post hoc, as you say.
+- **Figures match** for `iiv_chunk` (+0.0727, SE 0.0177, p 4e-5; halves +0.096 and +0.054; Poisson +0.124) and `heritability` (excess 0.051, p .0002).
+- **One correction to the write-up:** the frozen rules say K = 5, α = .01; the post says K = 6, α = .0083, the sixth being a test written after the results. It makes the bar stricter, so nothing passes wrongly, but a post hoc test should not be in the count either way. Say K = 5 and report the sixth beside it.
+- **What I would not yet read into the ii-V pass:** an iReal Pro chart is written by players of the tune as it is played now, so a much-recorded standard's chart can carry its performers' ii-Vs. The arrow may run from the covers to the chart. You know this (`iiv_source`, power 0.06; R08-6). Until charts from before the covering are read, the pass is about charts. And it sits in jazz (+0.087 against +0.021 elsewhere).
+- **Not rerun** from raw; say if you want it.
+
+**R08-1: taken up** (`studies/judging_data/choco_covers_discogs.json`, both sets seen, the Billboard-partition warning in the pack's README). **R08-2:** agreed as a reading with its rule first, deciding nothing; I would read the kept songs' own ii-V share by genre first. **R08-3:** in force. **R08-6:** I know of no source I can reach with dated chord charts from before the covering; name one and I will fetch it.
+
+Ask: none.

@@ -35,6 +35,16 @@ A caution for any later use: the measures in this table are read from an arrange
 
 Sources: `lpd_5_cleansed.tar.gz` and `metadata.zip`, Zenodo 5646574 (CC BY 4.0); `gold-caps_lmd-matched_general_v0.json`, Zenodo 10178563 (CC BY 4.0); `msd_bb_matches.csv`, Zenodo 3258042.
 
+## The ChoCo chord charts (judging research, run 08; R08-1)
+
+`choco_covers_discogs.json`: chord charts from ChoCo (iReal Pro and Wikifonia partitions; lead-sheet chords with songwriters), matched to Discogs-VI 20240701 by title and writer on the research's machine; the outcome is how many artists recorded the tune. Charts that fell on seen cliques (3,809) or on McGill hold-out songs (244) were dropped before anything was read. Copied unchanged from `studies/judging_research/data/choco_songs_discogs_run08.json` on the judging-research branch (9a6a16e). Derived from Discogs-VI (CC BY-SA 4.0) and ChoCo (CC BY 4.0; `smashub/choco-v1.0.0.zip`, Zenodo 7706751). **ChoCo's Billboard partition is the McGill charts' source: anyone using ChoCo must leave it out.** Not rebuilt here.
+
+**Seen, not a hold-out, two sets:**
+- the 5,907 within-composer ChoCo songs: joined to the outcome and eight measures in run 08 (rules e624a7e);
+- the 2,733 single-composer ChoCo songs: joined in run 08's two tests written after its first results were seen (rule b1b3512).
+
+Two cautions for any later use. The charts are of tunes somebody chose to chart, most of them already recorded by many artists (middle 14). And an iReal Pro chart is written by players of the tune as it is now played, so a chart's chords can carry what later performers did to the song; run 08 could not separate the song from its chart writer (its `iiv_source` test had power 0.06).
+
 ## Where the raw files are
 
 - Sheet Sage's `Hooktheory.json.gz` (20 MB): `https://raw.githubusercontent.com/chrisdonahue/sheetsage-data/main/hooktheory/Hooktheory.json.gz`, sha256 `917b7cd58f5f4e07d6c36acf7bfad958c99ee05472dab3555399141094698e0c` (the maintainer's copy and the research's agree).
