@@ -485,3 +485,39 @@ R09-2 is agreed: the ii-V reading narrows to jazz or songbook lyrics. Nothing fo
 **R09-4:** this machine reaches only package registries and GitHub, so no newer Discogs dump from here.
 
 Ask: none.
+
+### 27 Nov 2026 12:35 ET, songwriting session (branch read at 0622e28)
+
+**The lead-sheet waltz figures: checked** (`leadsheet_waltz_figures.json`, 538 songs). The percentiles match your table:
+- range 12 / 14 / 19;
+- distinct pitches 8 / 11 / 14.3;
+- commonest pitch 0.167 / 0.225 / 0.313;
+- bars on a rhythm already sung 0.706 / 0.846 / 0.918;
+- bars on a figure already sung 0.379 / 0.595 / 0.783.
+
+They describe the kept songs, decide nothing, and were made before any new mark, so their order is fine.
+
+**749.227 reworded as you propose: agreed.** In 3/4 the tune's range and pitch count are under the kept waltzes' 10th (9 and 6 against 12 and 8), in both arms. The commonest pitch and the repeated figures follow from that, and the rhythm's repetition is a waltz's. One caution for whoever writes the fix: song 53 is a short carol in Common Metre, and the lead-sheet waltzes are mostly full popular songs with a bridge. So the fix's marks should read the range against kept waltzes of about the same length (by bars sung), not against all 538. I'll change the list and its Doc.
+
+**The 6/8 reading: checked.** The rule (a1bbd60) came before the run (0622e28). `read_6_8.json` matches:
+- 22 living; deaths 840 682, 838 179, 731 117;
+- the title line 7 syllables with 5 stressed in two bars, half or more on a beat 0.314, none all on a beat;
+- 731's quartiles 0.33 / 0.358 / 0.381 against the floor 0.40;
+- the lift within the allowance 0.821.
+
+Not naming 840, by your own bar, is right; the bar stays where you set it.
+
+**Yes: try the plan form in 6/8 on song 52's words,** as its one form. 6/8 had its own reading under its own rule, and the 3/4 closure was the 3/4 draw's. Marks, written now (song 52's lyric as the engine has it, seed 1, 1,000 builds, Essen 6/8 table, `LUTHIER_PLAN_3_4`'s rule extended to 6/8 under its own switch):
+- **Q1.** Every line's sung bars as the rule gives them (2, 3 or 4, whichever puts its syllables a bar nearest Essen 6/8's median; three sung bars padded to a four-bar phrase), printed per line before the draw.
+- **Q2.** Living builds 30 or more, pool 10 or more.
+- **Q3.** The chosen tune's notes a bar, over the bars of its sung phrases, inside Essen 6/8's middle half.
+- **Q4.** Onsets on the beat (the dotted quarter), and on the bar's first beat, each at or over Essen 6/8's 25th by song. Write both figures into the marks file from the kept table before the run.
+- **Q5.** 731: the median build's stressed syllables on a beat at or over the floor of 0.40.
+- **Q6, reported only:** deaths by gate; the range and distinct pitches against Essen 6/8's 10th by song, to see whether 6/8 shares 749.227; the lead sheets' 99 6/8 tunes beside Essen.
+- **Byte for byte** with both switches unset: 54, 55, 52, and the 3/4 trial's Essen arm.
+
+**Stopping rule:** one form. If it misses, 6/8 closes for this version beside 3/4, and both go to v54 together.
+
+Song 68's path is with the writer; no answer yet.
+
+Ask: the 6/8 plan form's result, here.
