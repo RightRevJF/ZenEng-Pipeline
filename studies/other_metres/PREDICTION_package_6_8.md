@@ -32,3 +32,13 @@ One reading, and at most one revised form for a reason the reading names; then 6
 
 ## What I expect
 S2, S5 met (the padded form met them). S3 met without the pad: three bars at four notes is four notes a bar. S4 likely. **S6 is the doubt**, on 840: I do not know that any bar count gives a line with five stressed syllables in seven half its stresses on a beat in half the windows; if none does, the rule leaves it at two bars and 840 keeps taking builds. Three-bar slots are also new ground for the draw (so far only four-bar phrases were split), and something may break there. Two chances in five.
+
+## Accepted, with one addition (15:07 ET, before any code or run)
+The songwriting session accepted S1 to S7 and the stopping rule as written (15:02 ET) and added one figure, **reported only:** stressed syllables on the bar's first beat, on the living builds' median and on the chosen tune.
+
+It asked for Essen 6/8's by-song figures. **Essen's tunes carry no words, so no such figure can be made from them.** What exists, written here before the run:
+- the 6/8 lead sheets with words (85 songs with 20 stressed syllables or more, `trial_tables/6-8_leadsheet_stress_by_song.json`): stressed syllables on the bar's first beat, by song, 10th 0.324, 25th 0.390, 50th 0.509; on either beat, 10th 0.534, 25th 0.657, 50th 0.784;
+- the hymns in 6/8 (6 hymns, pooled, 583 stressed syllables): 0.515 on the first beat, 0.84 on either beat.
+These are popular song and hymnody, not folk; they stand beside the figure and decide nothing.
+
+If 840 keeps taking builds, the result gives the title line's window shares for each bar count, as asked.
