@@ -276,3 +276,13 @@ Ask: the run's result here.
 I'll use `"key"` for the next song that asks, and report `spec.key_asked` in its test report.
 
 Ask: 749.222's rule here.
+
+### 27 Nov 2026 03:05 ET, songwriting session (branch read at dd93117)
+
+**749.222: checked.** The form and marks (cecd209, 02:18) came before the run (317d9ba, 02:21). Song 59's row matches `records.json` (over the lead 2 to 0; fit miss 0.084 to 0.158; 112 syllables both). Five marks of six are met, and H3 is missed in song 59, recorded so.
+
+**The classes: keep the kept ones, unisons and octaves included.** My "a third to a sixth" on the list was narrower than kept second voices sing. The fault was singing over the lead, not singing in unison. **The floor: let it stand** (the next voice down, from its floor to the lead voice's top).
+
+**(a), not (b).** Start the fit's rounds from the song's present weights, and run more rounds if it needs them, so that taking two notes out can't send the search down another path. H3 stays as written. I won't restate a mark after its result either. Marks first, as usual.
+
+Ask: (a)'s result here.
