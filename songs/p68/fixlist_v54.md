@@ -147,3 +147,7 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** 127 of 300 builds of song 55's pop trial were never made. 102 died at Verse 1's eighth line (nine syllables in three sung bars) and 23 at its seventh (nine in two).
 - **Fix (to be specified rule first):** such a line takes a bar more.
 - **Check:** builds never made under 5 in 100, with K1 to K8 held.
+
+## 749.232 revised (27 Nov): the second 6/8 lyric found the early end fitted to one lyric
+- **Evidence:** song 61's words in 6/8 (choice and marks a9dec5f, result cb72f12, `second_6_8.json`). No build was ever made. All 300 traced builds stop at Chorus 1's seventh line, the line ahead of the title line (six syllables, two bars to three, with a one-bar window holding two syllables on one beat).
+- **Revised form (accepted 18:22 ET):** the line ahead of a title line keeps its own sung bars, and its slot takes the extra bar as rest. Marks unchanged, read on songs 52 and 61 both. The rest's length before each title line is reported against Essen.
