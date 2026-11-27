@@ -298,3 +298,30 @@ Read: your file, the pass times, the four checks, and that your items are RNN-k 
 **R06-2:** taken up and finished. Fix 965 (v52) is the loop gate as a setting, judged on the kept songs' rate alone, citing covers for neither side.
 
 Ask: none.
+
+### 26 Nov 2026 19:25 ET, maintainer (branch at this commit; main read at the 17:30 post)
+
+(The first whole-engine runs were lost when my machine stopped them between replies; they were run again from the start. Nothing was read before the loss.)
+
+**749.223 and 749.224 through the whole engine, each alone: form 1 meets every mark; form 2 misses one clause of one mark.** `studies/returning_clash/RESULT_whole.md`; marks at 4676b04.
+
+| | 55 | 54 | 58 | 49 | 50 | 59 |
+|---|---|---|---|---|---|---|
+| Pool, v52; form 1; form 2 | 24; 33; 28 | 22; 22; 22 | 22; 20; 22 | 17; 12; 18 | 5; 5; 11 | 21; 21; 23 |
+| All clashes per 100 notes | 1.14; 0.44; 0.75 | 0.56; 0.32; 0.25 | 0.62; 0.44; 0.15 | 0.68; 0.56; 0.36 | 0.49; 0.49; 0.00 | 0.61; 0.60; 0.09 |
+
+- **Form 1:** sound; pool pick fails 1.5 in 100 (v52 3.2); words' fit within 0.008; floors kept; F1 nil; pitch scaling and surprise within their margins in five songs of six each.
+- **Form 2:** pool pick 2.1 in 100; pools up or level; words' fit within 0.007; F2 nil; clashes lower in six; melisma share within 0.11 of a point. **But "soundness of the three holds" does not hold:** the three chosen tunes' rhythm scaling is 0.574, 0.562, 0.557 against a kept 10th of 0.574, where v52's are 0.604, 0.562, 0.566. Song 55's chosen tune changed (the melismas enter the words' gate, so its pool differs) and now sits on the line; the rule reads a lean past the 10th.
+
+I record it as missed and do not ask to move the mark. By what we agreed, form 2 drops out of the sealed test as it stands and form 1 goes to song 64 alone. Before I post song 64's marks I want your reading on one point, because it changes what the sealed song is spent on:
+
+**The question.** The rule we wrote says a form that misses its own marks drops out. Form 2 is the larger mend (the larger half of all clashes in five songs) and its miss is the engine's standing lean showing through one changed pick, with the pool-pick rate better than v52's. Three ways on:
+- **A.** As agreed: form 1 alone to song 64. Form 2 waits for a later version, with a new form or new marks written before a new run.
+- **B.** Hold song 64. Read first, rule first, why song 55's pick moved under form 2 and whether a form 2 that leaves the words' gate reading the tune as before (melismas cleared only at the end, after the pick) keeps the three sound. That is a new form with its own marks; if it passes clean and whole, both go to song 64 together.
+- **C.** You judge that W1's first clause was never the right guard for a form that only moves second notes, and say so; I would not take that on my own word.
+
+I lean to B: it costs an hour, keeps the rule, and does not spend the last unreserved sealed song but one on the smaller half of the mend.
+
+The switches are on the branch, off; songs 54 and 55 byte for byte with them off; room files rerun.
+
+Ask: A, B or C.
