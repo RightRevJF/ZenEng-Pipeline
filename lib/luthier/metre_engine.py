@@ -47,6 +47,7 @@ class Engine:
         for sec, chs in spec["form"]: self.BAR0[sec] = b; self.CHORD += chs; b += len(chs)
         self.NBARS = b; self.SUNG = [s for s, _, _ in spec["sung"]]; self.KIND = {s: k for s, k, _ in spec["sung"]}; self.LINES = {s: [[(t, bool(st)) for t, st in ln] for ln in ls] for s, _, ls in spec["sung"]}
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
+        self.SUNGB = {id(self.LINES[s_][i_]): b_ for s_, v_ in (spec.get("sung_bars") or {}).items() for i_, b_ in enumerate(v_)}; self._part = False      # trial (749.226)
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
         self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0, 1.0)                                                # 926, 927
@@ -130,13 +131,21 @@ class Engine:
         if bars == 2: return self.WIN.get(n, [])
         if bars == 1: return self.BARS.get(n, [])
         return []
-    def rhythm(self, rng, sy, tmin, slot, cap=None, hook=False):
+    def rhythm(self, rng, sy, tmin, slot, cap=None, hook=False, room=None):
+        if slot == 4 * self.BAR and self.SUNGB.get(id(sy)) in (3, 4) and len(sy) >= 4:
+            # trial (749.226): a four-bar phrase read as two windows; three sung bars are a two-bar window and a one-bar rhythm, the fourth bar left to the hold or the rest
+            sb_ = self.SUNGB[id(sy)]; n1_ = (len(sy) + 1) // 2 if sb_ == 4 else int(round(2 * len(sy) / 3.0)); self._part = True
+            try:
+                a_ = self.rhythm(rng, sy[:n1_], tmin, 2 * self.BAR, hook=hook, room=3); b_ = self.rhythm(rng, sy[n1_:], 0, 2 * self.BAR if sb_ == 4 else self.BAR, None if cap is None else cap - 2 * self.BAR, hook=hook, room=None if sb_ == 4 else 0) if a_ is not None else None
+            finally: self._part = False
+            if a_ is None or b_ is None or b_[0] < 0: return None
+            self.stats["749.226: a four-bar phrase in two windows"] += 1; return list(a_) + [x_ + 2 * self.BAR for x_ in b_]
         n = len(sy); lead = 0
         for x in sy:
             if x[1]: break
             lead += 1
-        room_ = 12 if self.LE else self.BREATH; end = slot - room_ if cap is None else min(slot - room_, cap); out = []; bars = slot // self.BAR; early = []
-        if bars == 2 and self.S.get("one_bar_share") and rng.random() < self.S["one_bar_share"]:      # 876: the line sung in one bar of its two and the voice silent for the other, as kept songs leave whole bars empty
+        room_ = (12 if self.LE else self.BREATH) if room is None else room; end = slot - room_ if cap is None else min(slot - room_, cap); out = []; bars = slot // self.BAR; early = []
+        if bars == 2 and not self._part and self.S.get("one_bar_share") and rng.random() < self.S["one_bar_share"]:      # 876: the line sung in one bar of its two and the voice silent for the other, as kept songs leave whole bars empty
             o1 = self.rhythm(rng, sy, tmin, self.BAR, cap=min(self.BAR - self.END, cap if cap is not None else 10 ** 6), hook=hook) if n <= 10 else None
             if o1 is not None and o1[-1] < self.BAR - self.END + 1 and self.stats is not None:
                 if o1[-1] <= self.BAR - self.END: self.stats["876: a line sung in one bar, the next bar silent"] += 1; return o1
@@ -526,6 +535,10 @@ class Engine:
                         ok_ = [(v, w) for v, w in zip(V, SH[tr_]) if self.END <= v <= (room if (n["stress"] or n["dur"] >= min(room, 24)) else n["dur"])]      # 871's cap on a weak last syllable stands
                         if ok_: n["dur"] = rng.choices([v for v, _ in ok_], [w for _, w in ok_])[0]
                     i0 = j + 1
+        if self.SUNGB:
+            # trial (749.226): a line of three sung bars holds its last note through the padded bar at the kept table's held-bar share; otherwise the bar rests
+            for j, n in enumerate(flat):
+                if (j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"])) and self.SUNGB.get(id(self.LINES[n["sec"]][n["line"]])) == 3 and self.SLOTS[n["sec"]][n["line"]] == 4 and rng.random() < self.S.get("held_bar_share", 0): n["dur"] = max(n["dur"], self.line_start(n["sec"], n["line"]) + 4 * self.BAR - self.BEAT - n["on"])
         for j in range(len(flat) - 1):
             if flat[j]["on"] + flat[j]["dur"] > flat[j + 1]["on"]: flat[j]["dur"] = flat[j + 1]["on"] - flat[j]["on"]
         return dict(notes=flat, plans=plans), None

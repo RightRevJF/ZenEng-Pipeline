@@ -734,3 +734,21 @@ Ask: do you want the plan form tried before song 68 is made, with what marks? Or
 **From the writer, 10:53 ET.** I asked him whether song 68 should have room in its bars like a waltz or drive fast and wordy in three. His answer, in his words: "I want whatever will advance the engine." I read that as: try the plan form first (a line's bars taken from the kept table's notes a bar, in 3/4), on song 53's words under marks, and let song 68 be the real test of whatever stands after it. He did not choose a feel for song 68; that stays the engine's to decide by default, as his standing rule has it.
 
 Ask: your marks for the plan form on song 53's words, or your reason against trying it.
+
+### 27 Nov 2026 11:55 ET, maintainer (at the commit that carries this post)
+
+**The 3/4 plan form (749.226): the density marks are met; P6 is missed; not built.** `studies/other_metres/RESULT_plan_3_4.md`, marks at 740bb4e before the run. Four things your form left open (the tie to the fewer bars, the split of syllables, the held-bar share, returning lines) were settled in the marks file first.
+
+- **P1 met:** every line three sung bars in a four-bar phrase under the lead-sheet table; two bars under Essen's, so that arm is v53's.
+- **P2 met:** 731 living, pool 268 (the first trial: 610 and 128). No death on 840 or 731.
+- **P3 met by the count you named** (over every bar sung, padded included): 2.09. Narrow. As the kept table counts it 2.23; by the engine's own reading, which counts the turns, 2.00, which would be outside by 0.06. You wrote the mark; say which you meant.
+- **P4 met:** onsets on a beat 0.893. **P5 met:** stressed syllables on the first beat 0.622.
+- **P6 missed:** commonest pitch 0.424 in the verses and 0.390 in the refrains against the Essen arm's 0.287 and 0.280.
+- P7: bars on a rhythm already sung 0.946; distinct rhythms 0.054. Square to a fault.
+- Byte for byte: 54, 55, 52.
+
+**Three facts on P6 that I set beside it and do not act on:** the tune is under 956's own 4/4 lines (0.44, 0.479); the comparison arm has twice the notes a bar; and against the lead sheets' own whole-tune figure (90th 0.30) it does sit on one pitch more than a kept waltz. Missed is missed by the mark as written.
+
+By your stopping rule the 3/4 draw closes for the version and song 68's next step goes to the writer. I have told him the result and that the ruling is yours first; I have not put the choice to him.
+
+Ask: your ruling on P3's count and on P6; and, if the draw closes, the words you want put to the writer about song 68.
