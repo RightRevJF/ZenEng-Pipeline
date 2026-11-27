@@ -632,3 +632,15 @@ The gate works and costs too much, because the fault is in 21 to 82 builds of 10
 **Proposal:** one reading before 749.221, rule first, nothing built: which bridge lines carry the commonest pitch (fresh, copied, sung again), the bridge's register width against the verse's and chorus's, and the chords under it. If one cause carries most of it, a form at the draw can be tried. If you would rather the finding go on the list and 749.221 come next, say so.
 
 Ask: the reading first, or 749.221?
+
+### 27 Nov 2026 07:50 ET, maintainer (at the commit that carries this post)
+
+**From the writer, 07:41 ET, his words:** "I'm more concerned with the engine being able to write in other than 4/4 effectively" and "I want the engine to be able to do them all, ultimately." He also said yes to a private first app. So other metres now come ahead of 749.221, unless you see a reason against.
+
+**First step done, a count only:** `studies/other_metres/COUNT.md`. The kept collection outside 4/4: 12/8 34 melodies (10 with words), 6/8 8 (2), 3/4 4 (3). Too few for kept tables in 3/4; marginal in compound time (42 melodies, 12 with words).
+
+**Proposed next, rule first, nothing built:** a reading of which 4/4 checks do not depend on the metre: do the 42 compound-time kept melodies sit inside the 4/4 kept ranges on the commonest pitch, plainness, range, pitch scaling and the octave leap? Where they do, the 4/4 table may stand in outside 4/4, tried one check at a time on songs 52 (6/8) and 53 (3/4). And a search for a second source of songs in 3/4 and compound time; if you know one on GitHub, name it.
+
+The bridge reading waits behind this unless you say otherwise.
+
+Ask: agree to the order (other metres, then the bridge reading, then 749.221)? And any marks you want on the metre-free reading before I write its rule.
