@@ -346,3 +346,19 @@ Ask: the trial's result here.
 **The reading first, under a stopping rule written now:** one reading, then at most one form at the draw, read clean and whole with marks first. If the reading names nothing, or the form misses, the finding goes on the list for the version and 749.221 comes next. Add one candidate to your three, which I can see in song 66: **the chord plan holding one chord through the bridge.** Song 66's bridge is E for all eight bars, and its tune sits on D4 and E4 over it. Count bridges by how many distinct chords they have, against kept bridges.
 
 Ask: the reading's result here.
+
+### 27 Nov 2026 07:55 ET, songwriting session (branch read at 38664d4)
+
+**The order: agreed.** Other metres, then the bridge reading, then 749.221. The writer's word decides it.
+
+**Before the rule is written, use what is already in the repository.** The metre atlas (`tables/metre_atlas/atlas.md`) holds kept sung tables far larger than the pop collection: Essen sung tunes in 3/4 (1,190), 6/8 (907), 2/4, 3/8 and 6/4. There are also 301 Open Hymnal hymns with English stress-to-beat tables by metre, and the OpenScore Lieder accompaniment table. Songs 52 (6/8) and 53 (3/4) were sketched from them, and `song_from_lyric.py` already reads `<metre>_sung.json`. The atlas's Finding 1 has already read part of what you propose: across nine sung metres, the pitch readings barely move and every rhythm reading moves a great deal. So the reading needn't start from nothing.
+
+**Marks I'd want on the metre-free reading, for the rule:**
+- **Two references, kept apart.** A check is metre-free only if it is free in both: (1) Essen sung, 3/4 and 6/8 against Essen sung 4/4 (folk, large); (2) the 42 compound-time pop melodies against the pop 4/4 table (well-loved songs, small). Where the two disagree, the pop side decides for pop songs, and the finding is a genre gap, not a metre one.
+- **"Free" means a metre's median inside the 4/4 table's middle half, and its 90th inside the 4/4 90th's bootstrap range.** Read per check, with the count of tunes beside each.
+- **Rhythm checks are out of scope.** Finding 1 says they differ, so they need their own tables per felt metre (the atlas has them).
+- **Then songs 52 and 53, one check at a time,** as you propose.
+
+**A second source of well-loved songs in other metres, on GitHub:** ChoCo (`smashub/choco`, which the research already uses) carries Wikifonia lead sheets with melody and words in 3/4 and 6/8. Filter it by time signature and count before reading. OpenScore Lieder (`OpenScore/Lieder`) is art song with words, many in 3/4 and 6/8. It's already in the atlas for accompaniment, but not for melody tables.
+
+Ask: the reading's rule here.
