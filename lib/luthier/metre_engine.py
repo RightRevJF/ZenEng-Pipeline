@@ -48,6 +48,7 @@ class Engine:
         self.NBARS = b; self.SUNG = [s for s, _, _ in spec["sung"]]; self.KIND = {s: k for s, k, _ in spec["sung"]}; self.LINES = {s: [[(t, bool(st)) for t, st in ln] for ln in ls] for s, _, ls in spec["sung"]}
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.SUNGB = {id(self.LINES[s_][i_]): b_ for s_, v_ in (spec.get("sung_bars") or {}).items() for i_, b_ in enumerate(v_)}; self._part = False      # trial (749.226)
+        self.TENTRY = set(spec.get("title_entry") or ())
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
         self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0, 1.0)                                                # 926, 927
@@ -432,6 +433,7 @@ class Engine:
                     if f2_ is not None:
                         cap2_ = self.line_start(s1_, i1_) + (self.line_start(s2_, i2_) + f2_ - self.BREATH - self.line_start(s1_, i1_)) - (len(self.LINES[s1_][i1_]) - 1) * 6 - 12 - U
                         cap = cap2_; self.stats["935: a limit set on a line before a short line before a copy (it binds only where the line would run late)"] += 1      # 938 (749.119): no longer asks that the song have an aim; where the line ends in time the limit changes nothing (songs 55, 54 and 58 build note for note the same with and without it)
+            if f"{sec}:{i}" in self.TENTRY: cap = min(cap if cap is not None else 10 ** 6, slot - self.BAR)      # trial (749.232): the line ahead of a title line begins its last syllable on or before the first beat of its last bar
             lim_ = None                                                                        # 948: where the very next line copies this one, the furthest this line's last syllable may stand from its first
             if k + 1 < len(self.KEYS):
                 hn2_ = self.HOW.get(self.KEYS[k + 1], ["fresh"])

@@ -1058,3 +1058,25 @@ Ask: accept the rule file, and I run. 749.232's rule follows at my next turn.
 The pop 3/4 trial's rule file (cee6e2d) still waits on your word; I have run nothing.
 
 Ask: accept or change 749.232's marks; and the pop trial's rule file.
+
+### 27 Nov 2026 16:28 ET, maintainer (at the commit that carries this post)
+
+Both trials are run. Both miss, each for a reason the builds name. Rules: cee6e2d and a098df5, your acceptance and changes at b4c88ec, all before any run.
+
+**The pop-style 3/4 trial on song 55's words: K1 missed, ten living builds.** `studies/other_metres/RESULT_pop_3_4.md`.
+- 982 of 1,000 builds are never made ("the syllables cannot fit the window"); pool 5. K2 to K8 cannot be read on ten builds.
+- One switch off at a time: with the **plan** off 120 of 200 live; with any other off, 2 to 5. It is the plan form.
+- **The reason:** the plan gives each line its bars from its own syllables. Song 55's verses sing each other's lines again and their lines differ in length, so verse 1 comes out `[3,2,3,2,3,2,3,3]` and verse 2 `[2,2,3,2,2,3,2,3]`. A line cannot sing again a tune that had a different number of bars. Songs 53 and 52 hid it: their matching lines match in length. Most pop lyrics will not, and song 68 may not.
+- **Proposed, 749.233: lines that share a tune share their bars,** the count chosen for the group from the median syllables of every line that will sing it. Metre-level, style-free. Then K1 to K8 on the same lyric.
+
+**749.232 in 6/8: living 719 and pool 329 (391 and 169); U2 and U3 missed.** `studies/other_metres/RESULT_232.md`.
+- U4 met throughout, pick and median: 3.78 and 3.79 notes a bar; on the beat 0.420 and 0.422; first beat 0.222 and 0.220; 731's median 0.568.
+- **U2:** the chorus title line on its bar line in **28.7** builds of 100 (6 before; 75 asked). The bridge's 91.4.
+- **U3:** 840 takes **1.3 in ten** (4.3 before; under one asked). 780 none.
+- **Your split settles the cause: of 129 deaths on 840, 128 have a title line late and 1 has every title line on time.** My caution about the bridge's line was wrong; with the line ahead ending early it is never under half.
+- **Why still late: 870.** A fresh line waits a kept rest where its slot leaves room, and a title line with four bars has all the room there is. The room we gave it is what lets 870 push it late.
+- **Proposed next form, marks unchanged: a title line does not take 870's wait.**
+
+Byte for byte with every switch unset, both runs: 54, 55, 52, song 53's Essen arm.
+
+Ask: accept the two next forms (749.233, shared bars for shared tunes; a title line exempt from 870), marks as they stand, and I run both. The deduction's step 2 after.
