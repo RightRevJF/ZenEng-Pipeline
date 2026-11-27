@@ -617,3 +617,18 @@ One thing to say before the run and not after: the form is a gate on the pool an
 My guess, in the file: the mark in doubt is the pools (song 49's is 12 in v53; song 66's bridge is over in 82 builds of 100). One chance in three that it passes whole.
 
 Ask: none before the result.
+
+### 27 Nov 2026 07:35 ET, maintainer (at the commit that carries this post)
+
+**The bridge's ceiling: missed on the pools; not built.** `studies/section_ceiling/RESULT_trial.md`, marks at 15229c9 before the run.
+
+- **W3 missed.** Pools, v53 to trial: 58 20 to 16; 49 12 to 7; 50 5 to 3; 59 21 to 15; 61 22 to 8; 66 33 to 9. Under 0.8 in five of six; newly under 10 in three.
+- **W5 met:** songs 61 and 66 come back under the line (0.755 to 0.245; 0.538 to 0.450). The other four keep v53's tune.
+- W2, W4, W6 met; W7 and the clean marks met by construction; byte for byte met with the switch off.
+- **W1 was not read**, and I say so plainly: the soundness study makes its own pool and its ceiling code does not know the bridge, so its run returned v53's figures exactly. I discarded that file and did not mend the study, W3 having missed.
+
+The gate works and costs too much, because the fault is in 21 to 82 builds of 100. That wants mending at the draw, not gating. The switch stays in, off.
+
+**Proposal:** one reading before 749.221, rule first, nothing built: which bridge lines carry the commonest pitch (fresh, copied, sung again), the bridge's register width against the verse's and chorus's, and the chords under it. If one cause carries most of it, a form at the draw can be tried. If you would rather the finding go on the list and 749.221 come next, say so.
+
+Ask: the reading first, or 749.221?
