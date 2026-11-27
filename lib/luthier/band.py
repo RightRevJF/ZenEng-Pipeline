@@ -132,11 +132,13 @@ def arrange(rec, genre="pop", lead="guitar", seed=1, voice=None):
     # 829 the harmony voice, in the choruses, below the lead. 889: its class weights are fitted to the song: the voice is written, its shares of thirds, fourths, fifths, sixths,
     # octaves and unisons read against the kept shares, each weight moved by kept over written, and written again (ten rounds at most; the round nearest the kept is kept).
     HFLOOR, HTOP = 40, 81                                                                           # the lowest and highest notes of the kept voice ranges (bass E2, soprano A5)
-    UNDER = voice in HARMONY_UNDER                                                                  # 749.222, a trial (studies/harmony_under): with the lead's voice given, the harmony is never over the lead and sings in the voice next below the lead's, up to the lead voice's top
-    if UNDER: HFLOOR, HTOP = HARMONY_UNDER[voice]; rec["harmony_range"] = dict(lowest=HFLOOR, highest=HTOP, note="749.222: the voice next below the lead's, from its floor to the lead voice's top; never over the lead")
+    UNDER = False                                                                                   # 749.222, a trial (studies/harmony_under): with the lead's voice given, the harmony is never over the lead and sings in the voice next below the lead's, up to the lead voice's top
+    WANT_UNDER = voice in HARMONY_UNDER
+    HR = [HFLOOR, HTOP, False]
     def room_below(n):
-        ct_ = tones(chord(n["on"])); return any((n["midi"] - iv) >= HFLOOR and ((n["midi"] - iv) % 12 in ct_) for iv in ICLASS if iv)
+        ct_ = tones(chord(n["on"])); return any((n["midi"] - iv) >= HR[0] and ((n["midi"] - iv) % 12 in ct_) for iv in ICLASS if iv)
     def harmony_voice(HW_, rng):
+        HFLOOR, HTOP = HR[0], HR[1]; UNDER = HR[2]
         above = {k: v for k, v in VOX["above"].items()}; below = {k: v for k, v in VOX["below"].items()}; scale = {(x + tonic) % 12 for x in rec["spec"]["scale"]}; hv = []; last = None; lastiv = None; lastlead = None
         for n in notes_:
             if "horus" not in n["sec"]: last = None; lastiv = None; lastlead = None; continue
@@ -157,12 +159,20 @@ def arrange(rec, genre="pop", lead="guitar", seed=1, voice=None):
             if not cands: last = None; lastiv = None; continue
             p, iv, _ = rng.choices(cands, [c[2] for c in cands])[0]; hv.append(dict(on=n["on"], dur=n["dur"], p=[p], vel=70, text=n["text"], lead=n["midi"])); last = p; lastiv = iv; lastlead = n["midi"]
         return hv
-    keptsh = {k: VOX["below"].get(k) / sum(VOX["below"][c] for c in HW) for k in HW}; HWs = dict(HW); best = None
-    for round_ in range(10):
-        hv = harmony_voice(HWs, random.Random(f"harmony {seed}")); cnt = collections.Counter(ICLASS[abs(x["lead"] - x["p"][0])] for x in hv); tot = max(1, sum(cnt.values())); miss = sum(abs(cnt[k] / tot - keptsh[k]) for k in HW)
-        if best is None or miss < best[0]: best = (miss, hv, dict(HWs), round_)
-        if miss < 0.06 or not hv: break
-        HWs = {k: HWs[k] * min(3.0, max(0.33, (keptsh[k] + 0.01) / (cnt[k] / tot + 0.01))) for k in HW}
+    keptsh = {k: VOX["below"].get(k) / sum(VOX["below"][c] for c in HW) for k in HW}
+    def fit_(start_, rounds_):
+        HWs = dict(start_); best = None
+        for round_ in range(rounds_):
+            hv = harmony_voice(HWs, random.Random(f"harmony {seed}")); cnt = collections.Counter(ICLASS[abs(x["lead"] - x["p"][0])] for x in hv); tot = max(1, sum(cnt.values())); miss = sum(abs(cnt[k] / tot - keptsh[k]) for k in HW)
+            if best is None or miss < best[0]: best = (miss, hv, dict(HWs), round_)
+            if miss < 0.06 or not hv: break
+            HWs = {k: HWs[k] * min(3.0, max(0.33, (keptsh[k] + 0.01) / (cnt[k] / tot + 0.01))) for k in HW}
+        return best
+    best = fit_(HW, 10)
+    if WANT_UNDER:
+        # 749.222: the harmony under the lead in the stated range, fitted from the song's present weights (the fit above), for up to twenty rounds
+        HR[0], HR[1] = HARMONY_UNDER[voice]; HR[2] = True; best = fit_(best[2], 20)
+        rec["harmony_range"] = dict(lowest=HR[0], highest=HR[1], note="749.222: the voice next below the lead's, from its floor to the lead voice's top; never over the lead")
     hv = best[1]; rec["harmony_fit"] = dict(rounds=best[3] + 1, miss=round(best[0], 3), weights={k: round(v, 3) for k, v in best[2].items()})
     parts["harmony"] = hv
     parts["bass"] = [dict(on=x["on"], dur=x["dur"], p=[x["midi"]], vel=int(62 + 30 * LV[sec_of_bar[min(NB - 1, max(0, x["on"] // BAR))][0]])) for x in rec["bass"]]

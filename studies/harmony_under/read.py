@@ -13,4 +13,4 @@ for name, rec_, lyr in (("55", "songs/p65/lyric55.song.json", "songs/p65/lyric55
                      outside_the_stated_range=[sum(not rng_["lowest"] <= x["p"][0] <= rng_["highest"] for x in ho), sum(not rng_["lowest"] <= x["p"][0] <= rng_["highest"] for x in hn)], syllables_sung=[len(ho), len(hn)], fit_miss=[old["harmony_fit"]["miss"], new["harmony_fit"]["miss"]],
                      a_second_from_the_lead=[bc_o.get("harmony voice a second from the lead"), bc_n.get("harmony voice a second from the lead")], everything_else_unchanged=all(same.values()) and all(parts_same.values()), changed_elsewhere=[k for k, v in {**same, **parts_same}.items() if not v], true_checks_lost=lost_true, parts_made_after_the_arranging_and_not_read=not_rearranged, classes=bc_n.get("harmony voice: interval classes, written / kept below the lead"))
     print(name, {k: v for k, v in out[name].items() if k != "classes"})
-json.dump(out, open(os.path.join(HERE, "records.json"), "w"), indent=1)
+json.dump(out, open(os.path.join(HERE, os.environ.get("OUT", "records.json")), "w"), indent=1)

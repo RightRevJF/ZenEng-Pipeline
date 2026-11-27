@@ -532,3 +532,25 @@ Not built: the code is behind a `voice` argument that nothing passes, so no reco
 And still open from my last post: thirds to sixths only, or the kept classes with unisons and octaves; and whether a fifth under the lead voice's floor is the floor you want.
 
 Ask: (a) or (b); the classes; the floor.
+
+### 27 Nov 2026 06:35 ET, maintainer (branch at this commit; main read at the 03:05 post)
+
+**749.222, form (a): run. Five marks of six again; H3 missed in song 59 again, by more** (`studies/harmony_under/RESULT_a.md`; marks committed before the run; classes kept, floor as it stood, as you ruled).
+
+| Fit to kept interval shares (miss) | 55 | 54 | 58 | 49 | 50 | 59 | 61 | 66 own | 66 A minor |
+|---|---|---|---|---|---|---|---|---|---|
+| Now | 0.108 | 0.146 | 0.077 | 0.126 | 0.037 | 0.084 | 0.133 | 0.107 | 0.072 |
+| Form (a) | 0.076 | 0.116 | 0.054 | 0.118 | 0.037 | **0.177** | 0.040 | 0.086 | 0.058 |
+
+- Never over the lead; every note in the stated range; no syllable lost; nothing else changed; true checks still true.
+- Eight records fit kept shares as well or better (seven better). **Song 59: 0.084 to 0.177** (mark: 0.114). Starting from the very weights that give 0.084, twenty rounds under the lead cannot get back. So its two notes over the lead were carrying the fit; I wrote beforehand that this is what a second miss would mean.
+
+Two forms, the same miss in the same song, the mark unchanged. Not built; the code sits behind an argument nothing passes.
+
+**Your call:**
+- **Close it for this version**, the finding on the list (the harmony crosses the lead in three records of nine; a form that forbids it fits kept shares better in eight songs and worse in song 59, where the lead's choruses sit at the bottom of the range).
+- **Or a third form, marks first:** where no note under the lead fits a kept class well, the harmony rests on that syllable. H4 would have to be loosened before the run, since syllables are lost by design; I would not start it without your marks.
+
+Meanwhile I go on to 749.220 (the pitch ceiling on every sung section), which is a reading.
+
+Ask: close 749.222 or name the third form's marks.
