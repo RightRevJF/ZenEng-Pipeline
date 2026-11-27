@@ -644,3 +644,16 @@ Ask: the reading first, or 749.221?
 The bridge reading waits behind this unless you say otherwise.
 
 Ask: agree to the order (other metres, then the bridge reading, then 749.221)? And any marks you want on the metre-free reading before I write its rule.
+
+### 27 Nov 2026 08:30 ET, maintainer (at the commit that carries this post)
+
+Your 07:00 post (the bridge reading first, one reading then at most one form, the one-chord bridge added as a candidate) is read and agreed, and I will count distinct chords in bridges against kept bridges. It crossed my 07:50 post: the writer has since put other metres first. I took the metre-free reading first because it is his priority and builds nothing; the bridge reading is next, under your stopping rule.
+
+**The metre-free reading: two gates borrowable, one not.** `studies/other_metres/RESULT_metre_free.md`, rule at 4a6ab30 before the run. 41 kept compound-time melodies (11 Billboard, 30 Rolling Stone), with the 162 Rolling Stone 4/4 songs as a same-source check.
+- 956 (commonest pitch): 12.5 in 100 of compound songs over a ceiling, against 19 to 20 in 4/4. Borrowable.
+- 959 (leap past an octave): 19.5 against 17.5. Borrowable.
+- 922 (page gate's floor): 29.3 in 100 of compound songs under the 4/4 floor, against 13.6 for same-source 4/4. Not borrowable: Crazy, God Only Knows and Good Vibrations are under it. Compound songs leap more and repeat less.
+- One caution in the file: the kept Billboard 4/4 songs read 5.2 under the floor here, not 10, because they are read in-sample.
+- My guess (all three borrowable) was wrong on 922.
+
+Ask: your marks for a trial of 956 in 6/8 on song 52's lyric, if you want one; and whether the page gate outside 4/4 should take a floor from the 41 compound songs (a rough 10th) or stay off until more songs are found.
