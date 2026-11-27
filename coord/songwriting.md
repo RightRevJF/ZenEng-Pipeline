@@ -398,3 +398,29 @@ Ask: the 6/8 trial's result, and the 3/4 tables' rule, here.
 **The Wikifonia licence:** right to leave the raw files out of the repository and raise it with the writer. Tables of counts drawn from the songs carry none of the songs' notes or words. If he asks me, I'll say so.
 
 Ask: the 3/4 tables' result and the 6/8 reading's rule, here.
+
+### 27 Nov 2026 11:15 ET, songwriting session (branch read at a1bbd60)
+
+**The 3/4 tables: checked.** The rule and my additions (c95e1e1; ee2cff3, 09:57:28) came before the tables (a1bbd60, 09:58:36). `tables_3_4.json` matches: halves 297 and 241, bar rhythms 0.996, windows 0.967, first-beat stress 0.654 and 0.649, notes a beat 0.787 and 0.768, 466 composers, 57 dated. All four tables are steady. The finding is the useful part: a popular waltz is sparser and squarer than Essen's, so Essen's draw would be too busy.
+
+**(1) A 3/4 trial: on song 53's lyric ("Sung to Sleep", `songs/p63/lyric_locked.md`).** It's the only 3/4 lyric there is, and it's a seen song (sketched by hand and delivered), so nothing sealed is spent. Write it as `lyric53.json` for the from-lyric engine: 3/4, its tempo and voice as in `songs/p63/intake.py`, genre folk. Hymn mode stays off, since this tests the draw. Two arms on the same seeds: the draw reading Essen 3/4, and reading the Wikifonia tables. Marks, written now:
+- **The Wikifonia arm:** living builds 30 or more in 1,000 and pool 10 or more; the chosen tune's notes a bar inside Wikifonia's middle half; onsets on a beat inside Wikifonia's middle half; stressed syllables on the first beat no lower than Wikifonia's 25th.
+- **Against the Essen arm:** words' fit no lower by more than 0.02; the commonest pitch, range and 959's leap no worse than the Essen arm's.
+- **Reported, deciding nothing:** the deaths by gate in both arms (if 3/4 dies as 6/8 does, that's the first thing to read), and the joint-gate distance against both references.
+- **If it passes:** the Wikifonia tables become what a 3/4 lyric draws from, as a setting, with no gate lines. Then a fresh 3/4 lyric from the writer, when he has one, is the real test.
+
+**(2) The 6/8 rule: run it as written.**
+
+Ask: the 6/8 reading's result and the 3/4 trial's result, here.
+
+### 27 Nov 2026 10:10 ET, songwriting session (branch read at a1bbd60)
+
+**From the writer:** he is starting a new song in 3/4 now (song 68, `songs/p78`). It is the real test: the trial on song 53's words runs first under the marks above, and song 68 is made by the engine once that trial has been read. Song 68 is not to be used as a trial lyric.
+
+Ask: none; for information.
+
+### 27 Nov 2026 10:34 ET, songwriting session (branch read at a1bbd60)
+
+**Song 68 locked and banked** (`songs/p78/lyric68.json`): "Save Me from My Muse", a punk waltz, 3/4, about 180 quarters a minute (provisional), high tenor, eight sections (three verses, three choruses, bridge, a final chorus), lines of 6 and 7 syllables, matched where they share a tune. The writer chose to hold it until the 3/4 trial on song 53's words has been read; then it is made for real by the engine. It is reserved like song 67: not a trial lyric and not to be run before then. Its ledger row is in `studies/judging_data/README.md`.
+
+Ask: none; for information.
