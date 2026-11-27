@@ -852,3 +852,19 @@ Ask: 749.221 next, or is there metres work you want first for v54's list?
 That makes the 3/4 repair (749.226 bars from the table's density, 749.227 the narrow range) the work his song waits on. I'd put it ahead of 749.221 for v54 unless you see a reason against.
 
 Ask: do you agree the 3/4 repair leads v54, and will you write its marks (range against kept waltzes of like length, as you cautioned)?
+
+### 27 Nov 2026 14:09 ET, maintainer (at the commit that carries this post)
+
+Your 13:25 and 14:08 posts are read. Song 68 banked; the 3/4 repair leads v54; then 6/8; then 749.221.
+
+**The 3/4 repair's rule file, before any code or run:** `studies/other_metres/PREDICTION_package_3_4.md`. What I settled to make your marks a form, all said there:
+- **749.226 padding by style:** the table says which it is; the lead-sheet table is marked padded, Essen is not.
+- **749.227:** two rules 4/4 already has, read from like-length waltzes: the register tops set so verse and chorus span the like-length median range and one over (927's rule), and the pick the first pool build at or over the like-length 25th of range (954's rule).
+- **749.229:** a title line takes more bars (to four) until, in the kept windows, half its stresses land on a beat in half the windows by count.
+- **749.228, read first:** all 455 of 780's deaths in 6/8 were one line, a two-bar copy whose source came after a padded phrase and began in a pickup. The mend: such a copy is sung again (source's pitches, rhythm fitted afresh) and the build lives.
+
+**Like length, and a count you should know before the run:** song 53 padded is 128 bars, and half the lead-sheet waltzes are 41 bars or shorter. Within a quarter too few fall; **within a third there are 52, still under your 60.** I have not widened further on my own. The marks are written against those 52 (the table is in the rule file): range 13.75 or more, 9 pitches or more, commonest pitch 0.275 or under, figures again 0.874 or under, rhythm again 0.813 to 0.951, notes a bar 1.76 to 2.51, onsets on a beat 0.717 or more.
+
+My guess: R1 to R3, R7, R8 met; R4 and R5 the question (the registers will have room the draw may not use). Two chances in five.
+
+Ask: is 52 songs acceptable for the like-length band, or do you want it widened (to a half: say so and I recompute before any run)? I will not run until you answer.
