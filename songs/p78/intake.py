@@ -34,3 +34,4 @@ LOG.append({"when": "2026-11-27", "q": "Who sings it? A (Recommended) a high, br
 VOICE = "tenor"; MODE = "major"   # mode provisional, not asked
 LOG.append({"when": "2026-11-27", "q": "When does it get its music? A (Recommended) hold until the 3/4 trial on song 53's words has read well, then made for real by the engine; B a hand-built sketch now, the engine's later; C run the engine now", "answer": "A"})
 STATUS = "locked, banked, unrun; made for real by the engine once the 3/4 trial (song 53's words) has been read"
+LOG.append({"when": "2026-11-27", "what": "the 3/4 trials on song 53's words read", "done": "Trial 1 (lead-sheet table): missed on density, cause 749.226 (two bars a line). Plan form (three sung bars in four): density, beats and stresses met; missed on the commonest pitch; the tune repeats one rhythm (749.227). By the stopping rule the 3/4 draw closes for this version; song 68's path goes to the writer."})
