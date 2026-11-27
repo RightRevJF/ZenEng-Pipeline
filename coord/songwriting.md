@@ -732,3 +732,37 @@ One correction: the metre atlas's research report says the Hooktheory release la
 **So, for 749.231 and what follows:** the 3/4 marks for a pop lyric (song 68) are read against the Hooktheory 3/4 table by song, not against Wikifonia. Wikifonia stays the table for a lyric that asks for a standard or a waltz. The form you have in hand (879's rule from a stress table) is metre-level, so it stands. Run its trial on song 53's words, a carol, against the table its style names. I'd also like the Hooktheory 3/4 and 6/4 tables made, by song, before any pop-lyric trial.
 
 Ask: build the Hooktheory 3/4 and 6/4 tables, by song, with the film and game tunes set apart, beside 749.231's run, and say whether the four style tables can be selected by a lyric's genre.
+
+### 27 Nov 2026 16:08 ET, songwriting session (branch read at 31c8841)
+
+**749.231: checked.** The rule (5be2e5f, 15:45:44) came before the run (d59b7e8, 15:55:32). `living_231.json` and `package_231.json` match:
+- first-beat stress: living median 0.607 (form B 0.541); pick 0.561;
+- off the beat: living median 0.071;
+- commonest pitch 0.302 on the pick and the median (form B's median 0.299);
+- 521 living, pool 165.
+
+So R3 is met on the median and missed on the pick, R3b is met, and R5 is missed on both. Thank you for saying that the second reading's R5 was the pick's luck too. **The form works at the draw:** first-beat stress moves on the living builds, where we said a form must move it. That is the standing test, and it holds here. It now reads as a result for the standard-or-waltz style, as you say.
+
+**The Hooktheory tables: checked against their file and taken as made.** The figures bear the writer out: a pop song in three is busier (2.75 notes a bar), far less repetitive (rhythm again 0.55 against 0.85) and less on the beat than a standard waltz.
+
+**(1) Rebuild from all songs, not just the 54 and 72,** with one filter, written before any figure is read. Leave out clips whose artist is a soundtrack, game or library source: a word list (ost, soundtrack, theme, game, video game, anime) and a named list of composers and libraries (Koji Kondo, Hans Zimmer, Kevin MacLeod, Hirokazu Tanaka, Jun Ishikawa, Takuya Hanaoka, Konami, ZUN, Hertzdevil and the like), committed first. Report the 54 and 72 beside it. If the joined subset's medians sit inside the full table's middle half, the full table stands. If not, say which figures part, and we use the joined table for those.
+
+**(2) The pop-style 3/4 trial.** The lyric should be a spent pop or rock lyric of ours, set in 3/4 with genre rock, chosen before the run by one rule: the spent lyric whose median line length is nearest song 68's (7 syllables, lines of 6 and 7). Song 66 is the first to look at (folk-rock, tenor, spent). Name it in the rule file with its line lengths. Songs 65, 67 and 68 are not candidates. Plan form and form B on, 749.231's rule with the lead sheets' stress table borrowed (pop lyrics have no stress table of their own, and the rule file says so), style table the Hooktheory 3/4.
+
+**Marks,** each figure the form moves read on the living median and the pick:
+- **K1.** Living 30+, pool 10+.
+- **K2.** Notes a bar inside the pop table's middle half (2.34 to 3.30).
+- **K3.** Onsets on a beat at or over the pop table's 25th. First-beat stress at or over the lead sheets' by-song 10th (0.324 in 6/8; give the 3/4 figure in the file), since pop syncopates. Stress off the beat at or under the lead sheets' 90th.
+- **K4.** Range and pitch count at or over the pop table's 25th, by song (clips pooled per song, said to be not like for like with whole songs).
+- **K5.** Commonest pitch at or under the pop table's 75th.
+- **K6.** Rhythm again inside the pop table's 10th to 90th, and figure again at or under its 90th. This is the waltz table's failing for pop, so it's the mark that matters most here.
+- **K7.** Voice and no leap past an octave. **K8.** Deaths on 780 and 840 each under one in ten.
+- **Reported:** each switch off in turn (200 builds); the share of living builds meeting all marks.
+
+**On the pick reading the style's figures (your candidate A):** now that the draw-level forms have done their work, I'd add it as a form, but as its own step after the trial above, with its own marks. For a pick-level form, the mark is the pick, plus a floor on the share of living builds that meet everything (5 in 100 or more), so the pick isn't hunting a needle. The 4/4 pick already reads a range floor (954), so this is the same kind of rule.
+
+**The commonest pitch:** no gate. If the pop trial misses K5 on the median, the next draw-level form waits for what your research finds on pitch in three.
+
+**749.232: yes, write its rule for 6/8** (the line before a title line ends by the first beat of its last bar). The research supports it in one sentence: no title line enters late, the line before ends early. Marks when you post it.
+
+Ask: the rebuilt pop tables and the trial's rule file, before any run.
