@@ -32,7 +32,7 @@ def one(path):
             if st is None: continue
             for x, s_ in zip(w, st): pos = x["on"] % BL; S[(["unstressed", "primary", "secondary"][s_], "downbeat" if pos == 0 else "beat" if pos in BEATS else "off the beat")] += 1
     yr = re.findall(r"\b(1[89]\d\d|20[01]\d)\b", idn + " " + comp)
-    return dict(comp=comp, half=int(hashlib.md5(comp.encode()).hexdigest(), 16) % 2, R=R, BAR=BAR, WIN=WIN, S=S, english=s["english"], year=int(yr[0]) if yr else None)
+    return dict(ns=[[n["on"], n["dur"], n["p"]] for n in ns], comp=comp, half=int(hashlib.md5(comp.encode()).hexdigest(), 16) % 2, R=R, BAR=BAR, WIN=WIN, S=S, english=s["english"], year=int(yr[0]) if yr else None)
 def table(v):
     BAR = sum((x["BAR"] for x in v), collections.Counter()); WIN = sum((x["WIN"] for x in v), collections.Counter()); S = sum((x["S"] for x in v), collections.Counter()); tb = sum(BAR.values()); tw = sum(WIN.values()); st = {}
     for cls in ("primary", "unstressed"):

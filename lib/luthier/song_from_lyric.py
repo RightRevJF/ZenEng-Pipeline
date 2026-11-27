@@ -85,7 +85,7 @@ def syllables(line, flags):
 def base(name): return re.sub(r"^(Last|Final)\s+", "", re.sub(r"\s*\d+$", "", name))
 def plan(L):
     """lyric -> the melody spec without chords, and the form"""
-    metre = L.get("metre", "4/4"); T = json.load(open(os.path.join(M.ATLAS, metre.replace("/", "-") + "_sung.json"))); beats = len(T["beats"])
+    metre = L.get("metre", "4/4"); trial_table_ = os.environ.get("LUTHIER_TABLE_" + metre.replace("/", "_")); T = json.load(open(os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".json"))); beats = len(T["beats"])      # trial (other metres): LUTHIER_TABLE_3_4=<a table under tables/metre_atlas, or a path from there> names the kept table a 3/4 lyric draws from; unset, Essen's
     closer_ = {}; closer_form_ = None
     sung = []; slots = {}; how = {}; first = {}; texts = {}; n_in, n_out = BD.edges(L["bpm"], beats); form = [("Intro", "intro", n_in)]; flags = []      # 825
     for name, lines in L["sections"]:
@@ -163,6 +163,7 @@ def plan(L):
                 registers=reg, plan=dict(lift=lift, note="838: the chorus's centre over the verse's, drawn from the kept songs' own lifts; 925: the lift of the kept song the aim is drawn from, where it has one"), hooks=hooks, vary_returns=vary, gates=[dict(type="plan lift", lift=lift, within=2), dict(type="hook beat", at_least=0.5)], clash_rule=True, borrow=dict(rhythm=0.0, figure=FIGURE_BORROW), early_entries=EARLY)      # 818: kept songs sing six bars in ten on a rhythm already sung
     if closer_: spec["verse_closer"] = dict(form=closer_form_, lines_given_one_bar=closer_, note="958: verse lines of 6 to 8 syllables given one bar; off unless the lyric asks (749.153)")
     if metre == "4/4": spec["table"] = "4-4_pop_sung"
+    if trial_table_ and metre != "4/4": spec["table"] = trial_table_
     if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
         KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
         ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_])); shape_ = None

@@ -21,6 +21,7 @@ LYRIC_SET = ("notes a bar", "notes a beat", "gaps of a sixteenth", "gaps of an e
 class Judge7:
     def __init__(self, table, shrink=0.3, gate=0.90):
         T = json.load(open(ROWS)).get(table)
+        if T is None and os.path.exists(os.path.join(os.path.dirname(ROWS), table + ".rows.json")): T = json.load(open(os.path.join(os.path.dirname(ROWS), table + ".rows.json")))      # trial (other metres): a table kept outside kept_readings.json carries its rows beside it
         if T is None: raise KeyError(table)
         self.table = table; names = [n for n in T["names"] if n not in LYRIC_SET]; idx = [T["names"].index(n) for n in names]; X = np.array(T["rows"], float)[:, idx]
         keep = X.std(0) > 1e-9; self.names = [n for n, k in zip(names, keep) if k]; X = X[:, keep]; self.n = len(X)

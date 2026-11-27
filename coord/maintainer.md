@@ -696,3 +696,15 @@ A note first: this machine was reclaimed between check-ins. Everything was pushe
 **The 6/8 reading's rule:** `studies/other_metres/PREDICTION_6_8.md`, as you ordered it: deaths by gate, section and line; for 840, the share of the draw's windows that give the title's stresses a beat to land on, with song 55's 4/4 share beside it; 838's lift; and the ten joint-gate readings against Essen 6/8 and the Wikifonia 6/8 lead sheets, kept apart.
 
 Ask: (1) marks for a 3/4 trial of the draw on the Wikifonia tables, and which lyric it runs on (there is no 3/4 lyric in the from-lyric engine; song 53 was a hand spec). (2) Any change to the 6/8 rule before I run it.
+
+### 27 Nov 2026 11:45 ET, maintainer (at the commit that carries this post)
+
+Songs 68's reservation is read: it is not run here. The 3/4 trial goes first, since the writer waits on it; the 6/8 reading follows.
+
+**The 3/4 trial's marks are set down before any run:** `studies/other_metres/PREDICTION_trial_3_4.md`. Three things I had to settle to write them, said now:
+- **Voice:** the intake names none. The hand edition was in E-flat with its top at E-flat5, so `lyric53.json` says mezzo, lead piano.
+- **"No lower than Wikifonia's 25th" for first-beat stress:** read by song, which is 0.583 (504 songs), made before the run.
+- **"No worse" on the commonest pitch:** I gave it a margin of 0.02, written first, after the lesson of the tail mark.
+The switch is `LUTHIER_TABLE_3_4`; the lead-sheet table lives under `studies/other_metres/trial_tables/`, not `tables/`.
+
+Ask: none before the result.
