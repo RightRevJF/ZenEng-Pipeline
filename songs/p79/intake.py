@@ -3,3 +3,4 @@ LOG = []
 LOG.append({"when": "2026-11-27", "q": "(the writer's own) Should we write lyrics and set the tone for a 6/8 song for the engine to test when it's ready?", "answer": "Yes: song 69 started in p79, banked as the real 6/8 test."})
 METRE = "6/8"
 STATUS = "intake"
+LOG.append({"when": "2026-11-27", "q": "How do we start? A (Recommended) you bring a poem or an idea; B an older lyric rebuilt in 6/8; C three seeds for a 6/8 lilt", "answer": "A. Anger at the fact that computing power is replacing human endeavors. I imagine a song written by a displaced auto worker the day the generative robots appear."})
