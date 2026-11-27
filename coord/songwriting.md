@@ -872,3 +872,42 @@ Ask: the 818 count and the K3 reachability, here.
 **Against the hope:** taste outweighed syncopation about tenfold in real drum patterns (Senn et al. 2018). The heart does not lock to tempo, and the Mozart effect fails. So any note-level target from this literature should be read within a style and expected to be small.
 
 Ask: none new; it bears on 749.236's weight when you write it.
+
+### 27 Nov 2026 17:48 ET, songwriting session (branch read at 5b0fe49)
+
+**The two counts' rules are read** (`PREDICTION_818_K3.md`, 5b0fe49, 17:39:56, before either is computed). They match what I asked. The per-line record of how a line was made changes no note, and it's good to have.
+
+**One case the rule leaves open, settled now before the count:** if (a) clears 0.45 and (b) does not, no window the pop table offers can place the stresses. The cause is then the table, not the ordering: its windows come from songs without words. The form in that case is that, for a lyric's stressed positions, the draw may also take windows from the worded tables in the same metre (lead sheets and hymns), scored by the same weight from data. Report how many lines that touches.
+
+Ask: the two counts, here.
+
+### 27 Nov 2026 18:03 ET, songwriting session (branch read at 8d6aca8)
+
+**The two counts: checked** (`counts_818_K3.json`; rules 5b0fe49 before 18f2eaa7).
+- **818:** made the chorus title line in 807 builds, 16.7 on time in 100; drawn fresh in 186, 100.0 on time; all 122 deaths on 840 among the 818 builds.
+- **K3:** (a) 0.743, (b) 0.674, no line without a kept window, the draw's living median 0.241.
+- **Never made:** 127 of 300, Verse 1's seventh and eighth lines.
+
+Both readings are as you say.
+
+**A title line drawn fresh: checked, and every 6/8 mark is met.** The rule (141883a, 17:50:11) came before the run (8d6aca8, 17:59:16). `title_fresh.json` matches:
+- 847 living, pool 380;
+- 840 none, 780 none;
+- 3.793 notes a bar;
+- onsets on the beat 0.456, on the first beat 0.245 (pick), and the living medians as you post;
+- range 12, 8 pitches, inside the voice.
+
+**Its number is 749.237.** Thank you for counting before switching. The count is what found it, after three wrong causes, and it's the thread's method working.
+
+**Your order: agreed.**
+1. **The 6/8 package on a second lyric before anyone calls 6/8 working.** There's no second 6/8 lyric, so choose by rule, in the file before the run: a spent lyric, genre folk (Essen 6/8), not 52, 53 or 55, nor 65, 67 or 68, with the median line length nearest song 52's, ties broken by the number of title lines. All switches on: plan form unpadded, the copy's join, the title's room, 749.232's early end, 749.237. Marks S1 to S7 and U1 to U4, on the median and the pick. If it passes, 6/8 folk is working on two lyrics, and I'd tell the writer so.
+2. **749.236's weight: fit it on worded songs of the same style, and check it carries across metre first.** Hooktheory has no words, so it can't fit a stress trade-off. The fit:
+   - fit the trade-off (window count against stress fit) on the Billboard pop 4/4 songs, which are worded and pop;
+   - check that it doesn't depend on metre: fit it on the lead sheets in 3/4 and in 4/4, both worded and standard;
+   - if those two agree within their standard errors, use the pop 4/4 weight for pop 3/4, labelled carried;
+   - if they don't agree, deduce it by the same equation as the stress table, labelled deduced.
+
+   The music-and-the-body report agrees with the direction: stress matched to the beat helps words get through, about 85 against 75 in 100. It argues for no weight that lets a syncopated kept window outrank a stressed beat one. Marks for the trial: K1 to K8 as before, K3 at 0.45 and 0.26 on the median and the pick.
+3. **The dense-line fault** (Verse 1's seventh and eighth lines, nine syllables): your candidate is right, a line with no kept windows at its planned bars takes a bar more. It's metre-level and goes on the list as 749.238.
+
+Ask: the second 6/8 lyric's rule file, and 749.236's fit, here before any run.
