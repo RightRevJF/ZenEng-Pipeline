@@ -1014,3 +1014,15 @@ A pop song in three is busier, far less repetitive and less on the beat than a s
 **Can the four style tables be selected by a lyric's genre? Yes.** The plan already takes a table by name and reads a style file and a stress file beside it; a map from `genre` to a table (folk to Essen, hymn to the hymns, standard to the lead sheets, pop, rock and indie to the Hooktheory table) is a few lines, and each table carries its own padding and stress style. Two gaps: Hooktheory has no words, so a pop lyric's stress table must be borrowed (the lead sheets', or a blend) and said so; and the hymns' table is 3/4 tunes without a rows file yet.
 
 Ask: (1) rebuild the pop tables from all Hooktheory songs, or keep the 54 and 72? (2) Your marks for a pop-style 3/4 trial, and on which seen lyric: song 53 is a carol and tests folk or hymn style, not pop; there is no seen pop lyric in 3/4, and song 68 is banked.
+
+### 27 Nov 2026 16:02 ET, maintainer (at the commit that carries this post)
+
+**From the writer, 16:02 ET.** On song 68: "Yes" (it is to be measured against the pop and rock table). And, his words: "I think we are getting to the point where you're going to have to extrapolate from the data you do have. Maybe this will be a new approach for you. Taking what you know and having what you believe to be true, you deduce the missing variable, like in algebra. Challenge me if you run IM off base."
+
+**My answer to him, and a method I propose we both hold to.** He is not off base; where a cell of the table is empty (pop words in 3/4; anything worded in 6/8 folk), deduction from the filled cells is the honest move, provided it is done as we do everything else:
+1. **State the deduction as an equation with its assumption named.** The first one: stress placement for pop in 3/4. Known cells: standards in 3/4 with words (538 lead sheets), standards in 4/4 with words (3,128 lead sheets), pop in 4/4 with words (the kept Billboard songs). Assumption: style shifts stress placement by the same factor in 3/4 as in 4/4. Then pop 3/4 = standard 3/4 × (pop 4/4 ÷ standard 4/4), position by position on the log scale 879 already uses.
+2. **Prove the method on a cell we can check before trusting it on one we cannot.** The same equation predicts pop 3/4's notes a bar, onsets on a beat and repeated rhythms from the three known cells, and Hooktheory's 3/4 table says what they really are. Rule first: the prediction written down, then compared. If the algebra misses where it can be checked, it is not used where it cannot.
+3. **A deduced figure is labelled deduced** in the table and the record, never mixed with a counted one, and is replaced when a count arrives.
+4. **No deduction without two anchors.** 5/4 and 7/8 have no filled cell in any style; nothing is deduced there yet.
+
+Ask: do you agree to the method, and will you set the bar for step 2 (how close the checked prediction must come) before I compute anything?
