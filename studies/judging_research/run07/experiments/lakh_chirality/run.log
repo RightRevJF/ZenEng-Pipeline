@@ -1,0 +1,85 @@
+Lakh tracks 21425; ambiguous files 8607; cover-only artists 395; excluded seen (Hooktheory) 1247, hold-out (McGill) 131, short/blank 25; songs 9549; within-artist songs 5901 by 1678 artists
+POWER (before the estimate): {'power': 0.0025, 'false_pass': 0.0, 'se': 0.5672837974972729}
+/usr/local/lib/python3.13/site-packages/statsmodels/discrete/conditional_models.py:303: ModelWarning: Dropped 958 groups and 2750 observations for having no within-group variance
+  super().__init__(endog, exog, missing=missing, **kwargs)
+{
+ "measure": "CH",
+ "extra": [
+  "A",
+  "ch_rep"
+ ],
+ "prediction": -0.6,
+ "alpha": 0.00625,
+ "power": {
+  "power": 0.0025,
+  "false_pass": 0.0,
+  "se": 0.5672837974972729
+ },
+ "outcome_info": {
+  "matched": 2387,
+  "dropped": 0,
+  "y_foreign1": 2343
+ },
+ "main": {
+  "b": 0.30414786432514307,
+  "se": 0.7618972260426367,
+  "p": 0.6897473018074575,
+  "N": 5900,
+  "G": 1678
+ },
+ "halves": [
+  {
+   "b": 0.3090559177897808,
+   "se": 1.0834327342543006,
+   "p": 0.7754478574386454,
+   "N": 2961,
+   "G": 842
+  },
+  {
+   "b": 0.46966103438848156,
+   "se": 1.0795971612953532,
+   "p": 0.6635380423828319,
+   "N": 2939,
+   "G": 836
+  }
+ ],
+ "cond_logit": {
+  "coef": 0.023879456856360243,
+  "p": 0.5596260626537422,
+  "converged": true
+ },
+ "readings": {
+  "on_y": {
+   "b": 0.42633088160421273,
+   "se": 0.7729472501972898,
+   "p": 0.5812462162945493,
+   "N": 5900,
+   "G": 1678
+  },
+  "fame_held": {
+   "b": 0.2011639424247259,
+   "se": 0.756714630804637,
+   "p": 0.7903635298842077,
+   "N": 5900,
+   "G": 1678
+  },
+  "first_performers": {
+   "b": 0.8008033390785874,
+   "se": 0.7781002816588846,
+   "p": 0.3033962512599556,
+   "N": 4754,
+   "G": 1591
+  },
+  "abs_CH": {
+   "b": 0.7095750253899469,
+   "se": 0.8162200536921204,
+   "p": 0.3846596603630956,
+   "N": 5900,
+   "G": 1678
+  }
+ },
+ "verdict": "KILLED",
+ "base_rate": 39.705134722928314,
+ "n_tests": 8
+}
+VERDICT: KILLED

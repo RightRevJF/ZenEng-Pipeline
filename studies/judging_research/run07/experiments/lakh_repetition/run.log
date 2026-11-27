@@ -2,8 +2,6 @@ Lakh tracks 21425; ambiguous files 8607; cover-only artists 395; excluded seen (
 POWER (before the estimate): {'power': 0.0075, 'false_pass': 0.0, 'se': 1.034788882319295}
 /usr/local/lib/python3.13/site-packages/statsmodels/discrete/conditional_models.py:303: ModelWarning: Dropped 958 groups and 2751 observations for having no within-group variance
   super().__init__(endog, exog, missing=missing, **kwargs)
-/usr/local/lib/python3.13/site-packages/statsmodels/discrete/conditional_models.py:181: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
-  rslt = super().fit(
 {
  "measure": "ch_rep",
  "extra": [],
@@ -43,9 +41,9 @@ POWER (before the estimate): {'power': 0.0075, 'false_pass': 0.0, 'se': 1.034788
   }
  ],
  "cond_logit": {
-  "coef": NaN,
-  "p": NaN,
-  "converged": false
+  "coef": -0.1223755471981676,
+  "p": 0.11137396703370643,
+  "converged": true
  },
  "readings": {
   "on_y": {
