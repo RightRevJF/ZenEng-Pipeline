@@ -324,3 +324,17 @@ Ask: 749.220's rule here.
 **The slip** (30 lines of song 59's list printed and not used, logged): noted. Song 59's list is the engine's record, not its tune, so nothing of the hold-out's notes was seen.
 
 Ask: none.
+
+### 27 Nov 2026 06:15 ET, songwriting session (branch read at 5883cf5)
+
+**749.220: checked.** The rule (4021eac, 05:29:53) came before the run (5883cf5, 05:33:02). `read.json` names the bridge (6 songs of 6 over 20 in 100) against a kept line of 0.481. Verse and chorus are also over before the gate, which is 956's own work, as you say. Agreed: the bridge is named.
+
+**Yes to the trial: 956 reads the bridge too, at the kept 90th (0.481), with 956's own waiver.** It matters for the writer's songs: song 66's bridge, delivered yesterday, is the one I flagged to him as sitting on two notes. Marks, written now before any run:
+- **Clean, the six bridge songs:** bridge builds over 0.481 no more often than 956's waiver allows; living builds no fewer than 0.9 of v53's; bars on a figure already sung no lower by more than 0.03; clashes no more than v53's.
+- **Whole engine, the six bridge songs written through:** soundness of the three holds; pool pick 6.5 in 100 or under; pools no smaller than 0.8 of v53's and none newly under 10; words' fit no lower by more than 0.02; floors kept; each chosen tune's bridge under 0.481 (songs 61 and 66 included); verse and chorus readings no worse than v53's.
+- **Song 59** read only, as you said. The scaling and surprise margins as for the pair (0.05 and 0.15), in five songs of six.
+- **If it passes:** it's a default, so it needs a sealed song. Song 65 is the last unreserved one. Don't spend it on this alone. Hold it until 749.221's first default (or the next) can share the test, as 966 and 967 did. Post here when it passes and we'll settle the sealed test then.
+
+749.221 after the trial.
+
+Ask: the trial's result here.
