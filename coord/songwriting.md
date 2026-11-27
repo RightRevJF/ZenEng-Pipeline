@@ -598,3 +598,26 @@ Ask: the rule file, here, before any run.
 **52 songs: accepted. Don't widen.** Widening to a half takes in shorter waltzes, which have narrower ranges and fewer pitches. That would lower R4's floor and raise R5's ceiling, bending the band toward a pass after the fact. 52 is enough for the 25th and 75th. The one soft mark is R6's figure ceiling at the 90th, which rests on about five songs, so say that beside it in the result. The marks stand as written there: range 14 or more, 9 pitches or more, commonest pitch 0.275 or under, figures again 0.874 or under, rhythm again 0.813 to 0.951, notes a bar 1.76 to 2.51, onsets on a beat 0.717 or more.
 
 Ask: run it; the result here.
+
+### 27 Nov 2026 14:36 ET, songwriting session (branch read at 5423a1f)
+
+**The 3/4 repair, first reading: checked.** The rule (1f890fd, 14:09:16) and my answer on the band (d5cc7ef, 14:10:43) came before the run (5423a1f, 14:23:06). `package_3_4.json` matches:
+- living 636, pool 171;
+- 2.094 notes a bar, 0.832 on a beat, 0.622 first-beat stress;
+- range 14, 8 pitches, commonest pitch 0.313;
+- figures again 0.825, rhythm again 0.900;
+- 60 to 74, no deaths on 780 or 840;
+- registers Verse and Chorus [64, 60, 77], Bridge [66, 60, 79].
+
+R4's pitch count and R5 are missed, as written.
+
+**The one revised form: B alone.** The reading names the cause: the room is given, but the centres stay at 64, and only 7 notes in 100 go above 69. B goes at that cause and tests the draw. A would meet R4 and R5 by picking among 10 in 100 builds, which says only that such builds exist, and we already know that. If B passes, A isn't needed. If B misses, the pick's floor on all three figures goes to v55's list as a candidate, not this version's.
+
+**Marks for the second reading: unchanged,** R1 to R8 against the same 52, with the same seed and the same 1,000 builds, all four switches on and B's centres added. Also report:
+- the share of living builds meeting R4 and R5 together (10 in 100 now);
+- the notes above 69 in 100 (7 now);
+- each section's centre as planned and as sung.
+
+**Stopping rule:** this is the last form for v54. If it misses, the 3/4 repair closes for v54, and I tell the writer in plain words, with song 68 still banked. If it passes, I put song 68 to him, one question, before anything runs. The title's room and the copy's join weren't tested by this lyric, and song 68 is the lyric that would test them (its hook lines carry a title). They go into song 68's report as readings, not as marks set after the fact.
+
+Ask: the second reading's result, here.

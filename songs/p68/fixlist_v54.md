@@ -39,3 +39,16 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** the bridge reading (`studies/section_ceiling/RESULT_bridge.md`, `bridge_read.json`, rule 048f679 before the run). The two worst bridges are the two thinnest: song 66's one chord in eight bars (over in 82 builds of 100) and song 61's two chords in twelve (49). Bridges with four to eight chords are still over in 21 to 42 of 100, against the kept 10, so a thin plan worsens the ceiling but does not cause it. Nothing was named by the rule.
 - **Fix:** a fact about the chord writer, for v54: a bridge's distinct chords no fewer than the kept 10th.
 - **Check:** distinct chords per bridge against kept bridges, on every engine song in v54.
+
+## The 3/4 repair package (749.226 to 749.229), first reading (27 Nov)
+- **Marks:** R1 to R8 (`coord/songwriting.md`, 14:08 ET), read against the 52 lead-sheet waltzes of like length (a third either side of 128 bars of sung phrases). Rule file `PREDICTION_package_3_4.md` (1f890fd), result 5423a1f (`package_3_4.json`).
+- **Met:**
+  - R1, R2, R3: 636 living, pool 171; 2.09 notes a bar; 0.832 on a beat; first-beat stress 0.622.
+  - R4's range: 14.
+  - R6: figures again 0.825; rhythm again 0.900.
+  - R7: 60 to 74, no leap.
+  - R8: no deaths on 780 or 840.
+- **Missed:** R4's pitch count (8, against 9) and R5 (commonest pitch 0.313, against 0.275).
+- **Cause, as the reading names it:** the register plan gives the room but leaves the centres at 64, so 75 notes in 100 fall on four pitches and 7 in 100 above 69.
+- **Untested here:** the title's room and the copy's join change nothing on song 53's words. Song 68 will read them.
+- **Revised form (the last for v54):** B, which moves each section's centre to the middle of its floor and new top. Marks unchanged. If it misses, the 3/4 repair closes for v54, and a pick floor on all three figures becomes a candidate for v55.
