@@ -96,7 +96,7 @@ None this pass.
 
 ## Fix list
 
-The proposed fix list for the maintainer is the Doc "Proposed fix list: judging research, run 09" (link in the Doc version of this report and in `run09/proposed_fixlist.md`).
+The proposed fix list for the maintainer is the Doc "Proposed fix list: judging research, run 09" (https://claude.ai/artifact/BXZRqqxiFxoeCbm6EK9sRz); the same text is in `run09/proposed_fixlist.md`. This report is published as the Doc "Judging research, run 09" (https://claude.ai/artifact/RH7H79gxTgx5RopbDNi3XS).
 
 ## References
 

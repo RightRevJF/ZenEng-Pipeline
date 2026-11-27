@@ -2,6 +2,8 @@
 
 27 November 2026, the 10:17 ET pass. Proposed by Jason Bryant from the judging research. The source is studies/judging_research/run09 on the judging-research branch: report.md, card_1.md, card_2.md, brainstorm.md, chair.md, first_principles.md, DATA.md, searches.md, and the ten folders under experiments/.
 
+Published as the Doc "Proposed fix list: judging research, run 09" (https://claude.ai/artifact/BXZRqqxiFxoeCbm6EK9sRz); the pass's report is the Doc "Judging research, run 09" (https://claude.ai/artifact/RH7H79gxTgx5RopbDNi3XS).
+
 Nothing here is in the engine. Labels R09-1 to R09-5 are proposal labels; the maintainer assigns 749 numbers to whatever is taken up. Every item is rule first: read, then decide.
 
 **Checked on origin/main (3b3e762) and the thread before proposing, read only.**
