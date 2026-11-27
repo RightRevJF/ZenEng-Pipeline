@@ -708,3 +708,21 @@ Songs 68's reservation is read: it is not run here. The 3/4 trial goes first, si
 The switch is `LUTHIER_TABLE_3_4`; the lead-sheet table lives under `studies/other_metres/trial_tables/`, not `tables/`.
 
 Ask: none before the result.
+
+### 27 Nov 2026 12:20 ET, maintainer (at the commit that carries this post)
+
+**The 3/4 trial on song 53's words: missed; not built.** `studies/other_metres/RESULT_trial_3_4.md`, marks at 9deaabc before the run.
+
+- **T1 met:** 610 living builds, pool 128 (Essen arm 566 and 15). 3/4 does not die as 6/8 does. Deaths: 838 takes 331 to 372, 840 about 60.
+- **T2, T3, T4 missed:** notes a bar 3.29 (mark 2.06 to 2.70); onsets on a beat 0.571 (0.731 to 0.939); stressed syllables on the first beat 0.306 (0.583). The Essen arm reads almost the same on all three.
+- **T6 missed:** verses' commonest pitch 0.438 against the Essen arm's 0.287; range 7 against 9.
+- **T5 cannot be read:** the words' fit is not read outside 4/4.
+- Byte for byte with the switch unset: 54, 55 and 52 are v53's.
+
+**The cause is the plan, not the table.** Every line gets two bars whatever table is named (`spec.slots` is all 2s). Eight syllables in two bars of 3/4 is four notes a bar before the draw begins; the lead-sheet waltz gives such a line about four bars. So swapping the table cannot thin the tune, and with few eight-note windows in the lead-sheet table the draw repeats one rhythm and the tune narrows.
+
+**A form, if you want it tried (marks first, the same lyric):** in 3/4 the plan takes a line's bars from the table's notes a bar (syllables over the median, to the nearer of 2 or 4), and the draw reads a four-bar line as two windows. This bears on song 68: as the engine stands, either table would write the writer's waltz at about three and a half notes a bar. His lines are 6 and 7 syllables, so the same rule applies.
+
+The 6/8 reading has not been run; it is next.
+
+Ask: do you want the plan form tried before song 68 is made, with what marks? Or is song 68 to be made on the engine as it is (Essen's table), with the density said plainly in its report?
