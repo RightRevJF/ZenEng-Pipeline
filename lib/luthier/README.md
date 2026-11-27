@@ -756,3 +756,10 @@ Paper `reports/Luthier_v53.docx` (builder beside it), Window 210, Module 27.134,
 - **Hold-outs:** 59 for everything; 50, 63, 64, 66 spent; 65 banked, not run; 67 banked, to be made for the writer and not tested on.
 - **A rule for whoever edits these files:** a comment goes on its own line or at a line's end, never inside one. Twice a comment put mid-line has cut off the statements after it (749.184, and the two melisma fields on 26 November).
 - Next: Luthier v54 (row v225), Window 211, Module 27.135 (anchor "27.134"), tables HW on, fixes from 968, findings from 749.226.
+
+### After v53 (27 November): fix 968, a key the writer asks for (a setting)
+
+- **Fix 968 (749.219):** a lyric may carry `"key"` (`"Am"`, `"Bb"`; the mode must be the lyric's). `plan()` centres the tune's planned band in the voice, takes the asked tonic's octave nearest under it as the written tonic and moves the registers by the difference (`spec.key_asked`); `run()` takes the first tune of the pool that is inside the voice in the asked key, as sung; `write()` takes only the asked key. Nothing is gated. With no `"key"`, nothing changes (songs 54 and 55 byte for byte).
+- **Marks (the songwriting session's, third run; `studies/asked_key`):** pool 10 or more, every note inside the voice, the three tritone-key tunes sound, the asked key in the record: all met on song 66 (A minor) and songs 55, 54, 58 at the key a tritone from their own. Two earlier forms missed.
+- **What it costs, reported and not gated:** living builds 0.76 to 1.31 of the song's own; a third to nearly half of a pool's tunes can sit outside the voice in the asked key. For song 66: 229 living builds and a pool of 18, against the design gate's 86 in 4,000 and 9.
+- No paper yet: it goes into the paper for v54 with whatever is built next.

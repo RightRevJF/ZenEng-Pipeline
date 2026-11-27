@@ -215,18 +215,19 @@ def plan(L):
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
     spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7; spec["one_bar_share"] = ONE_BAR; spec["kept_rests"] = [[12, 15, 18, 24, 36, 48], [0.2, 0.15, 0.1, 0.25, 0.15, 0.15]]      # 870: the kept rests after a line (10th percentile a quarter, 25th 15 twelfths, median a half, 75th a whole)
     if L.get("key"):
-        # 749.219, a trial setting (studies/asked_key; two forms tried, neither has met its marks; not a fix): a key the writer asks for. The planned band of the tune is centred in the voice; the asked tonic's octave nearest under it is the written tonic; the registers move by the difference
+        # 968 (749.219; studies/asked_key), a setting: a key the writer asks for ("key": "Am"). The planned band of the tune is centred in the voice; the asked tonic's octave nearest under it is the written tonic; the registers move by the difference
         nm_ = str(L["key"]); mn_ = nm_.endswith("m"); rt_ = nm_[:-1] if mn_ else nm_; md_ = L.get("mode", "major")
         if rt_ not in C.NAMES_S and rt_ not in C.NAMES_F: flags.append(f"the key asked for ({nm_}) is not a key's name: not used")
         elif mn_ != (md_ == "minor"): flags.append(f"the key asked for ({nm_}) is not in the lyric's mode ({md_}): not used")
         else:
             pc_ = C.NAMES_S.index(rt_) if rt_ in C.NAMES_S else C.NAMES_F.index(rt_); Vk_ = C.VOICES[L.get("voice", "tenor")]; kinds_ = {kind_of(n_) for n_, _ in L["sections"]}
             parts_ = [k_ for k_ in spec["registers"] if k_ != "Bridge" or "bridge" in kinds_]; lo_ = min(spec["registers"][k_][1] for k_ in parts_) - 60; hi_ = max(spec["registers"][k_][2] for k_ in parts_) - 60
-            a_ = (Vk_[1] - hi_) if Vk_[0] - lo_ <= Vk_[1] - hi_ else int((Vk_[0] + Vk_[1]) / 2.0 - (lo_ + hi_) / 2.0)
-            # the band's top at the voice's top where it fits (a tune dips under its floor by a melisma's step, and seldom reaches its planned top); centred where the band is wider than the voice
+            a_ = int((Vk_[0] + Vk_[1]) / 2.0 - (lo_ + hi_) / 2.0)
+            if Vk_[0] - lo_ <= Vk_[1] - hi_: a_ = max(Vk_[0] - lo_, min(Vk_[1] - hi_, a_))
+            # the band centred in the voice, kept inside it where it fits (the second form, its top at the voice's top, missed its marks: studies/asked_key/RESULT_b.md)
             t_ = min((12 * o_ + pc_ for o_ in range(1, 8)), key=lambda x_: (abs(a_ - x_), x_)); sh_ = a_ - t_
             spec["registers"] = {k_: [x_ + sh_ for x_ in v_] for k_, v_ in spec["registers"].items()}
-            spec["key_asked"] = dict(key=nm_, tonic_midi=t_, registers_moved_by=sh_, note="749.219 (a trial setting): the registers are moved so the tune is drawn where it would sit in the voice, against the asked tonic")
+            spec["key_asked"] = dict(key=nm_, tonic_midi=t_, registers_moved_by=sh_, tonic_pc=pc_, voice=list(Vk_), note="968: the registers are moved so the tune is drawn where it would sit in the voice, against the asked tonic")
     flags[:] = list(dict.fromkeys(flags))                                                      # 902 (749.81): each flag once
     return spec, form, flags
 first_name = {}
@@ -327,8 +328,9 @@ def write(L, N=1000, K=12):
     if not run["survivors"]: return dict(error="no build survived", deaths=run["deaths"], flags=flags, spec=spec)
     notes = run["pick"]["notes"]; lo, hi = min(n["p"] for n in notes) - 60, max(n["p"] for n in notes) - 60
     vn_ = sorted(n["p"] - 60 for n in notes if E.KIND.get(n["sec"]) == "Verse"); keys = C.choose_key(lo, hi, L.get("voice", "tenor"), L.get("lead", "guitar"), mode, centre=(vn_[len(vn_) // 2] if vn_ else None))
+    if spec.get("key_asked") and getattr(E, "_key_pick", None): spec["key_asked"]["pick"] = E._key_pick
     if spec.get("key_asked") and keys:
-        # 749.219, a trial setting: only the asked key is taken, at the octave that fits; the engine's own key where the chosen tune does not fit the voice in it
+        # 968 (749.219): only the asked key is taken, at the octave that fits; the engine's own key where the chosen tune does not fit the voice in it
         ka_ = sorted([k_ for k_ in keys if k_["key"] == spec["key_asked"]["key"]], key=lambda k_: (k_["tonic_midi"] != spec["key_asked"]["tonic_midi"], k_["from_middle"]))
         if ka_: keys = ka_
         else: flags.append(f"the key asked for ({spec['key_asked']['key']}) does not hold the chosen tune inside the voice: the engine's key is used")

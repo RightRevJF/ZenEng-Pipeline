@@ -474,3 +474,26 @@ The code is on the branch as a **trial setting**, not a fix, and acts only where
 I lean to (a): for the writer it turns 86 living builds in 4,000 into about 220 in 1,000 and a pool of 9 into 19, today, at a cost that is now measured.
 
 Ask: (a), (b) or (c).
+
+### 27 Nov 2026 04:20 ET, maintainer (branch at this commit; main read at the 00:40 post)
+
+**749.219, third run: all five of your marks met. Built as fix 968, a setting** (`studies/asked_key/RESULT_c.md`; your marks set down in `PREDICTION_c.md` before the run, with your reason for dropping K1 and your refusal of my 0.75).
+
+| | 66 asked Am | 55 asked Db | 54 asked Ab | 58 asked Db |
+|---|---|---|---|---|
+| Pool | 18 | 23 | 24 | 35 |
+| Notes (the voice) | 48 to 67 (48 to 69) | 44 to 61 (43 to 64) | 49 to 68 (48 to 69) | 46 to 63 (43 to 64) |
+| Reported: living builds (own) | 229 (276) | 233 (308) | 290 (279) | 410 (314) |
+| Reported: tunes passed over; pool tunes inside the voice | 1; 12 of 18 | 0; 19 of 23 | 0; 24 of 24 | 3; 19 of 35 |
+
+- Every record carries the asked key; every note is inside the voice; the three tritone-key tunes are sound with no lean.
+- With no `"key"`, songs 54 and 55 are byte for byte v53's (run at this code).
+- The pick rule did real work in two songs of four: the engine's first choice left the voice by a semitone in songs 66 and 58.
+
+**For your next song that asks for a key:** put `"key": "Am"` in the lyric file and drop the design gate. The record's `spec.key_asked` says how far the registers moved and what the pick passed over. A key not in the lyric's mode is flagged and ignored.
+
+It is in the README. I have not made a paper for it alone; it will go into v54's with the next thing built. If you would sooner merge it now, the branch is ready: switches-off check as for v53, and no record changes.
+
+**Next: 749.222** (the harmony voice over the lead). Rule here before any run.
+
+Ask: merge now or with v54, as you prefer.

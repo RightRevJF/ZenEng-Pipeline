@@ -665,6 +665,18 @@ class Engine:
                     fl_ = cr_["floor"]; nr_ = [c for c in pool if c["readings"]["range"] >= fl_]; first_ = pick
                     pick = min(nr_, key=lambda c: c["n"]) if nr_ else min(pool, key=lambda c: (-c["readings"]["range"], c["n"]))
                     chose_ = dict(asked=round(cr_["asked"], 1), floor=round(fl_, 2), builds_in_the_pool=len(pool), at_or_over_the_floor=len(nr_), the_first_build_past_the_gates_range=int(first_["readings"]["range"]), the_pick_range=int(pick["readings"]["range"]), the_pick_is_the_first_build_past_the_gates=bool(pick is first_))
+                ka_ = self.S.get("key_asked")
+                if ka_ and ka_.get("voice"):
+                    # 968 (749.219): where the pick leaves the voice in the asked key, as sung, the next tune inside it is taken, in the pick's own order
+                    sg_ = getattr(self, "as_sung", None) or (lambda x_: x_); V0_, V1_ = ka_["voice"]; tk_ = [12 * o_ + ka_["tonic_pc"] for o_ in range(1, 8)]
+                    def in_(c_): ps_ = [n_["p"] - 60 for n_ in sg_(c_["notes"])]; return any(t_ + min(ps_) >= V0_ and t_ + max(ps_) <= V1_ for t_ in tk_)
+                    nr2_ = [c_ for c_ in pool if c_["readings"]["range"] >= cr_["floor"]] if (ok and isinstance(cr_, dict)) else []
+                    ord_ = sorted(nr2_ or pool, key=(lambda c_: c_["n"]) if ok else (lambda c_: (c_["d7"], c_["fp"])))
+                    ins_ = [c_ for c_ in ord_ if in_(c_)]; self._key_pick = dict(the_first_pick_inside_the_voice=bool(in_(pick)), tunes_passed_over=0, in_the_pool_inside_the_voice=sum(1 for c_ in pool if in_(c_)), of=len(pool))
+                    if not in_(pick) and ins_:
+                        self._key_pick["tunes_passed_over"] = ord_.index(ins_[0]) if pick in ord_ else None; pick = ins_[0]
+                        if chose_ is not None: chose_["the_pick_range"] = int(pick["readings"]["range"])
+                    elif not in_(pick): self._key_pick["note"] = "no tune in the pool is inside the voice in the asked key: the engine's pick stands"
                 j7 = dict(kept_songs=J.n, readings_read_together=J.names, gate=round(J.gate, 3), a_kept_songs_usual_distance=round(J.usual, 3), kept_middle_half=[round(x, 3) for x in J.band], builds=len(alive), pass_the_gate=len(ok), in_the_kept_middle_half=len(band),
                           builds_distance_quartiles=[round(float(x), 3) for x in np.quantile([c["d7"] for c in alive], (0.25, 0.5, 0.75))], pick_distance=round(pick["d7"], 3), pick_directed=pick["directed"], words_gate=wgate, pick_words_fit=WW_.fit(pick["notes"], self.BAR, self.BEAT, parts=True) if self.WW else None,
                           pool="past both gates: the old charge's least half, then the joint gate; the pick is the first of them in the order built" if ok else "no build passed the joint gate: the least distance among the old charge's least half", gates_passed=dict(old_charge_least_half=len(first), joint_gate=n_joint, words_gate=n_words_ if wgate else None), gates_removed=dict(old_charge=len(alive) - len(first), joint_gate=len(first) - n_joint, words_gate=(n_joint - n_words_) if wgate and not wgate.get("no build past the joint gate also passed: the gate is waived") else None), shortlist=[dict(fp=c["fp"], distance=round(c["d7"], 3), old_charge=round(c["charge"], 3), **{k_: round(v_, 3) for k_, v_ in c["directed"].items()}) for c in short],
