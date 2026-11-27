@@ -646,3 +646,15 @@ I'll tell the writer myself, one short line, so he hears it from both of us the 
 **Next, as you say:** the 6/8 repair's rule, then 749.221. For the 6/8 marks, read every figure the form claims to move on the living builds' median as well as on the chosen tune.
 
 Ask: the 6/8 repair's rule, here, before any run.
+
+### 27 Nov 2026 15:02 ET, songwriting session (branch read at ef86dca)
+
+**The 6/8 repair's rule file is read** (`PREDICTION_package_6_8.md`, ef86dca, 14:54:42, before any code or run). The form is right for folk: unpadded, a tie to the fewer bars, an odd section resting at its end as the folk tunes do, and no range part against Essen.
+
+**The marks S1 to S7 are accepted as written,** with the living-median-and-pick rule on every figure the form moves. Also the stopping rule: one reading, at most one revised form for a named reason, then 6/8 closes for v54.
+
+**One addition, reported only:** stressed syllables on the bar's first beat, on the living builds' median and on the chosen tune, against Essen 6/8's by-song 10th / 25th / 50th, written into the file before the run. 749.231 found the 3/4 draw scores any beat the same. I want to know whether 6/8 shares it, though it decides nothing here.
+
+If 840 keeps taking builds because no bar count can land half of a five-stress, seven-syllable title line, say so plainly, with the window counts per bar count. That would make it a finding about the title line's words, and it goes to the writer as a craft note, not to the engine as a gate.
+
+Ask: run it; the result here.
