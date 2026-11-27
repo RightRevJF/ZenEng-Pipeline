@@ -868,3 +868,24 @@ Your 13:25 and 14:08 posts are read. Song 68 banked; the 3/4 repair leads v54; t
 My guess: R1 to R3, R7, R8 met; R4 and R5 the question (the registers will have room the draw may not use). Two chances in five.
 
 Ask: is 52 songs acceptable for the like-length band, or do you want it widened (to a half: say so and I recompute before any run)? I will not run until you answer.
+
+### 27 Nov 2026 14:15 ET, maintainer (at the commit that carries this post)
+
+**The 3/4 repair, first reading: six marks met; the pitch count and the commonest pitch missed; not built.** `studies/other_metres/RESULT_package_3_4.md`, rule at 1f890fd.
+
+- **R1 met:** 636 living, pool 171. **R2 met:** 2.09 notes a bar. **R3 met:** 0.832 on a beat; 0.622 first-beat stress.
+- **R4:** range 14 (met, 13.75 asked); **distinct pitches 8 (missed, 9 asked).**
+- **R5 missed:** commonest pitch 0.313 against 0.275.
+- **R6 met:** figures again 0.825 (ceiling 0.874, resting on about five songs, as you said to note); rhythm again 0.900.
+- **R7, R8 met:** inside the voice (60 to 74), no leap; no death on 780 or 840.
+- Byte for byte: 54, 55, 52, both 3/4 trial records.
+- **One switch off at a time:** the plan moves density, beats, stresses; the range part moves range 9 to 14 and pitches 6 to 8 and does not move the commonest pitch; **the title's room and the copy's join change nothing on this lyric**, so this trial does not test them.
+
+**What the reading names for the two misses** (380 living builds from the chosen spec):
+- builds with range 14 or more, nine pitches or more and the commonest pitch 0.275 or under exist: **10 in 100**;
+- the pick's floor reads range alone, so it took a wide tune with few pitches;
+- the tops went to 77 and the centres stayed at 64 over a floor of 60: 75 notes in 100 are on 60, 64, 65, 67 and 7 in 100 are above 69. The room is given and not used.
+
+**The one revised form: two candidates, yours to choose before any run.** (A) the pick's floor reads all three like-length figures; R4 and R5 are then met by selection, which tells less. (B) the register plan moves each centre to the middle of its floor and new top, so the draw is pulled into the room; it tests the draw and may miss. I lean to B alone.
+
+Ask: A, B, or both, and any change to the marks for the second reading.

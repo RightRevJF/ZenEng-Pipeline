@@ -132,11 +132,11 @@ class Engine:
         if bars == 1: return self.BARS.get(n, [])
         return []
     def rhythm(self, rng, sy, tmin, slot, cap=None, hook=False, room=None):
-        if slot == 4 * self.BAR and self.SUNGB.get(id(sy)) in (3, 4) and len(sy) >= 4:
+        if slot in (3 * self.BAR, 4 * self.BAR) and self.SUNGB.get(id(sy)) in (3, 4) and len(sy) >= 4:
             # trial (749.226): a four-bar phrase read as two windows; three sung bars are a two-bar window and a one-bar rhythm, the fourth bar left to the hold or the rest
             sb_ = self.SUNGB[id(sy)]; n1_ = (len(sy) + 1) // 2 if sb_ == 4 else int(round(2 * len(sy) / 3.0)); self._part = True
             try:
-                a_ = self.rhythm(rng, sy[:n1_], tmin, 2 * self.BAR, hook=hook, room=3); b_ = self.rhythm(rng, sy[n1_:], 0, 2 * self.BAR if sb_ == 4 else self.BAR, None if cap is None else cap - 2 * self.BAR, hook=hook, room=None if sb_ == 4 else 0) if a_ is not None else None
+                a_ = self.rhythm(rng, sy[:n1_], tmin, 2 * self.BAR, hook=hook, room=3); b_ = self.rhythm(rng, sy[n1_:], 0, 2 * self.BAR if sb_ == 4 else self.BAR, None if cap is None else cap - 2 * self.BAR, hook=hook, room=None if (sb_ == 4 or slot == 3 * self.BAR) else 0) if a_ is not None else None
             finally: self._part = False
             if a_ is None or b_ is None or b_[0] < 0: return None
             self.stats["749.226: a four-bar phrase in two windows"] += 1; return list(a_) + [x_ + 2 * self.BAR for x_ in b_]
@@ -436,7 +436,10 @@ class Engine:
             if how[0] == "design": lines[(sec, i)] = [(t, p) for t, p, d in how[1]]; prev = lines[(sec, i)][-1][1]; continue
             if how[0] == "copy":
                 src = lines[(how[1], how[2])]
-                if src[0][0] < tm and src[0][0] < tm - (self.BREATH - 12): return None, ("join before a copy (780)", sec, i)     # 780: two fixed lines a beat apart or more
+                if src[0][0] < tm and src[0][0] < tm - (self.BREATH - 12):                                                     # 780: two fixed lines a beat apart or more
+                    if not self.S.get("copy_join"): return None, ("join before a copy (780)", sec, i)
+                    how = ["again", how[1], how[2]]; self.stats["749.228: a copy that would begin too soon is sung again"] += 1      # trial (749.228)
+            if how[0] == "copy":
                 new = list(src)
                 if self.S.get("copy_clash"):                                                      # 966 (749.223; studies/returning_clash): a copied line's long note that clashes under a chord other than its source's is moved to a chord tone, as again() does (833)
                     Us_ = self.line_start(how[1], how[2]); DG_ = self.S.get("degrees") or {}; bl_ = set(DG_.get("blue", ())); tn_ = DG_.get("tonic", 0); mu_, lo_, hi_ = self.reg(sec, i); nw_ = []
@@ -673,7 +676,7 @@ class Engine:
                 score = lambda c: sum(rk[(c["fp"], n_)] for n_ in names) / len(names)
                 short = sorted(pool, key=lambda c: (score(c), c["fp"]))[:5]                                                                         # printed beside the pick, and chooses nothing (872)
                 pick = min(pool, key=lambda c: c["n"]) if ok else min(pool, key=lambda c: (c["d7"], c["fp"]))
-                cr_ = (self.S.get("target") or {}).get("choose_range") or None; chose_ = None
+                cr_ = (self.S.get("target") or {}).get("choose_range") or self.S.get("choose_range") or None; chose_ = None
                 if ok and isinstance(cr_, dict):                                                                                                    # 954 (749.135; amends 951): a floor, not a band. The words predict range loosely (held out by artist, sd 5 semitones), so the choice asks only that the tune be no narrower than the asking plus the kept 25th of range less the asking; above the floor 872 decides. Where no build clears it, the widest
                     fl_ = cr_["floor"]; nr_ = [c for c in pool if c["readings"]["range"] >= fl_]; first_ = pick
                     pick = min(nr_, key=lambda c: c["n"]) if nr_ else min(pool, key=lambda c: (-c["readings"]["range"], c["n"]))

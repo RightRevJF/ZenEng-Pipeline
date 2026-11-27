@@ -38,6 +38,22 @@ CHORD_TIE = os.environ.get("LUTHIER_CHORD_TIE", "0") == "1"      # 749.198: a tr
 PEAK_TRIES = int(os.environ.get("LUTHIER_PEAK_TRIES", "60"))      # 950's draws for the carrying line; 240 in the trial of 749.192 (studies/the_peak_line)
 OCTAVE_TAIL = os.environ.get("LUTHIER_OCTAVE_TAIL", "1") != "0"      # 964 (749.192): the octave bin shared as kept songs share it (the environment switch is for studies)
 PITCH_CEILING = True   # 956
+RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") == "1"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
+TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") == "1"      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
+COPY_JOIN = os.environ.get("LUTHIER_COPY_JOIN", "0") == "1"      # trial (749.228), off: a copy that would begin before the line ahead of it has ended is sung again, and the build lives
+def _land(T, sy, b):
+    """trial (749.229): by kept count, the share of the kept windows for b sung bars in which half or more of the line's stressed syllables fall on a beat; the line split as the plan form splits it"""
+    bar = T["bar"]; beats = set(T["beats"]); W2 = {int(k): v for k, v in T["two_bar_windows"].items()}; B1 = {}
+    for p_, c_ in T["bar_rhythms"]: B1.setdefault(len(p_), []).append((p_, c_))
+    n = len(sy); n1 = n if b == 2 else int(round(2 * n / 3.0)) if b == 3 else (n + 1) // 2; parts = [(sy[:n1], W2)] + ([(sy[n1:], B1 if b == 3 else W2)] if b > 2 else []); dist = {0: 1.0}; tot_st = sum(1 for _, st in sy if st)
+    if not tot_st: return 1.0
+    for syp, W in parts:
+        ws = W.get(len(syp), []); t = float(sum(c for _, c in ws)); d = {}
+        if not t: return 0.0
+        for w, c in ws:
+            k = sum(1 for o, (_, st) in zip(w, syp) if st and o % bar in beats); d[k] = d.get(k, 0.0) + c / t
+        dist = {a_ + k: pa * pk for a_, pa in dist.items() for k, pk in d.items()} if len(dist) == 1 else {s_: sum(pa * d.get(s_ - a_, 0.0) for a_, pa in dist.items()) for s_ in range(0, tot_st + 1)}
+    return sum(pv for k, pv in dist.items() if k >= 0.5 * tot_st)
 PLAN_6_8 = os.environ.get("LUTHIER_PLAN_6_8", "0") == "1"      # trial, off: 749.226's rule in 6/8
 PLAN_3_4 = os.environ.get("LUTHIER_PLAN_3_4", "0") == "1"      # trial (749.226), off: in 3/4 the plan takes a line's bars from the kept table's notes a bar
 BRIDGE_CEILING = os.environ.get("LUTHIER_BRIDGE_CEILING", "0") == "1"      # trial (749.220), off: 956 reads the bridge too, at the kept 90th (tables/kept_bridge_pitch.json)
@@ -89,13 +105,22 @@ def plan(L):
     """lyric -> the melody spec without chords, and the form"""
     metre = L.get("metre", "4/4"); trial_table_ = os.environ.get("LUTHIER_TABLE_" + metre.replace("/", "_")); T = json.load(open(os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".json"))); beats = len(T["beats"])      # trial (other metres): LUTHIER_TABLE_3_4=<a table under tables/metre_atlas, or a path from there> names the kept table a 3/4 lyric draws from; unset, Essen's
     closer_ = {}; closer_form_ = None
+    style_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".style.json"); style_ = json.load(open(style_p_)) if os.path.exists(style_p_) else {}; title_room_ = {}      # trial (other metres): a table's style file beside it, where there is one
     sungb_ = {}; sung = []; slots = {}; how = {}; first = {}; texts = {}; n_in, n_out = BD.edges(L["bpm"], beats); form = [("Intro", "intro", n_in)]; flags = []      # 825
     for name, lines in L["sections"]:
         sy = [[(w, bool(st)) for w, v, st, fn in syllables(ln, flags)] for ln in lines]; k = kind_of(name)
         pr = SL.propose([len(x) for x in sy], L["bpm"], beats); sl = [max(1, min(4, r["whole bars proposed"] if not (r["whole bars proposed"] == 1 and r["kept share in one bar or less"] < 0.5) else 2)) for r in pr]      # 869 (749.63): one bar only where half of kept lines that long fit in one
         if (PLAN_3_4 and metre == "3/4") or (PLAN_6_8 and metre == "6/8"):
-            # trial (749.226): a line's sung bars are whichever of 2, 3 or 4 puts its syllables a bar nearest the kept table's median (a tie to the fewer); three sung bars are padded to a four-bar phrase
-            med_ = T["readings_quartiles"]["notes a bar"][1]; sb_ = [min((2, 3, 4), key=lambda b_: (round(abs(len(x) / b_ - med_), 6), b_)) for x in sy]; sl = [2 if b_ == 2 else 4 for b_ in sb_]; sungb_[name] = sb_
+            # trial (749.226): a line's sung bars are whichever of 2, 3 or 4 puts its syllables a bar nearest the kept table's median (a tie to the fewer); three sung bars are padded to a four-bar phrase where the table's style is padded phrases (popular song), and take three bars where it is not
+            med_ = T["readings_quartiles"]["notes a bar"][1]; sb_ = [min((2, 3, 4), key=lambda b_: (round(abs(len(x) / b_ - med_), 6), b_)) for x in sy]; pad_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_)
+            if TITLE_ROOM and L.get("title"):
+                # trial (749.229): a line that sings the title takes more bars, to four, until half its stresses can land on a beat in half the kept windows
+                tw_ = " ".join(w for w, _, _, _ in LS.syllables(L["title"]))
+                for i_, ln_ in enumerate(lines):
+                    if tw_ and tw_ in " ".join(w for w, _, _, _ in LS.syllables(ln_)):
+                        b0_ = sb_[i_]; ok_ = next((b_ for b_ in range(b0_, 5) if _land(T, sy[i_], b_) >= 0.5), None)
+                        if ok_ is not None and ok_ != b0_: sb_[i_] = ok_; title_room_[f"{name}:{i_}"] = [b0_, ok_]
+            sl = [2 if b_ == 2 else 4 if (b_ == 4 or pad_) else 3 for b_ in sb_]; sungb_[name] = sb_
         vc_ = VERSE_CLOSER or ("apart" if L.get("verse_closer") is True else L.get("verse_closer") or None)
         if vc_ and k == "verse" and metre == "4/4" and L.get("verse_closer", True) is not False:      # 4/4 only: the kept figures are 4/4's                                                          # 958 (749.142; studies/busy_sections): the verse sung closer. Verse lines of 6 to 8 syllables that would take two bars take one: the shortest first, none side by side, an even count, as many as bring the verse nearest the kept middle of notes a bar (4.59). Kept verses run 4.6 notes a bar and 1.15 times their choruses; Luthier gave every such line two bars
             cand_ = sorted([i for i, r in enumerate(pr) if 6 <= r["syllables"] <= 8 and sl[i] == 2], key=lambda i: (pr[i]["syllables"], i)); n1_ = len(cand_) if vc_ == "all" else len(cand_) // 2 if vc_ == "half" else int(round(pr[cand_[0]]["kept share in one bar or less"] * len(cand_))) if cand_ else 0
@@ -171,6 +196,16 @@ def plan(L):
     if trial_table_ and metre != "4/4": spec["table"] = trial_table_
     if sungb_:
         spec["sung_bars"] = sungb_; spec["held_bar_share"] = round(next((c for p_, c in T["bar_rhythms"] if list(p_) == [0]), 0) / T["bars_total"], 4)      # trial (749.226)
+        if title_room_: spec["title_room"] = title_room_
+    if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
+    if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):
+        # trial (749.227): kept waltzes of like length (bars within a quarter of the song's bars of sung phrases; within a third where under 60 fall): the verse and chorus tops set so their span is those waltzes' median range and a little over, inside the voice (as 927); the pick's floor their 25th (as 954)
+        import numpy as _np7; bars7_ = sum(sum(v_) for v_ in slots.values()); bs7_ = style_["by_song"]; sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= 0.25 * bars7_]; band7_ = "a quarter"
+        if len(sel7_) < 60: sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= bars7_ / 3.0]; band7_ = "a third"
+        if sel7_:
+            med7_ = float(_np7.median(sel7_)); q7_ = float(_np7.percentile(sel7_, 25)); rg7_ = spec["registers"]; span7_ = max(rg7_[k_][2] for k_ in ("Verse", "Chorus")) - min(rg7_[k_][1] for k_ in ("Verse", "Chorus")); dr7_ = int(round(max(-5, min(9, min(med7_, V[1] - V[0]) + RANGE_OVER - span7_))))
+            for k_ in ("Verse", "Chorus", "Bridge"): rg7_[k_][2] = min(rg7_[k_][2] + dr7_, rg7_["Verse"][1] + (V[1] - V[0])) if rg7_[k_][2] + dr7_ > rg7_[k_][0] + 1 else rg7_[k_][0] + 2
+            spec["choose_range"] = dict(asked=med7_, floor=q7_, like_length_songs=len(sel7_), band=band7_, bars_of_sung_phrases=bars7_, tops_moved_by=dr7_)
     if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
         KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
         ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_])); shape_ = None
