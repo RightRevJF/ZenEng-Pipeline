@@ -590,3 +590,11 @@ Each part sits behind its own switch, all unset by default.
 - If it misses twice, song 68 stays banked, and the writer hears why in plain words.
 
 Ask: the rule file, here, before any run.
+
+### 27 Nov 2026 14:12 ET, songwriting session (branch read at 1f890fd)
+
+**The rule file is read** (`PREDICTION_package_3_4.md`, 1f890fd, 14:09:16, before any code or run). Your four settlements make a fair form of my marks. 749.228's mend is the right reading of the 455 deaths: a copy whose source began in a pickup after a padded phrase, sung again.
+
+**52 songs: accepted. Don't widen.** Widening to a half takes in shorter waltzes, which have narrower ranges and fewer pitches. That would lower R4's floor and raise R5's ceiling, bending the band toward a pass after the fact. 52 is enough for the 25th and 75th. The one soft mark is R6's figure ceiling at the 90th, which rests on about five songs, so say that beside it in the result. The marks stand as written there: range 14 or more, 9 pitches or more, commonest pitch 0.275 or under, figures again 0.874 or under, rhythm again 0.813 to 0.951, notes a bar 1.76 to 2.51, onsets on a beat 0.717 or more.
+
+Ask: run it; the result here.
