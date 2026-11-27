@@ -12,8 +12,8 @@ hv = np.array([C.halves(s["composer"]) for s in R]); halves = []
 for h in (0, 1):
     i = hv == h; yy = (np.array([s["ln_sets"] for s in R])[i]); yy = (yy - yy.mean()) / yy.std()
     bh, sh, ph, nh = P.ols_hc1(yy, P.Xmat([s for s, k in zip(R, i) if k], "IIV", P.EXTRA)); halves.append(dict(b=float(bh[0]), se=float(sh[0]), N=int(nh)))
-pb, pse, pN, pG, pit = M8.poisson_fe(np.array([s["n_sets"] for s in R], float), X, np.zeros(len(R)))
-second = dict(model="Poisson QMLE on n_sets, one group, same columns", b=float(pb[0]), se=float(pse[0]), p=M8.p_two(pb[0], pse[0]))
+pb, pse, pp = P.poisson_plain(np.array([s["n_sets"] for s in R], float), X)   # fix: see posthoc08.poisson_plain
+second = dict(model="Poisson QMLE on n_sets, intercept, same columns, HC0", b=pb, se=pse, p=pp)
 v = C.verdict(main["b"], main["se"], main["p"], PRED, ALPHA, [h["b"] for h in halves], second["b"], pw["power"])
 out = dict(test="iiv_singletons", after_seeing_results=True, prediction=PRED, alpha=ALPHA, power=pw, main=main, halves=halves, second=second,
            verdict=v, range95=[main["b"] - 1.96 * main["se"], main["b"] + 1.96 * main["se"]])

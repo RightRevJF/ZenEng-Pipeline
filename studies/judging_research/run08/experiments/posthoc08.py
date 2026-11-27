@@ -59,3 +59,12 @@ def fake_power_ols(R, meas, extra, beta, alpha, draws=300, seed=11, composer_fe=
             y = beta * z + rng.normal(0, math.sqrt(1 - beta ** 2), len(z)); b, se, p, N = ols_hc1(y, X)
         hits += (p[0] < alpha) and b[0] > 0; ses.append(se[0])
     return dict(power=hits / draws, se_fake=float(np.median(ses)), N=len(R), draws=draws)
+
+def poisson_plain(y, X):
+    """plain Poisson pseudo-likelihood with intercept, robust (HC0) SEs; the second model for iiv_singletons (one song per composer).
+    Added after the first run of iiv_singletons crashed in models08.poisson_fe (its clustered SE divides by G - 1 = 0 with one group);
+    the crash came after the outcome was loaded and before any estimate was printed or written. No rule changed."""
+    import statsmodels.api as sm
+    X1 = sm.add_constant(np.asarray(X, float), has_constant="add"); keep = np.r_[True, np.asarray(X).std(0) > 1e-12]
+    r = sm.GLM(np.asarray(y, float), X1[:, keep], family=sm.families.Poisson()).fit(cov_type="HC0")
+    return float(r.params[1]), float(r.bse[1]), float(r.pvalues[1])

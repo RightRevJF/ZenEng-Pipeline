@@ -1,0 +1,10 @@
+songs 2707
+POWER (before the outcome): {'power': np.float64(0.6866666666666666), 'se_fake': 0.021793917234600668, 'N': 2707, 'draws': 300}
+Traceback (most recent call last):
+  File "/home/claude/zeneng-pipeline/studies/judging_research/run08/experiments/iiv_singletons/test.py", line 15, in <module>
+    pb, pse, pN, pG, pit = M8.poisson_fe(np.array([s["n_sets"] for s in R], float), X, np.zeros(len(R)))
+                           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/zeneng-pipeline/studies/judging_research/run08/experiments/models08.py", line 43, in poisson_fe
+    V = Hi @ (Sg.T @ Sg) @ Hi * (G / (G - 1))
+                                 ~~^~~~~~~~~
+ZeroDivisionError: division by zero
