@@ -72,3 +72,43 @@ def poisson_plain(y, X):
     mu = np.exp(X1 @ b); Hi = np.linalg.inv(X1.T @ (X1 * mu[:, None])); S = X1 * (y - mu)[:, None]
     V = Hi @ (S.T @ S) @ Hi; se = math.sqrt(V[1, 1]); z = b[1] / se
     return float(b[1]), float(se), float(2 * stats.norm.sf(abs(z)))
+
+def title_only_rows():
+    """run 08 first principles section 5: ChoCo iReal/Wikifonia charts that matched NO clique by title plus name (not stop artists,
+    >= 8 chords). Match by title alone: the chart's variants() that have at least two words must hit exactly ONE Discogs-VI clique
+    title over all its variants (no name check). Cliques used by the run 08 design (all 8,640), the seen sets and the McGill hold-out
+    are excluded. Song = clique; charts averaged; genre = most common coarse genre; composer = nrm(artists string) for the halves.
+    Reads clique titles and ids only (no counts, no years)."""
+    import collections, re
+    cb = C.charts_by_id(); info, S = C.load_design(within=False)
+    used = {s["clique"] for s in S}; inD = {k for s in S for k in s["charts"]}
+    Q = json.load(open(os.path.join(C.SHAPE, "discogs_cliques.json"))); by = collections.defaultdict(list)
+    for q in Q: by[q["title"]].append(q["id"])
+    seen = C._seen_cliques(); mg = C._mcgill_keys(); mgt = {t for a, t in mg}
+    songs = collections.defaultdict(list)
+    for k, c in cb.items():
+        if k in inD or C.nrm(c["artists"]) in C.STOP_ARTIST or len(c["chords"]) < 8: continue
+        toks = C.ordered_tokens(c["artists"]); hit_named = False
+        vs = C.variants(c["title"]); words = [v for v in vs if v]
+        # skip charts that had a title+name candidate in build_design (they were matched, then excluded as seen or hold-out)
+        for v in vs:
+            for cid in by.get(v, []):
+                pass
+        raw = [re.sub(r"\([^)]*\)|\[[^\]]*\]", " ", c["title"]).split(" - ")[0]]
+        if len(raw[0].split()) < 2: continue
+        cands = {cid for v in vs for cid in by.get(v, [])}
+        if len(cands) != 1: continue
+        cid = cands.pop()
+        if cid in used or cid in seen: continue
+        if any(t in mgt for t in vs): continue
+        songs[cid].append(k)
+    R = []
+    for cid, ks in songs.items():
+        rows = [MS.chart_row(cb[k])[0] for k in ks]; rows = [r for r in rows if r is not None]
+        if not rows: continue
+        s = dict(clique=cid, charts=ks, composer=C.nrm(cb[ks[0]]["artists"]),
+                 genre=sorted(collections.Counter(C.genre_of(cb[k]) for k in ks).items(), key=lambda x: (-x[1], x[0]))[0][0])
+        for m in ["IIV"] + EXTRA:
+            v = [r[m] for r in rows if np.isfinite(r[m])]; s[m] = float(np.mean(v)) if v else None
+        if all(s.get(m) is not None for m in ["IIV"] + EXTRA): R.append(s)
+    return R

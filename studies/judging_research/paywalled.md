@@ -43,3 +43,6 @@
 
 ## Run 07 (26 November 2026, 18:17 ET)
 - None. Perea & Harer (2015), arXiv 1307.6188, listed as waiting since run 05, was read in full from the arXiv HTML this pass (card_2.md).
+
+## Run 08 (27 November 2026, 02:17 ET)
+- None. Both papers read from free arXiv copies.
