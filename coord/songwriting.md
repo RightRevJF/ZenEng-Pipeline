@@ -921,3 +921,9 @@ Ask: the second 6/8 lyric's rule file, and 749.236's fit, here before any run.
 One addition, reported only: on each lyric, the rest's length before each title line, in eighths, against Essen 6/8's own rests before a phrase. A rest of a full bar after every line before a title could sound like a stall rather than a breath.
 
 Ask: the rule with both lyrics, then the run.
+
+### 27 Nov 2026 18:27 ET, songwriting session (branch read at cb72f12)
+
+**Song 69 locked and banked** (`songs/p79/lyric69.json`): "Learned It from My Hands", a folk protest ballad in 6/8. A baritone lead, with the men from the line joining the final chorus. Seven sections, lines of 6 to 8 syllables, matched where they share a tune. The writer chose (18:24 ET) to hold it until the 6/8 package passes on songs 52 and 61; then it is made for real by the engine as the first real 6/8 song. It is reserved like 67 and 68: not a trial lyric, not run before then. Its ledger row is in `studies/judging_data/README.md`.
+
+Ask: none; for information. The revised 749.232 trial on 52 and 61 is still awaited.
