@@ -1,55 +1,86 @@
 {
  "metre": "3/4",
- "songs": 538,
- "syllables": {
-  "primary": 25249,
-  "unstressed": 26576
+ "DEDUCED": true,
+ "note": "DEDUCED, not counted (749.231; PREDICTION_deduce.md): pop 3/4 = standard 3/4 x pop 4/4 / standard 4/4, each share position by position, renormalised within a weight; the method passed its check on four countable figures (deduce_check.json). To be replaced when pop songs in 3/4 with words are counted. Secondary stress left out.",
+ "inputs": {
+  "standard_3_4": {
+   "primary": {
+    "downbeat": 0.6517,
+    "beat": 0.2768,
+    "off the beat": 0.0715
+   },
+   "unstressed": {
+    "downbeat": 0.1362,
+    "beat": 0.5872,
+    "off the beat": 0.2766
+   }
+  },
+  "standard_4_4": {
+   "primary": {
+    "downbeat": 0.3548,
+    "beat": 0.44,
+    "off the beat": 0.2052
+   },
+   "unstressed": {
+    "downbeat": 0.0812,
+    "beat": 0.4428,
+    "off the beat": 0.476
+   }
+  },
+  "pop_4_4_Billboard": {
+   "primary": {
+    "downbeat": 0.2043,
+    "beat": 0.352,
+    "off the beat": 0.4437
+   },
+   "unstressed": {
+    "downbeat": 0.046,
+    "beat": 0.2845,
+    "off the beat": 0.6695
+   }
+  },
+  "syllables": {
+   "standard_3_4": {
+    "primary": 25249,
+    "unstressed": 26576
+   },
+   "standard_4_4": {
+    "primary": 166349,
+    "unstressed": 174332
+   },
+   "pop_4_4": {
+    "primary": 21117,
+    "unstressed": 20984
+   }
+  }
  },
  "shares": {
   "primary": {
-   "downbeat": 0.6517,
-   "beat": 0.2768,
-   "off the beat": 0.0715
+   "downbeat": 0.4995,
+   "beat": 0.2947,
+   "off the beat": 0.2058
   },
   "unstressed": {
-   "downbeat": 0.1362,
-   "beat": 0.5872,
-   "off the beat": 0.2766
+   "downbeat": 0.0915,
+   "beat": 0.4473,
+   "off the beat": 0.4612
   }
  },
  "any_syllable": {
-  "downbeat": 0.3873,
-  "beat": 0.436,
-  "off the beat": 0.1767
+  "downbeat": 0.2903,
+  "beat": 0.3729,
+  "off the beat": 0.3368
  },
  "place": {
   "primary": {
-   "downbeat": 0.5202,
-   "beat": -0.4543,
-   "off the beat": -0.9043
+   "downbeat": 0.5427,
+   "beat": -0.2354,
+   "off the beat": -0.4925
   },
   "unstressed": {
-   "downbeat": -1.0451,
-   "beat": 0.2978,
-   "off the beat": 0.4482
+   "downbeat": -1.1543,
+   "beat": 0.1817,
+   "off the beat": 0.3144
   }
- },
- "by_song": {
-  "songs": 504,
-  "stressed_off_the_beat_10_25_50_75_90": [
-   0.0,
-   0.0,
-   0.026,
-   0.078,
-   0.159
-  ],
-  "stressed_on_first_beat_10_25_50_75_90": [
-   0.471,
-   0.583,
-   0.686,
-   0.8,
-   0.877
-  ]
- },
- "note": "BORROWED from the lead sheets of this metre (Hooktheory carries no words): a trial table (749.231): where a syllable of each weight is sung in the bar over where any syllable is, natural log; downbeat = the bar's first beat, beat = another beat, off the beat = elsewhere; secondary stress left out"
+ }
 }

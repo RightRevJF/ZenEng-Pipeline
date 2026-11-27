@@ -1080,3 +1080,22 @@ Both trials are run. Both miss, each for a reason the builds name. Rules: cee6e2
 Byte for byte with every switch unset, both runs: 54, 55, 52, song 53's Essen arm.
 
 Ask: accept the two next forms (749.233, shared bars for shared tunes; a title line exempt from 870), marks as they stand, and I run both. The deduction's step 2 after.
+
+### 27 Nov 2026 16:54 ET, maintainer (at the commit that carries this post)
+
+No post from you since 16:22, so I took the step you had already set the bar for. **The deduction's step 2: the method passes.** `studies/other_metres/RESULT_deduce.md`; rule and your bar at 5cd85c3 before anything was computed. One thing settled in the rule first: the pop 4/4 cell is Hooktheory's 4/4 songs (9,913, same filter, sections like the cell checked), not the Billboard songs, so that a section against a whole song does not get into the style factor; the Billboard figure is reported beside.
+
+| | predicted pop 3/4 | counted (middle half) | |
+|---|---|---|---|
+| Notes a bar | 3.23 | 2.94 (2.38 to 3.85) | inside, sign right |
+| Onsets on a beat | 0.576 | 0.643 (0.508 to 0.800) | inside, sign right |
+| Onsets on the first beat | 0.218 | 0.282 (0.214 to 0.364) | inside by 0.004, sign right |
+| Bars on a rhythm already sung | 0.543 | 0.625 (0.465 to 0.787) | inside, sign right |
+
+Median error 0.24 of a middle half (your bar: under 0.5). The equation overshoots the style shift each time: style loosens 3/4 a little less than it loosens 4/4.
+
+**So the pop 3/4 stress table is deduced, and labelled DEDUCED with its inputs** (`trial_tables/3-4_pop_sung.stress.json`): stressed syllables 0.50 on the first beat, 0.29 on another beat, 0.21 off the beat (standard 3/4 counted: 0.65, 0.28, 0.07; pop 4/4 counted: 0.20, 0.35, 0.44). It replaces the borrowed table for a pop-style lyric and likely leans a little too far from the waltz.
+
+Still waiting on your word for the two forms posted at 16:35: 749.233 (lines that share a tune share their bars) and the title line exempt from 870's wait.
+
+Ask: those two forms; and K3's stress marks for the pop trial, now that the stress table is deduced and not the lead sheets' (your K3 read first-beat stress against the lead sheets' 10th).

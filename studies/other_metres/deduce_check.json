@@ -1,0 +1,112 @@
+{
+ "songs": {
+  "standard_3_4": 538,
+  "standard_4_4": 3076,
+  "pop_4_4": 9913,
+  "pop_3_4": 267
+ },
+ "medians": {
+  "standard_3_4": {
+   "notes a bar": 2.3333333333333335,
+   "onsets on the beat": 0.8363334404800171,
+   "onsets on the bar's first beat": 0.37921561197423265,
+   "bars on a rhythm already sung": 0.8461538461538461
+  },
+  "pop_4_4": {
+   "notes a bar": 4.884615384615385,
+   "onsets on the beat": 0.46153846153846156,
+   "onsets on the bar's first beat": 0.12903225806451613,
+   "bars on a rhythm already sung": 0.42105263157894735
+  },
+  "standard_4_4": {
+   "notes a bar": 3.533333333333333,
+   "onsets on the beat": 0.6703921078921078,
+   "onsets on the bar's first beat": 0.2249260355029586,
+   "bars on a rhythm already sung": 0.6566964285714285
+  },
+  "pop_4_4_Billboard": {
+   "notes a bar": 4.2967,
+   "onsets on the beat": 0.450685,
+   "onsets on the bar's first beat": 0.124485,
+   "bars on a rhythm already sung": 0.59508
+  }
+ },
+ "counted_pop_3_4": {
+  "notes a bar": [
+   2.381962864721485,
+   2.9375,
+   3.846590909090909
+  ],
+  "onsets on the beat": [
+   0.5084483244156576,
+   0.6428571428571429,
+   0.8
+  ],
+  "onsets on the bar's first beat": [
+   0.21428571428571427,
+   0.2818181818181818,
+   0.36363636363636365
+  ],
+  "bars on a rhythm already sung": [
+   0.4654761904761905,
+   0.625,
+   0.7867965367965368
+  ]
+ },
+ "figures": {
+  "notes a bar": {
+   "predicted": 3.226,
+   "counted_median": 2.938,
+   "counted_middle_half": [
+    2.382,
+    3.847
+   ],
+   "inside": true,
+   "style_factor_in_4_4": 1.382,
+   "sign_right": true,
+   "error_over_width": 0.197,
+   "predicted_with_Billboard_pop": 2.837
+  },
+  "onsets on the beat": {
+   "predicted": 0.576,
+   "counted_median": 0.643,
+   "counted_middle_half": [
+    0.508,
+    0.8
+   ],
+   "inside": true,
+   "style_factor_in_4_4": 0.688,
+   "sign_right": true,
+   "error_over_width": 0.23,
+   "predicted_with_Billboard_pop": 0.562
+  },
+  "onsets on the bar's first beat": {
+   "predicted": 0.218,
+   "counted_median": 0.282,
+   "counted_middle_half": [
+    0.214,
+    0.364
+   ],
+   "inside": true,
+   "style_factor_in_4_4": 0.574,
+   "sign_right": true,
+   "error_over_width": 0.43,
+   "predicted_with_Billboard_pop": 0.21
+  },
+  "bars on a rhythm already sung": {
+   "predicted": 0.543,
+   "counted_median": 0.625,
+   "counted_middle_half": [
+    0.465,
+    0.787
+   ],
+   "inside": true,
+   "style_factor_in_4_4": 0.641,
+   "sign_right": true,
+   "error_over_width": 0.257,
+   "predicted_with_Billboard_pop": 0.767
+  }
+ },
+ "median_error_over_width": 0.243,
+ "passes": true
+}
