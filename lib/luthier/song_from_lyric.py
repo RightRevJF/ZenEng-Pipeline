@@ -30,7 +30,8 @@ CENTRE_FOLLOWS = 0.5                                   # 927: a part's centre ri
 PLANT_PEAK = os.environ.get("LUTHIER_PLANT_PEAK", "1") != "0"      # 950 (the environment switch is for studies/sounder_pools only)
 PEAK_CLIMB = {"1": True, "2": "fallback", "3": "line"}.get(os.environ.get("LUTHIER_PEAK_CLIMB", "0"), False)      # 749.182: a trial (studies/the_draw): the line that carries the planted peak holds no leap past an octave
 BORROW_KEPT = {"1": "rate", "count": "count", "count_true": "count_true"}.get(os.environ.get("LUTHIER_BORROW_KEPT", "0"))      # 749.207, 749.209: trials (studies/borrow_kept), off
-COPY_CLASH = os.environ.get("LUTHIER_COPY_CLASH", "0") == "1"; MELISMA_CLEAR = {"1": True, "after": "after"}.get(os.environ.get("LUTHIER_MELISMA_CLEAR", "0"), False)      # 749.223, 749.224: trials (studies/returning_clash), off
+COPY_CLASH = os.environ.get("LUTHIER_COPY_CLASH", "1") != "0"      # 966 (749.223): a copied line's long note that clashes under a chord other than its source's is moved to a chord tone, as again() does (the environment switch is for studies)
+MELISMA_CLEAR = {"0": False, "1": True}.get(os.environ.get("LUTHIER_MELISMA_CLEAR", "after"), "after")      # 967 (749.225): a melisma's second note that would be a long clash takes the step above, or the syllable keeps one note, when the chosen tune is written out. "1" is the form that failed (749.224: it moved melismas and so the pick); "0" is for studies
 JOIN_MOVES = os.environ.get("LUTHIER_JOIN_MOVES", "0") == "1"      # 749.216: a trial (studies/borrow_kept), off
 LINE_HEIGHTS = os.environ.get("LUTHIER_LINE_HEIGHTS", "0") == "1"      # 749.201: a trial (studies/line_heights)
 CHORD_TIE = os.environ.get("LUTHIER_CHORD_TIE", "0") == "1"      # 749.198: a trial (studies/chord_tie)
@@ -203,8 +204,8 @@ def plan(L):
         if PITCH_CEILING: spec["pitch_ceiling"] = {k_: v_["ceiling"] for k_, v_ in json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_commonest_pitch.json")))["parts"].items()}      # 956 (749.134): a build whose verses or choruses put more of their notes on one pitch than nine kept songs in ten is passed over      # 922, 923: the page gate as a floor (tables/kept_page_gate.json), 4/4
         spec["no_leap_past_an_octave"] = OCTAVE_GATE; spec["title_stress"] = L.get("title_stress", TITLE_STRESS) if L.get("title_stress", TITLE_STRESS) == "inside" else bool(L.get("title_stress", TITLE_STRESS))      # 959 on in 4/4; 961 where the lyric asks ("title_stress": true)
         if BORROW_KEPT: T7_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_repeat.json"))); spec["borrow_kept"] = dict(T7_["share"], **({"by_count": T7_["by_count"], "true": BORROW_KEPT == "count_true"} if BORROW_KEPT != "rate" else {}))      # 749.207: a trial form, off
-        if COPY_CLASH: spec["copy_clash"] = True      # 749.223: a trial form, off
-        if MELISMA_CLEAR: spec["melisma_clear"] = MELISMA_CLEAR      # 749.224: a trial form, off
+        if COPY_CLASH: spec["copy_clash"] = True      # 966 (749.223)
+        if MELISMA_CLEAR: spec["melisma_clear"] = MELISMA_CLEAR      # 967 (749.225)
         if JOIN_MOVES: spec["join_moves"] = json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_line_join.json")))["moves"]      # 749.216: a trial form, off
         if LINE_HEIGHTS: spec["line_heights"] = True      # 749.201: a trial form, off
         if CHORD_TIE: spec["chord_tie"] = {k_: json.load(open(os.path.join(HERE, "..", "..", "tables", "kept_chord_tie.json")))["weights"][k_] for k_ in ("on", "off")}      # 749.198: a trial form, off
@@ -361,7 +362,7 @@ def vary_returns(rec):
     return out
 ORN = json.load(open(os.path.join(HERE, "..", "..", "studies", "ornament", "ornament_results.json")))["CoCoPops Billboard"]
 def melisma_clash(E, tonic):
-    """749.224, a trial: would a melisma's second note, pitch q at time t and dr long, be a clash (a beat long or more, off the chord, a semitone from a chord tone)?"""
+    """967 (749.225): would a melisma's second note, pitch q at time t and dr long, be a clash (a beat long or more, off the chord, a semitone from a chord tone)?"""
     def f(t, q, dr):
         if dr < E.BEAT: return False
         ch = E.chord_at(t); c = (q - tonic) % 12; return c not in ch and ((c + 1) % 12 in ch or (c - 1) % 12 in ch)
@@ -374,7 +375,7 @@ def melisma_notes(ns, L, scale, key="midi", how=None, cap=None, share=None, clas
     import random as _r2
     rng = _r2.Random(f"melisma {L.get('seed', 1)} {L['title']}"); share_ = rng.choices([ORN["song_q"][0], ORN["song_median"], ORN["song_q"][1]], [0.25, 0.5, 0.25])[0] / 100.0; share = share_ if share is None else share / 100.0      # 932 (749.110): the aimed song's own share, where the song has an aim
     lo = min(n[key] for n in ns); hi_ = max(n[key] for n in ns); cands = []; w = []; ends = []
-    def second_(i, n):                                                                       # 749.224, a trial (studies/returning_clash), used only where clash is given: the second note of a melisma on syllable i, or None where both the step below and the step above are shut out
+    def second_(i, n):                                                                       # 967 (749.225; studies/returning_clash), used only where clash is given: the second note of a melisma on syllable i, or None where both the step below and the step above are shut out
         d1_ = max(3, (n["dur"] // 2) // 3 * 3); fol_ = lambda q_: next((j_ for j_, m_ in enumerate(ns[i + 1:]) if m_[key] != q_), len(ns) - i - 1)
         q = n[key] - 1
         while q % 12 not in scale: q -= 1
@@ -423,7 +424,7 @@ def melisma_notes(ns, L, scale, key="midi", how=None, cap=None, share=None, clas
         d1 = max(3, (n["dur"] // 2) // 3 * 3); out.append(dict(n, dur=d1, melisma="first")); out.append(dict(n, **{"on": n["on"] + d1, "dur": n["dur"] - d1, key: q, "text": "", "stress": False, "melisma": "second"}))
     return out, share, round(p_end, 3)
 def melismas(rec, L, E, tonic_midi):
-    out, share, p_end = melisma_notes(rec["melody"]["notes"], L, {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}, how=rec["spec"].get("how"), cap=(rec["spec"].get("target") or {}).get("run"), share=(rec["spec"].get("target") or {}).get("melisma_share"), clash=melisma_clash(E, tonic_midi) if rec["spec"].get("melisma_clear") else None, relocate=rec["spec"].get("melisma_clear") != "after"); rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = round(share, 4); rec["melody"]["melisma_line_end_share_kept_for_this_song"] = p_end      # 749.225, a trial: "after" clears a clashing second note only when the chosen tune is written out, and moves no melisma
+    out, share, p_end = melisma_notes(rec["melody"]["notes"], L, {(x + tonic_midi) % 12 for x in rec["spec"]["scale"]}, how=rec["spec"].get("how"), cap=(rec["spec"].get("target") or {}).get("run"), share=(rec["spec"].get("target") or {}).get("melisma_share"), clash=melisma_clash(E, tonic_midi) if rec["spec"].get("melisma_clear") else None, relocate=rec["spec"].get("melisma_clear") != "after"); rec["melody"]["notes"] = out; rec["melody"]["melisma_share_drawn"] = round(share, 4); rec["melody"]["melisma_line_end_share_kept_for_this_song"] = p_end      # 967 (749.225): "after" clears a clashing second note only when the chosen tune is written out, and moves no melisma
 def checks(rec, fb, tonic_midi, E):
     """815: what can be checked without ears"""
     ns = rec["melody"]["notes"]; bs = rec["bass"]; on = [n["on"] for n in ns]

@@ -745,3 +745,14 @@ Paper `reports/Luthier_v52.docx` (builder beside it), Window 209, Module 27.133,
 - Next: Luthier v53 (row v224), Window 210, Module 27.134 (anchor "27.133"), tables HV on, fixes from 966, findings from 749.219.
 
 **`loop_less`, a note for whoever turns it on (26 November):** the form takes a draw from the random stream only when a drafted verse or bridge comes out over the kept 75th, and more for the redraws. From that point every later draw differs, so the chosen draft and the tune can change wholly even though the form redrew one section; where no drafted section is over the line the song is unchanged (three of six seen songs). Pools on the seen songs with it on: 24, 22, 20, 23, 15, 21 (off: 24, 22, 22, 17, 5, 21); `studies/loop_chance/RESULT_seen.md`.
+
+### v53 (26 November): fixes 966 and 967, the clashes no rule saw
+
+Paper `reports/Luthier_v53.docx` (builder beside it), Window 210, Module 27.134, Table HV.
+- **Fix 966 (the copy):** a copied line's long note that clashes under a chord other than its source's is moved to a chord tone, as `again()` does (833). `COPY_CLASH`, `spec.copy_clash`, 4/4; `LUTHIER_COPY_CLASH=0` for studies.
+- **Fix 967 (the melisma's second note):** when the chosen tune is written out, a second note that would be a long clash takes the step above, or the syllable keeps one note; no melisma moves, and the engine reads each build as before. `MELISMA_CLEAR`, `spec.melisma_clear = "after"`, 4/4; `LUTHIER_MELISMA_CLEAR=0` for studies, `=1` the form that failed (749.224).
+- **Marks:** each alone clean and whole, and together, on the seen songs; sealed song 64, nine marks, all hold (clashes 0.545 to 0 per 100 notes). **Song 64 has no copied line over a changed chord: it tested 967 and gave 966 nothing to do.** 966 rests on the seen songs, song 59 among them.
+- **Records:** 55, 54, 58, 49, 50, 59, 61 run again; song 60's is `songs/p70/lyric60.v53.song.json`; song 66 (made for the writer on v52) not remade; song 52 (6/8) byte for byte. Sound; neighbour choice fails 2.0 in 100, pool pick 1.5; pools 33, 22, 20.
+- **Hold-outs:** 59 for everything; 50, 63, 64, 66 spent; 65 banked, not run; 67 banked, to be made for the writer and not tested on.
+- **A rule for whoever edits these files:** a comment goes on its own line or at a line's end, never inside one. Twice a comment put mid-line has cut off the statements after it (749.184, and the two melisma fields on 26 November).
+- Next: Luthier v54 (row v225), Window 211, Module 27.135 (anchor "27.134"), tables HW on, fixes from 968, findings from 749.226.

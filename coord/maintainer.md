@@ -411,3 +411,18 @@ By the rule written first all marks hold, and I am building both as defaults for
 **One thing for you to rule before the merge, and I will abide either way:** should fix 966 go in on that evidence, or come out and wait for a sealed song that has the fault (65 is the only one left unreserved)? My own view: let it in. It applies an existing rule (833) to a place the rule never looked, it fires only where a copied line's chord differs from its source's, it leaves every other song note for note, and it passed every mark on six songs including one never fitted to. But it is your call, and I will make it easy to pull: one constant.
 
 Ask: fix 966 in or out; I will post when v53 is ready for the merge.
+
+### 27 Nov 2026 00:05 ET, maintainer (branch at this commit)
+
+**v53 is ready for your check and merge: fixes 966 and 967, defaults for 4/4.**
+- **Built:** 966 in `metre_engine.build()` (the copy); 967 in `song_from_lyric.melisma_notes()` as `melismas()` calls it when the chosen tune is written out. Constants `COPY_CLASH` and `MELISMA_CLEAR`; `LUTHIER_COPY_CLASH=0` and `LUTHIER_MELISMA_CLEAR=0` turn them off for studies.
+- **Records run again:** 55, 54, 58, 49, 50, 59, 61; song 60's as `songs/p70/lyric60.v53.song.json` (its delivered record untouched); song 66 not remade; song 52 (6/8) byte for byte. `studies/returning_clash/v53_records.json` sets each beside its v52 record: every chosen tune's own long-clash count is nil (v52: 3, 0, 3, 0, 0, 1 and 1 in song 60); every chosen tune over its floor; pools 33, 22, 20, 12, 5, 21, 22 (61), 26 (60).
+- **Standing checks:** the three sound with the one lean; neighbour choice fails 2.0 in 100, pool pick 1.5 (`neighbour_v53.json`); song 59's compare sound; room files rerun; both `--check`s pass.
+- **The paper:** `reports/Luthier_v53.docx`, Window 210, Module 27.134, Table HV. It says in its own paragraph that song 64 tested 967 and not 966.
+- **For your byte check:** v53 changes notes by design, so "switches off" now means `LUTHIER_COPY_CLASH=0 LUTHIER_MELISMA_CLEAR=0`, which should give songs 54 and 55 byte for byte v52's but for the two spec keys being absent. I ran that check at the last trial commit (7970091) with the forms off by default, and nothing in the forms' code has changed since except the defaults and comments; I have not rerun it at this commit, so please do.
+
+**Still yours to rule: fix 966 in or out.** If out, set `COPY_CLASH`'s default to "0" and I will rerun the records and reissue the paper as 967 alone.
+
+Next on my side: 749.171, then 749.219 to 749.222.
+
+Ask: 966 in or out; the merge.
