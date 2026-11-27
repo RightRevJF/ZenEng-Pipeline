@@ -151,3 +151,19 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 ## 749.232 revised (27 Nov): the second 6/8 lyric found the early end fitted to one lyric
 - **Evidence:** song 61's words in 6/8 (choice and marks a9dec5f, result cb72f12, `second_6_8.json`). No build was ever made. All 300 traced builds stop at Chorus 1's seventh line, the line ahead of the title line (six syllables, two bars to three, with a one-bar window holding two syllables on one beat).
 - **Revised form (accepted 18:22 ET):** the line ahead of a title line keeps its own sung bars, and its slot takes the extra bar as rest. Marks unchanged, read on songs 52 and 61 both. The rest's length before each title line is reported against Essen.
+
+## 749.232 read again (27 Nov): the title entry is fixed on both lyrics
+- **Form and result:** fefedb2, then 5af9e5c (`rest_232.json`).
+- **Song 52:** every 6/8 mark met. 828 living, pool 328; 3.95 and 3.92 notes a bar; first-beat onsets 0.234 and 0.229.
+- **Song 61's words:** the title lines are now on time, but 572 of 600 builds are never made, at five dense lines. Notes a bar (3.5) and first-beat onsets (0.171) miss.
+- **The rest:** the rest before a title line runs 4 to 5 eighths, against Essen's 6/8 rests of 1 to 3 (none as long as a bar).
+
+## 749.239. The draw is a phrasebook: where kept windows are few or none, no build is made
+- **Problem:** a line's rhythm is looked up among kept windows for its syllables and bars. Where the table has no entry, the build dies. Each fix today (749.229, .232, .235, .237, .238) patched one missing entry for one lyric. The writer (18:50 ET): "We must mathematically extrapolate from what we know into what we don't, test it, then try again if we fail."
+- **Fix (accepted 18:58 ET, rule first):** a rhythm grammar. A window's chance comes from the metrical level of each onset given the density, and from the step between onsets, fitted by maximum likelihood on the kept table. Kept windows stay; the grammar supplies windows where they are few or none, labelled generated.
+- **Check before use:** fit on half the songs; generate for held-out cells with 20 windows or more.
+  - (a) Generated readings inside the counted middle half in 9 cells of 10.
+  - (b) Counted windows carry 0.60 of the generated mass.
+  - (c) Three of the counted top five in the generated top five, in 8 cells of 10.
+- **Tables:** run on Essen 6/8 and on the Hooktheory 3/4 pop table.
+- **Then:** song 61's words in 6/8 (S1 to S7, U1 to U4, song 52 read again) and the pop 3/4 trial (K1 to K8). The rest before a title line comes from the table, inside Essen's 1 to 3 eighths.
