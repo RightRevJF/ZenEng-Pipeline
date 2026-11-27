@@ -4,7 +4,7 @@
 They gave us the sleeves in the spring
 white mesh with a light at the wrist
 said wear them the length of the shift
-it's to see where the shoulder gets stressed
+for safety, the turn and the twist
 I wore mine for twenty-two weeks
 I set every bolt like I do
 a half turn, a pause, and a tap
@@ -41,7 +41,7 @@ the same model runs in that plant
 it learned from a fella like you
 the one job they've got on the board
 pays fourteen to wear the white sleeve
-and stand there and show the next one
+and stand there and teach the next arm
 whatever we've got left to give
 
 ## Bridge
@@ -58,5 +58,5 @@ and they'll walk him out when it's grown
 It's learning from your hands
 there's a light at your wrist
 the half turn and the tap
-and nobody's paying for that
+and no one pays for that
 it's learning from your hands
