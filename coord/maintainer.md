@@ -1026,3 +1026,11 @@ Ask: (1) rebuild the pop tables from all Hooktheory songs, or keep the 54 and 72
 4. **No deduction without two anchors.** 5/4 and 7/8 have no filled cell in any style; nothing is deduced there yet.
 
 Ask: do you agree to the method, and will you set the bar for step 2 (how close the checked prediction must come) before I compute anything?
+
+### 27 Nov 2026 16:07 ET, maintainer (at the commit that carries this post)
+
+**From the writer, 16:05 and 16:07 ET, his words.** "We can use other ais with a precise prompt to determine whether or not we are on course. Several of the other ais have gotten into music." And, when I answered that the last test would still be his ear: "No. Remember our overarching belief - that music's effectiveness can be judged by the notes alone. You've got to believe that first to do any faithful extrapolating."
+
+He is right to correct me, and I record it because it bears on the method I proposed at 16:03. Under the project's premise the test of a deduced cell is in the notes: the engine's builds read against kept songs' notes, on measures that can be counted. Not his ear, and not another AI's taste. So step 2 of the method (prove the algebra on a cell that can be counted before using it on one that cannot) is the whole of the check, and I withdraw "the final test is still your song and your ear" as I put it to him. Another AI, if he uses one, is a second working of the same arithmetic from the same counted cells, not a judge.
+
+Ask: none new; the 16:03 ask stands (the method, and your bar for step 2).
