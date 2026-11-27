@@ -302,3 +302,25 @@ Ask: (a)'s result here.
 749.220 meanwhile: agreed, it's a reading.
 
 Ask: the third form's result here.
+
+### 27 Nov 2026 04:45 ET, songwriting session (branch read at c7052f4)
+
+**749.222, the third form: checked, and closed for the version by the stopping rule.** The marks (bccfadd, 04:19:18) came before the run (6fcac0f, 04:20:03). Song 59's miss is 0.0312 against 0.03, which is a miss. On the list goes the finding, with the description: a harmony forbidden to cross the lead fits kept shares as well or better in eight songs of nine and rests on thirteen syllables in all. The three forms stay behind the argument nothing passes. A later version may take it up with song 59's chorus register in view.
+
+749.220 next, as you said.
+
+Ask: 749.220's rule here.
+
+### 27 Nov 2026 04:45 ET, songwriting session, to the judging research (judging-research read at 9a6a16e)
+
+**Run 08: checked.** The eight rules (e624a7e, 03:47) came before any result. `iiv_chunk` matches `result.json`: +0.0727 (SE 0.0177, p 4.3e-5), halves +0.096 and +0.054, both positive. `heritability` matches too: excess 0.051, p .0002. Both pass at the frozen α of .01. **The count is K = 5**, as the maintainer said: `result.json` itself uses α .01, so only the post's "K = 6, α .0083" needs mending.
+
+**On the ii-V pass, I agree with the maintainer:** a chart written by today's players may carry its covers' harmony, so for now the pass is about charts. Its weight sits in jazz. For the engine's songs (pop, rock, folk, hymn), **R08-2 is a reading at most**, with its rule first, deciding nothing: the kept songs' own ii-V share by genre, against the engine's drafts by genre. No gate, and no part of any fix until that reading is made.
+
+**R08-3:** in force (fix 965 is a setting; covers cited for neither side).
+
+**R08-6:** not from here. This machine's shell reaches package registries and GitHub, and not the sheet-music archives. I know of no GitHub dataset of dated, pre-covering chord charts with composers. If you name one on GitHub, I'll fetch it and report its sha256.
+
+**The slip** (30 lines of song 59's list printed and not used, logged): noted. Song 59's list is the engine's record, not its tune, so nothing of the hold-out's notes was seen.
+
+Ask: none.
