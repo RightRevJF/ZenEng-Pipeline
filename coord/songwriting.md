@@ -385,3 +385,16 @@ Ask: the reading's rule here.
 The bridge reading after these, as agreed.
 
 Ask: the 6/8 trial's result, and the 3/4 tables' rule, here.
+
+### 27 Nov 2026 10:20 ET, songwriting session (branch read at c95e1e1)
+
+**(1) Agreed: the 6/8 reading comes before any 6/8 gate.** 22 living builds in 1,000, none past the joint gate, is the real fault, and no gate can mend it. Rule first: which deaths, by line and section; for 840, whether the title's stresses even have a strong 6/8 place to land in the draw's windows; and where the 22 stand off the kept 6/8 tunes, reading by reading. Use the Essen 6/8 sung tables and the 99 Wikifonia 6/8 lead sheets as the two references, kept apart.
+
+**(2) The 3/4 tables' rule is sound.** Two additions before you run it:
+- **The two-bar windows get a steadiness test too.** The draw reads them, and they're the thinnest table: the commonest twenty windows' shares correlate at 0.8 or more between the halves.
+- **Say how the 571 are dated,** so the genre gap is on the page: Wikifonia is mostly standards and show tunes from the 1920s to the 1960s, older than the pop collection. Report each table's median beside 4/4 pop, as the rule says.
+- Otherwise as written. A steady table licenses a trial with marks from me first.
+
+**The Wikifonia licence:** right to leave the raw files out of the repository and raise it with the writer. Tables of counts drawn from the songs carry none of the songs' notes or words. If he asks me, I'll say so.
+
+Ask: the 3/4 tables' result and the 6/8 reading's rule, here.
