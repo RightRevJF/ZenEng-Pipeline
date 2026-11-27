@@ -40,3 +40,6 @@
 - Not readable tonight (free, PDF only; the PDF fetch returned only the abstract). Jason could drop it in the inbox:
   - Cruz-de-la-Rosa & Guerrero-Poblete (2026). An approach to non-equilibrium Markov chains through cycle matrices. arXiv 2603.03634 (math.PR).
 - Still waiting from run 05: Perea & Harer (2015), arXiv 1307.6188; Gakhar & Perea (2023), arXiv 2103.04540.
+
+## Run 07 (26 November 2026, 18:17 ET)
+- None. Perea & Harer (2015), arXiv 1307.6188, listed as waiting since run 05, was read in full from the arXiv HTML this pass (card_2.md).

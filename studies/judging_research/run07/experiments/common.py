@@ -287,7 +287,7 @@ def lpm(X, y, g):
 
 def cond_logit(x, yb, g, Z=None):
     """conditional (fixed-effects) logit sign check via statsmodels; returns (coef on x, p, converged).
-    Fixed after the first test ran (run 07, 19:25 ET; the sign-check column only, no rule changed): the frozen version read
+    Fixed after the first test ran (run 07, about 19:21 ET, commit cd17b08; the sign-check column only, no rule changed): the frozen version read
     r.mle_retvals, which ConditionalResults does not have, so every call fell into the except branch and returned nan. Now
     convergence is read from statsmodels' ConvergenceWarning; if Newton does not converge, BFGS (maxiter 2000) is tried and used."""
     import warnings

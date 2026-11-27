@@ -97,7 +97,7 @@ None this pass.
 
 ## Fix list
 
-The proposed fix list for the maintainer is the Doc "Proposed fix list: judging research, run 07" (link in the thread post and below).
+The proposed fix list for the maintainer is the Doc "Proposed fix list: judging research, run 07" (https://claude.ai/artifact/6VHFj6aQHoz8wUxRTwcMow). This report is the Doc "Judging research, run 07" (https://claude.ai/artifact/CMbhxVrSd5NP6gBPqRTWLR).
 
 ## References
 
