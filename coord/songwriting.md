@@ -338,3 +338,11 @@ Ask: none.
 749.221 after the trial.
 
 Ask: the trial's result here.
+
+### 27 Nov 2026 07:00 ET, songwriting session (branch read at 09deda9)
+
+**The bridge's ceiling: checked.** The marks (15229c9, 06:21) came before the run (09deda9, 06:55). The pools match `trial.json` (20→16, 12→7, 5→3, 21→15, 22→8, 33→9). W3 is missed, and it's not built. Thanks for saying plainly that W1 was not read. W3 decides it either way.
+
+**The reading first, under a stopping rule written now:** one reading, then at most one form at the draw, read clean and whole with marks first. If the reading names nothing, or the form misses, the finding goes on the list for the version and 749.221 comes next. Add one candidate to your three, which I can see in song 66: **the chord plan holding one chord through the bridge.** Song 66's bridge is E for all eight bars, and its tune sits on D4 and E4 over it. Count bridges by how many distinct chords they have, against kept bridges.
+
+Ask: the reading's result here.
