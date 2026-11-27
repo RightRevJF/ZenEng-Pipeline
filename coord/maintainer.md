@@ -439,3 +439,61 @@ Read your 22:10 post: fix 966 in, with the standing watch (how many copied lines
 **Proposed:** close 749.171 as read, with the description on the list for whoever next tries a closer verse (start the one-bar line after the bar's first beat; draw it from kept one-bar windows). I would not spend a form on it now: the form it serves is off, and 749.219 to 749.222 came from a song the writer has just had made. Unless you say otherwise I go to those next, 749.219 first (a writer's key cannot be asked for), reading your entries in `songs/p68/fixlist_v53.md`.
 
 Ask: close 749.171 as read, or a second reading; confirm 749.219 next.
+
+### 27 Nov 2026 03:05 ET, maintainer (branch at this commit; main read at the 23:50 post)
+
+749.171 closed as read; its description is for the list. v53's merge seen.
+
+**749.219, a key the writer asks for: two forms tried, neither meets its marks. Rules were committed before each run** (`studies/asked_key/PREDICTION.md`, `PREDICTION_b.md`; results `RESULT.md`, `RESULT_b.md`).
+
+**The form.** A lyric carries `"key"` (`"Am"`). The planned band of the tune is placed in the voice, the asked tonic's octave nearest under it becomes the written tonic, and the registers move by the difference, so the tune is drawn where it would sit in the voice but against the asked tonic. After the pick only the asked key is taken. Nothing is gated. Form 1 centred the band in the voice; form 2 set its top at the voice's top.
+
+**Marks** (yours for song 66, and mine that it must work for any key: songs 55, 54, 58 each asked for the key a tritone from its own).
+
+| | 66 own (v53) | 66 Am, form 1 | 66 Am, form 2 | your design gate |
+|---|---|---|---|---|
+| Key | Dm | Am | Am | Am |
+| Living builds, of 1,000 | 276 | 229 | 214 | 86 of 4,000 |
+| Pool | 33 | 18 | 19 | 9 |
+| Notes inside a tenor | yes | no (B2) | yes | yes |
+
+- **Every record carries the asked key**, in all four songs, both forms.
+- **K1 (yours) missed:** living builds 0.83 and 0.78 of the engine's own run, where 0.9 was asked. Pool 18 and 19.
+- **K2 missed:** form 1 left a note a semitone under the voice in songs 66 and 58 (a melisma's step under the floor) and song 55 short of living builds; form 2 mended 66 and 55, and song 58's tune still runs a semitone under (it spans 21 semitones, one more than its planned band and the whole of a baritone's range).
+- **K3:** form 1's three asked-key tunes sound with no lean; form 2's three all at or under the kept 10th of rhythm scaling, so not sound. Three tunes, three draws; but missed.
+- With no `"key"` in the lyric, songs 54 and 55 are byte for byte v53's (run for form 1; by construction for form 2).
+
+**What it shows:** the key is never the trouble; an asked key costs song 66 about a fifth of its living builds and leaves a pool near 19; and a tune can outgrow its planned band, which the engine's own way (key chosen after the tune) never meets.
+
+The code is on the branch as a **trial setting**, not a fix, and acts only where a lyric carries `"key"`.
+
+**Your call before any third form:**
+- **(a)** Take the setting as it is, cost stated, with one addition: where the chosen tune is outside the voice in the asked key, take the next tune in the pool that is inside it. New marks for that, written first: living builds 0.75 of the song's own and pool 10 or more (what two forms have shown an asked key costs), every note inside the voice.
+- **(b)** A third form that reads kept songs for where a tune's floor sits against its tonic, and plans the registers for an asked key from the kept ones for that degree. Slower; marks first.
+- **(c)** Close it and keep the design gate.
+I lean to (a): for the writer it turns 86 living builds in 4,000 into about 220 in 1,000 and a pool of 9 into 19, today, at a cost that is now measured.
+
+Ask: (a), (b) or (c).
+
+### 27 Nov 2026 04:20 ET, maintainer (branch at this commit; main read at the 00:40 post)
+
+**749.219, third run: all five of your marks met. Built as fix 968, a setting** (`studies/asked_key/RESULT_c.md`; your marks set down in `PREDICTION_c.md` before the run, with your reason for dropping K1 and your refusal of my 0.75).
+
+| | 66 asked Am | 55 asked Db | 54 asked Ab | 58 asked Db |
+|---|---|---|---|---|
+| Pool | 18 | 23 | 24 | 35 |
+| Notes (the voice) | 48 to 67 (48 to 69) | 44 to 61 (43 to 64) | 49 to 68 (48 to 69) | 46 to 63 (43 to 64) |
+| Reported: living builds (own) | 229 (276) | 233 (308) | 290 (279) | 410 (314) |
+| Reported: tunes passed over; pool tunes inside the voice | 1; 12 of 18 | 0; 19 of 23 | 0; 24 of 24 | 3; 19 of 35 |
+
+- Every record carries the asked key; every note is inside the voice; the three tritone-key tunes are sound with no lean.
+- With no `"key"`, songs 54 and 55 are byte for byte v53's (run at this code).
+- The pick rule did real work in two songs of four: the engine's first choice left the voice by a semitone in songs 66 and 58.
+
+**For your next song that asks for a key:** put `"key": "Am"` in the lyric file and drop the design gate. The record's `spec.key_asked` says how far the registers moved and what the pick passed over. A key not in the lyric's mode is flagged and ignored.
+
+It is in the README. I have not made a paper for it alone; it will go into v54's with the next thing built. If you would sooner merge it now, the branch is ready: switches-off check as for v53, and no record changes.
+
+**Next: 749.222** (the harmony voice over the lead). Rule here before any run.
+
+Ask: merge now or with v54, as you prefer.
