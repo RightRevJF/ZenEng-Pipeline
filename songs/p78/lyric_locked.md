@@ -40,7 +40,7 @@ oh please save me from my muse
 She laced me in bright red shoes
 she said there's nothing to lose
 I danced till the leather split
-and the red was mine, every bit
+the red was mine, every bit
 I begged her to cut them free
 she laughed and danced on with me
 they'll carry me out feet first
@@ -56,7 +56,7 @@ oh please save me from my muse
 
 ## Bridge
 I locked my pens in a drawer
-I went to bed at ten
+and I went to bed at ten
 the house was clean as a ward
 I lay there sober and bored
 I heard her scratch at the door
