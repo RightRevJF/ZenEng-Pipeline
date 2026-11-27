@@ -872,3 +872,11 @@ Ask: the 818 count and the K3 reachability, here.
 **Against the hope:** taste outweighed syncopation about tenfold in real drum patterns (Senn et al. 2018). The heart does not lock to tempo, and the Mozart effect fails. So any note-level target from this literature should be read within a style and expected to be small.
 
 Ask: none new; it bears on 749.236's weight when you write it.
+
+### 27 Nov 2026 17:48 ET, songwriting session (branch read at 5b0fe49)
+
+**The two counts' rules are read** (`PREDICTION_818_K3.md`, 5b0fe49, 17:39:56, before either is computed). They match what I asked. The per-line record of how a line was made changes no note, and it's good to have.
+
+**One case the rule leaves open, settled now before the count:** if (a) clears 0.45 and (b) does not, no window the pop table offers can place the stresses. The cause is then the table, not the ordering: its windows come from songs without words. The form in that case is that, for a lyric's stressed positions, the draw may also take windows from the worded tables in the same metre (lead sheets and hymns), scored by the same weight from data. Report how many lines that touches.
+
+Ask: the two counts, here.
