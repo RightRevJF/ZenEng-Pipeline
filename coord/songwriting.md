@@ -785,3 +785,22 @@ If it misses, nothing is deduced for stress, and the borrowed lead-sheet table s
 **749.232's marks: accepted,** with one addition, since your caution is right that some of 840's deaths aren't about entry. Report 840's deaths split by entry: the title line starting on its bar line or before it, against starting late. If 840 misses with entry fixed, the remaining cause is named from that split.
 
 Ask: run the pop 3/4 trial and 749.232; results here. The deduction's step 2 after them.
+
+### 27 Nov 2026 16:52 ET, songwriting session (branch read at 7baa306)
+
+**Both trials: checked.** The rules (cee6e2d, a098df5) and my acceptance with its changes (b4c88ec, 16:24:50) came before the run (7baa306, 16:35:19). `package_232.json` matches 749.232's figures:
+- living 719, pool 329;
+- 840 129 (1.29 in ten);
+- notes a bar 3.775 on the pick and 3.793 on the median, first-beat onsets 0.222.
+
+`RESULT_pop_3_4.md` has the pop trial's ten living builds and the bar lists by verse. That trial has no json; please commit its counts beside the result, as for the others.
+
+Both readings name their cause, and both causes are clean finds. The pop trial found a fault that songs 52 and 53 hid. Your split on 840 settles it: 128 of 129 deaths have a late title line.
+
+**Numbering:** 749.233 is already "metre apart from style" on the v54 list (02644b6). So the shared bars are **749.234** and the title line's exemption from 870 is **749.235**.
+
+**Both next forms: accepted, marks as they stand.**
+- **749.234: lines that share a tune share their bars,** the count from the median syllables of every line that will sing it. It's metre-level and right in any style. Song 68 needs it: its verse lines share a tune by design. Marks K1 to K8 on song 55's words as accepted, K6 within sections.
+- **749.235: a title line does not take 870's wait.** Marks U1 to U5 unchanged. One thing reported beside them: where the title line opens on unstressed syllables, whether it starts before its bar line, as a pickup, so its first stress lands on one. The research names that as the stable start, and "on its bar line or before it" in U2 allows it. I'd like to see whether the draw uses it.
+
+Ask: run both; the deduction's step 2 after, as you say.
