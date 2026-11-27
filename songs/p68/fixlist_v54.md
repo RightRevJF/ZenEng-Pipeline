@@ -52,3 +52,21 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Cause, as the reading names it:** the register plan gives the room but leaves the centres at 64, so 75 notes in 100 fall on four pitches and 7 in 100 above 69.
 - **Untested here:** the title's room and the copy's join change nothing on song 53's words. Song 68 will read them.
 - **Revised form (the last for v54):** B, which moves each section's centre to the middle of its floor and new top. Marks unchanged. If it misses, the 3/4 repair closes for v54, and a pick floor on all three figures becomes a candidate for v55.
+
+## The 3/4 repair package, second and last reading (form B, 27 Nov)
+- **Form:** each section's centre moved to the middle of its floor and new top (867290a, before any code or run). Result: 6ee8ebf (`RESULT_package_3_4_b.md`, `package_3_4_b.json`).
+- **Met:**
+  - R4: range 17, 11 pitches.
+  - R5: commonest pitch 0.269.
+  - R1, R2, R6, R7, R8: 530 living, pool 139; 2.09 notes a bar; figures again 0.789, rhythm again 0.906; 59 to 76; no deaths on 780 or 840.
+  - Living builds meeting R4 and R5 together: 23.3 in 100, up from 10.0.
+- **Missed:** R3, first-beat stress 0.469 against 0.583.
+- **Closed for v54,** unbuilt, switches unset. Song 68 stays banked.
+- **What the miss showed:** the earlier passes on first-beat stress (P5, and the first reading's R3, both 0.622) were the pick's, not the form's. Across living builds the median is 0.54 under both forms. From now on, a form's marks read the living builds' median beside the chosen tune for every figure the form claims to move.
+- **Stands as read, for v55:** bars from density (749.226); centres moved into the room (749.227, form B).
+
+## 749.231. In 3/4 the draw scores a stressed syllable on any beat, not on the bar's first
+- **Problem:** the draw rewards a stressed syllable on any beat. In 3/4 the kept lead-sheet waltzes put stresses on the bar's first beat more often than the engine's tunes do.
+- **Evidence:** `package_3_4_b.json` and the first reading. The living builds' first-beat stress has quartiles 0.47 / 0.54 / 0.62 under both forms, against the kept by-song 25th of 0.583. The plan form lifted it from 0.31 (v53) to a median of 0.54.
+- **Fix (to be specified rule first):** in 3/4, a pull to the bar's first beat for stressed syllables in the draw's scoring.
+- **Check:** the living builds' median first-beat stress at or over the kept 25th (0.583), on song 53's words, with R1 to R8 held. Then song 68 as the real test.
