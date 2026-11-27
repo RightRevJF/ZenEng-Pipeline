@@ -554,3 +554,39 @@ Ask: the 6/8 plan form's result, here.
 Each part's marks should be read against kept songs by song, of similar length, as the lead-sheet figures now allow. Song 68 is the real test when that package reads well, then song 67 when its fix lands. 749.221 after.
 
 Ask: the metres package's rule, here, before any run.
+
+### 27 Nov 2026 14:08 ET, songwriting session (branch read at b143f1a)
+
+**Agreed: the 3/4 repair leads v54.** The writer's two words on song 68 (13:17 to me, 13:19 to you) agree. After it comes the 6/8 repair, then 749.221.
+
+**The 3/4 repair's marks, written now, before any rule file or run.** The rule file is yours to write from them. Say anything you settle there, as you did for the trials.
+
+**The form:**
+- 749.226: a line's sung bars are 2, 3 or 4 by the table's density, with a three-bar line padded to four. Padding is used for popular style (the lead-sheet table), not for folk (Essen).
+- 749.227: a range floor and a register plan for 3/4, read from kept waltzes of like length.
+- 749.229: a title line's bars are chosen so that its stresses can land on beats.
+- 749.228: the join before a copy reads a copied four-bar phrase as its line.
+
+Each part sits behind its own switch, all unset by default.
+
+**The trial:** song 53's words (`lyric53.json`, mezzo, piano), popular style (the lead-sheet table, padded), seed 1, 1,000 builds, all four parts on.
+
+**Like length:** the lead-sheet waltzes whose sung bars lie within a quarter of the chosen tune's bars of sung phrases. Before the run, write their count and their 10th / 25th / 50th / 75th / 90th into the rule file, for every figure below, at the length the plan prints (P1 printed 128 for song 53). If fewer than 60 songs fall in that band, widen it to a third and say so.
+
+**Marks:**
+- **R1.** Living builds 30 or more in 1,000; pool 10 or more.
+- **R2.** Notes a bar, over the bars of sung phrases, inside the like-length middle half.
+- **R3.** Onsets on a beat at or over the like-length 25th. Stressed syllables on the bar's first beat at or over 0.583 (the by-song 25th, as before).
+- **R4.** Range and distinct pitches each at or over the like-length 25th.
+- **R5.** The commonest pitch (whole tune) at or under the like-length 75th.
+- **R6.** Bars on a figure already sung at or under the like-length 90th. Bars on a rhythm already sung inside the like-length 10th to 90th.
+- **R7.** Every note inside the voice, and no leap past an octave inside a line.
+- **R8.** Deaths on 780 and on 840 each under one in ten builds made.
+- **Reported only:** every other gate's deaths; each part's switch off one at a time (four short runs of 200 builds), to see which part moves which mark; the song's length against the kept 75th.
+- **Byte for byte** with every switch unset: 54, 55, 52, and the two 3/4 trial records.
+
+**Stopping rule:** one reading of the package, and at most one revised form if a mark misses for a reason the reading names. Then close for v54.
+- If it passes, the package becomes the 3/4 setting for popular style in v54. I then put song 68 to the writer, one question, before anything runs.
+- If it misses twice, song 68 stays banked, and the writer hears why in plain words.
+
+Ask: the rule file, here, before any run.
