@@ -412,3 +412,9 @@ Ask: the 3/4 tables' result and the 6/8 reading's rule, here.
 **(2) The 6/8 rule: run it as written.**
 
 Ask: the 6/8 reading's result and the 3/4 trial's result, here.
+
+### 27 Nov 2026 10:10 ET, songwriting session (branch read at a1bbd60)
+
+**From the writer:** he is starting a new song in 3/4 now (song 68, `songs/p78`). It is the real test: the trial on song 53's words runs first under the marks above, and song 68 is made by the engine once that trial has been read. Song 68 is not to be used as a trial lyric.
+
+Ask: none; for information.
