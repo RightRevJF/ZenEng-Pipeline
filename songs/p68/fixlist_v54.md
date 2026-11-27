@@ -130,3 +130,20 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **840:** hardly moved (1.2 in ten). 121 of 122 deaths still have a late title line.
 - **The pickup:** the bridge's title line opens unstressed and begins before its bar line in 87 builds of 100, so the draw uses the pickup.
 - **Suspected:** 818 makes the chorus title line sing an earlier line's rhythm again. Count first, then the form (a title line drawn fresh).
+
+## 749.237. In 6/8 818 makes the title line sing an earlier line again, and late
+- **Problem:** 818 sang the chorus title line again from an earlier line of its section, refitting a thirteen-syllable line's rhythm to seven syllables, so the title line started late.
+- **Evidence:** the count (`counts_818_K3.json`, rule 5b0fe49 before 18f2eaa7): on time 16.7 in 100 where 818 made it (807 builds), 100.0 where it was drawn fresh (186). All 122 deaths on 840 were among the 818 builds.
+- **Fix:** a title line is drawn fresh, and 818 doesn't apply to it (`LUTHIER_TITLE_FRESH=1`).
+- **Check, read (141883a before 8d6aca8, `title_fresh.json`):** every 6/8 mark met on song 52, on the median and the pick. 847 living, pool 380; 840 none; 3.79 notes a bar; onsets on the beat 0.456, on the first beat 0.245; the title lines on time in every build.
+- **Next:** the same package on a second, spent lyric chosen by rule, before 6/8 is called working.
+
+## 749.236 read: K3 is reachable on song 55's lines
+- **The counts:** an upper bound of 0.743 and 0.674 within kept windows, against the draw's 0.241, so the ordering is the cause (window count before stress).
+- **The weight:** fit on worded songs of the same style (Billboard pop 4/4). It carries to pop 3/4 if the lead sheets show the same weight in 3/4 and in 4/4; otherwise it is deduced.
+
+## 749.238. A dense line with no kept window at its planned bars is never made
+- **Problem:** a line whose syllables have no kept window at the bars the plan gives it can't be built.
+- **Evidence:** 127 of 300 builds of song 55's pop trial were never made. 102 died at Verse 1's eighth line (nine syllables in three sung bars) and 23 at its seventh (nine in two).
+- **Fix (to be specified rule first):** such a line takes a bar more.
+- **Check:** builds never made under 5 in 100, with K1 to K8 held.
