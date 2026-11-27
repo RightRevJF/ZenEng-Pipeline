@@ -1,0 +1,96 @@
+songs 9549; within-artist 5901; single-song artists 3648; dropped for sharing a MIDI file with a within-artist song 212; kept 3436
+POWER (before the estimate): {'power': 0.0625, 'false_pass': 0.0, 'se': 1.2375834061653688, 'base': 0.4, 'draws': 400}
+{
+ "test": "cv_w_singletons",
+ "written_after_seeing_results": true,
+ "measure": "cv_w",
+ "extra": [
+  "H4m",
+  "ch_rep"
+ ],
+ "prediction": 1.5,
+ "sign": 1,
+ "alpha": 0.005555555555555556,
+ "n_tests": 9,
+ "power": {
+  "power": 0.0625,
+  "false_pass": 0.0,
+  "se": 1.2375834061653688,
+  "base": 0.4,
+  "draws": 400
+ },
+ "outcome_info": {
+  "matched": 719,
+  "dropped": 0,
+  "y_foreign1": 691
+ },
+ "dropped_shared_file": 212,
+ "dropped_shared_clique": 87,
+ "rows": 3349,
+ "main": {
+  "b": -0.13031392480478832,
+  "se": 0.8133400371985686,
+  "p": 0.8727072095499251,
+  "N": 3348
+ },
+ "halves": [
+  {
+   "b": -0.015640896055148845,
+   "se": 1.1818126125081054,
+   "p": 0.9894405720141107,
+   "N": 1685
+  },
+  {
+   "b": 0.004929864258983674,
+   "se": 1.1404300126130107,
+   "p": 0.9965509059871677,
+   "N": 1663
+  }
+ ],
+ "logit": {
+  "coef": -0.013899882828404214,
+  "p": 0.8490298835287632,
+  "converged": true
+ },
+ "readings": {
+  "on_y": {
+   "b": 0.20540725004024368,
+   "se": 0.8451721773082802,
+   "p": 0.8079775233616543,
+   "N": 3348
+  },
+  "fame_held": {
+   "b": -0.05484671334678626,
+   "se": 0.7955633265687472,
+   "p": 0.9450368009236111,
+   "N": 3348
+  },
+  "style_held_F_tempo": {
+   "b": -0.6307574092433057,
+   "se": 0.8236941499113495,
+   "p": 0.44381523390230004,
+   "N": 3348
+  },
+  "first_performers": {
+   "b": 0.9907226071526195,
+   "se": 0.6798523661507188,
+   "p": 0.14504423907854647,
+   "N": 3058
+  },
+  "bare_no_extras": {
+   "b": 0.4665152096951569,
+   "se": 0.6272171288911454,
+   "p": 0.4570060570599438,
+   "N": 3348
+  },
+  "shared_cliques_kept": {
+   "b": -0.5391768064360808,
+   "se": 0.834396188105107,
+   "p": 0.5181576081318651,
+   "N": 3435
+  }
+ },
+ "verdict": "KILLED",
+ "base_rate": 18.03523439832786
+}
+VERDICT: KILLED

@@ -558,6 +558,15 @@
    "status": "testing",
    "status_set_by": "run07 experiments",
    "note": "frozen as run07/experiments/burstiness, +0.3 | run07 burstiness: UNSETTLED beta +0.57 (SE 0.97, p 0.559), halves +0.84/+0.36, N 5891, power 0.0"
+  },
+  {
+   "id": "R07-FP1",
+   "idea": "Repeat-and-contrast cv_w (spread of 4-bar window distances) across single-song artists (after seeing results)",
+   "stance": "First principles",
+   "proposed": "run07",
+   "status": "failed",
+   "status_set_by": "run07 experiments",
+   "note": "run07 cv_w_singletons: KILLED beta -0.13 (SE 0.81, p .87), halves -0.02/+0.005, logit -0.014; N 3,348; power 0.06; lead from an uncounted +3.11 within-artist reading"
   }
  ]
 }

@@ -43,7 +43,7 @@
 - **Tonic resistance:** retire (runs 05 and 06).
 
 ## 4. Simplify
-One idea is left, uncounted: repeat and contrast, sections that clearly differ while phrases recur. Test one measure at a time, and only at power ≥ 0.2, which means effects of about 1.5 pp per SD at Lakh's size.
+One idea was left, uncounted: repeat and contrast, sections that clearly differ while phrases recur. It was tested in step 5 and killed. Going forward, test one measure at a time, and only at power ≥ 0.2, which means effects of about 1.5 pp per SD at Lakh's size.
 
 ## 5. Speed the loop
 **Written, not run:** `experiments/cv_w_singletons/`, labelled *after seeing results*. A pass there is a lead only. I joined no outcome.
@@ -51,6 +51,7 @@ One idea is left, uncounted: repeat and contrast, sections that clearly differ w
 - **Prediction.** +1.5 pp per SD. Kill if β ≤ 0. Pass at p < .05/9, with both halves and the logit agreeing.
 - **Power.** 0.07 (0.23 at .05). The kill fires 11% of the time if the prediction is true and 50% if the effect is zero, the strongest kill on hand. It runs in minutes.
 - **Costs.** Style is not held across artists, and the test spends the last unseen Lakh outcomes.
+- **Run afterwards (the orchestrator, after its rule was committed at 6165846): KILLED.** β −0.13 (SE 0.81, p .87), halves −0.02 and +0.005, logit −0.014; base rate 18%. The cv_w lead was a winner's curse (`experiments/cv_w_singletons/RESULT.md`). Nothing uncounted is left standing.
 - **Rejected.** The seen 5,901 across artists (spent outcomes); the 8,607 ambiguous-file tracks (need a rule for which song each file is, and match data not on disk).
 
 ## 6. The obstacle and the way through
