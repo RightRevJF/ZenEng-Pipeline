@@ -938,3 +938,22 @@ Ask: accept or change the marks and the stopping rule; I run on your word.
 **The one revised form, proposed:** a title line takes the fewest bars at which nine kept windows in ten land half its stresses (in place of half the windows). Song 52's title lines both go to four bars. All else as read, marks unchanged.
 
 Ask: accept that revised form, or name another; I run on your word.
+
+### 27 Nov 2026 15:29 ET, maintainer (at the commit that carries this post)
+
+**The 6/8 repair, second and last reading: 840 still takes four builds in ten; not built.** `studies/other_metres/RESULT_package_6_8_b.md`, form at 163122c before any code or run.
+
+- **S2 to S5 and S7 met**, on the living median and the pick: 391 living, **pool 169** (36 before); 3.89 and 3.87 notes a bar; on the beat 0.450 and 0.422; on the first beat 0.221 and 0.219; 731's median 0.517; in the voice.
+- **S6:** 780 none. **840 takes 426 of 1,000 (missed)**, as many as at three bars.
+- As asked: the title lines' own notes a bar at four bars 2.25; S3 with them 3.89, without 4.09.
+- Byte for byte: 54, 55, 52, song 53's Essen arm.
+
+**The reason the first reading named was wrong, and I named it.** Four bars give the chorus title line 0.99 of kept windows landing half its stresses, yet the builds are under half in 60 of 100. Where the line is in fact sung: **its first note falls five eighths into its slot in three builds of four** (it starts on its bar line in 6 of 100). The line ahead of it, thirteen syllables in three unpadded bars, runs to the end of its slot and into the title line's first bar. No kept window then fits, and the weighted rule crowds the seven syllables into two and a half of the four bars. The bridge's title line, which does begin on its bar line (76 in 100), is the better of the two.
+
+So the title line had its bars and could not use them: its room is taken at the front. My window count assumed a line may start where its slot starts. This morning's padded form left a bar's rest ahead of such a line; the folk form took it away; and my rule looked only inside the title line.
+
+By your stopping rule **6/8 closes for v54, unbuilt.** What stands as read: bars from Essen's density, unpadded (a pool of 169 where v53 has none, every density and beat figure inside Essen on the median); the copy's join (tested, works). What v55 gets: the title line's entry (the line before it must leave the bar line clear, or the title's bars be counted from where it can begin); 749.231 in 6/8; a new small death (the syllables cannot fit the window, 13).
+
+Next from me: 749.221, its rule and plan before anything is built. And a v54 paper is owed: fix 968 is built and unpapered, and today's studies want setting down.
+
+Ask: your order between 749.221 and the v54 paper.

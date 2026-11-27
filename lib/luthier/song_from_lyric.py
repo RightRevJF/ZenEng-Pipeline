@@ -39,7 +39,7 @@ PEAK_TRIES = int(os.environ.get("LUTHIER_PEAK_TRIES", "60"))      # 950's draws 
 OCTAVE_TAIL = os.environ.get("LUTHIER_OCTAVE_TAIL", "1") != "0"      # 964 (749.192): the octave bin shared as kept songs share it (the environment switch is for studies)
 PITCH_CEILING = True   # 956
 RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") in ("1", "centres"); RANGE_CENTRES = os.environ.get("LUTHIER_RANGE_3_4") == "centres"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
-TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") == "1"      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
+TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") not in ("0", ""); TITLE_ROOM_SHARE = 0.5 if os.environ.get("LUTHIER_TITLE_ROOM", "0") in ("0", "", "1") else float(os.environ["LUTHIER_TITLE_ROOM"])      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
 COPY_JOIN = os.environ.get("LUTHIER_COPY_JOIN", "0") == "1"      # trial (749.228), off: a copy that would begin before the line ahead of it has ended is sung again, and the build lives
 def _land(T, sy, b):
     """trial (749.229): by kept count, the share of the kept windows for b sung bars in which half or more of the line's stressed syllables fall on a beat; the line split as the plan form splits it"""
@@ -118,8 +118,9 @@ def plan(L):
                 tw_ = " ".join(w for w, _, _, _ in LS.syllables(L["title"]))
                 for i_, ln_ in enumerate(lines):
                     if tw_ and tw_ in " ".join(w for w, _, _, _ in LS.syllables(ln_)):
-                        b0_ = sb_[i_]; ok_ = next((b_ for b_ in range(b0_, 5) if _land(T, sy[i_], b_) >= 0.5), None)
-                        if ok_ is not None and ok_ != b0_: sb_[i_] = ok_; title_room_[f"{name}:{i_}"] = [b0_, ok_]
+                        b0_ = sb_[i_]; ld_ = {b_: _land(T, sy[i_], b_) for b_ in range(b0_, 5)}; ok_ = next((b_ for b_ in range(b0_, 5) if ld_[b_] >= TITLE_ROOM_SHARE), None)
+                        if ok_ is None and TITLE_ROOM_SHARE != 0.5: ok_ = max(ld_, key=lambda b_: (ld_[b_], -b_))      # none reaches the share asked: the most favourable, and the record says so
+                        if ok_ is not None and ok_ != b0_: sb_[i_] = ok_; title_room_[f"{name}:{i_}"] = [b0_, ok_] + ([round(ld_[ok_], 3)] if TITLE_ROOM_SHARE != 0.5 else [])
             sl = [2 if b_ == 2 else 4 if (b_ == 4 or pad_) else 3 for b_ in sb_]; sungb_[name] = sb_
         vc_ = VERSE_CLOSER or ("apart" if L.get("verse_closer") is True else L.get("verse_closer") or None)
         if vc_ and k == "verse" and metre == "4/4" and L.get("verse_closer", True) is not False:      # 4/4 only: the kept figures are 4/4's                                                          # 958 (749.142; studies/busy_sections): the verse sung closer. Verse lines of 6 to 8 syllables that would take two bars take one: the shortest first, none side by side, an even count, as many as bring the verse nearest the kept middle of notes a bar (4.59). Kept verses run 4.6 notes a bar and 1.15 times their choruses; Luthier gave every such line two bars
