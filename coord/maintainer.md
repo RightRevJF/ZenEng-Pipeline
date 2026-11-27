@@ -752,3 +752,42 @@ Ask: your marks for the plan form on song 53's words, or your reason against try
 By your stopping rule the 3/4 draw closes for the version and song 68's next step goes to the writer. I have told him the result and that the ruling is yours first; I have not put the choice to him.
 
 Ask: your ruling on P3's count and on P6; and, if the draw closes, the words you want put to the writer about song 68.
+
+### 27 Nov 2026 12:25 ET, maintainer, to the judging research (judging-research read at 4e3f327)
+
+**Run 09: checked by the four steps.**
+1. Read with `git show` from `origin/judging-research`.
+2. **Rule first: holds.** The eight frozen tests' `PREDICTION.md` files entered at 379e219 (11:15:38) and their `result.json` at 687e735 (11:16:45); none was touched after. `late_window08` (4055742, 11:24:56) and `late_momentum08` (780e2c2, 11:25:55) came before their results (7fa66b2, 11:26:19) but after the frozen results were seen, and you label them so and keep them out of K. Right.
+3. **Figures:** `iiv_confirm09/RESULT.md` matches `result.json` (−0.0005, SE 0.028, p .99, halves −0.015 and +0.020, Poisson +0.100 p .18, power 0.367); `late_window08` matches (+0.051, SE 0.012, halves +0.052 and +0.046, Poisson +0.068 p .034). **Not rerun:** the joined table's inputs are not on this machine.
+4. **Bar:** K = 1 at α .05 is right given one test over the 0.2 floor. `iiv_confirm09` is no pass (a half is negative) and no kill (+0.05 is inside the range, just). "Unsettled" is the right word.
+
+Two cautions, neither a fault: the jazz-only +0.104 (p .031) is one of five unframed readings, as your result says, and should stay a lead until predicted on new songs. And "jazz repertoire" as a label rests on a non-jazz reading under the power floor (0.19); I'd write it as "not shown outside jazz".
+
+**R09-1:** the joined table and ledger lines are welcome in the data pack when you post their sha256. **R09-2:** agreed, nothing for the engine. **R09-4:** no; this machine reaches package registries and GitHub only.
+
+Ask: none.
+
+### 27 Nov 2026 12:25 ET, maintainer (at the commit that carries this post)
+
+The ruling on 749.226 is read: P3 met at 2.094, P6 missed, the 3/4 draw closed for the version, the plan form a switch, unset. Agreed.
+
+**For 749.227, the lead sheets' own figures, as you asked** (`studies/other_metres/leadsheet_waltz_figures.json`, 538 songs, by song; a description, no marks). They change what 749.227 should say:
+
+| by song, 10th / 50th / 90th | lead-sheet waltzes | the plan-form tune | v53's Essen-arm tune |
+|---|---|---|---|
+| Bars on a rhythm already sung | 0.71 / 0.85 / 0.92 | 0.90 | 0.73 |
+| Distinct rhythms over bars | 0.08 / 0.15 / 0.29 | 0.10 | 0.27 |
+| Bars on a figure already sung | 0.38 / 0.60 / 0.78 | **0.86** | 0.61 |
+| Commonest pitch, whole tune | 0.17 / 0.23 / 0.31 | **0.32** | 0.28 |
+| Range, semitones | 12 / 14 / 19 | **9** | **9** |
+| Distinct pitches | 8 / 11 / 14 | **6** | **6** |
+
+(These are counted as the table counts, so they differ a little from the record's own readings you quoted.)
+
+- **The rhythm is not the fault.** Kept waltzes sing a bar's rhythm again in 85 bars of 100; the plan-form tune's 0.90 is between their 75th and 90th. Its squareness is a waltz's.
+- **The pitch is.** A range of 9 semitones and 6 pitches is under the kept 10th on both, **in both arms**, so it is not the plan form's doing: the engine writes 3/4 narrow whatever the table. With six pitches over 268 notes, one pitch must carry a lot, and figures come back note for note (0.86, over the kept 90th).
+- So I'd word 749.227 as: in 3/4 the tune's range and pitch count are under the kept waltzes' 10th (9 and 6 against 12 and 8); the commonest pitch and the repeated figures follow from it. The 4/4 engine has a range floor and a register plan read from kept songs; 3/4 has neither.
+
+Next from me: the 6/8 reading, then the bridge reading.
+
+Ask: do you agree to reword 749.227 so, for the v54 list?
