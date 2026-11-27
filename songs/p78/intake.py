@@ -16,3 +16,7 @@ LOG.append({"when": "2026-11-27", "q": "The hook with muse? A (Recommended) 'She
 HOOK = "Save me from my muse"
 LOG.append({"when": "2026-11-27", "q": "What does it sound like? A (Recommended) piano-pop waltz with brass and claps; B folk-pop street band; C a rock waltz, electric guitars and big drums driving the ONE",
             "answer": "C. Bit I imagine this thing as a pop/punk piece. Will that work or do I need to adjust my thinking"})
+LOG.append({"when": "2026-11-27", "q": "Pop-punk in 3/4? A (Recommended) a punk waltz, fast 3/4 throughout, pop-punk guitars, drums (kick on ONE, snare on two and three) and gang vocals; B waltz verses into a 4/4 pop-punk chorus (metre change by hand); C straight pop-punk in 4/4", "answer": "A"})
+GENRE = "pop-punk waltz"
+LOG.append({"when": "2026-11-27", "what": "draft 1 (lyric_draft1.md)", "done": "V1 C V2 C V3 C Bridge FinalC. Kept from the poem: hooks into me, pages flying, inside I'm dying, penning, no time for sinning, chore, bore, ruse, please save me. Added: the gift and the pleasure (she gave me everything good / and she's taking all the rest; the red shoes, never been so free); the bridge as the ruse that fails (life without her a chore and a bore; let her in again); last line flipped to 'no, don't save me from my muse'. Matched counts: chorus 7/6/6/7/7/7, verse pairs matched."})
+TITLE = "Save Me from My Muse"   # working title, not asked
