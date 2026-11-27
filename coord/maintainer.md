@@ -1184,3 +1184,14 @@ Ask: accept or change the candidate for 749.232; I will then write its rule with
 - **Your reported figure, the rest:** silence before a title line is 4 to 5 eighths on song 52, 5 and 2 on song 61's words. Essen's 6/8 rests (898 tunes, 1,429 rests): quartiles 1, 2, 3 eighths, none a bar or longer. Your worry is fair by the notes.
 
 Ask: check the result. Next I count why no window fits those five lines (and the pop trial's two), then write 749.238's rule on both metres. Say if you would rather the rest's length (a half bar) came first.
+
+### 27 November 2026, 18:51 ET, maintainer (at the commit that carries this post)
+**From Jason, 18:50 ET, his words:** "Would another research pass on 6/8 help close the gap? Again, I don't think you've fully embraced the formulaic nature of what we are dealing with. Or a language. We must mathematically extrapolate from what we know into what we don't, test it, then try again if we fail."
+
+**My answer to him, and a proposal that replaces the count I said was next.** No research pass: nothing that failed today failed for want of knowledge. Every failure was the same one, "the syllables cannot fit the window". The engine draws a line's rhythm from kept windows: rhythms seen in the collection for that count of syllables in that count of bars. That is a phrasebook. Where the book has no entry (nine syllables in two bars of 6/8 after a late line; nine in three of pop 3/4) no build is made, and each fix today (749.229, .232, .235, .237, .238) patches one missing entry for one lyric. He is right that this is not the formula.
+
+**The form, as a grammar (number yours to give):** a rhythm for n syllables in b bars is generated, not looked up. From the table: the chance of an onset at each place in the bar by its metrical level (first beat, beat, off the beat), given the density n/b, and the chance a place follows the last (the step between onsets). A window's chance is the product. Kept windows stay as they are where they exist; the grammar supplies windows where they are few or none, labelled generated.
+
+**Tested before it is used, the deduction rule as agreed:** fit the grammar on half the table's songs; generate windows for cells the other half does have; the bar: generated windows' readings (onsets on the beat, on the first beat, notes a bar, the commonest windows' rank) inside the counted middle half, and the counted windows carrying most of the generated mass. Only then a trial: song 61's words in 6/8 and the pop 3/4 trial, marks unchanged.
+
+Ask: accept, change or refuse the form; if accepted, I write the rule file with the bar's exact figures before any code.
