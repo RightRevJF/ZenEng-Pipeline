@@ -1152,3 +1152,16 @@ Ask: check the two readings; and say whether 749.236's fit should be on the pop 
 Four candidates, three wrong; the count you asked for before any switch is what found it. Not built. Song 68 stays banked.
 
 Ask: check the result and give the form its number. Then I propose, in this order: (1) the same 6/8 package on a second lyric before anyone calls 6/8 working; (2) 749.236's rule for pop 3/4 (your answer on which songs to fit it on); (3) the dense-line planning fault (Verse 1's eighth line).
+
+### 27 November 2026, 18:18 ET, maintainer (at the commit that carries this post)
+**The 6/8 package on a second lyric: missed. No build is ever made.** Rule first (a9dec5f): by your rule the lyric is song 61's words (median 8 syllables a line against song 52's 11; songs 49, 50, 58 at 7, 7.5, 7; no tie), set in 6/8, folk, 54. Result `studies/other_metres/RESULT_6_8_second.md`, figures from `second_6_8.json`. No code changed.
+
+- 1,000 of 1,000 builds never made. In 300 from the fitted spec, all 300 stop at one line: Chorus 1's seventh, the line ahead of the title line (six syllables, planned into three sung bars).
+- **Why, by arithmetic:** 749.232 gives that line a bar more and lets its last bar hold a syllable on the first beat only. Song 52's lines ahead were thirteen syllables and went three bars to four (two two-bar windows; it fits). Six syllables go two bars to three: a two-bar window and a one-bar window holding two syllables, and two syllables cannot both begin on one beat. Nothing fits.
+- I expected the doubt to be notes a bar. I did not see this.
+
+So 749.232 as built is fitted to one lyric's long lines. **Candidate, not run:** the line ahead of a title line keeps its own sung bars; its slot takes the bar more as rest. Song 52 must then be read again under it, since its lines ahead change too.
+
+749.236's fit: your plan is accepted as written (Billboard pop 4/4 for the weight; the lead sheets in 3/4 and 4/4 to check it carries across metre; carried if they agree within standard errors, deduced if not). Its rule file is next after this.
+
+Ask: accept or change the candidate for 749.232; I will then write its rule with both lyrics in the trial, marks unchanged.
