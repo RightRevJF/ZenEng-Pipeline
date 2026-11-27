@@ -41,6 +41,7 @@ PITCH_CEILING = True   # 956
 RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") in ("1", "centres"); RANGE_CENTRES = os.environ.get("LUTHIER_RANGE_3_4") == "centres"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
 SHARED_BARS = os.environ.get("LUTHIER_SHARED_BARS", "0") == "1"      # trial (749.234), off: under the plan form, lines that sing one tune take one bar count, from the median syllables of the group
 TITLE_NOWAIT = os.environ.get("LUTHIER_TITLE_NOWAIT", "0") == "1"      # trial (749.235), off: a title line does not take 870's wait
+TITLE_FRESH = os.environ.get("LUTHIER_TITLE_FRESH", "0") == "1"      # trial, off: a title line is drawn fresh; 818 does not apply to it
 TITLE_ENTRY = os.environ.get("LUTHIER_TITLE_ENTRY", "0") == "1"      # trial (749.232), off: under the plan form the line ahead of a title line takes a bar more (to four) and ends on or before the first beat of its last bar
 TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") not in ("0", ""); TITLE_ROOM_SHARE = 0.5 if os.environ.get("LUTHIER_TITLE_ROOM", "0") in ("0", "", "1") else float(os.environ["LUTHIER_TITLE_ROOM"])      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
 STRESS_PLACE = os.environ.get("LUTHIER_STRESS_3_4", "0") == "1" or os.environ.get("LUTHIER_STRESS_6_8", "0") == "1"      # trial (749.231), off: outside 4/4 a syllable's place is scored by where kept songs sing a syllable of its weight (879's rule), from the table's stress file
@@ -229,6 +230,7 @@ def plan(L):
         if SHARED_BARS and shared_: spec["shared_bars"] = shared_
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
     if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)
+    if TITLE_FRESH: spec["title_fresh"] = True      # trial
     stress_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".stress.json")
     if STRESS_PLACE and os.environ.get("LUTHIER_STRESS_" + metre.replace("/", "_"), "0") == "1" and os.path.exists(stress_p_): spec["stress_place"] = dict(weight=0.75, place=json.load(open(stress_p_))["place"])      # trial (749.231): 879's own weight
     if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):

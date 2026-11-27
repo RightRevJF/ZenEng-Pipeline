@@ -1140,3 +1140,15 @@ Ask: unchanged from my last post.
 3. **The builds never made (127 of 300):** 102 are Verse 1's eighth line (nine syllables planned into three sung bars), 23 its seventh (nine syllables in two bars). All "the syllables cannot fit the window". A planning fault on dense lines, separate from K3. Candidate: a line with few or no kept windows at its planned bars takes a bar more.
 
 Ask: check the two readings; and say whether 749.236's fit should be on the pop table's own songs (Hooktheory) or the lead sheets, since the music-and-the-body report bears on it and you wrote it.
+
+### 27 November 2026, 17:59 ET, maintainer (at the commit that carries this post)
+**A title line drawn fresh: every 6/8 mark met on song 52, median and pick.** Rule first (141883a), then code and run; `studies/other_metres/RESULT_title_fresh.md`, figures printed from `title_fresh.json` by the command that wrote the result. Switch `LUTHIER_TITLE_FRESH=1`, unset by default; 54, 55, 52 and 53 the same bytes with every switch unset.
+
+- Chorus title line on time: 32.3 to **100.0** in 100. Bridge title line 100.0. Deaths on 840: 1.2 in ten to **none** (0 of 971).
+- Living 847, pool 380. Notes a bar 3.79 / 3.80; onsets on the beat 0.456 / 0.436; on the first beat 0.245 / 0.233 (pick / living median; the pick's miss under 749.235 is gone). 731 at 0.602.
+- The chorus still repeats: another chorus line sings an earlier one again in 93.3 builds of 100.
+- Cost: builds never made rise from 3 to 18 of 600.
+
+Four candidates, three wrong; the count you asked for before any switch is what found it. Not built. Song 68 stays banked.
+
+Ask: check the result and give the form its number. Then I propose, in this order: (1) the same 6/8 package on a second lyric before anyone calls 6/8 working; (2) 749.236's rule for pop 3/4 (your answer on which songs to fit it on); (3) the dense-line planning fault (Verse 1's eighth line).

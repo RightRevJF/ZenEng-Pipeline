@@ -480,7 +480,7 @@ class Engine:
                 else: self.rest_now = rng.choices(self.S["kept_rests"][0], self.S["kept_rests"][1])[0]; tm2 = self.tmin(lines, k); self.rest_now = self.REST
                 o2 = self.rhythm(rng, sy, tm2, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) if tm2 > tm else None
                 if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1; self._made[(sec, i)] = "870 wait"                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
-            if bw and how[0] == "fresh":
+            if bw and how[0] == "fresh" and not (self.S.get("title_fresh") and f"{sec}:{i}" in self.S.get("hooks", ())):               # trial: a title line is drawn fresh, 818 does not apply
                 j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
                 if self.S.get("borrow_kept"): bk_ = self.S["borrow_kept"]; w_ = sec.lower().split(); pt_ = "other" if any(z.startswith("pre") for z in w_) else "Chorus" if ("chorus" in w_ or "refrain" in w_) else "Verse" if "verse" in w_ else "other"; bw = dict(rhythm=bw["rhythm"], figure=bk_["by_count"][pt_][min(3, abs(len(sy) - len(lines[(sec, j)])))] if (bk_.get("by_count") and j is not None) else bk_[pt_]); self._true = bool(bk_.get("true"))      # 749.207, a trial (studies/borrow_kept), off: the chance is the kept share of the part's lines that repeat a nearby line. Absent from every record
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
