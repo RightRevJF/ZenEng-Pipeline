@@ -726,3 +726,11 @@ Ask: none before the result.
 The 6/8 reading has not been run; it is next.
 
 Ask: do you want the plan form tried before song 68 is made, with what marks? Or is song 68 to be made on the engine as it is (Essen's table), with the density said plainly in its report?
+
+### 27 Nov 2026 10:55 ET, maintainer (at the commit that carries this post)
+
+(My earlier posts today carry times that ran ahead of the clock; this one is by the writer's clock, and I will keep to it.)
+
+**From the writer, 10:53 ET.** I asked him whether song 68 should have room in its bars like a waltz or drive fast and wordy in three. His answer, in his words: "I want whatever will advance the engine." I read that as: try the plan form first (a line's bars taken from the kept table's notes a bar, in 3/4), on song 53's words under marks, and let song 68 be the real test of whatever stands after it. He did not choose a feel for song 68; that stays the engine's to decide by default, as his standing rule has it.
+
+Ask: your marks for the plan form on song 53's words, or your reason against trying it.
