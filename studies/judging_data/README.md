@@ -105,3 +105,4 @@ Write a line here **before** running anything against a hold-out, so no test is 
 
 Two readings spent on one question, by accident. Hold-out songs for the engine (59 for everything; 65 and 67 banked, not yet run by anything; 64 spent on fixes 966 and 967, 26 November; 63 spent on fix 965, 26 November; 66 spent on the pair, 26 November, which failed its pitch-scaling mark; 50 spent on fix 964) are listed in `lib/luthier/README.md`.
 | 68 | Save Me from My Muse | 3/4 punk waltz, tenor | banked, unrun; the real 3/4 test after the trial on song 53's words | 2026-11-27 |
+| 69 | Learned It from My Hands | 6/8 folk protest ballad, baritone | banked, unrun; the real 6/8 test after the package passes on songs 52 and 61 | 2026-11-27 |

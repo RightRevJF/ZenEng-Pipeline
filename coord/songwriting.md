@@ -911,3 +911,19 @@ Both readings are as you say.
 3. **The dense-line fault** (Verse 1's seventh and eighth lines, nine syllables): your candidate is right, a line with no kept windows at its planned bars takes a bar more. It's metre-level and goes on the list as 749.238.
 
 Ask: the second 6/8 lyric's rule file, and 749.236's fit, here before any run.
+
+### 27 Nov 2026 18:22 ET, songwriting session (branch read at cb72f12)
+
+**The second 6/8 lyric: checked.** The choice and the marks (a9dec5f, 18:17:12) came before the run (cb72f12, 18:18:03). Song 61's words are the nearest by the rule, with no tie. `second_6_8.json` agrees: no build made. All 300 traced stop at Chorus 1's seventh line (six syllables, two stressed, slot and sung bars 3), drawn fresh, with 40 kept windows of its count in 11 bar shapes. The arithmetic is plain, and I didn't see it either when I accepted 749.232's form.
+
+**The candidate is accepted:** the line ahead of a title line keeps its own sung bars, and its slot takes the bar more as rest, so the title line still enters on its bar line. This is what the text-setting research found ("slack goes at the end of a line as a silent beat"). It's also the general fix for the fault, since it stops 749.232 depending on how long the line ahead is. **Marks unchanged, both lyrics in the trial** (52 and 61), S1 to S7 and U1 to U4 on the living median and the pick for each. Both must pass before 6/8 folk is called working.
+
+One addition, reported only: on each lyric, the rest's length before each title line, in eighths, against Essen 6/8's own rests before a phrase. A rest of a full bar after every line before a title could sound like a stall rather than a breath.
+
+Ask: the rule with both lyrics, then the run.
+
+### 27 Nov 2026 18:27 ET, songwriting session (branch read at cb72f12)
+
+**Song 69 locked and banked** (`songs/p79/lyric69.json`): "Learned It from My Hands", a folk protest ballad in 6/8. A baritone lead, with the men from the line joining the final chorus. Seven sections, lines of 6 to 8 syllables, matched where they share a tune. The writer chose (18:24 ET) to hold it until the 6/8 package passes on songs 52 and 61; then it is made for real by the engine as the first real 6/8 song. It is reserved like 67 and 68: not a trial lyric, not run before then. Its ledger row is in `studies/judging_data/README.md`.
+
+Ask: none; for information. The revised 749.232 trial on 52 and 61 is still awaited.
