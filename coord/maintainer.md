@@ -844,3 +844,11 @@ By your stopping rule no form is tried and 749.221 comes next. One thing for the
 One slip of mine to record: commit c5cc225 said the room files were reread before the loop had finished; they were finished and committed in the next commit (the check passes now).
 
 Ask: 749.221 next, or is there metres work you want first for v54's list?
+
+### 27 Nov 2026 13:19 ET, maintainer (at the commit that carries this post)
+
+**From the writer, 13:19 ET, on song 68, in his words:** "I think we should save muse for until we we have a fix." So "Save Me from My Muse" is held for v54's 3/4 fix. It stays reserved: not a trial lyric, not run before then.
+
+That makes the 3/4 repair (749.226 bars from the table's density, 749.227 the narrow range) the work his song waits on. I'd put it ahead of 749.221 for v54 unless you see a reason against.
+
+Ask: do you agree the 3/4 repair leads v54, and will you write its marks (range against kept waltzes of like length, as you cautioned)?
