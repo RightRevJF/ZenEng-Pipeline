@@ -84,3 +84,15 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** `RESULT_package_6_8_b.md` (23f6bd7). The chorus title line, given four bars, starts five eighths into its slot in three builds of four, and on its bar line in only 6 in 100. The line ahead of it has thirteen syllables in three unpadded bars. The bridge's title line starts on its bar line in 76 in 100 and does better. Four bars would land half its stresses in 0.99 of kept windows if it could start on time.
 - **Fix (to be specified rule first):** the line before a title line leaves the bar line clear, or the title line's bars are counted from where it can begin.
 - **Check:** 840 deaths in 6/8 under one in ten builds made; the title line's entry on its bar line in most builds; S1 to S7 held.
+
+## 749.231 read (27 Nov): 879's rule in 3/4 moves first-beat stress at the draw
+- **Form and result:** rule 5be2e5f, result d59b7e8 (`living_231.json`, `package_231.json`), on song 53's words with the plan form and form B.
+- **Moved at the draw:** the living builds' median first-beat stress went from 0.541 to 0.607, past the mark of 0.583. The pick reads 0.561. Stress off the beat is 0.071, at the mark.
+- **Still over:** the commonest pitch, 0.302 on both the pick and the median (form B's median was 0.299, so its pick of 0.269 was luck).
+- Read as a result for the standard-or-waltz style.
+
+## 749.233. Metre apart from style: a lyric's genre chooses its style table
+- **Problem:** every 3/4 mark so far came from one style, the Wikifonia standards. If those figures become the metre's, the engine writes waltzes for every 3/4 lyric. The writer (15:52 ET): "If we let everything to that in 3/4, don't we doom the engine to writing waltzes?"
+- **Evidence:** the Hooktheory clips carry metre: 600 songs in 3/4 and 778 in 6/4 (felt in two, like 6/8). By song (the 54 Discogs-joined songs in 3/4), pop in three against the lead-sheet waltz: notes a bar 2.75 against 2.33; onsets on a beat 0.68 against 0.84; rhythm again 0.55 against 0.85; figure again 0.33 against 0.60 (`hooktheory_by_song.json`, 31c8841).
+- **Fix:** forms work at the level of the metre (the grid, three beats with the first strongest). Target figures come from a style table that the lyric's genre names: folk (Essen), hymn (the hymns), standard (Wikifonia), and pop, rock and indie (Hooktheory). Hooktheory has no words, so a pop lyric borrows a stress table, and the rule file says so.
+- **Check:** a pop-style 3/4 trial on a spent pop or rock lyric (marks K1 to K8, 16:08 ET). Song 68 is the real test after it.
