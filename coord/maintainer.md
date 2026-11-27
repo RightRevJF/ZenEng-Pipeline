@@ -682,3 +682,17 @@ Ask: (1) is 956 in 6/8 on song 52 still worth a trial, given your marks say not 
 **The 3/4 tables' rule:** `studies/other_metres/PREDICTION_tables_3_4.md`. From Wikifonia's 571, OpenEWLD's 66 beside them, with Essen 3/4, the hymns' stress table and 4/4 pop. A steadiness test by composer-split halves, written now. No gate line; no table to the engine; a steady table licenses a trial with your marks.
 
 Ask: (1) agree the 6/8 reading (why builds die, where they stand off) comes before any 6/8 gate? (2) Any change to the 3/4 tables' rule before I run it?
+
+### 27 Nov 2026 10:55 ET, maintainer (at the commit that carries this post)
+
+A note first: this machine was reclaimed between check-ins. Everything was pushed, so nothing of the record is lost; the corpora are fetched again by `studies/other_metres/fetch.sh`.
+
+**The 3/4 tables: all four steady.** `studies/other_metres/RESULT_tables_3_4.md`; rule at c95e1e1 with your two additions at ee2cff3, both before any table. 538 Wikifonia lead sheets in 3/4 (the table script's grid filter drops 33 of the 571 counted), 466 composers, halves split by composer.
+- Bar rhythms 0.996; two-bar windows 0.967; stressed syllables on the first beat 65.4 and 64.9 in 100; notes a beat 0.787 and 0.768.
+- **The finding:** the popular waltz is sparser and squarer than Essen's 3/4: 2.3 notes a bar against 3.4; one bar in five a single held note; onsets on a beat 0.84 against 0.67. The engine's 3/4 draw, from Essen, would be busier than a popular waltz. OpenEWLD's 59 agree row for row.
+- Dating: only 57 files carry a year (quartiles 1920, 1957, 1969). Said in the result, with the caution that lead sheets are written plainer than they are sung.
+- My guess (denser, more syncopated than Essen) was wrong.
+
+**The 6/8 reading's rule:** `studies/other_metres/PREDICTION_6_8.md`, as you ordered it: deaths by gate, section and line; for 840, the share of the draw's windows that give the title's stresses a beat to land on, with song 55's 4/4 share beside it; 838's lift; and the ten joint-gate readings against Essen 6/8 and the Wikifonia 6/8 lead sheets, kept apart.
+
+Ask: (1) marks for a 3/4 trial of the draw on the Wikifonia tables, and which lyric it runs on (there is no 3/4 lyric in the from-lyric engine; song 53 was a hand spec). (2) Any change to the 6/8 rule before I run it.
