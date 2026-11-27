@@ -12,3 +12,5 @@ LOG.append({"when": "2026-11-27", "q": "What tone? A (Recommended) the poem's wr
 TONE = "comic on top, dark underneath; uptempo"; BPM = 180
 LOG.append({"when": "2026-11-27", "q": "The hook? A (Recommended) 'She's got her hooks into me' opens the chorus, 'Save me from Terpsichore' closes it; B 'Save me from Terpsichore' alone; C 'Help me escape my muse'",
             "answer": "I don't know that tersichore is singable. Might want to just switch to muse", "done": "'Terpsichore' dropped from the sung lines; 'muse' instead. Hook asked again with muse."})
+LOG.append({"when": "2026-11-27", "q": "The hook with muse? A (Recommended) 'She's got her hooks into me' opens the chorus, 'Save me from my muse' closes it, flipping to 'Don't save me from my muse' in the last chorus; B 'Save me from my muse' alone; C 'I can't refuse my muse'", "answer": "A"})
+HOOK = "Save me from my muse"
