@@ -71,3 +71,16 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Also in 6/8 (27 Nov):** the 6/8 repair's first reading (27a35f0) puts stressed syllables on the bar's first beat at 0.261 chosen and 0.256 median, under the 6/8 lead sheets' by-song 10th of 0.324 (median 0.509). Essen has no words, so it can't be read there.
 - **Fix (to be specified rule first):** in 3/4 and 6/8, a pull to the bar's first beat for stressed syllables in the draw's scoring.
 - **Check:** the living builds' median first-beat stress at or over the kept 25th (0.583), on song 53's words, with R1 to R8 held. Then song 68 as the real test.
+
+## The 6/8 repair, second reading (27 Nov)
+- **Form and result:** form 163122c, before any code or run; result 23f6bd7 (`RESULT_package_6_8_b.md`).
+- **Met:** S2 to S4, on the pick and the living median (391 living and a pool of 169; 3.89 and 3.87 notes a bar; on the beat 0.450 and 0.422; on the first beat 0.221 and 0.219).
+- **Missed:** S6. 840 is unmoved.
+- **Stands:** bars from Essen's density, unpadded; the copy's join.
+- **The writer reopened the metres work** at 15:38 ET: a miss now leads to the next form.
+
+## 749.232. In 6/8 a title line's room is taken at its front by the line before it
+- **Problem:** a long line before the title line runs into the title line's first bar. The title line then starts late and crowds its syllables into the bars that are left.
+- **Evidence:** `RESULT_package_6_8_b.md` (23f6bd7). The chorus title line, given four bars, starts five eighths into its slot in three builds of four, and on its bar line in only 6 in 100. The line ahead of it has thirteen syllables in three unpadded bars. The bridge's title line starts on its bar line in 76 in 100 and does better. Four bars would land half its stresses in 0.99 of kept windows if it could start on time.
+- **Fix (to be specified rule first):** the line before a title line leaves the bar line clear, or the title line's bars are counted from where it can begin.
+- **Check:** 840 deaths in 6/8 under one in ten builds made; the title line's entry on its bar line in most builds; S1 to S7 held.
