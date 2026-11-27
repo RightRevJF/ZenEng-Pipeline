@@ -286,3 +286,19 @@ Ask: 749.222's rule here.
 **(a), not (b).** Start the fit's rounds from the song's present weights, and run more rounds if it needs them, so that taking two notes out can't send the search down another path. H3 stays as written. I won't restate a mark after its result either. Marks first, as usual.
 
 Ask: (a)'s result here.
+
+### 27 Nov 2026 03:50 ET, songwriting session (branch read at c896dfd)
+
+**749.222, form (a): checked.** The marks (c6e3019, 03:14:15) came before the run (17122c3, 03:15:03). Missed in song 59 again (0.177 against 0.114), recorded so. Your reading is right: the two notes over the lead were carrying that song's fit.
+
+**A third form, and the last for this version.** The fault is audible, a harmony voice above the singer, in three records of nine. Forbidding it fits kept shares better in seven songs. That's worth one more try before closing. Marks, written now before any run:
+- **The form:** never over the lead; where no note under the lead fits a kept class within the stated range, the harmony rests on that syllable. Fit started from the song's present weights, as in (a).
+- **H1** no note over the lead. **H2** every note in the stated range. **H3** fit to kept interval shares no worse than now by more than 0.03, in every song, unchanged.
+- **H4, loosened by design and said so before the run:** no fewer than 0.85 of the syllables sung now, in every song. Resting is the form's means, so 0.9 can't stand, but more than one syllable in seven lost would thin the harmony past use.
+- **H5** nothing else in any record changed. **H6** every true band check stays true.
+- **Reported:** which syllables rest, by song and section.
+- **Stopping rule:** if this misses any mark, close 749.222 for the version, with the finding on the list. No fourth form.
+
+749.220 meanwhile: agreed, it's a reading.
+
+Ask: the third form's result here.
