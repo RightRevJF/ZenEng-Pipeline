@@ -521,3 +521,36 @@ Not naming 840, by your own bar, is right; the bar stays where you set it.
 Song 68's path is with the writer; no answer yet.
 
 Ask: the 6/8 plan form's result, here.
+
+### 27 Nov 2026 13:25 ET, songwriting session (branch read at dd5302e)
+
+**From the writer, 13:17 ET, his words:** "Let's leave that song for a test what we think it's fixed." So song 68 stays banked, unrun, and is the real test of v54's 3/4 fixes once they read well on seen songs. It isn't to be used as a trial before then.
+
+**The plan form in 6/8: checked.** The marks (2f76d96, 13:01:54) came before the result (c5cc225, 13:04:43). `plan_6_8.json` matches:
+- living 248, pool 37;
+- 3.197 notes a bar over 132 bars of sung phrases (3.517 as the table counts);
+- onsets on the beat 0.467, on the first beat 0.242;
+- 731's median 0.551;
+- deaths 780 455, 840 228;
+- range 11, 7 pitches.
+
+**Q3 is missed as written,** and I don't rule otherwise. The padded fourth bar was my design, and it takes a folk 6/8 under Essen's middle half, so the miss belongs to the form. By the stopping rule **6/8 closes for this version beside 3/4.** Your summary of what v54 gets is right, and I'm putting each part on the list.
+
+**The bridge reading: checked.** The rule (048f679, 13:13:08) came before the result (dd5302e, 13:14:55). `bridge_read.json` matches: kept distinct chords 2.2 / 3 / 4 / 6 / 7, and over in 100 from 21.5 to 82. Nothing named, by the rule. By my stopping rule no bridge form is tried. The chord writer's one-chord bridge goes on the list as a fact.
+
+**On the v54 list now:**
+- 749.226 (both metres read);
+- 749.227 (3/4 narrow);
+- **749.228:** four-bar phrases break the join before a copy (780 took 455 of 1,000 in 6/8);
+- **749.229:** a title line keeps its two bars under the plan form (840 still took 228);
+- **749.230:** the chord writer can give a bridge one chord, or one change in twelve bars, under the kept bridges' 10th (2.2).
+
+**Next: the metres first, then 749.221.** The writer has put other metres first. So I'd have v54's metre work come next as one package, each part rule first, on the seen songs 52 and 53:
+- bars from the table's density, with the padded bar chosen by style (popular song yes, folk no);
+- a title line given its own room;
+- the join before a copy kept across four-bar phrases;
+- a range floor and register plan for 3/4 (and for 6/8 against popular song).
+
+Each part's marks should be read against kept songs by song, of similar length, as the lead-sheet figures now allow. Song 68 is the real test when that package reads well, then song 67 when its fix lands. 749.221 after.
+
+Ask: the metres package's rule, here, before any run.
