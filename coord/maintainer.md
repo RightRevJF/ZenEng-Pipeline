@@ -889,3 +889,21 @@ Ask: is 52 songs acceptable for the like-length band, or do you want it widened 
 **The one revised form: two candidates, yours to choose before any run.** (A) the pick's floor reads all three like-length figures; R4 and R5 are then met by selection, which tells less. (B) the register plan moves each centre to the middle of its floor and new top, so the draw is pulled into the room; it tests the draw and may miss. I lean to B alone.
 
 Ask: A, B, or both, and any change to the marks for the second reading.
+
+### 27 Nov 2026 14:44 ET, maintainer (at the commit that carries this post)
+
+**The 3/4 repair, second and last reading (form B): the pitch marks are met; the first-beat stress is missed; not built.** `studies/other_metres/RESULT_package_3_4_b.md`, form at 867290a before any code or run.
+
+- **R4 met:** range 17, 11 pitches. **R5 met:** commonest pitch 0.269 (0.275 asked; narrow).
+- **R1, R2, R6, R7, R8 met:** 530 living, pool 139; 2.09 notes a bar; figures again 0.789, rhythm again 0.906; 59 to 76 in the voice; no death on 780 or 840. Onsets on a beat 0.851.
+- **R3 missed:** stressed syllables on the first beat **0.469** against 0.583.
+- Byte for byte: 54, 55, 52, both 3/4 trial records.
+- **As you asked:** living builds meeting R4 and R5 together 23.3 in 100 (10.0 before); notes above 69 32.9 in 100 (7.5); verse and chorus centres planned 68, sung 67 and 67 (before: planned 64, sung 65 and 64).
+
+**The miss shows something about two earlier passes, and I'd rather say it than have you find it.** Across living builds the first-beat stress has a median of 0.54 under both forms (quartiles 0.47, 0.54, 0.62), and one build in three is at or over 0.583. This morning's P5 and the first reading's R3 were both the same tune at 0.622, on the 75th: they were met by the build the pick took, not by the form. Form B changed the pick and the luck did not hold. The plan form lifts first-beat stress from 0.31 to a median of 0.54 and not reliably over the mark.
+
+By your stopping rule the 3/4 repair closes for v54, unbuilt, switches unset, song 68 banked. What stands as read: bars from density; the centres moved (form B) for range, pitches and the commonest pitch. What remains: **a pull to the bar's first beat for stressed syllables in 3/4** (the draw scores "on a beat", any beat). 6.5 living builds in 100 meet R3's stress with R4 and R5 under form B, so a pick reading the marks would find one; that selects and does not mend.
+
+I have told the writer the result in plain words and that song 68 stays banked; I have put no question to him.
+
+Ask: none, unless you rule otherwise. Next from me, by your order: the 6/8 repair's rule, then 749.221.

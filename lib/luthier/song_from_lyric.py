@@ -38,7 +38,7 @@ CHORD_TIE = os.environ.get("LUTHIER_CHORD_TIE", "0") == "1"      # 749.198: a tr
 PEAK_TRIES = int(os.environ.get("LUTHIER_PEAK_TRIES", "60"))      # 950's draws for the carrying line; 240 in the trial of 749.192 (studies/the_peak_line)
 OCTAVE_TAIL = os.environ.get("LUTHIER_OCTAVE_TAIL", "1") != "0"      # 964 (749.192): the octave bin shared as kept songs share it (the environment switch is for studies)
 PITCH_CEILING = True   # 956
-RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") == "1"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
+RANGE_3_4 = os.environ.get("LUTHIER_RANGE_3_4", "0") in ("1", "centres"); RANGE_CENTRES = os.environ.get("LUTHIER_RANGE_3_4") == "centres"      # trial (749.227), off: in 3/4 the register tops and the pick's range floor are read from kept waltzes of like length
 TITLE_ROOM = os.environ.get("LUTHIER_TITLE_ROOM", "0") == "1"      # trial (749.229), off: under the plan form a title line takes more bars until half its stresses can land on a beat
 COPY_JOIN = os.environ.get("LUTHIER_COPY_JOIN", "0") == "1"      # trial (749.228), off: a copy that would begin before the line ahead of it has ended is sung again, and the build lives
 def _land(T, sy, b):
@@ -206,6 +206,11 @@ def plan(L):
             med7_ = float(_np7.median(sel7_)); q7_ = float(_np7.percentile(sel7_, 25)); rg7_ = spec["registers"]; span7_ = max(rg7_[k_][2] for k_ in ("Verse", "Chorus")) - min(rg7_[k_][1] for k_ in ("Verse", "Chorus")); dr7_ = int(round(max(-5, min(9, min(med7_, V[1] - V[0]) + RANGE_OVER - span7_))))
             for k_ in ("Verse", "Chorus", "Bridge"): rg7_[k_][2] = min(rg7_[k_][2] + dr7_, rg7_["Verse"][1] + (V[1] - V[0])) if rg7_[k_][2] + dr7_ > rg7_[k_][0] + 1 else rg7_[k_][0] + 2
             spec["choose_range"] = dict(asked=med7_, floor=q7_, like_length_songs=len(sel7_), band=band7_, bars_of_sung_phrases=bars7_, tops_moved_by=dr7_)
+            if RANGE_CENTRES:
+                # trial (749.227, form B): the verse's centre to the middle of its floor and new top; the chorus's and bridge's centres move by as much, so the planned lift stands
+                dc7_ = int(round((rg7_["Verse"][1] + rg7_["Verse"][2]) / 2.0)) - rg7_["Verse"][0]
+                for k_ in ("Verse", "Chorus", "Bridge"): rg7_[k_][0] = max(rg7_[k_][1] + 1, min(rg7_[k_][2] - 1, rg7_[k_][0] + dc7_))
+                spec["choose_range"]["centres_moved_by"] = dc7_
     if metre == "4/4" and L.get("aim", True):                                                  # 920 (749.94): one kept song drawn from the title's seed, as 838 draws the lift; its readings are this song's targets
         KR_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "kept_readings.json")))["4-4_pop_sung"]; AT_ = json.load(open(os.path.join(HERE, "..", "..", "tables", "metre_atlas", "4-4_pop_sung.json")))["readings_quartiles"]
         ri_ = _r.Random(f"aim {L.get('seed', 1)} {L['title']}").randrange(len(KR_["rows"])); tr_ = dict(zip(KR_["names"], KR_["rows"][ri_])); shape_ = None
