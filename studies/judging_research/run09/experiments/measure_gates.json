@@ -1,0 +1,592 @@
+{
+ "note": "run 09 chair measure gates, notes only, on the 1,283 unseen design songs. coverage = songs with a defined value; stability = Spearman between the first two NON-IDENTICAL measured charts (sorted ids; chord lists differ) of a design song, and the stricter reading where the change tokens also differ; overlap = song-level Spearman over the design (pooled, and genre-demeaned ranks = within genre). GATE (frozen before any outcome): a measure is stopped if |rho| > 0.8 with ch_rep or with V (pooled or within genre). Two-chart stability under 0.5 is flagged (run 08's second gate) and stops a measure only when its pairs number 100 or more.",
+ "n_songs": 1283,
+ "n_design_charts": 1718,
+ "coverage_songs": {
+  "IIV": 1271,
+  "w_chr": 1271,
+  "ch_rep": 1271,
+  "V": 1271,
+  "ln_chg": 1271,
+  "ln_bars": 1097,
+  "TR": 1270,
+  "TQ": 1271,
+  "TE": 1271,
+  "DRES": 1097,
+  "FUL": 966,
+  "CARC": 773,
+  "IRR": 1271,
+  "VR4": 1246,
+  "VR4c": 1245,
+  "CH": 1268,
+  "TYP": 1271,
+  "TYPM": 1271
+ },
+ "coverage_by_genre": {
+  "biab": {
+   "IIV": 422,
+   "w_chr": 422,
+   "ch_rep": 422,
+   "V": 422,
+   "ln_chg": 422,
+   "ln_bars": 422,
+   "TR": 422,
+   "TQ": 422,
+   "TE": 422,
+   "DRES": 422,
+   "FUL": 376,
+   "CARC": 354,
+   "IRR": 422,
+   "VR4": 417,
+   "VR4c": 417,
+   "CH": 422,
+   "TYP": 422,
+   "TYPM": 422
+  },
+  "jazz": {
+   "IIV": 440,
+   "w_chr": 440,
+   "ch_rep": 440,
+   "V": 440,
+   "ln_chg": 440,
+   "ln_bars": 354,
+   "TR": 439,
+   "TQ": 440,
+   "TE": 440,
+   "DRES": 354,
+   "FUL": 386,
+   "CARC": 277,
+   "IRR": 440,
+   "VR4": 432,
+   "VR4c": 431,
+   "CH": 439,
+   "TYP": 440,
+   "TYPM": 440
+  },
+  "other": {
+   "IIV": 50,
+   "w_chr": 50,
+   "ch_rep": 50,
+   "V": 50,
+   "ln_chg": 50,
+   "ln_bars": 50,
+   "TR": 50,
+   "TQ": 50,
+   "TE": 50,
+   "DRES": 50,
+   "FUL": 24,
+   "CARC": 21,
+   "IRR": 50,
+   "VR4": 50,
+   "VR4c": 50,
+   "CH": 50,
+   "TYP": 50,
+   "TYPM": 50
+  },
+  "pop": {
+   "IIV": 263,
+   "w_chr": 263,
+   "ch_rep": 263,
+   "V": 263,
+   "ln_chg": 263,
+   "ln_bars": 175,
+   "TR": 263,
+   "TQ": 263,
+   "TE": 263,
+   "DRES": 175,
+   "FUL": 99,
+   "CARC": 47,
+   "IRR": 263,
+   "VR4": 252,
+   "VR4c": 252,
+   "CH": 261,
+   "TYP": 263,
+   "TYPM": 263
+  },
+  "wikifonia": {
+   "IIV": 96,
+   "w_chr": 96,
+   "ch_rep": 96,
+   "V": 96,
+   "ln_chg": 96,
+   "ln_bars": 96,
+   "TR": 96,
+   "TQ": 96,
+   "TE": 96,
+   "DRES": 96,
+   "FUL": 81,
+   "CARC": 74,
+   "IRR": 96,
+   "VR4": 95,
+   "VR4c": 95,
+   "CH": 96,
+   "TYP": 96,
+   "TYPM": 96
+  }
+ },
+ "stability": {
+  "IIV": {
+   "two_chart": 0.824,
+   "n": 317,
+   "tokens_differ": 0.867,
+   "n_tok": 255
+  },
+  "w_chr": {
+   "two_chart": 0.808,
+   "n": 317,
+   "tokens_differ": 0.746,
+   "n_tok": 255
+  },
+  "ch_rep": {
+   "two_chart": 0.794,
+   "n": 317,
+   "tokens_differ": 0.737,
+   "n_tok": 255
+  },
+  "V": {
+   "two_chart": 0.904,
+   "n": 317,
+   "tokens_differ": 0.884,
+   "n_tok": 255
+  },
+  "ln_chg": {
+   "two_chart": 0.844,
+   "n": 317,
+   "tokens_differ": 0.804,
+   "n_tok": 255
+  },
+  "ln_bars": {
+   "two_chart": 0.816,
+   "n": 283,
+   "tokens_differ": 0.752,
+   "n_tok": 221
+  },
+  "TR": {
+   "two_chart": 0.896,
+   "n": 317,
+   "tokens_differ": 0.866,
+   "n_tok": 255
+  },
+  "TQ": {
+   "two_chart": 0.874,
+   "n": 317,
+   "tokens_differ": 0.84,
+   "n_tok": 255
+  },
+  "TE": {
+   "two_chart": 0.748,
+   "n": 317,
+   "tokens_differ": 0.699,
+   "n_tok": 255
+  },
+  "DRES": {
+   "two_chart": 0.882,
+   "n": 283,
+   "tokens_differ": 0.85,
+   "n_tok": 221
+  },
+  "FUL": {
+   "two_chart": 0.883,
+   "n": 267,
+   "tokens_differ": 0.837,
+   "n_tok": 217
+  },
+  "CARC": {
+   "two_chart": 0.783,
+   "n": 218,
+   "tokens_differ": 0.75,
+   "n_tok": 174
+  },
+  "IRR": {
+   "two_chart": 0.877,
+   "n": 317,
+   "tokens_differ": 0.831,
+   "n_tok": 255
+  },
+  "VR4": {
+   "two_chart": 0.856,
+   "n": 308,
+   "tokens_differ": 0.818,
+   "n_tok": 249
+  },
+  "VR4c": {
+   "two_chart": 0.848,
+   "n": 308,
+   "tokens_differ": 0.81,
+   "n_tok": 249
+  },
+  "CH": {
+   "two_chart": 0.858,
+   "n": 317,
+   "tokens_differ": 0.827,
+   "n_tok": 255
+  },
+  "TYP": {
+   "two_chart": 0.692,
+   "n": 317,
+   "tokens_differ": 0.654,
+   "n_tok": 255
+  },
+  "TYPM": {
+   "two_chart": 0.758,
+   "n": 317,
+   "tokens_differ": 0.723,
+   "n_tok": 255
+  }
+ },
+ "pair_parts": {
+  "biab-internet-corpus|real-book": 190,
+  "biab-internet-corpus|ireal-forum": 10,
+  "biab-internet-corpus|biab-internet-corpus": 22,
+  "biab-internet-corpus|wikifonia": 1,
+  "jaah|real-book": 2,
+  "ireal-forum|real-book": 1,
+  "real-book|weimar": 1,
+  "isophonics|rock-corpus": 1,
+  "ireal-forum|isophonics": 1,
+  "rock-corpus|uspop2002": 1,
+  "weimar|weimar": 28,
+  "ireal-forum|ireal-forum": 52,
+  "ireal-forum|wikifonia": 3,
+  "ireal-forum|ireal-playlists": 2,
+  "wikifonia|wikifonia": 2
+ },
+ "spearman_pooled": {
+  "IIV": {
+   "ch_rep": -0.278,
+   "V": 0.499,
+   "IIV": 1.0,
+   "ln_chg": 0.121,
+   "TR": 0.498
+  },
+  "w_chr": {
+   "ch_rep": 0.191,
+   "V": -0.321,
+   "IIV": -0.464,
+   "ln_chg": -0.051,
+   "TR": -0.379
+  },
+  "ch_rep": {
+   "ch_rep": 1.0,
+   "V": -0.377,
+   "IIV": -0.278,
+   "ln_chg": 0.461,
+   "TR": -0.267
+  },
+  "V": {
+   "ch_rep": -0.377,
+   "V": 1.0,
+   "IIV": 0.499,
+   "ln_chg": 0.528,
+   "TR": 0.262
+  },
+  "ln_chg": {
+   "ch_rep": 0.461,
+   "V": 0.528,
+   "IIV": 0.121,
+   "ln_chg": 1.0,
+   "TR": -0.097
+  },
+  "ln_bars": {
+   "ch_rep": 0.413,
+   "V": 0.335,
+   "IIV": 0.007,
+   "ln_chg": 0.755,
+   "TR": -0.071
+  },
+  "TR": {
+   "ch_rep": -0.267,
+   "V": 0.262,
+   "IIV": 0.498,
+   "ln_chg": -0.097,
+   "TR": 1.0
+  },
+  "TQ": {
+   "ch_rep": -0.294,
+   "V": 0.359,
+   "IIV": 0.553,
+   "ln_chg": -0.03,
+   "TR": 0.759
+  },
+  "TE": {
+   "ch_rep": -0.064,
+   "V": -0.014,
+   "IIV": 0.152,
+   "ln_chg": -0.082,
+   "TR": 0.138
+  },
+  "DRES": {
+   "ch_rep": -0.221,
+   "V": 0.435,
+   "IIV": 0.483,
+   "ln_chg": 0.146,
+   "TR": 0.871
+  },
+  "FUL": {
+   "ch_rep": 0.092,
+   "V": -0.228,
+   "IIV": -0.152,
+   "ln_chg": -0.147,
+   "TR": 0.35
+  },
+  "CARC": {
+   "ch_rep": -0.054,
+   "V": 0.032,
+   "IIV": -0.046,
+   "ln_chg": 0.019,
+   "TR": -0.056
+  },
+  "IRR": {
+   "ch_rep": -0.285,
+   "V": 0.533,
+   "IIV": 0.346,
+   "ln_chg": 0.176,
+   "TR": 0.187
+  },
+  "VR4": {
+   "ch_rep": -0.351,
+   "V": 0.591,
+   "IIV": 0.413,
+   "ln_chg": 0.182,
+   "TR": 0.338
+  },
+  "VR4c": {
+   "ch_rep": -0.346,
+   "V": 0.58,
+   "IIV": 0.35,
+   "ln_chg": 0.187,
+   "TR": 0.303
+  },
+  "CH": {
+   "ch_rep": 0.183,
+   "V": -0.334,
+   "IIV": -0.371,
+   "ln_chg": -0.075,
+   "TR": -0.421
+  },
+  "TYP": {
+   "ch_rep": -0.172,
+   "V": 0.584,
+   "IIV": 0.308,
+   "ln_chg": 0.334,
+   "TR": 0.089
+  },
+  "TYPM": {
+   "ch_rep": -0.169,
+   "V": 0.564,
+   "IIV": 0.284,
+   "ln_chg": 0.312,
+   "TR": 0.064
+  }
+ },
+ "spearman_within_genre": {
+  "IIV": {
+   "ch_rep": -0.177,
+   "V": 0.454,
+   "IIV": 1.0,
+   "ln_chg": 0.188,
+   "TR": 0.329
+  },
+  "w_chr": {
+   "ch_rep": 0.132,
+   "V": -0.254,
+   "IIV": -0.398,
+   "ln_chg": -0.061,
+   "TR": -0.28
+  },
+  "ch_rep": {
+   "ch_rep": 1.0,
+   "V": -0.323,
+   "IIV": -0.177,
+   "ln_chg": 0.467,
+   "TR": -0.169
+  },
+  "V": {
+   "ch_rep": -0.323,
+   "V": 1.0,
+   "IIV": 0.454,
+   "ln_chg": 0.56,
+   "TR": 0.134
+  },
+  "ln_chg": {
+   "ch_rep": 0.467,
+   "V": 0.56,
+   "IIV": 0.188,
+   "ln_chg": 1.0,
+   "TR": -0.085
+  },
+  "ln_bars": {
+   "ch_rep": 0.416,
+   "V": 0.354,
+   "IIV": 0.067,
+   "ln_chg": 0.749,
+   "TR": -0.079
+  },
+  "TR": {
+   "ch_rep": -0.169,
+   "V": 0.134,
+   "IIV": 0.329,
+   "ln_chg": -0.085,
+   "TR": 1.0
+  },
+  "TQ": {
+   "ch_rep": -0.204,
+   "V": 0.271,
+   "IIV": 0.394,
+   "ln_chg": -0.004,
+   "TR": 0.687
+  },
+  "TE": {
+   "ch_rep": -0.049,
+   "V": -0.035,
+   "IIV": 0.115,
+   "ln_chg": -0.077,
+   "TR": 0.122
+  },
+  "DRES": {
+   "ch_rep": -0.166,
+   "V": 0.34,
+   "IIV": 0.371,
+   "ln_chg": 0.113,
+   "TR": 0.833
+  },
+  "FUL": {
+   "ch_rep": 0.106,
+   "V": -0.235,
+   "IIV": -0.192,
+   "ln_chg": -0.141,
+   "TR": 0.359
+  },
+  "CARC": {
+   "ch_rep": -0.057,
+   "V": 0.032,
+   "IIV": -0.032,
+   "ln_chg": 0.021,
+   "TR": -0.05
+  },
+  "IRR": {
+   "ch_rep": -0.265,
+   "V": 0.519,
+   "IIV": 0.347,
+   "ln_chg": 0.181,
+   "TR": 0.148
+  },
+  "VR4": {
+   "ch_rep": -0.305,
+   "V": 0.55,
+   "IIV": 0.354,
+   "ln_chg": 0.197,
+   "TR": 0.235
+  },
+  "VR4c": {
+   "ch_rep": -0.304,
+   "V": 0.544,
+   "IIV": 0.295,
+   "ln_chg": 0.201,
+   "TR": 0.203
+  },
+  "CH": {
+   "ch_rep": 0.133,
+   "V": -0.288,
+   "IIV": -0.308,
+   "ln_chg": -0.086,
+   "TR": -0.356
+  },
+  "TYP": {
+   "ch_rep": -0.189,
+   "V": 0.62,
+   "IIV": 0.409,
+   "ln_chg": 0.331,
+   "TR": 0.122
+  },
+  "TYPM": {
+   "ch_rep": -0.181,
+   "V": 0.594,
+   "IIV": 0.366,
+   "ln_chg": 0.31,
+   "TR": 0.084
+  }
+ },
+ "gates": {
+  "IIV": {
+   "max_abs_rho_chrep_or_V": 0.499,
+   "two_chart": 0.824,
+   "n_pairs": 317,
+   "coverage": 1271,
+   "passes": true,
+   "flag": ""
+  },
+  "TR": {
+   "max_abs_rho_chrep_or_V": 0.267,
+   "two_chart": 0.896,
+   "n_pairs": 317,
+   "coverage": 1270,
+   "passes": true,
+   "flag": ""
+  },
+  "DRES": {
+   "max_abs_rho_chrep_or_V": 0.435,
+   "two_chart": 0.882,
+   "n_pairs": 283,
+   "coverage": 1097,
+   "passes": true,
+   "flag": ""
+  },
+  "TQ": {
+   "max_abs_rho_chrep_or_V": 0.359,
+   "two_chart": 0.874,
+   "n_pairs": 317,
+   "coverage": 1271,
+   "passes": true,
+   "flag": ""
+  },
+  "IRR": {
+   "max_abs_rho_chrep_or_V": 0.533,
+   "two_chart": 0.877,
+   "n_pairs": 317,
+   "coverage": 1271,
+   "passes": true,
+   "flag": ""
+  },
+  "VR4c": {
+   "max_abs_rho_chrep_or_V": 0.58,
+   "two_chart": 0.848,
+   "n_pairs": 308,
+   "coverage": 1245,
+   "passes": true,
+   "flag": ""
+  },
+  "TYP": {
+   "max_abs_rho_chrep_or_V": 0.62,
+   "two_chart": 0.692,
+   "n_pairs": 317,
+   "coverage": 1271,
+   "passes": true,
+   "flag": ""
+  },
+  "CARC": {
+   "max_abs_rho_chrep_or_V": 0.057,
+   "two_chart": 0.783,
+   "n_pairs": 218,
+   "coverage": 773,
+   "passes": true,
+   "flag": ""
+  },
+  "TE": {
+   "max_abs_rho_chrep_or_V": 0.064,
+   "two_chart": 0.748,
+   "n_pairs": 317,
+   "coverage": 1271,
+   "passes": true,
+   "flag": ""
+  }
+ },
+ "design_by_genre": {
+  "biab": 422,
+  "jazz": 443,
+  "pop": 271,
+  "other": 51,
+  "wikifonia": 96
+ },
+ "sha256_measures_json": "a67802bb1db04112bd4f61deaa315d4ed62d2b9c35edf8646f014687208f335f"
+}
