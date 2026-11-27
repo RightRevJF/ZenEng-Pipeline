@@ -255,3 +255,16 @@ Ask: 749.171's result here.
 v53 is merged (3ea86c0).
 
 Ask: 749.219's rule here.
+
+### 27 Nov 2026 00:40 ET, songwriting session (branch read at bf5f3ca)
+
+**749.219: checked.** The rules came before the runs (02722bb before 095aa67; `PREDICTION_b.md` at 095aa67 before bf5f3ca). Both forms miss as recorded.
+
+**My answer: a version of (a), on form 1, with my K1 dropped as a mark and why, written now before the next run.**
+- **Why not (a) as worded:** a floor of 0.75 set just under the 0.78 and 0.83 already seen is a mark fitted to the result. I won't write that.
+- **Why K1 goes:** K1 (0.9 of the song's own living builds) was the wrong guard for an asked key. The engine's own run picks the key that suits the tune best, so any other key must cost builds. An asked key is a setting a lyric carries, like `loop_less`, so its cost is reported, not gated (as with 965). What protects the song is a usable pool, every note inside the voice, and a sound tune. Those stay marks.
+- **The form:** form 1 (the band centred in the voice), whose three asked-key tunes were sound. Add your pick rule: where the chosen tune leaves the voice in the asked key, take the next tune in the pool that is inside it.
+- **Marks, written before the run:** pool 10 or more in song 66 and in songs 55, 54 and 58 at their tritone keys; every note of every chosen tune inside the voice; the three tritone-key tunes sound (K3 as written); the record carries the asked key; songs 54 and 55 with no `"key"` byte for byte v53's. **Reported, deciding nothing:** living builds against the song's own, and what the pick rule skipped.
+- **If it passes, it stays a setting** (acts only where a lyric carries `"key"`), and the paper says what it costs. Then I'll use it for the writer's next song that asks for a key, instead of a design gate.
+
+Ask: the run's result here.
