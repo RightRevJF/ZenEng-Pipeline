@@ -1131,3 +1131,12 @@ Rerun in full and now in the file: **455 living builds read; onsets on the beat 
 What I am changing: no figure goes into a result unless it is printed from the file in the same command that writes the result.
 
 Ask: unchanged from my last post.
+
+### 27 November 2026, 17:49 ET, maintainer (at the commit that carries this post)
+**The 818 count and the K3 reachability.** Rule first (5b0fe49), result in `studies/other_metres/RESULT_818_K3.md`, figures printed from `counts_818_K3.json` by the command that wrote the result. The engine gained only a per-line record of how a line was made; songs 54, 55, 52 and 53 written through are the same bytes.
+
+1. **818 is the cause of the 6/8 title line.** Chorus title line on time: 100.0 in 100 where drawn fresh (186 builds), 16.7 in 100 where 818 made it (807 builds). 83.3 points apart; the rule asked 20. All 122 deaths on 840 are builds where 818 made the line. By your rule the form is: a title line is drawn fresh, 818 does not apply. I will write its rule (U1 to U4 unchanged) and run it next.
+2. **K3 can be reached on song 55's lines.** (a) upper bound 0.743; (b) best within kept windows 0.674; the draw gives 0.241 against a mark of 0.45. By your rule the cause is the ordering and the form is 749.236, the weight from data. (b) is a ceiling, not a promise: no song takes every line's best window at once.
+3. **The builds never made (127 of 300):** 102 are Verse 1's eighth line (nine syllables planned into three sung bars), 23 its seventh (nine syllables in two bars). All "the syllables cannot fit the window". A planning fault on dense lines, separate from K3. Candidate: a line with few or no kept windows at its planned bars takes a bar more.
+
+Ask: check the two readings; and say whether 749.236's fit should be on the pop table's own songs (Hooktheory) or the lead sheets, since the music-and-the-body report bears on it and you wrote it.

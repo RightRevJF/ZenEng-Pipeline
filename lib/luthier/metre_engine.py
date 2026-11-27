@@ -48,7 +48,7 @@ class Engine:
         self.NBARS = b; self.SUNG = [s for s, _, _ in spec["sung"]]; self.KIND = {s: k for s, k, _ in spec["sung"]}; self.LINES = {s: [[(t, bool(st)) for t, st in ln] for ln in ls] for s, _, ls in spec["sung"]}
         self.SLOTS = {s: spec.get("slots", {}).get(s, [2] * len(self.LINES[s])) for s in self.SUNG}
         self.SUNGB = {id(self.LINES[s_][i_]): b_ for s_, v_ in (spec.get("sung_bars") or {}).items() for i_, b_ in enumerate(v_)}; self._part = False      # trial (749.226)
-        self.TENTRY = set(spec.get("title_entry") or ())
+        self.TENTRY = set(spec.get("title_entry") or ()); self._made = {}
         self.KEYS = [(s, i) for s in self.SUNG for i in range(len(self.LINES[s]))]; self.HOW = {tuple(k.rsplit(":", 1)): v for k, v in spec.get("how", {}).items()}
         self.HOW = {(s, int(i)): v for (s, i), v in self.HOW.items()}; self.stats = collections.Counter()
         self._runin = None; self.AIM = False; self.RUN = 3; self.RUNP = 2; self.MV = (1.0, 1.0, 50.0, 1.0)                                                # 926, 927
@@ -419,6 +419,7 @@ class Engine:
         self._lh = self.draw_heights(rng) if self.S.get("line_heights") else None
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
+            self._made[(sec, i)] = "fresh"                                                    # a record of how each line was made in this build, for studies; it changes no note
             cap = None                                                                        # 816 (780, 773 carried): the line before a copied or designed line that comes in early gives way
             if k + 1 < len(self.KEYS):
                 ns_, ni_ = self.KEYS[k + 1]; hn = self.HOW.get((ns_, ni_), ["fresh"]); f0 = None
@@ -467,18 +468,18 @@ class Engine:
                             if self.runs_ok([p_ for _, p_ in trial], self.RUN): new = trial; self.stats["839: a returning line lifts one held note"] += 1
                             break
                 if self.AIM: new = self.join(new, lines, k, sec, i) or new                           # 929: a copy that would run past the cap at its join moves its first note (the whole-build gate stands behind it)
-                lines[(sec, i)] = new; prev = new[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; continue
+                lines[(sec, i)] = new; prev = new[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; self._made[(sec, i)] = "copy"; continue
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
                 r = self.join(r, lines, k, sec, i) if r is not None else None                         # 929
-                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_): lines[(sec, i)] = r; prev = r[-1][1]; continue
+                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_): lines[(sec, i)] = r; prev = r[-1][1]; self._made[(sec, i)] = "again"; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
             if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0 and not (self.S.get("title_nowait") and f"{sec}:{i}" in self.S.get("hooks", ())):               # 870; trial (749.235): a title line does not wait (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
                 if self.LE: self.gap_now = rng.choices(self.LE["GV"], self.LE["Gw"])[0]; tm2 = self.tmin(lines, k); self.gap_now = 12      # 899: the time from the last line's last syllable to this line, drawn from the kept, where the slot leaves room
                 else: self.rest_now = rng.choices(self.S["kept_rests"][0], self.S["kept_rests"][1])[0]; tm2 = self.tmin(lines, k); self.rest_now = self.REST
                 o2 = self.rhythm(rng, sy, tm2, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) if tm2 > tm else None
-                if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
+                if o2 is not None: ons = o2; self.stats["870: a line waits a kept rest"] += 1; self._made[(sec, i)] = "870 wait"                                             # 818: a fresh line may sing an earlier line of its section again, or take its rhythm
             if bw and how[0] == "fresh":
                 j = next((j for j in (i - 2, i - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None); x = rng.random()
                 if self.S.get("borrow_kept"): bk_ = self.S["borrow_kept"]; w_ = sec.lower().split(); pt_ = "other" if any(z.startswith("pre") for z in w_) else "Chorus" if ("chorus" in w_ or "refrain" in w_) else "Verse" if "verse" in w_ else "other"; bw = dict(rhythm=bw["rhythm"], figure=bk_["by_count"][pt_][min(3, abs(len(sy) - len(lines[(sec, j)])))] if (bk_.get("by_count") and j is not None) else bk_[pt_]); self._true = bool(bk_.get("true"))      # 749.207, a trial (studies/borrow_kept), off: the chance is the kept share of the part's lines that repeat a nearby line. Absent from every record
@@ -486,8 +487,8 @@ class Engine:
                     self._818 = True; r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot); self._818 = False
                     if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
                         r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
-                        if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; continue
-                        ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1
+                        if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; self._made[(sec, i)] = "818 again"; continue
+                        ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1; self._made[(sec, i)] = "818 rhythm"
             if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
             self._runin = None
             if k and self.RUNP > 2:                                                             # 926: the run of one pitch the song is already on, counted across the lines

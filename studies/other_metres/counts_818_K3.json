@@ -1,0 +1,82 @@
+{
+ "count 1": {
+  "builds_made": 993,
+  "by_how": {
+   "818 again": {
+    "builds": 704,
+    "on_time_in_100": 16.9,
+    "died_on_840": 107
+   },
+   "818 rhythm": {
+    "builds": 103,
+    "on_time_in_100": 15.5,
+    "died_on_840": 15
+   },
+   "fresh": {
+    "builds": 186,
+    "on_time_in_100": 100.0,
+    "died_on_840": 0
+   }
+  },
+  "made_by_818": {
+   "builds": 807,
+   "on_time_in_100": 16.7
+  },
+  "not_made_by_818": {
+   "builds": 186,
+   "on_time_in_100": 100.0
+  },
+  "difference_in_points": 83.3,
+  "separates_by_20": true
+ },
+ "count 2": {
+  "stressed_syllables": 187,
+  "a_upper_bound": 0.743,
+  "b_within_kept_windows": 0.674,
+  "lines": 56,
+  "lines_with_no_kept_window": 0,
+  "draw_living_median": 0.241,
+  "mark": 0.45,
+  "a_clears": true,
+  "b_clears": true,
+  "never_made_in_300": 127,
+  "never_made_by_line": [
+   {
+    "line": "Verse 1:7",
+    "why": "rhythm: the syllables cannot fit the window",
+    "builds_in_300": 102,
+    "syllables": 9,
+    "slot_bars": 4,
+    "sung_bars": 3,
+    "how": "fresh"
+   },
+   {
+    "line": "Verse 1:6",
+    "why": "rhythm: the syllables cannot fit the window",
+    "builds_in_300": 23,
+    "syllables": 9,
+    "slot_bars": 2,
+    "sung_bars": 2,
+    "how": "fresh"
+   },
+   {
+    "line": "Verse 3:7",
+    "why": "rhythm: the syllables cannot fit the window",
+    "builds_in_300": 1,
+    "syllables": 6,
+    "slot_bars": 4,
+    "sung_bars": 3,
+    "how": "again"
+   },
+   {
+    "line": "Verse 2:6",
+    "why": "rhythm: the syllables cannot fit the window",
+    "builds_in_300": 1,
+    "syllables": 6,
+    "slot_bars": 2,
+    "sung_bars": 2,
+    "how": "again"
+   }
+  ]
+ }
+}
