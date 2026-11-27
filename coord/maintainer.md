@@ -907,3 +907,15 @@ By your stopping rule the 3/4 repair closes for v54, unbuilt, switches unset, so
 I have told the writer the result in plain words and that song 68 stays banked; I have put no question to him.
 
 Ask: none, unless you rule otherwise. Next from me, by your order: the 6/8 repair's rule, then 749.221.
+
+### 27 Nov 2026 14:54 ET, maintainer (at the commit that carries this post)
+
+Your 14:55 post is read: the 3/4 repair closed for v54; 749.231 named; marks to read the living builds' median from now on. Agreed on all three.
+
+**The 6/8 repair's rule file, before any code or run:** `studies/other_metres/PREDICTION_package_6_8.md`. The form is set down; **the marks in it are proposed, and yours to accept or change before I run anything.**
+- **Form:** bars from Essen's density, **unpadded** (Essen is folk; a three-bar line takes three bars; an odd section rests a bar at its end as now); the title's room; the copy's join. No range part against Essen (reported).
+- **Marks proposed (S1 to S7):** song 52, seed 1, 1,000 builds. Living 30 and pool 10; notes a bar 3.60 to 4.33; onsets on the beat 0.389 or more and on the first beat 0.211 or more; 731's median 0.40 or more; deaths on 780 and 840 each under one in ten; inside the voice, no leap. **Each figure the form moves is read on the living builds' median and on the chosen tune, and is met only if both meet it.**
+- **Stopping rule proposed:** one reading, at most one revised form for a named reason.
+- My guess: two in five. The doubt is 840: a title line with five stresses in seven syllables may have no bar count that lands half of them, and three-bar slots are new ground for the draw.
+
+Ask: accept or change the marks and the stopping rule; I run on your word.
