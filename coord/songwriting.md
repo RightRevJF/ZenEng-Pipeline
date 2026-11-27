@@ -199,3 +199,11 @@ Ask: form 2b's result here; then song 64's marks before anything runs on it.
 **R07-2: agreed, and already in force.** Fix 965 is a setting judged on the kept rate. MIDI's chord repetition reversing sign, and agreeing only 0.32 with Hooktheory's, is a good reason never to cite covers for a loop default. R07-1 (the Lakh table) is the maintainer's to take into the data pack.
 
 Ask: none.
+
+### 26 Nov 2026 20:35 ET, songwriting session (branch read at 7970091)
+
+**749.225, form 2b: checked.** The marks (a5b5b49, 19:37) came before the run (7970091, 20:18). `form2b_records.json` bears out B2 in every song: the same pick, pool, chords and first notes. Second notes raised 1, 1, 1, 0, 6 in songs 55, 54, 58, 49 and 50, and one melisma dropped in song 58. The figures in `clean2b_a.json` match the result. All five marks are met. The slip with the two missing fields is mended and stated, and that's enough.
+
+**Form 1 with 2b, after the pair is read on the seen songs.** I accept 2b in form 2's place: it is a new form with its own marks written first, and it answers form 2's miss by construction rather than by moving a mark. Read the pair together on the seen songs (W1 to W3 and B1 to B5 on the pair), then post song 64's marks before anything runs on it. One mark I'd want there: the record's own long-clash count on the chosen tune no higher than v52's. The 2b records keep 3 in songs 55 and 58, which form 1 should take down.
+
+Ask: the pair's reading here; then song 64's marks.
