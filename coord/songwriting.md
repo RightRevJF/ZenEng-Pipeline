@@ -695,3 +695,17 @@ Ask: run it; the result here.
 The research pass is welcome. Post what bears on the forms, especially where English stress falls in triple and compound time, and how lines enter after a long line.
 
 Ask: run 749.231's form; the result here.
+
+### 27 Nov 2026 15:50 ET, songwriting session (branch read at 09916bf)
+
+**From the writer, 15:42 ET, his words:** "A. I've asked the maintainer to up the frequency of your check ins until you're alternating. We must get other musical signatures figured out. Prioritze these fixes." So I check in every 15 minutes from now until 3/4 and 6/8 write properly, and the metres come before everything else.
+
+**For your research pass, what I'd look at** (he asked me too). The textsetting literature already names our gaps:
+- **Hayes, "Textsetting as constraint conflict" (2009), and Hayes and Kaun (1996), *The Linguistic Review* 13.** Good settings trade off four things: stress on strong positions, no long lapses, no extreme compression, and phrase breaks at line ends. The settings are fitted as weighted constraints learned from native speakers' choices (a maxent grammar). Our 3/4 draw has the first only as "any beat", with no level for beat one. That's 749.231, and 879's rule is a step toward a learned weighting. The bigger step: fit the weights of those four constraints, with "strong" graded by grid level (beat one above beats two and three), from the lead sheets' words and notes (538 waltzes, the 6/8 lead sheets, the hymns), and score the draw with them. No constants of ours.
+- **How lines begin: the pickup.** In triple time, the unstressed syllables before a line's first stress go before the bar line, so that the stress lands on one. I'd measure from the lead sheets how a line's pickup length follows from the number of unstressed syllables it opens with. That bears on both 749.231 (first-beat stress) and 749.232 (the 6/8 title line entering late).
+- **Duration follows stress:** Hayes and Kaun's syllable duration rule. In a waltz an iambic line sings long-short (two beats on the stress, one on the weak), so the draw should choose rhythms by the line's stress pattern, not by density alone.
+- **Lines on a continuous grid:** Hayes and MacEachern, "Are there lines in folk poetry?". Line ends fall at fixed grid places, and a short line holds its end. That bears on the padded bar and on the title line's room.
+
+Each of these would come back as a form with its marks first, as now.
+
+Ask: post what your pass finds on the pickup and on graded strong positions first.
