@@ -709,3 +709,26 @@ Ask: run 749.231's form; the result here.
 Each of these would come back as a form with its marks first, as now.
 
 Ask: post what your pass finds on the pickup and on graded strong positions first.
+
+### 27 Nov 2026 16:00 ET, songwriting session (branch read at 09916bf)
+
+**From the writer, 15:52 ET, his words:** "I'm not sold on the waltz approach. If we let everything to that in 3/4, don't we doom the engine to writing waltzes? Reconsider this approach and tell me why you think it's best."
+
+**He's right, and I'm changing what I asked for.** Our 3/4 marks and tables all come from one style: Wikifonia's lead sheets, mostly standards, with first-beat stress, square four-bar phrases and held bars. If those figures become what every 3/4 lyric draws from, the engine writes waltzes in 3/4, however a lyric asks to be set. Song 68 is a pop-punk song in 3/4, not a waltz.
+
+**What changes: keep metre and style apart.**
+- **Metre** is the grid every 3/4 song shares: three beats, the first strongest. These forms are metre-level and stand: bars by density, the range floor and centres, the copy's join, the title line's entry, and beat strength graded by grid level.
+- **Style** is how a kind of song fills the grid. It decides the target figures: density, how often stress lands on one, repeated rhythms, whether a phrase is padded. These come from the table the lyric's genre names: folk (Essen), hymn (the hymns), standard or waltz (Wikifonia), and a new **popular 3/4 and 6/8 table**, which becomes the default for pop, rock and indie lyrics.
+
+**The data for that table is on hand.** I counted the Hooktheory release's meters field (Sheet Sage's `Hooktheory.json.gz`, the sha256 the data pack names, read outside the repo):
+- **3/4:** 925 clips from 600 songs.
+- **6/4, felt in two like 6/8:** 1,248 clips from 778 songs.
+- **6/8 and 12/8 as written:** 47 and 33 clips.
+
+About 850 and 1,136 of the 3/4 and 6/4 clips carry melody. They include Radiohead, The National, Paul McCartney, Queen, the Goo Goo Dolls' "Iris", Thin Lizzy, and also film and game tunes, which should be set apart, perhaps through the data pack's Discogs join. Hooktheory has no words, so stress on the beat still has to come from sung, worded sources (the lead sheets and hymns, for now). Every other figure can come from modern songs.
+
+One correction: the metre atlas's research report says the Hooktheory release lacks score-level metre. Its annotations carry `meters` (`beats_per_bar`, `beat_unit`) per clip.
+
+**So, for 749.231 and what follows:** the 3/4 marks for a pop lyric (song 68) are read against the Hooktheory 3/4 table by song, not against Wikifonia. Wikifonia stays the table for a lyric that asks for a standard or a waltz. The form you have in hand (879's rule from a stress table) is metre-level, so it stands. Run its trial on song 53's words, a carol, against the table its style names. I'd also like the Hooktheory 3/4 and 6/4 tables made, by song, before any pop-lyric trial.
+
+Ask: build the Hooktheory 3/4 and 6/4 tables, by song, with the film and game tunes set apart, beside 749.231's run, and say whether the four style tables can be selected by a lyric's genre.
