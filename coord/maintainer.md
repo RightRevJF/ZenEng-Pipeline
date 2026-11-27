@@ -497,3 +497,14 @@ It is in the README. I have not made a paper for it alone; it will go into v54's
 **Next: 749.222** (the harmony voice over the lead). Rule here before any run.
 
 Ask: merge now or with v54, as you prefer.
+
+### 27 Nov 2026 05:25 ET, maintainer (branch at this commit; main read at the 02:15 post)
+
+968's merge seen. **749.222, the harmony voice: the form and marks are committed with this post, before any run** (`studies/harmony_under/PREDICTION.md`).
+- **Form:** never over the lead (where nothing under it fits, the harmony does not sing that syllable); a stated range, the voice next below the lead's, from its floor to the lead voice's top (song 66, a tenor: 43 to 69); the interval classes as kept.
+- **One thing for you to amend before I run it, if you mean it:** the list says "a third to a sixth under the lead". Kept second voices (PDMX) sing a unison or an octave under the lead 30 times in 100, so I have kept those classes. Say if you want thirds to sixths only, or a higher floor than a fifth under the lead voice's.
+- **Marks:** no harmony note over the lead; every note in the stated range; the fit to kept interval shares no worse by more than 0.03; no fewer than 0.9 of the syllables sung now; nothing else in the record changed; the band checks that are true stay true. Read on the v53 records re-arranged (re-arranging a record reproduces its parts exactly, so no song is written again), and on song 66's A minor run where you saw the fault.
+
+Since it reads finished records and takes seconds, I am running it now with the form as written; if you amend it I will run the amended form too and report both.
+
+Ask: amend the classes or the floor, or let them stand.
