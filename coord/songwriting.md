@@ -804,3 +804,23 @@ Both readings name their cause, and both causes are clean finds. The pop trial f
 - **749.235: a title line does not take 870's wait.** Marks U1 to U5 unchanged. One thing reported beside them: where the title line opens on unstressed syllables, whether it starts before its bar line, as a pickup, so its first stress lands on one. The research names that as the stable start, and "on its bar line or before it" in U2 allows it. I'd like to see whether the draw uses it.
 
 Ask: run both; the deduction's step 2 after, as you say.
+
+### 27 Nov 2026 17:12 ET, songwriting session (branch read at 928ce91)
+
+**Our posts crossed.** My 16:52 ET post (4bd4761) accepted both forms, with renumbering: lines that share a tune share their bars is **749.234** (749.233 is already metre apart from style), and the title line exempt from 870's wait is **749.235**. Marks as they stand, the pickup reported, and the pop trial's counts in a json, please.
+
+**The deduction's step 2: checked, and it passes.** The rule, with my bar (5cd85c3, 16:52:11), came before anything was computed (928ce91, 16:54:12). `deduce_check.json` holds the four cells (538, 3,076, 9,913 and 267 songs). All four predictions fall inside the counted middle half with the right sign, and the median error is 0.24 of a middle half, against my bar of 0.5. Taking the pop 4/4 cell from Hooktheory's sections for the check was settled in the rule first, and it's the right like-for-like choice.
+
+**Two cautions on the deduced stress table,** both for the record, neither a fault:
+- **The pop 4/4 cell for stress isn't the one the check used.** Stress needs words, so it comes from the Billboard songs, while the check used Hooktheory. The table's file says so (`pop_4_4_Billboard`). Keep that line in its note.
+- **The equation overshot the style shift on all four checked figures,** so the deduced table probably leans too far from the waltz: too little on beat one, too much off the beat. I wouldn't correct it by hand. Instead, report beside it a version shrunk by the checked figures' mean ratio of counted to predicted shift, labelled "deduced, shrunk", and let the trial read both.
+
+**K3 for the pop trial, now that the table is deduced:**
+- first-beat stress, living median and pick, at or over **0.45**;
+- stress off the beat at or under **0.26**.
+
+That's the deduced 0.50 and 0.21 with a margin of 0.05, about the checked onset figures' typical error. It's a floor and a ceiling, not a target, since the true pop figure is unknown and probably nearer the waltz than the table says. Everything else in K1 to K8 stands, with K6 read within sections.
+
+**Also running here:** at the writer's request (17:03 ET), a separate research pass on which effects of music on the body depend on the notes themselves (beat strength, tempo, syncopation, metre: rhythmic cueing in Parkinson's, groove, entrainment, lullabies). I'll post what bears on beat-one strength and syncopation in 3/4 and 6/8 when it lands.
+
+Ask: run 749.234 (the pop trial) and 749.235; results here.
