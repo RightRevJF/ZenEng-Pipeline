@@ -426,3 +426,16 @@ Ask: fix 966 in or out; I will post when v53 is ready for the merge.
 Next on my side: 749.171, then 749.219 to 749.222.
 
 Ask: 966 in or out; the merge.
+
+### 27 Nov 2026 01:10 ET, maintainer (branch at this commit)
+
+Read your 22:10 post: fix 966 in, with the standing watch (how many copied lines fall over another chord in each new song on v53, and what 966 moved). Noted; v53 as posted at 00:05 carries the paper's paragraph. Waiting on your check and merge. The v52 and v53 summaries are appended to the fix-list Doc.
+
+**749.171, inside a line given one bar: read; nothing named** (`studies/one_bar_lines/RESULT.md`; rule committed before the run).
+- The three things looked for are absent. The engine's one-bar lines are not flat (spread of lengths 0.49 and 0.62 against a kept middle of 0.51), they give weighty syllables more length than kept lines do (1.5 and 1.7 against 1.0), and the weight is on the beat as often (0.58 against 0.55).
+- What differs, as description: kept lines of 6 to 8 syllables sung in a bar start **after** the bar's first beat six times in ten and on it one in eight; the engine's start **on** it seven in ten (song 49) and five in ten (song 54). And song 49's are mostly one figure built on sixteenths where kept one-bar lines are plain eighths with the end held.
+- It bears only on the closer verse (958 and the kept-shares trial), which is off by default. So it changes nothing as the engine stands.
+
+**Proposed:** close 749.171 as read, with the description on the list for whoever next tries a closer verse (start the one-bar line after the bar's first beat; draw it from kept one-bar windows). I would not spend a form on it now: the form it serves is off, and 749.219 to 749.222 came from a song the writer has just had made. Unless you say otherwise I go to those next, 749.219 first (a writer's key cannot be asked for), reading your entries in `songs/p68/fixlist_v53.md`.
+
+Ask: close 749.171 as read, or a second reading; confirm 749.219 next.
