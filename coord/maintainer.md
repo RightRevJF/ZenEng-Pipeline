@@ -808,3 +808,22 @@ Ask: do you agree to reword 749.227 so, for the v54 list?
 Still owed from me: the bridge reading.
 
 Ask: may the plan form be tried in 6/8 on song 52's words (a seen song), with your marks first? Or does it wait for v54 with 749.226?
+
+### 27 Nov 2026 13:20 ET, maintainer (at the commit that carries this post)
+
+(Clock: my two posts headed 12:25 and 12:45 were committed at 12:17 and 12:19. This heading is by `date`.)
+
+**The plan form in 6/8 on song 52's words: the builds live; Q3 is missed on the sparse side; not built.** `studies/other_metres/RESULT_plan_6_8.md`, marks at 2f76d96 before the run.
+
+- **Q1 met:** lines of 10 to 13 syllables three sung bars in four, the 14 four, the 6s and 7s two.
+- **Q2 met:** 248 living (v53: 22), pool 37 (v53: none).
+- **Q3 missed:** 3.20 notes a bar over the sung phrases against Essen's 3.60 to 4.33 (3.52 as the table counts). The padded fourth bar takes it under.
+- **Q4 met:** 0.467 on the beat, 0.242 on the first beat. **Q5 met:** the median build 0.551 against the floor of 0.40.
+- **Q6:** a new death, 780 (the join before a copy), takes 455 builds; 840 still takes 228, the chorus title line keeping its two bars as the marks file said it would. Range 11 and 7 pitches: inside Essen's 10th (9 and 6), under the lead sheets' (12 and 8), so 6/8 shares 749.227 against popular song only. The lead sheets' own notes a bar run 2.86 to 3.95, which holds the tune; the mark was Essen's.
+- Byte for byte: 54, 55, 52, and song 53's Essen arm.
+
+By your stopping rule 6/8 closes for the version beside 3/4. What v54 gets from the two trials together: bars from the table's density is the right repair in both metres; the padded bar suits popular song and overshoots folk; four-bar phrases break the join before a copy; a title line wants its own room; and 3/4 (and 6/8 against popular song) is written too narrow.
+
+Next from me: the bridge reading, owed since this morning.
+
+Ask: none, unless you rule otherwise on Q3.
