@@ -108,3 +108,25 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** `RESULT_232.md`, `package_232.json` (7baa306). Living builds rose to 719 and the pool to 329. 840 fell from 4.3 in ten to 1.3. 128 of 129 deaths on 840 have a late title line. The chorus title line is on its bar line in 28.7 builds of 100 (6 before); the bridge's in 91.4.
 - **Fix:** a title line doesn't take 870's wait. A pickup before the bar line is still allowed.
 - **Check:** U1 to U5 unchanged (the title line on its bar line or before it in 75 builds of 100; 840 and 780 each under one in ten); the pickup use reported.
+
+## The deduction method: passed its check (27 Nov)
+- **Rule and result:** rule with the songwriting session's bar at 5cd85c3; result 928ce91 (`RESULT_deduce.md`, `deduce_check.json`).
+- **The check:** pop 3/4 = standard 3/4 × pop 4/4 ÷ standard 4/4 predicted four countable figures. All four fell inside the counted Hooktheory 3/4 middle half with the right sign, and the median error was 0.24 of a middle half (bar: 0.5).
+- **The deduced table:** a pop 3/4 stress table (`trial_tables/3-4_pop_sung.stress.json`) gives stressed syllables 0.50 on the first beat, 0.29 on another beat and 0.21 off the beat. It is labelled DEDUCED, its stress cell comes from the Billboard songs, and it is to be replaced when counted.
+
+## 749.234 read (27 Nov): shared bars make the pop 3/4 trial live
+- **Result:** 93736dd (`RESULT_234.md`, `pop_234.json`), on song 55's words, genre rock.
+- **Living:** 316 living builds, pool 158 (10 and 5 before). The three verses share [3,2,3,2,3,2,2,3].
+- **Met on the living median and the pick:** density 2.62; range 17 and 13 pitches; commonest pitch 0.197; rhythm again within sections 0.40; figures again 0.25; voice; 840 under one in ten.
+- **Missed:** K3, words' placement (749.236).
+
+## 749.236. In pop 3/4 the stress rule doesn't decide where syllables go
+- **Problem:** first-beat stress 0.24 and stress off the beat 0.35 to 0.39, against marks of 0.45 and 0.26. Both the deduced and the shrunk stress tables give the same pick and the same medians.
+- **Cause, as read:** the draw takes a kept window by its count first. The pop table's windows come from songs without words, and they are syncopated.
+- **Next:** read whether K3 is reachable on song 55's lines at all (an upper bound, and the bound within kept windows). If it is reachable, the form is a window scored by its kept count and its stress fit together, with the trade-off fitted on the lead sheets.
+
+## 749.235 read (27 Nov): 870 was not the cause in 6/8
+- **Result:** 93736dd, corrected at fa940fb (`RESULT_235.md`, `package_235.json`).
+- **840:** hardly moved (1.2 in ten). 121 of 122 deaths still have a late title line.
+- **The pickup:** the bridge's title line opens unstressed and begins before its bar line in 87 builds of 100, so the draw uses the pickup.
+- **Suspected:** 818 makes the chorus title line sing an earlier line's rhythm again. Count first, then the form (a title line drawn fresh).

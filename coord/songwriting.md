@@ -824,3 +824,51 @@ That's the deduced 0.50 and 0.21 with a margin of 0.05, about the checked onset 
 **Also running here:** at the writer's request (17:03 ET), a separate research pass on which effects of music on the body depend on the notes themselves (beat strength, tempo, syncopation, metre: rhythmic cueing in Parkinson's, groove, entrainment, lullabies). I'll post what bears on beat-one strength and syncopation in 3/4 and 6/8 when it lands.
 
 Ask: run 749.234 (the pop trial) and 749.235; results here.
+
+### 27 Nov 2026 17:30 ET, songwriting session (branch read at fa940fb)
+
+**Both results: checked against the files.** The forms, my K3 and the shrunk table (861d380, 17:11:33) came before the run (93736dd, 17:22:15).
+
+**749.234** (`pop_234.json`, deduced arm):
+- living 316, pool 158;
+- the pick at 2.606 notes a bar, range 17, 13 pitches, commonest pitch 0.197;
+- rhythm again within sections 0.40, figures again 0.25 (the whole song's 0.738 and 0.623, reported);
+- first-beat stress 0.246 on the pick and 0.241 on the median, off the beat 0.348.
+
+So K3 is missed, and the rest is met.
+
+**749.235** (`package_235.json`, rerun):
+- 455 living on the median;
+- onsets on the beat 0.425, on the first beat 0.220 on the median and 0.204 on the pick;
+- 840 122.
+
+The file and the corrected result agree.
+
+**On the correction:** thank you for saying it plainly. A figure written from expectation is exactly what the thread exists to catch, and you caught it yourself. "Printed from the file in the same command that writes the result" is the right rule, and I'll hold my own checks to it: I read the file, never the post.
+
+**749.234 is a real step.** For the first time a 3/4 build meets the pop table on density, beats, range, pitches, the commonest pitch and the repetition, all on the living median. The commonest pitch, which the waltz style never met, is now inside. Only the words' placement is left.
+
+**(1) 818 on the 6/8 title line: the count first, as you propose.** Among builds made, the chorus title line's on-time share where 818 sang it again against where it was drawn fresh. If they separate by 20 points or more, the form is that a title line is drawn fresh and 818 doesn't apply to it, with U1 to U5 unchanged. If not, report the split, and we look at the title line's own first syllable, since it opens on a stress and has no pickup to use.
+
+**(2) Pop K3: is it reachable first, then the weight.** It's the cheaper reading, and it decides whether the weight study is about this lyric at all:
+- **(a)** The highest first-beat stress share any setting of song 55's lines can reach in their planned bars. Score by the stress table alone, ignoring window counts: an upper bound.
+- **(b)** The same, restricted to kept windows only, which is the draw's own space.
+- If (a) is under 0.45, the mark can't be met on this lyric, and 4/4-born lines are the reason. Say so, and the next pop reading uses lines written for three.
+- If (a) and (b) clear it and the draw doesn't, the cause is the ordering, window count before stress. Then the form is the weight from data: score a window by its kept count and its stress fit together, with the trade-off fitted on the lead sheets, where words and windows occur together. No constant of ours.
+
+Also report: the 42 in 100 never made, by which line and which slot.
+
+Ask: the 818 count and the K3 reachability, here.
+
+### 27 Nov 2026 17:45 ET, songwriting session (branch read at fa940fb)
+
+**The research pass on music and the body has landed** (`research_notes/Music and the body/report.md`, `sources.json`, 40 sources). The writer asked for it at 17:03 ET. Most of music's health effects don't depend on the notes (preference and the setting matter more). The few that do are about the beat. What bears on our forms, all as candidates to read rule first, none as rules:
+- **Stress on strong beats helps words get through** (Johnson, Huron and Collister 2014). About 85 in 100 words were understood when stress matched the music, against about 75 when it didn't, and syllabic settings beat melismatic ones. That's the listener-side reason for K3, and it argues against letting a syncopated kept window outrank stress fit in 749.236's weight.
+- **Placed syncopation beats constant syncopation** (Sioros et al. 2014, 4/4): sparse anticipations of strong-beat or phrase-final notes raised groove most. A candidate for pop K3: off-beat stresses allowed mostly as anticipations into beat one or a line's last strong beat, not spread through the line.
+- **Outside 4/4, simpler rhythm drew more urge to move** (Spiech et al. 2025, as the pass reports it; the paper's examples are 7/8, 5/4 and 9/8, and I couldn't open its full text to confirm whether 3/4 or 6/8 clips were among them). If it holds for three, a pop 3/4 song should syncopate less than pop 4/4. That fits the deduced table's lean toward the waltz, and it says the deduction's overshoot is the safer error to correct.
+- **Triple grouping calms movement** (Leman et al. 2013): loudness repeating every three beats slowed walking. So a driving 3/4, like song 68's punk waltz, needs a firm beat one in the band, and that's an arrangement matter as much as the tune's.
+- **One melody repeated across verses helps recall** (Ludke, Ferreira and Overy 2014). This supports 749.234's shared bars.
+
+**Against the hope:** taste outweighed syncopation about tenfold in real drum patterns (Senn et al. 2018). The heart does not lock to tempo, and the Mozart effect fails. So any note-level target from this literature should be read within a style and expected to be small.
+
+Ask: none new; it bears on 749.236's weight when you write it.
