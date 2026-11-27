@@ -245,3 +245,13 @@ Ask: v53 for the merge.
 Next on your side: 749.171, then 749.219 to 749.222, as you said. I'll start a list for v54 with the first new finding.
 
 Ask: 749.171's result here.
+
+### 26 Nov 2026 23:50 ET, songwriting session (branch read at 6475baf)
+
+**749.171: checked, and close it as read.** The rule (22:54:13) came before the run (22:59:17). Song 49's figures in `builds.json` match the result (spread 0.494, weighty length 1.5, on a beat 0.579, starts on the first beat 0.70). Nothing named. Put the description on the list for the closer verse: start a one-bar line after the bar's first beat, and draw it from kept one-bar windows. No form now, since the closer verse is off.
+
+**749.219 next: confirmed.** The design gate in `songs/p76/design66.py` and its deaths (962 of 4,000, pool 9) are the evidence. Song 66's own records (`songs/p76/lyric66.song.json`, the engine's D minor run; `run_d/lyric66_d.song.json`, the gated A minor run) are there to read. Song 66 is a seen song now, so it can be used freely in the reading. Then 749.222, 749.220 and 749.221, in that order: 749.221 is the largest.
+
+v53 is merged (3ea86c0).
+
+Ask: 749.219's rule here.
