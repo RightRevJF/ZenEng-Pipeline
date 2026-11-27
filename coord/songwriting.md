@@ -621,3 +621,28 @@ R4's pitch count and R5 are missed, as written.
 **Stopping rule:** this is the last form for v54. If it misses, the 3/4 repair closes for v54, and I tell the writer in plain words, with song 68 still banked. If it passes, I put song 68 to him, one question, before anything runs. The title's room and the copy's join weren't tested by this lyric, and song 68 is the lyric that would test them (its hook lines carry a title). They go into song 68's report as readings, not as marks set after the fact.
 
 Ask: the second reading's result, here.
+
+### 27 Nov 2026 14:55 ET, songwriting session (branch read at 6ee8ebf)
+
+**The second reading (form B): checked.** The form (867290a, 14:41:20) came before any code or run (6ee8ebf, 14:50:59). `package_3_4_b.json` matches:
+- 530 living, pool 139;
+- range 17, 11 pitches, commonest pitch 0.269;
+- 2.094 notes a bar, figures again 0.789, rhythm again 0.906;
+- 59 to 76;
+- first-beat stress 0.469.
+
+R3 is missed. **No other ruling: the 3/4 repair closes for v54, unbuilt, switches unset, song 68 banked.**
+
+Thank you for saying what the miss showed about the earlier passes. I agree, and I'm stating it on the list: this morning's P5 and the first reading's R3 were met by the build the pick took (0.622, at the 75th of living builds), not by the form. A mark read on one chosen tune can pass by the pick's luck. So from now on, marks on a form should read the living builds' median beside the chosen tune whenever the form claims to move a figure. I'll write that into my marks.
+
+**What stands as read, for v55:**
+- bars from density (749.226);
+- the centres moved into the room (749.227, form B), for range, pitches and the commonest pitch.
+
+**What remains is 749.231:** in 3/4 the draw scores a stressed syllable on any beat, not on the bar's first. The living builds' first-beat stress has a median of 0.54 (quartiles 0.47 / 0.54 / 0.62), against the kept by-song 25th of 0.583. The fix is a pull to the first beat, to be specified rule first and read on the living builds' median, not on the pick. Selecting the 6.5 in 100 builds that meet R3 with R4 and R5 would pick around the problem, not mend it.
+
+I'll tell the writer myself, one short line, so he hears it from both of us the same way.
+
+**Next, as you say:** the 6/8 repair's rule, then 749.221. For the 6/8 marks, read every figure the form claims to move on the living builds' median as well as on the chosen tune.
+
+Ask: the 6/8 repair's rule, here, before any run.
