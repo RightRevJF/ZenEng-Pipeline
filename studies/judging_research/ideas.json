@@ -6,9 +6,9 @@
    "idea": "Chords that move: within-section chord repetition predicts fewer covers",
    "stance": "week01 chair",
    "proposed": "week01",
-   "status": "passed",
-   "status_set_by": "maintainer within_artist (22 Nov)",
-   "note": "−0.071 across artists; −0.042 within artist (p .009); fresh McGill −0.028, unsettled",
+   "status": "failed",
+   "status_set_by": "run08 experiments",
+   "note": "−0.071 across artists; −0.042 within artist (p .009); fresh McGill −0.028, unsettled | run08 chrep_confirm (fresh ChoCo, powered 0.49): KILLED, -0.003 (SE 0.014) vs -0.04; the seen-song pass did not replicate on whole-chart chord repetition",
    "history": [
     "run08: fresh ChoCo confirmation chrep_confirm frozen (counted)"
    ]
@@ -182,7 +182,7 @@
    "proposed": "run03",
    "status": "testing",
    "status_set_by": "run06 experiments",
-   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06; run05 first principles: recommended retiring (gate 0.203, power 0.09) | run06 fresh_tonic: -0.25 (SE 0.75, p .74), halves split; unsettled (power 0.03). Retirement still recommended; Jason decides.",
+   "note": "unsettled: β −0.019 (SE 0.014, p .19; needed p < .0083); halves −0.010, −0.027; without surprise −0.026; gate passed (clip-to-clip 0.247); power 0.31; run05: retested on y_foreign with fresh notes (experiments/tonic_resistance); run05 tonic_resistance on y_foreign: unsettled, beta -0.227 (SE 0.44, p .61), 0.03 past the kill line; halves -0.50/-0.06; run05 first principles: recommended retiring (gate 0.203, power 0.09) | run06 fresh_tonic: -0.25 (SE 0.75, p .74), halves split; unsettled (power 0.03). Retirement still recommended; Jason decides. | run08 tonic_resistance (estimate, written keys): +0.021 (SE 0.012) vs -0.03, opposite sign; decides nothing",
    "history": [
     "run08: tonic_resistance frozen on ChoCo written keys (estimate)"
    ]
@@ -580,8 +580,8 @@
    "stance": "Geometer",
    "proposed": "run08",
    "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "run08 chair: estimate (power 0.22, counted set full)"
+   "status_set_by": "run08 experiments",
+   "note": "run08 transport_economy (estimate): -0.035 (SE 0.016, p .023) vs +0.03, wrong sign; halves and Poisson negative; decides nothing"
   },
   {
    "id": "R08-G2",
@@ -589,62 +589,62 @@
    "stance": "Geometer",
    "proposed": "run08",
    "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "run08 chair: estimate (author withdrew it from the count)"
+   "status_set_by": "run08 experiments",
+   "note": "run08 transposed_rep (estimate): +0.014 (SE 0.015) vs +0.05; decides nothing"
   },
   {
    "id": "R08-G3",
    "idea": "Fitness beyond the urn: notes measure predicting late covers holding early covers",
    "stance": "Geometer",
    "proposed": "run08",
-   "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "merged into R08-L2 (cover_timeline) as its second reading"
+   "status": "failed",
+   "status_set_by": "run08 experiments",
+   "note": "run08 cover_timeline gamma readings: TRAV5 +0.003, econ -0.008, T_rep +0.018, IIV +0.006, ch_rep -0.042 (p .0496, uncorrected); none decides"
   },
   {
    "id": "R08-L1",
    "idea": "Key travel TRAV5: mean circular W1 on the fifths circle between consecutive 4-bar windows, holding TRAVL1 (card 1)",
    "stance": "Listener",
    "proposed": "run08",
-   "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "run08 key_travel, counted"
+   "status": "failed",
+   "status_set_by": "run08 experiments",
+   "note": "run08 key_travel: KILLED, beta -0.031 (SE 0.026, p .23) vs +0.05; halves -0.031/-0.035; Poisson +0.057; power 0.213"
   },
   {
    "id": "R08-L2",
    "idea": "Momentum or fitness: Poisson slope of late artist sets on log(K10+1) (card 2, neutral copying)",
    "stance": "Listener",
    "proposed": "run08",
-   "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "run08 cover_timeline, counted"
+   "status": "failed",
+   "status_set_by": "run08 experiments",
+   "note": "run08 cover_timeline: KILLED, beta 0.907 (SE 0.030) vs 1.10; neutral beta=1 also outside the range (sublinear: early leads fade); urn ceiling 0.48 of late-cover residual variance left beyond copying"
   },
   {
    "id": "R08-L3",
    "idea": "The ii-V chunk: share of changes from a minor seventh to a dominant seventh a fourth up",
    "stance": "Listener",
    "proposed": "run08",
-   "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "run08 iiv_chunk, counted"
+   "status": "passed",
+   "status_set_by": "run08 experiments",
+   "note": "run08 iiv_chunk: PASS, beta +0.073 (SE 0.018, p 4e-5) vs +0.04; halves +0.096/+0.054; Poisson +0.124; power 0.387. Confirmed as a lead on unseen single-composer songs (iiv_singletons, after seeing results): +0.057 (SE 0.019, p .0028), mostly in jazz genres (+0.087 vs +0.021). Rival story (chart writers add ii-Vs to tunes jazz players already play) still open"
   },
   {
    "id": "R08-I1",
    "idea": "Key excursion E: mean circular W1 (fifths) of 4-bar windows from the whole chart",
    "stance": "Inventor",
    "proposed": "run08",
-   "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "merged into key_travel as its second reading"
+   "status": "failed",
+   "status_set_by": "run08 experiments",
+   "note": "run08 key_travel second reading E: -0.026 (SE 0.018), deciding nothing; its parent test was killed"
   },
   {
    "id": "R08-I2",
    "idea": "Harmonic heritability: chord-space neighbours' cover residuals alike beyond a within-cell permutation null (card 2)",
    "stance": "Inventor",
    "proposed": "run08",
-   "status": "testing",
-   "status_set_by": "run08 chair",
-   "note": "run08 heritability, counted"
+   "status": "passed",
+   "status_set_by": "run08 experiments",
+   "note": "run08 heritability: PASS, excess rho_nb +0.051 (null SD 0.013, p .0002) vs +0.06; halves +0.039/+0.062; K=5 +0.056; power 0.65. Halves to +0.031 for t0>=1950. Cannot separate fitness carried by the chords from a shared jazz covering scene"
   },
   {
    "id": "R08-I3",
@@ -654,6 +654,24 @@
    "status": "withdrawn",
    "status_set_by": "run08 chair",
    "note": "withdrawn by its author (stability 0.45, 94% zeros)"
+  },
+  {
+   "id": "R08-P1",
+   "idea": "ii-V share on single-composer songs, across composers (after seeing results)",
+   "stance": "Orchestrator",
+   "proposed": "run08",
+   "status": "passed",
+   "status_set_by": "run08 experiments",
+   "note": "iiv_singletons: PASS as a LEAD (after seeing results): +0.057 (SE 0.019, p .0028), halves +0.041/+0.077, Poisson +0.150; power 0.69; jazz genres +0.087, others +0.021"
+  },
+  {
+   "id": "R08-P2",
+   "idea": "ii-V share read from Wikifonia lead sheets only (song vs chart writer)",
+   "stance": "Orchestrator",
+   "proposed": "run08",
+   "status": "testing",
+   "status_set_by": "run08 experiments",
+   "note": "iiv_source (estimate, seen songs, power 0.06): Wikifonia +0.021 (SE 0.039), iReal -0.006 (SE 0.048) on 1,128 songs; settles nothing"
   }
  ]
 }

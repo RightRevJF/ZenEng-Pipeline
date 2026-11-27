@@ -136,3 +136,6 @@ The script ran once, 19:23:24 to 19:24:29 ET on 26 November 2026, after commit c
 - `run.log`: this run's output.
 - `result.json`: every figure above.
 - Step 1 used a notes-only script outside the repo. Nothing was committed or pushed.
+
+## Correction (run 08, 27 November 2026; the maintainer's check of run 07)
+The conditional logit gave no reading for this test: in `result.json` it is `nan` with `converged: false`. This was not the bug fixed in cd17b08 (this test ran after that fix); the logit failed to converge for this measure. The kill stands on the main estimate (+1.41 against −0.5), but the pass bar names the logit, so a reader should know this one was silent. The test that ran before the cd17b08 fix was `lakh_repetition` (its earlier output is kept as `result_before_logit_fix.json`). No rule or figure is changed.
