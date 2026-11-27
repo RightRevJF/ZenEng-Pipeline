@@ -5,12 +5,13 @@ import numpy as np, song_from_lyric as SL, metre_engine as M, page_gate as PG
 T = PG.table(); out = {}; N = int(os.environ.get("N", "1000")); DIR = os.environ.get("DIR")
 for stem in sys.argv[1:]:
     L = json.load(open(stem + ".json")); o = {}
-    for form in ("v52", "form 1", "form 2") if not DIR else ("v52", os.environ["LABEL"]):
+    for form in tuple(os.environ.get("FORMS", "v52|form 1|form 2").split("|")) if not DIR else ("v52", os.environ["LABEL"]):
         rec = json.load(open(stem + ".song.json" if form == "v52" else os.path.join(DIR, os.path.basename(stem) + ".song.json") if DIR else stem + ".song.json")); spec = json.loads(json.dumps(rec["spec"]))
         if not DIR and form == "form 1": spec["copy_clash"] = True
         if not DIR and form == "form 2": spec["melisma_clear"] = True
+        if not DIR and form == "form 2b": spec["melisma_clear"] = "after"
         DG = spec.get("degrees") or {}; blue = set(DG.get("blue", ())); E = M.Engine(spec)
-        E.as_sung = lambda ns_: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"), clash=SL.melisma_clash(E, 0) if spec.get("melisma_clear") else None)[0]
+        E.as_sung = lambda ns_: SL.melisma_notes(ns_, L, set(spec["scale"]), key="p", how=spec.get("how"), cap=(spec.get("target") or {}).get("run"), share=(spec.get("target") or {}).get("melisma_share"), clash=SL.melisma_clash(E, 0) if spec.get("melisma_clear") else None, relocate=spec.get("melisma_clear") != "after")[0]      # form 2b is read here as it will be sung; the engine itself chooses reading v52's melismas
         rng = random.Random(L.get("seed", 1)); C = collections.Counter(); fig = []; psc = []; su = []; nn = 0; living = 0
         for _ in range(N):
             c, err = E.build(rng)

@@ -325,3 +325,22 @@ I lean to B: it costs an hour, keeps the rule, and does not spend the last unres
 The switches are on the branch, off; songs 54 and 55 byte for byte with them off; room files rerun.
 
 Ask: A, B or C.
+
+### 26 Nov 2026 20:50 ET, maintainer (branch at this commit)
+
+No reply yet to the 19:25 post, so I did the work of way B meanwhile, since it spends nothing sealed and binds nobody: if you choose A it is simply not used.
+
+**749.225, form 2b: the melisma's second note cleared after the pick. All five of its marks met** (`studies/returning_clash/RESULT_form2b.md`; marks committed before any run).
+- **The form:** melismas drawn exactly as in v52, the tune chosen reading them exactly as in v52; only when the chosen tune is written out does a clashing second note take the scale step above, or the syllable keep one note. No melisma moves. `LUTHIER_MELISMA_CLEAR=after`.
+- **B1:** clashes on a melisma's second note nil in the builds of all six songs (v52 0.30 to 0.57 per 100 notes) and nil in every chosen tune (v52: 1, 1, 2, 0, 6, 0).
+- **B2:** each written record has v52's chord plan, pick, pool, living builds and first note on every syllable. In the six chosen tunes nine second notes are raised and one melisma is dropped.
+- **B3: the three are sound**, as v52 (rhythm scaling as sung 0.604, 0.562, 0.568).
+- **B4:** melismas in 100 syllables fall by 0.04 of a point at most. **B5:** all clashes lower in six.
+
+So form 2's miss cannot arise under 2b: the pick does not change.
+
+**A slip of mine, caught by the byte check before the commit:** a comment put mid-line cut off two statements, so the six written 2b records lack two melisma-share fields (their notes are right). Mended; songs 54 and 55 with the switches off are byte for byte v52's; room files rerun. Said in the result.
+
+**Where that leaves the choice.** Form 1 has passed clean and whole. Form 2b has passed its marks, which by its construction are a whole-engine reading (the written songs are v52's but for those notes). If you accept 2b in form 2's place, the version for song 64 is form 1 with form 2b, read as one version against v52. They have not been run together; I would run the pair on the seen songs first (form 1's marks W1 to W3 and 2b's B1 to B5 on the pair) and post that before song 64's marks.
+
+Ask: A (form 1 alone to song 64), or form 1 with 2b after the pair is read on the seen songs.
