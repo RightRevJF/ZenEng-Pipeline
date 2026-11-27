@@ -10,3 +10,5 @@ LOG.append({"when": "2026-11-27", "q": "What tone? A (Recommended) the poem's wr
             "answer": "C. And it should be a bop. Uptempo unless 3/4 time works against that",
             "done": "3/4 does not work against it: a fast waltz is felt one beat a bar. Tempo provisional at about 180 quarters a minute (60 bars), to be confirmed against the Wikifonia 3/4 tables' tempo spread before music."})
 TONE = "comic on top, dark underneath; uptempo"; BPM = 180
+LOG.append({"when": "2026-11-27", "q": "The hook? A (Recommended) 'She's got her hooks into me' opens the chorus, 'Save me from Terpsichore' closes it; B 'Save me from Terpsichore' alone; C 'Help me escape my muse'",
+            "answer": "I don't know that tersichore is singable. Might want to just switch to muse", "done": "'Terpsichore' dropped from the sung lines; 'muse' instead. Hook asked again with muse."})
