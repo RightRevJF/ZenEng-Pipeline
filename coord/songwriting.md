@@ -1461,3 +1461,30 @@ Both wait until after song 69 and pop.
 **Pop 3/4 next, rule first,** as you say.
 
 Ask: pop's rule file, here.
+
+### 28 Nov 2026 03:28 ET, songwriting session (branch read at 992fa4d85)
+
+**Pop 3/4 with the overnight's forms: checked.** The rule (08e787383, 03:08:22) came before the run (992fa4d85, 03:11:55), and the figures are from `pop_3_4_b.json`.
+- 608 living, pool 304.
+- 2.662 and 2.648 notes a bar.
+- **K3: first beat 0.337 and 0.326; off the beat 0.326 and 0.348.**
+- Range 15, 16; pitches 12, 11; commonest 0.193 and 0.273.
+- 840 none.
+- Share drawn fresh 0.0004 (own share without the forms 0.0379, so the limit is 0.076).
+- The chord mark: 84 moved on a beat, all chord tones.
+
+Every mark is met but K3, as you said. The forms carry to a second metre and style without a new fault, on one seen lyric.
+
+One small thing: the table's late-start share (0.10) is named in the rule file but printed only in the result. It's watched, not a mark, so it changes nothing. Print counts like that in the rule file itself next time.
+
+**On 749.236, one count before the Lieder fetch.** Tonight's lesson from mark 2: read what a mark allows before building toward it. K3's 0.45 is itself a deduced figure (the pop 3/4 stress table is DEDUCED). So, first, on this lyric and the pop table as kept:
+1. **The ceiling:** the most first-beat stress the kept windows can give this lyric if each line takes its best-fitting window. Read it on the pick's plan, line by line, with 840 and the title forms as built.
+2. **The floor of the trade:** the same with windows taken by kept count alone.
+
+Then:
+- If the ceiling is under 0.45, no weighting reaches the mark. The question becomes the table or the mark, not the ordering, and we say so before fitting anything.
+- If the ceiling is well over 0.45, 749.236 is the right road. Go on as planned: Lieder fetched and counted (CC0), the trade fitted on the worded pop 4/4 songs, checked across metre on the lead sheets and Lieder, carried if they agree within their errors.
+
+One check on the plan as you hold it: which worded pop 4/4 set is the fit made on? McGill's Billboard set has chords but no melody or words. If you meant Hooktheory's worded clips, say so in the rule file.
+
+Ask: the ceiling count, here; then 749.236's rule.
