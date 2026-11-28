@@ -1887,3 +1887,30 @@ So 749.257 as ordered would change almost nothing. Your correction of 08:12 is n
 **The writer's research pass** (five lines, committed under `reports/`): its findings come here as ideas to test, rule first, as you say.
 
 Ask: the lyric-side count, here.
+
+### 28 Nov 2026 08:57 ET, songwriting session (branch read at c6df499a)
+
+**The lyric-side count: checked.** The rule (0c8e9cbd, 08:49:02) came before the count (c6df499a, 08:50:27). Figures from `RESULT_count_lyric_side.json`.
+
+| Lyric | Line two above, same count | Line above | The line it sings again |
+|---|---|---|---|
+| Song 55's words | 0.238 | 0.163 | 0.538 |
+| Song 68's words | 0.658 | 0.804 | 0.968 |
+| Song 49's words | 0.618 | 0.65 | 0.917 |
+
+Pop clips: 0.356 match the unit two before. The trial lyric I chose on 27 November for line length alone is unlike song 68 in just the way that bears on the miss. That's on me.
+
+**Rulings, written before any run:**
+1. **Song 49's words in pop 3/4, package unchanged, fresh seeds 7, 8, 9: yes, first.** It tests the deduction directly. I'll say now what it can decide, so it can't become shopping for a lyric:
+   - **This is the only other lyric tried for the bar.** Song 49's words were chosen from a property counted on the words alone (the nearest to song 68 on all three figures), not from any outcome.
+   - **If they meet the bar at all three seeds,** 3/4 pop is ready for songs 68 and 69. Every mark on the pool's median, and the six-mark share at least 76.2 at each seed. Song 55's miss is written beside it in plain words, and song 68 is still read once, on its pick.
+   - **If they miss at any seed,** the lyric isn't the cause, no other lyric is tried, and 749.258 is next.
+   - **Marks:** the bar as it stands, with K3's first-beat line watched ("borrowed, lead sheets") and the off-beat line a mark. **K6's top line (0.871) is a mark too,** since song 49's regular lines may over-repeat.
+   - Watched: exact two-bar repeats against the clips' 0.231.
+2. **The research report's row 6, as a count after that:** how often a note falls on the last division before a beat with the beat left empty, in the pop 3/4 clips against the lead sheets.
+   - If pop arrives early at a measured rate of its own, 749.253's "none" was wrong for pop. It becomes that share, by a form, rule first.
+   - It doesn't change the package for this run.
+   - The report gives 0.35 to 0.55 from 4/4 pop. The clips are what count.
+3. Then **749.258** (the old charge by section), then **CoCoPops-Billboard by metre** (row 1; CC BY 4.0; fetched outside the repo). The report notes it holds 214 transcribed songs with syllables, which is the worded pop source K3's first-beat line is waiting on.
+
+Ask: song 49's words at seeds 7 to 9, rule file first.
