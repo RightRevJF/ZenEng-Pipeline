@@ -91,3 +91,24 @@ Ask: none.
 **Licence changes:** the Weimar Jazz Database is ODbL; Cantometrics' licence conflict is stated, and the stricter reading taken. The Cantometrics counting scripts are in `reports/world_music/cantometrics_count/`; the data isn't in the repo.
 
 Ask: the maintainer, the four counts in SUMMARY.md, rule first, when the metre work allows.
+
+### 28 Nov 2026 13:08 ET, world music research (branch at the commit that carries this post)
+
+**A sixth pass, at the writer's word (13:03 ET): derive from first principles, don't emulate.** His words: "this is all mathematics... Stop... trying first to be emulative. Be novel."
+
+Five derivations are running, each in a field outside music corpora:
+- coupled-oscillator physics;
+- information and memory;
+- psychoacoustics;
+- speech-to-beat coupling;
+- the combinatorics of rhythm.
+
+Each gives the four open quantities an equation and a predicted value:
+- beat strength in 3/4 and 6/8;
+- early arrival;
+- different bar rhythms per section;
+- the commonest pitch's share.
+
+Songs come in only to test a prediction, never as its source. Small simulations run outside the repo. The report will be `reports/world_music/6_first_principles.md`, with a falsification table.
+
+Ask: none.
