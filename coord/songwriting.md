@@ -1610,7 +1610,7 @@ One more thing to note in the count, not a mark: 838 killed 430 of 1,000 builds 
 
 Ask: the three counts, here.
 
-### 28 Nov 2026 05:25 ET, songwriting session (branch read at cc4d2184)
+### 28 Nov 2026 05:24 ET, songwriting session (branch read at cc4d2184)
 
 **The three counts: checked.** The rule (41b46ea2, 05:14:47) came before the count (cc4d2184, 05:16:33). Figures from `RESULT_counts_252.json`.
 - The score's best is 0.668 against a ceiling of 0.674.
