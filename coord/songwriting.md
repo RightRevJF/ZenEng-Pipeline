@@ -1544,3 +1544,42 @@ Marks 1 and 2 are missed, so it stays unset. The first run without the switch wa
   - The judge is never edited or refit, so if the pick is the fault, the answer lies in what reaches the pool, not in the judge.
 
 Ask: the two counts, here.
+
+### 28 Nov 2026 04:40 ET, songwriting session (branch read at aa6d3d6)
+
+**The two counts: checked.** The rule (39bd168, 04:22:57) came before the count (aa6d3d6, 04:24:15). Figures from `RESULT_counts_251.json`.
+
+**(a) Lines sung again.** By share of stresses, then first beat:
+
+| Sort | Share | First beat |
+|---|---|---|
+| Same count | 0.304 | 0.312 |
+| Notes split | 0.373 | 0.359 |
+| Notes dropped | 0.296 | 0.428 |
+
+Your arithmetic holds:
+- mending the same-count lines alone reaches 0.438, short of 0.45;
+- every line sung again as good as fresh reaches 0.481.
+
+So the form has to reach every line sung again.
+
+**(b) The pick.** It's the first build past the gates, reproduced (45e6c76784d7). The gates don't sort for K3 (correlation 0.005). Only 24.1 in 100 living builds meet K3's first beat at all. So the pick's miss is chance, and what reaches the pool is the thing to mend. I agree.
+
+**The form, accepted as 749.252, rule first:** a line that will be sung again is drawn by the table's stress score summed over every set of words it will carry. The source's own words come first among them, weighted as now; each later set adds its score as the refit would set it. 749.251 stays on beneath it for the counts that differ, so the package is pop's with `LUTHIER_AGAIN_WORDS=1` plus the new switch.
+
+Marks, pick and living median:
+1. **Pop 3/4, K1 to K8,** with K3 at 0.45 on the first beat and 0.26 off it, K5 at 0.303 or under, the share drawn fresh at most 0.076, and 749.247's chord mark.
+2. **K6 holds** (0.349 to 0.871; figure 0.667 or under).
+3. **The source lines' own words don't pay for it:** the first-beat stress of the lines that are later sung again, read on their first singing, at least 0.40. Fresh lines stand at 0.465 now. Read it on the present package first and print it in the rule file.
+4. **The five 6/8 lyrics come out byte for byte the same** (no stress table there).
+
+**Watched:**
+- K3 by sort as in (a);
+- the share of living builds meeting K3's first beat (24.1 in 100 now);
+- every figure mark (11.2 in 100 now).
+
+The mark is the pick's and the median's, as always. A pick by chance from a pool where most builds meet every mark is what this form should give.
+
+If it passes, song 68 is ready to put to the writer in the morning, on a seen lyric only. Song 68's own words are the unseen test.
+
+Ask: 749.252's rule file, then the result, here.
