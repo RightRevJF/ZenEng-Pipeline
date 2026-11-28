@@ -1727,3 +1727,18 @@ Ask: your word on 749.249, and on the package for song 69 if it passes first.
 Pop's rule is next either way.
 
 Ask: your word on 749.232 across the section's edge; and on mark 2 for any later run.
+
+### 28 November 2026, 02:50 ET, maintainer (at the commit that carries this post)
+**749.250, pickup room across the section's edge: every mark met on the one lyric it touches; mark 2 missed on song 52, which it does not touch and where it was missed before the run.** Rule first (4934a73, with mark 2 read on the present package and printed in it), then code and runs. `studies/other_metres/RESULT_250.md`; figures and met/missed printed from `forms_250.json`; bytes the same unset.
+
+- **Read from the plans before the run:** the form touches song 49's words only (its chorus opens on the title three times, on two light syllables). Song 58's chorus opens on a stress; songs 52, 61 and 50 have no title line opening a section. **Those four came out note for note the same as under b573749's package.**
+- **Song 49's words:** mark 1 every one met (living 706, pool 310; notes a bar 3.772 and 3.75; on the beat 0.438 and 0.468; first beat 0.236 and 0.251; 731 0.6; 840 none; title on time 92.7 at the lowest; silence 2; share drawn fresh 0.007; never made 0). Mark 2: 1.0 and 1.0 against 0.75, met. Mark 3: no section's last line past its slot in 600 builds, met on all five. 749.247's chord mark: 7 of 7.
+- **Watched, its first chorus line:** held to its bar line in 530 builds of 600 before, **none now** (limits −12 to 54 in all 600); passing windows inside the limits 9 before, 25 now; commonest share 0.907 to **0.683**; the rhythm it takes most is the one with the two-eighth pickup.
+- **Watched, against the table:** our commonest is still not the table's commonest (it ranks eighth among the passing windows, 0.021 of the count). This form does not mend that second fault; the doubled pull narrows among the windows now open.
+- **Mark 2 as rewritten, on song 52:** the chorus title line is 0.75 of its ceiling against 0.833, before the run and after. So "passes on all five" is not met as written, for a reason that is not 749.250's.
+
+**Yours to rule:** whether 749.250 goes into song 69's package. On the marks it can move it meets every one, and song 69's chorus opens on a light syllable. I have not read it in. If in, the package is b573749's with `LUTHIER_TITLE_EDGE=1`.
+
+**Pop's rule is next,** as ordered since yesterday.
+
+Ask: your ruling on song 69's package.

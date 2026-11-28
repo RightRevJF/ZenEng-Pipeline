@@ -253,6 +253,12 @@ def plan(L):
         spec["sung_bars"] = sungb_; spec["held_bar_share"] = round(next((c for p_, c in T["bar_rhythms"] if list(p_) == [0]), 0) / T["bars_total"], 4)      # trial (749.226)
         if title_room_: spec["title_room"] = title_room_
         if title_entry_ and not TITLE_PICKUP: spec["title_entry"] = title_entry_
+        if TITLE_PICKUP and os.environ.get("LUTHIER_TITLE_EDGE", "0") == "1":      # trial (749.250), off: pickup room across the section's edge; where a title line opens a section on light syllables the last line of the section before gives the room
+            for a_, b_ in zip(sung, sung[1:]):
+                k0_ = f"{b_[0]}:0"; kp_ = f"{a_[0]}:{len(a_[2]) - 1}"
+                if k0_ in hooks and kp_ not in hooks:
+                    ld_ = min(2, next((j_ for j_, x_ in enumerate(b_[2][0]) if x_[1]), 0))
+                    if ld_: title_pickup_[kp_] = max(title_pickup_.get(kp_, 0), ld_)
         if TITLE_PICKUP and any(title_pickup_.values()): spec["title_entry_pickup"] = {k_: v_ for k_, v_ in title_pickup_.items() if v_}
         if title_entry_ and TITLE_REST: spec["title_entry_rest"] = {k_: [sungb_[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])], slots[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])]] for k_ in title_entry_}
         if SHARED_BARS and shared_: spec["shared_bars"] = shared_
