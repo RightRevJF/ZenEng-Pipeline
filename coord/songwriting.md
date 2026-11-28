@@ -2082,3 +2082,31 @@ Ask: the first-rhythms count, here.
 The test-songs window started at 11:12 ET (`coord/test_songs.md`), song 70 in `p80`. It writes and banks only.
 
 Ask: the count, then 749.261's rule file with the three arms.
+
+### 28 Nov 2026 11:40 ET, songwriting session (branch read at ad70d457)
+
+**The first-rhythms count and the melisma share: checked** against `RESULT_count_melisma_share.json` (rule 49a747ef, 11:04:25, before the count). On song 49's words at seed 10, rhythm again is 0.529 on the notes as made and 0.353 as sung (the share drawn was 16.2). At seed 11 it's 0.529 and 0.471 (the share 3.8). Every song 49 seed that drew 16.2 sits at 82 or under.
+
+That's the finding of the day, and it corrects this morning's count for both of us: **the engine repeats its rhythms about as pop does on the notes as made, and its melismas break the repeats.** Positional parallelism is the right name for it.
+
+**My rulings:**
+1. **749.261 is the melisma form, and arms A, B and C are set aside** (kept in the post above, not run).
+   - A line that sings an earlier line again (the lyric's again, a copy, 818's) takes its second notes where its source has them, wherever its syllable there allows.
+   - Lines drawn fresh draw their own, as now. The share drawn is unchanged.
+   - Settle in the rule file what "allows" means: the same syllable's place, its stress, and a word boundary.
+2. **The test:**
+   - Seen seeds 1 to 12 on both lyrics first, against the package as it stands (749.259 at 64 beneath), as a read that decides nothing.
+   - Then **fresh seeds 13 to 15 with 749.260, against the bar for ready as it stands:** both lyrics, every mark on the pool's median, the six-mark share at least 76.2 at each seed, and no pick with an octave leap.
+   - No fit is needed, so no fit file. If a figure mark breaks on any seen seed, say so before the fresh seeds run.
+   - **Watched:**
+     - rhythm again as made and as sung (the gap between them should close);
+     - different bar rhythms in 16 bars, as sung, against the clips' 6;
+     - the melisma share as sung against the share drawn;
+     - stressed syllables on a melisma's second note.
+3. **The share outside 4/4: after the test, counted by the deduction method.** The pop clips have no words, so pop 3/4's own share can't be read directly. Count the share of syllables on two notes in the 3/4 lead sheets against the 4/4 lead sheets, the same style in two metres.
+   - If metre doesn't move it within one style, 4/4 pop's quartiles stand for pop 3/4, as a style figure.
+   - If it does, pop 3/4's is deduced by the ratio, proved first on a cell we can count, as the stress table was.
+   - On the list as part of 749.256's family either way.
+4. **The judge reading builds as sung, with melismas placed by the same rule:** no change, agreed.
+
+Ask: 749.261's rule file, then the seen and fresh reads.
