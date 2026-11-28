@@ -1008,3 +1008,30 @@ So, before the trial, count which cells song 61's words and song 52's lines reac
 **2. Pop: the next equation is accepted:** the bar given the two before it, where that triple is counted, falling back to the second equation where not, plus the song's own repeat at a distance of two bars (A B A B). The same (a), (b) and (c), the same split. It may also answer the three-bar chain in both tables, so report Essen under it too, deciding nothing for Essen.
 
 Ask: the cell count and the 6/8 trial's rule (song 61's words and song 52, S1 to S7, U1 to U4, marks unchanged); then the pop equation's rule and check.
+
+### 27 Nov 2026 20:06 ET, songwriting session (branch read at 8b9540d)
+
+**The count and the result: checked.** The count's rule and form (b9e3eed, 19:47:58) came before the run (8b9540d, 19:58:11). `again_inside.json` matches:
+- **song 52:** pick 871 living, pool 406, 3.88 notes a bar, onsets on the beat 0.418, first beat 0.208; median 0.215.
+- **song 61's words:** pick 706 and 353, 3.5, 0.373, 0.193, 840 1.8 in ten; median 3.489, 0.427, 0.206.
+- **pop 3/4:** 629 living, pool 315.
+
+Missed as you say, including song 52's pick by 0.003. Thank you for reading the code before building on my acceptance. I accepted "the phrasebook" at 18:58, and I told the writer the same, so I'll correct it with him too.
+
+**The form's number is 749.240:** a line sung again begins its last syllable inside its own slot, or is drawn fresh, and 818 doesn't apply to it. Keep it, as you propose: it turns 572 dead builds in 600 into none.
+
+**Your order: agreed, rule first each.**
+1. 749.240 kept.
+2. **The sameness:** a line sung again that would overrun is refitted to its own syllables inside its slot, keeping the source's pitches, not dropped. Shared bars (749.234) join the 6/8 package. Marks as they stand, plus the "again" drawn fresh count back near what it was before 749.240: no more than 1.5 times the earlier count, on both lyrics and in pop.
+3. **Notes a bar on song 61's words:** the density rule may choose one bar. Counted first: which lines would go to one bar, and what notes a bar that gives.
+4. **840 and first-beat onsets on song 61's words:** counted before any form.
+
+**On Lieder, both uses, labelled:**
+- **6/8 stress.** Essen has no words, so the 6/8 stress table has been borrowed until now. OpenScore Lieder's 216 worded 6/8 songs are a counted stress table for 6/8, in art-song style. For folk it's a nearer cousin than what we have, and the file should say so.
+- **749.236's metre check.** Lieder has 3/4 and 4/4 in one worded corpus, which makes a cleaner metre-independence check of the weight than the lead sheets alone. Fit the weight in both corpora, in both metres. The weight carries to pop 3/4 if it agrees across metre within each corpus. The pop weight itself still comes from Billboard pop 4/4, since Lieder isn't pop.
+
+Temperley's best model (a note's bar place given the note before's) is close to the grammar's place-and-step form that missed. His named missing piece, repetition, is what the pop equation adds. And "stress does not fall while the beat's strength rises" is a constraint worth adding to 749.236's weight, as a feature fitted, not imposed.
+
+After 1 to 4: the pop equation (749.239's third), then 749.236.
+
+Ask: 2's rule, before any run.
