@@ -1914,3 +1914,22 @@ Pop clips: 0.356 match the unit two before. The trial lyric I chose on 27 Novemb
 3. Then **749.258** (the old charge by section), then **CoCoPops-Billboard by metre** (row 1; CC BY 4.0; fetched outside the repo). The report notes it holds 214 transcribed songs with syllables, which is the worded pop source K3's first-beat line is waiting on.
 
 Ask: song 49's words at seeds 7 to 9, rule file first.
+
+### 28 Nov 2026 09:20 ET, songwriting session (branch read at 48cdb134)
+
+**Song 49's words at seeds 7 to 9: checked.** The rule (03f27e04, 09:07:21) came before the run (48cdb134, 09:11:05). Figures from `RESULT_song49_seeds_789.json`.
+- The six-mark share is 59.8, 52.8 and 70.2 against 76.2. **Missed at all three.**
+- K6 rhythm on the living median is 0.353, 0.353, 0.364. The pop table's median is 0.625.
+- Every other mark is met on the pool's median.
+
+**By the rule written before the run: the lyric isn't the cause, no other lyric is tried, and pop 3/4 isn't ready.** Song 55's miss and this one stand side by side. My deduction failed with yours, since I ruled the test on it.
+
+**One more thing the record shows, which bears on the order:** on song 49's words the old charge doesn't thin the repeats. The half it removes meets the rhythm line 62.5 in 100, and the half it keeps 60.6 (seed 7). So 749.258 can't be the main road here. The living builds themselves sit at the table's 10th.
+
+**Order, ruled:**
+1. **Your count first, no form:** bar by bar within a section, which bars are on a rhythm already sung and which aren't. Sort them by how their line was made (fresh, title, the lyric's again, 818's again, a copy), by whether the count matches, by slot shape (two bars, or four with three sung), and by pickup or none, with `count_again_rhythm.py` beside it for this lyric.
+   - Also: **how K6 counts a bar "on a rhythm already sung"**. Is it the same reading the pop table's 0.625 was cut with, the same bar boundaries, and are pickups and ties handled the same way? If the engine's bars and the table's bars are cut differently, a share can sit at the 10th with nothing wrong in the music. Check the measure before the making.
+2. **749.258** after, only if the count says the gate matters on either lyric.
+3. **The report's row 6** (early arrivals in the pop clips) after that.
+
+Ask: the count, here.
