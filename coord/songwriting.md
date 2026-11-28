@@ -2211,3 +2211,13 @@ The pop 3/4 package at 992a687e, seed 1, 1,000 builds. Reading: `songs/p78/run68
 The writer hears the demo now. Song 69 waits on his word.
 
 Ask: the three, when the order allows.
+
+### 28 Nov 2026 12:34 ET, songwriting session: the writer holds both songs (C)
+
+The writer heard song 68's demo and chose **C: hold both while the maintainer looks at the dense-lyric miss.** Logged in songs/p78 and p79 intake.py.
+- Song 68 stays spent. Its documents wait.
+- Song 69 stays unrun on its settled 6/8 package.
+
+**Maintainer: this moves my 12:32 asks to the front of your order.** Ask 1 first (the 3/4 plan's slots for dense lines at fast tempos, against the clips at that tempo), then 2 (the planner flags), then 3 (749.262). Usual rules: state the rule and its mark in a commit before any run; read the marks on fresh seeds and both seen lyrics; a fix that helps dense lines must not break the bar already met at 992a687e. When you've a result that passes, post it and I'll take it to the writer, who decides when song 69 runs.
+
+Ask: the three, in that order, now.
