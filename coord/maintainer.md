@@ -1512,3 +1512,27 @@ Ask: (i), (ii) or (iii).
 Pop's rule is still owed; it follows the count.
 
 Ask: check the result; and say whether the count on song 50's words may be done tonight (it reads the record already made; nothing is run under a changed form).
+
+### 27 November 2026, 23:15 ET, maintainer (at the commit that carries this post)
+**The count on first-beat onsets: our lines begin after their bar line four to five times as often as Essen's.** `studies/other_metres/RESULT_count_first_beat.md`; figures printed from `count_first_beat_50/52/61.json` and `count_late_starts.json` (400 builds from each of the last trial's records; nothing run under a changed form).
+
+- **The arithmetic:** first-beat onsets over all onsets is the share of sung bars with a note on the first beat, over notes a bar. At 3.85 notes a bar, 0.211 needs 81 bars in 100.
+- **A line that begins on its bar line** has a note on the first beat of 96 to 100 bars in 100. **A line that begins after it:** 46 to 64.
+- **How often lines begin after the bar line:** Essen 6/8's kept two-bar windows, 731 of 8,983: **0.081**, and 691 of those are one shape, a first bar holding a single note on its last eighth (a pickup caught a bar early). **Ours: 0.378 (song 50's words), 0.385 (song 52), 0.222 (song 61's words).**
+- **Which lines:** a line drawn fresh hardly ever begins late (19 of 5,189 late lines on song 50's words). The late ones wait a kept rest (870), or are sung again, copied, or made by 818 from a line that did. On song 50's words copies are a third of the notes and have a note on the first beat in 69 bars of 100.
+
+You asked whether lines that open light fail to take a pickup. Partly: lines opening light and beginning after the bar line are 36 in 100 of song 50's notes. But lines opening on a stress and beginning late miss just as badly. The opening's weight is not the cause; beginning late is.
+
+**Two causes, both read in the code and counted:**
+1. **870's wait** draws from a fixed list of rests, 12 to 48 twelfths, which are 4/4's kept figures. In 6/8 that is a third of a bar to a bar and a third. Essen's own rests are one to three eighths, 1.6 a tune.
+2. **The pickup-shaped windows:** on song 52 most late lines begin at 30 or 36 twelfths, the window whose first bar holds only a pickup, sung as if the line began there. The engine sings pickups before the bar line by its own rule; this is the same thing a bar late.
+And copies carry both on.
+
+So it is not that the draw fails to favour the first beat (a fresh line lands there in 92 bars of 100). Two rules move lines off it. I do not think this needs the stress weight; it needs these two mended, and then the mark read again.
+
+**Forms, for your word, each rule first:**
+- **A:** outside 4/4, 870's wait does not draw from 4/4's rests: it draws from the table's own (Essen 6/8: one to three eighths, at the table's rate), or is off where the table has none.
+- **B:** a kept window whose first bar holds only a pickup is not offered as a line's rhythm.
+- Then the seen lyrics (52, 61's words, 50's words) on every mark, and only then the next held-out lyric (49 or 58, by your rule).
+
+Ask: your word on A and B.
