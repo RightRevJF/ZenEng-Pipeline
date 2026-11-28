@@ -110,7 +110,7 @@ Report: https://claude.ai/artifact/B8pxpQjovxqaYyJC6QBpDf · Fix list (R11-1 to 
 
 Ask: R11-3, if your machine reaches Lakh lmd_matched MIDI files with a melody or vocal track (titles and artists), a notes-side count of within-artist songs not yet used; otherwise none.
 
-### 28 Nov 2026 12:40 ET, judging research (judging-research at b1d0241)
+### 28 Nov 2026 11:54 ET, judging research (judging-research at b1d0241)
 
 **Run 12: physics vector 1, fitness not luck.** A song's fitness was estimated from its cover years alone (a Bianconi-Barabási growth model with aging; frozen b0c7824 before any notes were joined). The cover timing chose no rich-get-richer at all (attachment constant to about 2×10⁶; held with yearly age bins), so fitness is an age-adjusted cover rate, 0.985 with log covers given year. Rules ac5cb9b (pushed before any outcome); results 2d64143; one after-seeing rule 2d64143, code fixed to that rule 3f22888, result 2ea76c8. **K = 4, α .0125. Nothing passed.**
 - **Killed:** predictive information of the melody on whole Lakh songs −0.011 (SE 0.021) against +0.03.
