@@ -2187,3 +2187,61 @@ Ask: none until the writer answers.
 **Maintainer:** nothing for you to do. The counts go on in the order of my 12:21 post. I'll post the reading here.
 
 Ask: none.
+
+### 28 Nov 2026 12:32 ET, songwriting session: song 68, the one run, read once (at 4edb4188)
+
+The pop 3/4 package at 992a687e, seed 1, 1,000 builds. Reading: `songs/p78/run68_pool_reading.json`; record: `lyric68.run.song.json`, pick bc986befea6b in both.
+- **The pool's median meets every figure mark:**
+  - notes a bar 3.843 (line 3.85), onsets on a beat 0.545, off the beat 0.215;
+  - range 17, pitches 10, K5 0.263;
+  - K6 rhythm 0.402, figure 0.196.
+- **The six-mark share is 45.5 against 76.2: missed.** Notes a bar is met by only 53.1 in 100: the lyric is dense at 180, at the top of the table's middle half.
+- **The pick misses K6's rhythm line by 0.001** (0.348 against 0.349). Otherwise it's in range 14 (C4 to D5), commonest 0.238, first beat 0.42 (watched), no octave leap.
+- **What 749.259 and 749.261 were after shows on unseen words:**
+  - different bar rhythms in 16 bars 6.0 (the clips' 6);
+  - exact two-bar repeats 0.208 (the clips' 0.231).
+- 838 killed 288 and 959 killed 160 of 1,000. The melisma share drawn was 16.2.
+- **Song 68 is spent.** The pick is the song, as ruled, and the misses are recorded.
+
+**For the maintainer (no form asked; counts when the order allows):**
+1. **The six-mark share falls on notes a bar for a dense lyric at a fast tempo.** Is the 3/4 plan giving 2 bars to 6- and 7-syllable lines at 180 (every slot is 2 bars here) what the clips do at that tempo? This is 749.226's plan read on unseen words.
+2. **The record's planner flags say every line is "a slot of 3 bars, past the kept two-bar windows: set by weighted placement (760)".** But the spec's slots are all 2 bars, and the stats count 81,295 lines in kept windows against 9,203 by 760. The flags look stale, from a first plan before 749.226's form. Say whether they are.
+3. **The lyric's genre "pop-punk" crashed the band step** (no LPD key). The planner should map a genre to the band tables' nearest key or say so, not crash. On the list as 749.262.
+
+The writer hears the demo now. Song 69 waits on his word.
+
+Ask: the three, when the order allows.
+
+### 28 Nov 2026 12:34 ET, songwriting session: the writer holds both songs (C)
+
+The writer heard song 68's demo and chose **C: hold both while the maintainer looks at the dense-lyric miss.** Logged in songs/p78 and p79 intake.py.
+- Song 68 stays spent. Its documents wait.
+- Song 69 stays unrun on its settled 6/8 package.
+
+**Maintainer: this moves my 12:32 asks to the front of your order.** Ask 1 first (the 3/4 plan's slots for dense lines at fast tempos, against the clips at that tempo), then 2 (the planner flags), then 3 (749.262). Usual rules: state the rule and its mark in a commit before any run; read the marks on fresh seeds and both seen lyrics; a fix that helps dense lines must not break the bar already met at 992a687e. When you've a result that passes, post it and I'll take it to the writer, who decides when song 69 runs.
+
+Ask: the three, in that order, now.
+
+### 28 Nov 2026 12:37 ET, songwriting session: the looping chords (749.263)
+
+The writer asked us not to let the looping-chords work drop while the metres come first. It bears on 3/4 already.
+- **Song 68's verses loop their chords harder than 98 in 100 kept verses.** Each verse is one two-bar loop, D then G A, for 16 bars. Chord repetition is 0.864, against kept major verses' median 0.333, 75th 0.50 and 90th 0.714 (1,515 sections, the writer's vocabulary, read at 992a687e). The break reads 0.70, the choruses 0.0. The loop setting was off: the lyric doesn't ask for `loop_less`, and 965 is a setting.
+- **A possible 4/4 leak:** at 180 in 3/4, that loop comes round every two seconds. The chord writer's tables are counted in 4/4 bars. Nobody has read whether a 3/4 bar should take a 4/4 bar's share of changes.
+- Written up as 749.263 in `songs/p68/fixlist_v54.md`. It's a description and decides nothing.
+
+**Maintainer: queue it after my three 12:32 asks, not before.** Rule and marks first, as always:
+- (a) chord changes per bar and per second in 3/4 and 6/8 songs we may use, against the writer's 4/4 rate;
+- (b) the writer's chord repetition in 3/4 and 6/8 drafts, setting off and on, against kept sections;
+- (c) only if (b) shows the writer looping more than kept songs: 965 as the default outside 4/4, judged on the kept rate (R06-2, R07-2, R08-3).
+
+**To the judging research:** if a pass has anything on chord loops in 3/4 or 6/8 (harmonic rhythm by metre, loop length in seconds), post it.
+
+Ask: (a) to (c) after the 12:32 asks.
+
+### 28 Nov 2026 12:38 ET, songwriting session: count 1 (838) checked
+
+**Why 838 ran to 493: checked, and agreed.** The rule (bfab234f, 12:29:53) came before the result (e0038956, 12:30:25), on runs already made. From `RESULT_count_838.json`: 30 runs, gap 0 in all; the lift bands 33/137/176, 242-420 (8 runs) and 200-493 (19 runs); rank correlations −0.33 and −0.32 with the lift, −0.37 and −0.51 with its size. Not a new fault. The lift drawn from 4/4's kept songs in every metre goes on the list as part of 749.256's question; no new number.
+
+**Your order has moved since you posted** (my 12:34 and 12:37 posts): the writer chose C, holding songs 68 and 69. So my three 12:32 asks come next, ahead of count 2: (a) the 3/4 plan's slots for dense lines at fast tempos; (b) the planner flags; (c) 749.262. Then 749.263, the looping chords. Then count 2 and the rest. If a91c7bdd's count (4/4's repeats and melismas) is already under way, finish it first: its rule is committed.
+
+Ask: (a), (b), (c), then 749.263.

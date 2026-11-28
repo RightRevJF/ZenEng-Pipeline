@@ -335,3 +335,17 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 
 ## The pop 3/4 package (28 Nov 2026, 12:12 ET)
 `LUTHIER_TABLE_3_4=../../studies/other_metres/trial_tables/3-4_pop_sung LUTHIER_PLAN_3_4=1 LUTHIER_RANGE_3_4=centres LUTHIER_COPY_JOIN=1 LUTHIER_STRESS_3_4=1 LUTHIER_SHARED_BARS=1 LUTHIER_TITLE_ROOM=0.001 LUTHIER_TITLE_840=2 LUTHIER_TITLE_ENTRY=pickup LUTHIER_TITLE_EDGE=1 LUTHIER_TITLE_FRESH=1 LUTHIER_TITLE_NOWAIT=1 LUTHIER_SECTION_DENSITY=3 LUTHIER_REST_TABLE=1 LUTHIER_PICKUP_WINDOWS=0 LUTHIER_AGAIN_INSIDE=1 LUTHIER_AGAIN_REFIT=2 LUTHIER_AGAIN_RUNS=2 LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1 LUTHIER_CEILING_TABLE=1 LUTHIER_BAR_MEMORY=64 LUTHIER_MELISMA_FOLLOW=1 LUTHIER_OCTAVE_OUTSIDE=1`
+
+## Song 68, the one run (28 Nov 2026, 12:30 ET; 4edb4188)
+- The pop 3/4 package at 992a687e, seed 1. The pool's median meets every figure mark. The six-mark share is 45.5, missed against 76.2: notes a bar is met by 53.1 in 100, the lyric dense at 180. The pick misses K6's rhythm line by 0.001. On unseen words, bar rhythms in 16 bars are 6.0 and exact two-bar repeats 0.208: pop's own figures.
+
+## 749.262. A genre the band tables don't hold crashes the build
+- **Problem:** song 68's genre "pop-punk" stopped the run at the band step (`band.py`, KeyError), after the melody, because `lpd_band_tables.json` has no such key. The melody reads the genre only through FAMILY, which maps unknown genres to "other".
+- **Fix:** the planner maps a lyric's genre to the band tables' nearest key (pop-punk to rock), or names the gap, and never crashes.
+- **Check:** a lyric with an unknown genre builds, and the record names the mapping.
+
+## 749.263. Song 68's verses loop their chords more than 98 in 100 kept verses
+- **Problem:** song 68 was run with the loop setting off (its lyric doesn't ask for `loop_less`, and 965 is a setting). Its three verses are one two-bar loop, D then G A, sixteen bars each. Their chord repetition is 0.864 (the share of three-chord runs already heard in the section), and the break's is 0.70. Kept major verses (McGill, the writer's vocabulary, 1,515 sections) have a median of 0.333, a 75th of 0.50 and a 90th of 0.714, and only 1.1 in 100 reach 0.864. The choruses read 0.0. At 180 in 3/4 a bar lasts a second, so this loop comes round every two seconds. The chord writer's tables are counted in 4/4 bars (McGill), and whether a 3/4 bar should carry a 4/4 bar's share of changes hasn't been read. That may be another 4/4 setting leaking into other metres (as in 749.245 to 749.260).
+- **Evidence:** `songs/p78/lyric68.run.song.json`, chords; the kept figures as read on 28 Nov at 992a687e (chord_writer.sections, major verses, ch_rep as in `studies/loop_less_reading`). A description: it decides nothing, and song 68 is spent.
+- **Fix (proposed, rule first):** (a) read chord changes per bar and per second in 3/4 and 6/8 songs the project may use, against the writer's 4/4 rate; (b) read the writer's chord repetition in 3/4 and 6/8 drafts, setting off and on, against kept sections; (c) if the writer loops more than kept songs outside 4/4 as it does in 4/4, weigh 965 (the loop gate with a chance) as the default outside 4/4, judged on the kept songs' rate (R06-2, R07-2, R08-3).
+- **Check:** marks written in a commit before any draft is read; the pop 3/4 bar met at 992a687e still met.
