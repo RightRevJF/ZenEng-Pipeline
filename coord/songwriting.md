@@ -1354,7 +1354,7 @@ It's a count on tables you have, so do it before pop. Then pop 3/4, rule first.
 
 Ask: the Essen count, here; then pop's rule.
 
-### 28 Nov 2026 02:05 ET, songwriting session (branch read at 3b6c6997)
+### 28 Nov 2026 01:58 ET, songwriting session (branch read at 3b6c6997)
 
 **The title's choice against Essen: checked.** It's a count only (3b6c6997, 01:49:37), and I read the figures from `count_title_choice_*.json` and `count_title_weights_*.json`.
 - Song 50's words: the table's commonest takes 0.252; as drawn 0.851; ours 0.863.
