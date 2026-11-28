@@ -2454,3 +2454,33 @@ Ask: none new. My 10:46 ask stands (which design for the memory where the bars a
 - The oscillator models give no table of strengths for threes.
 
 Ask: none new; when the order allows, the beat-2-against-beat-3 count on the 3/4 lead sheets, rule first.
+
+### 28 November 2026, 11:21 ET, maintainer (at the commit that carries this post)
+
+**The first-rhythms count, and what a seed fixes** (`studies/other_metres/RESULT_count_first_rhythms.md`; rule file 49a747e first; a second counter, `count_melisma_share.py`, added when part 2 pointed at it; seen seeds only; no engine change). 749.260's line is in the planner behind its unset switch; unset songs byte for byte and room files this engine's after it.
+
+| | Share drawn (syllables in 100 on two notes) | Second notes, share of notes | Rhythm again within sections: notes as made; as sung | Meeting K6's rhythm line, in 100: as made; as sung |
+|---|---|---|---|---|
+| song 49's words, seed 10 | 16.2 | 0.141 | 0.529; 0.353 | 98.4; 63.6 |
+| song 49's words, seed 11 | 3.8 | 0.031 | 0.529; 0.471 | 99.0; 96.5 |
+| song 55's words, seed 10 | 8.6 | 0.096 | 0.5; 0.4 | 100.0; 82.9 |
+
+| Share drawn | Song 55's words: six-mark share at the seeds that drew it (with 749.259) | Song 49's words |
+|---|---|---|
+| 3.8 | [96.7, 96.8] | [99.6, 97.8] |
+| 8.6 | [92.3, 91.0, 90.8, 85.3, 86.5, 91.0, 77.0, 76.8, 79.5, 89.1] | [92.2, 84.8, 93.7, 94.0, 92.4] |
+| 16.2 | none drew it | [82.1, 76.1, 81.4, 75.9, 60.1] |
+
+- **What a seed fixes that moves K6 is the song's melisma share (848).** It is drawn once from the seed and the title among three figures, 3.8, 8.6 and 16.2 syllables in 100 on two notes, with chances a quarter, a half and a quarter. They are the kept 4/4 songs' quartiles. Between seeds 10 and 11 of song 49's words the plans differ in nothing but the chords and this draw (16.2 against 3.8); the making is the same to the count (the same lines drawn, sung again, copied).
+- **On the notes as made, K6 is met almost always; the melismas break it.** Rhythm sung again within sections is 0.529 on the notes as made at both seeds of song 49's words, and 98.4 and 99.0 in 100 builds meet its line. Read as sung, with the second notes placed, it is 0.353 where 16.2 was drawn and 0.471 where 3.8 was. Each melisma adds an onset to one line's bar and not to the bar of the line that sings it again, so two bars that were one rhythm become two.
+- **Over the twelve seen seeds the share drawn orders the six-mark share:** rank correlation -0.93 on song 49's words and -0.65 on song 55's (with 749.259). Every seed that drew 3.8 stands at 96 or over; every seed of song 49's words that drew 16.2 stands at 82 or under, and they are all three of its seeds under 76.2.
+- **So my count of this morning ("10 different bar rhythms against 6") was read as sung, and part of that 10 is melismas, not the draw.** I said the engine "invents a new rhythm for almost every line". On the notes as made it does not: 0.5 to 0.529 of bars are on a rhythm already sung, against the clips' 0.625. The clips are as sung too, so the reading is fair; what is not like the clips is that our second notes ignore the lines that repeat.
+- **Part 1, the first rhythms within a seed:** they matter where melismas are many and not where they are few. Song 49's words at seed 10: builds whose first chorus line has two like bars meet all six in 76.8 in 100 against 48.1; at seed 11, 97.4 against 97.2. A first chorus that ends with eight or fewer different bar rhythms meets them in 89.0, 88.8 and 100.0.
+
+**What follows, for you to weigh; nothing written:**
+- **The form the count points to is not 818's choice nor the first rhythms. It is the melismas: a line that sings an earlier line again (the lyric's again, a copy, 818's) takes its second notes where its source has them,** where the syllable allows; only lines drawn fresh draw their own. Then a repeated bar stays a repeated bar as sung, at any share. It needs no weight and no fit. It is positional parallelism (Dell and Halle, in the writer's report) applied to the one step that ignores it.
+- **And the share itself is a 4/4 figure in every metre** (848's quartiles from the kept 4/4 songs): one more for this morning's list. The 3/4 and 6/8 lead sheets have words and notes, so their own share of syllables on two notes can be counted; the pop clips have no words.
+- 749.261 as ruled (818's choice, or the first rhythms) may not be needed if this holds. I would test the melisma form first, on seen seeds 1 to 12 against the package as it stands (749.259 beneath), then the fresh seeds 13 to 15 with 749.260.
+- A thing to settle with it: whether the judge should read builds as sung with the melismas of the pick only (as now: melismas are drawn after the pick; the counters place them on every build by the same rule), which it does; no change proposed.
+
+Ask: say whether the melisma form takes 749.261's place (number it, give its marks), and whether its share outside 4/4 is counted from the lead sheets now or after.
