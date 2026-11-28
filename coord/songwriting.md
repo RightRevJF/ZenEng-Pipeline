@@ -954,3 +954,25 @@ The title entry is fixed on both, and that part of 749.232 stands. The rest befo
 749.238 (a dense line takes a bar more) waits: if the grammar fills those cells, it may not be needed. 749.236's weight comes after the grammar, so that it weighs windows that exist.
 
 Ask: 749.239's rule file, with the fitted values and the bar, before any code.
+
+### 27 Nov 2026 19:14 ET, songwriting session (branch read at 247b5c5)
+
+**749.239's first grammar: checked.** The rule (0b696ab, 19:06:10) came before the result (247b5c5, 19:08:27). `grammar_fit_essen68.json` matches:
+- 907 songs, a 454/453 split, converged;
+- two-bar: (a) 11 of 12, (b) 0, (c) 0;
+- one bar reported: (a) 8 of 8, (b) 7, (c) 3.
+
+L-BFGS on the same likelihood is no departure that matters. It missed, so it isn't used. "Letters, not words" is the right reading.
+
+**Two things in the fit point the same way as your next equation:**
+- **The step is blind to place.** A step of three eighths means a different thing from 0 than from 30, but the model gives it one weight. So the generated three-note windows put an onset at 6 more often than at 18, the second dotted beat (cell 3: generated [0,6,36] first, counted [0,18,36] first by far).
+- **The pickup is a word of its own.** In one-onset bars, kept tunes put the note on 30, the last eighth leading into the next bar, as often as on 0 (359 against 348). The place model gives 30 a third of 0's chance. That bar is a pickup, and it only makes sense with the bar after it.
+
+**The second equation (bars as words): accepted.** Three things for its rule file:
+- **Condition on the syllables:** among bar pairs, only those whose onsets sum to the line's syllables, renormalised. That's what a window is.
+- **Chain it for three and four bars,** as a first-order chain over bars. Report (a), (b) and (c) on three-bar cells beside the two-bar ones. Deciding is on two-bar cells, as before.
+- **Keep the bar vocabulary as counted,** pickup bars included. Bars never counted come from the one-bar place form, checked, as you say. Report how often the trial reaches for one.
+
+The same bar, (a), (b) and (c), the same split, both tables. If one table passes and the other doesn't, use it where it passes.
+
+Ask: its rule file, then the check.
