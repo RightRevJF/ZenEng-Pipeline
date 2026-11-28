@@ -2054,3 +2054,42 @@ For you to weigh, nothing written:
 - **The bar for ready.** By your point 2 (median at three seeds; pool at least 4/4's on its marks) 3/4 passes the pool half at every seed on like marks; the median half fails only on K5 at seed 3.
 
 Ask: say whether the K5-by-lift count over more seeds is next; and whether the bar's pool half is read on the six like marks. Songs 68 and 69 are not run.
+
+### 28 November 2026, 07:32 ET, maintainer (at the commit that carries this post)
+
+**749.255's result** (`studies/other_metres/RESULT_255.md`, figures from RESULT_255.json; rule file 41d1361 first, with the ceiling printed and the list of 4/4-only settings).
+
+| (pick; living median) | Seed 1 | Seed 2 | Seed 3 | Wanted |
+|---|---|---|---|---|
+| K1 living; pool | 591; 236 | 788; 362 | 609; 165 | 30; 10 |
+| K2 notes a bar | 2.683; 2.662 | 2.739; 2.718 | 2.585; 2.599 | 2.38 to 3.85 |
+| K3 on the first beat | 0.455; 0.46 | 0.439; 0.46 (pick misses) | 0.444; 0.46 (pick misses) | 0.45 or more |
+| K3 off the beat | 0.118; 0.134 | 0.139; 0.134 | 0.155; 0.134 | 0.26 or under |
+| K4 range | 17; 16.0 | 17; 16.0 | 13; 15.0 | 12 or more |
+| K4 pitches | 12; 11.0 | 12; 12.0 | 9; 10.0 | 7 or more |
+| K5 commonest pitch | 0.173; 0.278 | 0.226; 0.211 | 0.264; 0.331 **median missed** | 0.303 or under |
+| K6 rhythm again within sections | 0.45; 0.4 | 0.4; 0.381 | 0.45; 0.429 | 0.349 to 0.871 |
+| K6 figure again within sections | 0.211; 0.2 | 0.25; 0.158 | 0.25; 0.2 | 0.667 or under |
+| Builds the ceiling read; passed | 296; 236 | 394; 362 | 305; 165 | |
+| The pool's median commonest pitch (before 749.255) | 0.263 (0.274) | 0.207 (0.21) | 0.29 (0.318) | |
+| The pool meeting K5, in 100 (before) | 80.9 (72.3) | 98.6 (98.0) | 66.1 (41.0) | |
+| Mark 2: the pool on the six like marks, in 100 | 86.9 | 76.2 | 89.7 | 76.2 or more |
+| The pool meeting all nine, in 100 (before) | 41.5 (36.5) | 40.6 (40.1) | 38.8 (23.9) | watched |
+| The pick meets all nine | yes | no | no | reported |
+| Marked lines drawn fresh; source lines' first beat; lines late | 0.0001; 0.527; 0.027 | 0.0001; 0.528; 0.024 | 0.0001; 0.528; 0.025 | 0.076; 0.40; 0.15 |
+| Chord mark (source's share); voice; leap | 1.0 (0.942); in; none | 1.0 (0.953); in; none | 1.0 (0.965); in; none | |
+| 838's deaths in 1,000 | 409 | 212 | 391 | flag over 450 |
+
+- **Mark 1 is missed at seed 3, and it could not have been met by this form.** K5 on the living median at seed 3 is 0.331, exactly as before. The living builds are read before the judge's gates; a gate changes the pool, not the living builds. I should have said so in the rule file and did not see it until the result. Seeds 1 and 2 meet every mark on the living median.
+- **What the gate does do, at seed 3:** it passes over 140 of 305 builds; the pool's median commonest pitch falls from 0.318 to 0.29 (K5's line is 0.303), and the pool meeting K5 rises from 41.0 to 66.1 in 100. The pick at seed 3 now meets K5 (0.264).
+- **Mark 2 met** (the pool on the six like marks: 86.9, 76.2, 89.7 against 76.2; seed 2 sits exactly on it). **K1 met** (pools of 236, 362, 165): the gate does not starve the pool.
+- **The picks, reported:** seed 1 meets all nine; seeds 2 and 3 miss K3 on the first beat (0.439 and 0.444). The pool meeting all nine is 41.5, 40.6 and 38.8 in 100.
+- 838 is 409, 212, 391: unchanged, as it must be (the ceiling acts after it). The five 6/8 lyrics are byte for byte the same with the switch set (all); every unset song byte for byte (all); room files this engine's. The records carry the ceiling ({'Verse': 0.396, 'Chorus': 0.396}) and the judge ran.
+
+So, by the marks as written, 749.255 does not pass (mark 1, K5 at seed 3), and by your ruling the K5-by-lift count is next. But the question under it is yours to settle first, because it decides what any gate can ever be shown to do: **is "the median" read on the living builds or on the pool?** In 4/4 the like figures are held by gates, so they are true of the pool and never tested on the living builds. Read on the pool, 3/4 with 749.255 meets K5 at all three seeds (0.263, 0.207, 0.29); I have not printed the pool's medians for the other eight marks against their lines and would before claiming more.
+
+From the list in the rule file, three more 4/4 figures act outside 4/4 with no table of the metre behind them: 771's entry weights, 876's 0.09 and 818's 0.8. And the lift (838) is drawn from 4/4's kept songs in every metre, which is where seed 3's K5 comes from.
+
+**To the judging research (run 11), checked by the four steps:** fetched at 53cb6a9. Rule first: the eight frozen tests' rules e1858c0 (03:10:20) before their results 1ffa3b6 (03:15:32); s_coupling_after's rule 344be9b (07:07:27) before its result 351f8bb (07:08:54). Figures against result.json: pitch-class entropy −0.0294 (SE 0.0110, p .0076), second reading −0.164; S on the melody +0.0009; melody-chord table −0.0103; typical profile +0.0020; early reach −0.0043; self-teaching −0.0102; beat peaks +0.0065; typical melody +0.0017; s_coupling_after +0.0171 against a predicted −0.03. All as posted. Bar and signs: K = 5, α .01; entropy's sign as predicted and p under .01, so passed as you say, and your own caveat stands (at K = 7 it misses). Nothing for the engine beyond R11-2's reading; I have nothing to add. One note for both threads: R11-2 (simpler pitch spread taken up a little more) and K5 (one pitch not sung too often) are different measures that can pull apart; before any K5 form is built from the lift, it is worth one line from the research on whether entropy and the commonest-pitch share disagree on these tunes.
+
+Ask (songwriting session): rule on living or pool for the median; then the K5-by-lift count, or 749.255 re-read on the pool, as you order. Songs 68 and 69 are not run.

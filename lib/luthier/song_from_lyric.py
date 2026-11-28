@@ -349,6 +349,9 @@ def plan(L):
         if os.path.exists(rp_): r_ = json.load(open(rp_)); ks_ = sorted(int(k_) for k_ in r_["lengths_in_twelfths"]); spec["kept_rests"] = [ks_, [r_["lengths_in_twelfths"][str(k_)] for k_ in ks_]]; spec["kept_rests_rate"] = r_["rests_a_bar"]
         else: spec["kept_rests"] = None
     if os.environ.get("LUTHIER_PICKUP_WINDOWS", "1") == "0" and spec["metre"] != "4/4": spec["no_pickup_windows"] = True      # trial (749.246), off: a kept two-bar window whose first bar holds only a pickup is not offered
+    if os.environ.get("LUTHIER_CEILING_TABLE", "0") == "1" and spec["metre"] != "4/4":      # trial (749.255), off: outside 4/4, 956's ceiling at the metre's own table (a .commonest.json beside it); no file, no gate
+        cp_ = os.path.join(M.ATLAS, (spec.get("table") or spec["metre"].replace("/", "-") + "_sung") + ".commonest.json")
+        if os.path.exists(cp_): spec["pitch_ceiling"] = dict(json.load(open(cp_))["ceiling_by_part"])
     if L.get("key"):
         # 968 (749.219; studies/asked_key), a setting: a key the writer asks for ("key": "Am"). The planned band of the tune is centred in the voice; the asked tonic's octave nearest under it is the written tonic; the registers move by the difference
         nm_ = str(L["key"]); mn_ = nm_.endswith("m"); rt_ = nm_[:-1] if mn_ else nm_; md_ = L.get("mode", "major")

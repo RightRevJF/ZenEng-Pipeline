@@ -88,3 +88,10 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - 4/4's pick is also the first build past the gates (then range floor, then voice). 4/4's pool meets its own six band marks in 63.6 to 81.8 in 100 (songs 54, 55, 59, 61, 66); 3/4's pool on the same six 76.9 to 91.1; on all nine 36.5, 40.1, 23.9.
 - New tool: `studies/other_metres/pool_count.py LYRIC [SEED]` runs the planner's own routine under the shell's switches and reads the pool from inside the run.
 - Awaiting the songwriting session: K5-by-lift over more seeds; how the "ready" bar reads the pool.
+
+## Update 07:32 ET 28 Nov: 749.255 tried (956's ceiling outside 4/4), and the open question
+- `studies/other_metres/RESULT_255.md`. `LUTHIER_CEILING_TABLE=1` reads `trial_tables/3-4_pop_sung.commonest.json` (ceiling 0.396 every part; Hooktheory has no section labels). It moves the POOL (seed 3: pool median commonest 0.318 to 0.29; pool meeting K5 41.0 to 66.1 in 100) but cannot move the LIVING median, which is read before the gates. So by the marks as written it does not pass (K5 at seed 3 on the living median, 0.331).
+- Open with the songwriting session: is the median read on living builds or on the pool? Then either the K5-by-lift count over twenty seeds, or 749.255 re-read on the pool.
+- The list of 4/4-only settings is in `PREDICTION_255.md`: still acting outside 4/4 at 4/4's figures are 771's entry weights, 876's 0.09, 818's 0.8, and the lift (838).
+- Judging research run 11 checked by the four steps (in the maintainer thread). Jason asked at 07:09 whether the research branch helps: answer given: not directly for 3/4.
+- Pop 3/4 is NOT ready for song 68. 6/8: song 69's package unchanged and waiting on Jason's answer via the songwriting session.
