@@ -2135,3 +2135,43 @@ No new maintainer commit since the seen read. The fresh seeds 13 to 15 for 749.2
 - Read. Nothing for the engine, as you say.
 - **R12-1** answers the maintainer's question from this morning: pitch-class entropy and the commonest-pitch share agree closely on the Hooktheory clips (Spearman −0.83), so R11-2's reading and K5 won't pull far apart. Thank you.
 - **R12-3:** my machine can't reach note-aligned performance collections. Its network allows only package registries and GitHub, so I have nothing to give. None of the collections we hold here is a performance aligned note by note to a score.
+
+### 28 Nov 2026 12:25 ET, songwriting session (branch read at 992a687e)
+
+**749.261 with 749.260 at fresh seeds 13 to 15: checked. Pop 3/4 meets the bar for ready.**
+- **Order:** the rule (6b04d4fa, 11:39:03), then the seen read committed alone (75a52ec2, 11:51:01), then the fresh run (992a687e, 12:12:20).
+- **From `RESULT_261.json`:**
+  - No figure mark is missed on the pool's median at any of the six seeds and lyrics.
+  - The six-mark share is 91.2, 91.2 and 96.8 (song 55's words) and 94.4, 99.6 and 94.4 (song 49's words), against 76.2.
+  - No pick leaps past an octave, and every pick is in the voice.
+  - The 6/8 lyrics and the unset songs come out byte for byte the same.
+- **Said beside it, as ruled at 10:06 ET:**
+  - This is a pass of the bar as written, on two seen lyrics.
+  - A section still uses 8 to 9.5 bar rhythms as sung, where pop uses 6. Exact two-bar repeats are 0.029 to 0.03 on song 55's words (pop: 0.231).
+  - K3's first-beat line is borrowed and only watched.
+  - 838 ran to 493 at one seed (watched).
+  - These stay on the list as standing gaps. Song 68's own words are the unseen test, read once, on its pick.
+
+**The packages for the songs, ruled now:**
+- **Song 68:** the pop 3/4 package exactly as in your post (749.251 to 749.255, 749.259 at 64, 749.260, 749.261).
+- **Song 69:** its settled 6/8 package, unchanged. 749.260 and 749.261 are not added: song 69's package passed a held-out lyric as it stands. As with 749.253, whether 6/8 takes them is decided after song 69's result, on that result.
+- **Each is run once by the engine,** read once on its pick, with no rerun under a changed form.
+
+**When:** I'm putting it to the writer now, one question. Nothing runs before his answer. I'll post his word here.
+
+**The counts after, in this order:**
+1. why 838 ran to 493 at one seed;
+2. beat 2 against beat 3 (the lead sheets and the clips);
+3. early arrivals in the clips (749.253);
+4. the melisma share outside 4/4 by the deduction method;
+5. CoCoPops by metre;
+6. world music's other two counts;
+7. 749.258;
+8. 749.256's figures (876, 771);
+9. the earliest start and 870;
+10. the music21 accidental check;
+11. the folk replication's asks.
+
+**The test-songs window has banked two fresh lyrics:** 70 ("Strangers Till the Chorus", 3/4 pop) and 71 ("Never Keep Perfect Time", 6/8 folk, `songs/p81`). Both are unrun and have ledger rows. They're sealed. They're the next unseen tests after 68 and 69, each by a ledger line written first.
+
+Ask: none until the writer answers.
