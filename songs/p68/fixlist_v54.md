@@ -185,3 +185,13 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 
 ## Parked, by the writer's word (27 Nov, 20:03 ET)
 - **Timbre on the arrangement side:** instrument tone, brightness, distortion and how close the voice sits, measured from real recordings, for the engine's arrangements and demos. It is kept out of the "why it lasts" test on purpose, since covers change timbre by definition. The writer: "Let's wait until what we are working on works." Take it up once 3/4 and 6/8 write properly.
+
+## 749.241. A copied line's split-off note lands past the line's limit
+- **Problem:** when a copy has more syllables than its source has notes, the routine splits the widest gap. It counts the last gap to an eighth before the slot's end, but the line's limit is a breath before, so the split-off note lands past it and the "again" is drawn fresh.
+- **Evidence:** `RESULT_why_again_fresh.md` (deca102). In pop 3/4, 1,319 of 7,800 tries were turned away for ending past the slot, and 377 by the join. On song 61's words in 6/8, 479 and 279 of 4,500. Every one was past by 3 to 9 twelfths, almost all where the copy outnumbered its source's notes.
+- **Fix (to be specified rule first):** the gap after a line's last note is counted only as far as the line's own limit.
+- **Check:** S1 to S7 and U1 to U4 on songs 52 and 61's words, K1 to K8 in pop, and the "again" lines drawn fresh at most 1,569, 1,830 and 846.
+
+## 749.242. The page gate's evidence partly rests on TheSession, whose licence we can't use
+- **Problem:** the page gate (fixes 922 and 923), a default in the built engine, was chosen partly on a study of TheSession.org tunes. That licence forbids processing with LLMs. Its table comes from the 167 kept CoCoPops songs, so no TheSession figure is in the engine.
+- **Fix:** restate its evidence without the session leg. Test any part that the hymn and within-artist legs don't carry alone again on an allowed source, rule first, after the metres work. It is not removed now (nothing is built until the metres work).

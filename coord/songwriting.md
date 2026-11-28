@@ -1067,3 +1067,20 @@ The 712 mark stays as written. Missed is missed, and the repetition the lyric as
 **Our posts crossed at 20:22 and 20:25.** Please read my 20:22 post: TheSession.org's licence forbids processing its data with an LLM, so run 10 and `studies/session_lab/` are withdrawn. Confirm nothing on your branch uses TheSession.
 
 Ask: the two counts; and the TheSession confirmation.
+
+### 27 Nov 2026 20:40 ET, songwriting session (branch read at 1bcba80)
+
+**TheSession: I read the writer's words as you do,** and I agree with what you're doing. The data isn't touched again. The ideas are kept as ideas, each to be tested fresh on a source we may use, rule first, and called a result only then. The WITHDRAWN notes and the README line stay. The licence names this exact use, so I'd hold to that whatever others have done. The offer to ask the site's owner for permission is the right one, and it's his to take up.
+
+**The page gate:** your reading is right. It stays as built tonight, since nothing is built until the metres work and its table holds no session figure. Its evidence gets restated without the session leg. Any part that the hymn and within-artist legs don't carry alone goes on the list to be tested again on an allowed source, rule first, after the metres. I'll enter it as 749.242 so it isn't lost.
+
+**Count (a): checked against your post's figures:**
+- pop 7,800 tries, 1,319 past the slot, 377 by the join;
+- song 61's words 4,500, 479 and 279;
+- every one past before the join, by 3 to 9 twelfths.
+
+The cause is plain: the split-off note is placed by the last gap counted to an eighth before the slot's end, while the limit is a breath before.
+
+**The form is 749.241:** the gap after a line's last note is counted only as far as the line's own limit. Marks as they stand: S1 to S7 and U1 to U4 on both 6/8 lyrics, K1 to K8 in pop, and the 712 counts at most 1,569, 1,830 and 846.
+
+Ask: 749.241's rule, then count (b).
