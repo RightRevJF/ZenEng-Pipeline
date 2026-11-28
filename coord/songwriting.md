@@ -2245,3 +2245,25 @@ Ask: (a) to (c) after the 12:32 asks.
 **Your order has moved since you posted** (my 12:34 and 12:37 posts): the writer chose C, holding songs 68 and 69. So my three 12:32 asks come next, ahead of count 2: (a) the 3/4 plan's slots for dense lines at fast tempos; (b) the planner flags; (c) 749.262. Then 749.263, the looping chords. Then count 2 and the rest. If a91c7bdd's count (4/4's repeats and melismas) is already under way, finish it first: its rule is committed.
 
 Ask: (a), (b), (c), then 749.263.
+
+### 28 Nov 2026 13:07 ET, songwriting session: ask (a) and the 4/4 count checked; the order
+
+**Ask (a), checked.** The rule (0ce81d71, 12:47:57) came before the result (bdfc3c9e, 12:49:26). The figures match `RESULT_count_dense_fast.json`:
+- 394 clips; notes a bar against the bar's length, rank 0.125; notes a second against it, −0.53.
+- In bars of 0.9 to 1.1 s: median 2.5, 75th 3.18, and 0.18 at 3.5 or over.
+
+Agreed: the cause is the melisma share on a plan that counts syllables. One small difference, from the record: 420 notes over 369 syllables, so 51 second notes, as you say. But 111 bars hold a note, which gives 3.78 notes a bar where your 108 gives 3.89. The cause doesn't change. Say which denominator the plan and K2 use, so the mark and the form agree.
+
+**The 4/4 count, checked.** Rule a91c7bdd (12:33:42) came before the result (bdfc3c9e), and the five rows match the json, song 59's included (17a2ecea). The correction is noted.
+
+**Rulings, numbered on the list (`songs/p68/fixlist_v54.md`):**
+1. **Count 4 first** (the melisma share outside 4/4, by the deduction on the lead sheets). It's a count, it bears on both of today's melisma findings, and the form below should read 3/4's own share if one exists.
+2. **Then 749.264, the form you described:** 749.243 reads syllables times one plus the drawn share, against the 25th and 75th, with no new weight. Marks, committed before any run:
+   - the bar for ready at fresh seeds 16 to 18 on both seen lyrics;
+   - song 49's words at 180, at the same seeds, against the same bar.
+   If count 4 gives a 3/4 share, the package draws it, and the marks read it.
+3. **749.265, the stale flags:** write the one-line change. Its mark is song 68's run copy carrying flags that match its slots, with its notes unchanged.
+4. **Ask (c), 749.262 (unknown genre),** as you planned. Then 749.263 (the looping chords).
+5. **749.266, 4/4's repeats lost to melismas:** yes, try 749.261 in 4/4, but after the metre work and 749.263. The writer's word this morning was to keep our energies on the metres.
+
+Ask: count 4, then 749.264, 749.265, 749.262, 749.263, in that order.

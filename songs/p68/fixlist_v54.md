@@ -349,3 +349,22 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** `songs/p78/lyric68.run.song.json`, chords; the kept figures as read on 28 Nov at 992a687e (chord_writer.sections, major verses, ch_rep as in `studies/loop_less_reading`). A description: it decides nothing, and song 68 is spent.
 - **Fix (proposed, rule first):** (a) read chord changes per bar and per second in 3/4 and 6/8 songs the project may use, against the writer's 4/4 rate; (b) read the writer's chord repetition in 3/4 and 6/8 drafts, setting off and on, against kept sections; (c) if the writer loops more than kept songs outside 4/4 as it does in 4/4, weigh 965 (the loop gate with a chance) as the default outside 4/4, judged on the kept songs' rate (R06-2, R07-2, R08-3).
 - **Check:** marks written in a commit before any draft is read; the pop 3/4 bar met at 992a687e still met.
+
+## 749.264. The density plan counts syllables; the mark counts notes as sung
+- **Problem:** song 68's plan held 3.42 syllables a bar, under the pop 3/4 table's 75th (3.847), so 749.243 rightly moved nothing. The melisma step then drew its top share (16.2 in 100, 4/4's quartile) and added 51 second notes, and the pick sang 3.78 to 3.89 notes a bar (3.78 over the 111 bars with a note in them, 3.89 over the plan's 108). The pool's median was 3.843, against the line at 3.85, and the six-mark share fell to 45.5. Tempo is not the cause: in the 3/4 clips, notes a bar hardly moves with the bar's length (rank 0.125, 394 clips). In bars as short as song 68's (50 clips) the median is 2.5 and the 75th 3.18.
+- **Evidence:** `studies/other_metres/RESULT_count_dense_fast.json` (rule 0ce81d71 before bdfc3c9e); song 68's record (420 notes, 369 syllables).
+- **Fix:** 749.243 reads a section's notes a bar as its syllables times one plus the song's drawn melisma share, against the table's 25th and 75th, as now. No new weight.
+- **Check:** the bar for ready at fresh seeds 16 to 18 on both seen lyrics; and song 49's words at 180 (a dense seen lyric at a fast tempo), at the same seeds, against the same bar.
+- **First:** count 4 (the melisma share outside 4/4, by the deduction on the lead sheets), so that the share this reads is 3/4's own if the count gives one.
+
+## 749.265. The record's planner flags describe a plan the song doesn't use
+- **Problem:** song 68's record flags every line "a slot of 3 bars ... weighted placement (760)", but 749.226's plan sets every slot at two bars, and the stats count 81,295 lines in kept windows. The flags are written at the planner's first proposal, before 749.226's plan replaces it.
+- **Fix:** where 749.226's plan stands, the record's flags are written from the plan that is used. One line, behind the same switch.
+- **Check:** song 68's run copy, written again, carries flags that match its slots, and its notes don't change.
+
+## 749.266. 4/4 loses its repeats to melismas too
+- **Problem:** on the engine's last five 4/4 songs, every switch unset, bars on a rhythm already sung fall by 0.082 to 0.088 on the living builds once the second notes are placed (e.g. 54: 0.692 as made, 0.605 as sung). Run 13 of the judging research found the 4/4 engine's rhythm figures come back less than real songs' (0.36 against 0.54).
+- **Evidence:** `studies/other_metres/RESULT_count_4_4_made_sung.json` (rule a91c7bdd before bdfc3c9e; song 59's row added at 17a2ecea).
+- **Fix (proposed):** try 749.261 (a line sung again takes its source's second notes) in 4/4, rule first.
+- **Check:** the 4/4 songs' frozen orders and pools as the regression line; the gap as made against as sung narrowed; run 13's figure read again.
+- **Order:** after the metre work and 749.263.
