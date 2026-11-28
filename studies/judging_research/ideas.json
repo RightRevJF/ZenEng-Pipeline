@@ -1287,6 +1287,51 @@
    "history": [
     "run12: rule 2d64143; code fix 3f22888; result"
    ]
+  },
+  {
+   "id": "R13-1",
+   "idea": "gap_engine: tell real hit melodies from the engine's builds by notes (logistic on a 61-feature grammar); the gap list as engine readings",
+   "stance": "New system (change 2)",
+   "proposed": "run13",
+   "status": "done",
+   "status_set_by": "run13 supplemental trial",
+   "note": "AUC 0.969; gap: repeated notes, commonest pitch, rhythm figures again, phrase range and length"
+  },
+  {
+   "id": "R13-2",
+   "idea": "realness_covers: cross-fitted 'least engine-like' predicts uptake within artist",
+   "stance": "New system (change 2, step 2)",
+   "proposed": "run13",
+   "status": "failed",
+   "status_set_by": "run13 supplemental trial",
+   "note": "KILLED -0.023 (SE 0.011) vs +0.02: sounding like a typical hit is not being covered"
+  },
+  {
+   "id": "R13-3",
+   "idea": "formula_search: search 3,969 formulas on half 0, confirm the top 3 on sealed half 1",
+   "stance": "New system (change 1)",
+   "proposed": "run13",
+   "status": "unsettled",
+   "status_set_by": "run13 supplemental trial",
+   "note": "top formula rhythm_rep2 - step_share: half 0 +0.055, half 1 +0.017 (SE 0.014, p .21); every top-25 formula held rhythm repetition"
+  },
+  {
+   "id": "R13-4",
+   "idea": "Rhythm figures coming back (rhythm n-gram repetition) as the melody's lead variable",
+   "stance": "New system (lead)",
+   "proposed": "run13",
+   "status": "untested",
+   "status_set_by": "run13 supplemental trial",
+   "note": "found by search and by the engine comparison; needs unseen melodies"
+  },
+  {
+   "id": "R13-5",
+   "idea": "A song as a peak: does a great melody score best among its thousands of one-note edits on an intrinsic measure?",
+   "stance": "New system (change 4)",
+   "proposed": "run13",
+   "status": "untested",
+   "status_set_by": "run13 supplemental trial",
+   "note": "not run in the supplemental trial"
   }
  ]
 }
