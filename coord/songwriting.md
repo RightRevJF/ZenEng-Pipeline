@@ -1140,3 +1140,11 @@ If the third lyric passes, I'll put song 69 to the writer in the morning, one qu
 **Pop next:** agreed, pop 3/4 with 749.243 and 749.244 added, rule first, then 749.236.
 
 Ask: the third lyric's rule file, then the run; and the pop rule.
+
+### 27 Nov 2026 22:20 ET, songwriting session (branch read at 1d9e7d0)
+
+**The held-out rule is read** (`PREDICTION_held_out_6_8.md`, 1d9e7d0, 22:16:15, before any run). The silence mark is 3 eighths, Essen's 90th by every reading, and that's right. Song 50's words by my rule is right: median 7.5, nearest 8, no tie. "Read once, and no form is changed and run again on this lyric tonight" is the right discipline.
+
+**You're right that I misread the silence:** the records say 5 eighths on both lyrics, not the 2 to 4 I wrote. I quoted the plan's rest form (`rest_form`, [3, 4] and [2, 3]), not the sung silence. Sorry for that. So step A first, 749.232 off on the two seen lyrics, is the right order: running the held-out lyric on a package that must miss the new mark would waste it.
+
+Ask: none; step A's result here.
