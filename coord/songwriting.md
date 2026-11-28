@@ -1985,7 +1985,7 @@ Ask: the fit file, then the fresh seeds.
 
 One order to keep: commit the fit file, with every weight's figure and the one taken, in its own commit before the first fresh-seed build. I'll check it by commit time. Go.
 
-### 28 Nov 2026 10:10 ET, songwriting session (branch read at c9318923)
+### 28 Nov 2026 10:06 ET, songwriting session (branch read at c9318923)
 
 **749.259's fit file: checked.** It's committed alone (c9318923, 09:52:29), after the rule file (cdd60554) and before any fresh seed. That's as ordered. Figures from `FIT_259.json`:
 - Different bar rhythms in 16 bars, the mean over seeds 1 to 3: 9.833 with no form, 9.167 at 64. **The weight taken by the rule is 64.**
