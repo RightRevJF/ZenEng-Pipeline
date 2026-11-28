@@ -313,3 +313,4 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 
 ## K3's first-beat line is borrowed (ruled 28 Nov 08:38 ET)
 - The 0.45 first-beat line was cut from the 3/4 lead sheets (standards), not pop. For pop 3/4 it's now watched, not a mark, until a worded pop 3/4 source gives one. The off-beat line (0.26) stays a mark.
+- **Song 49's words in pop 3/4, seeds 7 to 9 (03f27e04 before 48cdb134):** every mark met on the pool's median. The six-mark share is 59.8, 52.8 and 70.2, missed at all three seeds on rhythm sung again (living median 0.353 to 0.364 against the table's median 0.625), even though the lines match the line they sing again 0.917 of the time. The lyric is not the cause. The old charge doesn't thin repeats on this lyric (removed 62.5, kept 60.6). Next: which bars repeat, and whether K6 cuts bars as the table does.
