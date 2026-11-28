@@ -223,3 +223,8 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Problem:** Essen's 691 two-bar windows whose first bar holds one note on its last eighth are a pickup caught a bar early. The draw sings them as the line's first bar, so the line starts late.
 - **Fix (preferred):** read such a window as a pickup before the bar line followed by its second bar. Otherwise, don't offer it as a line's rhythm.
 - **Check (749.245 and 749.246):** songs 52, 61's words and 50's words on every mark, each off in turn; then a new held-out lyric (49 or 58), read once.
+
+## 749.247. A line sung again makes its own run of one pitch, and the join refuses it
+- **Problem:** after the title's room was retired, song 61's words drew 0.097 of their "again" lines fresh (limit 0.076). Every refusal at the join (929), on all four seen lyrics, is a run of one pitch over the cap of 3. The source's longest run is 2 or 3, and the copy's is 4 to 6. Splitting a note for extra syllables repeats its neighbour's pitch, and notes moved onto the new section's chord land on one another (count at 0b92d08b, `why_join_refuses_*.json`).
+- **Fix:** when a line is sung again, each note that would be the fourth or later of one pitch in a row moves a scale step toward the next different note, inside the line's register. The join then tests as now. Switch `LUTHIER_AGAIN_RUNS=1`.
+- **Check:** the four seen lyrics on every mark, share at most 0.076. Watched: the chord-tone share of mended notes on a beat, against the source's own. Then song 58's words, held out and read once.
