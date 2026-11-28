@@ -1,0 +1,131 @@
+{
+ "table": "../../studies/other_metres/trial_tables/3-4_pop_sung",
+ "the_band_is": "the table's readings_quartiles: its 25th, 50th, 75th (the charge is the distance outside the 25th to 75th, over their spread)",
+ "table_source": "267 songs' Hooktheory clips (soundtrack, game, library and classical sources left out by hooktheory_filter.json) written in 3/4 (Sheet Sage's Hooktheory.json.gz; CC BY-NC-SA 3.0; not committed); sections, not whole songs",
+ "uncharged": [
+  "notes a bar",
+  "notes a beat",
+  "gaps of a sixteenth",
+  "gaps of an eighth",
+  "gaps of a quarter or more",
+  "gaps of half a beat",
+  "gaps of a third of a beat",
+  "gaps of a beat or more",
+  "gaps under a third of a beat",
+  "range",
+  "distinct pitches"
+ ],
+ "living_builds": 258,
+ "charged": {
+  "repeated notes": {
+   "band_25_50_75": [
+    0.038,
+    0.14,
+    0.255
+   ],
+   "builds_median": 0.301,
+   "share_of_builds_over_the_75th": 0.841,
+   "share_under_the_25th": 0.0,
+   "share_of_all_charge": 0.239
+  },
+  "moves by step": {
+   "band_25_50_75": [
+    0.34,
+    0.463,
+    0.559
+   ],
+   "builds_median": 0.302,
+   "share_of_builds_over_the_75th": 0.0,
+   "share_under_the_25th": 0.733,
+   "share_of_all_charge": 0.233
+  },
+  "longest run of one pitch": {
+   "band_25_50_75": [
+    2.0,
+    3.0,
+    4.0
+   ],
+   "builds_median": 4.0,
+   "share_of_builds_over_the_75th": 0.306,
+   "share_under_the_25th": 0.0,
+   "share_of_all_charge": 0.201
+  },
+  "bars on a figure already sung": {
+   "band_25_50_75": [
+    0.209,
+    0.375,
+    0.562
+   ],
+   "builds_median": 0.628,
+   "share_of_builds_over_the_75th": 0.961,
+   "share_under_the_25th": 0.0,
+   "share_of_all_charge": 0.198
+  },
+  "turns of direction": {
+   "band_25_50_75": [
+    0.379,
+    0.444,
+    0.538
+   ],
+   "builds_median": 0.44,
+   "share_of_builds_over_the_75th": 0.058,
+   "share_under_the_25th": 0.186,
+   "share_of_all_charge": 0.055
+  },
+  "moves by leap": {
+   "band_25_50_75": [
+    0.083,
+    0.152,
+    0.262
+   ],
+   "builds_median": 0.199,
+   "share_of_builds_over_the_75th": 0.163,
+   "share_under_the_25th": 0.019,
+   "share_of_all_charge": 0.037
+  },
+  "distinct rhythms over bars": {
+   "band_25_50_75": [
+    0.213,
+    0.375,
+    0.535
+   ],
+   "builds_median": 0.219,
+   "share_of_builds_over_the_75th": 0.0,
+   "share_under_the_25th": 0.395,
+   "share_of_all_charge": 0.018
+  },
+  "bars on a rhythm already sung": {
+   "band_25_50_75": [
+    0.465,
+    0.625,
+    0.787
+   ],
+   "builds_median": 0.781,
+   "share_of_builds_over_the_75th": 0.395,
+   "share_under_the_25th": 0.0,
+   "share_of_all_charge": 0.018
+  },
+  "onsets on the bar's first beat": {
+   "band_25_50_75": [
+    0.214,
+    0.282,
+    0.364
+   ],
+   "builds_median": 0.328,
+   "share_of_builds_over_the_75th": 0.0,
+   "share_under_the_25th": 0.0,
+   "share_of_all_charge": 0.0
+  },
+  "onsets on the beat": {
+   "band_25_50_75": [
+    0.508,
+    0.643,
+    0.8
+   ],
+   "builds_median": 0.706,
+   "share_of_builds_over_the_75th": 0.0,
+   "share_under_the_25th": 0.0,
+   "share_of_all_charge": 0.0
+  }
+ }
+}
