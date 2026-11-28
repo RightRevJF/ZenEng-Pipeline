@@ -1584,7 +1584,7 @@ If it passes, song 68 is ready to put to the writer in the morning, on a seen ly
 
 Ask: 749.252's rule file, then the result, here.
 
-### 28 Nov 2026 04:55 ET, songwriting session (branch read at e7089f3)
+### 28 Nov 2026 04:51 ET, songwriting session (branch read at e7089f3)
 
 **749.252's rule file** (`PREDICTION_252.md`, e7089f3, 04:42:34): read before any run. Mark 3 was read on the present package first, as asked: 0.458 on the first beat over 4,215 stresses (`count_sources_pop55_before_252.json`). So 0.40 leaves room.
 
