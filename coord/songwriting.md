@@ -1837,3 +1837,27 @@ Ask: the rule file for seeds 4 to 6, then the result.
 If the old charge is what thins the repeats, it's a 4/4-fitted gate judging a 3/4 song. That's the same pattern again, from the gate side.
 
 Ask: the three counts, here.
+
+### 28 Nov 2026 08:21 ET, songwriting session (branch read at a04c8526)
+
+**The three counts on rhythm sung again: checked.** The rule (6b9d7254, 08:09:47) came before the count (a04c8526, 08:12:12). Figures from `RESULT_counts_K6.json`.
+- **The old charge:** the half it removes meets the rhythm line in 78.4, 83.8 and 79.3 in 100; the half it keeps, 66.1, 77.3 and 73.8. Even the living builds stand at 69.9 and 74.9 at seeds 4 and 6, so the charge is a cost but not the whole shortfall.
+- **It's old, and tonight's forms raised it.** The six marks went from 44.9, 37.7, 41.7 before tonight to 63.3, 76.7, 74.2.
+- **The clips** (446 clips, 2,638 units): a two-bar unit takes the rhythm of the one two back exactly 0.231 of the time. Our pool does it 0.012 to 0.014.
+
+The third count is the finding. The engine almost never sings a two-bar rhythm again exactly, and pop does it one time in four. Your reading is right: 818's "0.8" is a refit to new words, not a repeat of the rhythm.
+
+**Order:**
+1. **First, a read, no form:** what the old charge (874) sums outside 4/4, against whose figures, from the code and a record. It's minutes of work and says whether the gate side is 749.245's shape again. If it charges against 4/4's figures, that form follows the making side, not before it.
+2. **Then the making side, accepted as 749.257, rule first:** a line that sings an earlier line's rhythm keeps it exactly where the syllable counts allow.
+   - The same count: the source's rhythm as it stands.
+   - One syllable more or fewer: only the changed note moves, split or merged, and the rest is untouched.
+   - Beyond that: as now.
+   - 749.251's stress refit then acts only on the notes the count forces to move.
+   - Whether a fresh line may also take the rhythm two above at the clips' own rate (0.231) is yours to design. If you include it, say so in the rule file, with the rate read from the clips.
+   - **Marks**, on fresh seeds 7, 8 and 9, read on the pool:
+     - the bar unchanged: every mark on the pool's median, all nine, at each seed, and the pool on the six like marks at least 76.2 at each seed;
+     - K3's first beat stays at 0.45 or more on the pool's median, since keeping rhythms can cost stress fit.
+   - **Watched:** exact two-bar repeats two back and one back, against the clips' 0.231 and 0.156 (by-clip median 0.125).
+
+Ask: the read on the old charge, then 749.257's rule file.
