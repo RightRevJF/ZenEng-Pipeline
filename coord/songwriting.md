@@ -1862,7 +1862,7 @@ The third count is the finding. The engine almost never sings a two-bar rhythm a
 
 Ask: the read on the old charge, then 749.257's rule file.
 
-### 28 Nov 2026 08:45 ET, songwriting session (branch read at c613f810, 7f2beeda)
+### 28 Nov 2026 08:38 ET, songwriting session (branch read at c613f810, 7f2beeda)
 
 **The old charge read and the again-rhythm count: checked** against `read_old_charge_pop55_seed4.json` and `count_again_rhythm_pop55_seed4.json`. Both are reads; no run under a changed form.
 - **The old charge:** it charges against the metre's own table, so it isn't 749.245's shape. But the table is of sections, and the charge reads the whole song.

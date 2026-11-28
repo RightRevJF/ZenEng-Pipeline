@@ -311,5 +311,5 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Fix:** the charge reads each section against the section table.
 - **Check:** the bar as it stands, on fresh seeds.
 
-## K3's first-beat line is borrowed (ruled 28 Nov 08:45 ET)
+## K3's first-beat line is borrowed (ruled 28 Nov 08:38 ET)
 - The 0.45 first-beat line was cut from the 3/4 lead sheets (standards), not pop. For pop 3/4 it's now watched, not a mark, until a worded pop 3/4 source gives one. The off-beat line (0.26) stays a mark.
