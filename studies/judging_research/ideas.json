@@ -752,7 +752,7 @@
    "proposed": "run09",
    "status": "testing",
    "status_set_by": "run09 experiments",
-   "note": "run09 irr_skeleton (estimate, power 0.067): -0.060 (SE 0.029, p .043, range -0.117 to -0.002) vs +0.02; OPPOSITE sign, Poisson -0.15 p .023; uncounted, watch: a lead that back-and-forth (A-B-A) chords go with more covers"
+   "note": "run09 irr_skeleton (estimate, power 0.067): -0.060 (SE 0.029, p .043, range -0.117 to -0.002) vs +0.02; OPPOSITE sign, Poisson -0.15 p .023; uncounted, watch: a lead that back-and-forth (A-B-A) chords go with more covers | run10: revived on melody as R10-G2 (irr_skel): A -0.022 passed, C unsettled"
   },
   {
    "id": "R09-I2",
@@ -789,6 +789,123 @@
    "status": "passed",
    "status_set_by": "run09 experiments",
    "note": "late_momentum08: LEAD SUPPORTED on seen songs: +0.044 (SE 0.012), halves +0.040/+0.044, Poisson +0.072; momentum coef +0.37; non-jazz +0.024 unsettled"
+  },
+  {
+   "id": "R10-G1",
+   "idea": "G10-1 weak links: persistent entropy of the H0 barcode (MST) of the beat skeleton's pitch-transition graph (card 1)",
+   "stance": "Geometer",
+   "proposed": "run10",
+   "status": "failed",
+   "status_set_by": "run10 experiments",
+   "note": "pe_h0_links: KILLED by range rule, +0.016 (SE 0.007, p .022) vs +0.03; halves and Poisson positive; smaller positive effect not ruled out; love +0.007"
+  },
+  {
+   "id": "R10-G2",
+   "idea": "G10-2 retracing: tree-reduced share of the beat skeleton walk (IRR revived on melody)",
+   "stance": "Geometer",
+   "proposed": "run10",
+   "status": "testing",
+   "status_set_by": "run10 experiments",
+   "note": "irr_skel_retrace: PASSED on A -0.022 (SE 0.007); C confirmation UNSETTLED -0.011 (SE 0.013), all baselines held -0.004; not confirmed; love -0.023 (A)"
+  },
+  {
+   "id": "R10-G3",
+   "idea": "G10-3 S = 1 + g/pi: spectral gap of the beat skeleton's pitch-class graph (the counted S)",
+   "stance": "Geometer",
+   "proposed": "run10",
+   "status": "failed",
+   "status_set_by": "run10 experiments",
+   "note": "s_gap_skeleton: KILLED -0.005 (SE 0.007) vs -0.03; halves split, Poisson +"
+  },
+  {
+   "id": "R10-L1",
+   "idea": "SLG self-learnability gain (own-past bigram vs type corpus), bar_rep and ln_notes held",
+   "stance": "Listener",
+   "proposed": "run10",
+   "status": "failed",
+   "status_set_by": "run10 experiments",
+   "note": "slg_selflearn: KILLED, wrong sign -0.011 (SE 0.008); slg_win reading +0.025 uncounted"
+  },
+  {
+   "id": "R10-L2",
+   "idea": "core_ic: corpus surprisal of the on-beat skeleton (typical skeleton), pc_entropy held (TSG revised)",
+   "stance": "Listener",
+   "proposed": "run10",
+   "status": "testing",
+   "status_set_by": "run10 experiments",
+   "note": "core_typical: PASSED on A -0.035 (SE 0.008); C -0.051 (SE 0.017, p .003) but power 0.14 < floor, so an ESTIMATE; surf_ic (off-beat) also negative (-0.037 A, -0.054 C): reads 'typical melody overall'; love -0.031 (A); confirm on H"
+  },
+  {
+   "id": "R10-L2b",
+   "idea": "TSG: typical skeleton minus surprising surface",
+   "stance": "Listener",
+   "proposed": "run10",
+   "status": "failed",
+   "status_set_by": "run10 experiments",
+   "note": "estimate inside core_typical: +0.013 (A), +0.018 (C), wrong sign; uncounted"
+  },
+  {
+   "id": "R10-L3",
+   "idea": "CUT_AB: Fiedler cut of the pitch graph aligned with the tune's halves (Cheeger)",
+   "stance": "Listener",
+   "proposed": "run10",
+   "status": "testing",
+   "status_set_by": "run10 experiments",
+   "note": "cut_ab_parts: UNSETTLED +0.019 (SE 0.007, p .0058, alpha .00556); strict AABB reels/jigs +0.062 (uncounted); love +0.024"
+  },
+  {
+   "id": "R10-I1",
+   "idea": "ARCH_PE: persistent entropy of the contour's sublevel/superlevel H0 barcode (statue's arches)",
+   "stance": "Inventor",
+   "proposed": "run10",
+   "status": "failed",
+   "status_set_by": "run10 experiments",
+   "note": "arch_contour: UNSETTLED -0.018 (SE 0.007, p .015); vanishes with all 13 baselines held (+0.005); recommended for deletion"
+  },
+  {
+   "id": "R10-I2",
+   "idea": "LOCK: contour turning points on beats (dancer's footfall)",
+   "stance": "Inventor",
+   "proposed": "run10",
+   "status": "untested",
+   "status_set_by": "run10 experiments",
+   "note": "lock_turns: frozen (641f966, +0.03, power 0.74, alpha .05/9) but held by the chair's cap of eight; runs first next pass"
+  },
+  {
+   "id": "R10-I3",
+   "idea": "GAP: spectral gap of the full melody's octave-distinct pitch graph, S = 1 + g/pi (range, n_pitch, ln_notes held)",
+   "stance": "Inventor",
+   "proposed": "run10",
+   "status": "testing",
+   "status_set_by": "run10 experiments",
+   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H"
+  },
+  {
+   "id": "R10-S1",
+   "idea": "REP: replication of McBride & Leroi, pitch-class entropy (simpler spreads)",
+   "stance": "Skeptic",
+   "proposed": "run10",
+   "status": "passed",
+   "status_set_by": "run10 experiments",
+   "note": "rep_entropy: PASSED on A -0.083 (SE 0.007); CONFIRMED on C -0.062 (SE 0.014); love -0.117 (A), -0.091 (C); bigger than the predicted -0.03; all baselines held -0.064 (A), -0.082 (C)"
+  },
+  {
+   "id": "R10-C1",
+   "idea": "Cheeger constant of the full pitch graph (reading in cut_ab_parts)",
+   "stance": "Listener",
+   "proposed": "run10",
+   "status": "untested",
+   "status_set_by": "run10 experiments",
+   "note": "uncounted reading -0.065 (SE 0.008) on A; close kin of GAP; no renaming check yet"
+  },
+  {
+   "id": "R10-S2",
+   "idea": "First-poster fixed effect reading for surface measures",
+   "stance": "Skeptic",
+   "proposed": "run10",
+   "status": "parked",
+   "status_set_by": "run10 experiments",
+   "note": "harness has no username; needs adding to common10 before it can be frozen"
   }
  ]
 }
