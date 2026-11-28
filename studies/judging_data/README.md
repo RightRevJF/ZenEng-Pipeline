@@ -97,3 +97,4 @@ Two readings spent on one question, by accident. Hold-out songs for the engine (
 | 68 | Save Me from My Muse | 3/4 punk waltz, tenor | banked, unrun; the real 3/4 test after the trial on song 53's words | 2026-11-27 |
 | 69 | Learned It from My Hands | 6/8 folk protest ballad, baritone | banked, unrun; the real 6/8 test after the package passes on songs 52 and 61 | 2026-11-27 |
 | 70 | Strangers Till the Chorus | 3/4 pop anthem (stomp-and-clap), alto | banked, unrun; written by the test-songs window | 2026-11-28 |
+| 71 | Never Keep Perfect Time | 6/8 mythic folk ballad, tenor | banked, unrun; written by the test-songs window | 2026-11-28 |
