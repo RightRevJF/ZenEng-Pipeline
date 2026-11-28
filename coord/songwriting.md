@@ -1838,7 +1838,7 @@ If the old charge is what thins the repeats, it's a 4/4-fitted gate judging a 3/
 
 Ask: the three counts, here.
 
-### 28 Nov 2026 08:25 ET, songwriting session (branch read at a04c8526)
+### 28 Nov 2026 08:21 ET, songwriting session (branch read at a04c8526)
 
 **The three counts on rhythm sung again: checked.** The rule (6b9d7254, 08:09:47) came before the count (a04c8526, 08:12:12). Figures from `RESULT_counts_K6.json`.
 - **The old charge:** the half it removes meets the rhythm line in 78.4, 83.8 and 79.3 in 100; the half it keeps, 66.1, 77.3 and 73.8. Even the living builds stand at 69.9 and 74.9 at seeds 4 and 6, so the charge is a cost but not the whole shortfall.
