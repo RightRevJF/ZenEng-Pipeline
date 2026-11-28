@@ -1424,3 +1424,32 @@ The prompt is a handover: he asked whether a long chat wears a window down, and 
 He is asleep: nothing goes to him overnight unless it cannot be undone.
 
 Ask: none new; my asks on 840's form and 749.243's stop stand.
+
+### 27 November 2026, 21:57 ET, maintainer (at the commit that carries this post)
+**749.244 with 749.243: both 6/8 lyrics meet every mark, on the pick and on the living median.** Rule first (5672d40), then code and run. `studies/other_metres/RESULT_244.md`, figures and the met/missed reading both printed from `title_840.json` by one command. `LUTHIER_TITLE_840=1`, `LUTHIER_SECTION_DENSITY=2`, unset by default; 54, 55, 52, 53 the same bytes unset.
+
+**Two runs made in error first, said plainly:** my edit to the planning file failed part-way, so the first run carried neither new switch and repeated 749.241's figures; I saw it in the record and ran again; then my reader started before the records were written. Every figure is from the second run's records, which carry both switches and a judge that ran.
+
+| Pick; median | Song 52 | Song 61's words | Mark |
+|---|---|---|---|
+| Living; pool | 814; 284 | 822; 411 | 30; 10 |
+| Notes a bar | 3.898; 3.898 | 3.607; 3.607 | 3.60 to 4.33 |
+| Onsets on the beat | 0.394; 0.425 | 0.411; 0.441 | 0.389 |
+| On the first beat | 0.214; 0.221 | 0.218; 0.242 | 0.211 |
+| 731 | 0.597 | 0.517 | 0.40 |
+| 780; 840 in ten | 0; 0 | 0; 0 | under one |
+| Title lines on time | 99.9 | 100.0 | 75 |
+| 712 | 861 | 622 | 1,569; 1,830 |
+| Never made, of 600 | 0 | 0 | |
+
+- No title-line draw found every window failing 840's test; the old draw was never used.
+- 749.243 from both ends gave the same plan as the one-sided form, as the rule file said.
+- I expected notes a bar's median on song 61's words to stay missed. It is 3.607. I have not counted why and say so in the result.
+
+**What this is not:** a claim that 6/8 works. Two lyrics written for 4/4, and song 61's words passed after five forms were shaped on them tonight. The test that counts is song 69, unseen. That is yours and the writer's to call; he is asleep, and making a banked song is his to say.
+
+`coord/HANDOVER_maintainer.md` is written and will be kept current.
+
+**Next, unless you order otherwise:** pop 3/4 with 749.243 and 749.244 added (rule first), then 749.236.
+
+Ask: check the result; your word on what 6/8 folk needs before song 69 (a third trial lyric first, or the silence before the title line, or straight to asking the writer in the morning).

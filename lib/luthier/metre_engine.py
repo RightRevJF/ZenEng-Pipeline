@@ -186,6 +186,11 @@ class Engine:
                     for sh in (6, 12):
                         o2 = [x - sh for x in w]
                         if o2[0] >= tmin: early.append((o2, math.log(c + 1) + 1.4 * self.stress_score([x for x in w], sy)))
+        if hook and self.S.get("title_840") and (out or early):                               # trial (749.244): a title line is offered only the windows that pass 840's own test (half its stresses on a beat), wherever any exist
+            ok8_ = lambda o_: (lambda v_: (not v_) or sum(1 for t_ in v_ if self.on_beat(t_)) * 2 >= len(v_))([t_ for t_, x_ in zip(o_, sy) if x_[1]])
+            o8_ = [x_ for x_ in out if ok8_(x_[0])]; e8_ = [x_ for x_ in early if ok8_(x_[0])]
+            if o8_: out = o8_; early = e8_; self.stats["749.244: a title line drawn among the windows that pass 840's test"] += 1
+            else: self.stats["749.244: no window passes 840's test; the old draw"] += 1
         if early and rng.random() < self.ENTRY[True][0]: out = early; self.stats["834: a stressed opening sung before the bar line"] += 1      # the entry's class first, at the kept share (771)
         if out:
             top = sorted(out, key=lambda x: -x[1])[:12]; ws = [math.exp(s - top[0][1]) for _, s in top]; self.stats["653: a line in a kept window"] += 1

@@ -189,7 +189,7 @@ def plan(L):
             for k_ in title_entry_: nm_, i_ = k_.rsplit(":", 1); slots[nm_][int(i_)] = max(slots[nm_][int(i_)], sungb_[nm_][int(i_)] + 1)
         form = [(nm_, k_, (sum(slots[nm_]) + sum(slots[nm_]) % 2) if nm_ in slots else n_) for nm_, k_, n_ in form]
     secdens_ = {}
-    if os.environ.get("LUTHIER_SECTION_DENSITY", "0") == "1" and sungb_:
+    if os.environ.get("LUTHIER_SECTION_DENSITY", "0") in ("1", "2") and sungb_:
         # trial (749.243): no section denser than the table's 75th of notes a bar; the densest line under four bars takes a bar more until the section is inside
         q75_ = T["readings_quartiles"]["notes a bar"][2]; pad5_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_ and not PLAN_6_8_FOLK); grp5_ = {k_: ks_ for ks_ in grp_.values() for k_ in ks_} if SHARED_BARS else {}
         for nm_, _, sy_ in sung:
@@ -197,6 +197,12 @@ def plan(L):
                 c5_ = [(len(sy_[i_]) / float(sungb_[nm_][i_]), -i_) for i_ in range(len(sy_)) if sungb_[nm_][i_] < 4]
                 if not c5_: break
                 i5_ = -max(c5_)[1]; b5_ = sungb_[nm_][i5_] + 1
+                if os.environ.get("LUTHIER_SECTION_DENSITY") == "2":      # read from both ends: the move is not made if it would take a section it touches under the table's 25th that was not under it already
+                    q25_ = T["readings_quartiles"]["notes a bar"][0]; syl5_ = {n_: sum(len(x_) for x_ in y_) for n_, _, y_ in sung}; add5_ = {}
+                    for k_ in grp5_.get(f"{nm_}:{i5_}", [f"{nm_}:{i5_}"]):
+                        n2_, j2_ = k_.rsplit(":", 1)
+                        if sungb_[n2_][int(j2_)] < b5_: add5_[n2_] = add5_.get(n2_, 0) + b5_ - sungb_[n2_][int(j2_)]
+                    if any(syl5_[n_] / float(sum(sungb_[n_])) >= q25_ > syl5_[n_] / float(sum(sungb_[n_]) + a_) for n_, a_ in add5_.items()): break
                 for k_ in grp5_.get(f"{nm_}:{i5_}", [f"{nm_}:{i5_}"]):
                     n2_, j2_ = k_.rsplit(":", 1); j2_ = int(j2_)
                     if sungb_[n2_][j2_] < b5_: secdens_[k_] = [secdens_.get(k_, [sungb_[n2_][j2_]])[0], b5_]; sungb_[n2_][j2_] = b5_; slots[n2_][j2_] = max(slots[n2_][j2_], 2 if b5_ == 2 else 4 if (b5_ == 4 or pad5_) else 3)
@@ -252,6 +258,7 @@ def plan(L):
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
     if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)
     if TITLE_FRESH: spec["title_fresh"] = True      # trial
+    if os.environ.get("LUTHIER_TITLE_840", "0") == "1": spec["title_840"] = True      # trial (749.244), off: a title line is drawn among the windows that pass 840's own test
     if os.environ.get("LUTHIER_AGAIN_INSIDE", "0") == "1": spec["again_inside"] = True      # trial, off: a line sung again (the lyric's "again", 818) begins its last syllable inside its own slot, as a fresh line must
     if os.environ.get("LUTHIER_AGAIN_REFIT", "0") in ("1", "2"): spec["again_refit"] = int(os.environ["LUTHIER_AGAIN_REFIT"])      # trial, off: a line sung again leaves out its source's notes that begin past its own latest start, so it is refitted inside its slot and not dropped
     stress_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".stress.json")
