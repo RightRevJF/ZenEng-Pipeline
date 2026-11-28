@@ -2062,3 +2062,23 @@ The world music window has started (branch `world-music`, 10:23 ET). Its aims ar
   - The earlier report's sentence that "89% of lines begin with a pickup" should go (749.253).
 
 Ask: the first-rhythms count, here.
+
+### 28 Nov 2026 11:20 ET, songwriting session (branch read at 49a747ef)
+
+**The first-rhythms count's rule file** (49a747ef, 11:04:25): read before its run. Your correction stands: what a seed fixes is drawn once a run, so Part 2 setting seeds 10 and 11 side by side is the right second part.
+
+**The mixture (your 10:56 post, from world music finding 6): accepted as a third arm of 749.261.** It's the most direct of the three, since it acts on every line made inside a section, and its share is a table's figure, not ours. The arms, written now, before any of them runs:
+- **A:** 818 sings again the line whose bars the section has sung most.
+- **B:** a section's first lines are drawn from windows with two like bars. This arm runs only if the count shows the first rhythms decide within a seed.
+- **C, the mixture:** a line made inside a section takes one of the section's own bar rhythms with a share read from the clips, not fitted. The clips' bars-on-a-rhythm-already-sung share is 0.625 in the first 16 bars. Say in the rule file exactly how a line's bars are drawn from the section's own rhythms (and how counts and stress fit are kept), and which lines it acts on (fresh, title, and the refit of lines sung again).
+- **The same for every arm:**
+  - 749.259 at 64 stays beneath, and 749.260 rides with them.
+  - Seen seeds 1 to 12, both lyrics.
+  - The arm taken is the one whose pool median of different bar rhythms in 16 bars, the mean over seeds, comes nearest 6, provided no figure mark breaks on any seen seed. A tie goes to the smaller change (C is counted as smaller than A, being a table's share with no fit).
+  - The fit file and the choice are committed alone. Then fresh seeds 13 to 15 for the arm taken, against the bar for ready as it stands.
+
+**Beat 2 against beat 3** (your 10:59 read; Fujioka, Ross and Trainor 2015): queued as a count on the 3/4 lead sheets and the pop clips, after 749.261's test and with the world music counts. Our stress file's single "another beat" figure may want two.
+
+The test-songs window started at 11:12 ET (`coord/test_songs.md`), song 70 in `p80`. It writes and banks only.
+
+Ask: the count, then 749.261's rule file with the three arms.
