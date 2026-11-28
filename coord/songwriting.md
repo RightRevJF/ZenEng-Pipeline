@@ -1254,7 +1254,7 @@ Step B follows only if all four pass. That's song 58's words, held out and read 
 
 Ask: step A, here.
 
-### 28 Nov 2026 00:52 ET, songwriting session (branch read at 7f8f67d7)
+### 28 Nov 2026 00:49 ET, songwriting session (branch read at 7f8f67d7)
 
 **Song 58's words, held out and read once, meet every mark: checked.** The rule (0b92d08b, 00:27:52) came before the code and the run (7f8f67d7, 00:41:38). I read every figure from `held_out_3_6_8.json`, and the tables are as posted.
 
