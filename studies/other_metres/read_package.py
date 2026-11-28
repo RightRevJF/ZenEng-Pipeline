@@ -3,7 +3,7 @@ python3 studies/other_metres/read_package.py LYRIC.json RECORD.song.json LIMIT_7
 import os, sys, json, random, collections
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.normpath(os.path.join(HERE, "..", "..")); sys.path[:0] = [HERE, os.path.join(ROOT, "lib", "luthier"), os.path.join(ROOT, "lib", "carol"), os.path.join(ROOT, "tables", "metre_atlas")]
 import metre_engine as M, read_6_8_lyric as RL
-KEYS = ("table", "title_entry_pickup", "title_840", "again_inside", "again_refit", "title_fresh", "title_nowait", "copy_join", "section_density", "title_room", "kept_rests", "kept_rests_rate", "no_pickup_windows", "again_runs", "shared_bars", "stress_place", "title_entry", "title_entry_rest")
+KEYS = ("table", "title_entry_pickup", "title_840", "again_inside", "again_refit", "title_fresh", "title_nowait", "copy_join", "section_density", "title_room", "kept_rests", "kept_rests_rate", "no_pickup_windows", "again_runs", "title_pull", "shared_bars", "stress_place", "title_entry", "title_entry_rest")
 def late(record, n=400):
     R = json.load(open(record)); E = M.Engine(R["spec"]); rng = random.Random(1); lt = tot = 0
     for _ in range(n):

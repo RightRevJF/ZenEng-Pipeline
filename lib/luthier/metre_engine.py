@@ -183,7 +183,7 @@ class Engine:
                 ons = [-6 * (p - j) for j in range(p)] + list(w)
                 if ons[0] < tmin: continue
                 e = self.ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
-                out.append((ons, math.log(c + 1) + (2.8 if hook else 1.4) * self.stress_score(ons, sy) + math.log(e)))        # 840: the title line's stresses pulled twice as hard to the beat
+                out.append((ons, math.log(c + 1) + ((self.S["title_pull"] if "title_pull" in self.S else 2.8) if hook else 1.4) * self.stress_score(ons, sy) + math.log(e)))        # 840: the title line's stresses pulled twice as hard to the beat
                 if p == 0 and sy[0][1] and w[0] == 0 and self.S.get("early_entries"):               # 834: a line that opens on a stress may sing its kept window an eighth or a quarter early
                     for sh in (6, 12):
                         o2 = [x - sh for x in w]

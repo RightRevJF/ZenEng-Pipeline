@@ -16,6 +16,7 @@ def table_side(E, sy):
         cum += v
         if k50 is None and cum >= 0.5 * tot: k50 = i
         if k90 is None and cum >= 0.9 * tot: k90 = i
+    rk = sorted(W.items(), key=lambda x: -x[1]); table_side.rank = {k: (i + 1, round(v / tot, 3)) for i, (k, v) in enumerate(rk)}
     return dict(passing_windows=len(W), their_kept_count=tot, commonest_share_by_kept_count=round(srt[0] / tot, 3) if tot else None, windows_to_cover_half=k50, windows_to_cover_nine_tenths=k90)
 def read(record, builds=600, seed=1):
     R = json.load(open(record)); sp = R["spec"]; E = M.Engine(sp); hooks = [h for h in sp.get("hooks", ()) if E.HOW.get((h.rsplit(":", 1)[0], int(h.rsplit(":", 1)[1])), ["fresh"])[0] not in ("copy", "again")]; C = {h: collections.Counter() for h in hooks}; rng = random.Random(seed); made = 0
@@ -31,6 +32,7 @@ def read(record, builds=600, seed=1):
             cum += v
             if k50 is None and cum >= 0.5 * made: k50 = i
             if k90 is None and cum >= 0.9 * made: k90 = i
-        out[h] = dict(syllables=len(sy), stressed=sum(1 for x in sy if x[1]), sung_bars=sb, table=table_side(E, sy) if sb == 2 else "not a two-bar line", ours=dict(distinct_rhythms=len(C[h]), commonest_share_of_builds=round(srt[0] / made, 3), rhythms_to_cover_half=k50, rhythms_to_cover_nine_tenths=k90), the_commonest_in_ours_is_the_tables_commonest=None)
+        tb = table_side(E, sy) if sb == 2 else "not a two-bar line"; mine = C[h].most_common(1)[0][0]; rk = table_side.rank.get(mine) if sb == 2 else None
+        out[h] = dict(syllables=len(sy), stressed=sum(1 for x in sy if x[1]), sung_bars=sb, table=tb, ours=dict(distinct_rhythms=len(C[h]), commonest_share_of_builds=round(srt[0] / made, 3), rhythms_to_cover_half=k50, rhythms_to_cover_nine_tenths=k90), the_commonest_in_ours_is_the_tables_commonest=(None if sb != 2 else bool(rk and rk[0] == 1)), our_commonest_in_the_table_rank_and_share=(None if sb != 2 else list(rk) if rk else "not among the passing kept windows (a one-bar or weighted rhythm)"))
     return dict(builds=builds, made=made, title_lines=out)
 if __name__ == "__main__": print(json.dumps(read(sys.argv[1], int(sys.argv[2]) if len(sys.argv) > 2 else 600), indent=1))

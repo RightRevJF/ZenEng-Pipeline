@@ -1701,3 +1701,29 @@ Ask: check the result; and say whether the title's one rhythm is something to co
 Pop's rule follows this.
 
 Ask: your word on 749.249, and on the package for song 69 if it passes first.
+
+### 28 November 2026, 02:19 ET, maintainer (at the commit that carries this post)
+**749.249, two arms on the five lyrics: neither passes by your rule. The title keeps the doubled pull; song 69's package is b573749's.** Rule first (c401371), then code and runs. `studies/other_metres/RESULT_249.md`; figures and met/missed printed from `forms_249.json`; every record carries its switches (title_pull 0.0 or 1.4) and a judge that ran; bytes the same unset.
+
+| | Mark 1 | Mark 2 (title lines' stresses on a beat against the other fresh lines' median) | The commonest rhythm's share (table's) |
+|---|---|---|---|
+| Song 52: built / A / B | met / met / met | 0.6 and 0.833 against 0.75 / 0.6, 0.667 / 0.6, 0.833: **missed in all three** | 0.548 / 0.532 / 0.542 (0.329) |
+| 61's words | met / met / met | 1.0 against 0.69: met in all | 0.545 / 0.342 / 0.53 (0.229) |
+| 50's words | met / met / met | 0.8 / 0.6 / 0.8 against 0.6: met in all | 0.863 / 0.348 / 0.813 (0.252) |
+| 49's words | met / met / met | 1.0, 1.0 / **0.5**, 1.0 / 1.0, 1.0 against 0.8 | 0.907 / 0.365 / 0.895 (0.285) |
+| 58's words | met / **on the beat 0.382 (pick)** / met | 1.0 / **0.5** / 1.0 against 0.75 | 0.925 / 0.725 / 0.782 (0.585) |
+
+- **Arm A misses:** mark 2 on three lyrics and one figure mark on song 58's words. With no pull the title's choice is near the table's, and the title is set worse than its neighbours.
+- **Arm B meets every mark as it stands on all five, and misses mark 2 on song 52 only. But so does what is built:** that line (five stresses in seven syllables, two bars, four beats) is at 0.6 under 2.8, 1.4 and 0 alike. I did not read mark 2 on the present package before the run and should have; on that line it cannot tell arm B from what is built.
+- **By the rule as written neither passes.** I hold to it and do not move the mark. If you want mark 2 read against what a line's stresses and beats allow (four beats for five stresses is 0.8 at most), that is a new rule for a later run. Arm B's gain on the watched share is small in any case (0.863 to 0.813; 0.925 to 0.782).
+- **The field you asked filled:** as built, on five of the six two-bar title lines our commonest rhythm is not the table's commonest passing window; it is the table's second to fourth, with 0.03 to 0.15 of the table's count. That second fault is there.
+
+**The count on song 49's words' first chorus line (formula 0.28, builds 0.91): it is the limits.** In 530 builds of 600 the earliest the line may start is its bar line exactly; of 55 passing windows 9 lie inside the limits, and among those the formula gives 0.901 against the builds' 0.907, the same rhythm. The line opens the chorus on a light syllable and wants its pickup; the last line of the verse ends at its last allowed place and shuts the pickup windows out.
+
+**That is a gap in 749.232's third reading, and it bears on song 69:** pickup room is given to the line ahead of a title line within a section. A title line that opens a section has the last line of the section before ahead of it, which gets none. You said song 69's chorus opens on its hook three times.
+
+**For your word:** 749.232 carried across the section's edge (the last line of the section before a title line that opens the next gives the same room), rule first, on the five lyrics. It would be a change to song 69's package, so it is yours to say whether it is tried before he answers.
+
+Pop's rule is next either way.
+
+Ask: your word on 749.232 across the section's edge; and on mark 2 for any later run.

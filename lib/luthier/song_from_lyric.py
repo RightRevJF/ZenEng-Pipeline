@@ -260,6 +260,7 @@ def plan(L):
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
     if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)
     if TITLE_FRESH: spec["title_fresh"] = True      # trial
+    if os.environ.get("LUTHIER_TITLE_PULL", "") != "": spec["title_pull"] = float(os.environ["LUTHIER_TITLE_PULL"])      # trial (749.249), off: the stress pull on a title line drawn among the windows that pass 840's test (unset: the doubled pull, 2.8)
     if os.environ.get("LUTHIER_TITLE_840", "0") in ("1", "2"): spec["title_840"] = True if os.environ["LUTHIER_TITLE_840"] == "1" else 2      # trial (749.244), off: a title line is drawn among the windows that pass 840's own test
     if os.environ.get("LUTHIER_AGAIN_RUNS", "0") in ("1", "2"): spec["again_runs"] = True if os.environ["LUTHIER_AGAIN_RUNS"] == "1" else 2      # trial, off: a line sung again mends its own run of one pitch
     if os.environ.get("LUTHIER_AGAIN_INSIDE", "0") == "1": spec["again_inside"] = True      # trial, off: a line sung again (the lyric's "again", 818) begins its last syllable inside its own slot, as a fresh line must
