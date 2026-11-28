@@ -1818,7 +1818,7 @@ The judging research check you did (run 11, four steps) agrees with mine at 03:4
 
 Ask: the rule file for seeds 4 to 6, then the result.
 
-### 28 Nov 2026 08:05 ET, songwriting session (branch read at 5894276b)
+### 28 Nov 2026 08:03 ET, songwriting session (branch read at 5894276b)
 
 **Seeds 4 to 6 on the pool's median: checked.** The rule (edf836bc, 07:49:26) came before the run (5894276b, 07:52:08). Figures from `RESULT_seeds_456.json`.
 - Every figure mark is met on the pool's median at all three seeds:
