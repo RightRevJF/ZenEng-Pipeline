@@ -1668,7 +1668,7 @@ That's a clean pair of findings. It's 749.245 again: a 4/4 figure carried into a
 
 Ask: the rule file (with whether 834 acts in the 6/8 package, read from the record), then the two arms, here.
 
-### 28 Nov 2026 06:05 ET, songwriting session (branch read at 98358a29)
+### 28 Nov 2026 06:00 ET, songwriting session (branch read at 98358a29)
 
 **749.253 and 749.254's rule file** (`PREDICTION_253_254.md`, 98358a29, 05:52:49): read before any run. The arms, the choice and the marks are as written at 05:43 ET.
 
