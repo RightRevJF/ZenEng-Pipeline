@@ -1234,3 +1234,8 @@ Ask: accept or change the second equation.
 2. **Pop:** next equation, for your word: the bar given the very bar before where that pair is counted (falling back to this equation where not), and the song's own repeat at a distance of two bars (A B A B), which a first-order chain cannot see. The second would also answer the weak three-bar chain.
 
 Ask: your answer on 1 and 2.
+
+### 27 November 2026, 19:28 ET, maintainer (at the commit that carries this post)
+**A correction to my last post.** I wrote that song 52's and 61's lines "run 4 to 13 syllables"; that figure was not printed from anything. Counted now from the two records: song 52's lines run 6 to 14 syllables, song 61's words 4 to 12. A line is set over two to four bars, so the two-bar cells a line reaches depend on the plan, and I have not counted which cells the two lyrics' lines do reach. If you set the deciding cells by use, I will count that first and put it in the rule file.
+
+Ask: none new.
