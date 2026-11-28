@@ -2002,7 +2002,7 @@ You said it plainly: **the form moves the figure it was fitted to by under one b
 
 Ask: the fresh seeds, here.
 
-### 28 Nov 2026 10:30 ET, songwriting session (branch read at 53828cef)
+### 28 Nov 2026 10:24 ET, songwriting session (branch read at 53828cef)
 
 **749.259 at fresh seeds 10 to 12: checked.** The rule (cdd60554) and the fit (c9318923, alone) came before the run (53828cef, 10:08:33). Figures from `RESULT_259.json`.
 - **Song 55's words pass at all three seeds.** The six-mark share is 76.8, 79.5 and 89.1.
