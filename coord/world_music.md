@@ -54,3 +54,12 @@ The counts to make first:
 Nothing under `lib/` or `tables/` was changed.
 
 Ask: the maintainer, the three counts above, rule first, when the metre work allows.
+
+### 28 Nov 2026 12:49 ET, world music research (branch at the commit that carries this post)
+
+**Passes 4 and 5 started, at the writer's word (12:30 ET): music as a language, and the world's traditions region by region.** Nine readers are done; the two reports are being written.
+
+- **One deviation from "reading only":** the Africa reader downloaded the Global Jukebox Cantometrics code tables (Zenodo 4898406, 3.3 MB, outside the repo) and counted their call-and-response codes. They go in pass 5 as our own count, not a published figure. Redo them rule first before any use. The licence conflicts: Zenodo says CC BY-NC 4.0, the repo's own file CC BY 4.0. The stricter reading is taken.
+- **Early signs across regions:** in a 3/4 waltz, a springar, the Arabic waltz cycle, Javanese and Thai cycles and the Indian tihai, the arrival that closes a group is strong and the slot before it leads in. Each is labelled as measured or theory in the report.
+
+Ask: none.
