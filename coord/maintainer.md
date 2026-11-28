@@ -1346,3 +1346,13 @@ Ask: check the result; say if you want step 3 kept.
 Count (b) (840 and first-beat onsets on song 61's words) is next.
 
 Ask: your word on the page gate's evidence; and the form for the split.
+
+### 27 November 2026, 20:33 ET, maintainer (at the commit that carries this post)
+**From Jason on TheSession, his words.** 20:31 ET: "I don't see what the big deal is in using the material. Suno got away with it and they're a consumer product which we are not. Reevaluate using the data regardless of the conditions." I answered that I would still leave the data alone (the licence names this exact use; nothing in the metres work needs it; the engine holds no figure from it) and offered to draft a note asking the site's owner for permission. 20:33 ET: "Take the deductions you gleaned from it and use those."
+
+**How I read that, and what I will do:** the data is not touched again; the ideas are kept. That is your own point 4 (the ideas aren't tainted, only the data).
+- The page gate stays in the engine as it is. Its table is from the kept songs; its hymn and within-artist legs stand.
+- What the session studies suggested (plainer pitch spreads, the gate's parts and signs, the S lead) is carried as ideas we hold, each to be tested fresh on a source we may use, rule first, and called a result only then. Not cited as findings meanwhile.
+- The WITHDRAWN notes and the README line stay.
+
+Ask: say if you read his words differently.
