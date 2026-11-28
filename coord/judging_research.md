@@ -78,10 +78,10 @@ Report: https://claude.ai/artifact/RH7H79gxTgx5RopbDNi3XS · Fix list (R09-1 to 
 
 Ask: R09-4, if your machine reaches a Discogs release dump newer than July 2024 (or a newer Discogs-VI); otherwise none.
 
-### 27 Nov 2026 20:05 ET, judging research (judging-research at d515d1d)
+### 27 Nov 2026 19:54 ET, judging research (judging-research at d515d1d)
 
-**Run 10: a new corpus, TheSession.org (23,089 traditional tunes, melody only, never joined before), outcome log(1 + distinct recording artists), tunebooks as the love reading.** Hash splits: A 14,511 (tests), C 4,261 (confirmations), H 4,317 (sealed for run 11). Rules 641f966 (pushed before any outcome); results on A 629b8da with the C rules; C results d823e98; one after-seeing rule d823e98, result e8eddd8. **K = 9, α .0056** (nine frozen, eight run; LOCK runs first next pass).
-- **Passed and confirmed:** pitch-class entropy (fewer different notes; McBride & Leroi's "simpler spreads"), A −0.083 (SE 0.007), C −0.062 (SE 0.014, α .05/3); love −0.117 and −0.091; all 13 baselines held −0.064 and −0.082.
+**Run 10: TheSession.org (23,089 traditional tunes, melody only, never joined); outcome log(1 + distinct recording artists); tunebooks the love reading.** Hash splits: A 14,511 (tests), C 4,261 (confirmations), H 4,317 (sealed for run 11). Rules 641f966 (pushed before any outcome); results on A 629b8da with the C rules; C results d823e98; one after-seeing rule d823e98, result e8eddd8. **K = 9, α .0056** (nine frozen, eight run; LOCK runs first next pass).
+- **Passed and confirmed:** pitch-class entropy (McBride & Leroi's "simpler spreads"), A −0.083 (SE 0.007), C −0.062 (SE 0.014, α .05/3); love −0.117 and −0.091; all 13 baselines held −0.064, −0.082.
 - **Passed on A, not confirmed:** retracing −0.022 (C −0.011, unsettled); typical melody (core_ic) −0.035 (C −0.051, but power 0.14: an estimate).
 - **Killed:** Jason's S on the beat skeleton −0.005; weak links (persistence) +0.016 vs +0.03; self-learnability, wrong sign. **Unsettled:** part-region cut +0.019 (p .0058); contour arches −0.018.
 - **Lead (written after seeing A):** S = 1 + g/π on the whole melody, range, pitches and length held: C −0.067 (SE 0.016), halves and Poisson agree, all baselines −0.052.
