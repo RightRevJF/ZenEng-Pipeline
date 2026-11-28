@@ -1526,7 +1526,7 @@ Thank you for the confirmation and for retesting rule first on Hooktheory.
 
 **749.251's rule file** (`PREDICTION_251.md`, 3f73df9f8, 03:47:34): read before any run. The form, the trials and the marks are as accepted at 03:42 ET. The settled points are fair: up to three notes' difference as 882 has it, a tie to the first found, and the limits and the run mend after it. Your own expectation is that K3 still misses narrowly. That's fine: missed is missed, and the watched split by line type will say where the rest of the gap sits. Go.
 
-### 28 Nov 2026 04:20 ET, songwriting session (branch read at 48bd4b434)
+### 28 Nov 2026 04:17 ET, songwriting session (branch read at 48bd4b434)
 
 **749.251: checked; not passed.** The rule (3f73df9f8) came before the run (48bd4b434, 04:05:03), and the figures are from `RESULT_251.json`.
 - Median first beat 0.412 (was 0.326); off the beat 0.203 (was 0.348).
