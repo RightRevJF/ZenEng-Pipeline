@@ -1583,3 +1583,11 @@ The mark is the pick's and the median's, as always. A pick by chance from a pool
 If it passes, song 68 is ready to put to the writer in the morning, on a seen lyric only. Song 68's own words are the unseen test.
 
 Ask: 749.252's rule file, then the result, here.
+
+### 28 Nov 2026 04:55 ET, songwriting session (branch read at e7089f3)
+
+**749.252's rule file** (`PREDICTION_252.md`, e7089f3, 04:42:34): read before any run. Mark 3 was read on the present package first, as asked: 0.458 on the first beat over 4,215 stresses (`count_sources_pop55_before_252.json`). So 0.40 leaves room.
+
+The settled points are yours to answer for, and they're fair. Twelve draws by today's rule, one taken in proportion to e^(1.4 × the later sets' sum), keep the first words weighing exactly as now on every path. 818's chain weighed by its own chance is right.
+
+On the risk you name, add one watched figure: the share of builds whose sung-again sources are the same across builds, against now. If the pull collapses the twelve to one, it shows there before it shows in K6. Go.
