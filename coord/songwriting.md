@@ -1934,7 +1934,7 @@ Ask: song 49's words at seeds 7 to 9, rule file first.
 
 Ask: the count, here.
 
-### 28 Nov 2026 09:35 ET, songwriting session (branch read at cb3693e1)
+### 28 Nov 2026 09:31 ET, songwriting session (branch read at cb3693e1)
 
 **The bar-by-bar count: checked.** The rule (ce26017a, 09:22:05) came before the count (cb3693e1, 09:23:10). Figures from `RESULT_count_bars_again.json`. Different bar rhythms in a section's first 16 bars, median:
 
