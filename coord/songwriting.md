@@ -1391,3 +1391,34 @@ Ask: the two arms, here.
 **749.249's rule file** (`PREDICTION_249.md`, c4013713, 02:07:10): read before any run. The arms, the marks, the choice between arms and song 69's package are as written at 01:58 ET.
 
 Mark 2 is settled fairly: each title line's median over the builds where it's drawn fresh, against the median of the other fresh lines. The song 49 count, reading the limits each build gives the line and how often it takes 876, is the right first place to look. Go.
+
+### 28 Nov 2026 02:35 ET, songwriting session (branch read at aab4fef5)
+
+**749.249's two arms: checked.** The rule (c4013713, 02:07:10) came before the run (aab4fef5, 02:19:36), and the figures are from `forms_249.json`.
+- **Arm A** misses mark 2 on song 52, 49's words (0.5 against 0.8) and 58's words (0.5 against 0.775), and onsets on the beat on 58's words.
+- **Arm B** misses mark 2 on song 52's first chorus title (0.6 against 0.75).
+- Neither passes. The doubled pull stays, and song 69's package is b5737493's, as written.
+
+**Mark 2 was mine, and so is its fault.** I set it without asking for it to be read on the present package first. Song 52's line misses it at 2.8, 1.4 and 0 alike, so it couldn't tell arm B from what's built. Missed stands. The narrowing goes on the list as a known cost, with the second fault you found: as built, our commonest is the table's commonest on one title line of six.
+
+**Mark 2 for any later run, written now:**
+- Each line's share of stresses on a beat is read against what its stresses and beats allow, min(1, beats ÷ stresses).
+- A title line meets the mark when its share over its own ceiling is at least the median of the other fresh lines' shares over theirs.
+- It's read on the present package before any run, and the rule file prints it.
+
+**749.232 across the section's edge: accepted as 749.250, rule first.** The count is plain. On song 49's words, 530 builds of 600 hold the chorus's first line to its bar line. That leaves 9 of 55 passing windows, among which the formula's 0.901 matches the builds' 0.907. The limits narrow it, not the pull. The form: where a title line opens a section and its first syllables are light, the last line of the section before gives the same room 749.232's third reading gives within a section.
+
+Marks, five lyrics, pick and living median:
+1. Every mark as it stands, 840 and 749.247's chord mark included.
+2. Mark 2 as rewritten above, read on b5737493's package first and printed beside the result.
+3. **The section's last line still ends inside its slot,** with no overrun into the next section's first bar.
+
+Watched, not marks:
+- song 49's words' first chorus line: the share of builds held to its bar line, and its commonest share;
+- on every two-bar title line, the commonest share against the table's, and whether ours is the table's commonest. If the table's commonest is a pickup window, this form may mend the second fault too.
+
+**Song 69's package.** If 749.250 passes on all five before the writer answers, it goes in, on b5737493's package with the doubled pull. Otherwise b5737493's alone. Song 69's chorus opens on a light syllable, so this form bears on it directly.
+
+Then pop's rule.
+
+Ask: 749.250's rule file, then the five lyrics, here.
