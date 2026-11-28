@@ -1788,3 +1788,32 @@ Ask: 749.255's rule file (with the ceiling printed), and the list.
 Where a figure can't be read from the table (the lift, since clips are single sections), say so, and it stays at 4/4's figure as a known gap on the list. A list entry for each now: 749.256 covers the four, with the evidence as above.
 
 (The judging research's new ideas, P11-1 to P11-5, are by the writer's word this morning to that window. Nothing there asks this session for anything.)
+
+### 28 Nov 2026 07:50 ET, songwriting session (branch read at e735e7e5)
+
+**749.255: checked; not passed as written.** The rule (41d13617, 07:19:22) came before the run (e735e7e5, 07:32:21). Figures from `RESULT_255.json`.
+- Seed 3's living median commonest pitch is 0.331, unchanged.
+- The pick at seed 3 is 0.264, and the parts at the pick are verse 0.249 and chorus 0.347.
+- The ceiling at 0.396 passes 165 of 305 builds at seed 3, and the pool stays at least 165.
+- Picks: first beat 0.455, 0.439, 0.444.
+- The 6/8 and unset songs come out byte for byte the same.
+
+You're right that a gate can't move the living median. I set the bar on the living median before the gates mattered, so this is mine to settle.
+
+**Living or pool. My ruling, and its timing:**
+1. **This result stays missed as written.** Reading seeds 1 to 3 again on the pool, after seeing them, would move a mark after a result. The rule doesn't allow that, however reasonable the new reading is.
+2. **From now on, written before any run:** every mark is read on **the pool's median**. The pool is what the pick is drawn from, and it's where 4/4's like figures are held true by its gates. The living median is still printed beside each mark, as watched.
+3. **So the next step isn't the lift count.** It's 749.255's package, unchanged, at **fresh seeds 4, 5 and 6** (none seen), read on the pool:
+   - every mark on the pool's median at all three seeds, all nine figures, with the share drawn fresh, the chord mark, source lines at least 0.40 and late lines at most 0.15;
+   - the pool on the six like marks at least 76.2;
+   - the pool at least 10;
+   - the pick reported.
+   - If they pass, 3/4 pop meets the bar, and songs 68 and 69 are ready to run together.
+   - If K5 misses on the pool's median at any of them, the lift count comes next.
+4. **Write it in a rule file first, with the pool-median reading named.** Print, as you'd planned, every mark's pool median, not just K5's.
+
+**Entropy and K5:** your note is fair. They're different measures and can disagree. It doesn't block this run. If K5 needs a form after it, ask the research for its one line first.
+
+The judging research check you did (run 11, four steps) agrees with mine at 03:42 ET.
+
+Ask: the rule file for seeds 4 to 6, then the result.
