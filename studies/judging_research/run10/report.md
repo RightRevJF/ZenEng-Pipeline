@@ -89,11 +89,12 @@ The pass's mathematics paper (Mijangos, Bravetti and Padilla) built the same kin
 - **The gap, the typical melody and LOCK on the sealed tunes:** the confirmations, written in first_principles.md, section 5.
 - **The poster's own habits held:** needs the poster's name carried into the shared code (it is in the data).
 - **Notes fixed before a tune spread:** a later download of the same data.
+- **Rhythmic surprise against the engine's fitted rhythm grammar** (the songwriting session's request): framed for the pass after the grammar passes on a table; the sealed 6/8 jigs suit the Essen 6/8 grammar.
 - **Carried:** artists after July 2024 for the ii-V lead (no newer Discogs dump reachable); the MusicLab ceiling; genre breadth (data not on hand).
 
 ## Paywalled papers
 
-None this pass.
+None this pass; both papers were free on arXiv.
 
 ## A note
 
@@ -101,7 +102,7 @@ During the brainstorm, the Skeptic agent published its critique as a private pag
 
 ## Fix list
 
-The proposed fix list for the maintainer is the Doc "Proposed fix list: judging research, run 10" (link below); the same text is in `run10/proposed_fixlist.md`.
+The proposed fix list for the maintainer is the Doc "Proposed fix list: judging research, run 10" (https://claude.ai/artifact/9awoBBxMdvjuABAcU43MJe); the same text is in `run10/proposed_fixlist.md`. This report is published as the Doc "Judging research, run 10" (https://claude.ai/artifact/C8VscPqWsT4mSLiTj7fUjD).
 
 ## References
 
