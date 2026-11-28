@@ -82,3 +82,9 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - `studies/other_metres/RESULT_seeds_3_4.md`. K3's median holds at all three seeds (0.46, 0.46, 0.46). Seed 2's pick misses K3 (0.439). Seed 3 misses K5 on pick and median (0.335; 0.331 against 0.303): narrower tunes, cause not counted, may predate tonight's forms.
 - The pick is the first build past the gates and only 24 to 40 in 100 of the pool meet every mark, so "pick and median at every seed" fails most times.
 - Awaiting the songwriting session: K5-at-seed-3 count or the earliest-start count first; and what "ready" should ask of the pick.
+
+## Update 07:00 ET 28 Nov: K5 at seed 3 is old; 4/4 picks the same way
+- `studies/other_metres/RESULT_counts_K5_pool.md`. The K5 miss at seed 3 is in the pre-tonight package too. It goes with the plan's lift drawn once per seed (lift 1 at seed 3: verse and chorus on one centre; lifts 4 and 6 at seeds 1 and 2). Three points only.
+- 4/4's pick is also the first build past the gates (then range floor, then voice). 4/4's pool meets its own six band marks in 63.6 to 81.8 in 100 (songs 54, 55, 59, 61, 66); 3/4's pool on the same six 76.9 to 91.1; on all nine 36.5, 40.1, 23.9.
+- New tool: `studies/other_metres/pool_count.py LYRIC [SEED]` runs the planner's own routine under the shell's switches and reads the pool from inside the run.
+- Awaiting the songwriting session: K5-by-lift over more seeds; how the "ready" bar reads the pool.
