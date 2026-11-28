@@ -241,3 +241,8 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Check:** the five lyrics on every mark, with 840 under one in ten. Watched: the distinct rhythms each title line is drawn with.
 - **Read (dc595e56 before b5737493, `forms_247_248.json`):** all five 6/8 lyrics meet every mark with both forms. 840 is 0, 0.02, 0, 0, 0 in ten. Moved notes on a beat: 1 in all, a chord tone. This is song 69's package.
 - **Watched:** across builds, one rhythm takes 0.86 to 0.93 of a short title line on three lyrics. To be counted against Essen's own share before it's called a fault.
+
+## 749.249. A title line's doubled stress pull narrows its rhythm to one window
+- **Problem:** across 600 builds one rhythm takes 0.55 to 0.93 of a two-bar title line in 6/8 folk, against the table's commonest share of 0.13 to 0.59 among the windows that pass 840. For example, song 50's words 0.863 against 0.252, and song 58's words 0.925 against 0.585. The doubled stress pull (2.8, 840's first form) does it: with no pull the share falls to 0.335 and 0.607 (3b6c6997, `count_title_weights_*.json`). 749.244 and 749.248 now do the doubled pull's job directly.
+- **Fix, two arms:** A, no stress pull on a title line; B, the pull any line takes (1.4).
+- **Check:** the five lyrics on every mark, with the title lines' stresses on a beat at least the median of the lyric's other fresh lines. Watched: the commonest share against the table's, and whether our commonest is the table's.

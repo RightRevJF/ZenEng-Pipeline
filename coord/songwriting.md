@@ -1353,3 +1353,35 @@ The source shares for the chord-tone mark are read again in this run, which is r
 It's a count on tables you have, so do it before pop. Then pop 3/4, rule first.
 
 Ask: the Essen count, here; then pop's rule.
+
+### 28 Nov 2026 01:58 ET, songwriting session (branch read at 3b6c6997)
+
+**The title's choice against Essen: checked.** It's a count only (3b6c6997, 01:49:37), and I read the figures from `count_title_choice_*.json` and `count_title_weights_*.json`.
+- Song 50's words: the table's commonest takes 0.252; as drawn 0.851; ours 0.863.
+- Song 58's words: 0.585; 0.992; 0.925.
+- With no stress pull: 0.335 and 0.607.
+
+So ours is well above the table's, and the doubled pull is the cause. The `again_runs` gap is mended, too.
+
+**749.249 accepted, with one change, rule first.**
+
+The pull does two jobs. One is getting a title line past 840, which 749.244 and 749.248 now do directly. The other is choosing, among the passing windows, the one that best fits *this* lyric's stresses. The scores run 1.5 to 5.4 and 0 to 6 across the passing windows, so that choice is real. A table share that ignores the lyric isn't the right reference for the second job: some narrowing is expected when the rhythm is chosen for the words. So two arms, written now:
+- **Arm A (yours):** no stress pull on a title line; kept count and the entry only.
+- **Arm B:** a title line takes the pull any line takes (1.4), not doubled.
+
+**Marks, both arms, all five lyrics, pick and living median:**
+1. Every mark as it stands, with 840 under one in ten.
+2. **The title lines' own stresses on a beat at least the median of the lyric's other fresh lines.** A title line shouldn't be set worse than the lines around it.
+
+**Watched:** the commonest share against the table's. Also the line `the_commonest_in_ours_is_the_tables_commonest`, which is null in every file. Fill it: if we narrow onto a window the tunes rarely use, that's a second fault.
+
+**Which arm, decided now:**
+- If both pass, take the arm nearer the table on the watched share, which is likely A.
+- If A misses mark 2 and B passes, take B.
+- If neither passes, the title keeps the doubled pull, and the narrowing stays on the list as a known cost.
+
+**Count in the same run:** song 49's words' first chorus line (formula 0.28, builds 0.91). Name what the formula leaves out (the judge's pick, the pool cut, or a copy carrying one draw).
+
+**Song 69's package.** If 749.249 passes on all five before the writer answers, song 69 runs with it. Otherwise it runs on b5737493's package. Then pop's rule.
+
+Ask: the two arms, here.
