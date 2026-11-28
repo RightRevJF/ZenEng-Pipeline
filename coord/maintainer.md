@@ -1564,3 +1564,37 @@ Ask: your word on A and B.
 **Next, counts before forms:** (1) the thin chorus: what the title's room costs each section, and which lines could give a bar back; (2) which lines on song 49's words are drawn fresh and what turns them away; whether 1.5 times a small count is the right mark is yours to say. Then song 58's words held out.
 
 Ask: check the result; your word on the tie-break, and on the 712 mark where the count before was small.
+
+### 28 November 2026, 00:10 ET, maintainer (at the commit that carries this post)
+**The two counts, a form from them, and the four seen lyrics: every figure mark met on all four; your share mark missed on song 61's words; song 58's words not run.**
+
+**Count 1, the thin chorus** (`RESULT_counts_49.md`): on all four lyrics every title line has kept windows that pass 840's test at the bars the density rule gave it (song 49's words 55 of 70 and 37 of 41; song 50's words 27 of 65; song 52 10 of 35; song 61's words 19 of 35 and 48 of 70). The title's room (749.229) was made before 749.244 and was adding four to six bars a song for nothing the draw does not now do.
+
+**Count 2, the share** (`share_712.json`, 300 builds): song 52 0.0736, song 61's words 0.076, song 50's words 0.0521, song 49's words 0.0273; before 749.240, song 50's words 0.0462 and song 49's words 0.024. So your limit for runs from now on is 0.076 (or 1.5 times the lyric's own earlier share if higher). On song 49's words 86 of the 90 fresh draws were refused by the join to the line ahead.
+
+**The form, rule first (4618aa7), no code:** the title's room asks only that a passing window exists (`LUTHIER_TITLE_ROOM=0.001`); 749.244 does the rest. `RESULT_title_room_retired.md`, figures and met/missed printed from `title_room_retired.json`.
+
+| Pick; median | Song 52 | Song 61's words | Song 50's words | Song 49's words | Mark |
+|---|---|---|---|---|---|
+| Living; pool | 908; 302 | 787; 394 | 734; 319 | 681; 258 | 30; 10 |
+| Sung bars | 101 | 83 | 91 | 92 | |
+| Notes a bar | 4.178; 4.158 | 3.855; 3.843 | 4.077; 4.099 | 3.793; 3.75 | 3.60 to 4.33 |
+| On the beat | 0.455; 0.449 | 0.453; 0.444 | 0.45; 0.448 | 0.47; 0.487 | 0.389 |
+| First beat | 0.235; 0.234 | 0.253; 0.247 | 0.243; 0.238 | 0.241; 0.257 | 0.211 |
+| 731 | 0.608 | 0.528 | 0.547 | 0.621 | 0.40 |
+| 840 in ten | 0 | 0.07 | 0.68 | 0.67 | under one |
+| Title on time (lowest) | 100 | 99.7 | 100 | 92.0 | 75 |
+| Silence before a title line | 2 | 2 | 2 | 2 | 3 |
+| "Again" drawn fresh, share | 0.0564 | **0.0969** | 0.0371 | 0.033 | 0.076 |
+| Never made, of 600 | 0 | 0 | 0 | 0 | |
+
+- Song 49's words, which missed notes a bar as a held-out lyric, are at 3.793 and 3.75 (seen ground now).
+- 840 is under one in ten on all four, but no longer none on three: the title lines sit in fewer bars with fewer passing windows.
+- **The miss:** song 61's words, 436 of 4,500 tries drawn fresh; 387 refused by the join, none by 749.240. Verse 3's fourth line alone is refused in 130 builds of 300. The limit was that lyric's own share under the last package.
+- By the rule, step B does not run. Song 58's words are still unseen.
+
+**Next:** a count of what the join to the line ahead (929) refuses and why, since it is now the only thing refusing a line sung again on any of the four. Then a form, the four seen lyrics, and song 58's words.
+
+Pop's rule is still owed; I am holding it until 6/8 folk has had its held-out lyric, unless you want it sooner.
+
+Ask: check the result.
