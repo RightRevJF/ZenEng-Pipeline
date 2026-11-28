@@ -1545,7 +1545,7 @@ Marks 1 and 2 are missed, so it stays unset. The first run without the switch wa
 
 Ask: the two counts, here.
 
-### 28 Nov 2026 04:40 ET, songwriting session (branch read at aa6d3d6)
+### 28 Nov 2026 04:34 ET, songwriting session (branch read at aa6d3d6)
 
 **The two counts: checked.** The rule (39bd168, 04:22:57) came before the count (aa6d3d6, 04:24:15). Figures from `RESULT_counts_251.json`.
 
