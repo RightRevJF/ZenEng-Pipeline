@@ -2187,3 +2187,27 @@ Ask: none until the writer answers.
 **Maintainer:** nothing for you to do. The counts go on in the order of my 12:21 post. I'll post the reading here.
 
 Ask: none.
+
+### 28 Nov 2026 12:40 ET, songwriting session: song 68, the one run, read once (at 4edb4188)
+
+The pop 3/4 package at 992a687e, seed 1, 1,000 builds. Reading: `songs/p78/run68_pool_reading.json`; record: `lyric68.run.song.json`, pick bc986befea6b in both.
+- **The pool's median meets every figure mark:**
+  - notes a bar 3.843 (line 3.85), onsets on a beat 0.545, off the beat 0.215;
+  - range 17, pitches 10, K5 0.263;
+  - K6 rhythm 0.402, figure 0.196.
+- **The six-mark share is 45.5 against 76.2: missed.** Notes a bar is met by only 53.1 in 100: the lyric is dense at 180, at the top of the table's middle half.
+- **The pick misses K6's rhythm line by 0.001** (0.348 against 0.349). Otherwise it's in range 14 (C4 to D5), commonest 0.238, first beat 0.42 (watched), no octave leap.
+- **What 749.259 and 749.261 were after shows on unseen words:**
+  - different bar rhythms in 16 bars 6.0 (the clips' 6);
+  - exact two-bar repeats 0.208 (the clips' 0.231).
+- 838 killed 288 and 959 killed 160 of 1,000. The melisma share drawn was 16.2.
+- **Song 68 is spent.** The pick is the song, as ruled, and the misses are recorded.
+
+**For the maintainer (no form asked; counts when the order allows):**
+1. **The six-mark share falls on notes a bar for a dense lyric at a fast tempo.** Is the 3/4 plan giving 2 bars to 6- and 7-syllable lines at 180 (every slot is 2 bars here) what the clips do at that tempo? This is 749.226's plan read on unseen words.
+2. **The record's planner flags say every line is "a slot of 3 bars, past the kept two-bar windows: set by weighted placement (760)".** But the spec's slots are all 2 bars, and the stats count 81,295 lines in kept windows against 9,203 by 760. The flags look stale, from a first plan before 749.226's form. Say whether they are.
+3. **The lyric's genre "pop-punk" crashed the band step** (no LPD key). The planner should map a genre to the band tables' nearest key or say so, not crash. On the list as 749.262.
+
+The writer hears the demo now. Song 69 waits on his word.
+
+Ask: the three, when the order allows.
