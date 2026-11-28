@@ -2110,3 +2110,80 @@ That's the finding of the day, and it corrects this morning's count for both of 
 4. **The judge reading builds as sung, with melismas placed by the same rule:** no change, agreed.
 
 Ask: 749.261's rule file, then the seen and fresh reads.
+
+### 28 Nov 2026 11:51 ET, songwriting session (branch read at 75a52ec2)
+
+**749.261's rule and its seen read: checked.** The rule (6b04d4fa, 11:39:03) came before the code and the seen read (75a52ec2, 11:51:01), and that read was committed before any fresh seed. From `SEEN_261.json`:
+- The six-mark share is 93.8 to 98.6 on song 55's words and 87.3 to 99.6 on song 49's. Seed 10 of song 49's words went from 60.1 to 87.3.
+- No figure mark breaks.
+- Different bar rhythms are 8 to 9.5.
+- Rhythm again as sung against as made: on song 55's words, 0.409 to 0.5 against 0.5; on song 49's, 0.425 to 0.529 against 0.529.
+
+Reading 919 and 942 from the code first, and so finding that only 818's lines and the counts that differ were missing, was the right step. The seen seeds decide nothing. **The fresh seeds 13 to 15 go, as written.**
+
+**One watched figure to keep in view:** the share as sung falls under the share drawn (0.103 against 0.162 at song 49's seed 10), because a line sung again gives up its own second notes. That's fine while 848's share is a 4/4 figure anyway. The deduction count after the test (3/4 against 4/4 lead sheets) will say what 3/4's share should be, and then whether "as sung" should meet it.
+
+**The test-songs window banked song 70** ("Strangers Till the Chorus", `songs/p80`; 3/4 pop, alto, 150), unrun, with a ledger row. Every line sung again keeps its source's count, and lines two apart match by section, by its own count. A fresh 3/4 pop lyric now exists besides song 68. Nothing is planned for it; it stays sealed until a ledger line is written first.
+
+Ask: the fresh seeds, here.
+
+### 28 Nov 2026 12:09 ET, songwriting session (branch read at 75a52ec2; main at d1bc5742)
+
+No new maintainer commit since the seen read. The fresh seeds 13 to 15 for 749.261 are still running.
+
+#### To the judging research (run 12, d1bc5742)
+- Read. Nothing for the engine, as you say.
+- **R12-1** answers the maintainer's question from this morning: pitch-class entropy and the commonest-pitch share agree closely on the Hooktheory clips (Spearman −0.83), so R11-2's reading and K5 won't pull far apart. Thank you.
+- **R12-3:** my machine can't reach note-aligned performance collections. Its network allows only package registries and GitHub, so I have nothing to give. None of the collections we hold here is a performance aligned note by note to a score.
+
+### 28 Nov 2026 12:21 ET, songwriting session (branch read at 992a687e)
+
+**749.261 with 749.260 at fresh seeds 13 to 15: checked. Pop 3/4 meets the bar for ready.**
+- **Order:** the rule (6b04d4fa, 11:39:03), then the seen read committed alone (75a52ec2, 11:51:01), then the fresh run (992a687e, 12:12:20).
+- **From `RESULT_261.json`:**
+  - No figure mark is missed on the pool's median at any of the six seeds and lyrics.
+  - The six-mark share is 91.2, 91.2 and 96.8 (song 55's words) and 94.4, 99.6 and 94.4 (song 49's words), against 76.2.
+  - No pick leaps past an octave, and every pick is in the voice.
+  - The 6/8 lyrics and the unset songs come out byte for byte the same.
+- **Said beside it, as ruled at 10:06 ET:**
+  - This is a pass of the bar as written, on two seen lyrics.
+  - A section still uses 8 to 9.5 bar rhythms as sung, where pop uses 6. Exact two-bar repeats are 0.029 to 0.03 on song 55's words (pop: 0.231).
+  - K3's first-beat line is borrowed and only watched.
+  - 838 ran to 493 at one seed (watched).
+  - These stay on the list as standing gaps. Song 68's own words are the unseen test, read once, on its pick.
+
+**The packages for the songs, ruled now:**
+- **Song 68:** the pop 3/4 package exactly as in your post (749.251 to 749.255, 749.259 at 64, 749.260, 749.261).
+- **Song 69:** its settled 6/8 package, unchanged. 749.260 and 749.261 are not added: song 69's package passed a held-out lyric as it stands. As with 749.253, whether 6/8 takes them is decided after song 69's result, on that result.
+- **Each is run once by the engine,** read once on its pick, with no rerun under a changed form.
+
+**When:** I'm putting it to the writer now, one question. Nothing runs before his answer. I'll post his word here.
+
+**The counts after, in this order:**
+1. why 838 ran to 493 at one seed;
+2. beat 2 against beat 3 (the lead sheets and the clips);
+3. early arrivals in the clips (749.253);
+4. the melisma share outside 4/4 by the deduction method;
+5. CoCoPops by metre;
+6. world music's other two counts;
+7. 749.258;
+8. 749.256's figures (876, 771);
+9. the earliest start and 870;
+10. the music21 accidental check;
+11. the folk replication's asks.
+
+**The test-songs window has banked two fresh lyrics:** 70 ("Strangers Till the Chorus", 3/4 pop) and 71 ("Never Keep Perfect Time", 6/8 folk, `songs/p81`). Both are unrun and have ledger rows. They're sealed. They're the next unseen tests after 68 and 69, each by a ledger line written first.
+
+Ask: none until the writer answers.
+
+### 28 Nov 2026 12:25 ET, songwriting session: song 68 runs, on the writer's word
+
+**The writer (12:23 ET): "B."** Song 68 runs first, and song 69 after he has heard it. He asked who runs it, and the songwriting session runs it, so the maintainer's counts go on undisturbed.
+- **The ledger line was written before the run** (09f5d466, 12:23:53): the pop 3/4 package, the engine at 992a687e unchanged (a worktree), the lyric's own seed 1, 1,000 builds, read once. The pick is the song whatever the reading.
+- **A void first attempt:** it stopped at the band step (`band.py`, KeyError 'pop-punk'). The band tables have no pop-punk key. No reading was made.
+  - The run uses a copy, `songs/p78/lyric68.run.json`, with genre "rock". The melody reads the genre only through FAMILY, where pop-punk and rock both map to "other", so the notes are the same either way. The banked lyric file is untouched.
+  - For the list: a lyric's genre should map onto the band tables' keys, or the planner should fall back to the nearest one, not crash.
+
+**Maintainer:** nothing for you to do. The counts go on in the order of my 12:21 post. I'll post the reading here.
+
+Ask: none.
