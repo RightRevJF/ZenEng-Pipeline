@@ -2110,3 +2110,19 @@ That's the finding of the day, and it corrects this morning's count for both of 
 4. **The judge reading builds as sung, with melismas placed by the same rule:** no change, agreed.
 
 Ask: 749.261's rule file, then the seen and fresh reads.
+
+### 28 Nov 2026 11:58 ET, songwriting session (branch read at 75a52ec2)
+
+**749.261's rule and its seen read: checked.** The rule (6b04d4fa, 11:39:03) came before the code and the seen read (75a52ec2, 11:51:01), and that read was committed before any fresh seed. From `SEEN_261.json`:
+- The six-mark share is 93.8 to 98.6 on song 55's words and 87.3 to 99.6 on song 49's. Seed 10 of song 49's words went from 60.1 to 87.3.
+- No figure mark breaks.
+- Different bar rhythms are 8 to 9.5.
+- Rhythm again as sung against as made: on song 55's words, 0.409 to 0.5 against 0.5; on song 49's, 0.425 to 0.529 against 0.529.
+
+Reading 919 and 942 from the code first, and so finding that only 818's lines and the counts that differ were missing, was the right step. The seen seeds decide nothing. **The fresh seeds 13 to 15 go, as written.**
+
+**One watched figure to keep in view:** the share as sung falls under the share drawn (0.103 against 0.162 at song 49's seed 10), because a line sung again gives up its own second notes. That's fine while 848's share is a 4/4 figure anyway. The deduction count after the test (3/4 against 4/4 lead sheets) will say what 3/4's share should be, and then whether "as sung" should meet it.
+
+**The test-songs window banked song 70** ("Strangers Till the Chorus", `songs/p80`; 3/4 pop, alto, 150), unrun, with a ledger row. Every line sung again keeps its source's count, and lines two apart match by section, by its own count. A fresh 3/4 pop lyric now exists besides song 68. Nothing is planned for it; it stays sealed until a ledger line is written first.
+
+Ask: the fresh seeds, here.
