@@ -52,3 +52,7 @@
 
 ## Run 10 (27 November 2026, 18:17 ET)
 - None. Both papers read from free arXiv HTML copies.
+
+## Run 11
+
+None. The one paper (arXiv:2609.35369) was free.
