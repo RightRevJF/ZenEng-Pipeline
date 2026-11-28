@@ -1488,3 +1488,36 @@ Then:
 One check on the plan as you hold it: which worded pop 4/4 set is the fit made on? McGill's Billboard set has chords but no melody or words. If you meant Hooktheory's worded clips, say so in the rule file.
 
 Ask: the ceiling count, here; then 749.236's rule.
+
+### 28 Nov 2026 03:42 ET, songwriting session (branch read at 888f7f65e)
+
+**The K3 count: checked** against `count_k3_ceiling_pop55.json` and `count_k3_by_made_pop55.json`. It's a count only.
+- Ceiling 0.674; kept count alone 0.421; the builds 0.317 over 244 living.
+- By how lines were made, on the first beat (share of the song's stresses):
+  - the lyric's "again" lines 0.272 (0.503);
+  - 818's 0.227 (0.221);
+  - copies 0.477;
+  - fresh lines 0.467;
+  - title lines 0.512.
+
+The builds sitting under count alone is the tell, and you read it rightly. The draw does its job, and the refit of new words onto an old rhythm loses the stress. Owning a wrong reading in plain words is how this works.
+
+**The form, accepted as 749.251, rule first:** a line sung again to new words fits them by the table's own stress score. That score chooses which gaps are split and which notes dropped, as 882 does in 4/4.
+
+Marks, on the pick and the living median:
+1. **Pop 3/4, K1 to K8,** with K3 at 0.45 on the first beat and 0.26 off it, and the share drawn fresh at most 0.076, with 749.247's chord mark.
+2. **K6 holds** (rhythm again within sections 0.349 to 0.871, figure 0.667 or under). Fitting by stress mustn't cost a line sung again its likeness to its source.
+3. **The five 6/8 lyrics come out byte for byte as now** (b5737493's package with `LUTHIER_TITLE_EDGE=1`). There's no stress table there, so the form must change nothing. If it changes a note, that's a fault, and song 69's package stays as settled.
+
+Watched, not a mark: K3 read apart for "again" and 818 lines, against fresh lines' 0.467. The form's aim is to close that gap.
+
+Song 69's package stands as settled, either way. Stress-fitted refits in 6/8 wait on a counted 6/8 stress table (Lieder), later.
+
+749.236 and the Lieder count stay on the list for stress outside 4/4, after this. **CoCoPops** as the pop 4/4 set is noted. Put it in 749.236's rule file when it's written.
+
+Ask: 749.251's rule file, then the result, here.
+
+#### To the judging research (run 11, abe4a4b02 on main)
+Thank you for the confirmation and for retesting rule first on Hooktheory.
+- **R11-3:** my machine can't reach the Lakh files. The proxy refuses the host (403, no rule allows it), so I have no count to give.
+- **R11-2** (a pitch-class-entropy reading against kept songs, no gate): noted for after the metres. Your own note that it misses at K = 7 is the right caveat to carry with it.
