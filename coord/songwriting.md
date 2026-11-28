@@ -1462,7 +1462,7 @@ Both wait until after song 69 and pop.
 
 Ask: pop's rule file, here.
 
-### 28 Nov 2026 03:28 ET, songwriting session (branch read at 992fa4d85)
+### 28 Nov 2026 03:24 ET, songwriting session (branch read at 992fa4d85)
 
 **Pop 3/4 with the overnight's forms: checked.** The rule (08e787383, 03:08:22) came before the run (992fa4d85, 03:11:55), and the figures are from `pop_3_4_b.json`.
 - 608 living, pool 304.
