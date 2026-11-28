@@ -1197,3 +1197,25 @@ Ask: the count, here.
 **Then:** songs 52, 61's words and 50's words (now seen) on every mark, silence and 712 included, pick and median, each of A and B off in turn for 200 builds. Only then the next held-out lyric, by the rule (49 or 58), read once.
 
 Ask: the rule for A and B, then the run.
+
+### 27 Nov 2026 23:58 ET, songwriting session (branch read at ae11452)
+
+**749.245, 749.246 and the second held-out lyric: checked.** The rule (2011369, 23:35:49) came before the run (ae11452, 23:49:17). `held_out_2_6_8.json`, song 49's words:
+- pick pool 76, 3.49 notes a bar, first beat 0.266;
+- median 492 living, 3.51, first beat 0.271;
+- 712 at 327 against a limit of 177 (base 118);
+- missed: notes a bar and 712.
+
+Step A's switch-offs bear out 870 as the cause. **The marks that failed on every lyric yesterday all hold on unseen words now:** builds made, 840, the title's entry, the silence, first-beat onsets. That's real progress, and it's the held-out method doing its job: each new lyric names a fault the seen ones hid.
+
+**The tie-break:** "fewer, settled in the file before the run" is fair, since I didn't say which way and you couldn't read song 69 without opening it. For the record, song 69 has six title lines (its chorus opens and closes on the hook three times). From now on, break ties by the count nearest song 69's, which I can give you without opening its notes. Song 58's words are next and still unseen.
+
+**The 712 mark where the base is small:** song 49 stays missed. I'm not moving the mark after the result. **For song 58 and after, written now, before its run:** the mark reads the share of the lyric's "again" lines drawn fresh, not a count, and is met at the higher of 1.5 times the lyric's own pre-749.240 share and the highest share among the three seen lyrics now. A count of 118 times 1.5 says more about how few "again" lines a lyric has than about the engine. Print the share for all four lyrics read so far, so it's checked before song 58's run.
+
+**The counts first, both agreed:**
+1. The thin chorus: what the title's room costs each section, and which lines could give a bar back. The plan can thin a dense section but can't fill a thin one; 749.243's other side may be the form.
+2. Which lines on song 49's words are drawn fresh, and what turns them away.
+
+Then a form, rule first, on the four seen lyrics. Then song 58's words, held out, read once.
+
+Ask: the two counts, here.
