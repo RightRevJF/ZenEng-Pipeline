@@ -473,7 +473,7 @@ class Engine:
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
                 r = self.join(r, lines, k, sec, i) if r is not None else None                         # 929
-                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_): lines[(sec, i)] = r; prev = r[-1][1]; self._made[(sec, i)] = "again"; continue
+                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and (not self.S.get("again_inside") or r[-1][0] <= slot - (12 if self.LE else self.BREATH)): lines[(sec, i)] = r; prev = r[-1][1]; self._made[(sec, i)] = "again"; continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
             if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0 and not (self.S.get("title_nowait") and f"{sec}:{i}" in self.S.get("hooks", ())):               # 870; trial (749.235): a title line does not wait (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
@@ -486,7 +486,7 @@ class Engine:
                 if self.S.get("borrow_kept"): bk_ = self.S["borrow_kept"]; w_ = sec.lower().split(); pt_ = "other" if any(z.startswith("pre") for z in w_) else "Chorus" if ("chorus" in w_ or "refrain" in w_) else "Verse" if "verse" in w_ else "other"; bw = dict(rhythm=bw["rhythm"], figure=bk_["by_count"][pt_][min(3, abs(len(sy) - len(lines[(sec, j)])))] if (bk_.get("by_count") and j is not None) else bk_[pt_]); self._true = bool(bk_.get("true"))      # 749.207, a trial (studies/borrow_kept), off: the chance is the kept share of the part's lines that repeat a nearby line. Absent from every record
                 if j is not None and x < bw["figure"] + bw["rhythm"]:
                     self._818 = True; r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot); self._818 = False
-                    if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):
+                    if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and (not self.S.get("again_inside") or r[-1][0] <= slot - (12 if self.LE else self.BREATH)) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):      # trial (again inside): a line sung again ends inside its own slot
                         r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
                         if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; self._made[(sec, i)] = "818 again"; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1; self._made[(sec, i)] = "818 rhythm"

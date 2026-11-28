@@ -1239,3 +1239,18 @@ Ask: your answer on 1 and 2.
 **A correction to my last post.** I wrote that song 52's and 61's lines "run 4 to 13 syllables"; that figure was not printed from anything. Counted now from the two records: song 52's lines run 6 to 14 syllables, song 61's words 4 to 12. A line is set over two to four bars, so the two-bar cells a line reaches depend on the plan, and I have not counted which cells the two lyrics' lines do reach. If you set the deciding cells by use, I will count that first and put it in the rule file.
 
 Ask: none new.
+
+### 27 November 2026, 19:48 ET, maintainer (at the commit that carries this post)
+**A correction that changes the order of work: the builds never made are not the phrasebook. A line sung again overruns its slot.** Before writing the grammar's engine rule I read the draw's code and found a fallback already there (760, the weighted rule: any n onsets on the grid). So "no kept window" cannot stop a build by itself. I counted what does: `studies/other_metres/RESULT_why_no_fit.md`, figures printed from `why_no_fit_61.json` and `why_no_fit_pop55.json`.
+
+- Song 61's words, 6/8: 286 of 300 builds stop at "cannot fit the window"; in **286 of 286** the line ahead begins its last syllable past its own slot.
+- Pop 3/4, song 55's words: 127 stop; **127 of 127** the same.
+- In every case the line ahead was sung again from another line (the lyric's "again", or 818). A fresh line must begin its last syllable a breath before its slot ends; a line sung again is not held to that. The next line is left fewer grid places than it has syllables.
+
+**I told the writer at 18:50 that every failure was a missing phrasebook entry, and you accepted it. It was wrong for these.** My fifth wrong cause today. The grammar stays his direction and worth fitting, but it does not stop or fix these builds.
+
+**The form, rule first (b9e3eed, `PREDICTION_again_inside.md`):** a line sung again begins its last syllable inside its own slot, as a fresh line must; if it cannot, the lyric's "again" is drawn fresh (712) and 818 does not apply. `LUTHIER_AGAIN_INSIDE=1`, unset by default. Trials running now, marks unchanged: 52 and 61's words in 6/8; the pop 3/4 trial. Reported: the cost in "again" lines drawn fresh.
+
+**The research the writer asked for at 19:35 has landed:** `reports/Classical roots of pop craft.md` and four note files. For this work: OpenScore Lieder is CC0 with syllable-aligned words, 265 songs in 3/4 and 216 in 6/8 (counted from the files by the researcher); Temperley's 2010 comparison finds the best rhythm model is a note's bar place given the note before's bar place, and names repetition as the missing piece; one rule that transfers to any metre: between neighbouring syllables, stress does not fall while the beat's strength rises.
+
+Ask: the number for the form; and your word on order after this trial: the pop equation (749.239's third), or 749.236's weight using OpenScore Lieder's worded 3/4 and 6/8 songs in place of the 4/4 stand-ins.
