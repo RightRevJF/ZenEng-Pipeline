@@ -2484,3 +2484,39 @@ Ask: none new; when the order allows, the beat-2-against-beat-3 count on the 3/4
 - A thing to settle with it: whether the judge should read builds as sung with the melismas of the pick only (as now: melismas are drawn after the pick; the counters place them on every build by the same rule), which it does; no change proposed.
 
 Ask: say whether the melisma form takes 749.261's place (number it, give its marks), and whether its share outside 4/4 is counted from the lead sheets now or after.
+
+### 28 November 2026, 12:12 ET, maintainer (at the commit that carries this post)
+
+**749.261 with 749.260 at fresh seeds 13 to 15** (`studies/other_metres/RESULT_261.md`, figures from RESULT_261.json; rule file 6b04d4f; the seen seeds read and committed alone at 75a52ec before the fresh seeds: no figure mark broke on any, every seed at or over 76.2, the least 87.3).
+
+| Pool's median | Song 55's words, seed 13 | 14 | 15 | Song 49's words, seed 13 | 14 | 15 | Wanted |
+|---|---|---|---|---|---|---|---|
+| Figure marks missed on the pool's median | none | none | none | none | none | none | none |
+| **The pool on the six like marks, in 100** | 91.2 | 91.2 | 96.8 | 94.4 | 99.6 | 94.4 | 76.2 or more |
+| K2 notes a bar | 2.69 | 2.768 | 2.563 | 2.672 | 2.555 | 2.617 | 2.38 to 3.85 |
+| K3 off the beat | 0.126 | 0.128 | 0.128 | 0.086 | 0.079 | 0.079 | 0.26 or under |
+| K5 commonest pitch | 0.264 | 0.248 | 0.276 | 0.256 | 0.241 | 0.171 | 0.303 or under |
+| K6 rhythm again within sections, as sung (as made) | 0.429 (0.5) | 0.429 (0.5) | 0.474 (0.5) | 0.471 (0.529) | 0.529 (0.529) | 0.471 (0.529) | 0.349 to 0.871 |
+| Drawn fresh, chord mark, source lines, late lines, pool of 10 | met | met | met | met | met | met | met |
+| **The pick: in the voice; a leap past an octave in a line** | in; none | in; none | in; none | in; none | in; none | in; none | in; none |
+| Watched: syllables on two notes as sung (share drawn) | 0.069 (0.086) | 0.099 (0.162) | 0.023 (0.086) | 0.054 (0.086) | 0.009 (0.038) | 0.034 (0.086) | |
+| Watched: melismas on a stressed syllable | 0.819 | 0.847 | 0.861 | 0.716 | 0.883 | 0.847 | |
+| Watched: different bar rhythms in 16 bars, as sung | 9.5 | 9.0 | 8.5 | 8.5 | 8.0 | 8.0 | clips 6 (4 to 8) |
+| Watched: exact two-bar repeats, two back | 0.029 | 0.03 | 0.03 | 0.21 | 0.249 | 0.249 | clips 0.231 |
+| Watched: K3 on the first beat (borrowed) | 0.46 | 0.46 | 0.455 | 0.471 | 0.479 | 0.479 | 0.45, watched |
+| Watched: the pick meets all nine; living; pool | yes; 432; 160 | yes; 581; 215 | no; 537; 216 | yes; 592; 213 | yes; 542; 243 | yes; 967; 234 | |
+| Watched: 838's deaths; builds 959 passes over, in 1,000 | 493  **(over 450)**; 75 | 381; 38 | 325; 138 | 365; 43 | 369; 89 | 33; 0 | 838 flagged over 450 |
+
+- **Both lyrics pass the bar at all three fresh seeds.** Every mark on the pool's median; the six-mark share 91.2, 91.2, 96.8, 94.4, 99.6, 94.4 against 76.2; no pick with a leap past an octave; every pick in the voice. **By the rule written before the run, pop 3/4 meets the bar for ready, and songs 68 and 69 are ready to run together when you say so.** I have not run them.
+- **Said plainly beside it, as you ruled this morning: this is a pass of the bar as written, on two seen lyrics.** A section still uses 8 to 9.5 different bar rhythms as sung where the pop clips use 6; exact two-bar repeats are 0.029 to 0.249 against the clips' 0.231 (song 49's words are at the clips' figure; song 55's are far under); K3's first-beat line is borrowed from the lead sheets and only watched. Those gaps stand on the list. Song 68's own words are the unseen test, read once, on its pick.
+- **838 is flagged: song 55's words, seed 13: 493.** It is over 450 at one seed and under at the other five (493, 381, 325, 365, 369, 33). The chorus-lift gate killed about half that run; the pool was still 160. Watched, not a mark; I have not counted why that seed is high.
+- 749.260 passes over 0 to 138 builds in 1,000 and starves no pool (the least pool is 160).
+- The melisma share as sung is under the share drawn at every seed, as on the seen seeds; whether the song should be topped up to its drawn share (on lines drawn fresh only) is a question for the share's own count outside 4/4, which you put after this test.
+- The switches act only where set: the five 6/8 lyrics unset are byte for byte the same (all); 54, 55, 52 and song 53's Essen arm unset, byte for byte (all); room files this engine's. The records carry seeds 13 to 15 and the whole package (bar memory 64, melismas follow, the octave gate, the ceiling); the judge ran; each pick equals its record's.
+
+**The pop 3/4 package as it now stands (every switch unset by default; nothing built into the engine):**
+`LUTHIER_TABLE_3_4=../../studies/other_metres/trial_tables/3-4_pop_sung LUTHIER_PLAN_3_4=1 LUTHIER_RANGE_3_4=centres LUTHIER_COPY_JOIN=1 LUTHIER_STRESS_3_4=1 LUTHIER_SHARED_BARS=1 LUTHIER_TITLE_ROOM=0.001 LUTHIER_TITLE_840=2 LUTHIER_TITLE_ENTRY=pickup LUTHIER_TITLE_EDGE=1 LUTHIER_TITLE_FRESH=1 LUTHIER_TITLE_NOWAIT=1 LUTHIER_SECTION_DENSITY=3 LUTHIER_REST_TABLE=1 LUTHIER_PICKUP_WINDOWS=0 LUTHIER_AGAIN_INSIDE=1 LUTHIER_AGAIN_REFIT=2 LUTHIER_AGAIN_RUNS=2 LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1 LUTHIER_CEILING_TABLE=1 LUTHIER_BAR_MEMORY=64 LUTHIER_MELISMA_FOLLOW=1 LUTHIER_OCTAVE_OUTSIDE=1`
+
+Song 69's 6/8 package is unchanged. 749.261 and 749.260 would act in 6/8 if set there (melismas and the octave gate are not 3/4's alone); whether song 69 takes either is yours to rule before it runs, as 749.253 was.
+
+Ask: your check of this result; then say when songs 68 and 69 run, with which package each, and the order of the standing counts after (beat 2 against beat 3; early arrivals in the clips; the melisma share outside 4/4; CoCoPops by metre; why 838 ran to 493 at one seed).
