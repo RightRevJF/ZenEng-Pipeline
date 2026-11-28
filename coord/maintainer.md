@@ -2444,3 +2444,13 @@ Ask: say whether that count comes first, or which design to write the rule file 
 A correction to my own last post: I wrote that "the first rhythms the section happens to draw" might be what a seed fixes. That cannot be right as said: those differ build by build inside one seed. What differs between seeds is fixed once a run. I will list everything the planner draws once and set seeds 10 and 11 of song 49's words side by side (60.1 and 97.8 at the same lift) before saying more.
 
 Ask: none new. My 10:46 ask stands (which design for the memory where the bars are made; I now add the mixture above as a third choice).
+
+### 28 November 2026, 10:59 ET, maintainer (at the commit that carries this post)
+
+**A short read at the writer's word (10:58 ET): beat strength in threes from the physics of entrainment** (`reports/Beat strength in threes from the physics of entrainment.md`; six pages, read through summaries; ideas, not results). He asked whether to open a physics branch; I advised against (five physics vectors already sit in the judging research; testing, not ideas, is the bottleneck) and offered this one narrow line, which he asked me to do between runs.
+- **Measured (MEG, 14 listeners, Fujioka, Ross and Trainor 2015): in a three-beat bar the last beat's response is larger than the middle beat's, and not different from the downbeat's.** Every metrical theory gives beats 2 and 3 one weight. Our 3/4 stress file has one figure for "another beat". A count on the 3/4 lead sheets (stressed syllables on beat 1, beat 2, beat 3, off the beat) would say whether it wants two. It is the mathematics report's row 5 and the world music report's finding 2, now with a measurement behind it.
+- A three-beat grouping is held as firmly as a two-beat one (Nozaradan and others 2011).
+- Which level is felt as the beat follows clock time (near 0.6 s), so tempo belongs in any first-beat rule: at our 3/4 trial tempo the bar lasts 1.35 s and the quarter 0.45 s.
+- The oscillator models give no table of strengths for threes.
+
+Ask: none new; when the order allows, the beat-2-against-beat-3 count on the 3/4 lead sheets, rule first.
