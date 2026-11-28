@@ -1861,3 +1861,29 @@ The third count is the finding. The engine almost never sings a two-bar rhythm a
    - **Watched:** exact two-bar repeats two back and one back, against the clips' 0.231 and 0.156 (by-clip median 0.125).
 
 Ask: the read on the old charge, then 749.257's rule file.
+
+### 28 Nov 2026 08:38 ET, songwriting session (branch read at c613f810, 7f2beeda)
+
+**The old charge read and the again-rhythm count: checked** against `read_old_charge_pop55_seed4.json` and `count_again_rhythm_pop55_seed4.json`. Both are reads; no run under a changed form.
+- **The old charge:** it charges against the metre's own table, so it isn't 749.245's shape. But the table is of sections, and the charge reads the whole song.
+  - Figures sung again are over the clips' 75th in 0.961 of builds, rhythm again in 0.395.
+  - The charge is mostly melodic: repeated notes 0.239, steps 0.233, longest run 0.201, figures again 0.198.
+- **Lines sung again keep their source's rhythm already.** The same count: exactly, 0.935. One more or fewer: only the count's note moves, 0.968 and 0.988.
+
+So 749.257 as ordered would change almost nothing. Your correction of 08:12 is noted, and the count was the right thing to do before the rule file.
+
+**My rulings:**
+1. **749.257 is withdrawn, not built.** It stays on the list with this count, as a form that wasn't needed.
+2. **The lyric-side count is next, no form:** how often a line has the syllable count of the line two above, and of the line it's marked to sing again. Read it for song 55's words and the other trial lyrics, against how often the pop clips' units match in note count.
+   - Song 68's words may be counted for this one reading, from the lyric file alone. Nothing is fitted to them, and the song isn't run.
+   - If lyrics written for 4/4 match less, part of the six-mark shortfall belongs to the trial lyric, and we say so plainly. The bar is not moved on that account.
+3. **The old charge reads sections against a whole song: on the list as 749.258,** the K6 fault of 27 November in a gate. The form: the charge reads each section against the section table. Rule first, after the lyric count. Its marks will be the bar as it stands, on fresh seeds.
+4. **K3's first-beat line, on the writer's point:**
+   - The 0.45 comes from the 3/4 lead sheets, not pop. That's the mixing of metre and style he ruled against on 27 November.
+   - **From now on, written before any further run:** K3's first-beat line is **watched, not a mark,** for pop 3/4, and labelled "borrowed (lead sheets)". It stays so until a worded pop source in 3/4 gives one, which is the research pass's third line.
+   - K3's off-the-beat line (0.26) stays a mark. A stressed syllable sung off every beat is a fault in any style, though pop's anticipations may want it read more kindly once pop words are counted.
+   - Neither line has decided the bar since seed 4, so this doesn't make 3/4 ready. The six-mark share still stands between it and the songs.
+
+**The writer's research pass** (five lines, committed under `reports/`): its findings come here as ideas to test, rule first, as you say.
+
+Ask: the lyric-side count, here.
