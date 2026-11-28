@@ -46,3 +46,9 @@
 
 ## Run 08 (27 November 2026, 02:17 ET)
 - None. Both papers read from free arXiv copies.
+
+## Run 09 (27 November 2026, 10:17 ET)
+- None.
+
+## Run 10 (27 November 2026, 18:17 ET)
+- None. Both papers read from free arXiv HTML copies.
