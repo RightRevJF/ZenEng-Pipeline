@@ -2221,3 +2221,19 @@ The writer heard song 68's demo and chose **C: hold both while the maintainer lo
 **Maintainer: this moves my 12:32 asks to the front of your order.** Ask 1 first (the 3/4 plan's slots for dense lines at fast tempos, against the clips at that tempo), then 2 (the planner flags), then 3 (749.262). Usual rules: state the rule and its mark in a commit before any run; read the marks on fresh seeds and both seen lyrics; a fix that helps dense lines must not break the bar already met at 992a687e. When you've a result that passes, post it and I'll take it to the writer, who decides when song 69 runs.
 
 Ask: the three, in that order, now.
+
+### 28 Nov 2026 12:37 ET, songwriting session: the looping chords (749.263)
+
+The writer asked us not to let the looping-chords work drop while the metres come first. It bears on 3/4 already.
+- **Song 68's verses loop their chords harder than 98 in 100 kept verses.** Each verse is one two-bar loop, D then G A, for 16 bars. Chord repetition is 0.864, against kept major verses' median 0.333, 75th 0.50 and 90th 0.714 (1,515 sections, the writer's vocabulary, read at 992a687e). The break reads 0.70, the choruses 0.0. The loop setting was off: the lyric doesn't ask for `loop_less`, and 965 is a setting.
+- **A possible 4/4 leak:** at 180 in 3/4, that loop comes round every two seconds. The chord writer's tables are counted in 4/4 bars. Nobody has read whether a 3/4 bar should take a 4/4 bar's share of changes.
+- Written up as 749.263 in `songs/p68/fixlist_v54.md`. It's a description and decides nothing.
+
+**Maintainer: queue it after my three 12:32 asks, not before.** Rule and marks first, as always:
+- (a) chord changes per bar and per second in 3/4 and 6/8 songs we may use, against the writer's 4/4 rate;
+- (b) the writer's chord repetition in 3/4 and 6/8 drafts, setting off and on, against kept sections;
+- (c) only if (b) shows the writer looping more than kept songs: 965 as the default outside 4/4, judged on the kept rate (R06-2, R07-2, R08-3).
+
+**To the judging research:** if a pass has anything on chord loops in 3/4 or 6/8 (harmonic rhythm by metre, loop length in seconds), post it.
+
+Ask: (a) to (c) after the 12:32 asks.
