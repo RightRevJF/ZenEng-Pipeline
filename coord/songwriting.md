@@ -1976,3 +1976,51 @@ The cause is plain now. A section has a memory for pitch (923) and none for rhyt
 Then 749.258 only if the gate still matters, then row 6 (early arrivals), then row 1 (CoCoPops by metre).
 
 Ask: the fit file, then the fresh seeds.
+
+### 28 Nov 2026 09:48 ET, songwriting session (branch read at cdd60554)
+
+**749.259's rule file** (`PREDICTION_259.md`, cdd60554, 09:46:35): read before any code or run. The form, the fit and the test are as accepted at 09:31 ET.
+- The grid (2, 4, 8, 16, 32, 64) is written before the fit, with ties to the smaller weight and nothing added after. That's the right guard.
+- The settled points are fair: a pickup isn't counted as a bar, 912's 4/4 path is untouched, and the weight enters before the cut to twelve.
+
+One order to keep: commit the fit file, with every weight's figure and the one taken, in its own commit before the first fresh-seed build. I'll check it by commit time. Go.
+
+### 28 Nov 2026 10:06 ET, songwriting session (branch read at c9318923)
+
+**749.259's fit file: checked.** It's committed alone (c9318923, 09:52:29), after the rule file (cdd60554) and before any fresh seed. That's as ordered. Figures from `FIT_259.json`:
+- Different bar rhythms in 16 bars, the mean over seeds 1 to 3: 9.833 with no form, 9.167 at 64. **The weight taken by the rule is 64.**
+- Watched on the seen seeds, and deciding nothing:
+  - the six-mark share rises from 86.9, 76.2, 89.7 to 96.7, 92.3, 96.8;
+  - rhythm again from 0.4, 0.381, 0.429 to 0.45, 0.4, 0.476;
+  - K3 off the beat holds at 0.123 to 0.134.
+
+You said it plainly: **the form moves the figure it was fitted to by under one bar rhythm in 16, at any weight.** The fresh seeds run at 64, as ruled, and the bar decides.
+
+**Written now, before the fresh result,** so it can't be read kindly after:
+- **If both lyrics pass the bar at seeds 10 to 12,** pop 3/4 meets the bar, and songs 68 and 69 are ready. That holds by the bar as written. But the record will say plainly that a section still uses about 9 different bar rhythms where pop uses 6. That gap goes on the list as standing, not closed.
+- **Then, or if it misses,** the count you name is next: how many of a section's lines are drawn from the windows at all, and how often a candidate window holds a bar already sung. That says why a memory weight barely moves a section that's mostly copies and lines sung again.
+
+Ask: the fresh seeds, here.
+
+### 28 Nov 2026 10:24 ET, songwriting session (branch read at 53828cef)
+
+**749.259 at fresh seeds 10 to 12: checked.** The rule (cdd60554) and the fit (c9318923, alone) came before the run (53828cef, 10:08:33). Figures from `RESULT_259.json`.
+- **Song 55's words pass at all three seeds.** The six-mark share is 76.8, 79.5 and 89.1.
+- **Song 49's words miss at seed 10** (60.1; then 97.8 and 92.4). Their pick holds a leap past an octave inside a line at seeds 10 and 12.
+- Different bar rhythms still sit at 9 to 10, against the clips' 6.
+
+**Not passed, by the rule written before the run. Pop 3/4 isn't ready, and songs 68 and 69 don't run.**
+
+**My rulings, in order:**
+1. **749.260, accepted, rule first: 959 acts outside 4/4.** It's the octave gate, which needs no table: no leap past an octave inside a line. It's on this morning's list of 4/4-only settings, and the pick broke it twice in three. Its mark: no pick at any seed with such a leap, and every other mark as it stands.
+2. **Two counts with it, no forms:**
+   - (a) how many lines in a section 749.259 can reach at all (drawn from the windows), and how often a candidate window holds a bar already sung;
+   - (b) K6 and the six-mark share against what each seed fixes (the lift, the registers), over the twelve seeds now run on pop 3/4. Song 49's words run from 60.1 to 97.8 on seed alone, which is more than any form moved them tonight.
+3. **Then the memory where the bars are made, rule first, from what (a) shows.** Either 818 chooses which line to sing again by the bars the section has sung most, or the section's first two rhythms are drawn from windows whose two bars are alike (0.329 of the table by count). Its weight is fitted on seen seeds, as before.
+4. **The test for ready, unchanged, at fresh seeds 13 to 15:**
+   - both lyrics, every mark on the pool's median;
+   - the six-mark share at least 76.2 at each seed;
+   - no pick with a leap past an octave.
+   - 749.259 at 64 stays in the package while the counts run. It lifted the share at five of six seeds and broke nothing that it can be shown to have caused.
+
+Ask: 749.260's rule file and the two counts, here.
