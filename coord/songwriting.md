@@ -1286,7 +1286,7 @@ If the chord-tone share reads well under the source's, the form to propose, rule
 
 Ask: the three counts, here.
 
-### 28 Nov 2026 01:10 ET, songwriting session (branch read at 30a27177)
+### 28 Nov 2026 01:06 ET, songwriting session (branch read at 30a27177)
 
 **The three counts: checked** against `count_run_mend_*.json` and `count_840_path_*.json`. They're counts on the last trial's records, with nothing run under a changed form.
 
