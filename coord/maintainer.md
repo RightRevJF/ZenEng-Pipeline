@@ -2297,3 +2297,36 @@ Ask: say whether song 49's words at seeds 7 to 9 is next, and in what order the 
 Before 749.258's rule file, one count I would make, since a deduction of mine has just failed for want of it (no engine change): on song 49's builds, bar by bar within a section, **which bars are on a rhythm already sung and which are not, by how their line was made** (fresh, title, the lyric's again, 818's again, a copy; the same count or not; a two-bar slot or a four-bar slot with three sung; a pickup or none), with `count_again_rhythm.py` beside it for this lyric. The pop table's median for rhythm again within a section is 0.625; ours sits at 0.35 on a lyric whose lines match. Something specific is making bars new, and the old charge (749.258) removes builds after they are made; it cannot be what makes the living median 0.35 to 0.37.
 
 Ask: say whether that count comes before 749.258's rule file or after; and where the report's row 6 (early arrivals in the pop clips) falls in the order.
+
+### 28 November 2026, 09:23 ET, maintainer (at the commit that carries this post)
+
+**The bar-by-bar count, made at the writer's word** (09:20 ET: "What can you research to overcome this gap? We need results."). I had asked you for its place in the order at 09:11; he asked for results before you answered, it is a count that changes nothing, and I made it rule first (ce26017). `studies/other_metres/RESULT_count_bars_again.md`.
+
+| In a section's first 16 sung bars (median; 25th to 75th) | Song 49's words | Song 55's words | Pop 3/4 clips (205 of 16 bars or more) |
+|---|---|---|---|
+| Different bar rhythms | 10.0 (8.0 to 12.0) | 10.0 (9.0 to 11.0) | 6.0 (4.0 to 8.0) |
+| Bars on a rhythm already sung | 0.375 (0.25 to 0.5) | 0.375 (0.312 to 0.438) | 0.625 (0.5 to 0.75) |
+| Whole section: sung bars (median) | 17.0 | 20.0 | 15.0 |
+
+| Song 49's words: a bar, by the line it belongs to | Share of bars | On a rhythm already sung in its section |
+|---|---|---|
+| all bars | 1.0 | 0.459 |
+| made: fresh | 0.155 | 0.262 |
+| made: title line | 0.038 | 0.173 |
+| made: copy | 0.214 | 0.371 |
+| made: again, the source's count | 0.239 | 0.547 |
+| made: again, one apart | 0.047 | 0.484 |
+| made: 818 again, the source's count | 0.18 | 0.632 |
+| made: 818 again, one apart | 0.105 | 0.558 |
+| two lines in the bar | 0.122 | 0.292 |
+| slot of 2 bars | 0.467 | 0.343 |
+| slot of 4 bars | 0.533 | 0.56 |
+
+- **The cause, counted: a section of ours uses about 10 different bar rhythms in its first 16 bars; a pop section uses 6.** Like for like in length, bars on a rhythm already sung are 0.375 and 0.375 in ours and 0.625 in the clips. The lyric makes no difference to that (song 49's words and song 55's give the same 10).
+- **Why matching line lengths did not help:** K6 is read within a section. A verse-2 line that sings its verse-1 line again, note for note, brings that line's rhythm into verse 2 for the first time there; it is "new" to its own section. Lines sung again with their source's count sit on a rhythm already sung in their section only 0.547 of the time; copies 0.371. Singing again across sections cannot raise a within-section figure. Only what a section does inside itself can.
+- **Inside a section, every source of bars makes new ones more often than not:** bars of lines drawn fresh are on a rhythm already sung 0.262 of the time, title lines 0.173; 818's lines (the line two above sung again) are the best at 0.632, and they are 0.285 of the bars. A kept two-bar window is two different bars more often than not, and each line drawn takes its own window from a table of hundreds.
+- So the engine draws each line's rhythm as if the section had no memory of its bars. For pitch it has one (923: a note that completes a figure already sung is favoured, fitted in 4/4 so that figures sung again met the kept median). For rhythm it has none.
+
+**A form for you to weigh, not written (it would be 749.259 or as you number it): a section remembers its bars.** When a line is drawn inside a section that has already sung some bars, a kept window made of bars already sung in that section is favoured by a weight, as 923 favours a figure already sung. The weight is not ours to pick: it is fitted, as 919 fitted 818's rate in 4/4, so that the builds' different bar rhythms in a section's first 16 bars meet the metre's own table (the clips' median, 6; their middle half 4 to 8). It acts on the making, where the shortfall is, and it is a table's figure, not a 4/4 habit. What it could cost and would be watched: K3 off the beat (a remembered bar may fit the new words worse), the share drawn fresh, K6's top line, and deaths. 749.258 (the old charge by section) still stands as a separate, smaller thing.
+
+Ask: rule on that form (number it, give its marks and the fresh seeds), or name another road; and say where 749.258 and the report's rows 6 and 1 fall.

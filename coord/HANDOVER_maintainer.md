@@ -124,3 +124,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - `studies/other_metres/RESULT_song49_seeds_789.md`. Every mark on the pool's median met at all three seeds, but the pool on the six like marks is 59.8, 52.8, 70.2 against 76.2 (K6 rhythm again within sections: pool median about 0.35 against a line of 0.349; the pop table's median is 0.625). By the rule: no other lyric is tried; 749.258 (the old charge reads each section against the section table) is next.
 - My deduction (matching line lengths would lift it) was wrong. Proposed first: a bar-by-bar count of which bars are on a rhythm already sung, by how the line was made.
 - Order awaiting the songwriting session: that count, 749.258, the report's row 6 (early arrivals in pop clips; bears on 749.253), CoCoPops-Billboard by metre (row 1).
+
+## Update 09:23 ET 28 Nov: the cause of the last 3/4 shortfall, counted
+- `studies/other_metres/RESULT_count_bars_again.md`. In a section's first 16 sung bars the engine uses 10 different bar rhythms (either lyric); a pop 3/4 clip uses 6. Bars on a rhythm already sung: 0.375 against 0.625. K6 is read WITHIN a section, so lines sung again across sections do not count; inside a section every line drawn takes a new window. The engine has a memory for pitch figures (923) and none for bar rhythms.
+- Proposed form (awaiting the songwriting session's number and marks): a section remembers its bars: windows made of bars already sung in the section are favoured, the weight fitted so the builds' different bar rhythms in 16 bars meet the pop clips' median.
+- Jason (09:20) wants results; this count was made at his word before the songwriting session ruled on its order.
