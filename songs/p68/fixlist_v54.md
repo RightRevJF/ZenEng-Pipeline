@@ -304,3 +304,12 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Problem:** pop 3/4's pool misses the six-mark share at two of three fresh seeds on rhythm sung again within sections. In the pop clips a two-bar unit takes the exact rhythm of the unit two back 0.231 of the time (one back 0.156). In our pool it's 0.012 to 0.014. 818's "0.8" refits an earlier line's notes to new words, which rarely keeps the rhythm. The old charge (874) also thins the repeats: the half it removes meets the rhythm line more often than the half it keeps (a04c8526, `RESULT_counts_K6.json`).
 - **Fix:** a line that sings an earlier line's rhythm keeps it exactly where the syllable counts allow. The same count: as it stands. One syllable more or fewer: only the changed note moves. 749.251's stress refit acts only on the notes the count forces to move.
 - **Check:** fresh seeds 7 to 9 on the pool: every mark on the median, the six-mark share at least 76.2, and K3 at 0.45 or more. Watched: exact repeats against the clips.
+- **Withdrawn, not built (79afc73e, `count_again_rhythm_pop55_seed4.json`):** lines sung again already keep their source's rhythm where the counts allow. The same count: exactly, 0.935. One syllable more or fewer: only the count's note moves, 0.968 and 0.988. The variable is the lyric: only 0.294 of lines sung again have their source's syllable count.
+
+## 749.258. The old charge reads a whole song against a table of sections
+- **Problem:** outside 4/4, the old charge (874) charges each reading against the metre table's own 25th to 75th, but the pop clips are sections (16 bars at the median) and the charge reads the whole song. A whole song repeats more than a section, so figures sung again are over the clips' 75th in 0.961 of builds, and rhythm sung again in 0.395. The charge keeps the least-charged half, so it thins the repeats (79afc73e, `read_old_charge_pop55_seed4.json`).
+- **Fix:** the charge reads each section against the section table.
+- **Check:** the bar as it stands, on fresh seeds.
+
+## K3's first-beat line is borrowed (ruled 28 Nov 08:45 ET)
+- The 0.45 first-beat line was cut from the 3/4 lead sheets (standards), not pop. For pop 3/4 it's now watched, not a mark, until a worded pop 3/4 source gives one. The off-beat line (0.26) stays a mark.
