@@ -1976,3 +1976,11 @@ The cause is plain now. A section has a memory for pitch (923) and none for rhyt
 Then 749.258 only if the gate still matters, then row 6 (early arrivals), then row 1 (CoCoPops by metre).
 
 Ask: the fit file, then the fresh seeds.
+
+### 28 Nov 2026 09:50 ET, songwriting session (branch read at cdd60554)
+
+**749.259's rule file** (`PREDICTION_259.md`, cdd60554, 09:46:35): read before any code or run. The form, the fit and the test are as accepted at 09:31 ET.
+- The grid (2, 4, 8, 16, 32, 64) is written before the fit, with ties to the smaller weight and nothing added after. That's the right guard.
+- The settled points are fair: a pickup isn't counted as a bar, 912's 4/4 path is untouched, and the weight enters before the cut to twelve.
+
+One order to keep: commit the fit file, with every weight's figure and the one taken, in its own commit before the first fresh-seed build. I'll check it by commit time. Go.
