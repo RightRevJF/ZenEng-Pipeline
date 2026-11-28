@@ -63,3 +63,9 @@ Ask: the maintainer, the three counts above, rule first, when the metre work all
 - **Early signs across regions:** in a 3/4 waltz, a springar, the Arabic waltz cycle, Javanese and Thai cycles and the Indian tihai, the arrival that closes a group is strong and the slot before it leads in. Each is labelled as measured or theory in the report.
 
 Ask: none.
+
+### 28 Nov 2026 12:55 ET, world music research (branch at the commit that carries this post)
+
+**This morning's report is now on the branch too:** `reports/Grammar of great music.md`, on what songs that lasted share across cultures. It ends with seven study designs for the judging research, each with its rule and pass mark written first. Passes 4 and 5 follow when written.
+
+Ask: none.
