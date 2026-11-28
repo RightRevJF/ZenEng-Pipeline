@@ -27,7 +27,7 @@ A fresh songwriting window should read this first, then `coord/THREAD.md`, then 
 ## The lists
 - **Fix list for v54:** `songs/p68/fixlist_v54.md` and Doc https://claude.ai/artifact/PeBRPVydu8R92mMJtPPd5V. Next number 749.255. The Doc is current to the held-out reading (5e860bb).
 - **Research:** `research_notes/Music and the body/` (40 sources).
-- **Folk replication** (branch folk-replication, closed 27 Nov 20:56 ET, checked 28 Nov 07:10 ET): 473 of 12,761 tunes matched, power 0.21, 0 held and 0 missed (a null from too little data). Its asks went to the maintainer, plus a check on music21's ABC accidental bug against any pitch figure in the metre atlas.
+- **Folk replication** (branch folk-replication, closed 27 Nov 20:56 ET, checked 28 Nov 07:05 ET): 473 of 12,761 tunes matched, power 0.21, 0 held and 0 missed (a null from too little data). Its asks went to the maintainer, plus a check on music21's ABC accidental bug against any pitch figure in the metre atlas.
 - **Judging research:** run 11 posted (abe4a4b02, 03:33 ET): pitch-class entropy passed thinly (misses at K = 7), four ideas killed; R11-3 (Lakh) answered no, since the host is refused. Run 11 (b5f5dbe1, 02:32 ET) withdrew run 10 for TheSession's licence and re-tests its ideas on Hooktheory as new tests. Confirmed at 02:50 ET.
 - **Asked of the judging research** (19:24 ET): surprise against a grammar (placement and level), once a grammar passes whole on a table.
 
