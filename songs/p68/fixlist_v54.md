@@ -270,3 +270,12 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Fix:** a line that will be sung again is drawn by the table's stress score summed over every set of words it will carry, the first words weighted as now. 749.251 stays on beneath it.
 - **Check:** pop 3/4 K1 to K8, with K6 held and the source lines' first singing at least 0.40 on the first beat. The five 6/8 lyrics come out byte for byte the same.
 - **Read (e7089f3 before d93811cf, `RESULT_252.json`): not passed.** On the median, first beat moved 0.412 → 0.422, and same-count lines didn't move (0.313). The source lines' first singing held (0.431). The 6/8 lyrics come out byte for byte the same. Unset. Next: whether the table's stress score, at its best, prefers beat one over beats two and three.
+
+## 749.253. Outside 4/4, 834's early entry fires at 4/4's share and is scored as if it hadn't moved
+- **Problem:** in pop 3/4, drawn lines would reach 0.591 on the first beat with no limit, and 0.472 is built. 834 alone takes 0.072 of that: a line opening on a stress sings its rhythm an eighth or a quarter early, at 0.2, 4/4's figure, since the pop table has no entry shares. The early rhythm is scored as if it hadn't moved. Title lines go from 0.656 to 0.531 under 834 alone (7c744143, `RESULT_counts_AB.json`).
+- **Fix:** outside 4/4, the early entry is taken only at the metre table's own share, and where the table has none, not at all.
+
+## 749.254. 749.252's summed score is led by unstressed syllables
+- **Problem:** a single rhythm can serve all the sets of words a source line carries (0.538 on the first beat). The rhythm with the best summed score reaches 0.459, because the whole score summed over two dozen sets is led by where the unstressed syllables fall.
+- **Fix:** on every set past the first words, the sum counts stressed syllables only.
+- **Check (both):** two arms on pop 3/4 (749.253 alone; 749.253 with 749.252 and 749.254). Marks: K1 to K8, K6 held, and lines beginning late at most 1.5 × the table's 0.10. Arm 2 also needs the source lines' first singing at least 0.40. 6/8 is read on every mark if 749.253 acts there; song 69's package doesn't change tonight.
