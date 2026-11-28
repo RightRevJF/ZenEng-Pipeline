@@ -1,0 +1,55 @@
+{
+ "measure": "REP",
+ "pred": -0.03,
+ "extra": [],
+ "alpha": 0.01,
+ "counted": true,
+ "idea": "R11-L3 (= R10-S1)",
+ "K": 5,
+ "rank": 3,
+ "status": "COUNTED",
+ "readings": [
+  {
+   "name": "all_other_12_baselines_and_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "tonic_share",
+    "bar_rep",
+    "mel_ic_mean"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "intensive_covers_first_year_held",
+   "kind": "intensive",
+   "pred_sign": -1
+  },
+  {
+   "name": "n_pitch_range_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "n_pitch",
+    "range",
+    "mel_ic_mean"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "n_pc",
+   "kind": "measure",
+   "measure": "n_pc",
+   "extra": [],
+   "pred_sign": -1
+  }
+ ]
+}

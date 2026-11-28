@@ -1,0 +1,63 @@
+{
+ "measure": "ANT",
+ "pred": 0.03,
+ "extra": [
+  "density"
+ ],
+ "alpha": 0.01,
+ "counted": true,
+ "idea": "R11-I2",
+ "K": 5,
+ "rank": 5,
+ "status": "COUNTED",
+ "readings": [
+  {
+   "name": "bare_no_extras",
+   "kind": "measure",
+   "measure": "ANT",
+   "extra": [],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_and_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep",
+    "mel_ic_mean"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "intensive_covers_first_year_held",
+   "kind": "intensive",
+   "pred_sign": 1
+  },
+  {
+   "name": "sync_per_note_held",
+   "kind": "extra",
+   "extra": [
+    "sync_per_note"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "CT_held",
+   "kind": "extra",
+   "extra": [
+    "CT"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}

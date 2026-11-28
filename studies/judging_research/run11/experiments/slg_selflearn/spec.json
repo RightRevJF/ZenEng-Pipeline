@@ -1,0 +1,65 @@
+{
+ "measure": "R_SLG",
+ "pred": 0.03,
+ "extra": [
+  "bar_rep",
+  "ln_notes"
+ ],
+ "alpha": 0.01,
+ "counted": false,
+ "idea": "R10-L1",
+ "K": 5,
+ "rank": 6,
+ "status": "ESTIMATE (not in K)",
+ "readings": [
+  {
+   "name": "bare_no_extras",
+   "kind": "measure",
+   "measure": "R_SLG",
+   "extra": [],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_and_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "mel_ic_mean"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "intensive_covers_first_year_held",
+   "kind": "intensive",
+   "pred_sign": 1
+  },
+  {
+   "name": "mel_rep_held",
+   "kind": "extra",
+   "extra": [
+    "mel_rep"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "R_SLGW",
+   "kind": "measure",
+   "measure": "R_SLGW",
+   "extra": [
+    "bar_rep",
+    "ln_notes"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}

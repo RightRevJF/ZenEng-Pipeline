@@ -795,132 +795,168 @@
    "idea": "G10-1 weak links: persistent entropy of the H0 barcode (MST) of the beat skeleton's pitch-transition graph (card 1)",
    "stance": "Geometer",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "pe_h0_links: KILLED by range rule, +0.016 (SE 0.007, p .022) vs +0.03; halves and Poisson positive; smaller positive effect not ruled out; love +0.007 | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "pe_h0_links: KILLED by range rule, +0.016 (SE 0.007, p .022) vs +0.03; halves and Poisson positive; smaller positive effect not ruled out; love +0.007 | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: pe_h0 on the Hooktheory clip skeleton (R_PE_H0) fails the standing gate (clip stability 0.182 < 0.20); printed as an uncounted reading in gap_rooms",
    "data_withdrawn": true,
-   "status_before_withdrawal": "failed"
+   "status_before_withdrawal": "failed",
+   "history": [
+    "run11 chair: pe_h0 on the Hooktheory clip skeleton (R_PE_H0) fails the standing gate (clip stability 0.182 < 0.20); printed as an uncounted reading in gap_rooms"
+   ]
   },
   {
    "id": "R10-G2",
    "idea": "G10-2 retracing: tree-reduced share of the beat skeleton walk (IRR revived on melody)",
    "stance": "Geometer",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "irr_skel_retrace: PASSED on A -0.022 (SE 0.007); C confirmation UNSETTLED -0.011 (SE 0.013), all baselines held -0.004; not confirmed; love -0.023 (A) | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "irr_skel_retrace: PASSED on A -0.022 (SE 0.007); C confirmation UNSETTLED -0.011 (SE 0.013), all baselines held -0.004; not confirmed; love -0.023 (A) | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: irr_skel on Hooktheory (R_IRR) fails the standing gate (clip stability 0.152 < 0.20); printed as an uncounted reading in gap_rooms",
    "data_withdrawn": true,
-   "status_before_withdrawal": "testing"
+   "status_before_withdrawal": "testing",
+   "history": [
+    "run11 chair: irr_skel on Hooktheory (R_IRR) fails the standing gate (clip stability 0.152 < 0.20); printed as an uncounted reading in gap_rooms"
+   ]
   },
   {
    "id": "R10-G3",
    "idea": "G10-3 S = 1 + g/pi: spectral gap of the beat skeleton's pitch-class graph (the counted S)",
    "stance": "Geometer",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "s_gap_skeleton: KILLED -0.005 (SE 0.007) vs -0.03; halves split, Poisson + | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "s_gap_skeleton: KILLED -0.005 (SE 0.007) vs -0.03; halves split, Poisson + | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: skeleton pitch-class S (R_SGAP) fails the standing gate (clip stability 0.080 < 0.20); printed as an uncounted reading in gap_rooms",
    "data_withdrawn": true,
-   "status_before_withdrawal": "failed"
+   "status_before_withdrawal": "failed",
+   "history": [
+    "run11 chair: skeleton pitch-class S (R_SGAP) fails the standing gate (clip stability 0.080 < 0.20); printed as an uncounted reading in gap_rooms"
+   ]
   },
   {
    "id": "R10-L1",
    "idea": "SLG self-learnability gain (own-past bigram vs type corpus), bar_rep and ln_notes held",
    "stance": "Listener",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "slg_selflearn: KILLED, wrong sign -0.011 (SE 0.008); slg_win reading +0.025 uncounted | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "slg_selflearn: KILLED, wrong sign -0.011 (SE 0.008); slg_win reading +0.025 uncounted | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ESTIMATE (not in K) in run11/experiments/slg_selflearn (R_SLG from measures/m_chair_run10.py, +0.03, bar_rep/ln_notes held, power 0.227 at .01; clears the floor but the counted set of 5 is full under the run 08 K rule; ranked 6th)",
    "data_withdrawn": true,
-   "status_before_withdrawal": "failed"
+   "status_before_withdrawal": "failed",
+   "history": [
+    "run11 chair: ESTIMATE (not in K) in run11/experiments/slg_selflearn (R_SLG from measures/m_chair_run10.py, +0.03, bar_rep/ln_notes held, power 0.227 at .01; clears the floor but the counted set of 5 is full under the run 08 K rule; ranked 6th)"
+   ]
   },
   {
    "id": "R10-L2",
    "idea": "core_ic: corpus surprisal of the on-beat skeleton (typical skeleton), pc_entropy held (TSG revised)",
    "stance": "Listener",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "core_typical: PASSED on A -0.035 (SE 0.008); C -0.051 (SE 0.017, p .003) but power 0.14 < floor, so an ESTIMATE; surf_ic (off-beat) also negative (-0.037 A, -0.054 C): reads 'typical melody overall'; love -0.031 (A); confirm on H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "core_typical: PASSED on A -0.035 (SE 0.008); C -0.051 (SE 0.017, p .003) but power 0.14 < floor, so an ESTIMATE; surf_ic (off-beat) also negative (-0.037 A, -0.054 C): reads 'typical melody overall'; love -0.031 (A); confirm on H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ESTIMATE (not in K) in run11/experiments/core_typical (R_CORE_IC from measures/m_chair_run10.py, -0.03, pc_entropy and mel_ic_mean held, power 0.190 at .01, under the floor)",
    "data_withdrawn": true,
-   "status_before_withdrawal": "testing"
+   "status_before_withdrawal": "testing",
+   "history": [
+    "run11 chair: ESTIMATE (not in K) in run11/experiments/core_typical (R_CORE_IC from measures/m_chair_run10.py, -0.03, pc_entropy and mel_ic_mean held, power 0.190 at .01, under the floor)"
+   ]
   },
   {
    "id": "R10-L2b",
    "idea": "TSG: typical skeleton minus surprising surface",
    "stance": "Listener",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "estimate inside core_typical: +0.013 (A), +0.018 (C), wrong sign; uncounted | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "estimate inside core_typical: +0.013 (A), +0.018 (C), wrong sign; uncounted | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: TSG on Hooktheory (R_TSG) fails the standing gate (clip stability 0.155 < 0.20); printed as an uncounted reading in core_typical",
    "data_withdrawn": true,
-   "status_before_withdrawal": "failed"
+   "status_before_withdrawal": "failed",
+   "history": [
+    "run11 chair: TSG on Hooktheory (R_TSG) fails the standing gate (clip stability 0.155 < 0.20); printed as an uncounted reading in core_typical"
+   ]
   },
   {
    "id": "R10-L3",
    "idea": "CUT_AB: Fiedler cut of the pitch graph aligned with the tune's halves (Cheeger)",
    "stance": "Listener",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "cut_ab_parts: UNSETTLED +0.019 (SE 0.007, p .0058, alpha .00556); strict AABB reels/jigs +0.062 (uncounted); love +0.024 | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "cut_ab_parts: UNSETTLED +0.019 (SE 0.007, p .0058, alpha .00556); strict AABB reels/jigs +0.062 (uncounted); love +0.024 | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: CUT_AB on Hooktheory clips (R_CUT_AB; clip halves) fails the standing gate (clip stability 0.095 < 0.20); merged with GAP, printed as an uncounted reading in gap_rooms",
    "data_withdrawn": true,
-   "status_before_withdrawal": "testing"
+   "status_before_withdrawal": "testing",
+   "history": [
+    "run11 chair: CUT_AB on Hooktheory clips (R_CUT_AB; clip halves) fails the standing gate (clip stability 0.095 < 0.20); merged with GAP, printed as an uncounted reading in gap_rooms"
+   ]
   },
   {
    "id": "R10-I1",
    "idea": "ARCH_PE: persistent entropy of the contour's sublevel/superlevel H0 barcode (statue's arches)",
    "stance": "Inventor",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "arch_contour: UNSETTLED -0.018 (SE 0.007, p .015); vanishes with all 13 baselines held (+0.005); recommended for deletion | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "arch_contour: UNSETTLED -0.018 (SE 0.007, p .015); vanishes with all 13 baselines held (+0.005); recommended for deletion | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ARCH_PE on Hooktheory (R_ARCH) fails the standing gate (clip stability 0.170 < 0.20); printed as an uncounted reading in gap_rooms",
    "data_withdrawn": true,
-   "status_before_withdrawal": "failed"
+   "status_before_withdrawal": "failed",
+   "history": [
+    "run11 chair: ARCH_PE on Hooktheory (R_ARCH) fails the standing gate (clip stability 0.170 < 0.20); printed as an uncounted reading in gap_rooms"
+   ]
   },
   {
    "id": "R10-I2",
    "idea": "LOCK: contour turning points on beats (dancer's footfall)",
    "stance": "Inventor",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "lock_turns: frozen (641f966, +0.03, power 0.74, alpha .05/9) but held by the chair's cap of eight; runs first next pass | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "lock_turns: frozen (641f966, +0.03, power 0.74, alpha .05/9) but held by the chair's cap of eight; runs first next pass | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: LOCK on Hooktheory clips fails the standing gate (clip stability 0.112 < 0.20); merged with R11-I3, printed as a reading in lockp_peaks",
    "data_withdrawn": true,
-   "status_before_withdrawal": "untested"
+   "status_before_withdrawal": "untested",
+   "history": [
+    "run11 chair: LOCK on Hooktheory clips fails the standing gate (clip stability 0.112 < 0.20); merged with R11-I3, printed as a reading in lockp_peaks"
+   ]
   },
   {
    "id": "R10-I3",
    "idea": "GAP: spectral gap of the full melody's octave-distinct pitch graph, S = 1 + g/pi (range, n_pitch, ln_notes held)",
    "stance": "Inventor",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-G1, tested fresh on Hooktheory as run11/experiments/gap_rooms (counted)",
    "data_withdrawn": true,
-   "status_before_withdrawal": "testing"
+   "status_before_withdrawal": "testing",
+   "history": [
+    "run11 chair: merged into R11-G1, tested fresh on Hooktheory as run11/experiments/gap_rooms (counted)"
+   ]
   },
   {
    "id": "R10-S1",
    "idea": "REP: replication of McBride & Leroi, pitch-class entropy (simpler spreads)",
    "stance": "Skeptic",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "rep_entropy: PASSED on A -0.083 (SE 0.007); CONFIRMED on C -0.062 (SE 0.014); love -0.117 (A), -0.091 (C); bigger than the predicted -0.03; all baselines held -0.064 (A), -0.082 (C) | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "rep_entropy: PASSED on A -0.083 (SE 0.007); CONFIRMED on C -0.062 (SE 0.014); love -0.117 (A), -0.091 (C); bigger than the predicted -0.03; all baselines held -0.064 (A), -0.082 (C) | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-L3, tested fresh on Hooktheory as run11/experiments/rep_entropy (counted)",
    "data_withdrawn": true,
-   "status_before_withdrawal": "passed"
+   "status_before_withdrawal": "passed",
+   "history": [
+    "run11 chair: merged into R11-L3, tested fresh on Hooktheory as run11/experiments/rep_entropy (counted)"
+   ]
   },
   {
    "id": "R10-C1",
    "idea": "Cheeger constant of the full pitch graph (reading in cut_ab_parts)",
    "stance": "Listener",
    "proposed": "run10",
-   "status": "untested",
-   "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "uncounted reading -0.065 (SE 0.008) on A; close kin of GAP; no renaming check yet | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "uncounted reading -0.065 (SE 0.008) on A; close kin of GAP; no renaming check yet | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: sweep-cut Cheeger constant (R_CHEEGER) fails the overlap gate (n_pitch rho -0.715 > 0.70; stability 0.245); merged with GAP (rho +0.80), printed as an uncounted reading in gap_rooms",
    "data_withdrawn": true,
-   "status_before_withdrawal": "untested"
+   "status_before_withdrawal": "untested",
+   "history": [
+    "run11 chair: sweep-cut Cheeger constant (R_CHEEGER) fails the overlap gate (n_pitch rho -0.715 > 0.70; stability 0.245); merged with GAP (rho +0.80), printed as an uncounted reading in gap_rooms"
+   ]
   },
   {
    "id": "R10-S2",
@@ -929,9 +965,129 @@
    "proposed": "run10",
    "status": "untested",
    "status_set_by": "run11 (run 10 data withdrawn for licence)",
-   "note": "harness has no username; needs adding to common10 before it can be frozen | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source",
+   "note": "harness has no username; needs adding to common10 before it can be frozen | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: not testable on Hooktheory (a TheSession first-poster effect; no such field); left as is",
    "data_withdrawn": true,
-   "status_before_withdrawal": "parked"
+   "status_before_withdrawal": "parked",
+   "history": [
+    "run11 chair: not testable on Hooktheory (a TheSession first-poster effect; no such field); left as is"
+   ]
+  },
+  {
+   "id": "R11-G1",
+   "idea": "GAP: Jason's S on the whole clip melody (lambda_2 of the cyclic symmetrised octave-distinct pitch graph), range, n_pitch, ln_notes held; fresh on Hooktheory (= R10-I3's idea)",
+   "stance": "Geometer",
+   "proposed": "run11",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held",
+   "history": [
+    "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held"
+   ]
+  },
+  {
+   "id": "R11-G2",
+   "idea": "ROOMS: mean 1/lambda_k over the lower half of the spectrum (card 1, higher-order Cheeger); withdrawn as a test, a reading of GAP",
+   "stance": "Geometer",
+   "proposed": "run11",
+   "status": "withdrawn",
+   "status_set_by": "run11 brainstorm",
+   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in gap_rooms (G_ROOMS, and G_ROOMS holding G_GAP)",
+   "history": [
+    "run11 chair: reading in gap_rooms (G_ROOMS, and G_ROOMS holding G_GAP)"
+   ]
+  },
+  {
+   "id": "R11-G3",
+   "idea": "TIE: Cramer's V^2 of the melody pitch-class x chord duration table (spectrum of the bipartite melody-chord graph, 1 +- s_k); merged with R11-I1",
+   "stance": "Geometer",
+   "proposed": "run11",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "run11 chair: COUNTED rank 2 of K=5 in run11/experiments/tie_rooms (G_TIE, +0.03, ln_notes/density/n_pc held, power 0.330 at .01); HB and Bergsma V2 readings",
+   "history": [
+    "run11 chair: COUNTED rank 2 of K=5 in run11/experiments/tie_rooms (G_TIE, +0.03, ln_notes/density/n_pc held, power 0.330 at .01); HB and Bergsma V2 readings"
+   ]
+  },
+  {
+   "id": "R11-L1",
+   "idea": "SETTLE: 1 - Fiedler sweep-cut crossings / expected crossings; withdrawn as a test (duplicate of GAP), a reading",
+   "stance": "Listener",
+   "proposed": "run11",
+   "status": "withdrawn",
+   "status_set_by": "run11 brainstorm",
+   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in gap_rooms (SETTLE, n_pitch and range held)",
+   "history": [
+    "run11 chair: reading in gap_rooms (SETTLE, n_pitch and range held)"
+   ]
+  },
+  {
+   "id": "R11-L2",
+   "idea": "TYP11: correlation of the clip's time-weighted scale-degree profile (tonic dropped) with the corpus profile, mel_ic_mean held",
+   "stance": "Listener",
+   "proposed": "run11",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "run11 chair: COUNTED rank 4 of K=5 in run11/experiments/typ11_typical (TYP11, +0.03, mel_ic_mean held, power 0.387 at .01)",
+   "history": [
+    "run11 chair: COUNTED rank 4 of K=5 in run11/experiments/typ11_typical (TYP11, +0.03, mel_ic_mean held, power 0.387 at .01)"
+   ]
+  },
+  {
+   "id": "R11-L3",
+   "idea": "REP fresh: melody pitch-class entropy, no extras (= R10-S1's idea, McBride & Leroi)",
+   "stance": "Listener",
+   "proposed": "run11",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01)",
+   "history": [
+    "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01)"
+   ]
+  },
+  {
+   "id": "R11-I1",
+   "idea": "HB: bound rooms, Cramer's V^2 of melody pc x chord (merged into R11-G3)",
+   "stance": "Inventor",
+   "proposed": "run11",
+   "status": "withdrawn",
+   "status_set_by": "run11 brainstorm",
+   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in tie_rooms (HB)",
+   "history": [
+    "run11 chair: reading in tie_rooms (HB)"
+   ]
+  },
+  {
+   "id": "R11-I2",
+   "idea": "ANT: the push, share of chord changes anticipated by a melody note in the half beat before, on a new-chord-only pitch class",
+   "stance": "Inventor",
+   "proposed": "run11",
+   "status": "testing",
+   "status_set_by": "run11 chair",
+   "note": "run11 chair: COUNTED rank 5 of K=5 in run11/experiments/ant_push (ANT, +0.03, density held, power 0.280 at .01)",
+   "history": [
+    "run11 chair: COUNTED rank 5 of K=5 in run11/experiments/ant_push (ANT, +0.03, density held, power 0.280 at .01)"
+   ]
+  },
+  {
+   "id": "R11-I3",
+   "idea": "LOCKP: metrical weight of contour peaks minus mean onset weight (run 10's LOCK sharpened); fails the 0.20 stability gate (0.143)",
+   "stance": "Inventor",
+   "proposed": "run11",
+   "status": "stopped",
+   "status_set_by": "run11 chair",
+   "note": "run11 chair: fails the standing gate (clip stability 0.143 < 0.20); runs as an uncounted ESTIMATE in run11/experiments/lockp_peaks (+0.02, no extras, power 0.133)",
+   "history": [
+    "run11 chair: fails the standing gate (clip stability 0.143 < 0.20); runs as an uncounted ESTIMATE in run11/experiments/lockp_peaks (+0.02, no extras, power 0.133)"
+   ]
+  },
+  {
+   "id": "R11-X1",
+   "idea": "BIP: near-bipartiteness 2 - lambda_max (Trevisan dual Cheeger); dropped on the notes (stability 0.11)",
+   "stance": "Geometer/Listener/Inventor",
+   "proposed": "run11",
+   "status": "stopped",
+   "status_set_by": "run11 brainstorm",
+   "note": "measure-side: clip-to-clip stability 0.107-0.159 < 0.20"
   }
  ]
 }

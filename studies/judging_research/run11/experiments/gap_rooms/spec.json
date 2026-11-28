@@ -1,0 +1,143 @@
+{
+ "measure": "G_GAP",
+ "pred": -0.03,
+ "extra": [
+  "range",
+  "n_pitch",
+  "ln_notes"
+ ],
+ "alpha": 0.01,
+ "counted": true,
+ "idea": "R11-G1 (= R10-I3; merges R10-C1, R10-L3, R10-G3, R11-G2, R11-L1)",
+ "K": 5,
+ "rank": 1,
+ "status": "COUNTED",
+ "readings": [
+  {
+   "name": "bare_no_extras",
+   "kind": "measure",
+   "measure": "G_GAP",
+   "extra": [],
+   "pred_sign": -1
+  },
+  {
+   "name": "all_13_baselines_and_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "density",
+    "n_pc",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep",
+    "mel_ic_mean"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "intensive_covers_first_year_held",
+   "kind": "intensive",
+   "pred_sign": -1
+  },
+  {
+   "name": "G_ROOMS",
+   "kind": "measure",
+   "measure": "G_ROOMS",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "G_ROOMS_holding_G_GAP",
+   "kind": "measure",
+   "measure": "G_ROOMS",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes",
+    "G_GAP"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "SETTLE",
+   "kind": "measure",
+   "measure": "SETTLE",
+   "extra": [
+    "n_pitch",
+    "range"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "R_CHEEGER_R10-C1",
+   "kind": "measure",
+   "measure": "R_CHEEGER",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "pred_sign": -1,
+   "note": "stopped as a test: n_pitch rho -0.715; reading"
+  },
+  {
+   "name": "R_CUT_AB_R10-L3",
+   "kind": "measure",
+   "measure": "R_CUT_AB",
+   "extra": [
+    "ln_notes"
+   ],
+   "pred_sign": 1,
+   "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+  },
+  {
+   "name": "R_SGAP_R10-G3",
+   "kind": "measure",
+   "measure": "R_SGAP",
+   "extra": [
+    "n_pc"
+   ],
+   "pred_sign": -1,
+   "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+  },
+  {
+   "name": "R_PE_H0_R10-G1",
+   "kind": "measure",
+   "measure": "R_PE_H0",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": 1,
+   "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+  },
+  {
+   "name": "R_IRR_R10-G2",
+   "kind": "measure",
+   "measure": "R_IRR",
+   "extra": [
+    "n_pc"
+   ],
+   "pred_sign": -1,
+   "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+  },
+  {
+   "name": "R_ARCH_R10-I1",
+   "kind": "measure",
+   "measure": "R_ARCH",
+   "extra": [
+    "range",
+    "n_pitch"
+   ],
+   "pred_sign": -1,
+   "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+  }
+ ]
+}

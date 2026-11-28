@@ -1,0 +1,77 @@
+{
+ "measure": "G_TIE",
+ "pred": 0.03,
+ "extra": [
+  "ln_notes",
+  "density",
+  "n_pc"
+ ],
+ "alpha": 0.01,
+ "counted": true,
+ "idea": "R11-G3 (merges R11-I1 HB)",
+ "K": 5,
+ "rank": 2,
+ "status": "COUNTED",
+ "readings": [
+  {
+   "name": "bare_no_extras",
+   "kind": "measure",
+   "measure": "G_TIE",
+   "extra": [],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_and_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "n_pitch",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep",
+    "mel_ic_mean"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "intensive_covers_first_year_held",
+   "kind": "intensive",
+   "pred_sign": 1
+  },
+  {
+   "name": "CT_held",
+   "kind": "extra",
+   "extra": [
+    "CT"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "G_TIE_BC_bergsma",
+   "kind": "measure",
+   "measure": "G_TIE_BC",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pc"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "HB",
+   "kind": "measure",
+   "measure": "HB",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pc"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}

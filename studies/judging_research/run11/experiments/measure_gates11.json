@@ -1,0 +1,1445 @@
+{
+ "rule": "Run 11 chair: notes-side measure gates (no outcome is read). python3 gates11.py -> measure_gates11.json\nStanding Hooktheory gate (runs 05-06), applied to the RAW measure as frozen: clip-1 vs clip-2 Spearman >= 0.20, and no single\n|Spearman| > 0.70 with one of the 13 baselines or 17 pack measures (REP is a baseline by design: exempt from the second part).\nReported beside it (decides nothing): the Skeptic's 'stability with extras held' = Spearman of clip-1 vs clip-2 residuals after an\nOLS of the clip values on the frozen extras' clip values (pooled over both clips; a pack extra has no clip value, so the song\nvalue is used for both clips), R^2 on the 13 baselines, coverage, and pairwise Spearman among the candidate measures.",
+ "measures": {
+  "G_GAP": {
+   "idea": "R11-G1 GAP (= R10-I3; S = 1 + g/pi)",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "songs": 9566,
+   "coverage": 0.9977054651647893,
+   "stability": 0.20039302666641484,
+   "pairs": 4239,
+   "largest_overlap": [
+    "n_pitch",
+    -0.6122657497815908
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     -0.612
+    ],
+    [
+     "range",
+     -0.564
+    ],
+    [
+     "n_pc",
+     -0.496
+    ],
+    [
+     "pc_entropy",
+     -0.472
+    ]
+   ],
+   "R2_on_13": 0.5705289862032723,
+   "stability_extras_held": 0.15791655655984743,
+   "pairs_extras_held": 4239,
+   "stability_13_held": 0.08914292523707465,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "G_TIE": {
+   "idea": "R11-G3 TIE (= R11-I1 HB)",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pc"
+   ],
+   "songs": 9576,
+   "coverage": 0.9987484355444305,
+   "stability": 0.26487994959129485,
+   "pairs": 4258,
+   "largest_overlap": [
+    "ln_notes",
+    -0.34234960758816424
+   ],
+   "top4": [
+    [
+     "ln_notes",
+     -0.342
+    ],
+    [
+     "density",
+     -0.245
+    ],
+    [
+     "rhy_h_mean",
+     0.232
+    ],
+    [
+     "mel_ic_mean",
+     0.209
+    ]
+   ],
+   "R2_on_13": 0.34185677866700137,
+   "stability_extras_held": 0.216473657911304,
+   "pairs_extras_held": 4258,
+   "stability_13_held": 0.20719743371515775,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "ANT": {
+   "idea": "R11-I2 ANT",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [
+    "density"
+   ],
+   "songs": 9363,
+   "coverage": 0.9765331664580726,
+   "stability": 0.25238935067015866,
+   "pairs": 3981,
+   "largest_overlap": [
+    "density",
+    0.2716237680965644
+   ],
+   "top4": [
+    [
+     "density",
+     0.272
+    ],
+    [
+     "sync_per_note",
+     0.22
+    ],
+    [
+     "rhy_h_mean",
+     -0.172
+    ],
+    [
+     "phrase_on_downbeat",
+     -0.172
+    ]
+   ],
+   "R2_on_13": 0.10903239030881884,
+   "stability_extras_held": 0.2132452375686469,
+   "pairs_extras_held": 3981,
+   "stability_13_held": 0.17652295961272885,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "TYP11": {
+   "idea": "R11-L2 TYP11",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [
+    "mel_ic_mean"
+   ],
+   "songs": 9588,
+   "coverage": 1.0,
+   "stability": 0.21228687467771784,
+   "pairs": 4266,
+   "largest_overlap": [
+    "n_int",
+    0.24538776916139268
+   ],
+   "top4": [
+    [
+     "n_int",
+     0.245
+    ],
+    [
+     "int_entropy",
+     0.228
+    ],
+    [
+     "pc_entropy",
+     0.208
+    ],
+    [
+     "range",
+     0.186
+    ]
+   ],
+   "R2_on_13": 0.1633407390162961,
+   "stability_extras_held": 0.20653143657710088,
+   "pairs_extras_held": 4266,
+   "stability_13_held": 0.18262150759999227,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "REP": {
+   "idea": "R11-L3 REP (= R10-S1)",
+   "role": "candidate (baseline by design)",
+   "pred": -0.03,
+   "extra": [],
+   "songs": 9588,
+   "coverage": 1.0,
+   "stability": 0.38876799581133753,
+   "pairs": 4271,
+   "largest_overlap": [
+    "n_pc",
+    0.8779200103715578
+   ],
+   "top4": [
+    [
+     "pc_entropy",
+     1.0
+    ],
+    [
+     "n_pc",
+     0.878
+    ],
+    [
+     "n_pitch",
+     0.794
+    ],
+    [
+     "n_int",
+     0.591
+    ]
+   ],
+   "R2_on_13": 1.0,
+   "stability_extras_held": 0.38876799581133753,
+   "pairs_extras_held": 4271,
+   "stability_13_held": 0.1178257613989032,
+   "gate_raw": "passes",
+   "overlap_exempt": true
+  },
+  "LOCKP": {
+   "idea": "R11-I3 LOCKP",
+   "role": "candidate",
+   "pred": 0.02,
+   "extra": [],
+   "songs": 9379,
+   "coverage": 0.9782019190654986,
+   "stability": 0.14291118656664217,
+   "pairs": 3965,
+   "largest_overlap": [
+    "ln_notes",
+    0.07080935039543139
+   ],
+   "top4": [
+    [
+     "ln_notes",
+     0.071
+    ],
+    [
+     "mel_ic_mean",
+     -0.067
+    ],
+    [
+     "bar_rep",
+     -0.064
+    ],
+    [
+     "phrase_on_downbeat",
+     -0.06
+    ]
+   ],
+   "R2_on_13": 0.01639635126062633,
+   "stability_extras_held": 0.14291118656664217,
+   "pairs_extras_held": 3965,
+   "stability_13_held": 0.13649158759512697,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "LOCK": {
+   "idea": "R10-I2 LOCK (run 10 recipe, m00)",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [],
+   "songs": 9493,
+   "coverage": 0.9900917813934085,
+   "stability": 0.11173023078082824,
+   "pairs": 4113,
+   "largest_overlap": [
+    "n_pitch",
+    0.08902296890225965
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     0.089
+    ],
+    [
+     "n_pc",
+     0.087
+    ],
+    [
+     "pc_entropy",
+     0.081
+    ],
+    [
+     "range",
+     0.071
+    ]
+   ],
+   "R2_on_13": 0.013371068440520162,
+   "stability_extras_held": 0.11173023078082824,
+   "pairs_extras_held": 4113,
+   "stability_13_held": 0.10911375447259676,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_PE_H0": {
+   "idea": "R10-G1 pe_h0",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [
+    "pc_entropy"
+   ],
+   "songs": 9134,
+   "coverage": 0.9526491447642887,
+   "stability": 0.18165438247358387,
+   "pairs": 3739,
+   "largest_overlap": [
+    "pc_entropy",
+    0.4406094119450802
+   ],
+   "top4": [
+    [
+     "pc_entropy",
+     0.441
+    ],
+    [
+     "n_pitch",
+     0.415
+    ],
+    [
+     "n_pc",
+     0.381
+    ],
+    [
+     "mel_ic_mean",
+     0.354
+    ]
+   ],
+   "R2_on_13": 0.1710896604723473,
+   "stability_extras_held": 0.10921607858180771,
+   "pairs_extras_held": 3739,
+   "stability_13_held": 0.11974961094737337,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_IRR": {
+   "idea": "R10-G2 irr_skel",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "n_pc"
+   ],
+   "songs": 9320,
+   "coverage": 0.9720483938256154,
+   "stability": 0.15190976844290158,
+   "pairs": 3937,
+   "largest_overlap": [
+    "pc_entropy",
+    0.32441862131684424
+   ],
+   "top4": [
+    [
+     "pc_entropy",
+     0.324
+    ],
+    [
+     "n_pitch",
+     0.306
+    ],
+    [
+     "mel_ic_mean",
+     0.303
+    ],
+    [
+     "n_pc",
+     0.279
+    ]
+   ],
+   "R2_on_13": 0.19673583453899812,
+   "stability_extras_held": 0.11395114745780392,
+   "pairs_extras_held": 3937,
+   "stability_13_held": 0.09452572318416201,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_SGAP": {
+   "idea": "R10-G3 S_gap (skeleton, pitch classes)",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "n_pc"
+   ],
+   "songs": 9108,
+   "coverage": 0.9499374217772215,
+   "stability": 0.08046254945736923,
+   "pairs": 3715,
+   "largest_overlap": [
+    "n_pc",
+    -0.34947110496821004
+   ],
+   "top4": [
+    [
+     "n_pc",
+     -0.349
+    ],
+    [
+     "pc_entropy",
+     -0.333
+    ],
+    [
+     "n_pitch",
+     -0.248
+    ],
+    [
+     "ch_rep",
+     0.151
+    ]
+   ],
+   "R2_on_13": 0.24579326809619906,
+   "stability_extras_held": 0.0698807461995639,
+   "pairs_extras_held": 3715,
+   "stability_13_held": 0.044514388943202705,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_CORE_IC": {
+   "idea": "R10-L2 core_ic",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "pc_entropy",
+    "mel_ic_mean"
+   ],
+   "songs": 8879,
+   "coverage": 0.9260534000834376,
+   "stability": 0.38592314991272875,
+   "pairs": 3415,
+   "largest_overlap": [
+    "mel_ic_mean",
+    0.5895605383337292
+   ],
+   "top4": [
+    [
+     "mel_ic_mean",
+     0.59
+    ],
+    [
+     "pc_entropy",
+     0.553
+    ],
+    [
+     "n_pc",
+     0.539
+    ],
+    [
+     "n_pitch",
+     0.479
+    ]
+   ],
+   "R2_on_13": 0.40878841375839436,
+   "stability_extras_held": 0.12997922536741355,
+   "pairs_extras_held": 3415,
+   "stability_13_held": 0.18087785438400028,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "R_TSG": {
+   "idea": "R10-L2b TSG",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "pc_entropy"
+   ],
+   "songs": 8637,
+   "coverage": 0.9008135168961201,
+   "stability": 0.1552217688682732,
+   "pairs": 3195,
+   "largest_overlap": [
+    "step_share",
+    0.3711125962095071
+   ],
+   "top4": [
+    [
+     "step_share",
+     0.371
+    ],
+    [
+     "leap_share",
+     -0.203
+    ],
+    [
+     "rhy_h_mean",
+     0.173
+    ],
+    [
+     "length_variety",
+     0.165
+    ]
+   ],
+   "R2_on_13": 0.18194625444261092,
+   "stability_extras_held": 0.15578377799669543,
+   "pairs_extras_held": 3195,
+   "stability_13_held": 0.13658883401671545,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_CUT_AB": {
+   "idea": "R10-L3 CUT_AB",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [
+    "ln_notes"
+   ],
+   "songs": 9566,
+   "coverage": 0.9977054651647893,
+   "stability": 0.09549231079085245,
+   "pairs": 4239,
+   "largest_overlap": [
+    "mel_rep",
+    -0.3978334885515856
+   ],
+   "top4": [
+    [
+     "mel_rep",
+     -0.398
+    ],
+    [
+     "bar_rep",
+     -0.362
+    ],
+    [
+     "n_pitch",
+     0.332
+    ],
+    [
+     "range",
+     0.291
+    ]
+   ],
+   "R2_on_13": 0.2225392984450818,
+   "stability_extras_held": 0.09254079002808245,
+   "pairs_extras_held": 4239,
+   "stability_13_held": 0.07339177745214878,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_CHEEGER": {
+   "idea": "R10-C1 Cheeger (sweep cut)",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "songs": 9566,
+   "coverage": 0.9977054651647893,
+   "stability": 0.24497508264678056,
+   "pairs": 4239,
+   "largest_overlap": [
+    "n_pitch",
+    -0.7149282074200465
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     -0.715
+    ],
+    [
+     "range",
+     -0.659
+    ],
+    [
+     "n_pc",
+     -0.586
+    ],
+    [
+     "pc_entropy",
+     -0.583
+    ]
+   ],
+   "R2_on_13": 0.5443287457471271,
+   "stability_extras_held": 0.12411625495321613,
+   "pairs_extras_held": 4239,
+   "stability_13_held": 0.08395518729368041,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_ARCH": {
+   "idea": "R10-I1 ARCH_PE",
+   "role": "candidate",
+   "pred": -0.03,
+   "extra": [
+    "range",
+    "n_pitch"
+   ],
+   "songs": 9540,
+   "coverage": 0.9949937421777222,
+   "stability": 0.1702581161093021,
+   "pairs": 4212,
+   "largest_overlap": [
+    "n_pitch",
+    -0.3505173238821369
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     -0.351
+    ],
+    [
+     "range",
+     -0.339
+    ],
+    [
+     "n_pc",
+     -0.298
+    ],
+    [
+     "step_share",
+     -0.291
+    ]
+   ],
+   "R2_on_13": 0.2949800086885048,
+   "stability_extras_held": 0.12978347815981467,
+   "pairs_extras_held": 4212,
+   "stability_13_held": 0.06701705400004583,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_SLG": {
+   "idea": "R10-L1 SLG",
+   "role": "candidate",
+   "pred": 0.03,
+   "extra": [
+    "bar_rep",
+    "ln_notes"
+   ],
+   "songs": 8879,
+   "coverage": 0.9260534000834376,
+   "stability": 0.24727415603251698,
+   "pairs": 3415,
+   "largest_overlap": [
+    "mel_rep",
+    0.44294460301590993
+   ],
+   "top4": [
+    [
+     "mel_rep",
+     0.443
+    ],
+    [
+     "bar_rep",
+     0.372
+    ],
+    [
+     "mel_ic_mean",
+     0.355
+    ],
+    [
+     "leap_share",
+     0.313
+    ]
+   ],
+   "R2_on_13": 0.4708892049072939,
+   "stability_extras_held": 0.21730021477772296,
+   "pairs_extras_held": 3415,
+   "stability_13_held": 0.15273367666698634,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "G_ROOMS": {
+   "idea": "reading in GAP (R11-G2)",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "songs": 9566,
+   "coverage": 0.9977054651647893,
+   "stability": 0.21799315853717663,
+   "pairs": 4239,
+   "largest_overlap": [
+    "n_pitch",
+    0.6372608963135369
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     0.637
+    ],
+    [
+     "range",
+     0.608
+    ],
+    [
+     "n_pc",
+     0.494
+    ],
+    [
+     "pc_entropy",
+     0.467
+    ]
+   ],
+   "R2_on_13": 0.3294365728574311,
+   "stability_extras_held": 0.1530046195293699,
+   "pairs_extras_held": 4239,
+   "stability_13_held": 0.09572543626955814,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "SETTLE": {
+   "idea": "reading in GAP (R11-L1)",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "n_pitch",
+    "range"
+   ],
+   "songs": 9528,
+   "coverage": 0.9937421777221527,
+   "stability": 0.21235531018747653,
+   "pairs": 4199,
+   "largest_overlap": [
+    "n_pitch",
+    0.6802337988555565
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     0.68
+    ],
+    [
+     "range",
+     0.637
+    ],
+    [
+     "n_pc",
+     0.549
+    ],
+    [
+     "pc_entropy",
+     0.519
+    ]
+   ],
+   "R2_on_13": 0.4920495496868198,
+   "stability_extras_held": 0.11293981973005564,
+   "pairs_extras_held": 4199,
+   "stability_13_held": 0.0762142076945234,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "HB": {
+   "idea": "reading in TIE",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pc"
+   ],
+   "songs": 9570,
+   "coverage": 0.9981226533166458,
+   "stability": 0.26261912717291774,
+   "pairs": 4250,
+   "largest_overlap": [
+    "ln_notes",
+    -0.37454322932665657
+   ],
+   "top4": [
+    [
+     "ln_notes",
+     -0.375
+    ],
+    [
+     "density",
+     -0.269
+    ],
+    [
+     "rhy_h_mean",
+     0.253
+    ],
+    [
+     "mel_ic_mean",
+     0.209
+    ]
+   ],
+   "R2_on_13": 0.3577879001109815,
+   "stability_extras_held": 0.2118214355373049,
+   "pairs_extras_held": 4250,
+   "stability_13_held": 0.18933562222252986,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "G_TIE_BC": {
+   "idea": "reading in TIE (Bergsma V^2)",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pc"
+   ],
+   "songs": 9573,
+   "coverage": 0.9984355444305382,
+   "stability": 0.20076686631377552,
+   "pairs": 4257,
+   "largest_overlap": [
+    "step_share",
+    -0.24863432366048324
+   ],
+   "top4": [
+    [
+     "step_share",
+     -0.249
+    ],
+    [
+     "unison_share",
+     0.238
+    ],
+    [
+     "mel_rep",
+     0.225
+    ],
+    [
+     "bar_rep",
+     0.215
+    ]
+   ],
+   "R2_on_13": 0.2839102470826025,
+   "stability_extras_held": 0.2092597205382144,
+   "pairs_extras_held": 4257,
+   "stability_13_held": 0.18359566193444157,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "CT": {
+   "idea": "reading (chord-tone share)",
+   "role": "reading",
+   "pred": null,
+   "extra": [],
+   "songs": 9557,
+   "coverage": 0.9967667918231122,
+   "stability": 0.28831871546117455,
+   "pairs": 4227,
+   "largest_overlap": [
+    "phrase_on_downbeat",
+    0.20927000441696147
+   ],
+   "top4": [
+    [
+     "phrase_on_downbeat",
+     0.209
+    ],
+    [
+     "sync_per_note",
+     -0.202
+    ],
+    [
+     "mel_ic_mean",
+     0.197
+    ],
+    [
+     "step_share",
+     -0.182
+    ]
+   ],
+   "R2_on_13": 0.14502146688128015,
+   "stability_extras_held": 0.28831871546117455,
+   "pairs_extras_held": 4227,
+   "stability_13_held": 0.26422623087113195,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "TYP_KK11": {
+   "idea": "reading in TYP11",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "mel_ic_mean"
+   ],
+   "songs": 9588,
+   "coverage": 1.0,
+   "stability": 0.19769581689185836,
+   "pairs": 4266,
+   "largest_overlap": [
+    "n_int",
+    0.25887983264746817
+   ],
+   "top4": [
+    [
+     "n_int",
+     0.259
+    ],
+    [
+     "int_entropy",
+     0.255
+    ],
+    [
+     "pc_entropy",
+     0.239
+    ],
+    [
+     "n_pitch",
+     0.196
+    ]
+   ],
+   "R2_on_13": 0.13276601504008856,
+   "stability_extras_held": 0.19927226625660568,
+   "pairs_extras_held": 4266,
+   "stability_13_held": 0.19024201900156182,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "TYP": {
+   "idea": "reading in TYP11",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "mel_ic_mean"
+   ],
+   "songs": 9588,
+   "coverage": 1.0,
+   "stability": 0.21491883794079994,
+   "pairs": 4271,
+   "largest_overlap": [
+    "tonic_share",
+    0.41362570072762134
+   ],
+   "top4": [
+    [
+     "tonic_share",
+     0.414
+    ],
+    [
+     "n_int",
+     0.274
+    ],
+    [
+     "int_entropy",
+     0.259
+    ],
+    [
+     "pc_entropy",
+     0.219
+    ]
+   ],
+   "R2_on_13": 0.3445475812666323,
+   "stability_extras_held": 0.21076438958506108,
+   "pairs_extras_held": 4271,
+   "stability_13_held": 0.18062992682440693,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "R_SURF_IC": {
+   "idea": "reading in core_ic",
+   "role": "reading",
+   "pred": -0.03,
+   "extra": [
+    "pc_entropy"
+   ],
+   "songs": 8637,
+   "coverage": 0.9008135168961201,
+   "stability": 0.3365147616609486,
+   "pairs": 3195,
+   "largest_overlap": [
+    "mel_ic_mean",
+    0.582939480123957
+   ],
+   "top4": [
+    [
+     "mel_ic_mean",
+     0.583
+    ],
+    [
+     "n_pc",
+     0.424
+    ],
+    [
+     "n_pitch",
+     0.421
+    ],
+    [
+     "leap_share",
+     0.401
+    ]
+   ],
+   "R2_on_13": 0.38539260833153544,
+   "stability_extras_held": 0.2569889617660756,
+   "pairs_extras_held": 3195,
+   "stability_13_held": 0.19092708727975932,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "R_SLGW": {
+   "idea": "reading in SLG",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "bar_rep",
+    "ln_notes"
+   ],
+   "songs": 8879,
+   "coverage": 0.9260534000834376,
+   "stability": 0.21785046803551553,
+   "pairs": 3415,
+   "largest_overlap": [
+    "mel_rep",
+    0.45020965135137964
+   ],
+   "top4": [
+    [
+     "mel_rep",
+     0.45
+    ],
+    [
+     "bar_rep",
+     0.365
+    ],
+    [
+     "leap_share",
+     0.309
+    ],
+    [
+     "ln_notes",
+     0.308
+    ]
+   ],
+   "R2_on_13": 0.46581279739015236,
+   "stability_extras_held": 0.18708478889187838,
+   "pairs_extras_held": 3415,
+   "stability_13_held": 0.1382561645339427,
+   "gate_raw": "passes",
+   "overlap_exempt": false
+  },
+  "R_PE_H0I": {
+   "idea": "reading in pe_h0",
+   "role": "reading",
+   "pred": 0.03,
+   "extra": [
+    "pc_entropy"
+   ],
+   "songs": 9134,
+   "coverage": 0.9526491447642887,
+   "stability": 0.12430170634026375,
+   "pairs": 3739,
+   "largest_overlap": [
+    "pc_entropy",
+    0.2651123324789007
+   ],
+   "top4": [
+    [
+     "pc_entropy",
+     0.265
+    ],
+    [
+     "mel_ic_mean",
+     0.259
+    ],
+    [
+     "mel_rep",
+     -0.227
+    ],
+    [
+     "n_pitch",
+     0.222
+    ]
+   ],
+   "R2_on_13": 0.18576063844835888,
+   "stability_extras_held": 0.09465764720643623,
+   "pairs_extras_held": 3739,
+   "stability_13_held": 0.08635292589630028,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  },
+  "R_H0MAX": {
+   "idea": "reading in GAP",
+   "role": "reading",
+   "pred": null,
+   "extra": [],
+   "songs": 9566,
+   "coverage": 0.9977054651647893,
+   "stability": 0.33850376723481407,
+   "pairs": 4239,
+   "largest_overlap": [
+    "n_pitch",
+    -0.8149476558836996
+   ],
+   "top4": [
+    [
+     "n_pitch",
+     -0.815
+    ],
+    [
+     "range",
+     -0.714
+    ],
+    [
+     "n_pc",
+     -0.712
+    ],
+    [
+     "pc_entropy",
+     -0.67
+    ]
+   ],
+   "R2_on_13": 0.6550196267313697,
+   "stability_extras_held": 0.33850376723481407,
+   "pairs_extras_held": 4239,
+   "stability_13_held": 0.05734777686486461,
+   "gate_raw": "stopped",
+   "overlap_exempt": false
+  }
+ },
+ "pairwise_spearman": {
+  "G_GAP|G_TIE": -0.184,
+  "G_GAP|ANT": 0.04,
+  "G_GAP|TYP11": -0.048,
+  "G_GAP|REP": -0.472,
+  "G_GAP|LOCKP": -0.004,
+  "G_GAP|LOCK": -0.03,
+  "G_GAP|R_PE_H0": -0.301,
+  "G_GAP|R_IRR": -0.21,
+  "G_GAP|R_SGAP": 0.417,
+  "G_GAP|R_CORE_IC": -0.196,
+  "G_GAP|R_TSG": 0.058,
+  "G_GAP|R_CUT_AB": -0.405,
+  "G_GAP|R_CHEEGER": 0.803,
+  "G_GAP|R_ARCH": 0.34,
+  "G_GAP|R_SLG": 0.01,
+  "G_GAP|G_ROOMS": -0.793,
+  "G_GAP|SETTLE": -0.803,
+  "G_GAP|HB": -0.169,
+  "G_GAP|G_TIE_BC": -0.186,
+  "G_GAP|CT": -0.148,
+  "G_GAP|TYP_KK11": -0.08,
+  "G_GAP|TYP": -0.071,
+  "G_GAP|R_SURF_IC": -0.21,
+  "G_GAP|R_SLGW": 0.035,
+  "G_GAP|R_PE_H0I": -0.213,
+  "G_GAP|R_H0MAX": 0.58,
+  "G_TIE|ANT": -0.28,
+  "G_TIE|TYP11": -0.24,
+  "G_TIE|REP": 0.174,
+  "G_TIE|LOCKP": -0.053,
+  "G_TIE|LOCK": -0.016,
+  "G_TIE|R_PE_H0": 0.201,
+  "G_TIE|R_IRR": 0.199,
+  "G_TIE|R_SGAP": -0.232,
+  "G_TIE|R_CORE_IC": 0.256,
+  "G_TIE|R_TSG": -0.04,
+  "G_TIE|R_CUT_AB": 0.062,
+  "G_TIE|R_CHEEGER": -0.157,
+  "G_TIE|R_ARCH": -0.141,
+  "G_TIE|R_SLG": 0.061,
+  "G_TIE|G_ROOMS": 0.178,
+  "G_TIE|SETTLE": 0.154,
+  "G_TIE|HB": 0.958,
+  "G_TIE|G_TIE_BC": 0.78,
+  "G_TIE|CT": 0.507,
+  "G_TIE|TYP_KK11": -0.128,
+  "G_TIE|TYP": -0.239,
+  "G_TIE|R_SURF_IC": 0.229,
+  "G_TIE|R_SLGW": 0.005,
+  "G_TIE|R_PE_H0I": 0.235,
+  "G_TIE|R_H0MAX": -0.189,
+  "ANT|TYP11": 0.107,
+  "ANT|REP": -0.061,
+  "ANT|LOCKP": 0.026,
+  "ANT|LOCK": -0.016,
+  "ANT|R_PE_H0": -0.121,
+  "ANT|R_IRR": -0.055,
+  "ANT|R_SGAP": 0.077,
+  "ANT|R_CORE_IC": -0.137,
+  "ANT|R_TSG": 0.033,
+  "ANT|R_CUT_AB": -0.05,
+  "ANT|R_CHEEGER": 0.075,
+  "ANT|R_ARCH": 0.033,
+  "ANT|R_SLG": -0.076,
+  "ANT|G_ROOMS": -0.065,
+  "ANT|SETTLE": -0.077,
+  "ANT|HB": -0.293,
+  "ANT|G_TIE_BC": -0.204,
+  "ANT|CT": -0.387,
+  "ANT|TYP_KK11": 0.039,
+  "ANT|TYP": 0.112,
+  "ANT|R_SURF_IC": -0.125,
+  "ANT|R_SLGW": -0.065,
+  "ANT|R_PE_H0I": -0.061,
+  "ANT|R_H0MAX": 0.118,
+  "TYP11|REP": 0.208,
+  "TYP11|LOCKP": 0.039,
+  "TYP11|LOCK": 0.03,
+  "TYP11|R_PE_H0": 0.045,
+  "TYP11|R_IRR": 0.044,
+  "TYP11|R_SGAP": 0.059,
+  "TYP11|R_CORE_IC": -0.24,
+  "TYP11|R_TSG": 0.122,
+  "TYP11|R_CUT_AB": 0.018,
+  "TYP11|R_CHEEGER": -0.087,
+  "TYP11|R_ARCH": -0.04,
+  "TYP11|R_SLG": -0.413,
+  "TYP11|G_ROOMS": 0.031,
+  "TYP11|SETTLE": 0.058,
+  "TYP11|HB": -0.243,
+  "TYP11|G_TIE_BC": -0.211,
+  "TYP11|CT": -0.112,
+  "TYP11|TYP_KK11": 0.749,
+  "TYP11|TYP": 0.826,
+  "TYP11|R_SURF_IC": -0.294,
+  "TYP11|R_SLGW": -0.352,
+  "TYP11|R_PE_H0I": -0.03,
+  "TYP11|R_H0MAX": -0.07,
+  "REP|LOCKP": 0.015,
+  "REP|LOCK": 0.081,
+  "REP|R_PE_H0": 0.441,
+  "REP|R_IRR": 0.324,
+  "REP|R_SGAP": -0.333,
+  "REP|R_CORE_IC": 0.553,
+  "REP|R_TSG": 0.021,
+  "REP|R_CUT_AB": 0.239,
+  "REP|R_CHEEGER": -0.583,
+  "REP|R_ARCH": -0.279,
+  "REP|R_SLG": 0.052,
+  "REP|G_ROOMS": 0.467,
+  "REP|SETTLE": 0.519,
+  "REP|HB": 0.154,
+  "REP|G_TIE_BC": 0.053,
+  "REP|CT": 0.134,
+  "REP|TYP_KK11": 0.239,
+  "REP|TYP": 0.219,
+  "REP|R_SURF_IC": 0.383,
+  "REP|R_SLGW": -0.008,
+  "REP|R_PE_H0I": 0.265,
+  "REP|R_H0MAX": -0.67,
+  "LOCKP|LOCK": 0.415,
+  "LOCKP|R_PE_H0": -0.035,
+  "LOCKP|R_IRR": -0.024,
+  "LOCKP|R_SGAP": 0.025,
+  "LOCKP|R_CORE_IC": 0.001,
+  "LOCKP|R_TSG": 0.085,
+  "LOCKP|R_CUT_AB": 0.036,
+  "LOCKP|R_CHEEGER": 0.005,
+  "LOCKP|R_ARCH": 0.017,
+  "LOCKP|R_SLG": -0.04,
+  "LOCKP|G_ROOMS": -0.011,
+  "LOCKP|SETTLE": -0.006,
+  "LOCKP|HB": -0.06,
+  "LOCKP|G_TIE_BC": -0.048,
+  "LOCKP|CT": -0.017,
+  "LOCKP|TYP_KK11": 0.047,
+  "LOCKP|TYP": 0.044,
+  "LOCKP|R_SURF_IC": -0.085,
+  "LOCKP|R_SLGW": -0.036,
+  "LOCKP|R_PE_H0I": -0.045,
+  "LOCKP|R_H0MAX": 0.025,
+  "LOCK|R_PE_H0": 0.039,
+  "LOCK|R_IRR": 0.027,
+  "LOCK|R_SGAP": 0.057,
+  "LOCK|R_CORE_IC": 0.161,
+  "LOCK|R_TSG": 0.145,
+  "LOCK|R_CUT_AB": 0.006,
+  "LOCK|R_CHEEGER": -0.047,
+  "LOCK|R_ARCH": -0.0,
+  "LOCK|R_SLG": 0.043,
+  "LOCK|G_ROOMS": 0.031,
+  "LOCK|SETTLE": 0.033,
+  "LOCK|HB": -0.014,
+  "LOCK|G_TIE_BC": -0.029,
+  "LOCK|CT": 0.029,
+  "LOCK|TYP_KK11": 0.05,
+  "LOCK|TYP": 0.023,
+  "LOCK|R_SURF_IC": -0.021,
+  "LOCK|R_SLGW": 0.029,
+  "LOCK|R_PE_H0I": 0.004,
+  "LOCK|R_H0MAX": -0.076,
+  "R_PE_H0|R_IRR": 0.55,
+  "R_PE_H0|R_SGAP": -0.197,
+  "R_PE_H0|R_CORE_IC": 0.337,
+  "R_PE_H0|R_TSG": -0.005,
+  "R_PE_H0|R_CUT_AB": 0.088,
+  "R_PE_H0|R_CHEEGER": -0.36,
+  "R_PE_H0|R_ARCH": -0.259,
+  "R_PE_H0|R_SLG": 0.033,
+  "R_PE_H0|G_ROOMS": 0.277,
+  "R_PE_H0|SETTLE": 0.305,
+  "R_PE_H0|HB": 0.195,
+  "R_PE_H0|G_TIE_BC": 0.054,
+  "R_PE_H0|CT": 0.197,
+  "R_PE_H0|TYP_KK11": 0.079,
+  "R_PE_H0|TYP": 0.036,
+  "R_PE_H0|R_SURF_IC": 0.253,
+  "R_PE_H0|R_SLGW": -0.021,
+  "R_PE_H0|R_PE_H0I": 0.9,
+  "R_PE_H0|R_H0MAX": -0.506,
+  "R_IRR|R_SGAP": -0.064,
+  "R_IRR|R_CORE_IC": 0.272,
+  "R_IRR|R_TSG": 0.04,
+  "R_IRR|R_CUT_AB": 0.016,
+  "R_IRR|R_CHEEGER": -0.25,
+  "R_IRR|R_ARCH": -0.22,
+  "R_IRR|R_SLG": 0.045,
+  "R_IRR|G_ROOMS": 0.192,
+  "R_IRR|SETTLE": 0.212,
+  "R_IRR|HB": 0.199,
+  "R_IRR|G_TIE_BC": 0.095,
+  "R_IRR|CT": 0.12,
+  "R_IRR|TYP_KK11": 0.059,
+  "R_IRR|TYP": 0.042,
+  "R_IRR|R_SURF_IC": 0.165,
+  "R_IRR|R_SLGW": 0.004,
+  "R_IRR|R_PE_H0I": 0.476,
+  "R_IRR|R_H0MAX": -0.353,
+  "R_SGAP|R_CORE_IC": -0.054,
+  "R_SGAP|R_TSG": 0.11,
+  "R_SGAP|R_CUT_AB": -0.282,
+  "R_SGAP|R_CHEEGER": 0.337,
+  "R_SGAP|R_ARCH": 0.109,
+  "R_SGAP|R_SLG": 0.018,
+  "R_SGAP|G_ROOMS": -0.322,
+  "R_SGAP|SETTLE": -0.335,
+  "R_SGAP|HB": -0.216,
+  "R_SGAP|G_TIE_BC": -0.205,
+  "R_SGAP|CT": -0.144,
+  "R_SGAP|TYP_KK11": 0.006,
+  "R_SGAP|TYP": 0.068,
+  "R_SGAP|R_SURF_IC": -0.155,
+  "R_SGAP|R_SLGW": 0.033,
+  "R_SGAP|R_PE_H0I": -0.178,
+  "R_SGAP|R_H0MAX": 0.245,
+  "R_CORE_IC|R_TSG": 0.303,
+  "R_CORE_IC|R_CUT_AB": 0.095,
+  "R_CORE_IC|R_CHEEGER": -0.319,
+  "R_CORE_IC|R_ARCH": -0.175,
+  "R_CORE_IC|R_SLG": 0.328,
+  "R_CORE_IC|G_ROOMS": 0.247,
+  "R_CORE_IC|SETTLE": 0.285,
+  "R_CORE_IC|HB": 0.25,
+  "R_CORE_IC|G_TIE_BC": 0.088,
+  "R_CORE_IC|CT": 0.182,
+  "R_CORE_IC|TYP_KK11": -0.107,
+  "R_CORE_IC|TYP": -0.232,
+  "R_CORE_IC|R_SURF_IC": 0.4,
+  "R_CORE_IC|R_SLGW": 0.236,
+  "R_CORE_IC|R_PE_H0I": 0.234,
+  "R_CORE_IC|R_H0MAX": -0.465,
+  "R_TSG|R_CUT_AB": -0.033,
+  "R_TSG|R_CHEEGER": 0.027,
+  "R_TSG|R_ARCH": -0.116,
+  "R_TSG|R_SLG": -0.271,
+  "R_TSG|G_ROOMS": -0.012,
+  "R_TSG|SETTLE": -0.028,
+  "R_TSG|HB": -0.038,
+  "R_TSG|G_TIE_BC": -0.125,
+  "R_TSG|CT": -0.136,
+  "R_TSG|TYP_KK11": 0.058,
+  "R_TSG|TYP": 0.119,
+  "R_TSG|R_SURF_IC": -0.688,
+  "R_TSG|R_SLGW": -0.279,
+  "R_TSG|R_PE_H0I": -0.025,
+  "R_TSG|R_H0MAX": 0.07,
+  "R_CUT_AB|R_CHEEGER": -0.394,
+  "R_CUT_AB|R_ARCH": -0.096,
+  "R_CUT_AB|R_SLG": -0.212,
+  "R_CUT_AB|G_ROOMS": 0.421,
+  "R_CUT_AB|SETTLE": 0.41,
+  "R_CUT_AB|HB": 0.069,
+  "R_CUT_AB|G_TIE_BC": -0.072,
+  "R_CUT_AB|CT": 0.08,
+  "R_CUT_AB|TYP_KK11": 0.034,
+  "R_CUT_AB|TYP": 0.028,
+  "R_CUT_AB|R_SURF_IC": 0.093,
+  "R_CUT_AB|R_SLGW": -0.18,
+  "R_CUT_AB|R_PE_H0I": 0.044,
+  "R_CUT_AB|R_H0MAX": -0.29,
+  "R_CHEEGER|R_ARCH": 0.373,
+  "R_CHEEGER|R_SLG": -0.042,
+  "R_CHEEGER|G_ROOMS": -0.895,
+  "R_CHEEGER|SETTLE": -0.933,
+  "R_CHEEGER|HB": -0.149,
+  "R_CHEEGER|G_TIE_BC": -0.065,
+  "R_CHEEGER|CT": -0.127,
+  "R_CHEEGER|TYP_KK11": -0.115,
+  "R_CHEEGER|TYP": -0.11,
+  "R_CHEEGER|R_SURF_IC": -0.262,
+  "R_CHEEGER|R_SLGW": -0.006,
+  "R_CHEEGER|R_PE_H0I": -0.249,
+  "R_CHEEGER|R_H0MAX": 0.665,
+  "R_ARCH|R_SLG": 0.172,
+  "R_ARCH|G_ROOMS": -0.356,
+  "R_ARCH|SETTLE": -0.356,
+  "R_ARCH|HB": -0.144,
+  "R_ARCH|G_TIE_BC": -0.02,
+  "R_ARCH|CT": -0.023,
+  "R_ARCH|TYP_KK11": -0.06,
+  "R_ARCH|TYP": -0.017,
+  "R_ARCH|R_SURF_IC": -0.038,
+  "R_ARCH|R_SLGW": 0.215,
+  "R_ARCH|R_PE_H0I": -0.224,
+  "R_ARCH|R_H0MAX": 0.37,
+  "R_SLG|G_ROOMS": 0.02,
+  "R_SLG|SETTLE": 0.042,
+  "R_SLG|HB": 0.053,
+  "R_SLG|G_TIE_BC": 0.197,
+  "R_SLG|CT": 0.097,
+  "R_SLG|TYP_KK11": -0.279,
+  "R_SLG|TYP": -0.395,
+  "R_SLG|R_SURF_IC": 0.497,
+  "R_SLG|R_SLGW": 0.894,
+  "R_SLG|R_PE_H0I": 0.002,
+  "R_SLG|R_H0MAX": -0.069,
+  "G_ROOMS|SETTLE": 0.905,
+  "G_ROOMS|HB": 0.176,
+  "G_ROOMS|G_TIE_BC": 0.09,
+  "G_ROOMS|CT": 0.105,
+  "G_ROOMS|TYP_KK11": 0.059,
+  "G_ROOMS|TYP": 0.049,
+  "G_ROOMS|R_SURF_IC": 0.197,
+  "G_ROOMS|R_SLGW": -0.009,
+  "G_ROOMS|R_PE_H0I": 0.206,
+  "G_ROOMS|R_H0MAX": -0.599,
+  "SETTLE|HB": 0.149,
+  "SETTLE|G_TIE_BC": 0.063,
+  "SETTLE|CT": 0.116,
+  "SETTLE|TYP_KK11": 0.09,
+  "SETTLE|TYP": 0.077,
+  "SETTLE|R_SURF_IC": 0.238,
+  "SETTLE|R_SLGW": 0.018,
+  "SETTLE|R_PE_H0I": 0.211,
+  "SETTLE|R_H0MAX": -0.641,
+  "HB|G_TIE_BC": 0.748,
+  "HB|CT": 0.488,
+  "HB|TYP_KK11": -0.134,
+  "HB|TYP": -0.245,
+  "HB|R_SURF_IC": 0.222,
+  "HB|R_SLGW": -0.002,
+  "HB|R_PE_H0I": 0.234,
+  "HB|R_H0MAX": -0.18,
+  "G_TIE_BC|CT": 0.409,
+  "G_TIE_BC|TYP_KK11": -0.107,
+  "G_TIE_BC|TYP": -0.202,
+  "G_TIE_BC|R_SURF_IC": 0.187,
+  "G_TIE_BC|R_SLGW": 0.152,
+  "G_TIE_BC|R_PE_H0I": 0.076,
+  "G_TIE_BC|R_H0MAX": -0.026,
+  "CT|TYP_KK11": 0.01,
+  "CT|TYP": -0.072,
+  "CT|R_SURF_IC": 0.266,
+  "CT|R_SLGW": 0.08,
+  "CT|R_PE_H0I": 0.157,
+  "CT|R_H0MAX": -0.204,
+  "TYP_KK11|TYP": 0.588,
+  "TYP_KK11|R_SURF_IC": -0.13,
+  "TYP_KK11|R_SLGW": -0.211,
+  "TYP_KK11|R_PE_H0I": 0.004,
+  "TYP_KK11|R_H0MAX": -0.123,
+  "TYP|R_SURF_IC": -0.281,
+  "TYP|R_SLGW": -0.341,
+  "TYP|R_PE_H0I": -0.043,
+  "TYP|R_H0MAX": -0.082,
+  "R_SURF_IC|R_SLGW": 0.435,
+  "R_SURF_IC|R_PE_H0I": 0.201,
+  "R_SURF_IC|R_H0MAX": -0.407,
+  "R_SLGW|R_PE_H0I": -0.048,
+  "R_SLGW|R_H0MAX": -0.025,
+  "R_PE_H0I|R_H0MAX": -0.395
+ }
+}

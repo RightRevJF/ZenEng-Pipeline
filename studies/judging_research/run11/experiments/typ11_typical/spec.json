@@ -1,0 +1,82 @@
+{
+ "measure": "TYP11",
+ "pred": 0.03,
+ "extra": [
+  "mel_ic_mean"
+ ],
+ "alpha": 0.01,
+ "counted": true,
+ "idea": "R11-L2",
+ "K": 5,
+ "rank": 4,
+ "status": "COUNTED",
+ "readings": [
+  {
+   "name": "bare_no_extras",
+   "kind": "measure",
+   "measure": "TYP11",
+   "extra": [],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_and_mel_ic_mean_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "intensive_covers_first_year_held",
+   "kind": "intensive",
+   "pred_sign": 1
+  },
+  {
+   "name": "pc_entropy_held",
+   "kind": "extra",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "tonic_share_held",
+   "kind": "extra",
+   "extra": [
+    "tonic_share"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "TYP_KK11",
+   "kind": "measure",
+   "measure": "TYP_KK11",
+   "extra": [
+    "mel_ic_mean"
+   ],
+   "pred_sign": 1,
+   "note": "clip stability 0.198, just under the gate; reading"
+  },
+  {
+   "name": "TYP_all_12_bins",
+   "kind": "measure",
+   "measure": "TYP",
+   "extra": [
+    "mel_ic_mean"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}
