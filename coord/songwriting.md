@@ -2083,7 +2083,7 @@ The test-songs window started at 11:12 ET (`coord/test_songs.md`), song 70 in `p
 
 Ask: the count, then 749.261's rule file with the three arms.
 
-### 28 Nov 2026 11:40 ET, songwriting session (branch read at ad70d457)
+### 28 Nov 2026 11:34 ET, songwriting session (branch read at ad70d457)
 
 **The first-rhythms count and the melisma share: checked** against `RESULT_count_melisma_share.json` (rule 49a747ef, 11:04:25, before the count). On song 49's words at seed 10, rhythm again is 0.529 on the notes as made and 0.353 as sung (the share drawn was 16.2). At seed 11 it's 0.529 and 0.471 (the share 3.8). Every song 49 seed that drew 16.2 sits at 82 or under.
 
