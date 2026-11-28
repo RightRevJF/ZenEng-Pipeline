@@ -2330,3 +2330,24 @@ Ask: say whether that count comes before 749.258's rule file or after; and where
 **A form for you to weigh, not written (it would be 749.259 or as you number it): a section remembers its bars.** When a line is drawn inside a section that has already sung some bars, a kept window made of bars already sung in that section is favoured by a weight, as 923 favours a figure already sung. The weight is not ours to pick: it is fitted, as 919 fitted 818's rate in 4/4, so that the builds' different bar rhythms in a section's first 16 bars meet the metre's own table (the clips' median, 6; their middle half 4 to 8). It acts on the making, where the shortfall is, and it is a table's figure, not a 4/4 habit. What it could cost and would be watched: K3 off the beat (a remembered bar may fit the new words worse), the share drawn fresh, K6's top line, and deaths. 749.258 (the old charge by section) still stands as a separate, smaller thing.
 
 Ask: rule on that form (number it, give its marks and the fresh seeds), or name another road; and say where 749.258 and the report's rows 6 and 1 fall.
+
+### 28 November 2026, 09:28 ET, maintainer (at the commit that carries this post)
+
+**To your 09:14 order: the count is the one posted at 09:3x above** (`RESULT_count_bars_again.md`, made at the writer's word while your ruling was in the post; rule file ce26017 first). What you added, answered here:
+
+**1. Is K6 read the same way on our builds as on the table? Checked from the code; I find no difference that could put a share at the 10th with nothing wrong.**
+- The same routine reads both (`kept_rows.structure`: a bar is the set of onsets inside one bar line to the next; a bar counts as "on a rhythm already sung" if that exact set was sung in an earlier bar). The table's rows were made by `hooktheory_tables.py` with it; `pop_read.py` and `pool_count.py` call it on each section of a build.
+- Bar lines: a clip keeps its own bar lines (it is shifted by whole bars only); a build's bars are the engine's. A pickup bar counts as a bar in both.
+- Ties and melismas: onsets only, in both. Our builds are read as sung (a melisma's second note is an onset, as a clip's notes are).
+- One real difference, small and against us: a build is cut by section label, so a bar that holds the last notes of one section and the pickup of the next is counted as two part-bars, each new. That is at most one bar a section.
+- And one in the table's favour I should name: the table's 0.625 is by song with its clips pooled (most songs have one clip). Read a clip at a time on its first 16 bars, the clips' median is the same 0.625; ours 0.375 on both lyrics. So the like-for-like reading stands.
+
+**2. `count_again_rhythm.py` on song 49's words (seed 7; `count_again_rhythm_song49_seed7.json`):** of lines sung again, 0.684 have their source's count (5,405 of 7,900), and those keep the source's rhythm exactly 0.882 of the time. So on this lyric six lines sung again in ten are exact repeats of their source. It does not lift K6 because K6 is within a section and most of those sources are in another section.
+
+**3. A sentence of mine at 09:3x that I had not counted, now counted:** "a kept two-bar window is two different bars more often than not". In the pop 3/4 table's windows, by kept count, the two bars have the same rhythm 0.329 of the time; different, 0.671. It stands.
+
+**4. Your point on the old charge and song 49's words** (removed half 62.5, kept half 60.6 at seed 7): agreed, 749.258 is not the road for this.
+
+The form I put to you above (a section remembers its bars; the weight fitted to the clips' different bar rhythms in 16 bars) stands as my proposal. I have written no rule file.
+
+Ask: rule on that form, or name another road.
