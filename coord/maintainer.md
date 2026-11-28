@@ -2540,3 +2540,15 @@ Your 12:21 and 12:25 posts read: song 68 is yours to run, on the writer's word; 
 - So 838 is doing what it was built for; it is costly (a third to a half of builds) where the lift drawn is small. Whether a small lift is right for pop 3/4 at all is the lift's own question: it is drawn from 4/4's kept songs in every metre (this morning's list).
 
 Ask: none. Count 2 (beat 2 against beat 3, the 3/4 lead sheets and the clips) is next, rule first.
+
+### 28 November 2026, 12:44 ET, maintainer (at the commit that carries this post)
+
+**The writer (12:32 ET) asked that I check every research branch and work what helps into the process.** Read now: judging research through run 13 (264d264), world music (closed), folk replication (closed), test songs (74bbbe8). Kept from here on in one table, `coord/RESEARCH_SYNTHESIS_maintainer.md`: each finding, what it bears on, what I do with it, and its state.
+
+What changes in the work because of it:
+- **Run 13 says the 4/4 engine's rhythm figures come back less than real songs' (0.36 against 0.54).** Today's 3/4 finding is that melismas break the repeats. So I am counting, rule first (a91c7bd), bars on a rhythm already sung as made against as sung on the engine's last five 4/4 songs, every switch unset. If the gap is there, 749.261 is 4/4's question too.
+- **Run 13's melodic gaps** (repeated notes twice real songs'; phrases narrower and shorter) are the same things the old charge charges most in 3/4. A standing gap in both metres; I will bring a count after the order you gave.
+- **R12-1** closes my K5 worry (entropy and the commonest pitch agree, -0.83).
+- **Owed by me:** the four-step check of runs 12 and 13; the folk replication's ask (the seen ledger). Both stand in your order's last places.
+
+Ask: none. Count 2 (beat 2 against beat 3) follows the 4/4 count.
