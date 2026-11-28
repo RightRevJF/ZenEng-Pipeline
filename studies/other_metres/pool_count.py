@@ -45,6 +45,8 @@ if __name__ == "__main__":
     def desc(cs):
         o = dict(builds=len(cs), median={k: round(float(np.median([c["_f"][k] for c in cs])), 3) for k in cs[0]["_f"]}, meeting_in_100={k: round(100 * float(np.mean([met(six, k, c["_f"][k]) for c in cs])), 1) for k in six}, meeting_all_six_in_100=round(100 * float(np.mean([all(met(six, k, c["_f"][k]) for k in six) for c in cs])), 1))
         dd = [x for x in (d16(c) for c in cs) if x is not None]; o["different_bar_rhythms_in_a_sections_first_16_bars_median"] = float(np.median(dd)) if dd else None; o["the_same_mean"] = round(float(np.mean(dd)), 2) if dd else None
+        o["rhythm_again_on_the_notes_as_made_median"] = round(float(np.median([figs(E, c["notes"], phr, pop34)["rhythm_again"] for c in cs])), 3); sg = [sung(c["notes"]) for c in cs]; o["second_notes_share_of_notes"] = round(float(np.mean([sum(1 for x in v if x.get("melisma") == "second") / len(v) for v in sg])), 3)
+        ml = [x for v in sg for x in v if x.get("melisma") == "first"]; o["melismas_on_a_stressed_syllable_share"] = round(sum(1 for x in ml if x["stress"]) / len(ml), 3) if ml else None; o["syllables_on_two_notes_share"] = round(float(np.mean([sum(1 for x in v if x.get("melisma") == "first") / max(1, sum(1 for x in v if x.get("melisma") != "second")) for v in sg])), 3)
         lt = [late(c) for c in cs]; o["lines_beginning_after_their_bar_line"] = round(sum(a_ for a_, _ in lt) / max(1, sum(b_ for _, b_ in lt)), 3)
         if nine: o["meeting_all_nine_in_100"] = round(100 * float(np.mean([all(met(nine, k, c["_f"][k]) for k in nine) for c in cs])), 1); o["meeting_K5_in_100"] = round(100 * float(np.mean([met(nine, "commonest", c["_f"]["commonest"]) for c in cs])), 1)
         return o

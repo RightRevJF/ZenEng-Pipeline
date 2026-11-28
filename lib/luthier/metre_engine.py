@@ -521,7 +521,7 @@ class Engine:
             tot += w * self._lsc[key]
         return tot
     def build(self, rng):
-        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False
+        lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False; self._src = {}
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
         self._lh = self.draw_heights(rng) if self.S.get("line_heights") else None
         for k, (sec, i) in enumerate(self.KEYS):
@@ -583,11 +583,11 @@ class Engine:
                             if self.runs_ok([p_ for _, p_ in trial], self.RUN): new = trial; self.stats["839: a returning line lifts one held note"] += 1
                             break
                 if self.AIM: new = self.join(new, lines, k, sec, i) or new                           # 929: a copy that would run past the cap at its join moves its first note (the whole-build gate stands behind it)
-                lines[(sec, i)] = new; prev = new[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; self._made[(sec, i)] = "copy"; continue
+                lines[(sec, i)] = new; prev = new[-1][1]; self.stats["780: a copied line keeps its source's join"] += 1; self._made[(sec, i)] = "copy"; self._src[(sec, i)] = (how[1], how[2]); continue
             if how[0] == "again":
                 src = lines[(how[1], how[2])]; r = self.again(rng, src, self.LINES[how[1]][how[2]][0][1], sy, U, sec, i, tm, slot)
                 r = self.join(r, lines, k, sec, i) if r is not None else None                         # 929
-                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and (not self.S.get("again_inside") or r[-1][0] <= slot - (12 if self.LE else self.BREATH)): lines[(sec, i)] = r; prev = r[-1][1]; self._made[(sec, i)] = "again"; continue
+                if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and (not self.S.get("again_inside") or r[-1][0] <= slot - (12 if self.LE else self.BREATH)): lines[(sec, i)] = r; prev = r[-1][1]; self._made[(sec, i)] = "again"; self._src[(sec, i)] = (how[1], how[2]); continue
                 self.stats["712: a line sung again that could not be fitted, drawn fresh"] += 1
             ons = None; bw = self.S.get("borrow")
             if self.S.get("kept_rests") and how[0] in ("fresh", "plan") and k > 0 and not (self.S.get("title_nowait") and f"{sec}:{i}" in self.S.get("hooks", ())) and (self.S.get("kept_rests_rate") is None or rng.random() < self.S["kept_rests_rate"] * (self.slot_len(*self.KEYS[k - 1]) // self.BAR)):               # 870; trial (749.235): a title line does not wait (749.58): the rest before this line drawn from the kept rests, where the slot leaves room
@@ -602,7 +602,7 @@ class Engine:
                     self._818 = True; r = self.again(rng, lines[(sec, j)], self.LINES[sec][j][0][1], sy, U, sec, i, tm, slot); self._818 = False
                     if r is not None and r[0][0] >= tm and (cap is None or r[-1][0] <= cap) and (lim_ is None or r[-1][0] - r[0][0] <= lim_) and (not self.S.get("again_inside") or r[-1][0] <= slot - (12 if self.LE else self.BREATH)) and all(b2 > a2 for a2, b2 in zip([t for t, _ in r], [t for t, _ in r][1:])):      # trial (again inside): a line sung again ends inside its own slot
                         r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
-                        if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; self._made[(sec, i)] = "818 again"; continue
+                        if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; self._made[(sec, i)] = "818 again"; self._src[(sec, i)] = (sec, j); continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1; self._made[(sec, i)] = "818 rhythm"
             if ons is None and self.S.get("source_words") and self.S.get("stress_place") and self.later_sets(sec, i):      # trial (749.252): a line that will be sung again is drawn for every set of words it will carry: twelve draws by today's rule, one taken by the later sets' summed stress score
                 cs_ = [c_ for c_ in (self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) for _ in range(12)) if c_ is not None]
@@ -670,6 +670,10 @@ class Engine:
                 if (j + 1 == len(flat) or (flat[j + 1]["sec"], flat[j + 1]["line"]) != (n["sec"], n["line"])) and self.SUNGB.get(id(self.LINES[n["sec"]][n["line"]])) == 3 and self.SLOTS[n["sec"]][n["line"]] == 4 and rng.random() < self.S.get("held_bar_share", 0): n["dur"] = max(n["dur"], self.line_start(n["sec"], n["line"]) + 4 * self.BAR - self.BEAT - n["on"])
         for j in range(len(flat) - 1):
             if flat[j]["on"] + flat[j]["dur"] > flat[j + 1]["on"]: flat[j]["dur"] = flat[j + 1]["on"] - flat[j]["on"]
+        if self.S.get("melisma_follow"):                                                    # trial (749.261): each note marked with its place in its line, and a line sung again with the line it sang, for the melisma step
+            for n in flat:
+                n["u"] = n["on"] - self.line_start(n["sec"], n["line"])
+                if (n["sec"], n["line"]) in self._src: n["of"] = list(self._src[(n["sec"], n["line"])])
         return dict(notes=flat, plans=plans), None
     # ---- readings, gates, the pick
     def readings(self, notes):

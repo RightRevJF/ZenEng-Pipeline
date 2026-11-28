@@ -349,6 +349,7 @@ def plan(L):
         if os.path.exists(rp_): r_ = json.load(open(rp_)); ks_ = sorted(int(k_) for k_ in r_["lengths_in_twelfths"]); spec["kept_rests"] = [ks_, [r_["lengths_in_twelfths"][str(k_)] for k_ in ks_]]; spec["kept_rests_rate"] = r_["rests_a_bar"]
         else: spec["kept_rests"] = None
     if os.environ.get("LUTHIER_PICKUP_WINDOWS", "1") == "0" and spec["metre"] != "4/4": spec["no_pickup_windows"] = True      # trial (749.246), off: a kept two-bar window whose first bar holds only a pickup is not offered
+    if os.environ.get("LUTHIER_MELISMA_FOLLOW", "0") == "1": spec["melisma_follow"] = True      # trial (749.261), off: a line that sings an earlier line again takes its second notes where its source has them
     if os.environ.get("LUTHIER_OCTAVE_OUTSIDE", "0") == "1" and spec["metre"] != "4/4": spec["no_leap_past_an_octave"] = True      # trial (749.260), off: 959 acts outside 4/4 (no leap past an octave inside a line, read as sung)
     if float(os.environ.get("LUTHIER_BAR_MEMORY", "0") or 0) > 1: spec["bar_memory"] = float(os.environ["LUTHIER_BAR_MEMORY"])      # trial (749.259), off: a section remembers its bars: a kept window's bar already sung in the section is favoured by this weight
     if os.environ.get("LUTHIER_CEILING_TABLE", "0") == "1" and spec["metre"] != "4/4":      # trial (749.255), off: outside 4/4, 956's ceiling at the metre's own table (a .commonest.json beside it); no file, no gate
@@ -485,7 +486,7 @@ def write(L, N=1000, K=12):
                chord_pick=dict(draft=seed, drafts=K, charge=round(c, 3), readings=cr, kept=W.Q),
                judge7=run.get("judge7"), melody=dict(made=run["made"], survivors=run["survivors"], deaths=run["deaths"], pick=run["pick"]["fp"], charge=run["pick"]["charge"], median_charge=run["median_charge"], readings=run["pick"]["readings"],
                            kept=run["kept_quartiles"], uncharged=run["uncharged"], entries=run["entries"], stressed_on_beat=run["pick"]["stressed_on_beat"], stats=run["stats"],
-                           notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"]) for n in notes]),
+                           notes=[dict(on=n["on"], dur=n["dur"], midi=n["p"] + shift, sec=n["sec"], line=n["line"], text=n["text"], stress=n["stress"], **({k_: n[k_] for k_ in ("u", "of") if k_ in n})) for n in notes]),
                bass=[dict(on=t, dur=dd, midi=p) for t, dd, p in bs], bar=E.BAR, beats=E.BEATS, spec=spec, chord_tones={x: sorted((t + key["tonic_midi"]) % 12 for t in C.tones(x)) for x in spec["chords"]})
     import hashlib as _h                                                                      # 905 (749.82): the record says which kept tables it read
     rec["kept_tables"] = {t: _h.sha1(open(os.path.join(HERE, "..", "..", "tables", t), "rb").read()).hexdigest()[:10] for t in ([f"metre_atlas/{spec.get('table') or spec['metre'].replace('/', '-') + '_sung'}.json", "metre_atlas/kept_readings.json", "register_plan.json"] + (["kept_word_weight.json", "kept_line_ends.json"] if spec.get("word_weight") else []) + (["kept_octave_tail.json"] if spec.get("octave_tail") else []) + (["loop_chance.json"] if (L.get("chords") == "loop_less" or os.environ.get("LUTHIER_LOOP") == "chance") else []) + (["kept_line_repeat.json"] if spec.get("borrow_kept") else []) + (["kept_line_join.json"] if spec.get("join_moves") else []) + (["kept_line_heights.json"] if spec.get("line_heights") else []) + (["kept_page_gate.json"] if spec.get("page_gate") else []) + (["kept_commonest_pitch.json"] if spec.get("pitch_ceiling") else []) + (["kept_bridge_pitch.json"] if "Bridge" in (spec.get("pitch_ceiling") or {}) else []) + (["kept_words_to_shape.json"] if (spec.get("target") or {}).get("shape_from") == "the song" else []))}
@@ -558,6 +559,16 @@ def melisma_notes(ns, L, scale, key="midi", how=None, cap=None, share=None, clas
         for _ in range(min(k_, len(idx))):
             if sum(ww) <= 0: break
             j = rng.choices(range(len(idx)), ww)[0]; chosen.add(cands[idx[j]]); ww[j] = 0.0
+    if any("u" in n for n in ns):                                                            # trial (749.261): every line that sings an earlier line again takes its second notes where its source has them, in song order; 919 and 942 stand where the lyric marks the line and the counts are the same
+        idx_ = {}; cs_ = set(cands)
+        for i, n in enumerate(ns): idx_.setdefault((n["sec"], n["line"]), []).append(i)
+        for (sec_, li_), ii in idx_.items():
+            h_ = (how or {}).get(f"{sec_}:{li_}"); of_ = ns[ii[0]].get("of")
+            if h_ and h_[0] in ("copy", "again") and (h_[1], int(h_[2])) in idx_ and len(idx_[(h_[1], int(h_[2]))]) == len(ii):
+                src_ = idx_[(h_[1], int(h_[2]))]; chosen -= set(ii); chosen |= {ii[k_] for k_, q_ in enumerate(src_) if q_ in chosen and ns[ii[k_]]["dur"] >= 6 and (clash is None or not relocate or second_(ii[k_], ns[ii[k_]]) is not None)}
+            elif of_ and (of_[0], int(of_[1])) in idx_:
+                su_ = {ns[q_]["u"] for q_ in idx_[(of_[0], int(of_[1]))] if q_ in chosen}; chosen -= set(ii); chosen |= {i_ for i_ in ii if ns[i_]["u"] in su_ and i_ in cs_}
+        how = None
     if how:                                                                                  # 919 (749.97): a line that returns note for note returns with its melismas: a copy takes its source's, syllable for syllable
         idx_ = {}
         for i, n in enumerate(ns): idx_.setdefault((n["sec"], n["line"]), []).append(i)
