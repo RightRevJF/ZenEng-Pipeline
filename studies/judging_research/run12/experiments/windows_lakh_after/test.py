@@ -29,7 +29,7 @@ def guard():
 
 def versions_for(cliques):
     z = zipfile.ZipFile(ZIP); out = {}
-    name = [n for n in z.namelist() if n.endswith(".jsonl")][0]
+    name = "main/Discogs-VI-20240701.jsonl"   # fixed 28 Nov ~11:42 ET: the first run took the YT subset (see NOTE_rerun.md)
     with z.open(name) as f:
         for line in f:
             d = json.loads(line)
