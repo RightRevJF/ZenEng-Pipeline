@@ -332,6 +332,11 @@ def plan(L):
         import word_weight as WW_; spec["word_weight"] = dict(place=WORD_PLACE, step=WORD_STEP, again_cost=WORD_AGAIN, length=WORD_LENGTH, last_note=True, short_stress=WORD_SHORT, gate=WW_.table()["fit_percentiles_10_25_50_75_90"][0])
     else: flags.append("the words' weights are not read: no kept table of them outside 4/4")
     spec["word_pitch"] = WORD_PITCH; spec["judge"] = 7; spec["one_bar_share"] = ONE_BAR; spec["kept_rests"] = [[12, 15, 18, 24, 36, 48], [0.2, 0.15, 0.1, 0.25, 0.15, 0.15]]      # 870: the kept rests after a line (10th percentile a quarter, 25th 15 twelfths, median a half, 75th a whole)
+    if os.environ.get("LUTHIER_REST_TABLE", "0") == "1" and spec["metre"] != "4/4":      # trial (749.245), off: outside 4/4 the rest a line may wait is the table's own, at the table's rate; no rests file beside the table, no wait
+        rp_ = os.path.join(M.ATLAS, (spec.get("table") or spec["metre"].replace("/", "-") + "_sung") + ".rests.json")
+        if os.path.exists(rp_): r_ = json.load(open(rp_)); ks_ = sorted(int(k_) for k_ in r_["lengths_in_twelfths"]); spec["kept_rests"] = [ks_, [r_["lengths_in_twelfths"][str(k_)] for k_ in ks_]]; spec["kept_rests_rate"] = r_["rests_a_bar"]
+        else: spec["kept_rests"] = None
+    if os.environ.get("LUTHIER_PICKUP_WINDOWS", "1") == "0" and spec["metre"] != "4/4": spec["no_pickup_windows"] = True      # trial (749.246), off: a kept two-bar window whose first bar holds only a pickup is not offered
     if L.get("key"):
         # 968 (749.219; studies/asked_key), a setting: a key the writer asks for ("key": "Am"). The planned band of the tune is centred in the voice; the asked tonic's octave nearest under it is the written tonic; the registers move by the difference
         nm_ = str(L["key"]); mn_ = nm_.endswith("m"); rt_ = nm_[:-1] if mn_ else nm_; md_ = L.get("mode", "major")

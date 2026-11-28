@@ -1536,3 +1536,31 @@ So it is not that the draw fails to favour the first beat (a fresh line lands th
 - Then the seen lyrics (52, 61's words, 50's words) on every mark, and only then the next held-out lyric (49 or 58, by your rule).
 
 Ask: your word on A and B.
+
+### 27 November 2026, 23:49 ET, maintainer (at the commit that carries this post)
+**749.245 and 749.246: all three seen lyrics meet every mark, with room. The second held-out lyric (song 49's words), read once, meets the first-beat mark and misses two others.** Rule first (2011369), then code and runs. `studies/other_metres/RESULT_held_out_2_6_8.md`; figures and met/missed printed from `held_out_2_6_8.json` by one command (`read_package.py`); every record carries its switches and a judge that ran; bytes the same unset.
+
+| Pick; median | Song 52 | Song 61's words | Song 50's words | **Song 49's words (held out)** | Mark |
+|---|---|---|---|---|---|
+| Living; pool | 827; 200 | 798; 399 | 782; 223 | 816; 76 | 30; 10 |
+| Notes a bar | 3.861; 3.87 | 3.655; 3.667 | 3.856; 3.845 | **3.49; 3.51** | 3.60 to 4.33 |
+| On the beat | 0.465; 0.466 | 0.475; 0.458 | 0.436; 0.462 | 0.421; 0.483 | 0.389 |
+| First beat | 0.247; 0.251 | 0.267; 0.26 | 0.235; 0.251 | 0.266; 0.271 | 0.211 |
+| 731 | 0.653 | 0.524 | 0.569 | 0.6 | 0.40 |
+| 780; 840 in ten | 0; 0 | 0; 0 | 0; 0 | 0; 0 | under one |
+| Title on time (lowest) | 100 | 94.9 | 100 | 100 | 75 |
+| Silence before a title line | 2 | 2 | 2 | 2 | 3 |
+| 712 | 1,063 | 1,060 | 416 | **327 (mark 177)** | 1.5 times before 749.240 |
+| Never made, of 600 | 0 | 0 | 0 | 0 | |
+| Lines beginning late | 0.057 | 0.03 | 0.043 | 0.026 | Essen 0.081 |
+
+- **Which switch:** with 749.245 off the late lines come back (0.374, 0.233, 0.365) and first-beat onsets miss on two lyrics. With 749.246 off little changes. 870's 4/4 rests were the cause.
+- **The tie between songs 49 and 58 (both median 7):** your rule breaks it by title lines; I could not read song 69's count without opening a banked lyric, so I settled it in the rule file before the run as the fewer (song 49, 5). Say if you meant otherwise; song 58 is still unseen.
+- **Song 49's misses.** Notes a bar: its verses are at 4.06 and 4.0 syllables a bar, its choruses at 2.9 (five to eight syllables a line, six of them given three bars by the title's room); the whole song 3.32, and 3.5 without the title room's five bars. The plan can thin a dense section and cannot fill a thin one. 712: its own count before 749.240 was 118 on 307 living builds, so the mark is 177; it draws 327 on 816.
+- By the rule both are misses. 6/8 folk is not passed on a held-out lyric. Song 49's words are seen now and not run again tonight under a changed form.
+
+**Where that leaves it:** three seen lyrics on every mark with room; two held-out lyrics each one or two marks short, and each short on a different mark. The marks that used to fail everywhere (never made, 840, the title's entry, first-beat onsets) hold on unseen words.
+
+**Next, counts before forms:** (1) the thin chorus: what the title's room costs each section, and which lines could give a bar back; (2) which lines on song 49's words are drawn fresh and what turns them away; whether 1.5 times a small count is the right mark is yours to say. Then song 58's words held out.
+
+Ask: check the result; your word on the tie-break, and on the 712 mark where the count before was small.
