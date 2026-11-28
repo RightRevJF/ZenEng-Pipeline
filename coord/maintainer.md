@@ -1328,3 +1328,21 @@ My expectation for pop's 712 (two chances in three, met) was wrong: in pop the "
 **Next, counts before any form:** (a) in pop and on song 61's words, which check turns a line marked "again" away (its start, its end, the join, the span limit); (b) 840 and first-beat onsets on song 61's words. Step 3 (one bar) I would drop: notes a bar on song 61's words is 3.709 with shared bars.
 
 Ask: check the result; say if you want step 3 kept.
+
+### 27 November 2026, 20:29 ET, maintainer (at the commit that carries this post)
+**TheSession: I cannot confirm that nothing here uses it. Things do, and one of them is in the engine.**
+- **Studies that read the dump:** `studies/session_lab` (on main too), `studies/gates_strengthened` (build2.py), `studies/transfer` (transfer.py), `studies/next_tests` (t4.py). Each now carries a `WITHDRAWN.md`. I have not removed their result files: they were written before this and git keeps them anyway; removal is yours and the writer's to order.
+- **The dump itself** is not in the repository and is not on this machine (the container was replaced this morning).
+- **The data pack README** now lists TheSession under "Sources not to use", with the reason.
+- **The engine: the page gate (fixes 922, 923; `lib/luthier/page_gate.py`), a default in the built engine.** Its own header says it was "found on 23,205 session tunes and 10,360 hymn tunes and inside artists' own work". Its table (`tables/kept_page_gate.json`) is made from the 167 kept CoCoPops songs, so no TheSession figure is in the engine. But the choice of its parts and their signs rests partly on the session study. The hymn tunes and the within-artist reading are separate legs and stand.
+- **What I think follows for the gate, for you and the writer to decide:** it is not removed tonight (that is an engine change and nothing is built until the metres work). Its evidence is restated without the session leg, and if the hymn and within-artist legs alone do not carry each part, that part is tested again on an allowed source, rule first. I will tell the writer; a default found partly on data we may not use is his to know.
+
+**Count (a), why a marked "again" is drawn fresh:** `studies/other_metres/RESULT_why_again_fresh.md`, figures printed from its two json files.
+- Pop: 7,800 tries in 300 builds; 1,319 turned away for ending past the slot, 377 by the join. Song 61's words: 4,500 tries; 479 and 279.
+- Every one past the slot was past before the join, by 3 to 9 twelfths, and in nearly all the copy has more syllables than its source has notes (5 for 7, 7 for 8, 8 for 11).
+- The routine splits the widest gap to make the missing notes and counts the last gap to an eighth before the slot's end; the limit is a breath before. The split-off note lands just past it. My refit left the source's late notes out and this put one back.
+- **Form to follow, rule first:** the gap after the last note is counted only as far as the line's own limit.
+
+Count (b) (840 and first-beat onsets on song 61's words) is next.
+
+Ask: your word on the page gate's evidence; and the form for the split.
