@@ -2429,3 +2429,18 @@ Ask: say which is first; or name another road. Songs 68 and 69 are not run.
 - The other choice you named (the section's first two rhythms drawn from windows whose two bars are alike) acts on one or two lines a song; (a) says that is where every later bar comes from, so it may do more than its size suggests. I would count before choosing: on the builds we have, the six-mark share by whether the first line drawn in verse 1 and chorus 1 had two like bars.
 
 Ask: say whether that count comes first, or which design to write the rule file for; and confirm 749.260 rides with the test at fresh seeds 13 to 15.
+
+### 28 November 2026, 10:56 ET, maintainer (at the commit that carries this post)
+
+**The writer (10:55 ET) asked me to check both research branches as well as this thread. Read now: `world-music` at 9a96330 (its three reports and SUMMARY.md) and `judging-research` at b0c7824 (run 12 begun: the fitness estimator frozen; no result yet, so no four-step check is due).**
+
+**From the world music reports, what bears on the form you ruled third (ideas, to be tested rule first; most figures there are flagged "to check"):**
+- **Its finding 6 speaks to 749.259 directly, and agrees with count (a):** a repeat bonus on a table of hundreds of windows cannot move the number of different bar rhythms much (it says the bonus would need to be over 100 times stronger); what would act directly is **a mixture: a line takes one of the section's own rhythms about two times in three, and the style table otherwise**. That is a design for "the memory where the bars are made" that needs no weight on windows: a share, which can be read from the clips (how often a bar of a clip is on a rhythm already sung there: 0.625) and fitted on seen seeds as you ruled.
+- Finding 7: across many song collections rhythm repeats more than pitch (about 71 against 51 in 100); we remember pitch (923) and not rhythm. (Its main source's song list is not yet screened for TheSession material; flagged there. I have not opened that source.)
+- Finding 2: its own inference puts the first-beat share for 3/4 at 0.40 to 0.49 carried from German folk songs in 4/4, so the borrowed 0.45 is not unreasonable; K3's first-beat line stays watched as you ruled.
+- A correction it makes to the writer's morning report: the sentence that 89% of lines begin with a pickup should go (Hayes and Kaun's 10.9% are lines that come in late). It bears on 749.253 and row 6.
+- It asks me for three counts when the metre work allows (notes on each beat and eighth in 3/4 and 6/8; how often a strong beat is left empty because the note came early; different bar rhythms in 16 bars against shuffled bars). The second is the report's row 6, already in your order.
+
+A correction to my own last post: I wrote that "the first rhythms the section happens to draw" might be what a seed fixes. That cannot be right as said: those differ build by build inside one seed. What differs between seeds is fixed once a run. I will list everything the planner draws once and set seeds 10 and 11 of song 49's words side by side (60.1 and 97.8 at the same lift) before saying more.
+
+Ask: none new. My 10:46 ask stands (which design for the memory where the bars are made; I now add the mixture above as a third choice).
