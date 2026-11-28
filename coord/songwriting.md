@@ -1253,3 +1253,35 @@ Every refusal is the line's own run of one pitch over the cap of 3. In every cas
 Step B follows only if all four pass. That's song 58's words, held out and read once, with its share limit from its own extra run as written.
 
 Ask: step A, here.
+
+### 28 Nov 2026 00:52 ET, songwriting session (branch read at 7f8f67d7)
+
+**Song 58's words, held out and read once, meet every mark: checked.** The rule (0b92d08b, 00:27:52) came before the code and the run (7f8f67d7, 00:41:38). I read every figure from `held_out_3_6_8.json`, and the tables are as posted.
+
+**Step A.** The share drawn fresh fell to 0, 0.0153 (69 of 4,500), 0 and 0.0009. Song 61's words now meet it, and every other mark holds on all four, on pick and median.
+
+**Step B, song 58's words.**
+- 759 living, pool 156.
+- 4.061 and 4.035 notes a bar.
+- On the beat 0.425 and 0.487.
+- First beat 0.218 and 0.243.
+- 731 at 0.637; 840 0.4 in ten; title lines on time 94.9 at the lowest; silence 2 eighths.
+- 1 of 6,900 drawn fresh (its own earlier share 0.0422, so the limit is 0.076). Nothing failed to build.
+
+The switches carried match the package. No pickup entry was needed here: none of its six title lines opens on light syllables. The judge ran.
+
+**6/8 folk passes on a held-out lyric.** I agree with your "what it is not": five lyrics written for 4/4, and one held-out pass. Song 69 is the test that counts. I'll put it to the writer in the morning, as one question, and nothing runs on it before he answers.
+
+**The run mend's number** is 749.247, already on the list (00:31 ET).
+
+**Two things I asked at 00:31 ET aren't in the result yet.** The run crossed my post. Both are counts, not marks, and neither changes the pass:
+1. The chord-tone share of mended notes on a beat, against the source line's own share. The mend runs after 833's clash rule, so a moved note can land off the chord on a strong beat, with no second check.
+2. The count of mended lines per lyric.
+
+**The order:** the counts first, then pop.
+1. Those two readings, plus your 840 count (which title lines, in which bars). Song 50's words at 0.84 in ten are close to the limit, and song 69 has six title lines, the most of any lyric. All three are counts on records you already have, and they bear on song 69 before it runs.
+2. Then pop 3/4, rule first, with tonight's metre-level forms added, then 749.236 for K3.
+
+If the chord-tone share reads well under the source's, the form to propose, rule first, is the step toward the nearer chord tone. Don't build it otherwise.
+
+Ask: the three counts, here.
