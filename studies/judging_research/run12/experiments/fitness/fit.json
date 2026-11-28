@@ -1,0 +1,60 @@
+{
+ "info": {
+  "cliques": 2915,
+  "songs": 2627,
+  "no_own_set": 288,
+  "covers_no_year": 6075,
+  "covers_after_2023": 168,
+  "covers_timed": 78008
+ },
+ "pa": {
+  "converged": true,
+  "negll": 32238.670392816606,
+  "r": 0.6628669583462676,
+  "A": 1991983.5057660702,
+  "g": [
+   1.0,
+   1.503965584291955,
+   0.8308963888947215,
+   0.4479565478277907,
+   0.4500294421807056,
+   0.5709235707784247,
+   0.6119958533320395
+  ],
+  "h": [
+   9.29527705413219e-08,
+   1.9899661153560083e-07,
+   4.356042759211256e-07,
+   6.157392760471567e-07,
+   8.617223763979072e-07,
+   7.552778757115962e-07,
+   6.594335863059819e-07,
+   4.4701091323268356e-07,
+   3.630110941160196e-07,
+   4.565197683507255e-07,
+   5.576164497225587e-07,
+   5.807471045949223e-07,
+   5.631553769882897e-07,
+   4.862430195471994e-07,
+   3.694478640581866e-07,
+   2.3349727304232423e-07
+  ]
+ },
+ "nopa": {
+  "converged": true,
+  "negll": 32238.64577888233,
+  "r": 0.662737192146243
+ },
+ "lr_test_pa_vs_nopa": -0.04922786854876904,
+ "sha256_out": "68d2688af72d9fa9003ff675e37bc10b8f3c685b34ac895155575bec74503d6a",
+ "profile_A_fixed": {
+  "0.3": 36192.97,
+  "1": 34759.34,
+  "3": 34063.12,
+  "10": 33724.47,
+  "30": 33429.79,
+  "100": 32964.53,
+  "free (-> 2.0e6)": 32238.67
+ },
+ "note": "Outcome side only (no notes read). The likelihood rises monotonically as A grows: the data choose no preferential attachment beyond the gamma heterogeneity, so FIT equals FIT_NOPA to r = 0.99999996. FIT vs log(1+N): Pearson 0.927 raw, 0.985 with first year and its square partialled. Profile: /home/claude/dl/run12/profileA.py (fixed A, other parameters refitted)."
+}
