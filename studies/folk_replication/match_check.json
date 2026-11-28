@@ -1,0 +1,943 @@
+{
+ "how": "judged by eye, by the Claude study session, from the tune's titles and the clique's titles, writers, three artists and genres; no count of artists shown; 27 Nov 2026, before the join",
+ "totals": {
+  "unsure": 9,
+  "right": 63,
+  "wrong": 28
+ },
+ "error_rate": 0.28,
+ "upper": 0.37,
+ "by_collection": {
+  "oneills": {
+   "unsure": 5,
+   "right": 16,
+   "wrong": 18
+  },
+  "ryans": {
+   "wrong": 6,
+   "right": 4,
+   "unsure": 1
+  },
+  "airds": {
+   "right": 6,
+   "wrong": 4
+  },
+  "essen": {
+   "right": 37,
+   "unsure": 3
+  }
+ },
+ "by_step": {
+  "exact": {
+   "unsure": 9,
+   "right": 59,
+   "wrong": 18
+  },
+  "loose": {
+   "wrong": 10,
+   "right": 4
+  }
+ },
+ "checks": [
+  {
+   "n": 1,
+   "collection": "oneills",
+   "tune": "She Is Far from the Land",
+   "clique": "C-0138064",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "Frank Lambert's art-song setting is mixed in with Moore's air"
+  },
+  {
+   "n": 2,
+   "collection": "oneills",
+   "tune": "the Gentle Maiden",
+   "clique": "C-0257606",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 3,
+   "collection": "oneills",
+   "tune": "AN IRISH LULLABY",
+   "clique": "C-0165672",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "Acker Bilk recordings; may be another 'Irish Lullaby'"
+  },
+  {
+   "n": 4,
+   "collection": "oneills",
+   "tune": "The Sixpence",
+   "clique": "C-0096278",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "reggae song by The Escorts"
+  },
+  {
+   "n": 5,
+   "collection": "oneills",
+   "tune": "Give Me Your Hand",
+   "clique": "C-0037214",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 6,
+   "collection": "oneills",
+   "tune": "The Banks of Claudy",
+   "clique": "C-0076617",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 7,
+   "collection": "oneills",
+   "tune": "The Wearing of the Green",
+   "clique": "C-0108338",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 8,
+   "collection": "oneills",
+   "tune": "THE SNOW STORM",
+   "clique": "C-0128173",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Ryo Kawasaki jazz piece"
+  },
+  {
+   "n": 9,
+   "collection": "oneills",
+   "tune": "CHRISTMAS EVE",
+   "clique": "C-0107454",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Celine Dion song"
+  },
+  {
+   "n": 10,
+   "collection": "oneills",
+   "tune": "The Southern Breeze",
+   "clique": "C-0041994",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "country song (Garvin, Shapiro)"
+  },
+  {
+   "n": 11,
+   "collection": "oneills",
+   "tune": "The Advice",
+   "clique": "C-0057735",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Billy Preston / Sly Stone song"
+  },
+  {
+   "n": 12,
+   "collection": "oneills",
+   "tune": "Sparkling Blue Eyes.",
+   "clique": "C-0223724",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Bill Cox country song"
+  },
+  {
+   "n": 13,
+   "collection": "oneills",
+   "tune": "THE KING OF THE PIPERS",
+   "clique": "C-0204581",
+   "step": "loose",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 14,
+   "collection": "oneills",
+   "tune": "SADDLE THE PONY",
+   "clique": "C-0317430",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 15,
+   "collection": "oneills",
+   "tune": "The Storyteller",
+   "clique": "C-0030197",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "pop/jazz song of the same name"
+  },
+  {
+   "n": 16,
+   "collection": "oneills",
+   "tune": "The Wheels of the World.",
+   "clique": "C-0253662",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "the clique is the reel; O'Neill's tune is in 6/8"
+  },
+  {
+   "n": 17,
+   "collection": "oneills",
+   "tune": "Palm Sunday",
+   "clique": "C-0193819",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Jerry Garcia song"
+  },
+  {
+   "n": 18,
+   "collection": "oneills",
+   "tune": "The Short Grass",
+   "clique": "C-0184872",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Ian & Sylvia song"
+  },
+  {
+   "n": 19,
+   "collection": "oneills",
+   "tune": "The Monaghan Jig",
+   "clique": "C-0277224",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 20,
+   "collection": "oneills",
+   "tune": "The Merry Maiden",
+   "clique": "C-0328667",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Doc Williams polka"
+  },
+  {
+   "n": 21,
+   "collection": "oneills",
+   "tune": "The Field of Flowers",
+   "clique": "C-0138471",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Paul Evans song"
+  },
+  {
+   "n": 22,
+   "collection": "oneills",
+   "tune": "Come to the Dance",
+   "clique": "C-0196022",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Barron Knights pop song"
+  },
+  {
+   "n": 23,
+   "collection": "oneills",
+   "tune": "Bonnie Kate",
+   "clique": "C-0259146",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 24,
+   "collection": "oneills",
+   "tune": "The Blackberry Blossom",
+   "clique": "C-0122930",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "the American bluegrass tune of the same name, not the Irish reel"
+  },
+  {
+   "n": 25,
+   "collection": "oneills",
+   "tune": "Peter Street",
+   "clique": "C-0275831",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 26,
+   "collection": "oneills",
+   "tune": "Drowsy Maggie",
+   "clique": "C-0204583",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 27,
+   "collection": "oneills",
+   "tune": "Around The World For Sport",
+   "clique": "C-0263779",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 28,
+   "collection": "oneills",
+   "tune": "Monday Morning",
+   "clique": "C-0039610",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "a modern song by the same title mixed with folk players"
+  },
+  {
+   "n": 29,
+   "collection": "oneills",
+   "tune": "Rakish Paddy",
+   "clique": "C-0204584",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 30,
+   "collection": "oneills",
+   "tune": "Bantry Bay",
+   "clique": "C-0246008",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "Molloy's song; O'Neill's may be another air"
+  },
+  {
+   "n": 31,
+   "collection": "oneills",
+   "tune": "The Echo",
+   "clique": "C-0038679",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Ernesto Kohler flute piece"
+  },
+  {
+   "n": 32,
+   "collection": "oneills",
+   "tune": "Early in the Morning",
+   "clique": "C-0035151",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "B.B. King / Bobby Darin songs"
+  },
+  {
+   "n": 33,
+   "collection": "oneills",
+   "tune": "The Sunrise",
+   "clique": "C-0007598",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Cliff Friend song"
+  },
+  {
+   "n": 34,
+   "collection": "oneills",
+   "tune": "The Flowers of Spring",
+   "clique": "C-0265096",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Kaarlo Valkama song"
+  },
+  {
+   "n": 35,
+   "collection": "oneills",
+   "tune": "The Fairies' Hornpipe",
+   "clique": "C-0159002",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 36,
+   "collection": "oneills",
+   "tune": "The Cuckoo's Nest",
+   "clique": "C-0142486",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 37,
+   "collection": "oneills",
+   "tune": "The Rakes Of Mallow",
+   "clique": "C-0302802",
+   "step": "loose",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 38,
+   "collection": "oneills",
+   "tune": "The Return From Fingal",
+   "clique": "C-0185304",
+   "step": "loose",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 39,
+   "collection": "oneills",
+   "tune": "The Fox Chase",
+   "clique": "C-0159019",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Sonny Terry harmonica piece"
+  },
+  {
+   "n": 40,
+   "collection": "ryans",
+   "tune": "All the Rage -- Reel",
+   "clique": "C-0164631",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Elvis Costello song"
+  },
+  {
+   "n": 41,
+   "collection": "ryans",
+   "tune": "\"BULLY FOR YOU\" -- JIG.",
+   "clique": "C-0107697",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Tom Robinson / Peter Gabriel song"
+  },
+  {
+   "n": 42,
+   "collection": "ryans",
+   "tune": "The Cup of Tea -- Reel",
+   "clique": "C-0014844",
+   "step": "loose",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 43,
+   "collection": "ryans",
+   "tune": "THE GIRL I LEFT BEHIND ME",
+   "clique": "C-0144574",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 44,
+   "collection": "ryans",
+   "tune": "Good-bye, Sweetheart -- Reel",
+   "clique": "C-0233471",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "pop song (Lottie Biggs)"
+  },
+  {
+   "n": 45,
+   "collection": "ryans",
+   "tune": "Hang Fire -- Jig",
+   "clique": "C-0074182",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Rolling Stones song"
+  },
+  {
+   "n": 46,
+   "collection": "ryans",
+   "tune": "Hiawat:ha -- Hornpipe",
+   "clique": "C-0078877",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Belle Stars / Dixieland pieces"
+  },
+  {
+   "n": 47,
+   "collection": "ryans",
+   "tune": "The Keel Row -- Reel",
+   "clique": "C-0160298",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 48,
+   "collection": "ryans",
+   "tune": "New Orleans (Lancashire) -- Clog",
+   "clique": "C-0047469",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "New Orleans songs (Guida, Carmichael)"
+  },
+  {
+   "n": 49,
+   "collection": "ryans",
+   "tune": "Paddy on the Turnpike -- Reel",
+   "clique": "C-0180022",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 50,
+   "collection": "ryans",
+   "tune": "STATEN ISLAND -- HORNPIPE",
+   "clique": "C-0038870",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "credited to Johnny McEvoy; may be his song, not the hornpipe"
+  },
+  {
+   "n": 51,
+   "collection": "airds",
+   "tune": "My Lodging is on the Cold Ground.",
+   "clique": "C-0147837",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 52,
+   "collection": "airds",
+   "tune": "My Love She's but a Lassie yet.",
+   "clique": "C-0160303",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 53,
+   "collection": "airds",
+   "tune": "Duncan Gray.",
+   "clique": "C-0273530",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 54,
+   "collection": "airds",
+   "tune": "A Trip to Sligo.",
+   "clique": "C-0185122",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 55,
+   "collection": "airds",
+   "tune": "The Battle.",
+   "clique": "C-0024357",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "David Guetta song"
+  },
+  {
+   "n": 56,
+   "collection": "airds",
+   "tune": "Hearts of Oak.",
+   "clique": "C-0303124",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 57,
+   "collection": "airds",
+   "tune": "Tom Jones,",
+   "clique": "C-0210144",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "film theme (John Addison)"
+  },
+  {
+   "n": 58,
+   "collection": "airds",
+   "tune": "The Billet Doux.",
+   "clique": "C-0133879",
+   "step": "loose",
+   "verdict": "wrong",
+   "why": "Henri Christine piece"
+  },
+  {
+   "n": 59,
+   "collection": "airds",
+   "tune": "A Dance.",
+   "clique": "C-0003015",
+   "step": "exact",
+   "verdict": "wrong",
+   "why": "Paul Jabara song"
+  },
+  {
+   "n": 60,
+   "collection": "airds",
+   "tune": "Drink to me only.",
+   "clique": "C-0191534",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 61,
+   "collection": "essen",
+   "tune": "Es flog ein kleins Waldvoegelein",
+   "clique": "C-0334224",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 62,
+   "collection": "essen",
+   "tune": "Wilhelmus van Nassouwe",
+   "clique": "C-0119584",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 63,
+   "collection": "essen",
+   "tune": "Was mein Gott will, das gscheh allzeit",
+   "clique": "C-0232727",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 64,
+   "collection": "essen",
+   "tune": "Media vita",
+   "clique": "C-0332864",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "Kurt Lissmann's choral setting; Essen's is the old melody"
+  },
+  {
+   "n": 65,
+   "collection": "essen",
+   "tune": "Die Koenigskinder",
+   "clique": "C-0124871",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "Roy Black's recording; may be a new setting"
+  },
+  {
+   "n": 66,
+   "collection": "essen",
+   "tune": "SCHLESWIG-HOLSTEIN MEERUMSCHLUNGEN",
+   "clique": "C-0329469",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 67,
+   "collection": "essen",
+   "tune": "BRUEDER REICHT DIE HAND ZUM BUNDE",
+   "clique": "C-0180782",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 68,
+   "collection": "essen",
+   "tune": "DU BIST WIE EINE BLUME",
+   "clique": "C-0312308",
+   "step": "exact",
+   "verdict": "unsure",
+   "why": "Heine's poem has many settings; Rubinstein's here"
+  },
+  {
+   "n": 69,
+   "collection": "essen",
+   "tune": "NUN ADE DU MEIN LIEB HEIMATLAND",
+   "clique": "C-0112825",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 70,
+   "collection": "essen",
+   "tune": "AN DER SAALE HELLEM STRANDE",
+   "clique": "C-0309713",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 71,
+   "collection": "essen",
+   "tune": "BRUEDER LAGERT EUCH IM KREISE",
+   "clique": "C-0268626",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 72,
+   "collection": "essen",
+   "tune": "ICH HATT EINEN KAMERADEN",
+   "clique": "C-0129460",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 73,
+   "collection": "essen",
+   "tune": "WER HAT DIE SCHOENSTEN SCHAEFCHEN",
+   "clique": "C-0102478",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 74,
+   "collection": "essen",
+   "tune": "STILLE NACHT HEILIGE NACHT",
+   "clique": "C-0074388",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 75,
+   "collection": "essen",
+   "tune": "Siebenbuergen, Land des Segens",
+   "clique": "C-0332731",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 76,
+   "collection": "essen",
+   "tune": "Der maechtigste Koenig im Luftrevier",
+   "clique": "C-0165732",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 77,
+   "collection": "essen",
+   "tune": "La Paloma",
+   "clique": "C-0014167",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 78,
+   "collection": "essen",
+   "tune": "Muede kehrt ein Wandersmann zurueck",
+   "clique": "C-0274223",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 79,
+   "collection": "essen",
+   "tune": "ES WAREN ZWEI KOENIGSKINDER",
+   "clique": "C-0139920",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 80,
+   "collection": "essen",
+   "tune": "ES HATT EIN BAUER EIN SCHOENES WEIB",
+   "clique": "C-0342880",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 81,
+   "collection": "essen",
+   "tune": "ICH HAB DIE NACHT GETRAEUMET",
+   "clique": "C-0111312",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 82,
+   "collection": "essen",
+   "tune": "WENN ALLE BRUENNLEIN FLIESSEN",
+   "clique": "C-0090599",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 83,
+   "collection": "essen",
+   "tune": "SCHOEN IST DIE JUGEND",
+   "clique": "C-0141279",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 84,
+   "collection": "essen",
+   "tune": "S IST ALLES DUNKEL",
+   "clique": "C-0175026",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 85,
+   "collection": "essen",
+   "tune": "MUSS I DENN MUSS I DENN",
+   "clique": "C-0169896",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 86,
+   "collection": "essen",
+   "tune": "ES STEHT EIN WIRTSHAUS AN DER LAHN",
+   "clique": "C-0270552",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 87,
+   "collection": "essen",
+   "tune": "HOPSA SCHWABENLIESEL",
+   "clique": "C-0313727",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 88,
+   "collection": "essen",
+   "tune": "BALD GRAS ICH AM NECKAR",
+   "clique": "C-0224733",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 89,
+   "collection": "essen",
+   "tune": "ES ES ES UND ES",
+   "clique": "C-0111314",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 90,
+   "collection": "essen",
+   "tune": "LUSTIG LUSTIG IHR LIEBEN BRUEDER",
+   "clique": "C-0099378",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 91,
+   "collection": "essen",
+   "tune": "GAUDEAMUS IGITUR",
+   "clique": "C-0157139",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 92,
+   "collection": "essen",
+   "tune": "CA CA GESCHMAUSET",
+   "clique": "C-0282993",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 93,
+   "collection": "essen",
+   "tune": "LASST UNS DAS KINDLEIN WIEGEN",
+   "clique": "C-0125516",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 94,
+   "collection": "essen",
+   "tune": "ALLEIN GOTT IN DER HOEH SEI EHR",
+   "clique": "C-0230866",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 95,
+   "collection": "essen",
+   "tune": "SCHOENSTER HERR JESU",
+   "clique": "C-0306740",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 96,
+   "collection": "essen",
+   "tune": "DER GULDNE ROSENKRANZ",
+   "clique": "C-0334849",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 97,
+   "collection": "essen",
+   "tune": "AUF EINEM BAUM EIN KUCKUCK",
+   "clique": "C-0146318",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 98,
+   "collection": "essen",
+   "tune": "EIN SCHNEIDER FING NE MAUS",
+   "clique": "C-0344750",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 99,
+   "collection": "essen",
+   "tune": "ALS ICH EINMAL REISTE",
+   "clique": "C-0335376",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  },
+  {
+   "n": 100,
+   "collection": "essen",
+   "tune": "\"Der Bettelvogt\"",
+   "clique": "C-0259154",
+   "step": "exact",
+   "verdict": "right",
+   "why": ""
+  }
+ ]
+}

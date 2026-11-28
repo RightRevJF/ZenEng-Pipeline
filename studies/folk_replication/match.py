@@ -37,7 +37,13 @@ def n_controls(rows):
     met = pooled_groups([r["metre"] for r in rows], 5, "other"); col = pooled_groups([r["collection"] for r in rows], 5, "oneills")
     return 2 + (len(set(met)) - 1) + (len(set(col)) - 1)
 
+class Tee:
+    def __init__(self, f): self.f = f; self.o = sys.stdout
+    def write(self, s): self.o.write(s); self.f.write(s)
+    def flush(self): self.o.flush(); self.f.flush()
+
 def main(path):
+    sys.stdout = Tee(open(os.path.join(HERE, "match_log.txt"), "w"))
     M = json.load(gzip.open(os.path.join(HERE, "measures.json.gz"), "rt"))["rows"]
     ex = collections.defaultdict(set); lo = collections.defaultdict(set); trad = {}; info = {}
     for line in open(path):

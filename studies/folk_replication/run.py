@@ -63,14 +63,14 @@ def main(counts_path):
     exact = [r for r in rows if r["step"] == "exact"]
     res = dict(made=datetime.datetime.now().isoformat(timespec="seconds"), commit=subprocess.run(["git", "-C", HERE, "rev-parse", "--short", "HEAD"], capture_output=True, text=True).stdout.strip(),
                k=K_TESTS, alpha=ALPHA, rho_for_power=RHO, outcome_summary=dict(median=float(np.median([r["n_sets"] for r in rows])), mean=float(np.mean([r["n_sets"] for r in rows])), max=int(max(r["n_sets"] for r in rows)), n=len(rows)),
-               all=run_set(rows, "all matches"), exact=run_set(exact, "exact-title matches only"))
+               all=run_set(rows, "all matches"), exact=run_set(exact, "exact-title matches only"), essen=run_set([r for r in rows if r["collection"] == "essen"], "Essen tunes only"))
     json.dump(res, open(os.path.join(HERE, "result.json"), "w"), indent=1)
     L = []; P = lambda s="": (print(s), L.append(s))
     P("# Folk replication: result"); P()
     P("Printed by `python3 -I studies/folk_replication/run.py <clique_counts.json>` at %s (code at %s), which wrote this file and `result.json`. The rule: `PREDICTION.md`." % (res["made"], res["commit"])); P()
     o = res["outcome_summary"]; P("Matched tunes with an outcome: %d. Artists per tune: median %.0f, mean %.1f, most %d." % (o["n"], o["median"], o["mean"], o["max"])); P()
     P("K = %d tests; pass level .05 / %d = %.5f one-sided. Power is for a correlation of %.2f (test half at the pass level, times the confirm half at .05)." % (K_TESTS, K_TESTS, ALPHA, RHO)); P()
-    for key in ("all", "exact"):
+    for key in ("all", "exact", "essen"):
         S = res[key]
         P("## %s%s" % (S["label"][0].upper() + S["label"][1:], " (deciding)" if key == "all" else " (reported, deciding nothing)")); P()
         P("Test half %d tunes, confirm half %d. Power: form A %.3f, form B %.3f. Smallest correlation with power one half: A %.3f, B %.3f.%s" % (

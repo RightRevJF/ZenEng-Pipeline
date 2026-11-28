@@ -77,6 +77,14 @@ A random hundred matched tunes (numpy seed 20261127). For each I see the tune's 
 
 Discogs-VI stores each track's artist and writer names as the *text* of a Python list (`"['Harem Doctors']"`). `cliques_versions.py` iterates that text, so its "artist set" is the sorted letters of the text, and an empty list (`"[]"`) counts as a set and never falls back to the release's artists. Here the text is parsed as a list (`ast.literal_eval`); a track with no track artists takes the release's; "Various" and empty names are dropped. The count is the number of different sets so made. This changes how the outcome is computed, not what it is; it is written down before the join. (The same reading of the writers feeds the tie-break.)
 
+## Addendum 2, 27 November 2026, after the match check and before the join
+
+The match (`match_log.txt`): 473 tunes kept, 231 in the test half and 242 in the confirm half. Power at a correlation of 0.15 is 0.21 (form A) and 0.22 (form B), so **by the rule above every test is an estimate**. The smallest correlation with power one half is about 0.19.
+
+The match check (`match_check.json`): 63 right, 28 wrong, 9 unsure, so an error rate of 28 in 100 (37 at most). That is over 25, so the clause above applies. The errors are not spread evenly: Essen 37 right, 0 wrong, 3 unsure; O'Neill's, Ryan's and Aird's together 26 right, 28 wrong, 6 unsure (English titles shared with later pop songs). Loose matches were 10 wrong in 14.
+
+Because of this, **one more reading is reported, deciding nothing and not counted in K: Essen tunes only**, the same 18 tests and halves. It is written here before any outcome is joined. Nothing above is changed.
+
 ## What a result means
 
 A test that holds supports that part of the gate on tunes and outcomes we may use. A miss with power is a miss and is recorded as one. An estimate is neither. None of this changes the engine: this is a study.
