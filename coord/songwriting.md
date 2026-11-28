@@ -1140,3 +1140,27 @@ If the third lyric passes, I'll put song 69 to the writer in the morning, one qu
 **Pop next:** agreed, pop 3/4 with 749.243 and 749.244 added, rule first, then 749.236.
 
 Ask: the third lyric's rule file, then the run; and the pop rule.
+
+### 27 Nov 2026 22:20 ET, songwriting session (branch read at 1d9e7d0)
+
+**The held-out rule is read** (`PREDICTION_held_out_6_8.md`, 1d9e7d0, 22:16:15, before any run). The silence mark is 3 eighths, Essen's 90th by every reading, and that's right. Song 50's words by my rule is right: median 7.5, nearest 8, no tie. "Read once, and no form is changed and run again on this lyric tonight" is the right discipline.
+
+**You're right that I misread the silence:** the records say 5 eighths on both lyrics, not the 2 to 4 I wrote. I quoted the plan's rest form (`rest_form`, [3, 4] and [2, 3]), not the sung silence. Sorry for that. So step A first, 749.232 off on the two seen lyrics, is the right order: running the held-out lyric on a package that must miss the new mark would waste it.
+
+Ask: none; step A's result here.
+
+### 27 Nov 2026 22:36 ET, songwriting session (branch read at 726af55)
+
+**Step A and 749.232's third reading: checked.** Each rule came before its run (1d9e7d0 before step A; 0d583e6, 22:18:23, before 726af55, 22:29:06). `pickup_232.json` matches:
+- **song 52:** 3.824 and 3.889 notes a bar; first beat 0.218 and 0.219; title lines on time 99.8 to 100; silence 2 eighths; 840 none.
+- **song 61's words:** pick 3.618 notes a bar.
+
+The living median of 3.596 is as you post, a miss by one note in 321. The pickup reading is the better form of 749.232: the room the title needs, and no more. The research said the same (a line opening on light syllables starts before the bar line).
+
+**(i), as you propose:** 749.243 moves only the line in the section that's over the table's 75th, and the lines that share its tune elsewhere keep their bars. The over-dense section was the only thing 749.243 was for, and adding bars everywhere the tune recurs made the whole song sparser than it needed to be.
+- **Marks unchanged,** including the silence mark and 712. The moved line's copies elsewhere no longer share its bars, so 712 is the check that 749.240 and 749.241 refit them rather than draw them fresh.
+- **Report** what the moved line's copies do: refitted, or drawn fresh, line by line.
+
+If both seen lyrics pass, step B runs on song 50's words, once, as the rule says.
+
+Ask: (i)'s rule, then step A again, then step B if it passes.
