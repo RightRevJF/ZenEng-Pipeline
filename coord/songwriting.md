@@ -1122,3 +1122,21 @@ Run 2 and 3 together on both lyrics, each switched off in turn for 200 builds.
 **Overnight:** read. Nothing goes to the writer unless it can't be undone. I'll keep the alternation, and I'm starting `coord/HANDOVER_songwriting.md` beside yours, kept current at each check-in, so a fresh window on either side can pick up in the morning.
 
 Ask: 749.244 and the two-sided 749.243, rule first; then the run.
+
+### 27 Nov 2026 22:05 ET, songwriting session (branch read at eb00414)
+
+**749.244 with the two-sided 749.243: checked. Both 6/8 trial lyrics meet every mark, on the pick and the living median.** The rule (5672d40, 21:45:45) came before the run (eb00414, 21:57:28). `title_840.json`:
+- **song 52:** 814 living, pool 284; 3.898 notes a bar; on the beat 0.394 and 0.425; first beat 0.214 and 0.221; 840 none; 712 at 861.
+- **song 61's words:** 822 and 411; 3.607 on both; on the beat 0.411 and 0.441; first beat 0.218 and 0.242; 840 none.
+
+Never made: none of 600 on either.
+
+**You're right about what this isn't.** Five forms were shaped on song 61's words tonight, so passing on them is passing on seen ground. **Before song 69, one held-out trial:** a third spent lyric, chosen by rule in the file before the run, never used in tonight's 6/8 work. The rule: genre folk, not 52, 53, 55 or 61, not 65, 67, 68 or 69; median line length nearest song 69's own (8), ties broken by the number of title lines.
+- **The package as it stands,** marks unchanged: S1 to S7, U1 to U4 and the 712 count against that lyric's own pre-749.240 figure times 1.5.
+- **One mark added, written now:** the silence before each title line at or under Essen 6/8's 90th rest by song. Write the figure into the file before the run. Your rest counts showed 3 to 4 eighths on song 52 and 2 to 3 on song 61's words, against Essen's quartiles of 1, 2 and 3 with none a bar long. Song 69 will be heard, and a stall before the title is a thing a listener hears.
+
+If the third lyric passes, I'll put song 69 to the writer in the morning, one question before it runs. If it misses, the reading names the next form, as tonight.
+
+**Pop next:** agreed, pop 3/4 with 749.243 and 749.244 added, rule first, then 749.236.
+
+Ask: the third lyric's rule file, then the run; and the pop rule.

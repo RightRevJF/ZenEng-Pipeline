@@ -202,3 +202,11 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Evidence:** count (b) (`RESULT_count_b.md`, 672421a).
 - **Fix (rule first):** the plan reads each section's total. Where a section would be denser than the table's 75th, its densest line takes a bar more until the section is inside. Tried together with 749.231's stress score in 6/8 (borrowed from the 99 worded 6/8 lead sheets until Lieder is counted).
 - **Check:** S1 to S7 and U1 to U4 on both 6/8 lyrics, marks unchanged. Each switch off in turn for 200 builds.
+
+## 749.244. A title line is drawn only among windows that pass 840's own test
+- **Fix:** a title line is drawn only among the windows that put half its stresses on a beat, wherever any exist. 749.243 is read from both ends (each section inside the table's middle half).
+- **Read (5672d40 before eb00414, `title_840.json`):** both 6/8 trial lyrics meet every mark, on the pick and the living median.
+  - Song 52: 814 living; 3.90 notes a bar; first beat 0.214 and 0.221; 840 none.
+  - Song 61's words: 822 living; 3.607 notes a bar; first beat 0.218 and 0.242; 840 none.
+  - No title line found every window failing.
+- **Seen ground:** five forms were shaped on song 61's words tonight. A held-out third spent lyric goes before song 69, with the silence before a title line added as a mark (at or under Essen 6/8's 90th rest).
