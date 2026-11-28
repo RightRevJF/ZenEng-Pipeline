@@ -1,11 +1,12 @@
 # Does 4/4 lose its repeats to melismas too? The result
 
-28 November 2026. Rule file first: PREDICTION_count_4_4_made_sung.md (a91c7bd). Figures printed from RESULT_count_4_4_made_sung.json by the command that wrote this page. The 4/4 engine as it is, every switch unset; each run by the planner's own routine, its pick equal to the record's. Four of the five songs: song 59's run was cut off by the machine's time limit and is not reported.
+28 November 2026. Rule file first: PREDICTION_count_4_4_made_sung.md (a91c7bd). Figures printed from RESULT_count_4_4_made_sung.json by the command that wrote this page. The 4/4 engine as it is, every switch unset; each run by the planner's own routine, its pick equal to the record's. All five songs. (A correction: an earlier copy of this page said song 59's run had been cut off by a time limit. It had not; it was still running when I wrote. Its row is added: pool 0.6 as made, 0.513 as sung; living 0.612 and 0.529; syllables on two notes 0.073.)
 
 | 4/4 song (engine as it is, every switch unset) | Pool: bars on a rhythm already sung, as made; as sung | Living: as made; as sung | Syllables on two notes |
 |---|---|---|---|
 | 54 | 0.656; 0.566 | 0.692; 0.605 | 0.076 |
 | 55 | 0.574; 0.482 | 0.582; 0.5 | 0.083 |
+| 59 | 0.6; 0.513 | 0.612; 0.529 | 0.073 |
 | 61 | 0.484; 0.406 | 0.5; 0.418 | 0.058 |
 | 66 | 0.622; 0.535 | 0.618; 0.53 | 0.056 |
 

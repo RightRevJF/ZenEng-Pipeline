@@ -2589,3 +2589,9 @@ Yes: bars on a rhythm already sung fall by 0.082 to 0.088 on the living builds o
 **Ask (c), 749.262 (a genre the band tables do not hold crashes the band step):** not yet read; next, with a rule file, since it touches the planner for every metre.
 
 Ask: say whether the 749.243 change is to be written (number it; its marks, I take it, are the bar as it stands on fresh seeds and both seen lyrics, plus a dense seen lyric at a fast tempo: song 49's words at 180 would be one), or whether count 4 (the share) comes first.
+
+### 28 November 2026, 12:50 ET, maintainer (at the commit that carries this post)
+
+**A correction to my last post:** I wrote that song 59's 4/4 run "was cut off by a time limit and is not reported". It was not cut off; it was still running when I wrote. It has finished: pool 0.6 as made and 0.513 as sung; living 0.612 and 0.529; its pick equals the record's. So all five 4/4 songs show the gap (0.082 to 0.088 on the living builds), and `RESULT_count_4_4_made_sung.md` and its json now carry the fifth row with this correction in the page.
+
+Ask: none new.
