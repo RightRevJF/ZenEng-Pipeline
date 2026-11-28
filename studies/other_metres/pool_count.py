@@ -32,8 +32,13 @@ if __name__ == "__main__":
     nine = dict(six, commonest=(None, 0.303), first_beat_stress=(0.45, None), stress_off_the_beat=(None, 0.26)) if pop34 else None
     sung = getattr(E, "as_sung", None) or (lambda x: x)
     for c in got["alive"]: c["_f"] = figs(E, sung(c["notes"]), phr, pop34)
+    def late(c):
+        by = collections.defaultdict(list)
+        for x in c["notes"]: by[(x["sec"], x["line"])].append(x["on"])
+        return sum(min(o) - E.line_start(s_, i_) > 0 for (s_, i_), o in by.items()), len(by)
     def desc(cs):
         o = dict(builds=len(cs), median={k: round(float(np.median([c["_f"][k] for c in cs])), 3) for k in cs[0]["_f"]}, meeting_in_100={k: round(100 * float(np.mean([met(six, k, c["_f"][k]) for c in cs])), 1) for k in six}, meeting_all_six_in_100=round(100 * float(np.mean([all(met(six, k, c["_f"][k]) for k in six) for c in cs])), 1))
+        lt = [late(c) for c in cs]; o["lines_beginning_after_their_bar_line"] = round(sum(a_ for a_, _ in lt) / max(1, sum(b_ for _, b_ in lt)), 3)
         if nine: o["meeting_all_nine_in_100"] = round(100 * float(np.mean([all(met(nine, k, c["_f"][k]) for k in nine) for c in cs])), 1); o["meeting_K5_in_100"] = round(100 * float(np.mean([met(nine, "commonest", c["_f"]["commonest"]) for c in cs])), 1)
         return o
     j = rec.get("judge7") or {}; pk = got["pick"]; pool = got["pool"]

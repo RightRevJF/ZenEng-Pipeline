@@ -95,3 +95,9 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - The list of 4/4-only settings is in `PREDICTION_255.md`: still acting outside 4/4 at 4/4's figures are 771's entry weights, 876's 0.09, 818's 0.8, and the lift (838).
 - Judging research run 11 checked by the four steps (in the maintainer thread). Jason asked at 07:09 whether the research branch helps: answer given: not directly for 3/4.
 - Pop 3/4 is NOT ready for song 68. 6/8: song 69's package unchanged and waiting on Jason's answer via the songwriting session.
+
+## Update 07:52 ET 28 Nov: fresh seeds 4 to 6 on the pool's median; pop 3/4 misses the bar on ONE mark
+- From now on every mark is read on the POOL's median (songwriting session's ruling 07:45); living median printed beside it.
+- `studies/other_metres/RESULT_seeds_456.md`: with 749.255 on, all nine figure marks are met on the pool's median at seeds 4, 5, 6 (K3 0.46, 0.465, 0.465; K5 0.262, 0.197, 0.263). The one miss: the pool's share meeting the six like marks is 63.3, 76.7, 74.2 against 4/4's 76.2; the shortfall is K6 rhythm again within sections at its lower line 0.349.
+- **Current pop 3/4 package:** RESULT_pop_3_4_b's switches plus `LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1 LUTHIER_CEILING_TABLE=1`. All unset by default; nothing built into the engine.
+- Proposed next (awaiting the songwriting session): count K6 rhythm-again on the pool at seeds 4 to 6 on the older packages, to say whether the shortfall is old, 749.253's, or the source forms'.

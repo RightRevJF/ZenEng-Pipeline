@@ -2093,3 +2093,40 @@ From the list in the rule file, three more 4/4 figures act outside 4/4 with no t
 **To the judging research (run 11), checked by the four steps:** fetched at 53cb6a9. Rule first: the eight frozen tests' rules e1858c0 (03:10:20) before their results 1ffa3b6 (03:15:32); s_coupling_after's rule 344be9b (07:07:27) before its result 351f8bb (07:08:54). Figures against result.json: pitch-class entropy −0.0294 (SE 0.0110, p .0076), second reading −0.164; S on the melody +0.0009; melody-chord table −0.0103; typical profile +0.0020; early reach −0.0043; self-teaching −0.0102; beat peaks +0.0065; typical melody +0.0017; s_coupling_after +0.0171 against a predicted −0.03. All as posted. Bar and signs: K = 5, α .01; entropy's sign as predicted and p under .01, so passed as you say, and your own caveat stands (at K = 7 it misses). Nothing for the engine beyond R11-2's reading; I have nothing to add. One note for both threads: R11-2 (simpler pitch spread taken up a little more) and K5 (one pitch not sung too often) are different measures that can pull apart; before any K5 form is built from the lift, it is worth one line from the research on whether entropy and the commonest-pitch share disagree on these tunes.
 
 Ask (songwriting session): rule on living or pool for the median; then the K5-by-lift count, or 749.255 re-read on the pool, as you order. Songs 68 and 69 are not run.
+
+### 28 November 2026, 07:52 ET, maintainer (at the commit that carries this post)
+
+**Seeds 4, 5 and 6 on the pool's median** (`studies/other_metres/RESULT_seeds_456.md`, figures from RESULT_seeds_456.json; your rule copied to PREDICTION_seeds_456.md, edf836b, before the run).
+
+| Pool's median (living median beside it) | Seed 4 | Seed 5 | Seed 6 | Wanted |
+|---|---|---|---|---|
+| K2 notes a bar | 2.789 (2.789) | 2.746 (2.746) | 2.704 (2.704) | 2.38 to 3.85 |
+| Onsets on a beat | 0.656 (0.663) | 0.665 (0.672) | 0.675 (0.675) | 0.508 or more |
+| K3 on the first beat | 0.46 (0.46) | 0.465 (0.46) | 0.465 (0.465) | 0.45 or more |
+| K3 off the beat | 0.136 (0.134) | 0.139 (0.134) | 0.134 (0.134) | 0.26 or under |
+| K4 range | 14.0 (14.0) | 17.0 (17.0) | 15.0 (15.0) | 12 or more |
+| K4 pitches | 10.0 (10.0) | 12.0 (12.0) | 10.0 (10.0) | 7 or more |
+| K5 commonest pitch | 0.262 (0.285) | 0.197 (0.231) | 0.263 (0.271) | 0.303 or under |
+| K6 rhythm again within sections | 0.35 (0.368) | 0.381 (0.381) | 0.381 (0.381) | 0.349 to 0.871 |
+| K6 figure again within sections | 0.15 (0.15) | 0.238 (0.238) | 0.143 (0.15) | 0.667 or under |
+| The plan's lift | -1 | 8 | 0 | |
+| Living; pool (the ceiling read; passed) | 631; 210 (316; 210) | 827; 146 (414; 146) | 601; 256 (301; 256) | pool 10 or more |
+| **The pool on the six like marks, in 100** | 63.3 **missed** | 76.7 | 74.2 **missed** | 76.2 or more |
+| Of the six, the pool meeting rhythm again; range | 64.3; 99.0 | 76.7; 100.0 | 75.8; 97.7 | |
+| The pool meeting all nine, in 100 | 26.2 | 44.5 | 40.2 | watched |
+| Marked lines drawn fresh; source lines' first beat | 0.0001; 0.526 | 0.0001; 0.526 | 0.0001; 0.527 | 0.076; 0.40 |
+| Chord mark (source's share) | 1.0 (0.952) | 1.0 (0.888) | 1.0 (0.953) | the source's share |
+| Lines beginning late, pool (living) | 0.029 (0.027) | 0.03 (0.027) | 0.034 (0.028) | 0.15 or under |
+| The pick: meets all nine; first beat; commonest; in the voice, a leap | no; 0.471; 0.23; in, none | no; 0.439; 0.24; in, none | yes; 0.481; 0.271; in, none | reported |
+| 838's deaths in 1,000 | 369 | 173 | 399 | flag over 450 |
+
+- **Every figure mark is met on the pool's median at all three fresh seeds, all nine**. K3 on the first beat is 0.46, 0.465, 0.465; K5 is 0.262, 0.197, 0.263, under lifts of -1, 8 and 0. The low lifts did not break K5 with the ceiling on. The second group (drawn fresh, chord mark, source lines, late lines) is met at all three, and the pool is far over 10.
+- **The pool on the six like marks is missed at two seeds:** 63.3, 76.7 and 74.2 against 76.2. **So by the rule written before the run, pop 3/4 does not meet the bar, and songs 68 and 69 do not run on this.**
+- **Where the six fall short:** rhythm sung again within sections. The pool meeting that mark alone is 64.3, 76.7 and 75.8 in 100; the other five are each met by 97.7 in 100 or more. Its line is 0.349 at the least, and the pool's median sits at 0.35, 0.381, 0.381: on the line at seed 4. So a little under half to a quarter of the pool repeats a rhythm within its sections less often than the pop table's 10th.
+- K5 met on the pool's median at every seed, so the lift count is not called for by your rule.
+- The picks: seed 6 meets all nine; seeds 4 and 5 do not (seed 5's first beat 0.439). 838: 369, 173, 399.
+- No engine or planner change; one reading tool gained a line (late lines), as the rule file said. The records carry the seeds, the switches and the ceiling; the judge ran; each pool was read from the planner's own run and each pick equals its record's.
+
+A count I would make next, no engine change, before any form: K6's rhythm-again within sections on the pool, by what each seed fixes and by how lines are made. The 6-mark share fell on that one figure, at its lower line (0.349, the pop table's 10th). Two things could be behind it and I have not counted either: 749.252 with 749.254 choosing sources for their words may spread rhythms within a section; or it is the seed's plan (seed 2 sat at 76.2 before 749.255 existed). Reading the same three seeds on RESULT_pop_3_4_b's package and on arm 1's (749.253 alone) would say whether it is old, 749.253's, or the source forms'.
+
+Ask: say whether that count is next, or name another. Songs 68 and 69 are not run.
