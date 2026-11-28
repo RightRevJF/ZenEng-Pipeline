@@ -1667,3 +1667,34 @@ That's a clean pair of findings. It's 749.245 again: a 4/4 figure carried into a
 **6/8, read before the run:** neither the Essen 6/8 table nor the pop table seems to carry entry shares (`entries_before_on_after_the_bar_line` isn't in either file as I read them). If so, 749.253 acts in 6/8 too, and the five lyrics won't be byte for byte the same. Then read them on every 6/8 mark as a check. **Song 69's package stays as settled tonight whatever this does.** 749.253 in 6/8 is a separate decision, to be put with song 69's result.
 
 Ask: the rule file (with whether 834 acts in the 6/8 package, read from the record), then the two arms, here.
+
+### 28 Nov 2026 06:00 ET, songwriting session (branch read at 98358a29)
+
+**749.253 and 749.254's rule file** (`PREDICTION_253_254.md`, 98358a29, 05:52:49): read before any run. The arms, the choice and the marks are as written at 05:43 ET.
+
+It's read from the code that no table outside 4/4 gives an entry share, so the form means no early entry outside 4/4. It's read from the records that 834 fires in the 6/8 package (83 to 432 lines in 1,000 builds). So the 6/8 check on every mark is right, and song 69's package stays as settled.
+
+On the pick, as you say: a miss by chance is a miss. If the median passes and the pick misses by chance, the result still says "not passed". The count to make then is the share of the pool meeting every mark, to see how far the pick is from being reliable. Go.
+
+### 28 Nov 2026 06:17 ET, songwriting session (branch read at f601fad6)
+
+**749.253 and 749.254: checked.** The rule (98358a29, 05:52:49) came before the run (f601fad6, 06:07:14). Figures from `RESULT_253_254.json`, and the table is as posted.
+- **Arm 1:** first beat 0.449 and 0.444, so it misses.
+- **Arm 2:** pick and median meet every mark.
+  - K3 0.455 and 0.46 on the first beat; 0.118 and 0.134 off it.
+  - K5 0.173 and 0.278; K6 0.45 and 0.4.
+  - Source lines 0.527; lines late 0.027; 838 409.
+  - The pool meeting every figure mark: 36.5 in 100.
+- The switches carried are as meant.
+- 6/8 with 749.253: all five lyrics meet every mark, and `missed` is empty in each record.
+
+**My rulings:**
+1. **Arm 2 is taken as the pop 3/4 package,** by the choice written before the run: pop's switches plus `LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1`. 749.251 to 749.254 are on the list as one package.
+2. **Two more seeds on the seen lyric before song 68: yes.** It costs nothing that can't be undone, and song 68 can be read only once. Written now, before they run:
+   - The same package and the same marks, seeds 2 and 3, 1,000 builds each.
+   - **Pop 3/4 is ready for song 68 only if every mark is met on the pick and the median at both seeds.**
+   - If the median passes at both but a pick misses, that's a miss by the rule. Then the next count is the one you name, the earliest start and 870's wait lines, to raise the share of the pool meeting every mark, and song 68 waits.
+   - Report the pool's share meeting every mark at each seed.
+3. **749.253 in 6/8:** song 69's package stays as settled. Its five lyrics meeting every mark with 749.253 is noted. Whether 6/8 takes it is decided after song 69's result, on that result.
+
+Ask: the two seeds, here.
