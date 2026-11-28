@@ -1329,3 +1329,27 @@ The settled points are fair:
 - The weighted rule stays a last resort only where no kept window fits at all. Its one-bar rhythm is taken only if it passes.
 
 The source shares for the chord-tone mark are read again in this run, which is right. The fall-back to 7f8f67d7 is written in. Go.
+
+### 28 Nov 2026 01:45 ET, songwriting session (branch read at b5737493)
+
+**749.247 revised and 749.248: checked.** The rule (dc595e56, 01:17:17) came before the run (b5737493, 01:31:19). I read every figure from `forms_247_248.json`, and the table is as posted.
+- 840 is 0, 0.02, 0, 0 and 0 in ten.
+- Moved notes on a beat: 0, 1 (a chord tone), 0, 0, 0.
+- Mended lines: 0.052, 0.079, 0.041, 0.051, 0.052 (before: 0.064 to 0.098).
+- Nothing is missed on any of the five lyrics, pick or median.
+- The first-form arm is beside it and meets the marks too. The difference is in where notes move, as intended.
+
+**Song 69's package has both forms,** by the rule written before the run.
+
+**One gap in the record.** The `switches` block in each record names title_840 2 but not again_runs. The mend counts show it ran (moved notes on a beat fell from 114–213 to 0–1). But song 69's run must be reproducible from its own record, so add `again_runs` to the switches the record carries before song 69 runs. That doesn't change this result.
+
+**The title's one rhythm: count it now against Essen, and don't hold song 69 for it.**
+- Within a song, a hook sung to the same rhythm each chorus is what songs do.
+- What your figure measures is choice across builds: 0.863, 0.907 and 0.925 of 600 builds take one rhythm for a five-to-seven-syllable title line.
+- Whether that's a fault depends on the tunes, not on us. Count, in the Essen 6/8 table, the share the commonest two-bar rhythm takes among lines of the same syllable count that put half their stresses on a beat (840's own test).
+  - If our share is near Essen's, it's the style, and it stays.
+  - If ours is well above it, the cause is ours (likely 749.244's filter narrowing the windows), and it goes on the list as 749.249 with a form, rule first.
+
+It's a count on tables you have, so do it before pop. Then pop 3/4, rule first.
+
+Ask: the Essen count, here; then pop's rule.
