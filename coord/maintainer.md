@@ -1771,3 +1771,38 @@ Ask: your ruling on song 69's package.
 **Next: 749.236's rule.** Your plan of 27 November stands as I have it: fit the trade-off between a window's kept count and its stress fit on the worded pop 4/4 songs (Billboard); check it does not depend on metre by fitting it in 3/4 and in 4/4 on the lead sheets, and on OpenScore Lieder (CC0; 265 songs in 3/4, 216 in 6/8, worded); carried if they agree within their errors, deduced if not; "stress does not fall while the beat's strength rises" as a fitted feature. Lieder is not yet fetched; fetching and counting it is the first step and takes a while. Say if the order should be otherwise.
 
 Ask: check the pop result; and your word on starting 749.236 with the Lieder count.
+
+### 28 November 2026, 03:30 ET, maintainer (at the commit that carries this post)
+**The ceiling count on K3, and what it turned up: the draw meets K3; the lines sung again to new words do not.** `studies/other_metres/RESULT_count_k3.md`; figures printed from `count_k3_ceiling_pop55.json` and `count_k3_by_made_pop55.json`. A count; nothing run under a changed form.
+
+**1 and 2, as you asked** (song 55's words, the pop table as kept, the last record's plan; 187 stressed syllables; every line has kept windows at its bars):
+| | On the first beat | Off the beat |
+|---|---|---|
+| Each line's best window | **0.674** | 0.0 |
+| Windows by kept count alone | **0.421** | 0.165 |
+| The builds (pick; median) | 0.337; 0.326 | 0.326; 0.348 |
+| K3 | 0.45 | 0.26 |
+
+The ceiling is well over 0.45. But **the builds are under what kept count alone gives.** A draw that weighed stress too little would sit between count alone and the ceiling; sitting under count alone means the stress is lost somewhere else. So I counted where.
+
+**K3 by how each line was made (244 living builds):**
+| | Share of the song's stresses | First beat | Off the beat |
+|---|---|---|---|
+| The lyric's "again" lines | 0.503 | **0.272** | **0.387** |
+| 818 sings again | 0.221 | **0.227** | **0.453** |
+| Copies | 0.176 | 0.477 | 0.197 |
+| Drawn fresh | 0.077 | 0.467 | 0.181 |
+| Title lines | 0.016 | 0.512 | 0.1 |
+
+- **Fresh lines, title lines and copies meet K3.** The draw with the table's stress score does what the mark asks.
+- **Lines sung again to new words do not, and they carry seven tenths of the song's stresses.** A copy keeps its words and so its fit. A line sung again puts new words on the old rhythm, and outside 4/4 the routine fits them by splitting the widest gap and dropping the narrowest, blind to stress. In 4/4 it chooses by the words' weights (882); outside 4/4 it never has.
+
+**So K3 is not the ordering, and 749.236 is not its road.** The reading of 27 November (reachable, not reached, therefore the ordering) did not separate fresh lines from lines sung again; I drew it and it was wrong. Your count before the Lieder fetch is what caught it. Lieder and 749.236 are still worth having for stress outside 4/4, but K3 does not wait on them.
+
+**On your check:** the worded pop 4/4 set is CoCoPops (the Billboard melodic transcriptions with syllables: `corpora/cocopops_notes.csv.gz`, the 167 kept songs the 4/4 engine is fitted on), not McGill's chord set. It would go in 749.236's rule file when that is written.
+
+**The form, for your word, rule first:** a line sung again fits its new words: which gaps are split and which notes dropped is chosen to set the new words' stresses best by the table's own stress score (749.231's, the one the draw uses), as 882 does in 4/4. Marks K1 to K8 on pop, K3 read apart for lines sung again; the five 6/8 lyrics read again on every mark, since the routine is shared (6/8 folk has no stress table, so there the form would have nothing to score by and should change nothing; that is to be checked, not assumed).
+
+Song 69 is not touched by this unless you say: its package stands.
+
+Ask: your word on the form; its number.
