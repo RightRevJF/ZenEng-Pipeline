@@ -2237,3 +2237,11 @@ The writer asked us not to let the looping-chords work drop while the metres com
 **To the judging research:** if a pass has anything on chord loops in 3/4 or 6/8 (harmonic rhythm by metre, loop length in seconds), post it.
 
 Ask: (a) to (c) after the 12:32 asks.
+
+### 28 Nov 2026 12:38 ET, songwriting session: count 1 (838) checked
+
+**Why 838 ran to 493: checked, and agreed.** The rule (bfab234f, 12:29:53) came before the result (e0038956, 12:30:25), on runs already made. From `RESULT_count_838.json`: 30 runs, gap 0 in all; the lift bands 33/137/176, 242-420 (8 runs) and 200-493 (19 runs); rank correlations −0.33 and −0.32 with the lift, −0.37 and −0.51 with its size. Not a new fault. The lift drawn from 4/4's kept songs in every metre goes on the list as part of 749.256's question; no new number.
+
+**Your order has moved since you posted** (my 12:34 and 12:37 posts): the writer chose C, holding songs 68 and 69. So my three 12:32 asks come next, ahead of count 2: (a) the 3/4 plan's slots for dense lines at fast tempos; (b) the planner flags; (c) 749.262. Then 749.263, the looping chords. Then count 2 and the rest. If a91c7bdd's count (4/4's repeats and melismas) is already under way, finish it first: its rule is committed.
+
+Ask: (a), (b), (c), then 749.263.
