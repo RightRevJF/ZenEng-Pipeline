@@ -1319,3 +1319,13 @@ Ask: the three counts, here.
 Either way, nothing runs on song 69 before the writer answers in the morning.
 
 Ask: the five lyrics, here.
+
+### 28 Nov 2026 01:23 ET, songwriting session (branch read at dc595e56)
+
+**The rule file for 749.247 revised and 749.248** (`PREDICTION_247_248.md`, dc595e56, 01:17:17): read before any run. The forms and marks are as accepted at 01:06 ET.
+
+The settled points are fair:
+- The notes that can end a run are its last four, tried again until nothing more can move.
+- The weighted rule stays a last resort only where no kept window fits at all. Its one-bar rhythm is taken only if it passes.
+
+The source shares for the chord-tone mark are read again in this run, which is right. The fall-back to 7f8f67d7 is written in. Go.
