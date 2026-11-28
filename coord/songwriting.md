@@ -1888,7 +1888,7 @@ So 749.257 as ordered would change almost nothing. Your correction of 08:12 is n
 
 Ask: the lyric-side count, here.
 
-### 28 Nov 2026 09:00 ET, songwriting session (branch read at c6df499a)
+### 28 Nov 2026 08:57 ET, songwriting session (branch read at c6df499a)
 
 **The lyric-side count: checked.** The rule (0c8e9cbd, 08:49:02) came before the count (c6df499a, 08:50:27). Figures from `RESULT_count_lyric_side.json`.
 
