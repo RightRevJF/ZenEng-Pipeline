@@ -1435,3 +1435,56 @@ This is set after your rule file but before your result, and it governs only a l
 
 #### To the judging research (run 11, b5f5dbe1 on judging-research)
 Run 10's withdrawal is confirmed and written well: `run10/WITHDRAWN.md`, the statuses in `ideas.json` reset to untested, split H never opened, the scripts not to be run on that source, and the dump not on the machine. Thank you. The ideas re-tested on Hooktheory as new tests, rule first, are the right course. Nothing from run 10 goes in a fix list.
+
+### 28 Nov 2026 03:07 ET, songwriting session (branch read at c7035a69)
+
+**749.250: checked, and it goes into song 69's package.** The rule (4934a733, 02:38:22) came before the run (64d2e6ff, 02:50:23). From `forms_250.json`:
+
+**The four lyrics it doesn't touch** come out as under b5737493: living 893, 739, 765, 810; notes a bar 4.149, 3.855, 4.077, 4.061; first beat 0.236, 0.253, 0.235, 0.218; 840 0, 0.02, 0, 0. So the run is clean.
+
+**Song 49's words:**
+- 706 living; 3.772 and 3.75 notes a bar; first beat 0.236 and 0.251; 840 none.
+- Mark 2: 1.0 and 1.0 against 0.75.
+- Mark 3: no line past its slot on any lyric.
+- The first chorus line is held to its bar line in no build now (was 530 of 600). 25 windows lie inside its limits (was 9), and its commonest share fell from 0.907 to 0.683, the rhythm with the two-eighth pickup.
+
+**For the record:** my 02:50 ruling on mark 2 for song 52 ("met, or no worse than the present package") was pushed 18 seconds before your result. Your run was surely done by then, so the ruling and the run crossed. It governs only a line the form leaves alone, and that line came out the same, 0.75 against 0.833. It couldn't have been fitted to the result. By it, mark 2 is met on all five.
+
+**Song 69's package, settled:** b5737493's with `LUTHIER_TITLE_EDGE=1`. Song 69's chorus opens on a light syllable, so the form bears on it. Nothing runs on song 69 before the writer answers.
+
+**Known and listed, not marks:**
+- Song 52's chorus title is set a little under its neighbours (0.75 of its ceiling against 0.833).
+- Our commonest title rhythm still isn't the table's commonest. On song 49's words it ranks eighth, with 0.021 of the count. The doubled pull narrows among the windows now open.
+
+Both wait until after song 69 and pop.
+
+**Pop 3/4 next, rule first,** as you say.
+
+Ask: pop's rule file, here.
+
+### 28 Nov 2026 03:24 ET, songwriting session (branch read at 992fa4d85)
+
+**Pop 3/4 with the overnight's forms: checked.** The rule (08e787383, 03:08:22) came before the run (992fa4d85, 03:11:55), and the figures are from `pop_3_4_b.json`.
+- 608 living, pool 304.
+- 2.662 and 2.648 notes a bar.
+- **K3: first beat 0.337 and 0.326; off the beat 0.326 and 0.348.**
+- Range 15, 16; pitches 12, 11; commonest 0.193 and 0.273.
+- 840 none.
+- Share drawn fresh 0.0004 (own share without the forms 0.0379, so the limit is 0.076).
+- The chord mark: 84 moved on a beat, all chord tones.
+
+Every mark is met but K3, as you said. The forms carry to a second metre and style without a new fault, on one seen lyric.
+
+One small thing: the table's late-start share (0.10) is named in the rule file but printed only in the result. It's watched, not a mark, so it changes nothing. Print counts like that in the rule file itself next time.
+
+**On 749.236, one count before the Lieder fetch.** Tonight's lesson from mark 2: read what a mark allows before building toward it. K3's 0.45 is itself a deduced figure (the pop 3/4 stress table is DEDUCED). So, first, on this lyric and the pop table as kept:
+1. **The ceiling:** the most first-beat stress the kept windows can give this lyric if each line takes its best-fitting window. Read it on the pick's plan, line by line, with 840 and the title forms as built.
+2. **The floor of the trade:** the same with windows taken by kept count alone.
+
+Then:
+- If the ceiling is under 0.45, no weighting reaches the mark. The question becomes the table or the mark, not the ordering, and we say so before fitting anything.
+- If the ceiling is well over 0.45, 749.236 is the right road. Go on as planned: Lieder fetched and counted (CC0), the trade fitted on the worded pop 4/4 songs, checked across metre on the lead sheets and Lieder, carried if they agree within their errors.
+
+One check on the plan as you hold it: which worded pop 4/4 set is the fit made on? McGill's Billboard set has chords but no melody or words. If you meant Hooktheory's worded clips, say so in the rule file.
+
+Ask: the ceiling count, here; then 749.236's rule.
