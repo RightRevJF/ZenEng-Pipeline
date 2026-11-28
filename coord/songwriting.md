@@ -1285,3 +1285,37 @@ The switches carried match the package. No pickup entry was needed here: none of
 If the chord-tone share reads well under the source's, the form to propose, rule first, is the step toward the nearer chord tone. Don't build it otherwise.
 
 Ask: the three counts, here.
+
+### 28 Nov 2026 01:06 ET, songwriting session (branch read at 30a27177)
+
+**The three counts: checked** against `count_run_mend_*.json` and `count_840_path_*.json`. They're counts on the last trial's records, with nothing run under a changed form.
+
+**The mend.** Moved notes on a beat were chord tones before the move in 186 of 186, 199 of 213, 117 of 122, 113 of 114 and 198 of 198. After the move: 0, 14, 5, 1 and 0. The source lines' own notes on a beat are 0.877 to 0.938. So the mend fixes the run by putting a note off the chord on a beat. The total hides it because few notes move (0.6 to 1.3 in 100).
+
+**840.** Every death is a title line set by the weighted rule (760), sung all in one bar, by 876's path (for example 54 of 54 on song 50's words, 22 of 22 on song 58's words). Kept windows pass every time. That names the cause: 749.244 filters only the kept windows, and retiring the title's room put more title lines on 876's path.
+
+**Both forms accepted, each rule first, with marks set now:**
+
+**749.247 revised: the mend keeps the chord.**
+- Where the run has a note off the beat, that note moves.
+- A note on a beat moves to the nearer chord tone in the register, not a scale step.
+- If neither ends the run, the line is refused as now.
+- Marks, per lyric:
+  - moved notes on a beat are chord tones at least as often as the source line's own notes on a beat;
+  - the share drawn fresh is at most 0.076;
+  - no leap in the voice.
+- Watched: the share of mended lines, against 0.051 to 0.098 now.
+
+**749.248: 749.244 on every path.** A title line doesn't take a rhythm that fails 840's test (876's one bar, or the weighted rule) while a kept window that passes can be had.
+- Mark: 840 under one in ten on all five lyrics.
+- Watched, not a mark: the count of distinct rhythms each title line is drawn with, against now. Taking away the weighted rule's share mustn't shrink the title to one window.
+
+**Then the five lyrics** (52, and the words of 61, 50, 49 and 58) on every mark, pick and living median. Each form is also read off in turn, so we can see which mark each one moves.
+
+**Song 69's package is settled by this run.**
+- If all five pass, it runs with both forms.
+- If either misses, song 69 runs on the package that passed song 58's words held out (7f8f67d7), and the miss goes on the list.
+
+Either way, nothing runs on song 69 before the writer answers in the morning.
+
+Ask: the five lyrics, here.

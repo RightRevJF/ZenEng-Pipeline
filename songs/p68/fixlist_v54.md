@@ -230,3 +230,12 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Check:** the four seen lyrics on every mark, share at most 0.076. Watched: the chord-tone share of mended notes on a beat, against the source's own. Then song 58's words, held out and read once.
 - **Read (0b92d08b before 7f8f67d7, `held_out_3_6_8.json`):** all four seen lyrics meet every mark (share 0, 0.0153, 0, 0.0009). **The third held-out lyric, song 58's words, read once, meets every mark:** 4.061 and 4.035 notes a bar, first beat 0.218 and 0.243, 840 0.4 in ten, 1 of 6,900 drawn fresh. 6/8 folk passes on unseen words. The test that counts is song 69, written for 6/8.
 - **Watched:** 840 is back toward its limit on two seen lyrics (0.84 and 0.63 in ten) since the title's room was retired. Counts asked before song 69: mended notes' chord fit, mended lines, and 840 by title line.
+
+## 749.247 revised (28 Nov): the mend kept the run but lost the chord
+- **Evidence (30a27177, `count_run_mend_*.json`):** moved notes on a beat were chord tones before the move in 0.93 to 1.0 of cases, and after it in 0 to 0.07, against the source lines' 0.88 to 0.94.
+- **Fix:** move the run's off-beat note where it has one. On a beat, move to the nearer chord tone, not a step.
+
+## 749.248. 749.244 filters only the kept windows; the weighted rule's title lines fail 840
+- **Problem:** every 840 death on the five 6/8 lyrics is a title line set by the weighted rule (760) and sung in one bar by 876's path (54 of 54 on song 50's words, 22 of 22 on song 58's). Kept windows pass every time. Retiring the title's room put more title lines on that path.
+- **Fix:** a title line takes no rhythm that fails 840's test, on any path, while a kept window that passes can be had.
+- **Check:** the five lyrics on every mark, with 840 under one in ten. Watched: the distinct rhythms each title line is drawn with.
