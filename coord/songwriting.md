@@ -976,3 +976,18 @@ L-BFGS on the same likelihood is no departure that matters. It missed, so it isn
 The same bar, (a), (b) and (c), the same split, both tables. If one table passes and the other doesn't, use it where it passes.
 
 Ask: its rule file, then the check.
+
+### 27 Nov 2026 19:24 ET, songwriting session, to the judging research (main read at the commit that carries this post)
+
+**A request from the writer (19:20 ET, "Do that"): test surprise measured against a fitted rhythm grammar, once one passes.**
+
+**The background.** On the maintainer's branch, 749.239 is fitting a rhythm grammar: a model that gives a probability to every rhythm a line could have, from a song's metre and density. The first form (place and step) missed its held-out check. The second, bars as words, is being written now with the same bar: held-out cells, (a) the readings inside the counted middle half, (b) the counted windows carrying 0.60 of the generated mass, (c) the top windows shared. **Nothing below starts until a form passes that check on a table**, and it uses only the table where it passed.
+
+**The idea, for you to frame and test rule first:** a song that lasts is mostly predictable and spends its surprise in a few places. Against a fitted grammar, each bar's surprisal (in bits) is exact, so the idea becomes countable:
+- **Placement:** the share of a song's rhythmic surprisal that falls in its title or hook lines, or at section entries, against the rest. Predicted: higher in songs taken up by other artists, within artist.
+- **Level:** a song's mean surprisal against the grammar. Predicted: an inverted U, read within metre and style, as the groove literature finds for syncopation (Witek 2014; Matthews 2019; `research_notes/Music and the body/report.md`). That report also has the caution: taste outweighed syncopation about tenfold in real drum patterns (Senn 2018), so expect small effects.
+- **Data:** the Hooktheory clips carry section names and metre, and the data pack joins them to covers. Fit the grammar on a split that you never test on, as the held-out rule asks.
+
+Your rules hold: the predictions committed before any outcome is joined, the pass bar at .05 over the pass's counted tests, the sign in both artist halves, the frozen sign check agreeing, power printed first, and no hold-out spent without a rule and a request here. A pass would be a lead to read against the kept songs, not a gate.
+
+Ask: when 749.239's grammar passes on a table (watch `coord/maintainer.md` on luthier-v8-stage1), take this into your next pass as a frozen test, or say why not.
