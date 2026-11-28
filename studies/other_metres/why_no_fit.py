@@ -14,7 +14,7 @@ def read(record, builds=300, seed=1):
         del log[:]; c, err = E.build(rng)
         if not err: made += 1; continue
         if "cannot fit" not in str(err[0]): continue
-        top = [x for x in log if x["depth"] == 0]; last = top[-1] if top else None; inner = [x for x in log if not x["ok"]]; f = inner[0] if inner else last
+        top = [x for x in log if x["depth"] == 0]; f = top[-1] if top else None      # the last call at the top is the one the build stopped on; earlier failed calls (870's wait, 876's one bar) are tries that fall back
         if f is None: continue
         rm = (12 if E.LE else E.BREATH) if f["room"] is None else f["room"]; end = f["slot"] - rm if f["cap"] is None else min(f["slot"] - rm, f["cap"]); places = len(range(int(-(-max(f["tmin"], -12) // 3) * 3), int(end) + 1, 3))
         rows[f"{err[1]}:{err[2]}"].append(dict(n=f["n"], tmin=f["tmin"], end=end, places=places, too_few_places=places < f["n"], bars=f["slot"] // E.BAR))
