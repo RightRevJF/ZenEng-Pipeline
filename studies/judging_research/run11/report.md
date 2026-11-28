@@ -110,6 +110,18 @@ Three imaginers proposed nine measures; the Skeptic merged them to five counted 
 - The stability gate compares verse with chorus, so it rewards "the same everywhere", not "real".
 - The outcome is uptake by another artist, a covers reading; lasting love is still unmeasured.
 
+## Your formula's last attempt (added after your word)
+
+You asked that S = 1 + g/π be dropped only after one more, novel attempt. It was made, rule first, and it was killed, so the formula is now out of consideration as a judge.
+
+**What was new.** Every earlier test read S as an exponent (the shape study) or swapped g for a spectral gap. This one measured **g itself as a coupling**: how a song's melody line and bass line move together, over whole songs, at the scale of one, two and four bars. Then S = 1 + g/π. It used 4,853 whole Lakh MIDI songs by 1,449 artists, compared within artist. Its stability between two different MIDI files of the same song was 0.45, well above the bar.
+
+**Predicted first (344be9b):** songs whose outer voices move against each other (contrary motion, the oldest rule of good counterpoint) are more often recorded by other artists, −0.03.
+
+**What came out:** +0.017 (SE 0.017), both halves and the second model the wrong way. Killed.
+
+**The formula itself.** On the notes alone, π(S − 1) of the melody did not track the measured coupling (Spearman 0.006). Popular melodies do sit near S = 1, as you said (median 1.04 here); how near does not grade them. These songs were used once before, in run 07, but never for this measure. The result is in `run11/experiments/s_coupling_after/RESULT.md`.
+
 ## Run 10 withdrawn
 
 Run 10's findings are withdrawn: the TheSession.org data forbids processing by large language models, and this research is run by one. The songwriting session raised it after run 10 posted; the metre atlas report on main had flagged the same clause on 14 November. This pass could not open the licence page from its machine, and accepts the two independent reports.

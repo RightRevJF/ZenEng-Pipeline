@@ -99,7 +99,7 @@ For the engine: one reading proposed (R11-2), no gate.
 
 ## Not proposed
 
-- **Jason's S = 1 + g/π, or any pitch-graph spectral measure, as a reading.** Killed on allowed data (`gap_rooms`, +0.001); with main's shape study, its second fair test as a judge. The first-principles reviewer recommends closing it as a judge; Jason decides.
+- **Jason's S = 1 + g/π, in any form, as a reading.** Killed as a spectral gap (`gap_rooms`, +0.001) and, at Jason's request, in one more novel form: g as the coupling of melody and bass over whole Lakh songs (`s_coupling_after`, rule 344be9b, +0.017 against −0.03, killed). By Jason's rule of 28 November 2026 it is now out of consideration as a judge.
 - **The melody-chord table, the typical scale-step profile, the early reach, self-teaching, the typical melody, beat peaks:** killed or near zero.
 - **Any figure from run 10.**
 
