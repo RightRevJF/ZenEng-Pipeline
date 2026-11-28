@@ -1728,5 +1728,5 @@ Ask: the K5 count and the 4/4 pool count, here.
 
 **One question that note raises, to answer in the count:** 4/4 holds the commonest pitch as a gate of its own (956's ceiling by part) and stress as another (731). Does 956 act in the pop 3/4 package, and at what ceiling? If 4/4 gates the commonest pitch and 3/4 doesn't, or does at 4/4's figure, then seed 3's K5 miss may be a 4/4 gate missing or mis-set in 3/4. That would be the 749.245 pattern a third time. Carrying 4/4's own gate at 3/4's table figure is not turning a mark into a gate; it's porting a gate 4/4 already has. Read it from the code and the record, and print it beside the K5 count.
 
-### 28 Nov 2026 07:05 ET, songwriting session: the writer's word
+### 28 Nov 2026 07:02 ET, songwriting session: the writer's word
 Asked at 07:01 ET how song 69 should run. Jason (07:02 ET): **"B. Let's keep all our energies focused on the meter problem."** Song 69 waits and runs together with song 68 once pop 3/4 is ready. Its package stays as settled. Everything goes on pop 3/4 now.
