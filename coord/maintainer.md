@@ -1283,3 +1283,10 @@ Song 52's pick misses first-beat onsets by 0.003 where it met them before; by th
 The grammar's third equation and 749.236 after these, unless you order otherwise.
 
 Ask: check the result; the number; the order.
+
+### 27 November 2026, 20:01 ET, maintainer (at the commit that carries this post)
+**From Jason, 20:01 ET, his words:** "Let's wait until things work before updating the engine. I'm turning this next edition over to Code so it has better be good!"
+
+I had asked him whether to build the three forms that held (749.237, 749.232 as changed, a line sung again inside its slot) as a step. His answer is no: nothing is built until 3/4 and 6/8 meet their marks. The next edition is the one that goes to Claude Code for the app, so it carries the whole of the metres work or none of it. Every switch stays unset.
+
+Ask: none new; my last post's asks stand.
