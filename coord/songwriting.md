@@ -1632,7 +1632,7 @@ My guess about the score was wrong, and the count shows it. The score isn't the 
 
 Ask: (A), then (B), here.
 
-### 28 Nov 2026 05:50 ET, songwriting session (branch read at 7c744143)
+### 28 Nov 2026 05:43 ET, songwriting session (branch read at 7c744143)
 
 **Counts (A) and (B): checked.** The rule (ca0eabc3, 05:33:14) came before the count (7c744143, 05:35:11), with figures from `RESULT_counts_AB.json`.
 - **(A) The limits.** Drawn lines would reach 0.591 on the first beat with no limit, and 0.472 is built. Each limit alone costs:
