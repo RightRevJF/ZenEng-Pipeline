@@ -2178,3 +2178,44 @@ Ask: say which is first, or name another. Songs 68 and 69 are not run.
 A correction to my 08:12 post, as noted for myself: "a line drawn for all the words it will carry is sung again more nearly as it was" was an explanation I had not counted. The exact two-bar repeat fell with tonight's forms (0.029, 0.019, 0.025 before; 0.014, 0.012, 0.012 now) while K6's bar-level share rose. Why the source forms raise K6 is not known.
 
 Ask: rule on K3's first-beat line in the light of the writer's point; my 08:12 ask (which road on rhythm sung again) stands.
+
+### 28 November 2026, 08:31 ET, maintainer (at the commit that carries this post)
+
+**The read on the old charge, and a count that stops 749.257's rule file before it is written.** Both are reads of the engine as it is (seed 4's record of RESULT_seeds_456, 258 living builds); no engine or planner change. Files (committed at 79afc73): `read_old_charge_pop55_seed4.json`, `count_again_rhythm_pop55_seed4.json`, made by `read_old_charge.py` and `count_again_rhythm.py`.
+
+**1. What the old charge (874) sums outside 4/4.** For each reading the table holds (bar the uncharged: notes a bar, the gaps, range, pitches), the distance outside the table's own 25th to 75th, over their spread. **The table is the metre's own** (here the pop 3/4 clips), not 4/4's. So it is not 749.245's shape. But it has a fault of the kind K6 was mended for on 27 November: **the table is of sections (16 bars at the median) and the charge reads the whole song.**
+
+| Reading charged | The table's 25th, 50th, 75th | Living builds' median | Builds over the 75th; under the 25th | Share of all the charge |
+|---|---|---|---|---|
+| repeated notes | [0.038, 0.14, 0.255] | 0.301 | 0.841; 0.0 | 0.239 |
+| moves by step | [0.34, 0.463, 0.559] | 0.302 | 0.0; 0.733 | 0.233 |
+| longest run of one pitch | [2.0, 3.0, 4.0] | 4.0 | 0.306; 0.0 | 0.201 |
+| bars on a figure already sung | [0.209, 0.375, 0.562] | 0.628 | 0.961; 0.0 | 0.198 |
+| turns of direction | [0.379, 0.444, 0.538] | 0.44 | 0.058; 0.186 | 0.055 |
+| moves by leap | [0.083, 0.152, 0.262] | 0.199 | 0.163; 0.019 | 0.037 |
+| distinct rhythms over bars | [0.213, 0.375, 0.535] | 0.219 | 0.0; 0.395 | 0.018 |
+| bars on a rhythm already sung | [0.465, 0.625, 0.787] | 0.781 | 0.395; 0.0 | 0.018 |
+| onsets on the bar's first beat | [0.214, 0.282, 0.364] | 0.328 | 0.0; 0.0 | 0.0 |
+| onsets on the beat | [0.508, 0.643, 0.8] | 0.706 | 0.0; 0.0 | 0.0 |
+
+A whole song repeats more than one section does, so nearly every build is charged for it: figures sung again are over the clips' 75th in 0.961 of builds, rhythm sung again in 0.395, distinct rhythms under the 25th in 0.395. A build that repeats more is charged more, and the charge keeps the least-charged half. That is why the half it removes meets K6 more often. Most of the charge, though, is melodic (repeated notes, moves by step, the longest run, figures again), not rhythmic.
+
+**2. The engine already does what 749.257 asks.** Counted before writing the rule file, since the form's premise was that a line sung again does not keep its source's rhythm:
+
+| Lines sung again (the lyric's and 818's), by count against the source | Lines | Exactly the source's rhythm | Only the count's notes added or taken | Other |
+|---|---|---|---|---|
+| The same count | 2874 | 0.935 | 0 | 0.065 |
+| One more syllable | 2098 | 0 | 0.968 | 0.032 |
+| One fewer | 1966 | 0 | 0.988 | 0.012 |
+| Two or three apart | 2824 | 0 | 0.939 | 0.062 |
+| All | 9762 | 0.275 | 0.679 | 0.046 |
+
+Where the counts are the same, the line keeps its source's rhythm exactly 0.935 of the time; a syllable more or fewer, only the count's note moves (0.968 and 0.988). 749.257 as ordered would change almost nothing. **I was wrong at 08:12** to say 818's refit "is rarely the same rhythm" because "the refit moves notes": the refit moves only what the count forces. The rhythm differs because **the words differ in count**: only 0.294 of lines sung again have their source's syllable count.
+
+**So the variable is on the lyric's side.** Pop repeats a two-bar rhythm one time in four, and it can only do so where lines match in length; song 55's lines, written for 4/4, mostly do not match the line they sing again. And a caution on my count 3: units were counted two bars at a time from the section's start, but this plan's verse slots run [4, 2, 4, 2, 4, 2, 2, 4] bars, so "the unit two back" is often not "the line two above". The measure is fair to the music as heard (a rhythm heard again four bars later); it does not test 818.
+
+What I would count next, no form: on the lyric alone, how often a line has the syllable count of the line two above (and of the line it is marked to sing again), for song 55's words and for the other lyrics, against how often the pop clips' units match in note count. If lyrics written for 4/4 match less, part of K6's shortfall belongs to the trial lyric, not the engine; and song 68's own words (written for 3/4) can be read for it from the lyric without running the song.
+
+**Also, from the writer (08:25 ET):** he ordered a thorough research pass "focusing on the math" on the research gap. It is running outside this branch (five lines: the textsetting equations and their weights; carrying a rule across metres and styles; worded pop corpora by metre, with licences; the mathematics of repetition and of adapting a tune to new words; lyric-to-melody systems and register figures). No TheSession data. The report will be committed under `reports/` and its findings come here as ideas to be tested, not results.
+
+Ask: rule on 749.257 in the light of the count (I have not written its rule file); and say whether the lyric-side count is next. My 08:25 ask on K3's first-beat line stands.
