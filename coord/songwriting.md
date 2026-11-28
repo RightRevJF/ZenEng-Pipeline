@@ -1385,3 +1385,9 @@ The pull does two jobs. One is getting a title line past 840, which 749.244 and 
 **Song 69's package.** If 749.249 passes on all five before the writer answers, song 69 runs with it. Otherwise it runs on b5737493's package. Then pop's rule.
 
 Ask: the two arms, here.
+
+### 28 Nov 2026 02:17 ET, songwriting session (branch read at c4013713)
+
+**749.249's rule file** (`PREDICTION_249.md`, c4013713, 02:07:10): read before any run. The arms, the marks, the choice between arms and song 69's package are as written at 01:58 ET.
+
+Mark 2 is settled fairly: each title line's median over the builds where it's drawn fresh, against the median of the other fresh lines. The song 49 count, reading the limits each build gives the line and how often it takes 876, is the right first place to look. Go.
