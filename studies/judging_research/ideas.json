@@ -1,5 +1,5 @@
 {
- "note": "Ideas backlog for the judging research. status: untested, testing, passed, failed, parked. 'failed' includes withdrawn ideas.",
+ "note": "Ideas backlog for the judging research. status: untested, testing, passed, failed, parked, unsettled, estimate (uncounted, under the power floor), stopped (stopped at a gate), pilot (no outcome). 'failed' includes withdrawn ideas.",
  "ideas": [
   {
    "id": "W01-J1",
@@ -1039,9 +1039,10 @@
    "proposed": "run11",
    "status": "passed",
    "status_set_by": "run11 experiments",
-   "note": "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01) | run11: rep_entropy (K=5, a=.01): PASSED beta -0.029 (SE 0.011, p .0076), halves -0.010/-0.046, cond logit -0.16; 12 baselines + mel_ic_mean held -0.029 (p .16); SEEN songs: a pass that needs unseen melodies to confirm. Lead on single-song artists (after seeing results): -0.025 (SE 0.016) unsettled, +0.040 with size held",
+   "note": "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01) | run11: rep_entropy (K=5, a=.01): PASSED beta -0.029 (SE 0.011, p .0076), halves -0.010/-0.046, cond logit -0.16; 12 baselines + mel_ic_mean held -0.029 (p .16); SEEN songs: a pass that needs unseen melodies to confirm. Lead on single-song artists (after seeing results): -0.025 (SE 0.016) unsettled, +0.040 with size held | run12 rep_lakh (Lakh replication, estimate, power 0.070): beta -0.022 (SE 0.021, p .30) vs -0.02, halves -0.020/-0.023, cond logit failed; neither confirms nor refutes the run11 pass",
    "history": [
-    "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01)"
+    "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01)",
+    "run12 experiments: Lakh REP replication estimate (rep_lakh), status left as run11 passed"
    ]
   },
   {
@@ -1103,18 +1104,24 @@
    "idea": "Fitness, not luck: estimate each song's intrinsic fitness from the timing of its covers (Bianconi-Barabasi fitness model, preferential attachment) and test whether notes measures predict fitness better than raw counts; priority 1, starts the 10:17 pass of 28 Nov 2026",
    "stance": "Physics vector (Jason, 28 Nov 2026, in place of S = 1 + g/pi)",
    "proposed": "run11 (after the pass)",
-   "status": "testing",
-   "status_set_by": "run12",
-   "note": ""
+   "status": "unsettled",
+   "status_set_by": "run12 experiments",
+   "note": "run12 v1_rep (counted): UNSETTLED, beta_D -0.0117 (SE 0.0073, p .108); v1_chrep estimate -0.018 (p .034); frozen fit has A -> infinity, so D is count arithmetic, not fitness beyond luck",
+   "history": [
+    "run12 experiments: unsettled in v1_rep (counted); v1_chrep estimate"
+   ]
   },
   {
    "id": "P11-2",
    "idea": "Predictive information (Bialek, Nemenman & Tishby 2001): excess entropy of the melody on whole songs; is 'fewer different notes' a crude form of learnability? Priority 2",
    "stance": "Physics vector (Jason, 28 Nov 2026, in place of S = 1 + g/pi)",
    "proposed": "run11 (after the pass)",
-   "status": "untested",
-   "status_set_by": "Jason's word, 28 Nov 2026",
-   "note": ""
+   "status": "unsettled",
+   "status_set_by": "run12 experiments",
+   "note": "run12: PI3c on Lakh KILLED (-0.011, SE 0.021, vs +0.03); PIC on Hooktheory UNSETTLED (+0.015, SE 0.0125, p .23); PI8 reading +0.019 (p .24)",
+   "history": [
+    "run12 experiments: unsettled: pi3c_lakh killed, pic_hook unsettled"
+   ]
   },
   {
    "id": "P11-3",
@@ -1130,108 +1137,144 @@
    "idea": "Roughness from overtones: Plomp-Levelt consonance from the MIDI voicings, within artist",
    "stance": "Physics vector (Jason, 28 Nov 2026, in place of S = 1 + g/pi)",
    "proposed": "run11 (after the pass)",
-   "status": "untested",
-   "status_set_by": "Jason's word, 28 Nov 2026",
-   "note": ""
+   "status": "estimate",
+   "status_set_by": "run12 experiments",
+   "note": "run12 roughx_lakh (ROUGH_X, estimate, power 0.013): beta +0.015 (SE 0.024, p .52) vs predicted -0.01",
+   "history": [
+    "run12 experiments: estimate in roughx_lakh (ROUGH_X)"
+   ]
   },
   {
    "id": "P11-5",
    "idea": "Invariants across arrangements: what stays the same between two arrangers' MIDI files of one song (about 190 Lakh pairs; a pilot)",
    "stance": "Physics vector (Jason, 28 Nov 2026, in place of S = 1 + g/pi)",
    "proposed": "run11 (after the pass)",
-   "status": "untested",
-   "status_set_by": "Jason's word, 28 Nov 2026",
-   "note": ""
+   "status": "pilot",
+   "status_set_by": "run12 experiments",
+   "note": "run12 canal_pilot (CANAL, 159 pairs): P1, P2, P4 true; P3 false (voicing agreement tracks CANAL, rho +0.34); median CANAL 0.988, 86% same key",
+   "history": [
+    "run12 experiments: pilot in canal_pilot (P3 false)"
+   ]
   },
   {
    "id": "R12-G1",
    "idea": "FIFTHS: Parseval split of melody pitch-class concentration on Z12 (C = 12 sum p^2 - 1 = E5 + REST, E5 = 2|f5|^2); fifths-axis energy predicts uptake beyond concentration; Lakh skyline counted, Hooktheory reading",
    "stance": "Geometer",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "stopped",
+   "status_set_by": "run12 experiments",
+   "note": "run12 fifths_lakh: STOPPED at the overlap gate (rho -0.708 with REP_L), run as estimate: beta(E5_L) +0.045 (SE 0.021, p .037); raw Wald b_E5 - b_REST +0.123 (SE 0.076, p .11); cond logit failed; Hooktheory G_E5 -0.003 (p .78)",
+   "history": [
+    "run12 experiments: stopped at the overlap gate; fifths_lakh run as estimate"
+   ]
   },
   {
    "id": "R12-G2",
    "idea": "PRED: Gaussian predictive information of the Lakh skyline from partial autocorrelations (Ibragimov-Rozanov), K = 32; merged into L12-1 as a reading",
    "stance": "Geometer",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "estimate",
+   "status_set_by": "run12 experiments",
+   "note": "run12 reading inside pi3c_lakh (merged into R12-L1): PI8 +0.019 (SE 0.016, p .24), predicted sign; REP_L shrink 7% with PI8 in (does not count: REP_L alone p .13)",
+   "history": [
+    "run12 experiments: estimate: PI8 reading inside pi3c_lakh"
+   ]
   },
   {
    "id": "R12-G3",
    "idea": "THIN: binomial thinning of late covers given n (no-waves reading of Freeman-Jordan); withdrawn into the windows merge",
    "stance": "Geometer",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "estimate",
+   "status_set_by": "run12 experiments",
+   "note": "run12 windows (merge G3/L3/I1; estimate, 1,419 songs): REP Delta -0.036 (SE_boot 0.069, analytic 0.059), beta_E +0.077, beta_L +0.041; ch_rep Delta -0.242 (bootstrap failed, NaN; analytic SE 0.072, p .0007, uncounted), beta_E +0.062, beta_L -0.180",
+   "history": [
+    "run12 experiments: estimate in windows (merge of G3, L3, I1)"
+   ]
   },
   {
    "id": "R12-L1",
    "idea": "PI3c: predictive information 2H(3) - H(6) of skyline pitch-class events on Lakh whole songs, shuffle-corrected; H1 and ln events held (physics vector 2)",
    "stance": "Listener",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "failed",
+   "status_set_by": "run12 experiments",
+   "note": "run12 pi3c_lakh (counted, K=3, a=.0167): KILLED by range, beta -0.011 (SE 0.0207, p .59), range -0.052 to +0.0296 vs +0.03 (by 0.0004); halves -0.015/-0.003, cond logit -0.045",
+   "history": [
+    "run12 experiments: failed: pi3c_lakh (counted) killed by the range rule"
+   ]
   },
   {
    "id": "R12-L2",
    "idea": "PIC: corpus-trained context gain (Witten-Bell trigram vs unigram) on Hooktheory clips; withdrawn as counted (power 0.18), estimate",
    "stance": "Listener",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "unsettled",
+   "status_set_by": "run12 experiments",
+   "note": "run12 pic_hook (counted by the chair despite the Listener's withdrawal, which rested on power without the artist share): UNSETTLED, beta +0.015 (SE 0.0125, p .23), halves +0.014/+0.015, cond logit +0.073",
+   "history": [
+    "run12 experiments: unsettled in pic_hook (counted by the chair over the Listener's withdrawal)"
+   ]
   },
   {
    "id": "R12-L3",
    "idea": "Late wins: notes measures predict late covers (age 8+) more than early (0-3); merged into the windows test",
    "stance": "Listener",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "estimate",
+   "status_set_by": "run12 experiments",
+   "note": "run12 windows (merge G3/L3/I1; estimate, 1,419 songs): REP Delta -0.036 (SE_boot 0.069, analytic 0.059), beta_E +0.077, beta_L +0.041; ch_rep Delta -0.242 (bootstrap failed, NaN; analytic SE 0.072, p .0007, uncounted), beta_E +0.062, beta_L -0.180",
+   "history": [
+    "run12 experiments: estimate in windows (merge of G3, L3, I1)"
+   ]
   },
   {
    "id": "R12-I1",
    "idea": "PROP: fitness is proportional, luck is front-loaded; Poisson per window with offset from frozen g,h; Delta = beta_late - beta_early = 0 for a fitness measure (merged windows test)",
    "stance": "Inventor",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "estimate",
+   "status_set_by": "run12 experiments",
+   "note": "run12 windows (merge G3/L3/I1; estimate, 1,419 songs): REP Delta -0.036 (SE_boot 0.069, analytic 0.059), beta_E +0.077, beta_L +0.041; ch_rep Delta -0.242 (bootstrap failed, NaN; analytic SE 0.072, p .0007, uncounted), beta_E +0.062, beta_L -0.180",
+   "history": [
+    "run12 experiments: estimate in windows (merge of G3, L3, I1)"
+   ]
   },
   {
    "id": "R12-I2",
    "idea": "ROUGH / ROUGH_X: Sethares roughness of MIDI voicings per sounding pair (octave pairs dropped), within artist on Lakh (P11-4)",
    "stance": "Inventor",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "estimate",
+   "status_set_by": "run12 experiments",
+   "note": "run12 roughx_lakh (estimate, power 0.013): beta +0.015 (SE 0.024, p .52) vs -0.01, wrong sign, not killed; bare +0.006 (p .72)",
+   "history": [
+    "run12 experiments: estimate in roughx_lakh"
+   ]
   },
   {
    "id": "R12-I3",
    "idea": "CANAL: canalization, 1 - min-rotation JSD of two arrangers' pitch-class profiles; withdrawn as a test, notes-side pilot (P11-5)",
    "stance": "Inventor",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "pilot",
+   "status_set_by": "run12 experiments",
+   "note": "run12 canal_pilot (notes only, 159 pairs): P1, P2, P4 true, P3 false (rho with -|dROUGH_X| +0.34, not < 0.15); rho with -|dH1| +0.52, -|dREP_L| +0.41, -|dPI3c| +0.30, mean PCE +0.19",
+   "history": [
+    "run12 experiments: pilot in canal_pilot (P3 false)"
+   ]
   },
   {
    "id": "R12-V1",
    "idea": "Jason's vector-1 test: does REP / ch_rep predict FIT (frozen Bianconi-Barabasi fitness) better than log covers; Skeptic: near-arithmetic once A -> infinity",
    "stance": "Chair/Jason",
    "proposed": "run12",
-   "status": "untested",
-   "status_set_by": "run12 brainstorm",
-   "note": ""
+   "status": "unsettled",
+   "status_set_by": "run12 experiments",
+   "note": "run12 v1_rep (counted, K=3, a=.0167): UNSETTLED, beta_D -0.0117 (SE 0.0073, p .108), halves -0.014/-0.011; readings beta on z(FIT) -0.028, on z(log1p N) -0.016; v1_chrep estimate beta_D -0.018 (SE 0.0084, p .034). With A -> infinity D is arithmetic (digamma vs log curvature): cannot show fitness beyond luck",
+   "history": [
+    "run12 experiments: unsettled in v1_rep (counted); v1_chrep estimate"
+   ]
   }
  ]
 }
