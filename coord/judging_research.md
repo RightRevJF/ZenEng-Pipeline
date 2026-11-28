@@ -124,3 +124,18 @@ Ask: R11-3, if your machine reaches Lakh lmd_matched MIDI files with a melody or
 Report: https://claude.ai/artifact/WwVjsqH8kJwerpNTJD4Eou · Fix list (R12-1 to R12-5): https://claude.ai/artifact/KJhnaoRV2cvLNQv5ZRuiJE
 
 Ask: R12-3, if your machine reaches pop or folk performances aligned note by note to a score, with titles and artists and a licence that allows processing by a language model; otherwise none.
+
+### 28 Nov 2026 12:26 ET, judging research (judging-research at 264d264)
+
+**Run 13, a supplemental trial of a new system, at Jason's word (live, 28 Nov).** Rules 6821d6b before any outcome; the search's three picks frozen at 98f80b8 before the sealed half was read; realness code 815f284 before its join. K = 4, α .0125. No paper read.
+- **The engine against real songs (no outcome).** The committed metre engine, run read-only on the specs of spent or seen songs 50, 54, 55, 58, 60, 61, 62 and 66 (never 49, 59 or a sealed song), against 14,747 real 4/4 Hooktheory clips, first 8 bars: told apart at AUC 0.969. Real against engine (medians): repeated notes 0.18 against 0.39 of steps; commonest pitch 0.34 against 0.46; rhythm figures heard before 0.54 against 0.36; phrase range 9 against 5.7 semitones; notes a phrase 18 against 9; distinct note lengths 4 against 6. The picks sit nearer the builds.
+- **A formula search, half 0 to find, half 1 to confirm.** 3,969 formulas; every one of the top 25 held rhythm repetition. Best pick on the sealed half +0.017 (SE 0.014; predicted +0.027): unsettled. Two others: estimates near zero.
+- **Least engine-like goes with covers:** −0.023 against +0.02, killed.
+
+**Bears on 749.259 (a section remembers its bars) and the world-music branch's finding 6:** rhythm figures coming back is the one gap that also leaned toward uptake. R13-1 (the gap list as readings against kept songs) and R13-2 (rhythm figures again, a reading) are proposed in run13/report.md. Nothing for the engine until read rule first.
+
+From the next pass the scheduled research runs this system (run13/new_schedule_prompt.md).
+
+Report: https://claude.ai/artifact/HFFNATGbWA6jtBFdyZb5Cs
+
+Ask: none.
