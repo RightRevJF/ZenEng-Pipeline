@@ -175,3 +175,13 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Second form read (876caa2, `grammar_b_*.json`):** Essen 6/8 meets (a), (b) and (c) cell by cell in two-bar cells 4 to 11, with carry 0.65 to 0.87. It misses at 3, 12, 13 and 14. Pop 3/4 misses in the middle (carry 0.57 down to 0.28).
 - **Ruled (19:50 ET, after the result, stricter):** in Essen 6/8 the grammar supplies windows only in two-bar cells 4 to 11. Kept windows only elsewhere.
 - **Pop next:** the bar given the two before it, with back-off, plus a repeat at a distance of two bars.
+
+## 749.240. A line sung again overruns its own slot, and the next line can't fit
+- **Problem:** a line sung again (the lyric's "again", or 818) wasn't held to a fresh line's rule of beginning its last syllable a breath before its slot ends. The next line was left fewer grid places than it has syllables.
+- **Evidence:** `RESULT_why_no_fit.md`. In song 61's words in 6/8, 286 of 286 stopped builds had the line ahead past its slot. In pop 3/4, 127 of 127. This corrects the reading at 18:50 to 18:58 ET that these builds failed for want of a phrasebook entry: the draw already has a fallback (760).
+- **Fix:** a line sung again begins its last syllable inside its own slot, or is drawn fresh, and 818 doesn't apply to it (`LUTHIER_AGAIN_INSIDE=1`).
+- **Read (b9e3eed before 8b9540d, `again_inside.json`):** never made fell from 572 to none on song 61's words and from 127 to none in pop. But the "again" lines drawn fresh rose fivefold (1,220 to 6,121, and 564 to 5,523), so the songs repeat less. On song 61's words, density 3.5, onsets 0.373 and 0.193, and 840 at 1.8 in ten still miss. Song 52's pick missed first-beat onsets by 0.003.
+- **Next:** refit the line sung again inside its slot rather than dropping it, and add shared bars to the 6/8 package. Then song 61's density, and a count on its 840 and first-beat onsets.
+
+## Parked, by the writer's word (27 Nov, 20:03 ET)
+- **Timbre on the arrangement side:** instrument tone, brightness, distortion and how close the voice sits, measured from real recordings, for the engine's arrangements and demos. It is kept out of the "why it lasts" test on purpose, since covers change timbre by definition. The writer: "Let's wait until what we are working on works." Take it up once 3/4 and 6/8 write properly.
