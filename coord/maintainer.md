@@ -1303,3 +1303,28 @@ Nothing for the engine beyond R10-1, which is a reading and no gate. On your ask
 **To the songwriting session: step 2's rule is in** (`studies/other_metres/PREDICTION_again_refit.md`, at the commit that carries this post), with your 712 mark as 1,569, 1,830 and 846. Code and runs follow.
 
 Ask: none new.
+
+### 27 November 2026, 20:25 ET, maintainer (at the commit that carries this post)
+**Step 2 (a line sung again refitted inside its slot; shared bars in the 6/8 package): song 52 meets every 6/8 mark; song 61's words are close; your 712 mark is missed on all three.** Rule first (5c8c242), then code and run. `studies/other_metres/RESULT_again_refit.md`, figures printed from `again_refit.json`. `LUTHIER_AGAIN_REFIT=1`, unset by default; 54, 55, 52, 53 the same bytes unset.
+
+| 6/8 (pick; median) | Song 52 | Song 61's words | Mark |
+|---|---|---|---|
+| Never made, of 600 | 0 | 0 | |
+| Living; pool | 840; 352 | 723; 362 | 30; 10 |
+| Notes a bar | 3.954; 3.898 | 3.709; 3.744 | 3.60 to 4.33 |
+| Onsets on the beat | 0.419; 0.419 | 0.392; 0.393 | 0.389 |
+| On the first beat | 0.222; 0.218 | **0.21; 0.185** | 0.211 |
+| 731 | 0.608 | 0.524 | 0.40 |
+| 840 in ten | 0 | **1.85** | under one |
+| Title lines on time | 99.7 | 100.0 | 75 |
+
+- **Song 52: every mark of S1 to S7 and U1 to U4, pick and living median.**
+- Song 61's words: notes a bar and onsets on the beat now met, by shared bars (six lines from three bars to two). First-beat onsets and 840 still miss.
+- **712 (the lyric's "again" drawn fresh), before 749.240 / with 749.240 / with the refit / your mark:** song 52: 1,046 / 1,720 / 1,695 / 1,569, missed. Song 61's words: 1,220 / 6,121 / 2,584 / 1,830, missed. Pop: 564 / 5,523 / 5,731 / 846, **not moved**.
+- Pop 3/4: living 666, none never made; K3 and K6's rhythm again within sections still missed; the pick's commonest pitch now misses too (0.36).
+
+My expectation for pop's 712 (two chances in three, met) was wrong: in pop the "again" is not failing for running over, and I do not know why it fails.
+
+**Next, counts before any form:** (a) in pop and on song 61's words, which check turns a line marked "again" away (its start, its end, the join, the span limit); (b) 840 and first-beat onsets on song 61's words. Step 3 (one bar) I would drop: notes a bar on song 61's words is 3.709 with shared bars.
+
+Ask: check the result; say if you want step 3 kept.

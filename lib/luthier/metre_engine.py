@@ -326,7 +326,9 @@ class Engine:
         """712: the source's onsets and pitches fitted to new syllables; 772: a stressed opening drops its source's pickup."""
         floor = max(tmin, 0) if (sy[0][1] and not src_st0 and src[0][0] < 0) else tmin
         if floor != tmin: self.stats["772: a line sung again, stressed opening: its source's pickup dropped"] += 1
-        keep = [(t, p) for t, p in src if t >= floor] or src[-1:]; on = [t for t, p in keep]; ps = [p for t, p in keep]; n = len(sy)
+        keep = [(t, p) for t, p in src if t >= floor] or src[-1:]
+        if self.S.get("again_refit"): keep = [(t, p) for t, p in keep if t <= slot - (12 if self.LE else self.BREATH)] or keep[:1]      # trial (again refit): the source's notes that begin past the copy's own latest start are left out before the count is matched
+        on = [t for t, p in keep]; ps = [p for t, p in keep]; n = len(sy)
         if self.WW and self.WW["again"] and abs(len(on) - n) <= 3:                                               # 882: the new words choose how they sit on the old tune: which notes are split, dropped or led into, by where kept songs sing each syllable's weight
             def step_from(q0, nxt):
                 st_ = [q for q in (q0 + 1, q0 - 1, q0 + 2, q0 - 2) if q % 12 in self.SCALE]; return min(st_, key=lambda q_: abs(q_ - nxt))
