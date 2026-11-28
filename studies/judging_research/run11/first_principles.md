@@ -55,3 +55,6 @@ Fold notes to letter names; add the time on each. Entropy (bits) says how spread
 - *Twinkle, Twinkle*, 16 beats: C 4, G 4, A, F, E, D 2 each → **2.50 bits**, about 5.7.
 
 Why it might matter (speculation): each extra note is one more thing to learn by ear, so a narrow tune is sung back sooner and travels further. Twinkle is loved too: a lean, not a rule.
+
+## Addendum (after Jason's word, 28 November 2026): the formula's last attempt
+Jason asked that his formula be dropped only after one more, novel attempt. Every earlier test read S as an exponent or swapped g for a spectral gap; this one measured **g as a coupling**: how the melody line and the bass line move together over whole Lakh songs (detrended cross-correlation at one, two and four bars), S = 1 + g/π. Rule first (344be9b): contrary motion (g below 0) goes with covers, −0.03. Result +0.017 (SE 0.017): **killed**, halves and logit the wrong way. On the notes alone the formula's identity did not hold either: π(S − 1) of the melody is unrelated to the measured coupling (Spearman 0.006). By Jason's rule, S = 1 + g/π is now eliminated from consideration as a judge of songs. What it leaves: popular melodies do sit near S = 1, as he said; nearness does not grade them.

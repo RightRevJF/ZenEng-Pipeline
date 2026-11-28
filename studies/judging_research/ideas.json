@@ -92,7 +92,7 @@
    "proposed": "run02",
    "status": "failed",
    "status_set_by": "run07 experiments",
-   "note": "McGill: renaming check passed, split-half 0.58; Hooktheory: clip-to-clip 0.17 (0.21 after size) — fails stability gate, kept out of Hooktheory models; untested on any outcome | run07: tested on whole Lakh songs as R07-G3 (spectral_gap) | run07 spectral_gap: KILLED beta +0.26 (SE 0.86, p 0.766), halves +0.69/-0.18, N 5901, power 0.01"
+   "note": "McGill: renaming check passed, split-half 0.58; Hooktheory: clip-to-clip 0.17 (0.21 after size) — fails stability gate, kept out of Hooktheory models; untested on any outcome | run07: tested on whole Lakh songs as R07-G3 (spectral_gap) | run07 spectral_gap: KILLED beta +0.26 (SE 0.86, p 0.766), halves +0.69/-0.18, N 5901, power 0.01 | ELIMINATED with Jason's formula after run 11 (his rule of 28 Nov 2026: one more novel attempt, then drop)"
   },
   {
    "id": "R02-pcentropy",
@@ -509,7 +509,7 @@
    "proposed": "run07",
    "status": "failed",
    "status_set_by": "run07 experiments",
-   "note": "frozen as run07/experiments/spectral_gap, -0.3 pp/SD, ch_rep held | run07 spectral_gap: KILLED beta +0.26 (SE 0.86, p 0.766), halves +0.69/-0.18, N 5901, power 0.01"
+   "note": "frozen as run07/experiments/spectral_gap, -0.3 pp/SD, ch_rep held | run07 spectral_gap: KILLED beta +0.26 (SE 0.86, p 0.766), halves +0.69/-0.18, N 5901, power 0.01 | ELIMINATED with Jason's formula after run 11 (his rule of 28 Nov 2026: one more novel attempt, then drop)"
   },
   {
    "id": "R07-L1",
@@ -825,7 +825,7 @@
    "proposed": "run10",
    "status": "stopped",
    "status_set_by": "run11 chair",
-   "note": "s_gap_skeleton: KILLED -0.005 (SE 0.007) vs -0.03; halves split, Poisson + | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: skeleton pitch-class S (R_SGAP) fails the standing gate (clip stability 0.080 < 0.20); printed as an uncounted reading in gap_rooms",
+   "note": "s_gap_skeleton: KILLED -0.005 (SE 0.007) vs -0.03; halves split, Poisson + | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: skeleton pitch-class S (R_SGAP) fails the standing gate (clip stability 0.080 < 0.20); printed as an uncounted reading in gap_rooms | ELIMINATED with Jason's formula after run 11 (his rule of 28 Nov 2026: one more novel attempt, then drop)",
    "data_withdrawn": true,
    "status_before_withdrawal": "failed",
    "history": [
@@ -923,7 +923,7 @@
    "proposed": "run10",
    "status": "failed",
    "status_set_by": "run11 experiments",
-   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-G1, tested fresh on Hooktheory as run11/experiments/gap_rooms (counted) | run11: fresh test run11 gap_rooms: KILLED +0.001 (SE 0.011)",
+   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-G1, tested fresh on Hooktheory as run11/experiments/gap_rooms (counted) | run11: fresh test run11 gap_rooms: KILLED +0.001 (SE 0.011) | ELIMINATED with Jason's formula after run 11 (his rule of 28 Nov 2026: one more novel attempt, then drop)",
    "data_withdrawn": true,
    "status_before_withdrawal": "testing",
    "history": [
@@ -979,7 +979,7 @@
    "proposed": "run11",
    "status": "failed",
    "status_set_by": "run11 experiments",
-   "note": "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held | run11: gap_rooms (K=5, a=.01): KILLED beta +0.001 (SE 0.011), halves +0.013/-0.012; bare +0.011; Hooktheory within artist, seen songs",
+   "note": "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held | run11: gap_rooms (K=5, a=.01): KILLED beta +0.001 (SE 0.011), halves +0.013/-0.012; bare +0.011; Hooktheory within artist, seen songs | ELIMINATED with Jason's formula after run 11 (his rule of 28 Nov 2026: one more novel attempt, then drop)",
    "history": [
     "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held"
    ]
@@ -1088,6 +1088,15 @@
    "status": "stopped",
    "status_set_by": "run11 brainstorm",
    "note": "measure-side: clip-to-clip stability 0.107-0.159 < 0.20"
+  },
+  {
+   "id": "R11-S1",
+   "idea": "Jason's S = 1 + g/pi with g as the coupling (rho_DCCA) of the melody skyline and the bass line over whole Lakh songs; contrary motion predicted to go with covers (Jason's 'one more, novel attempt', 28 Nov 2026)",
+   "stance": "Orchestrator (Jason's request)",
+   "proposed": "run11",
+   "status": "failed",
+   "status_set_by": "run11 s_coupling_after",
+   "note": "KILLED: +0.017 (SE 0.017) vs -0.03; halves +0.014/+0.020; logit (fixed column) +0.048; the formula's identity pi(S_mel-1) vs g: Spearman 0.006. By Jason's rule the formula is now eliminated from consideration as a judge."
   }
  ]
 }
