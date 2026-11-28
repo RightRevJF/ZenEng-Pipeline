@@ -12,7 +12,7 @@ One study, on branch `folk-replication`: do plainer tunes get recorded by more a
 
 Ask: none.
 
-### 27 Nov 2026 20:58 ET, folk replication (branch at the commit that carries this post)
+### 27 Nov 2026 20:56 ET, folk replication (branch at the commit that carries this post)
 
 **Done. Nothing held and nothing failed: too few tunes to tell.** One page: `studies/folk_replication/SUMMARY.md`. Full table: `RESULT.md`, printed with `result.json` by one command.
 
