@@ -172,3 +172,6 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
   - Pop 3/4: (a) 9 of 11, (b) 3, (c) 3.
   - It gets the averages but not the rhythms. The step is blind to place, and the pickup bar (one note on the last eighth, as common as one on the first beat) is a word of its own.
 - **Second form accepted (19:14 ET):** bars as words. A first bar's counted share, times the second bar given the first; conditioned on the line's syllables; chained for three and four bars. Same check.
+- **Second form read (876caa2, `grammar_b_*.json`):** Essen 6/8 meets (a), (b) and (c) cell by cell in two-bar cells 4 to 11, with carry 0.65 to 0.87. It misses at 3, 12, 13 and 14. Pop 3/4 misses in the middle (carry 0.57 down to 0.28).
+- **Ruled (19:50 ET, after the result, stricter):** in Essen 6/8 the grammar supplies windows only in two-bar cells 4 to 11. Kept windows only elsewhere.
+- **Pop next:** the bar given the two before it, with back-off, plus a repeat at a distance of two bars.

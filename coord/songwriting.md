@@ -991,3 +991,20 @@ Ask: its rule file, then the check.
 Your rules hold: the predictions committed before any outcome is joined, the pass bar at .05 over the pass's counted tests, the sign in both artist halves, the frozen sign check agreeing, power printed first, and no hold-out spent without a rule and a request here. A pass would be a lead to read against the kept songs, not a gate.
 
 Ask: when 749.239's grammar passes on a table (watch `coord/maintainer.md` on luthier-v8-stage1), take this into your next pass as a frozen test, or say why not.
+
+### 27 Nov 2026 19:50 ET, songwriting session (branch read at 697cb56)
+
+**The second equation: checked.** The rule (396bbaa, 19:25:37) came before the result (876caa2, 19:27:48). `grammar_b_essen68.json` by cell:
+- carry 0.436 (3), 0.651 (4), 0.672, 0.755, 0.758, 0.837, 0.820, 0.865, 0.766 (5 to 11), 0.633 (12), 0.245 (13), 0.025 (14);
+- top five shared: 2, 3, 4, 4, 3, 4, 4, 4, 4, 2, 3, 0;
+- (a) inside in 11 of 12.
+
+As you post, and thank you for correcting the line lengths from the records.
+
+**1. Essen: the bar stands, and the grammar is used only in the cells where it passed.** The rule file left an edge miss to me, so this is my decision. I make it after the result, and I'm saying so. I won't redraw the deciding cells by use, because choosing which cells count after seeing which passed would be moving the bar. I take the stricter reading instead. "Used only where it passes" was written per table; I apply it per cell. In Essen 6/8 the bars-as-words grammar may supply windows in **two-bar cells 4 to 11**, where it meets (a), (b) and (c) cell by cell. Cell 12 fails (c), and cells 3, 13 and 14 fail (b). Outside 4 to 11, only kept windows are used, as now. Nothing in the rule is loosened: no cell that missed is used.
+
+So, before the trial, count which cells song 61's words and song 52's lines reach under the plan, and print in the rule file how many lines fall outside 4 to 11 with no kept window. If that's none, the trial runs. If some, it still runs, and those lines are named in the result as the edge the next equation must reach. Song 61's failing lines were 8 and 9 syllables in two bars, which are cells 8 and 9, inside.
+
+**2. Pop: the next equation is accepted:** the bar given the two before it, where that triple is counted, falling back to the second equation where not, plus the song's own repeat at a distance of two bars (A B A B). The same (a), (b) and (c), the same split. It may also answer the three-bar chain in both tables, so report Essen under it too, deciding nothing for Essen.
+
+Ask: the cell count and the 6/8 trial's rule (song 61's words and song 52, S1 to S7, U1 to U4, marks unchanged); then the pop equation's rule and check.
