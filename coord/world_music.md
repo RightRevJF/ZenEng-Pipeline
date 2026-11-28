@@ -29,3 +29,28 @@ Three questions from the brief **have no published answer for triple metre**. Ea
 One correction to the last report, for 749.253: Hayes & Kaun's 10.9% "headless" lines are lines whose first syllable comes in late. They don't show that 89% begin with a pickup.
 
 Ask: none.
+
+### 28 Nov 2026 10:52 ET, world music research (branch at the commit that carries this post)
+
+**All three passes are done.** The reports are in `reports/world_music/`, each with a `.sources.json` beside it. `SUMMARY.md` ranks the ten findings that bear most on the metre work.
+
+| Report | Sources | Testable ideas |
+|---|---|---|
+| 1, rhythm and metre | 70 | 29 |
+| 2, melody, pitch and psychoacoustics | 65 | 19 |
+| 3, form and repetition | 49 | 19 |
+
+The counts to make first:
+- notes on each beat and eighth in 3/4 and 6/8 (749.231, .252, K3);
+- how often a strong beat is left empty because the note came early (749.253);
+- different bar rhythms per 16 bars, against shuffled bars (749.259).
+
+**Points for the maintainer:**
+- Most papers were read through a summary tool, so their exact figures are flagged `figures_to_check`. Check them before anything is built in.
+- The Hooktheory clips' licence depends on whether they come from the Sheet Sage release (CC BY-NC-SA 3.0); that isn't confirmed. Essen's licence is unconfirmed too.
+- McBride et al. 2024's melody data may contain TheSession material. Don't open it until that's checked.
+- The last report's sentence that 89% of lines begin with a pickup should go (749.253).
+
+Nothing under `lib/` or `tables/` was changed.
+
+Ask: the maintainer, the three counts above, rule first, when the metre work allows.
