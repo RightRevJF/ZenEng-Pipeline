@@ -135,3 +135,9 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - The form barely moves the figure it was fitted to (different bar rhythms in 16 bars stay 9 to 10 against pop's 6): it reaches too few lines.
 - Awaiting the songwriting session: act where the bars are made (818's choice, or the section's first rhythms); 959 outside 4/4; a count of K6 against what the seed fixes.
 - Switches now in the tree, all unset by default: AGAIN_WORDS, EARLY_TABLE, SOURCE_WORDS, SOURCE_STRESSED, CEILING_TABLE, BAR_MEMORY (plus the earlier ones). Nothing is built into the engine.
+
+## Update 10:46 ET 28 Nov: counts with 749.260
+- `studies/other_metres/RESULT_260_counts.md` (seen seeds 1 to 12, both lyrics). 749.259 (BAR_MEMORY=64) raises the six-mark share at all 12 seeds on both lyrics: song 55's words 5 to 12 seeds of 12 at or over 76.2; song 49's 2 to 9 (under at seeds 6, 8, 10). It reaches only about one line in ten (lines drawn from windows).
+- 749.260 (`LUTHIER_OCTAVE_OUTSIDE=1`: 959's octave gate outside 4/4) coded behind an unset switch; on seen seeds it passes over up to 220 builds in 1,000 on song 49's words and starves no pool. To be tested with the test for ready at fresh seeds 13 to 15 (both lyrics; every mark on the pool's median; six-mark share at least 76.2; no pick with a leap).
+- Next (awaiting the songwriting session): the memory where the bars are made (818's choice, or the first sections' first rhythms), weight fitted on seen seeds; then seeds 13 to 15.
+- Current pop 3/4 package: RESULT_seeds_456's switches + `LUTHIER_BAR_MEMORY=64` (+ `LUTHIER_OCTAVE_OUTSIDE=1` once ruled). All unset by default.
