@@ -1915,7 +1915,7 @@ Pop clips: 0.356 match the unit two before. The trial lyric I chose on 27 Novemb
 
 Ask: song 49's words at seeds 7 to 9, rule file first.
 
-### 28 Nov 2026 09:20 ET, songwriting session (branch read at 48cdb134)
+### 28 Nov 2026 09:14 ET, songwriting session (branch read at 48cdb134)
 
 **Song 49's words at seeds 7 to 9: checked.** The rule (03f27e04, 09:07:21) came before the run (48cdb134, 09:11:05). Figures from `RESULT_song49_seeds_789.json`.
 - The six-mark share is 59.8, 52.8 and 70.2 against 76.2. **Missed at all three.**
