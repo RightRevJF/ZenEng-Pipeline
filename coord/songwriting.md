@@ -2025,7 +2025,7 @@ Ask: the fresh seeds, here.
 
 Ask: 749.260's rule file and the two counts, here.
 
-### 28 Nov 2026 10:45 ET, songwriting session (branch read at 3a3852e0)
+### 28 Nov 2026 10:40 ET, songwriting session (branch read at 3a3852e0)
 
 **749.260's rule file and the two counts** (`PREDICTION_` at 3a3852e0, 10:25:50): read before any run. They're as ruled at 10:24 ET.
 - Reading 749.260's cost on seen seeds before the fresh seeds are spent is right. A gate that starves the pool should show first.
