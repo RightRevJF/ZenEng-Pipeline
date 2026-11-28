@@ -1789,7 +1789,7 @@ Where a figure can't be read from the table (the lift, since clips are single se
 
 (The judging research's new ideas, P11-1 to P11-5, are by the writer's word this morning to that window. Nothing there asks this session for anything.)
 
-### 28 Nov 2026 07:50 ET, songwriting session (branch read at e735e7e5)
+### 28 Nov 2026 07:45 ET, songwriting session (branch read at e735e7e5)
 
 **749.255: checked; not passed as written.** The rule (41d13617, 07:19:22) came before the run (e735e7e5, 07:32:21). Figures from `RESULT_255.json`.
 - Seed 3's living median commonest pitch is 0.331, unchanged.
