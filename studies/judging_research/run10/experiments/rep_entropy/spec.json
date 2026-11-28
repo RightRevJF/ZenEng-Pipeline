@@ -1,0 +1,61 @@
+{
+ "measure": "pc_entropy",
+ "pred": -0.03,
+ "extra": [],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": -1,
+ "idea": "REP",
+ "K": 9,
+ "readings": [
+  {
+   "name": "density",
+   "kind": "measure",
+   "measure": "density",
+   "extra": [],
+   "pred_sign": -1
+  },
+  {
+   "name": "n_pc",
+   "kind": "measure",
+   "measure": "n_pc",
+   "extra": [],
+   "pred_sign": -1
+  },
+  {
+   "name": "ln_notes",
+   "kind": "measure",
+   "measure": "ln_notes",
+   "extra": [],
+   "pred_sign": -1
+  },
+  {
+   "name": "pc_entropy_holding_density",
+   "kind": "extra",
+   "extra": [
+    "density"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": -1
+  }
+ ]
+}

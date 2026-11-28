@@ -1,0 +1,64 @@
+{
+ "measure": "S_gap",
+ "pred": -0.03,
+ "extra": [
+  "n_pc"
+ ],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": -1,
+ "idea": "G10-3",
+ "K": 9,
+ "readings": [
+  {
+   "name": "holding_pc_entropy_too",
+   "kind": "extra",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "GAP_estimate_inventor_R10-I3",
+   "kind": "measure",
+   "measure": "GAP",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "gap_estimate_listener_L3_duplicate",
+   "kind": "measure",
+   "measure": "gap",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": -1
+  }
+ ]
+}

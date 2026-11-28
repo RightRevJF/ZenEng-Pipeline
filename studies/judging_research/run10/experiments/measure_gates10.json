@@ -1,0 +1,434 @@
+{
+ "written": "run 10 chair, 27 Nov 2026, before any outcome; notes side only, split A",
+ "gates": {
+  "stability": "common10-style Spearman between first and second ok settings, first 4,000 split-A tunes with a second setting; stopped if < 0.5 (R09-5) or fewer than 100 pairs",
+  "renaming": "stopped if |Spearman| with any single one of the 13 baselines > 0.8 on split A (run 09's first gate, adapted); not applied to REP, which is a baseline",
+  "coverage": "stopped if defined on < 90% of split A"
+ },
+ "stability": {
+  "pe_h0": {
+   "spearman": 0.676,
+   "n": 3999
+  },
+  "pe_h0_inv": {
+   "spearman": 0.586,
+   "n": 3999
+  },
+  "irr_skel": {
+   "spearman": 0.767,
+   "n": 4000
+  },
+  "S_gap": {
+   "spearman": 0.75,
+   "n": 3999
+  },
+  "slg": {
+   "spearman": 0.548,
+   "n": 4000
+  },
+  "slg_win": {
+   "spearman": 0.585,
+   "n": 4000
+  },
+  "core_ic": {
+   "spearman": 0.569,
+   "n": 4000
+  },
+  "surf_ic": {
+   "spearman": 0.554,
+   "n": 4000
+  },
+  "tsg": {
+   "spearman": 0.601,
+   "n": 4000
+  },
+  "cut_ab": {
+   "spearman": 0.773,
+   "n": 4000
+  },
+  "gap": {
+   "spearman": 0.823,
+   "n": 4000
+  },
+  "cheeger": {
+   "spearman": 0.806,
+   "n": 4000
+  },
+  "h0_max": {
+   "spearman": 0.553,
+   "n": 4000
+  },
+  "ARCH_PE": {
+   "spearman": 0.806,
+   "n": 4000
+  },
+  "LOCK": {
+   "spearman": 0.741,
+   "n": 4000
+  },
+  "GAP": {
+   "spearman": 0.823,
+   "n": 3999
+  },
+  "pc_entropy": {
+   "spearman": 0.83,
+   "n": 4000
+  },
+  "density": {
+   "spearman": 0.874,
+   "n": 4000
+  },
+  "n_pc": {
+   "spearman": 0.701,
+   "n": 4000
+  },
+  "ln_notes": {
+   "spearman": 0.762,
+   "n": 4000
+  }
+ },
+ "stability_crosscheck_common10.stability": {
+  "_check_common10_irr_skel": {
+   "spearman": 0.767215168861721,
+   "n": 4000
+  },
+  "_check_common10_LOCK": {
+   "spearman": 0.7412270951641444,
+   "n": 4000
+  }
+ },
+ "renaming_splitA": {
+  "pe_h0": {
+   "n": 14511,
+   "R2": 0.152,
+   "top": [
+    [
+     "pc_entropy",
+     0.26
+    ],
+    [
+     "n_pitch",
+     0.25
+    ],
+    [
+     "range",
+     0.22
+    ]
+   ]
+  },
+  "irr_skel": {
+   "n": 14511,
+   "R2": 0.074,
+   "top": [
+    [
+     "pc_entropy",
+     0.18
+    ],
+    [
+     "n_pitch",
+     0.16
+    ],
+    [
+     "range",
+     0.13
+    ]
+   ]
+  },
+  "S_gap": {
+   "n": 14511,
+   "R2": 0.155,
+   "top": [
+    [
+     "pc_entropy",
+     -0.22
+    ],
+    [
+     "n_pc",
+     -0.19
+    ],
+    [
+     "range",
+     0.13
+    ]
+   ]
+  },
+  "slg": {
+   "n": 14413,
+   "R2": 0.273,
+   "top": [
+    [
+     "ln_notes",
+     0.34
+    ],
+    [
+     "bar_rep",
+     0.32
+    ],
+    [
+     "leap_share",
+     0.14
+    ]
+   ]
+  },
+  "core_ic": {
+   "n": 14413,
+   "R2": 0.209,
+   "top": [
+    [
+     "pc_entropy",
+     0.36
+    ],
+    [
+     "tonic_share",
+     -0.32
+    ],
+    [
+     "n_pc",
+     0.27
+    ]
+   ]
+  },
+  "cut_ab": {
+   "n": 14413,
+   "R2": 0.178,
+   "top": [
+    [
+     "range",
+     0.26
+    ],
+    [
+     "n_pitch",
+     0.21
+    ],
+    [
+     "ln_notes",
+     -0.14
+    ]
+   ]
+  },
+  "ARCH_PE": {
+   "n": 14511,
+   "R2": 0.345,
+   "top": [
+    [
+     "range",
+     -0.32
+    ],
+    [
+     "n_pitch",
+     -0.32
+    ],
+    [
+     "step_share",
+     -0.31
+    ]
+   ]
+  },
+  "LOCK": {
+   "n": 14511,
+   "R2": 0.011,
+   "top": [
+    [
+     "unison_share",
+     -0.08
+    ],
+    [
+     "step_share",
+     0.08
+    ],
+    [
+     "pc_entropy",
+     0.06
+    ]
+   ]
+  },
+  "pc_entropy": {
+   "n": 14511,
+   "R2": 0.732,
+   "top": [
+    [
+     "n_pc",
+     0.72
+    ],
+    [
+     "n_pitch",
+     0.48
+    ],
+    [
+     "tonic_share",
+     -0.4
+    ]
+   ]
+  },
+  "GAP": {
+   "n": 14511,
+   "R2": 0.63,
+   "top": [
+    [
+     "range",
+     -0.58
+    ],
+    [
+     "n_pitch",
+     -0.53
+    ],
+    [
+     "leap_share",
+     0.37
+    ]
+   ]
+  },
+  "gap": {
+   "n": 14413,
+   "R2": 0.642,
+   "top": [
+    [
+     "range",
+     -0.62
+    ],
+    [
+     "n_pitch",
+     -0.58
+    ],
+    [
+     "leap_share",
+     0.34
+    ]
+   ]
+  },
+  "tsg": {
+   "n": 14413,
+   "R2": 0.159,
+   "top": [
+    [
+     "step_share",
+     0.38
+    ],
+    [
+     "int_entropy",
+     -0.32
+    ],
+    [
+     "leap_share",
+     -0.26
+    ]
+   ]
+  }
+ },
+ "pairwise_spearman_counted": {
+  "keys": [
+   "pe_h0",
+   "irr_skel",
+   "S_gap",
+   "slg",
+   "core_ic",
+   "cut_ab",
+   "ARCH_PE",
+   "LOCK",
+   "pc_entropy"
+  ],
+  "rho": [
+   [
+    1.0,
+    0.381,
+    0.003,
+    -0.06,
+    0.129,
+    0.082,
+    -0.204,
+    0.062,
+    0.266
+   ],
+   [
+    0.381,
+    1.0,
+    0.064,
+    -0.04,
+    0.1,
+    -0.057,
+    -0.199,
+    0.029,
+    0.185
+   ],
+   [
+    0.003,
+    0.064,
+    1.0,
+    0.033,
+    -0.074,
+    -0.002,
+    -0.007,
+    0.062,
+    -0.223
+   ],
+   [
+    -0.06,
+    -0.04,
+    0.033,
+    1.0,
+    0.4,
+    -0.169,
+    0.174,
+    -0.046,
+    -0.082
+   ],
+   [
+    0.129,
+    0.1,
+    -0.074,
+    0.4,
+    1.0,
+    -0.026,
+    0.017,
+    -0.01,
+    0.357
+   ],
+   [
+    0.082,
+    -0.057,
+    -0.002,
+    -0.169,
+    -0.026,
+    1.0,
+    -0.005,
+    0.022,
+    -0.013
+   ],
+   [
+    -0.204,
+    -0.199,
+    -0.007,
+    0.174,
+    0.017,
+    -0.005,
+    1.0,
+    -0.027,
+    -0.149
+   ],
+   [
+    0.062,
+    0.029,
+    0.062,
+    -0.046,
+    -0.01,
+    0.022,
+    -0.027,
+    1.0,
+    0.059
+   ],
+   [
+    0.266,
+    0.185,
+    -0.223,
+    -0.082,
+    0.357,
+    -0.013,
+    -0.149,
+    0.059,
+    1.0
+   ]
+  ],
+  "n": 14413
+ },
+ "stopped": []
+}

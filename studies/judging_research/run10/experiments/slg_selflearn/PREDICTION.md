@@ -1,0 +1,71 @@
+# slg_selflearn: slg: self-learnability gain, a tune that teaches you its own grammar (L1)
+
+Run 10, 27 November 2026. Frozen by the chair before any outcome is joined: no outcome file was opened, `common10.load_outcomes` was not called and `harness10.py run` was not run. Idea: L1 (the Listener). **Status: COUNTED** (rank 8 of 9). K = 9, α = .05/9 = 0.00556 (two-sided p).
+
+## The measure (frozen)
+
+`measures_listener.py`, `measure(t)`, key `slg` (helpers `_seqs`, `corpus`, `_corp_for`, `_lp`).
+1. Surface: pitch classes relative to the tonic of the expanded first setting, consecutive equal MIDI pitches merged (n notes).
+2. Self model: an add-one bigram over 12 classes built from the tune's own earlier notes only (updated note by note).
+3. Corpus model: the add-one surface bigram of the tune's TYPE over split-A first settings, leave-one-out.
+4. **slg = mean over notes i ≥ n // 2 of [log₂ p_self(xᵢ | xᵢ₋₁) − log₂ p_corpus(xᵢ | xᵢ₋₁)]**. Add-one smoothing is the only setting.
+Not in the test (None) under the same conditions as the other Listener keys (98 split-A tunes). For split C the corpus is split A in full.
+
+Cache: `/home/claude/dl/thesession/measures_run10.json` (built by `experiments/build_cache10.py` from `experiments/measures/`; splits A and C only), key **`slg`**. The test reads the cache; it does not recompute the measure.
+
+Measure-side gates (chair, split A, notes only; `measure_gates10.json`): two-setting stability Spearman **0.548** (n 4000; bar 0.5, R09-5); R² on the 13 baselines 0.273; largest baseline ρ ln_notes +0.34, bar_rep +0.32, leap_share +0.14. Passes; not stopped.
+
+Why it is tested: The closest of the nine to "learning it". Partly repetition and length (ρ +0.34 ln_notes, +0.32 bar_rep):
+both frozen, so a pass means the tune's own grammar matters beyond plain repetition. Lowest power of the nine.
+
+## Songs
+
+Split A of `common10.tunes()` (sha256 of 'thesession:<tune_id>', first hex digit 0–9), each tune's first ok setting, expanded (repeats played), with the measure and the frozen extras defined: **14,413 tunes** (`harness10.design`).
+
+## Outcome
+
+- **Primary: y_cov** = log(1 + number of distinct recording artists of the tune in recordings.csv), standardised over the rows.
+- **Love reading: y_love** = log(tunebooks), on the tunes listed in tune_popularity.csv (10 or more tunebooks; a truncated sample), same model and halves; predicted sign **+**. Reported beside the test; decides nothing.
+
+## Model and controls (common10.fit; frozen in common10.py)
+
+OLS of z(y_cov) on z(slg) by Frisch–Waugh, with fixed effects for tune type, meter, mode (levels under 20 tunes pooled), first-posting year, composer (named composers with 2 or more analysed tunes), an indicator 'has a named composer', and the **frozen extra controls: bar_rep, ln_notes** (z-scored). Cluster-robust CR1 SEs by composer key (named) or the tune itself. Settings count is never a control. Second model: Poisson GLM of the artist count on z(slg) and the same columns (HC0), sign only.
+
+Halves: md5 of the composer key (named) or of 'trad:<tune_id>', first hex digit even = half 0, odd = half 1 (`common10.half_of`).
+
+## Prediction
+
+**β = +0.03 SD of z(y_cov) per SD of slg**. y_love: positive.
+
+## Verdict rules (common10.verdict)
+
+- **Pass:** p < 0.00556 (.05/9), the estimate has the predicted sign, both halves have that sign, and the Poisson model has it too.
+- **Killed:** the prediction (+0.03) lies outside the estimate's 95% range (β̂ ± 1.96 SE) (R07-3).
+- **Unsettled:** otherwise.
+- Counted because its power is at least 0.2 (R06-5).
+
+## Power (from power.json, fake outcomes on the real rows, before any outcome)
+
+`harness10.py power slg_selflearn`: y = β·z(x) + N(0, 1 − β²) with β = +0.03, the same model and extras, 300 draws, seed 10, α = 0.00556.
+
+| power | kill_if_true | kill_if_zero | median fake SE | n |
+|---|---|---|---|---|
+| **0.413** | 0.070 | 0.727 | 0.0113 | 14,413 |
+
+K = 9 (every one of the nine candidates clears 0.2 at .05/9; chair.md has the K table). α = .05/9 = 0.00556.
+
+## Readings (uncounted; frozen in spec.json; they decide nothing)
+
+- `slg_win` (share of second-half notes where the self model wins), same extras; predicted +
+- slg without the frozen extras (measure reading, no extra; predicted +; shows how much bar_rep and ln_notes carry)
+- all 13 baselines held (predicted +)
+
+The first-poster fixed effect (the Skeptic's round 2, accepted by the authors) is not available in `harness10.py` (the design carries no username), so it is not frozen this pass; see chair.md.
+
+## Confirmation on split C (rule written now, before any outcome)
+
+If this test PASSES on split A, it is re-run once on split C (about 4,260 tunes, never joined to an outcome) with the identical spec except `"split": "C"`: the same measure, extras, readings, predicted sign and size, at α = .05 divided by the number of run-10 tests that passed on A (and so go to C). It runs from a sibling folder `slg_selflearn_C/` holding this PREDICTION.md (with the C power added) and spec.json identical except `"split": "C"` and the C α; its power is computed on C with `harness10.py power slg_selflearn_C` at that α and committed and pushed before the C outcome is joined; the C verdict comes from the same `common10.verdict` (counted only at C power ≥ 0.2; otherwise an estimate, and the A pass stays a lead). **The C verdict is the finding.** If this test does not pass on A, it is not run on C. Split H stays sealed. (Notes-side preview: power on C at α .05 is in chair.md.)
+
+## How to run (after this file is committed and pushed)
+
+`cd run10/experiments && python3 harness10.py run slg_selflearn` (writes result.json; refuses unless this file is committed and pushed).

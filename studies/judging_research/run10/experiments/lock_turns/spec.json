@@ -1,0 +1,50 @@
+{
+ "measure": "LOCK",
+ "pred": 0.03,
+ "extra": [],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": 1,
+ "idea": "R10-I2",
+ "K": 9,
+ "readings": [
+  {
+   "name": "holding_range_n_pitch",
+   "kind": "extra",
+   "extra": [
+    "range",
+    "n_pitch"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "reels_only",
+   "kind": "subset",
+   "key": "type",
+   "value": "reel",
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": 1
+  }
+ ],
+ "waits": "COUNTED in run 10's family (K = 9, alpha .05/9) but runs FIRST in run 11, unchanged; do not run in run 10"
+}

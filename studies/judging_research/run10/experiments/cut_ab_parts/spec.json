@@ -1,0 +1,64 @@
+{
+ "measure": "cut_ab",
+ "pred": 0.03,
+ "extra": [
+  "n_bars",
+  "ln_notes"
+ ],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": 1,
+ "idea": "L3",
+ "K": 9,
+ "readings": [
+  {
+   "name": "strict_AABB_reels_jigs",
+   "kind": "subset",
+   "key": "aabb",
+   "value": 1.0,
+   "pred_sign": 1
+  },
+  {
+   "name": "cheeger_estimate",
+   "kind": "measure",
+   "measure": "cheeger",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "h0_max_card1_check",
+   "kind": "measure",
+   "measure": "h0_max",
+   "extra": [
+    "range",
+    "n_pitch",
+    "ln_notes"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}

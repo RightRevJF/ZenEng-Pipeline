@@ -1,0 +1,51 @@
+{
+ "measure": "slg",
+ "pred": 0.03,
+ "extra": [
+  "bar_rep",
+  "ln_notes"
+ ],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": 1,
+ "idea": "L1",
+ "K": 9,
+ "readings": [
+  {
+   "name": "slg_win",
+   "kind": "measure",
+   "measure": "slg_win",
+   "extra": [
+    "bar_rep",
+    "ln_notes"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "slg_no_extra",
+   "kind": "measure",
+   "measure": "slg",
+   "extra": [],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}

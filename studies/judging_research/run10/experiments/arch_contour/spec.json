@@ -1,0 +1,42 @@
+{
+ "measure": "ARCH_PE",
+ "pred": -0.03,
+ "extra": [
+  "range",
+  "n_pitch"
+ ],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": -1,
+ "idea": "R10-I1",
+ "K": 9,
+ "readings": [
+  {
+   "name": "holding_step_share_too",
+   "kind": "extra",
+   "extra": [
+    "step_share"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pc",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": -1
+  }
+ ]
+}

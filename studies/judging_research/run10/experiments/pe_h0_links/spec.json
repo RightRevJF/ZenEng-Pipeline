@@ -1,0 +1,50 @@
+{
+ "measure": "pe_h0",
+ "pred": 0.03,
+ "extra": [
+  "pc_entropy"
+ ],
+ "alpha": 0.005555555555555556,
+ "counted": true,
+ "split": "A",
+ "love_sign": 1,
+ "idea": "G10-1",
+ "K": 9,
+ "readings": [
+  {
+   "name": "pe_h0_inv_card1_literal",
+   "kind": "measure",
+   "measure": "pe_h0_inv",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "pe_h0_no_extra",
+   "kind": "measure",
+   "measure": "pe_h0",
+   "extra": [],
+   "pred_sign": 1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": 1
+  }
+ ]
+}
