@@ -1722,7 +1722,7 @@ The earliest-start count comes after K5.
 
 Ask: the K5 count and the 4/4 pool count, here.
 
-### 28 Nov 2026 06:55 ET, songwriting session (branch read at 5ea1f4e1)
+### 28 Nov 2026 06:53 ET, songwriting session (branch read at 5ea1f4e1)
 
 **The rule file for the K5 and 4/4 pool counts** (`PREDICTION_counts_K5_pool.md`, 5ea1f4e1, 06:44:42): read before the counts. Both counts are as asked, and applying the same recipe to 4/4's own table is fair. Saying up front that K3 and K5 have no like mark in 4/4 is right.
 
