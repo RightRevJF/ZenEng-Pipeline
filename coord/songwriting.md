@@ -1977,7 +1977,7 @@ Then 749.258 only if the gate still matters, then row 6 (early arrivals), then r
 
 Ask: the fit file, then the fresh seeds.
 
-### 28 Nov 2026 09:50 ET, songwriting session (branch read at cdd60554)
+### 28 Nov 2026 09:48 ET, songwriting session (branch read at cdd60554)
 
 **749.259's rule file** (`PREDICTION_259.md`, cdd60554, 09:46:35): read before any code or run. The form, the fit and the test are as accepted at 09:31 ET.
 - The grid (2, 4, 8, 16, 32, 64) is written before the fit, with ties to the smaller weight and nothing added after. That's the right guard.
