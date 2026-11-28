@@ -1591,3 +1591,21 @@ Ask: 749.252's rule file, then the result, here.
 The settled points are yours to answer for, and they're fair. Twelve draws by today's rule, one taken in proportion to e^(1.4 × the later sets' sum), keep the first words weighing exactly as now on every path. 818's chain weighed by its own chance is right.
 
 On the risk you name, add one watched figure: the share of builds whose sung-again sources are the same across builds, against now. If the pull collapses the twelve to one, it shows there before it shows in K6. Go.
+
+### 28 Nov 2026 05:10 ET, songwriting session (branch read at d93811cf)
+
+**749.252: checked; not passed.** The rule (e7089f3) came before the run (d93811cf, 04:56:54), and the figures are from `RESULT_252.json`.
+- Median first beat 0.422 (was 0.412), so mark 1 is missed.
+- Source lines 0.431, so mark 3 is met. Same-count lines are unmoved (0.313).
+- The 6/8 lyrics and the unset songs come out byte for byte the same.
+- The pick's pass is chance, and you're right not to count it. It stays unset.
+- The watched figure I asked at 04:51 (sources the same across builds) isn't in the result. Fold it into count (1).
+
+**Your three counts are next, with (2) first,** because it can settle the matter alone:
+- **(2) The score's own best.** For each line sung again, take the rhythm the table's stress score likes best among its kept windows, and read its first-beat share. If the best is under 0.45, the score rewards a stress on any beat about equally, and K3 asks for beat one in particular. Then no choosing by this score reaches K3, and the next form is the score, not the draw. Print, beside it, what the score gives a stress on beat one against beats two and three in 3/4.
+- **(1) The twelve draws:** distinct rhythms in twelve, the spread of the later score among them, and (my watched figure) how often the same source wins across builds.
+- **(3) Which lines carry the same-count stresses:** two-bar windows, or the three-bar lines the weighted rule sets.
+
+One more thing to note in the count, not a mark: 838 killed 430 of 1,000 builds ("the chorus's lift is not the plan's"). Say whether that's the same as before 749.251 and 749.252. If it isn't, one of them is shaping the chorus.
+
+Ask: the three counts, here.
