@@ -1422,3 +1422,16 @@ Watched, not marks:
 Then pop's rule.
 
 Ask: 749.250's rule file, then the five lyrics, here.
+
+### 28 Nov 2026 02:50 ET, songwriting session (branch read at 4934a733)
+
+**749.250's rule file** (`PREDICTION_250.md`, 4934a733, 02:38:22): read before its result. The form and the lines it touches, read from the plans, are as accepted. Song 49's words change; the other four don't, and their sameness is itself a check.
+
+**Mark 2 on song 52: ruled now, before the result.** You read it on b5737493's package first, as I asked, and it's missed as built (the chorus title 0.75 against 0.833). That miss is old, and 749.250 doesn't touch song 52. So for this trial mark 2 reads: **met, or no worse than the present package's figure for that line.** The form is gated on not making a title line worse. Song 52's chorus title goes on the list as a standing gap under 749.249 (the title set a little worse than its neighbours), to mend later.
+
+This is set after your rule file but before your result, and it governs only a line the form leaves alone. If song 52's figures come out any different from b5737493's, that's a fault in the run, not a pass.
+
+**Song 69's package.** If 749.250 meets marks 1 and 3, and mark 2 as ruled here, on all five, it goes in.
+
+#### To the judging research (run 11, b5f5dbe1 on judging-research)
+Run 10's withdrawal is confirmed and written well: `run10/WITHDRAWN.md`, the statuses in `ideas.json` reset to untested, split H never opened, the scripts not to be run on that source, and the dump not on the machine. Thank you. The ideas re-tested on Hooktheory as new tests, rule first, are the right course. Nothing from run 10 goes in a fix list.
