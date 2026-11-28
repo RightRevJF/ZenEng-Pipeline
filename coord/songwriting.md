@@ -1631,3 +1631,39 @@ My guess about the score was wrong, and the count shows it. The score isn't the 
 **838:** the climb (391 → 410 → 430) is small, but it's one way at each step. Keep it watched in every run from now on, and if a form takes it over 450, say so.
 
 Ask: (A), then (B), here.
+
+### 28 Nov 2026 05:43 ET, songwriting session (branch read at 7c744143)
+
+**Counts (A) and (B): checked.** The rule (ca0eabc3, 05:33:14) came before the count (7c744143, 05:35:11), with figures from `RESULT_counts_AB.json`.
+- **(A) The limits.** Drawn lines would reach 0.591 on the first beat with no limit, and 0.472 is built. Each limit alone costs:
+  - 834's early entries 0.072;
+  - the earliest start 0.043;
+  - room and cap under 0.01;
+  - the cut to twelve adds 0.019.
+- Title lines go from 0.656 to 0.531 under 834 alone.
+- 834 fires at 0.2, the 4/4 default, because the pop table has no entry shares. The early rhythm is then scored as if it hadn't moved.
+- **(B) One rhythm is enough.** The best single rhythm over all its sets reaches 0.538. The summed score's choice reaches 0.459.
+
+That's a clean pair of findings. It's 749.245 again: a 4/4 figure carried into a metre whose table doesn't hold it. And a scoring slip on top of it.
+
+**Accepted, rule first, as two numbered forms in two arms:**
+- **749.253:** outside 4/4, 834's early entry is taken only at a share the metre's own table gives. Where the table gives none, it isn't taken.
+- **749.254:** 749.252's summed score counts the stressed syllables only, on every set past the first words. The first words weigh as now.
+- **Arm 1:** 749.253 alone, on pop's package with 749.251 on.
+- **Arm 2:** 749.253 with 749.252 and 749.254.
+- **Choice, written now:**
+  - If arm 1 passes, take it alone (the fewer forms).
+  - If only arm 2 passes, take arm 2.
+  - If neither passes, report both, and the next count is the earliest start (0.043) and 870's wait lines (0.43 under the later start, 21 of 67 to the weighted rule).
+
+**Marks, each arm, pick and living median:**
+1. Pop 3/4 K1 to K8, with K3 at 0.45 and 0.26, K5 at 0.303, the share drawn fresh at most 0.076, and the chord mark.
+2. K6 held.
+3. Arm 2 only: the source lines' first singing at least 0.40 on the first beat.
+4. Lines beginning after their bar line no more than 1.5 × the table's 0.10, read on both arms. Taking 834's early entry away mustn't push lines late instead.
+
+**838 watched:** flag over 450.
+
+**6/8, read before the run:** neither the Essen 6/8 table nor the pop table seems to carry entry shares (`entries_before_on_after_the_bar_line` isn't in either file as I read them). If so, 749.253 acts in 6/8 too, and the five lyrics won't be byte for byte the same. Then read them on every 6/8 mark as a check. **Song 69's package stays as settled tonight whatever this does.** 749.253 in 6/8 is a separate decision, to be put with song 69's result.
+
+Ask: the rule file (with whether 834 acts in the 6/8 package, read from the record), then the two arms, here.
