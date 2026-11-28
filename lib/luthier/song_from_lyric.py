@@ -188,6 +188,21 @@ def plan(L):
         if TITLE_REST:
             for k_ in title_entry_: nm_, i_ = k_.rsplit(":", 1); slots[nm_][int(i_)] = max(slots[nm_][int(i_)], sungb_[nm_][int(i_)] + 1)
         form = [(nm_, k_, (sum(slots[nm_]) + sum(slots[nm_]) % 2) if nm_ in slots else n_) for nm_, k_, n_ in form]
+    secdens_ = {}
+    if os.environ.get("LUTHIER_SECTION_DENSITY", "0") == "1" and sungb_:
+        # trial (749.243): no section denser than the table's 75th of notes a bar; the densest line under four bars takes a bar more until the section is inside
+        q75_ = T["readings_quartiles"]["notes a bar"][2]; pad5_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_ and not PLAN_6_8_FOLK); grp5_ = {k_: ks_ for ks_ in grp_.values() for k_ in ks_} if SHARED_BARS else {}
+        for nm_, _, sy_ in sung:
+            while sum(len(x_) for x_ in sy_) / float(sum(sungb_[nm_])) > q75_:
+                c5_ = [(len(sy_[i_]) / float(sungb_[nm_][i_]), -i_) for i_ in range(len(sy_)) if sungb_[nm_][i_] < 4]
+                if not c5_: break
+                i5_ = -max(c5_)[1]; b5_ = sungb_[nm_][i5_] + 1
+                for k_ in grp5_.get(f"{nm_}:{i5_}", [f"{nm_}:{i5_}"]):
+                    n2_, j2_ = k_.rsplit(":", 1); j2_ = int(j2_)
+                    if sungb_[n2_][j2_] < b5_: secdens_[k_] = [secdens_.get(k_, [sungb_[n2_][j2_]])[0], b5_]; sungb_[n2_][j2_] = b5_; slots[n2_][j2_] = max(slots[n2_][j2_], 2 if b5_ == 2 else 4 if (b5_ == 4 or pad5_) else 3)
+        if TITLE_REST:
+            for k_ in title_entry_: nm_, i_ = k_.rsplit(":", 1); slots[nm_][int(i_)] = max(slots[nm_][int(i_)], sungb_[nm_][int(i_)] + 1)
+        form = [(nm_, k_, (sum(slots[nm_]) + sum(slots[nm_]) % 2) if nm_ in slots else n_) for nm_, k_, n_ in form]
     form.append(("Outro", "outro", n_out)); br = BD.break_after(form); bar_s = 60.0 / L["bpm"] * beats
     if br is not None and (sum(b for _, _, b in form) + 8) * bar_s <= BD.EDG["length"][2]: form.insert(br + 1, ("Break", "solo", 8))        # 830; 842: only while the song stays inside the kept songs' middle half of lengths
     elif br is not None: flags.append("no break: with one the song would run past the kept 75th of lengths")
@@ -233,6 +248,7 @@ def plan(L):
         if title_entry_: spec["title_entry"] = title_entry_
         if title_entry_ and TITLE_REST: spec["title_entry_rest"] = {k_: [sungb_[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])], slots[k_.rsplit(":", 1)[0]][int(k_.rsplit(":", 1)[1])]] for k_ in title_entry_}
         if SHARED_BARS and shared_: spec["shared_bars"] = shared_
+        if secdens_: spec["section_density"] = secdens_      # trial (749.243)
     if COPY_JOIN: spec["copy_join"] = True      # trial (749.228)
     if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)
     if TITLE_FRESH: spec["title_fresh"] = True      # trial

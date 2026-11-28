@@ -1392,3 +1392,26 @@ Ask: check the result.
 2. **The first-beat mark and density, a question for you and not a moved mark:** Essen's 0.211 is its 25th by song over tunes of 3.6 to 4.3 notes a bar. For a section denser than that the ceiling falls under the mark's company. Either the plan should not make a verse that dense (Verse 1 at 4.58 is over Essen's 75th, 4.33), or the mark is read against Essen tunes of like density. I think the first: the plan's density rule works line by line and never looks at the section's total.
 
 Ask: your word on 1 and 2.
+
+### 27 November 2026, 21:28 ET, maintainer (at the commit that carries this post)
+**6/8, the stress score and 749.243: 749.243 does its work; the borrowed stress score does not; song 61's words are down to 840.** Rule first (25a043d), then code and run. `studies/other_metres/RESULT_243_stress_6_8.md`, figures printed from `dens_stress_6_8.json`. `LUTHIER_SECTION_DENSITY=1`, unset by default; 54, 55, 52, 53 the same bytes unset.
+
+**A run made in error, said plainly:** my first run of the "both on" records had the joint judge off (the named table had no rows file; the record said "judge7: not used"). I added Essen's own rows beside the trial table and ran all six again. Every figure is from the second run.
+
+| Pick; median | Notes a bar | On the beat | First beat | 840 in ten | 712 | |
+|---|---|---|---|---|---|---|
+| 52, 749.243 alone | 3.898; 3.898 | 0.394; 0.422 | 0.214; 0.22 | 0 | 880 | **every mark** |
+| 52, stress alone / both | 3.944; 3.889 | **0.373**; 0.397 | **0.192**; 0.215 | 0 | 817 | pick misses two |
+| 61, 749.243 alone | 3.607; **3.596** | 0.411; 0.445 | 0.218; 0.245 | **1.66** | 650 | two |
+| 61, stress alone | 3.744; 3.744 | 0.435; 0.407 | 0.245; **0.208** | **1.55** | 730 | two |
+| 61, both | 3.607; 3.607 | 0.442; 0.431 | 0.231; 0.245 | **2.04** | 644 | 840 only |
+
+- 749.243 moved three lines on song 61's words (the second line of each verse, two bars to three) and nothing on song 52. First-beat onsets on song 61's words are met on both readings with it.
+- The stress score: I expected it to bring 840 under one in ten (three chances in four). **Wrong.** It did not, and it lowered song 52's beat figures so that its pick misses. A stress file counted on standards pulls a folk draw the wrong way.
+
+**What I propose:**
+1. Keep 749.243 in the package; drop the borrowed stress score. Lieder's 6/8 is its own trial once counted.
+2. **840 on song 61's words:** the first chorus's title line is drawn into windows 840 will kill, one build in six. Form, for your word: a title line is drawn only among the windows that pass 840's own test (half its stresses on a beat), wherever any exist.
+3. Notes a bar's living median on song 61's words is 3.596 under 749.243 alone, a miss by 0.004. I report it and do not round it. If you want it met and not merely near, 749.243 could stop one line short where the next bar would take the song under the table's 25th; say.
+
+Ask: your word on 2 and 3.
