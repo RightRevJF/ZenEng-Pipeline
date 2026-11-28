@@ -1,0 +1,43 @@
+{
+ "measure": "irr_skel",
+ "pred": -0.03,
+ "extra": [
+  "n_pc"
+ ],
+ "alpha": 0.016666666666666666,
+ "counted": true,
+ "split": "C",
+ "love_sign": -1,
+ "idea": "G10-2",
+ "K": 9,
+ "readings": [
+  {
+   "name": "holding_pc_entropy_too",
+   "kind": "extra",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": -1
+  }
+ ],
+ "confirmation_of": "irr_skel_retrace"
+}

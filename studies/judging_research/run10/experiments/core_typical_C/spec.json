@@ -1,0 +1,61 @@
+{
+ "measure": "core_ic",
+ "pred": -0.03,
+ "extra": [
+  "pc_entropy"
+ ],
+ "alpha": 0.016666666666666666,
+ "counted": true,
+ "split": "C",
+ "love_sign": -1,
+ "idea": "L2 (core_ic, the Skeptic's form)",
+ "K": 9,
+ "readings": [
+  {
+   "name": "TSG_estimate",
+   "kind": "measure",
+   "measure": "tsg",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "surf_ic_alone",
+   "kind": "measure",
+   "measure": "surf_ic",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "holding_n_pc_too",
+   "kind": "extra",
+   "extra": [
+    "n_pc"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "n_pc",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": -1
+  }
+ ],
+ "confirmation_of": "core_typical"
+}
