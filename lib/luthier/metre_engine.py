@@ -59,7 +59,7 @@ class Engine:
                 if k_ in t_ and k_ in Q2: a_, m_, z_ = Q2[k_]; Q2[k_] = [t_[k_] - (m_ - a_), t_[k_], t_[k_] + (z_ - m_)]      # the charge's middle half, of the kept width, set about the kept song's own reading
             g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); self.AIM = True; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)), float(mv_.get("repeat", 1.0)))
             self.TILT = tuple(cl_(((t_[k_] + 0.02) / (self.T["readings_quartiles"][k_][1] + 0.02)) ** g_) for k_ in ("repeated notes", "moves by step", "moves by leap"))
-        self._rc = {}; self._ls = {}; self._lsc = {}; self.ALLW = None
+        self._rc = {}; self._ls = {}; self._lsc = {}; self._secbars = None; self._lineU = 0; self._partU = 0; self.ALLW = None
         if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
             B_ = collections.defaultdict(list)
             for p_, c_ in T["bar_rhythms_all"]: B_[len(p_)].append((tuple(p_), c_))
@@ -143,8 +143,9 @@ class Engine:
             # trial (749.226): a four-bar phrase read as two windows; three sung bars are a two-bar window and a one-bar rhythm, the fourth bar left to the hold or the rest
             sb_ = self.SUNGB[id(sy)]; n1_ = (len(sy) + 1) // 2 if sb_ == 4 else int(round(2 * len(sy) / 3.0)); self._part = True
             try:
-                a_ = self.rhythm(rng, sy[:n1_], tmin, 2 * self.BAR, hook=hook, room=3); b_ = self.rhythm(rng, sy[n1_:], 0, 2 * self.BAR if sb_ == 4 else self.BAR, None if cap is None else cap - 2 * self.BAR, hook=hook, room=None if (sb_ == 4 or slot == 3 * self.BAR) else 0) if a_ is not None else None
-            finally: self._part = False
+                a_ = self.rhythm(rng, sy[:n1_], tmin, 2 * self.BAR, hook=hook, room=3); self._partU = 2 * self.BAR
+                b_ = self.rhythm(rng, sy[n1_:], 0, 2 * self.BAR if sb_ == 4 else self.BAR, None if cap is None else cap - 2 * self.BAR, hook=hook, room=None if (sb_ == 4 or slot == 3 * self.BAR) else 0) if a_ is not None else None
+            finally: self._part = False; self._partU = 0
             if a_ is None or b_ is None or b_[0] < 0: return None
             self.stats["749.226: a four-bar phrase in two windows"] += 1; return list(a_) + [x_ + 2 * self.BAR for x_ in b_]
         n = len(sy); lead = 0
@@ -183,7 +184,7 @@ class Engine:
                 ons = [-6 * (p - j) for j in range(p)] + list(w)
                 if ons[0] < tmin: continue
                 e = self.ENTRY[sy[0][1]][0 if ons[0] < 0 else 1 if ons[0] == 0 else 2]
-                out.append((ons, math.log(c + 1) + ((self.S["title_pull"] if "title_pull" in self.S else 2.8) if hook else 1.4) * self.stress_score(ons, sy) + math.log(e)))        # 840: the title line's stresses pulled twice as hard to the beat
+                out.append((ons, math.log(c + 1) + ((self.S["title_pull"] if "title_pull" in self.S else 2.8) if hook else 1.4) * self.stress_score(ons, sy) + math.log(e) + (self._bar_mem(ons) if self._secbars else 0.0)))        # 840: the title line's stresses pulled twice as hard to the beat; trial (749.259): a bar already sung in the section is favoured
                 if p == 0 and sy[0][1] and w[0] == 0 and self.S.get("early_entries"):               # 834: a line that opens on a stress may sing its kept window an eighth or a quarter early
                     for sh in (6, 12):
                         o2 = [x - sh for x in w]
@@ -473,6 +474,12 @@ class Engine:
             if lo <= q <= hi and (q % 12 in ch or not ((q + 1) % 12 in ch or (q - 1) % 12 in ch)) and self.line_ok([q] + ps[1:], lines, k):
                 self.stats["929: a returning line's first note moves a step, to end a run at the join"] += 1; return [(r[0][0], q)] + list(r[1:])
         return None
+    def _bar_mem(self, ons):
+        """trial (749.259): the log of the weight for each bar of a candidate window (from the line's bar line on) whose rhythm was already sung in this section"""
+        bars = collections.defaultdict(list)
+        for t in ons:
+            if t >= 0: bars[(self._lineU + self._partU + t) // self.BAR].append((self._lineU + self._partU + t) % self.BAR)
+        return math.log(self.S["bar_memory"]) * sum(1 for v in bars.values() if tuple(v) in self._secbars)
     def later_sets(self, sec, i):
         """trial (749.252): the lines that will sing this line again, each with its weight: the lyric's marked lines whole; 818's by its chance, multiplied down the chain"""
         if (sec, i) not in self._ls:
@@ -520,6 +527,13 @@ class Engine:
         for k, (sec, i) in enumerate(self.KEYS):
             sy = self.LINES[sec][i]; U = self.line_start(sec, i); slot = self.slot_len(sec, i); how = self.HOW.get((sec, i), ["fresh"]); tm = self.tmin(lines, k)
             self._made[(sec, i)] = "fresh"                                                    # a record of how each line was made in this build, for studies; it changes no note
+            if self.S.get("bar_memory"):                                                      # trial (749.259): the bars this section has sung so far
+                bs_ = collections.defaultdict(list); self._lineU = U
+                for (s_, j_), ln_ in lines.items():
+                    if s_ == sec:
+                        U2_ = self.line_start(s_, j_)
+                        for t_, _ in ln_: bs_[(U2_ + t_) // self.BAR].append((U2_ + t_) % self.BAR)
+                self._secbars = set(tuple(sorted(v_)) for v_ in bs_.values())
             cap = None                                                                        # 816 (780, 773 carried): the line before a copied or designed line that comes in early gives way
             if k + 1 < len(self.KEYS):
                 ns_, ni_ = self.KEYS[k + 1]; hn = self.HOW.get((ns_, ni_), ["fresh"]); f0 = None
