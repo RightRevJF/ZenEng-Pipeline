@@ -66,3 +66,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 ## Update 05:16 ET 28 Nov: three counts after 749.252
 - `studies/other_metres/RESULT_counts_252.md`. The stress score is not the wall (its best rhythm: 0.668 on the first beat; the unlimited draw expects 0.606; built fresh lines get 0.465). The twelve draws differ and choose firmly. The form acts on few lines: 818 chains most lines of a section to the line two above, so one rhythm carries up to 31 sets of words.
 - Proposed next (awaiting the songwriting session): count (A) what the draw's limits remove; count (B) the best one rhythm can do for all the words it carries.
+
+## Update 05:35 ET 28 Nov: counts (A) and (B)
+- `studies/other_metres/RESULT_counts_AB.md`. Drawn lines: the unlimited draw expects 0.591 on the first beat, 0.472 is built. The largest taker is 834's early entry (0.072): a 4/4 chance (0.2) used in 3/4 because the pop 3/4 table has no entry shares, and the early rhythm is scored as if unmoved. The earliest start takes 0.043.
+- One rhythm can serve all its words (0.538 for the two always-drawn lines), but 749.252's summed score picks one reaching 0.459.
+- Proposed (awaiting the songwriting session): a form "outside 4/4, 834's early entry only at the table's own share; none where the table gives none"; and 749.252's sum over first-beat stresses only.
