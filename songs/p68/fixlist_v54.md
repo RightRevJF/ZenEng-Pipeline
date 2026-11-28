@@ -319,3 +319,9 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Problem:** in a section's first 16 sung bars, ours uses a median of 10 different bar rhythms (middle half 8 to 12) and a pop 3/4 section uses 6 (4 to 8). Bars on a rhythm already sung are 0.375 in ours against 0.625 in the clips. The lyric makes no difference (song 49's words and song 55's give the same 10). Singing again across sections can't raise a figure read within one. Each line drawn takes its own window from hundreds, while pitch has 923's memory of figures already sung (cb3693e1, `RESULT_count_bars_again.json`).
 - **Fix:** inside a section, a kept window made of bars already sung in that section is favoured by a weight. The weight is fitted on song 55's words at seen seeds toward the clips' median of 6, and committed before any fresh run.
 - **Check:** both seen lyrics at fresh seeds 10 to 12: every mark on the pool's median, and the six-mark share at least 76.2 at each seed on both lyrics.
+- **749.259 at fresh seeds 10 to 12 (cdd60554 and c9318923 before 53828cef, `RESULT_259.json`): not passed.** Song 55's words pass at all three seeds (six-mark share 76.8, 79.5, 89.1). Song 49's words miss at seed 10 (60.1), and their pick leaps past an octave in a line at seeds 10 and 12. Different bar rhythms stay at 9 to 10 against the clips' 6: the form reaches too few lines. It stays in the package while the counts run.
+
+## 749.260. Outside 4/4, 959's octave gate never acts
+- **Problem:** 959 (no leap past an octave inside a line) is set only for 4/4 (this morning's list, 41d13617). In pop 3/4, song 49's words' pick held such a leap at two seeds of three (53828cef).
+- **Fix:** 959 acts outside 4/4. It needs no table.
+- **Check:** no pick with such a leap at any seed, and every other mark as it stands.
