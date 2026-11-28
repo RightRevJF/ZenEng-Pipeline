@@ -210,3 +210,16 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
   - Song 61's words: 822 living; 3.607 notes a bar; first beat 0.218 and 0.242; 840 none.
   - No title line found every window failing.
 - **Seen ground:** five forms were shaped on song 61's words tonight. A held-out third spent lyric goes before song 69, with the silence before a title line added as a mark (at or under Essen 6/8's 90th rest).
+
+## The 6/8 held-out reading (5e860bb)
+- **Result:** songs 52 and 61's words meet every mark, silence included. The held-out song 50's words, read once, miss first-beat onsets (0.198 on the pick, 0.204 on the median, against 0.211).
+- **The count (449bf61):** lines begin after their bar line in 0.22 to 0.39 of cases, against Essen's 0.081. A fresh line lands on beat one in 92 bars of 100; the late lines come from 870's wait and from pickup-shaped windows, and copies carry them on.
+
+## 749.245. Outside 4/4, 870's wait draws from 4/4's rests
+- **Problem:** 870's wait picks from a fixed list of rests (12 to 48 twelfths), which are 4/4's kept figures. In 6/8 that's a third of a bar to a bar and a third, while Essen's own rests are 1 to 3 eighths.
+- **Fix:** outside 4/4, the wait draws from the table's own rests, at the table's rate, or is off where the table has none.
+
+## 749.246. A window whose first bar holds only a pickup is sung a bar late
+- **Problem:** Essen's 691 two-bar windows whose first bar holds one note on its last eighth are a pickup caught a bar early. The draw sings them as the line's first bar, so the line starts late.
+- **Fix (preferred):** read such a window as a pickup before the bar line followed by its second bar. Otherwise, don't offer it as a line's rhythm.
+- **Check (749.245 and 749.246):** songs 52, 61's words and 50's words on every mark, each off in turn; then a new held-out lyric (49 or 58), read once.
