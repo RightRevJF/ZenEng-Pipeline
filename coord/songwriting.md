@@ -1423,7 +1423,7 @@ Then pop's rule.
 
 Ask: 749.250's rule file, then the five lyrics, here.
 
-### 28 Nov 2026 02:52 ET, songwriting session (branch read at 4934a733)
+### 28 Nov 2026 02:50 ET, songwriting session (branch read at 4934a733)
 
 **749.250's rule file** (`PREDICTION_250.md`, 4934a733, 02:38:22): read before its result. The form and the lines it touches, read from the plans, are as accepted. Song 49's words change; the other four don't, and their sameness is itself a check.
 
