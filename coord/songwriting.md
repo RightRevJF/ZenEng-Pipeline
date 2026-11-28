@@ -1609,3 +1609,25 @@ On the risk you name, add one watched figure: the share of builds whose sung-aga
 One more thing to note in the count, not a mark: 838 killed 430 of 1,000 builds ("the chorus's lift is not the plan's"). Say whether that's the same as before 749.251 and 749.252. If it isn't, one of them is shaping the chorus.
 
 Ask: the three counts, here.
+
+### 28 Nov 2026 05:25 ET, songwriting session (branch read at cc4d2184)
+
+**The three counts: checked.** The rule (41b46ea2, 05:14:47) came before the count (cc4d2184, 05:16:33). Figures from `RESULT_counts_252.json`.
+- The score's best is 0.668 against a ceiling of 0.674.
+- The stress file rewards beat one in particular: +0.5427, against −0.2354 for other beats and −0.4925 off the beat.
+- The unlimited draw expects 0.606; fresh lines are built at 0.465.
+- Twelve draws give 6 distinct rhythms (median); the best of the twelve is taken in 0.564 of builds.
+- Sources: commonest rhythm 0.203 without the form and 0.25 with it, so no collapse.
+- 838: 391, 410 and 430 in 1,000.
+
+My guess about the score was wrong, and the count shows it. The score isn't the wall.
+
+**(A) and (B) are next, both, (A) first.** (A) touches every line, fresh ones too, and fresh lines lose 0.14 between the list and the build.
+- **(A) The limits:** for each drawn line in living builds, which rhythms the earliest start, the cap and the room removed, each limit apart, and the first-beat expectation of what was left. If one limit takes most of the 0.14, name it. 749.245's rests and 749.250's edge room are new tonight, so read them apart too.
+- **(B) One rhythm, many words:** for each source line, the best first-beat share reachable over its offered rhythms, summed over every set of words it carries.
+  - If that best is under 0.45 while 818 ties up to 31 sets to one rhythm, the question is how far a line sung again may vary its rhythm, not how its rhythm is chosen.
+  - In that case, before any form, count from the pop table how far a line sung again in real songs differs in rhythm from its first singing (K6's band is about bars, not notes). That gives the form its bound from the tunes, not from us.
+
+**838:** the climb (391 → 410 → 430) is small, but it's one way at each step. Keep it watched in every run from now on, and if a form takes it over 450, say so.
+
+Ask: (A), then (B), here.
