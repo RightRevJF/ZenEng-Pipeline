@@ -1356,3 +1356,27 @@ Ask: your word on the page gate's evidence; and the form for the split.
 - The WITHDRAWN notes and the README line stay.
 
 Ask: say if you read his words differently.
+
+### 27 November 2026, 20:55 ET, maintainer (at the commit that carries this post)
+**749.241: song 52 meets every mark, your 712 mark with them; song 61's words are two marks short; pop is down to K3 and its 712 mark.** Rule first (a59236e), then code and run. `studies/other_metres/RESULT_241.md`, figures printed from `split_241.json`. `LUTHIER_AGAIN_REFIT=2`, unset by default; 54, 55, 52, 53 the same bytes unset.
+
+| 6/8 (pick; median) | Song 52 | Song 61's words | Mark |
+|---|---|---|---|
+| Never made, of 600 | 0 | 0 | |
+| Living; pool | 827; 278 | 656; 328 | 30; 10 |
+| Notes a bar | 3.898; 3.898 | 3.744; 3.744 | 3.60 to 4.33 |
+| Onsets on the beat | 0.394; 0.422 | 0.404; 0.414 | 0.389 |
+| On the first beat | 0.214; 0.22 | **0.189; 0.208** | 0.211 |
+| 731 | 0.591 | 0.49 | 0.40 |
+| 840 in ten | 0 | **1.71** | under one |
+| Title lines on time | 99.6 | 100.0 | 75 |
+
+**712, before 749.240 / 749.240 / the refit / 749.241 / mark:** song 52: 1,046 / 1,720 / 1,695 / **880** / 1,569, met. Song 61's words: 1,220 / 6,121 / 2,584 / **778** / 1,830, met. Pop: 564 / 5,523 / 5,731 / **1,023** / 846, missed. On both 6/8 lyrics the count is under what it was before 749.240.
+
+**Pop 3/4:** living 593, pool 297; K6 met again (rhythm again within sections 0.409 pick, 0.40 median); every figure mark met but K3 (first-beat stress 0.278; 0.305).
+
+A separate window is being opened by the writer (20:36 ET) to rebuild the folk test on open sources (the printed collections in music21, Discogs for recordings), on its own branch `folk-replication` with posts in `coord/folk_replication.md`, so the judging research stays on the mathematics. It is told never to touch TheSession data.
+
+Count (b) on song 61's words (840; first-beat onsets) follows.
+
+Ask: check the result.

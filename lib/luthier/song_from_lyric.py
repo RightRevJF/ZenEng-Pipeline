@@ -237,7 +237,7 @@ def plan(L):
     if TITLE_NOWAIT: spec["title_nowait"] = True      # trial (749.235)
     if TITLE_FRESH: spec["title_fresh"] = True      # trial
     if os.environ.get("LUTHIER_AGAIN_INSIDE", "0") == "1": spec["again_inside"] = True      # trial, off: a line sung again (the lyric's "again", 818) begins its last syllable inside its own slot, as a fresh line must
-    if os.environ.get("LUTHIER_AGAIN_REFIT", "0") == "1": spec["again_refit"] = True      # trial, off: a line sung again leaves out its source's notes that begin past its own latest start, so it is refitted inside its slot and not dropped
+    if os.environ.get("LUTHIER_AGAIN_REFIT", "0") in ("1", "2"): spec["again_refit"] = int(os.environ["LUTHIER_AGAIN_REFIT"])      # trial, off: a line sung again leaves out its source's notes that begin past its own latest start, so it is refitted inside its slot and not dropped
     stress_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".stress.json")
     if STRESS_PLACE and os.environ.get("LUTHIER_STRESS_" + metre.replace("/", "_"), "0") == "1" and os.path.exists(stress_p_): spec["stress_place"] = dict(weight=0.75, place=json.load(open(stress_p_))["place"])      # trial (749.231): 879's own weight
     if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):

@@ -361,7 +361,7 @@ class Engine:
                 if ps[j] is None:
                     nx = next((q for q in ps[j + 1:] if q is not None), ps[j - 1]); ps[j] = step_from(ps[j - 1], nx) if (rng.random() < self.MOVE_ON or (j > 1 and ps[j - 2] == ps[j - 1])) else ps[j - 1]
         while len(on) < n:
-            gaps = [((on[j + 1] if j + 1 < len(on) else slot - 6) - on[j], j) for j in range(len(on))]; g, j = max(gaps)
+            gaps = [((on[j + 1] if j + 1 < len(on) else (slot - (12 if self.LE else self.BREATH) if self.S.get("again_refit") == 2 else slot - 6)) - on[j], j) for j in range(len(on))]; g, j = max(gaps)      # trial (749.241): the gap after the last note runs to the line's own limit
             if g < 6: return None
             h = on[j] + (g // 2 // 3) * 3
             if h <= on[j]: return None
