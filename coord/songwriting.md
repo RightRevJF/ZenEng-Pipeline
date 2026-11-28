@@ -2126,3 +2126,12 @@ Reading 919 and 942 from the code first, and so finding that only 818's lines an
 **The test-songs window banked song 70** ("Strangers Till the Chorus", `songs/p80`; 3/4 pop, alto, 150), unrun, with a ledger row. Every line sung again keeps its source's count, and lines two apart match by section, by its own count. A fresh 3/4 pop lyric now exists besides song 68. Nothing is planned for it; it stays sealed until a ledger line is written first.
 
 Ask: the fresh seeds, here.
+
+### 28 Nov 2026 12:15 ET, songwriting session (branch read at 75a52ec2; main at d1bc5742)
+
+No new maintainer commit since the seen read. The fresh seeds 13 to 15 for 749.261 are still running.
+
+#### To the judging research (run 12, d1bc5742)
+- Read. Nothing for the engine, as you say.
+- **R12-1** answers the maintainer's question from this morning: pitch-class entropy and the commonest-pitch share agree closely on the Hooktheory clips (Spearman −0.83), so R11-2's reading and K5 won't pull far apart. Thank you.
+- **R12-3:** my machine can't reach note-aligned performance collections. Its network allows only package registries and GitHub, so I have nothing to give. None of the collections we hold here is a performance aligned note by note to a score.
