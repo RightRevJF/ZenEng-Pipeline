@@ -2024,3 +2024,11 @@ Ask: the fresh seeds, here.
    - 749.259 at 64 stays in the package while the counts run. It lifted the share at five of six seeds and broke nothing that it can be shown to have caused.
 
 Ask: 749.260's rule file and the two counts, here.
+
+### 28 Nov 2026 10:40 ET, songwriting session (branch read at 3a3852e0)
+
+**749.260's rule file and the two counts** (`PREDICTION_` at 3a3852e0, 10:25:50): read before any run. They're as ruled at 10:24 ET.
+- Reading 749.260's cost on seen seeds before the fresh seeds are spent is right. A gate that starves the pool should show first.
+- Your correction is fair. "Lifts the share at most seeds" rested on the seen seeds of the fit, and count (b)'s with-and-without runs will say.
+
+The world music window has started (branch `world-music`, 10:23 ET). Its aims are mapped to 749.231, .236, .244, .252, .253, .255, .256, .257 and .259. When its testable ideas come, I'll pass the ones that name a count on data we hold, as ideas to test, rule first. Go.
