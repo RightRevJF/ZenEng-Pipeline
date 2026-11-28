@@ -1,0 +1,42 @@
+{
+ "pairs": 159,
+ "CANAL_q10_50_90": [
+  0.9303055622047486,
+  0.9884068077919941,
+  0.9982991348356947
+ ],
+ "same_key_share": 0.8553459119496856,
+ "rho_CANAL_meanPCE": 0.19277525674707433,
+ "rho_CANAL_vs_minus_absdiff": {
+  "H1": {
+   "rho": 0.5225051214515658,
+   "n": 135
+  },
+  "REP_L": {
+   "rho": 0.4057977071889181,
+   "n": 159
+  },
+  "PI3c": {
+   "rho": 0.30363379182518785,
+   "n": 135
+  },
+  "ROUGH_X": {
+   "rho": 0.33821377046057494,
+   "n": 159
+  },
+  "E5_L": {
+   "rho": 0.4968832099355147,
+   "n": 159
+  },
+  "NPB": {
+   "rho": 0.23362807023835488,
+   "n": 159
+  }
+ },
+ "predictions_checked": {
+  "P1_H1_and_REP_L_above_0.20": true,
+  "P2_PI3c_positive_and_below_both_P1": true,
+  "P3_ROUGH_X_abs_below_0.15": false,
+  "P4_abs_rho_with_mean_PCE_below_0.30": true
+ }
+}

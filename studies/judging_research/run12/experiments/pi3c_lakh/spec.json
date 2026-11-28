@@ -1,0 +1,52 @@
+{
+ "kind": "lakh",
+ "idea": "R12-L1 PI3 (+ R12-G2 PRED as a reading; Merge 2)",
+ "measure": "PI3c",
+ "extra": [
+  "H1",
+  "REPBAR"
+ ],
+ "pred": 0.03,
+ "counted": true,
+ "readings": [
+  {
+   "name": "subsumption_H1_with_and_without_PI3c",
+   "kind": "shrink",
+   "measure": "H1",
+   "held": "PI3c",
+   "extra": [
+    "REPBAR"
+   ],
+   "rule": "Listener: H1 keeps at least two thirds of its coefficient (shrink <= 1/3); counts only if H1 alone has p < .05"
+  },
+  {
+   "name": "G2_PRED_gaussian_PI8",
+   "kind": "lakh",
+   "measure": "PI8",
+   "extra": [
+    "REP_L",
+    "H8",
+    "EVLEN",
+    "REPBAR"
+   ],
+   "skeptic": true,
+   "pred_sign": 1
+  },
+  {
+   "name": "G2_subsumption_REP_L_with_and_without_PI8",
+   "kind": "shrink",
+   "measure": "REP_L",
+   "held": "PI8",
+   "extra": [
+    "H8",
+    "EVLEN",
+    "REPBAR"
+   ],
+   "rule": "Geometer: REP_L's beta shrinks by under 10% when PI8 enters; 25% or more kills 'mostly not'; counts only if REP_L alone has p < .05"
+  }
+ ],
+ "alpha": 0.016666666666666666,
+ "K": 3,
+ "rank": 3,
+ "status": "COUNTED"
+}

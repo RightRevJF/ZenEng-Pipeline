@@ -1,0 +1,39 @@
+{
+ "kind": "hook",
+ "idea": "R12-L2 PIC",
+ "measure": "PIC",
+ "extra": [
+  "step_share",
+  "mel_ic_mean",
+  "ln_notes",
+  "pc_entropy"
+ ],
+ "pred": 0.03,
+ "counted": true,
+ "readings": [
+  {
+   "name": "PIC_REL_same_extras",
+   "measure": "PIC_REL",
+   "extra": [
+    "step_share",
+    "mel_ic_mean",
+    "ln_notes",
+    "pc_entropy"
+   ],
+   "pred_sign": 1
+  },
+  {
+   "name": "PIC_round1_form_ln_notes_pc_entropy",
+   "measure": "PIC",
+   "extra": [
+    "ln_notes",
+    "pc_entropy"
+   ],
+   "pred_sign": 1
+  }
+ ],
+ "alpha": 0.016666666666666666,
+ "K": 3,
+ "rank": 4,
+ "status": "COUNTED"
+}

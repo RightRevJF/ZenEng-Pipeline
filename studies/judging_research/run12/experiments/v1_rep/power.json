@@ -1,0 +1,67 @@
+{
+ "power": {
+  "0.05": 0.44333333333333336,
+  "0.025": 0.33666666666666667,
+  "0.016667": 0.29333333333333333,
+  "0.0125": 0.27666666666666667,
+  "0.01": 0.22666666666666666,
+  "0.008333": 0.20333333333333334,
+  "0.007143": 0.19
+ },
+ "scenarios": {
+  "artist": {
+   "power": {
+    "0.05": 0.44333333333333336,
+    "0.025": 0.33666666666666667,
+    "0.016667": 0.29333333333333333,
+    "0.0125": 0.2866666666666667,
+    "0.01": 0.27,
+    "0.008333": 0.26,
+    "0.007143": 0.24666666666666667
+   },
+   "median_fake_se": 0.005500761633604271,
+   "kill_if_zero": 0.42,
+   "median_sd_D": 0.39129640542550925,
+   "median_n": 1845.0
+  },
+  "recent": {
+   "power": {
+    "0.05": 0.47,
+    "0.025": 0.35333333333333333,
+    "0.016667": 0.3,
+    "0.0125": 0.27666666666666667,
+    "0.01": 0.22666666666666666,
+    "0.008333": 0.20333333333333334,
+    "0.007143": 0.19
+   },
+   "median_fake_se": 0.005297724373127732,
+   "kill_if_zero": 0.43666666666666665,
+   "median_sd_D": 0.2934872012724088,
+   "median_n": 1848.0
+  }
+ },
+ "calibration": {
+  "mean": 0.21808510638297873,
+  "tau": 1.85,
+  "selection_within_achieved": 0.378881326681713,
+  "rho_artist_eta": 0.45,
+  "logcov_within_achieved": 0.38664465622644195,
+  "FIT_within_achieved": 0.4713578662941933,
+  "logcov_within_target": 0.427,
+  "FIT_within_target": 0.559
+ },
+ "draws": 300,
+ "seed": 12,
+ "n_rows_all": 9588,
+ "note": "Model-based fake outcomes (fit.json's r, A, g, h): which songs are matched (artist-clustered probit tuned to 2,091 matched rows and the within-artist share 0.38 of y), first years (fake: an artist era 1960-2012 plus 0-8 years, or 1985-2012 plus 0-3 = 'recent'), fitness eta ~ Gamma(r, r) with artist correlation tuned to the within-artist share 0.427 of log covers, N ~ Poisson(eta E(t0)), FIT = digamma(r + N) - log(r + E). The fake D carries the predicted -0.01 z(x) on top of the model's own D. power = the lower of the two scenarios.",
+ "alpha_frozen": 0.016666666666666666,
+ "alphas_key": {
+  "K=1": "0.05",
+  "K=2": "0.025",
+  "K=3": "0.016667",
+  "K=4": "0.0125",
+  "K=5": "0.01",
+  "K=6": "0.008333",
+  "K=7": "0.007143"
+ }
+}

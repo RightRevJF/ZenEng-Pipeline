@@ -1,0 +1,40 @@
+{
+ "kind": "lakh",
+ "idea": "REP replication on Lakh (run 11's first principles)",
+ "measure": "REP_L",
+ "extra": [],
+ "pred": -0.02,
+ "counted": false,
+ "readings": [
+  {
+   "name": "bare_run07_controls_only",
+   "kind": "lakh",
+   "measure": "REP_L",
+   "extra": [],
+   "skeptic": false,
+   "pred_sign": -1
+  },
+  {
+   "name": "ln_events_held_only",
+   "kind": "lakh",
+   "measure": "REP_L",
+   "extra": [
+    "LNEV"
+   ],
+   "skeptic": false,
+   "pred_sign": -1
+  },
+  {
+   "name": "H1_event_entropy",
+   "kind": "lakh",
+   "measure": "H1",
+   "extra": [],
+   "skeptic": true,
+   "pred_sign": -1
+  }
+ ],
+ "alpha": 0.016666666666666666,
+ "K": 3,
+ "rank": 5,
+ "status": "ESTIMATE"
+}
