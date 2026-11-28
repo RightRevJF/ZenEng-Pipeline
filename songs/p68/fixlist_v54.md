@@ -255,3 +255,11 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Check:** the five lyrics on every mark, with mark 2 rewritten, and the section's last line inside its slot. Watched: the title's choice against the table, and whether ours is the table's commonest.
 - **Read (4934a733 before 64d2e6ff, `forms_250.json`):** song 49's words meet every mark. Its first chorus line is held to its bar line in no build (was 530 of 600), and its commonest rhythm's share fell from 0.907 to 0.683. The other four lyrics come out the same as before. **In song 69's package.**
 - **Standing gaps (from 749.249):** song 52's chorus title line sits at 0.75 of its stress ceiling against its neighbours' 0.833. Our commonest title rhythm is not the table's commonest (on song 49's words it ranks eighth, with 0.021 of the count).
+
+## Pop 3/4 with the overnight's forms (992fa4d85)
+- Every mark met but K3: first beat 0.337 and 0.326 against 0.45; off the beat 0.326 and 0.348 against 0.26. 840 none; share drawn fresh 0.0004; the chord mark met.
+
+## 749.251. Outside 4/4, a line sung again to new words is refitted blind to stress
+- **Problem:** in pop 3/4 the kept windows' ceiling for first-beat stress is 0.674 and kept count alone gives 0.421, but the builds give 0.317. Fresh, title and copied lines meet K3 (0.467 to 0.512). Lines sung again to new words don't (0.272, and 818's 0.227), and they carry seven tenths of the song's stresses. The refit splits the widest gap and drops the narrowest. In 4/4 it chooses by the words' weights (882); outside 4/4 it never has (9cc6427b4, `count_k3_by_made_pop55.json`).
+- **Fix:** the refit chooses which gaps are split and which notes dropped to set the new words' stresses best, by the table's own stress score.
+- **Check:** pop 3/4 K1 to K8, with K6 held. The five 6/8 lyrics come out byte for byte the same, since there's no stress table there.
