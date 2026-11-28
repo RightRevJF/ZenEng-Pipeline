@@ -32,3 +32,9 @@ The method, by the rules already agreed:
 - Anything that cannot be undone and is outside the rules above (for example, a default that would change his finished songs).
 
 He hears from us when a song is ready, or a question needs him. Otherwise nothing.
+
+## The test-songs window (joined 28 November 2026, at the writer's request)
+
+- **Its job:** writing and banking test lyrics for the metre engine (3/4 and 6/8 first), with the writer. It locks them, mouth-tests them and banks them. It never runs the engine.
+- **Its file:** `coord/test_songs.md` on `main`, append only. Its songs go in `songs/pNN/`, with a row in the ledger's banked table (`studies/judging_data/README.md`). It numbers songs from the handover's "next new song", checking the ledger first.
+- **What it doesn't do:** number findings (749.xxx), spend a banked lyric, or open songs 67, 68 or 69's results. The main songwriting window and the maintainer read its banked lyrics as fresh test songs, by a ledger line written first.
