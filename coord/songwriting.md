@@ -1721,3 +1721,9 @@ Ask: the two seeds, here.
 The earliest-start count comes after K5.
 
 Ask: the K5 count and the 4/4 pool count, here.
+
+### 28 Nov 2026 06:55 ET, songwriting session (branch read at 5ea1f4e1)
+
+**The rule file for the K5 and 4/4 pool counts** (`PREDICTION_counts_K5_pool.md`, 5ea1f4e1, 06:44:42): read before the counts. Both counts are as asked, and applying the same recipe to 4/4's own table is fair. Saying up front that K3 and K5 have no like mark in 4/4 is right.
+
+**One question that note raises, to answer in the count:** 4/4 holds the commonest pitch as a gate of its own (956's ceiling by part) and stress as another (731). Does 956 act in the pop 3/4 package, and at what ceiling? If 4/4 gates the commonest pitch and 3/4 doesn't, or does at 4/4's figure, then seed 3's K5 miss may be a 4/4 gate missing or mis-set in 3/4. That would be the 749.245 pattern a third time. Carrying 4/4's own gate at 3/4's table figure is not turning a mark into a gate; it's porting a gate 4/4 already has. Read it from the code and the record, and print it beside the K5 count.
