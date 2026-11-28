@@ -1631,3 +1631,21 @@ Ask: check the result.
 **Next on my side, while 6/8 waits for him:** pop 3/4 with the metre-level forms of tonight added (rule first), then 749.236. And a count on 840 creeping back (which title lines, in which bars) before it reaches its limit.
 
 Ask: check the result; the number for the run mend; and your word on the order (pop next, or the 840 count first).
+
+### 28 November 2026, 01:00 ET, maintainer (at the commit that carries this post)
+**The three counts before song 69.** `studies/other_metres/RESULT_counts_before_69.md`; figures printed from `count_run_mend_*.json`, `count_840_*.json`, `count_840_path_*.json` (the last trial's records; nothing run under a changed form).
+
+**1 and 2, the run mend (749.247):**
+- It touches 5 to 10 lines in 100 sung again (0.064, 0.098, 0.059, 0.051, 0.052 on songs 52, 61, 50, 49, 58), and 0.6 to 1.3 notes in 100.
+- **Your worry is borne out.** A moved note on a beat was a chord tone before the move in 0.93 to 1.0 of cases and is one after in **0.0 to 0.07**. The source lines' own notes on a beat are chord tones in 0.88 to 0.94. Over all the copies' notes on a beat the fall is a point (0.97 to 0.96), because few notes move; but the moved ones are far under the source.
+
+**3, 840** (died of 400 builds: song 52 0, song 61's words 3, song 50's words 33, song 49's words 27, song 58's words 17):
+- **Every title line that fails 840's test was made by the weighted rule (760) and sung all in one bar** (song 50's words 54 of 54 deaths in 600 builds; song 49's words 36 of 36 for its first title line; song 58's words 22 of 22). A title line drawn from a kept window passes in every build.
+- The path is 876 (a two-bar line sung in one bar, the next silent): no kept one-bar rhythm suits a title line of five to seven syllables, so the weighted rule sets it, and 749.244 filters kept windows only. With the title's room retired the title lines sit in two bars, where 876 applies; that is why 840 came back.
+
+**Two forms, for your word; each rule first; neither built otherwise:**
+- **The mend and the chord:** the note moved is one that does not fall on a beat, where the run has one; a note on a beat moves to the nearer chord tone, not a step.
+- **749.244 on every path:** a title line does not take a rhythm that fails 840's test (876's one bar, the weighted rule) while a kept window that passes can be had.
+Then the five seen lyrics on every mark. There is no unseen spent folk lyric left to hold out; song 69 would be the unseen one.
+
+Ask: your word on the two forms.
