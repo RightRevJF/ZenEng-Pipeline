@@ -1,0 +1,229 @@
+{
+ "spec": {
+  "kind": "v1",
+  "idea": "V1 (Jason's vector 1; P11-1)",
+  "measure": "ch_rep",
+  "pred": -0.01,
+  "counted": false,
+  "readings": [
+   {
+    "name": "D_five_year_bins_instead_of_exact_years",
+    "kind": "five_year_bins"
+   }
+  ],
+  "alpha": 0.016666666666666666,
+  "K": 3,
+  "rank": 2,
+  "status": "ESTIMATE"
+ },
+ "power": {
+  "power": {
+   "0.05": 0.37,
+   "0.025": 0.25,
+   "0.016667": 0.19333333333333333,
+   "0.0125": 0.16666666666666666,
+   "0.01": 0.15666666666666668,
+   "0.008333": 0.14333333333333334,
+   "0.007143": 0.13
+  },
+  "scenarios": {
+   "artist": {
+    "power": {
+     "0.05": 0.37,
+     "0.025": 0.25,
+     "0.016667": 0.19333333333333333,
+     "0.0125": 0.16666666666666666,
+     "0.01": 0.15666666666666668,
+     "0.008333": 0.14333333333333334,
+     "0.007143": 0.13
+    },
+    "median_fake_se": 0.005941954132171504,
+    "kill_if_zero": 0.36,
+    "median_sd_D": 0.39129640542550925,
+    "median_n": 1845.0
+   },
+   "recent": {
+    "power": {
+     "0.05": 0.4066666666666667,
+     "0.025": 0.30666666666666664,
+     "0.016667": 0.24,
+     "0.0125": 0.20666666666666667,
+     "0.01": 0.18666666666666668,
+     "0.008333": 0.17666666666666667,
+     "0.007143": 0.16333333333333333
+    },
+    "median_fake_se": 0.005722541989856736,
+    "kill_if_zero": 0.36,
+    "median_sd_D": 0.2934872012724088,
+    "median_n": 1848.0
+   }
+  },
+  "calibration": {
+   "mean": 0.21808510638297873,
+   "tau": 1.85,
+   "selection_within_achieved": 0.378881326681713,
+   "rho_artist_eta": 0.45,
+   "logcov_within_achieved": 0.38664465622644195,
+   "FIT_within_achieved": 0.4713578662941933,
+   "logcov_within_target": 0.427,
+   "FIT_within_target": 0.559
+  },
+  "draws": 300,
+  "seed": 12,
+  "n_rows_all": 9588,
+  "note": "Model-based fake outcomes (fit.json's r, A, g, h): which songs are matched (artist-clustered probit tuned to 2,091 matched rows and the within-artist share 0.38 of y), first years (fake: an artist era 1960-2012 plus 0-8 years, or 1985-2012 plus 0-3 = 'recent'), fitness eta ~ Gamma(r, r) with artist correlation tuned to the within-artist share 0.427 of log covers, N ~ Poisson(eta E(t0)), FIT = digamma(r + N) - log(r + E). The fake D carries the predicted -0.01 z(x) on top of the model's own D. power = the lower of the two scenarios.",
+  "alpha_frozen": 0.016666666666666666,
+  "alphas_key": {
+   "K=1": "0.05",
+   "K=2": "0.025",
+   "K=3": "0.016667",
+   "K=4": "0.0125",
+   "K=5": "0.01",
+   "K=6": "0.008333",
+   "K=7": "0.007143"
+  }
+ },
+ "readings": {
+  "beta_on_zFIT": {
+   "beta": -0.09001475561415573,
+   "se": 0.03291155993442651,
+   "p": 0.006237083801623259,
+   "lo": -0.15452141308563166,
+   "hi": -0.025508098142679778,
+   "n": 1853,
+   "artists": 405,
+   "coefs": {
+    "ch_rep": {
+     "beta": -0.09001475561415573,
+     "se": 0.03291155993442651,
+     "p": 0.006237083801623259
+    }
+   },
+   "cov": [
+    [
+     0.0010831707773173481
+    ]
+   ]
+  },
+  "beta_on_zlog1pN": {
+   "beta": -0.07217479217672464,
+   "se": 0.025738932308507774,
+   "p": 0.00504557200431205,
+   "lo": -0.12262309950139988,
+   "hi": -0.0217264848520494,
+   "n": 1853,
+   "artists": 405,
+   "coefs": {
+    "ch_rep": {
+     "beta": -0.07217479217672464,
+     "se": 0.025738932308507774,
+     "p": 0.00504557200431205
+    }
+   },
+   "cov": [
+    [
+     0.0006624926363819454
+    ]
+   ]
+  },
+  "share_zero_covers": 0.05126821370750135,
+  "corr_FIT_log1pN_on_rows": 0.9269505176910132,
+  "D_five_year_bins_instead_of_exact_years": {
+   "beta": -0.021168740293306874,
+   "se": 0.00871368721348694,
+   "p": 0.015125231714277395,
+   "lo": -0.038247567231741275,
+   "hi": -0.004089913354872472,
+   "n": 1853,
+   "artists": 405,
+   "coefs": {
+    "ch_rep": {
+     "beta": -0.021168740293306874,
+     "se": 0.00871368721348694,
+     "p": 0.015125231714277395
+    }
+   },
+   "cov": [
+    [
+     7.592834485448578e-05
+    ]
+   ]
+  }
+ },
+ "dry_run_synthetic_outcome": false,
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2226,
+  "y_foreign1": 2130,
+  "rows_with_FIT": 2091,
+  "window_N_mismatch_vs_fitness_json": 0,
+  "fitness_sha256": "68d2688af72d9fa9003ff675e37bc10b8f3c685b34ac895155575bec74503d6a"
+ },
+ "main": {
+  "beta": -0.017839963437431116,
+  "se": 0.008397487574690162,
+  "p": 0.033633319124059986,
+  "lo": -0.03429903908382383,
+  "hi": -0.0013808877910383988,
+  "n": 1853,
+  "artists": 405,
+  "coefs": {
+   "ch_rep": {
+    "beta": -0.017839963437431116,
+    "se": 0.008397487574690162,
+    "p": 0.033633319124059986
+   }
+  }
+ },
+ "halves": [
+  {
+   "beta": -0.025010027740832674,
+   "se": 0.012558899084241073,
+   "p": 0.046434864114809925,
+   "lo": -0.049625469945945175,
+   "hi": -0.00039458553572017246,
+   "n": 904,
+   "artists": 198,
+   "coefs": {
+    "ch_rep": {
+     "beta": -0.025010027740832674,
+     "se": 0.012558899084241073,
+     "p": 0.046434864114809925
+    }
+   }
+  },
+  {
+   "beta": -0.012603959064951443,
+   "se": 0.012656505276070495,
+   "p": 0.31932386592919004,
+   "lo": -0.03741070940604961,
+   "hi": 0.012202791276146726,
+   "n": 949,
+   "artists": 207,
+   "coefs": {
+    "ch_rep": {
+     "beta": -0.012603959064951443,
+     "se": 0.012656505276070495,
+     "p": 0.31932386592919004
+    }
+   }
+  }
+ ],
+ "verdict": {
+  "verdict": "estimate",
+  "counted": false,
+  "sign_ok": true,
+  "halves_ok": true,
+  "second_ok": true,
+  "second_applies": false,
+  "prediction_outside_range": false,
+  "kill_rule": "range_and_wrong_side",
+  "would_be_killed": false
+ },
+ "n": 1853,
+ "sd_D": 0.3822289426743794
+}

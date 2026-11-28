@@ -1,0 +1,190 @@
+{
+ "spec": {
+  "kind": "windows",
+  "idea": "WINDOWS (merge of R12-G3, R12-L3, R12-I1; Skeptic's Merge 1)",
+  "measures": [
+   "REP",
+   "ch_rep"
+  ],
+  "pred": {
+   "REP": -0.02,
+   "ch_rep": 0.0
+  },
+  "pred_by": {
+   "REP": "the Listener (round 2: Delta = -0.02)",
+   "ch_rep": "the Inventor (round 1-2: Delta = 0)"
+  },
+  "inventor_beta_L": {
+   "REP": -0.05,
+   "ch_rep": -0.05
+  },
+  "sim_beta_E": -0.05,
+  "boot": 500,
+  "counted": false,
+  "alpha": 0.016666666666666666,
+  "K": 3,
+  "rank": 7,
+  "status": "ESTIMATE"
+ },
+ "power": {
+  "per_measure": {
+   "REP": {
+    "power": {
+     "0.05": 0.14666666666666667,
+     "0.025": 0.09,
+     "0.016667": 0.06,
+     "0.0125": 0.04666666666666667,
+     "0.01": 0.04,
+     "0.008333": 0.03333333333333333,
+     "0.007143": 0.02666666666666667
+    },
+    "median_se_delta": 0.022040501034902328,
+    "median_n": 1453.5,
+    "sim_beta_E": -0.05,
+    "sim_beta_L": -0.07
+   },
+   "ch_rep": {
+    "power": null,
+    "note": "prediction Delta = 0: no directional pass is possible; an estimate"
+   }
+  },
+  "calibration": {
+   "mean": 0.21808510638297873,
+   "tau": 1.85,
+   "selection_within_achieved": 0.378881326681713,
+   "rho_artist_eta": 0.45,
+   "logcov_within_achieved": 0.38664465622644195,
+   "FIT_within_achieved": 0.4713578662941933,
+   "logcov_within_target": 0.427,
+   "FIT_within_target": 0.559
+  },
+  "draws": 300,
+  "seed": 12,
+  "note": "model-based fake counts as power_v1 ('artist' era scenario), t0 <= 2005; Delta SE by the analytic joint sandwich",
+  "alpha_frozen": 0.016666666666666666,
+  "alphas_key": {
+   "K=1": "0.05",
+   "K=2": "0.025",
+   "K=3": "0.016667",
+   "K=4": "0.0125",
+   "K=5": "0.01",
+   "K=6": "0.008333",
+   "K=7": "0.007143"
+  }
+ },
+ "readings": {},
+ "dry_run_synthetic_outcome": false,
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2226,
+  "y_foreign1": 2130,
+  "rows_with_FIT": 2091,
+  "window_N_mismatch_vs_fitness_json": 0,
+  "fitness_sha256": "68d2688af72d9fa9003ff675e37bc10b8f3c685b34ac895155575bec74503d6a"
+ },
+ "n": 1419,
+ "per_measure": {
+  "REP": {
+   "delta": -0.03621150189046554,
+   "se_analytic": 0.05928806981614785,
+   "p_analytic": 0.5413504330094162,
+   "n": 1419,
+   "artists": 326,
+   "beta_E": 0.07699057361032496,
+   "se_E": 0.05639515524451644,
+   "beta_L": 0.04077907171985942,
+   "se_L": 0.048835532199751064,
+   "groups_E": 296,
+   "groups_L": 321,
+   "covers_E": 7777.0,
+   "covers_L": 43270.0,
+   "se_boot": 0.0692507583462487,
+   "p_boot": 0.6010410272398059,
+   "boot_reps": 467,
+   "lo": -0.171942988249113,
+   "hi": 0.09951998446818192,
+   "boot_seed": 12,
+   "prediction": -0.02,
+   "prediction_by": "the Listener (round 2: Delta = -0.02)",
+   "prediction_outside_range": false,
+   "verdict": "estimate",
+   "reading_1970_plus": {
+    "delta": -0.05168096126515422,
+    "se_analytic": 0.07035991389408086,
+    "p_analytic": 0.46263016688835634,
+    "n": 1005,
+    "artists": 258,
+    "beta_E": 0.07529692297328934,
+    "se_E": 0.07145642211739602,
+    "beta_L": 0.023615961708135118,
+    "se_L": 0.05317566349413182,
+    "groups_E": 228,
+    "groups_L": 252,
+    "covers_E": 3321.0,
+    "covers_L": 13256.0
+   },
+   "reading_beta_L_with_log_r_plus_NE_held": {
+    "beta": 0.012975881989322592,
+    "se": 0.03458449099375213
+   },
+   "reading_inventor_beta_L": {
+    "pred": -0.05,
+    "outside_range": false
+   },
+   "reading_delta_zero_outside_range": false
+  },
+  "ch_rep": {
+   "delta": -0.24164526088544486,
+   "se_analytic": 0.07159924703231624,
+   "p_analytic": 0.0007382392482137829,
+   "n": 1419,
+   "artists": 326,
+   "beta_E": 0.061870293505428345,
+   "se_E": 0.0725058048529895,
+   "beta_L": -0.17977496738001653,
+   "se_L": 0.048934479715128404,
+   "groups_E": 296,
+   "groups_L": 321,
+   "covers_E": 7777.0,
+   "covers_L": 43270.0,
+   "se_boot": NaN,
+   "p_boot": NaN,
+   "boot_reps": 469,
+   "lo": NaN,
+   "hi": NaN,
+   "boot_seed": 12,
+   "prediction": 0.0,
+   "prediction_by": "the Inventor (round 1-2: Delta = 0)",
+   "prediction_outside_range": true,
+   "verdict": "estimate",
+   "reading_1970_plus": {
+    "delta": -0.09664821766994751,
+    "se_analytic": 0.06779438621375751,
+    "p_analytic": 0.15398153285562965,
+    "n": 1005,
+    "artists": 258,
+    "beta_E": -0.008944745717318408,
+    "se_E": 0.07825704916503734,
+    "beta_L": -0.10559296338726591,
+    "se_L": 0.0608869844658084,
+    "groups_E": 228,
+    "groups_L": 252,
+    "covers_E": 3321.0,
+    "covers_L": 13256.0
+   },
+   "reading_beta_L_with_log_r_plus_NE_held": {
+    "beta": -0.20683392144028528,
+    "se": 0.049312848867608776
+   },
+   "reading_inventor_beta_L": {
+    "pred": -0.05,
+    "outside_range": true
+   },
+   "reading_delta_zero_outside_range": true
+  }
+ }
+}
