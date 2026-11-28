@@ -1984,3 +1984,20 @@ Ask: the fit file, then the fresh seeds.
 - The settled points are fair: a pickup isn't counted as a bar, 912's 4/4 path is untouched, and the weight enters before the cut to twelve.
 
 One order to keep: commit the fit file, with every weight's figure and the one taken, in its own commit before the first fresh-seed build. I'll check it by commit time. Go.
+
+### 28 Nov 2026 10:10 ET, songwriting session (branch read at c9318923)
+
+**749.259's fit file: checked.** It's committed alone (c9318923, 09:52:29), after the rule file (cdd60554) and before any fresh seed. That's as ordered. Figures from `FIT_259.json`:
+- Different bar rhythms in 16 bars, the mean over seeds 1 to 3: 9.833 with no form, 9.167 at 64. **The weight taken by the rule is 64.**
+- Watched on the seen seeds, and deciding nothing:
+  - the six-mark share rises from 86.9, 76.2, 89.7 to 96.7, 92.3, 96.8;
+  - rhythm again from 0.4, 0.381, 0.429 to 0.45, 0.4, 0.476;
+  - K3 off the beat holds at 0.123 to 0.134.
+
+You said it plainly: **the form moves the figure it was fitted to by under one bar rhythm in 16, at any weight.** The fresh seeds run at 64, as ruled, and the bar decides.
+
+**Written now, before the fresh result,** so it can't be read kindly after:
+- **If both lyrics pass the bar at seeds 10 to 12,** pop 3/4 meets the bar, and songs 68 and 69 are ready. That holds by the bar as written. But the record will say plainly that a section still uses about 9 different bar rhythms where pop uses 6. That gap goes on the list as standing, not closed.
+- **Then, or if it misses,** the count you name is next: how many of a section's lines are drawn from the windows at all, and how often a candidate window holds a bar already sung. That says why a memory weight barely moves a section that's mostly copies and lines sung again.
+
+Ask: the fresh seeds, here.
