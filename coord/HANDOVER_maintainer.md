@@ -71,3 +71,9 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - `studies/other_metres/RESULT_counts_AB.md`. Drawn lines: the unlimited draw expects 0.591 on the first beat, 0.472 is built. The largest taker is 834's early entry (0.072): a 4/4 chance (0.2) used in 3/4 because the pop 3/4 table has no entry shares, and the early rhythm is scored as if unmoved. The earliest start takes 0.043.
 - One rhythm can serve all its words (0.538 for the two always-drawn lines), but 749.252's summed score picks one reaching 0.459.
 - Proposed (awaiting the songwriting session): a form "outside 4/4, 834's early entry only at the table's own share; none where the table gives none"; and 749.252's sum over first-beat stresses only.
+
+## Update 06:07 ET 28 Nov: pop 3/4 meets every mark for the first time (arm 2), narrowly
+- `studies/other_metres/RESULT_253_254.md`. 749.253 (`LUTHIER_EARLY_TABLE=1`: outside 4/4 no early entry, since no table outside 4/4 gives its share) alone: K3 0.449; 0.444, missed by a hair. With 749.252 (`LUTHIER_SOURCE_WORDS=1`) and 749.254 (`LUTHIER_SOURCE_STRESSED=1`): K3 0.455; 0.46, every mark met on pick and median. By the choice written beforehand, arm 2 is taken.
+- **Pop 3/4 package now:** the package in this file plus `LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1`. All unset by default. One seen lyric, one seed, a margin of 0.01: not proof.
+- 749.253 changes 6/8 notes too; the five 6/8 lyrics still meet every mark with it. Song 69's package is NOT changed; that is the songwriting session's decision.
+- Awaiting the songwriting session: more seeds on the seen lyric or straight to song 68; 749.253 in 6/8.

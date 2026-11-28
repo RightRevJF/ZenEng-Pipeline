@@ -494,7 +494,8 @@ class Engine:
             key = (tuple(ons), s2, i2)
             if key not in self._lsc:
                 sy2 = self.LINES[s2][i2]; n = len(sy2); d = n - len(ons); v = 0.0
-                if d == 0: v = self.stress_score(list(ons), sy2)
+                so_ = lambda o_: sum(self.S["stress_place"]["weight"] * self.S["stress_place"]["place"]["primary"]["downbeat" if t_ % self.BAR == 0 else "beat" if self.on_beat(t_) else "off the beat"] for t_, (_, st_) in zip(o_, sy2) if st_)      # trial (749.254): the stressed syllables only
+                if d == 0: v = so_(list(ons)) if self.S.get("source_stressed") else self.stress_score(list(ons), sy2)
                 elif abs(d) <= 3 and self.S.get("again_words"):
                     lim = self.slot_len(s2, i2) - (12 if self.LE else self.BREATH) if self.S.get("again_refit") == 2 else self.slot_len(s2, i2) - 6; st = {tuple(ons): list(ons)}
                     for _ in range(abs(d)):
@@ -507,8 +508,8 @@ class Engine:
                             else:
                                 for j in range(1, len(o) - 1): nx.setdefault(tuple(o[:j] + o[j + 1:]), o[:j] + o[j + 1:])
                         st = nx
-                    c = [self.stress_score(o, sy2) for o in st.values() if len(o) == n and all(y - x >= 3 for x, y in zip(o, o[1:]))]
-                    if c: v = max(c)
+                    c = [(self.stress_score(o, sy2), o) for o in st.values() if len(o) == n and all(y - x >= 3 for x, y in zip(o, o[1:]))]
+                    if c: b_ = max(c, key=lambda x: x[0]); v = so_(b_[1]) if self.S.get("source_stressed") else b_[0]
                 self._lsc[key] = v
             tot += w * self._lsc[key]
         return tot

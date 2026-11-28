@@ -1937,3 +1937,43 @@ Second, smaller, also not written: 749.252's sum could count first-beat stresses
 838 is watched as you asked; these were counts, no run.
 
 Ask: say whether the 834 form is next (number it, give its marks), whether the sum's change rides with it or waits, or name another. Song 69 is not run.
+
+### 28 November 2026, 06:07 ET, maintainer (at the commit that carries this post)
+
+**749.253 and 749.254, two arms** (`studies/other_metres/RESULT_253_254.md`, figures from RESULT_253_254.json; rule file 98358a2 first, with 834 read from the 6/8 records: it acts there).
+
+| Mark (pick; median) | Before (749.251 on) | Arm 1: 749.253 | Arm 2: + 749.252, 749.254 | Wanted |
+|---|---|---|---|---|
+| K1 living; pool | 590; 295 | 577; 289 | 591; 296 | 30; 10 |
+| K2 notes a bar | 2.662; 2.655 | 2.655; 2.655 | 2.683; 2.662 | 2.38 to 3.85 |
+| K3 stressed syllables on the first beat | 0.337; 0.412 | 0.449; 0.444 **missed** | 0.455; 0.46 | 0.45 or more |
+| K3 off the beat | 0.321; 0.203 | 0.155; 0.187 | 0.118; 0.134 | 0.26 or under |
+| K4 range | 17; 16.0 | 16; 16.0 | 17; 16.0 | 12 or more |
+| K4 pitches | 10; 11.0 | 12; 11.0 | 12; 11.0 | 7 or more |
+| K5 commonest pitch | 0.317; 0.287 | 0.292; 0.286 | 0.173; 0.278 | 0.303 or under |
+| K6 rhythm again within sections | 0.3; 0.368 | 0.474; 0.368 | 0.45; 0.4 | 0.349 to 0.871 |
+| K6 figure again within sections | 0.238; 0.2 | 0.1; 0.2 | 0.211; 0.2 | 0.667 or under |
+| K7 in the voice; a leap | | yes; none | yes; none | |
+| K8 deaths on 780; 840, in ten | | 0.0; 0.0 | 0.0; 0.0 | under one |
+| Marked lines drawn fresh, share | 0.0004 | 0.0001 | 0.0001 | 0.076 or under |
+| Chord mark: moved notes on a beat chord tones (source's share) | | 1.0 (0.942) | 1.0 (0.942) | the source's share |
+| Mark 3: source lines' first singing, first beat | 0.458 | (0.519) | 0.527 | 0.40 or more (arm 2) |
+| Mark 4: lines beginning after their bar line | | 0.031 | 0.027 | 0.15 or under |
+| Watched: 838's deaths in 1,000 | 410 | 423 | 409 | flag over 450 |
+| Watched: living builds meeting every figure mark, in 100 | 11.2 | 20.5 | 33.8 | |
+| Watched: the pool meeting every figure mark, in 100 | 10.8 | 21.1 | 36.5 | |
+
+- **Arm 1 (749.253 alone) misses, by a hair:** K3 on the first beat 0.449; 0.444 against 0.45. Every other mark is met. Missed is missed.
+- **Arm 2 (749.253 with 749.252 and 749.254) meets every mark, on the pick and on the median:** K3 0.455; 0.46 on the first beat and 0.118; 0.134 off it; K6 held; the source lines' own first singing 0.527; lines beginning late 0.027. **By the choice written before the run, arm 2 is taken.**
+- **It passes narrowly and I say so:** the median clears 0.45 by 0.01, on one seen lyric, one seed. 60.4 in 100 living builds meet K3's first beat (24.1 before); 36.5 in 100 of the pool meet every figure mark (10.8 before). So the pick, one draw from the pool, still misses some mark about two times in three on other seeds. This is a pass by the rule, not proof that 3/4 works.
+- Lines sung again are still the weak part (0.404 and 818's 0.391 on the first beat); lines set after 870's wait are poor in both arms (0.377).
+- 838: 423 and 409 deaths in 1,000; under 450.
+- **6/8, a check and not a mark:** 749.253 changes the 6/8 notes as foretold (none of the five is byte for byte the same; `early_entries` false in all five records). All five still meet every 6/8 mark. Song 69's package is unchanged; 749.253 in 6/8 is yours to decide with song 69's result.
+- Every switch unset: 54, 55, 52 and song 53's Essen arm byte for byte (all same); room files this engine's.
+- The records carry the switches meant (arm 1: early entries False, source words None; arm 2: early entries False, source words True, stressed only True); the judge ran in both.
+
+The pop 3/4 package as it now stands by your choice (all unset by default; nothing built into the engine): RESULT_pop_3_4_b's switches plus `LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1`.
+
+What I would do before song 68's words are spent, for you to rule on: read the same package on the same lyric at two more seeds (no rule changes; the mark is the same). A pass by 0.01 on one seed is thin, the unseen lyric can be read only once, and a second and third seed cost nothing that cannot be undone. And the next count you named (the earliest start; 870's wait lines) still stands as the place the next 0.04 is.
+
+Ask: rule on (1) arm 2 taken as the pop 3/4 package; (2) two more seeds on the seen lyric before song 68, or straight to the writer; (3) 749.253 in 6/8, with song 69's result. Song 68 and song 69 are not run.
