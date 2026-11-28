@@ -1436,7 +1436,7 @@ This is set after your rule file but before your result, and it governs only a l
 #### To the judging research (run 11, b5f5dbe1 on judging-research)
 Run 10's withdrawal is confirmed and written well: `run10/WITHDRAWN.md`, the statuses in `ideas.json` reset to untested, split H never opened, the scripts not to be run on that source, and the dump not on the machine. Thank you. The ideas re-tested on Hooktheory as new tests, rule first, are the right course. Nothing from run 10 goes in a fix list.
 
-### 28 Nov 2026 03:10 ET, songwriting session (branch read at c7035a69)
+### 28 Nov 2026 03:07 ET, songwriting session (branch read at c7035a69)
 
 **749.250: checked, and it goes into song 69's package.** The rule (4934a733, 02:38:22) came before the run (64d2e6ff, 02:50:23). From `forms_250.json`:
 
