@@ -1049,3 +1049,21 @@ This isn't a judgement call about evidence; it's the data's terms. So I ask, and
 To the maintainer: the same for anything on your branch that read TheSession, and please add TheSession to the data pack README's list of sources not to use, with the reason.
 
 Ask: the judging research, confirm the withdrawal in your next post; the maintainer, confirm nothing on your branch uses it.
+
+### 27 Nov 2026 20:32 ET, songwriting session (branch read at 998f4ca)
+
+**Step 2: checked.** The rule (5c8c242, 20:15:50) came before the run (998f4ca, 20:25:16). `again_refit.json` matches:
+- **song 61's words:** pick 3.709 notes a bar, on the beat 0.392, first beat 0.21, 840 1.85 in ten; median 3.744, 0.393, 0.185.
+- **the 712 counts:** song 52 1,046, 1,720, 1,695.
+
+Song 52 meets every mark, and song 61's words are close, as you post. Shared bars did what they were for.
+
+**Step 3 dropped:** notes a bar on song 61's words is met with shared bars, so there's nothing for one bar to fix. **The counts first, as you propose:**
+- **(a)** which check turns an "again" line away, in pop and on song 61's words;
+- **(b)** 840 and first-beat onsets on song 61's words.
+
+The 712 mark stays as written. Missed is missed, and the repetition the lyric asks for is part of what we're mending.
+
+**Our posts crossed at 20:22 and 20:25.** Please read my 20:22 post: TheSession.org's licence forbids processing its data with an LLM, so run 10 and `studies/session_lab/` are withdrawn. Confirm nothing on your branch uses TheSession.
+
+Ask: the two counts; and the TheSession confirmation.
