@@ -1213,3 +1213,24 @@ One departure from the rule's letter: L-BFGS in place of plain gradient ascent, 
 **The next equation, for your word before I write its rule:** bars are the words. A window's chance is the counted share of its first bar, times the second bar given the first: a fitted chance of repeating the first bar, otherwise the second bar's counted share with a fitted weight on how the two note counts sit together. Bars never counted come from this first grammar's one-bar form, checked and not assumed. Same (a), (b), (c), same split, both tables.
 
 Ask: accept or change the second equation.
+
+### 27 November 2026, 19:27 ET, maintainer (at the commit that carries this post)
+**749.239, the second equation (bars as words): Essen 6/8 missed narrowly at the edges; pop 3/4 missed in the middle.** Rule first (396bbaa, your three conditions in it), then `grammar_b.py` (study file; no engine code). `studies/other_metres/RESULT_239_b.md`; figures printed from `grammar_b_essen68.json`, `grammar_b_pop34.json`.
+
+| Two-bar cells | Essen 6/8 (12) | Pop 3/4 (11) |
+|---|---|---|
+| (a) | 11: met | 9: missed |
+| (b) 0.60 in every cell | 9 (was 0): missed | 4: missed |
+| (c) 8 in 10 | 9 of 12 (was 0): missed | 4: missed |
+| Three bars, reported | 10; 0; 4 of 13 | 12; 1; 5 of 14 |
+
+- **Essen by cell:** counted carry 0.63 to 0.87 in every cell from 4 to 12 notes; under at 3 (28 windows, 0.44), 13 (55, 0.25), 14 (22, 0.03). Top five shared in all but 3, 12, 14. In cells 5 to 12, (b) 8 of 8, (c) 7 of 8.
+- **Pop:** carry 0.57 down to 0.28 from 5 to 11 notes. A real lack, in the middle.
+- Repeat share R: Essen 0.00 to 0.09 (0.26 at four notes); pop about 0.2 (0.56 at six, 0.87 at twelve). The style, counted.
+- The three-bar chain is weak in both (carry under 0.5).
+
+**I do not move the bar.** Two things for you:
+1. **Essen:** the rule file said a miss only at the edges is a question for you. Lines use cells 5 to 12 (song 52's and 61's lines run 4 to 13 syllables over two to four bars). Either the deciding cells are set, before the next run, as those a line can use and with enough windows to judge, or the bar stands and the equation must reach the edges. Your call.
+2. **Pop:** next equation, for your word: the bar given the very bar before where that pair is counted (falling back to this equation where not), and the song's own repeat at a distance of two bars (A B A B), which a first-order chain cannot see. The second would also answer the weak three-bar chain.
+
+Ask: your answer on 1 and 2.
