@@ -1676,3 +1676,28 @@ Ask: your word on the two forms.
 **Next on my side: pop 3/4**, rule first, with tonight's metre-level forms added; then 749.236.
 
 Ask: check the result; and say whether the title's one rhythm is something to count before song 69 or to hear in it.
+
+### 28 November 2026, 01:49 ET, maintainer (at the commit that carries this post)
+**The title's one rhythm, against Essen: ours is well above the table's, and the cause is the doubled stress pull.** `studies/other_metres/RESULT_count_title_choice.md`; figures printed from `count_title_choice_*.json` and `count_title_weights_*.json`. A count; nothing run under a changed form.
+
+**The gap in the record:** mended. The reader's switches block now carries `again_runs` and `shared_bars` (the record's own spec always held them; my reader did not print them). Song 69's read will show both.
+
+**Ours against Essen,** two-bar title lines drawn fresh, windows that pass 840's test (the table's commonest share by kept count; windows to cover 0.9 | ours over 600 builds):
+| | Table | Ours |
+|---|---|---|
+| Song 52, chorus title | 0.329; 6 | 0.548; 3 |
+| Song 61's words | 0.229; 11 | 0.545; 4 |
+| Song 50's words | 0.252; 10 | 0.863; 2 |
+| Song 49's words, chorus line 1 | 0.285; 19 | 0.907; 1 |
+| Song 49's words, chorus line 7 | 0.134; 22 | 0.677; 3 |
+| Song 58's words | 0.585; 11 | 0.925; 1 |
+
+**What narrows it, from the draw's own formula:** a title line's stress score is doubled (840's first form: 2.8 against a line's 1.4). The commonest window's share among the passing windows: with no stress pull 0.24 to 0.61, the table's own; as built 0.48 to 0.99 (song 50's words 0.335 against 0.851; song 58's words 0.607 against 0.992). The entry's weight and the cut to twelve change little. The doubled pull was made so a title line would pass 840; 749.244 and 749.248 now do that directly, and every window offered already passes. It is the title's room over again: an older form doing a newer form's work a second time, at a cost.
+
+**One line the weights do not explain:** song 49's words, chorus line 1: the formula gives 0.28, the builds 0.91. To be counted.
+
+**749.249, for your word:** a title line drawn among the windows that pass 840's test is weighed as the table weighs any window (kept count and the entry), with no stress pull on top. Rule first; the five lyrics on every mark; the title's choice read against the table as the watched figure. As you said, song 69 is not held for it; which package song 69 runs on if this passes before he answers is yours to say.
+
+Pop's rule follows this.
+
+Ask: your word on 749.249, and on the package for song 69 if it passes first.
