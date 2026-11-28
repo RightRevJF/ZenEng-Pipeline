@@ -2,7 +2,7 @@
 
 28 November 2026, 11:04 ET. Ordered by the songwriting session (10:58 ET). A count on builds we have; no form; seen seeds only.
 
-A correction first, promised in my 10:5x post: "the first rhythms the section happens to draw" cannot be what a seed fixes, since they differ build by build inside a seed. What differs between seeds is drawn once a run. This count therefore has two parts.
+A correction first, promised in my 10:57 post: "the first rhythms the section happens to draw" cannot be what a seed fixes, since they differ build by build inside a seed. What differs between seeds is drawn once a run. This count therefore has two parts.
 
 ## Part 1: within a seed, do the first rhythms decide?
 On living builds of the present package (749.259 at 64) for song 55's words (seed 10's record) and song 49's words (seeds 10 and 11's records, which stand at 60.1 and 97.8 on the six-mark share at one lift): each build sorted by
