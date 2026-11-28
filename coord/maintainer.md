@@ -1855,3 +1855,24 @@ Ask: say whether those two counts are the next step, or name another. Song 69 is
 What follows, for you to weigh: your form (a line that will be sung again is drawn by the stress score of every set of words it will carry, summed) reaches the same-count lines and gives the fitted lines a better source too, so it aims at the whole 0.72 of the song's stresses, not the 0.22. I have not written a rule file for it.
 
 Ask: say whether to write that form's rule file next, with your marks, or to count something more first. Song 69 is not run.
+
+### 28 November 2026, 04:56 ET, maintainer (at the commit that carries this post)
+
+**749.252's result** (`studies/other_metres/RESULT_252.md`, figures from RESULT_252.json; rule file e7089f3 first, with mark 3 read on the present package: 0.458).
+
+| Pop 3/4, song 55's words | Before (749.251 on) | With 749.252 | Wanted |
+|---|---|---|---|
+| K3 first beat (pick; median) | 0.337; 0.412 | 0.481; 0.422 | 0.45 or more |
+| K3 off the beat | 0.321; 0.203 | 0.134; 0.198 | 0.26 or under |
+| Source lines, first beat (mark 3) | 0.458 | 0.431 | 0.40 or more |
+| Lines sung again, same count, first beat | 0.312 | 0.313 | watched |
+| All lines sung again, first beat | 0.358 | 0.366 | watched |
+| Living builds meeting every figure mark, in 100 | 11.2 | 11.2 | watched |
+
+- **Mark 1 missed on the median** (0.422). Marks 2, 3, 4 met; the 6/8 lyrics and unset songs byte for byte; room files this engine's.
+- The pick meets every mark this time. That is chance (first build past the gates; 10.2 in 100 of the pool meet every mark) and I do not count it.
+- **The form did not do its work:** the same-count lines did not move at all. Not passed; unset; in no package. How I settled the draw (twelve draws by today's rule, one taken by the later sets' score) is in the rule file and may be the weak point; I have not counted it.
+
+A count I would make before any third form (no engine change), to tell three causes apart: (1) do the twelve draws differ enough for the later words to choose among (how many distinct rhythms in twelve; the spread of the later score among them); (2) what first-beat share the table's stress score gives at its very best for these lines (if the best-scoring rhythm of each line still puts under 0.45 on the first beat, the score itself is content with any beat and no amount of choosing by it reaches K3); (3) which lines carry the same-count stresses: two-bar window lines or the three-bar lines the weighted rule sets.
+
+Ask: say whether that count is next, or name another. Song 68 is not ready to put to the writer: 3/4 still misses K3 on the median. Song 69 is not run.

@@ -274,6 +274,7 @@ def plan(L):
     stress_p_ = os.path.join(M.ATLAS, (trial_table_ or metre.replace("/", "-") + "_sung") + ".stress.json")
     if STRESS_PLACE and os.environ.get("LUTHIER_STRESS_" + metre.replace("/", "_"), "0") == "1" and os.path.exists(stress_p_): spec["stress_place"] = dict(weight=0.75, place=json.load(open(stress_p_))["place"])      # trial (749.231): 879's own weight
     if os.environ.get("LUTHIER_AGAIN_WORDS", "0") == "1" and spec.get("stress_place"): spec["again_words"] = True      # trial (749.251), off: a line sung again fits its new words by the table's stress score; only where the table has a stress file and 749.231 is on
+    if os.environ.get("LUTHIER_SOURCE_WORDS", "0") == "1" and spec.get("stress_place"): spec["source_words"] = True      # trial (749.252), off: a line that will be sung again is drawn for every set of words it will carry; only where the table has a stress file and 749.231 is on
     if RANGE_3_4 and metre == "3/4" and style_.get("by_song"):
         # trial (749.227): kept waltzes of like length (bars within a quarter of the song's bars of sung phrases; within a third where under 60 fall): the verse and chorus tops set so their span is those waltzes' median range and a little over, inside the voice (as 927); the pick's floor their 25th (as 954)
         import numpy as _np7; bars7_ = sum(sum(v_) for v_ in slots.values()); bs7_ = style_["by_song"]; sel7_ = [r_ for b_, r_ in zip(bs7_["bars"], bs7_["range"]) if abs(b_ - bars7_) <= 0.25 * bars7_]; band7_ = "a quarter"

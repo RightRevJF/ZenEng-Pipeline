@@ -59,7 +59,7 @@ class Engine:
                 if k_ in t_ and k_ in Q2: a_, m_, z_ = Q2[k_]; Q2[k_] = [t_[k_] - (m_ - a_), t_[k_], t_[k_] + (z_ - m_)]      # the charge's middle half, of the kept width, set about the kept song's own reading
             g_ = tg.get("power", 1.0); cl_ = lambda x: max(0.4, min(2.5, x)); self.Q = Q2; self.RUN = int(tg.get("run", 3)); self.AIM = True; self.RUNP = self.RUN; mv_ = tg.get("moves") or {}; self.MV = (float(mv_.get("step", 1.0)), float(mv_.get("leap", 1.0)), float(mv_.get("spread", 50.0)), float(mv_.get("repeat", 1.0)))
             self.TILT = tuple(cl_(((t_[k_] + 0.02) / (self.T["readings_quartiles"][k_][1] + 0.02)) ** g_) for k_ in ("repeated notes", "moves by step", "moves by leap"))
-        self._rc = {}; self.ALLW = None
+        self._rc = {}; self._ls = {}; self._lsc = {}; self.ALLW = None
         if spec.get("all_windows") and T.get("two_bar_windows_all"):                             # 912: every kept rhythm may be drawn, at its kept share
             B_ = collections.defaultdict(list)
             for p_, c_ in T["bar_rhythms_all"]: B_[len(p_)].append((tuple(p_), c_))
@@ -473,6 +473,45 @@ class Engine:
             if lo <= q <= hi and (q % 12 in ch or not ((q + 1) % 12 in ch or (q - 1) % 12 in ch)) and self.line_ok([q] + ps[1:], lines, k):
                 self.stats["929: a returning line's first note moves a step, to end a run at the join"] += 1; return [(r[0][0], q)] + list(r[1:])
         return None
+    def later_sets(self, sec, i):
+        """trial (749.252): the lines that will sing this line again, each with its weight: the lyric's marked lines whole; 818's by its chance, multiplied down the chain"""
+        if (sec, i) not in self._ls:
+            out = []
+            for (s2, i2), h in self.HOW.items():
+                if h[0] in ("again", "copy") and (h[1], h[2]) == (sec, i): out.append((1.0, (s2, i2))); out += self.later_sets(s2, i2)
+            bw = self.S.get("borrow")
+            if bw and bw["figure"] + bw["rhythm"] > 0:
+                for i2 in sorted({i + 2} | ({1} if i == 0 else set())):
+                    if i2 >= len(self.LINES[sec]) or self.HOW.get((sec, i2), ["fresh"])[0] != "fresh" or (self.S.get("title_fresh") and f"{sec}:{i2}" in self.S.get("hooks", ())): continue
+                    if next((j for j in (i2 - 2, i2 - 1) if j >= 0 and self.HOW.get((sec, j), ["fresh"])[0] != "design"), None) != i: continue
+                    ch = bw["figure"] + bw["rhythm"]; out.append((ch, (sec, i2))); out += [(ch * w, k) for w, k in self.later_sets(sec, i2)]
+            self._ls[(sec, i)] = out
+        return self._ls[(sec, i)]
+    def later_score(self, ons, sec, i):
+        """trial (749.252): the table's stress score of a rhythm summed over the later sets of words, each as the refit would set it (749.251's best where the counts differ by one to three)"""
+        tot = 0.0
+        for w, (s2, i2) in self.later_sets(sec, i):
+            key = (tuple(ons), s2, i2)
+            if key not in self._lsc:
+                sy2 = self.LINES[s2][i2]; n = len(sy2); d = n - len(ons); v = 0.0
+                if d == 0: v = self.stress_score(list(ons), sy2)
+                elif abs(d) <= 3 and self.S.get("again_words"):
+                    lim = self.slot_len(s2, i2) - (12 if self.LE else self.BREATH) if self.S.get("again_refit") == 2 else self.slot_len(s2, i2) - 6; st = {tuple(ons): list(ons)}
+                    for _ in range(abs(d)):
+                        nx = {}
+                        for o in st.values():
+                            if d > 0:
+                                for j in range(len(o)):
+                                    g = (o[j + 1] if j + 1 < len(o) else lim) - o[j]; hh = o[j] + (g // 2 // 3) * 3
+                                    if g >= 6 and hh > o[j]: nx.setdefault(tuple(o[:j + 1] + [hh] + o[j + 1:]), o[:j + 1] + [hh] + o[j + 1:])
+                            else:
+                                for j in range(1, len(o) - 1): nx.setdefault(tuple(o[:j] + o[j + 1:]), o[:j] + o[j + 1:])
+                        st = nx
+                    c = [self.stress_score(o, sy2) for o in st.values() if len(o) == n and all(y - x >= 3 for x, y in zip(o, o[1:]))]
+                    if c: v = max(c)
+                self._lsc[key] = v
+            tot += w * self._lsc[key]
+        return tot
     def build(self, rng):
         lines = {}; prev = None; plans = {}; self._figs = None; self._runin = None; self._peaked = False
         for name, opts in self.S.get("plans", {}).items(): plans[name] = rng.choice(opts)
@@ -550,7 +589,10 @@ class Engine:
                         r2_ = self.join(r, lines, k, sec, i) if x < bw["figure"] else None               # 929
                         if r2_ is not None: lines[(sec, i)] = r2_; prev = r2_[-1][1]; self.stats["818: a line sings an earlier line of its section again"] += 1; self._made[(sec, i)] = "818 again"; continue
                         ons = [t for t, _ in r]; self.stats["818: a line takes an earlier line's rhythm"] += 1; self._made[(sec, i)] = "818 rhythm"
-            if ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
+            if ons is None and self.S.get("source_words") and self.S.get("stress_place") and self.later_sets(sec, i):      # trial (749.252): a line that will be sung again is drawn for every set of words it will carry: twelve draws by today's rule, one taken by the later sets' summed stress score
+                cs_ = [c_ for c_ in (self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ())) for _ in range(12)) if c_ is not None]
+                if cs_: sc_ = [1.4 * self.later_score(c_, sec, i) for c_ in cs_]; ons = rng.choices(cs_, [math.exp(x_ - max(sc_)) for x_ in sc_])[0]; self.stats["749.252: a line that will be sung again drawn for every set of words it will carry"] += 1
+            elif ons is None: ons = self.rhythm(rng, sy, tm, slot, cap, hook=f"{sec}:{i}" in self.S.get("hooks", ()))
             self._runin = None
             if k and self.RUNP > 2:                                                             # 926: the run of one pitch the song is already on, counted across the lines
                 sq0_ = [p_ for kk_ in self.KEYS[max(0, k - 3):k] for _, p_ in lines[kk_]]; c0_ = 0
