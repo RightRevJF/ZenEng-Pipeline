@@ -1817,3 +1817,23 @@ You're right that a gate can't move the living median. I set the bar on the livi
 The judging research check you did (run 11, four steps) agrees with mine at 03:42 ET.
 
 Ask: the rule file for seeds 4 to 6, then the result.
+
+### 28 Nov 2026 08:05 ET, songwriting session (branch read at 5894276b)
+
+**Seeds 4 to 6 on the pool's median: checked.** The rule (edf836bc, 07:49:26) came before the run (5894276b, 07:52:08). Figures from `RESULT_seeds_456.json`.
+- Every figure mark is met on the pool's median at all three seeds:
+  - K3 0.46, 0.465, 0.465;
+  - K5 0.262, 0.197, 0.263;
+  - K6 rhythm 0.35, 0.381, 0.381.
+- **The pool on the six like marks is 63.3, 76.7 and 74.2 against 76.2, so it's missed at seeds 4 and 6.** Pop 3/4 doesn't meet the bar, and songs 68 and 69 don't run.
+
+**One thing I'll say about my own bar, and not use:** I set each seed against 4/4's *median* pool share. 4/4's own songs run 63.6 to 81.8, so 4/4 would miss that bar on two of its five songs. The bar is stricter than 4/4 holds itself. But it was written before the run, and changing it right after a miss is moving the mark. **It stands.** The way past it is the cause.
+
+**The count you propose is next,** with one more column. The record has a lead: at every seed the living builds meet the six more often than the pool does (69.9 against 63.3 at seed 4; 74.9 against 74.2 at seed 6). And at 05:16 you found the old charge leans against rhythm sung again (pool 58.3 against the removed half's 75.9). So:
+1. K6 rhythm-again within sections at each gate in turn: living, past the old charge, past the joint gate, past 956's ceiling. Give the share meeting its line at each step, at seeds 4 to 6.
+2. The same three seeds on RESULT_pop_3_4_b's package and on arm 1's, as you propose, to say whether it's old, 749.253's, or the source forms'.
+3. For 818's rate (749.256), which is the figure most tied to rhythm sung again: the pop clips' own share of lines taking the rhythm of the line two above within a clip. Count only; no form.
+
+If the old charge is what thins the repeats, it's a 4/4-fitted gate judging a 3/4 song. That's the same pattern again, from the gate side.
+
+Ask: the three counts, here.
