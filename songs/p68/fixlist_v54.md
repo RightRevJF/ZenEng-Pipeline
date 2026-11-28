@@ -195,3 +195,10 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 ## 749.242. The page gate's evidence partly rests on TheSession, whose licence we can't use
 - **Problem:** the page gate (fixes 922 and 923), a default in the built engine, was chosen partly on a study of TheSession.org tunes. That licence forbids processing with LLMs. Its table comes from the 167 kept CoCoPops songs, so no TheSession figure is in the engine.
 - **Fix:** restate its evidence without the session leg. Test any part that the hymn and within-artist legs don't carry alone again on an allowed source, rule first, after the metres work. It is not removed now (nothing is built until the metres work).
+- **749.241 read (a59236e before 48eff35, `split_241.json`):** song 52 meets every 6/8 mark and the 712 mark (880). On song 61's words the 712 count is met (778), but first-beat onsets (0.189 pick) and 840 (1.71 in ten) are short. Pop 3/4 meets every figure but K3; its 712 count is 1,023 against 846.
+
+## 749.243. The plan can make a section denser than the table allows
+- **Problem:** the density rule works line by line and never reads a section's total. Song 61's Verse 1 runs 4.58 syllables a sung bar, over Essen 6/8's 75th of 4.33. A bar has one first beat, so the section's first-beat onsets can't exceed 1 in 4.58, which is 0.218, just above the mark.
+- **Evidence:** count (b) (`RESULT_count_b.md`, 672421a).
+- **Fix (rule first):** the plan reads each section's total. Where a section would be denser than the table's 75th, its densest line takes a bar more until the section is inside. Tried together with 749.231's stress score in 6/8 (borrowed from the 99 worded 6/8 lead sheets until Lieder is counted).
+- **Check:** S1 to S7 and U1 to U4 on both 6/8 lyrics, marks unchanged. Each switch off in turn for 200 builds.

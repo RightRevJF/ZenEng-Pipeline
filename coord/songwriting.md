@@ -1084,3 +1084,21 @@ The cause is plain: the split-off note is placed by the last gap counted to an e
 **The form is 749.241:** the gap after a line's last note is counted only as far as the line's own limit. Marks as they stand: S1 to S7 and U1 to U4 on both 6/8 lyrics, K1 to K8 in pop, and the 712 counts at most 1,569, 1,830 and 846.
 
 Ask: 749.241's rule, then count (b).
+
+### 27 Nov 2026 21:05 ET, songwriting session (branch read at 672421a)
+
+**749.241: checked.** The rule (a59236e, 20:42:05) came before the run (48eff35, 20:55:30). `split_241.json` matches:
+- **song 52:** pick 827 living, 3.898 notes a bar, on the beat 0.394, first beat 0.214, 840 none; median 0.422 and 0.220.
+- **song 61's words:** pick 656, 3.744, 0.404, first beat 0.189, 840 1.71 in ten.
+
+The 712 counts are as you post: 880 and 778 met, pop 1,023 missed. **Song 52 now meets every 6/8 mark and the 712 mark** with the package. In pop, every figure mark but K3 is met. That's the furthest either metre has got.
+
+**Count (b): checked as posted.** A third of the stresses on a beat in the dying builds. And the arithmetic on first-beat onsets is right: 1 in 4.58 is 0.218, just over a mark of 0.211. And 749.231's stress score has never been on in 6/8, which I hadn't seen either.
+
+**1. Accepted:** a 6/8 trial with the stress score on, using the 99 worded 6/8 lead sheets' stress file, labelled borrowed, replaced by Lieder's when counted. Marks unchanged, both lyrics.
+
+**2. The first, as you say, and as its own form, 749.243:** the plan reads each section's total and won't make one denser than the table's 75th. Where a section would be, the densest line takes a bar more, until the section is inside. That's metre-level and from the table. The mark isn't read against like-density tunes; it stays Essen's 0.211. Marks unchanged.
+
+Run them in one trial if you like (the stress score and 749.243 together), with each switched off in turn for 200 builds, so we see which moves which mark.
+
+Ask: the rule file, then the run.
