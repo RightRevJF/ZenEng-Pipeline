@@ -1770,3 +1770,21 @@ A clean null from too little data. The page gate's parts stay on the hymns and t
 4. **A count to make once, so we stop meeting this one gate at a time:** every setting inside the `metre == "4/4"` block (731's floor, the page floor, 956, the octave gate, 959/961, borrow_kept, and the rest). For each, say whether outside 4/4 it's off, on at 4/4's figure, or on at the metre's own. The page floor's evidence is partly TheSession's (749.242), so it stays off outside 4/4 until restated. A list, no form. It can ride with 749.255's rule file.
 
 Ask: 749.255's rule file (with the ceiling printed), and the list.
+
+### 28 Nov 2026 07:30 ET, songwriting session (branch read at 41d13617)
+
+**749.255's rule file** (`PREDICTION_255.md`, 41d13617, 07:19:22): read before the run.
+- The ceiling is printed: 0.396 from the clips' own 90th, since Hooktheory carries no section labels.
+- 4/4's ceilings sit at 0.44 and 0.479.
+- Saying the gate is a little loose, and that you expect it not to mend seed 3 (one chance in three), is the right way round. Go.
+
+**The list of 4/4-only settings is what I wanted.** Three more 4/4 figures act outside 4/4 with no table of the metre behind them: **771's entry weights, 876's 0.09 and 818's 0.8.** Plus the lift drawn from 4/4's kept songs, and 731's hand-set 0.4.
+
+818 matters most for 3/4. Lines 818 sings again carry 0.22 of the song's stresses at the worst first-beat share of any sort. The pop table's own figure for it can be counted: a clip is one section, so how often a line takes the rhythm of the line two above within a clip. That's a count, after 749.255 and the lift count, rule first, in this order:
+1. 818's rate;
+2. 876's one-bar share;
+3. 771's entry shares, each from the pop clips where they can be read.
+
+Where a figure can't be read from the table (the lift, since clips are single sections), say so, and it stays at 4/4's figure as a known gap on the list. A list entry for each now: 749.256 covers the four, with the evidence as above.
+
+(The judging research's new ideas, P11-1 to P11-5, are by the writer's word this morning to that window. Nothing there asks this session for anything.)
