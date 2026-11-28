@@ -1,0 +1,334 @@
+{
+ "spec": {
+  "measure": "G_GAP",
+  "pred": -0.03,
+  "extra": [
+   "range",
+   "n_pitch",
+   "ln_notes"
+  ],
+  "alpha": 0.01,
+  "counted": true,
+  "idea": "R11-G1 (= R10-I3; merges R10-C1, R10-L3, R10-G3, R11-G2, R11-L1)",
+  "K": 5,
+  "rank": 1,
+  "status": "COUNTED",
+  "readings": [
+   {
+    "name": "bare_no_extras",
+    "kind": "measure",
+    "measure": "G_GAP",
+    "extra": [],
+    "pred_sign": -1
+   },
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "density",
+     "n_pc",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "pc_entropy",
+     "tonic_share",
+     "bar_rep",
+     "mel_ic_mean"
+    ],
+    "pred_sign": -1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": -1
+   },
+   {
+    "name": "G_ROOMS",
+    "kind": "measure",
+    "measure": "G_ROOMS",
+    "extra": [
+     "range",
+     "n_pitch",
+     "ln_notes"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "G_ROOMS_holding_G_GAP",
+    "kind": "measure",
+    "measure": "G_ROOMS",
+    "extra": [
+     "range",
+     "n_pitch",
+     "ln_notes",
+     "G_GAP"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "SETTLE",
+    "kind": "measure",
+    "measure": "SETTLE",
+    "extra": [
+     "n_pitch",
+     "range"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "R_CHEEGER_R10-C1",
+    "kind": "measure",
+    "measure": "R_CHEEGER",
+    "extra": [
+     "range",
+     "n_pitch",
+     "ln_notes"
+    ],
+    "pred_sign": -1,
+    "note": "stopped as a test: n_pitch rho -0.715; reading"
+   },
+   {
+    "name": "R_CUT_AB_R10-L3",
+    "kind": "measure",
+    "measure": "R_CUT_AB",
+    "extra": [
+     "ln_notes"
+    ],
+    "pred_sign": 1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   },
+   {
+    "name": "R_SGAP_R10-G3",
+    "kind": "measure",
+    "measure": "R_SGAP",
+    "extra": [
+     "n_pc"
+    ],
+    "pred_sign": -1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   },
+   {
+    "name": "R_PE_H0_R10-G1",
+    "kind": "measure",
+    "measure": "R_PE_H0",
+    "extra": [
+     "pc_entropy"
+    ],
+    "pred_sign": 1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   },
+   {
+    "name": "R_IRR_R10-G2",
+    "kind": "measure",
+    "measure": "R_IRR",
+    "extra": [
+     "n_pc"
+    ],
+    "pred_sign": -1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   },
+   {
+    "name": "R_ARCH_R10-I1",
+    "kind": "measure",
+    "measure": "R_ARCH",
+    "extra": [
+     "range",
+     "n_pitch"
+    ],
+    "pred_sign": -1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   }
+  ]
+ },
+ "power": {
+  "power": 0.22,
+  "kill_if_true": 0.023333333333333334,
+  "kill_if_zero": 0.47333333333333333,
+  "median_fake_se": 0.015442088624284768,
+  "draws": 300,
+  "seed": 11,
+  "n": 9566,
+  "artists": 1740,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2216,
+  "y_foreign1": 2121
+ },
+ "main": {
+  "beta": 0.0009147166189738314,
+  "se": 0.010735240220715498,
+  "p": 0.9320968992754883,
+  "lo": -0.020126354213628544,
+  "hi": 0.021955787451576204,
+  "n": 9564,
+  "artists": 1740
+ },
+ "halves": [
+  {
+   "beta": 0.013499098144810389,
+   "se": 0.014757488561686202,
+   "p": 0.36033408012694434,
+   "lo": -0.015425579436094567,
+   "hi": 0.042423775725715346,
+   "n": 4604,
+   "artists": 885
+  },
+  {
+   "beta": -0.011641816414074987,
+   "se": 0.015500341843576381,
+   "p": 0.45261151287441526,
+   "lo": -0.04202248642748469,
+   "hi": 0.01873885359933472,
+   "n": 4960,
+   "artists": 855
+  }
+ ],
+ "second": {
+  "beta": -0.017529876074063783,
+  "se": 0.04950650332786899,
+  "p": 0.7232696451635393,
+  "converged": true,
+  "songs": 3630,
+  "groups": 463
+ },
+ "verdict": {
+  "verdict": "killed",
+  "counted": true,
+  "sign_ok": false,
+  "halves_ok": false,
+  "second_ok": true,
+  "prediction_outside_range": true
+ },
+ "n": 9564,
+ "share_taken_up": 0.22176913425345043,
+ "readings": {
+  "bare_no_extras": {
+   "beta": 0.010638722731112887,
+   "se": 0.009751336902467305,
+   "p": 0.2752722431570549,
+   "lo": -0.00847389759772303,
+   "hi": 0.029751343059948802,
+   "n": 9564,
+   "artists": 1740,
+   "pred_sign": -1
+  },
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": 0.0008872111136897917,
+   "se": 0.013507235362421155,
+   "p": 0.9476293010545396,
+   "lo": -0.02558697019665567,
+   "hi": 0.027361392424035257,
+   "n": 9564,
+   "artists": 1740,
+   "pred_sign": -1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": -0.0068794610857832415,
+   "se": 0.023079456501065094,
+   "p": 0.7656441993312794,
+   "lo": -0.05211519582787083,
+   "hi": 0.03835627365630434,
+   "n": 2216,
+   "artists": 650,
+   "pred_sign": -1
+  },
+  "G_ROOMS": {
+   "beta": -0.004957853524587351,
+   "se": 0.00815418618279351,
+   "p": 0.5431786630685065,
+   "lo": -0.02094005844286263,
+   "hi": 0.011024351393687928,
+   "n": 9564,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "G_ROOMS_holding_G_GAP": {
+   "beta": -0.0054235985724689715,
+   "se": 0.009016382020661474,
+   "p": 0.5474889347046572,
+   "lo": -0.02309570733296546,
+   "hi": 0.012248510188027516,
+   "n": 9564,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "SETTLE": {
+   "beta": -0.024539997585130462,
+   "se": 0.011813168979853643,
+   "p": 0.03776996222074692,
+   "lo": -0.0476938087856436,
+   "hi": -0.0013861863846173217,
+   "n": 9526,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "R_CHEEGER_R10-C1": {
+   "beta": 0.013605495043427049,
+   "se": 0.011735256573376868,
+   "p": 0.24630572510492243,
+   "lo": -0.00939560784039161,
+   "hi": 0.03660659792724571,
+   "n": 9564,
+   "artists": 1740,
+   "pred_sign": -1
+  },
+  "R_CUT_AB_R10-L3": {
+   "beta": 0.009016231765053012,
+   "se": 0.009584247245868314,
+   "p": 0.34684094915484376,
+   "lo": -0.009768892836848885,
+   "hi": 0.02780135636695491,
+   "n": 9564,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "R_SGAP_R10-G3": {
+   "beta": -0.002422749145888789,
+   "se": 0.011530745148984242,
+   "p": 0.8335801772287472,
+   "lo": -0.025023009637897903,
+   "hi": 0.020177511346120326,
+   "n": 9106,
+   "artists": 1732,
+   "pred_sign": -1
+  },
+  "R_PE_H0_R10-G1": {
+   "beta": -0.014545596072913631,
+   "se": 0.011783187142957705,
+   "p": 0.2170403020966094,
+   "lo": -0.03764064287311073,
+   "hi": 0.00854945072728347,
+   "n": 9132,
+   "artists": 1734,
+   "pred_sign": 1
+  },
+  "R_IRR_R10-G2": {
+   "beta": -0.000524926563553607,
+   "se": 0.009498107138421454,
+   "p": 0.9559261986829954,
+   "lo": -0.019141216554859657,
+   "hi": 0.01809136342775244,
+   "n": 9318,
+   "artists": 1740,
+   "pred_sign": -1
+  },
+  "R_ARCH_R10-I1": {
+   "beta": 0.003962525675168822,
+   "se": 0.008385218720261729,
+   "p": 0.6365265541787122,
+   "lo": -0.012472503016544165,
+   "hi": 0.020397554366881808,
+   "n": 9538,
+   "artists": 1741,
+   "pred_sign": -1
+  }
+ }
+}

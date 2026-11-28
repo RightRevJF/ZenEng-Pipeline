@@ -1,0 +1,186 @@
+{
+ "spec": {
+  "measure": "R_SLG",
+  "pred": 0.03,
+  "extra": [
+   "bar_rep",
+   "ln_notes"
+  ],
+  "alpha": 0.01,
+  "counted": false,
+  "idea": "R10-L1",
+  "K": 5,
+  "rank": 6,
+  "status": "ESTIMATE (not in K)",
+  "readings": [
+   {
+    "name": "bare_no_extras",
+    "kind": "measure",
+    "measure": "R_SLG",
+    "extra": [],
+    "pred_sign": 1
+   },
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "density",
+     "n_pitch",
+     "n_pc",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "pc_entropy",
+     "tonic_share",
+     "mel_ic_mean"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": 1
+   },
+   {
+    "name": "mel_rep_held",
+    "kind": "extra",
+    "extra": [
+     "mel_rep"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "R_SLGW",
+    "kind": "measure",
+    "measure": "R_SLGW",
+    "extra": [
+     "bar_rep",
+     "ln_notes"
+    ],
+    "pred_sign": 1
+   }
+  ]
+ },
+ "power": {
+  "power": 0.22666666666666666,
+  "kill_if_true": 0.023333333333333334,
+  "kill_if_zero": 0.4866666666666667,
+  "median_fake_se": 0.015787548159896844,
+  "draws": 300,
+  "seed": 11,
+  "n": 8879,
+  "artists": 1728,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2038,
+  "y_foreign1": 1948
+ },
+ "main": {
+  "beta": -0.010219293160128777,
+  "se": 0.01121995578720208,
+  "p": 0.36239336822520407,
+  "lo": -0.03221040650304485,
+  "hi": 0.0117718201827873,
+  "n": 8877,
+  "artists": 1728
+ },
+ "halves": [
+  {
+   "beta": -0.014608505025583538,
+   "se": 0.014987764130283535,
+   "p": 0.32971136641507015,
+   "lo": -0.043984522720939265,
+   "hi": 0.01476751266977219,
+   "n": 4276,
+   "artists": 882
+  },
+  {
+   "beta": -0.006841979054933291,
+   "se": 0.016481648536259084,
+   "p": 0.6780488575670591,
+   "lo": -0.0391460101860011,
+   "hi": 0.025462052076134514,
+   "n": 4601,
+   "artists": 846
+  }
+ ],
+ "second": {
+  "beta": -0.05927706690510427,
+  "se": 0.05493577219026231,
+  "p": 0.28057662110036086,
+  "converged": true,
+  "songs": 3273,
+  "groups": 430
+ },
+ "verdict": {
+  "verdict": "estimate",
+  "counted": false,
+  "sign_ok": false,
+  "halves_ok": false,
+  "second_ok": false,
+  "prediction_outside_range": true
+ },
+ "n": 8877,
+ "share_taken_up": 0.21944350568885884,
+ "readings": {
+  "bare_no_extras": {
+   "beta": -0.00683258385279218,
+   "se": 0.010481686411462146,
+   "p": 0.5144919989990125,
+   "lo": -0.027376689219257986,
+   "hi": 0.013711521513673625,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": 1
+  },
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": -0.0005282707588241311,
+   "se": 0.015141702275076045,
+   "p": 0.9721686781395976,
+   "lo": -0.03020600721797318,
+   "hi": 0.029149465700324916,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": 1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": -0.05044662633378064,
+   "se": 0.03159044789872956,
+   "p": 0.11028912839023969,
+   "lo": -0.11236390421529058,
+   "hi": 0.011470651547729284,
+   "n": 2038,
+   "artists": 634,
+   "pred_sign": 1
+  },
+  "mel_rep_held": {
+   "beta": -0.01251993452166517,
+   "se": 0.011598582141856995,
+   "p": 0.28039312519710713,
+   "lo": -0.03525315551970488,
+   "hi": 0.010213286476374539,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": 1
+  },
+  "R_SLGW": {
+   "beta": -0.01081378232277475,
+   "se": 0.011635296728346055,
+   "p": 0.3526846086398634,
+   "lo": -0.03361896391033302,
+   "hi": 0.011991399264783516,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": 1
+  }
+ }
+}

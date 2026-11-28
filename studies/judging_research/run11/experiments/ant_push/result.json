@@ -1,0 +1,184 @@
+{
+ "spec": {
+  "measure": "ANT",
+  "pred": 0.03,
+  "extra": [
+   "density"
+  ],
+  "alpha": 0.01,
+  "counted": true,
+  "idea": "R11-I2",
+  "K": 5,
+  "rank": 5,
+  "status": "COUNTED",
+  "readings": [
+   {
+    "name": "bare_no_extras",
+    "kind": "measure",
+    "measure": "ANT",
+    "extra": [],
+    "pred_sign": 1
+   },
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "ln_notes",
+     "n_pitch",
+     "n_pc",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "pc_entropy",
+     "tonic_share",
+     "bar_rep",
+     "mel_ic_mean"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": 1
+   },
+   {
+    "name": "sync_per_note_held",
+    "kind": "extra",
+    "extra": [
+     "sync_per_note"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "CT_held",
+    "kind": "extra",
+    "extra": [
+     "CT"
+    ],
+    "pred_sign": 1
+   }
+  ]
+ },
+ "power": {
+  "power": 0.28,
+  "kill_if_true": 0.02666666666666667,
+  "kill_if_zero": 0.61,
+  "median_fake_se": 0.013777804526873005,
+  "draws": 300,
+  "seed": 11,
+  "n": 9363,
+  "artists": 1740,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2178,
+  "y_foreign1": 2084
+ },
+ "main": {
+  "beta": -0.00433732693373958,
+  "se": 0.010617709171018029,
+  "p": 0.6829071326175709,
+  "lo": -0.02514803690893492,
+  "hi": 0.016473383041455757,
+  "n": 9361,
+  "artists": 1740
+ },
+ "halves": [
+  {
+   "beta": -0.014986540037376693,
+   "se": 0.01441623724503276,
+   "p": 0.29854448335594397,
+   "lo": -0.0432423650376409,
+   "hi": 0.013269284962887514,
+   "n": 4512,
+   "artists": 885
+  },
+  {
+   "beta": 0.005959618221359157,
+   "se": 0.015310981677835853,
+   "p": 0.6970999827915616,
+   "lo": -0.024049905867199114,
+   "hi": 0.03596914230991743,
+   "n": 4849,
+   "artists": 855
+  }
+ ],
+ "second": {
+  "beta": -0.013050106576337483,
+  "se": 0.04253834697708677,
+  "p": 0.7590073878290675,
+  "converged": true,
+  "songs": 3515,
+  "groups": 451
+ },
+ "verdict": {
+  "verdict": "killed",
+  "counted": true,
+  "sign_ok": false,
+  "halves_ok": false,
+  "second_ok": false,
+  "prediction_outside_range": true
+ },
+ "n": 9361,
+ "share_taken_up": 0.22262578784317916,
+ "readings": {
+  "bare_no_extras": {
+   "beta": -0.004991494015866382,
+   "se": 0.01025770434847201,
+   "p": 0.6265352536183255,
+   "lo": -0.025096594538871517,
+   "hi": 0.015113606507138755,
+   "n": 9361,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": -0.0029903595767403353,
+   "se": 0.010465272578915327,
+   "p": 0.7750763443238988,
+   "lo": -0.023502293831414375,
+   "hi": 0.017521574677933707,
+   "n": 9361,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": 0.015680687929030462,
+   "se": 0.016673048222188916,
+   "p": 0.34697080300052985,
+   "lo": -0.01699848658645981,
+   "hi": 0.048359862444520736,
+   "n": 2178,
+   "artists": 645,
+   "pred_sign": 1
+  },
+  "sync_per_note_held": {
+   "beta": -0.0027977776928157744,
+   "se": 0.010995428753344074,
+   "p": 0.7991485703468535,
+   "lo": -0.024348818049370162,
+   "hi": 0.018753262663738612,
+   "n": 9347,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "CT_held": {
+   "beta": -0.0065935596879547346,
+   "se": 0.01099447402362489,
+   "p": 0.5486956623742587,
+   "lo": -0.02814272877425952,
+   "hi": 0.014955609398350053,
+   "n": 9332,
+   "artists": 1740,
+   "pred_sign": 1
+  }
+ }
+}

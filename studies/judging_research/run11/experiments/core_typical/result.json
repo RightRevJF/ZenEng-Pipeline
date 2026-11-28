@@ -1,0 +1,208 @@
+{
+ "spec": {
+  "measure": "R_CORE_IC",
+  "pred": -0.03,
+  "extra": [
+   "pc_entropy",
+   "mel_ic_mean"
+  ],
+  "alpha": 0.01,
+  "counted": false,
+  "idea": "R10-L2 (with R10-L2b TSG as a reading)",
+  "K": 5,
+  "rank": 7,
+  "status": "ESTIMATE (not in K)",
+  "readings": [
+   {
+    "name": "bare_no_extras",
+    "kind": "measure",
+    "measure": "R_CORE_IC",
+    "extra": [],
+    "pred_sign": -1
+   },
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "ln_notes",
+     "density",
+     "n_pitch",
+     "n_pc",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "tonic_share",
+     "bar_rep"
+    ],
+    "pred_sign": -1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": -1
+   },
+   {
+    "name": "run10_form_pc_entropy_only",
+    "kind": "measure",
+    "measure": "R_CORE_IC",
+    "extra": [
+     "pc_entropy"
+    ],
+    "pred_sign": -1
+   },
+   {
+    "name": "R_SURF_IC",
+    "kind": "measure",
+    "measure": "R_SURF_IC",
+    "extra": [
+     "pc_entropy",
+     "mel_ic_mean"
+    ],
+    "pred_sign": -1
+   },
+   {
+    "name": "R_TSG_R10-L2b",
+    "kind": "measure",
+    "measure": "R_TSG",
+    "extra": [
+     "pc_entropy",
+     "mel_ic_mean"
+    ],
+    "pred_sign": -1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   }
+  ]
+ },
+ "power": {
+  "power": 0.19,
+  "kill_if_true": 0.03,
+  "kill_if_zero": 0.39666666666666667,
+  "median_fake_se": 0.017761278057174694,
+  "draws": 300,
+  "seed": 11,
+  "n": 8879,
+  "artists": 1728,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2038,
+  "y_foreign1": 1948
+ },
+ "main": {
+  "beta": 0.0016753237137328517,
+  "se": 0.012116423454019686,
+  "p": 0.8900279576788993,
+  "lo": -0.022072866256145733,
+  "hi": 0.025423513683611433,
+  "n": 8877,
+  "artists": 1728
+ },
+ "halves": [
+  {
+   "beta": -0.009503371340543963,
+   "se": 0.0169802929771498,
+   "p": 0.5757041160067276,
+   "lo": -0.04278474557575757,
+   "hi": 0.023778002894669643,
+   "n": 4276,
+   "artists": 882
+  },
+  {
+   "beta": 0.011051530120858324,
+   "se": 0.016952499292154664,
+   "p": 0.5144582323364182,
+   "lo": -0.02217536849176482,
+   "hi": 0.044278428733481465,
+   "n": 4601,
+   "artists": 846
+  }
+ ],
+ "second": {
+  "beta": -0.008348454895952219,
+  "se": 0.06091647072110854,
+  "p": 0.8909931864679965,
+  "converged": true,
+  "songs": 3273,
+  "groups": 430
+ },
+ "verdict": {
+  "verdict": "estimate",
+  "counted": false,
+  "sign_ok": false,
+  "halves_ok": false,
+  "second_ok": true,
+  "prediction_outside_range": true
+ },
+ "n": 8877,
+ "share_taken_up": 0.21944350568885884,
+ "readings": {
+  "bare_no_extras": {
+   "beta": -0.015757154229302506,
+   "se": 0.009436111635677083,
+   "p": 0.09494352478140396,
+   "lo": -0.03425193303522959,
+   "hi": 0.0027376245766245755,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": -1
+  },
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": 0.0016054928332807975,
+   "se": 0.013001554251844195,
+   "p": 0.901723300950599,
+   "lo": -0.023877553500333822,
+   "hi": 0.02708853916689542,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": -1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": -0.03524198495107924,
+   "se": 0.028177860906420663,
+   "p": 0.21104480126704095,
+   "lo": -0.09047059232766375,
+   "hi": 0.01998662242550526,
+   "n": 2038,
+   "artists": 634,
+   "pred_sign": -1
+  },
+  "run10_form_pc_entropy_only": {
+   "beta": -0.006283949680184698,
+   "se": 0.01088741332532064,
+   "p": 0.5638208158037707,
+   "lo": -0.027623279797813153,
+   "hi": 0.015055380437443758,
+   "n": 8877,
+   "artists": 1728,
+   "pred_sign": -1
+  },
+  "R_SURF_IC": {
+   "beta": -0.001422823437183003,
+   "se": 0.012361105713252793,
+   "p": 0.9083620017212595,
+   "lo": -0.025650590635158475,
+   "hi": 0.022804943760792472,
+   "n": 8635,
+   "artists": 1721,
+   "pred_sign": -1
+  },
+  "R_TSG_R10-L2b": {
+   "beta": 0.001777895192659538,
+   "se": 0.009598502843958514,
+   "p": 0.8530515395114837,
+   "lo": -0.017035170381499147,
+   "hi": 0.020590960766818225,
+   "n": 8635,
+   "artists": 1721,
+   "pred_sign": -1
+  }
+ }
+}

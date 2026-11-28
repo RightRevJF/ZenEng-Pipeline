@@ -1,0 +1,208 @@
+{
+ "spec": {
+  "measure": "G_TIE",
+  "pred": 0.03,
+  "extra": [
+   "ln_notes",
+   "density",
+   "n_pc"
+  ],
+  "alpha": 0.01,
+  "counted": true,
+  "idea": "R11-G3 (merges R11-I1 HB)",
+  "K": 5,
+  "rank": 2,
+  "status": "COUNTED",
+  "readings": [
+   {
+    "name": "bare_no_extras",
+    "kind": "measure",
+    "measure": "G_TIE",
+    "extra": [],
+    "pred_sign": 1
+   },
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "n_pitch",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "pc_entropy",
+     "tonic_share",
+     "bar_rep",
+     "mel_ic_mean"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": 1
+   },
+   {
+    "name": "CT_held",
+    "kind": "extra",
+    "extra": [
+     "CT"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "G_TIE_BC_bergsma",
+    "kind": "measure",
+    "measure": "G_TIE_BC",
+    "extra": [
+     "ln_notes",
+     "density",
+     "n_pc"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "HB",
+    "kind": "measure",
+    "measure": "HB",
+    "extra": [
+     "ln_notes",
+     "density",
+     "n_pc"
+    ],
+    "pred_sign": 1
+   }
+  ]
+ },
+ "power": {
+  "power": 0.33,
+  "kill_if_true": 0.02666666666666667,
+  "kill_if_zero": 0.6033333333333334,
+  "median_fake_se": 0.014156173702235072,
+  "draws": 300,
+  "seed": 11,
+  "n": 9576,
+  "artists": 1741,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2222,
+  "y_foreign1": 2126
+ },
+ "main": {
+  "beta": -0.01033225402621506,
+  "se": 0.00917302881093616,
+  "p": 0.26000757595691915,
+  "lo": -0.028311390495649933,
+  "hi": 0.007646882443219812,
+  "n": 9574,
+  "artists": 1741
+ },
+ "halves": [
+  {
+   "beta": -0.011099482859919683,
+   "se": 0.013936008956010127,
+   "p": 0.42576433386552215,
+   "lo": -0.03841406041369953,
+   "hi": 0.016215094693860163,
+   "n": 4607,
+   "artists": 886
+  },
+  {
+   "beta": -0.010130400670798685,
+   "se": 0.012160721236223653,
+   "p": 0.4048206190757564,
+   "lo": -0.03396541429379704,
+   "hi": 0.013704612952199675,
+   "n": 4967,
+   "artists": 855
+  }
+ ],
+ "second": {
+  "beta": -0.07766316985580438,
+  "se": 0.04759127859403698,
+  "p": 0.10270514814364529,
+  "converged": true,
+  "songs": 3628,
+  "groups": 462
+ },
+ "verdict": {
+  "verdict": "killed",
+  "counted": true,
+  "sign_ok": false,
+  "halves_ok": false,
+  "second_ok": false,
+  "prediction_outside_range": true
+ },
+ "n": 9574,
+ "share_taken_up": 0.22205974514309587,
+ "readings": {
+  "bare_no_extras": {
+   "beta": -0.011161263719308335,
+   "se": 0.008610648644259611,
+   "p": 0.19490095165550092,
+   "lo": -0.02803813506205717,
+   "hi": 0.005715607623440503,
+   "n": 9574,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": -0.011521192661241101,
+   "se": 0.010325714649060591,
+   "p": 0.2645176946541604,
+   "lo": -0.03175959337339986,
+   "hi": 0.008717208050917658,
+   "n": 9574,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": -0.03623271099985266,
+   "se": 0.01998441173902523,
+   "p": 0.06982431597831025,
+   "lo": -0.0754021580083421,
+   "hi": 0.002936736008636788,
+   "n": 2222,
+   "artists": 650,
+   "pred_sign": 1
+  },
+  "CT_held": {
+   "beta": -0.01274939954242987,
+   "se": 0.010235561365364453,
+   "p": 0.21291184549881081,
+   "lo": -0.0328110998185442,
+   "hi": 0.007312300733684458,
+   "n": 9551,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "G_TIE_BC_bergsma": {
+   "beta": -0.003218094990353997,
+   "se": 0.008188568249954266,
+   "p": 0.694320593689588,
+   "lo": -0.01926768876026436,
+   "hi": 0.012831498779556364,
+   "n": 9571,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "HB": {
+   "beta": -0.00845247091460195,
+   "se": 0.009239253375411349,
+   "p": 0.3602737935671019,
+   "lo": -0.026561407530408192,
+   "hi": 0.009656465701204292,
+   "n": 9568,
+   "artists": 1741,
+   "pred_sign": 1
+  }
+ }
+}

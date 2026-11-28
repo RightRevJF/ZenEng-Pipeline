@@ -1,0 +1,166 @@
+{
+ "spec": {
+  "measure": "LOCKP",
+  "pred": 0.02,
+  "extra": [],
+  "alpha": 0.01,
+  "counted": false,
+  "idea": "R11-I3 (merges R10-I2 LOCK)",
+  "K": 5,
+  "rank": 8,
+  "status": "ESTIMATE (not in K)",
+  "readings": [
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "ln_notes",
+     "density",
+     "n_pitch",
+     "n_pc",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "pc_entropy",
+     "tonic_share",
+     "bar_rep",
+     "mel_ic_mean"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": 1
+   },
+   {
+    "name": "LOCK_R10-I2",
+    "kind": "measure",
+    "measure": "LOCK",
+    "extra": [],
+    "pred_sign": 1,
+    "note": "measure failed the standing gate (stopped); printed for the record, reads noise"
+   },
+   {
+    "name": "LOCKW",
+    "kind": "measure",
+    "measure": "LOCKW",
+    "extra": [],
+    "pred_sign": 1,
+    "note": "stability not gated; reading"
+   }
+  ]
+ },
+ "power": {
+  "power": 0.13333333333333333,
+  "kill_if_true": 0.03333333333333333,
+  "kill_if_zero": 0.3,
+  "median_fake_se": 0.012847985108818613,
+  "draws": 300,
+  "seed": 11,
+  "n": 9379,
+  "artists": 1740,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2186,
+  "y_foreign1": 2090
+ },
+ "main": {
+  "beta": 0.006532922853363625,
+  "se": 0.008779502415877612,
+  "p": 0.45680942626785936,
+  "lo": -0.010674901881756493,
+  "hi": 0.02374074758848374,
+  "n": 9377,
+  "artists": 1740
+ },
+ "halves": [
+  {
+   "beta": 0.011665209811524161,
+   "se": 0.01282832124226414,
+   "p": 0.3631746243719053,
+   "lo": -0.01347829982331355,
+   "hi": 0.036808719446361875,
+   "n": 4515,
+   "artists": 886
+  },
+  {
+   "beta": 0.0023784762036595437,
+   "se": 0.012260785358656595,
+   "p": 0.8461832999738219,
+   "lo": -0.02165266309930738,
+   "hi": 0.02640961550662647,
+   "n": 4862,
+   "artists": 854
+  }
+ ],
+ "second": {
+  "beta": 0.04119302137048048,
+  "se": 0.04158223674003593,
+  "p": 0.32186146465350074,
+  "converged": true,
+  "songs": 3554,
+  "groups": 458
+ },
+ "verdict": {
+  "verdict": "estimate",
+  "counted": false,
+  "sign_ok": true,
+  "halves_ok": true,
+  "second_ok": true,
+  "prediction_outside_range": false
+ },
+ "n": 9377,
+ "share_taken_up": 0.22288578436600193,
+ "readings": {
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": 0.006466345895132375,
+   "se": 0.008812251107095556,
+   "p": 0.4630764487330019,
+   "lo": -0.010805666274774913,
+   "hi": 0.023738358065039666,
+   "n": 9377,
+   "artists": 1740,
+   "pred_sign": 1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": -0.015967106549688498,
+   "se": 0.019156637512069044,
+   "p": 0.4045613504510521,
+   "lo": -0.053514116073343825,
+   "hi": 0.02157990297396683,
+   "n": 2186,
+   "artists": 651,
+   "pred_sign": 1
+  },
+  "LOCK_R10-I2": {
+   "beta": 0.00440863806302026,
+   "se": 0.008735083248713056,
+   "p": 0.6137662198478989,
+   "lo": -0.012712125104457331,
+   "hi": 0.021529401230497854,
+   "n": 9491,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "LOCKW": {
+   "beta": 0.0034822569835861543,
+   "se": 0.008131067907125865,
+   "p": 0.6684577333279402,
+   "lo": -0.01245463611438054,
+   "hi": 0.019419150081552847,
+   "n": 9491,
+   "artists": 1741,
+   "pred_sign": 1
+  }
+ }
+}

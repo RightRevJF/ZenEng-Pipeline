@@ -1,0 +1,223 @@
+{
+ "spec": {
+  "measure": "TYP11",
+  "pred": 0.03,
+  "extra": [
+   "mel_ic_mean"
+  ],
+  "alpha": 0.01,
+  "counted": true,
+  "idea": "R11-L2",
+  "K": 5,
+  "rank": 4,
+  "status": "COUNTED",
+  "readings": [
+   {
+    "name": "bare_no_extras",
+    "kind": "measure",
+    "measure": "TYP11",
+    "extra": [],
+    "pred_sign": 1
+   },
+   {
+    "name": "all_13_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "ln_notes",
+     "density",
+     "n_pitch",
+     "n_pc",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "pc_entropy",
+     "tonic_share",
+     "bar_rep"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": 1
+   },
+   {
+    "name": "pc_entropy_held",
+    "kind": "extra",
+    "extra": [
+     "pc_entropy"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "tonic_share_held",
+    "kind": "extra",
+    "extra": [
+     "tonic_share"
+    ],
+    "pred_sign": 1
+   },
+   {
+    "name": "TYP_KK11",
+    "kind": "measure",
+    "measure": "TYP_KK11",
+    "extra": [
+     "mel_ic_mean"
+    ],
+    "pred_sign": 1,
+    "note": "clip stability 0.198, just under the gate; reading"
+   },
+   {
+    "name": "TYP_all_12_bins",
+    "kind": "measure",
+    "measure": "TYP",
+    "extra": [
+     "mel_ic_mean"
+    ],
+    "pred_sign": 1
+   }
+  ]
+ },
+ "power": {
+  "power": 0.38666666666666666,
+  "kill_if_true": 0.03666666666666667,
+  "kill_if_zero": 0.66,
+  "median_fake_se": 0.01331903182053875,
+  "draws": 300,
+  "seed": 11,
+  "n": 9588,
+  "artists": 1741,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2226,
+  "y_foreign1": 2130
+ },
+ "main": {
+  "beta": 0.0019971112631689434,
+  "se": 0.008943965231425249,
+  "p": 0.8233086552864144,
+  "lo": -0.015533060590424544,
+  "hi": 0.019527283116762433,
+  "n": 9586,
+  "artists": 1741
+ },
+ "halves": [
+  {
+   "beta": 0.002883423005331451,
+   "se": 0.013569951252441788,
+   "p": 0.8317279940257161,
+   "lo": -0.023713681449454453,
+   "hi": 0.029480527460117353,
+   "n": 4616,
+   "artists": 886
+  },
+  {
+   "beta": 0.002811233557436571,
+   "se": 0.01177519947962162,
+   "p": 0.8113057205314481,
+   "lo": -0.020268157422621804,
+   "hi": 0.02589062453749495,
+   "n": 4970,
+   "artists": 855
+  }
+ ],
+ "second": {
+  "beta": 0.021390109850142353,
+  "se": 0.046739134360062,
+  "p": 0.6472047607480771,
+  "converged": true,
+  "songs": 3640,
+  "groups": 464
+ },
+ "verdict": {
+  "verdict": "killed",
+  "counted": true,
+  "sign_ok": true,
+  "halves_ok": true,
+  "second_ok": true,
+  "prediction_outside_range": true
+ },
+ "n": 9586,
+ "share_taken_up": 0.2221990402670561,
+ "readings": {
+  "bare_no_extras": {
+   "beta": 0.005893534335284619,
+   "se": 0.008643560174849187,
+   "p": 0.49533945031424786,
+   "lo": -0.011047843607419786,
+   "hi": 0.022834912277989023,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "all_13_baselines_and_mel_ic_mean_held": {
+   "beta": 0.009956362907932214,
+   "se": 0.010310274932259268,
+   "p": 0.33420740768936064,
+   "lo": -0.010251775959295951,
+   "hi": 0.030164501775160377,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": 0.03505044916930999,
+   "se": 0.019718069080091976,
+   "p": 0.07547282818444971,
+   "lo": -0.0035969662276702855,
+   "hi": 0.07369786456629027,
+   "n": 2226,
+   "artists": 651,
+   "pred_sign": 1
+  },
+  "pc_entropy_held": {
+   "beta": 0.007210325371842886,
+   "se": 0.009035275989782562,
+   "p": 0.42485924197629166,
+   "lo": -0.010498815568130936,
+   "hi": 0.02491946631181671,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "tonic_share_held": {
+   "beta": 0.0044994959331942225,
+   "se": 0.008962784804813379,
+   "p": 0.6156535541368635,
+   "lo": -0.013067562284240001,
+   "hi": 0.022066554150628446,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "TYP_KK11": {
+   "beta": 0.0026425934948290223,
+   "se": 0.008470757915122386,
+   "p": 0.755065911402381,
+   "lo": -0.013960092018810854,
+   "hi": 0.0192452790084689,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": 1
+  },
+  "TYP_all_12_bins": {
+   "beta": 0.0087130361130886,
+   "se": 0.009128236964031297,
+   "p": 0.3398231860465686,
+   "lo": -0.009178308336412743,
+   "hi": 0.026604380562589944,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": 1
+  }
+ }
+}

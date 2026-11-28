@@ -1,0 +1,166 @@
+{
+ "spec": {
+  "measure": "REP",
+  "pred": -0.03,
+  "extra": [],
+  "alpha": 0.01,
+  "counted": true,
+  "idea": "R11-L3 (= R10-S1)",
+  "K": 5,
+  "rank": 3,
+  "status": "COUNTED",
+  "readings": [
+   {
+    "name": "all_other_12_baselines_and_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "ln_notes",
+     "density",
+     "n_pitch",
+     "n_pc",
+     "range",
+     "int_entropy",
+     "n_int",
+     "step_share",
+     "leap_share",
+     "unison_share",
+     "tonic_share",
+     "bar_rep",
+     "mel_ic_mean"
+    ],
+    "pred_sign": -1
+   },
+   {
+    "name": "intensive_covers_first_year_held",
+    "kind": "intensive",
+    "pred_sign": -1
+   },
+   {
+    "name": "n_pitch_range_mel_ic_mean_held",
+    "kind": "extra",
+    "extra": [
+     "n_pitch",
+     "range",
+     "mel_ic_mean"
+    ],
+    "pred_sign": -1
+   },
+   {
+    "name": "n_pc",
+    "kind": "measure",
+    "measure": "n_pc",
+    "extra": [],
+    "pred_sign": -1
+   }
+  ]
+ },
+ "power": {
+  "power": 0.22,
+  "kill_if_true": 0.016666666666666666,
+  "kill_if_zero": 0.5466666666666666,
+  "median_fake_se": 0.015105214632148364,
+  "draws": 300,
+  "seed": 11,
+  "n": 9588,
+  "artists": 1741,
+  "alpha_used": 0.01
+ },
+ "outcome_info": {
+  "md5": [
+   "047085c74ba8b106a8b2a3f7441d6618",
+   "b7048f5553a42a791ea09edf8a4d8ae5"
+  ],
+  "drops": 2,
+  "y1": 2226,
+  "y_foreign1": 2130
+ },
+ "main": {
+  "beta": -0.029355889433870956,
+  "se": 0.01100613514739773,
+  "p": 0.007647940427033995,
+  "lo": -0.05092791432277051,
+  "hi": -0.007783864544971406,
+  "n": 9586,
+  "artists": 1741
+ },
+ "halves": [
+  {
+   "beta": -0.010425836647636709,
+   "se": 0.015579633684687887,
+   "p": 0.5033701257368732,
+   "lo": -0.040961918669624967,
+   "hi": 0.02011024537435155,
+   "n": 4616,
+   "artists": 886
+  },
+  {
+   "beta": -0.04562995829150054,
+   "se": 0.01572701481817935,
+   "p": 0.003715296767005547,
+   "lo": -0.07645490733513206,
+   "hi": -0.014805009247869007,
+   "n": 4970,
+   "artists": 855
+  }
+ ],
+ "second": {
+  "beta": -0.16429519063463152,
+  "se": 0.049985589875232626,
+  "p": 0.0010131439210152966,
+  "converged": true,
+  "songs": 3640,
+  "groups": 464
+ },
+ "verdict": {
+  "verdict": "passed",
+  "counted": true,
+  "sign_ok": true,
+  "halves_ok": true,
+  "second_ok": true,
+  "prediction_outside_range": false
+ },
+ "n": 9586,
+ "share_taken_up": 0.2221990402670561,
+ "readings": {
+  "all_other_12_baselines_and_mel_ic_mean_held": {
+   "beta": -0.02876611020098881,
+   "se": 0.02024429605232134,
+   "p": 0.15533161560466235,
+   "lo": -0.06844493046353864,
+   "hi": 0.010912710061561016,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": -1
+  },
+  "intensive_covers_first_year_held": {
+   "beta": -0.016077533552579428,
+   "se": 0.01706206239017202,
+   "p": 0.34604050322453694,
+   "lo": -0.04951917583731659,
+   "hi": 0.01736410873215773,
+   "n": 2226,
+   "artists": 651,
+   "pred_sign": -1
+  },
+  "n_pitch_range_mel_ic_mean_held": {
+   "beta": -0.026193925220029647,
+   "se": 0.01462553252552618,
+   "p": 0.07329772271185261,
+   "lo": -0.05485996897006096,
+   "hi": 0.0024721185300016664,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": -1
+  },
+  "n_pc": {
+   "beta": -0.021348947999118767,
+   "se": 0.009872218915260451,
+   "p": 0.03057751550314756,
+   "lo": -0.04069849707302925,
+   "hi": -0.0019993989252082844,
+   "n": 9586,
+   "artists": 1741,
+   "pred_sign": -1
+  }
+ }
+}
