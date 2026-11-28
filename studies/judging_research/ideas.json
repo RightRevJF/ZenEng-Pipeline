@@ -838,8 +838,8 @@
    "stance": "Listener",
    "proposed": "run10",
    "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "slg_selflearn: KILLED, wrong sign -0.011 (SE 0.008); slg_win reading +0.025 uncounted | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ESTIMATE (not in K) in run11/experiments/slg_selflearn (R_SLG from measures/m_chair_run10.py, +0.03, bar_rep/ln_notes held, power 0.227 at .01; clears the floor but the counted set of 5 is full under the run 08 K rule; ranked 6th)",
+   "status_set_by": "run11 experiments",
+   "note": "slg_selflearn: KILLED, wrong sign -0.011 (SE 0.008); slg_win reading +0.025 uncounted | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ESTIMATE (not in K) in run11/experiments/slg_selflearn (R_SLG from measures/m_chair_run10.py, +0.03, bar_rep/ln_notes held, power 0.227 at .01; clears the floor but the counted set of 5 is full under the run 08 K rule; ranked 6th) | run11: slg_selflearn ESTIMATE (counted set full): -0.010 (SE 0.011), wrong sign; decides nothing",
    "data_withdrawn": true,
    "status_before_withdrawal": "failed",
    "history": [
@@ -852,8 +852,8 @@
    "stance": "Listener",
    "proposed": "run10",
    "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "core_typical: PASSED on A -0.035 (SE 0.008); C -0.051 (SE 0.017, p .003) but power 0.14 < floor, so an ESTIMATE; surf_ic (off-beat) also negative (-0.037 A, -0.054 C): reads 'typical melody overall'; love -0.031 (A); confirm on H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ESTIMATE (not in K) in run11/experiments/core_typical (R_CORE_IC from measures/m_chair_run10.py, -0.03, pc_entropy and mel_ic_mean held, power 0.190 at .01, under the floor)",
+   "status_set_by": "run11 experiments",
+   "note": "core_typical: PASSED on A -0.035 (SE 0.008); C -0.051 (SE 0.017, p .003) but power 0.14 < floor, so an ESTIMATE; surf_ic (off-beat) also negative (-0.037 A, -0.054 C): reads 'typical melody overall'; love -0.031 (A); confirm on H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: ESTIMATE (not in K) in run11/experiments/core_typical (R_CORE_IC from measures/m_chair_run10.py, -0.03, pc_entropy and mel_ic_mean held, power 0.190 at .01, under the floor) | run11: core_typical ESTIMATE (power 0.19): +0.002 (SE 0.012); decides nothing",
    "data_withdrawn": true,
    "status_before_withdrawal": "testing",
    "history": [
@@ -921,9 +921,9 @@
    "idea": "GAP: spectral gap of the full melody's octave-distinct pitch graph, S = 1 + g/pi (range, n_pitch, ln_notes held)",
    "stance": "Inventor",
    "proposed": "run10",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-G1, tested fresh on Hooktheory as run11/experiments/gap_rooms (counted)",
+   "status": "failed",
+   "status_set_by": "run11 experiments",
+   "note": "estimate on A -0.065 (SE 0.008); after seeing results on C (gap_full_C, d823e98): PASSED as a LEAD -0.067 (SE 0.016), all baselines held -0.052, love -0.070; confirm on sealed split H | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-G1, tested fresh on Hooktheory as run11/experiments/gap_rooms (counted) | run11: fresh test run11 gap_rooms: KILLED +0.001 (SE 0.011)",
    "data_withdrawn": true,
    "status_before_withdrawal": "testing",
    "history": [
@@ -935,9 +935,9 @@
    "idea": "REP: replication of McBride & Leroi, pitch-class entropy (simpler spreads)",
    "stance": "Skeptic",
    "proposed": "run10",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "rep_entropy: PASSED on A -0.083 (SE 0.007); CONFIRMED on C -0.062 (SE 0.014); love -0.117 (A), -0.091 (C); bigger than the predicted -0.03; all baselines held -0.064 (A), -0.082 (C) | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-L3, tested fresh on Hooktheory as run11/experiments/rep_entropy (counted)",
+   "status": "passed",
+   "status_set_by": "run11 experiments",
+   "note": "rep_entropy: PASSED on A -0.083 (SE 0.007); CONFIRMED on C -0.062 (SE 0.014); love -0.117 (A), -0.091 (C); bigger than the predicted -0.03; all baselines held -0.064 (A), -0.082 (C) | WITHDRAWN DATA (run11): run 10 results used TheSession.org, whose licence forbids LLM processing; the figures are not evidence; the idea may be retested fresh on an allowed source | run11 chair: merged into R11-L3, tested fresh on Hooktheory as run11/experiments/rep_entropy (counted) | run11: fresh test run11 rep_entropy: PASSED -0.029 (SE 0.011) within artist on seen Hooktheory songs",
    "data_withdrawn": true,
    "status_before_withdrawal": "passed",
    "history": [
@@ -977,9 +977,9 @@
    "idea": "GAP: Jason's S on the whole clip melody (lambda_2 of the cyclic symmetrised octave-distinct pitch graph), range, n_pitch, ln_notes held; fresh on Hooktheory (= R10-I3's idea)",
    "stance": "Geometer",
    "proposed": "run11",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held",
+   "status": "failed",
+   "status_set_by": "run11 experiments",
+   "note": "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held | run11: gap_rooms (K=5, a=.01): KILLED beta +0.001 (SE 0.011), halves +0.013/-0.012; bare +0.011; Hooktheory within artist, seen songs",
    "history": [
     "run11 chair: COUNTED rank 1 of K=5 in run11/experiments/gap_rooms (G_GAP, -0.03, range/n_pitch/ln_notes held, power 0.220 at .01); raw clip stability 0.2004 (passes narrowly), 0.158 with its extras held"
    ]
@@ -1001,9 +1001,9 @@
    "idea": "TIE: Cramer's V^2 of the melody pitch-class x chord duration table (spectrum of the bipartite melody-chord graph, 1 +- s_k); merged with R11-I1",
    "stance": "Geometer",
    "proposed": "run11",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "run11 chair: COUNTED rank 2 of K=5 in run11/experiments/tie_rooms (G_TIE, +0.03, ln_notes/density/n_pc held, power 0.330 at .01); HB and Bergsma V2 readings",
+   "status": "failed",
+   "status_set_by": "run11 experiments",
+   "note": "run11 chair: COUNTED rank 2 of K=5 in run11/experiments/tie_rooms (G_TIE, +0.03, ln_notes/density/n_pc held, power 0.330 at .01); HB and Bergsma V2 readings | run11: tie_rooms: KILLED beta -0.010 (SE 0.009) vs +0.03; Bergsma-corrected -0.003",
    "history": [
     "run11 chair: COUNTED rank 2 of K=5 in run11/experiments/tie_rooms (G_TIE, +0.03, ln_notes/density/n_pc held, power 0.330 at .01); HB and Bergsma V2 readings"
    ]
@@ -1015,7 +1015,7 @@
    "proposed": "run11",
    "status": "withdrawn",
    "status_set_by": "run11 brainstorm",
-   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in gap_rooms (SETTLE, n_pitch and range held)",
+   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in gap_rooms (SETTLE, n_pitch and range held) | run11: SETTLE reading in gap_rooms: -0.025 (SE 0.012, p .04), opposite its + sign; uncounted",
    "history": [
     "run11 chair: reading in gap_rooms (SETTLE, n_pitch and range held)"
    ]
@@ -1025,9 +1025,9 @@
    "idea": "TYP11: correlation of the clip's time-weighted scale-degree profile (tonic dropped) with the corpus profile, mel_ic_mean held",
    "stance": "Listener",
    "proposed": "run11",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "run11 chair: COUNTED rank 4 of K=5 in run11/experiments/typ11_typical (TYP11, +0.03, mel_ic_mean held, power 0.387 at .01)",
+   "status": "failed",
+   "status_set_by": "run11 experiments",
+   "note": "run11 chair: COUNTED rank 4 of K=5 in run11/experiments/typ11_typical (TYP11, +0.03, mel_ic_mean held, power 0.387 at .01) | run11: typ11_typical: KILLED beta +0.002 (SE 0.009) vs +0.03; signs right, size near zero",
    "history": [
     "run11 chair: COUNTED rank 4 of K=5 in run11/experiments/typ11_typical (TYP11, +0.03, mel_ic_mean held, power 0.387 at .01)"
    ]
@@ -1037,9 +1037,9 @@
    "idea": "REP fresh: melody pitch-class entropy, no extras (= R10-S1's idea, McBride & Leroi)",
    "stance": "Listener",
    "proposed": "run11",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01)",
+   "status": "passed",
+   "status_set_by": "run11 experiments",
+   "note": "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01) | run11: rep_entropy (K=5, a=.01): PASSED beta -0.029 (SE 0.011, p .0076), halves -0.010/-0.046, cond logit -0.16; 12 baselines + mel_ic_mean held -0.029 (p .16); SEEN songs: a pass that needs unseen melodies to confirm. Lead on single-song artists (after seeing results): -0.025 (SE 0.016) unsettled, +0.040 with size held",
    "history": [
     "run11 chair: COUNTED rank 3 of K=5 in run11/experiments/rep_entropy (REP = pc_entropy, -0.03, bare, power 0.220 at .01)"
    ]
@@ -1049,9 +1049,9 @@
    "idea": "HB: bound rooms, Cramer's V^2 of melody pc x chord (merged into R11-G3)",
    "stance": "Inventor",
    "proposed": "run11",
-   "status": "withdrawn",
-   "status_set_by": "run11 brainstorm",
-   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in tie_rooms (HB)",
+   "status": "failed",
+   "status_set_by": "run11 experiments",
+   "note": "withdrawn by its author in round 2 (duplicate); kept as a reading | run11 chair: reading in tie_rooms (HB) | run11: merged into tie_rooms: KILLED (HB reading -0.009)",
    "history": [
     "run11 chair: reading in tie_rooms (HB)"
    ]
@@ -1061,9 +1061,9 @@
    "idea": "ANT: the push, share of chord changes anticipated by a melody note in the half beat before, on a new-chord-only pitch class",
    "stance": "Inventor",
    "proposed": "run11",
-   "status": "testing",
-   "status_set_by": "run11 chair",
-   "note": "run11 chair: COUNTED rank 5 of K=5 in run11/experiments/ant_push (ANT, +0.03, density held, power 0.280 at .01)",
+   "status": "failed",
+   "status_set_by": "run11 experiments",
+   "note": "run11 chair: COUNTED rank 5 of K=5 in run11/experiments/ant_push (ANT, +0.03, density held, power 0.280 at .01) | run11: ant_push: KILLED beta -0.004 (SE 0.011) vs +0.03",
    "history": [
     "run11 chair: COUNTED rank 5 of K=5 in run11/experiments/ant_push (ANT, +0.03, density held, power 0.280 at .01)"
    ]
@@ -1074,8 +1074,8 @@
    "stance": "Inventor",
    "proposed": "run11",
    "status": "stopped",
-   "status_set_by": "run11 chair",
-   "note": "run11 chair: fails the standing gate (clip stability 0.143 < 0.20); runs as an uncounted ESTIMATE in run11/experiments/lockp_peaks (+0.02, no extras, power 0.133)",
+   "status_set_by": "run11 experiments",
+   "note": "run11 chair: fails the standing gate (clip stability 0.143 < 0.20); runs as an uncounted ESTIMATE in run11/experiments/lockp_peaks (+0.02, no extras, power 0.133) | run11: lockp_peaks ESTIMATE (gate failed 0.143): +0.007 (SE 0.009); decides nothing",
    "history": [
     "run11 chair: fails the standing gate (clip stability 0.143 < 0.20); runs as an uncounted ESTIMATE in run11/experiments/lockp_peaks (+0.02, no extras, power 0.133)"
    ]
