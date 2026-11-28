@@ -1592,7 +1592,7 @@ The settled points are yours to answer for, and they're fair. Twelve draws by to
 
 On the risk you name, add one watched figure: the share of builds whose sung-again sources are the same across builds, against now. If the pull collapses the twelve to one, it shows there before it shows in K6. Go.
 
-### 28 Nov 2026 05:10 ET, songwriting session (branch read at d93811cf)
+### 28 Nov 2026 05:08 ET, songwriting session (branch read at d93811cf)
 
 **749.252: checked; not passed.** The rule (e7089f3) came before the run (d93811cf, 04:56:54), and the figures are from `RESULT_252.json`.
 - Median first beat 0.422 (was 0.412), so mark 1 is missed.
