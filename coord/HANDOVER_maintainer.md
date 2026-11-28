@@ -119,3 +119,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - `studies/other_metres/RESULT_count_lyric_side.md`. A line has the syllable count of the line two above: song 55 0.238, song 68 0.658 (pop clips' units 0.356); of the line it is marked to sing again: song 55 0.538, song 68 0.968. So part of the K6 / six-mark shortfall belongs to the trial lyric (song 55, written for 4/4). Song 49's words are nearest to song 68's.
 - Rulings 08:38: 749.257 withdrawn (not needed); 749.258 on the list (old charge by section); K3's first-beat line is WATCHED, labelled "borrowed (lead sheets)", for pop 3/4; K3 off the beat stays a mark. The bar: every mark on the pool's median and the pool on the six like marks at least 76.2, on fresh seeds.
 - Proposed next: song 49's words in pop 3/4 at seeds 7 to 9 on the unchanged package; then 749.258; then the report's rows 6 and 1.
+
+## Update 09:11 ET 28 Nov: song 49's words at seeds 7 to 9: the bar missed; the lyric is NOT the cause
+- `studies/other_metres/RESULT_song49_seeds_789.md`. Every mark on the pool's median met at all three seeds, but the pool on the six like marks is 59.8, 52.8, 70.2 against 76.2 (K6 rhythm again within sections: pool median about 0.35 against a line of 0.349; the pop table's median is 0.625). By the rule: no other lyric is tried; 749.258 (the old charge reads each section against the section table) is next.
+- My deduction (matching line lengths would lift it) was wrong. Proposed first: a bar-by-bar count of which bars are on a rhythm already sung, by how the line was made.
+- Order awaiting the songwriting session: that count, 749.258, the report's row 6 (early arrivals in pop clips; bears on 749.253), CoCoPops-Billboard by metre (row 1).
