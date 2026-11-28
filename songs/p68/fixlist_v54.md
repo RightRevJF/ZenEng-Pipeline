@@ -286,3 +286,15 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Problem:** pop 3/4 misses K5 (commonest pitch) on the median at seed 3 (0.331 against 0.303), and did before tonight's forms too. In 4/4 the pool meets the commonest-pitch limit by a gate, 956's ceiling by part, which `song_from_lyric.py` sets only inside `if L["metre"] == "4/4"`. In 3/4 the gate isn't there (8f5f5377, `RESULT_counts_K5_pool.json`; code read).
 - **Fix:** outside 4/4, 956 acts at the metre table's own 90th by part.
 - **Check:** every mark on the median at three seeds; the pool on the six like marks at least 4/4's median (76.2 in 100); the pool still at least 10. Ruled in the same post: the bar's pool half is read on the six like marks, against 4/4's own.
+
+## 749.256. Four more 4/4 figures act outside 4/4 with no table of the metre behind them
+- **Problem:** the list at 41d13617 (`PREDICTION_255.md`) shows four:
+  - 771's entry weights (0.20, 0.42, 0.38 for a stressed opening);
+  - 876's one-bar share (0.09);
+  - 818's rate of singing the line two above again (0.8, fitted to 4/4's kept median);
+  - the lift (838), drawn from 4/4's kept songs.
+  - 731's floor outside 4/4 is also hand-set at 0.4, not read from a table.
+  - In pop 3/4, 818's lines carry 0.22 of the song's stresses at the lowest first-beat share of any sort.
+- **Fix, in turn, rule first:** read each from the metre's own table where it can be read (from the pop clips: 818's rate, 876's share, 771's shares). Where it can't (the lift: clips are single sections), it stays at 4/4's figure as a known gap.
+- **Check:** each form on pop 3/4's marks at three seeds, and the 6/8 lyrics read on every mark.
+- **Read (41d13617 before e735e7e5, `RESULT_255.json`):** not passed as written. A gate acts on the pool, not on the living builds, so seed 3's living median commonest pitch stayed at 0.331. At seed 3 the gate passes over 140 of 305 builds; the pool's median commonest pitch falls from 0.318 to 0.29 and the pool meeting K5 rises from 41.0 to 66.1 in 100. The pool stays at least 165. The 6/8 lyrics come out byte for byte the same. **Ruled after, for later runs only:** marks are read on the pool's median, with the living median watched. Next: fresh seeds 4 to 6.

@@ -1770,3 +1770,50 @@ A clean null from too little data. The page gate's parts stay on the hymns and t
 4. **A count to make once, so we stop meeting this one gate at a time:** every setting inside the `metre == "4/4"` block (731's floor, the page floor, 956, the octave gate, 959/961, borrow_kept, and the rest). For each, say whether outside 4/4 it's off, on at 4/4's figure, or on at the metre's own. The page floor's evidence is partly TheSession's (749.242), so it stays off outside 4/4 until restated. A list, no form. It can ride with 749.255's rule file.
 
 Ask: 749.255's rule file (with the ceiling printed), and the list.
+
+### 28 Nov 2026 07:28 ET, songwriting session (branch read at 41d13617)
+
+**749.255's rule file** (`PREDICTION_255.md`, 41d13617, 07:19:22): read before the run.
+- The ceiling is printed: 0.396 from the clips' own 90th, since Hooktheory carries no section labels.
+- 4/4's ceilings sit at 0.44 and 0.479.
+- Saying the gate is a little loose, and that you expect it not to mend seed 3 (one chance in three), is the right way round. Go.
+
+**The list of 4/4-only settings is what I wanted.** Three more 4/4 figures act outside 4/4 with no table of the metre behind them: **771's entry weights, 876's 0.09 and 818's 0.8.** Plus the lift drawn from 4/4's kept songs, and 731's hand-set 0.4.
+
+818 matters most for 3/4. Lines 818 sings again carry 0.22 of the song's stresses at the worst first-beat share of any sort. The pop table's own figure for it can be counted: a clip is one section, so how often a line takes the rhythm of the line two above within a clip. That's a count, after 749.255 and the lift count, rule first, in this order:
+1. 818's rate;
+2. 876's one-bar share;
+3. 771's entry shares, each from the pop clips where they can be read.
+
+Where a figure can't be read from the table (the lift, since clips are single sections), say so, and it stays at 4/4's figure as a known gap on the list. A list entry for each now: 749.256 covers the four, with the evidence as above.
+
+(The judging research's new ideas, P11-1 to P11-5, are by the writer's word this morning to that window. Nothing there asks this session for anything.)
+
+### 28 Nov 2026 07:45 ET, songwriting session (branch read at e735e7e5)
+
+**749.255: checked; not passed as written.** The rule (41d13617, 07:19:22) came before the run (e735e7e5, 07:32:21). Figures from `RESULT_255.json`.
+- Seed 3's living median commonest pitch is 0.331, unchanged.
+- The pick at seed 3 is 0.264, and the parts at the pick are verse 0.249 and chorus 0.347.
+- The ceiling at 0.396 passes 165 of 305 builds at seed 3, and the pool stays at least 165.
+- Picks: first beat 0.455, 0.439, 0.444.
+- The 6/8 and unset songs come out byte for byte the same.
+
+You're right that a gate can't move the living median. I set the bar on the living median before the gates mattered, so this is mine to settle.
+
+**Living or pool. My ruling, and its timing:**
+1. **This result stays missed as written.** Reading seeds 1 to 3 again on the pool, after seeing them, would move a mark after a result. The rule doesn't allow that, however reasonable the new reading is.
+2. **From now on, written before any run:** every mark is read on **the pool's median**. The pool is what the pick is drawn from, and it's where 4/4's like figures are held true by its gates. The living median is still printed beside each mark, as watched.
+3. **So the next step isn't the lift count.** It's 749.255's package, unchanged, at **fresh seeds 4, 5 and 6** (none seen), read on the pool:
+   - every mark on the pool's median at all three seeds, all nine figures, with the share drawn fresh, the chord mark, source lines at least 0.40 and late lines at most 0.15;
+   - the pool on the six like marks at least 76.2;
+   - the pool at least 10;
+   - the pick reported.
+   - If they pass, 3/4 pop meets the bar, and songs 68 and 69 are ready to run together.
+   - If K5 misses on the pool's median at any of them, the lift count comes next.
+4. **Write it in a rule file first, with the pool-median reading named.** Print, as you'd planned, every mark's pool median, not just K5's.
+
+**Entropy and K5:** your note is fair. They're different measures and can disagree. It doesn't block this run. If K5 needs a form after it, ask the research for its one line first.
+
+The judging research check you did (run 11, four steps) agrees with mine at 03:42 ET.
+
+Ask: the rule file for seeds 4 to 6, then the result.
