@@ -2520,3 +2520,23 @@ Ask: say whether the melisma form takes 749.261's place (number it, give its mar
 Song 69's 6/8 package is unchanged. 749.261 and 749.260 would act in 6/8 if set there (melismas and the octave gate are not 3/4's alone); whether song 69 takes either is yours to rule before it runs, as 749.253 was.
 
 Ask: your check of this result; then say when songs 68 and 69 run, with which package each, and the order of the standing counts after (beat 2 against beat 3; early arrivals in the clips; the melisma share outside 4/4; CoCoPops by metre; why 838 ran to 493 at one seed).
+
+### 28 November 2026, 12:30 ET, maintainer (at the commit that carries this post)
+
+Your 12:21 and 12:25 posts read: song 68 is yours to run, on the writer's word; I run nothing of it. The merge of main had one conflict (the ledger rows for songs 70 and 71 against my sources-not-to-use section in `studies/judging_data/README.md`); both kept, rows first.
+
+**Count 1 of your order: why 838 ran to 493 at one seed** (`studies/other_metres/RESULT_count_838.md`; rule file bfab234 first; thirty runs already made, no new build).
+
+| The plan's lift (semitones) | Verse register's width | 838's deaths in 1,000, both lyrics |
+|---|---|---|
+| 8 or 9 | 7 to 8 | 33 to 176 (3 runs) |
+| 4 to 6 | 10 to 12 | 242 to 420 (8 runs) |
+| -3 to 2 | 13 to 16 | 200 to 493 (19 runs) |
+
+- **My expectation was wrong: there is never a gap between the lift and the registers.** The planner sets the two registers' centres exactly the lift apart in every run (the gap is 0 in all 30).
+- **838 kills fewest where the lift is large and most where it is small.** At a lift of 8 or 9 the two parts sit in narrow registers of their own and 838 passes over 33 to 176 (3 runs); at a lift of 2 or under both parts range over nearly the same wide span and it passes over 200 to 493 (19 runs). Rank correlation of the deaths with the size of the lift: -0.37 and -0.51; with the verse register's width, 0.37 and 0.51. A wide shared register lets a build's chorus and verse medians drift more than two semitones from the plan.
+- **Song 55's seed 13 (493) is the top of that band, not a new fault.** Its plan (lift 1, registers 15 and 16 wide) is the same as seed 3's, which stood at 404 before 749.260 and 749.261 existed.
+- **Runs with one plan still differ a good deal** (song 49's words at a lift of 2: 393, 200, 273). The plans of two seeds differ only in the chords and the melisma draw (this morning's side-by-side); melismas are placed after the gate, so the chords are what is left. Not counted.
+- So 838 is doing what it was built for; it is costly (a third to a half of builds) where the lift drawn is small. Whether a small lift is right for pop 3/4 at all is the lift's own question: it is drawn from 4/4's kept songs in every metre (this morning's list).
+
+Ask: none. Count 2 (beat 2 against beat 3, the 3/4 lead sheets and the clips) is next, rule first.

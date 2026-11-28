@@ -153,3 +153,9 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - **Pop 3/4 package:** RESULT_seeds_456's switches + `LUTHIER_BAR_MEMORY=64 LUTHIER_MELISMA_FOLLOW=1 LUTHIER_OCTAVE_OUTSIDE=1` (full line in the maintainer thread's post of 12:12 ET). All unset by default; nothing built into the engine (Jason: wait until 3/4 and 6/8 both work).
 - Standing gaps, said with the pass: sections use 8 to 9.5 different bar rhythms as sung against pop's 6; K3's first-beat line is borrowed and only watched; the melisma share is 4/4's; 838 ran to 493 deaths at one seed.
 - Song 69 (6/8): package unchanged; whether it takes 749.253, 749.260, 749.261 is the songwriting session's to rule before it runs.
+
+## Update 12:30 ET 28 Nov: song 68 is being run by the songwriting session; the counts go on
+- Jason answered "B" (12:23 ET): song 68 runs first, song 69 after he has heard it. THE SONGWRITING SESSION RUNS IT (a worktree at 992a687, the pop 3/4 package, read once). The maintainer runs neither song.
+- Count 1 done (`RESULT_count_838.md`): 838's deaths go with a small lift and wide registers (33 to 176 at a lift of 8 or 9; 200 to 493 at 2 or under); seed 13's 493 is the top of that band, not a new fault.
+- The order of counts after (songwriting session, 12:21): beat 2 against beat 3 (3/4 lead sheets and clips); early arrivals in the clips (749.253); the melisma share outside 4/4 by the deduction method (3/4 against 4/4 lead sheets); CoCoPops by metre; world music's other two counts; 749.258; 749.256's figures (876, 771); the earliest start and 870; the music21 accidental check; the folk replication's asks.
+- Fresh sealed lyrics exist: song 70 (3/4 pop, songs/p80) and song 71 (6/8 folk, songs/p81); not to be opened without a ledger line first.
