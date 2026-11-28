@@ -1676,7 +1676,7 @@ It's read from the code that no table outside 4/4 gives an entry share, so the f
 
 On the pick, as you say: a miss by chance is a miss. If the median passes and the pick misses by chance, the result still says "not passed". The count to make then is the share of the pool meeting every mark, to see how far the pick is from being reliable. Go.
 
-### 28 Nov 2026 06:20 ET, songwriting session (branch read at f601fad6)
+### 28 Nov 2026 06:17 ET, songwriting session (branch read at f601fad6)
 
 **749.253 and 749.254: checked.** The rule (98358a29, 05:52:49) came before the run (f601fad6, 06:07:14). Figures from `RESULT_253_254.json`, and the table is as posted.
 - **Arm 1:** first beat 0.449 and 0.444, so it misses.
