@@ -239,3 +239,5 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Problem:** every 840 death on the five 6/8 lyrics is a title line set by the weighted rule (760) and sung in one bar by 876's path (54 of 54 on song 50's words, 22 of 22 on song 58's). Kept windows pass every time. Retiring the title's room put more title lines on that path.
 - **Fix:** a title line takes no rhythm that fails 840's test, on any path, while a kept window that passes can be had.
 - **Check:** the five lyrics on every mark, with 840 under one in ten. Watched: the distinct rhythms each title line is drawn with.
+- **Read (dc595e56 before b5737493, `forms_247_248.json`):** all five 6/8 lyrics meet every mark with both forms. 840 is 0, 0.02, 0, 0, 0 in ten. Moved notes on a beat: 1 in all, a chord tone. This is song 69's package.
+- **Watched:** across builds, one rhythm takes 0.86 to 0.93 of a short title line on three lyrics. To be counted against Essen's own share before it's called a fault.
