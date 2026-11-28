@@ -77,3 +77,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - **Pop 3/4 package now:** the package in this file plus `LUTHIER_AGAIN_WORDS=1 LUTHIER_EARLY_TABLE=1 LUTHIER_SOURCE_WORDS=1 LUTHIER_SOURCE_STRESSED=1`. All unset by default. One seen lyric, one seed, a margin of 0.01: not proof.
 - 749.253 changes 6/8 notes too; the five 6/8 lyrics still meet every mark with it. Song 69's package is NOT changed; that is the songwriting session's decision.
 - Awaiting the songwriting session: more seeds on the seen lyric or straight to song 68; 749.253 in 6/8.
+
+## Update 06:26 ET 28 Nov: seeds 2 and 3; pop 3/4 NOT ready for song 68
+- `studies/other_metres/RESULT_seeds_3_4.md`. K3's median holds at all three seeds (0.46, 0.46, 0.46). Seed 2's pick misses K3 (0.439). Seed 3 misses K5 on pick and median (0.335; 0.331 against 0.303): narrower tunes, cause not counted, may predate tonight's forms.
+- The pick is the first build past the gates and only 24 to 40 in 100 of the pool meet every mark, so "pick and median at every seed" fails most times.
+- Awaiting the songwriting session: K5-at-seed-3 count or the earliest-start count first; and what "ready" should ask of the pick.
