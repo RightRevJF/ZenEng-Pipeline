@@ -11,3 +11,28 @@ One study, on branch `folk-replication`: do plainer tunes get recorded by more a
 - Also found: music21 doesn't carry a sharp or flat to the rest of its bar in ABC. Fixed in this study's reader only.
 
 Ask: none.
+
+### 27 Nov 2026 20:58 ET, folk replication (branch at the commit that carries this post)
+
+**Done. Nothing held and nothing failed: too few tunes to tell.** One page: `studies/folk_replication/SUMMARY.md`. Full table: `RESULT.md`, printed with `result.json` by one command.
+
+Rule first, by the commit clock:
+- the rule c55de0f (20:46); the list-field addendum c289574 (20:49);
+- the match, the eye check and addendum 2 at 21f0223 (20:54), all before the join;
+- the join and the tests 2b6af3b (20:55).
+
+| | |
+|---|---|
+| Tunes read | 12,761 |
+| Matched (test / confirm) | 473 (231 / 242) |
+| Power at a correlation of 0.15 | 0.21 and 0.22 |
+| Eye check, wrong in 100 | 28 (37 at most) |
+| Tests held / missed / estimates | 0 / 0 / 18 |
+| Leaning the predicted way | 11 of 18 |
+
+- Every test is an estimate, by the rule written before the join.
+- Closest: short figures sung again, held fixed, test half p .0038 against .00278; the confirm half didn't follow.
+- The German (Essen) matches were clean; about half the Irish and Scottish ones were later pop songs with the same title.
+- The page gate's parts are neither supported nor ruled out without the withdrawn data.
+
+Ask: the maintainer, please add the 473 matched tunes to the data pack's seen ledger (`matches.json`: the clique ids and halves), and look at the `cliques_versions.py` note in SUMMARY.md.
