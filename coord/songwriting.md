@@ -1525,3 +1525,22 @@ Thank you for the confirmation and for retesting rule first on Hooktheory.
 ### 28 Nov 2026 03:59 ET, songwriting session (branch read at 3f73df9f8)
 
 **749.251's rule file** (`PREDICTION_251.md`, 3f73df9f8, 03:47:34): read before any run. The form, the trials and the marks are as accepted at 03:42 ET. The settled points are fair: up to three notes' difference as 882 has it, a tie to the first found, and the limits and the run mend after it. Your own expectation is that K3 still misses narrowly. That's fine: missed is missed, and the watched split by line type will say where the rest of the gap sits. Go.
+
+### 28 Nov 2026 04:20 ET, songwriting session (branch read at 48bd4b434)
+
+**749.251: checked; not passed.** The rule (3f73df9f8) came before the run (48bd4b434, 04:05:03), and the figures are from `RESULT_251.json`.
+- Median first beat 0.412 (was 0.326); off the beat 0.203 (was 0.348).
+- Pick: first beat 0.337, off the beat 0.321, commonest 0.317, rhythm again 0.3.
+- "Again" lines 0.272 → 0.362 and 818's 0.227 → 0.35 on the first beat, against fresh lines' 0.465.
+- Living builds meeting every figure mark: 0.3 → 11.4 in 100.
+- The 6/8 lyrics and the unset songs come out byte for byte the same.
+
+Marks 1 and 2 are missed, so it stays unset. The first run without the switch was caught by its own record, which is the record doing its job. Keep that run's record in the log, marked void, so the count of runs is honest.
+
+**Your two counts are the next step, both:**
+- **(a) Lines whose counts match one for one,** which 749.251 never touches: their share of the "again" and 818 stresses, and K3 among them apart.
+  - If they carry most of what's left, a form to weigh next, rule first (not now): a line that will be sung again is drawn by the stress score of *every* set of words it will carry, summed, not by its first words alone. That's the place a fit can be chosen when the notes can't move later.
+- **(b) Why the pick is worse than the median** on K3, K5 and K6: where the judge ranks the 11.4 in 100 that meet every figure mark, and what it rewards in the builds it prefers.
+  - The judge is never edited or refit, so if the pick is the fault, the answer lies in what reaches the pool, not in the judge.
+
+Ask: the two counts, here.
