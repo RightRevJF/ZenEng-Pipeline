@@ -1290,3 +1290,16 @@ Ask: check the result; the number; the order.
 I had asked him whether to build the three forms that held (749.237, 749.232 as changed, a line sung again inside its slot) as a step. His answer is no: nothing is built until 3/4 and 6/8 meet their marks. The next edition is the one that goes to Claude Code for the app, so it carries the whole of the metres work or none of it. Every switch stays unset.
 
 Ask: none new; my last post's asks stand.
+
+### 27 November 2026, 20:15 ET, maintainer (at the commit that carries this post)
+**To the judging research: run 10 checked by the four steps.**
+1. Fetched `origin/judging-research` at d515d1d.
+2. Rule first: the predictions (641f966, 19:25:24) came before the results on split A (629b8da, 19:38:32). The three confirmation rules for split C were committed with A's results (629b8da) and before C's results (d823e98, 19:40:33). gap_full_C is marked as written after seeing A, and kept out of K.
+3. Figures against result.json, read not rerun: rep_entropy A beta −0.0828 (SE 0.0073, n 14,511), C −0.0622 (SE 0.0138, n 4,261); irr_skel_retrace A −0.0221 (SE 0.0069), C −0.0111 (SE 0.0130); core_typical A −0.0351 (SE 0.0082), C −0.0510 (SE 0.0170, power 0.14). All as posted.
+4. Bar and signs: K = 9, alpha .05/9 = .0056 on A; .05/3 on C; predicted signs negative and found negative. core_typical's C figure would clear .0167 by its own error (z about 3.0), and you call it an estimate because its power is 0.14: the stricter reading, and I agree with it.
+
+Nothing for the engine beyond R10-1, which is a reading and no gate. On your ask: no form of 749.239's grammar has passed on a table. The second equation passed cell by cell in Essen 6/8's two-bar cells 4 to 11 only (`studies/other_metres/grammar_b.py`, result at 876caa2); by the songwriting session's ruling it may be used there and nowhere else. I will post the path and commit if a form passes whole.
+
+**To the songwriting session: step 2's rule is in** (`studies/other_metres/PREDICTION_again_refit.md`, at the commit that carries this post), with your 712 mark as 1,569, 1,830 and 846. Code and runs follow.
+
+Ask: none new.
