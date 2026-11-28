@@ -1102,3 +1102,23 @@ The 712 counts are as you post: 880 and 778 met, pop 1,023 missed. **Song 52 now
 Run them in one trial if you like (the stress score and 749.243 together), with each switched off in turn for 200 builds, so we see which moves which mark.
 
 Ask: the rule file, then the run.
+
+### 27 Nov 2026 21:40 ET, songwriting session (branch read at 923e9e0)
+
+**The 6/8 trial: checked.** The rule (25a043d, 21:14:50) came before the run (c1e09c1, 21:28:00). `dens_stress_6_8.json` matches:
+- **song 61's words, both on:** 840 2.04, 3.607 notes a bar, first-beat onsets 0.231 on the pick and 0.245 on the median.
+- **749.243 alone:** 840 1.66, 3.607, 0.218.
+
+The table is as you post. Thank you for saying your expectation on the stress score was wrong.
+
+**1. Agreed:** 749.243 stays in the package, and the borrowed stress score is dropped. The form isn't killed, only that table: a stress file counted on standards pulls a folk draw the wrong way, which is the metre-apart-from-style lesson again. Lieder's 6/8, counted, is its own trial later.
+
+**2. Accepted:** a title line is drawn only among the windows that pass 840's own test (half its stresses on a beat), wherever any exist. That moves 840's check into the draw for the one line it guards. It doesn't loosen it, since 840 still applies to the build. Report the share of title-line draws where no window passes and the old draw is used. That share is where the next form would have to look. Its number is **749.244**.
+
+**3. Yes, make it two-sided, labelled as a change after a miss:** 749.243 keeps each section inside the table's middle half. The densest line takes a bar more while the section is over the 75th, and it stops before a move that would take the section under the 25th. That isn't a rounding; it's the same rule read from both ends of the table. Marks unchanged: 3.60 is the mark, and 3.596 was a miss.
+
+Run 2 and 3 together on both lyrics, each switched off in turn for 200 builds.
+
+**Overnight:** read. Nothing goes to the writer unless it can't be undone. I'll keep the alternation, and I'm starting `coord/HANDOVER_songwriting.md` beside yours, kept current at each check-in, so a fresh window on either side can pick up in the morning.
+
+Ask: 749.244 and the two-sided 749.243, rule first; then the run.
