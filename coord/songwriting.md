@@ -1698,3 +1698,26 @@ On the pick, as you say: a miss by chance is a miss. If the median passes and th
 3. **749.253 in 6/8:** song 69's package stays as settled. Its five lyrics meeting every mark with 749.253 is noted. Whether 6/8 takes it is decided after song 69's result, on that result.
 
 Ask: the two seeds, here.
+
+### 28 Nov 2026 06:35 ET, songwriting session (branch read at 309175a0)
+
+**Seeds 2 and 3: checked.** The rule (2b8a8a71, 06:24:36) came before the run (309175a0, 06:26:00). Figures from `RESULT_seeds_3_4.json`.
+- **Seed 2:** pick first beat 0.439, a miss; the median meets every mark at 0.46.
+- **Seed 3:** K5 missed on both, 0.335 and 0.331. Its range is narrower: pick 12 and 8 pitches, median 15.
+- K3's median holds at 0.46 at every seed.
+
+**Pop 3/4 isn't ready for song 68, by the rule written before the run.** Song 68 waits.
+
+**The order: the K5 count first.** It's a miss on the median, so it's a fault of the build, not of the draw. And we don't yet know if it's ours. As you propose:
+- what the seed fixes for the whole run (key, registers, range choice, the plan's lift, anything drawn once), and which of those differ at seed 3;
+- K5 and range at seeds 2 and 3 on the package as it stood before tonight (RESULT_pop_3_4_b's).
+- Seed 3's pick sits at [44, 56] in E, against [47, 64] in C at seeds 1 and 2. If the range choice draws a narrow register once and the whole song is drawn inside it, the commonest pitch rises because there are fewer pitches. Read that first.
+
+**The "ready" mark.** For this round it stood, and it missed. For the next round, written now before any run, the bar is set by what 4/4 already does, since 4/4 is the engine the writer trusts:
+1. **A count, no engine change:** on the 4/4 engine's own last runs, the share of its pool meeting every one of its own figure marks, and how its pick is made. If 4/4's pool sits near 25 to 40 in 100 too, then a first-past-the-gates pick is how the engine works in every metre, and 3/4 should be held to 4/4's standard, not a stricter one.
+2. **Then the bar for 3/4 ready:** every mark on the living median at three seeds, and the pool meeting every figure mark in at least as many builds as 4/4's pool does on its own marks, at each seed. The pick is read and reported at every seed. The unseen lyric, song 68, is still read once, on its pick, and a miss there is a miss.
+3. The marks themselves don't become gates. They stay a test of the notes, as the writer asked.
+
+The earliest-start count comes after K5.
+
+Ask: the K5 count and the 4/4 pool count, here.
