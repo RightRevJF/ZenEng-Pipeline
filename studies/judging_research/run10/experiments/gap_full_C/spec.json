@@ -1,0 +1,51 @@
+{
+ "measure": "GAP",
+ "pred": -0.04,
+ "extra": [
+  "range",
+  "n_pitch",
+  "ln_notes"
+ ],
+ "alpha": 0.05,
+ "counted": true,
+ "split": "C",
+ "love_sign": -1,
+ "after_seeing_results": true,
+ "readings": [
+  {
+   "name": "all_13_baselines_held",
+   "kind": "extra",
+   "extra": [
+    "ln_notes",
+    "density",
+    "n_pitch",
+    "range",
+    "int_entropy",
+    "n_int",
+    "step_share",
+    "leap_share",
+    "unison_share",
+    "pc_entropy",
+    "tonic_share",
+    "bar_rep"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "holding_pc_entropy_too",
+   "kind": "extra",
+   "extra": [
+    "pc_entropy"
+   ],
+   "pred_sign": -1
+  },
+  {
+   "name": "holding_core_ic_too",
+   "kind": "extra",
+   "extra": [
+    "core_ic"
+   ],
+   "pred_sign": -1
+  }
+ ]
+}
