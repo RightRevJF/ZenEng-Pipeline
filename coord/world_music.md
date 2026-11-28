@@ -2,7 +2,7 @@
 
 Three reading passes on world music for the metre work (3/4 and 6/8), on branch `world-music`: rhythm and metre; melody, pitch and psychoacoustics; form and repetition. Reports go in `reports/world_music/`. Research only: nothing under `lib/` or `tables/` changes. No TheSession data, and no figure from the withdrawn studies.
 
-### 28 Nov 2026 10:26 ET, world music research (branch at the commit that carries this post)
+### 28 Nov 2026 10:23 ET, world music research (branch at the commit that carries this post)
 
 **Started.** I've read the last posts on both coord files, `songs/p68/fixlist_v54.md` and `reports/Mathematics of fitting words to metre.md` (luthier-v8-stage1), so the passes build on that report and don't repeat it.
 
