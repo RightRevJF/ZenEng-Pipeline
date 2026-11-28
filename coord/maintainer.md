@@ -2552,3 +2552,40 @@ What changes in the work because of it:
 - **Owed by me:** the four-step check of runs 12 and 13; the folk replication's ask (the seen ledger). Both stand in your order's last places.
 
 Ask: none. Count 2 (beat 2 against beat 3) follows the 4/4 count.
+
+### 28 November 2026, 12:49 ET, maintainer (at the commit that carries this post)
+
+Your 12:32 to 12:38 posts read: song 68 is spent (every mark on the pool's median; the six-mark share 45.5, on notes a bar; the pick 0.001 under K6's rhythm line); the writer holds both songs (C); your three asks come first, then 749.263. Two results here: the count already under way, and ask (a).
+
+**1. Does 4/4 lose its repeats to melismas too?** (`RESULT_count_4_4_made_sung.md`; rule a91c7bd; the unset 4/4 engine; four songs, song 59's run cut off by a time limit and not reported.)
+
+| 4/4 song (engine as it is, every switch unset) | Pool: bars on a rhythm already sung, as made; as sung | Living: as made; as sung | Syllables on two notes |
+|---|---|---|---|
+| 54 | 0.656; 0.566 | 0.692; 0.605 | 0.076 |
+| 55 | 0.574; 0.482 | 0.582; 0.5 | 0.083 |
+| 61 | 0.484; 0.406 | 0.5; 0.418 | 0.058 |
+| 66 | 0.622; 0.535 | 0.618; 0.53 | 0.056 |
+
+Yes: bars on a rhythm already sung fall by 0.082 to 0.088 on the living builds once the second notes are placed. 749.261 is a 4/4 question too, and part of run 13's rhythm gap is this. Whether to try it in 4/4 is yours to order.
+
+**2. Ask (a): song 68's dense-lyric miss** (`RESULT_count_dense_fast.md`; rule 0ce81d7; a count; song 68 not run).
+
+| Bar's length | Clips | Notes a bar: 25th, 50th, 75th | Notes a second: 50th |
+|---|---|---|---|
+| under 1.1 s | 78 | 1.88, 2.5, 3.31 | 2.66 |
+| 1.1 to 1.5 s | 162 | 2.3, 2.86, 3.68 | 2.16 |
+| 1.5 to 2.0 s | 95 | 2.45, 3.0, 3.55 | 1.77 |
+| over 2.0 s | 59 | 2.25, 2.88, 4.0 | 1.19 |
+
+- **Tempo is not the cause; I expected it to be and was wrong.** In the pop 3/4 clips notes a bar hardly moves with the bar's length (rank correlation 0.125); it is notes a second that follows tempo (-0.53). Singers in these clips keep to the bar, not the clock. In bars as short as song 68's (0.9 to 1.1 s; 50 clips) the median is 2.5 notes a bar and the 75th 3.18; 0.18 of those clips sing 3.5 a bar or more. So two bars for a 7-syllable line at 180 is dense for pop but inside it.
+- **The cause is that the plan counts syllables and the mark counts notes as sung.** Song 68's plan holds 369 syllables in 108 bars: 3.417 syllables a bar, under the table's 75th (3.847), so 749.243 (no section denser than the table's 75th) rightly did nothing. Then the melisma step drew its top share (0.162: a quarter of songs draw it) and added 51 second notes to the pick: 3.889 notes a bar as sung, over the line. With the middle share the song would have stood near 3.71; with the low one near 3.55.
+- **So this is the melisma share again, from the other side:** this morning it broke the repeats; here it tips a dense lyric over K2. It is 4/4's figure in every metre, and 749.243 does not know it is coming.
+- Seen on unseen words, as you noted: different bar rhythms 6.0 and exact two-bar repeats 0.208. 749.259 and 749.261 did on song 68 what they were built for.
+
+**A form for you to weigh, not written:** 749.243 reads what will be sung, not the syllables alone: a section's notes a bar is its syllables times one plus the song's melisma share drawn, against the table's 75th (and 25th, two-sided as now). Song 68 at 16.2 would read 3.97 against 3.847 and its densest sections would be given a third bar on some lines; at 8.6 and 3.8 nothing would move. It needs no weight. The share itself (4/4's quartiles) is count 4 of your order, the deduction on the lead sheets; if 3/4's own share is lower, the same miss shrinks from that side too. The two are separate and I would keep them so.
+
+**Ask (b): the planner flags are stale. Yes.** They are written at the planner's first proposal (`song_from_lyric.py`, the line "a slot of ... bars, past the kept two-bar windows"), from the bars the older landing step proposed, before 749.226's plan sets the slots it uses. Song 68's record flags three-bar slots on every line while its plan's slots are all two bars and its stats show 81,295 lines in kept windows. A flag that describes a plan not used should be dropped where 749.226's plan stands: a one-line change behind the same switch, rule first, with the record's flags as its mark. Not written.
+
+**Ask (c), 749.262 (a genre the band tables do not hold crashes the band step):** not yet read; next, with a rule file, since it touches the planner for every metre.
+
+Ask: say whether the 749.243 change is to be written (number it; its marks, I take it, are the bar as it stands on fresh seeds and both seen lyrics, plus a dense seen lyric at a fast tempo: song 49's words at 180 would be one), or whether count 4 (the share) comes first.
