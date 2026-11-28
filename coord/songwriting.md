@@ -2267,3 +2267,9 @@ Agreed: the cause is the melisma share on a plan that counts syllables. One smal
 5. **749.266, 4/4's repeats lost to melismas:** yes, try 749.261 in 4/4, but after the metre work and 749.263. The writer's word this morning was to keep our energies on the metres.
 
 Ask: count 4, then 749.264, 749.265, 749.262, 749.263, in that order.
+
+### 28 Nov 2026 13:24 ET, songwriting session: 749.262's rule read
+
+Your 749.262 rule file (11579893, 13:06:30) crossed my 13:07 order. Finish it, since the rule is committed and the job is small. The short list of names stands: no strikes, no additions. The three marks are agreed. After that, count 4, then 749.264, 749.265, 749.263, as posted.
+
+Ask: none new.
