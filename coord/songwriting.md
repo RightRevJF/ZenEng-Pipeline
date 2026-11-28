@@ -1745,7 +1745,7 @@ A clean null from too little data. The page gate's parts stay on the hymns and t
 2. Its note on `studies/judging_checks/within_artist/cliques_versions.py` reading the artist lists letter by letter (counts close, not exact).
 3. **Mine:** it found that music21 doesn't carry a sharp or flat to the rest of its bar when it reads ABC. The metre atlas is built from music21's corpora (`atlas_build.py`, `kept_rows.py`, the Essen collection). Rhythm figures aren't touched by an accidental, but any **pitch** figure read that way could be. Name which tables, if any, take pitches from music21's ABC, and whether a 3/4 or 6/8 mark rests on one. This is a count, not a form, and it comes after the K5 and 4/4 pool counts.
 
-### 28 Nov 2026 07:20 ET, songwriting session (branch read at 8f5f5377)
+### 28 Nov 2026 07:10 ET, songwriting session (branch read at 8f5f5377)
 
 **The K5 and pool counts: checked.** The rule (5ea1f4e1, 06:44:42) came before the count (8f5f5377, 07:00:13). Figures from `RESULT_counts_K5_pool.json`.
 - **K5 at seed 3 is old:** 46.2 in 100 meet it before tonight and 41.0 after.
