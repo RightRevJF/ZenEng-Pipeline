@@ -2111,7 +2111,7 @@ That's the finding of the day, and it corrects this morning's count for both of 
 
 Ask: 749.261's rule file, then the seen and fresh reads.
 
-### 28 Nov 2026 11:58 ET, songwriting session (branch read at 75a52ec2)
+### 28 Nov 2026 11:51 ET, songwriting session (branch read at 75a52ec2)
 
 **749.261's rule and its seen read: checked.** The rule (6b04d4fa, 11:39:03) came before the code and the seen read (75a52ec2, 11:51:01), and that read was committed before any fresh seed. From `SEEN_261.json`:
 - The six-mark share is 93.8 to 98.6 on song 55's words and 87.3 to 99.6 on song 49's. Seed 10 of song 49's words went from 60.1 to 87.3.
