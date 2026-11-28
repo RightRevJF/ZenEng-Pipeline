@@ -1806,3 +1806,25 @@ The ceiling is well over 0.45. But **the builds are under what kept count alone 
 Song 69 is not touched by this unless you say: its package stands.
 
 Ask: your word on the form; its number.
+
+### 28 November 2026, 04:05 ET, maintainer (at the commit that carries this post)
+
+**749.251's result** (`studies/other_metres/RESULT_251.md`, figures printed from RESULT_251.json). Rule file first (3f73df9); your reading of it at 03:59 seen.
+
+A fault of mine first: the first run did not carry the switch (set before the stress table was read). The record showed it; one line moved; run again. Only the second run is reported.
+
+| Pop 3/4, song 55's words | Before | With 749.251 | Wanted |
+|---|---|---|---|
+| K3 first beat (pick; median) | 0.337; 0.326 | 0.337; 0.412 | 0.45 or more |
+| K3 off the beat | 0.326; 0.348 | 0.321; 0.203 | 0.26 or under |
+| K5 commonest pitch | 0.193; 0.273 | 0.317; 0.287 | 0.303 or under |
+| K6 rhythm again in sections | 0.364; 0.391 | 0.3; 0.368 | 0.349 to 0.871 |
+
+- **Mark 1 missed** (K3 first beat on both; off the beat and K5 on the pick). **Mark 2 missed on the pick.** **Mark 3 met:** the five 6/8 lyrics byte for byte; unset songs byte for byte; room files this engine's.
+- Watched: "again" lines 0.272 to 0.362 on the first beat, 818's 0.227 to 0.35, fresh 0.465. About half the gap closed for those lines.
+- Living builds meeting every figure mark: 0.3 in 100 before, 11.4 now. Every other mark as before (living 590, no death on 780 or 840, share drawn fresh 0.0004, chord mark 1.0).
+- Not passed. It stays unset and out of every package. The code is committed behind its switch only.
+
+What I would count next, before any new form (two counts, no engine change): (a) of the stresses in "again" and 818 lines, how many sit in lines whose counts match one for one, which 749.251 never touches, and what K3 is in those apart; (b) why the pick is a build worse than the median on K3, K5 and K6: where the judge ranks builds that meet every figure mark.
+
+Ask: say whether those two counts are the next step, or name another. Song 69 is not run.

@@ -47,3 +47,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - Repository at `/home/claude/zeneng-pipeline`; if gone: clone, check out the branch, `bash setup.sh`, `bash studies/other_metres/fetch.sh`.
 - The scratchpad does not survive a new container; trial lyrics are rebuilt from `songs/p62/lyric52.json`, `songs/p71/lyric61.json` (metre 6/8, bpm 54, genre folk) and `songs/p65/lyric55.json` (metre 3/4, bpm 133, genre rock).
 - A whole-engine song takes one and a half to five minutes; run in the background and wait on the record file, not on a flag left from an earlier run.
+
+## Update 04:05 ET 28 Nov: 749.251 tried, not passed
+- Pop 3/4 with `LUTHIER_AGAIN_WORDS=1`: K3 first beat 0.337 pick, 0.412 median (0.45 wanted); the pick also misses K5 (0.317) and K6 rhythm again (0.3). The five 6/8 lyrics byte for byte. See `studies/other_metres/RESULT_251.md`. The switch stays unset; it is in no package.
+- "Again" lines 0.272 to 0.362, 818's 0.227 to 0.35, fresh 0.465: half the gap closed.
+- Proposed next (awaiting the songwriting session): count stresses in one-for-one "again" lines; count why the pick is worse than the median.

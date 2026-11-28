@@ -367,6 +367,25 @@ class Engine:
             for j in range(len(ps)):
                 if ps[j] is None:
                     nx = next((q for q in ps[j + 1:] if q is not None), ps[j - 1]); ps[j] = step_from(ps[j - 1], nx) if (rng.random() < self.MOVE_ON or (j > 1 and ps[j - 2] == ps[j - 1])) else ps[j - 1]
+        if self.S.get("again_words") and self.S.get("stress_place") and len(on) != n and abs(len(on) - n) <= 3:      # trial (749.251): a line sung again fits its new words; the splits and drops are chosen by the table's stress score, as 882 does in 4/4 by the words' weights
+            lim_w = slot - (12 if self.LE else self.BREATH) if self.S.get("again_refit") == 2 else slot - 6; st_w = {tuple(on): (list(on), list(ps))}; d_w = n - len(on)
+            for _w in range(abs(d_w)):
+                nx_w = {}
+                for o_w, q_w in st_w.values():
+                    if d_w > 0:
+                        for j_w in range(len(o_w)):
+                            g_w = (o_w[j_w + 1] if j_w + 1 < len(o_w) else lim_w) - o_w[j_w]; h_w = o_w[j_w] + (g_w // 2 // 3) * 3
+                            if g_w >= 6 and h_w > o_w[j_w]: nx_w.setdefault(tuple(o_w[:j_w + 1] + [h_w] + o_w[j_w + 1:]), (o_w[:j_w + 1] + [h_w] + o_w[j_w + 1:], q_w[:j_w + 1] + [None] + q_w[j_w + 1:]))
+                    else:
+                        for j_w in range(1, len(o_w) - 1): nx_w.setdefault(tuple(o_w[:j_w] + o_w[j_w + 1:]), (o_w[:j_w] + o_w[j_w + 1:], q_w[:j_w] + q_w[j_w + 1:]))
+                st_w = nx_w
+            c_w = [(self.stress_score(o_w, sy), -k_w, o_w, q_w) for k_w, (o_w, q_w) in enumerate(st_w.values()) if len(o_w) == n and all(y_w - x_w >= 3 for x_w, y_w in zip(o_w, o_w[1:]))]
+            if c_w:
+                _, _, on, ps = max(c_w, key=lambda x_w: x_w[:2]); on = list(on); ps = list(ps); self.stats["749.251: a line sung again fits its new words by the table's stress score"] += 1
+                for j_w in range(len(ps)):
+                    if ps[j_w] is None:
+                        pv_w = ps[j_w - 1] if j_w else next(q_ for q_ in ps if q_ is not None); nt_w = next((q_ for q_ in ps[j_w + 1:] if q_ is not None), pv_w); sp_w = [q_ for q_ in (pv_w + 1, pv_w - 1, pv_w + 2, pv_w - 2) if q_ % 12 in self.SCALE]
+                        ps[j_w] = min(sp_w, key=lambda q_: abs(q_ - nt_w)) if (rng.random() < self.MOVE_ON or (j_w > 1 and ps[j_w - 2] == ps[j_w - 1])) else pv_w
         while len(on) < n:
             gaps = [((on[j + 1] if j + 1 < len(on) else (slot - (12 if self.LE else self.BREATH) if self.S.get("again_refit") == 2 else slot - 6)) - on[j], j) for j in range(len(on))]; g, j = max(gaps)      # trial (749.241): the gap after the last note runs to the line's own limit
             if g < 6: return None
