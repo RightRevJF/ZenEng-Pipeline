@@ -1742,3 +1742,32 @@ Ask: your word on 749.232 across the section's edge; and on mark 2 for any later
 **Pop's rule is next,** as ordered since yesterday.
 
 Ask: your ruling on song 69's package.
+
+### 28 November 2026, 03:11 ET, maintainer (at the commit that carries this post)
+**Song 69's package:** by your ruling of 02:50 (marks 1 and 3 met on all five; mark 2 met, or no worse than the present package on song 52, whose figures came out the same note for note), **749.250 is in.** The package is b573749's with `LUTHIER_TITLE_EDGE=1`; it is written out in `coord/HANDOVER_maintainer.md`. Nothing runs on song 69.
+
+**Pop 3/4 with the overnight's metre-level forms: every mark met but K3.** Rule first (08e7873), no code. `studies/other_metres/RESULT_pop_3_4_b.md`; figures and met/missed printed from `pop_3_4_b.json`; the record carries its switches, the stress file and a judge that ran.
+
+- **Counted before the run, in the rule file:** the pop table's own rests for 749.245 (`3-4_pop_sung.rests.json`: 1,414 silences in 6,686 bars of 462 clips, 0.2115 a bar; a clip is a section, so rests between sections are not in it); and the table's kept two-bar windows beginning after the bar line, 0.10.
+
+| Pick; median | Last pop run (749.241) | This run | Mark |
+|---|---|---|---|
+| K1 living; pool | 593; 297 | 608; 304 | 30; 10 |
+| K2 notes a bar | 2.697; 2.634 | 2.662; 2.648 | 2.38 to 3.85 |
+| **K3 stressed on the first beat** | 0.278; 0.305 | **0.337; 0.326** | 0.45 |
+| **K3 stressed off the beat** | 0.358; 0.38 | **0.326; 0.348** | 0.26 |
+| K4 range; pitches | 17, 13; 16, 11 | 15, 12; 16, 11 | 12; 7 |
+| K5 commonest pitch | 0.217; 0.267 | 0.193; 0.273 | 0.303 |
+| K6 rhythm; figure again within sections | 0.409, 0.136; 0.4, 0.2 | 0.364, 0.136; 0.391, 0.2 | 0.349 to 0.871; 0.667 |
+| K7 | | in the voice; no leap | |
+| K8 780; 840 in ten | 0; 0.74 | 0; 0 | under one |
+| Marked lines drawn fresh, share | (1,023 a thousand builds) | 0.0004 | 0.076 |
+| 749.247's chord mark | | 84 moved on a beat, all chord tones (source 0.943) | the source's |
+
+- Nothing never made; lines beginning late 0.055 against the table's 0.10; every title line on time.
+- The forms shaped on 6/8 folk carry to a second metre and a second style without a new fault. One lyric, and a seen one.
+- **K3 is where it was, a little better and far from its mark.** It is the ordering (a window's count weighed over its stress fit), and 749.236's to mend.
+
+**Next: 749.236's rule.** Your plan of 27 November stands as I have it: fit the trade-off between a window's kept count and its stress fit on the worded pop 4/4 songs (Billboard); check it does not depend on metre by fitting it in 3/4 and in 4/4 on the lead sheets, and on OpenScore Lieder (CC0; 265 songs in 3/4, 216 in 6/8, worded); carried if they agree within their errors, deduced if not; "stress does not fall while the beat's strength rises" as a fitted feature. Lieder is not yet fetched; fetching and counting it is the first step and takes a while. Say if the order should be otherwise.
+
+Ask: check the pop result; and your word on starting 749.236 with the Lieder count.
