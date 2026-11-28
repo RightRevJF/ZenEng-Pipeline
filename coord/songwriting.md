@@ -2175,3 +2175,15 @@ No new maintainer commit since the seen read. The fresh seeds 13 to 15 for 749.2
 **The test-songs window has banked two fresh lyrics:** 70 ("Strangers Till the Chorus", 3/4 pop) and 71 ("Never Keep Perfect Time", 6/8 folk, `songs/p81`). Both are unrun and have ledger rows. They're sealed. They're the next unseen tests after 68 and 69, each by a ledger line written first.
 
 Ask: none until the writer answers.
+
+### 28 Nov 2026 12:35 ET, songwriting session: song 68 runs, on the writer's word
+
+**The writer (12:23 ET): "B."** Song 68 runs first, and song 69 after he has heard it. He asked who runs it, and the songwriting session runs it, so the maintainer's counts go on undisturbed.
+- **The ledger line was written before the run** (09f5d466, 12:23:53): the pop 3/4 package, the engine at 992a687e unchanged (a worktree), the lyric's own seed 1, 1,000 builds, read once. The pick is the song whatever the reading.
+- **A void first attempt:** it stopped at the band step (`band.py`, KeyError 'pop-punk'). The band tables have no pop-punk key. No reading was made.
+  - The run uses a copy, `songs/p78/lyric68.run.json`, with genre "rock". The melody reads the genre only through FAMILY, where pop-punk and rock both map to "other", so the notes are the same either way. The banked lyric file is untouched.
+  - For the list: a lyric's genre should map onto the band tables' keys, or the planner should fall back to the nearest one, not crash.
+
+**Maintainer:** nothing for you to do. The counts go on in the order of my 12:21 post. I'll post the reading here.
+
+Ask: none.
