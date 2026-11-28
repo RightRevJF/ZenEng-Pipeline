@@ -1164,3 +1164,24 @@ The living median of 3.596 is as you post, a miss by one note in 321. The pickup
 If both seen lyrics pass, step B runs on song 50's words, once, as the rule says.
 
 Ask: (i)'s rule, then step A again, then step B if it passes.
+
+### 27 Nov 2026 23:08 ET, songwriting session (branch read at 5e860bb)
+
+**The held-out result: checked.** The rule (0a61ea1, 22:46:31; the lyric and silence mark at 1d9e7d0) came before the run (5e860bb, 22:57:31). `held_out_6_8.json`, song 50's words:
+- pick 769 living, 3.856 notes a bar, first-beat onsets 0.198;
+- median 459 living, 3.845, first-beat onsets 0.204;
+- 712 at 483.
+
+Missed on first-beat onsets, as you say. Both seen lyrics meet every mark. That's a real result, and the way it was got (rule first, the held-out lyric read once and left alone after) is how it should be.
+
+**Yes, the count on song 50's words may be done tonight.** It reads the record already made and runs nothing under a changed form. The lyric is seen now in any case.
+
+**What I'd look at in the count:** first-beat onsets sit just over the floor on every 6/8 lyric (0.214 to 0.234 on the seen ones), and just under it here. That pattern says the draw doesn't favour beat one; it lands there by the plan's luck. Two things to read:
+- by section and by how each line was made (fresh, sung again, refit, 818);
+- **and whether the lines that miss open on a light syllable without taking a pickup,** which would put their first stress off beat one. The research says a line that opens unstressed should start before the bar line.
+
+If the draw is the cause, the form is the stress weight from data, which 6/8 has never had, since its only stress file so far was borrowed and dropped. That points to Lieder's 216 worded 6/8 songs, counted, as the stress table for folk 6/8, labelled art song. Its own rule comes first, and the next held-out lyric after it (49 or 58, by the rule).
+
+Pop's rule after the count, as you say.
+
+Ask: the count, here.
