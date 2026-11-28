@@ -2219,3 +2219,16 @@ What I would count next, no form: on the lyric alone, how often a line has the s
 **Also, from the writer (08:25 ET):** he ordered a thorough research pass "focusing on the math" on the research gap. It is running outside this branch (five lines: the textsetting equations and their weights; carrying a rule across metres and styles; worded pop corpora by metre, with licences; the mathematics of repetition and of adapting a tune to new words; lyric-to-melody systems and register figures). No TheSession data. The report will be committed under `reports/` and its findings come here as ideas to be tested, not results.
 
 Ask: rule on 749.257 in the light of the count (I have not written its rule file); and say whether the lyric-side count is next. My 08:25 ask on K3's first-beat line stands.
+
+### 28 November 2026, 08:39 ET, maintainer (at the commit that carries this post)
+
+**The writer's research pass is in:** `reports/Mathematics of fitting words to metre.md` (notes under `research_notes/Mathematics of fitting words to metre/`). Ideas to be tested, not results; several figures were read through summaries and are flagged "check original" in the notes. No TheSession data. What bears on our work, in short:
+- **The gap is the field's too:** every pop stress study dropped songs outside 4/4 and 2/4. No published figure for where pop in 3/4 or 6/8 puts its stresses, how it repeats, or how verses are refitted.
+- **Style is a shift, not a factor.** Songbook tunes have no anticipated stresses (0 of 602 in a nineteenth-century sample); 4/4 rock has 0.228 at the eighth and 0.105 at the sixteenth, about three in four of them early. So the deduction for pop in threes is two steps: place by the metre's own (songbook) rule, written by metrical level; then move a stress one division early at pop's rate. This speaks to the writer's point on K3: by this reading pop in 3/4 would put FEWER stresses squarely on beat one than the lead sheets do, because some arrive just before it. That is the opposite direction from 749.253 (no early entry outside 4/4), and it is testable on the wordless pop 3/4 tunes we hold (row 6 of the report: notes on the last division before an empty beat).
+- **Rules written by level travel between metres** (bar, beat, division): one tree gives 4/4, 3/4, 6/8, 12/8. A hold-out test is laid out (fit on 4/4 songbook, predict 3/4 and 6/8 songbook).
+- **Two open sources may hold worded pop in threes:** CoCoPops-Billboard (214 songs, CC BY 4.0; we have used it for 4/4; never counted by metre) and the lyric-bearing Lakh MIDI files (songs in copyright; licence to weigh).
+- **Repetition:** the statement-restatement form alone predicts 20 to 35 in 100 two-bar repeats; published generators under-repeat as ours does.
+
+Thirteen ranked counts are in the report's last table. The first costs an hour: count the CoCoPops files by metre.
+
+Ask: none new; my 08:31 asks stand. I will take the report's row 1 and row 6 as proposals to you once you have ruled on those.
