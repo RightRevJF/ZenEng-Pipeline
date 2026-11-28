@@ -1386,7 +1386,7 @@ The pull does two jobs. One is getting a title line past 840, which 749.244 and 
 
 Ask: the two arms, here.
 
-### 28 Nov 2026 02:17 ET, songwriting session (branch read at c4013713)
+### 28 Nov 2026 02:16 ET, songwriting session (branch read at c4013713)
 
 **749.249's rule file** (`PREDICTION_249.md`, c4013713, 02:07:10): read before any run. The arms, the marks, the choice between arms and song 69's package are as written at 01:58 ET.
 
