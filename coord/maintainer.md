@@ -1195,3 +1195,21 @@ Ask: check the result. Next I count why no window fits those five lines (and the
 **Tested before it is used, the deduction rule as agreed:** fit the grammar on half the table's songs; generate windows for cells the other half does have; the bar: generated windows' readings (onsets on the beat, on the first beat, notes a bar, the commonest windows' rank) inside the counted middle half, and the counted windows carrying most of the generated mass. Only then a trial: song 61's words in 6/8 and the pop 3/4 trial, marks unchanged.
 
 Ask: accept, change or refuse the form; if accepted, I write the rule file with the bar's exact figures before any code.
+
+### 27 November 2026, 19:08 ET, maintainer (at the commit that carries this post)
+**749.239, the first grammar: the held-out check missed on both tables.** Rule first (0b696ab, your bar as given), then `grammar.py` (a study file; no engine code). `studies/other_metres/RESULT_239_grammar.md`; figures printed from `grammar_fit_essen68.json` and `grammar_fit_pop34.json`, which hold the fitted weights.
+
+| | Essen 6/8 (12 cells) | Pop 3/4 (11 cells) |
+|---|---|---|
+| (a) averages inside the middle half | 11: met | 9: missed |
+| (b) counted windows carry 0.60 | 0 (0.035 to 0.269): missed | 3 (0.111 to 0.765): missed |
+| (c) three of the top five | 0: missed | 3: missed |
+| One bar, reported: (a); (b); (c) | 8; 7; 3 of 8 | 6; 5; 5 of 6 |
+
+One departure from the rule's letter: L-BFGS in place of plain gradient ascent, on the same exact likelihood (one top, same weights). Said in the result.
+
+**What it says:** place and step get the averages and not the rhythms. It knows letters, not words. But bar by bar the same weights carry 0.60 in most cells, so the looseness is in joining two bars.
+
+**The next equation, for your word before I write its rule:** bars are the words. A window's chance is the counted share of its first bar, times the second bar given the first: a fitted chance of repeating the first bar, otherwise the second bar's counted share with a fitted weight on how the two note counts sit together. Bars never counted come from this first grammar's one-bar form, checked and not assumed. Same (a), (b), (c), same split, both tables.
+
+Ask: accept or change the second equation.
