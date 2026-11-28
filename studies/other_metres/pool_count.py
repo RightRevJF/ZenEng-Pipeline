@@ -42,5 +42,23 @@ if __name__ == "__main__":
         if nine: o["meeting_all_nine_in_100"] = round(100 * float(np.mean([all(met(nine, k, c["_f"][k]) for k in nine) for c in cs])), 1); o["meeting_K5_in_100"] = round(100 * float(np.mean([met(nine, "commonest", c["_f"]["commonest"]) for c in cs])), 1)
         return o
     j = rec.get("judge7") or {}; pk = got["pick"]; pool = got["pool"]
+    stages = None
+    if all("d7" in c for c in got["alive"]) and j.get("gate") is not None:                    # the judge's steps in turn, as run() takes them
+        half = float(np.median([c["charge"] for c in got["alive"]])); first = [c for c in got["alive"] if c["charge"] <= half]; joint = [c for c in first if c["d7"] <= j["gate"] + 0.0005]
+        def units(c):
+            out = [0, 0, 0, 0]; by = collections.OrderedDict()
+            for x in sorted(sung(c["notes"]), key=lambda x: x["on"]): by.setdefault(x["sec"], []).append(x["on"])
+            for ons in by.values():
+                b0 = ons[0] // E.BAR; U = collections.defaultdict(list)
+                for o in ons: U[(o // E.BAR - b0) // 2].append(o - (b0 + 2 * ((o // E.BAR - b0) // 2)) * E.BAR)
+                for k_ in U:
+                    if k_ - 2 in U: out[0] += 1; out[1] += tuple(U[k_]) == tuple(U[k_ - 2])
+                    if k_ - 1 in U: out[2] += 1; out[3] += tuple(U[k_]) == tuple(U[k_ - 1])
+            return out
+        def st(cs):
+            u = [units(c) for c in cs]; return dict(builds=len(cs), rhythm_again_median=round(float(np.median([c["_f"]["rhythm_again"] for c in cs])), 3), meeting_rhythm_again_in_100=round(100 * float(np.mean([met(six, "rhythm_again", c["_f"]["rhythm_again"]) for c in cs])), 1), meeting_all_six_in_100=round(100 * float(np.mean([all(met(six, k, c["_f"][k]) for k in six) for c in cs])), 1), charge_median=round(float(np.median([c["charge"] for c in cs])), 3),
+                                              two_bar_units_taking_the_rhythm_two_back=round(sum(x[1] for x in u) / max(1, sum(x[0] for x in u)), 3), one_back=round(sum(x[3] for x in u) / max(1, sum(x[2] for x in u)), 3))
+        stages = {"living": st(got["alive"]), "past the old charge": st(first), "removed by the old charge": st([c for c in got["alive"] if c["charge"] > half]), "past the joint gate": st(joint), "the pool": st(pool) if pool else None}
+        stages["correlation_of_the_old_charge_with_rhythm_again_among_living"] = round(float(np.corrcoef([c["charge"] for c in got["alive"]], [c["_f"]["rhythm_again"] for c in got["alive"]])[0, 1]), 3)
     print(json.dumps(dict(title=L.get("title"), metre=sp["metre"], table=table, seed=sp.get("seed"), key=rec["key"]["key"], registers=sp.get("registers"), range_choice=j.get("range_choice"), key_pick=rec.get("key_pick") or j.get("key_pick"), plan=sp.get("plan"), made=rec["melody"]["made"], deaths=rec["melody"]["deaths"], marks_six={k: [None if x is None else round(x, 3) for x in v] for k, v in six.items()},
-                          living=desc(got["alive"]), pool=desc(pool) if pool else None, pool_in_the_record=j.get("pass_the_gate"), gates_passed=j.get("gates_passed"), how_the_pool_and_pick_are_made=j.get("pool"), pick=dict(fp=pk["fp"], fp_in_the_record=rec["melody"]["pick"], order_built_in_the_pool=(sorted(c["n"] for c in pool).index(pk["n"]) + 1) if pk in pool else None, figs={k: round(v, 3) for k, v in pk["_f"].items()}, lowest_highest=[min(n["p"] for n in pk["notes"]), max(n["p"] for n in pk["notes"])], meets_all_six=all(met(six, k, pk["_f"][k]) for k in six), meets_all_nine=all(met(nine, k, pk["_f"][k]) for k in nine) if nine else None)), indent=1))
+                          stages=stages, living=desc(got["alive"]), pool=desc(pool) if pool else None, pool_in_the_record=j.get("pass_the_gate"), gates_passed=j.get("gates_passed"), how_the_pool_and_pick_are_made=j.get("pool"), pick=dict(fp=pk["fp"], fp_in_the_record=rec["melody"]["pick"], order_built_in_the_pool=(sorted(c["n"] for c in pool).index(pk["n"]) + 1) if pk in pool else None, figs={k: round(v, 3) for k, v in pk["_f"].items()}, lowest_highest=[min(n["p"] for n in pk["notes"]), max(n["p"] for n in pk["notes"])], meets_all_six=all(met(six, k, pk["_f"][k]) for k in six), meets_all_nine=all(met(nine, k, pk["_f"][k]) for k in nine) if nine else None)), indent=1))
