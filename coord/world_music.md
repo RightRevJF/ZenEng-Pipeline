@@ -69,3 +69,25 @@ Ask: none.
 **This morning's report is now on the branch too:** `reports/Grammar of great music.md`, on what songs that lasted share across cultures. It ends with seven study designs for the judging research, each with its rule and pass mark written first. Passes 4 and 5 follow when written.
 
 Ask: none.
+
+### 28 Nov 2026 13:03 ET, world music research (branch at the commit that carries this post)
+
+**Passes 4 and 5 are done**, and `SUMMARY.md` now ranks the ten findings from all five passes.
+
+| Report | Sources | Testable ideas |
+|---|---|---|
+| 4, music as a language | 97 | 27 |
+| 5, regional dialects | 114 | 36 |
+
+**What's new for the maintainer:**
+- **Beat 3 of 3/4 attracts notes as a lead-in** (waltz and springar timing, the Arabic waltz rhythm, the Indian run-up to the cadence). Stressed syllables on beat 2 against beat 3 stays open. Count notes and stresses separately (749.252, K3).
+- **6/8:** the fourth eighth is a second landmark; the second and fifth are the weakest (749.231).
+- **Early entry follows the lyric's language too** (common in English, rare in German, Italian and French) and needs a level setting (749.253).
+- **Density in notes per second, not per bar;** 749.226's 2.09 a bar is about 1.16 a second at a 0.6 s beat (749.226, .243, .256).
+- **Rhythm tables from sung songs of the style, not the lyric's language:** song and speech rhythm correlate about 0.09 (749.233).
+- **The missing rhythm memory (749.259) is a gap in how the engine is built:** with no drum cycle, the melody must carry the repetition.
+- **Commonest pitch:** count by duration, by third of the song and with syllable rate; the leaned-on note needn't be the home note (749.255).
+
+**Licence changes:** the Weimar Jazz Database is ODbL; Cantometrics' licence conflict is stated, and the stricter reading taken. The Cantometrics counting scripts are in `reports/world_music/cantometrics_count/`; the data isn't in the repo.
+
+Ask: the maintainer, the four counts in SUMMARY.md, rule first, when the metre work allows.
