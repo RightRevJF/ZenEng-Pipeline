@@ -2232,3 +2232,34 @@ Ask: rule on 749.257 in the light of the count (I have not written its rule file
 Thirteen ranked counts are in the report's last table. The first costs an hour: count the CoCoPops files by metre.
 
 Ask: none new; my 08:31 asks stand. I will take the report's row 1 and row 6 as proposals to you once you have ruled on those.
+
+### 28 November 2026, 08:50 ET, maintainer (at the commit that carries this post)
+
+**The lyric-side count** (`studies/other_metres/RESULT_count_lyric_side.md`; rule file 0c8e9cb first). Lyric files and plans only; no notes made; song 68's words counted once, not run; 67 and 69 not opened. Your 08:38 rulings are read: 749.257 withdrawn; 749.258 on the list; K3's first-beat line watched and labelled "borrowed (lead sheets)" for pop 3/4, its off-the-beat line still a mark.
+
+| Lyric | Lines (median syllables) | The count of the line two above | Of the line above | Of the line it is marked to sing again |
+|---|---|---|---|---|
+| Song 68's words (written for 3/4; counted once, not run) | 54 (7) | 0.658 | 0.804 | 0.968 |
+| Song 55's words (the pop 3/4 trial lyric) | 56 (6) | 0.238 | 0.163 | 0.538 |
+| Song 49's words | 46 (7) | 0.618 | 0.65 | 0.917 |
+| Song 66's words | 57 (8) | 0.333 | 0.396 | 0.759 |
+| Song 50's words | 44 (8) | 0.25 | 0.237 | 0.75 |
+| Song 59's words | 42 (7) | 0.167 | 0.25 | 0.818 |
+| Song 58's words | 57 (7) | 0.279 | 0.24 | 0.588 |
+| Song 54's words | 58 (8) | 0.225 | 0.306 | 0.545 |
+| Song 61's words | 39 (8) | 0.296 | 0.091 | 0.421 |
+| Song 52's words | 36 (11) | 0.2 | 0.179 | 0.478 |
+| Pop 3/4 clips: a two-bar unit with the note count of the unit two before; one before | 446 clips | 0.356 | 0.283 | |
+
+- **Song 55's words match little; song 68's match a great deal.** A line of song 55 has the syllable count of the line two above 0.238 of the time, and of the line it is marked to sing again 0.538. Song 68: 0.658 and 0.968; the line above, 0.804 against song 55's 0.163.
+- **The pop clips sit between them, nearer song 55:** a two-bar unit has the note count of the unit two before 0.356 of the time, and when it does it takes the same rhythm exactly 0.65 of the time (0.231 over all, as counted before).
+- **So part of the six-mark shortfall is the trial lyric's.** The engine keeps a rhythm exactly where the counts match (0.935), and song 55's counts match rarely. Song 68, on its words alone, gives the engine about three times the room to repeat a rhythm exactly. The bar is not moved on that account, as you ruled; but the trial lyric was chosen on 27 November for its median line length alone, and on this property it is the least like song 68 of any lyric we hold but two.
+- **Song 49's words are the nearest to song 68's** on all three figures (0.618, 0.65, 0.917), with the same median line (7). It is a spent lyric. Song 68's own regularity is higher than the pop clips', so its builds may repeat more than pop does; K6's top line (0.871) is the one to watch there.
+- Song 55 read as 4/4 and as tried in 3/4 gives the same figures (checked): the count is of the words.
+
+What I would do next, for you to rule (each rule first):
+1. **Read the bar on a seen lyric that is like song 68 in this respect:** song 49's words in pop 3/4, the package unchanged, fresh seeds (7, 8, 9), the marks as they stand with K3's first beat watched. It tests the deduction directly: if matching counts are what the six-mark share wants, song 49's words should clear 76.2 where song 55's did not. If they do not, the lyric is not the cause and 749.258 is the road.
+2. **749.258** (the old charge reads each section against the section table), after that, as you ordered.
+3. From the writer's research report (`reports/Mathematics of fitting words to metre.md`, ideas only): its row 6 is a count on the wordless pop 3/4 clips we hold: how often a note falls on the last division before a beat with the beat left empty, against the same in the lead sheets. It bears on 749.253, which takes early entries away outside 4/4: if pop in threes arrives early at a rate of its own, the table does give a share after all, and 749.253's "none" should become that share. And its row 1: count CoCoPops-Billboard by metre (the corpus is not on this machine now; it would be fetched outside the repository as before).
+
+Ask: say whether song 49's words at seeds 7 to 9 is next, and in what order the rest.

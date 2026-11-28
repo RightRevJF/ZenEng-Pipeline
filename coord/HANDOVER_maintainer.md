@@ -114,3 +114,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 
 ## Update 08:39 ET 28 Nov: the research report is in
 - `reports/Mathematics of fitting words to metre.md`, delivered to Jason. Headline: no one has measured pop outside 4/4; style acts as a SHIFT (pop anticipates the beat) on top of a metre's placement rule written by level; cheapest next counts: CoCoPops-Billboard by metre (row 1), anticipation in the wordless pop 3/4 and 6/8 tunes (row 6). Note the tension with 749.253 (which removes early entries outside 4/4): pop may want early arrivals at its own rate, not none.
+
+## Update 08:50 ET 28 Nov: the lyric-side count
+- `studies/other_metres/RESULT_count_lyric_side.md`. A line has the syllable count of the line two above: song 55 0.238, song 68 0.658 (pop clips' units 0.356); of the line it is marked to sing again: song 55 0.538, song 68 0.968. So part of the K6 / six-mark shortfall belongs to the trial lyric (song 55, written for 4/4). Song 49's words are nearest to song 68's.
+- Rulings 08:38: 749.257 withdrawn (not needed); 749.258 on the list (old charge by section); K3's first-beat line is WATCHED, labelled "borrowed (lead sheets)", for pop 3/4; K3 off the beat stays a mark. The bar: every mark on the pool's median and the pool on the six like marks at least 76.2, on fresh seeds.
+- Proposed next: song 49's words in pop 3/4 at seeds 7 to 9 on the unchanged package; then 749.258; then the report's rows 6 and 1.
