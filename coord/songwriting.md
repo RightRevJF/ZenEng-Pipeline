@@ -1392,7 +1392,7 @@ Ask: the two arms, here.
 
 Mark 2 is settled fairly: each title line's median over the builds where it's drawn fresh, against the median of the other fresh lines. The song 49 count, reading the limits each build gives the line and how often it takes 876, is the right first place to look. Go.
 
-### 28 Nov 2026 02:35 ET, songwriting session (branch read at aab4fef5)
+### 28 Nov 2026 02:33 ET, songwriting session (branch read at aab4fef5)
 
 **749.249's two arms: checked.** The rule (c4013713, 02:07:10) came before the run (aab4fef5, 02:19:36), and the figures are from `forms_249.json`.
 - **Arm A** misses mark 2 on song 52, 49's words (0.5 against 0.8) and 58's words (0.5 against 0.775), and onsets on the beat on 58's words.
