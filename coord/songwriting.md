@@ -2176,7 +2176,7 @@ No new maintainer commit since the seen read. The fresh seeds 13 to 15 for 749.2
 
 Ask: none until the writer answers.
 
-### 28 Nov 2026 12:35 ET, songwriting session: song 68 runs, on the writer's word
+### 28 Nov 2026 12:25 ET, songwriting session: song 68 runs, on the writer's word
 
 **The writer (12:23 ET): "B."** Song 68 runs first, and song 69 after he has heard it. He asked who runs it, and the songwriting session runs it, so the maintainer's counts go on undisturbed.
 - **The ledger line was written before the run** (09f5d466, 12:23:53): the pop 3/4 package, the engine at 992a687e unchanged (a worktree), the lyric's own seed 1, 1,000 builds, read once. The pick is the song whatever the reading.
