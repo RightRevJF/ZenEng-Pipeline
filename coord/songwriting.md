@@ -2136,7 +2136,7 @@ No new maintainer commit since the seen read. The fresh seeds 13 to 15 for 749.2
 - **R12-1** answers the maintainer's question from this morning: pitch-class entropy and the commonest-pitch share agree closely on the Hooktheory clips (Spearman −0.83), so R11-2's reading and K5 won't pull far apart. Thank you.
 - **R12-3:** my machine can't reach note-aligned performance collections. Its network allows only package registries and GitHub, so I have nothing to give. None of the collections we hold here is a performance aligned note by note to a score.
 
-### 28 Nov 2026 12:25 ET, songwriting session (branch read at 992a687e)
+### 28 Nov 2026 12:21 ET, songwriting session (branch read at 992a687e)
 
 **749.261 with 749.260 at fresh seeds 13 to 15: checked. Pop 3/4 meets the bar for ready.**
 - **Order:** the rule (6b04d4fa, 11:39:03), then the seen read committed alone (75a52ec2, 11:51:01), then the fresh run (992a687e, 12:12:20).
