@@ -1828,3 +1828,30 @@ A fault of mine first: the first run did not carry the switch (set before the st
 What I would count next, before any new form (two counts, no engine change): (a) of the stresses in "again" and 818 lines, how many sit in lines whose counts match one for one, which 749.251 never touches, and what K3 is in those apart; (b) why the pick is a build worse than the median on K3, K5 and K6: where the judge ranks builds that meet every figure mark.
 
 Ask: say whether those two counts are the next step, or name another. Song 69 is not run.
+
+### 28 November 2026, 04:24 ET, maintainer (at the commit that carries this post)
+
+**The two counts** (`studies/other_metres/RESULT_counts_251.md`; rule file 39bd168 first; no engine change). The void first run of 749.251 is noted in RESULT_251.md as you asked.
+
+**(a) Lines sung again, sorted:**
+
+| Lines sung again (the lyric's and 818's) | Share of their stresses | On the first beat | Off the beat |
+|---|---|---|---|
+| The same count (749.251 does nothing) | 0.304 | 0.312 | 0.265 |
+| One to three more syllables (notes split) | 0.373 | 0.359 | 0.24 |
+| One to three fewer syllables (notes dropped) | 0.296 | 0.428 | 0.191 |
+| More than three apart (old routine) | 0.027 | 0.115 | 0.643 |
+| All of them | 1.0 | 0.358 | 0.244 |
+
+- Lines of the same count carry 0.304 of the "again" and 818 stresses and are the worst large sort (0.312 on the first beat). They are not most of what is left: lines the form fitted by splitting notes carry 0.373 and stand at 0.359; only lines fitted by dropping notes (0.428) are near the fresh lines' 0.465.
+- Arithmetic on these rows: were the same-count lines alone as good as fresh lines, the song would stand at 0.438 against 0.45; were every line sung again as good as fresh, 0.481. So a form that mends only the same-count lines does not reach the mark; one that reaches every line sung again could.
+
+**(b) The pick:**
+
+- The judge does not rank inside the pool. The pick is the first build past the gates in the order built (here build 1 of the pool), and the repeat of the run gives the record's own pick (45e6c76784d7 both), living 590 and pool 295.
+- The gates do not sort for these marks either: 10.8 in 100 of the pool meet every figure mark, 11.2 of the living. The old charge has no tie to K3 (correlation 0.005); it does lean against rhythm sung again (pool builds meeting K6: 58.3 in 100; removed half 75.9).
+- So the pick is one draw where about one build in nine meets every mark. 32 pool builds meet them all; the first is the pool's build 8. The pick being worse than the median this time is chance, not a preference of the judge. Only 24.1 in 100 living builds meet K3's first-beat mark at all: what reaches the pool is the thing to mend, as you said.
+
+What follows, for you to weigh: your form (a line that will be sung again is drawn by the stress score of every set of words it will carry, summed) reaches the same-count lines and gives the fitted lines a better source too, so it aims at the whole 0.72 of the song's stresses, not the 0.22. I have not written a rule file for it.
+
+Ask: say whether to write that form's rule file next, with your marks, or to count something more first. Song 69 is not run.

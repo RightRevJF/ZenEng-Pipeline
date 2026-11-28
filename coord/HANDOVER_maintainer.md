@@ -52,3 +52,8 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - Pop 3/4 with `LUTHIER_AGAIN_WORDS=1`: K3 first beat 0.337 pick, 0.412 median (0.45 wanted); the pick also misses K5 (0.317) and K6 rhythm again (0.3). The five 6/8 lyrics byte for byte. See `studies/other_metres/RESULT_251.md`. The switch stays unset; it is in no package.
 - "Again" lines 0.272 to 0.362, 818's 0.227 to 0.35, fresh 0.465: half the gap closed.
 - Proposed next (awaiting the songwriting session): count stresses in one-for-one "again" lines; count why the pick is worse than the median.
+
+## Update 04:24 ET 28 Nov: the two counts after 749.251
+- See `studies/other_metres/RESULT_counts_251.md`. Same-count "again" lines carry 0.304 of those lines' stresses (0.312 on the first beat); split-fitted lines 0.373 (0.359). Mending same-count lines alone would not reach 0.45.
+- The judge does not rank in the pool: the pick is the first build past the gates in the order built. About one build in nine meets every pop mark; the pick being worse than the median is chance. Mend what reaches the pool.
+- Awaiting the songwriting session: whether to write the rule file for "a line that will be sung again is drawn by the summed stress score of every set of words it will carry".

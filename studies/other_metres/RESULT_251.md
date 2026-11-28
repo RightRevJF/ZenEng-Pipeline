@@ -56,3 +56,7 @@ Every switch unset, byte for byte: 54: same, 55: same, 52: same, 53 Essen arm: s
 - Off the beat 0.25 to 0.30: the median is 0.203, better than I said; the pick 0.321, worse.
 - K6 holds: **wrong on the pick.**
 - The 6/8 lyrics byte for byte: yes.
+
+## Log of runs
+- Run 1 (03:5x ET), pop 3/4: **void.** The switch was not carried (the record shows `again_words` unset); its figures are not reported and count for nothing. The five 6/8 runs and the unset songs of that pass were also run again after the line was moved; those are the ones reported.
+- Run 2, pop 3/4, and the 6/8 and unset runs after the line moved: reported above.
