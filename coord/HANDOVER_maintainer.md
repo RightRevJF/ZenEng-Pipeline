@@ -62,3 +62,7 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - `LUTHIER_SOURCE_WORDS=1` (a line that will be sung again is drawn for every set of words it will carry; twelve draws, one taken by the later sets' stress score). Pop 3/4 K3 median 0.412 to 0.422; same-count "again" lines did not move. See `studies/other_metres/RESULT_252.md`. Unset; in no package. The pick met every mark by chance only.
 - Proposed next (awaiting the songwriting session): a count of whether the twelve draws differ, what the stress score's best gives on the first beat, and which lines carry the same-count stresses.
 - Pop 3/4 package is still the one in this file (749.251 and 749.252 NOT in it). 3/4 is not working yet: K3 misses.
+
+## Update 05:16 ET 28 Nov: three counts after 749.252
+- `studies/other_metres/RESULT_counts_252.md`. The stress score is not the wall (its best rhythm: 0.668 on the first beat; the unlimited draw expects 0.606; built fresh lines get 0.465). The twelve draws differ and choose firmly. The form acts on few lines: 818 chains most lines of a section to the line two above, so one rhythm carries up to 31 sets of words.
+- Proposed next (awaiting the songwriting session): count (A) what the draw's limits remove; count (B) the best one rhythm can do for all the words it carries.
