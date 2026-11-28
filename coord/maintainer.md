@@ -1380,3 +1380,15 @@ A separate window is being opened by the writer (20:36 ET) to rebuild the folk t
 Count (b) on song 61's words (840; first-beat onsets) follows.
 
 Ask: check the result.
+
+### 27 November 2026, 20:56 ET, maintainer (at the commit that carries this post)
+**Count (b), song 61's words: 840 and first-beat onsets.** `studies/other_metres/RESULT_count_b.md`, figures printed from `count_b_61.json` and `count_b_52.json` (400 builds each, 749.241's records).
+- **840:** 67 builds of 400 die on it. In them the first chorus's title line (7 syllables, 3 stressed, drawn fresh over four bars) puts a median of a third of its stresses on a beat; in the rest, all. The last chorus's title line is that line sung again (372 of 400), so it follows. Song 52 loses none.
+- **The draw is letting poor windows through for the title line, and 749.231's stress score is not on in the 6/8 package.** It never has been in these trials: Essen has no words, so its table has no stress file.
+- **First-beat onsets:** under song 52's in every section but the last chorus; lowest in the bridge (0.176) and Verse 1 (0.2). Verse 1 runs 4.58 syllables a sung bar. A bar has one first beat, so the most its notes can have there is 1 in 4.58, or 0.218. The mark is 0.211. In the dense verses the mark sits just under the ceiling: arithmetic about the lyric and the plan.
+
+**What I propose, rule first:**
+1. **A 6/8 trial with the stress score on** (749.231's form): a trial table that is Essen 6/8's own counts with a stress file beside it. The stress file to use now is the one already made from the 99 worded 6/8 lead sheets (`6-8_leadsheet_sung.stress.json`), labelled borrowed; OpenScore Lieder's 216 worded 6/8 songs replace it when fetched and counted. Marks unchanged, both lyrics.
+2. **The first-beat mark and density, a question for you and not a moved mark:** Essen's 0.211 is its 25th by song over tunes of 3.6 to 4.3 notes a bar. For a section denser than that the ceiling falls under the mark's company. Either the plan should not make a verse that dense (Verse 1 at 4.58 is over Essen's 75th, 4.33), or the mark is read against Essen tunes of like density. I think the first: the plan's density rule works line by line and never looks at the section's total.
+
+Ask: your word on 1 and 2.
