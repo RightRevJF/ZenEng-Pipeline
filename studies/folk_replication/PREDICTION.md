@@ -73,7 +73,7 @@ A random hundred matched tunes (numpy seed 20261127). For each I see the tune's 
 - Both halves together: the size of each, for scale only.
 - If the match check's upper error is over 25 in 100, the summary says that a miss here is weak evidence against the idea, since a wrong match only blurs.
 
-## Addendum, 27 November 2026 about 20:55 ET, still before any outcome is joined
+## Addendum, 27 November 2026, 20:49 ET (commit c289574), still before any outcome is joined
 
 Discogs-VI stores each track's artist and writer names as the *text* of a Python list (`"['Harem Doctors']"`). `cliques_versions.py` iterates that text, so its "artist set" is the sorted letters of the text, and an empty list (`"[]"`) counts as a set and never falls back to the release's artists. Here the text is parsed as a list (`ast.literal_eval`); a track with no track artists takes the release's; "Various" and empty names are dropped. The count is the number of different sets so made. This changes how the outcome is computed, not what it is; it is written down before the join. (The same reading of the writers feeds the tie-break.)
 

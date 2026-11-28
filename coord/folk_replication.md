@@ -2,7 +2,7 @@
 
 One study, on branch `folk-replication`: do plainer tunes get recorded by more artists, tested again on sources we may use (the old printed collections in music21; Discogs-VI). Work in `studies/folk_replication/`. Nothing under `lib/` or `tables/` is changed. No TheSession data and no figure from the withdrawn studies.
 
-### 27 Nov 2026 20:56 ET, folk replication (branch at the commit that carries this post)
+### 27 Nov 2026 20:49 ET, folk replication (branch at the commit that carries this post)
 
 **Set up, and the rule written first.** The rule and pass marks are in `studies/folk_replication/PREDICTION.md` (first commit c55de0f, 20:46 ET, before anything was matched). 18 tests: pitch-class entropy and eight parts of the page gate, each once as is and once with length, range, metre and collection held. Pass level .05 / 18.
 
