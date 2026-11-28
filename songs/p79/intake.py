@@ -24,3 +24,5 @@ LOG.append({"when": "2026-11-27", "q": "Who sings it? A (Recommended) a weathere
 VOICE = "baritone"; ARRANGEMENT_NOTE = "other voices (the men from the line) join the final chorus"
 LOG.append({"when": "2026-11-27", "q": "When does it get its music? A (Recommended) hold until 6/8 passes on both test lyrics, then made for real by the engine; B a hand-built sketch now; C run the engine now", "answer": "A. Did you miss your pass working on this. If so, note my selection and then move on to that work, returning to this when you're done"})
 STATUS = "locked, banked, unrun; made for real by the engine once 6/8 passes on songs 52 and 61"
+LOG.append({"when": "2026-11-28 07:02 ET", "q": "6/8 passed overnight on a held-out lyric (song 58's words), package settled (b5737493's with LUTHIER_TITLE_EDGE=1). How should we run song 69? A (Recommended) now, on the settled package; B wait and run it with the 3/4 song once pop 3/4 is ready; C now, with 749.253 added", "answer": "B.  Let's keep all our energies focused on the meter problem."})
+STATUS = "locked, banked, unrun; runs together with song 68 once pop 3/4 is ready (writer's B, 28 Nov 07:02 ET); package settled"

@@ -3,6 +3,7 @@
 A fresh songwriting window should read this first, then `coord/THREAD.md`, then the bottom of `coord/maintainer.md` (on `luthier-v8-stage1`), `coord/judging_research.md` and this file's companion `coord/songwriting.md`.
 
 ## The writer's standing instructions (Jason)
+- **28 Nov 07:02 ET:** songs 68 and 69 run together once pop 3/4 is ready; all energy on the metre problem.
 - **Metres first.** "Prioritze these fixes" (15:42 ET). Nothing is built until 3/4 and 6/8 meet their marks (20:01 ET). The next edition goes to Claude Code for the app.
 - **Check-ins every 15 minutes,** alternating with the maintainer, until 3/4 and 6/8 write properly.
 - **Extrapolate mathematically,** test, try again on a miss (18:50 ET). Missing cells are deduced "like in algebra", proved first on a cell that can be counted. The notes alone are the test.
@@ -21,7 +22,7 @@ A fresh songwriting window should read this first, then `coord/THREAD.md`, then 
 ## Songs banked (not to be run as trials)
 - **67** "A Door in the Coral" (p77): held until the drafting fix.
 - **68** "Save Me from My Muse" (p78): a 3/4 punk waltz, high tenor, Hooktheory pop table. The real 3/4 test once pop 3/4 passes. Ask Jason one question before running.
-- **69** "Learned It from My Hands" (p79): a 6/8 folk protest ballad, baritone with the line's voices on the last chorus. **6/8 passed on held-out song 58's words (7f8f67d7). Ready: ask Jason one question in the morning before running.**
+- **69** "Learned It from My Hands" (p79): a 6/8 folk protest ballad, baritone with the line's voices on the last chorus. **6/8 passed on held-out song 58's words (7f8f67d7). Asked Jason 28 Nov 07:01 ET; he chose B (07:02): wait and run it together with song 68 once pop 3/4 is ready. 'Let's keep all our energies focused on the meter problem.'**
 
 ## The lists
 - **Fix list for v54:** `songs/p68/fixlist_v54.md` and Doc https://claude.ai/artifact/PeBRPVydu8R92mMJtPPd5V. Next number 749.255. The Doc is current to the held-out reading (5e860bb).
