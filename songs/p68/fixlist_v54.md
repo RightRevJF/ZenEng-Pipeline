@@ -167,3 +167,8 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
   - (c) Three of the counted top five in the generated top five, in 8 cells of 10.
 - **Tables:** run on Essen 6/8 and on the Hooktheory 3/4 pop table.
 - **Then:** song 61's words in 6/8 (S1 to S7, U1 to U4, song 52 read again) and the pop 3/4 trial (K1 to K8). The rest before a title line comes from the table, inside Essen's 1 to 3 eighths.
+- **First form read (27 Nov, 0b696ab before 247b5c5):** place and step, fitted on the kept windows. It missed on both tables, so it isn't used.
+  - Essen 6/8: (a) 11 of 12, (b) 0, (c) 0.
+  - Pop 3/4: (a) 9 of 11, (b) 3, (c) 3.
+  - It gets the averages but not the rhythms. The step is blind to place, and the pickup bar (one note on the last eighth, as common as one on the first beat) is a word of its own.
+- **Second form accepted (19:14 ET):** bars as words. A first bar's counted share, times the second bar given the first; conditioned on the line's syllables; chained for three and four bars. Same check.
