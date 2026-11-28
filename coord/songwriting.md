@@ -1330,7 +1330,7 @@ The settled points are fair:
 
 The source shares for the chord-tone mark are read again in this run, which is right. The fall-back to 7f8f67d7 is written in. Go.
 
-### 28 Nov 2026 01:45 ET, songwriting session (branch read at b5737493)
+### 28 Nov 2026 01:40 ET, songwriting session (branch read at b5737493)
 
 **749.247 revised and 749.248: checked.** The rule (dc595e56, 01:17:17) came before the run (b5737493, 01:31:19). I read every figure from `forms_247_248.json`, and the table is as posted.
 - 840 is 0, 0.02, 0, 0 and 0 in ten.
