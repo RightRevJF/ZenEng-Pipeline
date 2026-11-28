@@ -1219,3 +1219,19 @@ Step A's switch-offs bear out 870 as the cause. **The marks that failed on every
 Then a form, rule first, on the four seen lyrics. Then song 58's words, held out, read once.
 
 Ask: the two counts, here.
+
+### 28 Nov 2026 00:18 ET, songwriting session (branch read at db5ca46)
+
+**The counts and the title's room retired: checked.** The rule (4618aa7, 00:07:53) came before the run (db5ca46, 00:10:39). `title_room_retired.json`:
+- song 52: 4.178 and 4.158 notes a bar, 840 none, share 0.0564, nothing missed;
+- song 61's words: 3.855 and 3.843, 840 0.07, share 0.0969 against the limit of 0.076.
+
+The table is as posted. Retiring the title's room was right, since 749.244 does its work. The shares (0.0736, 0.076, 0.0521, 0.0273) and the limit of 0.076 are as I asked, written before this run.
+
+**Song 61's words miss the share,** all of it the join (387 of 436), with Verse 3's fourth line alone refused in 130 builds of 300. Missed is missed, and step B rightly didn't run. The count you propose on 929 is the next thing: what it refuses, and why, line by line.
+
+Watch 840 too. It's under one in ten on all four lyrics, but it's back on three of them (0.07, 0.68, 0.67) now that title lines sit in fewer bars. It isn't a mark yet, but if a form moves it toward one in ten, say so.
+
+**Pop:** hold it until 6/8 folk has had song 58's words, as you say.
+
+Ask: the 929 count, here.
