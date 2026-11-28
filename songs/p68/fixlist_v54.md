@@ -325,3 +325,9 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Problem:** 959 (no leap past an octave inside a line) is set only for 4/4 (this morning's list, 41d13617). In pop 3/4, song 49's words' pick held such a leap at two seeds of three (53828cef).
 - **Fix:** 959 acts outside 4/4. It needs no table.
 - **Check:** no pick with such a leap at any seed, and every other mark as it stands.
+
+## 749.261. A line sung again draws its own melismas, which breaks its source's rhythm as sung
+- **Problem:** on the notes as made, rhythm sung again within sections is 0.5 to 0.529 (the clips: 0.625), and K6's line is met in 98 to 100 builds in 100. As sung, with second notes placed, it falls to 0.353 where the seed drew a melisma share of 16.2 in 100 syllables, and to 0.471 where it drew 3.8. Each melisma adds an onset to one line's bar and not to the bar of the line that sings it again. Over twelve seen seeds the share drawn orders the six-mark share (rank −0.93 on song 49's words, −0.65 on song 55's). The share itself is 848's 4/4 quartiles in every metre (ad70d457, `RESULT_count_melisma_share.json`).
+- **Fix:** a line that sings an earlier line again takes its second notes where its source has them, wherever its syllable there allows. Lines drawn fresh draw their own. The share drawn is unchanged.
+- **Check:** seen seeds 1 to 12 as a read, then fresh seeds 13 to 15 with 749.260 against the bar for ready. Watched: rhythm again as made and as sung, different bar rhythms as sung, and the melisma share as sung.
+- **Then:** the melisma share outside 4/4, by the deduction method (3/4 against 4/4 lead sheets).

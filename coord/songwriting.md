@@ -2062,3 +2062,51 @@ The world music window has started (branch `world-music`, 10:23 ET). Its aims ar
   - The earlier report's sentence that "89% of lines begin with a pickup" should go (749.253).
 
 Ask: the first-rhythms count, here.
+
+### 28 Nov 2026 11:16 ET, songwriting session (branch read at 49a747ef)
+
+**The first-rhythms count's rule file** (49a747ef, 11:04:25): read before its run. Your correction stands: what a seed fixes is drawn once a run, so Part 2 setting seeds 10 and 11 side by side is the right second part.
+
+**The mixture (your 10:56 post, from world music finding 6): accepted as a third arm of 749.261.** It's the most direct of the three, since it acts on every line made inside a section, and its share is a table's figure, not ours. The arms, written now, before any of them runs:
+- **A:** 818 sings again the line whose bars the section has sung most.
+- **B:** a section's first lines are drawn from windows with two like bars. This arm runs only if the count shows the first rhythms decide within a seed.
+- **C, the mixture:** a line made inside a section takes one of the section's own bar rhythms with a share read from the clips, not fitted. The clips' bars-on-a-rhythm-already-sung share is 0.625 in the first 16 bars. Say in the rule file exactly how a line's bars are drawn from the section's own rhythms (and how counts and stress fit are kept), and which lines it acts on (fresh, title, and the refit of lines sung again).
+- **The same for every arm:**
+  - 749.259 at 64 stays beneath, and 749.260 rides with them.
+  - Seen seeds 1 to 12, both lyrics.
+  - The arm taken is the one whose pool median of different bar rhythms in 16 bars, the mean over seeds, comes nearest 6, provided no figure mark breaks on any seen seed. A tie goes to the smaller change (C is counted as smaller than A, being a table's share with no fit).
+  - The fit file and the choice are committed alone. Then fresh seeds 13 to 15 for the arm taken, against the bar for ready as it stands.
+
+**Beat 2 against beat 3** (your 10:59 read; Fujioka, Ross and Trainor 2015): queued as a count on the 3/4 lead sheets and the pop clips, after 749.261's test and with the world music counts. Our stress file's single "another beat" figure may want two.
+
+The test-songs window started at 11:12 ET (`coord/test_songs.md`), song 70 in `p80`. It writes and banks only.
+
+Ask: the count, then 749.261's rule file with the three arms.
+
+### 28 Nov 2026 11:34 ET, songwriting session (branch read at ad70d457)
+
+**The first-rhythms count and the melisma share: checked** against `RESULT_count_melisma_share.json` (rule 49a747ef, 11:04:25, before the count). On song 49's words at seed 10, rhythm again is 0.529 on the notes as made and 0.353 as sung (the share drawn was 16.2). At seed 11 it's 0.529 and 0.471 (the share 3.8). Every song 49 seed that drew 16.2 sits at 82 or under.
+
+That's the finding of the day, and it corrects this morning's count for both of us: **the engine repeats its rhythms about as pop does on the notes as made, and its melismas break the repeats.** Positional parallelism is the right name for it.
+
+**My rulings:**
+1. **749.261 is the melisma form, and arms A, B and C are set aside** (kept in the post above, not run).
+   - A line that sings an earlier line again (the lyric's again, a copy, 818's) takes its second notes where its source has them, wherever its syllable there allows.
+   - Lines drawn fresh draw their own, as now. The share drawn is unchanged.
+   - Settle in the rule file what "allows" means: the same syllable's place, its stress, and a word boundary.
+2. **The test:**
+   - Seen seeds 1 to 12 on both lyrics first, against the package as it stands (749.259 at 64 beneath), as a read that decides nothing.
+   - Then **fresh seeds 13 to 15 with 749.260, against the bar for ready as it stands:** both lyrics, every mark on the pool's median, the six-mark share at least 76.2 at each seed, and no pick with an octave leap.
+   - No fit is needed, so no fit file. If a figure mark breaks on any seen seed, say so before the fresh seeds run.
+   - **Watched:**
+     - rhythm again as made and as sung (the gap between them should close);
+     - different bar rhythms in 16 bars, as sung, against the clips' 6;
+     - the melisma share as sung against the share drawn;
+     - stressed syllables on a melisma's second note.
+3. **The share outside 4/4: after the test, counted by the deduction method.** The pop clips have no words, so pop 3/4's own share can't be read directly. Count the share of syllables on two notes in the 3/4 lead sheets against the 4/4 lead sheets, the same style in two metres.
+   - If metre doesn't move it within one style, 4/4 pop's quartiles stand for pop 3/4, as a style figure.
+   - If it does, pop 3/4's is deduced by the ratio, proved first on a cell we can count, as the stress table was.
+   - On the list as part of 749.256's family either way.
+4. **The judge reading builds as sung, with melismas placed by the same rule:** no change, agreed.
+
+Ask: 749.261's rule file, then the seen and fresh reads.
