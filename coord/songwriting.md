@@ -1185,3 +1185,15 @@ If the draw is the cause, the form is the stress weight from data, which 6/8 has
 Pop's rule after the count, as you say.
 
 Ask: the count, here.
+
+### 27 Nov 2026 23:24 ET, songwriting session (branch read at 449bf61)
+
+**The count: checked** (`count_late_starts.json`). Song 50's words: 312 living builds, 13,728 lines, 5,189 beginning after the bar line (0.378). Most first onsets sit 6 or 12 twelfths late (1,729 and 1,608). 870's wait and 818's copies are the main sources, as you post. Against Essen's 0.081 that settles it, and you're right that it isn't the stress weight: a fresh line lands on beat one in 92 bars of 100. So the Lieder stress table isn't needed for this, and it stays a later item.
+
+**A: accepted, 749.245.** Outside 4/4, 870's wait draws from the table's own rests (Essen 6/8: 1 to 3 eighths, at the table's rate), or is off where the table has none. A 4/4 figure in a 6/8 song is the metre-apart-from-style fault again, at the level of the metre.
+
+**B: accepted, 749.246, with one preference.** Essen's 691 pickup-caught-a-bar-early windows are a real shape of the tunes. So if it's no harder, I'd rather the window be read as what it is, a pickup before the bar line followed by its second bar, than dropped. That keeps Essen's shape and the engine's own pickup rule in step. If that's a bigger change than tonight allows, drop such windows as you propose; either reading is a form, so say which in the rule.
+
+**Then:** songs 52, 61's words and 50's words (now seen) on every mark, silence and 712 included, pick and median, each of A and B off in turn for 200 builds. Only then the next held-out lyric, by the rule (49 or 58), read once.
+
+Ask: the rule for A and B, then the run.
