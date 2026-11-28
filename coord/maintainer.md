@@ -1598,3 +1598,36 @@ Ask: check the result; your word on the tie-break, and on the 712 mark where the
 Pop's rule is still owed; I am holding it until 6/8 folk has had its held-out lyric, unless you want it sooner.
 
 Ask: check the result.
+
+### 28 November 2026, 00:41 ET, maintainer (at the commit that carries this post)
+**The 929 count, the form from it, the four seen lyrics, and the third held-out lyric: song 58's words, read once, meet every mark.**
+
+**The count** (`RESULT_why_join_refuses.md`): every refusal at the join, on all four lyrics (387, 254, 89 and 102 in 300 builds), is one thing: a run of one pitch over the cap of three inside the line. These songs are not aimed, so nothing is carried in and the join's own mend is not offered. In every case the source's longest run is two or three and the copy's is four to six: the copy makes the run (a note split off repeats its neighbour; notes moved onto the new chord land together).
+
+**The form, rule first (0b92d08):** a line sung again mends its own run; the note that takes a run over the cap moves a scale step toward the next different note, inside the register. `LUTHIER_AGAIN_RUNS=1`, unset by default; bytes the same unset. Its number is yours.
+
+**`RESULT_held_out_3_6_8.md`**, figures and met/missed printed from `held_out_3_6_8.json` by one command; every record carries its switches and a judge that ran.
+
+| Pick; median | Song 52 | Song 61's words | Song 50's words | Song 49's words | **Song 58's words (held out)** | Mark |
+|---|---|---|---|---|---|---|
+| Living; pool | 906; 212 | 742; 371 | 702; 273 | 656; 226 | 759; 156 | 30; 10 |
+| Notes a bar | 4.149; 4.158 | 3.855; 3.843 | 4.077; 4.099 | 3.772; 3.75 | 4.061; 4.035 | 3.60 to 4.33 |
+| On the beat | 0.453; 0.451 | 0.456; 0.443 | 0.437; 0.448 | 0.49; 0.492 | 0.425; 0.487 | 0.389 |
+| First beat | 0.236; 0.235 | 0.253; 0.248 | 0.235; 0.237 | 0.256; 0.257 | 0.218; 0.243 | 0.211 |
+| 731 | 0.608 | 0.524 | 0.55 | 0.629 | 0.637 | 0.40 |
+| 840 in ten | 0 | 0.09 | 0.84 | 0.63 | 0.4 | under one |
+| Title on time (lowest) | 100 | 100 | 100 | 92.5 | 94.9 | 75 |
+| Silence before a title line | 2 | 2 | 2 | 2 | 2 | 3 |
+| "Again" drawn fresh, share | 0.0 | 0.0153 | 0.0 | 0.0009 | 0.0001 | 0.076 |
+| Never made, of 600 | 0 | 0 | 0 | 0 | 0 | |
+| Lines beginning late | 0.067 | 0.026 | 0.037 | 0.034 | 0.028 | Essen 0.081 |
+
+- Song 58's own share without 749.240, 749.241 and the run mend was 0.0422 (291 of 6,900), so its limit was 0.076; it draws 1 of 6,900 fresh.
+- **840, as you asked me to watch:** before this form 0, 0.07, 0.68, 0.67; now 0, 0.09, **0.84**, 0.63, and 0.4 on the held-out lyric. Song 50's words are near the limit. It moved toward one in ten on one lyric; I say so.
+- The nearest the held-out lyric comes to a mark: first-beat onsets on the pick, 0.218 against 0.211.
+
+**What it is not:** proof that 6/8 works. Five lyrics written for 4/4; one held-out pass; no unseen spent folk lyric left. Song 69 is the test that counts, and whether it runs is yours to put to the writer. Nothing is built; `coord/HANDOVER_maintainer.md` carries the package and where everything stands.
+
+**Next on my side, while 6/8 waits for him:** pop 3/4 with the metre-level forms of tonight added (rule first), then 749.236. And a count on 840 creeping back (which title lines, in which bars) before it reaches its limit.
+
+Ask: check the result; the number for the run mend; and your word on the order (pop next, or the 840 count first).

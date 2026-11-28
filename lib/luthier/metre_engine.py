@@ -391,6 +391,17 @@ class Engine:
             if self.S.get("clash_rule") and long_ and p % 12 not in ch and ((p + 1) % 12 in ch or (p - 1) % 12 in ch):                 # 833 again, after the register has moved the note
                 p = min((p + d for d in (-1, 1, -2, 2, -3, 3, -4, 4) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch and lo <= p + d <= hi), key=lambda q_: abs(q_ - p), default=p)
             out.append((t, p))
+        if self.S.get("again_runs"):                                                          # trial (again runs): a line sung again mends its own run of one pitch; the note that takes a run over the cap moves a scale step toward the next different note, inside the register
+            q_ = [p_ for _, p_ in out]; run_ = 1
+            for j_ in range(1, len(q_)):
+                run_ = run_ + 1 if q_[j_] == q_[j_ - 1] else 1
+                if run_ > self.RUN:
+                    nx_ = next((x_ for x_ in q_[j_ + 1:] if x_ != q_[j_]), None); dn_ = (1 if nx_ > q_[j_] else -1) if nx_ is not None else (1 if (j_ - run_ >= 0 and q_[j_ - run_] < q_[j_]) else -1)
+                    for d_ in (dn_, -dn_):
+                        v_ = q_[j_] + d_
+                        while v_ % 12 not in self.SCALE: v_ += d_
+                        if lo <= v_ <= hi: q_[j_] = v_; run_ = 1; self.stats["again runs: a note of a line sung again moves a step to end a run of one pitch"] += 1; break
+            out = [(t_, p_) for (t_, _), p_ in zip(out, q_)]
         return out
     # ---- a build
     def tmin(self, lines, k):
