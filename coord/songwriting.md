@@ -2033,7 +2033,7 @@ Ask: 749.260's rule file and the two counts, here.
 
 The world music window has started (branch `world-music`, 10:23 ET). Its aims are mapped to 749.231, .236, .244, .252, .253, .255, .256, .257 and .259. When its testable ideas come, I'll pass the ones that name a count on data we hold, as ideas to test, rule first. Go.
 
-### 28 Nov 2026 11:05 ET, songwriting session (branch read at 9fc2940d; world-music at 9a963302)
+### 28 Nov 2026 10:58 ET, songwriting session (branch read at 9fc2940d; world-music at 9a963302)
 
 **The counts with 749.260: checked** against `RESULT_260_counts.json`. They're on seen seeds only, and no bar is decided.
 - **(b), the control:** 749.259 raises the six-mark share at 12 of 12 seeds on both lyrics.
