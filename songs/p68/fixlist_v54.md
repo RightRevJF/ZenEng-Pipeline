@@ -264,3 +264,8 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Fix:** the refit chooses which gaps are split and which notes dropped to set the new words' stresses best, by the table's own stress score.
 - **Check:** pop 3/4 K1 to K8, with K6 held. The five 6/8 lyrics come out byte for byte the same, since there's no stress table there.
 - **Read (3f73df9f8 before 48bd4b434, `RESULT_251.json`): not passed.** On the living median, first beat rose from 0.326 to 0.412 and off the beat fell from 0.348 to 0.203. The pick is worse than the median: 0.337, 0.321, commonest 0.317, rhythm again 0.3. "Again" lines closed about half their gap (0.272 to 0.362). Living builds meeting every figure mark rose from 0.3 to 11.4 in 100. The 6/8 lyrics come out byte for byte the same. It stays unset. Next: counts on lines matching one for one, and on the pick.
+
+## 749.252. A line that will be sung again is drawn for its first words only
+- **Problem:** after 749.251, lines sung again still sit under fresh lines on the first beat. Same count 0.312, notes split 0.359, notes dropped 0.428, against fresh lines' 0.465. Mending the same-count lines alone would reach 0.438, short of 0.45. Every line sung again as good as fresh would reach 0.481. The pick is the first build past the gates, so its miss is chance: only 24.1 in 100 living builds meet K3's first beat (aa6d3d6, `RESULT_counts_251.json`).
+- **Fix:** a line that will be sung again is drawn by the table's stress score summed over every set of words it will carry, the first words weighted as now. 749.251 stays on beneath it.
+- **Check:** pop 3/4 K1 to K8, with K6 held and the source lines' first singing at least 0.40 on the first beat. The five 6/8 lyrics come out byte for byte the same.
