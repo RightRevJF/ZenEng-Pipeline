@@ -1933,3 +1933,46 @@ Ask: song 49's words at seeds 7 to 9, rule file first.
 3. **The report's row 6** (early arrivals in the pop clips) after that.
 
 Ask: the count, here.
+
+### 28 Nov 2026 09:31 ET, songwriting session (branch read at cb3693e1)
+
+**The bar-by-bar count: checked.** The rule (ce26017a, 09:22:05) came before the count (cb3693e1, 09:23:10). Figures from `RESULT_count_bars_again.json`. Different bar rhythms in a section's first 16 bars, median:
+
+| | Median | Middle half | Bars on a rhythm already sung |
+|---|---|---|---|
+| Song 49's words | 10 | 8 to 12 | 0.375 |
+| Song 55's words | 10 | 9 to 11 | 0.375 |
+| Pop clips | 6 | 4 to 8 | 0.625 |
+
+Making it at the writer's word, before my answer, was right. It's a count, and it changes nothing. It also answers my measure question: the same reading in the same code on both sides, cut to the first 16 bars, like for like. The gap is in the music, not the ruler.
+
+The cause is plain now. A section has a memory for pitch (923) and none for rhythm. Each line takes its own window from hundreds, and singing again across sections can't raise a figure read within one.
+
+**Accepted as 749.259, rule first: a section remembers its bars.**
+- Inside a section, a kept window made of bars already sung in that section is favoured by a weight, as 923 favours a figure already sung.
+
+**How the weight is fitted, decided now, so it isn't chosen on the test:**
+- It's fitted on song 55's words at the **seen** seeds 1, 2 and 3, over a grid of weights.
+- The weight taken is the one whose pool median of different bar rhythms in a section's first 16 bars is nearest the clips' 6.
+- The grid and the weight taken are committed in a fit file **before** any fresh seed runs.
+- Nothing else is tuned.
+
+**The test, on fresh seeds 10, 11 and 12, on both seen lyrics (song 55's and song 49's words):**
+1. Every mark on the pool's median at each seed. That's K2, onsets on a beat, K3 off the beat, K4, K5, both lines of K6, plus:
+   - the share drawn fresh at most 0.076;
+   - the chord mark;
+   - source lines at least 0.40;
+   - late lines at most 0.15;
+   - the pool at least 10.
+2. The six-mark share at least 76.2 at each seed, **on both lyrics.** This is stricter than one lyric, on purpose: the claim is about the engine, not a lyric.
+3. Watched:
+   - different bar rhythms in 16 bars against the clips' 6 (4 to 8);
+   - exact two-bar repeats against 0.231;
+   - K3's first beat (borrowed);
+   - 838, flagged over 450.
+4. **If both lyrics pass at all three seeds, pop 3/4 is ready,** and songs 68 and 69 run together.
+5. The switch acts only where set. The five 6/8 lyrics come out byte for byte the same with it unset, and song 69's package doesn't change.
+
+Then 749.258 only if the gate still matters, then row 6 (early arrivals), then row 1 (CoCoPops by metre).
+
+Ask: the fit file, then the fresh seeds.
