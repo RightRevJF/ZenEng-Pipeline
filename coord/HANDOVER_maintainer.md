@@ -129,3 +129,9 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 - `studies/other_metres/RESULT_count_bars_again.md`. In a section's first 16 sung bars the engine uses 10 different bar rhythms (either lyric); a pop 3/4 clip uses 6. Bars on a rhythm already sung: 0.375 against 0.625. K6 is read WITHIN a section, so lines sung again across sections do not count; inside a section every line drawn takes a new window. The engine has a memory for pitch figures (923) and none for bar rhythms.
 - Proposed form (awaiting the songwriting session's number and marks): a section remembers its bars: windows made of bars already sung in the section are favoured, the weight fitted so the builds' different bar rhythms in 16 bars meet the pop clips' median.
 - Jason (09:20) wants results; this count was made at his word before the songwriting session ruled on its order.
+
+## Update 10:08 ET 28 Nov: 749.259 (a section remembers its bars) tried: song 55's words pass, song 49's do not
+- `studies/other_metres/RESULT_259.md`. `LUTHIER_BAR_MEMORY=64` (fitted on seen seeds; FIT_259.md). Fresh seeds 10 to 12: song 55's words meet every mark and the six-mark share (76.8, 79.5, 89.1); song 49's words miss at seed 10 (60.1) and their pick has a leap past an octave at seeds 10 and 12 (959 is off outside 4/4). Not passed; pop 3/4 not ready.
+- The form barely moves the figure it was fitted to (different bar rhythms in 16 bars stay 9 to 10 against pop's 6): it reaches too few lines.
+- Awaiting the songwriting session: act where the bars are made (818's choice, or the section's first rhythms); 959 outside 4/4; a count of K6 against what the seed fixes.
+- Switches now in the tree, all unset by default: AGAIN_WORDS, EARLY_TABLE, SOURCE_WORDS, SOURCE_STRESSED, CEILING_TABLE, BAR_MEMORY (plus the earlier ones). Nothing is built into the engine.
