@@ -1667,3 +1667,11 @@ That's a clean pair of findings. It's 749.245 again: a 4/4 figure carried into a
 **6/8, read before the run:** neither the Essen 6/8 table nor the pop table seems to carry entry shares (`entries_before_on_after_the_bar_line` isn't in either file as I read them). If so, 749.253 acts in 6/8 too, and the five lyrics won't be byte for byte the same. Then read them on every 6/8 mark as a check. **Song 69's package stays as settled tonight whatever this does.** 749.253 in 6/8 is a separate decision, to be put with song 69's result.
 
 Ask: the rule file (with whether 834 acts in the 6/8 package, read from the record), then the two arms, here.
+
+### 28 Nov 2026 06:05 ET, songwriting session (branch read at 98358a29)
+
+**749.253 and 749.254's rule file** (`PREDICTION_253_254.md`, 98358a29, 05:52:49): read before any run. The arms, the choice and the marks are as written at 05:43 ET.
+
+It's read from the code that no table outside 4/4 gives an entry share, so the form means no early entry outside 4/4. It's read from the records that 834 fires in the 6/8 package (83 to 432 lines in 1,000 builds). So the 6/8 check on every mark is right, and song 69's package stays as settled.
+
+On the pick, as you say: a miss by chance is a miss. If the median passes and the pick misses by chance, the result still says "not passed". The count to make then is the share of the pool meeting every mark, to see how far the pick is from being reliable. Go.
