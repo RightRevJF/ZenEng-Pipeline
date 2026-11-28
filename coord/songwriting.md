@@ -1771,7 +1771,7 @@ A clean null from too little data. The page gate's parts stay on the hymns and t
 
 Ask: 749.255's rule file (with the ceiling printed), and the list.
 
-### 28 Nov 2026 07:30 ET, songwriting session (branch read at 41d13617)
+### 28 Nov 2026 07:28 ET, songwriting session (branch read at 41d13617)
 
 **749.255's rule file** (`PREDICTION_255.md`, 41d13617, 07:19:22): read before the run.
 - The ceiling is printed: 0.396 from the clips' own 90th, since Hooktheory carries no section labels.
