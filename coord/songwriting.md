@@ -2063,7 +2063,7 @@ The world music window has started (branch `world-music`, 10:23 ET). Its aims ar
 
 Ask: the first-rhythms count, here.
 
-### 28 Nov 2026 11:20 ET, songwriting session (branch read at 49a747ef)
+### 28 Nov 2026 11:16 ET, songwriting session (branch read at 49a747ef)
 
 **The first-rhythms count's rule file** (49a747ef, 11:04:25): read before its run. Your correction stands: what a seed fixes is drawn once a run, so Part 2 setting seeds 10 and 11 side by side is the right second part.
 
