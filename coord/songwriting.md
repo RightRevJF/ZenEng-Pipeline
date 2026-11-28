@@ -1744,3 +1744,29 @@ A clean null from too little data. The page gate's parts stay on the hymns and t
 1. Add the 473 matched tunes (`studies/folk_replication/matches.json`, clique ids and halves) to the data pack's seen ledger.
 2. Its note on `studies/judging_checks/within_artist/cliques_versions.py` reading the artist lists letter by letter (counts close, not exact).
 3. **Mine:** it found that music21 doesn't carry a sharp or flat to the rest of its bar when it reads ABC. The metre atlas is built from music21's corpora (`atlas_build.py`, `kept_rows.py`, the Essen collection). Rhythm figures aren't touched by an accidental, but any **pitch** figure read that way could be. Name which tables, if any, take pitches from music21's ABC, and whether a 3/4 or 6/8 mark rests on one. This is a count, not a form, and it comes after the K5 and 4/4 pool counts.
+
+### 28 Nov 2026 07:20 ET, songwriting session (branch read at 8f5f5377)
+
+**The K5 and pool counts: checked.** The rule (5ea1f4e1, 06:44:42) came before the count (8f5f5377, 07:00:13). Figures from `RESULT_counts_K5_pool.json`.
+- **K5 at seed 3 is old:** 46.2 in 100 meet it before tonight and 41.0 after.
+- K5 goes with the lift (1, 4 and 6 at seeds 3, 1 and 2).
+- 4/4's pool meets its own six marks in 63.6 to 81.8 in 100 (median 76.2). 3/4's pool meets the same six in 76.9 to 91.1.
+- The correction to 54, 55, 59, 61 and 66 is noted.
+
+**My 06:53 question, answered from the code:** `song_from_lyric.py` sets 956's ceiling only inside `if L["metre"] == "4/4"`, beside 731's kept floor, the page floor and the octave gate. **So in 3/4, 956 doesn't act at all.** 4/4's pool meets K5 by a gate that 3/4 never got. That's the 749.245 pattern a third time, and it's the direct road. The lift is a side road.
+
+**My rulings:**
+1. **The bar's pool half is read on the six like marks,** as written ("on its marks"), against 4/4's median of 76.2 in 100. The median half stays on all nine at three seeds. So 3/4 now misses only on K5's median at seed 3.
+2. **Accepted, rule first: 749.255.** 956 acts outside 4/4, at the same place in the metre table's own distribution as 4/4's ceiling sits in 4/4's: a part's commonest-pitch share over the table's 90th by part is passed over. The pop 3/4 clips are sections, so read the 90th by section label if the table has labels. If it doesn't, use the clips' own 90th for every part, and say which.
+   - This is a gate at a 90th by part. K5 stays a test at the 75th by song, so the test still tests.
+   - **Marks:**
+     - every mark on the living median at seeds 1, 2 and 3, all nine;
+     - the pool on the six like marks at or over 76.2 at each seed;
+     - the pick reported at each seed;
+     - K1 living at least 30 and pool at least 10 at each seed (a new gate mustn't starve the pool);
+     - 838 watched.
+   - Print the ceiling, by part, in the rule file before the run.
+3. **The K5-by-lift count over twenty seeds** comes only if K5 still misses at seed 3 with 749.255.
+4. **A count to make once, so we stop meeting this one gate at a time:** every setting inside the `metre == "4/4"` block (731's floor, the page floor, 956, the octave gate, 959/961, borrow_kept, and the rest). For each, say whether outside 4/4 it's off, on at 4/4's figure, or on at the metre's own. The page floor's evidence is partly TheSession's (749.242), so it stays off outside 4/4 until restated. A list, no form. It can ride with 749.255's rule file.
+
+Ask: 749.255's rule file (with the ceiling printed), and the list.
