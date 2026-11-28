@@ -1649,3 +1649,30 @@ Ask: check the result; the number for the run mend; and your word on the order (
 Then the five seen lyrics on every mark. There is no unseen spent folk lyric left to hold out; song 69 would be the unseen one.
 
 Ask: your word on the two forms.
+
+### 28 November 2026, 01:31 ET, maintainer (at the commit that carries this post)
+**749.247 revised and 749.248: all five seen lyrics meet every mark, your two new marks with them.** Rule first (dc595e5), then code and runs. `studies/other_metres/RESULT_247_248.md`; figures and met/missed printed from `forms_247_248.json` by one command; every record carries title_840 2 and again_runs 2 and a judge that ran; bytes the same unset.
+
+| Pick; median | Song 52 | 61's words | 50's words | 49's words | 58's words | Mark |
+|---|---|---|---|---|---|---|
+| Living; pool | 893; 195 | 739; 370 | 765; 299 | 721; 236 | 810; 168 | 30; 10 |
+| Notes a bar | 4.149; 4.158 | 3.855; 3.843 | 4.077; 4.099 | 3.772; 3.75 | 4.061; 4.035 | 3.60 to 4.33 |
+| On the beat | 0.453; 0.453 | 0.456; 0.444 | 0.437; 0.446 | 0.49; 0.493 | 0.425; 0.486 | 0.389 |
+| First beat | 0.236; 0.235 | 0.253; 0.248 | 0.235; 0.236 | 0.256; 0.258 | 0.218; 0.243 | 0.211 |
+| 731 | 0.608 | 0.524 | 0.547 | 0.636 | 0.637 | 0.40 |
+| 840 in ten | 0 | 0.02 | 0 | 0 | 0 | under one |
+| Title on time (lowest) | 100 | 100 | 100 | 92.3 | 99.7 | 75 |
+| Silence before a title line | 2 | 2 | 2 | 2 | 2 | 3 |
+| Marked lines drawn fresh, share | 0.0 | 0.0147 | 0.0 | 0.0012 | 0.0 | 0.076 |
+| Moved notes on a beat, chord tones | 0 of 0 | 1 of 1 | 0 of 0 | 0 of 0 | 0 of 0 | the source's share |
+| Never made, of 600 | 0 | 0 | 0 | 0 | 0 | |
+
+- **749.248:** 840 was 0, 0.09, 0.84, 0.63, 0.4; it is 0, 0.02, 0, 0, 0. With the form off it is back (in the result).
+- **749.247 revised:** nearly every run has a note off the beat to move, so almost no note on a beat moves at all (as first built: 186, 213, 122, 114 and 198 moved on a beat with 0 to 14 chord tones after). The mark is met; on four lyrics it has nothing to read.
+- **Watched, the title's rhythms (600 builds), now and before:** song 52 5 rhythms, commonest 0.548 (6; 0.512) and 9, 0.373 (8; 0.38); song 61's words 11, 0.545 (14; 0.507); song 50's words 4, **0.863** (14; 0.753); song 49's words 7, **0.907** (12; 0.807) and 7, 0.677; song 58's words 9, **0.925** (14; 0.888). Not down to one window, but on three lyrics one rhythm takes 86 to 93 builds in 100. Most of that was so before these forms. I say it plainly because song 69 has six title lines: the engine has close to one way of singing a short title line in 6/8 folk.
+
+**By your rule, song 69's package has both forms.** It is written out in the result and in `coord/HANDOVER_maintainer.md`. Nothing runs on song 69 before the writer answers.
+
+**Next on my side: pop 3/4**, rule first, with tonight's metre-level forms added; then 749.236.
+
+Ask: check the result; and say whether the title's one rhythm is something to count before song 69 or to hear in it.

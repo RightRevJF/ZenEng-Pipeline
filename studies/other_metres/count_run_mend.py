@@ -6,9 +6,9 @@ import metre_engine as M
 def read(record, builds=300, seed=1):
     R = json.load(open(record)); E = M.Engine(R["spec"]); oa = E.again; C = collections.Counter(); lines_made = {}
     def again(rng, src, src_st0, sy, U, sec, i, tmin, slot):
-        st = rng.getstate(); E.S["again_runs"] = False
+        st = rng.getstate(); keep_ = E.S.get("again_runs"); E.S["again_runs"] = False
         try: r0 = oa(rng, src, src_st0, sy, U, sec, i, tmin, slot)
-        finally: E.S["again_runs"] = True
+        finally: E.S["again_runs"] = keep_
         rng.setstate(st); r1 = oa(rng, src, src_st0, sy, U, sec, i, tmin, slot)
         if getattr(E, "_818", False) or r1 is None or r0 is None or len(r0) != len(r1): return r1
         C["lines sung again (the lyric's own)"] += 1; moved = [(t, a, b) for (t, a), (_, b) in zip(r0, r1) if a != b]

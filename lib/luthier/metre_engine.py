@@ -154,6 +154,7 @@ class Engine:
         room_ = (12 if self.LE else self.BREATH) if room is None else room; end = slot - room_ if cap is None else min(slot - room_, cap); out = []; bars = slot // self.BAR; early = []
         if bars == 2 and not self._part and self.S.get("one_bar_share") and rng.random() < self.S["one_bar_share"]:      # 876: the line sung in one bar of its two and the voice silent for the other, as kept songs leave whole bars empty
             o1 = self.rhythm(rng, sy, tmin, self.BAR, cap=min(self.BAR - self.END, cap if cap is not None else 10 ** 6), hook=hook) if n <= 10 else None
+            if o1 is not None and hook and self.S.get("title_840") == 2 and 2 * sum(1 for t_, x_ in zip(o1, sy) if x_[1] and self.on_beat(t_)) < sum(1 for x_ in sy if x_[1]): o1 = None; self.stats["749.248: a title line's one-bar rhythm fails 840's test and is not taken"] += 1      # trial (749.248): 749.244 on 876's path
             if o1 is not None and o1[-1] < self.BAR - self.END + 1 and self.stats is not None:
                 if o1[-1] <= self.BAR - self.END: self.stats["876: a line sung in one bar, the next bar silent"] += 1; return o1
         if self.ALLW and bars in (1, 2):                                                      # 912: the scores of every kept rhythm for this line are worked once and kept; no cut to the twelve best
@@ -392,8 +393,28 @@ class Engine:
                 p = min((p + d for d in (-1, 1, -2, 2, -3, 3, -4, 4) if (p + d) % 12 in self.SCALE and (p + d) % 12 in ch and lo <= p + d <= hi), key=lambda q_: abs(q_ - p), default=p)
             out.append((t, p))
         if self.S.get("again_runs"):                                                          # trial (again runs): a line sung again mends its own run of one pitch; the note that takes a run over the cap moves a scale step toward the next different note, inside the register
-            q_ = [p_ for _, p_ in out]; run_ = 1
-            for j_ in range(1, len(q_)):
+            q_ = [p_ for _, p_ in out]; run_ = 1; ts_ = [t_ for t_, _ in out]
+            for _g in range(len(q_) if self.S["again_runs"] == 2 else 0):                       # trial (749.247 revised): the mend keeps the chord; a note off the beat moves a step, a note on a beat moves to the nearer chord tone
+                run_ = 1; bad_ = None
+                for j_ in range(1, len(q_)):
+                    run_ = run_ + 1 if q_[j_] == q_[j_ - 1] else 1
+                    if run_ > self.RUN: bad_ = j_; break
+                if bad_ is None: break
+                cand_ = list(range(bad_, bad_ - self.RUN - 1, -1)); nx_ = next((x_ for x_ in q_[bad_ + 1:] if x_ != q_[bad_]), None); dn_ = (1 if nx_ > q_[bad_] else -1) if nx_ is not None else (1 if (bad_ - run_ >= 0 and q_[bad_ - run_] < q_[bad_]) else -1); done_ = False
+                for j_ in cand_:
+                    if self.on_beat(U + ts_[j_]): continue
+                    for d_ in (dn_, -dn_):
+                        v_ = q_[j_] + d_
+                        while v_ % 12 not in self.SCALE: v_ += d_
+                        if lo <= v_ <= hi: q_[j_] = v_; done_ = True; self.stats["749.247: a note off the beat of a line sung again moves a step to end a run"] += 1; break
+                    if done_: break
+                if not done_:
+                    for j_ in cand_:
+                        ch_ = self.chord_at(U + ts_[j_]); op_ = [v_ for v_ in range(int(lo), int(hi) + 1) if v_ % 12 in ch_ and v_ % 12 in self.SCALE and v_ != q_[j_]]
+                        if op_: q_[j_] = min(op_, key=lambda v_: (abs(v_ - q_[j_]), 0 if (v_ - q_[j_]) * dn_ > 0 else 1)); done_ = True; self.stats["749.247: a note on a beat of a line sung again moves to the nearer chord tone to end a run"] += 1; break
+                if not done_: break
+            run_ = 1
+            for j_ in (range(1, len(q_)) if self.S["again_runs"] != 2 else ()):
                 run_ = run_ + 1 if q_[j_] == q_[j_ - 1] else 1
                 if run_ > self.RUN:
                     nx_ = next((x_ for x_ in q_[j_ + 1:] if x_ != q_[j_]), None); dn_ = (1 if nx_ > q_[j_] else -1) if nx_ is not None else (1 if (j_ - run_ >= 0 and q_[j_ - run_] < q_[j_]) else -1)
