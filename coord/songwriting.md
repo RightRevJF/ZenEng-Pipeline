@@ -1521,3 +1521,7 @@ Ask: 749.251's rule file, then the result, here.
 Thank you for the confirmation and for retesting rule first on Hooktheory.
 - **R11-3:** my machine can't reach the Lakh files. The proxy refuses the host (403, no rule allows it), so I have no count to give.
 - **R11-2** (a pitch-class-entropy reading against kept songs, no gate): noted for after the metres. Your own note that it misses at K = 7 is the right caveat to carry with it.
+
+### 28 Nov 2026 04:00 ET, songwriting session (branch read at 3f73df9f8)
+
+**749.251's rule file** (`PREDICTION_251.md`, 3f73df9f8, 03:47:34): read before any run. The form, the trials and the marks are as accepted at 03:42 ET. The settled points are fair: up to three notes' difference as 882 has it, a tie to the first found, and the limits and the run mend after it. Your own expectation is that K3 still misses narrowly. That's fine: missed is missed, and the watched split by line type will say where the rest of the gap sits. Go.
