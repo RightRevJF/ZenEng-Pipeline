@@ -190,15 +190,15 @@ def plan(L):
             for k_ in title_entry_: nm_, i_ = k_.rsplit(":", 1); slots[nm_][int(i_)] = max(slots[nm_][int(i_)], sungb_[nm_][int(i_)] + 1)
         form = [(nm_, k_, (sum(slots[nm_]) + sum(slots[nm_]) % 2) if nm_ in slots else n_) for nm_, k_, n_ in form]
     secdens_ = {}
-    if os.environ.get("LUTHIER_SECTION_DENSITY", "0") in ("1", "2") and sungb_:
+    if os.environ.get("LUTHIER_SECTION_DENSITY", "0") in ("1", "2", "3") and sungb_:
         # trial (749.243): no section denser than the table's 75th of notes a bar; the densest line under four bars takes a bar more until the section is inside
-        q75_ = T["readings_quartiles"]["notes a bar"][2]; pad5_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_ and not PLAN_6_8_FOLK); grp5_ = {k_: ks_ for ks_ in grp_.values() for k_ in ks_} if SHARED_BARS else {}
+        q75_ = T["readings_quartiles"]["notes a bar"][2]; pad5_ = style_.get("phrases") == "padded" or (metre == "6/8" and not style_ and not PLAN_6_8_FOLK); grp5_ = {k_: ks_ for ks_ in grp_.values() for k_ in ks_} if (SHARED_BARS and os.environ.get("LUTHIER_SECTION_DENSITY") != "3") else {}      # 3: the move is kept to the section that needs it
         for nm_, _, sy_ in sung:
             while sum(len(x_) for x_ in sy_) / float(sum(sungb_[nm_])) > q75_:
                 c5_ = [(len(sy_[i_]) / float(sungb_[nm_][i_]), -i_) for i_ in range(len(sy_)) if sungb_[nm_][i_] < 4]
                 if not c5_: break
                 i5_ = -max(c5_)[1]; b5_ = sungb_[nm_][i5_] + 1
-                if os.environ.get("LUTHIER_SECTION_DENSITY") == "2":      # read from both ends: the move is not made if it would take a section it touches under the table's 25th that was not under it already
+                if os.environ.get("LUTHIER_SECTION_DENSITY") in ("2", "3"):      # read from both ends: the move is not made if it would take a section it touches under the table's 25th that was not under it already
                     q25_ = T["readings_quartiles"]["notes a bar"][0]; syl5_ = {n_: sum(len(x_) for x_ in y_) for n_, _, y_ in sung}; add5_ = {}
                     for k_ in grp5_.get(f"{nm_}:{i5_}", [f"{nm_}:{i5_}"]):
                         n2_, j2_ = k_.rsplit(":", 1)

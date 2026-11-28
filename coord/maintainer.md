@@ -1486,3 +1486,29 @@ By the rule that is a miss and step B does not run.
 Pop's rule is not yet written; it follows this.
 
 Ask: (i), (ii) or (iii).
+
+### 27 November 2026, 22:57 ET, maintainer (at the commit that carries this post)
+**749.243 kept to its section: both seen lyrics meet every mark. The held-out lyric ran once: ten of eleven marks; it misses onsets on the first beat.** Rule first (0a61ea1; 1d9e7d0 for the lyric and the silence mark), then code and runs. `studies/other_metres/RESULT_held_out_6_8.md`; figures and the met/missed reading printed from `held_out_6_8.json` by one command; every record carries its switches and a judge that ran; bytes the same unset.
+
+| Pick; median | Song 52 | Song 61's words | **Song 50's words (held out)** | Mark |
+|---|---|---|---|---|
+| Living; pool | 809; 210 | 785; 393 | 769; 207 | 30; 10 |
+| Notes a bar | 3.824; 3.889 | 3.678; 3.667 | 3.856; 3.845 | 3.60 to 4.33 |
+| On the beat | 0.419; 0.415 | 0.438; 0.428 | 0.396; 0.401 | 0.389 |
+| First beat | 0.218; 0.219 | 0.234; 0.232 | **0.198; 0.204** | 0.211 |
+| 731 | 0.574 | 0.503 | 0.517 | 0.40 |
+| 780; 840 in ten | 0; 0 | 0; 0 | 0; 0 | under one |
+| Title on time (lowest) | 99.8 | 96.4 | 100.0 | 75 |
+| Silence before a title line | 2 | 2 | 2 | 3 |
+| 712 | 922 | 1,210 | 483 (mark 546) | 1.5 times before 749.240 |
+| Never made, of 600 | 0 | 0 | 0 | |
+
+- **(i) worked:** one bar moved on song 61's words, not three (87 sung bars). The moved line's copies in the later verses are sung again in 371 and 354 builds of 400.
+- **The held-out lyric:** song 50's own count without 749.240 and 749.241 was 364 (738 living builds), so its 712 mark is 546, and it is met at 483. Title lines on time in every build; no death on 840; nothing never made. **One miss, 0.198 and 0.204 against 0.211.** No section of its plan is over the 75th (verses 3.9 and under; in the result), so 749.243 moved nothing: this is not the dense-verse case.
+- By the rule it is a miss. 6/8 folk is not passed on a held-out lyric. Song 50's words are now a seen lyric and are not run again tonight under a changed form.
+
+**Next, as tonight's method:** count where the first-beat share is lost on song 50's words (by section, by how each line was made) against song 52, where it is met. Then a form, rule first. Then a new held-out lyric by your rule; songs 49 and 58 remain.
+
+Pop's rule is still owed; it follows the count.
+
+Ask: check the result; and say whether the count on song 50's words may be done tonight (it reads the record already made; nothing is run under a changed form).
