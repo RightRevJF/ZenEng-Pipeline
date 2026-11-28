@@ -1,4 +1,4 @@
-# Handover for a fresh maintainer window (kept current; last written 27 November 2026, 21:57 ET)
+# Handover for a fresh maintainer window (kept current; last written 27 November 2026, 22:29 ET)
 
 Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriting.md`. Everything here is also in the thread; this is the short form.
 
@@ -25,15 +25,16 @@ Read this, then the last ten posts of `coord/maintainer.md` and `coord/songwriti
 
 ## Where the metres stand
 - **4/4:** works (engine v53).
-- **6/8 folk (Essen table): both trial lyrics (song 52; song 61's words set in 6/8) meet every mark** with the package below (`studies/other_metres/RESULT_244.md`). Not a claim that 6/8 works: both lyrics were written for 4/4. The test that counts is song 69, unseen. That decision is the songwriting session's and Jason's.
-  - Package: `LUTHIER_PLAN_6_8=folk LUTHIER_TITLE_ROOM=0.9 LUTHIER_COPY_JOIN=1 LUTHIER_TITLE_ENTRY=rest LUTHIER_TITLE_NOWAIT=1 LUTHIER_TITLE_FRESH=1 LUTHIER_AGAIN_INSIDE=1 LUTHIER_AGAIN_REFIT=2 LUTHIER_SHARED_BARS=1 LUTHIER_SECTION_DENSITY=2 LUTHIER_TITLE_840=1`
-  - Open: the silence before a title line is longer than Essen's rests; no stress table counted on worded 6/8 song yet (OpenScore Lieder, CC0, 216 songs in 6/8, is the source); pop-style 6/8.
+- **6/8 folk (Essen table):** two trial lyrics (song 52; song 61's words set in 6/8). With the package below song 52 meets every mark, the silence mark included; song 61's words miss one figure by one note (notes a bar's living median 3.596 against 3.60; `studies/other_metres/RESULT_232_pickup.md`). Under the earlier bar-of-rest form both met every mark but the silence before a title line was 5 eighths against Essen's 3 (`RESULT_244.md`). **A held-out lyric (song 50's words) is chosen by rule and NOT yet run** (`PREDICTION_held_out_6_8.md`): it runs once, only when both seen lyrics pass with the silence mark. Then song 69 is the songwriting session's and Jason's call.
+  - Package: `LUTHIER_PLAN_6_8=folk LUTHIER_TITLE_ROOM=0.9 LUTHIER_COPY_JOIN=1 LUTHIER_TITLE_ENTRY=pickup LUTHIER_TITLE_NOWAIT=1 LUTHIER_TITLE_FRESH=1 LUTHIER_AGAIN_INSIDE=1 LUTHIER_AGAIN_REFIT=2 LUTHIER_SHARED_BARS=1 LUTHIER_SECTION_DENSITY=2 LUTHIER_TITLE_840=1`
+  - Marks: living 30, pool 10; notes a bar 3.60 to 4.33; onsets on the beat 0.389; on the first beat 0.211; 731 at 0.40; deaths on 780 and 840 under one in ten; in the voice, no leap past an octave in a line; title lines on time 75 in 100; the lyric's "again" drawn fresh (712) at most 1.5 times its count before 749.240 (1,569 song 52; 1,830 song 61's words); silence before a title line 3 eighths or under. Reader: `studies/other_metres/read_6_8_lyric.py`.
+  - Open: on song 61's words 749.243 (first-beat onsets in dense verses) and notes a bar pull against each other; no stress table counted on worded 6/8 song yet (OpenScore Lieder, CC0); pop-style 6/8.
 - **Pop 3/4 (Hooktheory table; song 55's words in 3/4):** builds are all made; every figure mark met but K3 (stressed syllables on the first beat about 0.30 against 0.45) and the 712 mark (1,023 against 846). The package there has not yet had 749.243 or 749.244. K3 needs 749.236: the weight between a window's count and its stress fit, fitted from worded songs.
 - **Standard 3/4 (lead-sheet table, song 53):** met most marks earlier in the day; not reread under tonight's forms.
 - **Other metres (12/8, 2/2, ...):** not begun.
 
 ## Forms by number (all behind switches, unset)
-749.226 bars from density · .227 3/4 range · .228 copy join · .229 title room · .231 stress score by table (helps 3/4; a borrowed table hurt 6/8 folk) · .232 the line ahead of a title line keeps its bars and takes a bar of rest · .234 shared bars · .235 title line skips 870's wait · .236 the weight from data (not yet written) · .237 title line drawn fresh · .239 rhythm grammar (two equations fitted; Essen passes cell by cell in two-bar cells 4 to 11 only; not used; a third equation for pop accepted) · .240 a line sung again ends inside its slot · .241 the split-off note stays inside the limit · .242 the page gate's evidence restated without TheSession · .243 no section denser than the table's 75th · .244 a title line drawn among windows that pass 840's test.
+749.226 bars from density · .227 3/4 range · .228 copy join · .229 title room · .231 stress score by table (helps 3/4; a borrowed table hurt 6/8 folk) · .232 the line ahead of a title line leaves room for the title's pickup (third reading; earlier: a bar more, then a bar of rest) · .234 shared bars · .235 title line skips 870's wait · .236 the weight from data (not yet written) · .237 title line drawn fresh · .239 rhythm grammar (two equations fitted; Essen passes cell by cell in two-bar cells 4 to 11 only; not used; a third equation for pop accepted) · .240 a line sung again ends inside its slot · .241 the split-off note stays inside the limit · .242 the page gate's evidence restated without TheSession · .243 no section denser than the table's 75th · .244 a title line drawn among windows that pass 840's test.
 
 ## Queue
 1. Whatever the songwriting session answers to the last post.

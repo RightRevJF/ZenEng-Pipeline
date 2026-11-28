@@ -1453,3 +1453,36 @@ Ask: none new; my asks on 840's form and 749.243's stop stand.
 **Next, unless you order otherwise:** pop 3/4 with 749.243 and 749.244 added (rule first), then 749.236.
 
 Ask: check the result; your word on what 6/8 folk needs before song 69 (a third trial lyric first, or the silence before the title line, or straight to asking the writer in the morning).
+
+### 27 November 2026, 22:29 ET, maintainer (at the commit that carries this post)
+**The held-out lyric is not run and not spent. Two step-A readings on the seen lyrics first; here is why and where it stands.**
+
+**Your post read the silence as 2 to 4 eighths; the records say 5** on both lyrics under the bar of rest. So the package as it stood would have missed your new mark (3 eighths, Essen's 90th, counted before any run: `essen_6_8_rests_by_song.json`) on any lyric. I wrote that into the rule (1d9e7d0) and tried the seen lyrics first.
+
+1. **749.232 off** (`RESULT_held_out_6_8_step_a.md`): silence 2 eighths, met; but song 52's bridge title line on time in 18.4 builds of 100. Counted why (400 builds each way): that title line opens on a light syllable and wants a pickup; with no rest the line ahead ends at its last allowed place in every build, so the title may start on its bar line and no earlier. The bar of rest was doing one small thing: leaving room for the pickup.
+2. **749.232's third reading, rule first (0d583e6):** the line ahead of a title line ends an eighth earlier for each light syllable the title opens on (two at most); no bar of rest. `LUTHIER_TITLE_ENTRY=pickup`. `RESULT_232_pickup.md`, figures printed from `pickup_232.json`; bytes the same unset.
+
+| Pick; median | Song 52 | Song 61's words | Mark |
+|---|---|---|---|
+| Living; pool | 809; 210 | 816; 408 | 30; 10 |
+| Notes a bar | 3.824; 3.889 | 3.618; **3.596** | 3.60 to 4.33 |
+| On the beat | 0.419; 0.415 | 0.45; 0.445 | 0.389 |
+| First beat | 0.218; 0.219 | 0.248; 0.246 | 0.211 |
+| 731 | 0.574 | 0.517 | 0.40 |
+| 840 in ten | 0 | 0 | under one |
+| Title on time (lowest) | 99.8 | 94.2 | 75 |
+| Silence before a title line | 2 | 2 | 3 |
+| 712 | 922 | 577 | 1,569; 1,830 |
+
+**Song 52: every mark, the silence mark with them. Song 61's words: one figure, by one note.** Counted: 89 sung bars, 310 syllables; the floor of 3.60 is 321 notes; the living median is 320 (quartiles 319, 321); 0.416 of living builds are at or over. It is the plan sitting on the line, not the draw. Before 749.243's move the plan was 86 bars (3.605 syllables a bar): 749.243 mends first-beat onsets in the dense verse by adding bars, each bar lowers notes a bar, and the three bars come as one because the three lines share a tune.
+
+By the rule that is a miss and step B does not run.
+
+**For your word (I do not move the mark):**
+- (i) **749.243 moves only the line in the section that is over the 75th**, and the lines that share its tune elsewhere keep their bars (87 bars: 3.56 syllables a bar before melismas). Cost: that copy no longer shares its source's bars; 749.240 and 749.241 refit it, and 712 is the check.
+- (ii) Leave the plan and read notes a bar over more builds. I do not favour it: the median is 320 notes however many builds are read.
+- (iii) Something of yours.
+
+Pop's rule is not yet written; it follows this.
+
+Ask: (i), (ii) or (iii).

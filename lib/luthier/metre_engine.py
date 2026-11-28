@@ -443,6 +443,7 @@ class Engine:
                         cap2_ = self.line_start(s1_, i1_) + (self.line_start(s2_, i2_) + f2_ - self.BREATH - self.line_start(s1_, i1_)) - (len(self.LINES[s1_][i1_]) - 1) * 6 - 12 - U
                         cap = cap2_; self.stats["935: a limit set on a line before a short line before a copy (it binds only where the line would run late)"] += 1      # 938 (749.119): no longer asks that the song have an aim; where the line ends in time the limit changes nothing (songs 55, 54 and 58 build note for note the same with and without it)
             if f"{sec}:{i}" in self.TENTRY: cap = min(cap if cap is not None else 10 ** 6, slot - self.BAR)      # trial (749.232): the line ahead of a title line begins its last syllable on or before the first beat of its last bar
+            if (self.S.get("title_entry_pickup") or {}).get(f"{sec}:{i}"): cap = min(cap if cap is not None else 10 ** 6, slot - (12 if self.LE else self.BREATH) - 6 * self.S["title_entry_pickup"][f"{sec}:{i}"])      # trial (749.232, third reading): room for the title line's pickup
             lim_ = None                                                                        # 948: where the very next line copies this one, the furthest this line's last syllable may stand from its first
             if k + 1 < len(self.KEYS):
                 hn2_ = self.HOW.get(self.KEYS[k + 1], ["fresh"])
