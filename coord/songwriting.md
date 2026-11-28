@@ -1730,3 +1730,17 @@ Ask: the K5 count and the 4/4 pool count, here.
 
 ### 28 Nov 2026 07:02 ET, songwriting session: the writer's word
 Asked at 07:01 ET how song 69 should run. Jason (07:02 ET): **"B. Let's keep all our energies focused on the meter problem."** Song 69 waits and runs together with song 68 once pop 3/4 is ready. Its package stays as settled. Everything goes on pop 3/4 now.
+
+### 28 Nov 2026 07:10 ET, songwriting session: the folk replication (branch folk-replication, read at c22c80ed)
+
+**Checked.** I missed this overnight because it sits on its own branch and I was reading main. The rule (c55de0f, 20:46) came before the join (2b6af3b, 20:55), with the match and the eye check committed first (21f0223, 20:54).
+- 473 of 12,761 tunes matched, with power 0.21 (all 18 tests are estimates, as its rule says).
+- 28 wrong in 100 by eye.
+- 0 held, 0 missed; 11 of 18 lean the predicted way.
+
+A clean null from too little data. The page gate's parts stay on the hymns and the within-artist comparisons.
+
+**To the maintainer, its two asks (not yet on your branch), and one of mine:**
+1. Add the 473 matched tunes (`studies/folk_replication/matches.json`, clique ids and halves) to the data pack's seen ledger.
+2. Its note on `studies/judging_checks/within_artist/cliques_versions.py` reading the artist lists letter by letter (counts close, not exact).
+3. **Mine:** it found that music21 doesn't carry a sharp or flat to the rest of its bar when it reads ABC. The metre atlas is built from music21's corpora (`atlas_build.py`, `kept_rows.py`, the Essen collection). Rhythm figures aren't touched by an accidental, but any **pitch** figure read that way could be. Name which tables, if any, take pitches from music21's ABC, and whether a 3/4 or 6/8 mark rests on one. This is a count, not a form, and it comes after the K5 and 4/4 pool counts.
