@@ -927,3 +927,30 @@ Ask: the rule with both lyrics, then the run.
 **Song 69 locked and banked** (`songs/p79/lyric69.json`): "Learned It from My Hands", a folk protest ballad in 6/8. A baritone lead, with the men from the line joining the final chorus. Seven sections, lines of 6 to 8 syllables, matched where they share a tune. The writer chose (18:24 ET) to hold it until the 6/8 package passes on songs 52 and 61; then it is made for real by the engine as the first real 6/8 song. It is reserved like 67 and 68: not a trial lyric, not run before then. Its ledger row is in `studies/judging_data/README.md`.
 
 Ask: none; for information. The revised 749.232 trial on 52 and 61 is still awaited.
+
+### 27 Nov 2026 18:58 ET, songwriting session (branch read at 2a691b4)
+
+**749.232 revised: checked.** The form (fefedb2, 18:35:24) came before the run (5af9e5c, 18:48:52). `rest_232.json` matches:
+- **song 52:** 828 living, pool 328; 3.954 notes a bar on the pick, 3.917 on the median; first-beat onsets 0.234 and 0.229. Every mark is met.
+- **song 61's words:** 37 living, pool 19; notes a bar 3.5 and first-beat onsets 0.171 both miss; 572 of 600 never made, at five dense lines.
+
+The title entry is fixed on both, and that part of 749.232 stands. The rest before a title line (4 to 5 eighths against Essen's 1 to 3, none a bar) is too long by the notes, as you found.
+
+**The writer's word (18:50 ET) is read.** Your answer is right: no research pass, because nothing today failed for want of knowledge. Every failure was the same one: the phrasebook has no entry.
+
+**The grammar: accepted, as 749.239.** It's the formula he's asking for, and it's Hayes's constraint model in the engine's own terms: a window's chance from the metrical level of each onset, given the density, and the step between onsets. Two things for the rule file:
+- **Fit it, don't set it.** Estimate the onset-by-level and step chances by maximum likelihood on the kept table's windows, with no constant of ours, and print the fitted values in the file.
+- **The bar for the held-out check, exact figures, written before any code:**
+  - fit on half the table's songs, split by a hash of the song;
+  - generate for every cell the other half has with 20 windows or more;
+  - **(a)** in at least 9 cells of 10, the generated windows' onsets on the beat, onsets on the first beat and notes a bar each lie inside that cell's counted middle half;
+  - **(b)** in those cells, the counted windows carry at least 0.60 of the generated probability mass;
+  - **(c)** the generated top five windows contain at least three of the counted top five, in at least 8 cells of 10.
+
+  Run it on Essen 6/8 and on the Hooktheory 3/4 pop table both. If either misses, the grammar isn't used in that table.
+
+**Then one trial, both metres, marks unchanged:** song 61's words in 6/8, S1 to S7 and U1 to U4 (with song 52 read again under it), and the pop 3/4 trial on song 55's words, K1 to K8. In the same trial, the rest before a title line comes from the table too, inside Essen's rest quartiles (1 to 3 eighths), with the title line on its bar line or a pickup. That makes your half bar a figure from data, not a choice. Report generated windows used, line by line, and their share of the song.
+
+749.238 (a dense line takes a bar more) waits: if the grammar fills those cells, it may not be needed. 749.236's weight comes after the grammar, so that it weighs windows that exist.
+
+Ask: 749.239's rule file, with the fitted values and the bar, before any code.
