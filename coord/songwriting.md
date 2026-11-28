@@ -2032,3 +2032,33 @@ Ask: 749.260's rule file and the two counts, here.
 - Your correction is fair. "Lifts the share at most seeds" rested on the seen seeds of the fit, and count (b)'s with-and-without runs will say.
 
 The world music window has started (branch `world-music`, 10:23 ET). Its aims are mapped to 749.231, .236, .244, .252, .253, .255, .256, .257 and .259. When its testable ideas come, I'll pass the ones that name a count on data we hold, as ideas to test, rule first. Go.
+
+### 28 Nov 2026 10:58 ET, songwriting session (branch read at 9fc2940d; world-music at 9a963302)
+
+**The counts with 749.260: checked** against `RESULT_260_counts.json`. They're on seen seeds only, and no bar is decided.
+- **(b), the control:** 749.259 raises the six-mark share at 12 of 12 seeds on both lyrics.
+  - Song 55's words: 5 of 12 seeds at or over 76.2 without it, 12 with it.
+  - Song 49's words: 2 to 9, still under at seeds 6, 8 and 10 (76.1, 75.9, 60.1).
+  - No seed property explains the spread (rank correlations 0.0 to 0.09 on song 55's words). Song 49's seeds 10 and 11 share a lift of 0 and stand at 60.1 and 97.8.
+- **(a):** the memory reaches 0.092 and 0.189 of a section's lines. Where it acts, it takes a remembered bar 0.856 and 0.823 of the time.
+- **749.260 on seen seeds:** it passes over up to 220 builds in 1,000 on song 49's words, and the smallest pool is 131. It doesn't starve the pool.
+
+**My rulings:**
+1. **749.260 rides with the test at fresh seeds 13 to 15.** Confirmed.
+2. **Your count first, no form:** the six-mark share by whether the first line drawn in verse 1 and chorus 1 had two like bars, and by how many different bar rhythms the first section ended with. It's on the builds we have, and it may explain the seed spread too.
+3. **Then 749.261, the design chosen by that count, rule first.** I accept your 818 design: where 818 acts, it sings again whichever earlier line puts the most of its bars on rhythms the section has already sung. Settle "two above, or any earlier line of its length" in the rule file.
+   - If the count says the first rhythms decide, write that arm beside it. Both run on seen seeds 1 to 12. The arm whose different bar rhythms come nearer 6 is taken, a tie to the smaller change. The fit file is committed alone. Then fresh seeds 13 to 15 for the one taken.
+   - 749.259 stays beneath.
+
+**From the world music window (closed 10:52 ET; `reports/world_music/SUMMARY.md` on `world-music`).** It's read, and labels and licences are as asked. Three points bear on this work now:
+- **Its finding 6 (our inference) agrees with your fit:** a small repeat bonus can't move a choice among hundreds, and acting on where most bars are made would work. That's the 818 design.
+- **Its three first counts go on your list, rule first, after 749.261's test:**
+  1. notes on each beat and eighth in 3/4 and 6/8, on Essen, the clips, the lead sheets and Lieder (for 749.231, .252, K3);
+  2. strong beats left empty because the note came early (749.253, the same as the earlier report's row 6);
+  3. different bar rhythms per 16 bars against shuffled bars (749.259).
+- **Its flags:**
+  - McBride et al. 2024's melody data may hold TheSession material. **Don't open it.**
+  - The pop clips' licence is CC BY-NC-SA 3.0 (Sheet Sage, as `studies/judging_data/README.md` records): credit, non-commercial, share-alike. I'll tell the writer, since it touches any sale of the app. It doesn't change the work.
+  - The earlier report's sentence that "89% of lines begin with a pickup" should go (749.253).
+
+Ask: the first-rhythms count, here.
