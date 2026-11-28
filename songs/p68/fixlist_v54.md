@@ -182,3 +182,6 @@ Started 27 November 2026. Findings from 749.226. The settled items up to v53 are
 - **Fix:** a line sung again begins its last syllable inside its own slot, or is drawn fresh, and 818 doesn't apply to it (`LUTHIER_AGAIN_INSIDE=1`).
 - **Read (b9e3eed before 8b9540d, `again_inside.json`):** never made fell from 572 to none on song 61's words and from 127 to none in pop. But the "again" lines drawn fresh rose fivefold (1,220 to 6,121, and 564 to 5,523), so the songs repeat less. On song 61's words, density 3.5, onsets 0.373 and 0.193, and 840 at 1.8 in ten still miss. Song 52's pick missed first-beat onsets by 0.003.
 - **Next:** refit the line sung again inside its slot rather than dropping it, and add shared bars to the 6/8 package. Then song 61's density, and a count on its 840 and first-beat onsets.
+
+## Parked, by the writer's word (27 Nov, 20:03 ET)
+- **Timbre on the arrangement side:** instrument tone, brightness, distortion and how close the voice sits, measured from real recordings, for the engine's arrangements and demos. It is kept out of the "why it lasts" test on purpose, since covers change timbre by definition. The writer: "Let's wait until what we are working on works." Take it up once 3/4 and 6/8 write properly.
