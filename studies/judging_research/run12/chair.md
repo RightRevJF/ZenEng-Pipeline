@@ -154,3 +154,8 @@ The two-file stability ranking (PCE_ALL 0.74 > H1 0.69 > REP_L 0.60 > E5_L 0.57 
 - Lakh MIDI Dataset (Raffel 2016) / Lakh Pianoroll Dataset (Dong et al. 2018), CC BY 4.0.
 - Discogs-VI 20240701 (Araz, Serra & Bogdanov 2024), CC BY-SA 4.0.
 - Cards: Freeman & Jordan, arXiv:1812.06946; Gaeta, Garetto, Ruffo & Flammini (2022), DOI 10.1145/3530790.
+
+## Addendum (orchestrator, after the results)
+- One test written after seeing results joined the pass's total: `windows_lakh_after` (rule 2d64143), so **K = 4, α = .05/4 = 0.0125** for the pass. None of the three counted tests had p under .0167, so no verdict changed. Its code read the wrong Discogs-VI member on a first run; fixed to the written rule and rerun (3f22888, NOTE_rerun.md); both runs reported.
+- `fitness_finebins_after` (cover timing only, no notes; not counted): the no-attachment finding holds with yearly age bins.
+- The windows estimate's frozen bootstrap failed for ch_rep (NaN replicates), so its frozen range flag is void; its RESULT.md reports the analytic SE.

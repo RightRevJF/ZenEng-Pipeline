@@ -56,3 +56,7 @@
 ## Run 11
 
 None. The one paper (arXiv:2609.35369) was free.
+
+## Run 12
+
+None. Both papers (arXiv:1812.06946, arXiv:2204.13536) were free.

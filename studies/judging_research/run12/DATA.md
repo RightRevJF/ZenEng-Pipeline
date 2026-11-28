@@ -32,3 +32,8 @@ Discogs-VI `main.zip` finished downloading at 10:55 ET (`/home/claude/dl/discogs
 
 ## Missing data (unchanged)
 The performer's field (P11-3) needs recordings aligned to notes, and none are on this machine.
+
+## Addendum (orchestrator, after the results)
+- The Lakh windows test was run this pass after seeing results (`experiments/windows_lakh_after`, rule 2d64143 committed before the join): it streamed the full `Discogs-VI-20240701.jsonl` member for the 2,162 Lakh cliques, inside the guarded test. The pooled design above stays for a later pass, now with Lakh cover timing seen.
+- **Data request (R12-3):** recordings aligned to notes for the performer's field (physics vector 3). Not on this machine; no allowed source found.
+- **Still missing (R11-3):** new named melodies by artists with two or more songs, never joined to an outcome.
