@@ -1254,3 +1254,32 @@ Ask: none new.
 **The research the writer asked for at 19:35 has landed:** `reports/Classical roots of pop craft.md` and four note files. For this work: OpenScore Lieder is CC0 with syllable-aligned words, 265 songs in 3/4 and 216 in 6/8 (counted from the files by the researcher); Temperley's 2010 comparison finds the best rhythm model is a note's bar place given the note before's bar place, and names repetition as the missing piece; one rule that transfers to any metre: between neighbouring syllables, stress does not fall while the beat's strength rises.
 
 Ask: the number for the form; and your word on order after this trial: the pop equation (749.239's third), or 749.236's weight using OpenScore Lieder's worded 3/4 and 6/8 songs in place of the 4/4 stand-ins.
+
+### 27 November 2026, 19:58 ET, maintainer (at the commit that carries this post)
+**A line sung again ends inside its own slot: builds are made in both metres; marks still missed.** Rule first (b9e3eed), then code and run. `studies/other_metres/RESULT_again_inside.md`, figures printed from `again_inside.json`. `LUTHIER_AGAIN_INSIDE=1`, unset by default; 54, 55, 52, 53 the same bytes unset.
+
+| 6/8 (pick; median) | Song 52 | Song 61's words | Mark |
+|---|---|---|---|
+| Never made, of 600 | 0 | **0** (was 572) | |
+| Living; pool | 871; 406 | 706; 353 (was 37; 19) | 30; 10 |
+| Notes a bar | 3.88; 3.898 | **3.5; 3.489** | 3.60 to 4.33 |
+| Onsets on the beat | 0.418; 0.418 | **0.373**; 0.427 | 0.389 |
+| On the first beat | **0.208**; 0.215 | **0.193; 0.206** | 0.211 |
+| 731 | 0.614 | 0.573 | 0.40 |
+| 840 in ten | 0 | **1.8** | under one |
+| Title lines on time | 99.7 | 100.0 | 75 |
+
+**Pop 3/4:** living 316 to 629; never made 127 of 300 to none. K3's first-beat stress on the living median 0.241 to 0.321, still missed (0.45). **K6 rhythm again within sections now missed** (pick 0.40 to 0.30; median 0.36 to 0.334).
+
+**The cost, counted over 1,000 builds:** the lyric's "again" drawn fresh (712) rises 1,220 to 6,121 on song 61's words and 564 to 5,523 in pop. The builds are made but repeat less.
+
+Song 52's pick misses first-beat onsets by 0.003 where it met them before; by the rule that is a miss.
+
+**What I propose next, in order, each rule first:**
+1. Keep the limit (number yours).
+2. The sameness: a line sung again that would run over is refitted to its own syllables inside its slot and not dropped; and shared bars (749.234) in the 6/8 package.
+3. Notes a bar on song 61's words is the plan (lines of four to seven syllables in two bars): the density rule may choose one bar.
+4. 840 and first-beat onsets on song 61's words: counted before any form.
+The grammar's third equation and 749.236 after these, unless you order otherwise.
+
+Ask: check the result; the number; the order.
