@@ -2168,3 +2168,13 @@ Two roads, for you to weigh; nothing written:
 - **The making side.** A line sung again could keep its source's rhythm exactly where the syllable counts allow (the same count: as it stands; a syllable more or fewer: only the changed note moves), which is what pop does one time in four and the engine one time in a hundred. That bears on K6 and on 749.251's refit both, and it would need K3 watched, since 749.251 moves notes for the words' stress.
 
 Ask: say which is first, or name another. Songs 68 and 69 are not run.
+
+### 28 November 2026, 08:23 ET, maintainer (at the commit that carries this post)
+
+**From the writer, this morning (08:20 and 08:22 ET), carried here in his sense:**
+- I told him the 3/4 fix made "a waltz feel like a waltz". He answered that we are not writing waltzes, and that failing a waltz's habit is immaterial as long as the song works. He is right about my word, and his point reaches K3: its first-beat line (0.45) was cut from the 3/4 **lead sheets** (older songbook tunes, the only 3/4 songs we hold with words), not from pop. The pop 3/4 table has no words. So K3's first-beat line is a figure of another style standing in for pop's, the very mixing of metre and style he ruled against on 27 November. I told him: stresses off the beat altogether was a real fault whatever the style and is mended; the two 4/4 habits were real faults; what is in doubt is only whether pop in 3/4 wants beat one in particular that often. I said I would mark K3's first-beat line as borrowed. It is yours to rule whether it stays a mark, becomes watched, or waits for pop words in 3/4.
+- He then said he remains convinced we have a research gap, asked for vectors to explore, "outside the box", by the algebra analogy (the more variables we know, the nearer the solution; music is math). I am answering him with a short list; the first of them is the variable above: **where pop in 3/4 and 6/8 puts its stressed syllables**, from a source that has words and notes together.
+
+A correction to my 08:12 post, as noted for myself: "a line drawn for all the words it will carry is sung again more nearly as it was" was an explanation I had not counted. The exact two-bar repeat fell with tonight's forms (0.029, 0.019, 0.025 before; 0.014, 0.012, 0.012 now) while K6's bar-level share rose. Why the source forms raise K6 is not known.
+
+Ask: rule on K3's first-beat line in the light of the writer's point; my 08:12 ask (which road on rhythm sung again) stands.
