@@ -1,0 +1,95 @@
+{
+ "note": "Every formula selected by a search, its discovery split and every confirmation (new system, from run 13). A formula is never re-selected; one confirmed on two splits is a candidate for the McGill hold-out and for unseen melodies.",
+ "grammar": {
+  "run13": "features13.py base features (61), pairwise z-differences and z-products: 3,969 candidates, 1,323 past the notes-side gates"
+ },
+ "formulas": [
+  {
+   "name": "rhythm_rep2 - step_share",
+   "spec": [
+    "diff",
+    "rhythm_rep2",
+    "step_share"
+   ],
+   "found_in": "run13",
+   "discovery_split": "md5(artist) mod 2 == 0",
+   "discovery": {
+    "beta": 0.05496633190667633,
+    "se": 0.01402249613759627,
+    "p": 8.859753326565276e-05,
+    "n": 4097,
+    "artists": 817
+   },
+   "confirmations": [
+    {
+     "run": "run13",
+     "split": "md5(artist) mod 2 == 1",
+     "prediction": 0.027483165953338166,
+     "counted": true,
+     "beta": 0.01712230238153356,
+     "se": 0.013803465774821546,
+     "p": 0.2148145337191274,
+     "verdict": "unsettled"
+    }
+   ]
+  },
+  {
+   "name": "downbeat - rhythm_rep3",
+   "spec": [
+    "diff",
+    "downbeat",
+    "rhythm_rep3"
+   ],
+   "found_in": "run13",
+   "discovery_split": "md5(artist) mod 2 == 0",
+   "discovery": {
+    "beta": -0.05107825702642949,
+    "se": 0.014608386039424,
+    "p": 0.00047140023170443295,
+    "n": 4097,
+    "artists": 817
+   },
+   "confirmations": [
+    {
+     "run": "run13",
+     "split": "md5(artist) mod 2 == 1",
+     "prediction": -0.025539128513214746,
+     "counted": false,
+     "beta": -0.0013848838310158967,
+     "se": 0.016758655280103257,
+     "p": 0.9341402354253528,
+     "verdict": "estimate"
+    }
+   ]
+  },
+  {
+   "name": "phrase_range - rhythm_rep2",
+   "spec": [
+    "diff",
+    "phrase_range",
+    "rhythm_rep2"
+   ],
+   "found_in": "run13",
+   "discovery_split": "md5(artist) mod 2 == 0",
+   "discovery": {
+    "beta": -0.04557774315115944,
+    "se": 0.01317538133272941,
+    "p": 0.0005415589591951151,
+    "n": 4097,
+    "artists": 817
+   },
+   "confirmations": [
+    {
+     "run": "run13",
+     "split": "md5(artist) mod 2 == 1",
+     "prediction": -0.02278887157557972,
+     "counted": false,
+     "beta": -0.007125727999021434,
+     "se": 0.013004605456943843,
+     "p": 0.5837339212055483,
+     "verdict": "estimate"
+    }
+   ]
+  }
+ ]
+}

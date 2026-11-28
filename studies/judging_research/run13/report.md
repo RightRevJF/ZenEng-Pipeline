@@ -1,6 +1,6 @@
 # Judging research, run 13: a supplemental trial of the new system
 
-28 November 2026, about 12:10 to 13:00 ET, at Jason's word ("go ahead and do a supplemental trial of the new system now"). No paper was read. Rules came first for every outcome test: 6821d6b (plan and predictions), 98f80b8 (the formulas the search chose, frozen before the sealed half was read), 815f284 (the realness test's code, before its join).
+28 November 2026, about 12:00 to 12:30 ET, at Jason's word ("go ahead and do a supplemental trial of the new system now"). No paper was read. Rules came first for every outcome test: 6821d6b (plan and predictions), 98f80b8 (the formulas the search chose, frozen before the sealed half was read), 815f284 (the realness test's code, before its join).
 
 ## In three sentences
 For the first time the research let the data propose the mathematics: a search over about 4,000 formulas on half the songs, checked once on the sealed other half, and a model that compares real hit melodies with our engine's own melodies. Both routes, separately, pointed at the same thing: real songs bring their rhythm figures back, and the engine does not. On the sealed half that lean held its direction at about 60% of the size but did not clear the bar; and a song that merely sounds more like a typical hit is not covered more (that test was killed, the other way).
